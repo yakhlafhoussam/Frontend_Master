@@ -1,1128 +1,418 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Vue 3 Mastery · Debuggers by HYK</title>
-    <!-- Google Fonts + modern font stack -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-    <!-- Font Awesome 6 (free) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1"></script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* CSS Variables for Light/Dark Mode */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
-            --bg-gradient-start: #f4f8fe;
-            --bg-gradient-end: #e9f0f5;
-            --card-bg: #ffffff;
-            --text-primary: #0a2a3b;
-            --text-secondary: #3e5a77;
-            --border-light: #cde0ec;
-            --header-bg: linear-gradient(115deg, #0b2b2c 0%, #123e3f 100%);
-            --header-text: white;
-            --playlist-card-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08);
-            --panel-bg: rgba(255, 255, 255, 0.7);
-            --badge-bg: #f0f4fa;
-            --badge-text: #5b6e8c;
-            --btn-outline-border: #cbdbe0;
-            --btn-outline-text: #1f4e6e;
-            --download-btn-bg: #f0f4fa;
-            --download-btn-hover: #e2e8f2;
-            --footer-border: #cde0ec;
-            --footer-text: #5c6f8a;
-            --modal-bg: #0b1a22;
-            --modal-footer-bg: white;
-            --modal-footer-text: #0a2a3b;
-            --progress-bg: #e0e7ef;
-            --progress-fill: #42b883;
-            --completed-bg: #e8f5ef;
-            --completed-border: #42b883;
+            --bg-gradient-start: #f4f8fe; --bg-gradient-end: #e9f0f5; --card-bg: #ffffff;
+            --text-primary: #0a2a3b; --text-secondary: #3e5a77; --border-light: #cde0ec;
+            --header-bg: linear-gradient(115deg, #0b2b2c 0%, #123e3f 100%); --header-text: white;
+            --badge-bg: #f0f4fa; --badge-text: #5b6e8c; --progress-fill: #42b883;
+            --progress-bg: #e0e7ef; --completed-bg: #e8f5ef; --shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08);
+            --modal-bg: #0b1a22; --modal-footer-bg: white; --note-bg: #fef9e3;
         }
-
         body.dark {
-            --bg-gradient-start: #0f1724;
-            --bg-gradient-end: #0a0f18;
-            --card-bg: #1a2533;
-            --text-primary: #e2e8f0;
-            --text-secondary: #94a3b8;
-            --border-light: #2d3a4a;
-            --header-bg: linear-gradient(115deg, #0a1a1f 0%, #0d2a2f 100%);
-            --header-text: #e2e8f0;
-            --playlist-card-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.3);
-            --panel-bg: rgba(26, 37, 51, 0.8);
-            --badge-bg: #2d3a4a;
-            --badge-text: #94a3b8;
-            --btn-outline-border: #3a4a5e;
-            --btn-outline-text: #94a3b8;
-            --download-btn-bg: #2d3a4a;
-            --download-btn-hover: #3a4a5e;
-            --footer-border: #2d3a4a;
-            --footer-text: #94a3b8;
-            --modal-bg: #0f1724;
-            --modal-footer-bg: #1a2533;
-            --modal-footer-text: #e2e8f0;
-            --progress-bg: #2d3a4a;
-            --progress-fill: #42b883;
-            --completed-bg: #1a3a2a;
-            --completed-border: #42b883;
+            --bg-gradient-start: #0f1724; --bg-gradient-end: #0a0f18; --card-bg: #1a2533;
+            --text-primary: #e2e8f0; --text-secondary: #94a3b8; --border-light: #2d3a4a;
+            --header-bg: linear-gradient(115deg, #0a1a1f 0%, #0d2a2f 100%); --header-text: #e2e8f0;
+            --badge-bg: #2d3a4a; --badge-text: #94a3b8; --progress-bg: #2d3a4a;
+            --completed-bg: #1a3a2a; --shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.3);
+            --modal-bg: #0f1724; --modal-footer-bg: #1a2533; --note-bg: #2a2a1a;
         }
-
-        body {
-            background: radial-gradient(circle at 10% 20%, var(--bg-gradient-start), var(--bg-gradient-end));
-            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-            color: var(--text-primary);
-            padding: 2rem 1.5rem;
-            transition: background 0.3s ease, color 0.3s ease;
-        }
-
-        .global-container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        /* header with creator spotlight */
-        .creator-spotlight {
-            background: var(--header-bg);
-            border-radius: 2rem;
-            padding: 1.8rem 2rem;
-            margin-bottom: 2.5rem;
-            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.2);
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            color: var(--header-text);
-            transition: background 0.3s ease;
-        }
-
-        .hyk-brand h1 {
-            font-size: 2rem;
-            font-weight: 800;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-
-        .hyk-brand h1 i {
-            background: #42b883;
-            padding: 10px;
-            border-radius: 60px;
-            font-size: 1.3rem;
-            color: #0b2b2c;
-        }
-
-        .classe-badge {
-            background: rgba(66, 184, 131, 0.2);
-            backdrop-filter: blur(4px);
-            padding: 0.5rem 1.2rem;
-            border-radius: 60px;
-            font-weight: 500;
-            font-size: 0.85rem;
-            border: 1px solid rgba(66, 184, 131, 0.6);
-        }
-
-        .debugger-tag {
-            margin-top: 8px;
-            font-size: 0.85rem;
-            opacity: 0.9;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        /* Dark Mode Toggle Button */
-        .theme-toggle {
-            background: rgba(255, 255, 255, 0.15);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 40px;
-            padding: 0.5rem 1rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            transition: 0.2s;
-            color: white;
-        }
-
-        .theme-toggle:hover {
-            background: rgba(255, 255, 255, 0.25);
-            transform: scale(1.02);
-        }
-
-        /* Progress Stats Bar */
-        .progress-stats {
-            background: var(--card-bg);
-            border-radius: 1.5rem;
-            padding: 1rem 1.5rem;
-            margin-bottom: 1.5rem;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            gap: 1rem;
-            border: 1px solid var(--border-light);
-        }
-
-        .progress-info {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .progress-circle {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: var(--progress-bg);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 1.2rem;
-            position: relative;
-        }
-
-        .progress-circle::before {
-            content: '';
-            position: absolute;
-            inset: -3px;
-            border-radius: 50%;
-            background: conic-gradient(var(--progress-fill) 0deg, var(--progress-bg) 0deg);
-            mask: radial-gradient(transparent 55%, black 56%);
-            -webkit-mask: radial-gradient(transparent 55%, black 56%);
-        }
-
-        .progress-text {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-
-        .progress-text strong {
-            font-size: 1.3rem;
-            color: var(--text-primary);
-        }
-
-        .reset-progress-btn {
-            background: var(--badge-bg);
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 40px;
-            cursor: pointer;
-            font-size: 0.75rem;
-            color: var(--text-primary);
-            transition: 0.2s;
-        }
-
-        .reset-progress-btn:hover {
-            background: var(--download-btn-hover);
-        }
-
-        /* Playlist grid */
-        .playlists-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0 2rem;
-        }
-
-        .playlist-card {
-            background: var(--card-bg);
-            border-radius: 2rem;
-            overflow: hidden;
-            box-shadow: var(--playlist-card-shadow);
-            transition: all 0.25s ease;
-            border: 1px solid rgba(0, 0, 0, 0.04);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .playlist-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 28px 40px -16px rgba(0, 0, 0, 0.18);
-        }
-
-        .playlist-cover {
-            padding: 1.8rem 1.5rem;
-            position: relative;
-            color: white;
-        }
-
-        .playlist-icon {
-            font-size: 2.5rem;
-            margin-bottom: 12px;
-        }
-
-        .playlist-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            letter-spacing: -0.3px;
-            line-height: 1.2;
-        }
-
-        .playlist-sub {
-            font-size: 0.7rem;
-            background: rgba(255, 255, 255, 0.2);
-            display: inline-block;
-            padding: 0.2rem 0.8rem;
-            border-radius: 60px;
-            margin-top: 12px;
-        }
-
-        .playlist-content {
-            padding: 1.4rem 1.4rem 1.6rem;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .info-stats {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            color: #2c7a5e;
-            margin-bottom: 12px;
-            flex-wrap: wrap;
-        }
-
-        .desc-text {
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            line-height: 1.45;
-            margin-bottom: 1.2rem;
-        }
-
-        .btn-playlist {
-            background: transparent;
-            border: 1.5px solid var(--btn-outline-border);
-            padding: 0.6rem 0;
-            border-radius: 60px;
-            font-weight: 600;
-            font-size: 0.85rem;
-            cursor: pointer;
-            transition: 0.2s;
-            margin-top: auto;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            color: var(--btn-outline-text);
-        }
-
-        .btn-playlist.active-pl {
-            background: #42b883;
-            border-color: #42b883;
-            color: white;
-            box-shadow: 0 4px 10px rgba(66, 184, 131, 0.2);
-        }
-
-        .download-playlist-btn {
-            background: var(--download-btn-bg);
-            border: none;
-            border-radius: 60px;
-            padding: 0.4rem 0.8rem;
-            font-size: 0.7rem;
-            font-weight: 500;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            margin-top: 8px;
-            transition: 0.2s;
-            color: var(--text-primary);
-        }
-
-        .download-playlist-btn:hover {
-            background: var(--download-btn-hover);
-        }
-
-        .coming-soon-chip {
-            background: var(--badge-bg);
-            border-radius: 30px;
-            padding: 0.25rem 0.9rem;
-            font-size: 0.7rem;
-            font-weight: 600;
-            color: var(--badge-text);
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        /* video panel */
-        .videos-panel {
-            margin-top: 2rem;
-            background: var(--panel-bg);
-            backdrop-filter: blur(2px);
-            border-radius: 2rem;
-            padding: 1.5rem;
-            transition: all 0.2s;
-        }
-
-        .panel-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            flex-wrap: wrap;
-            margin-bottom: 1.5rem;
-            border-bottom: 2px solid var(--border-light);
-            padding-bottom: 0.7rem;
-        }
-
-        .panel-header h2 {
-            font-size: 1.4rem;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--text-primary);
-        }
-
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 1.4rem;
-        }
-
-        .video-card-mini {
-            background: var(--card-bg);
-            border-radius: 1.5rem;
-            overflow: hidden;
-            transition: 0.2s;
-            border: 1px solid var(--border-light);
-            position: relative;
-        }
-
-        .video-card-mini.completed {
-            border-left: 4px solid var(--progress-fill);
-            background: var(--completed-bg);
-        }
-
-        .video-card-mini:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 20px -12px rgba(0, 0, 0, 0.12);
-        }
-
-        .video-thumb {
-            background: #1a2f3c;
-            aspect-ratio: 16/9;
+        body { background: radial-gradient(circle at 10% 20%, var(--bg-gradient-start), var(--bg-gradient-end)); font-family: 'Inter', sans-serif; color: var(--text-primary); padding: 2rem 1.5rem; transition: background 0.3s, color 0.3s; }
+        .global-container { max-width: 1400px; margin: 0 auto; }
+        
+        .creator-spotlight { background: var(--header-bg); border-radius: 2rem; padding: 1.5rem 2rem; margin-bottom: 2rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; color: var(--header-text); box-shadow: var(--shadow); }
+        .hyk-brand h1 { font-size: 1.8rem; display: flex; align-items: center; gap: 12px; }
+        .hyk-brand h1 i { background: #42b883; padding: 8px; border-radius: 60px; font-size: 1.2rem; color: #0b2b2c; }
+        .hyk-brand p { font-size: 0.8rem; opacity: 0.85; margin-top: 5px; }
+        .header-actions { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+        .theme-toggle, .downloads-link, .certificate-link { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); border-radius: 40px; padding: 0.5rem 1rem; cursor: pointer; display: flex; align-items: center; gap: 8px; color: white; transition: 0.2s; }
+        .theme-toggle:hover, .downloads-link:hover, .certificate-link:hover { background: rgba(255,255,255,0.25); transform: scale(1.02); }
+        
+        .nav-tabs { display: flex; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap; }
+        .nav-tab { background: var(--card-bg); border: 2px solid var(--border-light); border-radius: 60px; padding: 0.8rem 1.8rem; cursor: pointer; display: flex; align-items: center; gap: 10px; font-weight: 600; transition: 0.2s; color: var(--text-primary); }
+        .nav-tab:hover { transform: translateY(-2px); border-color: var(--progress-fill); }
+        .nav-tab.active { background: var(--progress-fill); border-color: var(--progress-fill); color: white; }
+        
+        .progress-dashboard { background: var(--card-bg); border-radius: 1.5rem; padding: 1.2rem 1.8rem; margin-bottom: 2rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; border: 1px solid var(--border-light); }
+        .progress-left { display: flex; align-items: center; gap: 1.2rem; flex-wrap: wrap; }
+        .progress-ring { width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.2rem; background: conic-gradient(var(--progress-fill) 0deg, var(--progress-bg) 0deg); border-radius: 50%; }
+        .progress-stats-text h3 { font-size: 1rem; font-weight: 600; }
+        .progress-stats-text p { font-size: 0.75rem; color: var(--text-secondary); margin-top: 4px; }
+        .progress-actions { display: flex; gap: 10px; }
+        .action-btn { background: var(--badge-bg); border: none; padding: 0.5rem 1rem; border-radius: 40px; cursor: pointer; font-size: 0.75rem; color: var(--text-primary); transition: 0.2s; display: inline-flex; align-items: center; gap: 6px; }
+        .action-btn:hover { background: var(--progress-fill); color: white; transform: translateY(-2px); }
+        
+        .page-container { display: none; }
+        .page-container.active-page { display: block; }
+        
+        .playlist-header { background: linear-gradient(135deg, var(--progress-fill), #2c5f2d); border-radius: 1.5rem; padding: 1.5rem; margin-bottom: 1.5rem; color: white; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+        .playlist-header h2 { font-size: 1.5rem; display: flex; align-items: center; gap: 10px; }
+        .playlist-stats-badge { background: rgba(255,255,255,0.2); padding: 0.3rem 0.8rem; border-radius: 60px; font-size: 0.8rem; }
+        
+        .video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.3rem; }
+        .video-card { background: var(--card-bg); border-radius: 1.3rem; overflow: hidden; transition: 0.25s; border: 1px solid var(--border-light); position: relative; }
+        .video-card.completed { border-left: 4px solid var(--progress-fill); background: var(--completed-bg); }
+        .video-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+        .video-thumb { 
+            aspect-ratio: 16/9; 
+            background: linear-gradient(135deg, #2c5f2d, #1e4a3a);
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
             position: relative;
-            overflow: hidden;
         }
-
-        .play-badge {
-            background: rgba(0, 0, 0, 0.6);
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            backdrop-filter: blur(4px);
-            color: white;
-            font-size: 1.2rem;
-            transition: 0.1s;
-            z-index: 2;
-            position: relative;
-        }
-
-        .video-thumb:hover .play-badge {
-            background: #42b883;
-            transform: scale(1.08);
-        }
-
-        .duration-overlay {
-            position: absolute;
-            bottom: 8px;
-            right: 10px;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 3px 8px;
-            border-radius: 20px;
-            font-size: 0.7rem;
-            color: white;
-            font-family: monospace;
-            z-index: 2;
-        }
-
-        .video-info-mini {
-            padding: 0.8rem 1rem;
-        }
-
-        .video-title-mini {
-            font-weight: 700;
-            font-size: 0.85rem;
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 6px;
-            color: var(--text-primary);
-        }
-
-        .lesson-num {
-            background: var(--badge-bg);
-            font-size: 0.65rem;
-            padding: 0.2rem 0.6rem;
-            border-radius: 30px;
-            color: var(--badge-text);
-        }
-
-        .video-actions-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 8px;
-        }
-
-        .duration-mini {
-            font-size: 0.7rem;
-            color: var(--text-secondary);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .check-btn {
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-            padding: 4px 8px;
-            border-radius: 20px;
-            transition: 0.2s;
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-
-        .check-btn.completed {
-            color: #42b883;
-        }
-
-        .check-btn:not(.completed) {
-            color: var(--text-secondary);
-        }
-
-        .check-btn:hover {
-            background: var(--badge-bg);
-            transform: scale(1.05);
-        }
-
-        .download-single-btn {
-            background: none;
-            border: none;
-            color: #2c7a5e;
-            cursor: pointer;
-            font-size: 0.7rem;
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            transition: 0.1s;
-        }
-
-        .footer-credits {
-            margin-top: 3rem;
-            text-align: center;
-            font-size: 0.75rem;
-            color: var(--footer-text);
-            border-top: 1px solid var(--footer-border);
-            padding-top: 1.8rem;
-            display: flex;
-            justify-content: center;
-            gap: 28px;
-            flex-wrap: wrap;
-        }
-
-        /* Modal */
-        .modal-player {
+        .play-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.4); display: flex; align-items: center; justify-content: center; opacity: 0; transition: 0.2s; border-radius: 1rem; }
+        .video-thumb:hover .play-overlay { opacity: 1; }
+        .play-btn { background: rgba(0,0,0,0.7); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.3rem; backdrop-filter: blur(4px); }
+        .video-icon { font-size: 3rem; color: white; opacity: 0.8; }
+        .duration-badge { position: absolute; bottom: 10px; right: 10px; background: rgba(0,0,0,0.75); padding: 3px 8px; border-radius: 20px; font-size: 0.7rem; color: white; font-family: monospace; }
+        .video-info { padding: 0.9rem 1rem; }
+        .video-title { font-weight: 700; font-size: 0.85rem; display: flex; justify-content: space-between; margin-bottom: 8px; }
+        .lesson-number { background: var(--badge-bg); padding: 0.2rem 0.6rem; border-radius: 30px; font-size: 0.65rem; }
+        .video-note-preview { background: var(--note-bg); border-radius: 0.8rem; padding: 0.5rem 0.7rem; margin: 8px 0; font-size: 0.7rem; border-left: 3px solid var(--progress-fill); display: flex; gap: 6px; align-items: flex-start; }
+        .video-actions { display: flex; justify-content: space-between; align-items: center; margin-top: 8px; flex-wrap: wrap; gap: 6px; }
+        .icon-btn { background: none; border: none; cursor: pointer; font-size: 0.7rem; padding: 5px 8px; border-radius: 20px; display: inline-flex; align-items: center; gap: 5px; color: var(--text-secondary); transition: 0.2s; }
+        .icon-btn.completed { color: var(--progress-fill); }
+        .icon-btn:hover { background: var(--badge-bg); transform: scale(1.02); }
+        
+        .modal-player { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.94); backdrop-filter: blur(14px); z-index: 10000; display: none; justify-content: center; align-items: center; }
+        .modal-window { background: var(--modal-bg); border-radius: 1.8rem; max-width: 1000px; width: 90%; overflow: hidden; max-height: 90vh; display: flex; flex-direction: column; animation: fadeIn 0.25s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+        .video-container { background: #000; display: flex; justify-content: center; }
+        .video-container video { width: 100%; max-height: 55vh; outline: none; }
+        .modal-info { padding: 1rem 1.5rem; background: var(--modal-footer-bg); }
+        .modal-title { font-weight: 700; margin-bottom: 0.8rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+        .speed-select { background: var(--badge-bg); border: none; padding: 0.3rem 0.8rem; border-radius: 60px; cursor: pointer; font-size: 0.75rem; }
+        .notes-area { margin-top: 0.8rem; }
+        .notes-area textarea { width: 100%; background: var(--card-bg); border: 1px solid var(--border-light); border-radius: 1rem; padding: 0.6rem; color: var(--text-primary); font-size: 0.8rem; resize: vertical; font-family: inherit; }
+        .modal-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 0.8rem; }
+        .modal-btn { background: var(--badge-bg); border: none; padding: 0.5rem 1rem; border-radius: 60px; cursor: pointer; font-size: 0.75rem; display: inline-flex; align-items: center; gap: 6px; transition: 0.2s; }
+        .modal-btn:hover { background: var(--progress-fill); color: white; transform: translateY(-2px); }
+        
+        .downloads-page { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg-gradient-start); z-index: 15000; overflow-y: auto; padding: 2rem; display: none; }
+        .downloads-container { max-width: 800px; margin: 0 auto; background: var(--card-bg); border-radius: 2rem; padding: 2rem; box-shadow: var(--shadow); }
+        .downloads-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem; }
+        .close-downloads { background: var(--badge-bg); border: none; padding: 0.5rem 1rem; border-radius: 60px; cursor: pointer; }
+        .playlist-download-item { background: var(--badge-bg); border-radius: 1rem; padding: 1rem; margin-bottom: 1rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+        .download-playlist-btn-page { background: var(--progress-fill); border: none; padding: 0.5rem 1rem; border-radius: 60px; cursor: pointer; color: white; display: flex; align-items: center; gap: 6px; }
+        
+        /* Certificate Modal */
+        .cert-modal {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.94);
-            backdrop-filter: blur(14px);
-            z-index: 10000;
+            background: rgba(0,0,0,0.95);
+            backdrop-filter: blur(10px);
+            z-index: 20000;
             display: none;
             justify-content: center;
             align-items: center;
+            overflow-y: auto;
         }
-
-        .modal-window {
-            background: var(--modal-bg);
+        .cert-modal-content {
+            background: #fff8e7;
             border-radius: 2rem;
-            max-width: 1000px;
+            max-width: 450px;
             width: 90%;
-            overflow: hidden;
-            animation: modalFadeIn 0.25s ease-out;
-            max-height: 85vh;
-            display: flex;
-            flex-direction: column;
+            padding: 2rem;
+            text-align: center;
+            border: 3px solid #d4af37;
         }
-
-        @keyframes modalFadeIn {
-            from {
-                opacity: 0;
-                transform: scale(0.95);
-            }
-
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        .video-modal-container {
-            background: #000;
-            width: 100%;
-        }
-
-        .video-modal-container video {
-            width: 100%;
-            display: block;
-            max-height: 65vh;
-            object-fit: contain;
-        }
-
-        .modal-footer {
-            background: var(--modal-footer-bg);
-            padding: 1rem 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .modal-footer h4 {
-            font-weight: 700;
-            font-size: 1rem;
-            margin: 0;
-            flex: 1;
-            color: var(--modal-footer-text);
-        }
-
-        .modal-actions {
-            display: flex;
-            gap: 10px;
-        }
-
-        .modal-action-btn {
-            background: var(--badge-bg);
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 30px;
-            cursor: pointer;
-            font-size: 0.8rem;
-            transition: 0.2s;
-            color: var(--text-primary);
-        }
-
-        .toast-message {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #1e2f3c;
-            color: white;
-            padding: 0.6rem 1.2rem;
-            border-radius: 60px;
-            font-size: 0.8rem;
-            z-index: 10001;
-            backdrop-filter: blur(8px);
-            white-space: nowrap;
-            pointer-events: none;
-        }
-
-        body.modal-open {
-            overflow: hidden;
-        }
-
-        @media (max-width: 680px) {
-            body {
-                padding: 1rem;
-            }
-
-            .creator-spotlight {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 1rem;
-            }
-
-            .toast-message {
-                white-space: normal;
-                text-align: center;
-                max-width: 90%;
-            }
-        }
+        .cert-modal-content h2 { color: #2c5f2d; margin-bottom: 1rem; }
+        .cert-name-input { width: 100%; padding: 1rem; font-size: 1.2rem; margin: 1.5rem 0; border: 2px solid #cde0ec; border-radius: 1rem; text-align: center; font-family: 'Inter', sans-serif; }
+        .cert-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .cert-download-btn, .cert-close-btn { background: #42b883; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 60px; cursor: pointer; font-size: 1rem; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; }
+        .cert-close-btn { background: #eef2f5; color: #0a2a3b; }
+        
+        .toast { position: fixed; bottom: 25px; left: 50%; transform: translateX(-50%); background: #1e2f3c; color: white; padding: 0.6rem 1.2rem; border-radius: 60px; font-size: 0.8rem; z-index: 10001; backdrop-filter: blur(8px); white-space: nowrap; pointer-events: none; }
+        @media (max-width: 680px) { body { padding: 1rem; } .toast { white-space: normal; max-width: 90%; text-align: center; } .nav-tab { padding: 0.5rem 1rem; font-size: 0.8rem; } }
+        body.modal-open { overflow: hidden; }
     </style>
 </head>
-
 <body>
-    <div class="global-container">
-        <div class="creator-spotlight">
-            <div class="hyk-brand">
-                <h1><i class="fas fa-bug"></i> Debuggers · by HYK</h1>
-                <div class="debugger-tag">
-                    <span><i class="fab fa-vuejs"></i> Vue 3 Curriculum Architect</span>
-                    <span><i class="fas fa-chalkboard-user"></i> Classe Debuggers</span>
-                    <span><i class="fas fa-code"></i> 90+ lessons</span>
-                </div>
-            </div>
-            <div style="display: flex; gap: 12px; align-items: center;">
-                <button id="darkModeToggle" class="theme-toggle"><i class="fas fa-moon"></i><span>Dark
-                        Mode</span></button>
-                <div class="classe-badge"><i class="fas fa-graduation-cap"></i> Track your progress</div>
-            </div>
-        </div>
-
-        <!-- Progress Stats -->
-        <div class="progress-stats" id="progressStats">
-            <div class="progress-info">
-                <div class="progress-circle" id="progressCircle">0%</div>
-                <div class="progress-text">
-                    <strong id="completedCount">0</strong> / <span id="totalCount">0</span> lessons completed<br>
-                    <span style="font-size: 0.7rem;"><i class="fas fa-check-circle"></i> Keep going! 🎯</span>
-                </div>
-            </div>
-            <button id="resetProgressBtn" class="reset-progress-btn"><i class="fas fa-undo-alt"></i> Reset all
-                progress</button>
-        </div>
-
-        <div class="playlists-grid">
-            <div class="playlist-card" id="plCard1">
-                <div class="playlist-cover" style="background: linear-gradient(145deg, #2c5f2d, #1e4a3a);">
-                    <div class="playlist-icon"><i class="fab fa-vuejs"></i></div>
-                    <div class="playlist-title">Vue 3 Fundamentals</div>
-                    <div class="playlist-sub">Complete · 50 episodes</div>
-                </div>
-                <div class="playlist-content">
-                    <div class="info-stats"><i class="fas fa-video"></i> 50 videos · 8+ hours</div>
-                    <div class="desc-text">Master Composition API, reactivity, components, directives, and real-world
-                        patterns.</div>
-                    <button id="activatePl1Btn" class="btn-playlist active-pl"><i class="fas fa-play-circle"></i> Browse
-                        lessons</button>
-                    <button id="downloadPlaylist1Btn" class="download-playlist-btn"><i class="fas fa-download"></i>
-                        Download all</button>
-                </div>
-            </div>
-            <div class="playlist-card" id="plCard2">
-                <div class="playlist-cover" style="background: linear-gradient(145deg, #2a4b6e, #163a51);">
-                    <div class="playlist-icon"><i class="fas fa-layer-group"></i></div>
-                    <div class="playlist-title">Intermediate Vue</div>
-                    <div class="playlist-sub">26 deep-dive lessons</div>
-                </div>
-                <div class="playlist-content">
-                    <div class="info-stats"><i class="fas fa-code-branch"></i> 26 videos · advanced patterns</div>
-                    <div class="desc-text">Composition API patterns, advanced slots, provide/inject, Pinia state
-                        management.</div>
-                    <button id="activatePl2Btn" class="btn-playlist"><i class="fas fa-play-circle"></i> Browse
-                        intermediate</button>
-                    <button id="downloadPlaylist2Btn" class="download-playlist-btn"><i class="fas fa-download"></i>
-                        Download all</button>
-                </div>
-            </div>
-            <div class="playlist-card" id="plCard3">
-                <div class="playlist-cover" style="background: linear-gradient(145deg, #2c3e5c, #1b2a46);">
-                    <div class="playlist-icon"><i class="fab fa-js"></i><span style="margin-left:5px;">+TS</span></div>
-                    <div class="playlist-title">TypeScript and Vue 3</div>
-                    <div class="playlist-sub">20+ episodes · more soon</div>
-                </div>
-                <div class="playlist-content">
-                    <div class="info-stats"><i class="fas fa-tools"></i> 20+ ready · 30+ coming</div>
-                    <div class="desc-text">TypeScript with Vue 3: generics, composables, and type-safe patterns.</div>
-                    <button id="activatePl3Btn" class="btn-playlist"><i class="fas fa-play-circle"></i> Browse
-                        lessons</button>
-                    <button id="downloadPlaylist3Btn" class="download-playlist-btn"><i class="fas fa-download"></i>
-                        Download available</button>
-                </div>
-            </div>
-        </div>
-
-        <div id="videosPanel" class="videos-panel" style="display: none;">
-            <div class="panel-header">
-                <h2><i class="fab fa-vuejs"></i> <span id="panelTitle">Vue 3 Fundamentals</span></h2>
-                <span id="panelBadge" class="coming-soon-chip"><i class="fas fa-list-ul"></i> loading...</span>
-            </div>
-            <div id="videoGridContainer" class="video-grid"></div>
-        </div>
-
-        <div class="footer-credits">
-            <span><i class="fas fa-chalkboard"></i> Instructor: HYK · Debuggers Community</span>
-            <span><i class="fas fa-check-circle"></i> Track your progress automatically</span>
-            <span><i class="fas fa-download"></i> Download any video</span>
+<div class="global-container">
+    <div class="creator-spotlight">
+        <div class="hyk-brand"><h1><i class="fas fa-bug"></i> Debuggers · by HYK</h1><p><i class="fab fa-vuejs"></i> Vue 3 Mastery · Complete Learning Path</p></div>
+        <div class="header-actions">
+            <button id="openDownloadsBtn" class="downloads-link"><i class="fas fa-download"></i> Downloads</button>
+            <button id="openCertificateBtn" class="certificate-link"><i class="fas fa-award"></i> Get Certificate</button>
+            <button id="darkModeToggle" class="theme-toggle"><i class="fas fa-moon"></i><span>Dark Mode</span></button>
         </div>
     </div>
 
-    <div id="videoModal" class="modal-player">
-        <div class="modal-window">
-            <div class="video-modal-container">
-                <video id="modalVideoElem" controls></video>
-            </div>
-            <div class="modal-footer">
-                <h4 id="modalVideoTitle">Lesson title</h4>
-                <div class="modal-actions">
-                    <button id="modalMarkCompleteBtn" class="modal-action-btn"><i class="fas fa-check-circle"></i> Mark
-                        Complete</button>
-                    <button id="modalDownloadBtn" class="modal-action-btn"><i class="fas fa-download"></i>
-                        Download</button>
-                    <button id="closeModalBtn" class="modal-action-btn"><i class="fas fa-times"></i> Close</button>
-                </div>
-            </div>
-        </div>
+    <div class="nav-tabs">
+        <div class="nav-tab active" data-page="fundamentals"><i class="fab fa-vuejs"></i> Vue 3 Fundamentals</div>
+        <div class="nav-tab" data-page="intermediate"><i class="fas fa-layer-group"></i> Intermediate Vue</div>
+        <div class="nav-tab" data-page="typescript"><i class="fab fa-js"></i> TypeScript + Vue 3</div>
     </div>
 
-    <script>
-        // ==================== PROGRESS STORAGE ====================
-        let completedVideos = new Set();
-        const STORAGE_KEY = 'vue3_completed_videos';
+    <div class="progress-dashboard">
+        <div class="progress-left"><div class="progress-ring" id="progressRing">0%</div><div class="progress-stats-text"><h3><span id="completedCount">0</span> / <span id="totalCount">0</span> lessons completed</h3><p><i class="fas fa-fire"></i> Keep learning! <span id="completionPercent">0</span>% mastery</p></div></div>
+        <div class="progress-actions"><button id="resetProgressBtn" class="action-btn"><i class="fas fa-undo-alt"></i> Reset Progress</button><button id="clearNotesBtn" class="action-btn"><i class="fas fa-trash-alt"></i> Clear All Notes</button></div>
+    </div>
 
-        function loadProgress() {
-            const saved = localStorage.getItem(STORAGE_KEY);
-            if (saved) {
-                completedVideos = new Set(JSON.parse(saved));
+    <div id="fundamentalsPage" class="page-container active-page">
+        <div class="playlist-header"><h2><i class="fab fa-vuejs"></i> Vue 3 Fundamentals</h2><div class="playlist-stats-badge"><i class="fas fa-video"></i> 50 lessons · 8+ hours</div></div>
+        <div id="fundamentalsGrid" class="video-grid"></div>
+    </div>
+
+    <div id="intermediatePage" class="page-container">
+        <div class="playlist-header"><h2><i class="fas fa-layer-group"></i> Intermediate Vue</h2><div class="playlist-stats-badge"><i class="fas fa-code-branch"></i> 26 lessons · Advanced Patterns</div></div>
+        <div id="intermediateGrid" class="video-grid"></div>
+    </div>
+
+    <div id="typescriptPage" class="page-container">
+        <div class="playlist-header"><h2><i class="fab fa-js"></i> TypeScript + Vue 3</h2><div class="playlist-stats-badge"><i class="fas fa-tools"></i> 20+ lessons · Growing</div></div>
+        <div id="typescriptGrid" class="video-grid"></div>
+    </div>
+</div>
+
+<!-- Certificate Modal (Name Request Only) -->
+<div id="certModal" class="cert-modal">
+    <div class="cert-modal-content">
+        <i class="fas fa-award" style="font-size: 3rem; color: #d4af37;"></i>
+        <h2>Certificate of Completion</h2>
+        <p style="color: #3e5a77;">Congratulations on completing all courses!</p>
+        <p style="color: #3e5a77; font-size: 0.9rem; margin-top: 0.5rem;">Enter your name to generate your certificate.</p>
+        <input type="text" id="certName" class="cert-name-input" placeholder="Enter your full name">
+        <div class="cert-buttons">
+            <button id="downloadCertBtn" class="cert-download-btn"><i class="fas fa-download"></i> Generate Certificate</button>
+            <button id="closeCertBtn" class="cert-close-btn"><i class="fas fa-times"></i> Close</button>
+        </div>
+    </div>
+</div>
+
+<div id="downloadsPage" class="downloads-page"><div class="downloads-container"><div class="downloads-header"><h2><i class="fas fa-download"></i> Download Playlists</h2><button id="closeDownloadsBtn" class="close-downloads"><i class="fas fa-times"></i> Close</button></div><div id="downloadsList"></div></div></div>
+
+<div id="videoModal" class="modal-player"><div class="modal-window"><div class="video-container"><video id="modalVideo" controls></video></div><div class="modal-info"><div class="modal-title"><span id="modalVideoTitle">Lesson</span><select id="speedSelect" class="speed-select"><option value="0.5">0.5x</option><option value="0.75">0.75x</option><option value="1" selected>1x</option><option value="1.25">1.25x</option><option value="1.5">1.5x</option><option value="2">2x</option></select></div><div class="notes-area"><textarea id="videoNotes" rows="2" placeholder="📝 Take notes here... They will be saved automatically"></textarea></div><div class="modal-actions"><button id="modalMarkComplete" class="modal-btn"><i class="fas fa-check-circle"></i> Mark Complete</button><button id="modalDownload" class="modal-btn"><i class="fas fa-download"></i> Download</button><button id="modalClose" class="modal-btn"><i class="fas fa-times"></i> Close</button></div></div></div></div>
+
+<script>
+    // ==================== STORAGE ====================
+    const STORAGE = { COMPLETED: 'vue3_completed_final', NOTES: 'vue3_notes_final', RESUME: 'vue3_resume_final', ACTIVE_PAGE: 'vue3_active_page' };
+    let completedVideos = new Set(), videoNotes = {}, videoResume = {}, currentPlaylistId = 'fundamentals';
+    
+    function loadAll() {
+        try {
+            let saved = localStorage.getItem(STORAGE.COMPLETED); if (saved) completedVideos = new Set(JSON.parse(saved));
+            saved = localStorage.getItem(STORAGE.NOTES); if (saved) videoNotes = JSON.parse(saved);
+            saved = localStorage.getItem(STORAGE.RESUME); if (saved) videoResume = JSON.parse(saved);
+            saved = localStorage.getItem(STORAGE.ACTIVE_PAGE); if (saved) currentPlaylistId = saved;
+        } catch(e) {}
+    }
+    function saveCompleted() { localStorage.setItem(STORAGE.COMPLETED, JSON.stringify([...completedVideos])); updateProgressStats(); checkAllCompletion(); }
+    function saveNotes() { localStorage.setItem(STORAGE.NOTES, JSON.stringify(videoNotes)); renderCurrentPage(); }
+    function saveResume() { localStorage.setItem(STORAGE.RESUME, JSON.stringify(videoResume)); }
+    function saveActivePage(p) { localStorage.setItem(STORAGE.ACTIVE_PAGE, p); }
+    function isCompleted(pid, vid) { return completedVideos.has(`${pid}_${vid}`); }
+    function toggleComplete(pid, vid) { let k = `${pid}_${vid}`; if (completedVideos.has(k)) completedVideos.delete(k); else completedVideos.add(k); saveCompleted(); renderCurrentPage(); }
+    function getNote(pid, vid) { return videoNotes[`${pid}_${vid}`] || ''; }
+    function setNote(pid, vid, note) { videoNotes[`${pid}_${vid}`] = note; saveNotes(); }
+    function getResume(pid, vid) { return videoResume[`${pid}_${vid}`] || 0; }
+    function setResume(pid, vid, t) { if (t > 5) { videoResume[`${pid}_${vid}`] = t; saveResume(); } }
+    
+    function getTotalLessons() { return fundamentalsVideos.length + intermediateVideos.length + tsVideos.length; }
+    function getCompletedLessons() {
+        let c = 0;
+        c += fundamentalsVideos.filter(v => completedVideos.has(`fundamentals_${v.id}`)).length;
+        c += intermediateVideos.filter(v => completedVideos.has(`intermediate_${v.id}`)).length;
+        c += tsVideos.filter(v => completedVideos.has(`typescript_${v.id}`)).length;
+        return c;
+    }
+    
+    function updateProgressStats() {
+        let total = getTotalLessons(), completed = getCompletedLessons(), p = total > 0 ? Math.round(completed/total*100) : 0;
+        document.getElementById('completedCount').innerText = completed;
+        document.getElementById('totalCount').innerText = total;
+        document.getElementById('completionPercent').innerText = p;
+        document.getElementById('progressRing').innerHTML = `${p}%`;
+        document.getElementById('progressRing').style.background = `conic-gradient(var(--progress-fill) ${p*3.6}deg, var(--progress-bg) ${p*3.6}deg)`;
+    }
+    
+    function checkAllCompletion() {
+        if (getCompletedLessons() === getTotalLessons() && getTotalLessons() > 0) {
+            if (typeof canvasConfetti !== 'undefined') {
+                canvasConfetti({ particleCount: 300, spread: 100, origin: { y: 0.5 }, colors: ['#42b883', '#ffd700', '#ffffff'] });
             }
         }
-
-        function saveProgress() {
-            localStorage.setItem(STORAGE_KEY, JSON.stringify([...completedVideos]));
-            updateProgressStats();
-        }
-
-        function isVideoCompleted(playlistId, videoId) {
-            return completedVideos.has(`${playlistId}_${videoId}`);
-        }
-
-        function markVideoComplete(playlistId, videoId, completed = true) {
-            const key = `${playlistId}_${videoId}`;
-            if (completed) {
-                completedVideos.add(key);
-            } else {
-                completedVideos.delete(key);
-            }
-            saveProgress();
-            // Re-render current playlist if visible
-            if (currentPlaylistId === playlistId && currentVideoList) {
-                renderVideos(currentVideoList, currentTitle, currentBadgeText);
-            }
-        }
-
-        function toggleVideoComplete(playlistId, videoId) {
-            const key = `${playlistId}_${videoId}`;
-            if (completedVideos.has(key)) {
-                completedVideos.delete(key);
-            } else {
-                completedVideos.add(key);
-            }
-            saveProgress();
-            if (currentPlaylistId === playlistId && currentVideoList) {
-                renderVideos(currentVideoList, currentTitle, currentBadgeText);
-            }
-        }
-
-        function updateProgressStats() {
-            const total = currentVideoList ? currentVideoList.length : 0;
-            let completed = 0;
-            if (currentVideoList) {
-                completed = currentVideoList.filter(v => completedVideos.has(`${currentPlaylistId}_${v.id}`)).length;
-            }
-            const percent = total > 0 ? Math.round((completed / total) * 100) : 0;
-            document.getElementById('completedCount').innerText = completed;
-            document.getElementById('totalCount').innerText = total;
-            document.getElementById('progressCircle').innerHTML = `${percent}%`;
-            const circle = document.getElementById('progressCircle');
-            const angle = (percent / 100) * 360;
-            circle.style.setProperty('--progress-angle', `${angle}deg`);
-            if (circle) {
-                circle.style.background = `conic-gradient(var(--progress-fill) ${angle}deg, var(--progress-bg) ${angle}deg)`;
-            }
-        }
-
-        function resetAllProgress() {
-            if (confirm('Are you sure you want to reset all progress? This cannot be undone.')) {
-                completedVideos.clear();
-                saveProgress();
-                if (currentVideoList) {
-                    renderVideos(currentVideoList, currentTitle, currentBadgeText);
-                }
-                showToast('All progress reset', false);
-            }
-        }
-
-        // ==================== Dark Mode ====================
-        const darkModeToggle = document.getElementById('darkModeToggle');
-        if (localStorage.getItem('darkMode') === 'enabled') {
-            document.body.classList.add('dark');
-            darkModeToggle.innerHTML = '<i class="fas fa-sun"></i><span>Light Mode</span>';
-        }
-        darkModeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('dark');
-            const isDark = document.body.classList.contains('dark');
-            localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
-            darkModeToggle.innerHTML = isDark ? '<i class="fas fa-sun"></i><span>Light Mode</span>' : '<i class="fas fa-moon"></i><span>Dark Mode</span>';
-        });
-
-        // ==================== VIDEO DATA ====================
-        const PLAYLIST_1_PATH = './playlist_1/';
-        const fundamentalsVideos = [];
-        for (let i = 1; i <= 50; i++) {
-            fundamentalsVideos.push({ id: i, lessonNumber: i, fullTitle: `${i}. Learn Introduction Vue 3 Fundamentals`, src: PLAYLIST_1_PATH + `${i}. Learn Introduction Vue 3 Fundamentals.mp4`, duration: null, thumbnail: null });
-        }
-
-        const PLAYLIST_2_PATH = './playlist_2/';
-        const intermediateVideos = [];
-        for (let i = 1; i <= 26; i++) {
-            intermediateVideos.push({ id: i, lessonNumber: i, fullTitle: `${i}. Learn Introduction Intermediate Vue Composition API Slots State`, src: PLAYLIST_2_PATH + `${i}. Learn Introduction Intermediate Vue Composition API Slots State.mp4`, duration: null, thumbnail: null });
-        }
-
-        const PLAYLIST_3_PATH = './playlist_3/';
-        const tsVideos = [];
-        for (let i = 1; i <= 8; i++) {
-            tsVideos.push({ id: i, lessonNumber: i, fullTitle: `${i}. Learn Introduction TypeScript and Vue 3`, src: PLAYLIST_3_PATH + `${i}. Learn Introduction TypeScript and Vue 3.mp4`, duration: null, thumbnail: null });
-        }
-        tsVideos.push({ id: 9, lessonNumber: 9, fullTitle: `9. Learn Introduction TypeScript and Vue 3 (Part 1)`, src: PLAYLIST_3_PATH + `9. Learn Introduction TypeScript and Vue 3-00.00.00.000-00.08.56.293-seg1.mp4`, duration: null, thumbnail: null });
-        tsVideos.push({ id: 10, lessonNumber: 9, fullTitle: `9. Learn Introduction TypeScript and Vue 3 (Part 2)`, src: PLAYLIST_3_PATH + `9. Learn Introduction TypeScript and Vue 3-00.08.56.293-00.17.47.733-seg2.mp4`, duration: null, thumbnail: null });
-        for (let i = 10; i <= 20; i++) {
-            tsVideos.push({ id: i + 10, lessonNumber: i, fullTitle: `${i}. Learn Refactoring Options API Methods TypeScript and Vue 3`, src: PLAYLIST_3_PATH + `${i}. Learn Refactoring Options API Methods TypeScript and Vue 3.mp4`, duration: null, thumbnail: null });
-        }
-
-        async function getVideoMetadata(video) {
-            return new Promise((resolve) => {
-                const tempVideo = document.createElement('video');
-                tempVideo.preload = 'metadata';
-                tempVideo.onloadedmetadata = () => {
-                    const minutes = Math.floor(tempVideo.duration / 60);
-                    const seconds = Math.floor(tempVideo.duration % 60);
-                    video.duration = `${minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
-                    const seekTime = Math.min(2, tempVideo.duration * 0.3);
-                    tempVideo.currentTime = seekTime;
-                    tempVideo.onseeked = () => {
-                        try {
-                            const canvas = document.createElement('canvas');
-                            canvas.width = 320; canvas.height = 180;
-                            canvas.getContext('2d').drawImage(tempVideo, 0, 0, canvas.width, canvas.height);
-                            video.thumbnail = canvas.toDataURL('image/jpeg', 0.7);
-                        } catch (e) { }
-                        resolve();
-                    };
-                    if (tempVideo.readyState >= 2) tempVideo.onseeked();
-                };
-                tempVideo.onerror = () => { video.duration = '??:??'; resolve(); };
-                tempVideo.src = video.src;
-            });
-        }
-
-        async function loadAllDurations(videos, onProgress) {
-            for (let i = 0; i < videos.length; i++) {
-                await getVideoMetadata(videos[i]);
-                if (onProgress) onProgress(i + 1, videos.length);
-                await new Promise(r => setTimeout(r, 50));
-            }
-        }
-
-        // DOM elements
-        const videosPanel = document.getElementById('videosPanel');
-        const videoGrid = document.getElementById('videoGridContainer');
-        const panelTitleSpan = document.getElementById('panelTitle');
-        const panelBadge = document.getElementById('panelBadge');
-        let currentVideoList = fundamentalsVideos;
-        let currentPlaylistId = 'pl1';
-        let currentTitle = 'Vue 3 Fundamentals';
-        let currentBadgeText = '50 lessons';
-
-        function renderVideos(videos, title, badgeText) {
-            currentVideoList = videos;
-            currentTitle = title;
-            currentBadgeText = badgeText;
-            videoGrid.innerHTML = '';
-            panelTitleSpan.innerHTML = title;
-            panelBadge.innerHTML = `<i class="fas fa-list-ul"></i> ${badgeText}`;
-
-            videos.forEach(video => {
-                const hue = (video.lessonNumber * 9) % 360;
-                const gradientBg = `linear-gradient(125deg, hsl(${hue}, 75%, 48%), hsl(${hue}, 80%, 35%))`;
-                const isCompleted = isVideoCompleted(currentPlaylistId, video.id);
-                const card = document.createElement('div');
-                card.className = `video-card-mini ${isCompleted ? 'completed' : ''}`;
-                card.innerHTML = `
-                <div class="video-thumb" data-video-id="${video.id}" style="background: ${gradientBg};">
-                    ${video.thumbnail ? `<img src="${video.thumbnail}" style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; opacity:0.7;">` : ''}
-                    <div class="play-badge"><i class="fas fa-play"></i></div>
-                    <div class="duration-overlay">${video.duration || 'loading...'}</div>
-                </div>
-                <div class="video-info-mini">
-                    <div class="video-title-mini">
-                        <span>${video.fullTitle.length > 50 ? video.fullTitle.substring(0, 47) + '...' : video.fullTitle}</span>
-                        <span class="lesson-num">#${video.lessonNumber}</span>
-                    </div>
-                    <div class="video-actions-row">
-                        <div class="duration-mini"><i class="far fa-clock"></i> ${video.duration || 'loading...'}</div>
-                        <button class="check-btn ${isCompleted ? 'completed' : ''}" data-video-id="${video.id}">
-                            <i class="fas ${isCompleted ? 'fa-check-circle' : 'fa-circle'}"></i>
-                            <span style="font-size:0.65rem;">${isCompleted ? 'Done' : 'Mark'}</span>
-                        </button>
-                    </div>
-                    <div style="margin-top: 6px;">
-                        <button class="download-single-btn" data-video-src="${video.src}" data-video-name="${video.fullTitle}.mp4"><i class="fas fa-download"></i> Download</button>
-                    </div>
-                </div>
-            `;
-                videoGrid.appendChild(card);
-            });
-
-            document.querySelectorAll('.video-thumb').forEach(thumb => {
-                thumb.addEventListener('click', (e) => {
-                    const vidId = parseInt(thumb.dataset.videoId);
-                    const video = videos.find(v => v.id === vidId);
-                    if (video) openVideoModal(video);
-                });
-            });
-
-            document.querySelectorAll('.check-btn').forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    const vidId = parseInt(btn.dataset.videoId);
-                    toggleVideoComplete(currentPlaylistId, vidId);
-                });
-            });
-
-            document.querySelectorAll('.download-single-btn').forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    const src = btn.dataset.videoSrc;
-                    const fileName = btn.dataset.videoName;
-                    if (src) downloadFile(src, fileName);
-                });
-            });
-            updateProgressStats();
-        }
-
-        async function loadAndRenderPlaylist(videos, title, badgeText, playlistId) {
-            currentPlaylistId = playlistId;
-            renderVideos(videos, title, `Loading ${videos.length} videos...`);
-            showToast(`Loading ${videos.length} videos...`, false);
-            await loadAllDurations(videos, (loaded, total) => {
-                if (loaded % 5 === 0 || loaded === total) {
-                    renderVideos(videos, title, `${badgeText} (${loaded}/${total})`);
-                }
-            });
-            renderVideos(videos, title, badgeText);
-            showToast(`✓ ${videos.length} videos ready`, false);
-        }
-
-        function openVideoModal(video) {
-            const modalVideoElem = document.getElementById('modalVideoElem');
-            modalVideoElem.src = video.src;
-            modalVideoElem.load();
-            document.getElementById('modalVideoTitle').innerText = `${video.fullTitle} (${video.duration || 'loading...'})`;
-            document.getElementById('videoModal').style.display = 'flex';
-            document.body.classList.add('modal-open');
-            modalVideoElem.play().catch(e => console.log("autoplay blocked"));
-
-            document.getElementById('modalMarkCompleteBtn').onclick = () => {
-                toggleVideoComplete(currentPlaylistId, video.id);
-                showToast(`${video.fullTitle} marked as ${isVideoCompleted(currentPlaylistId, video.id) ? 'completed ✓' : 'incomplete'}`, false);
+    }
+    
+    // Video Data (No thumbnails - just icons)
+    const PLAYLIST_1_PATH = './playlist_1/';
+    const fundamentalsVideos = [];
+    for (let i = 1; i <= 50; i++) fundamentalsVideos.push({ id: i, lessonNumber: i, fullTitle: `${i}. Learn Introduction Vue 3 Fundamentals`, src: `${PLAYLIST_1_PATH}${i}. Learn Introduction Vue 3 Fundamentals.mp4`, duration: null });
+    
+    const PLAYLIST_2_PATH = './playlist_2/';
+    const intermediateVideos = [];
+    for (let i = 1; i <= 26; i++) intermediateVideos.push({ id: i, lessonNumber: i, fullTitle: `${i}. Learn Introduction Intermediate Vue Composition API Slots State`, src: `${PLAYLIST_2_PATH}${i}. Learn Introduction Intermediate Vue Composition API Slots State.mp4`, duration: null });
+    
+    const PLAYLIST_3_PATH = './playlist_3/';
+    const tsVideos = [];
+    for (let i = 1; i <= 8; i++) tsVideos.push({ id: i, lessonNumber: i, fullTitle: `${i}. Learn Introduction TypeScript and Vue 3`, src: `${PLAYLIST_3_PATH}${i}. Learn Introduction TypeScript and Vue 3.mp4`, duration: null });
+    tsVideos.push({ id: 9, lessonNumber: 9, fullTitle: `9. Learn Introduction TypeScript and Vue 3 (Part 1)`, src: `${PLAYLIST_3_PATH}9. Learn Introduction TypeScript and Vue 3-00.00.00.000-00.08.56.293-seg1.mp4`, duration: null });
+    tsVideos.push({ id: 10, lessonNumber: 9, fullTitle: `9. Learn Introduction TypeScript and Vue 3 (Part 2)`, src: `${PLAYLIST_3_PATH}9. Learn Introduction TypeScript and Vue 3-00.08.56.293-00.17.47.733-seg2.mp4`, duration: null });
+    for (let i = 10; i <= 20; i++) tsVideos.push({ id: i + 10, lessonNumber: i, fullTitle: `${i}. Learn Refactoring Options API Methods TypeScript and Vue 3`, src: `${PLAYLIST_3_PATH}${i}. Learn Refactoring Options API Methods TypeScript and Vue 3.mp4`, duration: null });
+    
+    async function getVideoMetadata(video) {
+        return new Promise((resolve) => {
+            let temp = document.createElement('video');
+            temp.preload = 'metadata';
+            temp.onloadedmetadata = () => {
+                let m = Math.floor(temp.duration / 60), s = Math.floor(temp.duration % 60);
+                video.duration = `${m}:${s < 10 ? '0' + s : s}`;
+                resolve();
             };
-            document.getElementById('modalDownloadBtn').onclick = () => downloadFile(video.src, `${video.fullTitle}.mp4`);
+            temp.onerror = () => { video.duration = '??:??'; resolve(); };
+            temp.src = video.src;
+        });
+    }
+    async function loadAllDurations(videos) { for (let v of videos) { await getVideoMetadata(v); await new Promise(r => setTimeout(r, 30)); } }
+    
+    function getPlaylistColor(playlistId) {
+        if (playlistId === 'fundamentals') return 'linear-gradient(135deg, #2c5f2d, #1e4a3a)';
+        if (playlistId === 'intermediate') return 'linear-gradient(135deg, #2a4b6e, #163a51)';
+        return 'linear-gradient(135deg, #2c3e5c, #1b2a46)';
+    }
+    
+    function getPlaylistIcon(playlistId) {
+        if (playlistId === 'fundamentals') return '<i class="fab fa-vuejs" style="font-size: 3rem; color: white; opacity: 0.8;"></i>';
+        if (playlistId === 'intermediate') return '<i class="fas fa-layer-group" style="font-size: 3rem; color: white; opacity: 0.8;"></i>';
+        return '<i class="fab fa-js" style="font-size: 3rem; color: white; opacity: 0.8;"></i>';
+    }
+    
+    function renderVideoGrid(containerId, videos, playlistId) {
+        const container = document.getElementById(containerId);
+        if (!container) return;
+        container.innerHTML = '';
+        const playlistColor = getPlaylistColor(playlistId);
+        const playlistIcon = getPlaylistIcon(playlistId);
+        
+        videos.forEach(video => {
+            let completed = isCompleted(playlistId, video.id);
+            let note = getNote(playlistId, video.id);
+            let card = document.createElement('div');
+            card.className = `video-card ${completed ? 'completed' : ''}`;
+            card.innerHTML = `<div class="video-thumb" data-video-id="${video.id}" style="background:${playlistColor}"><div class="video-icon">${playlistIcon}</div><div class="play-overlay"><div class="play-btn"><i class="fas fa-play"></i></div></div><div class="duration-badge">${video.duration || 'loading...'}</div></div><div class="video-info"><div class="video-title"><span>${video.fullTitle.length > 55 ? video.fullTitle.substring(0, 52) + '...' : video.fullTitle}</span><span class="lesson-number">#${video.lessonNumber}</span></div>${note ? `<div class="video-note-preview"><i class="fas fa-sticky-note"></i><span>${note.length > 80 ? note.substring(0, 77) + '...' : note}</span></div>` : ''}<div class="video-actions"><button class="icon-btn complete-btn ${completed ? 'completed' : ''}" data-video-id="${video.id}"><i class="fas ${completed ? 'fa-check-circle' : 'fa-circle'}"></i> ${completed ? 'Done' : 'Mark'}</button><button class="icon-btn notes-btn" data-video-id="${video.id}"><i class="fas fa-pen"></i> Note</button></div></div>`;
+            container.appendChild(card);
+        });
+        container.querySelectorAll('.video-thumb').forEach(t => t.addEventListener('click', (e) => { let id = parseInt(t.dataset.videoId); let v = videos.find(v => v.id === id); if (v) openVideoModal(v, playlistId); }));
+        container.querySelectorAll('.complete-btn').forEach(b => b.addEventListener('click', (e) => { e.stopPropagation(); toggleComplete(playlistId, parseInt(b.dataset.videoId)); }));
+        container.querySelectorAll('.notes-btn').forEach(b => b.addEventListener('click', (e) => { e.stopPropagation(); let id = parseInt(b.dataset.videoId); let v = videos.find(v => v.id === id); if (v) { let note = prompt('✏️ Add/edit your note:', getNote(playlistId, id) || ''); if (note !== null) setNote(playlistId, id, note); } }));
+    }
+    
+    function renderCurrentPage() {
+        if (currentPlaylistId === 'fundamentals') renderVideoGrid('fundamentalsGrid', fundamentalsVideos, 'fundamentals');
+        else if (currentPlaylistId === 'intermediate') renderVideoGrid('intermediateGrid', intermediateVideos, 'intermediate');
+        else renderVideoGrid('typescriptGrid', tsVideos, 'typescript');
+        updateProgressStats();
+    }
+    
+    function switchToPage(pageId) {
+        currentPlaylistId = pageId;
+        saveActivePage(pageId);
+        document.querySelectorAll('.page-container').forEach(p => p.classList.remove('active-page'));
+        document.getElementById(`${pageId}Page`).classList.add('active-page');
+        document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+        document.querySelector(`.nav-tab[data-page="${pageId}"]`).classList.add('active');
+        renderCurrentPage();
+    }
+    
+    function openVideoModal(video, playlistId) {
+        let modalVid = document.getElementById('modalVideo');
+        modalVid.src = video.src;
+        modalVid.load();
+        let saved = getResume(playlistId, video.id);
+        if (saved > 5) { modalVid.currentTime = saved; showToast(`⏱️ Resuming from ${Math.floor(saved / 60)}:${Math.floor(saved % 60)}`, false); }
+        document.getElementById('modalVideoTitle').innerHTML = video.fullTitle;
+        document.getElementById('videoNotes').value = getNote(playlistId, video.id);
+        document.getElementById('videoModal').style.display = 'flex';
+        document.body.classList.add('modal-open');
+        modalVid.play().catch(e => console.log);
+        modalVid.ontimeupdate = () => { if (modalVid.currentTime > 5) setResume(playlistId, video.id, modalVid.currentTime); };
+        document.getElementById('speedSelect').onchange = () => { modalVid.playbackRate = parseFloat(document.getElementById('speedSelect').value); };
+        document.getElementById('videoNotes').onchange = () => { setNote(playlistId, video.id, document.getElementById('videoNotes').value); renderCurrentPage(); };
+        document.getElementById('modalMarkComplete').onclick = () => { toggleComplete(playlistId, video.id); showToast(`${video.fullTitle.substring(0, 50)} ${isCompleted(playlistId, video.id) ? '✓ completed!' : 'marked incomplete'}`, false); };
+        document.getElementById('modalDownload').onclick = () => downloadFile(video.src, `${video.fullTitle}.mp4`);
+    }
+    
+    function closeModal() { let vid = document.getElementById('modalVideo'); vid.pause(); vid.src = ''; document.getElementById('videoModal').style.display = 'none'; document.body.classList.remove('modal-open'); }
+    function downloadFile(url, filename) { fetch(url).then(res => res.blob()).then(blob => { let a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = filename.replace(/[\\/:*?"<>|]/g, '_'); a.click(); URL.revokeObjectURL(a.href); showToast(`✅ Download started: ${filename.substring(0, 40)}`, false); }).catch(() => showToast(`❌ Error: File not found`, true)); }
+    function downloadPlaylist(videos, name) { showToast(`Starting ${videos.length} downloads...`, false); videos.forEach((v, i) => setTimeout(() => downloadFile(v.src, `${name}_${v.fullTitle}.mp4`), i * 400)); }
+    function showToast(msg, isError = false) { let t = document.createElement('div'); t.className = 'toast'; t.style.background = isError ? '#b33a3a' : '#1e2f3c'; t.innerText = msg; document.body.appendChild(t); setTimeout(() => t.remove(), 3000); }
+    
+    function openDownloadsPage() {
+        let list = document.getElementById('downloadsList');
+        list.innerHTML = `<div class="playlist-download-item"><div><strong><i class="fab fa-vuejs"></i> Vue 3 Fundamentals</strong><br>50 videos</div><button class="download-playlist-btn-page" data-playlist="fund"><i class="fas fa-download"></i> Download All</button></div>
+        <div class="playlist-download-item"><div><strong><i class="fas fa-layer-group"></i> Intermediate Vue</strong><br>26 videos</div><button class="download-playlist-btn-page" data-playlist="inter"><i class="fas fa-download"></i> Download All</button></div>
+        <div class="playlist-download-item"><div><strong><i class="fab fa-js"></i> TypeScript + Vue 3</strong><br>${tsVideos.length} videos</div><button class="download-playlist-btn-page" data-playlist="ts"><i class="fas fa-download"></i> Download All</button></div>`;
+        list.querySelectorAll('[data-playlist="fund"]').forEach(b => b.addEventListener('click', () => downloadPlaylist(fundamentalsVideos, 'Vue3_Fundamentals')));
+        list.querySelectorAll('[data-playlist="inter"]').forEach(b => b.addEventListener('click', () => downloadPlaylist(intermediateVideos, 'Vue3_Intermediate')));
+        list.querySelectorAll('[data-playlist="ts"]').forEach(b => b.addEventListener('click', () => downloadPlaylist(tsVideos, 'Vue3_TypeScript')));
+        document.getElementById('downloadsPage').style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    }
+    function closeDownloadsPage() { document.getElementById('downloadsPage').style.display = 'none'; document.body.style.overflow = 'auto'; }
+    
+    // Certificate Functions - Save name to localStorage and open certificate page
+    function openCertificateModal() {
+        let total = getTotalLessons(), completed = getCompletedLessons();
+        if (completed !== total) {
+            alert(`⚠️ Complete all lessons first! (${completed}/${total} completed)`);
+            return;
         }
-
-        function closeModal() {
-            const modalVideoElem = document.getElementById('modalVideoElem');
-            modalVideoElem.pause();
-            modalVideoElem.src = '';
-            document.getElementById('videoModal').style.display = 'none';
-            document.body.classList.remove('modal-open');
+        document.getElementById('certModal').style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        document.getElementById('certName').value = '';
+    }
+    
+    function closeCertificateModal() {
+        document.getElementById('certModal').style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+    
+    function saveNameAndOpenCertificate() {
+        let userName = document.getElementById('certName').value.trim();
+        if (!userName) {
+            alert('Please enter your name to generate the certificate.');
+            return;
         }
-
-        function downloadFile(url, filename) {
-            const safeFilename = filename.replace(/[\\/:*?"<>|]/g, '_');
-            fetch(url).then(res => res.blob()).then(blob => {
-                const link = document.createElement('a');
-                link.href = URL.createObjectURL(blob);
-                link.download = safeFilename;
-                link.click();
-                URL.revokeObjectURL(link.href);
-                showToast(`✓ Download started: ${safeFilename}`);
-            }).catch(() => showToast(`✗ Error downloading file`, true));
-        }
-
-        function downloadPlaylist(videos, playlistName) {
-            if (!videos.length) { showToast("No videos available", true); return; }
-            showToast(`Starting ${videos.length} downloads...`, false);
-            videos.forEach((video, idx) => {
-                setTimeout(() => downloadFile(video.src, `${playlistName}_${video.fullTitle.replace(/[\\/:*?"<>|]/g, '_')}.mp4`), idx * 500);
-            });
-        }
-
-        function showToast(msg, isError = false) {
-            const toast = document.createElement('div');
-            toast.className = 'toast-message';
-            toast.style.background = isError ? '#b33a3a' : '#1e2f3c';
-            toast.innerText = msg;
-            document.body.appendChild(toast);
-            setTimeout(() => toast.remove(), 3000);
-        }
-
-        async function showPlaylistOne() {
-            videosPanel.style.display = 'block';
-            await loadAndRenderPlaylist(fundamentalsVideos, 'Vue 3 Fundamentals', '50 lessons · complete series', 'pl1');
-            videosPanel.scrollIntoView({ behavior: 'smooth' });
-            updateActiveCard('plCard1', activatePl1, activatePl2, activatePl3);
-        }
-        async function showPlaylistTwo() {
-            videosPanel.style.display = 'block';
-            await loadAndRenderPlaylist(intermediateVideos, 'Intermediate Vue: Composition API, Slots, & State', '26 lessons · advanced patterns', 'pl2');
-            videosPanel.scrollIntoView({ behavior: 'smooth' });
-            updateActiveCard('plCard2', activatePl2, activatePl1, activatePl3);
-        }
-        async function showPlaylistThree() {
-            videosPanel.style.display = 'block';
-            await loadAndRenderPlaylist(tsVideos, 'TypeScript and Vue 3', `${tsVideos.length} available · more coming soon`, 'pl3');
-            videosPanel.scrollIntoView({ behavior: 'smooth' });
-            updateActiveCard('plCard3', activatePl3, activatePl1, activatePl2);
-        }
-
-        function updateActiveCard(activeCardId, activeBtn, btn2, btn3) {
-            document.querySelectorAll('.playlist-card').forEach(c => c.style.boxShadow = '');
-            document.getElementById(activeCardId).style.boxShadow = '0 0 0 2px #42b883, 0 15px 25px -12px rgba(0,0,0,0.1)';
-            [activeBtn, btn2, btn3].forEach(btn => btn.classList.remove('active-pl'));
-            activeBtn.classList.add('active-pl');
-        }
-
-        const activatePl1 = document.getElementById('activatePl1Btn');
-        const activatePl2 = document.getElementById('activatePl2Btn');
-        const activatePl3 = document.getElementById('activatePl3Btn');
-        activatePl1.addEventListener('click', showPlaylistOne);
-        activatePl2.addEventListener('click', showPlaylistTwo);
-        activatePl3.addEventListener('click', showPlaylistThree);
-
-        document.getElementById('downloadPlaylist1Btn').addEventListener('click', () => downloadPlaylist(fundamentalsVideos, 'Vue3_Fundamentals'));
-        document.getElementById('downloadPlaylist2Btn').addEventListener('click', () => downloadPlaylist(intermediateVideos, 'Vue3_Intermediate'));
-        document.getElementById('downloadPlaylist3Btn').addEventListener('click', () => downloadPlaylist(tsVideos, 'Vue3_TypeScript'));
-        document.getElementById('resetProgressBtn').addEventListener('click', resetAllProgress);
-
-        document.getElementById('closeModalBtn').addEventListener('click', closeModal);
-        document.getElementById('videoModal').addEventListener('click', (e) => { if (e.target === document.getElementById('videoModal')) closeModal(); });
-        document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && document.getElementById('videoModal').style.display === 'flex') closeModal(); });
-
-        loadProgress();
-        window.addEventListener('DOMContentLoaded', () => showPlaylistOne());
-    </script>
+        // Save name to localStorage
+        localStorage.setItem('certificateUserName', userName);
+        // Open certificate template page
+        window.open('certificate-template.html', '_blank');
+        closeCertificateModal();
+    }
+    
+    // Event Listeners
+    document.querySelectorAll('.nav-tab').forEach(t => t.addEventListener('click', () => switchToPage(t.dataset.page)));
+    document.getElementById('resetProgressBtn').addEventListener('click', () => { if (confirm('Reset all progress?')) { completedVideos.clear(); videoNotes = {}; saveCompleted(); saveNotes(); renderCurrentPage(); showToast('All progress reset', false); } });
+    document.getElementById('clearNotesBtn').addEventListener('click', () => { if (confirm('Clear all notes?')) { videoNotes = {}; saveNotes(); renderCurrentPage(); showToast('All notes cleared', false); } });
+    document.getElementById('modalClose').addEventListener('click', closeModal);
+    document.getElementById('videoModal').addEventListener('click', (e) => { if (e.target === document.getElementById('videoModal')) closeModal(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && document.getElementById('videoModal').style.display === 'flex') closeModal(); });
+    document.getElementById('openDownloadsBtn').addEventListener('click', openDownloadsPage);
+    document.getElementById('closeDownloadsBtn').addEventListener('click', closeDownloadsPage);
+    document.getElementById('openCertificateBtn').addEventListener('click', openCertificateModal);
+    document.getElementById('downloadCertBtn').addEventListener('click', saveNameAndOpenCertificate);
+    document.getElementById('closeCertBtn').addEventListener('click', closeCertificateModal);
+    
+    const darkToggle = document.getElementById('darkModeToggle');
+    if (localStorage.getItem('darkMode') === 'enabled') { document.body.classList.add('dark'); darkToggle.innerHTML = '<i class="fas fa-sun"></i><span>Light Mode</span>'; }
+    darkToggle.addEventListener('click', () => { document.body.classList.toggle('dark'); let isDark = document.body.classList.contains('dark'); localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled'); darkToggle.innerHTML = isDark ? '<i class="fas fa-sun"></i><span>Light Mode</span>' : '<i class="fas fa-moon"></i><span>Dark Mode</span>'; });
+    
+    loadAll();
+    switchToPage(currentPlaylistId);
+    setTimeout(() => { loadAllDurations(fundamentalsVideos); loadAllDurations(intermediateVideos); loadAllDurations(tsVideos); }, 500);
+</script>
 </body>
-
 </html>
