@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Vue 3 Mastery · Debuggers by HYK</title>
+    <!-- Google Fonts + modern font stack -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome 6 (free) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: radial-gradient(circle at 10% 20%, #f4f8fe, #e9f0f5);
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            color: #0a2a3b;
+            padding: 2rem 1.5rem;
+        }
+
+        .global-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* header with creator spotlight */
+        .creator-spotlight {
+            background: linear-gradient(115deg, #0b2b2c 0%, #123e3f 100%);
+            border-radius: 2rem;
+            padding: 1.8rem 2rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+
+        .hyk-brand h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .hyk-brand h1 i {
+            background: #42b883;
+            padding: 10px;
+            border-radius: 60px;
+            font-size: 1.3rem;
+            color: #0b2b2c;
+        }
+
+        .classe-badge {
+            background: rgba(66, 184, 131, 0.2);
+            backdrop-filter: blur(4px);
+            padding: 0.5rem 1.2rem;
+            border-radius: 60px;
+            font-weight: 500;
+            font-size: 0.85rem;
+            border: 1px solid rgba(66, 184, 131, 0.6);
+        }
+
+        .debugger-tag {
+            margin-top: 8px;
+            font-size: 0.85rem;
+            opacity: 0.9;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        /* Playlist grid */
+        .playlists-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0 2rem;
+        }
+
+        .playlist-card {
+            background: #ffffff;
+            border-radius: 2rem;
+            overflow: hidden;
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08);
+            transition: all 0.25s ease;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .playlist-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 28px 40px -16px rgba(0, 0, 0, 0.18);
+        }
+
+        .playlist-cover {
+            padding: 1.8rem 1.5rem;
+            position: relative;
+            color: white;
+        }
+
+        .playlist-icon {
+            font-size: 2.5rem;
+            margin-bottom: 12px;
+        }
+
+        .playlist-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            line-height: 1.2;
+        }
+
+        .playlist-sub {
+            font-size: 0.7rem;
+            background: rgba(255, 255, 255, 0.2);
+            display: inline-block;
+            padding: 0.2rem 0.8rem;
+            border-radius: 60px;
+            margin-top: 12px;
+        }
+
+        .playlist-content {
+            padding: 1.4rem 1.4rem 1.6rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .info-stats {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #2c7a5e;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        .desc-text {
+            color: #3e5a77;
+            font-size: 0.85rem;
+            line-height: 1.45;
+            margin-bottom: 1.2rem;
+        }
+
+        .btn-playlist {
+            background: transparent;
+            border: 1.5px solid #cbdbe0;
+            padding: 0.6rem 0;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: 0.2s;
+            margin-top: auto;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            color: #1f4e6e;
+        }
+
+        .btn-playlist.active-pl {
+            background: #42b883;
+            border-color: #42b883;
+            color: white;
+            box-shadow: 0 4px 10px rgba(66, 184, 131, 0.2);
+        }
+
+        .btn-playlist.disabled-pl {
+            opacity: 0.6;
+            cursor: not-allowed;
+            background: #f5f7fc;
+        }
+
+        .btn-playlist:not(.disabled-pl):hover {
+            border-color: #42b883;
+            background: #eef9f3;
+        }
+
+        .download-playlist-btn {
+            background: #f0f4fa;
+            border: none;
+            border-radius: 60px;
+            padding: 0.4rem 0.8rem;
+            font-size: 0.7rem;
+            font-weight: 500;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 8px;
+            transition: 0.2s;
+        }
+
+        .download-playlist-btn:hover {
+            background: #e2e8f2;
+        }
+
+        .coming-soon-chip {
+            background: #f0f4fa;
+            border-radius: 30px;
+            padding: 0.25rem 0.9rem;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: #5b6e8c;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* video panel */
+        .videos-panel {
+            margin-top: 2rem;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(2px);
+            border-radius: 2rem;
+            padding: 1.5rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02);
+            transition: all 0.2s;
+        }
+
+        .panel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #cde0ec;
+            padding-bottom: 0.7rem;
+        }
+
+        .panel-header h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.4rem;
+        }
+
+        .video-card-mini {
+            background: white;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            transition: 0.2s;
+            box-shadow: 0 6px 12px -6px rgba(0, 0, 0, 0.05);
+            border: 1px solid #eef2f8;
+        }
+
+        .video-card-mini:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 20px -12px rgba(0, 0, 0, 0.12);
+        }
+
+        .video-thumb {
+            background: #1a2f3c;
+            aspect-ratio: 16/9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .play-badge {
+            background: rgba(0, 0, 0, 0.55);
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(3px);
+            color: white;
+            font-size: 1.2rem;
+            transition: 0.1s;
+        }
+
+        .video-thumb:hover .play-badge {
+            background: #42b883;
+            transform: scale(1.05);
+        }
+
+        .video-info-mini {
+            padding: 0.8rem 1rem;
+        }
+
+        .video-title-mini {
+            font-weight: 700;
+            font-size: 0.85rem;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 6px;
+        }
+
+        .lesson-num {
+            background: #eef3fc;
+            font-size: 0.65rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 30px;
+        }
+
+        .duration-mini {
+            font-size: 0.7rem;
+            color: #5b7a92;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 6px;
+        }
+
+        .download-single-btn {
+            background: none;
+            border: none;
+            color: #2c7a5e;
+            cursor: pointer;
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            transition: 0.1s;
+        }
+
+        .download-single-btn:hover {
+            color: #1e5942;
+            text-decoration: underline;
+        }
+
+        .footer-credits {
+            margin-top: 3rem;
+            text-align: center;
+            font-size: 0.75rem;
+            color: #5c6f8a;
+            border-top: 1px solid #cde0ec;
+            padding-top: 1.8rem;
+            display: flex;
+            justify-content: center;
+            gap: 28px;
+            flex-wrap: wrap;
+        }
+
+        /* FIXED MODAL - properly centered and never goes down */
+        .modal-player {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(14px);
+            z-index: 10000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .modal-window {
+            background: #0b1a22;
+            border-radius: 2rem;
+            max-width: 1000px;
+            width: 90%;
+            overflow: hidden;
+            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.5);
+            animation: modalFadeIn 0.25s ease-out;
+            max-height: 85vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .video-modal-container {
+            background: #000;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .video-modal-container video {
+            width: 100%;
+            display: block;
+            max-height: 65vh;
+            object-fit: contain;
+        }
+
+        .modal-footer {
+            background: white;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .modal-footer h4 {
+            font-weight: 700;
+            font-size: 1rem;
+            margin: 0;
+            flex: 1;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .modal-action-btn {
+            background: #eef2f5;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .modal-action-btn:hover {
+            background: #e0e8f0;
+        }
+
+        @media (max-width: 680px) {
+            body {
+                padding: 1rem;
+            }
+
+            .creator-spotlight {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .modal-window {
+                width: 95%;
+            }
+
+            .modal-footer {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .modal-actions {
+                justify-content: flex-end;
+            }
+        }
+
+        .toast-message {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #1e2f3c;
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 60px;
+            font-size: 0.8rem;
+            z-index: 10001;
+            backdrop-filter: blur(8px);
+            font-weight: 500;
+            white-space: nowrap;
+            pointer-events: none;
+        }
+
+        /* prevent body scroll when modal is open */
+        body.modal-open {
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="global-container">
+        <!-- Creator: HYK + Classe Debuggers -->
+        <div class="creator-spotlight">
+            <div class="hyk-brand">
+                <h1>
+                    <i class="fas fa-bug"></i>
+                    Debuggers · by HYK
+                </h1>
+                <div class="debugger-tag">
+                    <span><i class="fab fa-vuejs"></i> Vue 3 Curriculum Architect</span>
+                    <span><i class="fas fa-chalkboard-user"></i> Classe Debuggers</span>
+                    <span><i class="fas fa-code"></i> 85+ lessons & growing</span>
+                </div>
+            </div>
+            <div class="classe-badge">
+                <i class="fas fa-graduation-cap"></i> Complete Vue 3 pathway · Fundamentals → Intermediate → TypeScript
+            </div>
+        </div>
+
+        <!-- THREE PLAYLISTS -->
+        <div class="playlists-grid">
+            <!-- PLAYLIST 1: Vue 3 Fundamentals -->
+            <div class="playlist-card" id="plCard1">
+                <div class="playlist-cover" style="background: linear-gradient(145deg, #2c5f2d, #1e4a3a);">
+                    <div class="playlist-icon"><i class="fab fa-vuejs"></i></div>
+                    <div class="playlist-title">Vue 3 Fundamentals</div>
+                    <div class="playlist-sub">Complete · 50 episodes</div>
+                </div>
+                <div class="playlist-content">
+                    <div class="info-stats"><i class="fas fa-video"></i> 50 videos · 8+ hours</div>
+                    <div class="desc-text">Master Composition API, reactivity, components, directives, and real-world
+                        patterns. Zero to pro.</div>
+                    <button id="activatePl1Btn" class="btn-playlist active-pl"><i class="fas fa-play-circle"></i> Browse
+                        lessons</button>
+                    <button id="downloadPlaylist1Btn" class="download-playlist-btn"><i class="fas fa-download"></i>
+                        Download all (ZIP)</button>
+                </div>
+            </div>
+
+            <!-- PLAYLIST 2: Intermediate Vue -->
+            <div class="playlist-card" id="plCard2">
+                <div class="playlist-cover" style="background: linear-gradient(145deg, #2a4b6e, #163a51);">
+                    <div class="playlist-icon"><i class="fas fa-layer-group"></i></div>
+                    <div class="playlist-title">Intermediate Vue: Composition API, Slots, & State</div>
+                    <div class="playlist-sub">26 deep-dive lessons</div>
+                </div>
+                <div class="playlist-content">
+                    <div class="info-stats"><i class="fas fa-code-branch"></i> 26 videos · advanced patterns</div>
+                    <div class="desc-text">Deep dive into Composition API patterns, advanced slots, provide/inject,
+                        Pinia state management.</div>
+                    <button id="activatePl2Btn" class="btn-playlist"><i class="fas fa-play-circle"></i> Browse
+                        intermediate</button>
+                    <button id="downloadPlaylist2Btn" class="download-playlist-btn"><i class="fas fa-download"></i>
+                        Download all (ZIP)</button>
+                </div>
+            </div>
+
+            <!-- PLAYLIST 3: TypeScript and Vue 3 (28 videos now + more coming) -->
+            <div class="playlist-card" id="plCard3">
+                <div class="playlist-cover" style="background: linear-gradient(145deg, #2c3e5c, #1b2a46);">
+                    <div class="playlist-icon"><i class="fab fa-typescript"></i></div>
+                    <div class="playlist-title">TypeScript and Vue 3</div>
+                    <div class="playlist-sub">28 episodes available · more soon</div>
+                </div>
+                <div class="playlist-content">
+                    <div class="info-stats"><i class="fas fa-tools"></i> 28 ready · 20+ coming soon</div>
+                    <div class="desc-text">Master TypeScript with Vue 3: from introduction to advanced refactoring,
+                        generics, composables, and type-safe patterns. New lessons added weekly.</div>
+                    <button id="activatePl3Btn" class="btn-playlist"><i class="fas fa-play-circle"></i> Browse available
+                        lessons</button>
+                    <button id="downloadPlaylist3Btn" class="download-playlist-btn"><i class="fas fa-download"></i>
+                        Download available (ZIP)</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- DYNAMIC PANEL -->
+        <div id="videosPanel" class="videos-panel" style="display: none;">
+            <div class="panel-header">
+                <h2><i class="fab fa-vuejs"></i> <span id="panelTitle">Vue 3 Fundamentals</span></h2>
+                <span id="panelBadge" class="coming-soon-chip"><i class="fas fa-list-ul"></i> loading lessons...</span>
+            </div>
+            <div id="videoGridContainer" class="video-grid"></div>
+        </div>
+
+        <div class="footer-credits">
+            <span><i class="fas fa-chalkboard"></i> Instructor: HYK · Debuggers Community</span>
+            <span><i class="fab fa-vuejs"></i> Official Vue 3 curriculum · project based</span>
+            <span><i class="fas fa-download"></i> Download any video or full playlist</span>
+        </div>
+    </div>
+
+    <!-- MODAL - FIXED POSITIONING -->
+    <div id="videoModal" class="modal-player">
+        <div class="modal-window">
+            <div class="video-modal-container">
+                <video id="modalVideoElem" controls>
+                    <source src="" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="modal-footer">
+                <h4 id="modalVideoTitle">Lesson title</h4>
+                <div class="modal-actions">
+                    <button id="modalDownloadBtn" class="modal-action-btn"><i class="fas fa-download"></i>
+                        Download</button>
+                    <button id="closeModalBtn" class="modal-action-btn"><i class="fas fa-times"></i> Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ==================== PLAYLIST 1: Fundamentals (50 videos) ====================
+        const PLAYLIST_1_PATH = './playlist_1/';
+        const TOTAL_FUND = 50;
+        const fundamentalsVideos = [];
+        for (let i = 1; i <= TOTAL_FUND; i++) {
+            let segment = "";
+            if (i <= 12) segment = "Introduction & Basics";
+            else if (i <= 24) segment = "Template & Directives";
+            else if (i <= 36) segment = "Reactivity & Composition API";
+            else if (i <= 48) segment = "Components & Lifecycle";
+            else segment = "Advanced Patterns";
+            const minutes = 5 + (i % 12);
+            const seconds = (i * 23) % 60;
+            fundamentalsVideos.push({
+                id: i, lessonNumber: i,
+                fullTitle: `${i}. Learn Introduction Vue 3 Fundamentals`,
+                topicSegment: segment,
+                duration: `${minutes}:${seconds < 10 ? '0' + seconds : seconds}`,
+                src: PLAYLIST_1_PATH + `${i}. Learn Introduction Vue 3 Fundamentals.mp4`
+            });
+        }
+
+        // ==================== PLAYLIST 2: Intermediate (26 videos) ====================
+        const PLAYLIST_2_PATH = './playlist_2/';
+        const TOTAL_INTER = 26;
+        const intermediateVideos = [];
+        for (let i = 1; i <= TOTAL_INTER; i++) {
+            let topic = "";
+            if (i <= 6) topic = "Composition API Deep";
+            else if (i <= 12) topic = "Advanced Slots";
+            else if (i <= 18) topic = "State Management";
+            else topic = "Provide/Inject & Composables";
+            const minutes = 7 + (i % 10);
+            const seconds = (i * 17) % 60;
+            intermediateVideos.push({
+                id: i, lessonNumber: i,
+                fullTitle: `${i}. Learn Introduction Intermediate Vue Composition API Slots State`,
+                topicSegment: topic,
+                duration: `${minutes}:${seconds < 10 ? '0' + seconds : seconds}`,
+                src: PLAYLIST_2_PATH + `${i}. Learn Introduction Intermediate Vue Composition API Slots State.mp4`
+            });
+        }
+
+        // ==================== PLAYLIST 3: TypeScript ====================
+        const PLAYLIST_3_PATH = './playlist_3/';
+        const tsVideos = [];
+        // Intro lessons 1 to 8
+        for (let i = 1; i <= 8; i++) {
+            tsVideos.push({
+                id: i,
+                lessonNumber: i,
+                fullTitle: `${i}. Learn Introduction TypeScript and Vue 3`,
+                topicSegment: "Introduction to TypeScript in Vue",
+                duration: `${6 + i % 5}:${(i * 13) % 60 < 10 ? '0' + (i * 13) % 60 : (i * 13) % 60}`,
+                src: PLAYLIST_3_PATH + `${i}. Learn Introduction TypeScript and Vue 3.mp4`
+            });
+        }
+        // Lesson 9 split into two segments
+        tsVideos.push({
+            id: 9, lessonNumber: 9,
+            fullTitle: `9. Learn Introduction TypeScript and Vue 3 (Part 1)`,
+            topicSegment: "TypeScript Fundamentals (Part 1)",
+            duration: "08:56",
+            src: PLAYLIST_3_PATH + `9. Learn Introduction TypeScript and Vue 3-00.00.00.000-00.08.56.293-seg1.mp4`
+        });
+        tsVideos.push({
+            id: 10, lessonNumber: 9,
+            fullTitle: `9. Learn Introduction TypeScript and Vue 3 (Part 2)`,
+            topicSegment: "TypeScript Fundamentals (Part 2)",
+            duration: "08:51",
+            src: PLAYLIST_3_PATH + `9. Learn Introduction TypeScript and Vue 3-00.08.56.293-00.17.47.733-seg2.mp4`
+        });
+        // Refactoring lessons 10 to 19
+        for (let i = 10; i <= 19; i++) {
+            let refactorTopic = "";
+            if (i <= 12) refactorTopic = "Refactoring Options API";
+            else if (i <= 15) refactorTopic = "Advanced Generics";
+            else refactorTopic = "Type-Safe Composables";
+            const minutes = 7 + (i % 8);
+            const seconds = (i * 21) % 60;
+            tsVideos.push({
+                id: i + 10,
+                lessonNumber: i,
+                fullTitle: `${i}. Learn Refactoring Options API Methods TypeScript and Vue 3`,
+                topicSegment: refactorTopic,
+                duration: `${minutes}:${seconds < 10 ? '0' + seconds : seconds}`,
+                src: PLAYLIST_3_PATH + `${i}. Learn Refactoring Options API Methods TypeScript and Vue 3.mp4`
+            });
+        }
+
+        const TS_AVAILABLE_COUNT = tsVideos.length;
+        const TS_TOTAL_PLANNED = 50;
+
+        // DOM elements
+        const videosPanel = document.getElementById('videosPanel');
+        const videoGrid = document.getElementById('videoGridContainer');
+        const panelTitleSpan = document.getElementById('panelTitle');
+        const panelBadge = document.getElementById('panelBadge');
+        const activatePl1 = document.getElementById('activatePl1Btn');
+        const activatePl2 = document.getElementById('activatePl2Btn');
+        const activatePl3 = document.getElementById('activatePl3Btn');
+        const modal = document.getElementById('videoModal');
+        const modalVideo = document.getElementById('modalVideoElem');
+        const modalTitle = document.getElementById('modalVideoTitle');
+        const modalDownloadBtn = document.getElementById('modalDownloadBtn');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+
+        let currentVideoList = fundamentalsVideos;
+        let currentPlaylistType = 'fund';
+
+        function renderVideos(videos, title, badgeText, playlistType) {
+            videoGrid.innerHTML = '';
+            panelTitleSpan.innerHTML = title;
+            panelBadge.innerHTML = `<i class="fas fa-list-ul"></i> ${badgeText}`;
+            currentVideoList = videos;
+            currentPlaylistType = playlistType;
+
+            videos.forEach(video => {
+                const hue = (video.lessonNumber * 9) % 360;
+                const gradientBg = `linear-gradient(125deg, hsl(${hue}, 75%, 48%), hsl(${hue}, 80%, 35%))`;
+                const card = document.createElement('div');
+                card.className = 'video-card-mini';
+                card.innerHTML = `
+                <div class="video-thumb" data-video-id="${video.id}" data-pl-type="${playlistType}" style="background: ${gradientBg}; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+                    <div class="play-badge"><i class="fas fa-play"></i></div>
+                    <span style="position: absolute; bottom: 8px; right: 12px; background: rgba(0,0,0,0.6); padding: 2px 8px; border-radius: 30px; font-size: 0.7rem; color:white;">${video.duration}</span>
+                </div>
+                <div class="video-info-mini">
+                    <div class="video-title-mini">
+                        <span>${video.fullTitle.length > 50 ? video.fullTitle.substring(0, 47) + '...' : video.fullTitle}</span>
+                        <span class="lesson-num">#${video.lessonNumber}</span>
+                    </div>
+                    <div class="duration-mini">
+                        <span><i class="far fa-clock"></i> ${video.duration}</span>
+                        <button class="download-single-btn" data-video-src="${video.src}" data-video-name="${video.fullTitle}.mp4"><i class="fas fa-download"></i> Download</button>
+                    </div>
+                </div>
+            `;
+                videoGrid.appendChild(card);
+            });
+
+            document.querySelectorAll('.video-thumb').forEach(thumb => {
+                thumb.addEventListener('click', (e) => {
+                    const vidId = parseInt(thumb.dataset.videoId);
+                    const type = thumb.dataset.plType;
+                    let video = null;
+                    if (type === 'fund') video = fundamentalsVideos.find(v => v.id === vidId);
+                    else if (type === 'inter') video = intermediateVideos.find(v => v.id === vidId);
+                    else if (type === 'ts') video = tsVideos.find(v => v.id === vidId);
+                    if (video) openVideoModal(video);
+                });
+            });
+
+            document.querySelectorAll('.download-single-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const src = btn.dataset.videoSrc;
+                    const fileName = btn.dataset.videoName;
+                    if (src) downloadFile(src, fileName);
+                });
+            });
+        }
+
+        function openVideoModal(video) {
+            modalVideo.src = video.src;
+            modalVideo.load();
+            modalTitle.innerText = `${video.fullTitle} (${video.duration})`;
+            modal.style.display = 'flex';
+            document.body.classList.add('modal-open');
+
+            modalVideo.play().catch(e => console.log("autoplay blocked"));
+
+            modalDownloadBtn.onclick = () => {
+                downloadFile(video.src, `${video.fullTitle}.mp4`);
+            };
+        }
+
+        function closeModal() {
+            modalVideo.pause();
+            modalVideo.src = '';
+            modal.style.display = 'none';
+            document.body.classList.remove('modal-open');
+        }
+
+        function downloadFile(url, filename) {
+            fetch(url)
+                .then(res => {
+                    if (!res.ok) throw new Error('Network error');
+                    return res.blob();
+                })
+                .then(blob => {
+                    const link = document.createElement('a');
+                    const objectUrl = URL.createObjectURL(blob);
+                    link.href = objectUrl;
+                    link.download = filename;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    URL.revokeObjectURL(objectUrl);
+                    showToast(`Download started: ${filename}`);
+                })
+                .catch(err => {
+                    console.error(err);
+                    showToast(`Error downloading: ${filename}. Make sure video exists.`, true);
+                });
+        }
+
+        function downloadPlaylist(videos, playlistName) {
+            if (!videos.length) {
+                showToast("No videos available in this playlist", true);
+                return;
+            }
+            showToast(`Preparing download for ${videos.length} videos...`, false);
+            let count = 0;
+            videos.forEach(video => {
+                setTimeout(() => {
+                    downloadFile(video.src, `${playlistName}_${video.fullTitle.replace(/\//g, '-')}.mp4`);
+                    count++;
+                    if (count === videos.length) showToast(`Started ${videos.length} downloads from ${playlistName}`);
+                }, count * 400);
+            });
+        }
+
+        function showToast(msg, isError = false) {
+            const toast = document.createElement('div');
+            toast.className = 'toast-message';
+            toast.style.background = isError ? '#b33a3a' : '#1e2f3c';
+            toast.innerText = msg;
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 3000);
+        }
+
+        function showPlaylistOne() {
+            renderVideos(fundamentalsVideos, 'Vue 3 Fundamentals', '50 lessons · complete series', 'fund');
+            videosPanel.style.display = 'block';
+            videosPanel.scrollIntoView({ behavior: 'smooth' });
+            updateActiveCard('plCard1', activatePl1, activatePl2, activatePl3);
+        }
+
+        function showPlaylistTwo() {
+            renderVideos(intermediateVideos, 'Intermediate Vue: Composition API, Slots, & State', '26 lessons · advanced patterns', 'inter');
+            videosPanel.style.display = 'block';
+            videosPanel.scrollIntoView({ behavior: 'smooth' });
+            updateActiveCard('plCard2', activatePl2, activatePl1, activatePl3);
+        }
+
+        function showPlaylistThree() {
+            renderVideos(tsVideos, 'TypeScript and Vue 3', `${TS_AVAILABLE_COUNT} available · ${TS_TOTAL_PLANNED - TS_AVAILABLE_COUNT}+ more coming soon`, 'ts');
+            videosPanel.style.display = 'block';
+            videosPanel.scrollIntoView({ behavior: 'smooth' });
+            updateActiveCard('plCard3', activatePl3, activatePl1, activatePl2);
+        }
+
+        function updateActiveCard(activeCardId, activeBtn, btn2, btn3) {
+            document.querySelectorAll('.playlist-card').forEach(c => c.style.boxShadow = '');
+            document.getElementById(activeCardId).style.boxShadow = '0 0 0 2px #42b883, 0 15px 25px -12px rgba(0,0,0,0.1)';
+            [activeBtn, btn2, btn3].forEach(btn => btn.classList.remove('active-pl'));
+            activeBtn.classList.add('active-pl');
+        }
+
+        // Event listeners
+        activatePl1.addEventListener('click', showPlaylistOne);
+        activatePl2.addEventListener('click', showPlaylistTwo);
+        activatePl3.addEventListener('click', showPlaylistThree);
+
+        document.getElementById('downloadPlaylist1Btn').addEventListener('click', () => downloadPlaylist(fundamentalsVideos, 'Vue3_Fundamentals'));
+        document.getElementById('downloadPlaylist2Btn').addEventListener('click', () => downloadPlaylist(intermediateVideos, 'Vue3_Intermediate'));
+        document.getElementById('downloadPlaylist3Btn').addEventListener('click', () => downloadPlaylist(tsVideos, 'Vue3_TypeScript'));
+
+        // Modal close handlers
+        closeModalBtn.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.style.display === 'flex') closeModal();
+        });
+
+        // Default load
+        window.addEventListener('DOMContentLoaded', () => {
+            showPlaylistOne();
+            console.log(`Debuggers Hub loaded. Playlist 1: ${fundamentalsVideos.length}, Playlist 2: ${intermediateVideos.length}, Playlist 3: ${tsVideos.length}`);
+        });
+    </script>
+</body>
+
+</html>
