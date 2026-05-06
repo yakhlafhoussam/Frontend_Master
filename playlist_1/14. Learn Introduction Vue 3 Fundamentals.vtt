@@ -1,0 +1,1136 @@
+WEBVTT
+
+00:00.000 --> 00:01.960
+So we've talked about CDNs,
+
+00:01.960 --> 00:03.800
+we've talked about working with just the index.html,
+
+00:03.800 --> 00:06.980
+but most projects are not going to be run that way.
+
+00:06.980 --> 00:07.940
+That's just the reality.
+
+00:07.940 --> 00:11.320
+Most people have bought in fully to the tool chain system,
+
+00:11.320 --> 00:13.840
+and so it's time that we did so too.
+
+00:13.840 --> 00:15.600
+For those who come from the Vue2 ecosystem,
+
+00:15.600 --> 00:18.160
+you're probably used to scaffolding your app with Vue CLI.
+
+00:18.160 --> 00:20.480
+But there's been a new kid on the block in terms of
+
+00:20.480 --> 00:22.180
+the whole webpack build tool chain,
+
+00:22.180 --> 00:25.520
+and if you haven't heard about it, it's called Vue.
+
+00:26.000 --> 00:28.120
+One of the great things about Vue,
+
+00:28.120 --> 00:30.680
+basically what you need to know is that it's a bundler underneath
+
+00:30.680 --> 00:34.720
+that's helping to push front-end tooling to use more ES modules.
+
+00:34.720 --> 00:37.920
+Basically, it helps to make apps more performant.
+
+00:37.920 --> 00:40.440
+What's really nice about Vue though, as well,
+
+00:40.440 --> 00:43.080
+is that even though EvanU, the creator of Vue,
+
+00:43.080 --> 00:46.040
+is one of the founders of the Vue technology,
+
+00:46.040 --> 00:48.160
+it's a multi-framework tooling.
+
+00:48.160 --> 00:51.360
+So it's really nice to see a lot of frameworks starting to gather around it.
+
+00:51.360 --> 00:54.080
+So for anyone who's interested in this kind of stuff and want to see
+
+00:54.080 --> 00:57.160
+like helping to create plugins so that other frameworks can leverage that,
+
+00:57.160 --> 01:00.000
+Vue is doing a very good job as far as bringing the community together.
+
+01:00.000 --> 01:02.600
+But because of all these performance optimizations though,
+
+01:02.600 --> 01:06.360
+Vue CLI currently still uses a webpack and so it basically is being deprecated in
+
+01:06.360 --> 01:13.440
+favor of the createVue which is the new basically equivalent of Vue CLI.
+
+01:13.440 --> 01:17.760
+For this one, this has Vue powering it underneath.
+
+01:17.760 --> 01:19.600
+So this is where the shift is.
+
+01:19.600 --> 01:23.440
+So going forward, if you're creating a new Vue 3 app and you have
+
+01:23.440 --> 01:25.600
+the luxury of using Vue underneath,
+
+01:25.600 --> 01:29.040
+createVue is the basically recommended way going forward.
+
+01:29.040 --> 01:33.840
+So let's go ahead and create a project and see what that looks like, shall we?
+
+01:33.840 --> 01:39.200
+To do that, we're going to run the command NPM createVue3 inside of our project.
+
+01:39.200 --> 01:42.880
+So I'm going to go ahead and just close some of this off now,
+
+01:42.880 --> 01:45.480
+and let's go ahead and open this up.
+
+01:45.480 --> 01:49.520
+NPM createVue at 3.
+
+01:49.520 --> 01:51.840
+So one of the things that's really nice about
+
+01:51.840 --> 01:55.240
+the modern built tool chains these days is that you don't have to
+
+01:55.240 --> 01:58.960
+install a massive CLI on your computer only to use it a couple of times,
+
+01:58.960 --> 02:00.640
+maybe like a year or something.
+
+02:00.640 --> 02:03.680
+It's being called on the fly because NPM knows,
+
+02:03.680 --> 02:05.480
+you want to temporarily install something,
+
+02:05.480 --> 02:06.920
+I'll basically bring down the package,
+
+02:06.920 --> 02:10.960
+I'll use it and after that it won't be on your machine anymore.
+
+02:10.960 --> 02:14.440
+So for this one, I'm just going to call mine Sandbox right now because I want to
+
+02:14.440 --> 02:17.560
+show you all what's inside and then you all will have
+
+02:17.560 --> 02:20.920
+an opportunity to create your own building on what we've been doing today.
+
+02:20.920 --> 02:25.400
+All right, so I've named it Sandbox,
+
+02:25.400 --> 02:27.880
+and so at first glance, you see at TypeScript,
+
+02:27.880 --> 02:30.600
+your first impression might be,
+
+02:30.600 --> 02:32.560
+I'm definitely not using TypeScript, hit no.
+
+02:32.560 --> 02:34.560
+I'm going to say hit yes,
+
+02:34.560 --> 02:36.520
+and the short reason for that is
+
+02:36.520 --> 02:39.720
+because when Vue gives you the option to add the TypeScript,
+
+02:39.720 --> 02:42.240
+what it's saying is it's not saying you have to use TypeScript,
+
+02:42.240 --> 02:45.600
+it's saying we're going to configure everything so that if you ever choose to use TypeScript,
+
+02:45.720 --> 02:48.520
+it's really easy, no configuration needed kind of it.
+
+02:48.520 --> 02:51.320
+There'll be one or two lines of code we'll add to make it basically
+
+02:51.320 --> 02:53.400
+like ignore any TypeScript errors,
+
+02:53.400 --> 02:55.280
+but one of the things that I found that's really
+
+02:55.280 --> 02:57.360
+painful when it comes to code migrations is that
+
+02:57.360 --> 02:59.880
+people who want to start sprinkling in TypeScript,
+
+02:59.880 --> 03:02.800
+usually the build tool chain is what blocks them from doing that because they're like,
+
+03:02.800 --> 03:04.840
+oh, I just want to try types and then it's like,
+
+03:04.840 --> 03:06.400
+oh, you have to look at this config file,
+
+03:06.400 --> 03:09.080
+then you have to do a TS config and then by the time they've looked like
+
+03:09.080 --> 03:13.120
+that obstacle it's getting started can be super expensive.
+
+03:13.320 --> 03:16.880
+If you didn't know, there's a Vue3 and TypeScript workshop that I did,
+
+03:16.880 --> 03:18.640
+so you can watch that separately.
+
+03:18.640 --> 03:20.280
+But generally speaking,
+
+03:20.280 --> 03:22.480
+what I'm saying here is that this is great for
+
+03:22.480 --> 03:27.080
+code bases in the sense that if one person wants to use types on one file,
+
+03:27.080 --> 03:29.960
+they can, you don't have to enforce it across the entire code base,
+
+03:29.960 --> 03:32.840
+and that's the benefit of having that configured.
+
+03:32.840 --> 03:35.400
+As you can see here, JSX support,
+
+03:35.400 --> 03:38.680
+this is something I do want to address especially for those coming from the React background,
+
+03:38.680 --> 03:41.000
+is that you can use JSX with Vue.
+
+03:41.000 --> 03:43.440
+You've been seeing us do a lot with native HTML,
+
+03:43.440 --> 03:47.720
+but just know that if you really love JSX and you don't want to use native HTML,
+
+03:47.720 --> 03:49.200
+you can still do that.
+
+03:49.200 --> 03:52.840
+But personally, I do find it's advantageous to use native HTML,
+
+03:52.840 --> 03:56.480
+but just know that Vue can totally support that if that's something you prefer.
+
+03:56.480 --> 03:59.480
+We're not going to worry about Vue Router right now or Pinia,
+
+03:59.480 --> 04:00.920
+and we're not doing any end-to-end,
+
+04:00.920 --> 04:03.320
+but sure, let's add ESLint and Prettier.
+
+04:03.320 --> 04:06.240
+For those who are new to the tools chain space,
+
+04:06.240 --> 04:08.360
+ESLint is basically and Prettier are ways to
+
+04:08.360 --> 04:11.080
+standardize how your code is formatted and how it looks.
+
+04:11.080 --> 04:13.760
+So things like whether tabs are two spaces,
+
+04:13.760 --> 04:16.160
+four spaces or actual tabs, semicolons,
+
+04:16.160 --> 04:20.360
+those sort of things, that's how you can enforce consistency across your code base.
+
+04:20.360 --> 04:23.680
+So let's take a look at what's actually in here.
+
+04:23.680 --> 04:26.000
+So inside of my Sandbox directory,
+
+04:26.000 --> 04:30.040
+you now see a standard Vue project that scaffolded in Vue.
+
+04:30.040 --> 04:31.400
+So a couple of things here.
+
+04:31.400 --> 04:33.680
+One, we have a source directory,
+
+04:33.680 --> 04:37.920
+which is fairly standard on front-end client framework apps these days.
+
+04:37.920 --> 04:39.200
+We have the public directory,
+
+04:39.200 --> 04:41.600
+which is going to be what's served basically to users.
+
+04:41.600 --> 04:44.080
+So basically, think of the public directory as
+
+04:44.080 --> 04:45.800
+the build tools will not do anything to it,
+
+04:45.800 --> 04:48.400
+it will just be bundled with your code when you serve it.
+
+04:48.400 --> 04:51.560
+So basically no asset optimization, none of that.
+
+04:51.560 --> 04:56.560
+Then what we can see here as well is we have an index.html,
+
+04:56.560 --> 05:00.720
+and this is where you can see actually how your code is basically being built.
+
+05:00.720 --> 05:03.640
+In the sense that like if you want to drop Google font libraries,
+
+05:03.640 --> 05:07.440
+it's as simple now as coming into your index.html file and just dropping in
+
+05:07.440 --> 05:10.560
+your link to your style sheets, whatever you need.
+
+05:10.560 --> 05:13.840
+Then here we can see we have our div app as well,
+
+05:13.840 --> 05:16.600
+and then script type module here main.ts,
+
+05:16.600 --> 05:20.600
+and this main.ts refers to this file inside of our source directory.
+
+05:20.600 --> 05:23.200
+So you can see this should look actually pretty familiar.
+
+05:23.200 --> 05:26.360
+We're importing the create app helper method from Vue,
+
+05:26.360 --> 05:28.400
+and then we're creating an app with that,
+
+05:28.400 --> 05:31.960
+and then we're mounting it to the div ID right here.
+
+05:31.960 --> 05:34.880
+So that's where you see that inside of index.
+
+05:34.880 --> 05:37.720
+Actually, let me split this window so that we can get them side by side.
+
+05:37.720 --> 05:38.760
+So there we go.
+
+05:38.760 --> 05:40.840
+This is where these two are talking to each other,
+
+05:40.840 --> 05:43.800
+and then you'll notice that we're also importing some CSS as well,
+
+05:43.800 --> 05:47.280
+and I'll talk more to this in a little bit.
+
+05:47.280 --> 05:50.280
+Okay. So to show you just that everything works,
+
+05:50.280 --> 05:52.560
+let me go ahead and go inside of the sandbox,
+
+05:52.560 --> 05:56.280
+and I'm going to install the dependencies by running npm install.
+
+05:56.280 --> 06:00.280
+So while we're doing that,
+
+06:00.280 --> 06:04.160
+what I'd like people to do is if you look up Vue DevTools on
+
+06:04.160 --> 06:09.120
+your browser, whether it's Chrome,
+
+06:09.120 --> 06:10.560
+Firefox should have it as well,
+
+06:10.560 --> 06:12.880
+you should get an extension that you should be able to install here.
+
+06:12.880 --> 06:14.780
+So Vue.js DevTools, you'll see it has about
+
+06:14.780 --> 06:17.200
+1,800 at the time of this recording,
+
+06:17.200 --> 06:21.020
+and so you'll want to install this because this is what's actually showing up here.
+
+06:21.020 --> 06:22.760
+So if you click on your extensions,
+
+06:22.760 --> 06:25.640
+you can go ahead and pin it if it's hidden right now for you,
+
+06:25.640 --> 06:27.540
+because we'll be using that to explore what
+
+06:27.540 --> 06:30.920
+the Vue DevTools does for us when it comes to looking at a Vue project.
+
+06:30.920 --> 06:33.560
+Okay. So inside of here,
+
+06:33.620 --> 06:35.120
+we can see everything is running now.
+
+06:35.120 --> 06:37.200
+So we look at package.json now,
+
+06:37.200 --> 06:39.560
+and see what commands we have available to us.
+
+06:39.560 --> 06:43.200
+Well, we have the ability to dev, okay?
+
+06:43.200 --> 06:45.040
+Then there's a bunch of typescript stuff,
+
+06:45.040 --> 06:46.760
+we're not even going to worry about that right now.
+
+06:46.760 --> 06:51.040
+So npm run dev. All right, great.
+
+06:51.040 --> 06:53.400
+Let's open that up. There we go.
+
+06:53.400 --> 06:56.320
+As we can see, this is your Hello World Vue application.
+
+06:56.320 --> 06:58.520
+Now, when we take a look now,
+
+06:58.520 --> 06:59.960
+you'll notice that the DevTools,
+
+06:59.960 --> 07:00.800
+if you have that installed,
+
+07:00.800 --> 07:02.680
+will actually go ahead and light up.
+
+07:02.680 --> 07:04.840
+So if you open up your console now,
+
+07:04.840 --> 07:06.320
+and you go into the drop-down,
+
+07:06.320 --> 07:07.560
+or if you have a really wide monitor,
+
+07:07.560 --> 07:08.360
+you might already see it,
+
+07:08.360 --> 07:10.440
+but mine is hidden since it's a little bit bigger.
+
+07:10.440 --> 07:12.920
+Click on Vue, you'll see that here we go.
+
+07:12.920 --> 07:14.320
+We have the dev item.
+
+07:14.320 --> 07:19.280
+Basically, our entire app now is able to be inspected inside of here.
+
+07:19.280 --> 07:21.840
+So what we're seeing here is basically,
+
+07:21.840 --> 07:24.120
+we're starting to introduce the idea of components, right?
+
+07:24.120 --> 07:26.360
+Components-driven development is really popular in
+
+07:26.360 --> 07:29.000
+today's modern front-end frameworks.
+
+07:29.000 --> 07:30.520
+So as you would expect,
+
+07:30.520 --> 07:32.040
+Vue certainly supports components and we'll be
+
+07:32.040 --> 07:33.720
+doing a lot more with that now that
+
+07:33.720 --> 07:36.600
+we have the built-in training supported.
+
+07:36.600 --> 07:38.760
+So what's cool about this is that you can see,
+
+07:38.760 --> 07:40.960
+as you click on the different components,
+
+07:40.960 --> 07:43.360
+it'll actually tell you a little bit about it.
+
+07:43.360 --> 07:45.440
+So you can see that, oh, yes, here in the welcome,
+
+07:45.440 --> 07:47.120
+there's a bunch of stuff being set up.
+
+07:47.120 --> 07:49.120
+The Hello World here has a message,
+
+07:49.120 --> 07:50.920
+like we'll be using this a lot to
+
+07:50.920 --> 07:52.920
+inspect what's going on underneath the components.
+
+07:52.920 --> 07:54.800
+So definitely keep this in mind when we start to
+
+07:54.800 --> 07:56.840
+move forward on other things.
+
+07:56.840 --> 08:00.000
+So what we're going to do is I'm going to go ahead and
+
+08:00.000 --> 08:03.200
+port over the playground that I had made,
+
+08:03.200 --> 08:05.440
+and we're going to go ahead and actually use
+
+08:05.440 --> 08:08.480
+that to create the app to show you what's going on.
+
+08:08.480 --> 08:11.120
+So the main thing to understand here is that inside of
+
+08:11.120 --> 08:14.920
+the main.ts, you'll see here inside of this app Vue.
+
+08:14.920 --> 08:19.080
+So dot Vue files are the bread and butter
+
+08:19.080 --> 08:21.760
+of one of the reasons why I think Vue also got really popular,
+
+08:21.760 --> 08:24.440
+and so these are called single file components.
+
+08:24.440 --> 08:26.320
+So they're single file components because,
+
+08:26.320 --> 08:27.760
+well, they have a lot going on.
+
+08:27.960 --> 08:29.800
+What you might notice though is that none of
+
+08:29.800 --> 08:31.600
+my syntax highlighting is working,
+
+08:31.600 --> 08:33.880
+and the reason for that is because you need to actually
+
+08:33.880 --> 08:36.680
+enable a VS Code extension,
+
+08:36.680 --> 08:38.080
+and the one that I recommend,
+
+08:38.080 --> 08:39.680
+actually it's kind of the standard actually,
+
+08:39.680 --> 08:43.080
+is Volar, V-O-L-A-R.
+
+08:43.080 --> 08:44.240
+So if you're using VS Code,
+
+08:44.240 --> 08:48.240
+go ahead and install that on your machine while you're at it.
+
+08:48.240 --> 08:50.680
+So I'm going to go ahead and enable mine,
+
+08:50.680 --> 08:52.440
+and it does a ton of stuff for you.
+
+08:52.440 --> 08:53.480
+Honestly, there could probably be
+
+08:53.480 --> 08:55.400
+a half day lecture just on Volar alone,
+
+08:55.400 --> 08:56.780
+but know that it helps you out with
+
+08:56.780 --> 08:59.940
+syntax highlighting and a couple of other things as well.
+
+08:59.940 --> 09:03.380
+Okay. So instead of app.vue,
+
+09:03.380 --> 09:07.020
+you might notice this should look pretty familiar to you.
+
+09:07.020 --> 09:08.080
+In the sense that, okay,
+
+09:08.080 --> 09:10.820
+we have this part here, this template,
+
+09:10.820 --> 09:13.700
+this is HTML, and this template element,
+
+09:13.700 --> 09:17.260
+believe it or not, is actually built on a standard in HTML.
+
+09:17.260 --> 09:18.680
+The template element is actually
+
+09:18.680 --> 09:20.780
+a built-in thing to HTML, it's not just a Vue thing.
+
+09:20.780 --> 09:22.260
+But basically it says, hey,
+
+09:22.260 --> 09:24.940
+this is the HTML that I'm managing in this specific file.
+
+09:24.940 --> 09:26.620
+The script block is what you expect.
+
+09:26.620 --> 09:28.420
+Here's the JavaScript that I'm managing,
+
+09:28.420 --> 09:30.460
+and here we even have a style block,
+
+09:30.460 --> 09:32.900
+and that's to manage all the CSS.
+
+09:32.900 --> 09:35.380
+So as you can see, the reason why it's called
+
+09:35.380 --> 09:38.220
+single file components is because it basically allows you to
+
+09:38.220 --> 09:42.780
+scope all the things that you care about into a single file.
+
+09:42.780 --> 09:44.460
+That might sound like,
+
+09:44.460 --> 09:45.540
+what's so special about that,
+
+09:45.540 --> 09:47.580
+but we have to remember prior to this,
+
+09:47.580 --> 09:49.900
+a lot of times what people were doing is they would
+
+09:49.900 --> 09:52.620
+have an app.html, for example, for the template.
+
+09:52.620 --> 09:54.460
+They'd have an app.js for the JavaScript,
+
+09:54.460 --> 09:57.340
+and then they have an app.css for the CSS.
+
+09:57.340 --> 10:00.380
+To some extent, there's nothing wrong with that architecture,
+
+10:00.380 --> 10:02.300
+but for a lot of us who like,
+
+10:02.300 --> 10:04.340
+especially when you're navigating back between files,
+
+10:04.340 --> 10:07.020
+it's actually really helpful just to have it all in one place.
+
+10:07.020 --> 10:09.100
+At least that's what I found in my experience.
+
+10:09.100 --> 10:11.460
+Now granted, there's nothing stopping you
+
+10:11.460 --> 10:13.700
+from choosing your own adventure.
+
+10:13.700 --> 10:16.620
+So all these blocks here, they're optional.
+
+10:16.620 --> 10:20.100
+So I can delete this and we can just have,
+
+10:20.100 --> 10:22.980
+we can only use the template and the script.
+
+10:23.180 --> 10:26.300
+The other thing that people often
+
+10:26.300 --> 10:28.420
+misunderstand when it comes to single file components as well,
+
+10:28.420 --> 10:29.820
+is that the script, template,
+
+10:29.820 --> 10:32.500
+and style blocks are just what's default out of the box.
+
+10:32.500 --> 10:35.220
+There are actually other libraries and plugins
+
+10:35.220 --> 10:37.780
+that utilize things like a docs plugin.
+
+10:37.780 --> 10:40.020
+So it'll use a docs tag wrapper,
+
+10:40.020 --> 10:41.980
+and then basically whatever you document there will
+
+10:41.980 --> 10:44.060
+be associated with that specific component.
+
+10:44.060 --> 10:46.860
+So really, it's actually an open canvas
+
+10:46.860 --> 10:49.980
+for people's imaginations when it comes to how they might want
+
+10:50.020 --> 10:52.060
+to scope, how information is being managed
+
+10:52.060 --> 10:53.260
+across their code base.
+
+10:56.420 --> 10:59.620
+All right, so let's go ahead and migrate
+
+10:59.620 --> 11:00.980
+some stuff over, shall we?
+
+11:02.220 --> 11:07.060
+So I'm gonna go ahead and open up my playground here.
+
+11:07.060 --> 11:10.420
+Let's do that and then switch that over here.
+
+11:10.420 --> 11:11.860
+All right, let me zoom out a little bit,
+
+11:11.860 --> 11:13.980
+so I think it's a little bit harder, wait, can I zoom in?
+
+11:13.980 --> 11:15.620
+Yeah, that's a little bit harder, here we go.
+
+11:15.620 --> 11:18.820
+Okay, so I'm gonna go ahead and delete this boilerplate stuff.
+
+11:18.820 --> 11:21.260
+You all will understand how this works
+
+11:21.260 --> 11:23.340
+by the end of the workshop, so don't worry there.
+
+11:23.340 --> 11:24.500
+But this way, we keep it simple.
+
+11:24.500 --> 11:26.820
+We have a script block, we have a template block.
+
+11:26.820 --> 11:29.420
+In other words, our JavaScript and our HTML.
+
+11:29.420 --> 11:33.060
+So what we can do here is we can basically copy in
+
+11:33.060 --> 11:37.300
+our HTML here, all the way down to the div.
+
+11:40.020 --> 11:43.380
+And we're gonna go ahead and drop it inside of our template.
+
+11:46.580 --> 11:48.420
+Okay, a lot of things are gonna be breaking right now,
+
+11:48.420 --> 11:50.500
+and that's totally fine, because what we've gotta do,
+
+11:50.500 --> 11:54.140
+we gotta copy all this data that we have here.
+
+11:54.140 --> 11:56.580
+So we have a bunch of stuff inside of here,
+
+11:56.580 --> 11:58.460
+and we're just gonna copy all of it.
+
+11:58.460 --> 11:59.980
+Or in this case, I'm cutting it.
+
+12:01.060 --> 12:03.000
+The main difference in tactically speaking though,
+
+12:03.000 --> 12:04.980
+is that what we gotta do is rather than saying
+
+12:04.980 --> 12:07.940
+like create app here, because the app
+
+12:07.940 --> 12:10.500
+has already been created, we basically are saying,
+
+12:10.500 --> 12:13.100
+let's export the object that we're gonna be using.
+
+12:13.100 --> 12:16.300
+So in other words, here is the specific object
+
+12:16.300 --> 12:18.940
+that will reflect the JavaScript for this file.
+
+12:18.940 --> 12:19.780
+There we go.
+
+12:19.780 --> 12:24.020
+Okay, so what we see here, we're back to the point
+
+12:24.020 --> 12:25.900
+where we have our data here, and we have all the stuff
+
+12:25.900 --> 12:28.700
+that we just copy pasted, and we have our template.
+
+12:28.700 --> 12:30.460
+So we see some stuff yelling at us, yep,
+
+12:30.460 --> 12:32.180
+we'll talk about that in a little bit.
+
+12:32.180 --> 12:34.860
+And so let's see if this actually did anything for us.
+
+12:36.380 --> 12:39.900
+So you'll notice, okay, our data is there,
+
+12:39.900 --> 12:41.380
+it's just super messy.
+
+12:41.380 --> 12:44.420
+The reason it's super messy is because we have,
+
+12:46.580 --> 12:49.980
+inside of our main.ts, you saw earlier
+
+12:49.980 --> 12:52.820
+we have this main.ts, we're gonna wipe that out.
+
+12:52.820 --> 12:54.500
+Cause right now we just wanna work with standard things
+
+12:54.500 --> 12:56.180
+and make sure everything's just working.
+
+12:56.180 --> 12:58.060
+And so sure enough, there we go.
+
+12:58.060 --> 13:01.700
+We have our app, and it's up and running.
+
+13:04.500 --> 13:09.340
+Okay, so, the first thing I wanna address here
+
+13:09.340 --> 13:11.540
+is that you'll notice now, before we weren't getting
+
+13:11.540 --> 13:14.120
+any sort of errors when we did the index.html way,
+
+13:14.120 --> 13:16.400
+because basically, volar and these sort of extensions
+
+13:16.400 --> 13:19.120
+allow us to basically identify common problems
+
+13:19.120 --> 13:20.960
+that people sort of, or mistakes that they make
+
+13:20.960 --> 13:22.440
+when it comes to this stuff.
+
+13:22.440 --> 13:24.920
+And so you'll notice here, we got these error messages here
+
+13:24.920 --> 13:27.080
+because it's saying that whenever we iterate
+
+13:27.080 --> 13:28.640
+through an element, it's expected to have
+
+13:28.640 --> 13:30.440
+a vbind key directive.
+
+13:30.440 --> 13:32.040
+And so what does that mean exactly?
+
+13:32.040 --> 13:35.120
+Well, basically when you're having the frameworks
+
+13:35.120 --> 13:37.200
+track the elements that they're looping through,
+
+13:37.200 --> 13:39.000
+it's good to give them some sort of identifier
+
+13:39.000 --> 13:41.360
+so that they know whether or not something's changed or not.
+
+13:41.360 --> 13:43.760
+Without that identifier, you basically run the risk
+
+13:43.800 --> 13:47.120
+of relying solely on the data to figure out what's working.
+
+13:47.120 --> 13:49.240
+And especially when it comes to animation,
+
+13:49.240 --> 13:51.920
+it'll bite you in the butt constantly.
+
+13:51.920 --> 13:53.540
+And so typically what people do then
+
+13:53.540 --> 13:55.080
+is they will do the vbind directive
+
+13:55.080 --> 13:58.120
+because the key needs to be a unique key for everything.
+
+13:58.120 --> 13:59.800
+And so we can also shortcut this as well
+
+13:59.800 --> 14:01.960
+to just like this, vkey.
+
+14:01.960 --> 14:04.960
+And then we can do something as simple as, for example,
+
+14:04.960 --> 14:07.680
+I sometimes would just take out the index
+
+14:07.680 --> 14:13.160
+and I'll say I will do a ES6 string,
+
+14:13.160 --> 14:16.320
+and I'll go item-index, for example.
+
+14:18.160 --> 14:20.920
+And so this here then basically provides a custom key.
+
+14:20.920 --> 14:22.360
+Now most of the time when you're working with databases,
+
+14:22.360 --> 14:24.040
+hopefully you have UUIDs and that kind of thing
+
+14:24.040 --> 14:26.760
+to populate it, but for the sake of like
+
+14:26.760 --> 14:28.520
+sort of demoing this at the moment,
+
+14:28.520 --> 14:30.400
+this is how we could fulfill this requirement.
+
+14:30.400 --> 14:31.880
+They're basically creating our own key.
+
+14:31.880 --> 14:35.840
+So you'll see here, it notices that this is,
+
+14:35.840 --> 14:40.840
+I think identical to the other one, but index, it doesn't.
+
+14:40.880 --> 14:45.200
+So there you go, number, index, great.
+
+14:45.200 --> 14:46.280
+What does it not like about it?
+
+14:46.280 --> 14:47.520
+Oh, it'll format it.
+
+14:47.520 --> 14:49.280
+Okay, there we go.
+
+14:51.000 --> 14:53.360
+And just like that, we have our app now working
+
+14:53.360 --> 14:55.920
+inside of the build tool chain.
+
+14:55.920 --> 14:57.560
+This is the final bit that I was talking about.
+
+14:57.560 --> 14:58.840
+Remember how I was talking about
+
+14:58.840 --> 15:02.000
+where we've enabled TypeScript, but you don't have to use it?
+
+15:02.000 --> 15:03.160
+The main thing here is that you'll notice
+
+15:03.160 --> 15:04.760
+Volar is basically saying, hey,
+
+15:04.760 --> 15:07.160
+I thought we were in TypeScript, what's going on?
+
+15:07.160 --> 15:11.160
+So what you gotta do here is go into your tsconfig.json
+
+15:11.160 --> 15:14.840
+and under the compiler options, we can allow js to true.
+
+15:15.780 --> 15:17.960
+And that'll basically prevent it from yelling at us anymore
+
+15:17.960 --> 15:20.480
+if we don't use TypeScript.
+
+15:20.480 --> 15:22.560
+But on the other hand, if anyone ever does use TypeScript,
+
+15:22.560 --> 15:24.360
+it's just gonna work magically.
+
+15:24.360 --> 15:26.320
+And all the configurations already work.
+
+15:26.320 --> 15:27.160
+Oh yes, go.
+
+15:27.160 --> 15:28.520
+If you have an existing project,
+
+15:28.520 --> 15:32.640
+would you probably not recommend trying to vitifize it?
+
+15:34.240 --> 15:35.160
+So the question here is around,
+
+15:35.160 --> 15:36.800
+if you have an existing project that already works,
+
+15:36.840 --> 15:38.960
+whether or not to switch it over to vit.
+
+15:38.960 --> 15:42.240
+Honestly, most of the people who've switched to tool chain
+
+15:42.240 --> 15:43.840
+have found very little difference.
+
+15:43.840 --> 15:46.960
+In terms of like, it's not like other build tools
+
+15:46.960 --> 15:49.220
+where like something usually major breaks.
+
+15:49.220 --> 15:50.480
+So I guess a lot of it boils down
+
+15:50.480 --> 15:52.040
+to actually your dependencies.
+
+15:52.040 --> 15:52.960
+I would take a look at that.
+
+15:52.960 --> 15:55.100
+If you have a lot of dependencies that rely
+
+15:55.100 --> 15:57.120
+on some sort of webpack build,
+
+15:57.120 --> 16:00.000
+then in that case, vit might be a little premature.
+
+16:00.000 --> 16:01.540
+But if it's a more evergreen project
+
+16:01.540 --> 16:03.320
+where it has like standard JavaScript stuff
+
+16:03.320 --> 16:06.240
+that it's JavaScript libraries installing
+
+16:06.240 --> 16:09.240
+that might already have ESM support for ES modules,
+
+16:09.240 --> 16:11.000
+then that would be a great case for like,
+
+16:11.000 --> 16:12.200
+let's just try and see what happens
+
+16:12.200 --> 16:13.840
+because the performance improvements
+
+16:13.840 --> 16:16.280
+that people are experiencing on vit are pretty significant.
+
+16:16.280 --> 16:19.160
+And so it's honestly, it's worth,
+
+16:19.160 --> 16:21.040
+it's worth like an hour time box effort
+
+16:21.040 --> 16:23.640
+just to see if you can improve the DX on that regard.
+
