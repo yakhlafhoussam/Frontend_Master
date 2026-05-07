@@ -1,0 +1,383 @@
+WEBVTT
+
+00:00.000 --> 00:03.700
+So, for this next other part that I want to cover with ViewRouter,
+
+00:03.700 --> 00:05.320
+which is a very common scenario,
+
+00:05.320 --> 00:07.800
+is we want to talk about programmatic navigation,
+
+00:07.800 --> 00:09.600
+because it's one thing to just click a link,
+
+00:09.600 --> 00:10.960
+but programmatically speaking,
+
+00:10.960 --> 00:12.320
+we need to be able to say,
+
+00:12.320 --> 00:14.280
+hey, when a user does this thing,
+
+00:14.280 --> 00:18.080
+check these things and then send them off to a specific page.
+
+00:18.080 --> 00:21.360
+Very common. So, I want to make sure we actually covered
+
+00:21.360 --> 00:24.560
+that as well as dynamic route with params.
+
+00:24.560 --> 00:29.480
+So, if you take a look back inside of our playground,
+
+00:29.840 --> 00:32.720
+and then let's go ahead and run that now.
+
+00:32.720 --> 00:35.000
+Great. This is good.
+
+00:35.000 --> 00:38.360
+Okay. Home to hide that.
+
+00:38.360 --> 00:39.600
+Playground's good.
+
+00:39.600 --> 00:42.600
+Hide this so we don't get confused. Great.
+
+00:42.600 --> 00:44.840
+Okay. So, at this point,
+
+00:44.840 --> 00:46.760
+what if we wanted to do something like,
+
+00:46.760 --> 00:51.360
+when local count is greater than 200,
+
+00:51.360 --> 00:54.840
+it will go ahead and migrate them to Pokedex.
+
+00:54.840 --> 00:56.840
+That's like a basic chain that we could do.
+
+00:56.840 --> 00:58.000
+So, how might that work?
+
+00:58.000 --> 01:00.200
+Well, if we look at our basic counter app,
+
+01:00.200 --> 01:03.520
+base, counter, there you go.
+
+01:03.520 --> 01:06.240
+Here we go. Inside of here.
+
+01:06.240 --> 01:09.000
+Oh, this one's not using script setup just yet.
+
+01:09.000 --> 01:10.640
+Do we have one that we're using script setup?
+
+01:10.640 --> 01:12.640
+Okay. That's totally fine. Here's what we'll do.
+
+01:12.640 --> 01:14.920
+We will basically then do it inside of here,
+
+01:14.920 --> 01:17.360
+just so that it's easier for people to read.
+
+01:17.360 --> 01:19.680
+Okay. So, inside of here,
+
+01:19.680 --> 01:21.480
+we're going to import that count,
+
+01:21.480 --> 01:25.800
+that local count from our composable that we did earlier.
+
+01:26.000 --> 01:28.400
+Let me go ahead and grab this useCount,
+
+01:28.400 --> 01:32.680
+and we're going to drop it over here for our app,
+
+01:32.680 --> 01:37.200
+and then we say countStore equals useCount,
+
+01:37.200 --> 01:39.680
+and then we can say do,
+
+01:39.680 --> 01:43.040
+do, do, we can render out underneath here,
+
+01:43.040 --> 01:48.520
+the H2 that says countStore.localCount.
+
+01:48.520 --> 01:52.200
+So, what did it not like this time?
+
+01:52.200 --> 01:55.080
+Do, do, do. Does it look composable?
+
+01:55.080 --> 01:56.000
+All right. Hold up.
+
+01:56.000 --> 01:57.760
+Let me just make sure we'll switch all this to
+
+01:57.760 --> 01:59.760
+the alias to make our lives easier.
+
+01:59.760 --> 02:01.680
+There we go. 50. See?
+
+02:01.680 --> 02:03.600
+File names, no longer routes.
+
+02:03.600 --> 02:05.160
+You don't have to worry about it anymore with that symbol.
+
+02:05.160 --> 02:08.400
+Great. Okay. So, what we want to do,
+
+02:08.400 --> 02:12.000
+if we want to be able to say when the count goes to 50,
+
+02:12.000 --> 02:13.280
+or we increment it, right?
+
+02:13.280 --> 02:14.600
+Let's go ahead and actually check,
+
+02:14.600 --> 02:17.080
+and if we want, we're going to go ahead and navigate the user.
+
+02:17.080 --> 02:18.680
+So, what we're going to do is we're going to
+
+02:18.680 --> 02:21.440
+import the watchHelper method from view,
+
+02:21.440 --> 02:22.760
+and so we're going to watch what?
+
+02:22.760 --> 02:27.040
+We're going to watch countStore.localCount.
+
+02:27.040 --> 02:29.640
+Then, what we get from this is a function
+
+02:29.640 --> 02:31.840
+where we get the value of it,
+
+02:31.840 --> 02:35.680
+and I believe I can just do it like this.
+
+02:35.680 --> 02:37.920
+So, now, to show that this works,
+
+02:37.920 --> 02:40.760
+we're going to go ahead and we're going to go ahead and
+
+02:40.760 --> 02:42.960
+increment it. Oh, I need to increment
+
+02:42.960 --> 02:44.600
+count because this is a local one.
+
+02:44.600 --> 02:46.440
+So, actually, let's do globalCount just to make
+
+02:46.440 --> 02:49.120
+our lives a little bit easier here.
+
+02:49.120 --> 02:52.040
+So, globalCount.
+
+02:53.200 --> 02:55.400
+There you go, there's your 200.
+
+02:55.400 --> 02:57.000
+We can increment globalCount here,
+
+02:57.000 --> 03:00.200
+it goes to 1200, and then there you go, 1200 up top.
+
+03:00.200 --> 03:03.440
+You'll notice that our value is being printed out at the bottom,
+
+03:03.440 --> 03:05.000
+as we would expect. So, that's nice.
+
+03:05.000 --> 03:06.040
+So, it's being watched.
+
+03:06.040 --> 03:09.200
+So, what we want to say is that, well,
+
+03:09.200 --> 03:12.440
+if value is greater than 1200,
+
+03:12.440 --> 03:13.400
+what do we want to do?
+
+03:13.400 --> 03:16.480
+We want to navigate user to Pokedex.
+
+03:16.480 --> 03:18.960
+That's the pseudo code. How do we do that?
+
+03:18.960 --> 03:22.440
+Well, because we're inside of Composition API,
+
+03:22.440 --> 03:24.360
+and to be honest, I think this tends to be
+
+03:24.360 --> 03:25.800
+the easier way going forward to use with
+
+03:25.800 --> 03:28.040
+view libraries and this is why we're going to do it this way.
+
+03:28.040 --> 03:31.880
+We're going to go ahead and import something from View Router.
+
+03:31.880 --> 03:34.520
+So, if you're in the options API for those from View2,
+
+03:34.520 --> 03:38.720
+you might remember something like this.router.push.
+
+03:38.720 --> 03:40.400
+That should look pretty familiar.
+
+03:40.400 --> 03:43.800
+But, there's no this context inside of Composition API.
+
+03:43.800 --> 03:47.200
+But, what we do get though is we get helper methods.
+
+03:47.200 --> 03:49.040
+Helper methods are basically the name of
+
+03:49.040 --> 03:50.920
+the game when it comes to View3.
+
+03:50.920 --> 03:54.120
+So, from View Router, what do you think we called it?
+
+03:54.120 --> 03:57.440
+Well, it is useRouter.
+
+03:57.440 --> 03:58.840
+Because, what are we doing?
+
+03:58.840 --> 04:00.800
+We're basically going to call the router.
+
+04:00.800 --> 04:01.560
+So, how do we do that?
+
+04:01.560 --> 04:03.520
+ConsRouter equals useRouter.
+
+04:03.520 --> 04:05.640
+So, we're very explicit in what we're calling.
+
+04:05.640 --> 04:11.280
+Then here, we can go router.push once slash Pokedex.
+
+04:11.280 --> 04:13.480
+So, we refresh this now,
+
+04:13.480 --> 04:15.480
+and we go ahead and go global,
+
+04:15.480 --> 04:19.880
+global, swapped to Pokedex. That's it.
+
+04:20.240 --> 04:22.040
+That's programmatic navigation.
+
+04:22.040 --> 04:24.240
+Main thing being that, what do you do?
+
+04:24.240 --> 04:26.320
+You make sure you get the router from
+
+04:26.320 --> 04:27.560
+View Router that you can basically,
+
+04:27.560 --> 04:28.920
+just like we did from the Composable.
+
+04:28.920 --> 04:30.480
+It's a little helper method that says,
+
+04:30.480 --> 04:32.920
+hey, we're going to help you do some stuff with the route.
+
+04:32.920 --> 04:35.600
+You instantiate it here on line 10.
+
+04:35.600 --> 04:37.960
+Then, inside of either our watch or
+
+04:37.960 --> 04:38.960
+whatever you need to use it,
+
+04:38.960 --> 04:41.240
+it really is just router.push.
+
+04:41.240 --> 04:44.800
+The push semantics come from as well,
+
+04:44.800 --> 04:46.520
+from I think the web history MDN.
+
+04:46.520 --> 04:48.080
+So, again, we're not trying to reinvent the wheel here.
+
+04:48.080 --> 04:49.280
+This should feel familiar.
+
+04:49.320 --> 04:50.920
+Is a router now replaced?
+
+04:50.920 --> 04:52.280
+Yeah, there's replace as well.
+
+04:52.280 --> 04:54.160
+So, if you go into the View Router docs,
+
+04:54.160 --> 04:55.480
+which again, I highly recommend
+
+04:55.480 --> 04:57.800
+checking out when you start to dive into that stuff.
+
+04:57.800 --> 04:59.200
+There's a ton of things that you can do
+
+04:59.200 --> 05:01.000
+in terms of programmatic navigation.
+
+05:01.000 --> 05:03.240
+So, we see there's push,
+
+05:03.240 --> 05:05.800
+you can replace the location,
+
+05:05.800 --> 05:08.520
+you can even use traversing history with the go.
+
+05:08.520 --> 05:09.800
+Again, we're not going to play around with all this,
+
+05:09.800 --> 05:12.840
+because this is something you can dive into as it makes sense.
+

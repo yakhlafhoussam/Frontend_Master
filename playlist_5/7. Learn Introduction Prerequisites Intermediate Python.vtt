@@ -1,0 +1,323 @@
+WEBVTT
+
+00:00.000 --> 00:05.520
+We talked about simple loops yesterday, we talked about four loops had a loop over each
+
+00:05.520 --> 00:07.040
+item in a list.
+
+00:07.040 --> 00:12.880
+List comprehension are one of those incredible features of Python that I think have been
+
+00:12.880 --> 00:17.040
+making their way into other programming languages slowly over time.
+
+00:17.040 --> 00:24.040
+They let you take a kind of a four loop and condensate it down into just one statement.
+
+00:24.040 --> 00:29.040
+In a way that's actually pretty readable.
+
+00:29.040 --> 00:53.600
+So we'll start with list comprehension and let's say I had my list of names, so just a list
+
+00:53.640 --> 01:01.640
+of three items, everyone who's typing along, you can use whatever names you want.
+
+01:01.640 --> 01:12.440
+Earlier, I wanted to build a new list that had maybe all the lower case names in it.
+
+01:12.440 --> 01:20.560
+So I know that if I call, if I say string dot lower, it'll give me the lower case, if I say
+
+01:20.600 --> 01:23.920
+string dot upper, it'll give me the upper case.
+
+01:23.920 --> 01:25.800
+Okay, let's say I wanted to do upper case names.
+
+01:25.800 --> 01:30.400
+Let's say I wanted to like shout them, reading them, you're shouting know that, you know,
+
+01:30.400 --> 01:33.000
+these names are kind of really important.
+
+01:33.000 --> 01:41.640
+So before I would make my list of upper case names and I would go through in a four loop,
+
+01:41.640 --> 01:54.120
+right four name in names, I would say that the upper case name would be equal to name dot
+
+01:54.120 --> 02:01.600
+upper, and then what action would I need to take next to build up my list of upper names
+
+02:01.600 --> 02:03.360
+with these values?
+
+02:03.360 --> 02:08.560
+How do we add to the end of a list, a pen?
+
+02:08.560 --> 02:17.640
+So I would say upper names dot a pen and my upper case name, okay.
+
+02:17.640 --> 02:23.240
+If we look in our upper names now, we'll see that we've looped through this list, we've
+
+02:23.240 --> 02:30.760
+taken some action on it, right, but this is a lot of code and it's a pretty common programming
+
+02:30.760 --> 02:31.760
+paradigm.
+
+02:31.760 --> 02:34.400
+We do this type of programming all the time.
+
+02:34.400 --> 02:40.520
+And so Python came up with a really handy shortcut for it.
+
+02:40.520 --> 02:47.760
+To do a list comprehension, we start with the list syntax, so those square brackets.
+
+02:47.760 --> 02:52.920
+And then, as you're kind of getting used to these, I find that the order really trips
+
+02:52.920 --> 02:53.920
+people up.
+
+02:53.920 --> 03:00.160
+And so I tend to basically write mine backwards, I think about what do I want to loop over
+
+03:00.160 --> 03:01.800
+and I type that first.
+
+03:01.800 --> 03:06.240
+So what were we looping over in our four loop?
+
+03:06.240 --> 03:11.640
+Yeah, so I would say four names and names.
+
+03:11.640 --> 03:15.960
+So that's the second half of our list comprehension.
+
+03:15.960 --> 03:23.120
+Now move your cursor back to the beginning and place it right to the right side of that
+
+03:23.120 --> 03:26.160
+first opening bracket.
+
+03:26.160 --> 03:30.680
+The first part of the list comprehension is the action that we want to take.
+
+03:30.680 --> 03:35.680
+So what was I doing with my name and the previous example?
+
+03:35.680 --> 03:38.520
+Yeah, I was making it uppercase.
+
+03:38.520 --> 03:45.840
+So here on the left hand side, I would say name dopper.
+
+03:45.840 --> 03:47.920
+What result do we get when we run this?
+
+03:47.920 --> 03:55.520
+That's right, a list of uppercase names, pretty useful, right?
+
+03:55.520 --> 04:05.160
+We can, let's say we wanted to build a list of squares, right?
+
+04:05.160 --> 04:12.080
+What function can we use in Python to generate a list of numbers in a sequence?
+
+04:12.080 --> 04:13.080
+Range.
+
+04:13.080 --> 04:14.080
+Range, right?
+
+04:14.080 --> 04:18.040
+So quick recap of range.
+
+04:18.040 --> 04:24.160
+If we call range without doing any sort of looping over it, we'll see this range
+
+04:24.200 --> 04:25.160
+object.
+
+04:25.160 --> 04:29.240
+It's because each item in it is generated on the fly, which is great, right?
+
+04:29.240 --> 04:32.160
+It's great for performance, great for memory.
+
+04:32.160 --> 04:50.520
+As we're learning, if we want to peek inside of range, just maybe we forget the syntax.
+
+04:50.760 --> 04:55.080
+Quick note here for everyone who's not paying attention, like don't call range on a huge list
+
+04:55.080 --> 05:00.840
+of numbers and call list around it because Nina told you so because that is not what I'm saying.
+
+05:00.840 --> 05:06.280
+So if we want to peek inside of a range, we can call list on it, right?
+
+05:06.280 --> 05:15.360
+So range with just one number will go up to that number, but not inclusive, so exclusive.
+
+05:15.360 --> 05:20.720
+If we call range with two numbers, this first number is the starting number.
+
+05:20.720 --> 05:29.920
+The range will be inclusive of the starting number, exclusive of the ending number.
+
+05:29.920 --> 05:34.400
+And the third argument to range is a step.
+
+05:34.400 --> 05:39.560
+So if I wanted to go through all the even numbers, or I'm sorry, not all the even numbers,
+
+05:39.560 --> 05:46.560
+I wanted to go from one to four and add to each time I would get one and three, so that's how
+
+05:46.560 --> 05:49.000
+range works.
+
+05:49.000 --> 05:54.120
+Let's say I wanted to make a list comprehension that went through all of the numbers from
+
+05:54.120 --> 06:00.400
+one to zero to five and printed out the square.
+
+06:00.400 --> 06:08.840
+So I would say a four number in range, I wanted the numbers from zero to five, what range
+
+06:08.840 --> 06:15.080
+would I need to, what value would I need to put in range, so this is what we're going to
+
+06:15.080 --> 06:18.520
+loop over in our list comprehension.
+
+06:18.520 --> 06:25.960
+And then moving back to the start of the line, Windows users, I don't know, Mac users
+
+06:25.960 --> 06:33.360
+control a might help you get your line to the start, or your cursor to the start of the line.
+
+06:33.360 --> 06:40.920
+If I wanted to do the squares, I would just say, you know, number number.
+
+06:40.920 --> 06:43.520
+That's quickly all of our squares.
+
+06:43.520 --> 06:50.480
+We can return a list of any of the other types that we've talked about.
+
+06:50.480 --> 06:58.080
+In our first example, we saw strings, in our second example, we saw a number.
+
+06:58.080 --> 07:01.240
+Let's take a look at a more complicated data type.
+
+07:01.240 --> 07:06.680
+Let's say I wanted to return a list of tuples.
+
+07:06.680 --> 07:14.680
+And the way that I would do that, so I would, you know, I have my names variable here.
+
+07:14.680 --> 07:16.120
+I would make my list comprehension.
+
+07:16.120 --> 07:21.040
+I'm going to loop over the name and names.
+
+07:21.040 --> 07:23.160
+And what I want to return is a tuple.
+
+07:23.160 --> 07:26.680
+So I'm going to put those parentheses around it.
+
+07:26.680 --> 07:34.720
+I want a tuple that has the string length in it, for example, along with the length of the
+
+07:34.720 --> 07:35.720
+name.
+
+07:35.720 --> 07:37.720
+How do we get the length of a string?
+
+07:37.720 --> 07:39.720
+With length, really?
+
+07:39.720 --> 07:40.720
+Yeah.
+
+07:40.720 --> 07:41.720
+That's right.
+
+07:41.720 --> 07:49.200
+Don't forget an extra parentheses here, and I would get the length of my name.
+
+07:49.200 --> 07:56.040
+So any variable that's on the right side of this four statement, that's available for
+
+07:56.040 --> 08:01.880
+us to use in the left side of this equation.
+
+08:01.880 --> 08:08.760
+Yesterday we used tuple unpacking to loop through two items that once, for example, if we
+
+08:08.760 --> 08:12.360
+were looping over a list of tuples.
+
+08:12.360 --> 08:14.680
+So call this one's comprehension.
+
+08:14.680 --> 08:19.400
+And I get the word length followed by the length of each string.
+
+08:19.400 --> 08:25.120
+One last thing I want to show with split and join.
+
+08:25.120 --> 08:27.560
+I've showed you kind of fstrings, right?
+
+08:27.560 --> 08:31.040
+So let's say the name is Nina.
+
+08:31.040 --> 08:35.000
+And my fstring starts with an f.
+
+08:35.000 --> 08:46.600
+They can say the name is followed by name.
+
+08:46.600 --> 08:56.560
+If I wanted to do the same thing for a list of names and print them out in comma separated
+
+08:56.560 --> 09:03.480
+string, I can do that with a join, right?
+
+09:03.480 --> 09:22.600
+So if I just had kind of my one string here, it would be kind of funky, because it's
+
+09:22.600 --> 09:26.360
+not a list.
+
+09:26.360 --> 09:33.080
+You can pass a list comprehension into join, right?
+
+09:33.080 --> 09:34.080
+Join takes a list.
+
+09:34.080 --> 09:40.520
+So I can say four names in names like I did before.
+
+09:40.520 --> 09:45.960
+And I can just go to the right, put my cursor to the right of that opening bracket.
+
+09:45.960 --> 09:51.720
+And I can put an fstring in here and say name is name.
+
+09:51.720 --> 09:57.160
+So I'm just putting some of these pieces together.
+

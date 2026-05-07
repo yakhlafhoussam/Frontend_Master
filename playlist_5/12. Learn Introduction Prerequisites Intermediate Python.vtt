@@ -1,0 +1,404 @@
+WEBVTT
+
+00:00.000 --> 00:07.000
+Python doesn't really know how to represent this generator in any other way. It doesn't know what's in it until you start looping through it.
+
+00:07.000 --> 00:14.000
+The other cool thing about generators is they don't necessarily have to have an end, right?
+
+00:14.000 --> 00:20.000
+The structure is not in memory, so you can kind of be a little loosey goosey about it.
+
+00:20.000 --> 00:27.000
+A good way to think about generators is, you know, the list has all the items in it,
+
+00:27.000 --> 00:32.000
+but a generator and only knows where it is right now, and it knows the very next step.
+
+00:32.000 --> 00:37.000
+It has no idea what happened in the past. It's got, you know, some weird amnesia,
+
+00:37.000 --> 00:42.000
+and it doesn't really know where it's going in the future besides for the very next step.
+
+00:42.000 --> 00:46.000
+So I'll make a little bit more sense.
+
+00:46.000 --> 00:56.000
+We talked a little bit about slicing yesterday, but slicing is a way to create sublifts.
+
+00:57.000 --> 01:04.000
+From larger lists. So let's say I had my string.
+
+01:04.000 --> 01:15.000
+So our string is kind of considered as sequence in Python.
+
+01:15.000 --> 01:19.000
+What well my string zero return?
+
+01:19.000 --> 01:23.000
+Each.
+
+01:23.000 --> 01:30.000
+We also looked at negative slicing. What well my string subscripts negative one return?
+
+01:30.000 --> 01:34.000
+exclamation point.
+
+01:34.000 --> 01:39.000
+But we also learned that we can provide two numbers into this range.
+
+01:39.000 --> 01:42.000
+So let's just say I wanted to return the string, hello.
+
+01:42.000 --> 01:49.000
+I can say zero one two three four.
+
+01:49.000 --> 01:57.000
+And I would put in position five because just like a range.
+
+01:57.000 --> 01:59.000
+These are the first four characters.
+
+01:59.000 --> 02:05.000
+Just like range, the second argument to the subscript, it's exclusive.
+
+02:05.000 --> 02:09.000
+So it does not include the character that you put in there.
+
+02:09.000 --> 02:17.000
+We also know that when you're working with either the first value of the list or the last value of the list,
+
+02:17.000 --> 02:24.000
+that the zero is optional gives us the same thing.
+
+02:24.000 --> 02:30.000
+So we can put any numbers in here that we want.
+
+02:30.000 --> 02:37.000
+It'll give us a new copy of those values from the string.
+
+02:37.000 --> 02:45.000
+So doing it with a list.
+
+02:45.000 --> 02:49.000
+Renders the same results.
+
+02:49.000 --> 02:52.000
+Say I have a list of four items in it.
+
+02:52.000 --> 02:55.000
+What will name zero return?
+
+02:55.000 --> 02:59.000
+And names negative one.
+
+03:00.000 --> 03:05.000
+What's the last item?
+
+03:05.000 --> 03:10.000
+What if I wanted the first two items in the list?
+
+03:10.000 --> 03:14.000
+What would I put for my second range variable?
+
+03:14.000 --> 03:18.000
+First two items would be three.
+
+03:18.000 --> 03:20.000
+Oh sorry, two.
+
+03:20.000 --> 03:23.000
+I'm sorry, whoever corrected me, you were right.
+
+03:23.000 --> 03:28.000
+Because list indexes start at zero.
+
+03:28.000 --> 03:35.000
+And is this zero optional or not?
+
+03:35.000 --> 03:43.000
+If I wanted to go to the end of the string, I would start at zero one two.
+
+03:43.000 --> 03:49.000
+And I would go to four.
+
+03:49.000 --> 03:51.000
+So that's the end of my list.
+
+03:51.000 --> 03:53.000
+That's the length of it.
+
+03:53.000 --> 03:57.000
+Just like what zero is this four optional.
+
+03:57.000 --> 04:03.000
+It is because we're going all the way to the end.
+
+04:03.000 --> 04:08.000
+One of the cool useful uses for the substring.
+
+04:08.000 --> 04:12.000
+So if we have a list, let's say my list names,
+
+04:12.000 --> 04:16.000
+and I reassign it to new names.
+
+04:17.000 --> 04:23.000
+If I append a new value here,
+
+04:23.000 --> 04:28.000
+is it going to change my names list?
+
+04:28.000 --> 04:32.000
+Well, yes.
+
+04:32.000 --> 04:33.000
+It will, right?
+
+04:33.000 --> 04:37.000
+Because all I did is I changed the label here.
+
+04:37.000 --> 04:39.000
+I didn't make a new list, right?
+
+04:39.000 --> 04:42.000
+I just told Python, these things share a name now.
+
+04:42.000 --> 04:45.000
+The point at the same thing.
+
+04:46.000 --> 04:49.000
+Can you print out names, too?
+
+04:49.000 --> 04:51.000
+It's the same.
+
+04:51.000 --> 04:55.000
+So if I quickly wanted to make a copy of my list,
+
+04:55.000 --> 05:01.000
+so that I can do some operations on it and not modify the original,
+
+05:01.000 --> 05:10.000
+let's say I had my list of names here.
+
+05:11.000 --> 05:14.000
+If we started the beginning of a sequence,
+
+05:14.000 --> 05:18.000
+and we want to take a slice, is the zero optional?
+
+05:18.000 --> 05:20.000
+Yes.
+
+05:20.000 --> 05:23.000
+If we go to the end of the sequence,
+
+05:23.000 --> 05:27.000
+is the last number, that last value, is that optional?
+
+05:27.000 --> 05:28.000
+It is.
+
+05:28.000 --> 05:34.000
+So if I put just the colon in here, I'll get a copy of my list.
+
+05:35.000 --> 05:41.000
+And now I can say, new names is equal to a copy of my names list.
+
+05:41.000 --> 05:45.000
+Sorry, we got new names, but bear with me.
+
+05:45.000 --> 05:53.000
+If I append something to this, now, will my names list change?
+
+05:53.000 --> 05:55.000
+No.
+
+05:55.000 --> 06:01.000
+But my new names, I modified that, right?
+
+06:04.000 --> 06:05.000
+Okay.
+
+06:05.000 --> 06:12.000
+Let's talk about negative indexing a little bit.
+
+06:12.000 --> 06:19.000
+So I had my string here, hello, world.
+
+06:19.000 --> 06:25.000
+If I do a negative index one, what do I get?
+
+06:25.000 --> 06:31.000
+What about negative index two?
+
+06:31.000 --> 06:36.000
+Same where I'm getting here.
+
+06:36.000 --> 06:37.000
+Yeah.
+
+06:37.000 --> 06:43.000
+So negative one goes to the first last item, negative two,
+
+06:43.000 --> 06:46.000
+kind of et cetera, et cetera.
+
+06:46.000 --> 06:50.000
+You can get kind of interesting here.
+
+06:50.000 --> 06:54.000
+You can go from the end, a length of the string,
+
+06:54.000 --> 07:00.000
+to the fourth from the end, and end up with some,
+
+07:01.000 --> 07:03.000
+some subset of the string.
+
+07:03.000 --> 07:06.000
+You can do the same thing for lists.
+
+07:06.000 --> 07:11.000
+You kind of rarely want to get too tricky with the substrings,
+
+07:11.000 --> 07:13.000
+because explicit is better than implicit.
+
+07:13.000 --> 07:16.000
+You want to be clear, but it's available to you,
+
+07:16.000 --> 07:19.000
+and you might see this in Python code.
+
+07:19.000 --> 07:21.000
+Okay.
+
+07:21.000 --> 07:29.000
+One last argument, let's say I had a list of the numbers from zero to nine.
+
+07:29.000 --> 07:34.000
+I can quickly build that list with range, right?
+
+07:34.000 --> 07:39.000
+And pass it in to list, and just looking at our list,
+
+07:39.000 --> 07:44.000
+the numbers from zero to nine.
+
+07:44.000 --> 07:48.000
+We know that this will give us the whole list.
+
+07:48.000 --> 07:51.000
+There's one additional third argument to step.
+
+07:51.000 --> 07:54.000
+And you can kind of think about it like range.
+
+07:54.000 --> 07:57.000
+So the first argument to range, the optional first argument
+
+07:57.000 --> 07:58.000
+is the start.
+
+07:58.000 --> 08:01.000
+The second argument to range is the end.
+
+08:01.000 --> 08:05.000
+What's the third optional argument to range?
+
+08:05.000 --> 08:07.000
+It's a step.
+
+08:07.000 --> 08:09.000
+Yeah, interval or a step.
+
+08:09.000 --> 08:12.000
+So I can do the same thing here,
+
+08:12.000 --> 08:17.000
+and say, just give me every other one.
+
+08:17.000 --> 08:20.000
+One little other bit of trickery here.
+
+08:20.000 --> 08:22.000
+What if the step was negative one?
+
+08:22.000 --> 08:26.000
+What do you think that would do?
+
+08:27.000 --> 08:29.000
+That's right.
+
+08:29.000 --> 08:30.000
+Yeah.
+
+08:30.000 --> 08:33.000
+So going through the whole list,
+
+08:33.000 --> 08:36.000
+stepping from the end to the beginning.
+
+08:36.000 --> 08:40.000
+So just a little bit of trickery there.
+
+08:40.000 --> 08:50.000
+Let's say I wanted to go start from the first value.
+
+08:50.000 --> 08:54.000
+And let's look at my list again here.
+
+08:54.000 --> 08:57.000
+I wanted to start from the first value.
+
+08:57.000 --> 09:00.000
+Go to the sixth one.
+
+09:00.000 --> 09:03.000
+And then skip every other.
+
+09:03.000 --> 09:12.000
+I could use all three of those arguments to range.
+
+09:12.000 --> 09:17.000
+And remember that you can slice to get a subset of items from any data type that
+
+09:17.000 --> 09:19.000
+maintains an order.
+
+09:19.000 --> 09:22.000
+So that would be your list and your tuple.
+
+09:22.000 --> 09:30.000
+Can you do this sort of sub sequencing with a dictionary or set?
+
+09:30.000 --> 09:32.000
+No, right?
+
+09:32.000 --> 09:34.000
+Why?
+
+09:34.000 --> 09:37.000
+They're unordered, right?
+
+09:37.000 --> 09:40.000
+So if you can't for the data structure,
+
+09:40.000 --> 09:43.000
+if you can't subscript it by an index.
+
+09:43.000 --> 09:46.000
+And remember, you can do this with a dictionary.
+
+09:46.000 --> 09:48.000
+Only if the dictionary has a key of zero.
+
+09:48.000 --> 09:49.000
+So that doesn't count.
+
+09:49.000 --> 09:53.000
+If you can do this to the data type, then you can take a slice of that.
+

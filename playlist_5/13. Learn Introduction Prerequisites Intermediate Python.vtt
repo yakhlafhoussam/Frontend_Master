@@ -1,0 +1,242 @@
+WEBVTT
+
+00:00.000 --> 00:07.000
+One last thing would be the zip function.
+
+00:07.000 --> 00:15.000
+Let's say I used a dictionary comprehension.
+
+00:15.000 --> 00:20.000
+And I wanted to build up a dictionary where the key was the number,
+
+00:20.000 --> 00:26.000
+and the value was that number squared for all the numbers from zero to ten.
+
+00:27.000 --> 00:31.000
+How do I start my dictionary comprehension with my loop?
+
+00:31.000 --> 00:36.000
+What am I looping over?
+
+00:36.000 --> 00:42.000
+I don't have any numbers, so how would I get?
+
+00:42.000 --> 00:47.000
+How would I get a list of numbers from zero to ten?
+
+00:47.000 --> 00:54.000
+And to build up my dictionary, what's the key here that I want?
+
+00:54.000 --> 00:56.000
+No.
+
+00:56.000 --> 00:59.000
+And the value is no.
+
+00:59.000 --> 01:13.000
+If I wanted to see all of the keys in my dictionary, what method would I call?
+
+01:14.000 --> 01:19.000
+The key is in all the values.
+
+01:19.000 --> 01:22.000
+These two look kind of like a list, right?
+
+01:22.000 --> 01:24.000
+It's kind of a different data structure.
+
+01:24.000 --> 01:26.000
+They look kind of like a list, right?
+
+01:26.000 --> 01:31.000
+What if I wanted to get the key value pairs?
+
+01:31.000 --> 01:35.000
+The items.
+
+01:35.000 --> 01:38.000
+Okay, kind of ignoring this part.
+
+01:38.000 --> 01:43.000
+What sort of data structure does this result look like?
+
+01:43.000 --> 01:45.000
+A list of two balls.
+
+01:45.000 --> 01:47.000
+Does that make sense to everyone?
+
+01:47.000 --> 01:50.000
+Okay.
+
+01:50.000 --> 02:01.000
+If you think we had a list of two balls, maybe there's a way we can turn it back into a dictionary?
+
+02:01.000 --> 02:14.000
+Okay, so let's say I had a list of players.
+
+02:14.000 --> 02:22.000
+And those players had some scores in a game, so I got the best score, obviously.
+
+02:22.000 --> 02:30.000
+Bob got five points, and let's say Alice is a runner up.
+
+02:31.000 --> 02:43.000
+Quick way to combine the values in these two lists is with the zip function.
+
+02:43.000 --> 02:50.000
+So you passing two or more, I believe.
+
+02:50.000 --> 02:53.000
+I don't remember about them more, but I'll have to look it up.
+
+02:53.000 --> 02:58.000
+But we'll talk about two passing two different lists to zip.
+
+02:58.000 --> 03:02.000
+And we got something that looks like this.
+
+03:02.000 --> 03:05.000
+And it's like, okay, well, what is this?
+
+03:05.000 --> 03:08.000
+What does this kind of look like that we've seen?
+
+03:08.000 --> 03:10.000
+Generator, right?
+
+03:10.000 --> 03:16.000
+So we can't really do anything with this data structure until we loop over it.
+
+03:16.000 --> 03:20.000
+So let's just do that.
+
+03:20.000 --> 03:25.000
+Let's say we don't really know what this data structure contains.
+
+03:25.000 --> 03:37.000
+So maybe let's just print out for item, just like the item in the zip players and scores.
+
+03:37.000 --> 03:41.000
+Print out the item.
+
+03:41.000 --> 03:43.000
+Okay, here we go.
+
+03:43.000 --> 03:46.000
+Now we know that we have a list of two balls.
+
+03:46.000 --> 03:54.000
+How do we loop over the list of two balls and use two ball and packing to pull out the name and the score from each one?
+
+03:54.000 --> 03:58.000
+What would I loop over?
+
+03:58.000 --> 04:00.000
+Name, comma, score.
+
+04:00.000 --> 04:03.000
+Name, comma, score.
+
+04:03.000 --> 04:09.000
+And the zip of players and scores.
+
+04:09.000 --> 04:23.000
+And I can print out an upstream and say, like, name, name, had a score of score.
+
+04:23.000 --> 04:27.000
+Could I do this with a comprehension?
+
+04:27.000 --> 04:29.000
+Yeah, could, right?
+
+04:29.000 --> 04:36.000
+I would be looping over a four-name score in zip of players and scores.
+
+04:36.000 --> 04:39.000
+And I could just print out my same upstream.
+
+04:39.000 --> 04:45.000
+Name, name, had score score.
+
+04:45.000 --> 04:51.000
+And that would give me a list of four-matted strings.
+
+04:51.000 --> 05:09.000
+The interesting thing about zip is you need to be mindful of, let's say, had my list one and add three items in it and my list two had two items in it.
+
+05:09.000 --> 05:17.000
+If we try to zip these things, you know, would get this zip object.
+
+05:17.000 --> 05:27.000
+When we wanted to look at everything that a generator, the range generator had in it, what did I quickly do to debug that?
+
+05:27.000 --> 05:31.000
+I used a four-lip, but I can also pass it into it.
+
+05:31.000 --> 05:35.000
+Yeah, passed it into the list.
+
+05:35.000 --> 05:38.000
+So as we'll see here, zip only works.
+
+05:38.000 --> 05:43.000
+It goes through all the items in both lists and it matches them up one by one.
+
+05:43.000 --> 05:46.000
+One's pair was a, two's pair was b.
+
+05:46.000 --> 05:49.000
+What is three is pair?
+
+05:49.000 --> 05:51.000
+Didn't have one, right?
+
+05:51.000 --> 05:58.000
+So it didn't make it into the final list of two poles.
+
+05:58.000 --> 06:09.000
+Okay, going back to our zip of players and scores, I'm going to pass this into list just so we can look at it.
+
+06:09.000 --> 06:20.000
+If dictionary.items returned to list of two poles, maybe we can take this list of two poles and turn it into a dictionary, right?
+
+06:20.000 --> 06:23.000
+And the way of doing that is very simple.
+
+06:23.000 --> 06:30.000
+Just like I passed the zip into list here to see it in list form.
+
+06:31.000 --> 06:41.000
+I could also just pass it into a deck tier and get a dictionary out of it.
+
+06:41.000 --> 06:49.000
+And keep in mind that the two poles has to be two items, right?
+
+06:49.000 --> 06:54.000
+The first item is the key, the second item is the what?
+
+06:54.000 --> 06:56.000
+The value.
+
+06:57.000 --> 07:07.000
+You know, would it be fair to say that if you created dictionary from a zip generator, you're going to create, you're going to use up some memory doing that.
+
+07:07.000 --> 07:11.000
+Okay, so that's.
+
+07:11.000 --> 07:14.000
+It just kind of depends on your end result, right?
+
+07:14.000 --> 07:18.000
+Like, do you want to see the data in a key value form?
+
+07:18.000 --> 07:23.000
+Do you want to take advantage of a very quick membership testing?
+
+07:23.000 --> 07:33.000
+You know, finding out very quickly if a key is or is not in the dictionary, or do you want to loop over all the items and take some action?
+
+07:33.000 --> 07:36.000
+So it kind of depends on the end use case.
+

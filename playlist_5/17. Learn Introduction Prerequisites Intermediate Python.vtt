@@ -1,0 +1,41 @@
+WEBVTT
+
+00:00.000 --> 00:06.640
+The kind of funny thing about Python, in languages like Java, you're required to make
+
+00:06.640 --> 00:12.560
+getters and setters to modify stuff within your class, but Python is a little bit more
+
+00:12.560 --> 00:22.720
+willy-nilly. So, I can just go and change the value of dot runs for my Subaru, for my instance.
+
+00:22.720 --> 00:32.240
+I don't necessarily need to use a getter or setter. Using them is, you know, a best practice
+
+00:32.240 --> 00:37.440
+in software projects to take out some of the mystery, but you're not going to get a syntaxer,
+
+00:37.440 --> 00:44.640
+or Python is not going to stop you from doing this type of modification. So, now, if I call
+
+00:44.640 --> 00:50.080
+my Subaru dot start, and it takes a name, so I'm going to have to pass one in again.
+
+00:50.960 --> 00:53.520
+What will I see printed out?
+
+00:55.520 --> 01:00.800
+All is broken. Time to do more front-end master's classes to pay for the repair.
+
+01:02.800 --> 01:07.600
+Okay, so self- that's self-variable, it refers to an instance.
+
+01:09.280 --> 01:16.240
+And if I make a new car, let's call it a Mustang car.
+
+01:21.040 --> 01:27.920
+If I check runs on Mustang car, what will I get? It's true, right?
+
+01:27.920 --> 01:32.400
+So, the changes that I made to my Subaru only applied to the my Subaru instance.
+

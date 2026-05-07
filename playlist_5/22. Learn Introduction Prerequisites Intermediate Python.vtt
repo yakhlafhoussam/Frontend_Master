@@ -1,0 +1,575 @@
+WEBVTT
+
+00:00.000 --> 00:06.000
+One more topic to cover before we go into our exercise is inheritance.
+
+00:08.500 --> 00:14.000
+As we saw, these classes in Python help us make reusable code.
+
+00:14.500 --> 00:18.000
+And I'm going to make a new file here.
+
+00:18.000 --> 00:25.000
+I'm going to save it and I'm going to call it vehicle.py.
+
+00:25.000 --> 00:30.000
+Okay.
+
+00:30.000 --> 00:36.000
+Sometimes we want our classes to share properties between each other.
+
+00:36.000 --> 00:41.000
+So we saw that my car had four wheels.
+
+00:41.000 --> 00:44.000
+Well, I could also have a motorcycle.
+
+00:44.000 --> 00:50.000
+And my motorcycle will have two wheels, but it still runs.
+
+00:51.000 --> 00:59.000
+So inheritance is a way to kind of make types that have shared attributes.
+
+00:59.000 --> 01:06.000
+And it helps us break up an organizer code in a hierarchy from more generic to more specific.
+
+01:06.000 --> 01:11.000
+Objects that belong to classes higher up the hierarchy, the more generic ones.
+
+01:11.000 --> 01:19.000
+They're accessible via the more specific subclasses, but not vice versa.
+
+01:19.000 --> 01:34.000
+Earlier, we saw that the bull type is so close.
+
+01:49.000 --> 01:58.000
+Sorry, I forgot about arguments and instead of scrolling through my history, I'm just going to show you, you know, the quickest way to get help on that.
+
+01:58.000 --> 02:05.000
+So the first thing is the class and the second thing is the class or two bull.
+
+02:05.000 --> 02:10.000
+So subclass X.
+
+02:11.000 --> 02:18.000
+So I would ask is subclass of bull and int both of the arguments have to be a class there.
+
+02:18.000 --> 02:19.000
+Okay, true.
+
+02:19.000 --> 02:25.000
+So just like we saw earlier, this bullion, the bullion subclass.
+
+02:25.000 --> 02:31.000
+It took all of the properties of int and then it added to and extended them.
+
+02:31.000 --> 02:35.000
+Right, so it's still got all the stuff that instewonder the hood.
+
+02:35.000 --> 02:43.000
+You're going to be weird and add them together, but it has a lot more properties.
+
+02:43.000 --> 02:47.000
+We can do the same thing with our classes as well.
+
+02:47.000 --> 02:58.000
+So looking at this vehicle.py file, I'm going to make a class vehicle.
+
+02:58.000 --> 03:03.000
+And I'm going to make a dunder in it for it.
+
+03:03.000 --> 03:10.000
+What does the first argument to dunder in it have to be?
+
+03:10.000 --> 03:19.000
+And I'm going to put a make here and a model and the type of fuel that it takes.
+
+03:19.000 --> 03:24.000
+Just like in other types of functions, I can pass in a default argument here.
+
+03:24.000 --> 03:30.000
+Just remember that all of those default arguments have to come last in order.
+
+03:30.000 --> 03:36.000
+How do I save these parameters that are passed into my instance?
+
+03:36.000 --> 03:40.000
+Right, so self dot make is going to be the passed in make.
+
+03:40.000 --> 03:44.000
+Self dot model is going to be the passed in model.
+
+03:44.000 --> 03:49.000
+And self dot fuel is going to be the passed in fuel.
+
+03:49.000 --> 03:55.000
+For you more advanced folks who want to do more research after class,
+
+03:55.000 --> 04:10.000
+there's a great thing in Python 37 called a data class that is kind of a special type of more advanced class that kind of helps you do a lot less of this kind of template stuff.
+
+04:10.000 --> 04:15.000
+Because the more arguments you add if you want to save them to the instance,
+
+04:15.000 --> 04:20.000
+you have to kind of have a long list of assignments here.
+
+04:20.000 --> 04:25.000
+Okay, and then I'm going to make a new class now for my car.
+
+04:25.000 --> 04:28.000
+And it's going to inherit and extend from vehicle.
+
+04:28.000 --> 04:32.000
+And in order to do that, I add some parentheses here.
+
+04:32.000 --> 04:37.000
+And then I put in the class that I want to extend from.
+
+04:37.000 --> 04:40.000
+So notice this is the type, it's not an instance, right?
+
+04:40.000 --> 04:43.000
+This is the type I want to inherit from.
+
+04:43.000 --> 04:53.000
+And my car is going to have its own constructor.
+
+04:53.000 --> 04:56.000
+And it's going to take self again.
+
+04:56.000 --> 05:00.000
+It's going to take them make the model.
+
+05:00.000 --> 05:05.000
+It's going to take the fuel.
+
+05:05.000 --> 05:09.000
+But it's also going to take another optional argument.
+
+05:10.000 --> 05:20.000
+Number of wheels.
+
+05:20.000 --> 05:25.000
+If I want to.
+
+05:25.000 --> 05:28.000
+Call the constructor on my vehicle.
+
+05:28.000 --> 05:32.000
+Because I already do, you know, I wrote the code to be most of the stuff.
+
+05:32.000 --> 05:35.000
+Just added on a little bit of extra.
+
+05:35.000 --> 05:39.000
+I have to use a special keyword in Python called super.
+
+05:39.000 --> 05:43.000
+And if you use Python 2 or if you've seen Python 2,
+
+05:43.000 --> 05:49.000
+this super keyword is just a bit of a mess.
+
+05:49.000 --> 05:51.000
+In Python 3, it's a lot easier.
+
+05:51.000 --> 05:53.000
+You just use the super keyword.
+
+05:53.000 --> 06:00.000
+You pass, you kind of call it with this empty.
+
+06:00.000 --> 06:08.000
+You're storing it and you do the method of the super class that you want to call.
+
+06:08.000 --> 06:16.000
+And then you pass in the arguments.
+
+06:16.000 --> 06:23.000
+So this just calls this with all of the parameters I gave.
+
+06:23.000 --> 06:25.000
+But we missed something.
+
+06:25.000 --> 06:28.000
+We're passing in a new parameter.
+
+06:28.000 --> 06:31.000
+We have to do with number of wheels.
+
+06:31.000 --> 06:39.000
+Assign it to self, right?
+
+06:39.000 --> 06:44.000
+Hey, I'm going to copy over this reload stuff.
+
+06:44.000 --> 06:49.000
+This reload comment to the top here.
+
+06:49.000 --> 06:51.000
+Sorry, it's a little bit annoying.
+
+06:51.000 --> 06:54.000
+We're not usually changing the file this much.
+
+06:54.000 --> 06:57.000
+And I'm going to open my Rappel again.
+
+06:57.000 --> 07:03.000
+So now I'm going to say import vehicle.
+
+07:03.000 --> 07:09.000
+And I'm going to make a new car.
+
+07:09.000 --> 07:15.000
+I'm going to say my super equals.
+
+07:15.000 --> 07:19.000
+Actually, before I do that, I'm going to make a new vehicle, right?
+
+07:19.000 --> 07:21.000
+This super class.
+
+07:21.000 --> 07:25.000
+Maybe I have a 4 by 4, right?
+
+07:25.000 --> 07:28.000
+It doesn't really fit into the other categories.
+
+07:28.000 --> 07:31.000
+So I'm going to say that my 4 by 4 is a vehicle.
+
+07:31.000 --> 07:36.000
+And the make of it is, I don't know anything about 4 by 4s.
+
+07:36.000 --> 07:38.000
+So I'm going to say the make of it is zoom.
+
+07:38.000 --> 07:41.000
+And the model is it goes fast.
+
+07:41.000 --> 07:46.000
+And the fuel is cooking oil.
+
+07:46.000 --> 07:50.000
+Very efficient.
+
+07:50.000 --> 07:51.000
+Oh, I'm sorry.
+
+07:51.000 --> 07:55.000
+I had to do a vehicle dot vehicle.
+
+07:55.000 --> 07:58.000
+Usually we just say from vehicle import the vehicle class.
+
+07:58.000 --> 08:02.000
+But because I have to reload, we're kind of doing it this way.
+
+08:02.000 --> 08:03.000
+Okay.
+
+08:03.000 --> 08:09.000
+So now my 4 by 4, it has a make.
+
+08:09.000 --> 08:12.000
+It has a model.
+
+08:12.000 --> 08:15.000
+And it has a fuel.
+
+08:15.000 --> 08:20.000
+I'm going to make a new instance of car.
+
+08:21.000 --> 08:28.000
+So I'm going to say my Subaru is a vehicle dot cars.
+
+08:28.000 --> 08:31.000
+And the make is Subaru.
+
+08:31.000 --> 08:34.000
+And the model is cross track.
+
+08:34.000 --> 08:37.000
+And the fuel is diesel.
+
+08:37.000 --> 08:45.000
+I'm sorry I called it car.
+
+08:45.000 --> 08:47.000
+So vehicle dot car.
+
+08:47.000 --> 08:48.000
+Okay.
+
+08:48.000 --> 08:51.000
+So I have my Subaru instance now.
+
+08:51.000 --> 08:54.000
+My Subaru has a make.
+
+08:54.000 --> 08:57.000
+My Subaru has a model.
+
+08:57.000 --> 09:03.000
+My Subaru has fuel.
+
+09:03.000 --> 09:09.000
+Does my Subaru have the number of wheels variable?
+
+09:09.000 --> 09:11.000
+Does it?
+
+09:11.000 --> 09:14.000
+It's always default.
+
+09:14.000 --> 09:16.000
+That's right.
+
+09:17.000 --> 09:20.000
+Does see what did I name it here?
+
+09:20.000 --> 09:23.000
+My 4 by 4.
+
+09:23.000 --> 09:27.000
+Does my 4 by 4 have a number of wheels?
+
+09:27.000 --> 09:28.000
+Does it?
+
+09:28.000 --> 09:29.000
+No.
+
+09:29.000 --> 09:30.000
+Right?
+
+09:30.000 --> 09:32.000
+No.
+
+09:32.000 --> 09:36.000
+Vehicle object has no attribute number of wheels.
+
+09:36.000 --> 09:39.000
+My car does my vehicle doesn't.
+
+09:39.000 --> 09:41.000
+And this is a good opportunity for me now.
+
+09:41.000 --> 09:43.000
+If I wanted to make a motorcycle,
+
+09:43.000 --> 09:48.000
+you can make a new class that has the default number of wheels to be two.
+
+09:48.000 --> 09:52.000
+And that really kind of cuts down on data duplication.
+
+09:52.000 --> 09:55.000
+Makes this code a lot more.
+
+09:55.000 --> 09:59.000
+Composable a lot more easier to maintain.
+
+09:59.000 --> 10:00.000
+Right?
+
+10:00.000 --> 10:05.000
+If I had a method on vehicle.
+
+10:05.000 --> 10:12.000
+Let's say, you know.
+
+10:13.000 --> 10:16.000
+Is my fuel efficient?
+
+10:16.000 --> 10:20.000
+Is eco friendly?
+
+10:20.000 --> 10:22.000
+And I would take in self.
+
+10:22.000 --> 10:26.000
+And if the fuel is equal to gas,
+
+10:26.000 --> 10:29.000
+we're going to return false.
+
+10:29.000 --> 10:37.000
+Otherwise, we're going to ever turn true.
+
+10:37.000 --> 10:44.000
+My self.fuel, of course.
+
+10:44.000 --> 10:52.000
+And I know that this self.fuel is always on my vehicle.
+
+10:52.000 --> 10:59.000
+Even if I removed this, it wouldn't matter because the fuel here is by default gas.
+
+10:59.000 --> 11:01.000
+So now I'm going to go in.
+
+11:01.000 --> 11:10.000
+I'm going to reload this.
+
+11:10.000 --> 11:14.000
+And then I'm going to say, you know,
+
+11:14.000 --> 11:23.000
+I'm going to go back to my 4 by 4.
+
+11:23.000 --> 11:25.000
+And make a new instance.
+
+11:25.000 --> 11:33.000
+I'm going to make a new instance of my Subaru.
+
+11:33.000 --> 11:39.000
+Subaru, cross track.
+
+11:39.000 --> 11:41.000
+Does my 4 by 4?
+
+11:41.000 --> 11:43.000
+Can I call this?
+
+11:43.000 --> 11:45.000
+Is eco friendly?
+
+11:45.000 --> 11:51.000
+Method on it?
+
+11:51.000 --> 12:01.000
+Can I call it on my Subaru?
+
+12:01.000 --> 12:06.000
+No, because you didn't bring it in in Subaru.
+
+12:06.000 --> 12:08.000
+I didn't.
+
+12:08.000 --> 12:17.000
+But what did I do here by calling a super dye net?
+
+12:17.000 --> 12:21.000
+I made a called a net on my vehicle.
+
+12:21.000 --> 12:26.000
+And my car inherits from vehicle.
+
+12:26.000 --> 12:33.000
+So any methods available to my vehicle will also be available on my car.
+
+12:33.000 --> 12:37.000
+That's how we encourage car code reuse.
+
+12:37.000 --> 12:41.000
+If I made a new motorcycle class that inherited from vehicle,
+
+12:41.000 --> 12:44.000
+it would also have this eco friendly method.
+
+12:44.000 --> 12:49.000
+So instead of making motorcycle and car and a 4 by 4,
+
+12:49.000 --> 12:52.000
+that all have their own version of this method,
+
+12:52.000 --> 12:58.000
+we cut down on code duplication and put it in one place.
+
+12:58.000 --> 13:02.000
+The last topic here, I'm not going to talk about very much.
+
+13:02.000 --> 13:04.000
+I just want to give you a heads up.
+
+13:04.000 --> 13:08.000
+Unlike in other languages, in Python, you can have multiple inheritance.
+
+13:08.000 --> 13:13.000
+So you can inherit from multiple different other classes at once.
+
+13:14.000 --> 13:21.000
+And things get a bit hairy, but one use case of this is something called a mixing.
+
+13:21.000 --> 13:28.000
+So a mixing might be a class that just has a method like this on it.
+
+13:28.000 --> 13:32.000
+And I don't care if my 4 by 4 is eco friendly.
+
+13:32.000 --> 13:35.000
+I'm driving it through the grass and mowing it down.
+
+13:35.000 --> 13:40.000
+And what do I care if it's, you know, gas or solar?
+
+13:41.000 --> 13:45.000
+So where I, in the cases where I do care maybe like a car,
+
+13:45.000 --> 13:51.000
+I can have an additional class that I inherit from that just has this method.
+
+13:51.000 --> 13:55.000
+So one of my favorite, one common use case for this,
+
+13:55.000 --> 14:00.000
+you might see if you're declaring database tables in Python.
+
+14:00.000 --> 14:03.000
+You might have some mix-ins for something like a date column,
+
+14:03.000 --> 14:07.000
+where you don't necessarily want, you want to have a date,
+
+14:07.000 --> 14:13.000
+a created on date on all of your objects, just, you know, for compliance reasons.
+
+14:13.000 --> 14:17.000
+But you don't want to have to say, you know, class vehicle dot date equals whatever,
+
+14:17.000 --> 14:20.000
+class motor cycle dot date equals whatever.
+
+14:20.000 --> 14:25.000
+So you can just have a mix-in class that will create that column for you.
+
+14:25.000 --> 14:28.000
+And provide all of the methods that you might need to use it.
+
+14:28.000 --> 14:32.000
+I've seen Python code that on an objects that don't,
+
+14:32.000 --> 14:35.000
+or classes that don't inherit from anything else,
+
+14:35.000 --> 14:39.000
+but the object keyword is the object that they inherit from,
+
+14:39.000 --> 14:42.000
+instead of just saying the name of the class column,
+
+14:42.000 --> 14:46.000
+they'll have object after the class definition.
+
+14:46.000 --> 14:52.000
+So that is, yeah, that is one of the differences between Python 2 and Python 3.
+
+14:52.000 --> 14:56.000
+In Python 3, you don't need to do that anymore.
+
+14:56.000 --> 14:58.000
+It's redundant, you know,
+
+14:58.000 --> 15:01.000
+simple as better than complex.
+
+15:01.000 --> 15:05.000
+You can still do it, and it's not a syntax error.
+
+15:05.000 --> 15:08.000
+You just shouldn't.
+

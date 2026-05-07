@@ -1,0 +1,215 @@
+WEBVTT
+
+00:00.000 --> 00:05.120
+A few really useful operations in Python,
+
+00:05.120 --> 00:09.320
+going back to my simple list of squares.
+
+00:09.320 --> 00:15.720
+So that would be four nm in range of six.
+
+00:15.720 --> 00:19.440
+And nm times nm.
+
+00:19.440 --> 00:23.320
+So if we look at our squares, they're right here.
+
+00:23.320 --> 00:26.560
+Python has a sum operation that will let me quickly sum up
+
+00:26.560 --> 00:32.880
+the values of any numbers as a sequence.
+
+00:32.880 --> 00:37.840
+All I have to do is call the sum built in and pass the list to it.
+
+00:37.840 --> 00:38.800
+So sum squares.
+
+00:43.440 --> 00:48.120
+There's also a built-in min, which gives you the minimum value,
+
+00:48.120 --> 00:49.440
+and a built-in max.
+
+00:52.440 --> 00:54.440
+So the biggest number, smallest number.
+
+00:57.520 --> 01:01.120
+We can also use some of the other built-in operations.
+
+01:01.120 --> 01:04.280
+We looked at sorted in introduction to Python,
+
+01:04.280 --> 01:06.040
+so that will give us the sorted numbers.
+
+01:06.040 --> 01:09.760
+They're already sorted in ascending order.
+
+01:09.760 --> 01:13.760
+What if I wanted to get a copy of the list back sorted
+
+01:13.760 --> 01:16.720
+in descending order?
+
+01:19.240 --> 01:20.920
+Pass in an argument.
+
+01:20.920 --> 01:22.400
+Does anyone remember what it is?
+
+01:22.400 --> 01:25.360
+Send into reverse equals to us.
+
+01:25.360 --> 01:30.240
+Clubs by reverse equals true.
+
+01:30.240 --> 01:33.680
+That'll give me back a list that's sorted in reverse.
+
+01:33.680 --> 01:37.200
+And just very quickly, one more list comprehension.
+
+01:37.200 --> 01:47.200
+Let's say I had a, say I had a string here.
+
+01:47.200 --> 01:51.920
+Lottery numbers string.
+
+01:51.920 --> 01:55.160
+And it contained my lottery numbers.
+
+01:58.800 --> 02:07.320
+Nowing everything we know now, how would we get the maximum value
+
+02:07.320 --> 02:10.840
+in this list of strings that are numbers?
+
+02:10.840 --> 02:14.040
+How would we get the maximum value?
+
+02:14.040 --> 02:16.000
+What's the first thing that we would need?
+
+02:16.000 --> 02:17.480
+What does max take?
+
+02:17.480 --> 02:18.320
+The list?
+
+02:18.360 --> 02:19.160
+A list.
+
+02:19.160 --> 02:22.280
+And what do the items in the list have to be?
+
+02:22.280 --> 02:24.000
+String numbers versus...
+
+02:24.000 --> 02:25.280
+They have to be numbers.
+
+02:27.760 --> 02:31.200
+So how do we get a list of numbers from the string?
+
+02:33.840 --> 02:36.640
+How do we get a list of strings from the string?
+
+02:38.840 --> 02:39.680
+Split.
+
+02:41.520 --> 02:45.240
+And I'm just going to make this a little shorter.
+
+02:46.240 --> 02:50.920
+I'm going to reassign my variable just so it's a little bit easier
+
+02:50.920 --> 02:54.600
+to read when I reassign it to lottery numbers.
+
+02:54.600 --> 02:57.320
+So I'm going to say lottery numbers dot split.
+
+02:57.320 --> 02:59.640
+What is my delimit or to split?
+
+02:59.640 --> 03:00.440
+comma.
+
+03:00.440 --> 03:01.400
+comma.
+
+03:01.400 --> 03:04.920
+And here I'm going to have to add a space, right?
+
+03:04.920 --> 03:05.760
+OK.
+
+03:05.760 --> 03:08.760
+Now I have a list of strings.
+
+03:08.760 --> 03:12.200
+We know that max takes a list of integers.
+
+03:12.200 --> 03:18.320
+How do I get my list of strings to be a list of integers?
+
+03:22.320 --> 03:22.960
+OK.
+
+03:22.960 --> 03:24.760
+Can you do a list of comprehension, right?
+
+03:24.760 --> 03:31.560
+So we're going to loop over four num in lottery nums.
+
+03:31.560 --> 03:35.000
+But we're going to call split right in here.
+
+03:35.000 --> 03:40.640
+And we're going to split on the comma space delimit.
+
+03:40.640 --> 03:41.800
+What do we want to take?
+
+03:41.800 --> 03:46.760
+What action do we want to take on each string in this list?
+
+03:46.760 --> 03:47.920
+Pass it to him.
+
+03:47.920 --> 03:48.600
+Exactly, right.
+
+03:51.440 --> 03:54.240
+Now we have a list of numbers.
+
+03:54.240 --> 03:57.920
+And as we saw earlier, I mean, this is getting a little bit complicated.
+
+03:57.920 --> 04:01.600
+You'll probably want to introduce this as a variable, right?
+
+04:01.600 --> 04:04.920
+But as you're typing along in the rep, you can build on this.
+
+04:04.920 --> 04:09.920
+So what does max take a list of numbers?
+
+04:09.920 --> 04:11.720
+And now we have a list of numbers, right?
+
+04:11.720 --> 04:18.200
+So I can just put max and open parenthesis and put a closing parenthesis around all
+
+04:18.200 --> 04:19.200
+of that.
+
+04:19.200 --> 04:20.640
+It'll pass it to max.
+
+04:20.640 --> 04:22.400
+And that gives me the biggest number in my list.
+

@@ -1,0 +1,554 @@
+WEBVTT
+
+00:00.000 --> 00:02.040
+And so what we'll be doing today as far as
+
+00:02.040 --> 00:04.200
+for basically going forward for the rest of the workshop,
+
+00:04.200 --> 00:06.600
+you can find all the different snapshots of
+
+00:06.600 --> 00:09.920
+where we start and stop inside of the individual branches.
+
+00:09.920 --> 00:11.800
+And so basically, O1 begin,
+
+00:11.800 --> 00:13.880
+let me go ahead and add everything.
+
+00:13.880 --> 00:16.760
+So let me check, take status, what do we change?
+
+00:16.760 --> 00:18.080
+We change the playground.
+
+00:18.080 --> 00:19.400
+And so the playground was for me.
+
+00:19.400 --> 00:22.720
+So let me go ahead, kit, feature, add
+
+00:22.720 --> 00:26.040
+live coding for essentials.
+
+00:26.560 --> 00:30.480
+Let's see, reactive data in playground.
+
+00:31.560 --> 00:33.000
+Okay.
+
+00:33.000 --> 00:35.320
+So I'm gonna push that up, whoop, get push.
+
+00:35.320 --> 00:36.520
+I haven't done this yet.
+
+00:36.520 --> 00:38.040
+Let me do this real quick.
+
+00:39.960 --> 00:41.120
+Boom.
+
+00:41.120 --> 00:42.520
+All right, great.
+
+00:42.520 --> 00:46.480
+And so check out O2, oh wait, O1 exercise.
+
+00:46.480 --> 00:49.320
+Get push, origin, O1 exercise.
+
+00:49.320 --> 00:50.160
+Okay.
+
+00:51.200 --> 00:53.680
+So if you go ahead and pull down the latest changes now,
+
+00:53.680 --> 00:55.520
+you should be able to see all the stuff that I did
+
+00:55.520 --> 00:57.080
+inside of the playground.
+
+00:57.080 --> 01:00.080
+Now of course, I saw that some people were coding along,
+
+01:00.080 --> 01:01.680
+which I was really happy to see.
+
+01:01.680 --> 01:03.320
+But of course, we're gonna actually give you a chance
+
+01:03.320 --> 01:04.600
+to actually practice that on your own
+
+01:04.600 --> 01:06.440
+without any guidance.
+
+01:06.440 --> 01:08.160
+So the way that's gonna work
+
+01:09.720 --> 01:12.640
+is what I want you to do is choose your favorite TV show
+
+01:12.640 --> 01:14.960
+or if you don't watch TV, try movie
+
+01:14.960 --> 01:17.880
+or basically anything that is personal to you
+
+01:17.880 --> 01:20.760
+and basically use the index.html page that we have in there
+
+01:20.760 --> 01:23.160
+that's already ready for you to play around with.
+
+01:23.160 --> 01:25.280
+And I want you to go ahead and replicate what we just did.
+
+01:25.280 --> 01:27.200
+As far as go ahead and create that app,
+
+01:27.200 --> 01:29.600
+create a view app using the CDN,
+
+01:29.600 --> 01:31.040
+add some reactive data tracking
+
+01:31.040 --> 01:33.940
+to track maybe some characters on the show and whatnot.
+
+01:33.940 --> 01:36.400
+I want you to practice using the VIF, V4.
+
+01:36.400 --> 01:39.320
+So VIF to basically track if there are no characters,
+
+01:39.320 --> 01:41.120
+it should show some sort of text element that says,
+
+01:41.120 --> 01:42.320
+hey, no characters.
+
+01:42.320 --> 01:44.840
+And then when it populates it, it swaps it out.
+
+01:44.840 --> 01:47.720
+And then go ahead and drop in as much reactive data
+
+01:47.720 --> 01:49.920
+as you want, again, play, have fun with this.
+
+01:49.920 --> 01:51.680
+And yeah.
+
+01:52.680 --> 01:58.360
+So from my end, I'm going to go ahead and open up index.html
+
+01:58.360 --> 01:59.880
+as you all did.
+
+01:59.880 --> 02:02.680
+And for me, I'm going to go ahead and do avatar
+
+02:02.680 --> 02:03.680
+the last airbender.
+
+02:03.680 --> 02:06.720
+That's the one I'm going to do.
+
+02:06.720 --> 02:09.320
+And so inside of here, we're going to go ahead and copy over
+
+02:09.320 --> 02:16.640
+the CDN include that I used earlier.
+
+02:16.640 --> 02:18.640
+And then from here, we'll go ahead
+
+02:18.640 --> 02:20.160
+and we'll start setting up the app.
+
+02:20.160 --> 02:23.960
+So again, the convention here is div id app.
+
+02:23.960 --> 02:26.760
+And the reason for this is because typically, the frameworks
+
+02:26.760 --> 02:29.120
+will go ahead and render a bunch of stuff in there.
+
+02:29.120 --> 02:31.880
+So the div, it doesn't have any semantic value
+
+02:31.880 --> 02:34.320
+as far as from screen readers and that kind of thing.
+
+02:34.320 --> 02:36.520
+So that's why the convention is usually to use a div.
+
+02:36.520 --> 02:39.680
+But if for whatever reason you want to attach it to something
+
+02:39.680 --> 02:43.280
+else, by all means feel empowered to do so.
+
+02:43.280 --> 02:44.360
+OK, so what do we say?
+
+02:44.360 --> 02:45.760
+We're going to create some data.
+
+02:45.760 --> 02:51.160
+So let's say cons create app equals view.
+
+02:51.160 --> 02:52.840
+And actually, you know what I'm going to do?
+
+02:52.840 --> 02:56.840
+Just for the sake of showing you that they're the equivalent,
+
+02:56.840 --> 03:01.200
+we can basically do view.createApp like this.
+
+03:01.200 --> 03:03.160
+And then this can be a data function.
+
+03:03.160 --> 03:04.600
+Now, I'm going to show you a new syntax
+
+03:04.600 --> 03:06.520
+that I personally prefer to use, which
+
+03:06.520 --> 03:10.240
+is that I'll use the arrow function for the, basically,
+
+03:10.240 --> 03:11.800
+assigning a function to data.
+
+03:11.800 --> 03:14.000
+And then I'll wrap the object in the parentheses.
+
+03:14.000 --> 03:16.120
+So it basically saves a couple lines of code.
+
+03:16.120 --> 03:22.000
+So just to show the difference on that real quick,
+
+03:22.000 --> 03:24.440
+you'll see here this is the difference, right?
+
+03:24.440 --> 03:28.120
+Data with the parentheses, then the actual explicit return.
+
+03:28.120 --> 03:30.240
+This has the implicit return with the arrow.
+
+03:30.240 --> 03:32.200
+And then we can find our data here.
+
+03:32.200 --> 03:34.520
+So here, I can do my characters like this.
+
+03:34.520 --> 03:36.280
+And then I'll go ahead and collapse this now,
+
+03:36.280 --> 03:38.600
+so that we have the single column.
+
+03:38.600 --> 03:41.240
+OK, so then we'll have four objects.
+
+03:41.240 --> 03:43.680
+So actually, you know I'm going to go ahead and do real quick.
+
+03:43.680 --> 03:47.520
+This is 1, 2, 3, 4.
+
+03:47.520 --> 03:50.760
+I'm going to use a multi-cursor select by holding down command.
+
+03:50.760 --> 03:52.440
+Might be control for Windows.
+
+03:52.440 --> 03:54.320
+And then I'll just open up, basically, an object
+
+03:54.320 --> 03:56.320
+so that I don't have to do that multiple times.
+
+03:56.320 --> 03:57.080
+Great.
+
+03:57.080 --> 03:59.720
+And then let's just save that real quick so it will auto format.
+
+03:59.720 --> 04:02.160
+Once again, let's click through and let's add some properties.
+
+04:02.160 --> 04:06.320
+So we'll have, basically, the name of the character.
+
+04:06.320 --> 04:08.040
+And that's basically it.
+
+04:08.040 --> 04:09.960
+So in this case, we have ng.
+
+04:09.960 --> 04:12.200
+We have Zuko.
+
+04:12.200 --> 04:14.080
+We have Tof.
+
+04:14.080 --> 04:16.640
+And we have Katara.
+
+04:19.200 --> 04:19.680
+All right.
+
+04:22.480 --> 04:24.280
+So first thing first, we're going to do now is,
+
+04:24.280 --> 04:26.280
+let's go ahead and actually render out our empty state.
+
+04:26.280 --> 04:28.760
+So what we're going to do that is we're going to do a p element
+
+04:28.760 --> 04:31.920
+and say, there are no characters.
+
+04:31.920 --> 04:33.680
+And so we'll save this right now.
+
+04:33.680 --> 04:37.480
+And let's go ahead and actually open this up inside of the browser.
+
+04:37.480 --> 04:39.600
+So instead of playground, we'll go to index.
+
+04:39.600 --> 04:39.920
+There you go.
+
+04:39.920 --> 04:41.520
+There are no characters.
+
+04:41.560 --> 04:44.120
+And then we'll have the ul here.
+
+04:44.120 --> 04:47.720
+And just like before, we'll practice now the v4 element
+
+04:47.720 --> 04:48.680
+that we had.
+
+04:48.680 --> 04:53.400
+So for every character in characters, although actually,
+
+04:53.400 --> 04:55.920
+this is surfacing a philosophical point
+
+04:55.920 --> 04:58.640
+that I like to do when it comes to naming things.
+
+04:58.640 --> 05:00.640
+One off errors are very common in programming.
+
+05:00.640 --> 05:02.720
+And I find that happens a lot with spelling too.
+
+05:02.720 --> 05:05.800
+And so the 1s plural has caught me in multiple times.
+
+05:05.800 --> 05:08.480
+So personally, I usually like to just say that it's a list.
+
+05:08.480 --> 05:10.280
+It's a little bit longer, but then you just
+
+05:10.280 --> 05:11.720
+have that visual distinction.
+
+05:11.720 --> 05:13.280
+It's a character in character list.
+
+05:13.280 --> 05:17.520
+And then I can just render out character.name, which is great.
+
+05:17.520 --> 05:19.320
+Although, hmm, what's happening here?
+
+05:19.320 --> 05:20.880
+Why isn't it working?
+
+05:20.880 --> 05:22.480
+This is a common mistake that we often
+
+05:22.480 --> 05:24.520
+make when we're sort of creating the app this way
+
+05:24.520 --> 05:25.720
+is because what we have to remember to do
+
+05:25.720 --> 05:29.160
+is we need to tell view that we need to mount it.
+
+05:29.160 --> 05:32.920
+So we're going to go ahead and run the mount command on this.
+
+05:32.920 --> 05:35.040
+And we're going to mount it to the ID app.
+
+05:35.040 --> 05:40.240
+And once we do that, save, refresh, uh-oh.
+
+05:40.240 --> 05:41.800
+I broke something.
+
+05:41.800 --> 05:44.200
+WarnSelector, why is that the case?
+
+05:44.200 --> 05:45.560
+Well, typos.
+
+05:45.560 --> 05:47.560
+Didn't I say something about one off errors right here?
+
+05:47.560 --> 05:49.840
+This is a one that'll catch you off guard
+
+05:49.840 --> 05:52.240
+because in your mind, you're thinking CSSSelector,
+
+05:52.240 --> 05:55.440
+but you don't need the extra hashtag symbol.
+
+05:55.440 --> 05:56.200
+Hey, there we go.
+
+05:56.200 --> 05:57.360
+Everything's working.
+
+05:57.360 --> 05:58.840
+So now all we've got to do, though,
+
+05:58.840 --> 06:00.560
+is complete the exercise by saying
+
+06:00.560 --> 06:08.160
+if characterList.length is equal to 0, then show that.
+
+06:08.200 --> 06:11.320
+Otherwise, show this.
+
+06:11.320 --> 06:13.320
+OK, as you can see, boom, there we go.
+
+06:13.320 --> 06:14.320
+It's working.
+
+06:14.320 --> 06:17.120
+If we go ahead and just go ahead and update that real quick,
+
+06:17.120 --> 06:21.000
+you'll see there are no characters showing up.
+
+06:21.000 --> 06:23.800
+Now, something worth noting about the vif directive,
+
+06:23.800 --> 06:27.600
+though, is that when you use the vif directive, what view
+
+06:27.600 --> 06:33.120
+is actually doing is, if we take a look here,
+
+06:33.120 --> 06:36.480
+is that the UL that you have here for the else condition
+
+06:36.480 --> 06:39.040
+does not even exist on the DOM.
+
+06:39.040 --> 06:42.520
+So basically, the elements are being destroyed and recreated
+
+06:42.520 --> 06:44.160
+each time you toggle that.
+
+06:44.160 --> 06:46.520
+So as you can see here now, if we take a look at the app,
+
+06:46.520 --> 06:48.880
+you'll notice here that the UL is president,
+
+06:48.880 --> 06:51.080
+that the p tag is gone.
+
+06:51.080 --> 06:54.660
+And so this is contrary to another directive
+
+06:54.660 --> 06:57.560
+that you will see in view called v-show, which is,
+
+06:57.560 --> 06:59.680
+I'll say, it's less popular cousin.
+
+06:59.680 --> 07:01.360
+And that's because what v-show does
+
+07:01.360 --> 07:05.280
+is it toggles the visibility of the element via CSS.
+
+07:05.280 --> 07:07.240
+And so the reason you want those two different approaches
+
+07:07.240 --> 07:12.000
+is because there are times where it might be a performance
+
+07:12.000 --> 07:15.880
+bottleneck of destroying a list of thousands of items
+
+07:15.880 --> 07:17.920
+and then having the DOM recreated every time someone
+
+07:17.920 --> 07:19.000
+toggles it on and off.
+
+07:19.000 --> 07:21.040
+And you might just want to show or hide it.
+
+07:21.040 --> 07:23.200
+So that's where v-show, v-hide could be very useful
+
+07:23.200 --> 07:24.360
+in those regards.
+
+07:24.360 --> 07:29.920
+So once again, the idea here, building on what we know
+
+07:29.920 --> 07:31.680
+and trying to make it easy for us to do
+
+07:31.680 --> 07:33.000
+the right performance optimization.
+
+07:33.120 --> 07:35.320
+That's a trade-off to consider when using v-f.
+
+07:35.320 --> 07:37.240
+But again, I would say 95% of the time,
+
+07:37.240 --> 07:38.480
+that is what you want to use.
+
+07:38.480 --> 07:41.000
+But the moment you start thinking, oh, users
+
+07:41.000 --> 07:42.360
+are going to be toggling this a lot,
+
+07:42.360 --> 07:46.840
+and it might be expensive to destroy it, reach out for v-show.
+

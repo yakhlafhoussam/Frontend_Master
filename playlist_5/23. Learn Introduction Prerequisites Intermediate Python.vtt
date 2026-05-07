@@ -1,0 +1,248 @@
+WEBVTT
+
+00:00.000 --> 00:11.960
+For this third exercise, an object oriented programming, we're going to learn about classes
+
+00:11.960 --> 00:21.080
+and self-instance variables, inheritance, and also using the IS subclass and IS instance methods
+
+00:21.080 --> 00:25.040
+to learn a little bit more about our class structure.
+
+00:25.040 --> 00:32.040
+This time around we're going to be making some files, so I'm going to make a new file and
+
+00:32.040 --> 00:42.560
+I'm going to save it as classexample.py, just in the root here.
+
+00:42.560 --> 00:46.760
+And we're going to practice making a simple class.
+
+00:46.760 --> 00:51.360
+We're going to pass in several variables and then we're going to save them to the instance
+
+00:51.360 --> 00:54.240
+by using self.
+
+00:54.240 --> 01:04.000
+So we'll type class vehicle, define that dunder in it class, and what do I have to pass
+
+01:04.000 --> 01:06.000
+to dunder in it?
+
+01:06.000 --> 01:08.000
+Self.
+
+01:08.000 --> 01:13.560
+Even if I accept no arguments, self always has to be there, but we will take a few arguments
+
+01:13.560 --> 01:22.680
+we're going to take a make, a model, and the fuel is going to be gas.
+
+01:22.680 --> 01:29.400
+And to save those values to our instance, we're going to have to do a self.make is equal
+
+01:29.400 --> 01:42.440
+to make, self.model is equal to model, self.fuel is equal to fuel.
+
+01:42.440 --> 01:48.360
+Okay, yesterday we talked about main methods and when we would want to put our code in
+
+01:48.360 --> 01:52.120
+a main method, the distor reminder is not required.
+
+01:52.120 --> 01:58.960
+So for these simple exercises, I'm just going to put the code where I use the class I defined
+
+01:58.960 --> 02:01.600
+just right underneath here in the same file.
+
+02:01.600 --> 02:05.160
+Just remember, indentation is important.
+
+02:05.160 --> 02:10.800
+So this indentation level belongs to this method.
+
+02:10.800 --> 02:14.720
+This indentation level where def is belongs to the class.
+
+02:14.720 --> 02:17.720
+So if we're going to want to use this class, we're going to have to break out of that
+
+02:17.720 --> 02:19.840
+class's indentation level.
+
+02:19.840 --> 02:29.720
+And I'm going to say that my daily car is a vehicle, and it's a Subaru cross truck.
+
+02:29.720 --> 02:37.600
+Okay, and let's take a look at what this prints out, too.
+
+02:37.600 --> 02:44.640
+So remember the fastest way to run this in Python in DS code is just to say Python
+
+02:44.680 --> 02:48.560
+run Python file in terminal.
+
+02:48.560 --> 02:50.560
+And we see that.
+
+02:50.560 --> 02:52.400
+Yeah, right.
+
+02:52.400 --> 02:56.200
+It prints out that it's a vehicle object.
+
+02:56.200 --> 03:00.240
+And you see this dundre main here.
+
+03:00.240 --> 03:03.440
+We talked about why that is in the introduction class.
+
+03:03.440 --> 03:08.160
+Can anyone remind me?
+
+03:08.160 --> 03:12.000
+That gets set when we run this script directly.
+
+03:12.000 --> 03:16.560
+So that's the same dundre main that you check for if you want to have a main method.
+
+03:16.560 --> 03:23.360
+And this is a memory address, so nothing useful at all.
+
+03:23.360 --> 03:26.760
+But we do have access to the variables.
+
+03:26.760 --> 03:30.720
+And so I'm going to comment this out.
+
+03:30.720 --> 03:35.280
+And instead, I'll print out an F string.
+
+03:35.280 --> 03:48.840
+And I'll say, I drive daily.make daily.model.
+
+03:48.840 --> 03:53.440
+It runs on daily.fuel.
+
+03:53.440 --> 04:00.760
+Okay, if I run this, okay, a little bit of an improvement, right?
+
+04:00.760 --> 04:05.800
+Because I drive a Subaru cross track and it runs on gas.
+
+04:05.800 --> 04:13.080
+And I'll just put a period there to finish our sentence.
+
+04:13.080 --> 04:25.920
+Remember that the better way of doing this is to create a repper or a stir.
+
+04:25.920 --> 04:32.880
+So let's make a quick stir method here.
+
+04:32.880 --> 04:34.760
+And it'll take a self.
+
+04:34.760 --> 04:40.400
+Why don't we need to pass in any of the other arguments?
+
+04:40.400 --> 04:42.760
+Make model fuel.
+
+04:42.760 --> 04:46.960
+Sorry, you applied with them that self is attached to that.
+
+04:46.960 --> 04:48.360
+Right, it's attached to the self.
+
+04:48.360 --> 04:51.600
+It's attached to the instance.
+
+04:51.600 --> 04:58.040
+So now I can, I'm just going to cut the string here and paste it here.
+
+04:58.040 --> 04:59.600
+But this isn't going to work.
+
+04:59.600 --> 05:00.600
+Why?
+
+05:00.600 --> 05:03.040
+There's two problems.
+
+05:03.040 --> 05:04.440
+I need to return it.
+
+05:04.440 --> 05:05.440
+I need to return it.
+
+05:05.440 --> 05:07.600
+So it's a certain needs to return a string.
+
+05:07.600 --> 05:09.880
+What's the other problem here?
+
+05:09.880 --> 05:13.400
+Daily is not a scope, not a self instead of it.
+
+05:13.400 --> 05:14.400
+Daily is out of scope.
+
+05:14.400 --> 05:19.560
+We want self, so self.make, self.model, self.fuel.
+
+05:19.560 --> 05:28.080
+Now, I'm going to uncomment my print daily.
+
+05:28.080 --> 05:30.800
+And should see the same result.
+
+05:30.800 --> 05:36.920
+So instead of having to conjure up this long string every time I want to represent my vehicle,
+
+05:36.920 --> 05:42.120
+I can just use stir instead, and then it's in one place.
+
+05:42.120 --> 05:46.600
+Okay, so we talked about class variables as well.
+
+05:46.600 --> 05:55.480
+It enables that exist for all instances of that class, whether or not you, it exists
+
+05:55.480 --> 05:58.600
+on the type as well as all instances of that class.
+
+05:58.600 --> 06:02.960
+So you don't even have to have an instance to use it and see it.
+
+06:02.960 --> 06:14.040
+So we're going to make a number of wheels, class variable here.
+
+06:14.040 --> 06:18.600
+And I'm going to say four.
+
+06:18.600 --> 06:31.120
+And now I can print out my daily.number of wheels.
+
+06:31.120 --> 06:37.320
+And I'll just say this is the instance for the instance.
+
+06:37.320 --> 06:57.960
+I can print out the class or type variable as well.
+
+06:57.960 --> 07:09.400
+How do I access that class, not an instance, just the class?
+
+07:09.400 --> 07:10.400
+That's right.
+
+07:10.400 --> 07:15.400
+Capital V vehicle.
+
+07:15.400 --> 07:21.960
+Okay, I'm going to run this.
+
+07:21.960 --> 07:25.000
+See for the class it's four for the instance it's four.
+

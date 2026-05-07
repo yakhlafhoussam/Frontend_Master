@@ -1,0 +1,137 @@
+WEBVTT
+
+00:00.000 --> 00:06.000
+I'm not going to dive into this too much, but there are a few important concepts and syntax
+
+00:06.000 --> 00:11.000
+that I would like you to be familiar with.
+
+00:11.000 --> 00:16.000
+When you work with files, there are different modes for opening them.
+
+00:16.000 --> 00:17.000
+Don't recognize them.
+
+00:17.000 --> 00:18.000
+Sorry, sorry.
+
+00:18.000 --> 00:21.000
+Don't memorize them.
+
+00:21.000 --> 00:27.000
+Instead, check out this cheat sheet for when you need it and forget it.
+
+00:27.000 --> 00:30.000
+It's kind of useless knowledge.
+
+00:30.000 --> 00:35.000
+The important one, though, is our, which is open for reading.
+
+00:35.000 --> 00:37.000
+That is the default.
+
+00:37.000 --> 00:43.000
+So if you don't pass in a file mode, that's the one that it's going to be.
+
+00:43.000 --> 00:46.000
+There are other file modes, like,
+
+00:46.000 --> 00:49.000
+Open for writing, but truncate the file.
+
+00:49.000 --> 00:52.000
+There's a text mode.
+
+00:52.000 --> 00:56.000
+Generally, you'll probably only be working with our or W.
+
+00:57.000 --> 01:00.000
+Or occasionally A, which means open this file.
+
+01:00.000 --> 01:04.000
+I would like to write to it, but if that file already exists,
+
+01:04.000 --> 01:08.000
+append to the end of it instead of overwriting it.
+
+01:08.000 --> 01:14.000
+So opening a file and Python looks something like this.
+
+01:14.000 --> 01:16.000
+You call open on it.
+
+01:16.000 --> 01:20.000
+Remember that will open a file and read mode by defaults.
+
+01:20.000 --> 01:25.000
+If you want to open a file for writing, but replace any existing file,
+
+01:25.000 --> 01:30.000
+use mode W, or if you want to open a file for reading and writing,
+
+01:30.000 --> 01:33.000
+but append to the end of a file.
+
+01:33.000 --> 01:37.000
+If it already exists, use mode A.
+
+01:37.000 --> 01:44.000
+Now, the thing about files is you want to call close on any open file that you have
+
+01:44.000 --> 01:49.000
+to release the handle that your program has on that file back to the operating system.
+
+01:49.000 --> 01:52.000
+Otherwise, you're locking it up.
+
+01:53.000 --> 01:58.000
+And if your program crashes before you happen to call close,
+
+01:58.000 --> 02:01.000
+you might end up in some pretty weird states.
+
+02:01.000 --> 02:07.000
+So Python has some shortcuts syntax called a context manager.
+
+02:07.000 --> 02:12.000
+And a context manager is like taking a block of code that depends on some resource,
+
+02:12.000 --> 02:14.000
+like a file.
+
+02:14.000 --> 02:21.000
+And there's some stuff that happens under the hood when you use this syntax,
+
+02:21.000 --> 02:26.000
+this keyword with, that will then close the file for you,
+
+02:26.000 --> 02:33.000
+and also take care of any cleanup if this happens to throw an exception.
+
+02:33.000 --> 02:37.000
+So if you are familiar with other programming languages,
+
+02:37.000 --> 02:42.000
+it's similar to a try and finally block, but it's a lot cleaner to look at.
+
+02:42.000 --> 02:48.000
+So you can think of context managers as code that just automatically provisions a resource
+
+02:48.000 --> 02:53.000
+before your code runs, and then clean the up afterward.
+
+02:53.000 --> 02:59.000
+And that open function that we saw earlier, that works as a context manager.
+
+02:59.000 --> 03:02.000
+And so opening a file can look like this.
+
+03:02.000 --> 03:06.000
+And then we don't have to call close on that file every time,
+
+03:06.000 --> 03:09.000
+and litter our code with open closed open closed,
+
+03:09.000 --> 03:14.000
+we can use this with keyword and know that that closing is happening for us.
+

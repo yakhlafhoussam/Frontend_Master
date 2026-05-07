@@ -1,0 +1,533 @@
+WEBVTT
+
+00:00.000 --> 00:04.180
+What I want you to do is on Say Love You, go ahead and the user page,
+
+00:04.180 --> 00:08.460
+we had a bunch of users, go ahead and just make those things links that you can click.
+
+00:08.460 --> 00:14.860
+So you can go to their specific ID and then show that user's basically data.
+
+00:14.860 --> 00:17.180
+And don't worry about the nested routes bonus, but I mean,
+
+00:17.180 --> 00:19.380
+if you happen to have the time, feel free to check that out.
+
+00:19.380 --> 00:22.740
+The other part of the exercise I totally forgot is that you know, there's a login page.
+
+00:22.740 --> 00:26.780
+Basically what I want you to do is just check to make sure that the user types an email in there,
+
+00:26.780 --> 00:29.140
+just something basic, you don't need a full regex thing.
+
+00:29.140 --> 00:33.380
+Maybe check like that the characters are greater than three and includes an at symbol.
+
+00:33.380 --> 00:39.060
+And if that happens, then when they click login, allow the user to navigate over to another page.
+
+00:39.060 --> 00:43.060
+So whether you want to navigate to the user's page, practice that programmatic navigation.
+
+00:47.060 --> 00:50.780
+So the way this is going to work is we're going to go inside of our Say Love You.
+
+00:50.780 --> 00:53.180
+Say Love You, I keep messing that up actually.
+
+00:53.180 --> 00:56.420
+I see the Say Love You and then Run Dev.
+
+00:56.420 --> 00:57.500
+Looks like we're good.
+
+00:57.500 --> 01:01.820
+And then inside of Chrome, boom, there we are.
+
+01:01.820 --> 01:06.020
+Oh, 74, I just realized, because I have two running.
+
+01:06.020 --> 01:06.540
+Great.
+
+01:06.540 --> 01:08.340
+OK.
+
+01:08.340 --> 01:13.780
+So the exercise here was to go into the login and start by programmatically navigating it somewhere.
+
+01:13.780 --> 01:17.900
+So inside of our source, inside of our views, we're going to look at our login page.
+
+01:17.900 --> 01:21.980
+And all right, we're just basically going to do a quick check to make sure we actually have an email.
+
+01:21.980 --> 01:25.900
+So again, when I do anything too fancy here, we're just going to v-model to something called,
+
+01:25.900 --> 01:29.180
+let's say, user, or let's say, email input.
+
+01:29.180 --> 01:30.380
+That's what I'll call it.
+
+01:30.380 --> 01:34.100
+And so I'll import a ref from view, because this is something we want to track.
+
+01:34.100 --> 01:38.740
+And so we'll say cons email input equals ref, that is an empty string by default.
+
+01:38.740 --> 01:40.580
+So to show that this works, though, I'll do 1, 2, 3.
+
+01:40.580 --> 01:42.660
+You'll notice that it does populate up.
+
+01:42.660 --> 01:43.140
+So that's fine.
+
+01:43.140 --> 01:44.900
+We know that it's working.
+
+01:44.900 --> 01:51.740
+The thing we need to check, though, is that when the user clicks here and we'll call this login,
+
+01:51.740 --> 01:58.060
+so cons login, we need to actually make sure that email input actually has the thing, right?
+
+01:58.060 --> 02:00.740
+So log test, whoops, not test.
+
+02:00.740 --> 02:04.460
+So we'll log email input dot value.
+
+02:04.460 --> 02:11.020
+And so to show what I mean by this is we can see here, if I go Ben at Ben, then we can continue with email.
+
+02:11.020 --> 02:14.180
+You'll see that that is actually being rendered out as expected.
+
+02:14.180 --> 02:15.660
+OK, great.
+
+02:15.700 --> 02:24.260
+So now all we need to do is just do a simple check to say, if email dot input dot value, let's say, so this is a string, right?
+
+02:24.260 --> 02:27.340
+So I think we actually can do that includes an at symbol.
+
+02:27.340 --> 02:33.340
+And the email input dot value dot length is greater than 3.
+
+02:33.340 --> 02:35.940
+We'll just keep the logic simple here.
+
+02:35.940 --> 02:39.500
+Then we'll say valid user.
+
+02:39.500 --> 02:43.380
+Else log invalid user.
+
+02:45.660 --> 02:48.500
+OK, let's see if that works.
+
+02:48.500 --> 02:54.700
+We have test, nothing's working at, huh, nothing is working.
+
+02:54.700 --> 02:56.460
+Why? Because, well, we didn't click on anything.
+
+02:56.460 --> 02:56.820
+There you go.
+
+02:56.820 --> 02:58.060
+That's a valid user.
+
+02:58.060 --> 03:00.980
+If we just do test invalid user because there's no at symbol.
+
+03:00.980 --> 03:03.380
+But then we just do at by itself also invalid user.
+
+03:03.380 --> 03:05.740
+OK, easy enough as an email test.
+
+03:05.740 --> 03:10.020
+Again, just so you know, this is not production grade quality email validation.
+
+03:10.020 --> 03:12.340
+Just know this is just for demo purposes.
+
+03:12.340 --> 03:13.300
+We have our valid user.
+
+03:13.300 --> 03:14.060
+So what do we want to do?
+
+03:14.060 --> 03:15.340
+We want to navigate it.
+
+03:15.380 --> 03:17.220
+We want to navigate our users to a page.
+
+03:17.220 --> 03:17.940
+How do we do that?
+
+03:17.940 --> 03:25.100
+Well, let's go ahead and import our use router from view router.
+
+03:25.100 --> 03:30.700
+Then we will go ahead and construct it by calling it our router using use router.
+
+03:30.700 --> 03:33.060
+And then all we need to do is inside here.
+
+03:33.060 --> 03:35.620
+We'll just leave the console log because that's nice to have for now.
+
+03:35.620 --> 03:39.420
+As you router that push and let's go to user just like that.
+
+03:39.420 --> 03:41.620
+And so whoops, something's not happy.
+
+03:41.620 --> 03:42.380
+What's going on?
+
+03:42.380 --> 03:44.140
+Well, I have typos up here at the top.
+
+03:44.140 --> 03:45.260
+That's what's wrong.
+
+03:45.260 --> 03:47.420
+Let's save here much better.
+
+03:47.420 --> 03:50.540
+OK, so we do the T and then we continue with email.
+
+03:50.540 --> 03:51.420
+Nothing's happening.
+
+03:51.420 --> 03:52.380
+Great.
+
+03:52.380 --> 03:55.060
+Test at email.com.
+
+03:55.060 --> 03:56.580
+Continue with email.
+
+03:56.580 --> 03:59.220
+Look at that programmatic navigation.
+
+03:59.220 --> 04:03.180
+Easy peasy with the composition API in that we imported it.
+
+04:03.180 --> 04:04.660
+Use the router to set it up.
+
+04:04.660 --> 04:10.500
+And then we just push the user once we had fulfilled our logic for the app.
+
+04:10.500 --> 04:13.980
+OK, the final thing that we need to do is that we need the user to be able to
+
+04:13.980 --> 04:15.500
+actually look at different things.
+
+04:15.500 --> 04:19.420
+So when we click on it, they'll actually be able to at least see user one, user two.
+
+04:19.420 --> 04:21.540
+Or in this case, we actually might even just want to show their name.
+
+04:21.540 --> 04:22.860
+Let's do that.
+
+04:22.860 --> 04:27.060
+So the way we might do that is we'll go inside of our routes.
+
+04:27.060 --> 04:27.780
+So I think it's in.
+
+04:27.780 --> 04:29.380
+Oh, kind of we're managing it inside of here.
+
+04:29.380 --> 04:30.580
+That's totally fine.
+
+04:30.580 --> 04:34.620
+So we'll basically create a user page.
+
+04:34.620 --> 04:37.420
+Well, it looks like I didn't use name that quite well.
+
+04:37.420 --> 04:40.300
+So what I'm going to do for now just to make it a little bit easier is I'm
+
+04:40.300 --> 04:42.820
+going to call it user detail page.
+
+04:42.820 --> 04:47.340
+But you should note that user page is slightly semantically inaccurate.
+
+04:47.340 --> 04:51.980
+So the h1 here will be our user.
+
+04:51.980 --> 04:55.340
+So I'll just say user name so it's easy to see that we switched pages.
+
+04:55.340 --> 05:02.100
+And then we have our path to slash user slash.
+
+05:02.100 --> 05:06.260
+And then this time we'll call the variable name instead of id to show you how that works.
+
+05:06.260 --> 05:08.780
+Component will import what?
+
+05:08.780 --> 05:16.380
+Will import slash views slash user detail page.view save.
+
+05:16.380 --> 05:21.020
+OK, to show that this works, we'll go inside of our user page.
+
+05:21.020 --> 05:25.140
+And inside of each of these loops, rather than just having the card here, what we're
+
+05:25.140 --> 05:32.820
+going to do is we're going to actually wrap it here inside of a router link too.
+
+05:32.820 --> 05:36.620
+And so the router card will just go inside of our router link.
+
+05:36.660 --> 05:40.180
+And what we're going to route it to is going to be a JavaScript.
+
+05:40.180 --> 05:43.500
+We're going to dynamically bind this one because we need to dynamically create it,
+
+05:43.500 --> 05:45.980
+which is going to be slash user slash.
+
+05:45.980 --> 05:49.380
+And then we'll do the basically user dot name.
+
+05:49.380 --> 05:52.580
+This might be a little bit tricky, though, because I know there are spaces in here.
+
+05:52.580 --> 05:58.700
+OK, so if we refresh this, ooh, did not like that user.
+
+05:58.700 --> 06:00.820
+Oh, right, because the loop is in here.
+
+06:00.820 --> 06:03.940
+So my mistake, we actually cannot do it at this level.
+
+06:03.940 --> 06:06.380
+At least the way it's currently architected, I would need to actually go inside
+
+06:06.380 --> 06:08.940
+of user card in order to actually do this.
+
+06:08.940 --> 06:16.500
+So inside of here is where then we would actually then say, OK, wrap this in a router link.
+
+06:16.500 --> 06:26.940
+And inside of here is where we can say to ES6 template slash user slash user dot name,
+
+06:26.940 --> 06:28.300
+just like that.
+
+06:28.300 --> 06:28.740
+There you go.
+
+06:28.740 --> 06:30.180
+We see our link showing up now.
+
+06:30.180 --> 06:32.260
+Wonderful.
+
+06:32.300 --> 06:38.340
+So if we inspect all of these, we'll see that we can see slash liangram.
+
+06:38.340 --> 06:39.140
+Great.
+
+06:39.140 --> 06:44.020
+So if we click on it, we should see, oh, we are correctly being navigated to username.
+
+06:44.020 --> 06:45.060
+So that's good.
+
+06:45.060 --> 06:49.860
+But we need to actually make sure this shows up in a way that actually takes into account
+
+06:49.860 --> 06:51.540
+the actual user's name.
+
+06:51.540 --> 06:52.380
+So how do we do that?
+
+06:52.380 --> 06:54.260
+Well, we need to get info on the route.
+
+06:54.260 --> 06:55.900
+So where are we going to reach for?
+
+06:55.900 --> 07:00.700
+We're reaching for use route from view router.
+
+07:00.700 --> 07:04.580
+And then we'll initialize the route by calling use route.
+
+07:04.580 --> 07:09.900
+And then we can basically log the route.params to show you what's happening here.
+
+07:09.900 --> 07:14.540
+And you'll notice that inside of here, we have a name, because that's what we named
+
+07:14.540 --> 07:17.820
+it inside of our routes.
+
+07:17.820 --> 07:20.620
+So now that we have that, great.
+
+07:20.620 --> 07:26.340
+All we need to do now is just swap it out to go route.params.name.
+
+07:26.340 --> 07:30.700
+Save, choo, choo, choo, choo.
+
+07:30.700 --> 07:32.380
+And there we have it.
+
+07:32.380 --> 07:37.380
+So we've got user again, Irvin Clementine.
+
+07:37.380 --> 07:38.620
+It works.
+
+07:38.620 --> 07:39.140
+Question?
+
+07:39.140 --> 07:46.380
+What if you wanted to pass that user object to the profile page and have
+
+07:46.380 --> 07:50.660
+additional information that is not on that user's list page?
+
+07:50.660 --> 07:52.140
+That is a great question.
+
+07:52.140 --> 07:55.820
+So what I want you to check out for this, so the question here is around the fact
+
+07:55.820 --> 07:58.300
+that what if you actually want to pass that user information to the route,
+
+07:58.300 --> 08:01.900
+right, some sort of props passing that kind of stuff?
+
+08:01.900 --> 08:05.620
+I believe it's in, I believe it's actually in the program.
+
+08:05.620 --> 08:08.900
+Oh, passing props to rock components, literally this page.
+
+08:08.900 --> 08:12.580
+So this will allow you to do kind of some interesting stuff regarding how you
+
+08:12.580 --> 08:13.820
+pass parameters.
+
+08:13.820 --> 08:18.220
+But what's interesting too is that if you turn certain routes as props true,
+
+08:18.220 --> 08:22.300
+it'll actually drop the parameters and certain things as props to the page.
+
+08:22.300 --> 08:23.700
+So you don't even need to use use route.
+
+08:23.700 --> 08:28.220
+It'll actually be passed as a prop to the component, which again takes a little
+
+08:28.220 --> 08:29.460
+wrapping your mind around.
+
+08:29.460 --> 08:32.580
+So it's one of those kind of intermediate to advanced techniques that if it's
+
+08:32.580 --> 08:35.380
+something you're looking for, take a read of this document and see if it fits
+
+08:35.380 --> 08:36.260
+your scenario.
+
+08:36.260 --> 08:39.060
+But generally speaking, what we've been doing thus far regarding just grabbing
+
+08:39.060 --> 08:43.460
+the route.pramsid, that fulfills, I would say, a good 70% to 80% of the use cases
+
+08:43.460 --> 08:45.820
+out there, which is what I wanted to make sure that we covered.
+
+08:45.820 --> 08:49.500
+Are you going to get burnt by deep linking to that page?
+
+08:49.500 --> 08:51.060
+Deep linking to the page.
+
+08:51.100 --> 08:57.940
+Passing in props, an object through the link, and you deep link to it,
+
+08:57.940 --> 09:01.780
+without having visited the page before that, does that burn you?
+
+09:01.780 --> 09:04.540
+That's where the state management can be very tricky.
+
+09:04.540 --> 09:08.740
+So that's why you have to be careful when you're passing that kind of stuff
+
+09:08.740 --> 09:10.620
+around, what stuff is already accessible.
+
+09:10.620 --> 09:14.260
+Because earlier during the exercise, if you all noticed, when I loaded the home
+
+09:14.260 --> 09:18.340
+page for sale of you, the five users actually don't show up.
+
+09:18.340 --> 09:20.460
+So if I refresh this page, you'll notice it's gone.
+
+09:20.460 --> 09:22.820
+And the reason for that, it's not a bug, actually.
+
+09:22.820 --> 09:27.500
+It's how it's intended, because user page is what's actually loading the data.
+
+09:27.500 --> 09:31.420
+And so unless you visit the user page, home page has no idea what these five
+
+09:31.420 --> 09:31.920
+things are.
+
+09:31.920 --> 09:35.500
+And so as far as the state's concern, the composable's concern, it doesn't exist.
+
+09:36.620 --> 09:41.100
+So knowing where to import, how to make sure they stay in sync,
+
+09:41.100 --> 09:43.980
+that's part of the puzzle of the game that we play.
+

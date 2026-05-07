@@ -1,0 +1,185 @@
+WEBVTT
+
+00:00.000 --> 00:10.200
+Let's say that we wanted to write a custom class that represented the GitHub repositories
+
+00:10.200 --> 00:15.400
+that we did in our final exercise and introduction to Python.
+
+00:15.400 --> 00:31.000
+So our final exercise, let me open up that file quickly.
+
+00:31.000 --> 00:37.560
+So if we remember in our final exercise, we created a query and then we got back this list
+
+00:37.560 --> 00:41.240
+of items from the GitHub API.
+
+00:41.240 --> 00:46.120
+And then we looped through all the results, which is a dictionary.
+
+00:46.120 --> 00:50.680
+And we got the language, we got the number stars, we got the name, and we printed this
+
+00:50.680 --> 00:51.680
+out.
+
+00:51.680 --> 00:59.360
+How could we refactor this into a custom class?
+
+00:59.360 --> 01:06.560
+So the first thing we would want to do is make a class called GitHub repo.
+
+01:06.560 --> 01:10.960
+And we would want to create a constructor here.
+
+01:10.960 --> 01:16.440
+And what are the variables that we would take here?
+
+01:16.440 --> 01:17.880
+No languages, right?
+
+01:17.880 --> 01:24.640
+The repo has a single language, right?
+
+01:24.640 --> 01:26.120
+So this is each repository.
+
+01:26.120 --> 01:31.600
+So it would take a name, a language, and the number of stars that it has.
+
+01:31.600 --> 01:44.120
+And then we would just assign these values to the instance.
+
+01:44.120 --> 01:51.200
+If I wanted to take this print out here, the string, and make it so that it's available
+
+01:51.200 --> 01:58.680
+on every instance of my GitHub repo class, what method would I want to put it in?
+
+01:58.680 --> 02:03.000
+This nice human readable print out, right?
+
+02:03.000 --> 02:05.000
+And not just string, but what?
+
+02:05.000 --> 02:06.000
+I don't understand.
+
+02:06.000 --> 02:07.000
+I don't understand.
+
+02:07.000 --> 02:08.000
+I don't understand.
+
+02:08.000 --> 02:09.640
+And that also takes the self.
+
+02:09.640 --> 02:13.040
+We don't need any of the other variables because we know that they're attached to the
+
+02:13.040 --> 02:14.640
+instance.
+
+02:14.640 --> 02:21.560
+And we want to return a string here, right?
+
+02:21.560 --> 02:31.560
+And use self.name, self.language, and self.stars.
+
+02:31.560 --> 02:40.960
+So I'm going to run this file again in this interactive mode.
+
+02:40.960 --> 02:45.080
+And now I can make a new GitHub repo.
+
+02:45.080 --> 02:49.840
+And again, even though these are required variables, I can provide names here if I want
+
+02:49.840 --> 02:50.840
+to.
+
+02:50.840 --> 02:56.480
+So let's say this is view.
+
+02:56.480 --> 03:08.440
+And the language is JavaScript, and the number of stars is 50,000.
+
+03:08.440 --> 03:11.760
+I want to save this into a variable.
+
+03:11.760 --> 03:15.120
+Why are we seeing this here when we make a new GitHub repo?
+
+03:15.120 --> 03:19.560
+I'm not a generator.
+
+03:19.560 --> 03:24.680
+I only implemented star, but I didn't implement what other method.
+
+03:24.680 --> 03:25.680
+Repper?
+
+03:25.680 --> 03:26.880
+Repper.
+
+03:26.880 --> 03:34.760
+And when we enter this instance into the repo without a print or anything like that,
+
+03:34.760 --> 03:37.560
+it uses the repper.
+
+03:37.560 --> 03:42.400
+Now that I've assigned a variable view, I can double check that assumption.
+
+03:42.400 --> 03:46.920
+If I ask for the repper, it's that.
+
+03:46.920 --> 03:51.800
+And keep in mind, for those kind of built-in types, the zip, the range.
+
+03:51.800 --> 03:56.080
+If you see something like that, it means that it might be a generator.
+
+03:56.080 --> 03:57.480
+It's not guaranteed.
+
+03:57.480 --> 04:02.920
+But if you see this for your own custom classes, it means that you forgot to implement
+
+04:02.920 --> 04:05.000
+star or repper.
+
+04:05.000 --> 04:08.560
+But now if we look at the star of you, oh, sorry.
+
+04:08.560 --> 04:10.360
+I mean a mistake here.
+
+04:10.360 --> 04:16.680
+It's a num star.
+
+04:16.680 --> 04:26.240
+And I'm just going to copy this into the file so that I can just run a view here.
+
+04:26.240 --> 04:30.800
+Under the hood, print a call star, because we're using print when we want to represent
+
+04:30.800 --> 04:36.440
+to the user, and star is the one that is the user friendly one.
+
+04:36.440 --> 04:47.080
+So I'll run that Python file in the terminal, oops, have to you.
+
+04:47.080 --> 04:52.920
+For some reason, my VS code terminal just is not happy, so I'm going to delete that one.
+
+04:52.920 --> 04:54.680
+And run it again, and there we go.
+
+04:54.680 --> 04:58.880
+We'll see that view is a JavaScript repo with 50,000 stars.
+
+04:58.880 --> 05:02.880
+So this is how we start encapsulating some of the data we've been working with.
+

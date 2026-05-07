@@ -1,0 +1,209 @@
+WEBVTT
+
+00:00.000 --> 00:12.040
+We're going to do an exercise where we cover our syntax errors, our custom exceptions, talk
+
+00:12.040 --> 00:18.760
+about tri-accept, and see how we might be able to re-raise errors.
+
+00:18.760 --> 00:27.080
+Some common types of exceptions we've seen, I try to define a function, and I don't put
+
+00:27.080 --> 00:33.760
+it in the right indentation, I'll get an indentation error here.
+
+00:33.760 --> 00:44.080
+We saw syntax error yesterday, it's a little bit harder to trigger syntax error for a list
+
+00:44.080 --> 00:49.760
+here, but let's say it did something like that, that's a syntax error, invalid syntax, and
+
+00:49.840 --> 00:51.840
+put in the value.
+
+00:51.840 --> 00:58.960
+If I try to do this, and I forgot the comma between the last two values, it's also
+
+00:58.960 --> 01:06.920
+a syntax error, so some common exceptions that we might see, one divided by zero, that's
+
+01:06.920 --> 01:19.680
+that zero division error that we've seen, and some of those other common exceptions are
+
+01:19.680 --> 01:28.920
+type error, so if we try to add an integer in a string, that's an unsupported
+
+01:28.920 --> 01:35.720
+operand right, we would need to call, stir, on that number, before we can concatenate them
+
+01:35.720 --> 01:42.040
+together, a value error like we saw earlier, if I try to make an integer out of a string
+
+01:42.040 --> 01:49.240
+a, it's a value error, I'd say, I don't know what this is, is a number, and lastly,
+
+01:49.240 --> 02:00.280
+the key error, so if I try to make a dictionary, with that, hello, for the key and a world
+
+02:00.360 --> 02:12.640
+has the value for that key, and I try to use a key that doesn't exist, and I get a key error.
+
+02:12.640 --> 02:22.760
+In terms of raising our own exceptions, the classes that we make should inherit from exception,
+
+02:22.760 --> 02:31.480
+and generally end with, usually you'll see error, very occasionally you'll see exception,
+
+02:31.480 --> 02:38.040
+but usually naming these errors more common, as you've seen the type error value error,
+
+02:38.040 --> 02:45.720
+key error, et cetera, so to follow that convention, let me name this my error, and subclass
+
+02:45.720 --> 02:55.400
+from exception, do I need to have anything in this class, or can it just be empty, right?
+
+02:55.400 --> 03:03.520
+And to, to raise this exception, I use the raised key word, and that'll generate that
+
+03:03.520 --> 03:07.720
+trace back there.
+
+03:07.720 --> 03:17.080
+I can also make my own custom exceptions a little bit fancier, so I can say class my error,
+
+03:17.080 --> 03:28.000
+extends from exception, and provide my own constructor, and say self and message.
+
+03:28.000 --> 03:40.480
+And now I'm going to change my message, and it's going to say error, system, failure.
+
+03:40.480 --> 03:55.720
+I mean, that's a really serious error, followed by the message, and what do I need to
+
+03:55.720 --> 04:05.080
+do, so that this, my new message is propagated up, super, super, right, and super will
+
+04:05.080 --> 04:12.200
+call the constructor on which class, exception, right, so we're going to need to call dot in
+
+04:12.200 --> 04:17.160
+it there, and we're going to pass in our new message.
+
+04:17.160 --> 04:29.360
+Now, if I raise my error, is this going to work, it won't, because message is required,
+
+04:29.360 --> 04:35.720
+and I did not provide one, so I'm going to provide a helpful error message here, well,
+
+04:35.720 --> 04:42.200
+okay, and that's what we get.
+
+04:42.200 --> 04:48.320
+Programming is very serious, it's very serious business, no laughing a lot in this class,
+
+04:48.320 --> 04:49.320
+just kidding.
+
+04:49.320 --> 05:01.120
+Okay, I'm trying accept if I have a dictionary here, the key is hello, and the value for
+
+05:01.120 --> 05:04.800
+that key is world.
+
+05:04.800 --> 05:15.040
+I can try to print out my dictionary, that look for random key, it's not in there, right?
+
+05:15.040 --> 05:27.240
+So what do I want to catch in this instance, which type of key are, yep, oops, I think I messed
+
+05:27.240 --> 05:34.640
+up my, let's see, right here, forgot that closing parentheses, okay, I'm going to accept
+
+05:34.640 --> 05:50.360
+on here and print no key found, okay, works as expected, I can also add a label to that exception
+
+05:50.360 --> 05:55.880
+if I wanted to do anything with it, generally more useful for our own custom exceptions,
+
+05:55.880 --> 05:58.760
+right?
+
+05:58.760 --> 06:12.760
+Let's say I was going to try, you know, getting some random key here, and I could accept
+
+06:12.760 --> 06:22.760
+on key error, and how do I give a variable name to that error, right, has, let's say as
+
+06:22.760 --> 06:33.880
+E, and now I can print out an upstream, and it'll say, oh no, the key, and now I can be,
+
+06:33.880 --> 06:51.880
+the key doesn't exist, and I can say error was here, we can also re-raise exceptions,
+
+06:51.880 --> 07:01.320
+so catching a, you know, runtime error or something, and then raising one of our own custom
+
+07:01.320 --> 07:16.480
+exceptions, that might be a good case for one, so I had the class my exception, and just
+
+07:16.480 --> 07:30.480
+as a reminder here, when I raise my exception, I got that, I'm sorry, I called it my error,
+
+07:30.480 --> 07:39.240
+when I raise my error, I get this very helpful message, right, so maybe what I want to
+
+07:39.240 --> 07:49.640
+do here is I'm going to loop over a range of numbers, and I'm going to do that in reverse,
+
+07:49.640 --> 08:02.840
+so if I call range with 0 and 5 and negative 1, I'm going to show you this as a list,
+
+08:02.840 --> 08:16.520
+sorry, that's not what I want, I'm going to start at 0, start at 5, go to 0, so if I wanted
+
+08:16.520 --> 08:22.520
+to print out a list of, go through a range of numbers in reverse, I would do the end value
+
+08:22.520 --> 08:27.640
+first, the start value second, so kind of flip that around and then pass in a negative
+
+08:27.640 --> 08:39.400
+number here, and as a reminder, that second argument is not inclusive, and so if I want
+
+08:39.400 --> 08:50.680
+to go to 0, we have to put minus 1 there, right, so I'm going to loop over this and say
+
+08:50.680 --> 09:05.000
+for num in this range, print out 5 divided by the number, and eventually it's going to get
+
+09:05.000 --> 09:20.360
+to 0 and say 0 division error, so instead, I can put this whole thing in a try, right, and
+
+09:20.360 --> 09:28.680
+print out 5 divided by the number, okay, just to show you, we had my, you know, my error that
+
+09:28.680 --> 09:36.520
+I can raise, and I'm going to loop over this list of numbers, and I'm going to put this
+
+09:36.520 --> 09:43.560
+in a try block, and I'm going to say try to divide 5 by that number, I'm going to accept
+
+09:43.560 --> 09:53.400
+on the 0 division error, and then I'm going to raise a different type of error, I'm going
+
+09:53.400 --> 10:09.480
+to raise my error, and say, you know, well, you tried to divide by 0, okay, so we'll see that
+
+10:09.480 --> 10:15.480
+in the repule, I'll say during the handling of that exception, another exception occurred,
+
+10:15.480 --> 10:21.400
+you won't see that particular detail in your trace backs when you run Python programs,
+
+10:22.040 --> 10:30.440
+so this exception caused another one, and I re-raised, I caught this one, and I raised another
+
+10:30.440 --> 10:33.480
+one, and so, you know, what are you trying to do here?
+

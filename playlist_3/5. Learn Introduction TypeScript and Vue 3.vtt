@@ -1,0 +1,209 @@
+WEBVTT
+
+00:00.000 --> 00:05.000
+So you'll notice that inside of the project, we have two basically two different data types.
+
+00:05.000 --> 00:07.000
+We have the restaurant, we have dishes.
+
+00:07.000 --> 00:11.000
+And so just like the restaurant card where we added prop types to the dish,
+
+00:11.000 --> 00:13.000
+we need you to do the same for the dish.
+
+00:13.000 --> 00:18.000
+And so inside of the dish card, go ahead and take what we've just learned as far as
+
+00:18.000 --> 00:21.000
+converting a component over to type script,
+
+00:21.000 --> 00:27.000
+and then importing the defining components method and just defining the types with for the dish.
+
+00:31.000 --> 00:35.000
+Working through this, I was curious how much of what we've just seen and implemented
+
+00:35.000 --> 00:39.000
+is going to be similar when using the composition API.
+
+00:39.000 --> 00:43.000
+A lot of things we're doing upfront right now is to basically accommodate the options API
+
+00:43.000 --> 00:46.000
+because we do provide a lot of conventions with that.
+
+00:46.000 --> 00:49.000
+Because for those of you who are using this keyword a lot,
+
+00:49.000 --> 00:53.000
+and this is, as you know in JavaScript, is a diabolical concept.
+
+00:53.000 --> 00:55.000
+So type script gets super super lost.
+
+00:55.000 --> 00:58.000
+And we try our best to hack around that to make your lives easier.
+
+00:58.000 --> 01:00.000
+But when it comes to composition API,
+
+01:00.000 --> 01:04.000
+I'm hoping that people will feel like it's a more native integration with,
+
+01:04.000 --> 01:06.000
+as far as using view with type script.
+
+01:06.000 --> 01:09.000
+Now I see Gullina or apologize by the mispronounce that,
+
+01:09.000 --> 01:12.000
+but I see that apparently it's not as easy to expect it.
+
+01:12.000 --> 01:15.000
+So I would love to hear from you when the time comes and as we're going through that.
+
+01:15.000 --> 01:19.000
+But in the meantime, I think let's go ahead and do the solution for the exercise.
+
+01:19.000 --> 01:23.000
+Okay, so for those here in the dish card,
+
+01:23.000 --> 01:26.000
+hopefully you didn't find this exercise too difficult.
+
+01:26.000 --> 01:30.000
+But basically we're really repeating what we did before in the restaurant card.
+
+01:30.000 --> 01:33.000
+So the first thing first is we want to use type script,
+
+01:33.000 --> 01:35.000
+so we are going to do the language attribute.
+
+01:35.000 --> 01:38.000
+And actually there was a great question earlier for those who might be nearer to view
+
+01:38.000 --> 01:41.000
+is that this language attribute is not something that's specific to script.
+
+01:41.000 --> 01:47.000
+Basically view tries to use a native attribute within its component,
+
+01:47.000 --> 01:49.000
+single file component, as much as possible.
+
+01:49.000 --> 01:52.000
+So the language attribute can also be used on style, for example.
+
+01:52.000 --> 01:55.000
+It's commonly used like pre-processors, like laying sass, for example.
+
+01:55.000 --> 01:58.000
+Over those that use pug might be laying pug.
+
+01:58.000 --> 02:02.000
+And we'll see that actually the attributes inside of these single file component blocks
+
+02:02.000 --> 02:04.000
+can be basically anything you want.
+
+02:04.000 --> 02:08.000
+So people have done some pretty interesting things to create some custom attributes
+
+02:08.000 --> 02:11.000
+and we'll be using one later on in the course to show you that.
+
+02:11.000 --> 02:17.000
+Okay, next thing we got to do is we got to import the find component from view
+
+02:17.000 --> 02:23.000
+because we got to tell type script, hey, we're using this options API component wrapper thing.
+
+02:23.000 --> 02:25.000
+So please, this is what it is.
+
+02:25.000 --> 02:30.000
+And so if you haven't hovered over it, you'll see that there's a lot going on in here.
+
+02:30.000 --> 02:34.000
+And so, and that is because once again, we're trying to help type script navigate
+
+02:34.000 --> 02:37.000
+all of the guard rails that we set up with options API.
+
+02:37.000 --> 02:41.000
+Once we have that, we want to actually make sure that we have the type for the dish.
+
+02:41.000 --> 02:44.000
+So all I'm going to do is go onto the dish page.
+
+02:44.000 --> 02:47.000
+And we're going to grab the dish from up here.
+
+02:47.000 --> 02:50.000
+And so as we can see here, I actually think I memorized it.
+
+02:50.000 --> 02:55.000
+So we have a type of dish and that has an idea of string that has a name of string
+
+02:55.000 --> 02:58.000
+and it has a status with string as well.
+
+02:58.000 --> 02:59.000
+And that's all it is.
+
+02:59.000 --> 03:03.000
+And so to actually apply that now to our object, this is where we're going to practice
+
+03:03.000 --> 03:06.000
+our as type casting and we're going to want the prop type.
+
+03:06.000 --> 03:09.000
+And so what we need to do is import that from view.
+
+03:09.000 --> 03:15.000
+Now, something that actually worth noting though is you might have been,
+
+03:15.000 --> 03:17.000
+you might have been compelled to do it like this originally.
+
+03:18.000 --> 03:21.000
+And so this feels normal because it's how we typically import stuff within JavaScript.
+
+03:21.000 --> 03:25.000
+But you'll notice though is that it's yelling at us because it's saying that this is not exactly
+
+03:25.000 --> 03:27.000
+a traditional JavaScript value.
+
+03:27.000 --> 03:29.000
+This is actually a type.
+
+03:29.000 --> 03:33.000
+So as a result, it should be yelling you, but we basically,
+
+03:33.000 --> 03:36.000
+whenever you see import type, it's because we're trying to tell like the compiler
+
+03:36.000 --> 03:38.000
+that like, hey, this thing you can basically ignore.
+
+03:38.000 --> 03:41.000
+You don't need to compile it into anything.
+
+03:41.000 --> 03:44.000
+Okay, so now that we have the prop type, we're going to use a greater than less than single
+
+03:45.000 --> 03:46.000
+and then pass that in.
+
+03:46.000 --> 03:47.000
+And then we inspect now.
+
+03:47.000 --> 03:51.000
+We can see that our dish is a prop type dish.
+
+03:51.000 --> 03:53.000
+And that's all there is to it.
+

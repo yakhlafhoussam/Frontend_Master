@@ -1,0 +1,86 @@
+WEBVTT
+
+00:00.000 --> 00:10.000
+Earlier we talked about object oriented Python, we talked about classes and self, and what the difference is.
+
+00:10.000 --> 00:17.000
+So let's open a new file and save this one as class underscore example.
+
+00:17.000 --> 00:23.000
+And we're going to be running this one from the command line rather than from the Ripple.
+
+00:24.000 --> 00:34.000
+We're going to pass in several variables and save them to the instance by using the self.
+
+00:34.000 --> 00:40.000
+In this example, we added some class variables.
+
+00:40.000 --> 00:45.000
+So these are variable that exist for all instances of a class.
+
+00:45.000 --> 00:50.000
+Here we set the number of wheels to be four at the class scope.
+
+00:51.000 --> 00:55.000
+And we can query both the instance and the class variables.
+
+00:55.000 --> 01:04.000
+When we set the instance variable to three, the will note that the class variable is still four.
+
+01:04.000 --> 01:09.000
+Now inheritance is a topic that you should go through on your own time.
+
+01:09.000 --> 01:19.000
+I highly recommend that you revisit this chapter and this practice because it's one of the foundational topics in Python.
+
+01:20.000 --> 01:31.000
+We talked about using type is instance and is subclass to learn more about the different classes and objects that we're working with.
+
+01:31.000 --> 01:35.000
+And we also learned about trace backs and exceptions.
+
+01:35.000 --> 01:44.000
+So you've probably already seen the indentation error quite a few times as you've been working in Python.
+
+01:44.000 --> 01:48.000
+You've also seen the more general syntax error.
+
+01:48.000 --> 01:52.000
+There are other common exceptions that you might see.
+
+01:52.000 --> 01:56.000
+For example, if you try to divide by zero, you will see a zero division error.
+
+01:56.000 --> 02:02.000
+Or if you try to get a key out of a dictionary and that key doesn't exist, you will see a key error.
+
+02:02.000 --> 02:07.000
+Adding together to unrelated types will throw an exception as well.
+
+02:07.000 --> 02:13.000
+If you want to raise your own exceptions, you will need to inherit from the exception class.
+
+02:13.000 --> 02:23.000
+You do that by when you define your class passing in the exception class in parentheses and then you can go ahead and just raise it.
+
+02:23.000 --> 02:31.000
+Having a custom exceptions in your programs is a great best practice because we want to catch exceptions that are specific as possible.
+
+02:31.000 --> 02:38.000
+So that we have a better idea of what's going wrong when things do inevitably go wrong.
+
+02:38.000 --> 02:42.000
+You can catch exceptions with try and accept.
+
+02:42.000 --> 02:49.000
+So try followed by an indented block of code with what you are trying that might throw an exception.
+
+02:49.000 --> 02:55.000
+Followed by an accept clause that also defines what exception you would like to catch.
+
+02:55.000 --> 03:03.000
+You can also use that as keyword if you need a handle on that exception, for example, if you wanted to grab the error message.
+
+03:03.000 --> 03:17.000
+You can also re-raise exceptions as needed, so catching an exception and then raising a more specific one or catching an exception and then raising a custom exception are both things that you might see in Python code.
+

@@ -1,0 +1,683 @@
+WEBVTT
+
+00:00.000 --> 00:05.200
+So we're going to talk about global state management with Pinya.
+
+00:05.200 --> 00:06.480
+Pinya, if you don't know,
+
+00:06.480 --> 00:11.300
+I believe is French for pineapple and basically it is a successor to Vuex.
+
+00:11.300 --> 00:13.160
+So if you've heard from the React community about
+
+00:13.160 --> 00:14.860
+Redux pattern and those kind of thing,
+
+00:14.860 --> 00:18.360
+Pinya is the evolution of that because Vue did
+
+00:18.360 --> 00:21.720
+take inspiration from like the Redux pattern and so we had Vuex for a very long time.
+
+00:21.720 --> 00:26.520
+But there were some ergonomics with it that made it kind of tricky to work with over the long period of time.
+
+00:26.720 --> 00:31.640
+So Pinya with the Composition API has basically been the evolution of Vuex.
+
+00:31.640 --> 00:34.960
+Okay. So in terms of Pinya,
+
+00:34.960 --> 00:36.840
+let's take a look at what that looks like.
+
+00:36.840 --> 00:40.800
+Because global state management typically is a fairly complicated topic.
+
+00:40.800 --> 00:47.960
+So first of all, be sure to pin their docs pinya.vuejs.org.
+
+00:47.960 --> 00:51.600
+Once again, this is an officially supported Vue library.
+
+00:51.600 --> 00:55.400
+It's got this cute little mascot which I need to get some stickers of.
+
+00:55.420 --> 00:59.080
+Basically, Pinya, funny enough,
+
+00:59.080 --> 01:01.880
+was started out as just like an experiment that Eduardo,
+
+01:01.880 --> 01:04.560
+also known as Postva, who actually wrote VueRouter,
+
+01:04.560 --> 01:07.880
+was kind of experimenting with how we might reinvent Vuex.
+
+01:07.880 --> 01:11.600
+So he came up with this idea and it's gained a lot of popularity
+
+01:11.600 --> 01:14.680
+and thus it is now the official one.
+
+01:14.680 --> 01:17.040
+Okay. So to show it in action,
+
+01:17.040 --> 01:19.240
+what we're going to go ahead and do is on the playground,
+
+01:19.240 --> 01:21.360
+I'm going to go ahead and just install it right now.
+
+01:21.360 --> 01:24.200
+So NPM install Pinya.
+
+01:24.200 --> 01:27.520
+So once again, let's go and see how we know that we're using it.
+
+01:27.520 --> 01:31.960
+We can go ahead and look inside of the package.json.
+
+01:31.960 --> 01:36.440
+As we see here, we'll see VueRouter and we see Pinya now.
+
+01:36.440 --> 01:40.920
+Now, the only thing we need to do before we need to continue using it though,
+
+01:40.920 --> 01:41.840
+it's just like the router,
+
+01:41.840 --> 01:45.600
+we need to tell Vue that we're using this plugin basically.
+
+01:45.600 --> 01:47.640
+So inside of our main.ts,
+
+01:47.640 --> 01:52.480
+we get the opportunity to now create basically a Pinya instance.
+
+01:52.480 --> 01:53.960
+How does that work?
+
+01:53.960 --> 01:55.480
+It's just like VueRouter actually.
+
+01:55.480 --> 02:00.720
+So we can import create Pinya from Pinya.
+
+02:00.720 --> 02:03.000
+So just to show you that again,
+
+02:03.000 --> 02:04.800
+this time it'll actually auto-complete, there you go.
+
+02:04.800 --> 02:05.840
+Now that's right.
+
+02:05.840 --> 02:08.160
+So remember that multi-line thing I was telling you about?
+
+02:08.160 --> 02:13.760
+This is where this is super helpful because we can say const Pinya equals create Pinya.
+
+02:13.760 --> 02:15.920
+Then after that, after we use the router,
+
+02:15.920 --> 02:21.240
+we can just say app.usePinya. There you go.
+
+02:21.440 --> 02:24.880
+Just like that, you have Pinya enabled on your app.
+
+02:25.120 --> 02:27.920
+So how does Pinya actually work?
+
+02:27.920 --> 02:30.240
+Creating stores and stuff, this is stuff again,
+
+02:30.240 --> 02:32.200
+is typically very complicated.
+
+02:32.200 --> 02:37.000
+But I think I've set you all up to see what it's actually like.
+
+02:37.000 --> 02:40.600
+What we're going to do is we're going to create a folder called stores.
+
+02:40.600 --> 02:43.000
+Because after all, what are we trying to track?
+
+02:43.000 --> 02:44.480
+We're trying to track stores of data.
+
+02:44.480 --> 02:46.800
+So what are we creating? We're creating a directory for stores.
+
+02:46.800 --> 02:48.680
+Why? Because when it comes to global state management,
+
+02:48.680 --> 02:51.000
+we're typically referred to as stores of the data,
+
+02:51.000 --> 02:55.120
+of the actions we need to take in order to make changes to those data stores.
+
+02:55.120 --> 02:58.920
+So let's go ahead and inside of this playground this time.
+
+02:58.920 --> 03:01.320
+We noticed that we have this count store over here.
+
+03:01.320 --> 03:03.600
+Let's go ahead and recreate this over here.
+
+03:03.600 --> 03:05.440
+So I'm going to do count store,
+
+03:05.440 --> 03:08.400
+and I'm just going to do it in Pascal case just to make it look different.
+
+03:08.400 --> 03:11.440
+What does that look like now inside of Pinya?
+
+03:11.440 --> 03:13.920
+Well, let's go ahead and define the store.
+
+03:13.920 --> 03:15.560
+As we look at the docs here,
+
+03:15.560 --> 03:18.240
+we're going to do things very composition API like.
+
+03:18.440 --> 03:22.120
+We're going to import define store from Pinya.
+
+03:22.120 --> 03:27.480
+Then what we're going to do then is export a const of use
+
+03:27.480 --> 03:29.720
+whatever the count store or whatever the store name is.
+
+03:29.720 --> 03:31.920
+So use count store is typically what it's called.
+
+03:31.920 --> 03:33.760
+So use, append it to this,
+
+03:33.760 --> 03:37.280
+and then we call the define store in here.
+
+03:37.280 --> 03:39.440
+Now the difference is one,
+
+03:39.440 --> 03:42.880
+we first start by defining how we want the store to be labeled.
+
+03:42.880 --> 03:44.960
+So I usually just call it count store,
+
+03:44.960 --> 03:47.720
+like whatever it's already called inside of the file name.
+
+03:47.720 --> 03:51.920
+Then after that, you get an object that you get to configure.
+
+03:51.920 --> 03:55.160
+Inside of here, it's going to look familiar.
+
+03:55.160 --> 03:59.520
+So one, you get a state option to return data,
+
+03:59.520 --> 04:02.000
+there is a getters option,
+
+04:02.000 --> 04:06.480
+and there is an actions option.
+
+04:06.480 --> 04:09.800
+So you might think, this looks familiar,
+
+04:09.800 --> 04:12.040
+this looks a little bit like options,
+
+04:12.040 --> 04:14.760
+and it does in the sense that it's providing you
+
+04:14.760 --> 04:17.240
+structure at how you manage your state.
+
+04:17.240 --> 04:19.800
+Because what we saw with composition API earlier is that
+
+04:19.800 --> 04:22.520
+you can wrangle together whatever you want.
+
+04:22.520 --> 04:25.120
+But this, especially when we think about global source,
+
+04:25.120 --> 04:27.840
+it's actually useful to have a convention for everyone to follow.
+
+04:27.840 --> 04:31.200
+Because you don't really want it to be like the Wild Wild West
+
+04:31.200 --> 04:34.200
+when it comes to people managing and accessing data.
+
+04:34.200 --> 04:36.360
+Something else that you might notice too though,
+
+04:36.360 --> 04:39.040
+missing from here, especially for my fellow VUX users,
+
+04:39.040 --> 04:40.920
+there are no mutations.
+
+04:40.920 --> 04:43.800
+That is probably one of the best things about Pinya,
+
+04:43.880 --> 04:48.400
+is that when we have something in here, like count zero,
+
+04:48.400 --> 04:50.360
+and we want to increment the count,
+
+04:50.360 --> 04:53.960
+all we got to do is go this.count++,
+
+04:53.960 --> 04:56.520
+and it takes care of everything for you.
+
+04:56.520 --> 04:59.600
+No more creating this separate thing that's like a mutation
+
+04:59.600 --> 05:01.160
+that requires you to call an action,
+
+05:01.160 --> 05:03.200
+and then the mutation is basically redundant
+
+05:03.200 --> 05:04.680
+of the thing that you're trying to do.
+
+05:04.680 --> 05:07.240
+That's all gone.
+
+05:07.240 --> 05:09.560
+And so we think of this another way to alias it,
+
+05:09.560 --> 05:11.400
+just to provide the mental model,
+
+05:11.480 --> 05:15.000
+data computed methods.
+
+05:17.600 --> 05:18.800
+That's what you have.
+
+05:20.120 --> 05:23.280
+And so if we compare this over now to the counselor
+
+05:23.280 --> 05:26.000
+that we originally sort of scaffolded ourselves together
+
+05:26.000 --> 05:27.280
+inside of the composables,
+
+05:27.280 --> 05:29.160
+you'll see here how different the code is
+
+05:29.160 --> 05:31.040
+in the sense that this is just kind of
+
+05:31.040 --> 05:34.200
+however I feel like and however I chose to write it.
+
+05:34.200 --> 05:36.000
+But you get an additional benefit actually
+
+05:36.000 --> 05:38.360
+that I'll show you in right here.
+
+05:38.360 --> 05:41.360
+So let's say, let's add that increment amount to 80,
+
+05:41.360 --> 05:43.480
+and then this one is gonna be plus equal this
+
+05:43.480 --> 05:44.880
+that increment amount,
+
+05:44.880 --> 05:45.760
+because this should look familiar
+
+05:45.760 --> 05:48.080
+to our base counter stuff that we've done before.
+
+05:48.080 --> 05:50.320
+And then we'll have a double count here
+
+05:50.320 --> 05:53.080
+that will be a function that receives the state
+
+05:53.080 --> 05:54.400
+as an argument,
+
+05:54.400 --> 05:57.240
+and we can just return state.count times two,
+
+05:57.240 --> 05:58.680
+just like that.
+
+05:58.680 --> 06:00.120
+And then I mess something up
+
+06:00.120 --> 06:03.640
+because I use the comma instead of a period, boom.
+
+06:03.640 --> 06:06.840
+Okay, how is this any different than what we just did?
+
+06:06.840 --> 06:08.000
+So we have this right here,
+
+06:08.000 --> 06:09.640
+and I'm gonna leave this to the right
+
+06:09.640 --> 06:11.920
+so that we have this as a reference.
+
+06:11.920 --> 06:15.680
+Now, inside of our base counter this time,
+
+06:15.680 --> 06:18.120
+what I'm gonna do is we're gonna go ahead
+
+06:18.120 --> 06:20.800
+and actually import this store.
+
+06:20.800 --> 06:24.760
+So import useCounterStore or useCountStore, it looks like.
+
+06:24.760 --> 06:26.600
+There you go, it actually detected it properly.
+
+06:26.600 --> 06:28.520
+So we were getting some type auto completion,
+
+06:28.520 --> 06:29.960
+which is super nice.
+
+06:29.960 --> 06:33.560
+And this time we'll do a const newCountStore,
+
+06:33.560 --> 06:38.040
+which will be the useCountStore like this.
+
+06:38.040 --> 06:39.160
+Just like that.
+
+06:39.160 --> 06:43.480
+And then we're gonna return newCountStore, just like that.
+
+06:43.480 --> 06:45.920
+Okay, so what do we get out of this?
+
+06:45.920 --> 06:48.520
+One, I'm gonna show you what it looks like
+
+06:48.520 --> 06:49.880
+when we actually use it.
+
+06:49.880 --> 06:53.560
+So let me bring that back over here, this is great.
+
+06:53.560 --> 06:57.960
+Okay, so first thing first is that
+
+06:57.960 --> 07:00.840
+now that you have yourCountStore,
+
+07:00.840 --> 07:02.520
+what you actually end up finding out
+
+07:02.520 --> 07:06.920
+is that when we look at something like thirdCounterVersion,
+
+07:07.800 --> 07:10.440
+so when we look inside of here,
+
+07:10.440 --> 07:15.440
+you're gonna notice that we get auto completion here.
+
+07:15.640 --> 07:18.680
+It actually can detect properties on that store now.
+
+07:18.680 --> 07:20.160
+So you get a lot of auto completion out of this.
+
+07:20.160 --> 07:21.720
+So in other words, if you take a look,
+
+07:21.720 --> 07:23.360
+increment is actually sitting right here.
+
+07:23.360 --> 07:25.520
+It actually knows that it's a property now.
+
+07:25.520 --> 07:27.560
+And so there's a lot of work being done
+
+07:27.560 --> 07:29.160
+underneath to help with the intelligence
+
+07:29.160 --> 07:31.720
+of what's going on when you're managing your code.
+
+07:31.720 --> 07:34.280
+And so here we can do count, for example,
+
+07:34.280 --> 07:35.920
+and then as you can see, it's zero,
+
+07:35.920 --> 07:38.360
+but actually very easily, if we added a button,
+
+07:38.360 --> 07:43.280
+we can just say newCountStore.increment.
+
+07:43.280 --> 07:45.360
+And then new increment,
+
+07:46.480 --> 07:49.400
+and then you can see it just works.
+
+07:51.440 --> 07:54.600
+And the reason why I kind of prefaced this
+
+07:54.600 --> 07:57.480
+with how global stores are normally complicated,
+
+07:57.480 --> 07:58.920
+this should actually remind you of the composable
+
+07:58.920 --> 08:00.440
+we kind of designed ourselves.
+
+08:00.440 --> 08:02.360
+You have this thing called countStore.
+
+08:02.360 --> 08:05.200
+Again, it learns from the options API.
+
+08:05.200 --> 08:06.720
+It takes the advantage of the option API
+
+08:06.720 --> 08:08.840
+by providing some structure,
+
+08:08.840 --> 08:11.040
+gives you the chance to manipulate it as you see fit,
+
+08:11.040 --> 08:13.480
+but then when you call it, it feels just as natural
+
+08:13.480 --> 08:15.960
+as using any other part of the data.
+
+08:15.960 --> 08:17.800
+Whereas in a lot of other state managements
+
+08:17.800 --> 08:19.240
+that I've used before, there's usually a lot
+
+08:19.240 --> 08:22.640
+in terms of going in to fetch a certain thing
+
+08:22.640 --> 08:24.760
+and then auto completion becomes a bit of a pain.
+
+08:24.760 --> 08:27.000
+If you use Vuex, you knew that you had to type the string
+
+08:27.000 --> 08:29.960
+exactly a certain way to initiate a certain action.
+
+08:29.960 --> 08:33.040
+There was a lot of opportunities for mistakes.
+
+08:33.040 --> 08:36.000
+But with this, it's easy for us to understand
+
+08:36.000 --> 08:38.120
+what's happening, and on top of that,
+
+08:38.120 --> 08:39.600
+I'm always a big fan of conventions,
+
+08:39.600 --> 08:41.320
+especially when it comes to debugging.
+
+08:42.280 --> 08:46.040
+We know that state management is notoriously difficult to do.
+
+08:46.040 --> 08:48.800
+And so, if you take a look right here,
+
+08:48.800 --> 08:51.760
+you'll notice that another benefit you get by using Pinya
+
+08:51.760 --> 08:53.680
+is that you get this dev tool right here.
+
+08:53.680 --> 08:55.600
+And we can actually go ahead and start inspecting it
+
+08:55.600 --> 08:58.120
+and doing stuff just like you normally would want to do
+
+08:58.120 --> 08:59.920
+when you're debugging a large application.
+
+08:59.920 --> 09:02.760
+And the other thing that, again,
+
+09:02.760 --> 09:04.920
+it feels really natural as we do this right now,
+
+09:04.920 --> 09:07.560
+is that unlike a global state management store
+
+09:07.560 --> 09:09.100
+like the way Vuex used to be,
+
+09:09.100 --> 09:11.560
+you used to have to intentionally name space modules.
+
+09:11.560 --> 09:12.880
+In other words, you have to be like,
+
+09:12.880 --> 09:15.520
+from this global piece, only take this small piece
+
+09:15.520 --> 09:16.480
+and import it here.
+
+09:16.480 --> 09:18.500
+Only take this small piece and import it here.
+
+09:18.500 --> 09:20.020
+But then sometimes you still ended up with like,
+
+09:20.020 --> 09:21.460
+importing everything at once, right?
+
+09:21.460 --> 09:24.100
+So Vuex stores became rather cumbersome
+
+09:24.100 --> 09:25.960
+and people had trouble with that.
+
+09:25.960 --> 09:29.580
+But with this new model of like a composable about Pinya,
+
+09:29.620 --> 09:31.960
+this is actually modular by default.
+
+09:31.960 --> 09:35.100
+You only import the stores you need where you need them.
+
+09:35.100 --> 09:37.140
+And so almost without even thinking about it,
+
+09:37.140 --> 09:38.540
+you saw the performance bottleneck
+
+09:38.540 --> 09:40.060
+that might have naturally occurred
+
+09:40.060 --> 09:42.280
+in an enterprise grade app where you have the single,
+
+09:42.280 --> 09:44.500
+the singleton tracking global state,
+
+09:44.500 --> 09:46.780
+everyone just chucking stuff in there because they can
+
+09:46.780 --> 09:48.620
+or it's the easiest thing to do.
+
+09:48.620 --> 09:51.060
+But now it almost is just as easy to go,
+
+09:51.060 --> 09:53.380
+wait, my functionality is about login.
+
+09:53.380 --> 09:54.380
+I'm gonna create a login store.
+
+09:54.380 --> 09:56.680
+I'm not gonna toss it in the global state.
+
+09:56.680 --> 09:59.380
+I'm gonna actually think of it modular first.
+
+09:59.380 --> 10:01.400
+And the fact that it's named states modular first,
+
+10:01.400 --> 10:03.260
+I think that's wonderful because it encourages us
+
+10:03.260 --> 10:05.700
+to use best practices without even realizing it.
+
+10:06.860 --> 10:09.140
+And that's some of the best sort of advancements
+
+10:09.140 --> 10:11.340
+that we can have when it comes to developer toys.
+

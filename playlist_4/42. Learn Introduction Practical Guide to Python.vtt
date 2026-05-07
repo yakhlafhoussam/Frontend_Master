@@ -1,0 +1,221 @@
+WEBVTT
+
+00:00.000 --> 00:05.000
+Now, let's chat about views, routes, and templates.
+
+00:05.000 --> 00:14.000
+Views and routes allow us to map URLs in our web application to pages, API, and points, and more.
+
+00:14.000 --> 00:17.000
+Our blog right now has three different sections.
+
+00:17.000 --> 00:23.000
+There's an index here that will show all of our posts.
+
+00:23.000 --> 00:27.000
+If I click on Read More, I go to a detail page.
+
+00:27.000 --> 00:32.000
+And I also have an about page right here that is at slash about.
+
+00:32.000 --> 00:41.000
+So, we have routes that are defined in at the project level in practical blog URLs.py and at the
+
+00:41.000 --> 00:45.000
+at level at blogslash URL.py.
+
+00:45.000 --> 00:50.000
+Let's take a quick look at those side by side.
+
+00:50.000 --> 00:54.000
+So, on the left hand side is the practical blog URL configuration.
+
+00:54.000 --> 00:59.000
+This is the top level configuration for everything.
+
+00:59.000 --> 01:05.000
+Here, I'm including a path to the admin, which we'll look at in just a second.
+
+01:05.000 --> 01:10.000
+It's one of the built-in things about Django that is really fantastic.
+
+01:10.000 --> 01:14.000
+The next thing is an include of blog.URLs.
+
+01:14.000 --> 01:22.000
+So, that's going to take all of the URLs that I've defined in my app specific blog.URLs and import them here.
+
+01:22.000 --> 01:29.000
+So, looking at URLs.py in blog, this is where you'll see I've defined the index,
+
+01:29.000 --> 01:33.000
+the about page and the detail page.
+
+01:33.000 --> 01:41.000
+And that is the path that I'm passing in as the first argument.
+
+01:41.000 --> 01:45.000
+We also have some templates.
+
+01:45.000 --> 01:55.000
+And those are located in the blog templates blog directory.
+
+01:55.000 --> 01:59.000
+So, a bit of a weird data structure, but that is what Django expects.
+
+01:59.000 --> 02:04.000
+We also have static blog CSS.
+
+02:04.000 --> 02:13.000
+If I take a look at base.html, this is just the base template that all of my other templates will use.
+
+02:13.000 --> 02:18.000
+It's got a header and a footer and all of those reusable elements.
+
+02:18.000 --> 02:26.000
+I need to call load static at the top here, which means load up all of the static resources I might need.
+
+02:26.000 --> 02:29.000
+Such as my CSS.
+
+02:29.000 --> 02:36.000
+These funky looking tags with the curly braces and the percent symbols are template tags.
+
+02:36.000 --> 02:43.000
+And those allow you to use some special commands in your HTML templates that let them interface with Django.
+
+02:43.000 --> 02:47.000
+Now, the important thing in base.html is this block right here.
+
+02:47.000 --> 02:54.000
+This content blocks, let's us know that we can use base.html as a template.
+
+02:54.000 --> 03:00.000
+If I then take a look at about.html, I have a template directive here that says,
+
+03:00.000 --> 03:04.000
+extend this one from blog base.html.
+
+03:04.000 --> 03:22.000
+And then everything that is in between these block content blocks insert that right into here, right into the matching content blocks.
+
+03:22.000 --> 03:31.000
+So that is pretty straightforward. We have a post list that has a little bit of a more complex template tag usage.
+
+03:31.000 --> 03:33.000
+Here we have a four loop.
+
+03:33.000 --> 03:40.000
+We are getting a post list variable passed into this template from our view, which we'll look at in just a second.
+
+03:40.000 --> 03:45.000
+And we're looping over it, so for every post that we have we're going to display it.
+
+03:45.000 --> 03:57.000
+And then for the detail, we are using a post variable and we're pulling out the post title, the post created at date and the post dot body.
+
+03:57.000 --> 04:03.000
+The slug is being used here for the read more button.
+
+04:03.000 --> 04:14.000
+We're passing in, we're using this URL template tag and we're passing in post, which is the name of the view.
+
+04:14.000 --> 04:17.000
+Followed by the slug.
+
+04:17.000 --> 04:23.000
+This matches our URL defined here in URLs.py.
+
+04:23.000 --> 04:30.000
+So that lets us get a link to the detail view.
+
+04:30.000 --> 04:34.000
+Now, we're going to take a quick look at views.
+
+04:34.000 --> 04:40.000
+These are some simple basic views that you might define when you're first starting out.
+
+04:40.000 --> 04:45.000
+But the more advanced concept is class-based views.
+
+04:45.000 --> 04:50.000
+So here we have our defined views.
+
+04:50.000 --> 04:59.000
+And these views map to the URLs that we have defined in your blog URLs.py.
+
+04:59.000 --> 05:07.000
+So here we see views.about views.index views.post.
+
+05:07.000 --> 05:13.000
+And we've also given these names so that we can access them from our templates.
+
+05:13.000 --> 05:23.000
+Now, this view, the about view, is just getting a template and rendering it and returning an HTTP response.
+
+05:23.000 --> 05:34.000
+This index view is taking a post, getting all of the objects in the database via query, creating a context.
+
+05:34.000 --> 05:39.000
+So we remember in our template earlier, we used a variable called post underscore list.
+
+05:39.000 --> 05:46.000
+This is where it came from, we're passing in here, and then for a detail view in our post.
+
+05:46.000 --> 05:58.000
+We're using a shortcut called get object or 404, which means that if a post with the passed in slot isn't found, Django will return a 404 status code.
+
+05:58.000 --> 06:02.000
+Now, this is a pattern that you will see over and over in Django.
+
+06:02.000 --> 06:12.000
+And so Django has built in some handy shortcuts called class-based views that allow you to take out a lot of this stuff that you might do over and over again.
+
+06:12.000 --> 06:20.000
+So I'm going to check out the class-based views branch in the repository.
+
+06:20.000 --> 06:26.000
+And we're going to take a look at what class-based views look like.
+
+06:26.000 --> 06:28.000
+This is it.
+
+06:28.000 --> 06:41.000
+So from Django.views.generic, I have imported detail view, which means give me one object, and I've imported list view, which gets a list of objects.
+
+06:41.000 --> 06:46.000
+And I've also imported the model that we care about in this case.
+
+06:46.000 --> 06:47.000
+It's post.
+
+06:47.000 --> 06:54.000
+So I'm creating a class-based view called post list view that inherits from list view, and I'm telling it what model to use.
+
+06:54.000 --> 07:00.000
+If we take a look at our URLs again, they look a little bit different.
+
+07:00.000 --> 07:06.000
+Now, you notice that I didn't have the about page in here.
+
+07:06.000 --> 07:13.000
+That's because I'm using a class-based view called detail view, our template view, and I'm using it right in URLs.
+
+07:13.000 --> 07:20.000
+So I'm calling a method on it called as view, and I'm telling it what template name I care about.
+
+07:20.000 --> 07:22.000
+Super quick shortcut.
+
+07:22.000 --> 07:29.000
+I'm also calling as view on my imported post list view and post detail view and giving it a name.
+
+07:29.000 --> 07:36.000
+Now, this code does the same exact thing that the other code was doing with a lot less craft.
+
+07:36.000 --> 07:42.000
+So let me make sure that my server is still running and take a look here, and here we are.
+
+07:42.000 --> 07:45.000
+Everything still works as expected.
+

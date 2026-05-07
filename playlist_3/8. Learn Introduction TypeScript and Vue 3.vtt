@@ -1,0 +1,233 @@
+WEBVTT
+
+00:00.000 --> 00:05.040
+We are basically moving on to the exercise part where we've talked about how to actually use
+
+00:05.040 --> 00:09.920
+types within the options API for its core functionality, and so your exercise now is to take
+
+00:09.920 --> 00:15.280
+the dish page that we see here, and now you're going to reapply all that stuff, right?
+
+00:15.280 --> 00:19.360
+You got to make sure you convert it to TypeScript, then go ahead and type the data.
+
+00:19.360 --> 00:22.960
+Go ahead and type the computer properties and the methods, whatever makes sense to you.
+
+00:23.520 --> 00:31.280
+So, we have our dishes page, and actually let me go ahead and before I forget, let me switch
+
+00:31.280 --> 00:34.560
+the branch to finish so that we add the solution as we go.
+
+00:35.920 --> 00:40.640
+So, inside of here, first thing first, we want to use TypeScript, so let's go ahead and make
+
+00:40.640 --> 00:45.920
+it language TypeScript, and then once again import defined component, starting to, I'm
+
+00:45.920 --> 00:49.920
+going to start to use AutoComplete now, now that you all know where these things are coming from,
+
+00:49.920 --> 00:56.560
+so the fine component goes here, let's just collapse that, collapse that, much better, less scrolling.
+
+00:57.360 --> 01:02.000
+Okay, so the next thing we need to do now is we need to define the shape of the data,
+
+01:02.000 --> 01:08.720
+so we can type data shape, and we know filter text is going to be a string,
+
+01:10.080 --> 01:18.560
+and then we want the dish list to be an array of dish, but dish does not exist yet.
+
+01:18.640 --> 01:23.200
+So, I'm going to go ahead over to dish card over here, and I'm going to grab this here,
+
+01:23.920 --> 01:27.920
+we're going to open up types, and then we're going to drop a suit alphabetical order,
+
+01:27.920 --> 01:30.880
+just to make it a little bit easier to follow, export TypeDish.
+
+01:32.080 --> 01:37.680
+Now that we have this exported, we can now import the TypeDish, there you go, from types,
+
+01:37.680 --> 01:44.480
+perfect, everything works as expected. Then over here, we'll do the same thing, import TypeDish.
+
+01:44.560 --> 01:53.360
+Looks like it's not giving me that, that's fine, and then there we go, so we have our dish,
+
+01:53.360 --> 01:57.840
+so we've modularized our dish type, and now we're using in two files, and finally we have one
+
+01:57.840 --> 02:10.320
+more thing, which is I believe it's show to do, show new form. Form, Boolean, rate, so now what are we doing?
+
+02:10.320 --> 02:15.120
+We're returning, we're saying that this is going to be the data shape, and so we take a look now,
+
+02:15.120 --> 02:20.480
+this is good, we have a bunch of dishes, dish list is an array of dishes, this is fantastic,
+
+02:21.520 --> 02:24.800
+and so I guess something actually probably worth mentioning is you might have noticed that
+
+02:24.800 --> 02:29.120
+I tend to notice my arrays with like the thing lists rather than just a plural,
+
+02:29.120 --> 02:34.880
+so instead of dishes or restaurants, I found that one off errors when it comes to typing those things,
+
+02:34.880 --> 02:39.520
+it happens a lot, so dish list just makes it really explicit, you tend the autocomplete
+
+02:39.520 --> 02:43.360
+a little bit better, and you won't dismiss like the one letter, one typing, so that's just
+
+02:43.360 --> 02:49.440
+a little convention that I do to kind of offset some of that. Okay, so then okay, inside a
+
+02:49.440 --> 02:53.040
+computer, let's go ahead and do some things here, we got an array of dishes, because that's what we're
+
+02:53.040 --> 02:59.040
+filtering for, and then just for the sake of documenting a little bit more, the argument is a dish type,
+
+02:59.040 --> 03:03.600
+which is great, and number of dishes is going to be a number, we don't want that to ever change,
+
+03:03.600 --> 03:07.520
+because that's what we're actually rendering when we're counting the thing, and then inside of
+
+03:07.520 --> 03:11.840
+methods, both of our payloads are just going to be the dish type, because that's what we're doing,
+
+03:11.840 --> 03:15.760
+right, we're adding something to the dish, and then we're deleting something from the dish,
+
+03:15.760 --> 03:19.760
+and this is great, and then actually just to annotate this one to there's another filter here,
+
+03:19.760 --> 03:24.400
+that will take care of that, and then finally, hide form doesn't do anything, and then mounted,
+
+03:24.400 --> 03:30.880
+we have, nope, there's nothing really to do there, at this point, so okay, that is the solution
+
+03:30.880 --> 03:37.200
+for the exercise that we just went through. You might have noticed that I'm typing take,
+
+03:37.280 --> 03:44.080
+instead of git, this is not a typo, this is actually an extension that is built to
+
+03:44.080 --> 03:52.080
+await take git, there we go. So it's basically a text interface for git, so basically you'll notice
+
+03:52.080 --> 03:55.920
+that rather than doing like git status and seeing what's available, and then having to be like
+
+03:55.920 --> 04:02.480
+git, at source, and have to figure that out, which takes a while, takes status gives me like
+
+04:02.480 --> 04:08.400
+basically a little UI, to be like, oh, actually, I forgot, these are not, they were already staged,
+
+04:08.400 --> 04:12.400
+but you can see that I can actually see what stages different files are in, and it's easy to
+
+04:12.400 --> 04:16.480
+individually select it with my keyboard, I won't dive into how to use this, but in case you want to
+
+04:16.480 --> 04:20.560
+look into it, it's just a little bit of quality life improvement that I like to use for my command line
+
+04:20.560 --> 04:24.880
+git. So this is jumping ahead a little bit, but I don't want to lose the context on this question.
+
+04:25.440 --> 04:31.200
+So the question here from Daniel in the chat is around the idea of using generics in type script
+
+04:31.280 --> 04:36.720
+along the extend. So I want to show you how things used to look. Basically, how you used to
+
+04:36.720 --> 04:42.160
+actually use type script on view two, what you did is like view extend thing, and what it basically
+
+04:42.160 --> 04:48.320
+allows you to do is like define a bunch of different properties on it, so resuming on this, you'll see
+
+04:48.320 --> 04:52.880
+that it's like data methods, and so interface, again, for those who have used type script before,
+
+04:52.880 --> 04:57.200
+think of it as a different kind, a different way to define objects in type script. That's all you
+
+04:57.200 --> 05:01.760
+need to know right now. There's a lot of argument between which one you should use. Just think
+
+05:01.760 --> 05:09.360
+of another, another, and alias for type for now. And so this allows you to create like generic type.
+
+05:09.360 --> 05:14.240
+So the concept of generics in type script is a messy topic. In my opinion, and I think it's where
+
+05:14.240 --> 05:18.320
+a lot of people actually get messed up, because it's one thing to annotate what you intend to do.
+
+05:18.320 --> 05:22.880
+It's another than abstracted into generic concepts that then oftentimes when you look at
+
+05:22.960 --> 05:26.880
+type script generics, you'll notice that whenever you see single letters in type script stuff,
+
+05:26.880 --> 05:31.440
+that's when you basically, they're using generics, because they're basically placeholder variables.
+
+05:32.160 --> 05:35.680
+We're, I will be very explicit. We're not covering that in this, because I do think it just,
+
+05:35.680 --> 05:39.120
+it tends to digest just a little too far deep for people when they're getting started with type
+
+05:39.120 --> 05:43.760
+script. Most people can just use the straight annotation, and that will already do wonders
+
+05:43.760 --> 05:48.000
+for helping them just document their code a little bit better. But for those that are interested in
+
+05:48.000 --> 05:53.040
+type theory, I don't want to leave y'all behind too. And so just so you know, rather than having
+
+05:53.040 --> 05:57.680
+an extent, the question here is in view three with a defined component, where does it go from here?
+
+05:57.680 --> 06:02.960
+There is a great blog post here, where he talks about how it works. And so basically, you can see
+
+06:02.960 --> 06:09.200
+here for those wondering, imagine you want to have like a function that generates a specific type of
+
+06:09.200 --> 06:13.840
+component, where it comes with these types every single time. So these are generally called factories,
+
+06:13.840 --> 06:17.760
+so you can see here that like it's an input select, but we want very specific things to get
+
+06:17.760 --> 06:23.200
+attached to it. And so there is the way where basically you can define a component that does take
+
+06:23.200 --> 06:28.000
+these generic, you see these T's here, so you can define it, pass it in. There is the way for it to
+
+06:28.000 --> 06:31.600
+happen. So if you understand what generic are, you're interested in this, I will make sure that this
+
+06:31.600 --> 06:38.480
+is at it as a resource. Okay, so now that we've had like the core functionality of options API,
+
+06:38.480 --> 06:42.240
+sort of taking care of, we're going to start moving our way now into composition API.
+

@@ -1,0 +1,239 @@
+WEBVTT
+
+00:00.000 --> 00:05.040
+Now that you know all about Python, you know how to set up your environment, I'm going to
+
+00:05.040 --> 00:11.920
+quickly show you the anatomy of a Python program. Note that you don't need to understand
+
+00:11.920 --> 00:16.400
+everything that's happening in the program, so don't worry, don't panic. You're going to understand
+
+00:16.400 --> 00:20.800
+all of the concepts throughout the course of the day, but I want to show you what some typical
+
+00:20.800 --> 00:27.680
+Python code might look like and what it does and break it down into pieces. So here I have a
+
+00:27.680 --> 00:34.080
+Python program for using the GitHub search API and I'm going to open this up in my editor so
+
+00:34.080 --> 00:40.080
+that I can walk through it and I'm going to run it and we'll see some results.
+
+00:49.760 --> 00:55.920
+So first line, I'm importing requests. This is a package import. In this case,
+
+00:55.920 --> 01:02.800
+requests is a third party package that I would need to install in my virtual environment before
+
+01:02.800 --> 01:08.960
+running this program since it's not included in Python standard library. Then I'm going ahead and
+
+01:08.960 --> 01:15.760
+defining a GitHub API URL. So what this piece of code is going to do is it's going to use the
+
+01:15.760 --> 01:24.320
+public GitHub search API and it's going to pass in a query asking for repositories and
+
+01:24.320 --> 01:34.400
+particular languages that have more than a set number of stars. These are methods and you can tell
+
+01:34.400 --> 01:41.120
+because they have the deaf keyword in front of them and some code that is indented to the right
+
+01:41.120 --> 01:48.880
+of them. But for the time being, I'm going to scroll all the way down and this code is only 40 lines.
+
+01:48.880 --> 01:53.760
+So once you start getting more familiar in Python, you'll have no trouble reading this line
+
+01:53.760 --> 01:59.680
+by line and understanding exactly what it does. But the thing that I'm scrolling down to is on
+
+01:59.680 --> 02:08.560
+930 and it says if underscore underscore name underscore underscore is equal to underscore main
+
+02:08.560 --> 02:17.040
+in quotes that's a string. This is how Python knows whether the main method is being run. So
+
+02:17.040 --> 02:23.520
+when we start a Python program from the command line, this is going to be the point of entry.
+
+02:24.720 --> 02:32.000
+Here I'm defining a list and this is a list of what languages I would like to query for. In this
+
+02:32.000 --> 02:39.920
+case, it's Python, JavaScript, and Ruby. And then I'm calling a method that is defined in this file
+
+02:39.920 --> 02:48.160
+called ripos with most stars. And I'm passing in the list of languages as an argument.
+
+02:49.120 --> 02:57.760
+Now, in VS code, I can in Mac command click or in Windows control click onto this method and it
+
+02:57.760 --> 03:06.320
+will automatically jump and bring me straight to it in the code. This method is defined in line 16.
+
+03:06.880 --> 03:13.600
+So first, I am creating a query with that list of languages. Create query is another method that
+
+03:13.600 --> 03:21.440
+I've defined in this file. Let's jump up to that. This one takes a list of languages and a second
+
+03:21.440 --> 03:31.840
+argument. Here, I'm providing a default value of 60,000 as the second argument. So if that second
+
+03:31.840 --> 03:39.120
+argument is not provided, it's going to use the default. Then I'm going to build up my query.
+
+03:40.080 --> 03:45.840
+This is something called an F string and Python or a string with built-in formatting.
+
+03:45.840 --> 03:54.720
+And this allows me to provide a variable inside of curly braces. Just like this. And the
+
+03:55.200 --> 04:01.680
+representation of that variable is going to get inserted right into the string. So I start building
+
+04:01.680 --> 04:07.920
+my base query and then I loop through every language in the list of languages and I append
+
+04:07.920 --> 04:16.240
+onto my query, a string that looks like this. So a sample query that might be generated from this
+
+04:16.240 --> 04:24.400
+method looks like this comment right here. Stars, colon greater than 50, language, colon Python,
+
+04:24.400 --> 04:32.640
+a space language, colon JavaScript. This is syntax that the GitHub search API expects as part of
+
+04:32.800 --> 04:41.040
+a query. And then it returns the built-up query. Now we're back in the repos with most
+
+04:41.040 --> 04:48.560
+stars method. I'm going to build a dictionary that's defined with these curly braces.
+
+04:49.360 --> 04:58.800
+The first entry in this dictionary has a key of Q and a value of query, a key of sort
+
+04:59.520 --> 05:06.240
+that is going to be in this case the default value, which is sort by the number of stars.
+
+05:06.240 --> 05:12.400
+And then also a key of order. It will have the value of desk for descending.
+
+05:14.240 --> 05:21.760
+I'm going to get a response from the GitHub API by using this request library. The request
+
+05:21.760 --> 05:29.600
+library provides a .get method that maps to HTTP get, where I pass in the URL and then that
+
+05:29.600 --> 05:36.880
+dictionary of parameters that I built online a team. And then I'm going to get the status code
+
+05:36.880 --> 05:44.240
+in the response. So for those of you familiar with APIs, it might be 200 for okay for for
+
+05:44.240 --> 05:52.560
+not found. Maybe 503 if I was an authorized, doesn't matter to me. If I got back a status code
+
+05:52.560 --> 06:02.400
+that was not 200. Oh, sorry. I have Liga Church turned on for myself. I will turn those off for
+
+06:02.400 --> 06:11.680
+all of you at the next break because what this should actually look like is not equals without
+
+06:11.680 --> 06:19.840
+a space in between. I just have a fancy setup. So for that I apologize. But I'm checking here that
+
+06:19.840 --> 06:25.280
+if the status code does not equal 200, I'm going to raise the runtime error. My program just
+
+06:25.280 --> 06:29.680
+going to quit. I got an error code. I don't know what it is. I don't know where to go from here.
+
+06:31.360 --> 06:38.480
+Otherwise, I'm going to get the JSON from the response. Save it in a variable called response
+
+06:38.560 --> 06:47.440
+underscore JSON. And then I'm going to return the items key in that response JSON back to the
+
+06:47.440 --> 06:56.720
+calling main method. So now I'm here. I've gotten the results from the repos with most stars
+
+06:58.160 --> 07:04.800
+method right up here. And now I'm going to loop through every result in that list of results.
+
+07:05.200 --> 07:14.160
+And I'm going to get the language, which I know from reading the hub API docs that it's going to be
+
+07:14.160 --> 07:22.160
+in a JSON format that's going to have a language key, a star geysers count key, which is the number
+
+07:22.160 --> 07:28.160
+of people who have started that repository. And it's also going to have the name of the repository.
+
+07:28.720 --> 07:38.400
+Then for every result in these results, I'm going to use one of these F strings to print out an
+
+07:38.400 --> 07:49.280
+arrow. The name of the repo is a language repo with these many stars. So it's pretty short
+
+07:49.280 --> 07:56.320
+program. It's only 40 lines of code. I like to think that this is pretty readable. Do you folks think
+
+07:56.320 --> 08:05.920
+that this is readable? Yeah, it's compact and condensed. It's pretty straightforward. What's happening.
+
+08:05.920 --> 08:12.240
+And let's go ahead and run this. And I'm just going to do that by opening up the command palette
+
+08:12.240 --> 08:19.840
+and then selecting run Python file and terminal. I think I already, this is something that you might
+
+08:19.920 --> 08:27.680
+run into. If you already have a REPL open in your terminal and you select run Python file
+
+08:27.680 --> 08:33.760
+in terminal, VS code is going to try to paste in the commands to run the file into your REPL
+
+08:33.760 --> 08:40.560
+and then REPL is going to explode. So if you see something like this, you know, this is the fully
+
+08:40.560 --> 08:47.840
+qualified path to the Python executable on my system. And the file that I'm trying to run,
+
+08:47.920 --> 08:53.520
+if you see that and like invalid syntax, know that you just need to exit out of your REPL or
+
+08:53.520 --> 09:00.720
+open a new terminal here with plus before you try running that again. So let's try that again.
+
+09:01.600 --> 09:06.880
+I'm going to select Python run file in terminal and now it works successfully. And this went and
+
+09:06.880 --> 09:15.120
+reached out to the GitHub API and pretty quickly returned this list of some of the top Python
+
+09:15.120 --> 09:27.120
+JavaScript and I forget the third language. What was the third one? Let's see Ruby. I guess there
+
+09:27.120 --> 09:36.720
+are no Ruby repositories with over 60,000 stars. The GitHub search API, it doesn't always return
+
+09:36.720 --> 09:46.880
+super accurate values just in FYI. It optimizes for returning quickly versus super accurate results.
+
+09:46.880 --> 09:52.640
+So if you run this multiple times, you might get multiple different results.
+
+09:53.760 --> 10:00.240
+But that was it. It was pretty straightforward. It used a lot of the language features that we
+
+10:00.240 --> 10:06.560
+are going to learn today. And it's a really quick and easy way to interact with APIs,
+
+10:06.560 --> 10:12.080
+interact with data and automate a lot of the tasks that you might have to do day-to-day.
+
