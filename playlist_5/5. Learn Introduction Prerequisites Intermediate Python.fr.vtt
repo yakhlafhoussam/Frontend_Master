@@ -1,0 +1,158 @@
+WEBVTT
+
+00:00.000 --> 00:08.000
+J'ai l'impression que quelque chose qui englobe vraiment cette philosophie Python est la facilité avec laquelle il est possible de convertir entre les types de données.
+
+00:08.000 --> 00:13.000
+Et c’est quelque chose que j’ai tendance à utiliser tout le temps.
+
+00:13.000 --> 00:17.000
+Nous allons donc d’abord parler de quelques opérations sur les chaînes.
+
+00:17.000 --> 00:29.000
+Mais disons que nous avons une chaîne séparée par des virgules.
+
+00:30.000 --> 00:33.000
+À quel type de données cela ressemble-t-il ?
+
+00:35.000 --> 00:41.000
+Mais quel type de données voyons-nous dans le monde réel qui ressemblent à ceci ?
+
+00:43.000 --> 00:45.000
+Ouais, un fichier CSV.
+
+00:45.000 --> 00:48.000
+Est-ce que tout le monde a travaillé avec des fichiers CSV ?
+
+00:48.000 --> 00:50.000
+Il existe une représentation textuelle des données.
+
+00:50.000 --> 00:56.000
+Donc, généralement, ils auront une ligne de colonne séparée par des virgules et toutes vos données seront alors présentes dans le fichier.
+
+00:56.000 --> 01:00.000
+Séparé uniquement dans le texte par des virgules.
+
+01:00.000 --> 01:13.000
+Donc, si vous connaissez d'autres langages de programmation, comment pourriez-vous aborder ce fichier CSV, puis le diviser en quelque chose de réellement utile ?
+
+01:13.000 --> 01:14.000
+Ouais.
+
+01:14.000 --> 01:25.000
+Ainsi, en Python, nous pouvons diviser ces données par virgule et nous obtiendrons une liste.
+
+01:25.000 --> 01:35.000
+Et nous vous remettrons une liste.
+
+01:35.000 --> 01:46.000
+Disons que si nous avions un étudiant séparé par des virgules.
+
+01:46.000 --> 01:52.000
+Mary, elle a huit ans et sa matière préférée est l'histoire.
+
+01:52.000 --> 01:56.000
+En fait, c'est des mathématiques. Mary aime les mathématiques.
+
+01:56.000 --> 02:06.000
+Maintenant, nous pouvons dire que le point d'étudiant est divisé sur la virgule et nous obtiendrons une liste.
+
+02:06.000 --> 02:10.000
+Nous avons vu un petit peu de tuple se décompresser hier.
+
+02:10.000 --> 02:15.000
+J'ai mentionné que vous pouvez également décompresser les variables d'une liste.
+
+02:15.000 --> 02:19.000
+Ce n’était tout simplement pas aussi courant, mais je peux continuer et le faire.
+
+02:19.000 --> 02:25.000
+Je peux donc simplement dire que le nom, l'âge et le sujet sont égaux à la répartition des points entre les étudiants.
+
+02:25.000 --> 02:29.000
+Droite? Parce que l'étudiant Dot Split m'a donné la liste.
+
+02:29.000 --> 02:33.000
+Et maintenant j'ai le nom de Mary. J'ai son âge. J'ai son sujet.
+
+02:33.000 --> 02:35.000
+Super facile de mettre ça en boucle, non ?
+
+02:35.000 --> 02:41.000
+Si vous devez parcourir plusieurs lignes.
+
+02:42.000 --> 02:53.000
+Si c’était le cas, j’ai mes données. Je vais en faire une liste.
+
+02:53.000 --> 02:57.000
+Mais je vais encore une fois me diviser sur cette virgule.
+
+02:57.000 --> 03:02.000
+Alors maintenant, j'ai ma liste d'éléments individuels qui ont été divisés par une virgule.
+
+03:02.000 --> 03:09.000
+Si je voulais regrouper tous les éléments de cette liste,
+
+03:09.000 --> 03:14.000
+le moyen le plus simple, le meilleur ou le plus efficace de procéder consiste à effectuer une jointure.
+
+03:14.000 --> 03:16.000
+Cette syntaxe pour join est donc un peu bizarre.
+
+03:16.000 --> 03:21.000
+Je vois ce voyage gagnant, mais vous voudrez commencer par votre
+
+03:21.000 --> 03:26.000
+Dillimètre ici. Et puis appelez join à ce sujet.
+
+03:26.000 --> 03:30.000
+Et vous passerez dans une séquence pour rejoindre.
+
+03:30.000 --> 03:33.000
+Alors ici, je vais utiliser ma liste.
+
+03:33.000 --> 03:37.000
+Et maintenant, nous allons voir notre nouveau Dillimeter ici.
+
+03:38.000 --> 03:42.000
+Si vous souhaitez rendre cela plus facile à lire, par exemple, pour le réinsérer dans le CSV,
+
+03:42.000 --> 03:45.000
+Je peux également ajouter un espace ici.
+
+03:45.000 --> 03:49.000
+Et cela permettra facilement de mettre une virgule après chaque mot.
+
+03:49.000 --> 03:55.000
+Notez que Python est intelligent et n'inclut pas celui de fin.
+
+03:55.000 --> 04:00.000
+Dans d’autres langues, c’est beaucoup plus difficile, beaucoup plus compliqué.
+
+04:00.000 --> 04:10.000
+Nous savons que nous avons vu hier que nous pouvions passer des chaînes dans l'entier.
+
+04:10.000 --> 04:14.000
+Le type entier et récupère un int.
+
+04:14.000 --> 04:20.000
+Nous pouvons, vous savez, créer des nombres flottants.
+
+04:20.000 --> 04:24.000
+Au fur et à mesure que vous en apprendrez davantage sur le bouclage, les intuitions de l'entreprise et l'utilisation de vos données,
+
+04:24.000 --> 04:29.000
+vous verrez exactement à quel point c’est puissant.
+
+04:29.000 --> 04:32.000
+Alors ouvrez le site Web de votre cours.
+
+04:32.000 --> 04:36.000
+Si vous ne l'avez pas déjà fait, cliquez sur la date pour passer à Python intermédiaire.
+
+04:36.000 --> 04:39.000
+Si vous ne le voyez pas ici, vous devrez peut-être actualiser votre site.
+
+04:39.000 --> 04:44.000
+Et puis nous en sommes à l’exercice du premier chapitre.
+

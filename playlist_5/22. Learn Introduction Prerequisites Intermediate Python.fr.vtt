@@ -1,0 +1,575 @@
+WEBVTT
+
+00:00.000 --> 00:06.000
+Un autre sujet à aborder avant de commencer notre exercice est l’héritage.
+
+00:08.500 --> 00:14.000
+Comme nous l'avons vu, ces classes en Python nous aident à créer du code réutilisable.
+
+00:14.500 --> 00:18.000
+Et je vais créer un nouveau fichier ici.
+
+00:18.000 --> 00:25.000
+Je vais le sauvegarder et je vais l'appeler véhicule.py.
+
+00:25.000 --> 00:30.000
+D'accord.
+
+00:30.000 --> 00:36.000
+Parfois, nous souhaitons que nos classes partagent des propriétés entre elles.
+
+00:36.000 --> 00:41.000
+Nous avons donc vu que ma voiture avait quatre roues.
+
+00:41.000 --> 00:44.000
+Eh bien, je pourrais aussi avoir une moto.
+
+00:44.000 --> 00:50.000
+Et ma moto aura deux roues, mais elle roulera toujours.
+
+00:51.000 --> 00:59.000
+L’héritage est donc un moyen de créer des types ayant des attributs partagés.
+
+00:59.000 --> 01:06.000
+Et cela nous aide à décomposer un code organisateur dans une hiérarchie du plus générique au plus spécifique.
+
+01:06.000 --> 01:11.000
+Objets appartenant à des classes supérieures dans la hiérarchie, les plus génériques.
+
+01:11.000 --> 01:19.000
+Ils sont accessibles via les sous-classes les plus spécifiques, mais pas l'inverse.
+
+01:19.000 --> 01:34.000
+Plus tôt, nous avons vu que le type taureau est si proche.
+
+01:49.000 --> 01:58.000
+Désolé, j'ai oublié les arguments et au lieu de parcourir mon historique, je vais juste vous montrer, vous savez, le moyen le plus rapide d'obtenir de l'aide à ce sujet.
+
+01:58.000 --> 02:05.000
+Donc la première chose est la classe et la deuxième chose est la classe ou deux taureaux.
+
+02:05.000 --> 02:10.000
+Donc sous-classe X.
+
+02:11.000 --> 02:18.000
+Je demanderais donc si la sous-classe de bull et int les deux arguments doivent y être une classe.
+
+02:18.000 --> 02:19.000
+D'accord, c'est vrai.
+
+02:19.000 --> 02:25.000
+Donc, comme nous l’avons vu plus tôt, ce lingot, la sous-classe des lingots.
+
+02:25.000 --> 02:31.000
+Il a pris toutes les propriétés de int, puis les a ajoutées et étendues.
+
+02:31.000 --> 02:35.000
+C'est vrai, donc il contient toujours tous les trucs qui cachent le capot.
+
+02:35.000 --> 02:43.000
+Vous allez être bizarre et les additionner, mais cela a beaucoup plus de propriétés.
+
+02:43.000 --> 02:47.000
+Nous pouvons également faire la même chose avec nos classes.
+
+02:47.000 --> 02:58.000
+Donc, en regardant ce fichier Vehicle.py, je vais créer un véhicule de classe.
+
+02:58.000 --> 03:03.000
+Et je vais en faire tout un plat pour ça.
+
+03:03.000 --> 03:10.000
+Quel doit être le premier argument à mettre en avant ?
+
+03:10.000 --> 03:19.000
+Et je vais mettre ici une marque, un modèle et le type de carburant nécessaire.
+
+03:19.000 --> 03:24.000
+Tout comme dans d’autres types de fonctions, je peux passer ici un argument par défaut.
+
+03:24.000 --> 03:30.000
+N'oubliez pas que tous ces arguments par défaut doivent venir en dernier dans l'ordre.
+
+03:30.000 --> 03:36.000
+Comment puis-je enregistrer ces paramètres transmis à mon instance ?
+
+03:36.000 --> 03:40.000
+C'est vrai, donc self dot make sera le transmis in make.
+
+03:40.000 --> 03:44.000
+Le modèle à points autonomes sera le modèle transmis.
+
+03:44.000 --> 03:49.000
+Et le carburant autonome sera le carburant transmis.
+
+03:49.000 --> 03:55.000
+Pour les personnes plus avancées qui souhaitent faire plus de recherches après les cours,
+
+03:55.000 --> 04:10.000
+il y a une bonne chose dans Python 37 appelée une classe de données qui est une sorte de type spécial de classe plus avancée qui vous aide à faire beaucoup moins de ce genre de choses de modèle.
+
+04:10.000 --> 04:15.000
+Parce que plus vous ajoutez d'arguments si vous souhaitez les enregistrer dans l'instance,
+
+04:15.000 --> 04:20.000
+vous devez en quelque sorte avoir une longue liste de missions ici.
+
+04:20.000 --> 04:25.000
+D'accord, et ensuite je vais créer une nouvelle classe maintenant pour ma voiture.
+
+04:25.000 --> 04:28.000
+Et cela va hériter et s'étendre du véhicule.
+
+04:28.000 --> 04:32.000
+Et pour ce faire, j’ajoute ici quelques parenthèses.
+
+04:32.000 --> 04:37.000
+Et puis j’inscris la classe à partir de laquelle je souhaite m’étendre.
+
+04:37.000 --> 04:40.000
+Alors remarquez que c'est le type, ce n'est pas une instance, n'est-ce pas ?
+
+04:40.000 --> 04:43.000
+C’est le type dont je veux hériter.
+
+04:43.000 --> 04:53.000
+Et ma voiture aura son propre constructeur.
+
+04:53.000 --> 04:56.000
+Et ça va encore se reprendre.
+
+04:56.000 --> 05:00.000
+Il va leur falloir réaliser le modèle.
+
+05:00.000 --> 05:05.000
+Cela va prendre du carburant.
+
+05:05.000 --> 05:09.000
+Mais cela nécessitera également un autre argument facultatif.
+
+05:10.000 --> 05:20.000
+Nombre de roues.
+
+05:20.000 --> 05:25.000
+Si je le veux.
+
+05:25.000 --> 05:28.000
+Appelez le constructeur de mon véhicule.
+
+05:28.000 --> 05:32.000
+Parce que je le fais déjà, vous savez, j'ai écrit le code pour l'essentiel.
+
+05:32.000 --> 05:35.000
+Je viens d'ajouter un petit plus.
+
+05:35.000 --> 05:39.000
+Je dois utiliser un mot-clé spécial en Python appelé super.
+
+05:39.000 --> 05:43.000
+Et si vous utilisez Python 2 ou si vous avez vu Python 2,
+
+05:43.000 --> 05:49.000
+ce super mot-clé est juste un peu en désordre.
+
+05:49.000 --> 05:51.000
+En Python 3, c'est beaucoup plus simple.
+
+05:51.000 --> 05:53.000
+Vous utilisez simplement le super mot-clé.
+
+05:53.000 --> 06:00.000
+Vous passez, vous l'appelez en quelque sorte avec ce vide.
+
+06:00.000 --> 06:08.000
+Vous le stockez et vous exécutez la méthode de la super classe que vous souhaitez appeler.
+
+06:08.000 --> 06:16.000
+Et puis vous passez les arguments.
+
+06:16.000 --> 06:23.000
+Donc cela appelle simplement cela avec tous les paramètres que j'ai donnés.
+
+06:23.000 --> 06:25.000
+Mais nous avons raté quelque chose.
+
+06:25.000 --> 06:28.000
+Nous transmettons un nouveau paramètre.
+
+06:28.000 --> 06:31.000
+Nous avons affaire au nombre de roues.
+
+06:31.000 --> 06:39.000
+Attribuez-le à vous-même, n'est-ce pas ?
+
+06:39.000 --> 06:44.000
+Hé, je vais copier ce truc de rechargement.
+
+06:44.000 --> 06:49.000
+Ce commentaire de rechargement en haut ici.
+
+06:49.000 --> 06:51.000
+Désolé, c'est un peu ennuyeux.
+
+06:51.000 --> 06:54.000
+Nous ne modifions généralement pas autant le fichier.
+
+06:54.000 --> 06:57.000
+Et je vais ouvrir à nouveau mon Rappel.
+
+06:57.000 --> 07:03.000
+Alors maintenant, je vais dire importer un véhicule.
+
+07:03.000 --> 07:09.000
+Et je vais fabriquer une nouvelle voiture.
+
+07:09.000 --> 07:15.000
+Je vais dire mes super égaux.
+
+07:15.000 --> 07:19.000
+En fait, avant de faire ça, je vais fabriquer un nouveau véhicule, n'est-ce pas ?
+
+07:19.000 --> 07:21.000
+Cette super classe.
+
+07:21.000 --> 07:25.000
+Peut-être que j'ai un 4 par 4, non ?
+
+07:25.000 --> 07:28.000
+Cela ne rentre pas vraiment dans les autres catégories.
+
+07:28.000 --> 07:31.000
+Je vais donc dire que mon 4 par 4 est un véhicule.
+
+07:31.000 --> 07:36.000
+Et le fait est que je ne connais rien aux 4 x 4.
+
+07:36.000 --> 07:38.000
+Je vais donc dire que la marque est le zoom.
+
+07:38.000 --> 07:41.000
+Et le modèle est que ça va vite.
+
+07:41.000 --> 07:46.000
+Et le combustible est de l’huile de cuisson.
+
+07:46.000 --> 07:50.000
+Très efficace.
+
+07:50.000 --> 07:51.000
+Oh, je suis désolé.
+
+07:51.000 --> 07:55.000
+J'ai dû faire un véhicule à points de véhicule.
+
+07:55.000 --> 07:58.000
+Habituellement, nous disons simplement à partir de l'importation du véhicule la classe du véhicule.
+
+07:58.000 --> 08:02.000
+Mais parce que je dois recharger, nous procédons en quelque sorte de cette façon.
+
+08:02.000 --> 08:03.000
+D'accord.
+
+08:03.000 --> 08:09.000
+Alors maintenant mon 4 par 4, il a une marque.
+
+08:09.000 --> 08:12.000
+Il a un modèle.
+
+08:12.000 --> 08:15.000
+Et il a un carburant.
+
+08:15.000 --> 08:20.000
+Je vais créer une nouvelle instance de voiture.
+
+08:21.000 --> 08:28.000
+Je vais donc dire que ma Subaru est un véhicule dot cars.
+
+08:28.000 --> 08:31.000
+Et la marque est Subaru.
+
+08:31.000 --> 08:34.000
+Et le modèle est cross track.
+
+08:34.000 --> 08:37.000
+Et le carburant est du diesel.
+
+08:37.000 --> 08:45.000
+Je suis désolé de l'avoir appelé voiture.
+
+08:45.000 --> 08:47.000
+Donc véhicule dot car.
+
+08:47.000 --> 08:48.000
+D'accord.
+
+08:48.000 --> 08:51.000
+J'ai donc mon instance Subaru maintenant.
+
+08:51.000 --> 08:54.000
+Ma Subaru a une marque.
+
+08:54.000 --> 08:57.000
+Ma Subaru a un modèle.
+
+08:57.000 --> 09:03.000
+Ma Subaru a du carburant.
+
+09:03.000 --> 09:09.000
+Ma Subaru a-t-elle le nombre de roues variable ?
+
+09:09.000 --> 09:11.000
+Est-ce que c'est vrai ?
+
+09:11.000 --> 09:14.000
+C'est toujours par défaut.
+
+09:14.000 --> 09:16.000
+C'est exact.
+
+09:17.000 --> 09:20.000
+Vous voyez comment je l'ai nommé ici ?
+
+09:20.000 --> 09:23.000
+Mon 4 par 4.
+
+09:23.000 --> 09:27.000
+Mon 4x4 a-t-il plusieurs roues ?
+
+09:27.000 --> 09:28.000
+Est-ce que c'est vrai ?
+
+09:28.000 --> 09:29.000
+Non.
+
+09:29.000 --> 09:30.000
+N'est-ce pas ?
+
+09:30.000 --> 09:32.000
+Non.
+
+09:32.000 --> 09:36.000
+L'objet véhicule n'a pas de numéro d'attribut de roues.
+
+09:36.000 --> 09:39.000
+Ma voiture le fait, mon véhicule non.
+
+09:39.000 --> 09:41.000
+Et c'est une bonne opportunité pour moi maintenant.
+
+09:41.000 --> 09:43.000
+Si je voulais faire une moto,
+
+09:43.000 --> 09:48.000
+vous pouvez créer une nouvelle classe dont le nombre de roues par défaut est de deux.
+
+09:48.000 --> 09:52.000
+Et cela réduit vraiment la duplication des données.
+
+09:52.000 --> 09:55.000
+Rend ce code beaucoup plus.
+
+09:55.000 --> 09:59.000
+Composable beaucoup plus facile à entretenir.
+
+09:59.000 --> 10:00.000
+Droite?
+
+10:00.000 --> 10:05.000
+Si j'avais une méthode sur véhicule.
+
+10:05.000 --> 10:12.000
+Disons, vous savez.
+
+10:13.000 --> 10:16.000
+Mon carburant est-il économe ?
+
+10:16.000 --> 10:20.000
+Est-ce écologique ?
+
+10:20.000 --> 10:22.000
+Et je me reprendrais moi-même.
+
+10:22.000 --> 10:26.000
+Et si le carburant est égal au gaz,
+
+10:26.000 --> 10:29.000
+nous allons retourner false.
+
+10:29.000 --> 10:37.000
+Sinon, nous deviendrons un jour vrais.
+
+10:37.000 --> 10:44.000
+Mon auto.carburant, bien sûr.
+
+10:44.000 --> 10:52.000
+Et je sais que cet auto.carburant est toujours sur mon véhicule.
+
+10:52.000 --> 10:59.000
+Même si je supprimais cela, cela n'aurait pas d'importance car le carburant ici est par défaut du gaz.
+
+10:59.000 --> 11:01.000
+Alors maintenant, je vais y entrer.
+
+11:01.000 --> 11:10.000
+Je vais recharger ça.
+
+11:10.000 --> 11:14.000
+Et puis je vais dire, tu sais,
+
+11:14.000 --> 11:23.000
+Je vais revenir à mon 4 par 4.
+
+11:23.000 --> 11:25.000
+Et créez une nouvelle instance.
+
+11:25.000 --> 11:33.000
+Je vais créer une nouvelle instance de ma Subaru.
+
+11:33.000 --> 11:39.000
+Subaru, voie transversale.
+
+11:39.000 --> 11:41.000
+Est-ce que mon 4 par 4 ?
+
+11:41.000 --> 11:43.000
+Puis-je appeler ça ?
+
+11:43.000 --> 11:45.000
+Est-ce écologique ?
+
+11:45.000 --> 11:51.000
+Méthode là-dessus ?
+
+11:51.000 --> 12:01.000
+Puis-je l'appeler sur ma Subaru ?
+
+12:01.000 --> 12:06.000
+Non, parce que vous ne l'avez pas apporté chez Subaru.
+
+12:06.000 --> 12:08.000
+Je ne l'ai pas fait.
+
+12:08.000 --> 12:17.000
+Mais qu’ai-je fait ici en appelant un super filet de teinture ?
+
+12:17.000 --> 12:21.000
+J'ai fait un appel au filet sur mon véhicule.
+
+12:21.000 --> 12:26.000
+Et ma voiture hérite du véhicule.
+
+12:26.000 --> 12:33.000
+Ainsi, toutes les méthodes disponibles pour mon véhicule seront également disponibles sur ma voiture.
+
+12:33.000 --> 12:37.000
+C'est ainsi que nous encourageons la réutilisation des codes automobiles.
+
+12:37.000 --> 12:41.000
+Si je créais une nouvelle classe de moto héritée du véhicule,
+
+12:41.000 --> 12:44.000
+il aurait également cette méthode écologique.
+
+12:44.000 --> 12:49.000
+Donc au lieu de fabriquer des motos, des voitures et un 4x4,
+
+12:49.000 --> 12:52.000
+que chacun a sa propre version de cette méthode,
+
+12:52.000 --> 12:58.000
+nous avons réduit la duplication de code et l'avons placé au même endroit.
+
+12:58.000 --> 13:02.000
+Le dernier sujet ici, je ne vais pas beaucoup en parler.
+
+13:02.000 --> 13:04.000
+Je veux juste vous prévenir.
+
+13:04.000 --> 13:08.000
+Contrairement à d’autres langages, en Python, vous pouvez avoir plusieurs héritages.
+
+13:08.000 --> 13:13.000
+Vous pouvez donc hériter de plusieurs autres classes à la fois.
+
+13:14.000 --> 13:21.000
+Et les choses deviennent un peu compliquées, mais un cas d'utilisation est ce qu'on appelle un mixage.
+
+13:21.000 --> 13:28.000
+Ainsi, un mixage pourrait être une classe qui contient simplement une méthode comme celle-ci.
+
+13:28.000 --> 13:32.000
+Et je m'en fiche si mon 4 x 4 est respectueux de l'environnement.
+
+13:32.000 --> 13:35.000
+Je le conduis dans l'herbe et je le tonds.
+
+13:35.000 --> 13:40.000
+Et qu'est-ce que ça m'importe si c'est, vous savez, du gaz ou de l'énergie solaire ?
+
+13:41.000 --> 13:45.000
+Alors là où je, dans les cas où je m'en soucie peut-être comme une voiture,
+
+13:45.000 --> 13:51.000
+Je peux avoir une classe supplémentaire dont j’hérite et qui a juste cette méthode.
+
+13:51.000 --> 13:55.000
+Donc l'un de mes cas d'utilisation préférés et courants pour cela,
+
+13:55.000 --> 14:00.000
+vous verrez peut-être si vous déclarez des tables de base de données en Python.
+
+14:00.000 --> 14:03.000
+Vous pourriez avoir des mélanges pour quelque chose comme une colonne de date,
+
+14:03.000 --> 14:07.000
+où tu n'as pas forcément envie, tu veux avoir un rendez-vous,
+
+14:07.000 --> 14:13.000
+une date de création sur tous vos objets, juste, vous savez, pour des raisons de conformité.
+
+14:13.000 --> 14:17.000
+Mais vous ne voulez pas avoir à dire, vous savez, la date du point du véhicule de classe est égale à n'importe quoi,
+
+14:17.000 --> 14:20.000
+la date du point de la moto de classe est égale à n'importe quoi.
+
+14:20.000 --> 14:25.000
+Vous pouvez donc simplement avoir une classe mixte qui créera cette colonne pour vous.
+
+14:25.000 --> 14:28.000
+Et fournissez toutes les méthodes dont vous pourriez avoir besoin pour l’utiliser.
+
+14:28.000 --> 14:32.000
+J'ai vu du code Python sur des objets qui ne le font pas,
+
+14:32.000 --> 14:35.000
+ou des classes qui n'héritent de rien d'autre,
+
+14:35.000 --> 14:39.000
+mais le mot-clé object est l'objet dont ils héritent,
+
+14:39.000 --> 14:42.000
+au lieu de simplement dire le nom de la colonne de classe,
+
+14:42.000 --> 14:46.000
+ils auront un objet après la définition de la classe.
+
+14:46.000 --> 14:52.000
+Voilà donc, oui, c'est l'une des différences entre Python 2 et Python 3.
+
+14:52.000 --> 14:56.000
+Dans Python 3, vous n'avez plus besoin de faire cela.
+
+14:56.000 --> 14:58.000
+C'est redondant, tu sais,
+
+14:58.000 --> 15:01.000
+mieux vaut simple que complexe.
+
+15:01.000 --> 15:05.000
+Vous pouvez toujours le faire et ce n'est pas une erreur de syntaxe.
+
+15:05.000 --> 15:08.000
+Vous ne devriez tout simplement pas.
+

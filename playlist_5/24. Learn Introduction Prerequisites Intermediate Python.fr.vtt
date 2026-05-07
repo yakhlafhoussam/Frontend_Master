@@ -1,0 +1,347 @@
+WEBVTT
+
+00:00.000 --> 00:16.000
+Que se passe-t-il si je dis quotidiennement le nombre de roues est égal à trois et que je copie et colle ces deux déclarations imprimées ?
+
+00:16.000 --> 00:29.000
+D'accord, pour la classe, cela fait toujours quatre, mais maintenant pour cette instance spécifique, et je devrais dire pour cette instance quotidiennement.
+
+00:29.000 --> 00:33.000
+Maintenant, le nombre de roues est de trois, n'est-ce pas ?
+
+00:33.000 --> 00:35.000
+D'accord.
+
+00:35.000 --> 00:43.000
+Alors héritage, laissez-moi fermer cette fenêtre rebelle.
+
+00:43.000 --> 00:49.000
+J'ai mon véhicule de classe. Créons une nouvelle classe.
+
+00:49.000 --> 00:56.000
+Et nous ne voulons pas nécessairement que la classe du véhicule nous dise combien de roues il possède.
+
+00:56.000 --> 01:00.000
+Il s'agit plutôt d'un détail d'implémentation. Je vais donc retirer cela pour l'instant.
+
+01:00.000 --> 01:08.000
+Au lieu de cela, je vais créer deux nouvelles classes. Je vais fabriquer un véhicule automobile de classe et hériter du véhicule.
+
+01:08.000 --> 01:20.000
+Et il aura un nombre de roues égal à quatre.
+
+01:20.000 --> 01:30.000
+C'est la dernière fois que je vous montre l'héritage. J'ai montré la création d'une nouvelle méthode d'initialisation pour la classe de cet enfant.
+
+01:30.000 --> 01:41.000
+Mais je n'en ai pas besoin ici. Si je ne fournis pas de méthode init dans la sous-classe, quels initialiseurs vont utiliser.
+
+01:41.000 --> 01:49.000
+S'il n'y a pas de méthode init ici, il appellera simplement la méthode init du véhicule.
+
+01:49.000 --> 02:00.000
+De la même manière que nous avons vu si le véhicule possède une variable, celle-ci est disponible pour toutes ses sous-classes.
+
+02:00.000 --> 02:05.000
+Même chose pour les méthodes. Python essaiera d'instancier la voiture s'il ne la voit pas.
+
+02:05.000 --> 02:10.000
+Il recherchera l'initialisation du véhicule, et ce sera juste celui-là.
+
+02:11.000 --> 02:20.000
+Et disons que nous avons un camion de classe. C'est aussi un véhicule.
+
+02:20.000 --> 02:26.000
+Et le camion a six roues.
+
+02:26.000 --> 02:33.000
+Et en plus, ces camions fonctionnent au diesel. Alors cette fois, créons un constructeur personnalisé.
+
+02:33.000 --> 02:40.000
+Je dirai un véritable passage en soi. Je vais prendre un modèle de marque.
+
+02:40.000 --> 02:47.000
+Et le carburant sera du diesel.
+
+02:47.000 --> 02:55.000
+Cette fois, je veux appeler init sur super. Pourquoi donc?
+
+02:55.000 --> 02:59.000
+En regardant le carburant ici, et le carburant ici, pourquoi ?
+
+02:59.000 --> 03:02.000
+Nous devons remplacer cette valeur.
+
+03:02.000 --> 03:06.000
+Ouais, j'écrase cette valeur par défaut.
+
+03:06.000 --> 03:18.000
+Et donc vers super.init, nous allons passer la marque, le modèle et le carburant.
+
+03:18.000 --> 03:24.000
+D'accord, regardons maintenant cela.
+
+03:24.000 --> 03:31.000
+Je veux vous montrer quelque chose qui ne figure pas sur le site Web du cours, mais qui constitue une fonctionnalité plutôt intéressante de Python.
+
+03:31.000 --> 03:38.000
+Je peux le faire, je peux ouvrir mon onglet Python ici dans le code VS.
+
+03:38.000 --> 03:49.000
+Et si nous appuyons sur la touche haut, nous verrons que c'est la commande que le code VS a automatiquement remplie pour exécuter mon script.
+
+03:49.000 --> 03:55.000
+Il contient donc le chemin complet vers mon environnement virtuel Python 3.
+
+03:55.000 --> 03:59.000
+Et puis il y a le chemin complet de mon fichier.
+
+03:59.000 --> 04:03.000
+Je n'ai pas forcément besoin de tout ça.
+
+04:03.000 --> 04:11.000
+Je peux simplement dire un Python dans mon environnement virtuel et passer le chemin comme ça.
+
+04:11.000 --> 04:18.000
+Oups, désolé, et je vais devoir commenter mon ancien code ici car le véhicule est le même.
+
+04:18.000 --> 04:27.000
+Le véhicule n'a plus le nombre de roues.
+
+04:27.000 --> 04:30.000
+Raccourci pratique pour sortir, un tas de lignes dans le code VS.
+
+04:30.000 --> 04:37.000
+Au moins pour OS X, vous pouvez simplement les sélectionner et appuyer sur la barre oblique de commande.
+
+04:37.000 --> 04:42.000
+Et si vous sélectionnez, commentez le code et appuyez à nouveau dessus, il sera décommenté.
+
+04:42.000 --> 04:46.000
+D'accord, essayons à nouveau.
+
+04:46.000 --> 04:48.000
+D'accord, ça marche.
+
+04:48.000 --> 04:54.000
+Une chose vraiment intéressante que Python peut faire s'appelle exécuter en mode interactif.
+
+04:54.000 --> 04:59.000
+C'est donc idéal pour le débogage et ce n'est pas sur le site Web du cours.
+
+04:59.000 --> 05:08.000
+Donc, si vous voulez savoir cela dès le départ, tout ce que vous avez à faire est de passer le drapeau tiret i après Python avant votre script.
+
+05:08.000 --> 05:15.000
+Ce que cela va faire, c'est exécuter tout ce qui se trouve dans ce fichier Python et cela vous laissera tomber dans une ondulation.
+
+05:15.000 --> 05:20.000
+Vous pouvez donc jeter un œil, vous savez, à l’état de tout.
+
+05:20.000 --> 05:23.000
+Je vois ici que j'ai fait la variable quotidienne.
+
+05:23.000 --> 05:26.000
+Maintenant, je peux regarder ça.
+
+05:26.000 --> 05:28.000
+Juste dans mon ondulation.
+
+05:28.000 --> 05:33.000
+C'est donc une chose vraiment intéressante à savoir lorsque vous êtes simplement en train de déboguer.
+
+05:33.000 --> 05:38.000
+Je vais maintenant vous montrer quelques-unes de nos nouvelles instances.
+
+05:38.000 --> 05:45.000
+Je vais dire que mon conducteur quotidien est une voiture et c'est une Subaru.
+
+05:45.000 --> 05:51.000
+La marque est une piste croisée.
+
+05:51.000 --> 05:54.000
+Et maintenant, je peux imprimer un fichier en amont.
+
+05:54.000 --> 06:03.000
+Je conduis quotidiennement.make.
+
+06:03.000 --> 06:08.000
+Modèle.quotidien.
+
+06:08.000 --> 06:14.000
+Il utilise quotidiennement du carburant.
+
+06:14.000 --> 06:17.000
+Et continue.
+
+06:17.000 --> 06:19.000
+Quotidien.num.
+
+06:19.000 --> 06:21.000
+Roues.
+
+06:21.000 --> 06:23.000
+Roues.
+
+06:23.000 --> 06:28.000
+D'accord.
+
+06:28.000 --> 06:30.000
+Qu'est-ce que j'ai fait ici ?
+
+06:30.000 --> 06:33.000
+Je ne sais pas.
+
+06:33.000 --> 06:34.000
+Nombre de roues.
+
+06:34.000 --> 06:39.000
+J'ai demandé le numéro.
+
+06:39.000 --> 06:40.000
+Merci.
+
+06:40.000 --> 06:41.000
+D'accord.
+
+06:41.000 --> 06:42.000
+Et voilà.
+
+06:42.000 --> 06:45.000
+Le conducteur Subaru Cross Track utilise du gaz et a quatre roues.
+
+06:45.000 --> 06:47.000
+Je peux faire la même chose pour un camion.
+
+06:47.000 --> 06:53.000
+Je peux dire que mon camion est un Ford F350.
+
+06:53.000 --> 06:56.000
+Un camion tellement cool et génial.
+
+06:56.000 --> 06:58.000
+Je peux vérifier le camion.
+
+06:58.000 --> 07:00.000
+Fabriquer un modèle de camion.
+
+07:00.000 --> 07:04.000
+Quel sera le carburant du camion ?
+
+07:04.000 --> 07:05.000
+Oui.
+
+07:05.000 --> 07:06.000
+Ce n'est pas du gaz.
+
+07:06.000 --> 07:09.000
+Donc si je regarde où je.
+
+07:09.000 --> 07:11.000
+Oh, ça va.
+
+07:11.000 --> 07:13.000
+Le carburant de mon camion sera donc du diesel.
+
+07:13.000 --> 07:16.000
+Tous mes camions seront au diesel.
+
+07:16.000 --> 07:20.000
+Plutôt utile, non ?
+
+07:21.000 --> 07:25.000
+L’utilisation du type est une instance et une sous-classe.
+
+07:25.000 --> 07:30.000
+Le type de mon camion est donc un camion.
+
+07:30.000 --> 07:34.000
+Le type de mon chauffeur quotidien.
+
+07:34.000 --> 07:36.000
+Oh, je ne peux vraiment pas écrire aujourd'hui.
+
+07:36.000 --> 07:38.000
+Il n'y a pas de méthode de camionnage ici.
+
+07:38.000 --> 07:40.000
+C’est une sorte de quotidien.
+
+07:40.000 --> 07:41.000
+D'accord.
+
+07:41.000 --> 07:43.000
+C'est donc une voiture.
+
+07:43.000 --> 07:46.000
+Je peux demander par exemple.
+
+07:47.000 --> 07:49.000
+Tous les jours.
+
+07:49.000 --> 07:50.000
+Voiture.
+
+07:50.000 --> 07:52.000
+Eh bien, je comprends.
+
+07:52.000 --> 07:54.000
+Ouais, c'est vrai, non ?
+
+07:54.000 --> 07:56.000
+C'est un exemple.
+
+07:56.000 --> 07:58.000
+Camion.
+
+07:58.000 --> 08:00.000
+Ouais.
+
+08:00.000 --> 08:06.000
+Et juste pour noter ici, je sais que ce camion est ma variable minuscule.
+
+08:06.000 --> 08:08.000
+Mon exemple.
+
+08:08.000 --> 08:11.000
+Et je sais que ce camion majuscule est ma classe.
+
+08:11.000 --> 08:14.000
+Un peu simplement en le regardant à partir de la convention de dénomination, n'est-ce pas ?
+
+08:14.000 --> 08:19.000
+C'est l'une des raisons pour lesquelles les conventions et Python sont si puissants.
+
+08:19.000 --> 08:22.000
+Génial.
+
+08:22.000 --> 08:25.000
+Maintenant, je veux demander.
+
+08:25.000 --> 08:28.000
+C'est un camion de sous-classe.
+
+08:28.000 --> 08:31.000
+Véhicule.
+
+08:31.000 --> 08:32.000
+Ouais.
+
+08:32.000 --> 08:35.000
+Et c'est une voiture de sous-classe.
+
+08:35.000 --> 08:37.000
+Véhicule.
+
+08:37.000 --> 08:38.000
+Ouais.
+
+08:38.000 --> 08:43.000
+Qu’en est-il de la sous-classe de véhicule et de voiture ?
+
+08:43.000 --> 08:44.000
+Non.
+
+08:44.000 --> 08:45.000
+Non.
+

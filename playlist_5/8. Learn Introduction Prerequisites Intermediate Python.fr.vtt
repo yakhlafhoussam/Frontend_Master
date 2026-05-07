@@ -1,0 +1,215 @@
+WEBVTT
+
+00:00.000 --> 00:09.000
+Nous pouvons également utiliser des instructions conditionnelles comme les instructions if dans notre compréhension de liste pour les rendre encore plus puissantes.
+
+00:10.000 --> 00:20.000
+Donc, avant d'avoir mes carrés corrects pour num dans une plage de 6, j'ai imprimé num fois num.
+
+00:23.000 --> 00:28.000
+Et si je voulais faire cela uniquement pour les nombres pairs ?
+
+00:31.000 --> 00:37.000
+J'utiliserais une instruction F et une brève description de la condition que nous allons utiliser
+
+00:38.000 --> 00:41.000
+Est-ce que tout le monde sait ce qu'est l'opération modulo ?
+
+00:41.000 --> 00:42.000
+Module ?
+
+00:42.000 --> 00:43.000
+D'accord.
+
+00:43.000 --> 00:45.000
+Je vais donc l'expliquer très rapidement.
+
+00:45.000 --> 00:49.000
+Le fonctionnement modulo est le reste que vous obtenez de la division.
+
+00:49.000 --> 00:53.000
+Donc 6 modulaire à modulaire avec ce signe de pourcentage.
+
+00:53.000 --> 00:56.000
+Ce sera 0.
+
+00:57.000 --> 01:02.000
+Nous voulons vérifier si notre nombre est divisible par 2.
+
+01:02.000 --> 01:06.000
+C'est comme ça que nous savons que c'est égal.
+
+01:06.000 --> 01:08.000
+Mais il y a un petit piège ici.
+
+01:08.000 --> 01:12.000
+Nous avons appris la véracité hier, n'est-ce pas ?
+
+01:12.000 --> 01:17.000
+Et que nous pouvons rapidement vérifier la véracité de quelque chose en le transmettant à Bull.
+
+01:17.000 --> 01:20.000
+Nous savons donc que les chiffres positifs sont véridiques.
+
+01:20.000 --> 01:24.000
+Nous savons que les nombres négatifs sont également véridiques.
+
+01:24.000 --> 01:27.000
+Quels nombres sont faux et Python ?
+
+01:27.000 --> 01:28.000
+Zéro.
+
+01:28.000 --> 01:29.000
+Zéro.
+
+01:29.000 --> 01:34.000
+Nous voulons donc vérifier si 6 est modulaire.
+
+01:34.000 --> 01:39.000
+Et si nous oublions de faire une vérification supplémentaire et vérifions réellement si c'est zéro ?
+
+01:39.000 --> 01:43.000
+Eh bien, cette expression soit vraie ou fausse.
+
+01:43.000 --> 01:46.000
+Ce sera faux, non ?
+
+01:46.000 --> 01:51.000
+Si je vérifie en passant toute cette expression en deux, c'est faux, non ?
+
+01:52.000 --> 01:59.000
+Donc, ce que nous voulons réellement vérifier, c'est si le nombre modulaire à est égal à zéro.
+
+01:59.000 --> 02:05.000
+C'est une sorte de petit bug subtil qui me dérange encore occasionnellement dans ma propre programmation.
+
+02:05.000 --> 02:09.000
+C’est donc l’un de ces cas où nous souhaitons vérifier explicitement.
+
+02:09.000 --> 02:12.000
+Nous allons obtenir un mauvais résultat.
+
+02:12.000 --> 02:15.000
+Bon, revenons à nos places ici.
+
+02:15.000 --> 02:21.000
+Et vous pouvez simplement utiliser la flèche vers le haut pour faire défiler vers le haut dans l'ondulation.
+
+02:21.000 --> 02:25.000
+Mon conditionnel va du côté droit.
+
+02:25.000 --> 02:29.000
+Donc d’abord, j’ai en quelque sorte mon résultat.
+
+02:29.000 --> 02:32.000
+Ensuite, j'ai mes quatre boucles.
+
+02:32.000 --> 02:36.000
+Et enfin, dans la formule, j'ai mon abstention.
+
+02:36.000 --> 02:38.000
+Je mets ici ma condition.
+
+02:38.000 --> 02:42.000
+Alors, sur la base de ce que nous avons appris ci-dessus, comment puis-je vérifier ?
+
+02:42.000 --> 02:46.000
+Comment pourrais-je le renvoyer uniquement si les chiffres étaient pairs ?
+
+02:46.000 --> 02:48.000
+Quelle serait mon expression ?
+
+02:48.000 --> 02:51.000
+Si vous n'êtes pas module, vous ne le ferez pas.
+
+02:51.000 --> 02:54.000
+Cela va à la quantité zéro.
+
+02:54.000 --> 02:57.000
+La quantité est nulle, n'est-ce pas ?
+
+02:57.000 --> 03:00.000
+Cela ne me donnera donc que les carrés pairs.
+
+03:00.000 --> 03:04.000
+Disons que j'ai cette liste de carrés pairs.
+
+03:04.000 --> 03:11.000
+Et je vais l'attribuer à une variable afin de pouvoir travailler avec cela un peu plus facilement.
+
+03:11.000 --> 03:17.000
+Sachant tout ce que nous savons maintenant, nous savons que ces carrés pairs sont des nombres entiers.
+
+03:17.000 --> 03:25.000
+Comment pourrions-nous imprimer une liste de ces valeurs séparées par des virgules sous forme de chaîne ?
+
+03:25.000 --> 03:28.000
+Comment combiner ces opérations ?
+
+03:28.000 --> 03:34.000
+Quelles sont les différentes pièces ?
+
+03:34.000 --> 03:39.000
+Comment prendre une liste et la combiner en valeurs séparées par des virgules ?
+
+03:40.000 --> 03:41.000
+L'articulation.
+
+03:41.000 --> 03:45.000
+Et qu’y a-t-il du côté gauche de l’équation conjointe ?
+
+03:45.000 --> 03:47.000
+Le délimiteur.
+
+03:47.000 --> 03:52.000
+C'est exact.
+
+03:52.000 --> 03:54.000
+À quoi est-ce que je rejoins ?
+
+03:54.000 --> 03:59.000
+Nous savons que les carrés pairs constituent ma liste de nombres.
+
+03:59.000 --> 04:04.000
+Et cette jointure nécessite une liste ou une compréhension de liste, n'est-ce pas ?
+
+04:04.000 --> 04:06.000
+Une compréhension de liste renvoie une liste.
+
+04:06.000 --> 04:10.000
+Alors, sur quoi est-ce que je boucle ?
+
+04:10.000 --> 04:12.000
+Ouais.
+
+04:12.000 --> 04:18.000
+Je peux dire, vous savez, quatre carrés pairs et carrés pairs.
+
+04:18.000 --> 04:21.000
+Alors sur quoi je suis en boucle.
+
+04:21.000 --> 04:25.000
+Mais je sais que ce joint prend une liste de chaînes.
+
+04:25.000 --> 04:28.000
+Nous avons une liste d'entiers.
+
+04:28.000 --> 04:32.000
+Comment faire cette conversion ?
+
+04:32.000 --> 04:35.000
+C'est exact.
+
+04:35.000 --> 04:46.000
+Cela convertit tout autre type en sa représentation sous forme de chaîne.
+
+04:46.000 --> 04:50.000
+Alors maintenant, nous avons une liste de chaînes et nous pouvons appeler joint dessus.
+
+04:50.000 --> 04:54.000
+Si j'appuie sur Entrée ici, nous obtenons un résultat.
+
+04:54.000 --> 04:59.000
+C'est un peu comme ça qu'on commence à penser à assembler certaines de ces pièces.
+

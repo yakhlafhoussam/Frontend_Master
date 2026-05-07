@@ -1,0 +1,167 @@
+WEBVTT
+
+00:00.000 --> 00:14.000
+Nous avons parlé hier de quatre types de données différents, de quatre types de données de conteneur différents.
+
+00:14.000 --> 00:21.000
+Nous avons parlé de listes, de deux bols, d'ensembles, de dictionnaires.
+
+00:21.000 --> 00:26.000
+Pensez-vous que ces autres types de conteneurs ont des compréhensions ?
+
+00:26.000 --> 00:33.000
+Ouais. Donc si je voulais faire une compréhension d'ensemble,
+
+00:33.000 --> 00:39.000
+J'utiliserais, je me souviens que cet ensemble est une sorte d'accolades, n'est-ce pas ?
+
+00:39.000 --> 00:43.000
+Ceci est un dictionnaire. Nous nous en souvenons.
+
+00:43.000 --> 00:49.000
+Mais tant qu’il contient des éléments, c’est un ensemble.
+
+00:50.000 --> 00:53.000
+Nous allons utiliser cette syntaxe d'accolades.
+
+00:53.000 --> 00:58.000
+Disons que nous voulons créer un ensemble de nos carrés.
+
+00:58.000 --> 01:02.000
+Je ferais la même chose que j’ai fait dans ma compréhension de liste.
+
+01:02.000 --> 01:07.000
+Je dirais quatre chiffres à portée.
+
+01:07.000 --> 01:11.000
+Donnons-lui maintenant une plage plus grande pour num dans la plage 11.
+
+01:11.000 --> 01:13.000
+C'est ma boucle.
+
+01:13.000 --> 01:18.000
+Et puis mon action est juste nombre de fois nombre.
+
+01:19.000 --> 01:21.000
+N'oubliez pas que les ensembles ne sont pas ordonnés.
+
+01:21.000 --> 01:26.000
+Vous ne verrez donc pas les résultats dans l’ordre comme vous le feriez dans la liste.
+
+01:26.000 --> 01:33.000
+Et pour vérifier cela rapidement, je peux modifier le début et la fin.
+
+01:33.000 --> 01:38.000
+Et confirme mes hypothèses.
+
+01:38.000 --> 01:43.000
+Quelle est la différence de syntaxe entre un ensemble et un dictionnaire ?
+
+01:43.000 --> 01:47.000
+Pouvez-vous considérer un ensemble comme, vous savez, une collection de clés ?
+
+01:47.000 --> 01:51.000
+Juste des clés. Qu'est-ce qui est différent avec un dictionnaire ?
+
+01:51.000 --> 01:53.000
+C'est une valeur du test de ces clés.
+
+01:53.000 --> 01:57.000
+Oui. Paires de valeurs clés.
+
+01:57.000 --> 02:06.000
+Quelle est la différence entre notre syntaxe pour un ensemble et notre syntaxe pour un dictionnaire ?
+
+02:07.000 --> 02:16.000
+Et ces virgules, car vous différenciez les éléments de votre ensemble par des virgules.
+
+02:16.000 --> 02:19.000
+Mais c'est cool et ouais.
+
+02:19.000 --> 02:29.000
+Et si je voulais créer un dictionnaire dont la clé était le nombre d’origine et la valeur le carré ?
+
+02:29.000 --> 02:32.000
+Ma clé est donc le numéro d'origine.
+
+02:32.000 --> 02:34.000
+La valeur est le carré.
+
+02:34.000 --> 02:37.000
+Nous savons donc que je dois mettre deux points.
+
+02:37.000 --> 02:41.000
+Où va la clé avant la valeur ?
+
+02:41.000 --> 02:44.000
+C'est vrai, avant la valeur.
+
+02:44.000 --> 02:51.000
+Maintenant, j'ai transformé ma compréhension d'ensemble en une compréhension de dictionnaire.
+
+02:51.000 --> 02:54.000
+Tout comme, je vous ai déjà montré les cordes F.
+
+02:54.000 --> 02:57.000
+Vous pouvez utiliser des chaînes F dans vos compréhensions.
+
+02:57.000 --> 03:05.000
+Disons que j'avais ma liste de noms ici.
+
+03:05.000 --> 03:09.000
+Je peux faire une liste ou définir une compréhension.
+
+03:09.000 --> 03:14.000
+Je peux faire une compréhension de dictionnaire.
+
+03:14.000 --> 03:17.000
+Mais juste pour simplifier, je vais faire une compréhension de liste.
+
+03:17.000 --> 03:21.000
+Et je vais dire quatre noms dans des noms.
+
+03:21.000 --> 03:24.000
+Et comme expression, je peux mettre une chaîne F.
+
+03:24.000 --> 03:29.000
+Et dites que le nom est le nom.
+
+03:29.000 --> 03:32.000
+Disons que j'avais une liste de noms contenant des doublons.
+
+03:32.000 --> 03:34.000
+Je vais l'appeler des noms de dups.
+
+03:34.000 --> 03:38.000
+Et il va y en avoir neuf ici et max.
+
+03:38.000 --> 03:44.000
+Et vous savez, vous savez, encore une fois.
+
+03:44.000 --> 03:48.000
+Je sais que je peux appeler des noms de dups.
+
+03:48.000 --> 03:51.000
+Et je retirerai les doublons.
+
+03:51.000 --> 04:00.000
+Je peux également appeler set sur une compréhension de liste.
+
+04:00.000 --> 04:06.000
+Disons que je voulais obtenir la longueur de chaque nom de cette liste.
+
+04:06.000 --> 04:12.000
+Donc je dirais quatre noms dans des noms dups.
+
+04:12.000 --> 04:16.000
+Et j'imprimerais le, je le ferais, désolé.
+
+04:16.000 --> 04:19.000
+La valeur serait la longueur du nom.
+
+04:19.000 --> 04:21.000
+Et donc mon set n’en a que trois.
+
+04:21.000 --> 04:26.000
+Parce que le nom Nina a deux fois la même longueur.
+

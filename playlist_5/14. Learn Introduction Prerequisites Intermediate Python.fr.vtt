@@ -1,0 +1,365 @@
+WEBVTT
+
+00:00.000 --> 00:11.120
+Pour ce deuxième exercice, nous allons mettre en pratique nos compréhensions, nos compréhensions de listes
+
+00:11.120 --> 00:12.120
+et plus encore.
+
+00:12.120 --> 00:25.440
+Nous allons également examiner de plus près le découpage et utiliser la fonction zip.
+
+00:25.440 --> 00:37.600
+D'accord, nous avons donc parlé de toutes sortes de types différents de compréhensions.
+
+00:37.600 --> 00:41.000
+La compréhension ressemble à ceci.
+
+00:41.000 --> 00:48.280
+Je peux dire, vous savez, donnez-moi tous les nombres pairs de 0 à 99 en les parcourant et en disant
+
+00:48.280 --> 00:58.920
+4-NOM, permettez-moi de dire, 4-NOM dans une plage de 100.
+
+00:58.920 --> 01:03.360
+Et si je reviens au début, je sais que je veux juste le numéro, je ne veux rien
+
+01:03.360 --> 01:06.280
+spécial avec ça.
+
+01:06.280 --> 01:13.320
+Si je voulais obtenir uniquement les nombres pairs, je ferais une vérification modulaire et dirais que si le
+
+01:13.320 --> 01:19.680
+modulo 2 vaut 0, c'est pair.
+
+01:19.680 --> 01:25.720
+Une chose importante à retenir ici est que vous devez utiliser l'opérateur d'égalité pour vérifier
+
+01:25.720 --> 01:28.760
+que la valeur est explicitement 0.
+
+01:28.760 --> 01:36.440
+Sinon, ce sera faux et vous obtiendrez des valeurs impaires à la place.
+
+01:36.440 --> 01:39.160
+Bon, c'est parti.
+
+01:39.160 --> 01:47.960
+Je vais attribuer cela à une variable.
+
+01:47.960 --> 01:54.680
+Et je vais utiliser quelque chose de la bibliothèque standard.
+
+01:54.680 --> 02:01.720
+La méthode aléatoire va m'aider à obtenir un nombre aléatoire.
+
+02:01.720 --> 02:07.160
+Dans la synthèse, vous pouvez taper import random, mais sachez que lorsque vous effectuez des importations en Python
+
+02:07.160 --> 02:12.000
+fichiers, vous voulez toujours mettre vos importations en haut.
+
+02:12.000 --> 02:21.120
+Et en passant, il y a une commande dans la palette de commandes appelée Organiser les importations.
+
+02:21.120 --> 02:27.440
+Une fois que vous aurez commencé à créer des fichiers Python avec de nombreuses importations, il vous suffira de les organiser de manière très simple.
+
+02:27.440 --> 02:30.000
+belle façon pour vous.
+
+02:30.000 --> 02:39.680
+Je veux donc créer un dictionnaire où la clé est le hasard, la clé est le nombre.
+
+02:39.680 --> 02:45.160
+Et puis la valeur est juste un nombre aléatoire de I0 à 99.
+
+02:45.160 --> 02:51.320
+Donc, pour obtenir un nombre aléatoire, je peux dire random dot random int.
+
+02:51.320 --> 02:56.920
+Et disons que je ne me souvenais pas de ce que faisait cette méthode ni des arguments, qu'est-ce que
+
+02:56.960 --> 03:04.120
+puis-je utiliser pour me donner quelques conseils pour m'aider dans ma troisième année ?
+
+03:04.120 --> 03:07.480
+Pour que je puisse transformer tout cela en aide.
+
+03:07.480 --> 03:14.040
+Je dirai aléatoire, A et B, renvoie un entier aléatoire compris entre A et B, incluant les deux
+
+03:14.040 --> 03:16.640
+et des points.
+
+03:16.640 --> 03:26.400
+Je vais donc appeler random dot random int, 0 à 100, et appeler ceci plusieurs fois, en obtenir un nouveau
+
+03:26.400 --> 03:28.840
+valeur à chaque fois, c'est aléatoire.
+
+03:28.840 --> 03:33.280
+Donc pour mon dictionnaire, je vais faire une compréhension de dictionnaire.
+
+03:33.280 --> 03:39.080
+Et quelle est la différence entre la syntaxe entre une compréhension de dictionnaire et un ensemble
+
+03:39.080 --> 03:40.080
+compréhension ?
+
+03:40.080 --> 03:43.400
+Le côlon, non ?
+
+03:43.400 --> 03:48.120
+Donc, sur le côté gauche du côlon se trouve ma clé.
+
+03:48.120 --> 03:56.360
+Et sur le côté droit, je vais utiliser ce point aléatoire random int de 0 à 100.
+
+03:57.320 --> 04:01.120
+Sur quoi est-ce que je boucle ?
+
+04:01.120 --> 04:10.280
+Bon, eh bien, je vais donc dire qu'il n'y en a aucun dans ma liste.
+
+04:10.280 --> 04:13.800
+Et en jetant un oeil à mon deck, c'est parti.
+
+04:13.800 --> 04:15.800
+Chaque valeur est un nombre aléatoire.
+
+04:19.960 --> 04:23.400
+Permettez-moi de regarder les valeurs que nous générons.
+
+04:23.440 --> 04:26.240
+Vous pouvez le faire avec les valeurs de points de mon deck.
+
+04:26.240 --> 04:30.960
+Et il est probable qu'il y ait des doublons ici, pas tout à fait sûr, n'est-ce pas ?
+
+04:30.960 --> 04:32.640
+Le numéro est aléatoire.
+
+04:32.640 --> 04:43.200
+Donc, si je voulais dédupliquer rapidement cette structure de données, je peux le faire de deux manières :
+
+04:43.200 --> 04:44.040
+fais-le.
+
+04:44.080 --> 04:49.080
+La première serait de le passer dans un ensemble.
+
+04:53.360 --> 04:56.160
+Ou je pourrais aussi utiliser une compréhension définie.
+
+04:56.160 --> 05:00.000
+Disons que je voulais apporter quelques modifications avant de le dédoublonner.
+
+05:00.000 --> 05:02.920
+Ce serait une bonne utilité pour une compréhension d'ensemble.
+
+05:02.920 --> 05:05.800
+Donc ici, je pourrais simplement dire pour aucun.
+
+05:05.840 --> 05:11.240
+Numéro aucun dans les valeurs de points de mon deck.
+
+05:16.920 --> 05:18.640
+Oups, désolé pour ça.
+
+05:18.640 --> 05:20.040
+Et voilà.
+
+05:20.040 --> 05:23.160
+Et cela fera la même chose.
+
+05:23.160 --> 05:27.160
+Pour le découpage, je vais faire une nouvelle liste.
+
+05:27.160 --> 05:30.920
+Je peux, avec les nombres de 0 à 99.
+
+05:31.040 --> 05:33.440
+Comme nous l'avons vu, je peux le faire de deux manières.
+
+05:33.440 --> 05:43.800
+Je pourrais, si j'ai une plage de 0 à 100, je peux passer cela dans la liste.
+
+05:43.800 --> 05:48.680
+Ou si je voulais y apporter quelques modifications, alors une compréhension de liste serait un bon
+
+05:48.680 --> 05:49.680
+façon.
+
+05:49.680 --> 05:56.240
+Je pourrais juste dire, vous savez, aucun numéro dans une fourchette de 100.
+
+05:56.240 --> 06:00.280
+Et vous savez, mes modifications seraient ici, mais je vais juste vous montrer ceci à titre d'exemple.
+
+06:00.280 --> 06:03.920
+Je vais nommer ceci ma liste.
+
+06:03.920 --> 06:08.760
+Et je vais prendre une partie de la liste.
+
+06:08.760 --> 06:12.680
+Dans le wrap-all, il est facile de voir le découpage au fur et à mesure.
+
+06:12.680 --> 06:24.280
+Donc la première chose que je veux faire est de prendre une tranche de la 30ème valeur à la 69ème.
+
+06:24.280 --> 06:30.080
+Si je voulais faire la même tranche, mais prendre toutes les autres valeurs à la place, quelle est la
+
+06:30.080 --> 06:40.600
+troisième paramètre que je peux passer, ou je peux ajouter ici, tous les autres, cela me donnerait chaque
+
+06:40.600 --> 06:43.440
+un autre.
+
+06:43.440 --> 06:52.880
+Si j'avais ma liste ici, et que je voulais prendre toutes les valeurs qu'elle contient, mais juste à l'envers,
+
+06:52.880 --> 06:56.880
+qu'est-ce qu'un raccourci utilisant le découpage ?
+
+06:57.680 --> 07:02.720
+Tout est en deux points, moins un.
+
+07:02.720 --> 07:09.360
+Depuis le cours d'introduction à Python, quelle est une autre façon d'inverser tous les
+
+07:09.360 --> 07:12.480
+valeurs dans une liste ?
+
+07:12.480 --> 07:21.120
+Cet inverse, oui, je peux le dire, ma liste dot reverse fait la même chose.
+
+07:21.120 --> 07:24.880
+Quelle est la différence ici ?
+
+07:24.880 --> 07:28.400
+Est-ce que cela n'a rien retourné, n'est-ce pas ?
+
+07:28.400 --> 07:29.680
+Trié sur place.
+
+07:29.680 --> 07:40.800
+Trié sur place, tandis que cela renvoie une copie.
+
+07:40.800 --> 07:47.760
+D'accord, je vais inverser ma liste une fois de plus pour que nous nous retrouvions avec la même chose.
+
+07:47.760 --> 07:54.360
+Si je voulais renvoyer une copie inversée de la liste d’une autre manière, je peux le faire.
+
+07:54.360 --> 08:05.120
+Ce n'est donc pas tout à fait vrai.
+
+08:05.120 --> 08:14.520
+Cela fonctionnera sur ce tri ou cette liste de numéros, mais c'est parce qu'ils sont tous déjà
+
+08:14.520 --> 08:15.520
+dans l'ordre.
+
+08:15.600 --> 08:26.080
+Juste pour garder à l'esprit que lorsque nous utilisons ce point inversé et ceci, cette syntaxe renverra
+
+08:26.080 --> 08:34.640
+la liste à l'envers, mais si vous utilisez le tri par points ou trié et transmettez l'indicateur inverse,
+
+08:34.640 --> 08:40.040
+ça va faire un tri décroissant.
+
+08:40.120 --> 08:47.320
+Tellement difficile à voir avec une liste de nombres, mais plus facile à voir avec d'autres types de structures de données.
+
+08:47.320 --> 08:50.600
+D'accord, parlons de zip.
+
+08:50.600 --> 09:04.600
+Nous avons Nina Max, nous avons Floyd et nous avons Lloyd, et ils ont tous des scores dans un match.
+
+09:05.240 --> 09:14.120
+Utilisons à nouveau random ici, et demandons un entier aléatoire entre 0 et 100, et je vais
+
+09:14.120 --> 09:16.360
+pour parcourir chaque nom.
+
+09:19.960 --> 09:20.920
+Oh non, je perds.
+
+09:24.760 --> 09:33.560
+D'accord, donc si je voulais compresser ces valeurs, je peux dire quatre noms et marquer dans le zip des noms
+
+09:33.560 --> 09:54.440
+et les scores, et imprimez une chaîne d'application qui dit, vous savez, nom, j'ai obtenu des scores, des points, oh, euh,
+
+09:55.160 --> 09:57.880
+vous voulez marquer, marquer, marquer, marquer, marquer, marquer. Merci.
+
+10:02.520 --> 10:06.920
+La programmation en groupe par paires est toujours le moyen le plus rapide. Bon, c'est parti.
+
+10:08.840 --> 10:12.840
+Et si je voulais un dictionnaire de ces noms et de leurs partitions ?
+
+10:13.800 --> 10:21.000
+Je peux simplement transmettre ce zip au constructeur de déduction et me retrouver avec cela.
+
+10:21.320 --> 10:27.960
+Quelqu'un a posé une très bonne question pendant qu'il faisait l'exercice, et j'ai donc voulu revoir
+
+10:27.960 --> 10:33.800
+cela très rapidement afin que nous soyons tous au clair. Donc si je regarde le zip des noms et des scores,
+
+10:34.680 --> 10:39.320
+et récupérez quelque chose qui ressemble à ceci, c'est généralement un indice que ce type d'objet
+
+10:39.320 --> 10:46.600
+c'est peut-être quoi ? Ouais, ça pourrait être un générateur. Et notez que c'est un peu pour
+
+10:47.560 --> 10:53.160
+ces types intégrés. Si vous créez vos propres classes et que vous n'insérez pas de représentation sous forme de chaîne,
+
+10:53.160 --> 10:58.520
+vous pourriez aussi voir quelque chose qui ressemble à ceci, mais ce n'est pas un générateur. Nous avons juste
+
+11:00.680 --> 11:04.440
+Je n'ai pas mis en place, vous savez, d'y insérer une fonction de représentation.
+
+11:05.080 --> 11:17.960
+Si c’est le cas, attribuez-le à une variable. Je vais donc vous montrer ce qui se passe lorsqu'un générateur
+
+11:17.960 --> 11:23.560
+est épuisé. Qu'est ce que c'est? Je vais dire que mon zip est le zip des noms et des scores.
+
+11:23.880 --> 11:40.280
+Si je parcoure ceci, et je dis juste pour Z et mon zip, imprime Z, et c'est passé,
+
+11:41.560 --> 11:49.000
+chaque tuple et la liste l'ont imprimé. On sait que ces expressions génératrices, elles ne savent que
+
+11:49.560 --> 11:54.280
+en quelque sorte leur valeur actuelle, qu'ils reviennent, et ils connaissent juste la prochaine étape dans le
+
+11:54.280 --> 11:59.640
+futur. Ils ne savent rien du passé, et ils ne peuvent pas, ils ne peuvent pas voir loin dans le passé.
+
+11:59.640 --> 12:12.280
+futur. Donc si j'imprime, si j'imprime, si j'essaye de refaire ça et de dire :
+
+12:12.280 --> 12:33.080
+pour Z et mon zip print Z, que penses-tu que je vais voir ? Rien. Pourquoi donc? C'est parce que
+
+12:33.080 --> 12:42.600
+tu l'as utilisé comme ce que tu traverses ? Ouais, je l'ai déjà utilisé. C'est vide. Il le savait, tu sais,
+
+12:42.600 --> 12:48.360
+la dernière étape était, il a terminé la dernière étape, et puis c'est parti. Il n'y a plus rien dedans.
+
+12:49.080 --> 12:53.160
+Vous ne pouvez donc pas réutiliser ces générateurs. Ils sont en quelque sorte à usage unique.
+

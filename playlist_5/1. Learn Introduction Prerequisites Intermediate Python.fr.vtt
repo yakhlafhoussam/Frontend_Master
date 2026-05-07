@@ -1,0 +1,140 @@
+WEBVTT
+
+00:00.000 --> 00:04.560
+Un peu de moi, votre instructeur, je m'appelle Nina Zackranko.
+
+00:04.560 --> 00:07.360
+Vous me connaissez peut-être aussi sous les noms de NNJ et Twitter.
+
+00:07.360 --> 00:12.240
+J'ai écrit des logiciels pour des entreprises plutôt cool au cours de ma carrière de dix ans.
+
+00:12.240 --> 00:13.520
+et l'ingénierie.
+
+00:13.520 --> 00:15.520
+J'ai travaillé chez Meetup.
+
+00:15.520 --> 00:19.280
+J'ai travaillé chez HBO, écrivant des logiciels pour ordinateurs satellites.
+
+00:19.280 --> 00:21.280
+J'ai travaillé chez Reddit.
+
+00:21.280 --> 00:27.040
+Ces jours-ci, je travaille chez Microsoft et je suis un défenseur des développeurs cloud, en me concentrant sur Python.
+
+00:27.520 --> 00:32.240
+Je suis développeur Python professionnel depuis cinq ou six ans maintenant
+
+00:32.240 --> 00:35.040
+et c'est absolument ma langue préférée.
+
+00:36.160 --> 00:39.040
+Si vous souhaitez rester en contact avec moi après le cours,
+
+00:39.040 --> 00:41.440
+il y a quelques liens ici sur le site Web du cours.
+
+00:45.280 --> 00:48.080
+Il s'agit d'un cours Python intermédiaire.
+
+00:48.080 --> 00:52.160
+Vous pouvez également le voir désigné sous le nom de deuxième jour sur le site Web du cours.
+
+00:52.160 --> 00:55.280
+Au cours de ce cours, nous allons commencer à nous sentir plus à l'aise
+
+00:55.280 --> 00:58.720
+avec certains des aspects les plus avancés de Python,
+
+00:58.720 --> 01:02.880
+comme les classes, les compréhensions de listes et la bibliothèque standard.
+
+01:03.600 --> 01:07.920
+En fin de compte, vous en saurez assez pour créer un petit projet interactif
+
+01:07.920 --> 01:10.480
+site Web utilisant le framework Web Flask.
+
+01:11.760 --> 01:14.960
+Sachez que pour participer pleinement au cours d'aujourd'hui,
+
+01:14.960 --> 01:21.360
+vous devez avoir VS Code configuré localement, ainsi qu'une version Python supérieure à 3.7.
+
+01:21.920 --> 01:26.560
+Vous devez être familier avec tous les concepts depuis l'introduction à Python,
+
+01:26.560 --> 01:29.440
+que vous pourriez voir appelé le premier jour.
+
+01:31.280 --> 01:34.640
+En cliquant sur la section d'introduction à Python.
+
+01:35.200 --> 01:38.160
+Vous devez être familier avec les conventions Python, comme Pepe,
+
+01:39.280 --> 01:42.800
+types de données de base et variables, nombres, chaînes,
+
+01:43.440 --> 01:47.200
+les erreurs courantes et les erreurs courantes que vous pourriez commettre en tant que développeur Python.
+
+01:48.080 --> 01:52.400
+Fonctions les définissant comme arguments, portée de la fonction.
+
+01:53.440 --> 01:59.840
+Les types de Python les plus avancés, la liste, le tuple, l'ensemble et le dictionnaire,
+
+01:59.840 --> 02:07.360
+vous devez être familier avec la mutabilité et savoir qu'un tuple est une structure de données immuable,
+
+02:07.360 --> 02:10.080
+tandis que l'ensemble de listes et le dictionnaire sont modifiables.
+
+02:11.040 --> 02:18.240
+Vous devez connaître la logique booléenne, la véracité d'une valeur en Python,
+
+02:18.240 --> 02:25.120
+ainsi que comment faire des comparaisons, telles que supérieur à inférieur à, et terminer ou non,
+
+02:25.120 --> 02:30.480
+ces opérateurs booléens. Vous devez savoir comment boucler avec des instructions de contrôle.
+
+02:30.480 --> 02:39.120
+Vous devez connaître l'instruction if, sinon les quatre boucles, les boucles murales et le break,
+
+02:39.200 --> 02:44.080
+continuez et revenez. Enfin, vous devez savoir travailler avec les programmes Python,
+
+02:44.640 --> 02:50.560
+comment les exécuter, quelle est la méthode principale, les exceptions et les traçages, et comment
+
+02:51.520 --> 02:57.600
+travailler avec des bibliothèques simples. Enfin, vous devriez savoir un peu ce qu'est une API,
+
+02:57.600 --> 03:04.720
+et comment travailler avec eux, les requêtes et les réponses, les codes d'état HTTP et comment utiliser la requête
+
+03:04.800 --> 03:12.320
+bibliothèque et Python. Si vous n'êtes pas sûr de connaître ces sujets, je vous suggère de continuer
+
+03:12.320 --> 03:18.000
+et regardez d'abord l'introduction au cours Python. Vous allez tirer beaucoup plus de valeur de l'intermédiaire
+
+03:18.000 --> 03:23.520
+Python si vous avez une solide compréhension de ces concepts fondamentaux. Si vous choisissez
+
+03:23.520 --> 03:30.160
+pour nous rejoindre pour Python intermédiaire sans suivre d'abord le cours d'introduction à Python, allez-y et faites défiler
+
+03:30.240 --> 03:36.000
+en haut du site Web du cours, cliquez sur l'introduction du cours, puis accédez au
+
+03:36.000 --> 03:41.520
+paramètres des exigences. Vous devrez suivre toutes ces étapes pour pouvoir suivre
+
+03:41.520 --> 03:46.480
+avec les exercices de Python intermédiaire.
+

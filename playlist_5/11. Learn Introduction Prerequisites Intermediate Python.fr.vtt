@@ -1,0 +1,80 @@
+WEBVTT
+
+00:00.000 --> 00:05.760
+Quelque chose à noter ici est que cette compréhension de liste va construire tout cet ensemble.
+
+00:05.760 --> 00:16.160
+liste en mémoire et c'est un peu inefficace, non ? En Python 3, il y a une idée de générateurs
+
+00:16.160 --> 00:24.640
+et comme nous l'avons vu lorsque nous avons appelé range, c'est comme, oh, voici cet objet génial. Portée d'appel,
+
+00:24.720 --> 00:32.080
+chaque numéro sera généré au fur et à mesure que nous bouclerons une sorte de juste à temps, considérez-le comme un
+
+00:32.080 --> 00:41.280
+évaluation paresseuse. Comme nous travaillons avec des ensembles de données plus volumineux, nous pouvons assez facilement faire la même chose.
+
+00:42.640 --> 00:50.480
+Voici donc ma longueur pour le nom et les dupes. Pour créer une expression génératrice, cela s'appelle
+
+00:50.560 --> 00:57.200
+expression génératrice en Python, mais j'aime l'appeler compréhension du générateur. je pense que
+
+00:57.200 --> 01:03.440
+cela a juste un peu plus de sens. L'expression du générateur est le genre de générateur de nom correct
+
+01:03.440 --> 01:09.360
+la compréhension est la façon dont vous pouvez y penser. Donc je pense que c'est comme, tu sais, nous sommes un générateur
+
+01:09.360 --> 01:17.360
+objet en retour. Et tout comme pour la plage, cette valeur sera calculée selon nos besoins,
+
+01:17.360 --> 01:30.240
+c'est généralement lorsque nous effectuons une boucle dessus. Et vous pouvez transmettre cette compréhension du générateur à certains
+
+01:30.240 --> 01:37.520
+de nos autres méthodes. Alors ici, j'appelle un set là-dessus. C'est beaucoup plus efficace.
+
+01:37.520 --> 01:47.680
+Lorsque vous transmettez la compréhension de ce générateur à d'autres méthodes, ces parenthèses supplémentaires sont
+
+01:47.680 --> 02:03.520
+facultatif. Python le sait. Vous pouvez également appeler ces autres méthodes, la somme, le max et le min,
+
+02:03.840 --> 02:17.200
+sur eux. Donc la représentation la plus efficace. Notez que lorsque nous faisons une compréhension du générateur,
+
+02:18.160 --> 02:24.080
+et ici, permettez-moi de simplifier un peu. Je dirai juste, tu sais, je vais refaire mes carrés.
+
+02:24.400 --> 02:38.480
+Nous ne pouvons pas, par exemple, disons que je l'attribue à une valeur. Je ne peux pas faire comme ma Gen 0, n'est-ce pas ? C'est comme si je pourrais
+
+02:38.480 --> 02:45.040
+avec une liste. Je ne parviens pas à accéder au premier élément. Ce n'est pas inscriptible, n'est-ce pas ? Donc la façon dont nous obtenons
+
+02:45.040 --> 02:52.000
+sur ces éléments du générateur, nous les parcourons soit dans une boucle de compréhension, soit dans une boucle for,
+
+02:52.000 --> 03:02.960
+n'est-ce pas ? C'est à ce moment-là que ces valeurs deviennent disponibles lorsque nous les parcourons. Des questions sur
+
+03:02.960 --> 03:07.760
+des générateurs ? Ouais. Alors, que feriez-vous comme générateur ? Quel est l'avantage à cela ? Est-ce un profond
+
+03:07.760 --> 03:14.080
+chose ? Ouais. À mesure que votre structure de données grandit, à mesure que vous utilisez de grands nombres en travaillant avec
+
+03:14.160 --> 03:21.840
+de grands ensembles de données, comme vous le feriez, en IA, ML, les générateurs deviennent cruciaux, car vous n'avez pas besoin de générer,
+
+03:21.840 --> 03:29.280
+ou Python ne crée pas toute cette liste, toute cette structure de données en mémoire. Ça fait un paresseux
+
+03:29.280 --> 03:35.440
+évaluation. Et je pourrais parler toute la journée d’itérateurs et de générateurs. C'est juste
+
+03:36.240 --> 03:40.320
+ce que j'ai suffisamment de temps pour couvrir. Ils sont vraiment intéressants et fascinants.
+

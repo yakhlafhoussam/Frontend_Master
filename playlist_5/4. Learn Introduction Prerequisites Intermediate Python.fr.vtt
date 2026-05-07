@@ -1,0 +1,104 @@
+WEBVTT
+
+00:00.000 --> 00:08.000
+Python a une philosophie intéressante, mais Zen of Python, c'est une liste de 19 logiciels
+
+00:08.000 --> 00:14.800
+principes écrits sous forme de poème qui ont influencé la conception du langage de programmation Python,
+
+00:14.800 --> 00:23.040
+et en quelque sorte capture vraiment, j'en ai l'impression d'en être l'essence. Il a été publié sur une liste de diffusion Python
+
+00:23.040 --> 00:29.040
+en juin 1999 par Tim Peters. Comme nous l'avons appris hier, Python a 30 ans.
+
+00:30.080 --> 00:36.160
+Python 3 a 11 ans, donc il sera bientôt assez vieux pour voter, non ?
+
+00:38.640 --> 00:44.640
+Alors un joli petit œuf de Pâques et Python, le Zen de Python est dans l'interpréteur Python.
+
+00:44.640 --> 00:50.720
+Vous devriez donc tous avoir vos ondulations ouvertes. Tapez import, espacez-le et appuyez sur Entrée.
+
+00:51.440 --> 00:55.760
+Où je vais parler de certains des premiers principes, je recommande de revenir et
+
+00:55.760 --> 01:02.160
+en regardant le reste plus tard. Ainsi, le Zen de Python commence par le beau vaut mieux que le laid,
+
+01:02.160 --> 01:09.360
+explicite, mieux qu'implicite, simple, mieux que complexe, complexe, mieux que compliqué.
+
+01:09.360 --> 01:14.240
+C'est une distinction importante, une distinction importante, plate, mieux qu'emboîtée,
+
+01:14.240 --> 01:23.280
+mieux vaut clairsemé que dense, et la lisibilité compte. Ce sont donc des idées Python vraiment importantes.
+
+01:23.600 --> 01:30.400
+Mieux vaut simple que complexe, en général, les programmeurs Python préfèrent être explicites et écrire simple,
+
+01:30.400 --> 01:37.040
+code compréhensible et maintenable. Au lieu, vous savez, peut-être de faire preuve d'ego et d'écrire,
+
+01:37.040 --> 01:43.120
+des choses inutilement complexes, j'en suis sûr. Bien sûr, développeurs, nous avons tous vu des choses qui
+
+01:43.120 --> 01:50.800
+Il n’était pas nécessaire que ce soit si compliqué. La lisibilité compte, rendre votre code facile à lire,
+
+01:50.800 --> 01:55.680
+éviter les noms de variables à un seul caractère, appeler vos fonctions avec des paramètres nommés,
+
+01:55.680 --> 02:05.600
+le cas échéant, en utilisant de bons noms de variables. C'est vraiment, j'ai l'impression d'être vraiment lié avec
+
+02:05.600 --> 02:12.000
+Pepe 8. Nous avons entendu parler de Pepe 8 hier. En quoi c'est un guide de style important pour les développeurs Python
+
+02:13.040 --> 02:18.480
+parce que la plupart des bons codes Python devraient être assez similaires, et cela aide vraiment en termes de
+
+02:18.560 --> 02:23.600
+lisibilité. Toutes les importations seront au sommet. Vous savez, si quelque chose est nommé avec
+
+02:23.600 --> 02:29.840
+cas de chameau, alors ce sera probablement une classe. Vos variables sont toutes de classe inférieure et divisées par des traits de soulignement.
+
+02:34.160 --> 02:42.400
+Ayez encore quelques œufs de Pâques amusants à vous montrer. Je vais donc commencer mon ondulation ici.
+
+02:42.400 --> 02:55.840
+Voyons où est passée mon ondulation ? Oh non, on dirait que mon Ripple s'est écrasé. Donc si ce genre de chose arrive
+
+02:55.840 --> 03:01.120
+pour vous, si vous voyez, vous savez, des bizarreries, les choses ne fonctionnent pas comme prévu ou comme prévu,
+
+03:01.120 --> 03:07.680
+frappez simplement cette poubelle ici et elle explosera. Et essayons encore une fois. Génial.
+
+03:08.240 --> 03:16.560
+D'accord, donc notre prochain œuf de Pâques, nous pouvons le faire à partir du trait de soulignement. Rappelez-vous ces doubles traits de soulignement
+
+03:16.560 --> 03:24.160
+sont également appelés dunder en Python. À partir de la fonction de soulignement, de soulignement, de soulignement
+
+03:24.160 --> 03:43.360
+importer des accolades. Cela n'arrive pas. Et un de mes œufs de Pâques préférés, si vous importez de l'anti-gravité
+
+03:43.840 --> 03:55.360
+je devrais me voir du petit KCD. Peut-être un de mes préférés. Et ça dit juste que tu voles comment
+
+03:56.160 --> 04:02.240
+avec Python. Alors tu l'as appris, tu sais, hier soir, tout était si simple. Bonjour tout le monde, c'est juste
+
+04:02.240 --> 04:08.800
+print, hello world en Python trois, mettez des parenthèses autour de cela. Vous savez, il y a la saisie dynamique,
+
+04:08.880 --> 04:15.280
+il y a un espace blanc, vous savez. Donc un tout nouveau monde. Donc tu as toujours besoin d'un petit coup de pouce pour me chercher
+
+04:15.280 --> 04:18.560
+importer de l'anti-gravité.
+

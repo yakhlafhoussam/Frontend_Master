@@ -1,0 +1,92 @@
+WEBVTT
+
+00:00.000 --> 00:05.440
+Dans le prochain et dernier chapitre, chapitre 8, nous allons parler des frameworks Web.
+
+00:05.440 --> 00:12.080
+Les frameworks Web sont donc pour nous un moyen de tester et de mettre en pratique toutes nos nouvelles connaissances Python.
+
+00:12.080 --> 00:21.520
+Et créez une application Web très, très basique avec des tests unitaires utilisant Python et le framework flask.
+
+00:25.040 --> 00:27.360
+Passons en revue les bases de Flask.
+
+00:30.960 --> 00:35.920
+Il existe différents types de frameworks Web en Python.
+
+00:35.920 --> 00:38.080
+Django est le plus populaire.
+
+00:38.080 --> 00:43.120
+Il s'agit d'un framework de haut niveau complet pour créer des applications Web.
+
+00:43.120 --> 00:47.200
+Django se concentre sur l'automatisation autant que possible.
+
+00:47.200 --> 00:49.760
+De nombreux sites à grande échelle fonctionnent sur Django.
+
+00:49.760 --> 00:51.760
+Instagram en fait partie.
+
+00:53.040 --> 00:59.120
+Django a commencé comme un projet CMS, un système de gestion de contenu pour un journal.
+
+00:59.440 --> 01:02.880
+Et Django est un framework assez lourd.
+
+01:02.880 --> 01:08.560
+Il a de nombreuses opinions sur la façon dont les choses devraient fonctionner et comment les choses devraient être structurées.
+
+01:08.560 --> 01:12.400
+Si vous voulez quelque chose de plus léger, le flacon est un bon choix.
+
+01:13.200 --> 01:16.000
+Flask est un micro-framework pour Python.
+
+01:16.000 --> 01:23.120
+Et il permet aux utilisateurs de créer des API back-end et des applications Web assez basiques avec un minimum de code.
+
+01:23.760 --> 01:26.080
+Flask est un peu plus facile pour les débutants.
+
+01:26.080 --> 01:28.000
+Ce n'est pas aussi opiniâtre.
+
+01:28.000 --> 01:31.360
+Il y a moins d’étapes de configuration, moins d’exigences.
+
+01:31.360 --> 01:34.880
+C'est donc sur cela que je vais me concentrer pour les exercices d'aujourd'hui.
+
+01:34.880 --> 01:40.400
+Mais ne pensez pas que Flask est un simple framework Web.
+
+01:40.400 --> 01:44.000
+L'avantage de Flask est qu'à mesure que votre application Web se développe,
+
+01:44.000 --> 01:48.000
+vous pouvez ajouter toutes sortes de modules différents pour vous aider
+
+01:49.920 --> 01:56.000
+ajouter des fonctionnalités pour les bases de données ou d'autres types de choses que votre application Web pourrait
+
+01:56.160 --> 01:56.720
+veux faire.
+
+01:58.720 --> 02:03.120
+Ouais, un autre framework Web dont vous pourriez entendre parler ou considérer comme une pyramide.
+
+02:03.920 --> 02:07.600
+C'est un framework rapide et avancé.
+
+02:07.600 --> 02:10.400
+C'est un successeur de l'ancien cadre de pylônes.
+
+02:12.000 --> 02:18.960
+Donc toujours populaire et utilisé, mais pas aussi populaire pour les nouveaux projets.
+
+02:18.960 --> 02:21.840
+Pyramid est open source et également activement développé.
+
