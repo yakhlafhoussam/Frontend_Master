@@ -1,0 +1,155 @@
+WEBVTT
+
+00:00.000 --> 00:03.920
+Nous parlions de l'API d'options et du pont sur l'API de composition, puis nous
+
+00:03.920 --> 00:07.280
+est allé de l'avant et vous a essentiellement montré à quoi cela ressemblait d'utiliser uniquement l'API de composition où
+
+00:07.280 --> 00:11.440
+nous déplacerions tout dans la fonction de configuration. Mais je t'ai promis que tout ça
+
+00:11.440 --> 00:16.720
+passe-partout que nous écrivions, eh bien, il y a un écran d'herbe de l'autre côté et c'est vraiment
+
+00:16.720 --> 00:22.880
+c'est parce que quelque chose qui est sorti récemment avec la vue 3.2 et supérieure est le concept de
+
+00:22.880 --> 00:27.120
+configuration du script. Et donc avant de plonger dans le code, je vais faire quelques diapositives juste pour vous donner
+
+00:27.120 --> 00:32.400
+tout comme un aperçu de base afin qu'il aide, espérons-le, à mieux expliquer les choses.
+
+00:33.440 --> 00:38.640
+Nous avons donc ici un composant de vue. Comme vous pouvez le voir ici, nous avons notre script et comme nous pouvons le voir ici
+
+00:38.640 --> 00:43.280
+nous utilisons l'API d'options pour tout définir avec l'API de composition. Donc votre vie d'installation
+
+00:43.280 --> 00:48.880
+crochet à vélo. Nous pouvons voir qu'il s'agit d'une application de compteur standard avec un décompte approximatif de 0. Nous avons un ordinateur
+
+00:48.880 --> 00:53.920
+propriété par exemple. Nous avons une méthode pour incrémenter le décompte et nous renvoyons tout dans l'objet.
+
+00:54.000 --> 00:58.560
+Assez standard du point de vue de l'API de composition. Eh bien, une des choses que nous réalisons cependant
+
+00:58.560 --> 01:03.440
+c'est que c'est encore beaucoup de passe-partout étant donné que beaucoup de gens optent pour la composition
+
+01:03.440 --> 01:09.760
+API pour certains composants de manière pure. Alors, comment pourrions-nous améliorer les choses ? Eh bien, première chose
+
+01:09.760 --> 01:13.440
+d'abord, nous sommes allés de l'avant et nous allons dire que nous allons supposer que l'intégralité du bloc de script est
+
+01:13.440 --> 01:17.840
+va être un crochet de cycle de vie d'installation. C'est pourquoi vous voyez que nous avons déplacé la configuration, en fait, nous avons déplacé
+
+01:17.840 --> 01:22.160
+tout cela jusqu'à ce bloc de script. Alors maintenant, le script a cet attribut de configuration qui indique
+
+01:22.160 --> 01:28.400
+le compilateur, hé, nous sommes maintenant dans une fonction de hook de cycle de vie de configuration pure. Alors qu’est-ce que ça veut dire ?
+
+01:28.400 --> 01:32.720
+Permettez-moi de me débarrasser d'un objet d'exportation par défaut car nous allons faire quelques optimisations du compilateur
+
+01:32.720 --> 01:37.840
+que nous pouvons supposer sur la base du fait que nous travaillons uniquement dans la configuration de scripts. Puis en plus de ça
+
+01:37.840 --> 01:43.360
+parce que nous pouvons maintenant faire un peu de visualisation, nous pouvons faire de la magie en ce qui concerne la détection de ce qui est utilisé
+
+01:43.360 --> 01:47.840
+dans le modèle et ainsi de suite, nous pouvons en fait nous débarrasser complètement de l'objet de retour.
+
+01:48.720 --> 01:55.440
+Et donc en fin de compte, ce code fonctionne exactement de la même manière que tout ce que vous avez vu plus tôt.
+
+01:56.880 --> 02:04.000
+D'accord, alors allons-y et voyons cela en action, d'accord ? Donc ce que nous allons faire, c'est aller
+
+02:04.000 --> 02:08.720
+prendre la page du restaurant avec laquelle nous avons travaillé et nous allons la réduire
+
+02:08.720 --> 02:13.200
+dans le format de configuration du script. Donc, tout d'abord, nous allons ajouter l'attribut setup ici et
+
+02:13.200 --> 02:18.400
+ce que vous remarquez immédiatement, c'est qu'en gros, ça commence à dire hé, beaucoup de ces choses
+
+02:18.400 --> 02:23.040
+vous parlez, ils ne sont pas utilisés. Ainsi, par exemple, nous pouvons nous débarrasser de ce composant défini.
+
+02:23.040 --> 02:28.880
+Cela peut donc simplement être supprimé. Alors laissez-moi aller de l'avant en bas parce que maintenant tout est
+
+02:28.880 --> 02:33.680
+c'est la configuration du script dont nous n'avons pas besoin, nous n'avons plus l'API d'options. Donc cette méthode d'assistance disparaît
+
+02:34.800 --> 02:39.440
+et puis, comme les composants sont automatiquement enregistrés lors de l'importation, nous n'avons pas besoin de le faire manuellement
+
+02:39.520 --> 02:45.520
+enregistrez-les non plus. Alors voilà, au revoir. Et puis ici, nous n'avons pas besoin de nous installer ici, pourquoi
+
+02:45.520 --> 02:50.240
+parce que nous avons déjà l'attribut setup défini ici dans le bloc de script, puis
+
+02:50.240 --> 02:57.520
+en faisant défiler jusqu'en bas, il y a l'autre et enfin nous pouvons supprimer tous ces trucs de retour
+
+02:58.400 --> 03:04.960
+et puis c'est tout. Avez-vous maintenant votre bloc de configuration de script et tout exploite toujours la vue
+
+03:05.040 --> 03:10.880
+comme vous le souhaitez, mais il s'agit essentiellement davantage de cette terre JavaScript vanille, puis de saupoudrer
+
+03:10.880 --> 03:15.600
+toutes les méthodes d'assistance là où cela a du sens. Et maintenant que j'ai fait ça et que je t'ai montré comment ça marche
+
+03:15.600 --> 03:19.680
+nous allons vous demander d'essayer rapidement cela. Donc étant donné que c'est essentiellement un peu comme
+
+03:19.680 --> 03:23.760
+exercice de refactoring, nous allons juste lui donner cinq minutes juste pour les personnes ayant l'habitude de le faire
+
+03:23.760 --> 03:28.640
+alors laissez-moi aller de l'avant et configurer cela très rapidement. D'accord, maintenant, si vous cliquez, si vous payez
+
+03:28.640 --> 03:34.640
+la branche d'exercices O4 qui vous permettra d'avancer et comme nous l'avons dit sur votre page plats, vous êtes
+
+03:34.640 --> 03:37.920
+nous allons faire exactement la même chose en enlevant toute la plaque chauffante et en obtenant
+
+03:37.920 --> 03:47.440
+vous descendez dans ce bloc de configuration de script. J'espère donc que c'était surtout un effort de décapage
+
+03:47.440 --> 03:51.760
+ce composant. Nous allons donc faire ça très rapidement ensemble. Alors encore une fois, première chose
+
+03:51.760 --> 03:56.000
+Voulons-nous utiliser le bloc de configuration du script, ajouter l'attribut de configuration, puis nous pouvons continuer et supprimer
+
+03:56.080 --> 04:02.080
+cette ligne d'exportation. Nous pouvons supprimer la ligne des composants. Nous n'avons plus besoin de configuration. je vais m'en occuper
+
+04:02.080 --> 04:07.680
+ça dans un petit moment. Nous n'avons pas besoin de ce bloc de retour. Nous n'avons pas besoin de tout cela au fond.
+
+04:07.680 --> 04:12.800
+Je pense que nous économisons. Nous y sommes pour la plupart. Il suffit d'éliminer cela et c'est tout.
+
+04:13.520 --> 04:18.720
+Eux et maintenant vous avez votre bloc de configuration de script et ça a l'air génial. Et ainsi de suite pour le
+
+04:18.720 --> 04:23.440
+Pour le reste de cet atelier, nous allons essentiellement utiliser la syntaxe du bloc de configuration de script. Et maintenant tu as
+
+04:23.440 --> 04:27.840
+j'ai vu ce voyage et j'espère que tout le monde pourra suivre à partir de ce point.
+

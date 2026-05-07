@@ -1,0 +1,350 @@
+WEBVTT
+
+00:00.000 --> 00:01.760
+Merci à tous d'être venus aujourd'hui.
+
+00:01.760 --> 00:05.160
+Je sais que la journée a été longue, mais j'espère que vous avez trouvé cela utile.
+
+00:05.160 --> 00:08.560
+En ce qui concerne les prochaines étapes, il y a tout un monde
+
+00:08.560 --> 00:11.600
+des types partout là-bas que nous n’avons même pas commencé à toucher.
+
+00:11.600 --> 00:15.120
+Comme je l'ai dit, vous devez penser à certaines interfaces.
+
+00:15.120 --> 00:18.800
+Il existe des génériques et toutes ces autres choses que vous pouvez faire avec TypeScript.
+
+00:18.800 --> 00:21.600
+Mais pour être honnête, ma recommandation en matière de TypeScript
+
+00:21.600 --> 00:23.920
+est similaire à mes conseils en matière de cadres d'apprentissage,
+
+00:23.920 --> 00:26.640
+c'est-à-dire, n'essayez pas d'apprendre toutes les techniques du monde
+
+00:26.640 --> 00:28.960
+dans une tentative d'aimer créer le code parfait.
+
+00:28.960 --> 00:31.040
+Lorsque vous avez un problème spécifique,
+
+00:31.040 --> 00:33.040
+c'est à ce moment-là que vous tendez la main et trouvez une solution.
+
+00:33.040 --> 00:36.720
+Un bon exemple de cela est lorsque j'ai réalisé que nous avions une constante
+
+00:36.720 --> 00:40.560
+cela gardait une source de vérité pour notre liste de régimes et ce genre de choses.
+
+00:40.560 --> 00:43.680
+Et puis j'ai réalisé que le TypeScript reproduisait cela dans les types.
+
+00:43.680 --> 00:47.040
+C'est à ce moment-là que j'ai appris qui l'admettait à nouveau.
+
+00:47.040 --> 00:49.920
+Taxe sur l'autisme, mais elle résout un problème pour moi.
+
+00:49.920 --> 00:51.760
+Et c'est à ce moment-là que je l'ai contacté.
+
+00:51.760 --> 00:55.360
+C'est vraiment tentant, je pense, en tant que développeurs, d'essayer de tout apprendre d'un coup.
+
+00:55.360 --> 00:57.120
+parce que tu as peur de rater quelque chose.
+
+00:57.120 --> 01:00.720
+Mais honnêtement, je pense que la perfection est l'ennemie du progrès
+
+01:00.720 --> 01:03.840
+et la pureté du code peut vraiment entraver la progression de l'équipe
+
+01:03.840 --> 01:07.360
+quand il s’agit vraiment de ce qui est le plus important, n’est-ce pas ?
+
+01:07.360 --> 01:12.240
+Et encore une fois, je ne saurais trop insister sur ce TypeScript comme de nombreux outils.
+
+01:12.240 --> 01:13.520
+C'est merveilleux à bien des égards, n'est-ce pas ?
+
+01:13.520 --> 01:14.800
+Nous l’avons vu faire beaucoup de bonnes choses pour nous.
+
+01:14.800 --> 01:17.120
+Mais n'oubliez pas que nous l'avons fait de manière progressive.
+
+01:17.120 --> 01:20.320
+C'était comme, laisse-moi m'aider en définissant mes intentions
+
+01:20.320 --> 01:23.920
+et puis juste comme le choisir quand cela a du sens pour moi.
+
+01:23.920 --> 01:26.320
+Mais vous remarquerez que parfois je n'ai pas défini de types non plus.
+
+01:26.320 --> 01:27.040
+Et ça va.
+
+01:27.040 --> 01:29.040
+C'est en fait une excellente façon de se mouiller les pieds
+
+01:29.040 --> 01:30.800
+et déterminez ce qui a le plus de sens.
+
+01:30.800 --> 01:33.440
+Au moment où tu te laisses emporter par l'abstraction, ce genre de choses,
+
+01:33.440 --> 01:36.720
+c'est à ce moment-là que cela peut vous exploser au visage, puis au lieu de proposer des fonctionnalités utiles,
+
+01:36.720 --> 01:38.640
+le client est juste assis là à se battre contre des types.
+
+01:38.640 --> 01:40.560
+Et je ne sais pas, ce n’est probablement pas la meilleure utilisation de notre temps, n’est-ce pas ?
+
+01:40.560 --> 01:42.560
+En fin de journée.
+
+01:42.560 --> 01:46.400
+Parce que si vous y réfléchissez, c'est quoi, c'est ce que voient les utilisateurs, n'est-ce pas ?
+
+01:46.400 --> 01:48.720
+Lorsqu'ils reçoivent votre code, ils ne voient pas les beaux types.
+
+01:48.720 --> 01:49.600
+Ils ne voient pas tout ça.
+
+01:49.600 --> 01:50.560
+C'est pour nous.
+
+01:50.560 --> 01:53.120
+C'est à nous de l'aider à se maintenir et à expédier plus rapidement.
+
+01:53.200 --> 01:57.680
+Mais en fin de compte, tout dépend des fonctionnalités que nous proposons.
+
+01:57.680 --> 02:03.520
+Et je ne perds pas cela de vue lorsque je travaille sur du code.
+
+02:03.520 --> 02:06.160
+Sur ce, merci à tous de vous joindre à moi aujourd'hui.
+
+02:06.880 --> 02:08.400
+Cela a suffi pour faire une explosion en boucle.
+
+02:08.400 --> 02:09.200
+Oh, ça vient juste de se réaliser.
+
+02:09.200 --> 02:10.800
+J'ai quelques questions auxquelles je dois répondre, n'est-ce pas ?
+
+02:10.800 --> 02:11.600
+Ouais.
+
+02:11.600 --> 02:12.240
+Allez-y.
+
+02:12.240 --> 02:17.360
+Existe-t-il un test décisif pour savoir quand il est préférable de migrer vers TypeScript,
+
+02:17.360 --> 02:19.120
+pour faire évoluer une application pour le futur ?
+
+02:19.120 --> 02:19.840
+Super.
+
+02:19.840 --> 02:20.320
+D'accord, oui.
+
+02:20.320 --> 02:21.280
+Merci pour le rappel.
+
+02:21.280 --> 02:22.720
+D'accord, c'est donc ici que Shiva.
+
+02:23.680 --> 02:26.320
+Lorsqu'il s'agit de réellement réfléchir à l'évolutivité du code,
+
+02:27.440 --> 02:29.920
+en gros, à mon avis, en ce qui concerne l'échelle du code,
+
+02:29.920 --> 02:33.520
+il s'agit de la capacité des gens, de la rapidité avec laquelle quelqu'un peut comprendre votre base de code.
+
+02:34.080 --> 02:38.720
+Et cela distingue vraiment quelque chose d'évolutif et maintenable de quelque chose qui l'est,
+
+02:38.720 --> 02:43.200
+est fondamentalement difficile à mettre à l’échelle au niveau de l’entreprise.
+
+02:43.520 --> 02:47.120
+Et donc TypeScript fait encore une fois partie de ces choses que si votre équipe est prête à commencer
+
+02:47.200 --> 02:53.360
+intégrer cela et l'incorporer, et d'une manière qui n'arrête pas la progression de la chaîne d'outils,
+
+02:53.360 --> 02:55.600
+alors bien sûr, c'est certainement utile pour cela.
+
+02:55.600 --> 03:01.200
+Mais encore une fois, il y a tellement de scénarios réels où des gens ont tenté de migrer,
+
+03:01.200 --> 03:05.840
+et ils se sont retrouvés coincés dans les outils de la chaîne de facturation, comme des erreurs constantes.
+
+03:05.840 --> 03:08.240
+Et donc, plutôt que de faire des progrès, ils se battent simplement pour cela.
+
+03:08.240 --> 03:10.080
+Et puis personne ne veut toucher à aucun des fichiers.
+
+03:10.080 --> 03:14.480
+Et puis en fin de compte, vous utiliserez peut-être un logiciel d'entreprise, comme TypeScript,
+
+03:14.480 --> 03:19.600
+mais si c'est le cas, vous savez, cela entrave le progrès, ce n'est pas une bonne chose du tout.
+
+03:19.600 --> 03:22.880
+Alors encore une fois, tout est question de compréhension et de facilité de maintenance,
+
+03:22.880 --> 03:25.920
+tant que votre équipe se sent à l'aise avec cela,
+
+03:25.920 --> 03:28.640
+même si vous utilisez simplement des documents JS, vous n'êtes pas obligé d'utiliser TypeScript, cela fonctionne aussi.
+
+03:29.520 --> 03:32.640
+Je pense donc que c'est vraiment l'élément clé sur lequel se concentrer, et non la partie TypeScript.
+
+03:32.640 --> 03:36.720
+Quel est le meilleur choix pour les projets plus importants, l'API d'options ou l'API de composition ?
+
+03:36.720 --> 03:41.680
+Ouais. Donc, quand il s'agit d'utiliser la V3, je pense qu'en fin de compte,
+
+03:41.680 --> 03:43.920
+il est vraiment difficile d'échapper à l'API de composition.
+
+03:43.920 --> 03:46.320
+Nous le verrons beaucoup lors des trois prochains ateliers à venir,
+
+03:46.320 --> 03:48.480
+mais en raison de sa modularité,
+
+03:48.480 --> 03:52.160
+L'API de composition fera partie de pratiquement tous les projets V3 à l'avenir.
+
+03:52.160 --> 03:55.920
+Cela dit, cela ne signifie pas non plus que ce que vous faites avec l'API d'options est obsolète.
+
+03:55.920 --> 03:58.480
+Parce que certains composants bénéficient parfois de cette structure,
+
+03:58.480 --> 04:01.440
+que l'API propose, et c'est donc l'une de ces choses où
+
+04:01.440 --> 04:04.160
+choisissez l'outil qui convient le mieux au problème que vous essayez de résoudre,
+
+04:04.160 --> 04:07.680
+plutôt que d'essayer de ressembler à ça, je vais utiliser uniquement cette seule méthode.
+
+04:07.680 --> 04:10.640
+Alors, comprendre les compromis et connaître les capacités de votre équipe,
+
+04:10.640 --> 04:12.640
+ce sera la clé du succès de votre projet.
+
+04:12.640 --> 04:17.760
+Est-il possible d'exporter des accessoires ou des méthodes calculés à partir du script d'installation vers un fichier de test ?
+
+04:18.800 --> 04:22.560
+Donc évidemment, tester est une chose, mais pour autant que je sache,
+
+04:22.560 --> 04:25.440
+tout ce que nous avons fait en matière de types et tout ça devrait pouvoir être
+
+04:25.440 --> 04:29.680
+importé dans un fichier de test afin que vous puissiez l'utiliser et vous assurer que tout est correctement saisi.
+
+04:29.680 --> 04:33.440
+Il existe quelques ressources clés que je vais essayer d'ajouter à la liste des ressources,
+
+04:33.440 --> 04:35.200
+mais ça vaut le coup. Ouais.
+
+04:35.200 --> 04:37.360
+Donc, au cas où vous n'auriez pas eu l'occasion de le vérifier,
+
+04:37.360 --> 04:41.040
+J'ai en fait un autre atelier sur les front-of-masters appelé production-grade view,
+
+04:41.040 --> 04:45.040
+où je parle de modèles d'entreprise fondamentalement différents que j'ai vus au fil des ans.
+
+04:45.040 --> 04:47.920
+Et donc, fondamentalement, lorsqu'il s'agit de tester des types,
+
+04:47.920 --> 04:52.160
+encore une fois, tout ce que nous avons fait dans le code devrait pouvoir être exporté et importé.
+
+04:52.160 --> 04:55.280
+Mais l’essentiel en matière de tests est, à mon avis,
+
+04:55.280 --> 04:57.680
+est de s'assurer que vous disposez des tests de bout en bout.
+
+04:57.680 --> 04:59.920
+Parce que je sais que beaucoup de gens se laissent prendre par les tests unitaires,
+
+04:59.920 --> 05:03.600
+mais les tests de bout en bout, à mon avis, sont l'élément clé pour déterminer si oui ou non
+
+05:03.600 --> 05:05.200
+votre application va survivre ou non.
+
+05:05.280 --> 05:08.320
+Et donc la blague qu'un de mes prédécesseurs disait toujours était que
+
+05:08.320 --> 05:11.840
+il y a deux tests que je fais toujours pour m'assurer que chaque application a,
+
+05:11.840 --> 05:15.200
+et c'est un que l'utilisateur peut se connecter, et deux peuvent-ils me payer.
+
+05:15.200 --> 05:17.520
+Après cela, tout le reste est facultatif.
+
+05:17.520 --> 05:22.720
+Donc quelque chose à garder à l'esprit, mais très sérieusement, quand il s'agit de taper ces choses,
+
+05:22.720 --> 05:24.240
+tout devrait fonctionner comme prévu.
+
+05:24.240 --> 05:27.200
+Je recommanderais de vérifier V-test pour votre test unitaire
+
+05:27.200 --> 05:30.240
+cela prend vraiment d'assaut ce genre de communauté,
+
+05:30.240 --> 05:32.960
+au point d'être presque comme le prochain successeur de just.
+
+05:32.960 --> 05:34.560
+Alors vérifiez certainement cela.
+
+05:34.640 --> 05:35.280
+Super.
+
+05:35.280 --> 05:37.280
+Merci à tous.
+

@@ -1,0 +1,350 @@
+WEBVTT
+
+00:00.000 --> 00:04.000
+La prochaine chose que nous allons faire est de parler de quelque chose qui est commun à de nombreuses applications.
+
+00:04.000 --> 00:10.000
+en particulier la vue et nous allons donc parler des gestionnaires d'événements et donc quand nous parlerons des gestionnaires d'événements comme un bref récapitulatif
+
+00:10.000 --> 00:16.000
+si nous jetons un oeil à Allons-y, allons à notre nouveau formulaire de restaurant, c'est probablement le meilleur endroit pour y jeter un œil
+
+00:16.000 --> 00:20.000
+c'est que nous avons ce truc ici quand nous créons
+
+00:20.000 --> 00:26.000
+et vous remarquerez que nous intégrons cet admettre, c'est vrai
+
+00:26.000 --> 00:30.000
+et il dit oh admets un nouveau restaurant, un nouveau restaurant, un nouveau restaurant passé
+
+00:30.000 --> 00:36.000
+mais encore une fois, l'un des problèmes est que c'est enfoui dans notre code
+
+00:36.000 --> 00:42.000
+et donc commençons par refactoriser ceci afin que nous puissions parler davantage de ce que nous allons faire avec cela
+
+00:42.000 --> 00:46.000
+donc personnellement, j'ai essayé d'éviter d'inclure le signe dollar à l'intérieur du modèle autant que possible
+
+00:46.000 --> 00:50.000
+juste parce que c'est très souvent un peu logique que tu veuilles pouvoir appeler
+
+00:50.000 --> 00:52.000
+plusieurs fois
+
+00:52.000 --> 00:56.000
+donc ce que je ferais généralement, c'est d'aller de l'avant et d'échanger cela vers la configuration
+
+00:56.000 --> 01:00.000
+nous allons supprimer ces deux-là
+
+01:00.000 --> 01:04.000
+ensuite nous définirons nos émissions
+
+01:04.000 --> 01:06.000
+tel
+
+01:06.000 --> 01:10.000
+et ensuite commentons cela très rapidement
+
+01:10.000 --> 01:12.000
+nous allons le lancer
+
+01:12.000 --> 01:16.000
+donc le premier est un événement appelé ad new restaurant
+
+01:16.000 --> 01:20.000
+où on prend un type de restaurant qui devrait être un type restaurant
+
+01:20.000 --> 01:24.000
+alors en gros on a la même chose pour le deuxième
+
+01:24.000 --> 01:30.000
+mais celui-ci annule un nouveau restaurant et en fait, il n'a aucune charge utile
+
+01:30.000 --> 01:34.000
+et ensuite il nous suffit de définir ce qui est renvoyé, rien
+
+01:34.000 --> 01:36.000
+donc on ajoute juste du vide et c'est parti
+
+01:36.000 --> 01:40.000
+maintenant nous l'avons et avant de finir, faisons ceci
+
+01:40.000 --> 01:44.000
+par contre le nouveau restaurant est une référence qui est à vue d'oeil
+
+01:44.000 --> 01:46.000
+enveloppe tout ça
+
+01:46.000 --> 01:50.000
+et puis ce qui est bien maintenant, c'est que parce que le côté restaurant de la liste est importé
+
+01:50.000 --> 01:52.000
+Je n'ai pas besoin de le déclarer une deuxième fois
+
+01:52.000 --> 01:56.000
+c'est donc ainsi que cela finit par s'effondrer une fois que nous l'avons migré
+
+01:56.000 --> 01:58.000
+ok
+
+01:58.000 --> 02:02.000
+alors permettez-moi d'aller de l'avant et de commencer par confier cela au
+
+02:02.000 --> 02:06.000
+branche d'exercice pour que vous puissiez voir la progression
+
+02:06.000 --> 02:08.000
+le facteur
+
+02:08.000 --> 02:10.000
+bouger
+
+02:10.000 --> 02:14.000
+nouveau restaurant
+
+02:14.000 --> 02:16.000
+super
+
+02:16.000 --> 02:18.000
+alors ce que nous allons remarquer ici maintenant
+
+02:18.000 --> 02:20.000
+est-ce que nous avons cette émission ici qui se produit
+
+02:20.000 --> 02:22.000
+mais en fait, je veux probablement juste appeler
+
+02:22.000 --> 02:24.000
+une fonction de restauration publicitaire
+
+02:24.000 --> 02:26.000
+Je pense que l'intégrer de cette façon est la manière la plus propre
+
+02:26.000 --> 02:30.000
+pour dire ok, il y aura une fonction qui s'exécutera en un clic
+
+02:30.000 --> 02:32.000
+personne n'a à s'inquiéter de la légèreté, c'est quoi tout le signe, c'est quoi un peu
+
+02:32.000 --> 02:34.000
+non, il existe une fonction publicitaire appelée annonce restaurant
+
+02:34.000 --> 02:38.000
+ok, alors comment allons-nous bien définir cela, allons-y et faisons-le
+
+02:38.000 --> 02:40.000
+donc en fait je vais ajouter ceci ci-dessous donc
+
+02:40.000 --> 02:42.000
+restaurant annonce constante
+
+02:42.000 --> 02:44.000
+est la fonction
+
+02:44.000 --> 02:46.000
+et cette fonction
+
+02:46.000 --> 02:48.000
+lorsque vous cliquez dessus,
+
+02:48.000 --> 02:50.000
+émet que va-t-il émettre
+
+02:50.000 --> 02:54.000
+eh bien, nous pouvons en fait, nos émissions ne sont pas définies, nous avons donc juste besoin de les déclarer ici
+
+02:54.000 --> 02:56.000
+et puis on peut dire émettre quoi
+
+02:56.000 --> 02:58.000
+Voyons émettre un espace de contrôle de clic
+
+02:58.000 --> 03:00.000
+ah et ton restaurant oui c'est ce que je veux
+
+03:00.000 --> 03:04.000
+J'ai reçu une saisie semi-automatique d'amour parce que je viens de réduire le nombre de
+
+03:04.000 --> 03:08.000
+fautes de frappe que j'ai, puis nouvelle valeur du point du restaurant
+
+03:08.000 --> 03:10.000
+je pense que ça devrait le faire
+
+03:10.000 --> 03:14.000
+sauf que oh regard intéressant, ça nous crie pourquoi
+
+03:14.000 --> 03:16.000
+parce que ça dit attends, qu'est-ce que c'est
+
+03:16.000 --> 03:20.000
+objet tu me dépasses ce n'est pas vraiment un restaurant et bien on peut arranger ça
+
+03:20.000 --> 03:24.000
+nous le passons simplement ici et le définissons là
+
+03:24.000 --> 03:26.000
+et voilà
+
+03:26.000 --> 03:30.000
+maintenant vous avez tout tapé de manière très cohérente comme nous l'avons appris jusqu'à présent
+
+03:30.000 --> 03:32.000
+et maintenant, si nous allons de l'avant et entrons dans notre application
+
+03:32.000 --> 03:34.000
+va dans l'autre sens
+
+03:34.000 --> 03:36.000
+donc au lieu de neuf
+
+03:37.000 --> 03:38.000
+et puis nous serons comme
+
+03:38.000 --> 03:40.000
+euh, ça a été ouais et les juts
+
+03:42.000 --> 03:44.000
+tester point com
+
+03:44.000 --> 03:46.000
+créer
+
+03:46.000 --> 03:50.000
+pour quelqu'un, le titre a disparu mais nous allons le découvrir dans une seconde oh je pense que je sais pourquoi
+
+03:50.000 --> 03:52.000
+euh, je pense que je pense savoir pourquoi
+
+03:52.000 --> 03:56.000
+ok, donc clairement, quelque chose est ajouté au
+
+03:56.000 --> 03:58.000
+parce que d'accord, alors laisse-moi t'expliquer cette partie
+
+03:58.000 --> 04:02.000
+parce que j'ai oublié quand on émet le restaurant ce qui se passe c'est que
+
+04:02.000 --> 04:04.000
+le composant parent qui
+
+04:04.000 --> 04:06.000
+il vit sur la page parente actuelle
+
+04:08.000 --> 04:10.000
+vous le remarquerez lorsque nous ferons défiler vers le bas
+
+04:12.000 --> 04:14.000
+restaurant euh le nouveau formulaire de restaurant ici
+
+04:14.000 --> 04:18.000
+c'est là que nous appelons, comme si nous écoutions l'événement
+
+04:18.000 --> 04:22.000
+donc je viens de multiligne, cela rend cela un peu plus facile à lire
+
+04:22.000 --> 04:24.000
+mais c'est essentiellement lorsque vous déclarez un événement personnalisé en vue comme
+
+04:24.000 --> 04:28.000
+Au restaurant Adne, ça veut dire en gros qu'on peut écouter ce truc qui s'appelle Adne.
+
+04:28.000 --> 04:30.000
+restaurant lorsque cet événement est déclenché
+
+04:30.000 --> 04:32.000
+exécuter cette fonction
+
+04:32.000 --> 04:34.000
+essentiellement dans le composant parent
+
+04:34.000 --> 04:38.000
+donc cette annonce de restaurant ici est déclenchée
+
+04:38.000 --> 04:40.000
+juste ici
+
+04:40.000 --> 04:44.000
+et c'est donc à nouveau là que se situe notre travail que nous faisions auparavant
+
+04:44.000 --> 04:48.000
+commence à se rassembler parce que pourquoi nous savons que la charge utile est censée être un restaurant
+
+04:48.000 --> 04:50.000
+et c'est ce qui est défini lors de l'émission
+
+04:50.000 --> 04:52.000
+donc nous avons de la cohérence ici
+
+04:52.000 --> 04:54.000
+et puis nous savons que bon restaurant, la vie vaut la peine
+
+04:54.000 --> 04:58.000
+très bonne forme, ça commence à se mettre en place très bien
+
+04:58.000 --> 05:02.000
+ok, donc ça a l'air bien
+
+05:02.000 --> 05:06.000
+mais nous avons ceci, euh, nous avons un léger problème alors laissez-moi
+
+05:06.000 --> 05:10.000
+commençons par refactoriser celui-ci très rapidement pour l'annuler
+
+05:10.000 --> 05:14.000
+restaurant nouveau restaurant
+
+05:14.000 --> 05:16.000
+et puis maintenant que nous avons ça
+
+05:16.000 --> 05:18.000
+nous allons juste copier ça très vite
+
+05:18.000 --> 05:22.000
+et remarquez l'annulation d'un nouveau restaurant
+
+05:22.000 --> 05:26.000
+émettre quelles commandes contrôlent l'espace
+
+05:26.000 --> 05:28.000
+attends, ce n'est pas le bon
+
+05:28.000 --> 05:30.000
+j'essaie d'être intelligent parce que tu as le deuxième argument
+
+05:30.000 --> 05:34.000
+oh, je pense que tu as raison
+
+05:34.000 --> 05:38.000
+parce que donc, euh, cela a été mentionné dans la classe, voici que
+
+05:38.000 --> 05:42.000
+actuellement, il sait que l'annulation d'un nouveau restaurant n'a pas de paramètre
+
+05:42.000 --> 05:46.000
+mais le restaurant Adne le fait, alors nous supprimons cela
+
+05:46.000 --> 05:48.000
+il faudrait voir que c'est là
+
+05:48.000 --> 05:52.000
+c'est un peu trop intelligent
+
+05:52.000 --> 05:54.000
+mais c'était très sympa
+
+05:54.000 --> 05:56.000
+alors maintenant nous avons ça maintenant tout est refactorisé
+
+05:56.000 --> 05:58.000
+c'est vrai, nous allons bien
+
+05:58.000 --> 06:00.000
+Je vois une ligne rouge ondulée, mais nous y reviendrons dans une seconde.
+
+06:00.000 --> 06:02.000
+ok, finissons ce refactor
+
