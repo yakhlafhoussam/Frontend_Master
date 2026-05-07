@@ -1,0 +1,815 @@
+WEBVTT
+
+00:00.000 --> 00:07.000
+Donc votre défi, si vous choisissez de l’accepter, est d’aller de l’avant et d’examiner soit la façon dont se présente la carte de tâche, soit la carte de planificateur.
+
+00:07.000 --> 00:12.000
+Et donc ceux que vous verrez sont parcourus en boucle, si vous recherchez la V4 à l'intérieur de l'application.
+
+00:12.000 --> 00:15.000
+Il se passe des choses assez complexes là-bas.
+
+00:15.000 --> 00:22.000
+Alors allez-y et voyez si vous pouvez refactoriser cela afin que vous utilisiez des emplacements pour essentiellement effectuer certaines actions, une partie du texte étant rendue.
+
+00:22.000 --> 00:29.000
+Et puis jouez avec, voyez si vous pouvez continuer et restituer le contenu différemment, le réorganiser comme bon vous semble via le parent,
+
+00:29.000 --> 00:31.000
+par l'intermédiaire du parent plutôt que de l'enfant.
+
+00:31.000 --> 00:39.000
+Et puis, si cela a du sens, allez-y et essayez d'utiliser la fonction d'assistance Use Slots si vous pensez qu'il est logique de cacher certaines choses et ainsi de suite.
+
+00:45.000 --> 00:50.000
+Notre objectif ici est de créer une carte de planification, on l'appelle à l'époque une nouvelle carte de planification.
+
+00:50.000 --> 00:55.000
+Parce qu'en gros, si on regarde, voyons si on passe à la V4,
+
+00:55.000 --> 01:04.000
+J'avais une page de réflexion faible, une page de paramètres, je voyais de nombreuses opportunités de refactorisation, de nombreuses opportunités mûres.
+
+01:04.000 --> 01:11.000
+Mais de toute façon, page de détails faible, même si, oh, voici une page de planificateur, j'ai sauté jusqu'au bout, d'accord.
+
+01:11.000 --> 01:22.000
+Et puis nous voulons celle-ci en particulier, parce que celle-ci, comme nous pouvons le voir, est essentiellement la carte qui s'affiche, correspondons à la supervision.
+
+01:22.000 --> 01:26.000
+Cela correspond à cette carte particulière ici.
+
+01:26.000 --> 01:34.000
+Donc, si nous examinons cela, nous pouvons voir que c'est, je dirais, grossièrement divisé.
+
+01:34.000 --> 01:45.000
+Ouais, c'est un, si nous sommes généreux, ou sommes, ou ouais, nous pourrions dire deux sections ici, parce que nous avons ici les tâches qui montrent essentiellement tout ce qui est ici.
+
+01:45.000 --> 01:48.000
+Et puis nous avons essentiellement des trucs sur les faibles ici.
+
+01:48.000 --> 01:54.000
+Donc, et puis je dirais, cependant, c'est peut-être un peu plus méta.
+
+01:54.000 --> 01:59.000
+Donc sans doute, vous pourriez créer un emplacement ici qui, par exemple, si vous ne voulez pas afficher cela, cela pourrait être un choix.
+
+01:59.000 --> 02:03.000
+Je pense que pour l'instant, je pense, alors qu'est-ce qui va faire ça, juste pour le garder, juste nous donner un peu plus d'options.
+
+02:03.000 --> 02:08.000
+Et donc ce que je ferais ici, c'est, d'accord, alors laissez-moi prendre ceci, et ensuite.
+
+02:08.000 --> 02:10.000
+Boup, boup, boup, boup.
+
+02:10.000 --> 02:13.000
+Très bien, fermons ce truc pour moi, c'est plus facile à suivre.
+
+02:13.000 --> 02:15.000
+D'accord.
+
+02:15.000 --> 02:19.000
+La première chose que nous allons vouloir faire est de créer un nouveau composant.
+
+02:19.000 --> 02:22.000
+Et je l'appellerai une nouvelle carte de planificateur.
+
+02:22.000 --> 02:25.000
+Parce que celui-ci sera différent de l’autre.
+
+02:25.000 --> 02:27.000
+C’est un peu tout l’intérêt de cet exercice.
+
+02:27.000 --> 02:31.000
+Je vais donc copier tout cela.
+
+02:31.000 --> 02:35.000
+En fait, réduisons-le, ce sera probablement plus rapide.
+
+02:35.000 --> 02:36.000
+Copiez ceci.
+
+02:36.000 --> 02:38.000
+Oh.
+
+02:38.000 --> 02:40.000
+Et puis déposez ça ici.
+
+02:40.000 --> 02:43.000
+D'accord, beaucoup de gribouillis, beaucoup, beaucoup de gribouillis.
+
+02:43.000 --> 02:45.000
+Donc, premièrement, nous n’en avons absolument pas besoin.
+
+02:45.000 --> 02:47.000
+Si déclaration en haut.
+
+02:47.000 --> 02:49.000
+Et puis nous le sélectionnons, nous testons.
+
+02:49.000 --> 02:51.000
+C'est donc quelque chose que nous devrons adopter.
+
+02:51.000 --> 02:52.000
+Il semble.
+
+02:52.000 --> 02:55.000
+Alors définissez déjà les accessoires.
+
+02:55.000 --> 02:56.000
+Et puis.
+
+02:56.000 --> 02:58.000
+Nous avons donc ici une option.
+
+02:58.000 --> 03:02.000
+Au fait, je pense que c'est probablement censé être un tableau.
+
+03:02.000 --> 03:03.000
+Alors voyons.
+
+03:03.000 --> 03:05.000
+Oui, c'est un tableau de tâches.
+
+03:05.000 --> 03:08.000
+Donc, vous savez, pour ceux-là, si vous avez besoin de taper ici, c'est l'un des avantages.
+
+03:08.000 --> 03:12.000
+Et puis l’objectif principal est que vous obteniez des définitions de types plus claires.
+
+03:12.000 --> 03:13.000
+Alors comprenez ce que vous attendez.
+
+03:13.000 --> 03:14.000
+J'attends donc un tableau.
+
+03:14.000 --> 03:17.000
+Alors juste faire, faire, faire, faire.
+
+03:17.000 --> 03:19.000
+Nous l’appelons donc simplement un tableau pour l’instant.
+
+03:19.000 --> 03:22.000
+Nous allons garder les choses très simples du point de vue du type.
+
+03:22.000 --> 03:24.000
+Tapez un tableau.
+
+03:24.000 --> 03:27.000
+Et puis, euh, exigez vrai.
+
+03:27.000 --> 03:28.000
+D'accord.
+
+03:28.000 --> 03:30.000
+Et puis en gros.
+
+03:30.000 --> 03:31.000
+Alors vous pensez peut-être, d'accord.
+
+03:31.000 --> 03:33.000
+Ensuite, je vais juste avoir besoin de cette tâche.
+
+03:33.000 --> 03:35.000
+Et puis nous l'appellerons, nous l'appellerons aujourd'hui.
+
+03:35.000 --> 03:38.000
+Euh, je proposerais quelque chose à considérer.
+
+03:38.000 --> 03:42.000
+Je trouve que des erreurs ponctuelles par la lettre S se produisent souvent en termes de codage.
+
+03:42.000 --> 03:44.000
+C'est tout simplement facile de l'enlever.
+
+03:44.000 --> 03:46.000
+Donc, en fait, j'aime simplement créer des tableaux.
+
+03:46.000 --> 03:48.000
+J'ai juste, juste une liste de stylos à la place.
+
+03:48.000 --> 03:49.000
+C'est un peu plus propre.
+
+03:49.000 --> 03:52.000
+Euh, vous obtenez juste moins d'erreurs ponctuelles.
+
+03:52.000 --> 03:54.000
+Encore une fois, ce n’est pas une obligation ou quoi que ce soit.
+
+03:54.000 --> 03:56.000
+Juste quelque chose que je pensais partager.
+
+03:56.000 --> 03:57.000
+Et puis, d'accord.
+
+03:57.000 --> 03:58.000
+Nous avons donc une tâche.
+
+03:58.000 --> 03:59.000
+Euh, à ce stade, ce sont des erreurs de type.
+
+03:59.000 --> 04:00.000
+Nous n'allons pas trouver la bande de type.
+
+04:00.000 --> 04:02.000
+Ce n'est pas le but de ce cours.
+
+04:02.000 --> 04:04.000
+Euh, mais je pense.
+
+04:04.000 --> 04:06.000
+Mais je l'ai fait, si je le pouvais.
+
+04:06.000 --> 04:08.000
+Laissez-moi voir si je peux tricher un peu.
+
+04:08.000 --> 04:10.000
+Euh, type accessoire.
+
+04:10.000 --> 04:12.000
+Donc.
+
+04:12.000 --> 04:16.000
+Il existe un moyen, je crois.
+
+04:16.000 --> 04:18.000
+Voyons si cela fonctionnera.
+
+04:18.000 --> 04:20.000
+Oh, j'ai totalement tort.
+
+04:20.000 --> 04:21.000
+Oups.
+
+04:21.000 --> 04:22.000
+Pas ici.
+
+04:22.000 --> 04:25.000
+Da, da, da, da.
+
+04:25.000 --> 04:27.000
+Cela a fonctionné.
+
+04:27.000 --> 04:28.000
+D'accord.
+
+04:28.000 --> 04:30.000
+Donc un petit script de type, un extrait.
+
+04:30.000 --> 04:32.000
+Euh, pour que vous puissiez tous le voir.
+
+04:32.000 --> 04:35.240
+est-ce que, encore une fois, si vous définissez un accessoire
+
+04:35.240 --> 04:38.120
+normalement via l'API de composition, c'est ce que vous utilisez.
+
+04:38.120 --> 04:40.120
+Et puis il y a cette capacité dans le type
+
+04:40.120 --> 04:43.560
+d'appel à essentiellement pour transtyper si je me souviens bien.
+
+04:43.560 --> 04:45.480
+Et donc, comme le dit essentiellement, hé,
+
+04:45.480 --> 04:47.120
+Je sais ce que c'est censé être.
+
+04:47.120 --> 04:49.200
+Et puis vous devez utiliser cet assistant de type accessoire
+
+04:49.200 --> 04:52.800
+du point de vue que vous transmettez alors le type qu'il est censé être.
+
+04:52.800 --> 04:54.120
+C'est tout ce qui se passe ici.
+
+04:54.120 --> 04:56.840
+Je vais donc laisser cet extrait ici simplement parce que je pense que c'est bon à savoir.
+
+04:56.840 --> 05:00.240
+C'est juste, encore une fois, juste un petit peu de script.
+
+05:00.400 --> 05:02.600
+Et nous n'en avons pas parlé plus tôt, mais il y a comme,
+
+05:02.600 --> 05:05.120
+tous les types que nous utilisons cette base de code
+
+05:05.120 --> 05:07.200
+devrait être géré principalement ici.
+
+05:07.200 --> 05:10.720
+Vous pouvez donc voir ici que toutes nos tâches sont définies ici.
+
+05:10.720 --> 05:12.600
+Et encore une fois, si vous devez taper une interface de script,
+
+05:12.600 --> 05:14.720
+c'est fondamentalement juste un plutôt qu'un type
+
+05:14.720 --> 05:17.680
+c'est comme un tas de chaînes ou un peu comme un objet standard,
+
+05:17.680 --> 05:21.480
+une valeur standard, l'interface représente généralement un objet.
+
+05:21.480 --> 05:24.480
+Et il y a tout un débat entre les types et l'interface
+
+05:24.480 --> 05:25.320
+de quand il s'agit d'objets.
+
+05:25.320 --> 05:26.920
+Mais de manière générale, les gens utilisent des interfaces
+
+05:26.920 --> 05:29.320
+quand il s'agit d'objets d'après ce que j'ai vu.
+
+05:29.320 --> 05:32.320
+D'accord, alors de toute façon, ce petit détour s'explique.
+
+05:32.320 --> 05:34.960
+D'accord, alors nous avons eu ça en cool, cool, cool.
+
+05:34.960 --> 05:38.480
+Et donc, très bien, alors maintenant nous avons mentionné que nous voulions rompre avec ça
+
+05:38.480 --> 05:41.480
+en quelque sorte, j'ai mis trois parties, mais voyons voir,
+
+05:41.480 --> 05:42.880
+cette partie est en boucle.
+
+05:43.920 --> 05:46.440
+Ceci est un bouton pour développer des éléments.
+
+05:46.440 --> 05:51.440
+Hein, pourquoi ai-je l'impression que, d'accord, l'icône est agrandie.
+
+05:51.440 --> 05:54.360
+Trois autres tâches affichent moins de VIF.
+
+05:55.320 --> 05:58.120
+Pourquoi ai-je l'impression que quelque chose me manque
+
+05:58.120 --> 06:00.240
+comme le sommet de la bordure de tâche faible ?
+
+06:01.160 --> 06:03.360
+Cela semblait lié.
+
+06:04.360 --> 06:07.280
+Oui, basculez une liste de tâches.
+
+06:07.280 --> 06:10.120
+D'accord, mais ce que nous pouvons faire, c'est commencer,
+
+06:10.120 --> 06:11.520
+faisons juste ça.
+
+06:12.800 --> 06:15.040
+Nous avons ça comme la tâche, le duh, duh,
+
+06:15.040 --> 06:18.440
+alors nous avons des tâches ici, une liste de tâches.
+
+06:19.720 --> 06:21.840
+Et puis la liste des tâches est-elle élargie ?
+
+06:21.840 --> 06:25.560
+Remplaçons simplement tout cela d'abord, la liste des tâches est élargie.
+
+06:25.560 --> 06:27.480
+Ok, alors qu'est-ce qu'on nettoie ici
+
+06:27.480 --> 06:32.160
+est-ce que nous avons quelque chose qui définit la visibilité de quelque chose via ici.
+
+06:32.160 --> 06:36.520
+Nous pouvons donc aller de l'avant et dire qu'il est élargi.
+
+06:36.520 --> 06:38.920
+C'est probablement ce que je choisirais, c'est un booléen,
+
+06:38.920 --> 06:43.200
+et ensuite nous définirons cela par défaut sur false, juste comme ça.
+
+06:43.200 --> 06:45.960
+Et puis comme ça, ce sera plus facile.
+
+06:50.560 --> 06:53.400
+Maintenant, la seule partie délicate est de savoir que fait cette liste de tâches à bascule ?
+
+06:53.400 --> 06:56.960
+Donc on va revenir en arrière, basculer la liste des tâches,
+
+06:56.960 --> 06:59.120
+et donc on dirait qu'il est littéralement basculé
+
+06:59.120 --> 07:00.200
+si c'est visible ou non.
+
+07:00.200 --> 07:03.560
+Honnêtement, ce n’est pas quelque chose que nous devons transmettre.
+
+07:03.560 --> 07:05.160
+C'est quelque chose en théorie
+
+07:05.160 --> 07:06.800
+nous pouvons simplement cliquer par nous-mêmes.
+
+07:06.800 --> 07:11.800
+Donc à cet égard, je vais juste créer une bascule élargie,
+
+07:13.360 --> 07:15.560
+et puis nous allons juste dire,
+
+07:15.560 --> 07:18.280
+c'est là que ça devient un peu délicat.
+
+07:18.280 --> 07:20.560
+Parce qu'elle ne devrait pas muter vos accessoires.
+
+07:20.560 --> 07:29.560
+Donc si je veux juste, je vais suivre ça, suivre ça pour le moment.
+
+07:32.240 --> 07:36.240
+Et pour que nous puissions dire, nous importerons les calculs de votre part.
+
+07:37.520 --> 07:40.480
+Et puis je dirai, oh, ça y est, c'est à moi.
+
+07:44.400 --> 07:45.480
+Je ne veux pas faire ça.
+
+07:45.680 --> 07:57.680
+D'accord, est visible équivaut à rugueux, faux,
+
+07:57.680 --> 08:01.080
+Je pense que là encore, si nous faisons ça
+
+08:01.080 --> 08:03.560
+comme le bon cycle de vie,
+
+08:03.560 --> 08:04.760
+tu dis en gros ça, hé,
+
+08:04.760 --> 08:06.920
+lorsque le composant est monté,
+
+08:06.920 --> 08:09.920
+tu vas prendre, c'est visible cette valeur
+
+08:09.920 --> 08:12.760
+et réglez-le sur les accessoires visibles.
+
+08:13.320 --> 08:16.720
+C'est comme ça que vous aimeriez, attendez, c'est élargi.
+
+08:16.720 --> 08:17.320
+Merci.
+
+08:18.440 --> 08:19.760
+Oui, et alors vous avez ça.
+
+08:19.760 --> 08:22.640
+Nous pourrions donc dire en gros, est visible, est,
+
+08:24.640 --> 08:26.640
+est, est, est, est, est, est, est, est, est,
+
+08:30.640 --> 08:32.920
+comme ça, et puis j'aime généralement mettre mon monté
+
+08:32.920 --> 08:34.880
+un cycle de vie s'accroche en bas.
+
+08:36.520 --> 08:41.520
+Nous pouvons alors basculer, développer et, oui,
+
+08:43.760 --> 08:44.600
+alors nous le ferons.
+
+08:46.440 --> 08:49.000
+Ok, alors pour voir si ça marche,
+
+08:49.920 --> 08:54.440
+on peut descendre vers, vers, vers, vers la V4,
+
+08:55.440 --> 08:59.480
+quand je le trouve, il est là.
+
+08:59.480 --> 09:02.320
+D'accord, alors nous allons le faire, nous allons juste le faire
+
+09:02.320 --> 09:03.800
+une nouvelle carte planaire ici.
+
+09:05.320 --> 09:09.280
+Et cette fois, nous allons dire la liste des tâches,
+
+09:09.280 --> 09:11.760
+nous savons que c'est comme les tâches faibles.
+
+09:13.320 --> 09:16.440
+Et puis je pense que c'est la seule chose dont j'avais besoin
+
+09:17.960 --> 09:21.360
+est développé, oui, false par défaut.
+
+09:21.360 --> 09:23.520
+Et voyons, est-ce qu'on fait quelque chose d'intéressant
+
+09:23.520 --> 09:24.760
+avec ça ici ?
+
+09:24.760 --> 09:26.600
+Masqué est la liste des tâches développée.
+
+09:26.600 --> 09:28.760
+D'accord, cela signifie que nous faisons, à cet égard,
+
+09:28.760 --> 09:31.840
+on peut dire, est élargi,
+
+09:33.840 --> 09:38.840
+cela équivaut à une liste de tâches développée comme ça.
+
+09:40.040 --> 09:42.520
+D'accord, alors nous pouvons rafraîchir,
+
+09:42.520 --> 09:44.000
+et puis vous pouvez voir,
+
+09:46.000 --> 09:46.920
+ne parvient pas à résoudre le composant.
+
+09:46.920 --> 09:49.000
+Ouais, ça ferait l'affaire.
+
+09:49.000 --> 09:51.520
+On dirait que je l'ai laissé tomber,
+
+09:51.520 --> 09:54.120
+mais cela n'a pas été importé parce que,
+
+09:55.120 --> 09:56.840
+et le type d'importation me mord encore.
+
+10:00.080 --> 10:02.720
+D'accord, maintenant nous avons d'autres choses à faire.
+
+10:02.720 --> 10:03.800
+Non, non, non, non, non, non, non, non, non.
+
+10:03.800 --> 10:06.320
+L’heure du nouveau format de carte planaire n’est pas une fonction.
+
+10:07.360 --> 10:08.200
+Où est-ce?
+
+10:09.440 --> 10:11.160
+D'accord, je l'ai compris.
+
+10:11.160 --> 10:12.000
+D'accord.
+
+10:12.600 --> 10:13.640
+Cela sera pertinent plus tard,
+
+10:13.640 --> 10:15.200
+donc nous allons juste copier ça.
+
+10:15.200 --> 10:17.560
+On sait que j'écris moins,
+
+10:17.560 --> 10:19.640
+Je reconnais qu'il ne s'agit pas de code sec.
+
+10:19.640 --> 10:23.440
+C'est juste pour démontrer également
+
+10:23.440 --> 10:25.320
+des trucs que nous ferons plus tard.
+
+10:25.320 --> 10:27.800
+En fait, permettez-moi simplement de vérifier qu'il n'y a pas d'autres erreurs.
+
+10:27.800 --> 10:28.720
+Non, d'accord, on y va.
+
+10:31.240 --> 10:34.760
+Est développé par access.n.to find sur l'instance.
+
+10:37.440 --> 10:39.760
+Ah, mais on voit ici, c'est parti.
+
+10:39.760 --> 10:41.360
+Voilà, c'est ici.
+
+10:41.360 --> 10:44.040
+Il semble donc que je n’en ai pris qu’un petit segment.
+
+10:44.040 --> 10:46.000
+Et encore une fois, juste pour démontrer
+
+10:46.000 --> 10:49.520
+ce que nous avons fait, dans la mesure où, afin de mettre en pratique ce que nous avons fait.
+
+10:49.520 --> 10:52.560
+Donc vraiment, c'est la nouvelle carte planaire.
+
+10:52.560 --> 10:54.000
+Honnêtement, je vais juste appeler ça corps,
+
+10:54.000 --> 10:55.240
+parce que c'est vraiment ce que nous venons de faire.
+
+10:55.240 --> 10:57.600
+Alors qu’est-ce qu’on change ?
+
+10:57.600 --> 10:59.160
+Oui, veuillez l'appliquer.
+
+11:00.640 --> 11:02.920
+Et puis une nouvelle carte,
+
+11:04.040 --> 11:09.040
+nouvelle carte planaire, corps, nouvelle carte planaire,
+
+11:09.320 --> 11:12.400
+nouvelle carte planaire, corps, super.
+
+11:12.400 --> 11:14.720
+OK, maintenant que nous avons ça,
+
+11:14.720 --> 11:16.240
+alors c'est ici que nous pouvons pratiquer exactement
+
+11:16.240 --> 11:17.080
+ce dont nous avons parlé.
+
+11:17.080 --> 11:20.960
+Donc à cet égard, nous pourrions dire ici dans cette case,
+
+11:22.760 --> 11:28.080
+ici, nous rendons clairement comme un groupe de,
+
+11:29.920 --> 11:34.120
+cherche à économiser, j'en ai trop fait.
+
+11:34.120 --> 11:37.480
+Da, da, da, da.
+
+11:37.480 --> 11:41.360
+Je veux que la fente entoure ce truc.
+
+11:45.160 --> 11:46.800
+Oui, voilà.
+
+11:47.920 --> 11:48.920
+Très bien, excellent.
+
+11:50.600 --> 11:53.880
+Et cette machine à sous, voyons voir, nous affichons essentiellement
+
+11:53.880 --> 11:56.480
+la liste des tâches.
+
+11:56.480 --> 12:00.240
+Je peux donc simplement appeler ce nom, liste de tâches pour être honnête.
+
+12:00.240 --> 12:02.600
+Et puis ce que nous pouvons faire, c'est essentiellement dire :
+
+12:02.600 --> 12:05.800
+hé, écoute, sur ce créneau, nous allons fournir,
+
+12:06.800 --> 12:11.800
+faites, faites, faites, nous allons vous fournir la liste des tâches.
+
+12:14.240 --> 12:16.000
+Et donc dans ce cas, encore une fois, c'est plus pour la pratique
+
+12:16.000 --> 12:18.480
+et pas parce que vous y avez déjà accès,
+
+12:18.480 --> 12:19.320
+mais c'est ce que nous ferions.
+
+12:19.320 --> 12:22.240
+Nous donnerions essentiellement l’accès à la machine à sous à cette chose.
+
+12:22.240 --> 12:24.800
+Et puis de cette façon, lorsque vous êtes à l’intérieur, utilisez-le.
+
+12:24.800 --> 12:33.120
+Mais, mais, mais encore une fois, pour être clair, c'est un peu redondant
+
+12:33.120 --> 12:38.120
+du fait que vous avez déjà accès à des tâches,
+
+12:40.720 --> 12:42.600
+cela vous donne alors accès essentiellement,
+
+12:42.600 --> 12:44.600
+et je vais juste le faire comme ça juste pour que nous puissions juste montrer
+
+12:44.600 --> 12:45.760
+que certaines choses sont différentes.
+
+12:46.960 --> 12:49.320
+Donc deux choses que j'ai faites ici et que je n'ai pas explicitement dites
+
+12:49.320 --> 12:51.040
+expliquez avant au cas où vous seriez nouveau dans ce domaine.
+
+12:51.040 --> 12:56.440
+Premièrement, ici, le symbole dièse, est un raccourci pour v-slot.
+
+12:58.520 --> 13:02.040
+La raison pour laquelle, et pour être clair, cela n'est applicable que sur le modèle,
+
+13:02.040 --> 13:03.920
+vous ne pouvez pas utiliser ce raccourci ailleurs,
+
+13:03.920 --> 13:05.120
+parce que c'est uniquement pour le v-slot.
+
+13:06.120 --> 13:09.760
+Alors voici un petit raccourci sympa pour afficher les données
+
+13:09.760 --> 13:12.160
+d'une manière agréable, comme JSON.
+
+13:12.160 --> 13:14.680
+Parce que si tu l'as fait sans le pré et que tu l'as juste fait en tant que p,
+
+13:15.680 --> 13:18.160
+vous verrez, c'est très très illisible.
+
+13:18.160 --> 13:20.520
+Donc le pré est un joli petit truc de lisibilité
+
+13:20.520 --> 13:23.160
+que, en théorie, pouvez-vous vous connecter sur une console ?
+
+13:23.160 --> 13:25.880
+Oui, mais j'aime parfois voir mes données sur mon interface utilisateur.
+
+13:25.880 --> 13:29.320
+C'est donc quelque chose que j'utilise beaucoup, juste pour le rendre un peu plus visible.
+
+13:29.960 --> 13:32.280
+Alors oui, pour que vous puissiez voir ici, nous l'avons exposé.
+
+13:33.160 --> 13:35.080
+Et puis, oui, c'est essentiellement ça.
+
+13:35.800 --> 13:38.280
+Et puis si vous vouliez vraiment vous entraîner à utiliser les machines à sous,
+
+13:38.520 --> 13:40.080
+la façon dont vous feriez cela, c'est de dire,
+
+13:40.080 --> 13:42.240
+contre-slots équivaut à utiliser des emplacements.
+
+13:43.520 --> 13:45.720
+Et puis nous pourrions le vérifier et dire :
+
+13:45.720 --> 13:50.720
+hé, écoute, si slots.castlists est utilisé,
+
+13:52.560 --> 13:55.000
+alors rendez ceci, sinon, ne le faites pas.
+
+13:55.960 --> 13:57.600
+Et cela combine en quelque sorte les deux techniques.
+
+13:58.680 --> 14:01.000
+Et de cette façon, vous n'avez pas cet espaceur aléatoire.
+
+14:01.000 --> 14:02.920
+Donc je suppose, je suppose, cela mérite également d'être mentionné pour ceux
+
+14:02.920 --> 14:06.360
+si vous êtes nouveau dans Tailwind CSS, ce genre d'utilitaires,
+
+14:06.360 --> 14:11.360
+Classes CSS, ces choses appliquent essentiellement le CSS, comme, aussi peu.
+
+14:11.360 --> 14:12.920
+Donc celui-ci dit espace verticalement,
+
+14:13.160 --> 14:15.760
+Je pense que ce ne sera que deux unités de quoi que ce soit.
+
+14:15.760 --> 14:16.600
+C'est ce que c'est.
+

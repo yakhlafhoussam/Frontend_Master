@@ -1,0 +1,221 @@
+WEBVTT
+
+00:00.000 --> 00:05.760
+Donc, commencez par l'API de composition chaque fois que vous créez une fonction réutilisable avec l'API de composition
+
+00:05.760 --> 00:11.000
+Nous avons atterri sur les composables tournants, ce n'est pas mon préféré, mais c'est sur cela que nous avons atterri donc
+
+00:11.560 --> 00:13.060
+Sache juste que
+
+00:13.060 --> 00:16.380
+À l'avenir, lorsque vous regardez les bases de code et que vous voyez
+
+00:17.760 --> 00:19.760
+par ici
+
+00:19.920 --> 00:21.920
+Ce petit dossier composables
+
+00:22.360 --> 00:27.700
+C'est à cela que cela fait référence essentiellement aux fonctions API de composition que vous utiliserez dans votre base de code.
+
+00:30.000 --> 00:37.480
+La question est donc évidemment de savoir ce que sont exactement les composables et ce sont donc essentiellement des fonctionnalités que vous souhaitez utiliser dans vos composants.
+
+00:37.480 --> 00:41.160
+Voyons vraiment ce qu'ils sont. Donnons juste une rapide démonstration de ce que cela signifie
+
+00:41.160 --> 00:46.200
+Très bien, je suis sur ma branche de début, puis laissez-moi passer à la branche d'exercice pour que
+
+00:46.800 --> 00:48.800
+Cela peut donner un droit engagé
+
+00:49.800 --> 00:51.800
+D'accord, alors
+
+00:51.800 --> 00:55.560
+Nous avons notre dossier composables et commençons par jeter un œil à notre page de tâches
+
+00:55.560 --> 00:57.560
+À droite
+
+00:58.200 --> 01:02.200
+Et donc vous remarquez ici, sur la page des tâches que nous avons, qu'il se passe beaucoup de choses ici.
+
+01:02.840 --> 01:10.040
+En fait, je remarque qu'il y a beaucoup de tâches de filtrage de éléments faibles. Je veux dire, alors regarde la tâche de filtrage
+
+01:10.040 --> 01:13.160
+Cela ressemble à une tâche très spécifique et
+
+01:14.240 --> 01:18.920
+Comme nous pouvons le voir ici, il est en fait utilisé à deux endroits différents dans le magasin.
+
+01:18.920 --> 01:24.080
+Dont nous parlerons davantage plus tard ainsi que dans cette page ici. C'est donc quelque chose qui est
+
+01:24.840 --> 01:28.120
+Clairement correct pour un certain type de refactoring car
+
+01:29.720 --> 01:33.520
+En gros, oui, ça ne sert à rien qu'ils aient deux endroits différents. Alors allons-y et refactorisons simplement ceci
+
+01:33.800 --> 01:36.000
+Nous pouvons donc l'utiliser. Alors première chose en premier
+
+01:36.200 --> 01:41.320
+Nous allons continuer et créer un nouveau fichier dans notre répertoire composables
+
+01:41.320 --> 01:46.160
+Et donc la norme pour tous les composables est de le préfixer avec le mot use
+
+01:47.040 --> 01:51.280
+Et donc dans ce cas, nous l'appelons simplement used task.ts et encore
+
+01:51.280 --> 01:55.000
+C'est un fichier type fit, mais ne vous inquiétez pas. Nous n'utilisons vraiment pas beaucoup d'ajustement de type, mais tout le cas échéant
+
+01:55.000 --> 02:02.160
+Et donc ce que je ferais en gros, c'est d'aller de l'avant, de couper ça et de le jeter ici
+
+02:04.960 --> 02:06.960
+Et puis c'est parti
+
+02:08.960 --> 02:11.760
+Et puis j'irais de l'avant et jetterais un œil au magasin de tâches
+
+02:15.360 --> 02:17.360
+Et où est ce filtre ?
+
+02:17.920 --> 02:22.240
+Voici. Voici le dossier. C’est donc la véritable méthode, comme nous pouvons le voir ici. Il se passe beaucoup de choses ici
+
+02:22.560 --> 02:28.160
+Donc ce que nous allons faire, c'est faire la chose controversée et nous en reparlerons plus tard quand les magasins le feront.
+
+02:28.160 --> 02:31.440
+En fait, je vais le sortir du magasin et le mettre dans un composable
+
+02:32.480 --> 02:35.120
+Nous allons donc ici prendre la méthode de la tâche de filtrage et
+
+02:36.240 --> 02:38.320
+Donc en fait, je vais juste remplacer celui-ci ici
+
+02:39.720 --> 02:42.720
+D'accord, et puis nous avons les filtres et
+
+02:43.680 --> 02:47.280
+Ensuite les données et puis c'est une fonction
+
+02:50.080 --> 02:54.640
+Ce sera oui, et ce que nous devons alors faire, c'est pouvoir accéder à la liste des tâches
+
+02:55.040 --> 03:01.120
+Donc, ce que je vais faire, c'est dire en fait que la liste des tâches indique quand une tâche comme celle-ci sera transmise.
+
+03:02.080 --> 03:05.040
+Et donc ce sera essentiellement un argument que nous transmettrons à notre composable
+
+03:05.920 --> 03:09.120
+Et puis je pense que tout va plutôt bien à partir de là
+
+03:09.600 --> 03:16.160
+Il ne nous reste plus qu'à importer le type dans pour indiquer qu'il s'agit d'une tâche de type et qu'elle utilise des filtres de tâches.
+
+03:18.720 --> 03:25.040
+Et puis nous allons exporter cela en tant que tel et voilà maintenant. Le formatage est correct
+
+03:25.920 --> 03:28.960
+D'accord, nous avons maintenant ici une fonction JavaScript réutilisable.
+
+03:29.440 --> 03:34.800
+C'est vrai, c'est ce que nous avons et donc ce que nous pouvons faire maintenant se trouve dans notre magasin de tâches.
+
+03:35.760 --> 03:40.400
+En fait, je peux le laisser de côté car le seul endroit où l'on appelle était ici
+
+03:41.120 --> 03:43.760
+À l'intérieur de la méthode de filtrage, mais je n'en ai plus besoin
+
+03:44.400 --> 03:48.640
+Parce que ce que je peux faire alors, c'est dire d'accord, je vais importer
+
+03:50.480 --> 03:54.400
+C'était un filtre de tâches de ma tâche d'utilisation composable
+
+03:56.160 --> 04:00.240
+C'est vraiment tout ce qui est composable, c'est que cela nous permet essentiellement de
+
+04:00.720 --> 04:05.920
+Le module ou les yeux des parties de notre script sont configurés en bloc dans différents fichiers que nous pouvons ensuite importer
+
+04:06.720 --> 04:08.720
+Vraiment c'est ce qu'il y a de plus simple
+
+04:10.000 --> 04:15.360
+Et je tiens à souligner cela parce que je me souviens de la première fois où j'ai découvert ce genre de concept et si vous êtes nouveau dans le domaine du travail
+
+04:15.360 --> 04:19.920
+Vous pouvez vous sentir un peu intimidant de déplacer des éléments vers des fichiers et surtout vous ne savez pas comment fonctionnent les importations.
+
+04:19.920 --> 04:21.920
+Nous parlerons un peu plus de la stratégie de dénomination dans une seconde
+
+04:22.320 --> 04:24.320
+Mais c'est vraiment ça
+
+04:25.280 --> 04:32.320
+C'est l'essentiel de ce que c'est et la raison pour laquelle le composable est devenu très populaire est parce que plutôt que de regrouper les choses en fonction de leur fonctionnement,
+
+04:32.320 --> 04:34.320
+Donc si nous avons le même état
+
+04:34.320 --> 04:36.800
+Les actions deviennent ou alors nous les organiserions via des données
+
+04:38.400 --> 04:41.280
+Calculez-le et toutes ces choses que vous pouvez maintenant les organiser via
+
+04:41.760 --> 04:47.360
+fonctionnalité via des fonctionnalités et ainsi de suite plutôt que d'appeler comme une sorte de filtre
+
+04:47.600 --> 04:53.440
+Nous savons que cela est associé à notre fonctionnalité de tâche, nous pouvons donc le faire glisser et glissons encore une chose ici
+
+04:54.400 --> 04:57.680
+Disons que le statut du format est en fait très spécifique
+
+04:58.640 --> 05:04.640
+Tests mais on dirait en fait que c'est générique mais d'après ce dont je me souviens, celui-ci est assez spécifique donc nous pouvons le supprimer
+
+05:05.760 --> 05:11.920
+Et voyons, j'aime faire les choses par ordre alphabétique comme si je pouvais, alors voilà, c'est un filtre
+
+05:12.560 --> 05:14.560
+Nous allons donc avoir le statut du format mais
+
+05:14.720 --> 05:16.720
+euh
+
+05:18.160 --> 05:23.600
+Étiquette J'aime être très précis avec ceux-ci afin que vous puissiez comprendre ce qui se passe ici
+
+05:24.000 --> 05:27.040
+Donc, pour mon étiquette de statut de tâche, je pense que nous serions assez bien
+
+05:27.680 --> 05:31.840
+Et puis tout ce que nous avons à faire pour exposer quoi que ce soit, c'est le mot-clé export qui est l'essentiel ici.
+
+05:32.480 --> 05:40.080
+Une fois que vous avez cela, nous pouvons continuer et maintenant, en haut, nous pouvons importer l'étiquette de tâche au format
+
+05:40.720 --> 05:44.400
+Mais c'était auparavant l'état du format, nous devons donc nous assurer de le mettre à jour.
+
+05:45.440 --> 05:47.440
+le format a une étiquette d'état
+
