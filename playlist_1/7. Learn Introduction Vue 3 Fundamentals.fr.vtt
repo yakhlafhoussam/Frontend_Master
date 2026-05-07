@@ -1,0 +1,812 @@
+WEBVTT
+
+00:00.000 --> 00:02.000
+D'accord, nous avons donc appris à créer une application.
+
+00:02.000 --> 00:04.000
+Nous avons joint quelques données réactives. C'était amusant,
+
+00:04.000 --> 00:05.000
+j'espère que c'est assez facile à faire.
+
+00:05.000 --> 00:07.000
+Et maintenant, bien sûr, nous voulons parler de
+
+00:07.000 --> 00:08.000
+comment gérons-nous les entrées des utilisateurs, n'est-ce pas ?
+
+00:08.000 --> 00:10.000
+Parce que c'est en grande partie la valeur de JavaScript,
+
+00:10.000 --> 00:13.000
+gère l’interactivité de votre site Web.
+
+00:13.000 --> 00:15.000
+Donc la première chose dont nous voulons parler
+
+00:15.000 --> 00:18.000
+est-ce que nous ouvrons Playground réellement dans Chrome.
+
+00:18.000 --> 00:19.000
+Nous avons donc cela.
+
+00:19.000 --> 00:23.000
+Alors laissez-moi ouvrir un nouvel onglet avec ceci,
+
+00:23.000 --> 00:26.000
+et ce sera Playground.
+
+00:26.000 --> 00:30.000
+D'accord, donc à des fins de démonstration de Playground,
+
+00:30.000 --> 00:34.000
+Utilisons simplement l'exemple standard de l'application de compteur, n'est-ce pas ?
+
+00:34.000 --> 00:37.000
+C'est le fait que si nous entrons ici,
+
+00:37.000 --> 00:40.000
+et cette fois, je vais devoir, voyons, faisons cela séquentiellement.
+
+00:40.000 --> 00:43.000
+Je vais donc mettre ici une ligne horizontale, saut de ligne, et voilà.
+
+00:43.000 --> 00:47.000
+Et puis ici, nous ferons juste un h1, nous l'appellerons compteur.
+
+00:47.000 --> 00:48.000
+Nous avons un décompte, puis nous avons un bouton
+
+00:48.000 --> 00:51.000
+où nous voulons incrémenter le nombre.
+
+00:51.000 --> 00:55.000
+Cela devrait vous sembler assez familier, 10.
+
+00:55.000 --> 00:58.000
+OK, donc si vous faites défiler vers le bas,
+
+00:58.000 --> 01:01.000
+ooh, je n'aime pas le fait que ce soit tout en bas.
+
+01:01.000 --> 01:04.000
+Je vais en fait déplacer cela vers le haut.
+
+01:04.000 --> 01:08.000
+Copiez ça, hr, super.
+
+01:08.000 --> 01:10.000
+Nous allons donc procéder du plus récent au plus ancien.
+
+01:10.000 --> 01:13.000
+D'accord, nous avons donc ici notre compteur,
+
+01:13.000 --> 01:14.000
+et votre question est probablement une réflexion,
+
+01:14.000 --> 01:17.000
+ok, comment pouvons-nous réellement modifier les données ?
+
+01:17.000 --> 01:20.000
+Parce qu'après tout, c'est amusant de rendre des trucs réactifs,
+
+01:20.000 --> 01:21.000
+nous voulons en faire plus.
+
+01:21.000 --> 01:24.000
+Donc, à l'intérieur de la vue, nous avons nos données ici,
+
+01:24.000 --> 01:27.000
+mais la question est que nous voulons réellement le changer.
+
+01:27.000 --> 01:29.000
+Et donc l'option que nous voulons connaître ensuite
+
+01:29.000 --> 01:32.000
+est le concept de méthodes.
+
+01:32.000 --> 01:34.000
+Et donc si l'on pense aux fonctions en JavaScript,
+
+01:34.000 --> 01:38.000
+c'est vrai, généralement nous aurions quelque chose comme laisser le nombre est égal à zéro,
+
+01:38.000 --> 01:41.000
+et puis vous auriez une fonction appelée incrément,
+
+01:41.000 --> 01:45.000
+et cela dirait count++, quelque chose dans ce sens.
+
+01:45.000 --> 01:48.000
+Lorsque vous pensez aux méthodes, pensez-y comme aux fonctions de JavaScript
+
+01:48.000 --> 01:50.000
+qui sont disponibles pour que votre application puisse appeler à tout moment.
+
+01:50.000 --> 01:52.000
+C'est la meilleure façon d'y penser.
+
+01:52.000 --> 01:55.000
+Donc, de ce point de vue, nous voudrions en fait définir une méthode.
+
+01:55.000 --> 01:59.000
+Nous dirons simplement le nombre d'incréments.
+
+01:59.000 --> 02:05.000
+Et à l’intérieur d’ici, c’est là qu’entre en jeu une question que nous nous sommes posée plus tôt.
+
+02:05.000 --> 02:08.000
+Ainsi, lorsque vous souhaitez faire référence à autre chose dans l'application.
+
+02:08.000 --> 02:13.000
+Donc, dans ce cas, nous voulons réellement faire référence à cette propriété count à l’intérieur des données.
+
+02:13.000 --> 02:19.000
+View est intelligent sur beaucoup de choses, mais si nous disons simplement count++,
+
+02:19.000 --> 02:21.000
+cela ne fonctionnera pas.
+
+02:21.000 --> 02:24.000
+Et la raison en est que si nous savons ce qui concerne JavaScript
+
+02:24.000 --> 02:26.000
+et la programmation, la portée est une chose.
+
+02:26.000 --> 02:29.000
+Il ne sait donc pas fondamentalement d'où récupérer le décompte.
+
+02:29.000 --> 02:34.000
+Et c’est là que le mot-clé redouté entre en jeu
+
+02:34.000 --> 02:35.000
+quand il s'agit de JavaScript.
+
+02:35.000 --> 02:39.000
+Le mot-clé this est l'endroit où la vue prend essentiellement le contexte de l'application,
+
+02:39.000 --> 02:42.000
+et il déterminera essentiellement où existe le nombre.
+
+02:42.000 --> 02:46.000
+Donc, à partir de la vue 2, vous l'avez peut-être remarqué depuis this.data.count.
+
+02:46.000 --> 02:48.000
+Ce serait une chose explicite que vous pourriez faire.
+
+02:48.000 --> 02:52.000
+Mais comme View sait que nous faisons souvent référence à des données ou les calculons,
+
+02:52.000 --> 02:55.000
+ce sera le cas, à moins d'avoir des conflits de noms très clairs,
+
+02:55.000 --> 02:58.000
+vous pouvez simplement l'utiliser, quelle que soit la propriété que vous recherchez.
+
+02:58.000 --> 03:02.000
+Et cela vaut pour pratiquement tout ce que vous définissez dans cette API d'options.
+
+03:02.000 --> 03:08.000
+Et l’avantage est que même si certaines personnes trouvent ce mot-clé déroutant,
+
+03:08.000 --> 03:11.000
+le but, je pense qu'au moment où l'API était en cours de conception,
+
+03:11.000 --> 03:14.000
+c'est que vous ne devriez pas vraiment avoir à réfléchir à ce que cela signifie.
+
+03:14.000 --> 03:16.000
+Le fait est que je considère cela comme une application,
+
+03:16.000 --> 03:19.000
+et de cette façon, vous entrez et vous faites référence à cette application, et c'est tout.
+
+03:19.000 --> 03:23.000
+Alors, quand j'enseignais à d'autres personnes pour la première fois,
+
+03:23.000 --> 03:25.000
+même s'ils n'avaient pas beaucoup d'expérience en JavaScript,
+
+03:25.000 --> 03:28.000
+ils ont eu la convention selon laquelle tant que j'appelle cela, cela fait référence à mon application,
+
+03:28.000 --> 03:30.000
+et je ne vais pas apprendre la portée ou quoi que ce soit.
+
+03:30.000 --> 03:31.000
+Cela fonctionne.
+
+03:31.000 --> 03:34.000
+Et cela constitue en soi un avantage du point de vue de l’apprentissage.
+
+03:34.000 --> 03:37.000
+Mais sache juste que tu n'es pas obligé de l'utiliser
+
+03:37.000 --> 03:40.000
+de sorte qu'à l'avenir, si les gens l'évitent activement,
+
+03:40.000 --> 03:43.000
+nous pouvons aller de l'avant et le faire une fois que nous aurons découvert l'API de composition.
+
+03:43.000 --> 03:45.000
+Mais pendant que nous sommes actuellement dans l'API Options,
+
+03:45.000 --> 03:49.000
+c'est ainsi que nous faisons référence aux choses dans cet objet de configuration.
+
+03:49.000 --> 03:50.000
+D'accord.
+
+03:50.000 --> 03:54.000
+Alors maintenant que nous avons thisCount++, qu'allons-nous faire ici maintenant
+
+03:54.000 --> 03:57.000
+est-ce qu'on va dire, comment appelle-t-on réellement la chose ?
+
+03:57.000 --> 03:59.000
+Et donc ce que nous allons faire, c'est que nous allons,
+
+03:59.000 --> 04:03.000
+comme avant, nous allons utiliser une directive view pour appeler la chose.
+
+04:03.000 --> 04:05.000
+Et donc nous allons utiliser v-on.
+
+04:05.000 --> 04:07.000
+C'est la directive que vous voudrez apprendre pour cela
+
+04:07.000 --> 04:10.000
+car similaire à ce que vous savez des événements JavaScript,
+
+04:10.000 --> 04:14.000
+onClick, onKeyUp, c'est la même idée.
+
+04:14.000 --> 04:17.000
+Nous développons cette théorie.
+
+04:17.000 --> 04:19.000
+Et donc, au lieu de simplement comme onClick,
+
+04:19.000 --> 04:22.000
+ce que vous pourriez penser, c'est ce que je vais probablement deviner,
+
+04:22.000 --> 04:26.000
+vue, parce que v-on lui-même est la directive,
+
+04:26.000 --> 04:29.000
+vous avez la possibilité de lui transmettre un argument via le symbole deux-points.
+
+04:29.000 --> 04:32.000
+C'est donc v-on colon l'événement que vous souhaitez appeler.
+
+04:32.000 --> 04:35.000
+Et l'événement que vous souhaitez appeler, encore une fois, est un événement JavaScript standard.
+
+04:35.000 --> 04:36.000
+Nous n'avons rien inventé.
+
+04:36.000 --> 04:41.000
+Alors saisissez tout ce à quoi vous pouvez penser et qui est standard dans l'API JavaScript,
+
+04:41.000 --> 04:42.000
+ça existe.
+
+04:42.000 --> 04:45.000
+Et donc lorsque vous cliquez, à quoi voulons-nous faire référence ?
+
+04:45.000 --> 04:46.000
+Eh bien, devinez quoi ?
+
+04:46.000 --> 04:50.000
+Nous voulons faire référence à notre fonction de comptage d'incréments que nous avions précédemment.
+
+04:50.000 --> 04:52.000
+Cependant, l'élément clé à retenir ici est
+
+04:52.000 --> 04:54.000
+c'est que vous ne voulez pas réellement appeler la fonction
+
+04:54.000 --> 04:57.000
+car c'est quelque chose qui sera appelé lorsque l'événement sera déclenché.
+
+04:57.000 --> 05:01.000
+Donc, fondamentalement, vous transmettez une référence à la fonction à l'intérieur de votre application,
+
+05:01.000 --> 05:03.000
+et puis quand on clique dessus, il sera appelé.
+
+05:03.000 --> 05:05.000
+C'est la raison pour laquelle vous ne l'appelez pas immédiatement.
+
+05:05.000 --> 05:10.000
+Donc, si nous enregistrons cela, et allons-y et actualisons maintenant notre page,
+
+05:10.000 --> 05:13.000
+vous voyez, boum, les choses sont en train de changer.
+
+05:13.000 --> 05:16.000
+Et ils sont suivis.
+
+05:16.000 --> 05:18.000
+C'est donc assez simple.
+
+05:18.000 --> 05:20.000
+Et pourquoi pas quelque chose d'un peu plus compliqué,
+
+05:20.000 --> 05:22.000
+et si je voulais fixer le montant
+
+05:22.000 --> 05:24.000
+dont le compteur est incrémenté ?
+
+05:24.000 --> 05:26.000
+Okay, eh bien, dans ce cas, tu vas dire,
+
+05:26.000 --> 05:28.000
+eh bien, disons que nous avons une étiquette ici.
+
+05:28.000 --> 05:31.000
+Disons le montant de l'incrément.
+
+05:31.000 --> 05:34.000
+Et puis ce sera incrémenté.
+
+05:34.000 --> 05:39.000
+Et puis vous avez probablement ici un élément qui est un nombre.
+
+05:39.000 --> 05:41.000
+Et puis, si nous actualisons cela, théoriquement,
+
+05:41.000 --> 05:44.000
+ce que vous voudriez, c'est la possibilité de modifier le montant
+
+05:44.000 --> 05:46.000
+ce nombre d'incréments change.
+
+05:46.000 --> 05:48.000
+Alors, comment pourrions-nous procéder concrètement ?
+
+05:48.000 --> 05:50.000
+Eh bien, tout d'abord, ce que nous voulons faire
+
+05:50.000 --> 05:52.000
+est-ce que nous avons besoin d'une propriété de données réactive
+
+05:52.000 --> 05:54.000
+parce que nous voulons suivre ce qui se passe.
+
+05:54.000 --> 05:57.000
+Donc à ce moment-là, si nous examinons nos données,
+
+05:57.000 --> 05:59.000
+nous avons ce décompte, et nous pouvons dire,
+
+05:59.000 --> 06:02.000
+nous pouvons simplement faire en sorte que le montant de l'incrément soit une propriété de données réactive.
+
+06:02.000 --> 06:05.000
+Et actuellement, c'en est un.
+
+06:05.000 --> 06:09.000
+Et puis ce que nous voulons faire, c'est le lier à notre compte à rebours ici.
+
+06:09.000 --> 06:11.000
+Permettez-moi de réduire cela.
+
+06:11.000 --> 06:15.000
+Et donc plutôt que de simplement l'incrémenter de un, ce qui est le plus plus,
+
+06:15.000 --> 06:19.000
+nous ferons plus est égal à ce montant d'incrément.
+
+06:19.000 --> 06:28.000
+Et pour montrer que cela fonctionne, je vais passer à 10.
+
+06:28.000 --> 06:29.000
+Et nous allons continuer et actualiser cela.
+
+06:29.000 --> 06:32.000
+Et vous pouvez voir qu'il augmente, comme on peut s'y attendre, de 10.
+
+06:32.000 --> 06:35.000
+Mais nous voulons pouvoir changer cela, n’est-ce pas ?
+
+06:35.000 --> 06:38.000
+Comment pouvons-nous réellement relier ces deux éléments ?
+
+06:38.000 --> 06:41.000
+Alors laissez-moi aller de l'avant et envelopper cette partie dans le div très rapidement.
+
+06:41.000 --> 06:44.000
+Oups, ce n'est pas du tout ce que je voulais.
+
+06:44.000 --> 06:47.000
+Da, da, da, div.
+
+06:47.000 --> 06:48.000
+Et voilà.
+
+06:48.000 --> 06:49.000
+D'accord.
+
+06:49.000 --> 06:50.000
+Cela devrait lui donner une nouvelle ligne.
+
+06:50.000 --> 06:51.000
+Parfait.
+
+06:51.000 --> 06:52.000
+D'accord.
+
+06:52.000 --> 06:57.000
+Donc, la première chose à faire est que nous avons besoin de notre contribution pour afficher quelle est cette valeur.
+
+06:57.000 --> 06:58.000
+Alors, comment pouvons-nous faire cela ?
+
+06:58.000 --> 07:00.000
+Normalement, nous dirions que la valeur est égale à 10.
+
+07:00.000 --> 07:02.000
+Il s'agit du HTML standard.
+
+07:02.000 --> 07:04.000
+Mais c'est statique, non ?
+
+07:04.000 --> 07:07.000
+C'est quelque chose que nous définissons nous-mêmes et n'a rien à voir avec notre application.
+
+07:07.000 --> 07:08.000
+Comment relier les deux ?
+
+07:08.000 --> 07:11.000
+La façon dont nous procédons est avec une autre directive de vue.
+
+07:11.000 --> 07:12.000
+Parce que qu'est-ce qu'on fait ?
+
+07:12.000 --> 07:15.000
+Nous étendons maintenant notre HTML pour lui donner un super pouvoir pour faire quoi ?
+
+07:15.000 --> 07:19.000
+Avoir une certaine interactivité, être suralimenté en données réactives.
+
+07:19.000 --> 07:22.000
+Et donc vous faites ça via vbind, n'est-ce pas ?
+
+07:22.000 --> 07:24.000
+Vous liez la valeur à une propriété dynamique.
+
+07:24.000 --> 07:25.000
+C'est ainsi qu'il faut y penser.
+
+07:25.000 --> 07:27.000
+Mais ici, à quoi le lions-nous ?
+
+07:27.000 --> 07:28.000
+Nous ne le limitons pas à 10.
+
+07:28.000 --> 07:29.000
+Ce n’est pas par cela que nous nous engageons.
+
+07:29.000 --> 07:31.000
+Nous le lions pour augmenter le montant.
+
+07:31.000 --> 07:35.000
+On peut donc se référer directement à la variable dont nous avons parlé plus tôt.
+
+07:35.000 --> 07:41.000
+Et donc pour montrer que cela a changé, cette fois je vais changer le montant de l'incrément à 8.
+
+07:41.000 --> 07:43.000
+Et si je rafraîchis, boum, c'est parti.
+
+07:43.000 --> 07:46.000
+On voit qu'ils se parlent maintenant.
+
+07:46.000 --> 07:49.000
+Et maintenant, nous pouvons voir quand nous incrémentons le nombre, c'est génial.
+
+07:49.000 --> 07:50.000
+En fait, ça change.
+
+07:50.000 --> 07:52.000
+Mais que savons-nous de cela ?
+
+07:52.000 --> 07:56.000
+Nous savons que si nous passons maintenant à 12, est-ce que cela fera une différence ?
+
+07:56.000 --> 07:57.000
+Non, ce n'est pas le cas.
+
+07:57.000 --> 07:59.000
+En fait, il va se réinitialiser à 8.
+
+07:59.000 --> 08:00.000
+Que se passe-t-il ?
+
+08:00.000 --> 08:04.000
+Eh bien, la raison en est que vous avez dit à Vue de suivre cette chose et de vous assurer que
+
+08:04.000 --> 08:07.000
+sa valeur est toujours liée à ce montant d'incrément.
+
+08:07.000 --> 08:09.000
+C'est ce que vous lui avez dit.
+
+08:09.000 --> 08:12.000
+Et c'est pourquoi, même si nous l'avons modifié une fois et que nous essayons d'augmenter le décompte,
+
+08:12.000 --> 08:17.000
+cela le remet en place parce que c'est ce que Vue fait le travail que vous lui avez dit de faire.
+
+08:17.000 --> 08:18.000
+Alors que voulons-nous faire ?
+
+08:18.000 --> 08:23.000
+Nous voulons réellement mettre à jour le montant de l'incrément chaque fois que quelqu'un tape réellement à l'intérieur de l'élément d'entrée.
+
+08:23.000 --> 08:24.000
+Alors, comment pourriez-vous faire ça ?
+
+08:24.000 --> 08:27.000
+Eh bien, nous allons réellement écouter un événement.
+
+08:27.000 --> 08:28.000
+Et alors, qu'est-ce que c'est ?
+
+08:28.000 --> 08:32.000
+Nous avons appris que V est activé et nous allons écouter l'événement d'entrée.
+
+08:32.000 --> 08:36.000
+Et ce que nous n'allons pas faire, cependant, c'est que nous n'allons pas intégrer la fonction qui changera cela.
+
+08:36.000 --> 08:39.000
+parce que je trouve ça très maladroit.
+
+08:39.000 --> 08:41.000
+Nous allons donc appeler cela le montant de l'incrément de modification.
+
+08:41.000 --> 08:47.000
+Et donc ce que nous faisons ici, c'est dire, hé, sur l'événement d'entrée pour cet élément d'entrée,
+
+08:47.000 --> 08:52.000
+lorsque nous recevons un événement d'entrée, je veux que vous exécutiez cette fonction, que nous n'avons pas encore créée, pour être clair.
+
+08:52.000 --> 09:00.000
+Nous allons donc entrer ici, et nous passerons à une méthode, et nous dirons modifier le montant de l'incrément.
+
+09:00.000 --> 09:02.000
+Comme ça.
+
+09:02.000 --> 09:04.000
+Et voici la différence, cependant.
+
+09:04.000 --> 09:08.000
+Maintenant que vous écoutez réellement un événement, vous obtenez un objet événement par défaut
+
+09:08.000 --> 09:12.000
+cela vous est transmis, une fois de plus, comme vous pouvez l'attendre du JavaScript standard.
+
+09:12.000 --> 09:13.000
+Je vais donc appeler cet événement.
+
+09:13.000 --> 09:17.000
+Et ce que nous allons faire, c'est simplement enregistrer l'événement pour prouver que cela fonctionne.
+
+09:17.000 --> 09:19.000
+Je vais donc aller de l'avant et ouvrir ceci, actualiser.
+
+09:19.000 --> 09:25.000
+Et si je continue et tape ici, quelque chose se passe, regardez, l'événement d'entrée est déclenché.
+
+09:25.000 --> 09:26.000
+Alors que savons-nous ?
+
+09:26.000 --> 09:34.000
+Eh bien, nous le savons, encore une fois, nous n'entrerons pas dans les détails, mais event.target.value est ce que vous recherchez.
+
+09:34.000 --> 09:38.000
+C'est généralement la convention lorsque vous jouez avec des éléments de formulaire.
+
+09:38.000 --> 09:43.000
+Donc, pour vous montrer que cela fonctionne, si je supprime ceci, vous pouvez voir qu'il apparaît réellement dans mon terminal,
+
+09:43.000 --> 09:45.000
+comme on peut s'y attendre.
+
+09:45.000 --> 09:49.000
+Et maintenant que nous obtenons réellement la valeur dynamique de l'événement,
+
+09:49.000 --> 09:58.000
+nous pouvons alors dire que le montant de cet incrément est égal à event.target.value.
+
+09:58.000 --> 10:01.000
+Maintenant, pour montrer que cela fonctionne, nous allons aussi,
+
+10:01.000 --> 10:04.000
+Je suis un grand fan de m'assurer que les choses fonctionnent réellement correctement.
+
+10:04.000 --> 10:12.000
+Je vais donc aller de l'avant et à l'intérieur d'ici, nous allons simplement ajouter un h1 rapide pour le montant de l'incrément.
+
+10:12.000 --> 10:15.000
+Vous pouvez donc voir ici que nous affichons le montant de l'incrément ici et ici.
+
+10:15.000 --> 10:19.000
+Et si je change cela maintenant en 18, vous verrez qu'il est suivi correctement.
+
+10:19.000 --> 10:20.000
+C'est ici.
+
+10:20.000 --> 10:25.000
+Et maintenant, nous pouvons incrémenter le décompte, et puis, hmm, cela ne fonctionne pas aussi correctement.
+
+10:25.000 --> 10:26.000
+Quelqu'un a-t-il une idée du pourquoi ?
+
+10:26.000 --> 10:27.000
+Chaîne.
+
+10:27.000 --> 10:28.000
+C'est une chaîne.
+
+10:28.000 --> 10:29.000
+C'est une ficelle !
+
+10:29.000 --> 10:30.000
+C'est exact.
+
+10:30.000 --> 10:32.000
+Alors vous pourriez penser, d'accord, eh bien, vous savez ce que je vais faire ?
+
+10:32.000 --> 10:36.000
+Je vais entrer ici, je vais envelopper ça dans un numéro, en finir avec ça.
+
+10:36.000 --> 10:39.000
+Très bien, actualisons, assurons-nous que cela fonctionne.
+
+10:39.000 --> 10:41.000
+Faisons 80 cette fois.
+
+10:41.000 --> 10:42.000
+Très bien, ça marche.
+
+10:42.000 --> 10:44.000
+Mais je vais te faire mieux.
+
+10:44.000 --> 10:48.000
+Au lieu de devoir venir ici et le faire ici, ce qui est un peu idiot,
+
+10:48.000 --> 10:51.000
+en raison du montant de l'incrément, il a déjà une valeur cible.
+
+10:51.000 --> 10:55.000
+Et ce qui est un peu étrange aussi, c'est que, hein, si nous regardons notre élément d'entrée,
+
+10:55.000 --> 10:57.000
+nous sommes déjà tapés numéro.
+
+10:57.000 --> 10:58.000
+Pourquoi est-ce le cas ?
+
+10:58.000 --> 11:01.000
+Eh bien, c'est une façon de résoudre ce problème.
+
+11:01.000 --> 11:03.000
+Mais voici le problème.
+
+11:03.000 --> 11:08.000
+Si nous regardons nos contributions, Sam a fait la blague que j'ai montrée dans le tweet
+
+11:08.000 --> 11:12.000
+plus tôt, la majeure partie du Web affiche une liste.
+
+11:12.000 --> 11:15.000
+Eh bien, je dirais qu’une grande partie du Web remplit également des formulaires, n’est-ce pas ?
+
+11:15.000 --> 11:18.000
+Je veux dire, c’est aussi ce qu’est une grande partie de notre pain et de notre beurre.
+
+11:18.000 --> 11:22.000
+Donc Vue disait, d'accord, ça fait beaucoup de travail à faire à chaque fois que vous avez un formulaire
+
+11:22.000 --> 11:23.000
+élément, non ?
+
+11:23.000 --> 11:26.000
+Genre, oh mon Dieu, et si nous pouvions simplement apprendre de ce qu'Angular a fait
+
+11:26.000 --> 11:29.000
+et faire une liaison bidirectionnelle dans ce contexte particulier ?
+
+11:29.000 --> 11:34.000
+Donc, au lieu d'avoir à toujours définir, modifier et suivre tout cela,
+
+11:34.000 --> 11:37.000
+et si nous avions une directive appelée vModel,
+
+11:37.000 --> 11:41.000
+et nous l'avons suivi directement jusqu'à la propriété de données qui nous intéressait ?
+
+11:43.000 --> 11:48.000
+Une fois que vous avez ce vModel, tout cela, dis-je, disparaît,
+
+11:48.000 --> 11:53.000
+mais vModel est un sucre syntaxique permettant de configurer essentiellement tout ce qui se cache sous le capot,
+
+11:53.000 --> 11:58.000
+ce qui signifie qu'à l'intérieur de notre méthode ici, nous n'avons même pas besoin de ceci non plus.
+
+11:58.000 --> 12:00.000
+Je peux donc sauvegarder ça.
+
+12:00.000 --> 12:04.000
+Maintenant, si nous actualisons, encore une fois, faisons 800 cette fois et incrémentons,
+
+12:04.000 --> 12:07.000
+vous verrez que les choses changent comme vous vous en doutez avec ce vModel.
+
+12:07.000 --> 12:13.000
+Et ce qui est encore plus intéressant, si vous le remarquez, ce n'est plus une chaîne.
+
+12:13.000 --> 12:18.000
+Parce qu'une fois de plus, ce que Vue essaie de faire, c'est de s'intéresser à l'expérience du développeur.
+
+12:18.000 --> 12:22.000
+et ça dit, hé, je sais que je regarde un élément d'entrée.
+
+12:22.000 --> 12:25.000
+Parce que voici le problème, vModel fonctionne avec d'autres éléments de formulaire comme les cases à cocher,
+
+12:25.000 --> 12:26.000
+radio, sélectionnez.
+
+12:26.000 --> 12:27.000
+Vous pouvez faire tout cela.
+
+12:27.000 --> 12:28.000
+Vous pouvez faire tout cela.
+
+12:28.000 --> 12:32.000
+Mais il sait également quel type d’événement d’entrée écouter.
+
+12:32.000 --> 12:34.000
+Parce que vous saurez que, surtout avec select, c'est une question délicate.
+
+12:34.000 --> 12:36.000
+Je dois toujours rechercher la documentation chaque fois que je travaille avec select.
+
+12:36.000 --> 12:39.000
+Je dois le coder à partir de zéro.
+
+12:39.000 --> 12:43.000
+Mais ici, il sait en fait que nous sommes un petit nombre ici.
+
+12:43.000 --> 12:47.000
+Et à cause de cela, la valeur est réellement suivie à l'intérieur de son application
+
+12:47.000 --> 12:49.000
+a été automatiquement converti.
+
+12:49.000 --> 12:53.000
+Maintenant, si nous faisions une chaîne, par exemple, ici, ou non, une chaîne, un texte, un retour,
+
+12:53.000 --> 12:59.000
+vous pouvez voir, oh, il est en fait assez intelligent pour savoir quoi faire.
+
+12:59.000 --> 13:05.000
+Mais la seule chose que je voulais montrer, parce que c'était autrefois un truc de Vue2,
+
+13:05.000 --> 13:11.000
+est que vous pouvez réellement attacher des arguments ou essentiellement des modificateurs à vos directives.
+
+13:11.000 --> 13:16.000
+Donc dans ce cas, c'est un vModel de nombre, par exemple.
+
+13:16.000 --> 13:18.000
+Mais il y aura d'autres opportunités.
+
+13:18.000 --> 13:20.000
+Je pourrai le présenter plus tard.
+

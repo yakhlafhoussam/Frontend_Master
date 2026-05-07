@@ -1,0 +1,728 @@
+WEBVTT
+
+00:00.000 --> 00:03.400
+Donc pour cet exercice particulier,
+
+00:03.400 --> 00:06.880
+Je veux que vous essayiez de vous entraîner à le configurer à partir de zéro.
+
+00:06.880 --> 00:08.400
+Parce que je veux que tu te familiarises avec
+
+00:08.400 --> 00:10.760
+les fichiers essentiels au fonctionnement de View Router.
+
+00:10.760 --> 00:13.220
+Donc, à titre général,
+
+00:13.220 --> 00:15.360
+utilisez la documentation View Router pour référence.
+
+00:15.360 --> 00:17.200
+Je ne m'attends pas à ce que vous mémorisiez tout cela.
+
+00:17.200 --> 00:18.560
+En fait, si vous faites beaucoup
+
+00:18.560 --> 00:21.040
+copier et coller à partir de l'exemple de code, c'est tout à fait correct.
+
+00:21.040 --> 00:23.120
+Le but est que vous puissiez ici configurer,
+
+00:23.120 --> 00:24.960
+avoir une idée de la façon dont les choses se passent
+
+00:24.960 --> 00:27.440
+essentiellement configuré à partir du répertoire brut.
+
+00:27.440 --> 00:29.120
+Puis à part ça,
+
+00:29.120 --> 00:31.880
+vous pouvez déplacer tous les composants de page que vous pensez être
+
+00:31.880 --> 00:35.080
+pertinent dans votre application SeleView.
+
+00:35.080 --> 00:36.840
+Ensuite, nous continuerons et
+
+00:36.840 --> 00:38.080
+mettre à niveau App.View pour l'utiliser
+
+00:38.080 --> 00:39.800
+RouterLink et RouterView afin que
+
+00:39.800 --> 00:41.960
+tout s'affiche correctement.
+
+00:43.760 --> 00:47.160
+D'accord. Content de te revoir.
+
+00:47.160 --> 00:49.240
+Comment s'est passée cette expérience avec un peu
+
+00:49.240 --> 00:51.520
+pénible à cause de toute la configuration ?
+
+00:51.520 --> 00:54.040
+Ouais, je comprends tout à fait.
+
+00:54.040 --> 00:56.600
+Nous allons donc refaire un tour d'horizon,
+
+00:56.640 --> 00:58.240
+juste pour réitérer ces étapes et
+
+00:58.240 --> 01:01.600
+et partageons quelques trucs et astuces en cours de route.
+
+01:01.600 --> 01:07.000
+Alors, comment cela fonctionnera, nous allons passer à SeleView.
+
+01:07.000 --> 01:11.520
+Laissez-moi continuer et faire SeleView.
+
+01:11.520 --> 01:14.720
+Super. Alors jouons avec ça.
+
+01:14.720 --> 01:19.120
+La première chose à faire est que nous devons installer View Router,
+
+01:19.120 --> 01:22.760
+version, pas version R, version 4.
+
+01:22.760 --> 01:24.880
+Et voilà.
+
+01:24.880 --> 01:27.720
+Alors ce que nous allons faire, c'est aller
+
+01:27.720 --> 01:29.720
+à l'avance et configurez notre application.
+
+01:29.720 --> 01:31.040
+En fait, laissez-moi continuer et l'exécuter également
+
+01:31.040 --> 01:32.960
+afin que nous puissions voir les changements se produire.
+
+01:32.960 --> 01:35.200
+Et voilà. Nous y sommes.
+
+01:35.200 --> 01:39.160
+D'accord. Donc, dans notre application main.js,
+
+01:39.160 --> 01:41.000
+nous verrons que nous n'avons pas de routeur pour le moment.
+
+01:41.000 --> 01:42.360
+Alors allons-y et réparons cela.
+
+01:42.360 --> 01:45.840
+Importer Créer un routeur depuis,
+
+01:45.840 --> 01:47.760
+Je préfère généralement quand j'ai la saisie semi-automatique,
+
+01:47.760 --> 01:49.520
+mais je suis assez confiant dans celui-ci.
+
+01:49.520 --> 01:51.480
+Super. Ouais. C'est vrai.
+
+01:51.480 --> 01:54.480
+Donc ce que nous pouvons faire maintenant, c'est votre application const,
+
+01:54.560 --> 01:55.800
+est votre application de création.
+
+01:55.800 --> 01:57.520
+Ensuite, pour le rendre plus déclaratif,
+
+01:57.520 --> 02:00.600
+nous ferons app.useRouter,
+
+02:00.600 --> 02:02.880
+que je dois définir dans une seconde,
+
+02:02.880 --> 02:07.080
+et puis app.mount, oups, pas un contrôleur de carte.
+
+02:07.080 --> 02:12.520
+Ensuite, nous pouvons simplement définir notre routeur de cette façon pour créer un routeur.
+
+02:12.520 --> 02:14.640
+Nous devons lui transmettre certaines options.
+
+02:14.640 --> 02:17.720
+L'historique à ce sujet sera donc Create WebHassHistory.
+
+02:17.720 --> 02:20.760
+Encore une fois, la raison pour laquelle nous faisons cela est parce que c'est le cas
+
+02:20.760 --> 02:23.720
+nécessitent certaines configurations de serveur pour le faire fonctionner
+
+02:23.720 --> 02:26.160
+le mode HTML5 normal.
+
+02:26.160 --> 02:28.520
+Encore une fois, je vous laisse le soin à vous et aux docs,
+
+02:28.520 --> 02:30.440
+selon la façon dont vous le déployez pour ce faire.
+
+02:30.440 --> 02:32.120
+Mais d'une manière générale, ce que vous faites, c'est que vous le souhaitez
+
+02:32.120 --> 02:34.120
+rediriger toujours vers index.html,
+
+02:34.120 --> 02:35.640
+et encore une fois, plein de documents à l'appui
+
+02:35.640 --> 02:37.680
+probablement partout où vous le déployez.
+
+02:37.680 --> 02:40.720
+En attendant, c'est WebHassHistory que nous allons utiliser,
+
+02:40.720 --> 02:43.000
+parce que c'est le plus universel en termes de
+
+02:43.000 --> 02:44.760
+comme s'assurer que les choses ne se cassent pas,
+
+02:44.760 --> 02:46.800
+et c'est une fonction que nous devons exécuter,
+
+02:46.800 --> 02:49.440
+et puis nous devons être capables de trouver les itinéraires.
+
+02:49.440 --> 02:51.400
+Donc juste pour faire ça légèrement différemment,
+
+02:51.400 --> 02:54.080
+pour que vous puissiez réellement voir ce qui se passe ici,
+
+02:54.080 --> 02:56.600
+nous pouvons en fait simplement définir les itinéraires ici également.
+
+02:56.600 --> 02:58.720
+Je les sépare normalement dans un fichier
+
+02:58.720 --> 03:00.360
+pour faciliter un peu la tâche de la gestion.
+
+03:00.360 --> 03:03.480
+Mais encore une fois, pour aider à sceller un peu plus le modèle mental,
+
+03:03.480 --> 03:04.680
+nous allons procéder de cette façon.
+
+03:04.680 --> 03:06.400
+Donc à l'intérieur des composants,
+
+03:06.400 --> 03:08.580
+nous pouvons voir quel type de pages avons-nous déjà.
+
+03:08.580 --> 03:11.400
+Eh bien, nous avons déjà trois pages qui portent bien leur nom.
+
+03:11.400 --> 03:13.640
+Alors allons-y et créons ce dossier pour les vues,
+
+03:13.640 --> 03:15.960
+et déplaçons-les simplement.
+
+03:15.960 --> 03:18.440
+Ouais. Que veut faire Vola ?
+
+03:18.440 --> 03:19.680
+Oh, il sait que je veux le changer.
+
+03:19.680 --> 03:21.640
+Super. S'il vous plaît, faites ça pour moi.
+
+03:21.640 --> 03:23.480
+Je vais le proposer également.
+
+03:23.480 --> 03:27.280
+Je vais lui faire confiance pour faire son travail. Super.
+
+03:27.280 --> 03:30.440
+D'accord. Alors maintenant, nous devrions déplacer un tas de choses.
+
+03:30.440 --> 03:34.560
+Mais il y a une bonne question qui a été posée plus tôt concernant :
+
+03:34.560 --> 03:37.800
+c'est bien pour nous d'être explicites sur l'endroit où se trouve le chemin du fichier,
+
+03:37.800 --> 03:40.280
+mais tous ceux qui ont déjà travaillé sur une grande application le sauront
+
+03:40.280 --> 03:41.680
+quand il s'agit de déplacer des fichiers,
+
+03:41.680 --> 03:43.240
+ça peut être un peu pénible quand on bouge
+
+03:43.240 --> 03:44.720
+répertoires supérieurs, répertoires inférieurs,
+
+03:44.720 --> 03:46.440
+et n'y a-t-il pas un moyen plus simple de le faire,
+
+03:46.440 --> 03:49.080
+qu'il fait toujours référence au répertoire racine.
+
+03:49.280 --> 03:50.240
+De cette façon, peu importe où vous êtes,
+
+03:50.240 --> 03:51.800
+tant que vous ne faites pas une tonne de dossiers imbriqués,
+
+03:51.800 --> 03:53.760
+cela devrait rendre la vie beaucoup plus facile.
+
+03:53.760 --> 03:55.480
+Et donc le secret de tout ça en fait,
+
+03:55.480 --> 03:57.440
+c'est que nous avons déjà cela intégré,
+
+03:57.440 --> 03:59.160
+et c'est le symbole at.
+
+03:59.160 --> 04:01.520
+Et donc, lorsque vous faites le symbole at, cela signifie :
+
+04:01.520 --> 04:03.240
+veuillez aller dans le dossier source,
+
+04:03.240 --> 04:06.480
+puis démarrez votre chemin de fichier à partir de là.
+
+04:06.480 --> 04:08.200
+Et c'est un pseudo vraiment sympa à avoir.
+
+04:08.200 --> 04:09.600
+Maintenant, je te dis ça, et tu pourrais te dire,
+
+04:09.600 --> 04:12.760
+ooh, ça ressemble à de la magie noire. Ce n'est pas le cas.
+
+04:12.760 --> 04:14.440
+Si vous regardez à l'intérieur de notre configuration V,
+
+04:14.440 --> 04:15.960
+en fait, c'est la valeur par défaut pour être honnête,
+
+04:15.960 --> 04:19.800
+mais je vais m'en tenir à la vue Cela V.
+
+04:19.800 --> 04:21.880
+Vous verrez ici qu'il y a effectivement un alias
+
+04:21.880 --> 04:25.360
+étant défini à partir de V qui dit, hé, c'est le symbole at,
+
+04:25.360 --> 04:27.600
+et ce que je veux que tu fasses, c'est automatiquement mettre
+
+04:27.600 --> 04:32.080
+le chemin de l'URL du fichier vers ce répertoire source de barre oblique.
+
+04:32.080 --> 04:33.480
+Et donc cela signifie que vous pouvez le configurer
+
+04:33.480 --> 04:34.320
+à tout ce que vous voulez.
+
+04:34.320 --> 04:35.320
+Il n'est pas nécessaire que ce soit à,
+
+04:35.320 --> 04:36.560
+mais c'est effectivement le cas,
+
+04:36.560 --> 04:39.280
+cela se trouve être une convention pour de nombreuses applications.
+
+04:39.280 --> 04:41.040
+Alors le symbole at est là pour vous,
+
+04:41.040 --> 04:42.240
+si tu veux simplifier le fait
+
+04:42.240 --> 04:43.680
+que vous n'avez pas besoin de naviguer maintenant.
+
+04:43.680 --> 04:46.280
+Attendez, dans quel dossier me trouve-t-il et que se passe-t-il ?
+
+04:46.280 --> 04:48.120
+Maintenant que nous avons cela, continuons.
+
+04:48.120 --> 04:50.120
+Alors tout d’abord, quels types d’itinéraires avons-nous ?
+
+04:50.120 --> 04:53.080
+Eh bien, nous allons vouloir avoir un chemin pour la page d'accueil.
+
+04:53.080 --> 04:54.400
+Et alors, de quel composant s'agit-il ?
+
+04:54.400 --> 04:57.880
+Nous allons vouloir créer le composant pour la page d'accueil.
+
+04:57.880 --> 05:00.640
+Très bien, nous avons donc ici la page d'accueil,
+
+05:00.640 --> 05:02.080
+mais nous devons importer cela.
+
+05:02.080 --> 05:05.200
+Nous avons donc la page d'accueil de, utilisons notre alias pratique,
+
+05:05.200 --> 05:08.320
+composants slash vue par points de la page d'accueil.
+
+05:08.320 --> 05:10.240
+Et c'est super pratique parce que je n'ai pas besoin de réfléchir
+
+05:10.240 --> 05:12.160
+où suis-je dans le répertoire.
+
+05:12.160 --> 05:14.300
+C'est super, super sympa.
+
+05:14.300 --> 05:16.880
+Super, il y a eu un commentaire dans le public disant que
+
+05:16.880 --> 05:18.680
+nous l'avons déplacé vers les vues, il n'est plus dans les composants.
+
+05:18.680 --> 05:20.240
+Et c'est exact, donc ça casserait.
+
+05:20.240 --> 05:23.920
+Mais comme je n'ai pas besoin de réfléchir au répertoire dans lequel je me trouve,
+
+05:23.920 --> 05:24.760
+c'est utile.
+
+05:24.760 --> 05:26.680
+Et voilà, regardez, tout s'affiche.
+
+05:26.680 --> 05:28.920
+D'accord, alors nous avons un chemin ici.
+
+05:28.920 --> 05:32.080
+Et allons-y et copions ce bloc très rapidement
+
+05:32.080 --> 05:34.040
+juste pour rendre cela un peu plus facile.
+
+05:34.040 --> 05:37.380
+Nous avons donc la connexion, puis l'utilisateur.
+
+05:38.880 --> 05:40.760
+D'accord, page utilisateur, super.
+
+05:40.760 --> 05:44.960
+Et puis nous avons la page utilisateur, la page de connexion.
+
+05:45.880 --> 05:48.080
+Et c’est ainsi que la plupart d’entre nous feraient probablement cette partie.
+
+05:48.080 --> 05:50.880
+Connectez-vous, oh, la connexion est un L.
+
+05:51.840 --> 05:56.640
+Et puis P ou U pour la page utilisateur, c'est parti, sauvegarde, super.
+
+05:56.640 --> 05:59.880
+Et puis ce que nous pouvons faire maintenant, c'est aller à l'intérieur de notre application.view
+
+05:59.880 --> 06:01.200
+à vendre avec vue.
+
+06:01.200 --> 06:03.200
+Et plutôt que de tout gérer maintenant
+
+06:03.200 --> 06:04.880
+avec la page actuelle et ainsi de suite,
+
+06:04.880 --> 06:06.400
+nous pouvons en fait rendre cela beaucoup plus simple.
+
+06:06.400 --> 06:09.040
+Donc ce que nous allons faire ici, c'est aller de l'avant
+
+06:09.040 --> 06:10.940
+et plutôt que de mettre le composant ici,
+
+06:10.940 --> 06:12.640
+nous allons juste le faire, laissez-moi d'abord le supprimer
+
+06:12.640 --> 06:14.360
+pour vous montrer que tout fonctionnait.
+
+06:14.360 --> 06:16.080
+Okay, super, c'est parti.
+
+06:16.080 --> 06:18.180
+Maintenant, nous allons simplement mettre la vue du routeur.
+
+06:19.560 --> 06:23.800
+Et juste comme ça, nous avons nos pages.
+
+06:23.800 --> 06:26.120
+Vos itinéraires sont tous définis pour accéder à la page d'accueil.
+
+06:26.120 --> 06:29.120
+Oui, ils sont tous définis pour aller en page d'accueil, bonne prise.
+
+06:29.120 --> 06:31.920
+Nous n'avons donc plus besoin de suivre ces choses
+
+06:31.920 --> 06:35.000
+car cela est désormais géré au niveau du routeur.
+
+06:35.000 --> 06:36.260
+Donc, au cas où vous auriez vu des doublons,
+
+06:36.260 --> 06:38.120
+vous ne devriez pas avoir de doublons.
+
+06:38.160 --> 06:40.760
+Et voilà, je n’ai pas besoin de ce composant.
+
+06:40.760 --> 06:42.760
+En fait, nous n'avons besoin de rien de tout cela
+
+06:42.760 --> 06:44.640
+parce que tout ce que je fais, j'essaie de le faire
+
+06:44.640 --> 06:46.580
+toutes les choses programmatiques que viewrouter
+
+06:46.580 --> 06:47.880
+fera l'affaire pour nous dès le départ.
+
+06:47.880 --> 06:50.280
+Donc je peux simplement effacer tout ça.
+
+06:52.080 --> 06:56.000
+Et puis on ne peut plus faire référence à aucune de ces choses.
+
+06:56.000 --> 06:58.240
+Commentons cela très rapidement.
+
+06:58.240 --> 07:02.780
+Et puis je pense que nous sommes bons dans ce domaine.
+
+07:02.780 --> 07:05.080
+Nous devons maintenant avoir la possibilité de le désactiver.
+
+07:05.080 --> 07:08.080
+Donc plutôt que d'utiliser les balises A,
+
+07:08.080 --> 07:12.000
+nous allons continuer et utiliser nos ancres,
+
+07:12.000 --> 07:15.400
+utilisez notre lien de routeur, désolé, un, deux, lien de routeur.
+
+07:17.120 --> 07:21.200
+Ensuite, nous avons ceci ici, un, deux, lien de routeur.
+
+07:22.760 --> 07:24.840
+Nous n'avons alors plus à nous soucier du clic
+
+07:24.840 --> 07:26.840
+et gérer cela et empêcher cela.
+
+07:26.840 --> 07:31.840
+Donc tout ce qui peut être supprimé, nettoyez-le.
+
+07:32.320 --> 07:33.800
+Et puis au lieu du href,
+
+07:33.800 --> 07:36.160
+ce que nous allons faire, c'est déplacer cela
+
+07:36.160 --> 07:38.080
+et puis faites-en deux.
+
+07:38.080 --> 07:39.360
+Et puis à quoi ?
+
+07:39.360 --> 07:42.040
+Et puis nous pourrons continuer correctement,
+
+07:42.040 --> 07:45.320
+puis allez connexion, utilisateur, accueil.
+
+07:46.500 --> 07:48.100
+Une fois que nous avons cela, voilà.
+
+07:49.140 --> 07:51.400
+Tout fonctionne comme prévu.
+
+07:52.840 --> 07:53.680
+D'accord.
+
+07:54.840 --> 07:57.400
+Donc, avant de terminer cet exercice,
+
+07:57.400 --> 07:59.680
+la seule chose que je veux te montrer,
+
+07:59.680 --> 08:01.320
+si tu reviens au passe-partout
+
+08:01.400 --> 08:04.520
+que nous avons créé avec la vue trois,
+
+08:04.520 --> 08:09.520
+et cette fois en ajoutant le fait que nous avons,
+
+08:10.400 --> 08:11.760
+à faire voici le routeur.
+
+08:11.760 --> 08:12.840
+D'accord.
+
+08:12.840 --> 08:15.240
+Vous remarquerez peut-être quelque chose ici,
+
+08:15.240 --> 08:17.560
+ce qui est plutôt intéressant dans la mesure où vous pouvez réellement
+
+08:17.560 --> 08:19.640
+écrire une fonction où le composant est
+
+08:19.640 --> 08:23.600
+afin d'importer dynamiquement cette vue.
+
+08:23.600 --> 08:26.160
+Et la raison pour laquelle c'est une technique puissante,
+
+08:26.160 --> 08:28.560
+bien que relativement simple, c'est qu'il sera alors
+
+08:28.560 --> 08:30.820
+générer automatiquement un morceau de build séparé
+
+08:30.820 --> 08:33.740
+cela se chargera paresseusement lors du chargement.
+
+08:33.740 --> 08:34.740
+Parce que le problème en ce moment,
+
+08:34.740 --> 08:37.300
+si nous regardons comment nous chargeons réellement l'itinéraire en ce moment
+
+08:37.300 --> 08:41.300
+dans main.js, et dis que je t'aime,
+
+08:41.300 --> 08:43.540
+nous importons chaque composant
+
+08:43.540 --> 08:46.120
+vers lequel l'application pourrait éventuellement avoir besoin d'être acheminée.
+
+08:46.120 --> 08:47.980
+Et si cette application devient assez volumineuse,
+
+08:47.980 --> 08:49.980
+c'est beaucoup à briser.
+
+08:49.980 --> 08:53.740
+D'une manière générale, c'est considéré comme une bonne pratique
+
+08:53.740 --> 08:57.140
+pour aller de l'avant et tout comme nous le voyons à l'intérieur de ce router.js,
+
+08:57.140 --> 08:59.940
+oups, pas celui-là, nous regardons celui-ci,
+
+08:59.940 --> 09:02.260
+pour continuer et importer simplement le chemin directement.
+
+09:02.260 --> 09:04.140
+Alors je vais y aller et faire ça pour nous,
+
+09:04.140 --> 09:06.940
+afin que nous puissions réellement avoir cela comme preuve de cela.
+
+09:06.940 --> 09:09.100
+Encore une fois, plutôt que d'avoir ces deux-là ici,
+
+09:09.100 --> 09:11.180
+parce que nous ne savons pas quand les utilisateurs vont s'y connecter,
+
+09:11.180 --> 09:12.780
+nous savons que la page d'accueil doit être importée.
+
+09:12.780 --> 09:14.860
+Cela ne peut donc pas être importé dynamiquement.
+
+09:14.860 --> 09:17.900
+Mais tout le reste, ça a du potentiel.
+
+09:17.900 --> 09:21.740
+Nous pouvons donc continuer et abandonner les importations ici.
+
+09:21.740 --> 09:24.060
+Et la façon dont ça fonctionne, c'est une fonction
+
+09:25.660 --> 09:28.800
+qui renvoie ce chemin.
+
+09:30.020 --> 09:31.420
+Et voilà à quoi cela ressemble.
+
+09:34.740 --> 09:36.100
+Supprimez ça, supprimez ça.
+
+09:36.100 --> 09:37.620
+Je pense que j'avais raison.
+
+09:37.620 --> 09:39.580
+Laissez-moi juste m'en assurer une fois de plus.
+
+09:39.580 --> 09:41.340
+Oups, celui-là n'est pas facile à lire.
+
+09:42.700 --> 09:44.260
+Importer, ouais.
+
+09:44.260 --> 09:48.420
+Alors, oh, j'ai fait ça par erreur dans l'autre sens.
+
+09:48.420 --> 09:53.420
+C'est une fonction qui fait l'import ici,
+
+09:54.460 --> 09:57.120
+et importe le chemin spécifique, juste comme ça.
+
+09:58.120 --> 10:01.240
+Et là encore, nous pouvons voir l'expérience utilisateur,
+
+10:01.240 --> 10:02.240
+pourquoi en ce qui concerne le développement,
+
+10:02.240 --> 10:03.480
+tu ne connaîtrais probablement pas vraiment la différence,
+
+10:03.480 --> 10:05.840
+mais cette optimisation peut beaucoup aider
+
+10:05.840 --> 10:07.840
+quand il s'agit de vos applications à l'avenir.
+

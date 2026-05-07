@@ -1,0 +1,695 @@
+WEBVTT
+
+00:00.000 --> 00:03.000
+Question ici dans le chat.
+
+00:03.000 --> 00:10.000
+Comment les hooks de cycle de vie comme avant la destruction ou la destruction fonctionnent-ils dans l'API de composition ?
+
+00:10.000 --> 00:12.000
+Ouais, c'est une excellente question.
+
+00:12.000 --> 00:17.000
+Donc, si nous regardons à l’intérieur de nos crochets de cycle de vie, oh, est-ce que j’ai déjà tout compris ?
+
+00:17.000 --> 00:21.000
+La façon d'y penser est que l'API de composition ne fait pas réellement,
+
+00:21.000 --> 00:24.000
+dans la mesure où nous en parlons comme d'une manière distincte d'architecturer vos applications,
+
+00:24.000 --> 00:27.000
+cela ne change pas le fonctionnement du composant.
+
+00:27.000 --> 00:30.000
+Donc la question ici concernant ce qui précède le démontage,
+
+00:30.000 --> 00:34.000
+donc fondamentalement, détruisez au lieu de détruire, pensez-y comme non monté.
+
+00:34.000 --> 00:36.000
+Tout cela arrive encore à la fin.
+
+00:36.000 --> 00:40.000
+La seule chose qui diffère de l'API Composition est que cela se produit au tout début.
+
+00:40.000 --> 00:43.000
+C'est toujours toutes ces autres choses auxquelles on s'attend quand il s'agit de détruire des trucs
+
+00:43.000 --> 00:45.000
+cela est toujours pris en compte dans l'API de composition.
+
+00:45.000 --> 00:49.000
+En fait, l’API Composition continuera à toucher tous ces autres points d’ancrage du cycle de vie.
+
+00:49.000 --> 00:53.000
+Donc juste pour répondre à cette question un peu plus complètement,
+
+00:53.000 --> 00:57.000
+permettez-moi d'aller au Pokedex ici où le script est configuré.
+
+00:57.000 --> 01:01.000
+Donc, si en l'occurrence, vous dites, oh, eh bien, ce composant, disons,
+
+01:01.000 --> 01:04.000
+permettez-moi de mettre cela côte à côte afin que nous puissions réellement voir cela ensemble.
+
+01:04.000 --> 01:07.000
+Et puis permettez-moi de réduire cela pour que ce soit plus facile à lire.
+
+01:07.000 --> 01:10.000
+Donc si vous essayez de dire ça comme, OK, j'ai ce truc où,
+
+01:10.000 --> 01:14.000
+quand juste avant le démontage du composant, je veux qu'il fasse quelque chose.
+
+01:14.000 --> 01:17.000
+Parfois, c'est une chose avant qu'elle ne soit détruite.
+
+01:17.000 --> 01:20.000
+Pour ce faire, vous avez besoin d'une méthode d'assistance.
+
+01:20.000 --> 01:23.000
+Et c'est ainsi que nous avons, tout comme on pourrait s'y attendre, qu'on l'appelle,
+
+01:23.000 --> 01:25.000
+il n'est pas appelé avant le démontage.
+
+01:25.000 --> 01:29.000
+Parce que ce que l’on réalise avec les conventions, c’est qu’il s’agit en réalité d’un événement du cycle de vie.
+
+01:29.000 --> 01:33.000
+Donc vraiment, tous nos trucs portent le préfixe on.
+
+01:33.000 --> 01:35.000
+Comme on peut s'y attendre pour d'autres événements, en cliquant, en appuyant sur la touche.
+
+01:35.000 --> 01:38.000
+Eh bien, puisqu'il s'agit d'une méthode d'assistance pour un événement pour les hooks de cycle de vie,
+
+01:38.000 --> 01:41.000
+avant le montage, c'est ce que nous importerions.
+
+01:41.000 --> 01:43.000
+Et puis, désolé, avant de démonter,
+
+01:43.000 --> 01:46.000
+parce que c'est précisément de cela dont nous parlions.
+
+01:46.000 --> 01:49.000
+Nous dirions donc avant de démonter.
+
+01:49.000 --> 01:51.000
+Et voilà.
+
+01:51.000 --> 01:56.000
+Et puis j’aime généralement garder mes crochets de cycle de vie vers le bas, généralement.
+
+01:56.000 --> 01:58.000
+Mais attendez-vous à une API de composition.
+
+01:58.000 --> 02:00.000
+Cela disparaît en fonction de la complexité du code.
+
+02:00.000 --> 02:03.000
+Il serait donc très clair que ce n'est pas du tout une bonne pratique,
+
+02:03.000 --> 02:07.000
+c'est juste un peu ce que j'ai l'habitude de faire avec l'API d'options.
+
+02:07.000 --> 02:10.000
+Donc, ce que nous ferions, c'est appeler avant de démonter.
+
+02:10.000 --> 02:15.000
+Et puis c'est une fonction qui prend une fonction de rappel de ce que l'on veut faire.
+
+02:15.000 --> 02:18.000
+Donc, dans ce cas particulier, vous pourriez vous dire : faites cette chose.
+
+02:19.000 --> 02:21.000
+Et puis c'est tout.
+
+02:21.000 --> 02:23.000
+Vous avez essentiellement fait ce que vous feriez avec une API d'options,
+
+02:23.000 --> 02:25.000
+vous le définissez simplement au niveau de la configuration.
+
+02:25.000 --> 02:28.000
+Donc, encore une fois, l'élément clé à retenir est que l'API de composition
+
+02:28.000 --> 02:30.000
+ne vous sort pas du flux.
+
+02:30.000 --> 02:32.000
+Vous êtes absolument convaincu par tout cela.
+
+02:32.000 --> 02:36.000
+C'est juste maintenant que vous pouvez littéralement tout configurer ici, en une seule étape,
+
+02:36.000 --> 02:39.000
+puis laissez-le fonctionner à partir de là.
+
+02:39.000 --> 02:41.000
+Alors que comme nous l'avons vu avec l'API d'options,
+
+02:41.000 --> 02:44.000
+il y a un peu plus de complexité concernant votre configuration,
+
+02:44.000 --> 02:46.000
+puis transmettez cela dans vos options,
+
+02:46.000 --> 02:48.000
+et puis les options peuvent faire des choses à partir de là.
+
+02:48.000 --> 02:50.000
+C'est donc une question de style.
+
+02:50.000 --> 02:52.000
+Vous découvrirez ce qui vous convient le mieux.
+
+02:52.000 --> 02:56.000
+Mais ce que j'ai fait dans cet atelier, c'est essayer de vous présenter les différents styles
+
+02:56.000 --> 03:00.000
+afin que vous puissiez avoir une idée et déterminer ce que vous voulez pour vos applications.
+
+03:00.000 --> 03:03.000
+J'espère que cela aidera à répondre à cette question.
+
+03:03.000 --> 03:04.000
+Question.
+
+03:04.000 --> 03:10.000
+Les composables.
+
+03:10.000 --> 03:15.000
+S'agit-il de singletons présents pendant tout le cycle de vie de l'application ?
+
+03:15.000 --> 03:21.000
+Ou s'ils ne sont pas activement utilisés par les composants à l'écran,
+
+03:21.000 --> 03:26.000
+sont-ils jetés puis réinstanciés la prochaine fois qu'ils seront utilisés ?
+
+03:26.000 --> 03:28.000
+C'est une bonne question.
+
+03:28.000 --> 03:29.000
+D'accord.
+
+03:29.000 --> 03:32.000
+Donc, pour définir le contexte, la question ici,
+
+03:32.000 --> 03:35.000
+laisse-moi aller au comptoir de la base,
+
+03:35.000 --> 03:37.000
+c'est autour de l'idée de ces composables
+
+03:37.000 --> 03:41.000
+et s'ils sont célibataires et dans quelle mesure sont-ils permanents
+
+03:41.000 --> 03:44.000
+en ce qui concerne l'ensemble de l'instance ?
+
+03:44.000 --> 03:48.000
+Donc parce que nous abordons maintenant les composables,
+
+03:48.000 --> 03:52.000
+cela signifie que vous commencez à avoir des problèmes de portée
+
+03:52.000 --> 03:54.000
+quand vous parlez de JavaScript,
+
+03:54.000 --> 03:56.000
+c'est pourquoi je parlais de la courbe d'apprentissage de l'API de composition.
+
+03:56.000 --> 03:59.000
+Cela commence à augmenter un peu lorsque vous commencez à penser à ce genre de choses.
+
+03:59.000 --> 04:03.000
+Donc, pour vous donner un exemple, revenons à ce magasin de comptage.
+
+04:03.000 --> 04:04.000
+D'ACCORD.
+
+04:04.000 --> 04:07.000
+Donc, comme tout JavaScript normal, ce que vous pouvez également faire
+
+04:07.000 --> 04:11.000
+est-ce que nous pouvons également créer quelque chose appelé quelque chose comme useCount,
+
+04:11.000 --> 04:13.000
+c'est une fonction.
+
+04:13.000 --> 04:17.000
+Et donc quand vous faites cela, OK, et disons que nous avons const localCount
+
+04:17.000 --> 04:20.000
+équivaut à une référence de, disons, 50.
+
+04:20.000 --> 04:24.000
+Et puis nous retournons newCount,
+
+04:24.000 --> 04:27.000
+ou bien permettez-moi de nommer cela un peu mieux,
+
+04:27.000 --> 04:31.000
+globalCount et renvoie localCount.
+
+04:31.000 --> 04:32.000
+D'ACCORD.
+
+04:32.000 --> 04:33.000
+Voilà, nous avons cela.
+
+04:33.000 --> 04:34.000
+Je pense que j'ai bien fait tout cela.
+
+04:34.000 --> 04:35.000
+Parfait.
+
+04:35.000 --> 04:36.000
+D'ACCORD.
+
+04:36.000 --> 04:38.000
+Donc la chose que je dois faire est de ne pas avoir ça.
+
+04:38.000 --> 04:42.000
+Cela ressemble plus à une sorte d'approche d'usine des composables,
+
+04:42.000 --> 04:46.000
+où ce que vous faites, c'est que vous exécutez une fonction qui a alors essentiellement,
+
+04:46.000 --> 04:48.000
+eh bien, nous sommes sur le point de voir bientôt à quoi cela ressemble.
+
+04:48.000 --> 04:53.000
+Il est plus facile de montrer que d’expliquer cela sous sa forme brute.
+
+04:53.000 --> 04:54.000
+D'ACCORD.
+
+04:54.000 --> 04:57.000
+Ainsi, plutôt que useCount, nous obtenons cette fonction appelée useCount.
+
+04:57.000 --> 05:01.000
+Et donc ce que nous pouvons faire maintenant, c'est dire à l'intérieur de la fonction :
+
+05:01.000 --> 05:06.000
+nous allons comprendre que nous pouvons faire const.
+
+05:06.000 --> 05:07.000
+D'ACCORD.
+
+05:07.000 --> 05:09.000
+En fait, je n’ai pas aimé la façon dont je minimise cela.
+
+05:09.000 --> 05:10.000
+Et voilà.
+
+05:10.000 --> 05:12.000
+CountStore.
+
+05:12.000 --> 05:13.000
+D'ACCORD.
+
+05:13.000 --> 05:14.000
+Et voilà.
+
+05:14.000 --> 05:16.000
+UtilisezCount.
+
+05:16.000 --> 05:19.000
+Et puis c'est logCountStore pour commencer.
+
+05:19.000 --> 05:22.000
+Ne rendons même rien pour l'instant.
+
+05:22.000 --> 05:23.000
+D'ACCORD.
+
+05:23.000 --> 05:27.000
+Faites, faites, faites, faites, faites.
+
+05:27.000 --> 05:32.000
+Si nous jetons un œil à notre console et actualisons, faisons, faisons, faisons, faisons.
+
+05:32.000 --> 05:34.000
+Oh, c'est vrai.
+
+05:34.000 --> 05:35.000
+D'ACCORD.
+
+05:35.000 --> 05:36.000
+Désolé.
+
+05:36.000 --> 05:37.000
+Il recherche toujours newCount ici.
+
+05:37.000 --> 05:40.000
+Alors laissez-moi aller de l'avant et commenter cela.
+
+05:40.000 --> 05:41.000
+Et puis, où est newCount ?
+
+05:41.000 --> 05:44.000
+Oh, newCount existe également ici, à l'intérieur de userCard.
+
+05:44.000 --> 05:47.000
+Permettez-moi de désactiver cela également.
+
+05:47.000 --> 05:48.000
+Pas cette userCard.
+
+05:48.000 --> 05:50.000
+Cette userCard.
+
+05:50.000 --> 05:51.000
+Ouais.
+
+05:51.000 --> 05:52.000
+Ouais.
+
+05:55.000 --> 05:57.000
+Et puis cela devrait aussi être caché.
+
+05:57.000 --> 05:58.000
+D'ACCORD.
+
+05:58.000 --> 05:59.000
+Maintenant, tout va bien.
+
+05:59.000 --> 06:00.000
+D'ACCORD.
+
+06:04.000 --> 06:07.000
+Donc, ce que nous voyons ici, c'est que globalCount obtient deux références différentes.
+
+06:07.000 --> 06:09.000
+Il y en a un local et un global.
+
+06:09.000 --> 06:15.000
+Et donc à l'intérieur d'ici, si nous retournons countStore à, genre,
+
+06:15.000 --> 06:17.000
+pour l'exposer une fois de plus.
+
+06:17.000 --> 06:20.000
+Et puis ce que nous pouvons faire ici, c'est créer deux boutons différents maintenant.
+
+06:20.000 --> 06:24.000
+Nous allons avoir la capacité de, oh, c'est vrai,
+
+06:24.000 --> 06:25.000
+il est référencé ici.
+
+06:25.000 --> 06:30.000
+Nous allons donc dire newCounter ici.
+
+06:30.000 --> 06:33.000
+Cela va ajouter un HR ici pour que ce soit plus facile à voir.
+
+06:33.000 --> 06:37.000
+Et puis laissez-moi ne pas couper le navigateur.
+
+06:37.000 --> 06:38.000
+D'ACCORD.
+
+06:38.000 --> 06:43.000
+Donc, ce que nous allons faire ici, c'est dire globalCount.
+
+06:43.000 --> 06:48.000
+Et ce sera countStore.globalCount.
+
+06:48.000 --> 06:56.000
+Et puis localCount.CountStore.localCount.
+
+06:56.000 --> 06:58.000
+D'ACCORD.
+
+06:58.000 --> 07:03.000
+Donc, ce que nous voyons ici correspond à ce que nous avons ici dans countStore.
+
+07:03.000 --> 07:04.000
+Droite?
+
+07:04.000 --> 07:08.000
+Donc la différence ici est que allons de l'avant et ajoutons quelques fonctionnalités ici
+
+07:08.000 --> 07:12.000
+où si nous voulons aller de l'avant et augmenter les choses, à quoi cela ressemble-t-il ?
+
+07:12.000 --> 07:15.000
+Nous allons donc ajouter un bouton ici très rapidement.
+
+07:15.000 --> 07:17.000
+Et nous allons juste écrire du JavaScript en ligne
+
+07:17.000 --> 07:19.000
+juste pour rendre la vie un peu plus facile.
+
+07:19.000 --> 07:23.000
+Où globalCount sera incrémenté de 80.
+
+07:23.000 --> 07:25.000
+Je vais donc simplement appeler cela mondial.
+
+07:25.000 --> 07:30.000
+Et puis nous ferons localCount par 100.
+
+07:30.000 --> 07:34.000
+Mais rendons cela un peu plus choquant pour que ce soit plus facile, 10, 100 locaux.
+
+07:34.000 --> 07:35.000
+Super.
+
+07:35.000 --> 07:38.000
+Donc ce que nous avons ici, nous en avons les références,
+
+07:38.000 --> 07:41.000
+mais nous essayons de muter le nombre spécifiquement.
+
+07:41.000 --> 07:45.000
+Et donc l'une des choses que nous pouvons faire à la place est qu'en raison de la façon dont ils sont définis,
+
+07:45.000 --> 07:50.000
+nous pourrions faire l'incrément localCount ici, par exemple.
+
+07:50.000 --> 07:56.000
+Et c'est ici que nous pouvons dire que localCount.value plus est égal à 80.
+
+07:56.000 --> 08:02.000
+Exposez l'incrément localCount comme ceci.
+
+08:02.000 --> 08:05.000
+Et puisque nous partageons cette fonctionnalité,
+
+08:05.000 --> 08:08.000
+maintenant ce que nous pouvons faire, c'est dire,
+
+08:08.000 --> 08:18.000
+faites, faites, faites, comptez store.increment localCount comme ça.
+
+08:18.000 --> 08:19.000
+Sauvegarder.
+
+08:19.000 --> 08:20.000
+Frais.
+
+08:20.000 --> 08:23.000
+Vous voyez, notre section locale est en train de changer.
+
+08:23.000 --> 08:27.000
+La raison pour laquelle c'est différent est que si nous revenons à notre carte d'utilisateur
+
+08:27.000 --> 08:33.000
+et faisons la même chose en important notre useCount ici.
+
+08:33.000 --> 08:41.000
+Et donc nous disons que const count store est égal à useCount.
+
+08:41.000 --> 08:44.000
+Et puis retournez le magasin de comptage.
+
+08:44.000 --> 08:47.000
+Et cette fois, nous copierons cet extrait exact ici.
+
+08:47.000 --> 08:49.000
+C'est donc très évident.
+
+08:53.000 --> 08:54.000
+Sauvegarder.
+
+08:54.000 --> 08:56.000
+D'ACCORD.
+
+08:56.000 --> 08:57.000
+Vous verrez quelques choses ici.
+
+08:57.000 --> 09:00.000
+Premièrement, en raison de la façon dont la fonction est instanciée,
+
+09:00.000 --> 09:03.000
+comme on peut s'y attendre, le localCount, comme le composant
+
+09:03.000 --> 09:07.000
+car le compteur de base détient en fait sa propre version
+
+09:07.000 --> 09:09.000
+de ce localCount.
+
+09:09.000 --> 09:13.000
+Alors que par ici, on peut voir que la carte utilisateur a sa propre version
+
+09:13.000 --> 09:14.000
+de localCount.
+
+09:14.000 --> 09:18.000
+Par contre, si on a ici une fonction
+
+09:18.000 --> 09:23.000
+cela nous permet d'incrémenter globalCount,
+
+09:23.000 --> 09:29.000
+et puis, encore une fois, globalCount.value plus égal à,
+
+09:29.000 --> 09:31.000
+faisons-en 1 000.
+
+09:31.000 --> 09:34.000
+Ensuite, nous allons continuer et incrémenter globalCount.
+
+09:34.000 --> 09:36.000
+Super.
+
+09:36.000 --> 09:38.000
+Maintenant, quand nous allons de l'avant et changeons cela.
+
+09:45.000 --> 09:47.000
+Mondial.
+
+09:47.000 --> 09:49.000
+C'est bien.
+
+09:49.000 --> 09:51.000
+Et puis nous avons ceci ici.
+
+09:51.000 --> 09:52.000
+Sauvegarder.
+
+09:52.000 --> 09:53.000
+Rafraîchir.
+
+09:53.000 --> 09:55.000
+Nous vivons un changement global.
+
+09:55.000 --> 09:58.000
+Et nous avons, désolé, nous avons des changements locaux en haut.
+
+09:58.000 --> 10:01.000
+Global changeant des deux côtés.
+
+10:01.000 --> 10:04.000
+Et donc je sais que c'était une réponse un peu longue,
+
+10:04.000 --> 10:06.000
+mais cela montre que cela se résume essentiellement
+
+10:06.000 --> 10:08.000
+à votre capacité à étendre votre JavaScript
+
+10:08.000 --> 10:10.000
+comme vous le feriez normalement, en ce qui concerne leur génération.
+
+10:10.000 --> 10:11.000
+J’en avais assez.
+
+10:11.000 --> 10:12.000
+Je demandais.
+
+10:12.000 --> 10:14.000
+Supposons que vous appuyiez sur un bouton qui restituait différents composants.
+
+10:14.000 --> 10:15.000
+Ouais.
+
+10:15.000 --> 10:18.000
+Ainsi, le compteur et la carte utilisateur sont hors écran.
+
+10:18.000 --> 10:19.000
+Mm-hmm.
+
+10:19.000 --> 10:21.000
+Et puis vous réinstanciez ces deux composants.
+
+10:21.000 --> 10:22.000
+Est-ce que globalCount recommence ?
+
+10:22.000 --> 10:27.000
+Ou cet état est-il détenu par l’application d’une manière ou d’une autre ?
+
+10:27.000 --> 10:32.000
+Dans ce cas particulier, si le composant est démonté
+
+10:32.000 --> 10:34.000
+et la vue suit déjà l'état global,
+
+10:34.000 --> 10:36.000
+J'imagine que l'État mondial resterait,
+
+10:36.000 --> 10:39.000
+mais l’État local serait réinstancié.
+
+10:39.000 --> 10:40.000
+C'est ce à quoi vous devez vous attendre.
+
+10:40.000 --> 10:43.000
+Vous pouvez l'utiliser comme singleton pendant toute la durée de vie de l'application.
+
+10:43.000 --> 10:44.000
+Mm-hmm.
+
+10:44.000 --> 10:45.000
+Ouais.
+
+10:45.000 --> 10:47.000
+Il peut y avoir des pièges dans certaines situations,
+
+10:47.000 --> 10:49.000
+mais encore une fois, si vous rencontrez cela, faites-le-moi savoir.
+
+10:49.000 --> 10:50.000
+Nous pouvons toujours y jeter un œil.
+
+10:50.000 --> 10:53.000
+Mais cela dépasserait probablement le cadre de cette étude.
+
+10:53.000 --> 10:54.000
+Cool.
+
+10:54.000 --> 10:55.000
+D'ACCORD.
+
+10:55.000 --> 10:58.000
+Donc je sais qu'il se passe beaucoup de choses ici,
+
+10:58.000 --> 11:02.000
+mais je voulais en quelque sorte fournir un paysage complet à ceux
+
+11:02.000 --> 11:04.000
+qui n'ont pas l'habitude d'écrire leurs propres modules JavaScript
+
+11:04.000 --> 11:07.000
+et pour vous montrer certaines des différences derrière ce que
+
+11:07.000 --> 11:09.000
+se produit lorsque vous utilisez une fonction pour l'invoquer
+
+11:09.000 --> 11:12.000
+plutôt que d'exporter simplement une constante et de vous donner simplement
+
+11:12.000 --> 11:14.000
+quelques options différentes là-bas.
+

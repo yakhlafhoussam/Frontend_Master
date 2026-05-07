@@ -1,0 +1,275 @@
+WEBVTT
+
+00:00.000 --> 00:03.440
+I want to cover two questions that came up the first of which is around the
+
+00:03.440 --> 00:07.400
+strategy of actually tracking the increment amount. So as we can see here
+
+00:07.400 --> 00:10.440
+what we're doing right now is using view to track the increment amount using this
+
+00:10.440 --> 00:15.480
+vModel directive. So down here we can see inside of this reactive data we have it
+
+00:15.480 --> 00:19.140
+tracked in here and the question is why do we even do this? Which is actually a
+
+00:19.140 --> 00:23.760
+good question because theoretically if we go ahead and comment this out and we
+
+00:23.760 --> 00:28.680
+go up here and we don't even attach any view powers to this particular input
+
+00:28.680 --> 00:33.780
+element technically the text element knows what it's doing right it knows
+
+00:33.780 --> 00:38.100
+that it has this I chose a smaller number it's fine it knows that it has
+
+00:38.100 --> 00:43.680
+123 inside already why are we using view to also check it so in other words
+
+00:43.680 --> 00:47.400
+especially before sort of reactive frameworks became really a big thing a
+
+00:47.400 --> 00:50.580
+common strategy for this was that every time you wanted to increment
+
+00:50.580 --> 00:54.160
+increment the count we would basically go and check the DOM to see what the
+
+00:54.160 --> 00:58.120
+source of truth is right and so a completely valid approach and one that
+
+00:58.120 --> 01:02.300
+we use for many many years in web development but as websites and
+
+01:02.300 --> 01:05.800
+applications have gotten more complex the problem is that if we were to have
+
+01:05.800 --> 01:12.280
+some method again call it check input for value that's being run right here
+
+01:12.280 --> 01:16.720
+again this is pseudo code just in case anyone's afraid they miss anything
+
+01:17.280 --> 01:21.580
+the reason this is ends up becoming a problem is because there ends up being
+
+01:21.580 --> 01:24.940
+kind of like an inefficient performance bottleneck in the sense that now every
+
+01:24.940 --> 01:27.760
+time someone's running this increment count they're going to check the dumb
+
+01:27.760 --> 01:31.780
+regardless of the fact that nothing has actually changed and so that's what a
+
+01:31.780 --> 01:35.020
+lot of reactivity system has provided for us from like a developer experience
+
+01:35.020 --> 01:38.080
+convenience and also abstracting some of those performance concerns away is
+
+01:38.080 --> 01:42.280
+because again for this particular example the performance difference is
+
+01:42.280 --> 01:46.120
+probably negligible to be honest to just check an input element real quick if it's
+
+01:46.120 --> 01:49.240
+the number pass it back and then run it but we can envision when you have
+
+01:49.240 --> 01:53.860
+complex data visualizations when you have a lot of things working with each other if you have to check the
+
+01:53.860 --> 01:56.680
+DOM every single time for every single element that has that source of truth
+
+01:56.680 --> 02:01.000
+you're going to end up with some conflict and then it'll probably be slower because
+
+02:01.000 --> 02:04.660
+once again if those things haven't changed there's no reason to even check that to
+
+02:04.660 --> 02:10.260
+begin with so as a result of that this is why and so the more modern frameworks we
+
+02:10.260 --> 02:14.260
+have the ability to cache things and have these reactivity tracking and that's
+
+02:14.260 --> 02:19.700
+where the advantage of actually making sure that you track that reactive data makes our
+
+02:19.700 --> 02:24.980
+lives a lot easier so great question again for that one okay so let's go and
+
+02:24.980 --> 02:30.200
+reset this part real quick so we don't ruin the code one two three and then we had
+
+02:30.200 --> 02:38.840
+the v model here increment amount let me save that make sure this works this does great okay
+
+02:38.840 --> 02:45.860
+in addition there was a second question here in regards to what happens when you
+
+02:45.860 --> 02:50.360
+actually want to pass an argument to the method so in this particular case what if
+
+02:50.360 --> 02:56.360
+for example an increment count we wanted to pass it our own variable so in this case
+
+02:56.360 --> 03:01.460
+let's just say 10 and then for whatever reason again we're spitballing here in
+
+03:01.460 --> 03:06.920
+increment count we're gonna check if the argument is greater than the what's inside of
+
+03:06.920 --> 03:10.400
+this that increment amount then we'll basically use the argument instead of the
+
+03:10.400 --> 03:15.500
+reactive variable again a little bit convoluted but we're kind of going on the fly here so in
+
+03:15.500 --> 03:22.520
+increment count I mentioned before that typically when something's being run it's
+
+03:22.520 --> 03:26.420
+by default pass an event object so once again to show that this works let me just
+
+03:26.420 --> 03:32.720
+go ahead and log event real quick and then remove the argument save refresh console
+
+03:32.720 --> 03:39.180
+you can see the pointer event is being registered however if I add that 10 here
+
+03:39.180 --> 03:44.480
+and refresh you'll see 10 is being passed and that's because what view does is it
+
+03:44.480 --> 03:48.300
+goes okay at this point I don't know how many arguments you're going to pass because you
+
+03:48.300 --> 03:53.840
+could pass a bunch of different ones if you wanted to and so rather than try to try like
+
+03:53.840 --> 03:58.700
+sort of force you to remember that the event object is there the default event object that's
+
+03:58.700 --> 04:02.580
+being passed you basically gets pushed to the end so if we still wanted to access the event
+
+04:02.580 --> 04:07.400
+object in this regard we would say for example now this is not actually new this is not actually
+
+04:07.400 --> 04:13.100
+event it's new amount and then we also have the event object that's being attached at the end so
+
+04:13.100 --> 04:17.140
+once again just to make sure that this actually works as intended so when it comes to how view
+
+04:17.140 --> 04:22.940
+handles that default event because it cannot predict where that default event needs to be brought in
+
+04:22.940 --> 04:28.900
+you actually pass it in as this basically you explicitly define it so you can see here dollar sign
+
+04:28.900 --> 04:34.840
+event that passes the standard javascript event to the function and that way in case you have any sort
+
+04:34.840 --> 04:39.520
+of funky things going on it's very very clear what you're looking for the other thing I wanted to show
+
+04:39.520 --> 04:45.600
+with this as well in the docs is that I again I'm not a huge fan of inline events but I just want
+
+04:45.600 --> 04:49.720
+you to know it is possible you can inline the event directly there and just actually run the thing if
+
+04:49.720 --> 04:56.140
+you want but generally speaking I find that it's a lot cleaner to just have the method there because
+
+04:56.140 --> 05:01.800
+again HTML is meant to be in my mind to be readable for users and then the logic and all that stuff we
+
+05:01.800 --> 05:06.220
+should abstract that away as much as humanly possible because what it does is it lowers the barrier of
+
+05:06.220 --> 05:10.220
+entry for those who might want to come and contribute particularly like if you have designers
+
+05:10.220 --> 05:13.980
+on your team who are have front-end abilities but might not be that comfortable with javascript
+
+05:13.980 --> 05:17.640
+by attracting that stuff away it just makes the code a lot more approachable for them
+
+05:17.640 --> 05:24.280
+so the dollar sign event is the answer for that so just to show that inside of the code actually so
+
+05:24.280 --> 05:36.700
+that we have cons or I guess consistency here again this is the event but it is not passed by default to do
+
+05:36.700 --> 05:43.880
+do we need to go inside of here and we say dollar sign event now when we increment there we go we have a
+
+05:43.880 --> 05:52.840
+pointer and we have our account all right question so what's the difference between the at click and the
+
+05:52.840 --> 06:00.220
+v on click at click is that's just an html5 attribute right ah okay good question no no no it actually
+
+06:00.220 --> 06:07.840
+segues really well so something you'll notice here is that right now we're doing this v on and v bind
+
+06:07.840 --> 06:14.960
+where's my v bind oh v bind is gone in this particular case okay that's fine we interact with elements a
+
+06:14.960 --> 06:19.540
+lot as far as like interactivity and events so rather than forcing you to type v on all the time
+
+06:19.540 --> 06:25.500
+there is a shorthand which is the at symbol and so if you shortcut that that'll basically do exactly
+
+06:25.500 --> 06:30.260
+what you expect in terms of the v on but otherwise it's a syntactic sugar to basically say you don't
+
+06:30.260 --> 06:35.380
+have to type those one two three four five characters anymore just do at which honestly I think is a
+
+06:35.380 --> 06:40.500
+fairly intuitive shortcut when it comes to saying ah yes at click do this thing at key up do this thing
+
+06:40.500 --> 06:49.060
+et cetera and so I mentioned v bind and just for the sake of showing that one I'll just do a data
+
+06:49.060 --> 06:55.000
+attribute called increment by because sometimes you know you're rendering stuff to the server or some
+
+06:55.000 --> 07:01.900
+other app needs something here and let's say you want to render increment amount to this p element and
+
+07:01.900 --> 07:08.340
+so if we look at this p element right here you'll notice uh there's the wrong one it is no that should
+
+07:08.340 --> 07:16.360
+be oh I didn't refresh that's why boom okay you see that the attribute data increment by is there
+
+07:16.360 --> 07:21.640
+available for you but once again we need it to be bound and I said before that you could do v bind
+
+07:21.640 --> 07:26.720
+and that will go ahead and change that to actually say ah yes the increment by we're looking at is eight
+
+07:26.720 --> 07:32.680
+but again dynamically binding attributes very very common so what can you do instead you can just
+
+07:32.680 --> 07:39.380
+delete v bind and just prefix your attribute with the colon another shorthand right or wrong way
+
+07:39.380 --> 07:43.800
+there's no right or wrong way most people end up eventually getting used to the convention so you see
+
+07:43.800 --> 07:47.860
+that a lot in code bases but otherwise it's up to you on how you want to write your code
+

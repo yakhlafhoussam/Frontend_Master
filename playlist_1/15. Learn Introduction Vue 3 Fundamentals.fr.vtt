@@ -1,0 +1,881 @@
+WEBVTT
+
+00:00.000 --> 00:02.120
+Donc, pour revoir ce qui vient de se passer,
+
+00:02.120 --> 00:04.240
+parce que je sais que c'était beaucoup.
+
+00:04.240 --> 00:07.280
+Nous sommes donc allés de l'avant et avons élaboré un tout nouveau projet
+
+00:07.280 --> 00:09.680
+à l'aide de la CLI CreateView, qui a créé
+
+00:09.680 --> 00:12.000
+tout ce répertoire de terrains de jeux.
+
+00:12.000 --> 00:15.720
+Et puis l'essentiel ici est qu'à l'intérieur de notre NS.html,
+
+00:15.720 --> 00:19.480
+nous pouvons voir ici que nous obtenons nos éléments de vue
+
+00:19.480 --> 00:21.720
+à partir de cette source main.ts.
+
+00:21.720 --> 00:23.400
+C'est ainsi que vous allez suivre cela.
+
+00:23.400 --> 00:26.960
+Et donc à l’intérieur de main.ts, c’est là que nous pouvons voir, ah, oui.
+
+00:26.960 --> 00:28.760
+C'est ici que nous le montons sur l'application.
+
+00:28.760 --> 00:31.080
+Et puis plus important encore, cette application Create, n'est-ce pas ?
+
+00:31.080 --> 00:38.680
+Si nous regardons notre application ici même dans Playground,
+
+00:38.680 --> 00:41.160
+tu te souviens comment nous avons passé cet objet ici ?
+
+00:41.160 --> 00:44.520
+Cet objet a maintenant été exporté dans son propre fichier.
+
+00:44.520 --> 00:46.960
+C’est donc de cela qu’il s’agit en termes de modularité.
+
+00:46.960 --> 00:50.920
+Donc cette application maintenant, alors pour continuer cette réflexion,
+
+00:50.920 --> 00:53.280
+pour l'ouvrir ici, cet objet que l'on voit ici
+
+00:53.280 --> 00:55.640
+que nous exportons, cet objet est en fait
+
+00:55.640 --> 00:58.880
+ce qui est déposé ici.
+
+00:58.880 --> 01:01.000
+C’est ainsi que ces trois choses sont liées.
+
+01:01.000 --> 01:03.600
+Et c'est aussi l'une des raisons pour lesquelles créer des outils
+
+01:03.600 --> 01:05.200
+peut être très déroutant, car là
+
+01:05.200 --> 01:08.000
+il y a beaucoup de pièces mobiles.
+
+01:08.000 --> 01:11.880
+Et donc pour plonger directement dedans, mouiller vos pieds,
+
+01:11.880 --> 01:14.520
+ce que nous allons faire pour cet exercice
+
+01:14.520 --> 01:17.440
+c'est d'aller de l'avant et de créer un tout nouveau projet avec CreateView
+
+01:17.440 --> 01:20.400
+à l'intérieur de notre répertoire que nous utilisons déjà.
+
+01:20.400 --> 01:22.120
+Et cette fois, tu vas le renommer comme tu veux
+
+01:22.120 --> 01:23.840
+votre forum de tableau de bord de nom d'émission.
+
+01:23.840 --> 01:27.840
+Donc dans mon cas, ce sera comme le forum Dash d'Avatarlassairbender.
+
+01:27.840 --> 01:29.360
+Et puis nous allons migrer les choses
+
+01:29.360 --> 01:32.800
+que nous avons fait à l'intérieur de index.html dans app.view.
+
+01:32.800 --> 01:35.080
+Pour ceux qui n'ont pas mis à jour leur version de Node depuis un certain temps,
+
+01:35.080 --> 01:38.840
+si vous avez moins de 16 ans, en gros,
+
+01:38.840 --> 01:40.920
+V ne fonctionne pas très bien avec certaines des anciennes versions,
+
+01:40.920 --> 01:42.480
+parce que certaines des bibliothèques modernes
+
+01:42.480 --> 01:44.440
+en fait, nous avons évolué.
+
+01:44.440 --> 01:46.840
+Et donc, encore une fois, ce sera probablement
+
+01:46.840 --> 01:50.480
+être obsolète avec le temps, car Node évolue très rapidement.
+
+01:50.480 --> 01:53.720
+Mais la dernière version stable est en réalité la 18 pour le moment.
+
+01:53.720 --> 01:55.280
+C'est donc une de ces choses où, si vous
+
+01:55.280 --> 01:57.320
+j'ai l'impression que les versions évoluent rapidement, ne vous inquiétez pas,
+
+01:57.320 --> 01:58.160
+ce n'est pas seulement toi.
+
+01:58.160 --> 02:00.720
+Mais si vous rencontrez des problèmes avec V,
+
+02:00.720 --> 02:03.800
+veuillez procéder à la mise à niveau vers au moins 16.
+
+02:03.800 --> 02:05.200
+Si vous avez une version, parce que je
+
+02:05.200 --> 02:08.160
+je sais que certaines personnes ont des problèmes avec le support des bits, comme 32 bits,
+
+02:08.160 --> 02:10.280
+Prise en charge 64 bits pour 18.
+
+02:10.280 --> 02:13.440
+Donc quelque chose à considérer si vous rencontrez ce problème.
+
+02:16.680 --> 02:19.400
+Alors allons-y et effectuons à nouveau cette migration.
+
+02:19.400 --> 02:23.640
+Et cette fois, je le ferai avec mon émission TV que j'ai sélectionnée.
+
+02:23.640 --> 02:26.440
+Alors allons-y et faisons ceci.
+
+02:26.440 --> 02:27.920
+Donc ce que nous allons faire en premier, c'est
+
+02:27.920 --> 02:29.240
+nous allons créer notre nouvelle application.
+
+02:29.240 --> 02:32.120
+Je vais donc faire npm create view à 3.
+
+02:32.120 --> 02:34.160
+Et la raison pour laquelle tu veux le à 3 heures en ce moment
+
+02:34.160 --> 02:36.280
+c'est parce que vous pouvez techniquement le faire à 2 aussi.
+
+02:36.280 --> 02:37.640
+Je pense qu'à un moment donné, il y aura probablement
+
+02:37.640 --> 02:39.840
+sera un changement de version par défaut, de sorte que npm create
+
+02:39.840 --> 02:41.040
+la vue fera son travail.
+
+02:41.040 --> 02:44.600
+Mais pour l’instant, il est toujours prudent d’ajouter le 3.
+
+02:44.600 --> 02:47.880
+Donc pour moi, mon émission de télévision est Avatar Last Airbender,
+
+02:47.880 --> 02:49.240
+mais ça fait beaucoup à taper.
+
+02:49.240 --> 02:50.400
+Je vais donc juste utiliser les acronymes,
+
+02:50.400 --> 02:54.320
+comme la plupart des gens le savent, qui est ATLA pour Avatar le dernier maître de l'air.
+
+02:54.320 --> 02:56.960
+Et c'est l'application forum pour cela.
+
+02:56.960 --> 02:58.480
+Pour l'instant, je vais simplement désactiver TypeScript
+
+02:58.480 --> 03:00.400
+juste parce que c'est principalement à des fins de démonstration.
+
+03:00.400 --> 03:02.520
+Mais comme je l'ai dit, lorsqu'il s'agit d'applications de toute sorte
+
+03:02.520 --> 03:05.160
+vous avez l'intention d'évoluer, cela vaut la peine de consacrer du temps à
+
+03:05.160 --> 03:08.200
+configurez TypeScript, ajoutez cette doublure à votre configuration TS
+
+03:08.200 --> 03:09.760
+pour autoriser JavaScript.
+
+03:09.760 --> 03:11.040
+Et une fois que vous faites cela, vous
+
+03:11.040 --> 03:13.560
+tu peux l'ignorer jusqu'au jour où tu te dis, tu sais quoi ?
+
+03:13.560 --> 03:17.120
+Je vais essayer des types sur ce fichier, puis c'est facile.
+
+03:17.120 --> 03:18.400
+Non, JXX.
+
+03:18.400 --> 03:20.400
+Nous n'allons pas nous soucier de la vue du routeur pour l'instant.
+
+03:20.400 --> 03:21.680
+Je sais qu'il y avait des questions concernant
+
+03:21.680 --> 03:23.200
+un projet en vue standard.
+
+03:23.200 --> 03:24.760
+Nous passerons du temps sur le routeur de visualisation.
+
+03:24.760 --> 03:28.680
+Donc, généralement, vous sélectionnerez probablement oui pour cela.
+
+03:28.680 --> 03:30.560
+Dans le cas où vous envisagez de faire évoluer votre application.
+
+03:30.560 --> 03:33.120
+Mais dans ce cas, je ne veux pas confondre les pages pour le moment,
+
+03:33.120 --> 03:34.640
+et ce serait un peu déroutant.
+
+03:34.640 --> 03:35.680
+Alors non.
+
+03:35.680 --> 03:38.680
+Même chose avec Pineda pour la gestion de l'État.
+
+03:38.680 --> 03:41.320
+Je ne vais pas m'inquiéter des tests, ni pour l'un ni pour l'autre.
+
+03:41.320 --> 03:43.600
+Et puis les deux principaux, je dirais oui,
+
+03:43.600 --> 03:45.960
+est ESLint et plus joli.
+
+03:45.960 --> 03:47.000
+C'est ça.
+
+03:47.000 --> 03:50.080
+Comme vous pouvez le voir ici, nous avons un nouveau répertoire ici.
+
+03:50.080 --> 03:50.880
+Et c’est ce que nous faisons.
+
+03:50.880 --> 03:54.640
+Nous pouvons voir que vous y êtes, forum L-T-A-T-L-A.
+
+03:54.640 --> 03:56.640
+Et puis si je change les répertoires,
+
+03:56.640 --> 03:59.360
+on verra maintenant, boum, on a tout
+
+03:59.360 --> 04:02.800
+que nous attendrions en ce qui concerne votre répertoire public,
+
+04:02.800 --> 04:05.880
+votre répertoire source qui contient votre app.view
+
+04:05.880 --> 04:08.420
+composant, puis tous les différents fichiers de configuration
+
+04:08.420 --> 04:10.240
+et construisez les éléments dont vous avez besoin.
+
+04:10.240 --> 04:12.880
+Je vais donc continuer et simplement npm install pour ça
+
+04:12.880 --> 04:14.640
+et laissez ça fonctionner.
+
+04:14.640 --> 04:16.800
+En attendant, nous pouvons continuer et simplement migrer,
+
+04:16.800 --> 04:18.680
+parce que l'installation npm, qu'est-ce qu'il fait
+
+04:18.680 --> 04:21.680
+est-ce que cela nous permet de configurer un serveur de développement local, ce que je n'ai pas fait
+
+04:21.680 --> 04:23.880
+couvrir plus tôt, mais nous expliquerons essentiellement
+
+04:23.880 --> 04:25.360
+où en sont les avantages maintenant que nous sommes
+
+04:25.360 --> 04:26.840
+je commence à jouer avec.
+
+04:26.840 --> 04:29.080
+Alors laissez-moi continuer et clore tout cela très rapidement.
+
+04:29.080 --> 04:35.880
+J'ai besoin de cette application.View, boom, OK, split.
+
+04:35.880 --> 04:39.120
+OK, c'est parti.
+
+04:39.120 --> 04:42.920
+Et puis celui-ci, nous devons ouvrir myindex.html.
+
+04:42.920 --> 04:43.680
+Et voilà.
+
+04:43.680 --> 04:46.240
+OK, donc quand il s'agit de migration, la première chose à faire,
+
+04:46.240 --> 04:49.440
+nous le remarquerons en haut, c'est que nous avons personnalisé cette pièce de titre.
+
+04:49.440 --> 04:51.920
+Et normalement, dans d'autres outils de build,
+
+04:51.920 --> 04:53.200
+et j'ai vécu l'expérience dans le passé, toi
+
+04:53.200 --> 04:55.240
+il faudra faire un peu de travail pour changer cela.
+
+04:55.240 --> 04:57.440
+Mais c'est en fait assez simple à faire,
+
+04:57.440 --> 04:59.380
+parce qu'à l'intérieur de notre projet, vous
+
+04:59.380 --> 05:02.120
+remarquez que nous avons également un index.html ici.
+
+05:02.120 --> 05:02.920
+Et devinez quoi ?
+
+05:02.920 --> 05:04.520
+Voici notre titre.
+
+05:04.520 --> 05:06.160
+Donc plutôt que d'être simplement vtap, je suis juste
+
+05:06.160 --> 05:10.360
+je vais copier mon avatar lastairbender et le remplacer.
+
+05:10.360 --> 05:10.840
+Et voilà.
+
+05:10.840 --> 05:12.720
+Nous l'avons personnalisé.
+
+05:12.720 --> 05:16.360
+Ensuite, nous avons tout ce qui se trouve à l’intérieur de cette division d’application.
+
+05:16.360 --> 05:17.920
+Alors je vais juste aller de l'avant et copier ceci,
+
+05:17.920 --> 05:23.000
+sachant que je vais avoir un wrapper par défaut que je supprimerai.
+
+05:23.000 --> 05:26.360
+Nous allons donc supprimer tous ces éléments à l'intérieur du modèle,
+
+05:26.360 --> 05:28.480
+parce que c'est là que notre HTML va vivre.
+
+05:28.480 --> 05:31.440
+Donc si je colle ici, vous verrez ici que tout va bien.
+
+05:31.440 --> 05:33.600
+Nous avons quelques erreurs que nous pourrons traiter plus tard.
+
+05:33.600 --> 05:35.040
+Mais on peut continuer et supprimer cette application d'identification,
+
+05:35.040 --> 05:37.000
+parce que nous n'avons plus besoin de ce div.
+
+05:37.000 --> 05:38.040
+Gardons ça.
+
+05:38.040 --> 05:40.600
+Et puis comme vous pouvez le constater, plus jolie est automatiquement
+
+05:40.600 --> 05:44.040
+tout réindenter pour nous, ce qui est super sympa.
+
+05:44.040 --> 05:46.320
+Alors nous n'aurons pas peur de nous crier dessus pour le moment.
+
+05:46.320 --> 05:48.120
+Nous allons continuer et nettoyer le JavaScript,
+
+05:48.120 --> 05:51.080
+parce que ce genre de choses, nous ne nous en inquiétons pas pour le moment.
+
+05:51.080 --> 05:53.400
+Et puis nous supprimerons également tous les styles ici,
+
+05:53.400 --> 05:56.520
+parce que cela ne nous concerne pas non plus.
+
+05:56.520 --> 05:59.400
+OK, donc finalement, la dernière chose que nous devons faire,
+
+05:59.400 --> 06:02.160
+est-ce que nous devons copier tout ce JavaScript que nous avons écrit
+
+06:02.160 --> 06:04.560
+dans notre bloc de script.
+
+06:04.560 --> 06:09.440
+Donc, ce que nous faisons, c'est prendre l'objet entier ici,
+
+06:09.440 --> 06:11.560
+coupe ça, et puis à l'intérieur d'ici,
+
+06:11.560 --> 06:15.320
+nous allons l'exporter comme objet par défaut
+
+06:15.320 --> 06:18.480
+et collez-le simplement.
+
+06:18.480 --> 06:19.680
+Rien d'autre n'a changé.
+
+06:19.680 --> 06:21.880
+Nous avons désormais toute notre application de visualisation, logiquement,
+
+06:21.880 --> 06:25.080
+à l'intérieur d'ici en haut.
+
+06:25.080 --> 06:26.840
+Et puis la dernière chose que nous devons changer ici
+
+06:26.840 --> 06:27.680
+est d'ajouter la clé.
+
+06:27.680 --> 06:30.080
+Alors je vais de l'avant et je fais juste une touche dynamique rapide,
+
+06:30.080 --> 06:34.560
+alors bender, et ensuite fais juste stat.
+
+06:34.560 --> 06:37.920
+Donc pour les objets, c'est délicat, car vous n'obtenez pas d'index.
+
+06:37.920 --> 06:42.320
+Donc, je finis généralement par marquer toutes les choses.
+
+06:42.320 --> 06:44.680
+Donc vous pouvez voir ici, les maîtres, ce type,
+
+06:44.680 --> 06:47.360
+cela devrait empêcher sa duplication.
+
+06:47.360 --> 06:50.520
+OK, alors faisons-le rapidement également.
+
+06:50.520 --> 06:55.720
+Ce sera l'index des caractères, qui
+
+06:55.720 --> 06:59.280
+nous obtiendrons en ouvrant le deuxième argument à l'intérieur
+
+06:59.280 --> 07:01.760
+de cela pour la liste.
+
+07:01.760 --> 07:03.280
+Et puis même chose pour ici.
+
+07:03.280 --> 07:05.120
+Donc en fait, c'est intéressant.
+
+07:05.120 --> 07:07.720
+Nous avons un autre if ici qui fait même.
+
+07:07.720 --> 07:10.600
+Donc pour les besoins de l'argumentation, faisons juste un personnage égal
+
+07:10.600 --> 07:11.760
+comme ça.
+
+07:11.760 --> 07:14.080
+Et puis je peux copier ça.
+
+07:14.080 --> 07:17.200
+Et donc à l'intérieur d'ici, de cette façon, nous
+
+07:17.200 --> 07:19.600
+garantir que même si ces personnages,
+
+07:19.600 --> 07:22.000
+ces choses pourraient s'afficher.
+
+07:22.000 --> 07:23.840
+En même temps, ils auront des clés différentes.
+
+07:23.840 --> 07:26.880
+Ainsi, il n’y aura pas de conflit.
+
+07:26.880 --> 07:29.360
+Et puis nous devons réellement récupérer l’index à partir de cela.
+
+07:29.360 --> 07:31.960
+Alors divisons cela également.
+
+07:31.960 --> 07:32.720
+Et voilà.
+
+07:32.720 --> 07:34.440
+Oh, on dirait que j'en ai encore quelques-uns à faire.
+
+07:34.440 --> 07:37.000
+Oh mon Dieu, il y en a beaucoup ici.
+
+07:37.000 --> 07:40.520
+Appelons cette liste de virgules.
+
+07:40.520 --> 07:42.520
+Et puis voilà.
+
+07:42.520 --> 07:46.240
+Et puis vls, il y a des personnages.
+
+07:46.240 --> 07:48.000
+N'a pas de si adjacent.
+
+07:48.000 --> 07:48.520
+Quoi?
+
+07:48.520 --> 07:49.760
+Oh, je sais pourquoi.
+
+07:49.760 --> 07:51.160
+OK, c'est donc une erreur amusante.
+
+07:51.160 --> 07:53.960
+Donc, en fait, je n'avais pas réalisé que cela avait été cassé tout le temps.
+
+07:53.960 --> 07:55.960
+C’est donc l’un des avantages de l’utilisation des outils de build.
+
+07:55.960 --> 07:58.080
+C'est parce que si on regarde ce message d'erreur,
+
+07:58.080 --> 08:02.600
+il dit vls, vlsif n'a pas de vif adjacent, vlsif.
+
+08:02.600 --> 08:04.160
+Parce que si nous regardons réellement ici,
+
+08:04.160 --> 08:06.560
+l'élément suivant juste à côté, c'est frère,
+
+08:06.560 --> 08:09.640
+n'est en fait qu'un élément p normal.
+
+08:09.640 --> 08:12.440
+Au fur et à mesure que je déconnais, à un moment donné,
+
+08:12.440 --> 08:15.960
+En gros, je l'ai éloigné beaucoup trop de son chèque d'origine.
+
+08:15.960 --> 08:17.960
+Et donc si nous regardons ici, c’est en fait là qu’il appartient.
+
+08:17.960 --> 08:19.400
+En fait, sa place est ici.
+
+08:19.400 --> 08:21.800
+Je vais donc continuer et supprimer cela.
+
+08:21.800 --> 08:25.640
+Encore une fois, vérifiez simplement l'orthographe lorsque vous écrivez des articles.
+
+08:25.640 --> 08:28.480
+avec des outils de construction, comme volar et extensions,
+
+08:28.480 --> 08:30.920
+cela peut rendre la vie beaucoup plus facile de détecter ce genre d'erreurs
+
+08:30.920 --> 08:33.360
+pour que tu ne te dises pas, attends, où est passé tout ?
+
+08:33.360 --> 08:35.960
+Donc ceux-ci n'ont pas été capturés auparavant parce que le plugin
+
+08:35.960 --> 08:37.600
+tu n'as pas pu le construire ?
+
+08:37.600 --> 08:40.160
+À l’époque, je dirai que je l’avais effectivement désactivé.
+
+08:40.160 --> 08:42.080
+Donc, si possible, il l'aurait peut-être attrapé.
+
+08:42.080 --> 08:44.080
+Mais en même temps, ça peut être délicat parfois
+
+08:44.080 --> 08:46.040
+parce que vous devez vous assurer que vous pouvez détecter
+
+08:46.040 --> 08:49.560
+que le langage d'affichage est exécuté.
+
+08:49.560 --> 08:53.360
+Je suis donc moins convaincu que l'extension serait réellement
+
+08:53.360 --> 08:55.680
+récupérez-le à l’intérieur d’un code HTML indexé.
+
+08:55.680 --> 08:57.720
+Mais quelque chose qui vaut la peine d'être essayé plus tard
+
+08:57.720 --> 09:00.240
+pour voir si cela fonctionne.
+
+09:00.240 --> 09:02.880
+OK, donc pour être sûr que cela fonctionne, nous ne sommes pas
+
+09:02.880 --> 09:04.320
+je vais enregistrer les modifications apportées à cela.
+
+09:04.320 --> 09:06.000
+Mais c'est bien.
+
+09:06.000 --> 09:10.200
+Nous allons aller de l'avant et exécuter ceci, npm run def.
+
+09:10.200 --> 09:12.640
+On y va.
+
+09:12.640 --> 09:14.720
+Et on voit que beaucoup de choses sont cassées.
+
+09:14.720 --> 09:17.120
+Et la raison pour laquelle il est cassé est pourquoi ?
+
+09:17.120 --> 09:20.600
+À l’intérieur de notre main.js, nous importons un CSS principal.
+
+09:20.600 --> 09:22.360
+Et nous ne voulons pas de tous ces styles en ce moment.
+
+09:22.360 --> 09:23.240
+Alors voilà.
+
+09:23.240 --> 09:25.080
+Maintenant, cela ressemble exactement à ce que nous attendions.
+
+09:25.080 --> 09:27.480
+Nous pouvons préférer des trucs comme nous le faisions avant.
+
+09:27.480 --> 09:28.840
+Nos statistiques apparaissent.
+
+09:28.840 --> 09:31.240
+Cela a l'air bien.
+
+09:31.240 --> 09:33.920
+OK, est-ce que quelqu'un a des questions
+
+09:33.920 --> 09:36.280
+sur la migration en général ?
+
+09:36.280 --> 09:39.000
+Je sais qu'il y a beaucoup à faire depuis le HTML indexé
+
+09:39.000 --> 09:40.000
+à cela.
+
+09:40.000 --> 09:43.200
+Mais c'est une de ces choses où je pense qu'une fois qu'on s'est habitué
+
+09:43.200 --> 09:44.880
+à cela, et plus important encore, la plupart du temps
+
+09:44.880 --> 09:47.800
+vous ne serez pas dans un fichier HTML indexé et ne passerez pas à la construction,
+
+09:47.800 --> 09:49.520
+vous commencerez essentiellement ici.
+
+09:49.520 --> 09:51.120
+Et nous allons essentiellement commencer à nous entraîner davantage
+
+09:51.120 --> 09:53.840
+avec la façon dont nous travaillons dans cet environnement particulier
+
+09:53.840 --> 09:54.680
+aller de l'avant.
+
+09:54.680 --> 09:56.240
+Et donc quelque chose d'autre que je voulais aborder,
+
+09:56.240 --> 09:57.800
+avant de passer à la prochaine séance,
+
+09:57.800 --> 10:00.680
+c'est pourquoi passons-nous par tout ce processus, n'est-ce pas ?
+
+10:00.680 --> 10:02.960
+Nous avons beaucoup parlé d'optimisations de build.
+
+10:02.960 --> 10:05.640
+Mais l'une des choses dont nous avons un avantage lorsque
+
+10:05.640 --> 10:07.840
+nous avons un serveur de développement local, c'est quoi
+
+10:07.840 --> 10:09.480
+appelé rechargement de module à chaud.
+
+10:09.480 --> 10:11.960
+Comme nous pouvons le voir ici, à l'intérieur de app.view,
+
+10:11.960 --> 10:14.680
+J'ai remarqué qu'en réalité ma statistique n'a pas de titre.
+
+10:14.680 --> 10:16.440
+Et donc dans le passé, lorsque nous codions plus tôt,
+
+10:16.440 --> 10:18.760
+vous avez peut-être remarqué que je devrais ajouter mes modifications.
+
+10:18.760 --> 10:21.400
+Je devrais changer ou je devrais l'enregistrer dans VS Code.
+
+10:21.400 --> 10:23.480
+Et puis je devrais le mettre à jour dans le navigateur.
+
+10:23.480 --> 10:26.160
+Eh bien, vous avez peut-être remarqué que je n'ai même pas changé de contexte
+
+10:26.160 --> 10:28.800
+et Veets a déjà mis à jour le navigateur
+
+10:28.800 --> 10:30.600
+pour avoir toutes mes dernières modifications.
+
+10:30.600 --> 10:33.440
+Donc dans l'événement, c'était comme, oh, stat fois 2.
+
+10:33.440 --> 10:34.600
+Je peux garder ça.
+
+10:34.600 --> 10:37.760
+Vous pouvez voir que c'est presque super rapide au point
+
+10:37.760 --> 10:39.220
+où parfois tu pourrais même réaliser
+
+10:39.220 --> 10:40.520
+que votre code a changé.
+
+10:40.520 --> 10:42.560
+Et c'est le genre de chose que Veet a fait pour aider
+
+10:42.560 --> 10:45.400
+en ce qui concerne les performances, c'est parce que maintenant, lorsque vous faites
+
+10:45.400 --> 10:47.960
+changements sur votre code, c'est presque instantané dans la mesure où
+
+10:47.960 --> 10:49.440
+comme en voyant les résultats.
+
+10:49.440 --> 10:52.680
+Cela a donc été plutôt cool en ce qui concerne un DevEx.
+
+10:52.680 --> 10:55.440
+Mais au cas où tu aurais l'impression que c'est pour ça que parfois je fais
+
+10:55.440 --> 10:58.400
+de gros changements, car encore une fois, cette fois 2 bits,
+
+10:58.400 --> 11:00.000
+si tu ne fais pas attention, tu ne le feras même pas
+
+11:00.000 --> 11:01.040
+réaliser cette mise à jour.
+
+11:01.040 --> 11:05.560
+Quoi qu'il en soit, c'est quelque chose à noter quand il s'agit de travailler
+
+11:05.560 --> 11:06.120
+avec ça.
+
+11:06.120 --> 11:09.720
+Donc si vous n'utilisez pas Veet, vous ne pouvez pas utiliser le .view
+
+11:09.720 --> 11:11.320
+un moyen de briser ces choses ?
+
+11:11.320 --> 11:12.480
+Ou est-ce ?
+
+11:12.480 --> 11:13.640
+Oh, tu peux.
+
+11:13.640 --> 11:15.360
+Veet n'est que le bundler en dessous.
+
+11:15.360 --> 11:18.960
+C'est pourquoi Vue CLI vous a permis d'attendre.
+
+11:18.960 --> 11:20.320
+Quand tu dis de le briser via la vue,
+
+11:20.320 --> 11:22.080
+tu veux dire comme via les fichiers .view ?
+
+11:22.080 --> 11:24.080
+Ouais, ils ont un fichier .view.
+
+11:24.080 --> 11:25.840
+Oh, donc ce n'est pas spécifique à Veet.
+
+11:25.840 --> 11:27.360
+Webpack était capable de le faire aussi.
+
+11:27.360 --> 11:29.840
+C'est ainsi que nous procédions auparavant dans Vue 2.
+
+11:29.840 --> 11:33.280
+Donc Veet, c'est comme rendre les dépendances beaucoup plus rapides
+
+11:33.280 --> 11:34.920
+charger, ce genre de choses.
+
+11:34.920 --> 11:38.280
+En fait, cela n'a rien à voir spécifiquement avec Vue.
+
+11:38.280 --> 11:42.400
+OK, donc la façon .view de le faire est la suivante
+
+11:42.400 --> 11:44.120
+vous pouvez le faire avec n'importe quel type de package.
+
+11:44.120 --> 11:45.040
+D'ACCORD.
+
+11:45.040 --> 11:47.320
+Et nous sommes sur le point d'en faire davantage en fait
+
+11:47.320 --> 11:49.160
+dans cette rubrique.
+
