@@ -1,0 +1,44 @@
+WEBVTT
+
+00:00.000 --> 00:10.560
+Ouais, donc la question était, euh, il y avait une chaîne ici en bas qui commençait par le caractère F.
+
+00:10.560 --> 00:15.760
+Existe-t-il d'autres types de chaînes spéciales comme celle-ci en Python ?
+
+00:15.760 --> 00:20.800
+Oui, vous pourriez voir R qui représente une expression régulière.
+
+00:20.800 --> 00:26.400
+Vous pourriez voir B qui est une chaîne d'octets, euh, il y en a quelques autres
+
+00:26.480 --> 00:32.000
+dont je ne me souviens pas par cœur, mais c'est assez facile à rechercher.
+
+00:32.000 --> 00:36.880
+Demandes d'importation. Il dit que mon module de requête est manquant.
+
+00:36.880 --> 00:42.960
+C'est parce que la bibliothèque de requêtes ne fait pas partie de la bibliothèque standard de Python, donc tout ce qui
+
+00:42.960 --> 00:49.520
+est livré avec l'installation de Python lorsque vous le retirez. Euh, donc pour que ce code fonctionne,
+
+00:49.520 --> 00:56.080
+vous allez devoir installer la bibliothèque de requêtes avec un outil différent dont nous parlerons plus tard.
+
+00:57.040 --> 01:04.560
+Oh, et je pense que j'ai raté mon discours plus tôt. Si vous voyez un R ici, euh, il est généralement utilisé pour les
+
+01:04.560 --> 01:11.600
+expressions, mais cela symbolise une chaîne brute. Ainsi, lorsque vous écrivez des expressions régulières,
+
+01:11.600 --> 01:17.200
+vous ne voudrez peut-être pas faire beaucoup de, euh, vous échapper comme vous le feriez dans une chaîne normale. Donc c'est juste
+
+01:17.200 --> 01:23.200
+formaté un peu différemment. Ce n'est pas quelque chose que l'on voit beaucoup, sauf si vous travaillez régulièrement
+
+01:23.200 --> 01:25.200
+expressions.
+

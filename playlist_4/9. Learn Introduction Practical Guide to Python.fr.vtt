@@ -1,0 +1,158 @@
+WEBVTT
+
+00:00.000 --> 00:14.800
+Donc les nombres en Python, ce sont tous des entiers, et nous pouvons toujours le vérifier en appelant
+
+00:14.800 --> 00:31.280
+tapez, il y a aussi des flottants en Python, donc des nombres qui ont des points décimaux.
+
+00:31.280 --> 00:37.640
+Quelque chose d'un peu délicat qui pourrait vous mordre, c'est un flotteur valide.
+
+00:37.640 --> 00:40.920
+Vous n'avez pas besoin d'avoir un point décimal après.
+
+00:40.920 --> 00:45.600
+Vous ne devriez pas vraiment définir vos flotteurs comme ça, c'est déroutant, mais si vous voyez ça
+
+00:45.600 --> 00:49.560
+dans le code Python, sachez simplement que ce n'est pas une erreur de syntaxe.
+
+00:49.560 --> 00:57.000
+Et puis il y a aussi les nombres complexes, et ceux-ci se terminent par le caractère j.
+
+00:57.000 --> 01:01.280
+Je ne suis pas un mathématicien, je ne pense pas avoir déjà utilisé des nombres complexes dans mon code Python,
+
+01:01.280 --> 01:05.960
+mais ils sont là si vous en avez besoin.
+
+01:06.200 --> 01:11.800
+Comme vous l'avez vu plus tôt, ces types ne sont que des objets sous le capot, vous pouvez également déclarer
+
+01:11.800 --> 01:21.480
+en appelant le constructeur de ce type intégré, je peux donc en dire cinq.
+
+01:21.480 --> 01:27.960
+Je peux aussi passer une chaîne ici, même chose pour float.
+
+01:27.960 --> 01:34.200
+Si je transmets, disons, un entier au constructeur float, nous renverrons un float.
+
+01:34.200 --> 01:39.160
+En règle générale, vous ne souhaitez jamais faire cela dans votre code, sauf si vous effectuez une conversion entre
+
+01:39.160 --> 01:44.640
+types, mais c'est quelque chose que vous pourriez voir.
+
+01:44.640 --> 01:49.800
+Un exemple de conversion entre types est si vous utilisez un formatage de chaîne à l'ancienne,
+
+01:49.800 --> 01:58.440
+si vous essayez par exemple de concaténer, nous parlerons des chaînes un peu plus tard, une chaîne
+
+01:58.440 --> 02:03.360
+avec un nombre, vous obtiendrez une erreur de type indiquant que vous ne pouvez concaténer que des chaînes
+
+02:03.440 --> 02:10.080
+et non des ins, donc dans ce cas, vous pouvez passer le numéro cinq à la méthode Stir.
+
+02:10.080 --> 02:17.680
+Encore une fois, avec le formatage de chaîne Python moderne, vous n'aurez plus vraiment besoin de le faire, mais
+
+02:17.680 --> 02:21.440
+pourrait arriver.
+
+02:21.440 --> 02:26.120
+Vous pouvez effectuer toutes les opérations mathématiques standard auxquelles vous pouvez vous attendre avec Python
+
+02:26.120 --> 02:33.160
+nombres, vous pouvez les additionner et les multiplier.
+
+02:33.160 --> 02:38.200
+Vous pouvez les diviser, notez que si vous divisez deux entiers, le type que vous obtenez
+
+02:38.200 --> 02:39.960
+ça va être un flotteur.
+
+02:39.960 --> 02:45.600
+Si vous voulez faire une division entière, vous devez utiliser deux barres obliques, et cela vous donnera
+
+02:45.600 --> 02:47.760
+un retour entier.
+
+02:47.760 --> 02:55.880
+Vous pouvez également augmenter les puissances, disons que X est égal à quatre et Y est égal à trois,
+
+02:55.880 --> 03:01.800
+vous pouvez dire X à la puissance trois ou X à la puissance Y.
+
+03:01.800 --> 03:08.320
+Donc tout ce à quoi vous pouvez vous attendre, et vous pouvez également utiliser des parenthèses pour vous assurer
+
+03:08.320 --> 03:18.600
+que les choses se produisent dans l'ordre que vous souhaitez, et tout cela est un code Python valide.
+
+03:18.600 --> 03:25.640
+Python possède quelques méthodes intégrées supplémentaires utiles pour les nombres, et vous entendrez peut-être
+
+03:25.640 --> 03:28.800
+je dis méthodes intégrées, qu'est-ce que cela signifie ?
+
+03:28.840 --> 03:34.320
+Vous avez vu plus tôt dans notre visite d'un programme Python que je devais importer le module de requête.
+
+03:34.320 --> 03:38.600
+Plus tard, nous verrons comment importer des modules depuis la bibliothèque standard.
+
+03:38.600 --> 03:41.960
+Lorsque j'utilise ces éléments intégrés, je n'ai rien besoin d'importer.
+
+03:41.960 --> 03:45.480
+Ils sont uniquement disponibles en Python.
+
+03:45.480 --> 03:52.000
+Et les trois méthodes utiles pour les mathématiques sont le min et le max ou les tours.
+
+03:52.000 --> 04:01.000
+Donc, pour min, vous pouvez transmettre certaines valeurs, et cela renverra toujours la plus petite d'entre elles.
+
+04:01.000 --> 04:06.160
+La même chose est vraie pour max, sauf le contraire.
+
+04:06.160 --> 04:11.120
+Cela renverra 10 000, car il s’agit du plus grand nombre de cette liste.
+
+04:11.120 --> 04:20.080
+Vous pouvez également utiliser round pour arrondir les décimales au chiffre inférieur ou au chiffre supérieur.
+
+04:20.080 --> 04:26.440
+Il existe des types de mélange intégrés dans Python, tout comme nous avons vu qu'aucun n'est un mot-clé.
+
+04:26.440 --> 04:33.760
+En Python, les types de mélange sont définis avec vrai en majuscule et faux en minuscule.
+
+04:33.760 --> 04:36.200
+Ce sont des mots-clés.
+
+04:36.200 --> 04:42.320
+Quelque chose de remarquable en Python que j'ai vu faire trébucher les gens, encore une fois, en Python, tout
+
+04:42.320 --> 04:43.520
+est un objet.
+
+04:43.520 --> 04:54.360
+Ces booléens sont des objets et, en fait, sous le capot, ce sont des sous-classes d’entiers.
+
+04:54.360 --> 05:00.600
+Cela signifie que sous le capot, true a une valeur de 1 et false a une valeur de 0.
+
+05:00.600 --> 05:05.680
+Ne faites pas ça, s'il vous plaît.
+
+05:05.680 --> 05:13.480
+Grâce à cela, vous pouvez les additionner ou faire tout ce que vous pourriez faire avec des nombres.
+
+05:13.480 --> 05:16.240
+Ne faites pas ça, mais Python, en fait.
+

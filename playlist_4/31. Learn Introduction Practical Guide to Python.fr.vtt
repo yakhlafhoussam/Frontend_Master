@@ -1,0 +1,38 @@
+WEBVTT
+
+00:00.000 --> 00:08.000
+Python a un héritage et il a également un héritage multiple. Je ne vais pas aborder beaucoup de ces sujets
+
+00:08.000 --> 00:15.000
+mais je tiens à souligner quelques points importants concernant l'héritage. Quand une classe hérite d'une autre
+
+00:15.000 --> 00:19.000
+vous mettrez la classe héritée de
+
+00:19.000 --> 00:24.000
+entre parenthèses après la définition de la classe elle-même.
+
+00:25.000 --> 00:30.000
+Quand vous appelez Dunder sur cette sous-classe,
+
+00:30.000 --> 00:36.000
+si vous souhaitez ensuite exécuter tout le code de la superclasse,
+
+00:36.000 --> 00:40.000
+vous devez appeler explicitement super,
+
+00:40.000 --> 00:45.000
+et puis la méthode que vous appelleriez dans ce cas, nous savons que nous voulons y appeler Dunder,
+
+00:45.000 --> 00:49.000
+avec tous les arguments.
+
+00:50.000 --> 00:56.000
+Il s’agit d’une syntaxe que vous êtes très susceptible de rencontrer, il est donc important de la suivre.
+
+00:56.000 --> 01:01.000
+Il y a beaucoup plus de contenu ici dans le cours sur
+
+01:01.000 --> 01:08.000
+variables de remplacement et sous-classes que je vous recommande de revenir et de lire plus tard.
+

@@ -1,0 +1,71 @@
+WEBVTT
+
+00:00.000 --> 00:06.240
+Essayons donc un court exercice où nous travaillons avec des fichiers, puis nous nous entraînerons
+
+00:07.520 --> 00:12.080
+boucles et notre compréhension de liste et travail avec des fichiers.
+
+00:15.360 --> 00:21.360
+Si le site Web du cours est ouvert, vous pouvez télécharger ce fichier appelé villes.json et il
+
+00:21.360 --> 00:27.600
+contient, jetons un coup d'oeil, juste les cinq principales villes et leurs populations.
+
+00:30.880 --> 00:39.760
+Nous allons donc importer le module JSON qui est intégré à la bibliothèque standard et Python
+
+00:39.760 --> 00:42.720
+et nous allons l'utiliser pour nous aider à analyser les données.
+
+00:45.840 --> 00:49.360
+Je vais juste quitter mon Ripple ici et récupérer ce fichier.
+
+00:49.360 --> 01:08.320
+Alors maintenant, si je liste ici, je devrais voir le fichier dans mon répertoire appelé villes.json et je vais
+
+01:08.320 --> 01:17.760
+pour ouvrir à nouveau mon ondulation. Donc si je veux travailler avec JSON et la bibliothèque JSON en Python,
+
+01:17.760 --> 01:25.840
+Je dois l'importer. Ce n'est pas intégré et je souhaite ensuite utiliser un gestionnaire de contexte pour l'ouvrir
+
+01:25.840 --> 01:35.280
+fichier donc je vais l'utiliser avec un mot-clé et dire avec open city.json et je vais utiliser
+
+01:36.000 --> 01:44.880
+un autre mot-clé appelé pour donner un nom à ce fichier ouvert afin que je puisse le référencer plus tard.
+
+01:45.360 --> 01:55.360
+Donc je vais dire en tant que ville un dossier et ensuite je pourrai continuer pendant que je suis dans ce gestionnaire de contexte
+
+01:55.360 --> 02:01.040
+remarquez que j'y ai accédé. Donc, tout le code prévu dans l'instruction
+
+02:01.040 --> 02:06.880
+appartient au gestionnaire de contexte, tout ce qui se trouve après lui et qui n'est pas prévu ne le sera pas
+
+02:06.880 --> 02:12.960
+être exécuté dans le cadre du gestionnaire de contexte. Donc je veux faire mon travail avec le fichier dans le contexte
+
+02:13.040 --> 02:20.720
+manager, puis quittez ce bloc, ce que j'ai fait. Je peux donc dire que les données de la ville sont
+
+02:22.880 --> 02:34.240
+JSON.load dans le fichier de la ville, puis je peux l'imprimer et je vais appuyer sur Entrée un de plus
+
+02:34.240 --> 02:44.160
+temps parce que maintenant j'en ai fini avec ce fichier. Si je regarde le type de données de la ville, nous verrons
+
+02:44.160 --> 02:51.360
+que c'est une liste. Si je regarde l'élément zéro, nous verrons que c'est un dictionnaire. Et alors quoi
+
+02:51.360 --> 02:58.080
+ceci a renvoyé une liste de dictionnaires qui mappent les correspondances au fichier JSON et je peux ensuite travailler
+
+02:58.080 --> 03:08.080
+avec ça. Je pourrais utiliser cette jolie fonction d'impression d'avant, donc de P print import P print à ensuite
+
+03:08.080 --> 03:14.080
+P imprimez ma liste de données sur la ville, imprimez-la dans un format plus lisible par l'homme.
+

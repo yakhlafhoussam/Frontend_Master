@@ -1,0 +1,182 @@
+WEBVTT
+
+00:00.000 --> 00:04.000
+Parlons de la pratique des boucles.
+
+00:04.000 --> 00:08.000
+En descendant aux instructions de contrôle sur le bouclage,
+
+00:08.000 --> 00:11.000
+nous avons parlé de if else et else if.
+
+00:11.000 --> 00:15.000
+Alors quand nous avons une déclaration comme celle-ci,
+
+00:15.000 --> 00:19.000
+l'instruction if, nous allons vérifier et voir si l'expression est ensuite vraie.
+
+00:19.000 --> 00:21.000
+Si tel est le cas, nous exécuterons ce code.
+
+00:21.000 --> 00:25.000
+S'il y a un if présent, nous garderons
+
+00:26.000 --> 00:28.000
+et la déclaration if est fausse.
+
+00:28.000 --> 00:33.000
+Nous continuerons à vérifier les autres si jusqu’à ce que nous en trouvions une qui soit vraie.
+
+00:33.000 --> 00:37.000
+S'il n'y a pas d'autre si avec une déclaration vraie,
+
+00:37.000 --> 00:41.000
+alors nous passerons à autre chose et passerons en revue le code ici.
+
+00:41.000 --> 00:45.000
+Donc dans ce cas, quand on appelle ça sur le numéro cinq,
+
+00:45.000 --> 00:48.000
+nous allons imprimer ceci est un petit nombre.
+
+00:48.000 --> 00:55.000
+Pour 99, nous allons dire ceci.
+
+00:55.000 --> 00:57.000
+Il s’agit également d’un nombre assez restreint.
+
+00:57.000 --> 01:01.000
+Si c’est exactement 100, nous dirons que ce nombre est correct.
+
+01:01.000 --> 01:02.000
+Et puis pour ce numéro ici,
+
+01:02.000 --> 01:06.000
+nous allons passer à l'instruction else et dire que ce nombre est énorme.
+
+01:06.000 --> 01:09.000
+Nous pouvons également avoir plusieurs conditions dans une instruction if.
+
+01:09.000 --> 01:15.000
+Donc ici, nous vérifions si le nombre transmis à fizz buzz est les deux.
+
+01:15.000 --> 01:21.000
+Divisible par trois et divisible par cinq, alors nous imprimerons du fizz buzz.
+
+01:21.000 --> 01:24.000
+Donc on n'imprime rien pour trois, rien pour cinq,
+
+01:24.000 --> 01:28.000
+puis fizz buzz pour le numéro 15.
+
+01:28.000 --> 01:32.000
+Nous pouvons également utiliser if pour tester une liste vide.
+
+01:32.000 --> 01:35.000
+Donc ici, ma fonction attend une liste.
+
+01:35.000 --> 01:39.000
+N'oubliez pas qu'une liste vide est fausse et donne un résultat faux.
+
+01:39.000 --> 01:43.000
+Bien qu'une liste contenant des valeurs soit véridique et
+
+01:43.000 --> 01:45.000
+résoudre à vrai.
+
+01:45.000 --> 01:49.000
+Ainsi, lorsque je passe une liste avec des valeurs, cette instruction if sera valide,
+
+01:49.000 --> 01:52.000
+et je vais sauter dans ce bloc de code.
+
+01:52.000 --> 01:59.000
+Si je passe une liste vide, je vais passer directement à l'instruction else ici
+
+01:59.000 --> 02:02.000
+et l'impression a obtenu une liste vide.
+
+02:02.000 --> 02:08.000
+Nous avons parlé de certaines de ces fonctions d'assistance comme la plage et le calcul.
+
+02:08.000 --> 02:12.000
+Nous pouvons également les utiliser en conjonction avec les quatre boucles.
+
+02:12.000 --> 02:18.000
+Si j'ai une liste définie ici, si je voulais parcourir toutes les valeurs entre zéro et deux,
+
+02:18.000 --> 02:22.000
+Je pourrais les écrire manuellement et passer un mauvais moment.
+
+02:22.000 --> 02:26.000
+Ou à la place, je peux utiliser un raccourci de la fonction range.
+
+02:26.000 --> 02:31.000
+Passez un début de zéro et une fin de trois car cette valeur de fin n'est pas inclusive.
+
+02:31.000 --> 02:33.000
+Et faites la même chose.
+
+02:33.000 --> 02:38.000
+L'avantage d'utiliser la plage est qu'il existe certaines optimisations en jeu qui signifient
+
+02:38.000 --> 02:41.000
+Je n'ai pas besoin de définir une liste avec toutes mes valeurs.
+
+02:42.000 --> 02:49.000
+Ce qui est bien pour ma liste de trois éléments, mais cela commence à devenir davantage un problème pour les listes volumineuses ou complexes.
+
+02:49.000 --> 02:57.000
+Et enfin, si nous voulions faire une boucle et avoir à la fois un index et la valeur à cet index,
+
+02:57.000 --> 03:00.000
+nous voulons utiliser la fonction enumerate.
+
+03:00.000 --> 03:08.000
+Et la fonction enumerate est un générateur, mais si vous regardez ce qu'elle renvoie réellement,
+
+03:08.000 --> 03:11.000
+une liste de deux pôles.
+
+03:11.000 --> 03:16.000
+Et le premier élément de ces deux pôles est un index, et le second est l'élément lui-même.
+
+03:16.000 --> 03:21.000
+Nous pouvons donc utiliser le déballage à deux pôles dans notre déclaration à quatre ici,
+
+03:21.000 --> 03:26.000
+et récupérez l'index et l'élément d'énumération en une seule étape.
+
+03:26.000 --> 03:30.000
+Nous pouvons également l'utiliser pour parcourir un dictionnaire.
+
+03:30.000 --> 03:36.000
+N'oubliez pas que par défaut, si vous parcourez un dictionnaire, vous parcourez uniquement les clés.
+
+03:36.000 --> 03:44.000
+Si vous voulez à la fois les clés et les valeurs, vous devez vous assurer que vous appelez la fonction dot items dessus.
+
+03:44.000 --> 03:55.000
+Et lorsque vous faites cela, vous obtenez également une liste de deux pôles, la première valeur étant la clé et la seconde valeur étant la valeur elle-même.
+
+03:55.000 --> 04:03.000
+Vous pouvez donc également utiliser le décompression à deux pôles ici pour parcourir à la fois la clé et la valeur.
+
+04:03.000 --> 04:11.000
+Nous pouvons utiliser des instructions return pour sortir des fonctions et des boucles, ce qui est utile lorsque vous recherchez un indicateur.
+
+04:11.000 --> 04:18.000
+Et je ne vais pas aborder les boucles while, mais si vous voulez en savoir plus sur les boucles while ou les boucles imbriquées,
+
+04:18.000 --> 04:23.000
+Je vous recommande de lire les chapitres sur Practical.learnpython.dev.
+
+04:23.000 --> 04:29.000
+Je vous recommande également de consulter le chapitre facultatif sur la pause et de continuer sur votre temps libre,
+
+04:29.000 --> 04:35.000
+parce que ce sont deux concepts qui ont tendance à faire trébucher les programmeurs débutants ou intermédiaires.
+
+04:35.000 --> 04:39.000
+Et ce sont des concepts importants que vous devez bien comprendre.
+
