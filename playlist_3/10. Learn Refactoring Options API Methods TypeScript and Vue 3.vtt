@@ -1,0 +1,194 @@
+WEBVTT
+
+00:00.000 --> 00:06.800
+So, your exercise is to go to the disk page and try to do what we just did, which is essentially
+
+00:06.800 --> 00:12.480
+migrate everything that you see inside of the options, so that means data, computed, methods,
+
+00:12.480 --> 00:16.400
+and mounted, and practice moving that all over into composition API.
+
+00:21.200 --> 00:26.320
+First thing first, we're going to go ahead and what we need for the composition API is a setup method.
+
+00:26.400 --> 00:29.040
+That is life cycle hook that will hold everything in here.
+
+00:29.600 --> 00:33.920
+So, let's go ahead and just, I'm going to copy all this over, so it was my great data first.
+
+00:35.120 --> 00:40.320
+So, inside of here, paste that over, so we have a concept, woo, that was a typo,
+
+00:40.320 --> 00:45.520
+console, through text, and this is a ref. So, again, I'm going to import that automatically.
+
+00:45.520 --> 00:49.760
+So, if you'll notice that in the auto-complete, if your view code is hopefully working the way I
+
+00:49.760 --> 00:54.080
+hope it does, you'll notice that ref should show up and if you select the package, I'll show that one
+
+00:54.080 --> 00:59.920
+more time. If you just select the top one, it's just going to do some random thing, but you'll notice
+
+00:59.920 --> 01:05.280
+that ref here, it'll actually say that it's from the, you see that little package thing from view.
+
+01:06.320 --> 01:10.000
+That's how you know, it's from view. Oh, that's why it's already imported.
+
+01:10.000 --> 01:13.280
+Hang on, let me go back. I do want to make sure I show that, get that screen grab.
+
+01:14.080 --> 01:18.480
+So, again, if I go ref, you'll see that on the right-hand side, there's that, it tells you where it's
+
+01:18.480 --> 01:21.680
+coming from, and that's how you know you want to import it from view. So, that's how I'm doing that,
+
+01:21.680 --> 01:25.840
+so when I hit that, it'll automatically augment my import up here. So, just know that
+
+01:25.840 --> 01:29.760
+that's all the magic that's happening. All right, ref of string, we're good,
+
+01:29.760 --> 01:36.880
+cons, dish list is going to be a ref of dish array, and then we just need to pass that in as an
+
+01:36.880 --> 01:43.920
+argument, so wrap that in parentheses, and we're golden. The, why is that? They got to look
+
+01:43.920 --> 01:50.480
+better. And then cons show new form is a ref that is a boolean, but we're going to let that
+
+01:50.560 --> 01:54.400
+automatically infer. So, as you'll see that, we don't need to define this here. We don't
+
+01:54.400 --> 01:59.680
+need to be like boolean, and we don't need to be like string, because it's being assumed that
+
+01:59.680 --> 02:04.240
+that will be the case for both. All right, then let's go ahead and just start our return
+
+02:04.240 --> 02:09.920
+object, because we want to actually expose all these, so filter text, show new form and
+
+02:10.000 --> 02:17.280
+dish list. Great. Now, we can delete this data, data shape up here at the top.
+
+02:20.080 --> 02:24.800
+All right, and let's keep the journey going. We have two things that are computed. So,
+
+02:24.800 --> 02:30.480
+we're going to jump in here. Once again, this is a cons, the filter dish, and what kind of variable
+
+02:30.480 --> 02:34.960
+is it? It is a computed variable. So, again, you'll see the view right here, hit that, and you'll
+
+02:34.960 --> 02:39.120
+see that import here, computed right at the top, and it even alphabetically organizes it,
+
+02:39.120 --> 02:45.760
+which is great. All right, so bump, bump, bump, there we go. We'll deal with that this is in a second.
+
+02:46.720 --> 02:52.640
+So, then here equals computed, and then we just need to turn this into an arrow function.
+
+02:53.440 --> 02:57.280
+And actually, small aside, that's actually one of the nice things about the
+
+02:57.280 --> 03:01.680
+composition API is that arrow functions in options API would break the this reference
+
+03:01.680 --> 03:06.320
+sometimes. So, you actually couldn't use arrow function within options API when defining things.
+
+03:06.800 --> 03:10.640
+So, it's a nice thing to get back to you if you enjoy that sort of shorter syntax.
+
+03:11.440 --> 03:15.280
+All right, so now we just need to grab anything that has this, because we know that we're using
+
+03:15.280 --> 03:21.600
+graphs for all of it basically, and then we just need to delete it, and then replace it with dot value,
+
+03:21.600 --> 03:26.640
+because we need to unpackage our references. So, there we go, that's good to go now, and so now we can
+
+03:26.640 --> 03:33.920
+say filtered dish list, and then we have our number of dishes. Great.
+
+03:35.520 --> 03:40.080
+Finally, we're almost there. We're just going to actually let's just grab all this and just
+
+03:40.080 --> 03:51.680
+move it on in. Let's grab the methods, and then 1, 2, 3, const equals jump ahead at the arrows.
+
+03:51.760 --> 03:56.560
+This is great. Wait, I messed up. Too far. There you go. Jump here.
+
+03:57.360 --> 04:02.880
+Then we go 1, 2, 3 equals, then jump to the end, then that.
+
+04:04.000 --> 04:08.080
+And then we're good to go for the most part, just have these commas to deal with.
+
+04:08.800 --> 04:15.280
+For all this, this stuff, we can just roll this too much. 1, 2, 3, 4. I'm using Command D,
+
+04:15.280 --> 04:21.280
+for me, this is how you select multiple things on your cursor, and then from there, 1, 2, 3,
+
+04:21.840 --> 04:32.400
+for dot value. Save, let's good, add dish, delete dish, and hide form for the sake of being
+
+04:33.120 --> 04:43.520
+alphabetical, and finally we have our unmounted here, and so we have on mounted, and you can see here,
+
+04:43.520 --> 04:47.120
+it's now autocomplating with views, so I can hit enter, and once again it will automatically
+
+04:47.120 --> 04:52.240
+import that directly from view, and then we just need to pass it in the callback function that
+
+04:52.240 --> 04:56.960
+will run every time it hits that lifecycle hook, but we don't have this, so what do we need?
+
+04:56.960 --> 05:03.600
+We need use route, and we'll import that from use router, and boom, again the autocomplete is one
+
+05:03.600 --> 05:08.400
+of the best things about TypeScript to be totally honest, even if you're not annotating everything,
+
+05:08.400 --> 05:13.200
+because that's one of the benefits of using TypeScript is that anyone who's like the library
+
+05:13.200 --> 05:18.480
+others who went through the effort of documenting all that, you just get that for free, and so
+
+05:18.480 --> 05:22.960
+that's another to be honest, another reason why I like to recommend, just starting out using TypeScript,
+
+05:22.960 --> 05:31.520
+even if you're not actually applying it everywhere. Okay, unmounted, that's good, and I think
+
+05:31.520 --> 05:36.800
+that's everything. So I had you all do that exercise for a reason, is that some of you probably
+
+05:36.800 --> 05:41.280
+were thinking even as I was typing, you're like, wow, that's a lot of boilerplate,
+
+05:41.360 --> 05:47.920
+particularly this thing down here. What I'm happy to tell you is that there is a better way of doing
+
+05:47.920 --> 05:52.400
+this, which again, I wanted to show you just a full pass, so you know where all this is coming from,
+
+05:52.400 --> 05:56.480
+we'll be showing you sort of the more common way you'll see a composition API use going forward,
+
+05:56.480 --> 06:00.480
+and then from there we'll continue building on our knowledge for using view and TypeScript.
+

@@ -1,0 +1,803 @@
+WEBVTT
+
+00:00.000 --> 00:02.280
+We've danced around this topic a lot at this point,
+
+00:02.280 --> 00:04.440
+and I love to address this.
+
+00:04.440 --> 00:07.360
+So as a recap on the context of what we're talking about
+
+00:07.360 --> 00:10.160
+is, at this point, we're talking about children components
+
+00:10.160 --> 00:12.160
+trying to figure out how the heck to update the parent
+
+00:12.160 --> 00:15.320
+component, because we've talked about the fact that, well,
+
+00:15.320 --> 00:16.520
+we don't want to mutate props.
+
+00:16.520 --> 00:18.920
+As we can see very clearly here, we're being yelled at.
+
+00:18.920 --> 00:21.360
+Don't mutate props.
+
+00:21.360 --> 00:24.560
+On the other hand, we talked about passing functions down,
+
+00:24.560 --> 00:28.800
+as in, like, if there was a method on this component that
+
+00:28.800 --> 00:34.600
+was called changeName, and call it this.userData.name equals,
+
+00:34.600 --> 00:37.480
+let's say, there's an argument for newName,
+
+00:37.480 --> 00:39.200
+and then just like that.
+
+00:39.200 --> 00:42.120
+And so then you'd be like, OK, well, inside of user,
+
+00:42.120 --> 00:45.760
+I'm going to pass this method, call it changeName,
+
+00:45.760 --> 00:48.920
+and then it'll take on the reference to that method.
+
+00:48.920 --> 00:54.080
+And then we have this changeName, which is a function.
+
+00:54.080 --> 00:57.280
+And then it's, let's say, requiredTrue.
+
+00:57.280 --> 01:00.840
+And then let's say we have a button here that's like, hey,
+
+01:00.840 --> 01:02.880
+like, changeName.
+
+01:02.880 --> 01:05.320
+That's like most people's instinctual way
+
+01:05.320 --> 01:08.040
+in how a lot of frameworks approach this problem,
+
+01:08.040 --> 01:10.200
+because the parent is telling it what to change,
+
+01:10.200 --> 01:13.400
+and the child obediently does it.
+
+01:13.400 --> 01:15.240
+The thing about this mental model, though,
+
+01:15.240 --> 01:17.880
+is that it foregoes the fact that, actually, if we think
+
+01:17.880 --> 01:20.440
+about how the web is designed, when
+
+01:20.440 --> 01:23.640
+we have childdom elements, what do we have it do?
+
+01:23.640 --> 01:25.960
+We have it bubble up events.
+
+01:25.960 --> 01:28.440
+That's actually how the web is built natively,
+
+01:28.440 --> 01:29.480
+if we think about it.
+
+01:29.480 --> 01:31.680
+It's not actually the parent just telling it what to do.
+
+01:31.680 --> 01:34.240
+It's saying, when you know that a button at a child
+
+01:34.240 --> 01:36.360
+has happened, it bubbles up that event.
+
+01:36.360 --> 01:38.360
+That's where we get these concepts, right?
+
+01:38.360 --> 01:39.560
+That, oh, a click has happened.
+
+01:39.560 --> 01:42.680
+Therefore, how does this relate to the chain of communication?
+
+01:42.680 --> 01:44.600
+And so what we're going to talk about right now,
+
+01:44.600 --> 01:46.640
+basically at this point, is how we can basically
+
+01:46.640 --> 01:48.840
+emit custom events from our child
+
+01:48.840 --> 01:52.120
+to tell the parent that something is happening.
+
+01:52.120 --> 01:54.560
+So let's actually go ahead and just take this user card
+
+01:54.560 --> 01:55.080
+example.
+
+01:55.080 --> 01:55.800
+Why not?
+
+01:55.800 --> 01:57.040
+Why wouldn't we?
+
+01:57.040 --> 02:00.040
+So let's go ahead and just set this context up a bit.
+
+02:00.040 --> 02:04.520
+So let me just remove this and how we would do this.
+
+02:04.520 --> 02:07.880
+Actually, I think I might be able to leave that.
+
+02:07.880 --> 02:12.560
+We can, for now, let's do this.
+
+02:12.560 --> 02:14.800
+Change name.
+
+02:14.800 --> 02:17.480
+So let's make sure everything's at least rendering correctly
+
+02:17.480 --> 02:20.600
+on our side for the app.
+
+02:20.600 --> 02:21.720
+OK.
+
+02:21.720 --> 02:24.400
+So let's start with something simple,
+
+02:24.400 --> 02:26.680
+which is that if we click a button from the child,
+
+02:26.680 --> 02:29.000
+it will basically tell the parent that, hey,
+
+02:29.000 --> 02:30.840
+I want to change the name.
+
+02:30.840 --> 02:32.960
+And that when that happens, what we want it to do
+
+02:32.960 --> 02:36.200
+is this is updated directly to Charlie.
+
+02:36.200 --> 02:39.200
+So we won't even worry about arguments right now.
+
+02:39.200 --> 02:41.680
+And so again, right here, just to show that this works,
+
+02:41.680 --> 02:47.360
+if we add the click and we add change name, change now,
+
+02:47.360 --> 02:50.640
+you'll see Ben does switch to Charlie as expected.
+
+02:50.640 --> 02:52.800
+OK, as expected.
+
+02:52.800 --> 02:57.080
+But this method is existing all the way up here.
+
+02:57.080 --> 03:00.000
+So how the heck does a user card get access to that
+
+03:00.000 --> 03:03.120
+without passing the prop down as a function?
+
+03:03.120 --> 03:05.840
+Well, the way we do that is with this concept,
+
+03:05.840 --> 03:11.480
+new to view 3 did not exist in View2 called emits.
+
+03:11.480 --> 03:13.120
+And emits is the equivalent of props.
+
+03:13.120 --> 03:15.960
+Props is saying, hey, this is what I'm expecting to send down.
+
+03:15.960 --> 03:17.640
+Emits is our way of documenting, hey,
+
+03:17.640 --> 03:20.440
+this is what I'm going to send up.
+
+03:20.440 --> 03:22.120
+So if you think about it, this is actually
+
+03:22.120 --> 03:25.720
+following the one-way data chain of unidirectional data
+
+03:25.720 --> 03:28.840
+flow because the data comes down and then you're basically
+
+03:28.840 --> 03:32.040
+sending a signal up to say, hey, I want something to change.
+
+03:32.040 --> 03:35.360
+Then basically the parent knows, oh, change it,
+
+03:35.360 --> 03:37.840
+then send that change back down.
+
+03:37.840 --> 03:40.800
+So in that regard, it follows that traditional web model.
+
+03:40.800 --> 03:43.280
+And so to show you what that means, we'll say emits.
+
+03:43.280 --> 03:47.480
+So again, emit the event change name.
+
+03:47.480 --> 03:48.840
+And so the key thing with the emits
+
+03:48.840 --> 03:50.600
+is to think of this as custom events.
+
+03:50.600 --> 03:52.400
+We're used to click, key up.
+
+03:52.400 --> 03:55.080
+Those are events that are already defined for us.
+
+03:55.080 --> 03:58.480
+This is a custom event that we're emitting.
+
+03:58.480 --> 04:03.240
+And so what we get to do then is once we have our emits defined,
+
+04:03.240 --> 04:06.800
+what we get to do is we get to call a global method called
+
+04:06.800 --> 04:08.600
+emit, dollar sign emit.
+
+04:08.600 --> 04:10.360
+And so if this is your first time using View,
+
+04:10.360 --> 04:12.800
+you're probably wondering, what is this dollar sign here?
+
+04:12.800 --> 04:17.120
+It's basically View's way of name scoping a global function
+
+04:17.120 --> 04:19.080
+that is available to View specifically.
+
+04:19.080 --> 04:21.440
+So now that this is not just something in JavaScript,
+
+04:21.440 --> 04:23.600
+this is a View thing, we're going to emit what?
+
+04:23.600 --> 04:25.200
+We're going to emit change name.
+
+04:28.200 --> 04:36.520
+And this is now where the DevTools become very handy.
+
+04:36.520 --> 04:38.400
+Inside the DevTools, there is this tab right here
+
+04:38.400 --> 04:39.800
+called a Timeline.
+
+04:39.800 --> 04:41.800
+And what it allows you to do is actually notice
+
+04:41.800 --> 04:43.160
+when different events are happening.
+
+04:43.160 --> 04:45.200
+So you notice that if I just click on the page here,
+
+04:45.200 --> 04:47.960
+it actually does give me a timeline of snapshot
+
+04:47.960 --> 04:49.080
+of what's happening.
+
+04:49.080 --> 04:51.880
+It even actually has the coordinates on here I am noticing.
+
+04:51.880 --> 04:54.240
+And so you see, it actually tells you the actual position
+
+04:54.240 --> 04:55.520
+of what's happening.
+
+04:55.520 --> 04:56.680
+And so when it comes to debugging,
+
+04:56.680 --> 04:59.040
+this is pretty darn useful.
+
+04:59.040 --> 05:01.600
+And so you notice here, though, if I click Change Name,
+
+05:01.600 --> 05:02.880
+something happens here.
+
+05:02.880 --> 05:04.120
+So let me scroll over.
+
+05:04.120 --> 05:05.960
+Oop.
+
+05:05.960 --> 05:07.280
+Oof.
+
+05:07.280 --> 05:08.560
+I think it's losing the scroll.
+
+05:08.560 --> 05:10.320
+OK, it's right over here.
+
+05:10.320 --> 05:11.760
+Oop.
+
+05:11.760 --> 05:13.720
+I think I zoomed out too much.
+
+05:13.720 --> 05:15.760
+OK.
+
+05:15.760 --> 05:16.840
+Refresh.
+
+05:16.840 --> 05:18.640
+OK, there we go.
+
+05:18.640 --> 05:29.520
+Where is my sidebar view reload components timeline?
+
+05:29.520 --> 05:30.120
+Oh, I hit it.
+
+05:30.120 --> 05:30.600
+Here we go.
+
+05:30.600 --> 05:31.080
+Oh my gosh.
+
+05:31.080 --> 05:32.720
+And I was like, where did it go?
+
+05:32.720 --> 05:35.240
+OK, click Change Name.
+
+05:35.240 --> 05:36.560
+And we'll see a couple of things here.
+
+05:36.560 --> 05:39.080
+One, you see right here?
+
+05:39.080 --> 05:41.640
+Change Name event has been omitted.
+
+05:41.640 --> 05:44.520
+And so it's been omitted by user card.
+
+05:44.520 --> 05:47.400
+And so you also know that it happened with a click as well.
+
+05:47.400 --> 05:49.480
+Because you see that here, it has the mouse up,
+
+05:49.480 --> 05:51.240
+mouse down, the click event.
+
+05:51.240 --> 05:53.880
+And then here is where we get that Change Name event.
+
+05:53.880 --> 05:55.840
+And you notice here, it actually tells you a little bit more
+
+05:55.840 --> 05:56.720
+about the event info.
+
+05:56.720 --> 05:58.480
+That is from the component user card.
+
+05:58.480 --> 06:00.080
+The event is Change Name.
+
+06:00.080 --> 06:01.760
+But also, we haven't gotten into this yet.
+
+06:01.760 --> 06:03.280
+We can actually pass parameters up.
+
+06:03.280 --> 06:05.040
+Because sometimes you're going to be customizing stuff
+
+06:05.040 --> 06:06.240
+at the child level.
+
+06:06.240 --> 06:08.400
+But you need to say, hey, here are some of the customizations
+
+06:08.400 --> 06:09.560
+I'm sending up to the parent.
+
+06:09.560 --> 06:11.760
+And this is what I'm going to send.
+
+06:11.760 --> 06:13.440
+And so when you do this, what happens
+
+06:13.440 --> 06:20.240
+is on your component, we get the ability to listen to what?
+
+06:20.240 --> 06:21.760
+Listen to our custom event, which is what?
+
+06:21.760 --> 06:23.200
+Change Name.
+
+06:23.200 --> 06:26.120
+So this is no different than our at click, at key up.
+
+06:26.120 --> 06:28.440
+So I'm actually going to go ahead and just do the at.
+
+06:28.440 --> 06:30.400
+Because that's my preferred.
+
+06:30.400 --> 06:33.360
+And then from here, what are we going to do when this is called?
+
+06:33.360 --> 06:35.160
+We're going to run the method changeName.
+
+06:38.160 --> 06:39.080
+OK, there we go.
+
+06:39.080 --> 06:40.040
+I'm going to run dev.
+
+06:44.000 --> 06:45.040
+There we go.
+
+06:45.040 --> 06:47.760
+Yeah, I figured.
+
+06:47.760 --> 06:49.560
+So this takes some getting used to.
+
+06:49.560 --> 06:51.640
+Because I know that, again, this is not traditionally
+
+06:51.640 --> 06:52.960
+how people are thinking of things.
+
+06:52.960 --> 06:55.480
+But it's funny when we think about the primitives
+
+06:55.480 --> 06:57.560
+were given when building with the web.
+
+06:57.560 --> 07:00.360
+Event bubbling is a very standard way of building with things.
+
+07:00.360 --> 07:04.040
+And more importantly, I think it allows for,
+
+07:04.040 --> 07:07.360
+I'll call it a cleaner way of removing
+
+07:07.360 --> 07:11.480
+that strict instructions that you're passing down
+
+07:11.480 --> 07:13.560
+from the parent when you just pass the function.
+
+07:13.560 --> 07:15.880
+Because now, all of a sudden, that function,
+
+07:15.880 --> 07:17.680
+I've just seen on code bases when people do that,
+
+07:17.680 --> 07:20.440
+it just gets hairy in terms of people,
+
+07:20.440 --> 07:22.080
+then they start passing in the wrong function.
+
+07:22.080 --> 07:23.120
+Because then you have to make sure
+
+07:23.120 --> 07:25.800
+the function is doing what you want it to in the child, which
+
+07:25.800 --> 07:27.800
+means you actually now have to check the parent
+
+07:27.800 --> 07:29.800
+to make sure that it makes sense.
+
+07:29.800 --> 07:32.240
+Whereas when you just emit an event,
+
+07:32.280 --> 07:35.480
+this child component can be used in a lot of different contexts.
+
+07:35.480 --> 07:37.680
+And then the parent can do whatever it wants with it.
+
+07:37.680 --> 07:39.200
+And it makes sense because you're saying,
+
+07:39.200 --> 07:40.760
+when the child component has this custom event,
+
+07:40.760 --> 07:42.960
+I'm going to run this function, which lives in this file.
+
+07:42.960 --> 07:44.160
+And so in that regard, it really does
+
+07:44.160 --> 07:47.160
+help to really encapsulate that single file component
+
+07:47.160 --> 07:50.680
+mentality while still building on web standards
+
+07:50.680 --> 07:53.360
+and principles that we're actually
+
+07:53.360 --> 07:55.840
+using on a day-to-day, but often overlook.
+
+07:55.840 --> 07:56.320
+Yeah.
+
+07:56.320 --> 07:58.920
+If you were to bubble up multiple levels,
+
+07:58.920 --> 08:02.000
+would you have to catch it, re-emit it?
+
+08:02.480 --> 08:04.880
+You can't just say emit, emit, emit, emit the whole way up?
+
+08:04.880 --> 08:05.960
+You cannot.
+
+08:05.960 --> 08:07.760
+And so that's a great question.
+
+08:07.760 --> 08:09.480
+Because OK, so let me reiterate.
+
+08:09.480 --> 08:11.280
+So the question here is that right now we just
+
+08:11.280 --> 08:13.840
+have a single parent, single child, one emit, whatever.
+
+08:13.840 --> 08:16.040
+What happens when you have a great, great, great, great,
+
+08:16.040 --> 08:17.880
+great, great, great, great grandchild wanting
+
+08:17.880 --> 08:19.960
+to communicate info up?
+
+08:19.960 --> 08:23.520
+And so emits and props really are designed
+
+08:23.520 --> 08:26.440
+for a closer relationship, like when you're closer together.
+
+08:26.440 --> 08:28.520
+Because props actually have that same problem.
+
+08:28.520 --> 08:29.840
+And so the pattern that's actually
+
+08:29.840 --> 08:31.280
+the anti-pattern that's resulted from that
+
+08:31.280 --> 08:32.520
+is called prop drilling.
+
+08:32.520 --> 08:34.440
+And so we have app.view has this global thing,
+
+08:34.440 --> 08:36.080
+and then you drill, drill, drill, drill,
+
+08:36.080 --> 08:38.120
+prop, prop, prop, prop, and none of the components
+
+08:38.120 --> 08:39.760
+use it until this one.
+
+08:39.760 --> 08:41.440
+But then the problem with prop drilling
+
+08:41.440 --> 08:43.720
+is that the moment you remove one in the middle,
+
+08:43.720 --> 08:45.520
+the whole thing just falls apart immediately.
+
+08:45.520 --> 08:47.680
+The answer to this is basically using
+
+08:47.680 --> 08:50.640
+composables and state management in a way that,
+
+08:50.640 --> 08:52.360
+because at that point, I would argue,
+
+08:52.360 --> 08:54.560
+if you have data that is shared across components
+
+08:54.560 --> 08:56.920
+at that depth, it probably makes sense
+
+08:56.920 --> 08:58.760
+for it to be encapsulated in a module that can just
+
+08:58.760 --> 09:00.600
+be shared across both files.
+
+09:00.600 --> 09:02.560
+The props is really, in my mind, designed
+
+09:02.560 --> 09:05.760
+when there's a tight coupling between the two components,
+
+09:05.760 --> 09:07.840
+and you want it to behave a certain way.
+
+09:07.840 --> 09:10.200
+Otherwise, what we'll see here later on
+
+09:10.200 --> 09:12.320
+is around other flexible APIs that
+
+09:12.320 --> 09:16.160
+allow it to do more than just these rigid instructions
+
+09:16.160 --> 09:17.320
+between components.
+
+09:17.320 --> 09:20.280
+Does that help to answer your question?
+
+09:20.280 --> 09:23.880
+Is there an emit equivalent in view 2?
+
+09:23.880 --> 09:26.440
+OK, so good question.
+
+09:26.440 --> 09:29.200
+In regards to view 2, the dollar sign emit actually
+
+09:29.200 --> 09:30.560
+does exist as a function.
+
+09:31.480 --> 09:33.840
+Custom events are not new to view 3.
+
+09:33.840 --> 09:35.320
+What is new to view 3 is the fact
+
+09:35.320 --> 09:39.400
+that you can basically document them inside of your options.
+
+09:39.400 --> 09:42.520
+Because the problem, and this was a misstep on,
+
+09:42.520 --> 09:44.480
+I guess on our part, we didn't think about it,
+
+09:44.480 --> 09:46.400
+is that when you don't have this emits property,
+
+09:46.400 --> 09:48.080
+it seems like a small thing.
+
+09:48.080 --> 09:50.440
+But if you start emitting multiple events,
+
+09:50.440 --> 09:53.240
+it starts getting really hairy to track in a big component
+
+09:53.240 --> 09:55.240
+of like, wait, what events are happening?
+
+09:55.240 --> 09:55.760
+Where is it?
+
+09:55.760 --> 09:58.360
+I mean, that's why we have prop definitions, too, actually.
+
+09:58.400 --> 10:00.800
+It's to let you know, hey, what am I expecting to receive?
+
+10:00.800 --> 10:02.840
+The emit does the opposite for us,
+
+10:02.840 --> 10:04.880
+where what kind of events are you expecting to emit
+
+10:04.880 --> 10:07.360
+so that people don't just randomly create their own?
+
+10:07.360 --> 10:10.840
+And so to be clear, and just to kind of wrap that up,
+
+10:10.840 --> 10:13.160
+if you don't like emitting directly here,
+
+10:13.160 --> 10:18.960
+we can actually just do something like a tell parent
+
+10:18.960 --> 10:20.720
+change name.
+
+10:20.720 --> 10:24.600
+And this can just be a method, tell parent change name.
+
+10:24.600 --> 10:26.680
+And we can do this dot dollar sign emit.
+
+10:26.680 --> 10:28.440
+This would be the same exact thing.
+
+10:28.440 --> 10:30.600
+It's up to you whether you want to call it here,
+
+10:30.600 --> 10:32.960
+or you just want to call it inline.
+
+10:32.960 --> 10:35.360
+Once again, I think that's more of a stylistic thing.
+
+10:35.360 --> 10:36.880
+Because some people would be like, well,
+
+10:36.880 --> 10:39.040
+if it's just this one event, and I'm not tracking that much,
+
+10:39.040 --> 10:40.280
+I'm just going to inline it.
+
+10:40.280 --> 10:42.880
+Because there's not really being reused.
+
+10:42.880 --> 10:45.360
+On the other hand, if you have this being called a bunch of places,
+
+10:45.360 --> 10:47.440
+you might not really want to define that everywhere.
+
+10:47.440 --> 10:49.160
+You might want to change it in one place.
+

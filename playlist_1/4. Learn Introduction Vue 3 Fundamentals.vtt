@@ -1,0 +1,608 @@
+WEBVTT
+
+00:00.000 --> 00:04.280
+So, just based on this, for those who have been working with web apps for a while, you
+
+00:04.280 --> 00:09.040
+might already start to realize there's a lot of flexibility with this, because now all
+
+00:09.040 --> 00:13.080
+of a sudden, if you have a back end that's not quite ready to integrate all the build
+
+00:13.080 --> 00:17.640
+tools and everything you need to get it up and running, you can just on a specific page
+
+00:17.640 --> 00:21.600
+when you're proposing to start progressively migrating your apps, you can say on this
+
+00:21.600 --> 00:26.040
+page we're going to drop the CDN and we're going to add the basically interactivity
+
+00:26.040 --> 00:30.720
+to this page and over time will migrate away and then once we have enough pages that consolidate
+
+00:30.720 --> 00:34.360
+that view, then we can actually invest the time to do the build tools.
+
+00:34.360 --> 00:37.880
+Because I think a lot of times when we think about migration, a lot of times developers
+
+00:37.880 --> 00:42.520
+are thinking like code freeze everything, no new features, and we just stop development.
+
+00:42.520 --> 00:46.400
+And we know that practically speaking, that just rarely works for business.
+
+00:46.400 --> 00:51.600
+And so this is a really great way for us to basically go ahead and migrate an enterprise
+
+00:51.600 --> 00:58.280
+app over to something that might use more modern framework technologies.
+
+00:58.280 --> 01:01.240
+Now that said, we have a message here.
+
+01:01.240 --> 01:07.560
+Now what if we wanted to, let's say, show or hide it based on whether or not the message
+
+01:07.560 --> 01:09.320
+is even or not?
+
+01:09.320 --> 01:13.520
+Well, something that View is also known for are their directives.
+
+01:13.520 --> 01:16.560
+And so for those who have come from Angular, this might look a little bit familiar.
+
+01:16.560 --> 01:21.800
+So the way that it works is that we basically would have a normal HTML element.
+
+01:21.800 --> 01:27.080
+So let's say let's wrap this in a P element.
+
+01:27.080 --> 01:29.760
+And then this one we're going to say even.
+
+01:29.760 --> 01:33.600
+And this one we're going to say odd.
+
+01:33.600 --> 01:38.680
+And so the idea here being that what we'd like to do is if the message.length is even,
+
+01:38.680 --> 01:43.040
+show the even keyword, otherwise show the odd keyword.
+
+01:43.040 --> 01:47.560
+And so one way we can do this is we can use something called view directives.
+
+01:47.560 --> 01:52.360
+And the way it works is it's basically an attribute you add on an HTML element, and
+
+01:52.360 --> 01:55.160
+it's prefixed with v dash.
+
+01:55.160 --> 02:03.880
+So in this case, if I go v dash if equals message.length, and I'll use the modular 2
+
+02:03.880 --> 02:06.800
+equals 0 to determine that it's even.
+
+02:06.800 --> 02:11.280
+And then otherwise, v else, it'll display the other thing.
+
+02:11.280 --> 02:14.400
+So if we refresh this, we'll see, ah, OK, there we go.
+
+02:14.400 --> 02:16.240
+We'll notice that it is currently odd.
+
+02:16.240 --> 02:22.440
+And so now if I delete the exclamation mark, that should bring us over to even.
+
+02:22.440 --> 02:27.480
+And so what we see here is, again, one of the things I talked about when it came to
+
+02:27.480 --> 02:30.480
+view is that it builds on top of what you already know.
+
+02:30.480 --> 02:32.560
+And so when most people are working with HTML and CSS,
+
+02:32.560 --> 02:37.280
+there's a lot of value in extending upon people's existing knowledge when it comes
+
+02:37.280 --> 02:38.680
+to extending APIs.
+
+02:38.680 --> 02:42.600
+And so in this regard, by basically having the convention of the v dash and
+
+02:42.600 --> 02:44.280
+then using the if-else statements.
+
+02:44.280 --> 02:47.560
+Again, if you know JavaScript, in fact, you don't even need to know JavaScript.
+
+02:47.560 --> 02:52.840
+People would actually understand this property, granted, maybe not this part.
+
+02:52.840 --> 02:54.920
+But when people are navigating the HTML,
+
+02:54.920 --> 02:56.400
+they would actually understand what's going on here.
+
+02:56.400 --> 03:00.600
+Rather than if you had kind of big if-else blogs that have a bunch of functions in it,
+
+03:00.600 --> 03:04.320
+which again, I think sometimes we find is a little bit tricky with,
+
+03:04.320 --> 03:08.120
+I think, sort of React components, those can be harder to follow.
+
+03:08.120 --> 03:10.960
+Especially if you don't have as much experience with JavaScript.
+
+03:10.960 --> 03:16.880
+But this here keeps a visually a semantic concise way of telling people what's going on.
+
+03:19.080 --> 03:24.200
+Now, the other directive that I want to talk about is this one.
+
+03:25.320 --> 03:28.040
+But before we do that, here's a slide to talk about this.
+
+03:28.040 --> 03:31.200
+And this is from a while ago from Sansa Cone.
+
+03:31.200 --> 03:36.320
+And what it says here is that 99.7% of software development in one requirement.
+
+03:36.360 --> 03:39.320
+A user should be able to view a list of items.
+
+03:39.320 --> 03:41.360
+And I still think that's incredibly relevant today, right?
+
+03:41.360 --> 03:42.440
+That's what we're doing half the time.
+
+03:42.440 --> 03:45.440
+We're taking a bunch of data, rendering out a list.
+
+03:45.440 --> 03:50.000
+And I don't know about you all, but when I was doing this in React originally,
+
+03:50.000 --> 03:52.600
+I realized there's a lot of different ways to do it.
+
+03:52.600 --> 03:54.440
+And I know that there's more of a best practice now.
+
+03:54.440 --> 03:57.960
+But that can be confusing for users, especially if they have a function that
+
+03:57.960 --> 04:00.720
+runs the map or maybe in this case, use the for loop.
+
+04:00.720 --> 04:04.200
+There's a lot of kind of deciding what to do.
+
+04:04.200 --> 04:07.920
+And so let's go ahead and show how rendering a list works in view.
+
+04:07.920 --> 04:11.880
+So in this case, I'm just going to do a list of numbers here, just to keep it easy.
+
+04:11.880 --> 04:15.880
+And so one, two, three, four, five, and we have an array here.
+
+04:17.200 --> 04:21.960
+And then what we're going to do here is we're just going to do an unordered list.
+
+04:21.960 --> 04:23.800
+And then what are we trying to repeat, right?
+
+04:23.800 --> 04:25.600
+We're trying to repeat the list item.
+
+04:25.600 --> 04:28.560
+So what we're going to have is, if you might want to guess,
+
+04:28.560 --> 04:31.640
+is that we have the v4 directive, right?
+
+04:31.640 --> 04:33.920
+Using the for loop concept from JavaScript.
+
+04:33.920 --> 04:34.840
+And what are we looping for?
+
+04:34.840 --> 04:41.000
+For every number in list of numbers, we're going to go ahead and
+
+04:41.000 --> 04:42.080
+just put the number.
+
+04:44.240 --> 04:44.600
+That's it.
+
+04:46.200 --> 04:49.360
+And if you refresh, there you go, done.
+
+04:49.360 --> 04:51.560
+Your list is rendered, it's fantastic.
+
+04:54.000 --> 04:58.280
+And so what's really nice about this, once again, is that we are trying to extend
+
+04:58.280 --> 05:02.080
+upon people's base knowledge of JavaScript without getting too much in the weeds.
+
+05:02.080 --> 05:05.480
+Again, the syntax is written in a way that's approachable for
+
+05:05.480 --> 05:07.960
+people to sort of like in plain English, really.
+
+05:07.960 --> 05:09.640
+For number in list of numbers, print number.
+
+05:09.640 --> 05:11.840
+Great, I understand what that means, even if I don't know JavaScript.
+
+05:13.320 --> 05:17.240
+The other fun fact about the declarative rendering of the curly braces here is
+
+05:17.240 --> 05:19.000
+that it's not meant to just print out variables.
+
+05:19.000 --> 05:21.840
+It actually does evaluate JavaScript statements in there.
+
+05:21.840 --> 05:26.560
+So if in the case of, let's say we wanted to be really excited about the fact that
+
+05:26.560 --> 05:31.200
+it's even, we can actually do two uppercase in here and run it.
+
+05:32.240 --> 05:34.440
+And then you'll see that it'll actually transform the text,
+
+05:34.440 --> 05:37.240
+basically run the JavaScript inside of it immediately.
+
+05:37.240 --> 05:39.000
+So theoretically, you could also do things like, well,
+
+05:39.000 --> 05:43.840
+let's just multiply like math.random in here and we refresh this, boom.
+
+05:43.840 --> 05:46.840
+I mean, please, we have some interesting numbers up here.
+
+05:46.840 --> 05:49.040
+But that's something to consider.
+
+05:49.040 --> 05:51.480
+Now, the thing about this is when people discover this,
+
+05:51.480 --> 05:53.080
+sometimes they get really carried away.
+
+05:53.080 --> 05:56.120
+And we're talking like ternary statements and ternary statements.
+
+05:56.120 --> 05:59.920
+And that to me is very, I would say, anti-view ethos in that we're trying to
+
+05:59.920 --> 06:02.240
+make it easy for people to understand the code base, right?
+
+06:02.240 --> 06:04.960
+So I would say when it comes to basically inlining your JavaScript
+
+06:04.960 --> 06:08.240
+inside of these double curly braces, I would say keep it to a minimum and
+
+06:08.240 --> 06:10.640
+try to abstract that logic as much as humanly possible.
+
+06:10.640 --> 06:14.080
+So the question we have here is in regard to the differences between the View2Way
+
+06:14.080 --> 06:15.120
+and the View3Way.
+
+06:15.120 --> 06:18.920
+So the View3Way, as we see here, is that you can abstract a helper function from
+
+06:18.920 --> 06:25.600
+View or if for those familiar with the View2Way, we had View, it was NewView.
+
+06:25.600 --> 06:28.760
+You would instantiate a NewView app this way.
+
+06:29.760 --> 06:34.040
+And so part of the reason this approach has changed is because View3 has
+
+06:34.040 --> 06:36.680
+become a lot about becoming modular and performant.
+
+06:36.680 --> 06:40.520
+In other words, being able to split apart things that you don't need.
+
+06:40.520 --> 06:44.320
+With this sort of NewView approach, basically you have everything instantiated
+
+06:44.320 --> 06:47.200
+with it and it was a lot harder from a bundling perspective,
+
+06:47.200 --> 06:49.280
+like thinking of it from a library maintenance perspective.
+
+06:49.280 --> 06:52.760
+That was a lot of the motivation behind this new approach,
+
+06:52.760 --> 06:56.640
+which you'll see a lot more in View3CodeBases is that there's a lot of helper
+
+06:56.640 --> 06:59.720
+functions which we'll actually see in this workshop that allow you to basically
+
+06:59.720 --> 07:02.600
+break apart pieces of View that are helpful in certain instances.
+
+07:02.600 --> 07:06.760
+And otherwise, it'll know to either drop certain things and optimize itself away.
+
+07:06.760 --> 07:11.960
+I expected that V4 inside the UL instead of in LI.
+
+07:11.960 --> 07:17.720
+So the question here is around the idea of the V4 element being like basically
+
+07:17.720 --> 07:21.200
+someone having the impression that they thought that they would put it on the UL
+
+07:21.200 --> 07:22.600
+element.
+
+07:22.600 --> 07:25.600
+But the reason why this is not the case is because we have to think through what
+
+07:25.640 --> 07:28.240
+exactly we want the renderer to be looping through, right?
+
+07:28.240 --> 07:30.240
+What is the element we're repeating?
+
+07:30.240 --> 07:35.880
+And in this case, we're repeating the list in this regard and not say like,
+
+07:35.880 --> 07:37.280
+we don't want the entire unordered list.
+
+07:37.280 --> 07:42.800
+So for example, if we did this, you'll see, we'll just show the difference.
+
+07:44.480 --> 07:45.560
+So we can do it like this.
+
+07:46.680 --> 07:51.240
+And if we refresh it, you'll notice that at first glance it kind of looks the same.
+
+07:51.240 --> 07:53.080
+But when we take a look underneath,
+
+07:54.080 --> 07:57.840
+you'll see that there are individual unordered lists happening in this case.
+
+07:57.840 --> 07:58.880
+So don't get me wrong.
+
+07:58.880 --> 08:02.800
+If in the case, you have a bunch of like, okay, let's just actually give that example.
+
+08:02.800 --> 08:07.480
+If in the case, we have different things that we're going on in each element.
+
+08:07.480 --> 08:11.720
+So let's say that, okay, so one, two, three, four, five.
+
+08:11.720 --> 08:13.440
+So we have like an object here.
+
+08:13.440 --> 08:19.520
+And let's say like name, let me do text pastry one to three.
+
+08:19.520 --> 08:24.360
+And then ID, let's just do text pastry UUID.
+
+08:24.360 --> 08:29.320
+Whoop, I need that first text pastry UUID, boom.
+
+08:29.320 --> 08:30.440
+Okay, save.
+
+08:30.440 --> 08:33.080
+Okay, so here we have a more complex data set, right?
+
+08:34.800 --> 08:36.520
+We have a bunch of objects in each.
+
+08:36.520 --> 08:41.440
+So if I refresh this now, you might notice that, well, nothing to do.
+
+08:41.440 --> 08:42.760
+Did I mess something up syntax wise?
+
+08:42.760 --> 08:45.120
+Do you have some math on that?
+
+08:45.120 --> 08:47.480
+Oh, I am doing math, okay, that totally makes sense.
+
+08:47.480 --> 08:48.920
+All right, okay, here we go.
+
+08:48.920 --> 08:54.440
+Now if I save this, so in this particular case, maybe then inside of here,
+
+08:54.440 --> 08:56.280
+we then have a like a sub list.
+
+08:56.280 --> 08:58.840
+So I realize I actually didn't even add the other thing I needed.
+
+08:59.920 --> 09:04.120
+So we could even say inside of here, we had another list inside of here.
+
+09:04.120 --> 09:06.640
+That was then one, two, three, for example.
+
+09:06.640 --> 09:09.800
+Then we might say, for example, in this particular list,
+
+09:09.800 --> 09:13.440
+we want the first item to show the ID.
+
+09:13.440 --> 09:15.440
+So we say number.ID.
+
+09:15.440 --> 09:17.600
+And then we could then embed a second list and
+
+09:17.600 --> 09:22.600
+that's where we would loop through number.list like this.
+
+09:24.200 --> 09:27.680
+So instead of number, I'm going to say, switch this to item,
+
+09:27.680 --> 09:29.880
+because now this is more accurate.
+
+09:29.880 --> 09:36.520
+And then number in number list and then number like this.
+
+09:36.520 --> 09:37.840
+So then we refresh this.
+
+09:37.840 --> 09:39.080
+I broke something.
+
+09:39.080 --> 09:39.800
+Item list.
+
+09:39.800 --> 09:41.040
+Item list.
+
+09:41.040 --> 09:43.480
+Item list.
+
+09:43.480 --> 09:46.200
+Number and number list should be number and item list.
+
+09:46.240 --> 09:49.000
+Number, yes, good catch.
+
+09:49.000 --> 09:49.840
+Okay, there we go.
+
+09:51.520 --> 09:54.400
+And so that's an example where you might want to loop possibly.
+
+09:54.400 --> 09:55.920
+Although at that point, it might even be a div.
+
+09:55.920 --> 09:58.160
+It's kind of you wondering why you'd want just the one.
+
+09:58.160 --> 10:02.200
+But basically, consider basically how you want the semantic HTML to be
+
+10:02.200 --> 10:03.760
+rendered out at the end of the day.
+
+10:03.760 --> 10:04.480
+And that's the key thing.
+
+10:07.520 --> 10:09.320
+A quick note before the next question.
+
+10:09.320 --> 10:12.680
+In case anyone was wondering how I sort of did the data population,
+
+10:12.680 --> 10:18.440
+that is the text pastry VS code extension that's highly underutilized.
+
+10:18.440 --> 10:22.440
+But it's really great at generating things on the fly as far as ranges and
+
+10:22.440 --> 10:27.720
+also custom UUIDs, which is great for random data when you're doing
+
+10:27.720 --> 10:29.040
+some sandbox coding like I did.
+
+10:30.880 --> 10:31.320
+Next question.
+
+10:32.560 --> 10:36.000
+Is that data attribute and the create app?
+
+10:36.000 --> 10:41.960
+Is that required or can we rename it to something like state?
+
+10:41.960 --> 10:45.720
+So the question here is around this particular keyword data here.
+
+10:45.720 --> 10:48.920
+In this particular context, when you're passing a configuration object to
+
+10:48.920 --> 10:54.480
+create app, this is basically a reserved keyword in that it is called data and
+
+10:54.480 --> 10:55.760
+that's what it has to be.
+
+10:55.760 --> 10:59.760
+However, I will tell you right now that if you're more of a fan of calling it state,
+
+10:59.760 --> 11:02.960
+there is going to be another style of components that we'll be covering that
+
+11:02.960 --> 11:05.560
+will allow you to basically name things as you see fit.
+
+11:05.560 --> 11:10.360
+But basically what you're seeing here is basically a preview of what is known in
+
+11:10.360 --> 11:14.800
+view two or will view two and view three as the options API in that view will
+
+11:14.800 --> 11:18.440
+provide you a set of options to do what you need to do inside of your app.
+
+11:18.440 --> 11:21.760
+And those configuration and rail guards are actually, in my opinion,
+
+11:21.760 --> 11:24.520
+very powerful when it comes to people either onboarding to view for
+
+11:24.520 --> 11:27.520
+the first time or when they're looking to set like a standard and
+
+11:27.520 --> 11:30.920
+consistency across their team, options API can be incredibly powerful.
+
+11:30.920 --> 11:34.400
+But we'll show a little bit more about how that works before we get into the other
+
+11:34.400 --> 11:37.240
+one, which is composition API, which for the person who asked that question,
+
+11:37.240 --> 11:39.040
+you might be more interested in when we get to that one.
+

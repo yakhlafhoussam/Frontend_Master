@@ -1,0 +1,743 @@
+WEBVTT
+
+00:00.000 --> 00:04.200
+So now that you have this new knowledge,
+
+00:04.200 --> 00:07.280
+the exercise now is to continue on
+
+00:07.280 --> 00:09.520
+your component exploration journey and now you
+
+00:09.520 --> 00:11.760
+have basically the opportunity to
+
+00:11.760 --> 00:14.320
+architect your components however you see fit.
+
+00:14.320 --> 00:16.240
+Do you want to go ahead and just have
+
+00:16.240 --> 00:19.920
+these display components that receive data from the parent,
+
+00:19.920 --> 00:21.400
+and then if it makes changes,
+
+00:21.400 --> 00:23.600
+emit that upwards or do you
+
+00:23.600 --> 00:24.720
+want to just keep everything at the top?
+
+00:24.720 --> 00:26.000
+Like you can figure out how you want to
+
+00:26.000 --> 00:28.800
+play around with that and see what works well for you.
+
+00:30.840 --> 00:33.800
+All right, and we're back.
+
+00:33.800 --> 00:36.440
+So one of the questions that came up during
+
+00:36.440 --> 00:39.240
+the exercise is like people were playing around,
+
+00:39.240 --> 00:40.720
+and what they notice is,
+
+00:40.720 --> 00:42.300
+is that if you mutate the prop,
+
+00:42.300 --> 00:44.040
+everything does seem to work.
+
+00:44.040 --> 00:46.120
+So in other words, if you're in here for example,
+
+00:46.120 --> 00:52.560
+and we said this dot user dot name equals,
+
+00:52.560 --> 00:55.760
+let's do Dominique.
+
+00:56.760 --> 00:59.960
+Again, it will technically work.
+
+00:59.960 --> 01:03.760
+The principle I want to stress here,
+
+01:03.760 --> 01:06.800
+it's not so much that a question of whether or not it works or not,
+
+01:06.800 --> 01:12.720
+but more so that when it comes to best practices for architecting apps,
+
+01:12.720 --> 01:15.800
+you want to keep it as easy as possible to debug what's wrong.
+
+01:15.800 --> 01:19.280
+This is why I'm also a big fan of when you have error reporting,
+
+01:19.280 --> 01:21.760
+or for example, we'll talk about styling later,
+
+01:21.760 --> 01:26.880
+but when we go too far in terms of our optimizations of like,
+
+01:26.880 --> 01:28.720
+well, it's easier to just do this,
+
+01:28.720 --> 01:32.160
+it can make it tricky to track where things are happening.
+
+01:32.160 --> 01:34.040
+So when it comes to UI,
+
+01:34.040 --> 01:37.040
+a lot of it ends up going down to where's your source of truth.
+
+01:37.040 --> 01:39.640
+When you allow your code base to start
+
+01:39.640 --> 01:43.520
+messing with that source of truth in different places,
+
+01:43.520 --> 01:45.360
+all of a sudden it becomes a lot trickier to
+
+01:45.360 --> 01:47.800
+figure out why and when something happened.
+
+01:47.800 --> 01:49.640
+Whereas if you follow this pattern of
+
+01:49.640 --> 01:51.640
+emitting for children to parent,
+
+01:51.640 --> 01:54.200
+you'll always know that if in the future the user has
+
+01:54.200 --> 01:57.120
+a bug where this list, for example, is broken,
+
+01:57.120 --> 01:59.120
+you'll know that basically you probably should be looking at
+
+01:59.120 --> 02:03.320
+the parent and basically you'll probably be able to solve it just off that alone.
+
+02:03.320 --> 02:05.640
+But if you allow the mutation of props elsewhere,
+
+02:05.640 --> 02:07.640
+all of a sudden that guarantee becomes
+
+02:07.640 --> 02:10.480
+far less likely is because you just don't know what's happening.
+
+02:10.480 --> 02:13.720
+So I always err on the side of keeping it easy when it comes
+
+02:13.720 --> 02:16.960
+to maintenance and debugging.
+
+02:17.720 --> 02:21.520
+So let's take a look at this exercise, shall we?
+
+02:21.520 --> 02:29.200
+Okay. That's not what I wanted at all.
+
+02:29.200 --> 02:34.360
+Okay, perfect. So what I'm going to do is I'm going to open up
+
+02:34.360 --> 02:36.080
+my ATLA forum.
+
+02:36.080 --> 02:38.120
+Actually, let me just, good.
+
+02:38.120 --> 02:45.120
+So ATLA forum, great.
+
+02:45.280 --> 02:47.720
+Fresh, cool. Okay.
+
+02:47.720 --> 02:54.960
+So a good component to illustrate this is going to be the favoriting button.
+
+02:54.960 --> 02:56.760
+Because we can see here that inside of
+
+02:56.760 --> 03:00.320
+App.View we're actually managing our favorite lists here at the very top.
+
+03:00.320 --> 03:03.960
+So let's go ahead and create that favorite list component.
+
+03:03.960 --> 03:06.760
+So favorite list, great.
+
+03:06.760 --> 03:10.240
+Actually, you know what? I think favorite characters is actually a bit more accurate.
+
+03:10.240 --> 03:12.800
+Favorite characters, great.
+
+03:13.480 --> 03:17.120
+And then I realized though, actually, wait, I misspoke.
+
+03:17.120 --> 03:18.640
+Rather than the favorite characters,
+
+03:18.640 --> 03:21.200
+we actually want to create individual character cards.
+
+03:21.200 --> 03:22.400
+That's what we want.
+
+03:22.400 --> 03:24.480
+So let me rename this now to character card.
+
+03:26.560 --> 03:32.040
+And so what we have here now, what I did earlier in case when people see that,
+
+03:32.040 --> 03:35.200
+this is just a VS code extension.
+
+03:35.200 --> 03:38.520
+So, or not an extension, it's one of the short hands.
+
+03:38.520 --> 03:40.440
+So it's a short code that I customized so that when I type
+
+03:40.440 --> 03:42.120
+sfc for a single file component,
+
+03:42.120 --> 03:44.480
+it would automatically spit out my building blocks for me.
+
+03:46.120 --> 03:52.280
+Okay. So what we have here is we have this html that we basically want to refactor.
+
+03:52.280 --> 03:57.360
+Which is what we're looping through right here.
+
+03:57.360 --> 04:03.640
+Okay. So I'm going to go ahead and actually just copy this as a,
+
+04:03.640 --> 04:04.880
+should I do it as a list item?
+
+04:04.880 --> 04:05.960
+Let's just do it as a div.
+
+04:05.960 --> 04:09.480
+Actually, this would be cleaner so that it doesn't have to be in the list.
+
+04:09.520 --> 04:13.600
+So we'll have a div, and the div will contain all this stuff.
+
+04:15.040 --> 04:17.600
+Now, we need to move some functionality over though.
+
+04:17.600 --> 04:18.600
+So here's our placeholder.
+
+04:20.000 --> 04:22.080
+We need to move the favorite character functionality.
+
+04:27.960 --> 04:33.320
+Okay. And I think we need a prop,
+
+04:33.320 --> 04:35.880
+because we need to actually know what character we're rendering.
+
+04:35.880 --> 04:39.800
+So the character, this case, again, would be a type object.
+
+04:39.800 --> 04:42.280
+And so I'm not going to actually break down the individual properties.
+
+04:43.360 --> 04:46.080
+And then that way we can get character.name.
+
+04:46.080 --> 04:49.360
+And then for now, let's not worry about this function because this will break.
+
+04:50.400 --> 04:52.440
+And then that's it.
+
+04:53.600 --> 04:56.840
+Okay. So to prove that this works, we're going to go ahead and
+
+04:56.840 --> 04:59.560
+import our character card.
+
+05:02.920 --> 05:04.240
+And then drop that here.
+
+05:06.520 --> 05:08.320
+And then we're going to use it inside of our placeholder.
+
+05:12.160 --> 05:14.520
+And we'll pass in the character as a prop.
+
+05:16.280 --> 05:18.240
+So this is reusing all the stuff that we did earlier.
+
+05:19.400 --> 05:21.600
+Okay. Everything is appearing as expected.
+
+05:22.840 --> 05:25.760
+Now, the difference here, though, is that this favorite character functionality
+
+05:25.760 --> 05:29.120
+doesn't work because, guess what, this card does not care about.
+
+05:29.120 --> 05:33.280
+Like, its responsibility is not to track the favorite list.
+
+05:33.280 --> 05:35.280
+So to the point of what I was talking about earlier,
+
+05:36.200 --> 05:40.320
+you can theoretically pass favorite list as a prop to this component.
+
+05:40.320 --> 05:43.720
+And then you could have theoretically the component update favorite list.
+
+05:43.720 --> 05:47.240
+But again, that starts to convolute the scope of the data and how it's being owned.
+
+05:47.240 --> 05:48.480
+That's not its goal.
+
+05:48.480 --> 05:52.520
+Its goal is to say, hey, I'm going to show a card of my characters.
+
+05:52.520 --> 05:55.360
+And by the way, when someone clicks the favorite event, I will go ahead and
+
+05:55.360 --> 05:58.720
+tell the parent of whatever contacts I'm in that the user decided they wanted to
+
+05:58.720 --> 05:59.800
+favorite this card.
+
+05:59.800 --> 06:02.040
+Whatever you do with that, that's up to you.
+
+06:02.040 --> 06:06.600
+So what we've got to do here is we'll define our emits call.
+
+06:06.600 --> 06:08.480
+And we'll just call it, we'll keep it simple, actually,
+
+06:08.480 --> 06:11.560
+because emits our scope to the specific component.
+
+06:11.560 --> 06:13.000
+We'll just call it a favorite event.
+
+06:13.000 --> 06:13.680
+That's just what's happening.
+
+06:15.320 --> 06:18.520
+So now that we have the favorite event, we can say, okay, well,
+
+06:19.600 --> 06:22.480
+when this happens, this dot emit.
+
+06:22.480 --> 06:25.200
+This dot emit, what event are we emitting?
+
+06:25.200 --> 06:26.480
+It's called favorite.
+
+06:26.480 --> 06:31.600
+But more importantly, actually, what we can do is we can actually
+
+06:32.160 --> 06:37.160
+pass in an argument to our emitted function, which is this dot character.
+
+06:39.960 --> 06:41.240
+So we can save that.
+
+06:41.240 --> 06:46.760
+And then this time now, we can click, favorite character, okay, great.
+
+06:49.760 --> 06:53.520
+Now that we have this, we can come over here and then we can say, ah, yes.
+
+06:53.520 --> 06:56.680
+So on the character card, we have this favorite event that's going to happen.
+
+06:56.680 --> 07:01.400
+And when it does, we can say add, let's see, add favorite character.
+
+07:03.040 --> 07:08.360
+And so if we take a look now, let's update this method.
+
+07:08.360 --> 07:10.240
+It's called add favorite character.
+
+07:10.240 --> 07:13.320
+And what you end up getting, because you're passing it as an argument,
+
+07:13.320 --> 07:14.120
+is a payload.
+
+07:14.120 --> 07:15.880
+Basically, you can rename it, whatever you want.
+
+07:15.880 --> 07:19.680
+But generally speaking, we call it a payload because this is coming from the event.
+
+07:19.680 --> 07:21.960
+So again, the way this is connected to show this side by side.
+
+07:23.400 --> 07:26.960
+This dot emit emits this as the event name.
+
+07:26.960 --> 07:30.520
+And this here, the second argument, will basically be the payload.
+
+07:30.520 --> 07:34.040
+So it's generally frowned upon, for example, to just keep adding to this.
+
+07:34.040 --> 07:38.880
+If you're like, oh, I want to add a custom ID, like 123, you wouldn't do this.
+
+07:38.880 --> 07:41.320
+You would actually instead just pass a single object.
+
+07:41.320 --> 07:47.560
+That's like, this is the character and this is the ID.
+
+07:47.560 --> 07:49.800
+So payloads are typically done in a single argument.
+
+07:49.800 --> 07:51.920
+Try not to spread them out beyond that.
+
+07:51.920 --> 07:55.640
+And like I said, if you need more nesting, then by all means use an object.
+
+07:55.640 --> 07:57.080
+But we don't need to do that.
+
+07:57.080 --> 08:00.240
+So let's go ahead and actually just emit the character directly.
+
+08:00.240 --> 08:02.640
+And then with that payload, we can actually just push that over.
+
+08:04.160 --> 08:06.480
+So let's go ahead and verify that this works.
+
+08:06.480 --> 08:10.400
+Refresh, boom, anezuko, and bam.
+
+08:12.840 --> 08:13.520
+And there you have it.
+
+08:13.520 --> 08:17.360
+That is a way that you can implement the props in a way that lets you render
+
+08:17.360 --> 08:18.600
+exactly what you need.
+
+08:18.600 --> 08:22.760
+But then when it's time to actually do something, the child can tell the parent
+
+08:22.760 --> 08:26.120
+that, hey, there's this thing that I'm requesting, please do what you will with it.
+
+08:26.120 --> 08:32.240
+Does anyone have any questions regarding what the solution that we just went over?
+
+08:36.560 --> 08:38.880
+If you wanted to have your favorite, be a separate,
+
+08:38.880 --> 08:43.400
+like a favorite module, and so if you want to call that a function in another
+
+08:43.400 --> 08:48.920
+module, a child module, from the template code there or something.
+
+08:48.920 --> 08:51.240
+So let me make sure I understand the question correctly.
+
+08:51.240 --> 08:56.040
+So let's say in the event you're mentioning that the favorite functionality
+
+08:56.040 --> 08:58.240
+is something that's shared amongst different UI components.
+
+08:58.240 --> 09:00.160
+How would we share that amongst the different components?
+
+09:01.280 --> 09:04.680
+Yeah, or I mean specifically you have a button with an ad click.
+
+09:04.680 --> 09:05.760
+This is favorite character.
+
+09:05.760 --> 09:08.080
+And let's say that function is actually in a different module.
+
+09:09.680 --> 09:13.360
+Okay, so with this button you're saying that this is in a different module.
+
+09:13.360 --> 09:14.320
+Yeah.
+
+09:14.320 --> 09:21.520
+So okay, so you're saying that in this example you'd have like,
+
+09:21.520 --> 09:32.440
+let's say we'd have a utilities folder that has a favorite.js, for example.
+
+09:32.440 --> 09:36.760
+And so you're kind of referring to where there's like a function that like will.
+
+09:37.960 --> 09:40.840
+Like I was thinking of a component that displays the favorites and
+
+09:40.840 --> 09:43.600
+then have ad favorite function also inside there.
+
+09:43.600 --> 09:46.720
+I see, okay, got it.
+
+09:46.720 --> 09:51.360
+So the scope here is you're saying that having the favorite list scoped with
+
+09:51.360 --> 09:55.560
+the component directly, so actually, so not this scenario.
+
+09:57.960 --> 10:01.240
+The idea here actually being that instead,
+
+10:01.240 --> 10:07.400
+let's go and create that favorite list, characters, dot view.
+
+10:10.000 --> 10:12.240
+And so in this case, are you referring to the fact that like,
+
+10:12.240 --> 10:15.520
+we would be rendering out the list here then?
+
+10:15.520 --> 10:16.960
+Yeah.
+
+10:16.960 --> 10:19.560
+So got it, so here, okay.
+
+10:20.560 --> 10:26.000
+So inside of here, we're doing another refactoring here.
+
+10:26.000 --> 10:29.560
+We have our data being the actual favorite list that's being tracked here.
+
+10:30.680 --> 10:34.000
+And then this is where we're actually rendering the favorite list,
+
+10:34.000 --> 10:36.880
+which is going to be this block right here.
+
+10:36.880 --> 10:40.240
+And apparently we have an vls condition, so that is that whole thing.
+
+10:41.320 --> 10:42.960
+And then drop that in here.
+
+10:44.840 --> 10:47.280
+Okay, so that should be good.
+
+10:47.280 --> 10:48.520
+Favorite list is good.
+
+10:48.560 --> 10:51.240
+That's good, okay.
+
+10:51.240 --> 10:54.640
+Now, the question here is we need to import favorite characters.
+
+10:55.640 --> 11:00.680
+So let's do that real quick, favorite characters, and drop that as well.
+
+11:02.200 --> 11:05.560
+And then once we have that, you said that you want to render it here.
+
+11:08.320 --> 11:12.080
+Favorite characters, like this.
+
+11:12.080 --> 11:13.200
+Okay.
+
+11:13.200 --> 11:17.200
+And I guess you tell me where you'd put the function to add favorites, but
+
+11:17.280 --> 11:19.080
+the variable is inside that module.
+
+11:19.080 --> 11:19.840
+Correct.
+
+11:19.840 --> 11:21.760
+So how would you go about it?
+
+11:21.760 --> 11:25.760
+Okay, and then variables in here.
+
+11:27.120 --> 11:32.320
+And I think something's missing, though, it must be delta resolve component.
+
+11:32.320 --> 11:33.560
+Because I think I misspelled it.
+
+11:35.240 --> 11:35.760
+What'd you say?
+
+11:35.760 --> 11:36.960
+Favorite characters.
+
+11:36.960 --> 11:40.360
+See, the one off, the S gets me.
+
+11:40.360 --> 11:44.160
+This is why I generally do list, anyhow.
+
+11:44.160 --> 11:45.360
+Okay, no favorite characters yet.
+
+11:45.360 --> 11:49.920
+Okay, so are you saying that in this particular context,
+
+11:49.920 --> 11:54.440
+you're saying we clearly have the favorite functionality inside of the card here.
+
+11:54.440 --> 11:58.040
+And you're saying that what if we had another section that also had a favorite
+
+11:58.040 --> 12:00.240
+button to add characters?
+
+12:00.240 --> 12:02.680
+I guess I'm just, just as is.
+
+12:02.680 --> 12:03.160
+Yep.
+
+12:03.160 --> 12:06.120
+How would you get the data over into the favorite list variable,
+
+12:06.120 --> 12:09.280
+which is inside the favorite characters component?
+
+12:09.280 --> 12:11.760
+Yeah, this is where it gets tricky.
+
+12:11.760 --> 12:14.200
+So at least with the tools that we have now,
+
+12:14.200 --> 12:18.800
+you would basically have to do, okay, so you've omitted this.
+
+12:21.360 --> 12:22.280
+You would omit this.
+
+12:25.520 --> 12:27.760
+I'm not sure it would actually make sense, because so
+
+12:27.760 --> 12:30.480
+the thing about we have to remember when it comes to omits and props is that it's
+
+12:30.480 --> 12:32.840
+a top down relationship.
+
+12:32.840 --> 12:36.160
+And the problem we're trying to solve here is a sibling relationship,
+
+12:36.160 --> 12:40.840
+because character card contains data that Benner statistics,
+
+12:40.840 --> 12:43.000
+or no, not Benner statistics.
+
+12:43.000 --> 12:46.280
+Favorite characters and character card are trying to talk to each other basically
+
+12:46.280 --> 12:47.440
+at this point.
+
+12:47.440 --> 12:50.680
+And so usually what happens at that point is where you want some sort of
+
+12:50.680 --> 12:55.800
+alternative state management solution where you have like basically as a preview
+
+12:55.800 --> 12:59.680
+is you would have stores and we probably would have like a favorite store.
+
+13:00.800 --> 13:04.000
+And the favorite store becomes a file that becomes basically a JavaScript module
+
+13:04.000 --> 13:06.600
+that's shared between the two components that care about that.
+
+13:06.600 --> 13:09.240
+And that way the updating becomes cleaner.
+
+13:09.240 --> 13:11.800
+And in fact, what's kind of interesting though is that once you start doing these
+
+13:11.800 --> 13:15.200
+stores, sometimes the omit goes away actually, because now you're actually not
+
+13:15.200 --> 13:18.120
+thinking about emitting to a parent, you're just updating the store.
+
+13:19.240 --> 13:22.560
+And so that can do a lot in terms of like cleaning up code and that kind of stuff.
+
+13:22.560 --> 13:25.240
+But I wanted to at least start with the fundamentals of like if you're
+
+13:25.240 --> 13:28.840
+dealing with two components, parent child, this is like kind of like best practice
+
+13:28.840 --> 13:30.160
+for how we approach things.
+
+13:30.160 --> 13:32.520
+But then with tomorrow, once we talk about store module and
+
+13:32.520 --> 13:34.680
+that kind of stuff, it's going to be all sorts of fun, so.
+
+13:34.680 --> 13:41.120
+The situation you have here, this is where that generic list component could be useful.
+
+13:41.120 --> 13:41.640
+Yep.
+
+13:41.640 --> 13:45.360
+Where you're passing as a prop the list of characters into one list,
+
+13:45.360 --> 13:47.080
+the list of favorites into the others.
+
+13:47.080 --> 13:50.160
+And then using functions to update those separate lists.
+
+13:50.160 --> 13:50.880
+Exactly.
+
+13:50.880 --> 13:54.040
+Yep. Great.
+

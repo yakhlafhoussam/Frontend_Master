@@ -1,0 +1,410 @@
+WEBVTT
+
+00:00.000 --> 00:04.000
+So now that we have this, we have this other thing called emits.
+
+00:04.000 --> 00:08.000
+And so to kind of basically provide a quick overview for those
+
+00:08.000 --> 00:10.000
+who might not have used it in view three,
+
+00:10.000 --> 00:12.000
+if you remember inside of your code,
+
+00:12.000 --> 00:14.000
+whenever you wanted to emit an event within view,
+
+00:14.000 --> 00:16.000
+you would actually use dollar sign emit.
+
+00:16.000 --> 00:18.000
+So let's say this click handler right here,
+
+00:18.000 --> 00:21.000
+you say emit, and then some sort of event.
+
+00:21.000 --> 00:23.000
+So let's be like test event.
+
+00:23.000 --> 00:25.000
+And so where am I on the restaurant card?
+
+00:25.000 --> 00:28.000
+So if we go over to our app,
+
+00:28.000 --> 00:31.000
+and go to our restaurant, yep,
+
+00:31.000 --> 00:36.000
+we'll see here in something, okay, we're good.
+
+00:36.000 --> 00:39.000
+So if we go inside of the view dev tools,
+
+00:39.000 --> 00:42.000
+and then we pull this up a little bit,
+
+00:42.000 --> 00:46.000
+wait, restaurant card, yes, okay, yeah, I'm in the right place.
+
+00:46.000 --> 00:48.000
+And then let's go to timeline.
+
+00:48.000 --> 00:50.000
+You'll see that when I click delete,
+
+00:50.000 --> 00:53.000
+it's actually showing me here that,
+
+00:53.000 --> 00:56.000
+here it is, here's the custom event.
+
+00:56.000 --> 01:00.000
+Here you go, it's fired off this event called test event.
+
+01:00.000 --> 01:03.000
+And so this is actually for those who haven't used it before,
+
+01:03.000 --> 01:06.000
+this follows basically basic job-ship conventions, right?
+
+01:06.000 --> 01:08.000
+Because you have an event that's triggered somewhere,
+
+01:08.000 --> 01:10.000
+it bubbles up, and then you want to do something with it.
+
+01:10.000 --> 01:14.000
+So that's how currently we're working with our cards right now,
+
+01:14.000 --> 01:18.000
+is that it's emitting an event like delete restaurant,
+
+01:18.000 --> 01:21.000
+for example, and then the parent who has the data
+
+01:21.000 --> 01:25.000
+would then go ahead and perform the necessary tasks to do that.
+
+01:26.000 --> 01:30.000
+So the thing is, especially in view two,
+
+01:30.000 --> 01:33.000
+this was actually all that you basically did.
+
+01:33.000 --> 01:36.000
+And what happened was components got a little bit complex,
+
+01:36.000 --> 01:39.000
+because you had this emitting events here and there,
+
+01:39.000 --> 01:40.000
+is kind of hard to track.
+
+01:40.000 --> 01:42.000
+And so in view three, we introduce an option,
+
+01:42.000 --> 01:45.000
+similar to props, where you can define the kind of events
+
+01:45.000 --> 01:47.000
+that the component is emitting.
+
+01:47.000 --> 01:50.000
+And so typically what we saw before is that it's just the fine
+
+01:50.000 --> 01:54.000
+as an array with the list of the names of the events.
+
+01:54.000 --> 01:58.000
+But with the compiler macro and TypeScript,
+
+01:58.000 --> 02:00.000
+I do think it gets a lot cleaner.
+
+02:00.000 --> 02:04.000
+So we have here, as we can say, defined emits,
+
+02:04.000 --> 02:08.000
+and then inside of defined emits, it can take an array,
+
+02:08.000 --> 02:11.000
+it can take an array just like this,
+
+02:11.000 --> 02:15.000
+or rather than having just an array like this,
+
+02:15.000 --> 02:19.000
+I'm going to comment this out so that we have this for comparison.
+
+02:19.000 --> 02:21.000
+We're actually going to give our events a tight,
+
+02:21.000 --> 02:23.000
+and this is actually super helpful, particularly with events.
+
+02:24.000 --> 02:27.000
+Because what we end up getting is the ability to say,
+
+02:27.000 --> 02:30.000
+okay, so we have an event that comes in,
+
+02:30.000 --> 02:32.000
+and we can say it's just a generic event,
+
+02:32.000 --> 02:34.000
+but you could also be a specific, you could be like,
+
+02:34.000 --> 02:36.000
+oh, this is a keyboard event.
+
+02:36.000 --> 02:38.000
+And that keyboard event can then,
+
+02:38.000 --> 02:40.000
+we'll do more of the event handles later,
+
+02:40.000 --> 02:42.000
+but this is pretty nice.
+
+02:42.000 --> 02:45.000
+So for now, we know that this event is going to be called
+
+02:45.000 --> 02:47.000
+Delete Restaurant, just a double check,
+
+02:47.000 --> 02:49.000
+yep, so you have your E here,
+
+02:49.000 --> 02:51.000
+you pass in the name of the event that's going to happen.
+
+02:51.000 --> 02:54.000
+And then after that, you're going to pass in whatever payload
+
+02:54.000 --> 02:55.000
+that it's expecting,
+
+02:55.000 --> 02:57.000
+and then whether or not it's supposed to return anything,
+
+02:57.000 --> 02:59.000
+and it's typically not, so it's void.
+
+02:59.000 --> 03:02.000
+So in that particular case, we have E here,
+
+03:02.000 --> 03:04.000
+we know that it's going to have a payload,
+
+03:04.000 --> 03:06.000
+and the payload is going to be,
+
+03:06.000 --> 03:09.000
+two, should be restaurant,
+
+03:09.000 --> 03:13.000
+so we'll type that, just like this.
+
+03:13.000 --> 03:15.000
+Okay, there we go.
+
+03:15.000 --> 03:17.000
+So what's nice about this now,
+
+03:17.000 --> 03:20.000
+is that when we want to actually use this, right?
+
+03:20.000 --> 03:23.000
+Because before all you could do is define the name of it,
+
+03:23.000 --> 03:25.000
+so now when we call the emits,
+
+03:25.000 --> 03:28.000
+something pretty cool happens.
+
+03:28.000 --> 03:30.000
+When we emit the thing,
+
+03:30.000 --> 03:33.000
+if I hit command space and hit up,
+
+03:33.000 --> 03:36.000
+you actually notice that it actually lists the event names
+
+03:36.000 --> 03:38.000
+that we've defined in the autocomplete.
+
+03:38.000 --> 03:40.000
+So even though it's a string and not like a constant,
+
+03:40.000 --> 03:41.000
+it actually knows that, hey,
+
+03:41.000 --> 03:43.000
+I actually should look for the string,
+
+03:43.000 --> 03:45.000
+and so not only can I do that,
+
+03:45.000 --> 03:46.000
+then I can even say, okay,
+
+03:46.000 --> 03:48.000
+well, if I did like one, two, three, for example,
+
+03:48.000 --> 03:50.000
+it'll say, hey, by the way,
+
+03:50.000 --> 03:54.000
+this particular event is looking for a restaurant.
+
+03:54.000 --> 03:56.000
+And this is pretty big because as we know,
+
+03:56.000 --> 03:58.000
+events can be really clunky to manage in JavaScript,
+
+03:58.000 --> 04:00.000
+especially because there's different types,
+
+04:00.000 --> 04:02.000
+and we expect it to do different things at different times.
+
+04:02.000 --> 04:05.000
+So being able to type your event and be very specific about
+
+04:05.000 --> 04:07.000
+what kind of thing we're expecting, that's huge.
+
+04:07.000 --> 04:09.000
+So now all we gotta do then,
+
+04:09.000 --> 04:13.000
+is basically we want the props dot restaurant.
+
+04:13.000 --> 04:15.000
+And that's it.
+
+04:15.000 --> 04:17.000
+And so once with all that autocomplete,
+
+04:17.000 --> 04:20.000
+you get that because you're typing your events,
+
+04:20.000 --> 04:23.000
+which, again, is something in my opinion you want to be doing,
+
+04:23.000 --> 04:26.000
+because when you don't do something like this,
+
+04:26.000 --> 04:29.000
+and myths get really, really tricky to track,
+
+04:29.000 --> 04:31.000
+and much less trying to figure out what they do.
+
+04:31.000 --> 04:33.000
+You know, almost seems like every time you have
+
+04:33.000 --> 04:35.000
+the debug event that's being admitted,
+
+04:35.000 --> 04:37.000
+you have to start over from figuring out like the stack trace of why,
+
+04:37.000 --> 04:38.000
+it's a certain way.
+
+04:38.000 --> 04:42.000
+Whereas here, we are being so explicit that a delete restaurant event
+
+04:42.000 --> 04:46.000
+will take a payload that is of type restaurant.
+
+04:46.000 --> 04:47.000
+That's it.
+
+04:47.000 --> 04:51.000
+And that, I think, does wonders for us when it comes to,
+
+04:51.000 --> 04:56.000
+you know, actually scaling our code.
+
+04:56.000 --> 05:00.000
+So now that we've come to the end of that,
+
+05:00.000 --> 05:04.000
+does anyone have any questions about what we just covered?
+
+05:04.000 --> 05:05.000
+Yes.
+
+05:05.000 --> 05:10.000
+Why don't we have to import to find a myths and to find props?
+
+05:10.000 --> 05:12.000
+That is a great question.
+
+05:12.000 --> 05:15.000
+So one of the things that, I feel like the JavaScript community
+
+05:15.000 --> 05:17.000
+kind of goes back and forth a little bit on this with,
+
+05:17.000 --> 05:20.000
+is that they try to ship away any global imports
+
+05:20.000 --> 05:23.000
+that you might need just to make it one
+
+05:23.000 --> 05:25.000
+less thing that you have to import.
+
+05:25.000 --> 05:26.000
+And because view knows,
+
+05:26.000 --> 05:28.000
+for a fact that your scripts set up,
+
+05:28.000 --> 05:31.000
+these are kind of the compiler macros that I was talking about,
+
+05:31.000 --> 05:33.000
+where there are optimization done in advance.
+
+05:33.000 --> 05:36.000
+However, there really is nothing stopping you from saying
+
+05:36.000 --> 05:38.000
+to find props to find myths,
+
+05:38.000 --> 05:42.000
+because I can totally see the value in being explicit.
+
+05:42.000 --> 05:44.000
+And it's not going to yell at you.
+
+05:44.000 --> 05:46.000
+But on the other hand, if you're one of those people that want to
+
+05:46.000 --> 05:48.000
+ship away as much as humanly possible,
+
+05:48.000 --> 05:49.000
+that is there for you.
+
+05:49.000 --> 05:51.000
+But I will go ahead and leave this here for records,
+
+05:51.000 --> 05:52.000
+record, keeping say.
+
+05:52.000 --> 05:57.000
+And then actually I'll just fuse these together.
+
+05:57.000 --> 05:58.000
+There we go.
+

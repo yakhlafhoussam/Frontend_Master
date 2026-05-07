@@ -1,0 +1,293 @@
+WEBVTT
+
+00:00.000 --> 00:03.640
+We're going to take a bit of a mental break because we've
+
+00:03.640 --> 00:05.360
+been doing a lot of JavaScripts,
+
+00:05.360 --> 00:07.240
+doing a lot of the heavy lifting stuff.
+
+00:07.240 --> 00:09.860
+Let's talk about styling your app because let's face it,
+
+00:09.860 --> 00:10.960
+as web developers,
+
+00:10.960 --> 00:12.440
+styling your app is a real thing.
+
+00:12.440 --> 00:14.800
+Managing CSS, a lot of us might not love it.
+
+00:14.800 --> 00:15.880
+I happen to love CSS,
+
+00:15.880 --> 00:18.320
+but I wanted to show you what's possible with
+
+00:18.320 --> 00:20.280
+view so that those ideas can get
+
+00:20.280 --> 00:22.800
+flowing when it comes to time to style the app.
+
+00:22.800 --> 00:26.960
+So I'm going to go ahead and go back to the playground,
+
+00:26.960 --> 00:30.800
+run dev, and we good.
+
+00:30.800 --> 00:34.080
+Okay. Let's take a look at our base counter
+
+00:34.080 --> 00:36.560
+since this is what we have showing up on the screen right now.
+
+00:36.560 --> 00:41.040
+Okay. So when we've talked a lot about templates,
+
+00:41.040 --> 00:43.560
+we talked a lot about script, let's talk about style.
+
+00:43.560 --> 00:44.720
+So actually, I take that back.
+
+00:44.720 --> 00:46.680
+I'm going back to playground because this is
+
+00:46.680 --> 00:48.040
+a simpler file to read right now.
+
+00:48.040 --> 00:50.640
+Base counter has a lot of stuff going on.
+
+00:50.640 --> 00:52.760
+So the style block here,
+
+00:52.760 --> 00:54.120
+what exactly is going on here?
+
+00:54.120 --> 00:56.080
+Well, let's start by doing something pretty simple.
+
+00:56.080 --> 00:59.400
+Let's go ahead and just tag the entire page and just give it
+
+00:59.400 --> 01:01.840
+a background color of say,
+
+01:01.840 --> 01:05.200
+let's do the background color,
+
+01:05.200 --> 01:10.760
+Paya whip, and I can't spell.
+
+01:10.760 --> 01:12.520
+All right. That should do it.
+
+01:12.520 --> 01:14.280
+Okay. This is great.
+
+01:14.280 --> 01:16.480
+Now, what's going on here actually?
+
+01:16.480 --> 01:20.520
+What's going on is that when you just have a standard style tag,
+
+01:20.520 --> 01:22.040
+what view is doing is injecting
+
+01:22.040 --> 01:24.920
+the style basically across the entire app.
+
+01:24.920 --> 01:27.400
+So in other words, you see these buttons right here.
+
+01:27.400 --> 01:31.880
+If I go ahead and did button border red,
+
+01:31.880 --> 01:34.920
+or let's see 10px solid red like that,
+
+01:34.920 --> 01:37.920
+you'll see that it impacts everything.
+
+01:37.920 --> 01:39.640
+You might be thinking, oh,
+
+01:39.640 --> 01:41.040
+is it because it's app.view?
+
+01:41.040 --> 01:44.680
+It's no because the styles are being injected globally.
+
+01:44.680 --> 01:47.000
+So any component that comes on
+
+01:47.000 --> 01:50.920
+this page is going to get impacted by this.
+
+01:50.920 --> 01:53.920
+So this is a double-edged sword like anything else.
+
+01:54.120 --> 01:58.160
+There are times that you want CSS to cascade and do its thing.
+
+01:58.160 --> 01:59.760
+A lot of times actually though,
+
+01:59.760 --> 02:00.920
+you don't want it to do its thing.
+
+02:00.920 --> 02:03.000
+You want your styles to be encapsulated
+
+02:03.000 --> 02:04.720
+to the components you're using.
+
+02:04.720 --> 02:06.040
+So for instance,
+
+02:06.040 --> 02:09.240
+if we're looking at the user card in this case,
+
+02:09.240 --> 02:14.880
+you might want the buttons here to have a very specific style.
+
+02:14.880 --> 02:16.920
+In this case, let's say we wanted the buttons to be
+
+02:16.920 --> 02:19.640
+border 10px solid green.
+
+02:19.640 --> 02:22.840
+You'll notice that if we just use
+
+02:22.840 --> 02:25.840
+standard tile tag as it happens to be,
+
+02:25.840 --> 02:27.600
+it'll happen to override.
+
+02:27.600 --> 02:32.120
+While you might try to think of a way to reason why this is happening,
+
+02:32.120 --> 02:34.840
+trust me, when you have hundreds and thousands of components
+
+02:34.840 --> 02:36.280
+injecting global styles,
+
+02:36.280 --> 02:38.240
+you do not want to debug that.
+
+02:38.240 --> 02:43.280
+So this is like the first style of styling your app,
+
+02:43.280 --> 02:44.720
+which is you can just drop CSS,
+
+02:44.720 --> 02:47.040
+it will render everywhere.
+
+02:47.040 --> 02:51.520
+The one that's the most popular is something called scope styles.
+
+02:51.720 --> 02:54.000
+If you've never heard of scope styles before,
+
+02:54.000 --> 02:56.000
+there are basically a way to do exactly as
+
+02:56.000 --> 03:00.440
+the naming convention sounds to scope your styles to a specific area.
+
+03:00.440 --> 03:02.400
+So what is actually happening underneath the hood?
+
+03:02.400 --> 03:03.920
+Because I talked a lot about
+
+03:03.920 --> 03:07.260
+view building on what already exists in the ecosystem.
+
+03:07.260 --> 03:10.960
+Well, scope CSS, what it's actually doing if we take a look here,
+
+03:10.960 --> 03:12.760
+is it's actually taking a look at
+
+03:12.760 --> 03:18.720
+the elements that are relevant to this particular component,
+
+03:19.360 --> 03:22.320
+and it's appending a unique data attribute.
+
+03:22.320 --> 03:25.880
+So you see here this data.v.b600,
+
+03:25.880 --> 03:30.240
+that is what's basically being appended to the HTML.
+
+03:30.240 --> 03:34.560
+Then what's cool about this is if you look at the console,
+
+03:34.560 --> 03:38.080
+where's my CSS? Oh, it's down here, I hit it.
+
+03:38.080 --> 03:39.320
+Look at this style.
+
+03:39.320 --> 03:43.160
+It's button using the attribute selector to then go ahead and apply
+
+03:43.160 --> 03:46.040
+those styles specifically within that context.
+
+03:46.040 --> 03:47.920
+That actually works pretty well,
+
+03:48.000 --> 03:49.720
+assuming that the rest of your global CSS
+
+03:49.720 --> 03:51.920
+isn't written in a highly specific way.
+
+03:51.920 --> 03:53.280
+This actually works really great,
+
+03:53.280 --> 03:56.280
+and a lot of people have a lot of success using scope styles.
+
+03:56.280 --> 04:01.080
+But scope styles isn't perfect because if we went ahead,
+
+04:01.080 --> 04:04.960
+and I don't know, there's something a little bit more specific like this.
+
+04:04.960 --> 04:08.820
+I think that didn't quite do it. It's fine.
+
+04:08.820 --> 04:11.520
+I'll just do this. I'll just go the lazy route.
+
+04:11.520 --> 04:14.800
+If someone somewhere in your Enterprise app decided to bang
+
+04:14.800 --> 04:19.280
+port in the button, scope styles are not going to save you, by any means.
+
+04:19.280 --> 04:21.880
+You're still going to have to be stuck with the cascade effect.
+
+04:21.880 --> 04:25.560
+There's something to be said about being disciplined about writing your CSS,
+
+04:25.560 --> 04:27.400
+so that could be something your team does.
+
+04:27.400 --> 04:30.200
+But what if there was a better way?
+

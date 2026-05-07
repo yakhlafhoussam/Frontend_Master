@@ -1,0 +1,350 @@
+WEBVTT
+
+00:00.000 --> 00:01.760
+Thanks everyone for hanging out today.
+
+00:01.760 --> 00:05.160
+I know it's been a long day, but hopefully you found this useful.
+
+00:05.160 --> 00:08.560
+As far as next steps go, there's a whole world
+
+00:08.560 --> 00:11.600
+of the types throughout there that we haven't even began to touch.
+
+00:11.600 --> 00:15.120
+Like I said, there are interfaces that you need to think about.
+
+00:15.120 --> 00:18.800
+There are generics and all these other things that you could do with TypeScript.
+
+00:18.800 --> 00:21.600
+But to be honest, my recommendation when it comes to TypeScript
+
+00:21.600 --> 00:23.920
+is similar to my advice when it comes to learning frameworks,
+
+00:23.920 --> 00:26.640
+which is, don't try to learn every single technique in the world
+
+00:26.640 --> 00:28.960
+in an attempt to like create the perfect code.
+
+00:28.960 --> 00:31.040
+When you have a specific problem that you have,
+
+00:31.040 --> 00:33.040
+that's when you reach out and find a solution for it.
+
+00:33.040 --> 00:36.720
+So a great example of that is when I realized that we had a constant
+
+00:36.720 --> 00:40.560
+that was keeping a source of truth for like our diet list and that kind of stuff.
+
+00:40.560 --> 00:43.680
+And then I realized that the TypeScript was replicating that in the types.
+
+00:43.680 --> 00:47.040
+This is when I went on to learn which admit it again.
+
+00:47.040 --> 00:49.920
+Autism tax, but it does solve a problem for me.
+
+00:49.920 --> 00:51.760
+And that's when I reached out for it.
+
+00:51.760 --> 00:55.360
+It's really tempting, I think, as developers to try to learn everything at once
+
+00:55.360 --> 00:57.120
+because you're afraid you'll miss something.
+
+00:57.120 --> 01:00.720
+But honestly, I think perfection is the enemy of progress
+
+01:00.720 --> 01:03.840
+and code purity can really get in the way of team progress
+
+01:03.840 --> 01:07.360
+when it comes to really what's most important, right?
+
+01:07.360 --> 01:12.240
+And so again, I can't stress this enough TypeScript like many tools.
+
+01:12.240 --> 01:13.520
+It's wonderful in many ways, right?
+
+01:13.520 --> 01:14.800
+We saw it do a lot of good things for us.
+
+01:14.800 --> 01:17.120
+But don't forget that we did that in a progressive way.
+
+01:17.120 --> 01:20.320
+That was like, let me help myself out by setting my intentions
+
+01:20.320 --> 01:23.920
+and then just like picking it out when it makes sense for me.
+
+01:23.920 --> 01:26.320
+But you'll notice there are sometimes I didn't define types either.
+
+01:26.320 --> 01:27.040
+And that's okay.
+
+01:27.040 --> 01:29.040
+That's actually a great way to just get your feet wet
+
+01:29.040 --> 01:30.800
+and figure out what makes the most sense.
+
+01:30.800 --> 01:33.440
+The moment you get caught up in abstraction, that kind of stuff,
+
+01:33.440 --> 01:36.720
+that's when it can just blow up in your face, then instead of shipping useful features,
+
+01:36.720 --> 01:38.640
+the customer is just sitting there fighting types.
+
+01:38.640 --> 01:40.560
+And I don't know, that's probably not the best use of our time, right?
+
+01:40.560 --> 01:42.560
+At the end of the day.
+
+01:42.560 --> 01:46.400
+Because if you think about it, this is what, this is what users see, right?
+
+01:46.400 --> 01:48.720
+When they get your code, they don't see beautiful types.
+
+01:48.720 --> 01:49.600
+They don't see all that stuff.
+
+01:49.600 --> 01:50.560
+That's for us.
+
+01:50.560 --> 01:53.120
+That's for us to help it maintain and to ship faster.
+
+01:53.200 --> 01:57.680
+But at the end of the day, it's all about the, it's all about the features that we ship.
+
+01:57.680 --> 02:03.520
+And I don't, you know, don't lose sight of that when working on code.
+
+02:03.520 --> 02:06.160
+With that, thank you, everyone, for joining me again today.
+
+02:06.880 --> 02:08.400
+It's been enough to loop blast.
+
+02:08.400 --> 02:09.200
+Oh, it's just realized.
+
+02:09.200 --> 02:10.800
+I have some questions I need to answer, right?
+
+02:10.800 --> 02:11.600
+Yep.
+
+02:11.600 --> 02:12.240
+Go for it.
+
+02:12.240 --> 02:17.360
+Is there a litmus test to know when it's better to migrate to TypeScript,
+
+02:17.360 --> 02:19.120
+for scaling an app for the future?
+
+02:19.120 --> 02:19.840
+Great.
+
+02:19.840 --> 02:20.320
+Okay, yes.
+
+02:20.320 --> 02:21.280
+Thank you for the reminder.
+
+02:21.280 --> 02:22.720
+Okay, so this is where Shiva.
+
+02:23.680 --> 02:26.320
+When it comes to really thinking about scalability of code,
+
+02:27.440 --> 02:29.920
+basically, in my opinion, when it comes to the scale of code,
+
+02:29.920 --> 02:33.520
+it's about the ability of people to, how quickly someone can understand your code base.
+
+02:34.080 --> 02:38.720
+And that really sets apart something that scalable and maintainable versus something that is,
+
+02:38.720 --> 02:43.200
+is, like, basically tricky to scale at an enterprise level.
+
+02:43.520 --> 02:47.120
+And so TypeScript is one of those things, once again, that if your team is ready to start
+
+02:47.200 --> 02:53.360
+bringing that in and incorporating it, and in a way that doesn't halt the progress of the tool chain,
+
+02:53.360 --> 02:55.600
+then by all means, it certainly is useful for that.
+
+02:55.600 --> 03:01.200
+But again, there's so many real world scenarios where people tried to migrate,
+
+03:01.200 --> 03:05.840
+and they found themselves stuck in bill chain tools, like errors constantly.
+
+03:05.840 --> 03:08.240
+And so rather than making progress, they're just fighting over it.
+
+03:08.240 --> 03:10.080
+And then no one wants to touch any of the files.
+
+03:10.080 --> 03:14.480
+And then at the end of the day, you might be using an enterprise grade, like TypeScript,
+
+03:14.480 --> 03:19.600
+but if it's, you know, it's hindering progress, not a good thing at all.
+
+03:19.600 --> 03:22.880
+So once again, it's all about comprehension and ease of maintenance,
+
+03:22.880 --> 03:25.920
+as long as you get your team to feel comfortable with that,
+
+03:25.920 --> 03:28.640
+even if you just use JS docs, you don't have to use TypeScript, that works too.
+
+03:29.520 --> 03:32.640
+So I think that's really the key thing to focus on, and not the TypeScript part.
+
+03:32.640 --> 03:36.720
+Which is better for bigger projects, options API, or composition API?
+
+03:36.720 --> 03:41.680
+Yeah. So when it comes to using V3, I do think that at the end of the day,
+
+03:41.680 --> 03:43.920
+it's really hard to escape from composition API.
+
+03:43.920 --> 03:46.320
+We'll see this a lot in the next three workshop upcoming,
+
+03:46.320 --> 03:48.480
+but because of how modular it is,
+
+03:48.480 --> 03:52.160
+composition API will be a part of basically every V3 project going forward.
+
+03:52.160 --> 03:55.920
+That said, that doesn't mean that what you're doing with options API is out of date either.
+
+03:55.920 --> 03:58.480
+Because there are sometimes some components benefit from that structure,
+
+03:58.480 --> 04:01.440
+that options API provides, and so it's one of those things where
+
+04:01.440 --> 04:04.160
+choose the tool that best suits the problem that you're trying to solve,
+
+04:04.160 --> 04:07.680
+rather than trying to be like, I'm only going to use this one method.
+
+04:07.680 --> 04:10.640
+So understanding the trade-offs and knowing your team's abilities,
+
+04:10.640 --> 04:12.640
+that will be the key to success for your project.
+
+04:12.640 --> 04:17.760
+Is it possible to export computed props or methods from the setup script into a test file?
+
+04:18.800 --> 04:22.560
+So obviously testing is a whole thing, but as far as I'm aware,
+
+04:22.560 --> 04:25.440
+everything that we've done as far as types and all this stuff should be able to be
+
+04:25.440 --> 04:29.680
+imported into a test file so that you can use that and make sure everything's type correctly.
+
+04:29.680 --> 04:33.440
+There's a couple key resources out there that I'll try to add to the resource list,
+
+04:33.440 --> 04:35.200
+but worth them in. Yeah.
+
+04:35.200 --> 04:37.360
+So in case you haven't had a chance to check it out,
+
+04:37.360 --> 04:41.040
+I do actually have another workshop on front-of-masters called production-grade view,
+
+04:41.040 --> 04:45.040
+where I talk about basically different enterprise patterns that I've seen over the years.
+
+04:45.040 --> 04:47.920
+And so basically when it comes to testing with types,
+
+04:47.920 --> 04:52.160
+again, everything that we've done in the code should be able to be exported and imported.
+
+04:52.160 --> 04:55.280
+But the key thing when it comes to testing is, in my opinion,
+
+04:55.280 --> 04:57.680
+is to make sure that you have the end-to-end tests.
+
+04:57.680 --> 04:59.920
+Because I know that a lot of people get caught up in the unit tests,
+
+04:59.920 --> 05:03.600
+but end-to-end testing in my opinion is the key part of basically figuring out whether or not
+
+05:03.600 --> 05:05.200
+your app is going to survive or not.
+
+05:05.280 --> 05:08.320
+And so the joke that a predecessor of mine always said was that
+
+05:08.320 --> 05:11.840
+there are two tests that I always make that make sure that every app has,
+
+05:11.840 --> 05:15.200
+and that's one can the user login, and two can they pay me.
+
+05:15.200 --> 05:17.520
+After that, everything else is optional.
+
+05:17.520 --> 05:22.720
+So something to keep in mind, but in all seriousness, when it comes to typing these things,
+
+05:22.720 --> 05:24.240
+everything should work as expected.
+
+05:24.240 --> 05:27.200
+I would recommend checking V-test out for your unit test
+
+05:27.200 --> 05:30.240
+that's really taking the sort of the community by storm,
+
+05:30.240 --> 05:32.960
+as far as like almost being like the next successor to just.
+
+05:32.960 --> 05:34.560
+So definitely check that out.
+
+05:34.640 --> 05:35.280
+Great.
+
+05:35.280 --> 05:37.280
+Thanks, everyone.
+
