@@ -1,0 +1,266 @@
+WEBVTT
+
+00:00.000 --> 00:05.600
+Alright, so what is the draw of using Python? How is it different from other languages?
+
+00:05.600 --> 00:11.600
+What advantages does it offer? Python is the dynamic programming language and this really caught me
+
+00:11.600 --> 00:18.800
+by surprise at first. It was created by Guido Van Rossam in the late 1980s. That means that Python
+
+00:18.800 --> 00:25.840
+is 30 years old. That means that it's older than some of you. It is old enough to vote.
+
+00:26.080 --> 00:33.760
+So a lot of folks think that Python is a new language or that it's new on the scene. That
+
+00:33.760 --> 00:39.200
+is not true. It's just been gaining a lot of popularity and probably the past 10 years or so.
+
+00:40.480 --> 00:45.440
+There's also this common misconception that Python is only a scripting language. It's really
+
+00:45.440 --> 00:52.480
+simple and that is not true at all. Django, a web framework that's built in Python, is used to
+
+00:52.480 --> 00:59.760
+run Instagram, which is one of the largest websites in the world with the most users. It powers
+
+00:59.760 --> 01:06.640
+parts of Reddit. It's used at Netflix and early versions of Dropbox were built almost entirely in Python.
+
+01:07.920 --> 01:14.480
+Dropbox credits a lot of it's success to Python because Python is easy to read and easy to
+
+01:14.480 --> 01:20.240
+write and it's easy for teams to collaborate in Python. They have this idea and they were able to get
+
+01:20.320 --> 01:26.480
+a product out the door as quickly as possible and then when they had to scale that was something
+
+01:26.480 --> 01:32.400
+that they started dealing with by replacing parts of their application with go or other more
+
+01:32.400 --> 01:38.800
+performant languages but they didn't optimize when they didn't need to and that let them have this
+
+01:38.800 --> 01:45.600
+very, very successful company. It's also becoming an increasingly popular language for education
+
+01:45.680 --> 01:54.160
+of all ages. There is our Python books for kids. Python is taught in universities and
+
+01:56.080 --> 02:02.720
+I found this great quote that in 2014 Python was the most popular teaching language at top
+
+02:02.720 --> 02:09.680
+US universities and if you know Python you might not have a hard time finding a job because it's one
+
+02:09.760 --> 02:16.560
+of the fastest growing programming languages. Gido said that Python is now also the language of
+
+02:16.560 --> 02:22.960
+amateurs and I mean that in the best way possible. That means that the language is accessible to a lot of
+
+02:22.960 --> 02:31.440
+people. One of the great things of Python is that it's open source. It's an active development.
+
+02:31.440 --> 02:36.400
+There's a committed team of core contributors and there are also a lot of issues that are tagged
+
+02:36.480 --> 02:41.040
+welcoming for beginners. So as you advance in your Python journey if you decide that you want to
+
+02:41.040 --> 02:47.840
+contribute back to the language that is something that you can easily do. We chatted a little bit
+
+02:47.840 --> 02:54.640
+about versions in Python. You might hear something about Python 2 versus Python 3. What's that all about?
+
+02:56.000 --> 03:01.760
+It will say that this is maybe a little bit of a stain on Python history. Python 3 was actually
+
+03:01.840 --> 03:10.880
+released in 2008 and its adoption was very slow. There were a lot of really popular frameworks that
+
+03:11.600 --> 03:18.480
+didn't want to migrate because it would have been a lot of work and because of that a lot of folks
+
+03:18.480 --> 03:24.320
+stuck to Python 2 instead of Python 3 there were some breaking changes that were introduced.
+
+03:24.320 --> 03:31.200
+At this point that chapter is now fully closed. Python 2 7 which was the last version of Python 2
+
+03:31.200 --> 03:38.240
+is deprecated. It has reached its end of life. It's not getting critical security updates. It's not
+
+03:38.240 --> 03:47.440
+getting critical new features that you might want to use. So it's time to use Python 3 and move on
+
+03:47.440 --> 03:54.320
+from Python 2. All of those popular libraries and frameworks have now migrated as well and are
+
+03:54.320 --> 04:01.040
+likely not supporting their Python 2 features because that's double the work. So this course is going
+
+04:01.040 --> 04:07.760
+to focus on Python 3 only and I would encourage you all to use Python 3 for your personal projects
+
+04:07.760 --> 04:15.600
+and projects at work. Python has an incredibly rich, fully featured standard library.
+
+04:18.000 --> 04:24.320
+There's a saying that Python is batteries included. So anything that you might want to do like
+
+04:24.400 --> 04:30.480
+working with. Jason, all of those are included in the standard library. You don't need to install
+
+04:30.480 --> 04:35.920
+any additional packages and there's a link here into the standard library and you kind of go
+
+04:35.920 --> 04:46.080
+through here and see what is available. There's a lot of stuff. There's also the Python package
+
+04:46.160 --> 04:57.760
+index for third party packages. As of today there are almost 300,000 projects and almost half a
+
+04:57.760 --> 05:06.240
+million users. So this is where you go where you want to find something that's maybe more modern
+
+05:06.240 --> 05:13.360
+or more niche and there are lots of third party packages available for many different uses.
+
+05:13.360 --> 05:22.240
+There's tons of stuff for AI and ML, sci-fi, numpy pandas, pi torch. There are great options
+
+05:22.240 --> 05:27.040
+for hardware and microcontrollers. There are two very popular web development frameworks that
+
+05:27.040 --> 05:35.360
+are Django and Flask, lots of tooling for DevOps and the absolute best part of Python is actually
+
+05:35.360 --> 05:42.000
+the incredible community. So after this course I encourage you all to continue in that community,
+
+05:42.080 --> 05:50.000
+Python US is the biggest yearly conference with approximately 4,000 attendees. There are lots of local
+
+05:50.000 --> 05:55.840
+user groups. A lot of them are listed in a wiki that is linked. A lot of these groups are now
+
+05:55.840 --> 06:02.000
+having online and remote events that you can participate in. And there are also many great and
+
+06:02.000 --> 06:10.000
+supportive groups for women and non-binary developers such as Pilates and Django girls. And these
+
+06:10.080 --> 06:17.120
+organizations tend to have chapters in most major cities and they do a lot of really, really great work.
+
+06:18.880 --> 06:26.320
+So a little bit about the philosophy of Python. A lot of ideas in Python were formed by something
+
+06:26.320 --> 06:33.280
+called the Zen of Python. It's a collection of 19 software principles that was sent to the Python
+
+06:33.360 --> 06:41.440
+mailing list in 1999. And you can actually find the Zen of Python included in the Python distribution
+
+06:41.440 --> 06:51.920
+as an Easter egg. So let's go to our repel wherever you have that open and type import this.
+
+06:56.400 --> 07:01.760
+And we're not going to read this whole thing but the the top few tenants
+
+07:01.760 --> 07:07.760
+beautiful is better than ugly, explicit is better than implicit, simple is better than complex,
+
+07:07.760 --> 07:14.880
+complex is better than complicated. Flat is better than nested, sparse is better than dense,
+
+07:14.880 --> 07:22.960
+and most importantly readability counts. So as you advance through your Python career, you'll see
+
+07:22.960 --> 07:31.440
+more and more of this in practice. Python code should be simple. You shouldn't try to make
+
+07:31.440 --> 07:39.680
+the most the the smallest one liner that nobody else can understand. Python can give you those tools.
+
+07:39.680 --> 07:46.160
+You can do it but you shouldn't. You should focus on making your code very clear, very simple,
+
+07:46.160 --> 07:55.920
+very readable. Flat is better than nested means don't have a arrow-shaped code. So no,
+
+07:55.920 --> 08:01.600
+if statement, if statement, if statement, if statement, not a ton of nested loops. Try to keep
+
+08:01.600 --> 08:11.200
+everything as close to the left margin as possible. And really focus on this. This is what makes
+
+08:11.200 --> 08:21.360
+Python different from a lot of other programming languages. Now, a way that Python encourages you
+
+08:21.360 --> 08:27.680
+to write simple readable code is with a style guideline that's included in the
+
+08:28.880 --> 08:36.000
+languages list of official proposals. It's called Pep 8. And if we take a look at this,
+
+08:36.000 --> 08:47.440
+Pep 8 gives coding conventions for Python. Everything from indentation to maximum line length
+
+08:47.440 --> 08:58.080
+to where blank lines should be to where how the spacing around equal sign works. You don't have
+
+08:58.080 --> 09:03.200
+to remember all of these rules because tools called linters, you should have installed a
+
+09:03.200 --> 09:08.080
+inter-invious code. We'll show you warnings when your code doesn't meet Pep 8 standards.
+
+09:08.880 --> 09:15.760
+Know that the warnings that linters give, they're not syntax errors. Your code will still run,
+
+09:15.760 --> 09:21.680
+but it won't be accepted Python code style standards. Not very important when you're working on
+
+09:21.680 --> 09:26.800
+your own, but much more important when you're working on a team and collaborating with others.
+
+09:26.960 --> 09:33.920
+There are a few other Easter eggs that I'm going to show you. Actually, I don't know if this
+
+09:33.920 --> 09:48.640
+one works in Python 3. This was a Python 2 Easter egg. There we go. So, if you type from underscore
+
+09:48.640 --> 09:54.880
+underscore future import braces, like we'll Python the programming language ever get braces.
+
+09:55.760 --> 09:59.280
+You'll see a syntax error and the message is not a chance.
+
+10:02.880 --> 10:07.760
+So, Python won't be looking like JavaScript anytime in the near future. And then,
+
+10:08.480 --> 10:12.080
+one of my favorite Easter eggs is if you import anti-gravity.
+
+10:15.280 --> 10:21.600
+This will take you to an XKCD comic about Python that says you're flying how
+
+10:22.560 --> 10:28.240
+with Python. I learned it last night. Everything is so simple. Hello world is just print
+
+10:28.240 --> 10:36.480
+hello world. This is Python 2 and Python 3 you need those parentheses. So, yeah, Python's a pretty
+
+10:36.480 --> 10:44.160
+fun language, but it's also very, very powerful. We're going to take a short break before we talk
+
+10:44.160 --> 10:49.360
+about the anatomy of a Python program and jump into data types.
+

@@ -1,0 +1,245 @@
+WEBVTT
+
+00:00.000 --> 00:06.480
+Pour vérifier Python 39, vous devrez ouvrir un terminal.
+
+00:06.480 --> 00:16.120
+Donc, si j'exécute Python 3, version Dash Dash, je devrais voir Python 39.
+
+00:16.120 --> 00:18.200
+Vous devriez voir ça aussi.
+
+00:18.200 --> 00:22.920
+Il est particulièrement important d'installer la dernière version de Python car votre machine,
+
+00:22.920 --> 00:27.240
+surtout si vous utilisez un Mac, il est possible qu'une version de Python soit déjà fournie, selon
+
+00:27.240 --> 00:28.400
+sur votre système d'exploitation.
+
+00:28.400 --> 00:32.360
+Il s'agit peut-être d'une version plus ancienne, nous voulons donc nous assurer que nous travaillons avec la dernière version.
+
+00:32.360 --> 00:34.720
+et le plus grand.
+
+00:34.720 --> 00:44.480
+Maintenant, nous voulons créer un répertoire de projet et y créer un environnement virtuel.
+
+00:44.480 --> 00:55.160
+Donc, pour cet exemple, permettez-moi de partir du même point que vous tous.
+
+00:55.160 --> 01:00.200
+at, créez un répertoire, assurez-vous que vous êtes dans votre répertoire personnel.
+
+01:00.200 --> 01:06.320
+Donc, dans ce cas, pour Macro Linux, il suffit de CD à la maison, puis de créer un répertoire appelé
+
+01:06.320 --> 01:14.840
+Pi Workshop et le CD qu'il contient devraient être un répertoire vide.
+
+01:14.840 --> 01:21.120
+Maintenant, nous voulons créer un environnement virtuel et l'activer.
+
+01:21.160 --> 01:27.680
+Pour ce faire, nous allons utiliser Python 3, dash, le dash m signifie exécuter ceci ensuite
+
+01:27.680 --> 01:36.800
+commande en tant que module, qui sera le Python 3 intégré aux environnements virtuels.
+
+01:36.800 --> 01:38.800
+Et la prochaine commande sera un nom.
+
+01:38.800 --> 01:42.320
+Dans ce cas, je vais simplement l'appeler le n standard.
+
+01:42.320 --> 01:49.520
+C'est une très bonne idée de nommer vos environnements virtuels et parce que si vous utilisez un standard
+
+01:49.600 --> 01:55.280
+get ignore pour Python, c'est l'un des dossiers qui va être automatiquement exclu.
+
+01:55.280 --> 01:59.920
+Et vous ne voudrez pas que ces fichiers générés automatiquement se retrouvent dans votre référentiel get.
+
+02:03.760 --> 02:08.720
+Maintenant, si je regarde ici, je devrais voir un répertoire ENV.
+
+02:08.720 --> 02:12.720
+Je vais le faire, je ne vais pas parler de ce qu'il y a dans ce répertoire pour le moment.
+
+02:12.720 --> 02:16.320
+Nous en parlerons un peu plus tard dans le cours.
+
+02:16.320 --> 02:24.880
+Mais fondamentalement, il contient une version Python autonome, un interpréteur Python autonome.
+
+02:24.880 --> 02:30.960
+Et lorsque nous travaillons avec cet interpréteur, nous avons la garantie d'utiliser la version de Python
+
+02:30.960 --> 02:33.120
+que nous avons utilisé lors de sa création.
+
+02:33.120 --> 02:38.400
+Et tous les packages que nous installons lorsque cet environnement virtuel est activé resteront dans
+
+02:38.400 --> 02:42.080
+cet environnement virtuel et ne polluera pas les paramètres de votre système.
+
+02:43.040 --> 02:48.880
+Donc travailler dans un environnement virtuel pour un projet, aussi petit soit-il, est généralement une très bonne chose.
+
+02:48.880 --> 02:58.080
+idée. Afin de l'activer sur Mac, je vais activer source n slash bin slash.
+
+02:58.800 --> 03:05.200
+Et votre terminal n’est peut-être pas aussi sophistiqué que le mien. Vous verrez probablement quelque chose qui ressemble à ceci.
+
+03:06.240 --> 03:10.000
+Il dira la fin entre parenthèses suivie du reste de votre invite.
+
+03:10.960 --> 03:14.160
+Et cela signifie que l'environnement virtuel est désormais activé.
+
+03:15.600 --> 03:22.000
+Maintenant, je peux taper Python ici. Je n'ai plus besoin des trois. Et les points exécutables Python
+
+03:22.000 --> 03:26.720
+à cette version de Python que nous avons utilisée lors de la création de l'environnement virtuel.
+
+03:30.400 --> 03:36.640
+Vous voulez également vous assurer que vous disposez du code VS. Si vous utilisez Mac et que vous avez récemment
+
+03:36.640 --> 03:43.680
+code VS installé, vous n'aurez peut-être pas le code exécutable. Vous pouvez vérifier si vous l'avez en tapant
+
+03:43.680 --> 03:49.840
+version de tiret de code. Si vous êtes sur un Mac et que vous ne voyez rien ici, vous devrez peut-être suivre
+
+03:49.840 --> 04:02.880
+une étape supplémentaire. Désolé, c'est ici, ce qui s'appelle lancer depuis la ligne de commande
+
+04:02.880 --> 04:08.080
+installez la commande de code sur le chemin. Je vais vous montrer comment afficher cette boîte de dialogue dans une seconde.
+
+04:08.080 --> 04:10.560
+Mais si vous ne le voyez pas, les instructions sont là.
+
+04:12.400 --> 04:20.160
+Nous voulons maintenant faire un peu de configuration pour le code VS. Nous voulons nous assurer que nous avons le
+
+04:20.160 --> 04:25.200
+Extension Python installée. Vous ne verrez rien de l'extension Python tant que vous n'aurez pas
+
+04:25.280 --> 04:32.960
+ouvrez votre tout premier fichier Python. J'ai un lien ici vers une liste d'extensions de clavier.
+
+04:32.960 --> 04:39.840
+Si vous souhaitez remapper vos raccourcis clavier dans le code VS vers e-max ou vim ou sublime ou autre chose.
+
+04:39.840 --> 04:43.680
+Mais pendant que nous parcourons le cours, il n'y a que deux raccourcis clavier que vous utilisez.
+
+04:43.680 --> 04:53.360
+il faudra se souvenir dans le code VS pour un Windows qui est Control Shift P. Et Command Shift P
+
+04:53.440 --> 05:02.240
+sur Mac pour afficher la palette de commandes. C'est comme votre couteau suisse. Ça va ouvrir une fenêtre
+
+05:02.240 --> 05:09.120
+où vous pouvez taper et voir toute la liste des différentes commandes proposées par VS code. Donc si j'apporte
+
+05:09.120 --> 05:19.120
+cela ici, si je tape Python, nous verrons que toutes ces commandes sont disponibles car j'ai
+
+05:19.200 --> 05:27.280
+J'ai ouvert un fichier Python et j'ai activé l'extension Python. L'autre commande dont vous avez besoin
+
+05:27.280 --> 05:35.280
+savoir est Control P sous Windows ou Command P sur Mac. Cela va faire apparaître le chercheur de fichiers Fest.
+
+05:35.280 --> 05:43.680
+Vous pouvez donc saisir n'importe quel nom de fichier contenu dans votre projet et il l'affichera rapidement.
+
+05:43.680 --> 05:48.160
+Si vous connaissez ces deux raccourcis clavier, notez-les simplement sur un post-it à proximité de
+
+05:48.240 --> 05:53.120
+votre bureau. Vous allez les utiliser beaucoup et c'est vraiment tout ce que vous devez savoir
+
+05:53.120 --> 06:02.080
+pour devenir productif et Python dans le code VS. Désormais, lorsque vous travaillez avec des fichiers, lorsque vous affichez un nouveau
+
+06:02.080 --> 06:08.080
+Fichier Python, si vous ne l'avez pas fait auparavant, si vous n'avez pas installé de code VS, vous pourriez voir
+
+06:08.080 --> 06:17.920
+quelques pop-ups divers. Alors allons-y et créons un nouveau fichier. C'est juste un nouveau fichier ou une nouvelle commande
+
+06:17.920 --> 06:29.680
+et Control N. Et nous allons enregistrer ce fichier sous, oh mon code VS est maintenant en colère parce que je l'ai renommé
+
+06:29.680 --> 06:41.760
+mon répertoire. Nous allons appeler cela high.py. Et si vous ouvrez ce fichier pour la première fois,
+
+06:41.760 --> 06:47.760
+vous pourriez voir des pop-ups ici vous demandant si vous souhaitez installer un linter, auquel cas vous le faites
+
+06:48.160 --> 06:55.200
+cliquez oui là-dessus. Et s'il y a d'autres pop-ups pour des éléments manquants ou non installés,
+
+06:55.200 --> 07:02.160
+allez-y, cliquez sur oui et installez-les. Il existe également une extension facultative que vous souhaiterez peut-être
+
+07:02.160 --> 07:12.320
+installation appelée Pylands. Et il s'agit d'un serveur de langage supplémentaire riche en fonctionnalités pour le code VS. Tu ne le fais pas
+
+07:12.320 --> 07:20.000
+j'en ai besoin, mais je le trouve plutôt utile. Vous voulez donc continuer et installer cela.
+
+07:21.520 --> 07:30.080
+Assurez-vous que lorsque vous ouvrez ce fichier Python, le bon interpréteur est également ouvert.
+
+07:32.720 --> 07:40.080
+Dans ce cas, le mien est le dernier. Il semble donc que le code VS ne l'ait pas automatiquement récupéré.
+
+07:40.080 --> 07:45.360
+Peut-être à cause de la bizarrerie de mon répertoire. Alors assurez-vous d'aller de l'avant et de sélectionner le bon
+
+07:45.360 --> 07:53.040
+interprète. Ici, vous verrez que le mien est en Python point n slash bin slash. Et maintenant je vais voir ici
+
+07:53.040 --> 07:59.360
+en bas que j'ai la bonne version de Python. Je vais juste augmenter un peu cela.
+
+07:59.360 --> 08:12.320
+Maintenant, que devons-nous faire pour exécuter du code Python dans du code VS ? Nous sommes déjà allés de l'avant et avons créé
+
+08:12.320 --> 08:21.040
+dans votre dossier. Copions ceci dans notre nouveau fichier et exécutons-le. Il existe plusieurs options différentes pour
+
+08:21.040 --> 08:26.000
+exécuter vos fichiers Python. Je vais vous montrer comment les exécuter à la fois depuis le code VS et depuis le terminal.
+
+08:29.360 --> 08:41.040
+Alors j'ai collé ça juste là. Si vous êtes déjà dans le code VS, vous pouvez ouvrir la commande
+
+08:41.040 --> 08:47.120
+palette avec la commande shift p ou control shift p et sélectionnez Python, exécutez le fichier et le terminal Python.
+
+08:48.800 --> 08:53.840
+Et cela présente l’avantage que le code VS soit intelligent. Et si votre environnement virtuel est un
+
+08:53.840 --> 09:01.200
+activé, il le sélectionnera automatiquement. Et nous verrons qu'il apparaît directement dans le terminal inclus
+
+09:01.200 --> 09:13.600
+fenêtre ici en bas. Vous pouvez également accéder à ce fichier dans votre terminal et faire
+
+09:13.600 --> 09:22.720
+assurez-vous que votre environnement virtuel est activé et exécutez Python. Salut.py. C'est donc en dehors du code VS
+
+09:22.720 --> 09:27.120
+si vous êtes plus à l'aise dans un terminal séparé ou sur la ligne de commande.
+
