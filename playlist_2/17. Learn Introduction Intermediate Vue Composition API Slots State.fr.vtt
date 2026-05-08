@@ -1,0 +1,272 @@
+WEBVTT
+
+00:00.000 --> 00:03.200
+La conscience de ceci est, comme je l'ai mentionné précédemment, qui est une usine.
+
+00:03.200 --> 00:06.080
+Encore une fois, si vous pensez à une seule dizaine, c'est comme si elles étaient uniques. Ils sont célibataires.
+
+00:06.080 --> 00:11.040
+Usine, pensez à votre grande usine de fabrication, n'est-ce pas ? C'est comme si on sortait des trucs.
+
+00:11.040 --> 00:16.160
+C'est ce que font les fonctions. Ils produisent un nouvel ensemble d'états qui seront utilisés à chaque
+
+00:16.160 --> 00:20.640
+instanciation. En d’autres termes, les usines ne sont pas géniales quand on veut un État partagé,
+
+00:20.640 --> 00:23.040
+parce qu'ils seront tous uniques. Ce seront des États distincts.
+
+00:23.040 --> 00:27.040
+C'est ce que tu veux. C'est super. Mais si vous essayez de le partager, c'est là que réside le problème.
+
+00:27.040 --> 00:31.200
+Alors, est-ce que tout le monde ici a probablement déjà eu recours à une sorte de gestion étatique ?
+
+00:31.200 --> 00:36.160
+Ouais, on dirait. Et donc pour ceux qui sont nouveaux dans ce modèle,
+
+00:36.160 --> 00:40.960
+les jours sont structurés, en gros, cela suppose que vous avez un seul dix que vous partagez en haut.
+
+00:40.960 --> 00:45.520
+Alors en fait, laissez-moi y aller, je suppose que je vais devoir utiliser des semaines dans celui-ci, et nous inverserons la tâche.
+
+00:45.520 --> 00:48.320
+Et vous utilisez simplement des tâches, puis faites des semaines les deux. Donc c'est déjà configuré.
+
+00:49.280 --> 00:52.400
+L'idée ici est quelque chose de partagé, comme le single dix ici,
+
+00:53.040 --> 00:59.040
+et puis vous avez une fonction qui le modifie ensuite. En d’autres termes, si nous disons :
+
+00:59.040 --> 01:07.040
+Je pense que nous avons eu une sorte de récupération, voyons voir, c'est une récupération de réponse, oh mon Dieu, voyons voir,
+
+01:09.040 --> 01:14.960
+nous pourrions former un modèle. Peut-être que ça ira. Si nous, c'est un post, non, je ne veux pas le mettre, non,
+
+01:15.840 --> 01:21.520
+va chercher, voilà, des semaines, d'accord, ça suffit. Et donc ici, par exemple, oh,
+
+01:21.600 --> 01:29.360
+la fonction de cette semaine de récupération, prenons tout un truc. D'accord. Alors à l'intérieur d'ici,
+
+01:30.000 --> 01:37.840
+nous avons maintenant cette méthode. J'aime généralement étiqueter mes objets en fonction, juste pour les séparer
+
+01:37.840 --> 01:45.280
+à partir des variables, quelque chose que j'aime faire. Nous avons donc cette fonction asynchrone pour récupérer les semaines
+
+01:46.240 --> 01:54.240
+pour l'instant, nous sommes, oh, je suppose que nous avons besoin de ces autres pièces, mais à un moment donné, nous devons ensuite les saisir
+
+01:54.240 --> 02:01.600
+ces morceaux d'État ici. Nous allons donc les récupérer, tels quels, et nous les exporterons également.
+
+02:03.520 --> 02:10.000
+Et puis, ce sont vos actions car elles ont un impact sur l’état. Alors ils sont là. J'ai besoin de l'API
+
+02:10.000 --> 02:23.920
+URL de base. Qu'est-ce que c'est? Voilà. OK, et puis on laisse tomber ça, voyons, c'est une constante,
+
+02:23.920 --> 02:32.400
+stockons cela en haut. Et puis cela est très bien partagé. Et puis je vais chercher des semaines, je vais chercher, ouais,
+
+02:32.480 --> 02:42.560
+c'est bien. Cela ne ressemble à aucune erreur. D'accord, parfait. Et donc généralement, ce qui se passe alors, c'est :
+
+02:42.560 --> 02:47.600
+vous avez donc cette action pour pouvoir récupérer des semaines. Et donc vous pouvez imaginer ici, d'accord,
+
+02:47.600 --> 02:54.560
+c'était celui de l'usine. Si nous avons un nombre de semaines précis, nous dirons alors exportation.
+
+02:54.560 --> 03:04.080
+par contre, un nombre de semaines est égal à calculé. Et puis nous allons de l'avant et revenons week.value.length.
+
+03:05.760 --> 03:11.280
+Et donc ici, nous voyons que nous commençons en quelque sorte à nous transformer un peu en magasin. Et alors le
+
+03:11.280 --> 03:18.560
+données, le modèle de magasin de données rapporte ensuite essentiellement que, d'après ce que vous feriez ici,
+
+03:18.560 --> 03:23.360
+parce qu'en ce moment, tout est en quelque sorte partagé ensemble, eux, tu veux pouvoir
+
+03:23.360 --> 03:28.800
+instancier des choses, c'est un peu l'idée. Vous exporteriez donc en fait une fonction appelée comme
+
+03:28.800 --> 03:35.520
+utiliser dans ce cas la semaine en magasin. Et ce que ça fait, c'est que, encore une fois, vous gardez votre single 10 ici.
+
+03:36.080 --> 03:45.920
+Mais à l’intérieur de ça, vous, vous partagez essentiellement ce genre de choses. Donc vos actions et vos getters.
+
+03:46.080 --> 03:57.440
+Mais, mais, mais en tant que tel. Alors revenez, je dirais le nombre de semaines par semaine. Oui, nombre de semaines.
+
+03:57.440 --> 04:02.400
+Et puis c'est dans quelques semaines. Ouais. Et donc, techniquement, ce seraient vos getters.
+
+04:03.600 --> 04:09.600
+Ce sont vos actions. Et puis ce que tu pourrais faire, et c'est une autre technique,
+
+04:10.560 --> 04:14.160
+il y a une fonction d'assistance de vue. C'est ce qu'on appelle la lecture seule.
+
+04:15.840 --> 04:20.800
+Et la lecture seule est utile car lorsque vous exposez directement votre repos, il est possible que
+
+04:20.800 --> 04:24.960
+un développeur va devenir négligent et va essayer de muter quelque chose. Donc dans ce cas,
+
+04:24.960 --> 04:30.320
+plutôt que de les laisser toucher directement, ce que vous feriez, c'est d'empêcher que cela soit
+
+04:31.200 --> 04:36.480
+exportés afin qu’ils puissent avoir un impact direct sur votre source de vérité. Et puis, en gros, vous diriez :
+
+04:36.560 --> 04:43.520
+à l'intérieur d'ici, les semaines sont lues uniquement en semaines. Et puis je pense que c'était comme si c'était en train de charger,
+
+04:43.520 --> 04:51.040
+Je pense que plus des deux autres, la semaine est une erreur de chargement de la semaine. La semaine est en cours de chargement, lecture seule. C'est
+
+04:52.000 --> 05:08.640
+chargement, erreur de lecture de la semaine. Lecture seule. D'accord. Et puis virgule. Et comment cela fonctionnerait-il ?
+
+05:09.360 --> 05:15.120
+Eh bien, maintenant que nous avons cela, voyons voir, il y a probablement des choses qui ne fonctionnent plus maintenant. Alors allons
+
+05:15.120 --> 05:20.560
+découvrez ce qui ne va pas. Fais, fais, fais. Ouais. Je n'ai donc aucune idée de ce qu'est cette semaine. Nous pouvons donc faire
+
+05:20.560 --> 05:29.520
+ça et comme on dit, d'accord, on va importer, utiliser ce que je pensais stocker depuis des semaines à partir des composables
+
+05:29.520 --> 05:36.320
+utiliser la semaine. Et puis j'allais de l'avant et je l'initialisais et je dirai, par contre le magasin de la semaine est égal à
+
+05:36.320 --> 05:42.640
+utiliser le magasin de la semaine. Et puis vous voyez ici, il y a un tas de choses prêtes à être accessibles.
+
+05:43.600 --> 06:01.680
+Et donc à partir de là, weekstore.weeks fonctionne désormais weekstore.weeks. Et euh euh euh euh euh euh euh magasin de la semaine.
+
+06:01.680 --> 06:08.400
+Cela fait des semaines. Je pense que c'est tout. D'accord. Et puis si je regarde le formulaire de test
+
+06:08.720 --> 06:18.320
+maintenant, mettez-vous en place. J'ai tué le serveur. D'accord.
+
+06:22.320 --> 06:29.760
+Qu'ai-je fait de mal ? Oh, je sais que j'ai mal fait. Vous ne pouvez pas placer plusieurs exportations dans un
+
+06:29.760 --> 06:41.920
+exporter. Donc, je veux dire, euh, utilisez la semaine ici. J'ai malheureusement laissé le clavier là-dedans. Alors voilà.
+
+06:41.920 --> 06:52.160
+Cela devrait le faire. Et puis oh oui, de retour ici, de retour ici deux tâches. Oh. Ça me crie dessus.
+
+06:52.160 --> 06:58.320
+Pourquoi tu cries ? Utiliser la semaine ne trouve pas de nom d'exportation semaines. Donc ça veut dire qu'on l'utilise ailleurs,
+
+06:59.200 --> 07:04.400
+semaines d'importation. Ouais. D'accord. Ouais. Vous avez tout à fait raison. D'accord. C'est ça le problème. D'accord.
+
+07:04.400 --> 07:09.040
+C'est bon. Nous allons faire preuve de diligence à ce sujet. Utilisez le magasin hebdomadaire. Tu as raison.
+
+07:11.520 --> 07:13.600
+Ça, ça, ça, ça, et puis
+
+07:17.520 --> 07:23.680
+même si c'est déjà le cas, j'y vois certainement une répétition. Les semaines de récupération sont définitivement répétées ici.
+
+07:24.640 --> 07:36.320
+Magasin de la semaine. Des semaines. Nous stockons le magasin de la semaine. Même si je ne l'ai pas encore initialisé. Donc c'est
+
+07:36.880 --> 07:44.400
+pourquoi c'est si diffusé. Nous pouvons donc continuer. Ne manquez plus ça. Ouais. C'est un magasin hebdomadaire.
+
+07:44.400 --> 07:52.480
+Il a été utilisé en magasin une semaine. D'accord. Maintenant, cela devrait être plus sain. Bon appel. Merci pour cela.
+
+07:54.320 --> 08:14.000
+Des semaines. Ouais. Droite. Et voilà, c'est tout. D'accord. D'accord. Je dois le faire pour le reste.
+
+08:14.000 --> 08:19.760
+D'accord. Je peux le faire pendant l’exercice. Mais ce que je fais, je le voulais, d'accord. Est-ce que
+
+08:24.000 --> 08:33.040
+cette partie. Donc, exactement votre point. Il y a une sorte d'usine en activité dans le sens où
+
+08:33.040 --> 08:39.600
+vous instanciez le magasin qui peut ensuite vous récupérer comme les getters, les actions
+
+08:40.880 --> 08:45.520
+qui lui sont associés. Mais en fin de compte, ce qui est finalement partagé,
+
+08:45.520 --> 08:50.800
+bien qu'il s'agisse d'un modèle d'usine, parce que vous utilisez une fonction ici, c'est que vous avez le
+
+08:50.800 --> 08:57.520
+état partagé à ce sommet qui reste une tonne unique partagée. Est-ce que cela a du sens ?
+
+08:59.040 --> 09:06.480
+D'accord. En d’autres termes, ces deux éléments ne s’excluent pas mutuellement. Ceci est un exemple de la façon dont vous pouvez
+
+09:06.480 --> 09:11.840
+combinez-les de manière à vous permettre de tirer parti des avantages des deux. Maintenant accordé,
+
+09:11.840 --> 09:17.120
+la chose en lecture seule ici est comme, c'est comme appeler ça une convention de certaines personnes, vraiment
+
+09:17.120 --> 09:21.840
+comme avoir des valeurs en lecture seule dans leurs magasins d'état. Honnêtement, en général, je n'ai pas vraiment eu de problème
+
+09:21.840 --> 09:27.920
+tout comme avoir l'État directement accessible par moi-même. Mais enseignez le leur et vous savez,
+
+09:27.920 --> 09:32.480
+parfois, vous avez besoin de plus de garde-corps pour différentes équipes. Je voulais donc m'assurer que vous étiez au courant de
+
+09:32.480 --> 09:38.880
+utilisez uniquement un motif. Désolé, le modèle en lecture seule pour qu'il ne vous dérange pas trop.
+
+09:38.880 --> 09:43.520
+Donc, fondamentalement, ce que vous remarquerez, laissez-moi vous montrer l'erreur à venir et pourquoi nous allons aimer,
+
+09:43.520 --> 09:49.680
+adoptez une approche un peu hybride, vous verrez ici que la valeur du point des semaines est définie
+
+09:49.680 --> 09:54.640
+pour récupérer des semaines, non ? Il y a donc clairement une logique ici qui tente de mettre à jour la valeur définie.
+
+09:55.600 --> 10:01.280
+Si nous regardons notre semaine d'utilisation, composable en ce moment, la seule action dont nous disposons est la
+
+10:01.280 --> 10:06.560
+chercher une semaine. Nous n'avons pas encore de fonctionnalité de mise à jour comme les semaines en termes de,
+
+10:06.560 --> 10:11.920
+si quelqu'un essaie simplement d'introduire des données. Et encore une fois, nous pourrions évidemment concevoir cela
+
+10:11.920 --> 10:16.960
+et rendez cela très propre. Mais c'est vrai, encore une fois, je veux utiliser le temps de chacun ici.
+
+10:16.960 --> 10:24.560
+Je vais juste réexporter cela et cela devrait alors. Et donc pour être très clair pour le
+
+10:24.560 --> 10:32.720
+enregistrement qui va à l’encontre de l’objectif de la lecture seule en usine. Mais ça devrait résoudre le problème
+
+10:32.720 --> 10:40.960
+sinon. Donc de cette façon, je n’ai pas besoin de faire cela et je n’ai que des semaines exportées directement. Et ça
+
+10:40.960 --> 10:46.000
+devrait en fait. Ouais. Nous allons tout commencer. Ouais.
+

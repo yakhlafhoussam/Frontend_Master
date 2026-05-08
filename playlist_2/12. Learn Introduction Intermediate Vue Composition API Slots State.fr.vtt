@@ -1,0 +1,281 @@
+WEBVTT
+
+00:00.000 --> 00:04.560
+Vous allez créer un Composable USB tout comme j'ai utilisé la tâche et pour être honnête, je dirais :
+
+00:04.560 --> 00:07.760
+surtout lorsque vous commencez à écrire des Composables, déplacez simplement les éléments.
+
+00:08.240 --> 00:11.040
+Ne réfléchissez pas trop à la question de savoir si c'est un utilitaire ? Genre, si tu as un instinct pour
+
+00:11.040 --> 00:15.600
+immédiatement, genre, cool, genre, fais ton truc, genre, déplace-le dans un utilitaire. Mais sinon, je veux dire,
+
+00:15.600 --> 00:20.000
+s'il s'agit de fonctionnalités associées, c'est bien, c'est un pas dans la bonne direction, non ?
+
+00:20.000 --> 00:25.920
+Vous pouvez toujours continuer à refactoriser plus tard. Et donc, je suppose que je lui donne aussi un indice. Il y a
+
+00:25.920 --> 00:31.200
+il y a beaucoup de choses sur la date et l'heure qui, comme le formatage des dates, sont super répétées dans la base de code.
+
+00:31.200 --> 00:34.880
+Et ainsi, vous pouvez faire des choix sur la manière dont vous souhaitez procéder. Alors si tu veux pratiquer
+
+00:34.880 --> 00:39.680
+créer des fonctions utilitaires, qui sont également là pour vous.
+
+00:45.680 --> 00:51.760
+Notre objectif pour cet exercice était de créer un Composable USB car si vous, parce que si vous ne l'avez pas encore fait
+
+00:51.760 --> 00:58.240
+chance d'y jeter un oeil, vous avez peut-être remarqué qu'il y a beaucoup de choses avec les faibles qui se produisent
+
+00:58.240 --> 01:04.720
+dans la base de code. C'est plutôt prolifique. Et donc, vous savez, je pense que pour cela en particulier
+
+01:04.720 --> 01:08.960
+Composable, je pense que c'est un bon point pour démontrer quelque chose dont on n'a pas parlé plus tôt,
+
+01:08.960 --> 01:14.160
+c'est le fait que Composables, nous avons montré la capacité avec les tâches utilisées que nous étions
+
+01:14.160 --> 01:20.000
+essentiellement, nous exportions certaines méthodes et nous les utilisions. Mais la chose importante à retenir
+
+01:20.000 --> 01:23.520
+à propos de Composable, c'est qu'ils peuvent contenir n'importe quoi. Autrement dit, ils peuvent aussi avoir
+
+01:23.520 --> 01:29.200
+état réactif. Ainsi, les Composables ne sont pas seulement un bon moyen de partager des méthodes et des fonctionnalités,
+
+01:29.200 --> 01:34.320
+mais aussi pour partager l'état entre les composants. Et c'est à bien des égards l'un des plus idéaux
+
+01:34.320 --> 01:40.560
+les idéaux, dont nous parlerons dans un instant. Alors allons-y et je vais juste chercher,
+
+01:41.600 --> 01:48.320
+voyons, ça ressemble, voyons, laissez-moi voir si je peux trouver, alors regardons les faibles
+
+01:48.400 --> 01:56.800
+modèle, peut-être, est-ce que nous recherchons, peut-être, un constweaks ? Et voilà, d'accord,
+
+01:56.800 --> 02:05.680
+voyez, alors regardez, la référence de cette semaine est utilisée dans de nombreux endroits différents. Et donc, ce que nous remarquons ici
+
+02:05.680 --> 02:11.200
+est qu'il y a essentiellement une logique assez dupliquée en ce qui concerne le chargement, l'erreur de semaine. Et puis
+
+02:11.200 --> 02:17.600
+plus important encore, vous remarquerez ici que les semaines de récupération ici mettent ensuite à jour la valeur des semaines.
+
+02:18.080 --> 02:22.000
+Et donc, pour démontrer réellement ce que je disais, faisons en fait ceci
+
+02:22.000 --> 02:26.000
+Composable vraiment simple. Et donc, ce que je vais faire, c'est arrêter ça,
+
+02:27.360 --> 02:32.320
+Je vais le déposer dans le Composable de ma semaine d'utilisation, et ensuite nous n'aurons plus qu'à faire
+
+02:32.320 --> 02:38.640
+bien sûr, nous importons la référence depuis la vue. Et puis juste pour conserver le type, il suffit d'importer le type
+
+02:39.520 --> 02:44.080
+semaine, et puis voilà, il y a ma saisie semi-automatique à partir des types. Et puis il vous suffit de l'exporter.
+
+02:45.040 --> 02:51.280
+Et puis, croyez-le ou non, juste comme ça, vous avez maintenant créé cet élément d'État réutilisable.
+
+02:51.280 --> 02:57.280
+que nous pouvons maintenant accéder à chacune de ces pages, et nous pouvons en fait les supprimer directement.
+
+02:58.160 --> 03:04.560
+Et au lieu de les avoir là, nous pouvons simplement importer des semaines de notre semaine d'utilisation Composable.
+
+03:07.040 --> 03:12.640
+Et ça devient ça. Voilà, au revoir. Cela va ici.
+
+03:14.240 --> 03:25.760
+Cela disparaît. Cela va là. Cela disparaît. Et puis, le dernier.
+
+03:28.560 --> 03:31.600
+Donc, si vous ne pouviez pas le dire avec celui-ci en particulier, c'est l'une des raisons pour lesquelles certaines personnes
+
+03:31.600 --> 03:35.840
+J'ai commencé à me lancer dans l'importation automatique, car tout mon écran est rempli d'importations à ce stade.
+
+03:36.480 --> 03:43.600
+Et cela peut être une discussion d’une autre époque. Mais ici, ce que nous venons de faire, c'est que nous avons pris cette chose
+
+03:43.600 --> 03:47.840
+que nous savons que nous voulons partager entre six composantes différentes. Et qu'est-ce qu'il y a de beau dans le
+
+03:47.840 --> 03:53.600
+Composables est qu'il ne se soucie pas de l'endroit où se trouvent vos composants les uns par rapport aux autres.
+
+03:54.320 --> 03:58.800
+Droite? Les accessoires doivent être des ancêtres directs. Ou même pas, c'est vrai. L'accessoire doit être direct
+
+03:58.800 --> 04:03.040
+enfants, si vous fournissez des injections, vous devez alors être un ancêtre. Comme s'il y avait un tas de
+
+04:03.040 --> 04:09.280
+mises en garde avec ceux-ci. Mais Composables, il sait où aller et il le partage et c'est bien.
+
+04:10.240 --> 04:16.480
+Et donc, cela faisait partie de ce qui s'est passé plus tôt à la pause. Et donc, ce modèle particulier est connu.
+
+04:16.480 --> 04:18.880
+Nous en reparlerons un peu plus plus tard, mais cela s'appelle comme un singleton.
+
+04:18.880 --> 04:24.560
+Parce que c'est ce fichier unique qui est utilisé et partagé entre plusieurs fichiers. Et c'est le
+
+04:24.560 --> 04:30.160
+raison pour laquelle c'est le cas, c'est pourquoi vous pouvez partager un état. Et puis, encore une fois, juste un,
+
+04:30.160 --> 04:34.880
+nous sommes en quelque sorte en train de vous préparer, nous ferons quelques exercices à ce sujet dans un instant.
+
+04:35.760 --> 04:41.200
+Mais l’alternative, non ? Si vous deviez faire quelque chose comme générer des semaines, n'est-ce pas ?
+
+04:42.080 --> 04:48.480
+Et puis vous avez exporté ça et vous avez dit, et vous avez eu des semaines contre, ou disons, juste pour être clair,
+
+04:48.480 --> 04:55.440
+les nouvelles semaines sont égales à une semaine de référence comme celle-ci. D'accord, peut-être que de nouvelles semaines auront lieu.
+
+04:57.280 --> 05:01.440
+Si vous exécutez cette fonction dans chaque composant, elle va vous en générer une nouvelle,
+
+05:01.440 --> 05:03.840
+à chaque fois, car il exécute cette fonction à chaque fois.
+
+05:05.200 --> 05:10.880
+Ce sont, c'est encore une fois, c'est comme une sorte d'aperçu de ce dont nous allons parler,
+
+05:10.880 --> 05:14.640
+ce sont probablement les deux paradigmes que vous devez prendre en compte lors de l'écriture
+
+05:14.640 --> 05:20.480
+Composables. Une autre chose que nous souhaitons également mentionner ici concernant Composables
+
+05:20.480 --> 05:25.280
+c'est que nous, je l'ai mentionné, vous savez, nous les appelons Composables et nous les préfixons avec use.
+
+05:25.280 --> 05:30.000
+Et nous les mettons dans un dossier appelé Composables. Mais je pense que ce qu'il est important de clarifier, c'est que
+
+05:30.080 --> 05:36.000
+tout cela est une convention choisie. View ne fait rien de similaire à l'auto comme par magie,
+
+05:36.000 --> 05:40.160
+cela détecte les choses, puis fait une sorte de compilation magique ou quoi que ce soit.
+
+05:40.800 --> 05:45.040
+Maintenant, il y a des bibliothèques qui, parce qu'elles savent que les Composables sont des modèles, savent qu'elles utilisent
+
+05:45.040 --> 05:49.840
+préfixes de choses. En gros, vous pouvez le pointer et dire, hé, pour tous mes Composables,
+
+05:49.840 --> 05:54.320
+importez-les simplement automatiquement pour que je ne m'occupe pas de cela. C'est donc comme un exemple d'auto
+
+05:54.320 --> 05:59.120
+chose magique que vous pourriez avoir une prise et faire pour vous. Mais ce sont toutes des conventions choisies. Tu pourrais
+
+05:59.200 --> 06:05.600
+très bien placez ce Composable dans le dossier utils. Et en supposant que vous mettiez à jour le chemin,
+
+06:06.240 --> 06:12.720
+ça marche exactement pareil. Ce qui en fait un Composable, c'est le fait que vous utilisez une référence ici
+
+06:12.720 --> 06:16.320
+de la vue et que vous renvoyez quelque chose de réactif qui aura un impact sur l'état.
+
+06:18.160 --> 06:25.520
+Alors juste pour que je sois clair. Oui. Si vous importez vos semaines dans plusieurs composants différents,
+
+06:25.600 --> 06:30.560
+ils sont à l'écran ou sur différents itinéraires. Euh-huh. Et disons que c'était un compteur et toi
+
+06:30.560 --> 06:36.880
+l'a incrémenté. Ouais. Cette valeur serait utilisée partout. Correct. Vous auriez incrémenté d'un
+
+06:36.880 --> 06:42.160
+composant ou un itinéraire et cela se reflètera sur la page suivante que vous visiterez. Correct.
+
+06:42.160 --> 06:45.120
+En supposant que vous utilisez une liaison de routeur, car je pense que si vous effectuez une actualisation complète, cela
+
+06:46.000 --> 06:49.760
+alors vous faites des choses avec la mise en cache. Et il existe en fait des moyens assez simples de contourner
+
+06:49.760 --> 06:54.080
+cela, ce que je pourrai démontrer plus tard. Mais oui, je réponds à votre point, tant que vous n'avez pas affaire à
+
+06:54.080 --> 07:00.720
+comme tout ce qui est détruit, mis en cache, c'est essentiellement comme un magasin global que vous pouvez mettre
+
+07:00.720 --> 07:07.440
+n'importe où. C'est autant de fois que vous le souhaitez. Pour être clair, je suppose que je vais le faire très rapidement. Celui-ci.
+
+07:17.520 --> 07:19.440
+C'est comme le principe fondamental entre eux.
+
+07:19.840 --> 07:29.280
+Ouais. Et puis aussi, dans le but d'être complet sur l'exercice, nous allons
+
+07:29.280 --> 07:34.000
+créez simplement un utilitaire rapide pour montrer à quoi cela ressemble afin que vous puissiez voir la différence.
+
+07:34.000 --> 07:38.080
+Le dernier que j'ai mentionné était un utilitaire de date et d'heure. Et donc nous sommes juste, nous allons, nous n'allons pas
+
+07:38.080 --> 07:43.680
+pour accéder à toute la base de code. Je le ferais, cela prendrait du temps. Nous allons juste prendre quelque chose
+
+07:43.680 --> 07:48.640
+que je serai certainement utile. Et donc je pense que nous avons comme un format de date, par exemple,
+
+07:49.440 --> 07:53.360
+il y a un tas de trucs. Cette plage de dates de format, je pense que la plage de dates l'était en fait, si je
+
+07:53.360 --> 07:58.000
+J'ai fait le tour, je cherchais à faire un socle en coupelle, c'était un plus simple. Alors voici le format de plage de dates
+
+07:58.000 --> 08:03.120
+assez standard, vous obtenez une date de début puis une date. Et puis ici, vous savez, vous avez,
+
+08:04.160 --> 08:07.840
+disons ici exactement, vous commencez la date et la date, ouais, regardez à quel point la bague est abandonnée. Donc tout cela est
+
+08:07.840 --> 08:15.120
+identique. Il est donc mûr pour une refactorisation. Alors prenons ça. Et puis nous irons à notre rendez-vous
+
+08:15.680 --> 08:21.760
+et ensuite nous déposerons cela. Exportez-le. On dirait qu'il n'y a rien de magique là-dedans.
+
+08:21.760 --> 08:28.160
+Pas besoin d'importer autre chose. Et donc maintenant que nous avons cela, nous pouvons fermer cela. Et nous pouvons
+
+08:28.160 --> 08:37.680
+importez-le en haut. Faites-en deux, deux, une fois sur place. Importer. C'était une plage de dates de format. Voilà.
+
+08:37.680 --> 08:44.320
+Je dois aimer la saisie semi-automatique. Et puis voilà. Et voilà, votre utilitaire a maintenant été refactorisé.
+
+08:44.400 --> 08:48.480
+Donc c'est là. C'est là. C'est bien. Cela n’a pas besoin d’être redéfini.
+
+08:49.760 --> 08:57.520
+Alors allez jusqu'au sommet. Déposez ça. Et voilà. Cela n’a pas besoin d’être défini ici non plus.
+
+09:02.080 --> 09:11.680
+Voilà. Et donc, juste comme ça, c'est un excellent exemple d'utilisation de date et d'heure.
+

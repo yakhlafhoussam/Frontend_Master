@@ -1,0 +1,134 @@
+WEBVTT
+
+00:00.000 --> 00:02.160
+L'un d'entre vous a-t-il entendu parler de la référence superficielle ?
+
+00:02.160 --> 00:06.480
+Au cas où ce ne serait pas le cas, la référence peu profonde ressemble en fait un peu à ce que vous pensez,
+
+00:06.480 --> 00:12.720
+c'est-à-dire que prends ça, euh, nous allons prendre ça, c'est là que je,
+
+00:12.720 --> 00:15.680
+de retour dans la base de données JSON. D'accord.
+
+00:15.680 --> 00:19.840
+Imaginez un instant ici, et allons au bac à sable de Mar ici,
+
+00:19.840 --> 00:29.040
+que nous avions, euh, mes données, et que c'était une référence qui était cet objet géant, n'est-ce pas ?
+
+00:29.920 --> 00:32.960
+Cela fait beaucoup de données, et le fait est que lorsque vous en faites une référence,
+
+00:32.960 --> 00:36.560
+en fait, il surveille tout à un niveau profond.
+
+00:36.560 --> 00:40.800
+Donc, il signe une certaine réactivité, il surveille tout en profondeur,
+
+00:40.800 --> 00:44.240
+ce qui, euh, à première vue, vous vous dites probablement, oh, ça a l'air bien.
+
+00:44.240 --> 00:47.840
+C'est ce que je veux. Et donc pour, je ne sais pas, la plupart des gens,
+
+00:47.840 --> 00:49.760
+une de ces performances, comme, pour ça,
+
+00:49.760 --> 00:53.920
+en fait, ce n’est même pas vraiment si gros, donc cela aurait probablement de l’importance.
+
+00:53.920 --> 00:56.800
+Mais vous pouvez imaginer que si vous composez des éléments depuis votre base de données,
+
+00:56.800 --> 00:59.920
+vous faites une sorte de tests. Il peut y avoir des dizaines de milliers d'enregistrements.
+
+00:59.920 --> 01:02.720
+Et le fait est qu’il n’est pas toujours nécessaire d’avoir une grande réactivité.
+
+01:02.720 --> 01:06.400
+Parfois, il suffit de savoir si l'objet, comme l'objet géant, a changé.
+
+01:06.400 --> 01:09.040
+Au lieu des mots, c'est pourquoi on l'appelle ainsi.
+
+01:09.040 --> 01:13.120
+Donc, la ref superficielle est une méthode d'assistance, tout comme la ref, euh, depuis la vue.
+
+01:13.120 --> 01:16.400
+Et la différence est que lorsque vous traitez de grands ensembles de données,
+
+01:16.400 --> 01:19.760
+ou plus important encore, vous n'allez pas manipuler une réactivité profonde.
+
+01:19.760 --> 01:23.840
+Et donc cela entre particulièrement en jeu avec les tests que j’ai vus le plus souvent.
+
+01:23.920 --> 01:28.000
+En fait, je recommande simplement par défaut la référence superficielle, car la vue est alors simplement
+
+01:28.000 --> 01:30.480
+je regarde seulement vers le haut. Ils ne s'inquiètent pas du reste.
+
+01:31.840 --> 01:34.640
+Et encore une fois, il s’agit plutôt d’une technique pour l’événementiel.
+
+01:34.640 --> 01:37.760
+Vous pensez que les performances pourraient être un problème, ou vous savez, pour un fait dont vous n'avez pas besoin
+
+01:37.760 --> 01:42.160
+une réactivité profonde. Il y en a qui oseraient même aller jusqu'à dire que les
+
+01:42.160 --> 01:46.480
+ref devrait être votre valeur par défaut. Certains diraient cela. Je ne pense pas que cela doive être aussi extrême.
+
+01:46.480 --> 01:49.840
+Je dirais que j'ai vu la plupart des tests unitaires, ou, comme,
+
+01:49.840 --> 01:53.920
+l'intention, comme ils le font, a tendance à être une référence superficielle, car c'est généralement comme rendre cet objet
+
+01:53.920 --> 01:57.360
+et passez à l'étape suivante, ou s'il y a un élément, il doit vraiment être réactif.
+
+01:57.360 --> 02:01.680
+Ils rendront cette pièce réactive. Euh, donc j'ai vu des gens, des gens essayer d'optimiser les performances
+
+02:01.680 --> 02:05.120
+à cet égard, mais sachez simplement que cela existe pour vous au cas où vous auriez déjà
+
+02:05.120 --> 02:09.920
+comme, euh, la réf semble vraiment exagérée pour cette chose. Eh bien, nous devons couvrir la réf peu profonde.
+
+02:10.640 --> 02:14.000
+Nous allions donc officiellement lui donner un nom. Nous en avons parlé plus tôt et j'ai mentionné que
+
+02:14.000 --> 02:18.800
+nous avions essentiellement abordé ce sujet. Et c'est donc ce rappel. Donc je suppose que combien de personnes ont
+
+02:18.880 --> 02:23.840
+a ensuite travaillé appelé singleton. D'accord? Super. Ouais. Parce que voici le problème. Ce n'est pas un
+
+02:23.840 --> 02:28.560
+voir la chose. C'est une chose JavaScript. C'est une question de programmation. Euh, et donc, vous savez, pour ceux qui
+
+02:28.560 --> 02:33.200
+n'en ont peut-être pas entendu parler ou ne le savaient pas auparavant, essentiellement, c'est en tant que choses que c'est un
+
+02:33.200 --> 02:38.640
+instance unique qui est ensuite partagée avec un tas de choses. Et c'est pourquoi nous avons vu plus tôt
+
+02:38.640 --> 02:44.320
+dans notre code lorsque nous utilisions des éléments comme use week. Ceci est un exemple de singleton ici
+
+02:44.400 --> 02:50.160
+car cette constante est alors essentiellement mise en cache. Et puis chaque fois que c'est amené dans un autre
+
+02:50.160 --> 02:55.520
+composant, cette même instance de semaines est alors référencée. Et c'est la raison pour laquelle nous obtenons
+
+02:55.520 --> 02:58.720
+cet état partagé.
+

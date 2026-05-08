@@ -1,0 +1,356 @@
+WEBVTT
+
+00:00.000 --> 00:03.440
+All right, who here has heard of view use?
+
+00:04.320 --> 00:10.720
+Yay, okay, so we got a we got some people here and then there are obviously some who haven't and so this is the one
+
+00:11.360 --> 00:16.160
+Composable library. I tell everyone as much as I keep in the can because
+
+00:16.880 --> 00:21.600
+It just represents this incredible collection of
+
+00:22.400 --> 00:25.360
+What possibilities are with composables, right?
+
+00:25.360 --> 00:28.160
+So if you're looking for examples of how composables could be written
+
+00:28.560 --> 00:34.560
+I'd not sure there's really a better library to stare at because what they've essentially done if you don't know if you use is is
+
+00:34.560 --> 00:40.640
+It's taken all the core functionality of like browsers and stuff and made it basically they've they've made everything
+
+00:40.640 --> 00:43.440
+Reactive so it's ready to be used for view so
+
+00:44.480 --> 00:48.240
+You know again they say show don't tell so the first thing so
+
+00:49.200 --> 00:54.560
+Has anyone here ever implemented local storage by themselves? Yeah, they've is not terrible
+
+00:54.640 --> 01:00.720
+But it's a little verbose and so what's cool is that they have this thing called use storage
+
+01:01.840 --> 01:08.400
+And use storage essentially you wrap the you wrap instead of doing like something rough you just say
+
+01:10.240 --> 01:16.720
+My thing like flag you storage you give it a key of whatever you want the local storage to store it
+
+01:16.720 --> 01:20.480
+A under right because we're just gonna achieve it and then whatever value you want
+
+01:21.440 --> 01:29.120
+And then after that flag just becomes this reactive ref that like does and then whenever it changes it updates the local storage and it's fantastic
+
+01:30.080 --> 01:34.960
+And so the reason this is also particularly cool is because what this means is
+
+01:35.600 --> 01:41.200
+It's a little it's not as effective in this particular demo because we technically have it back in that's saving data
+
+01:41.840 --> 01:44.640
+But you can to give you an example
+
+01:45.920 --> 01:48.320
+If we look at the task store
+
+01:50.560 --> 01:52.560
+There we have here
+
+01:52.800 --> 01:55.520
+You'll notice here the right now is just a regular
+
+01:56.560 --> 01:58.560
+Reactive array
+
+01:58.560 --> 02:02.240
+But if you were to import use storage
+
+02:04.400 --> 02:10.320
+From view use core like this and you just wrapped it I think I can do it like this
+
+02:14.720 --> 02:16.720
+Has
+
+02:17.200 --> 02:20.400
+Think that works yeah
+
+02:21.360 --> 02:24.320
+Dean okay, oh by the way
+
+02:24.960 --> 02:27.360
+You see that maybe refer together
+
+02:28.080 --> 02:33.760
+So more commonly I think seeing in libraries I think it's where we're seeing it because they just don't know what their users are gonna do
+
+02:34.720 --> 02:40.480
+So what's cool about this then is that now that you have this all you've done is you've wrapped instead of just making it a normal ref
+
+02:40.480 --> 02:45.200
+You've wrapped you storage to it and so now if we go to our site
+
+02:46.080 --> 02:48.080
+and go to our tasks
+
+02:49.200 --> 02:51.200
+You see here inside of your application
+
+02:52.320 --> 02:54.320
+We bring this up so it's easier if I want to see
+
+02:55.440 --> 02:57.440
+Look at that
+
+02:57.440 --> 03:04.640
+All your stuff there it's fantastic and so if you're working on just a client side rendered app you don't have access to a database
+
+03:04.640 --> 03:07.520
+And you want to be to like save your stuff in between sessions
+
+03:07.840 --> 03:12.560
+This is a really cheap and easy way to do so like it's not quite a local database
+
+03:12.800 --> 03:14.800
+But honestly, I think it'll get you pretty darn far
+
+03:15.440 --> 03:19.120
+Being able to do that especially if you just you know cookie ideas whatever
+
+03:19.600 --> 03:23.680
+It makes it just so easy and so to be clear though the default is
+
+03:24.480 --> 03:26.480
+local storage but
+
+03:27.200 --> 03:29.200
+You can see here
+
+03:29.440 --> 03:31.440
+And this is the pattern that I want to talk about next
+
+03:32.400 --> 03:36.320
+That they actually make it easy for you to then like configure things
+
+03:36.960 --> 03:38.320
+So for example
+
+03:38.720 --> 03:40.720
+See
+
+03:40.720 --> 03:48.080
+Where's it use other storage shows can be specified via third argument right so where is that third argument so here's an example
+
+03:49.040 --> 03:54.560
+Where they've given you like here's your key here's your object and then they actually have what they call like a serializer
+
+03:54.880 --> 03:58.960
+So they actually give you the option to determine how your data is being pars so you have some custom
+
+03:59.680 --> 04:02.160
+You know tree walker thing that like you know
+
+04:02.160 --> 04:04.640
+I've got a Jason that probably stays in our tree and find that's fairly standard
+
+04:04.960 --> 04:10.480
+But you know you might have some unique things that you're doing you can walk in there and it'll it basically accepts those things
+
+04:11.120 --> 04:14.560
+And so I guess for the I'll switch back to this in just a second
+
+04:14.960 --> 04:18.160
+The pattern here that we're talking about is ultimately what is called a um
+
+04:19.200 --> 04:24.240
+Like the options parameter object and so to quickly just give you an overview what I mean by this
+
+04:24.800 --> 04:27.200
+Is that a lot of times when people are writing
+
+04:27.440 --> 04:32.960
+Composable although this really does apply to I think JavaScript as a whole like when you're architecting your for example
+
+04:33.040 --> 04:35.360
+We were just using use fetch earlier, right? That's what we were doing
+
+04:37.840 --> 04:42.000
+It's easy for developers to get carried away because they're like oh, there's your elders the methods, you know
+
+04:42.000 --> 04:47.200
+There's like the body type whatever and they kind of like before you know it
+
+04:47.200 --> 04:52.240
+There are some methods signatures that are just like you know so many arguments long and the problem with this
+
+04:52.480 --> 04:55.760
+Even with this three alone is that you have to remember which order they're in
+
+04:56.560 --> 04:59.440
+Right and so the the options parameter object
+
+04:59.600 --> 05:02.640
+Basically tries to encourage developers to think more along the lines that like
+
+05:03.360 --> 05:06.800
+Call it like the rule of thumb being that your first you can have
+
+05:07.520 --> 05:13.120
+The rule of thumb is the first two parameters which are commonly used say in this particular case like you're on your methods
+
+05:13.440 --> 05:17.280
+Those are so common that like cool those are the required ones that I want you to memorize
+
+05:17.680 --> 05:21.920
+But if I have stuff like body type and whatever, this is really an options object
+
+05:22.480 --> 05:30.240
+And instead of the options object you can then say like you know if you have like you know body
+
+05:31.520 --> 05:33.360
+What would have for me and then it was like JSON whatever
+
+05:36.800 --> 05:40.880
+You can then like expose additional functionality through this part
+
+05:41.760 --> 05:48.160
+And so it's this idea of trying to keep your signatures lower so that obviously they're easier to understand and then by doing so
+
+05:48.640 --> 05:51.840
+You then unlock what you see here inside of you use
+
+05:53.040 --> 05:57.200
+Which is that they ultimately let me pick one for example
+
+05:58.640 --> 06:00.640
+Use Ref History
+
+06:01.280 --> 06:03.440
+Okay, let me fund this up so you'd see probably
+
+06:05.840 --> 06:07.840
+This is how the controls
+
+06:08.160 --> 06:11.440
+So what we see here right is use Ref History
+
+06:12.160 --> 06:17.360
+Comes on in it takes in your counter and then what it does is it exposes additional functionality
+
+06:17.360 --> 06:19.360
+that then can be used
+
+06:19.920 --> 06:22.240
+Basically like without having you configure a bunch of stuff
+
+06:22.640 --> 06:28.080
+So this is also called like a controls pattern and so typically like you can assume that like it it normally
+
+06:29.040 --> 06:30.400
+allows you to
+
+06:30.640 --> 06:32.160
+Increment document and whatnot
+
+06:32.240 --> 06:37.200
+But then it exposes additional functionality for undo and redo should you choose to like expose it
+
+06:37.760 --> 06:42.160
+And so it's kind of like thinking of it like overloading a JavaScript function where you have like a basic implementation
+
+06:42.320 --> 06:45.920
+Where it like does the simplest thing you want it to do and then when the user
+
+06:46.880 --> 06:49.280
+Configures again, I'm not sure where
+
+06:50.160 --> 06:53.920
+There wasn't an example that was let me just write the signature for you
+
+06:55.040 --> 06:57.520
+Was essentially like this it was like I was
+
+06:59.840 --> 07:01.840
+So by default
+
+07:01.840 --> 07:05.520
+It was something like this it was like use play video
+
+07:06.320 --> 07:08.880
+Right and so use play video by default
+
+07:09.280 --> 07:13.360
+Assume that you would basically give it like again, let's say video URL
+
+07:14.320 --> 07:21.200
+And then when you basically grab the video and you played it or you've basically ran the
+
+07:22.240 --> 07:28.640
+Function you would play the video because that's what you would be but by normally default do and then what it did was interesting enough
+
+07:28.640 --> 07:32.080
+It would it allow you to do something like controls equals true and
+
+07:32.720 --> 07:36.320
+What that happened was it would then instead of assuming you wanted to play
+
+07:36.560 --> 07:42.480
+It would all of a sudden expose a play a pause stop and like fast forward for example
+
+07:42.800 --> 07:46.640
+And we give you fine grain like control over how the function worked
+
+07:48.320 --> 07:51.600
+And so I'm not telling you whether you should do it this way one way or another
+
+07:51.600 --> 07:54.800
+But I I have found it to be an interesting way to allow
+
+07:55.360 --> 07:59.040
+Users to progressively enhance complexity in their functions
+
+07:59.440 --> 08:03.280
+Because normally I think we're used to just kind of writing new functions every time you want new functionality
+
+08:03.600 --> 08:07.840
+But this way with this kind of controls true flag or via like the options parameter
+
+08:08.240 --> 08:12.320
+It gives you a way of thinking about things from like a okay nine out of ten times users are doing this
+
+08:12.800 --> 08:16.800
+One out of ten times they need more granular control. This is how we're gonna expose it to them
+
+08:17.680 --> 08:19.920
+So this is like a pattern that's kind of interesting
+
+08:22.560 --> 08:24.560
+That's wanted to share with you
+
+08:27.360 --> 08:33.120
+Use media controls it was it in that one I was I didn't want to use might be what you're thinking of
+
+08:33.440 --> 08:36.720
+Maybe you know it's funny. Yeah, it might be that one
+
+08:37.920 --> 08:42.240
+You said use media controls yeah has a source and then it has a whole bunch of options
+
+08:43.440 --> 08:48.880
+And then if you just click it is this playing and yeah, I think this is this is similar. Yeah, there's so much fun stuff in here to play with
+
+08:48.880 --> 08:52.560
+So for example, one of the things I've used a lot is like use color mode
+
+08:52.960 --> 08:57.280
+It basically uses the browser API to automatically detect whether what kind of theme you prefer like dark
+
+08:57.840 --> 09:01.280
+And then since that's something you have to manage anyways. It's just really convenient to have
+
