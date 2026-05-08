@@ -1,0 +1,473 @@
+WEBVTT
+
+00:00.000 --> 00:02.960
+Ce que je veux que tu essayes de faire, c'est que tu vas y aller
+
+00:02.960 --> 00:05.000
+avancez et reprenez la page de cet utilisateur sur laquelle vous travailliez.
+
+00:05.000 --> 00:07.620
+Cette fois, voyez ce que vous pouvez faire sur ce composant pour
+
+00:07.620 --> 00:09.800
+utilisez en fait la fonction de configuration pour
+
+00:09.800 --> 00:12.000
+refactoriser au strict minimum les données de récupération.
+
+00:12.000 --> 00:13.400
+Alors si tu as le temps,
+
+00:13.400 --> 00:15.360
+si vous êtes libre de vous entraîner à utiliser la référence,
+
+00:15.360 --> 00:18.160
+réactif, calculé ou tout ce que vous préférez.
+
+00:19.920 --> 00:23.280
+D'accord. Qu’est-ce que cela a ressenti pour tout le monde ?
+
+00:23.280 --> 00:26.280
+Je sais que nous avons fait du jumelage ici dans la pièce,
+
+00:26.280 --> 00:29.640
+mais les gens en ligne peuvent me dire comment s'est déroulée cette expérience.
+
+00:29.640 --> 00:31.480
+Si vous avez des questions, en attendant,
+
+00:31.480 --> 00:32.680
+Je vais y aller et commencer à marcher
+
+00:32.680 --> 00:35.840
+la solution pour voir comment j'aborderais cela.
+
+00:35.840 --> 00:38.640
+D'accord. Alors allons-y et plongeons-nous dans le code.
+
+00:38.640 --> 00:41.160
+Comme nous pouvons le voir ici, ce que nous voulons faire, c'est
+
+00:41.160 --> 00:42.600
+migrer ce que nous avons fait,
+
+00:42.600 --> 00:46.480
+surtout en ce qui concerne la récupération des éléments dans notre fonction de configuration.
+
+00:46.480 --> 00:48.160
+Alors allons-y et commençons à faire cela.
+
+00:48.160 --> 00:49.480
+Tout d'abord, encore une fois,
+
+00:49.480 --> 00:51.960
+J'aime toujours mettre ma configuration avant les données pour me rappeler
+
+00:51.960 --> 00:54.080
+moi-même que cela ne va pas
+
+00:54.080 --> 00:57.640
+réellement pouvoir accéder à tout ce qui se trouve en dessous.
+
+00:57.640 --> 00:59.360
+Ça peut aller de haut en bas,
+
+00:59.360 --> 01:01.040
+mais rien ne vient du bas.
+
+01:01.040 --> 01:02.760
+Alors faisons quelques choses.
+
+01:02.760 --> 01:04.160
+Voyons. D'accord.
+
+01:04.160 --> 01:06.360
+Donc cette méthode ici, les fonctions asynchrones,
+
+01:06.360 --> 01:08.160
+commençons par déplacer les données.
+
+01:08.160 --> 01:11.040
+Les données ici, je vais continuer et utiliser le réactif,
+
+01:11.040 --> 01:13.120
+puisque c'est quelque chose qui semble au moins un peu plus
+
+01:13.120 --> 01:14.320
+familier aux gens.
+
+01:14.320 --> 01:19.160
+Je pense qu'ils débutent avec l'API Composition.
+
+01:19.160 --> 01:21.480
+Nous allons donc importer le réactif depuis la vue,
+
+01:21.480 --> 01:23.640
+et nous créerons cet état,
+
+01:23.640 --> 01:26.640
+qui va être un objet réactif.
+
+01:26.640 --> 01:28.960
+À l'intérieur de là, je vais faire appeler cette chose
+
+01:28.960 --> 01:32.480
+UserList et UserList seront alors ce tableau.
+
+01:32.480 --> 01:35.800
+Cela me permet donc de me débarrasser de cette propriété de données.
+
+01:35.800 --> 01:39.840
+La seule chose que nous devons faire maintenant est de rendre l'État ici,
+
+01:39.840 --> 01:41.760
+et puis pour montrer que cela fonctionne,
+
+01:41.760 --> 01:45.880
+ce que nous pouvons faire, c'est dire ceci.state.userList,
+
+01:45.880 --> 01:48.520
+et puis si tout devait encore fonctionner,
+
+01:48.520 --> 01:49.600
+la seule chose que nous devons changer est ici,
+
+01:49.600 --> 01:52.280
+state.userList, et nous l'enregistrons.
+
+01:52.280 --> 01:54.600
+Allons voir. Si nous nous rafraîchissons,
+
+01:54.680 --> 01:56.120
+c'est en panne parce que pourquoi,
+
+01:56.120 --> 01:58.480
+car aucun développeur local n'est en cours d'exécution.
+
+01:58.480 --> 02:01.560
+D'accord. Et voilà.
+
+02:01.560 --> 02:03.360
+Vous pouvez voir que tout fonctionne toujours.
+
+02:03.360 --> 02:06.160
+D'accord. Donc refactorisé, première étape, c'est parti.
+
+02:06.160 --> 02:07.720
+La prochaine chose que nous devons faire,
+
+02:07.720 --> 02:10.840
+la principale chose que nous voulons faire est un dysfonctionnement des méthodes.
+
+02:10.840 --> 02:14.360
+Alors certains d'entre vous l'ont compris parce que vous pensez peut-être,
+
+02:14.360 --> 02:19.080
+attendez, y a-t-il une méthode que je dois importer depuis la vue ?
+
+02:19.080 --> 02:20.840
+La réponse est non,
+
+02:20.840 --> 02:23.960
+parce que nous avons introduit les méthodes plus tôt.
+
+02:24.000 --> 02:25.240
+Tu te souviens de ce que j'ai dit ?
+
+02:25.240 --> 02:29.320
+Les méthodes ne sont en réalité que des fonctions JavaScript auxquelles la vue a accès.
+
+02:29.320 --> 02:30.360
+Donc en d'autres termes,
+
+02:30.360 --> 02:34.160
+ils n'ont rien de spécial car ce sont des fonctions JavaScript.
+
+02:34.160 --> 02:37.200
+Donc nous pouvons le faire, si nous pouvons prendre ça,
+
+02:37.200 --> 02:38.960
+et nous pouvons copier ceci ici,
+
+02:38.960 --> 02:43.200
+et disons essentiellement qu'il s'agit d'une fonction asynchrone appelée récupérer les utilisateurs.
+
+02:43.200 --> 02:45.560
+Maintenant, avant de continuer,
+
+02:45.560 --> 02:46.880
+il y a quelques choses qui vont casser.
+
+02:46.880 --> 02:49.920
+Premièrement, nous savons pertinemment que cela ne fonctionne plus,
+
+02:49.920 --> 02:51.760
+parce que pourquoi nous ne sommes pas dans l'API d'options,
+
+02:51.760 --> 02:53.160
+nous sommes en API de composition.
+
+02:53.360 --> 02:56.520
+Nous avons donc cet état ici qui est supprimé,
+
+02:56.520 --> 02:59.920
+et puis c'est actuellement state.userList,
+
+02:59.920 --> 03:02.480
+nous égalons cela, et nous avons l'asynchrone ici.
+
+03:02.480 --> 03:06.480
+Donc ce que nous devons faire, c'est aller de l'avant et faire aussi,
+
+03:06.480 --> 03:08.440
+nous n'avons pas non plus, ou n'attendons pas,
+
+03:08.440 --> 03:10.240
+il y a la fonction là, c'est bien,
+
+03:10.240 --> 03:13.400
+et puis commençons par le rendre.
+
+03:13.400 --> 03:16.720
+Nous allons lentement refactoriser cela afin de pouvoir le voir étape par étape,
+
+03:16.720 --> 03:18.200
+pièce par pièce.
+
+03:18.200 --> 03:21.040
+Bum bum bum bum, voilà.
+
+03:21.040 --> 03:22.680
+Maintenant, nous sauvegardons ceci,
+
+03:22.960 --> 03:26.080
+vous remarquerez que tout semble toujours fonctionner,
+
+03:26.080 --> 03:27.880
+et donc nous verrons ça bonjour bonjour.
+
+03:29.800 --> 03:31.080
+Et donc voici le problème,
+
+03:31.080 --> 03:35.800
+est-ce qu'à l'heure actuelle, récupérer les utilisateurs a un lien très implicite
+
+03:35.800 --> 03:37.400
+à notre état en ce moment.
+
+03:37.400 --> 03:39.840
+En d'autres termes, si nous voulions récupérer des utilisateurs dans un autre contexte,
+
+03:39.840 --> 03:42.520
+il faudrait alors créer théoriquement une autre fonction,
+
+03:42.520 --> 03:44.200
+mais c'est du JavaScript, c'est de la programmation,
+
+03:44.200 --> 03:45.040
+nous ne voulons pas de ça,
+
+03:45.040 --> 03:47.440
+c'est quelque chose qui n'aurait pas beaucoup de sens.
+
+03:47.440 --> 03:48.720
+Et donc ce que tu veux probablement faire
+
+03:48.720 --> 03:51.000
+est en fait séparé de l'affectation de l'État ici
+
+03:51.000 --> 03:52.640
+de la fonction elle-même.
+
+03:52.640 --> 03:54.680
+En d'autres termes, ce que nous aimerions faire
+
+03:54.680 --> 03:57.720
+c'est en fait dire state.userList ici
+
+03:57.720 --> 04:01.040
+est égal à ce qui se passe lorsque nous exécutons la récupération des utilisateurs.
+
+04:01.040 --> 04:02.560
+C'est en fait ce que nous aimerions faire.
+
+04:02.560 --> 04:03.640
+Et donc ce que nous voudrions vraiment
+
+04:03.640 --> 04:05.440
+est essentiellement de renvoyer la réponse
+
+04:05.440 --> 04:06.440
+ça vient de ça.
+
+04:06.440 --> 04:08.080
+Alors quand tu regardes ça
+
+04:08.080 --> 04:09.000
+et tu regardes le retour,
+
+04:09.000 --> 04:10.760
+vous pourriez penser, d'accord, je vais juste rendre la promesse.
+
+04:10.760 --> 04:13.680
+Maintenant, apparemment, quand il s'agit de rendre ses promesses
+
+04:13.680 --> 04:15.680
+à l'intérieur de toi, ça devient un peu délicat
+
+04:15.680 --> 04:17.000
+parce qu'alors il faut gérer
+
+04:17.000 --> 04:18.920
+comme résoudre la promesse et ce genre de choses.
+
+04:18.920 --> 04:21.280
+Et donc au moins pour moi, ce que j'ai essayé de faire en fait
+
+04:21.280 --> 04:23.440
+c'est que je vais juste créer la réponse
+
+04:23.440 --> 04:24.400
+c'est ce qui est attendu.
+
+04:24.400 --> 04:26.400
+Donc, fondamentalement, cette contre-réponse.
+
+04:26.400 --> 04:28.920
+Et ce que je fais, c'est renvoyer la réponse directement.
+
+04:28.920 --> 04:30.360
+Et c'est ce qui est retourné
+
+04:30.360 --> 04:32.760
+plutôt que de retourner la totalité de la promesse elle-même.
+
+04:32.760 --> 04:34.520
+Et c'est ce qui devrait permettre cette chose
+
+04:34.520 --> 04:36.280
+de s'y consacrer.
+
+04:36.280 --> 04:37.800
+Mais avant de finir,
+
+04:37.800 --> 04:40.440
+rappelez-vous que récupérer les utilisateurs est une fonction asynchrone,
+
+04:40.440 --> 04:41.280
+ça veut dire quoi ?
+
+04:41.280 --> 04:43.120
+Nous devons attendre le mot-clé ici.
+
+04:43.120 --> 04:45.400
+Et si nous devons attendre un mot-clé ici, qu'est-ce que cela signifie ?
+
+04:45.400 --> 04:47.160
+Nous avons également besoin de la clé asynchrone
+
+04:47.160 --> 04:49.160
+tout en haut ici à l'intérieur de la configuration.
+
+04:50.160 --> 04:52.120
+Et puis nous sauvegardons ça,
+
+04:52.120 --> 04:55.440
+nous recevons notre message prévisible qui nous crie dessus.
+
+04:56.520 --> 04:58.240
+Et la raison en est pourquoi ?
+
+04:58.240 --> 05:00.000
+Parce que le parent dit, whoa, whoa, whoa,
+
+05:00.000 --> 05:01.600
+vous avez ce truc qui fait une fonction asynchrone,
+
+05:01.600 --> 05:02.840
+il est peut-être cassé.
+
+05:02.840 --> 05:04.260
+Donnez-moi quelque chose sur quoi m'appuyer.
+
+05:04.260 --> 05:06.120
+Alors allons-y et réparons ça.
+
+05:06.120 --> 05:10.000
+Si vous allez dans app.view dans la vue de configuration,
+
+05:10.000 --> 05:11.640
+nous avons ce composant ici.
+
+05:11.640 --> 05:13.680
+Et donc ce que nous allons faire, c'est l'emballer
+
+05:13.680 --> 05:15.880
+dans une composante suspense.
+
+05:15.880 --> 05:20.600
+Et puis nous aurons notre modèle avec le vslot de secours.
+
+05:20.600 --> 05:25.600
+Et puis ce que nous allons faire ici, c'est ensuite charger les données, les enregistrer.
+
+05:27.960 --> 05:29.560
+Et si tu voyais réellement le petit clignement des yeux,
+
+05:29.560 --> 05:31.000
+c'est effectivement le cas, les données sont en cours de chargement
+
+05:31.000 --> 05:33.580
+parce que la vue attend réellement quelque chose.
+
+05:33.580 --> 05:36.040
+Donc, encore une fois, pour vos applications de niveau production,
+
+05:36.040 --> 05:38.520
+vous voudrez probablement une sorte de belle page de chargement
+
+05:38.520 --> 05:39.520
+et ainsi de suite pour ça.
+
+05:39.520 --> 05:42.040
+Mais pour l’instant, nous faisons cela avec un simple texte.
+
+05:42.040 --> 05:43.320
+Mais maintenant, si nous y regardons,
+
+05:43.320 --> 05:47.360
+il semble que tout fonctionne comme prévu.
+
+05:47.360 --> 05:48.280
+Maintenant, le problème est que,
+
+05:48.280 --> 05:51.640
+nous faisons en fait un double appel ici si vous vous en rendez compte
+
+05:51.640 --> 05:53.520
+en ce sens que nous renvoyons la méthode fetch users,
+
+05:53.520 --> 05:55.400
+mais en fait, on l'appelle déjà
+
+05:55.400 --> 05:57.040
+à l'intérieur de votre méthode de configuration.
+
+05:57.040 --> 05:58.880
+Donc vraiment, nous n’avons même pas besoin de ça ici.
+
+05:58.880 --> 06:02.760
+Nous pouvons donc réellement supprimer l’intégralité de notre hook de cycle de vie créé.
+
+06:02.760 --> 06:07.760
+Et ce que vous avez maintenant ici, c'est essentiellement l'intégralité de votre page utilisateur.
+
+06:08.420 --> 06:12.400
+en utilisant l'API de composition dans l'API d'options.
+
+06:12.440 --> 06:14.780
+Et tout fonctionne comme prévu.
+
+06:14.780 --> 06:15.620
+Heureusement.
+

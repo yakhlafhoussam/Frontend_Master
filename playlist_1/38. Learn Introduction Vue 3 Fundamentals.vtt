@@ -1,0 +1,350 @@
+WEBVTT
+
+00:00.000 --> 00:03.800
+Okay. The one other thing I want to talk about styling,
+
+00:03.800 --> 00:06.640
+which most people don't know about when it comes to Vue 3,
+
+00:06.640 --> 00:07.880
+is that this is great.
+
+00:07.880 --> 00:10.380
+We have the ability to global styles,
+
+00:10.380 --> 00:13.200
+we have scope styles, we have CSS modules.
+
+00:13.200 --> 00:16.600
+For me, one of the things that when it comes to extending
+
+00:16.600 --> 00:20.080
+on the functionality of the web is how we can
+
+00:20.080 --> 00:22.600
+bring the technology together in a better way.
+
+00:22.600 --> 00:24.840
+JavaScript is really good at interactivity,
+
+00:24.840 --> 00:27.680
+managing state, and dynamic pieces of information.
+
+00:27.800 --> 00:30.440
+CSS is very good at what it does, styling.
+
+00:30.440 --> 00:35.080
+So what if you could find a way to actually merge the two together in a way
+
+00:35.080 --> 00:38.680
+that allows for just crazy possibility?
+
+00:38.680 --> 00:39.920
+To show you what I mean,
+
+00:39.920 --> 00:42.640
+let's go ahead and I'm just going to save this right now.
+
+00:42.640 --> 00:47.320
+On the app.vue, what if we wanted the ability for the user to
+
+00:47.320 --> 00:49.320
+choose what the background color is?
+
+00:49.320 --> 00:51.760
+Typically, the approach for that is you probably would come to
+
+00:51.760 --> 00:52.880
+your designers and you would say,
+
+00:52.880 --> 00:55.840
+okay, these are like the seven classes we'll support,
+
+00:55.840 --> 00:58.320
+and so we'll try our best to just support it this way,
+
+00:58.320 --> 00:59.840
+and so you're limited.
+
+00:59.840 --> 01:01.840
+But there are plenty of cases where you might actually
+
+01:01.840 --> 01:04.200
+want to give the user infinite configuration,
+
+01:04.200 --> 01:06.000
+but the reason why we can't do that is because,
+
+01:06.000 --> 01:08.600
+frankly, managing the CSS for that can be quite difficult.
+
+01:08.600 --> 01:11.240
+So let's say for instance,
+
+01:11.240 --> 01:13.520
+we have that property.
+
+01:13.520 --> 01:15.880
+So I'm going to import a ref from view,
+
+01:15.880 --> 01:18.920
+and I'm going to call it color preference.
+
+01:18.920 --> 01:20.800
+It'll be a ref, it'll be an empty.
+
+01:20.800 --> 01:23.160
+Actually, we'll just say black for now.
+
+01:23.160 --> 01:28.200
+So what we'll do here is what you ideally want to do is you'd
+
+01:28.200 --> 01:31.720
+like your CSS to be able to read from your JavaScript.
+
+01:31.720 --> 01:33.640
+That would be a perfect world, wouldn't it?
+
+01:33.640 --> 01:36.200
+Right now, what you probably have to do is some convoluted
+
+01:36.200 --> 01:38.540
+like onload the document element,
+
+01:38.540 --> 01:40.640
+then insert your own style tag and manipulate
+
+01:40.640 --> 01:42.760
+the inline styles of the HTML.
+
+01:42.760 --> 01:44.680
+There's a lot of work that goes into that.
+
+01:44.680 --> 01:50.000
+Well, what if I said instead that what we could do is,
+
+01:50.000 --> 01:52.400
+let's say on the app itself,
+
+01:52.400 --> 01:54.840
+this time we're going to do a background color,
+
+01:54.840 --> 01:58.560
+but this time I'm going to actually,
+
+01:58.560 --> 02:00.720
+let's see, let's try to just do this.
+
+02:00.720 --> 02:02.640
+Will color preference work?
+
+02:02.640 --> 02:04.720
+No, nothing's happening.
+
+02:04.720 --> 02:05.880
+Well, let's make sure it's working first.
+
+02:05.880 --> 02:06.920
+So let's go ahead and do this.
+
+02:06.920 --> 02:10.120
+Let's actually render out the color preference.
+
+02:10.120 --> 02:13.360
+So color preference, where is it?
+
+02:13.360 --> 02:15.680
+It is, oh, it's all the way down here.
+
+02:15.680 --> 02:17.760
+Let's bump it up so it's easier to read.
+
+02:17.760 --> 02:20.440
+Okay, great. It is showing up.
+
+02:20.440 --> 02:21.480
+Let's make sure it actually can get
+
+02:21.480 --> 02:23.120
+changed that it's reactive.
+
+02:23.120 --> 02:24.400
+Let's do an import.
+
+02:24.400 --> 02:27.120
+If you didn't know, there's a type called color on
+
+02:27.120 --> 02:29.200
+your inputs that actually built into HTML,
+
+02:29.200 --> 02:32.340
+and we can just V-model this to our color preference.
+
+02:32.340 --> 02:33.560
+So let's see if this works.
+
+02:33.560 --> 02:35.840
+Let's see, let's go this. Okay, great.
+
+02:35.840 --> 02:38.240
+So now we have this infinite color loop.
+
+02:38.240 --> 02:40.920
+Well, view three was like,
+
+02:40.920 --> 02:43.200
+you know what, I think we can make this happen.
+
+02:43.200 --> 02:47.280
+What if we just wrap this in V-bind?
+
+02:47.280 --> 02:55.360
+So we get, shoot,
+
+02:55.360 --> 02:59.080
+do I need to, maybe app is too far of a context?
+
+02:59.080 --> 03:01.760
+There we go. Okay, that context was too high.
+
+03:01.760 --> 03:06.040
+All right, it's fine. I'll just do the, let me do this.
+
+03:06.040 --> 03:07.400
+Let me wrap this real quick.
+
+03:07.400 --> 03:09.680
+Okay, so I'll explain why that's not working real quick.
+
+03:09.680 --> 03:11.400
+It actually does make sense.
+
+03:11.400 --> 03:15.880
+But for the sake of showing this, there we go.
+
+03:16.000 --> 03:20.280
+Okay. We can see here now is you
+
+03:20.280 --> 03:24.200
+have this infinite loop of JavaScript updating the CSS.
+
+03:24.200 --> 03:25.840
+Now, if you're skeptical, you're like,
+
+03:25.840 --> 03:28.280
+this looks like black magic, what's happening here?
+
+03:28.280 --> 03:29.920
+All right, let me show you.
+
+03:29.920 --> 03:32.200
+Let me show you.
+
+03:32.200 --> 03:35.240
+I promise you, when we think about things,
+
+03:35.240 --> 03:37.640
+we try to think of things in terms of extending the web.
+
+03:37.640 --> 03:39.880
+Look at actually what's happening here.
+
+03:39.880 --> 03:42.600
+What view does, what JavaScript does well is it says,
+
+03:42.600 --> 03:45.200
+okay, I'm going to create a custom variable,
+
+03:45.200 --> 03:47.540
+but we're going to use CSS variables because guess what?
+
+03:47.540 --> 03:50.360
+That is browser technology that is actively supported,
+
+03:50.360 --> 03:52.720
+and why would we try to reinvent the wheel?
+
+03:52.720 --> 03:55.420
+All of JavaScript's doing is actually just
+
+03:55.420 --> 03:58.920
+tracking this variable and just making sure to update that value.
+
+03:58.920 --> 04:00.800
+But the rest of it is CSS.
+
+04:00.800 --> 04:03.040
+So you get the power of CSS in
+
+04:03.040 --> 04:05.160
+Cascades and everything in its native form,
+
+04:05.160 --> 04:06.720
+but you also get the power of getting
+
+04:06.720 --> 04:09.200
+reactive data that can impact those things.
+
+04:09.200 --> 04:11.280
+So you can imagine the number of
+
+04:11.280 --> 04:12.960
+times I've been on apps where I wanted to customize
+
+04:13.040 --> 04:15.360
+the font size or the padding.
+
+04:15.360 --> 04:17.300
+Those are hard to do because to create a class
+
+04:17.300 --> 04:18.640
+for every single one of those scenarios or to
+
+04:18.640 --> 04:21.380
+manage that at one point was nigh impossible.
+
+04:21.380 --> 04:25.360
+But with things like vbind on your styles now,
+
+04:25.360 --> 04:29.000
+oh, so many possibilities now exist with this.
+
+04:29.000 --> 04:30.640
+So if you're wondering though,
+
+04:30.640 --> 04:32.560
+why did I have a little bit of trouble with
+
+04:32.560 --> 04:36.080
+the HTML and the app is because I think
+
+04:36.080 --> 04:40.840
+it view once it takes over the div is unable to go outside of it.
+
+04:40.840 --> 04:41.840
+So that's what it is.
+
+04:41.840 --> 04:42.880
+It's just not in control,
+
+04:42.880 --> 04:44.560
+like view is not in control of that area.
+
+04:44.560 --> 04:45.400
+So if you're going to do this,
+
+04:45.400 --> 04:47.800
+obviously make sure that you're within the context of your app,
+
+04:47.800 --> 04:49.640
+otherwise the CSS won't apply.
+
+04:49.640 --> 04:50.760
+But otherwise at this point,
+
+04:50.760 --> 04:53.400
+you can imagine just infinite user preference configuration
+
+04:53.400 --> 04:54.600
+that's possible with this.
+

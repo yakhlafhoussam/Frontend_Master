@@ -1,0 +1,491 @@
+WEBVTT
+
+00:00.000 --> 00:02.060
+So the question here is, what do you
+
+00:02.060 --> 00:04.380
+need to know to really get started with Vue?
+
+00:04.380 --> 00:06.480
+And so earlier, we talked about some prerequisites
+
+00:06.480 --> 00:09.260
+for the workshop, but this is where I kind of want to start
+
+00:09.260 --> 00:12.420
+us as far as ground zero goes.
+
+00:12.420 --> 00:16.100
+As long as you have familiarity with HTML, CSS, and JavaScript,
+
+00:16.100 --> 00:18.700
+and you have familiarity with the code editor,
+
+00:18.700 --> 00:21.020
+that is all you need.
+
+00:21.020 --> 00:22.980
+And that might come as a surprise to people,
+
+00:22.980 --> 00:24.940
+because a lot of times when we think about frameworks,
+
+00:24.940 --> 00:27.420
+we are thinking about it from a build tool perspective.
+
+00:27.420 --> 00:29.420
+But we are going to go ahead and show you
+
+00:29.420 --> 00:31.340
+how this approach works and why it's actually
+
+00:31.340 --> 00:34.380
+a viable approach when it comes to a lot of organizations
+
+00:34.380 --> 00:37.340
+looking to either progressively migrate their apps
+
+00:37.340 --> 00:39.700
+into a framework.
+
+00:39.700 --> 00:43.540
+So here's your Morpheus meme from Matrix.
+
+00:43.540 --> 00:48.580
+What if I told you no build tools were needed?
+
+00:48.580 --> 00:51.100
+And so again, some of you will be understandably skeptical,
+
+00:51.100 --> 00:53.940
+but we're going to actually experience this live ourselves
+
+00:53.940 --> 00:58.060
+and go through what this is like.
+
+00:58.060 --> 01:00.380
+So with that said, has everyone had a chance
+
+01:00.380 --> 01:02.820
+to basically fork the repo, sort of clone it down
+
+01:02.820 --> 01:05.500
+to make sure they have that environment ready to go?
+
+01:05.500 --> 01:07.500
+OK.
+
+01:07.500 --> 01:09.980
+Great.
+
+01:09.980 --> 01:11.900
+So the first thing we're going to do,
+
+01:11.900 --> 01:14.900
+we talked for a little bit now, let's dive right into some code
+
+01:14.900 --> 01:16.660
+and check this out.
+
+01:16.660 --> 01:19.860
+So inside of here, you'll notice that there's very little
+
+01:19.860 --> 01:20.540
+going on in here.
+
+01:20.540 --> 01:21.900
+There's no package.json.
+
+01:21.900 --> 01:23.580
+There's no dependencies to run.
+
+01:23.580 --> 01:25.140
+It's basically a readme file here,
+
+01:25.140 --> 01:27.820
+and we have a couple of HTML files for you
+
+01:27.820 --> 01:29.700
+to basically work with.
+
+01:29.700 --> 01:31.580
+So what I'm going to do is I'm going
+
+01:31.580 --> 01:34.340
+to go ahead and open up my playground HTML
+
+01:34.340 --> 01:37.300
+file inside of the browser over here.
+
+01:37.300 --> 01:39.100
+And so to make sure everything's working,
+
+01:39.100 --> 01:42.740
+I'm just going to go ahead and do an H1 with hello, front end
+
+01:42.740 --> 01:46.340
+masters, save, refresh.
+
+01:46.340 --> 01:46.860
+There we go.
+
+01:46.860 --> 01:47.740
+OK.
+
+01:47.740 --> 01:49.740
+Dev environment set up, no build tools required.
+
+01:49.740 --> 01:52.020
+Great.
+
+01:52.020 --> 01:56.260
+Now, when we think about building your first view app,
+
+01:56.260 --> 01:58.420
+I mentioned before, because no build tools are required,
+
+01:58.420 --> 02:02.020
+what you can do is you can actually just drop view onto a page.
+
+02:02.020 --> 02:03.340
+And so the way we're going to do that
+
+02:03.340 --> 02:08.380
+is we're going to go ahead and go onto the view.js.org docs.
+
+02:08.380 --> 02:13.500
+And if we go to the guide, I believe it's under quick start,
+
+02:13.500 --> 02:15.740
+we'll see.
+
+02:15.740 --> 02:16.900
+Here we go.
+
+02:16.900 --> 02:19.500
+There's a section here that says using view from the CDN.
+
+02:19.500 --> 02:20.620
+And all we're going to do is we're
+
+02:20.620 --> 02:23.900
+going to copy this line right here and drop it into our HTML
+
+02:23.900 --> 02:26.580
+file.
+
+02:26.580 --> 02:30.140
+So all we're going to do here is boom, paste that in.
+
+02:30.140 --> 02:31.900
+And so to verify that this worked,
+
+02:31.900 --> 02:33.660
+that something actually happened, we're
+
+02:33.660 --> 02:37.020
+actually going to go ahead and open up our browser console.
+
+02:37.020 --> 02:39.460
+And you'll notice here that, one, it's already alerting us
+
+02:39.460 --> 02:41.860
+that we're running a development build of view.
+
+02:41.860 --> 02:43.860
+So in other words, if we're going to deploy this,
+
+02:43.860 --> 02:45.860
+there's going to need to use a production deployment,
+
+02:45.860 --> 02:48.340
+because the size is going to be a bit larger.
+
+02:48.340 --> 02:50.420
+But this is fine, because we're learning right now.
+
+02:50.420 --> 02:52.260
+So the way you can check that also that this is working
+
+02:52.260 --> 02:54.580
+is if you type view, it'll auto-complete.
+
+02:54.580 --> 02:57.380
+And you'll notice it'll basically bring up the view object that's
+
+02:57.380 --> 03:00.300
+ready for you to do stuff with it.
+
+03:00.300 --> 03:01.740
+And so what I'm going to do right now
+
+03:01.740 --> 03:04.940
+is I'm going to go ahead and just show you basically
+
+03:04.940 --> 03:06.580
+how that kind of works.
+
+03:06.580 --> 03:09.300
+So what I'm going to do here is we're going to go ahead
+
+03:09.300 --> 03:10.860
+and we're going to create a div.
+
+03:10.860 --> 03:12.460
+And just like you typically would expect,
+
+03:12.460 --> 03:15.100
+I'm going to call it the div app.
+
+03:15.100 --> 03:17.900
+That's all we're going to do.
+
+03:17.900 --> 03:21.140
+And then we're going to say, my app in here, save it,
+
+03:21.140 --> 03:21.820
+and we refresh.
+
+03:21.820 --> 03:24.020
+There you go, my app is showing up here.
+
+03:24.020 --> 03:26.060
+And now let's go ahead and actually attach our app.
+
+03:26.060 --> 03:27.060
+And how do we do that?
+
+03:27.060 --> 03:28.500
+So what we're going to do now is we're
+
+03:28.500 --> 03:30.740
+going to open up a script block at the bottom.
+
+03:30.740 --> 03:33.820
+And we're actually going to go ahead and bring in a function
+
+03:33.820 --> 03:35.860
+from view called create app.
+
+03:35.860 --> 03:37.220
+So I'm going to create a constant.
+
+03:37.220 --> 03:40.100
+And I'm going to destructure it from view.
+
+03:40.100 --> 03:43.260
+So it's going to look like this.
+
+03:43.260 --> 03:46.280
+Now, this is an alternative syntax that basically just
+
+03:46.280 --> 03:52.160
+calling create app like this, calling the function directly.
+
+03:52.160 --> 03:53.600
+But there will be an advantage to this
+
+03:53.600 --> 03:54.800
+from a syntax perspective.
+
+03:54.800 --> 03:57.160
+So that's why we're destructuring the function out.
+
+03:57.160 --> 03:58.320
+And all we're going to do is we're
+
+03:58.320 --> 04:02.200
+going to go ahead and say const app equals create app.
+
+04:05.800 --> 04:09.080
+And so what that'll do is it'll create a variable called app.
+
+04:09.080 --> 04:11.800
+And then it'll go ahead and create set app.
+
+04:11.800 --> 04:14.360
+And all we're going to do now is we're going to mount.
+
+04:14.360 --> 04:15.280
+Because what we've got to do, we've
+
+04:15.280 --> 04:18.320
+got to tell view where it is we want to actually put the app.
+
+04:18.320 --> 04:20.720
+So that is where this mount keyword comes in.
+
+04:20.720 --> 04:24.360
+And we're going to mount it to the ID of app, which
+
+04:24.360 --> 04:26.000
+is using the CSS selector here.
+
+04:26.000 --> 04:29.960
+So it'll mount it directly into this part.
+
+04:29.960 --> 04:33.720
+So in three lines of codes, we have dropped the view,
+
+04:33.720 --> 04:36.960
+or I guess four of you include the CDN.
+
+04:36.960 --> 04:39.000
+We've loaded view onto the page.
+
+04:39.000 --> 04:40.320
+And we basically created the app.
+
+04:40.320 --> 04:43.360
+So if we refresh it, we'll notice nothing's really happening.
+
+04:43.360 --> 04:44.720
+And that's totally fine because we haven't
+
+04:44.720 --> 04:47.040
+had view display anything yet.
+
+04:47.040 --> 04:49.160
+And so when it comes to frameworks,
+
+04:49.160 --> 04:51.400
+one of the things that people love about working with frameworks
+
+04:51.400 --> 04:54.560
+is that it really helps to track your data across different states.
+
+04:54.560 --> 04:56.200
+So that's called reactive data.
+
+04:56.200 --> 04:57.720
+So the fact that when something changes,
+
+04:57.720 --> 05:00.360
+it'll go ahead and make sure that your HTML page is
+
+05:00.360 --> 05:02.320
+updated as expected.
+
+05:02.320 --> 05:05.240
+So the way we're going to do this is, inside of our create app,
+
+05:05.240 --> 05:06.960
+we're going to pass it an object.
+
+05:06.960 --> 05:08.800
+And this object's going to allow us to configure things
+
+05:08.800 --> 05:09.320
+about our app.
+
+05:09.320 --> 05:11.360
+So think of it as a configuration object.
+
+05:11.360 --> 05:12.320
+And what we're going to do is we're
+
+05:12.320 --> 05:15.120
+going to pass it a data option.
+
+05:15.120 --> 05:16.400
+And what we're going to do is this
+
+05:16.400 --> 05:20.600
+is going to be a function that returns an object.
+
+05:20.600 --> 05:22.440
+And so we think about what's going on here.
+
+05:22.440 --> 05:24.080
+Basically, we're saying, hey, view,
+
+05:24.080 --> 05:25.600
+we want you to create an app that's
+
+05:25.600 --> 05:27.320
+going to have a data property.
+
+05:27.320 --> 05:29.040
+And the reason we're using a function here
+
+05:29.040 --> 05:31.480
+is because we want to actually basically maintain
+
+05:31.480 --> 05:33.600
+the reactivity in terms of tracking
+
+05:33.600 --> 05:36.160
+the latest instance of that object.
+
+05:36.160 --> 05:37.840
+Because if you were to do something instead,
+
+05:37.840 --> 05:42.080
+like just data like this, the data becomes stale over time.
+
+05:42.080 --> 05:44.120
+And there becomes like caching issues.
+
+05:44.120 --> 05:47.280
+And so it's being kind of best practice across frameworks
+
+05:47.280 --> 05:49.400
+that when you're managing data, you actually
+
+05:49.400 --> 05:51.720
+have it be a function that returns an object.
+
+05:51.720 --> 05:54.840
+And then the framework will take care of it from there for you.
+
+05:54.840 --> 05:57.000
+And so in this, let's go ahead and just add a message here.
+
+05:57.000 --> 06:01.360
+And this time, I'll just say, hello, it works.
+
+06:01.360 --> 06:02.560
+OK.
+
+06:02.560 --> 06:04.760
+So now here, we have our reactive data message.
+
+06:04.760 --> 06:07.000
+And the question is, how are we going to actually render
+
+06:07.000 --> 06:08.960
+that inside of our app?
+
+06:08.960 --> 06:10.920
+Well, the way we're going to do that
+
+06:10.920 --> 06:14.240
+is we're going to be using the curly brace syntax.
+
+06:14.240 --> 06:16.720
+So this is specific to, well, actually, this
+
+06:16.720 --> 06:18.840
+has been a fairly common syntax language.
+
+06:18.840 --> 06:20.880
+But as far as the three frameworks are concerned,
+
+06:20.880 --> 06:24.880
+this one view uses the double curly brace.
+
+06:24.880 --> 06:27.680
+And all we type is message.
+
+06:27.680 --> 06:28.960
+That's all it is.
+
+06:28.960 --> 06:30.480
+And when we refresh it, you'll notice
+
+06:30.480 --> 06:34.480
+your data is now appearing inside of your page,
+
+06:34.480 --> 06:35.240
+as you would expect.
+

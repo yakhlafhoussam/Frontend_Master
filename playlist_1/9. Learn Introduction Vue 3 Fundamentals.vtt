@@ -1,0 +1,560 @@
+WEBVTT
+
+00:00.000 --> 00:03.000
+So we're going to go back to your index.html page
+
+00:03.000 --> 00:05.000
+that you were playing around with with your characters.
+
+00:05.000 --> 00:07.000
+And this time, under each of your character,
+
+00:07.000 --> 00:10.000
+I want you to go ahead and add a favorite button to it.
+
+00:10.000 --> 00:13.000
+And when a user clicks on that favorite button,
+
+00:13.000 --> 00:17.000
+go ahead and update a separate list that tracks your favorite characters.
+
+00:17.000 --> 00:19.000
+And as a bonus, if you have some time,
+
+00:19.000 --> 00:23.000
+go ahead and actually create a form that will allow you to add more characters
+
+00:23.000 --> 00:26.000
+to whatever the preset of data already exists.
+
+00:30.000 --> 00:33.000
+Cool. So what I'm going to do now for the solution
+
+00:33.000 --> 00:37.000
+is we're going to go ahead and run through this.
+
+00:37.000 --> 00:42.000
+Okay. So inside of my index.html file.
+
+00:42.000 --> 00:45.000
+All right. First thing we're going to do is we're going to add a button to each character.
+
+00:45.000 --> 00:48.000
+Well, we have our list here that we have.
+
+00:48.000 --> 00:50.000
+And all we're going to do is I'm going to do this.
+
+00:50.000 --> 00:53.000
+I'm going to just, for the sake of making it easier,
+
+00:53.000 --> 00:57.000
+let's make the p element wrapping around that.
+
+00:57.000 --> 00:59.000
+So we save that. This is good.
+
+00:59.000 --> 01:02.000
+And then we can then go ahead and add a button.
+
+01:02.000 --> 01:05.000
+So just do.
+
+01:05.000 --> 01:08.000
+And I'm going to add a star here for favorite.
+
+01:08.000 --> 01:11.000
+There we go. We have a favorite button. Great.
+
+01:13.000 --> 01:16.000
+Now, what we need to do is actually add a favorite character.
+
+01:16.000 --> 01:20.000
+So at click, we will say favorite character.
+
+01:20.000 --> 01:22.000
+We haven't written the method yet.
+
+01:22.000 --> 01:24.000
+So we'll go down inside of our app here.
+
+01:24.000 --> 01:27.000
+And so inside of data, we don't need that.
+
+01:27.000 --> 01:28.000
+So we need it here.
+
+01:28.000 --> 01:33.000
+So we need methods for favorite character.
+
+01:33.000 --> 01:36.000
+And this is where the argument actually comes into play.
+
+01:36.000 --> 01:38.000
+Because at this point, well, there's a couple things.
+
+01:38.000 --> 01:40.000
+One, we need a favorite list.
+
+01:40.000 --> 01:44.000
+So I like to try to go alphabetical whenever it makes sense.
+
+01:44.000 --> 01:49.000
+So favorite list, that's just an array.
+
+01:49.000 --> 01:53.000
+And so what we want to do is we're going to do this.favoriteList.push.
+
+01:53.000 --> 01:54.000
+What are we pushing?
+
+01:54.000 --> 01:56.000
+We want to push the character that's actually being called.
+
+01:56.000 --> 02:00.000
+And so the way we detect this is we go inside of our favorite character.
+
+02:00.000 --> 02:06.000
+And we're in our loop, so we can actually pass character directly to our function.
+
+02:06.000 --> 02:09.000
+Which means character now should be here.
+
+02:09.000 --> 02:13.000
+And we can go ahead and push that over.
+
+02:13.000 --> 02:17.000
+And so to show that that works, let's go ahead and add another list right here.
+
+02:17.000 --> 02:23.000
+This time, we'll just add a h2 of favorite characters.
+
+02:23.000 --> 02:25.000
+Once again, I see a typo there.
+
+02:25.000 --> 02:27.000
+I'll fix that real quick.
+
+02:27.000 --> 02:30.000
+v4 character in favorite list.
+
+02:30.000 --> 02:34.000
+And then inside of here, we're just going to render out the character.
+
+02:34.000 --> 02:35.000
+Okay?
+
+02:35.000 --> 02:38.000
+So as we can see here, actually nothing's showing up.
+
+02:38.000 --> 02:43.000
+So actually, this is a good instance where we might actually want to do no favorite characters left.
+
+02:43.000 --> 02:47.000
+So this is where the vif works well.
+
+02:47.000 --> 02:52.000
+So vif favorite characters or favorite lists.length.
+
+02:54.000 --> 02:55.000
+Actually, you know what?
+
+02:55.000 --> 02:58.000
+I usually prefer the greater than zero as my first one.
+
+02:58.000 --> 02:59.000
+So we're going to swap this.
+
+02:59.000 --> 03:03.000
+We're going to go down here and we'll swap the vif for the ul
+
+03:03.000 --> 03:05.000
+as well because that's my preferred default state.
+
+03:05.000 --> 03:08.000
+And this empty state is really a fallback for one that doesn't have it.
+
+03:08.000 --> 03:09.000
+There we go.
+
+03:09.000 --> 03:10.000
+No favorite characters yet.
+
+03:10.000 --> 03:11.000
+We'll be favorite Toph.
+
+03:11.000 --> 03:12.000
+There we go.
+
+03:12.000 --> 03:15.000
+Toph, Zuko, Aang, Katara.
+
+03:15.000 --> 03:16.000
+Everything's working.
+
+03:16.000 --> 03:18.000
+Now, of course, you can do deduping and all that fun stuff,
+
+03:18.000 --> 03:20.000
+but I'll leave you all to play with that.
+
+03:20.000 --> 03:22.000
+And then there you go.
+
+03:22.000 --> 03:23.000
+Create form.
+
+03:23.000 --> 03:24.000
+Okay.
+
+03:24.000 --> 03:27.000
+And then let's go ahead and add the characters as well.
+
+03:27.000 --> 03:31.000
+So what we want to do next is we want to actually then add a new character.
+
+03:31.000 --> 03:32.000
+How do we do that?
+
+03:32.000 --> 03:35.000
+Well, at this point, the easiest thing for me to do
+
+03:35.000 --> 03:38.000
+is let's go ahead and create another h2.
+
+03:38.000 --> 03:41.000
+And this h2 will be new character.
+
+03:41.000 --> 03:42.000
+And then what do we have?
+
+03:42.000 --> 03:47.000
+We have basically one attribute, which is the character name.
+
+03:47.000 --> 03:48.000
+And so let's say name.
+
+03:48.000 --> 03:50.000
+And then we'll have the input.
+
+03:50.000 --> 03:51.000
+And this will be text.
+
+03:51.000 --> 03:52.000
+That's fine.
+
+03:52.000 --> 03:56.000
+And then what we're going to do is we're going to do...
+
+03:56.000 --> 03:58.000
+If we think about the data structure we're probably looking for,
+
+03:58.000 --> 04:00.000
+eventually characters have more attributes, right?
+
+04:00.000 --> 04:02.000
+So if we think about the reactive data we're looking for,
+
+04:02.000 --> 04:05.000
+we can say there's going to be a new character object
+
+04:05.000 --> 04:08.000
+that we're basically going to be tracking inside of here.
+
+04:08.000 --> 04:13.000
+So with that, we can then say vModel equals new character.
+
+04:13.000 --> 04:15.000
+And you know what? We actually know how we kind of want it structured.
+
+04:15.000 --> 04:17.000
+So we're actually going to go ahead by default,
+
+04:17.000 --> 04:19.000
+go ahead and actually define the name inside of the data
+
+04:19.000 --> 04:23.000
+so we're clear to future developers that it's not an implicit thing.
+
+04:23.000 --> 04:26.000
+And then new character.name.
+
+04:26.000 --> 04:29.000
+And so to show that that works, what we're going to do once again
+
+04:29.000 --> 04:32.000
+is let's go ahead and use the pre-element.
+
+04:32.000 --> 04:34.000
+And so the pre-element is a handy little trick
+
+04:34.000 --> 04:38.000
+to actually render your reactive data in a way that's actually readable.
+
+04:38.000 --> 04:40.000
+So here I'll show you the difference.
+
+04:40.000 --> 04:42.000
+So if we save here and refresh,
+
+04:42.000 --> 04:46.000
+you'll see that the name is actually being rendered kind of in its code block form.
+
+04:46.000 --> 04:49.000
+But if you didn't do a pre-element and you just did like the p-element, for example,
+
+04:49.000 --> 04:51.000
+which is what I might do by default,
+
+04:51.000 --> 04:55.000
+you'll see that it basically automatically just renders it as a normal string.
+
+04:55.000 --> 04:58.000
+And so the pre-element, it's not as obvious in this particular case,
+
+04:58.000 --> 05:00.000
+but when you have like JSON objects that's multiple lists,
+
+05:00.000 --> 05:02.000
+it's really nice to have it automatically formatted
+
+05:02.000 --> 05:05.000
+with just using an HTML element without having to do anything special.
+
+05:05.000 --> 05:07.000
+So there we go.
+
+05:07.000 --> 05:09.000
+And now if we come in here, hey, there we go.
+
+05:09.000 --> 05:11.000
+Look, things are actually changing.
+
+05:11.000 --> 05:15.000
+So once again, if I say appa, right, and then, hmm, nothing's adding yet.
+
+05:15.000 --> 05:16.000
+Why?
+
+05:16.000 --> 05:19.000
+Because we haven't actually had a way to actually push the character to it.
+
+05:19.000 --> 05:20.000
+So how might we do that?
+
+05:20.000 --> 05:22.000
+Well, for the sake of showing you all something new, right,
+
+05:22.000 --> 05:24.000
+we talked about vModel and all that stuff,
+
+05:24.000 --> 05:28.000
+and we know how to do some, we can click on the button to add it.
+
+05:28.000 --> 05:30.000
+But what if instead we did something a little bit more fun?
+
+05:30.000 --> 05:32.000
+Let's not do a button this time.
+
+05:32.000 --> 05:34.000
+What if we wanted to do a key up,
+
+05:34.000 --> 05:36.000
+and then when we hit enter, then we push it.
+
+05:36.000 --> 05:37.000
+How would that work?
+
+05:37.000 --> 05:41.000
+Well, we can actually do an add key up event,
+
+05:41.000 --> 05:46.000
+and then we can say basically add new character.
+
+05:46.000 --> 05:49.000
+And so if we come in here, and we go to methods,
+
+05:49.000 --> 05:52.000
+and we go add new character,
+
+05:52.000 --> 05:55.000
+at this point, we do know what the new character is,
+
+05:55.000 --> 05:57.000
+so we don't need to pass any arguments to it
+
+05:57.000 --> 06:00.000
+because that is already being tracked inside of our reactive data.
+
+06:00.000 --> 06:04.000
+So what we get to do is we can do this.characterList.push.
+
+06:04.000 --> 06:05.000
+What are we pushing?
+
+06:05.000 --> 06:07.000
+We're pushing the new character.
+
+06:07.000 --> 06:09.000
+And not just any new character.
+
+06:09.000 --> 06:11.000
+It's this new character.
+
+06:11.000 --> 06:14.000
+So if we refresh that and do oppa,
+
+06:14.000 --> 06:16.000
+you'll see that's weird.
+
+06:16.000 --> 06:18.000
+What's happening?
+
+06:18.000 --> 06:21.000
+Well, any guesses?
+
+06:21.000 --> 06:22.000
+Every key up.
+
+06:22.000 --> 06:23.000
+Yep.
+
+06:23.000 --> 06:25.000
+Every key up is just like firing off.
+
+06:25.000 --> 06:27.000
+It's like add, add, add, add, add, add, add, add, add.
+
+06:27.000 --> 06:28.000
+We don't want that.
+
+06:28.000 --> 06:34.000
+We really only want to do this when you hit key up enter.
+
+06:34.000 --> 06:37.000
+And so some of you are probably thinking,
+
+06:37.000 --> 06:38.000
+okay, so I know what I'm going to do.
+
+06:38.000 --> 06:39.000
+I'm going to get the event.
+
+06:39.000 --> 06:41.000
+I'm going to do event.target,
+
+06:41.000 --> 06:43.000
+and then I have to figure out what the key code is.
+
+06:43.000 --> 06:46.000
+But I got you all one easier.
+
+06:46.000 --> 06:47.000
+Yep.
+
+06:47.000 --> 06:48.000
+So the audience already gots it.
+
+06:48.000 --> 06:50.000
+So what we can do here,
+
+06:50.000 --> 06:53.000
+I mentioned before about modifiers to the API.
+
+06:53.000 --> 06:54.000
+On the key up,
+
+06:54.000 --> 06:57.000
+Vue also knows we have common things we're using all the time.
+
+06:57.000 --> 07:00.000
+And enter and escape keys, those are common.
+
+07:00.000 --> 07:03.000
+So all we can do is we do .enter on this.
+
+07:03.000 --> 07:05.000
+Refresh.
+
+07:05.000 --> 07:07.000
+Oppa's fine.
+
+07:07.000 --> 07:08.000
+Hit enter.
+
+07:08.000 --> 07:09.000
+And then there you go.
+
+07:09.000 --> 07:11.000
+The reason it's blinking is because of that odd character.
+
+07:11.000 --> 07:12.000
+So actually, let me,
+
+07:12.000 --> 07:15.000
+I think that functionality is basically done.
+
+07:15.000 --> 07:18.000
+So let's do-do-do.
+
+07:18.000 --> 07:20.000
+Don't do that.
+
+07:20.000 --> 07:21.000
+Don't.
+
+07:21.000 --> 07:22.000
+Oh, right.
+
+07:22.000 --> 07:23.000
+I had that whole list thing.
+
+07:23.000 --> 07:24.000
+That's fine.
+
+07:24.000 --> 07:25.000
+Okay.
+
+07:25.000 --> 07:26.000
+Then if I just add it twice, there you go.
+
+07:26.000 --> 07:28.000
+Now you'll see both of them.
+
+07:28.000 --> 07:29.000
+And so the final thing,
+
+07:29.000 --> 07:31.000
+just from like a code cleanup perspective,
+
+07:31.000 --> 07:33.000
+is probably just once we push the character,
+
+07:33.000 --> 07:36.000
+just new character equals, you know,
+
+07:36.000 --> 07:40.000
+just like a new object.
+
+07:40.000 --> 07:42.000
+And so just to prove that that works,
+
+07:42.000 --> 07:43.000
+oppa, enter.
+
+07:43.000 --> 07:44.000
+That's fine.
+
+07:44.000 --> 07:47.000
+Then we can say, like, Azula.
+
+07:47.000 --> 07:48.000
+There we go.
+
+07:48.000 --> 07:49.000
+Oppa Azula.
+
+07:49.000 --> 07:53.000
+And you can see that our name input is being reset properly.
+

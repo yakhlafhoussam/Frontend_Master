@@ -1,0 +1,608 @@
+WEBVTT
+
+00:00.000 --> 00:02.000
+Nous avons donc parlé de l'API Composition,
+
+00:02.000 --> 00:03.280
+nous avons parlé de la configuration du script.
+
+00:03.280 --> 00:05.800
+Nous devons maintenant parler de quelque chose appelé Composable.
+
+00:05.800 --> 00:08.680
+C'est le petit nouveau du quartier en matière de visionnage, car c'est
+
+00:08.680 --> 00:11.760
+essentiellement une terminologie spécifique à la vue autour
+
+00:11.760 --> 00:14.520
+un type d'utilitaire JavaScript réutilisable qui
+
+00:14.520 --> 00:18.520
+utilise l'API Composition, d'où son nom Composable.
+
+00:18.520 --> 00:20.760
+Donc pour ceux qui viennent d'un milieu React,
+
+00:20.760 --> 00:23.600
+vous connaissez peut-être les hooks React
+
+00:23.600 --> 00:25.520
+où ils préfixent tout avec usage,
+
+00:25.520 --> 00:27.640
+comme utiliser la position de la souris, ce genre de chose.
+
+00:27.720 --> 00:31.320
+Ce modèle s'est également confirmé dans la mesure où nous allons
+
+00:31.320 --> 00:33.760
+en gros, je vais faire une démonstration sous peu,
+
+00:33.760 --> 00:36.560
+mais nous pourrons créer une aide,
+
+00:36.560 --> 00:39.360
+essentiellement des fonctions utilitaires utilisant l'API Composition,
+
+00:39.360 --> 00:41.480
+et puis c'est l'insaisissable,
+
+00:41.480 --> 00:43.120
+comment partager certaines choses entre les composants
+
+00:43.120 --> 00:45.560
+sans polluer et réécrire la même chose ?
+
+00:45.560 --> 00:47.360
+Les Composables sont votre réponse à cela.
+
+00:47.360 --> 00:49.760
+D'accord, alors chargeons le compteur très vite.
+
+00:49.760 --> 00:51.880
+Je vais donc entrer dans mon app.view,
+
+00:51.880 --> 00:55.120
+et cette fois, nous allons pratiquer cela.
+
+00:55.160 --> 00:58.520
+En fait, je vais juste importer mon compteur de base,
+
+00:58.520 --> 01:01.400
+et cela vient du compteur de base ici.
+
+01:01.400 --> 01:02.680
+Nous allons supprimer cela,
+
+01:02.680 --> 01:06.240
+et ensuite nous allons juste afficher notre compteur de base,
+
+01:07.080 --> 01:07.920
+juste comme ça.
+
+01:07.920 --> 01:10.440
+Bon, alors voilà.
+
+01:10.440 --> 01:13.360
+En outre, la configuration du script en chair et en os, juste là.
+
+01:15.760 --> 01:18.360
+D'accord, nous avons la possibilité d'augmenter, c'est très bien,
+
+01:19.800 --> 01:24.800
+mais et si nous voulions pouvoir compter ailleurs ?
+
+01:24.880 --> 01:27.440
+C'est fondamentalement comme une fonctionnalité encapsulée
+
+01:27.440 --> 01:29.240
+que nous ne voulons pas,
+
+01:29.240 --> 01:30.520
+donc quand nous examinons cette fonctionnalité,
+
+01:30.520 --> 01:31.960
+encore une fois, c'est un exemple simpliste,
+
+01:31.960 --> 01:34.120
+mais par souci de compréhension des composables,
+
+01:34.120 --> 01:36.080
+imaginez si on voulait que le décompte soit géré
+
+01:36.080 --> 01:37.560
+de plusieurs endroits.
+
+01:37.560 --> 01:38.640
+Autrement dit, au comptoir de base,
+
+01:38.640 --> 01:40.640
+c'est bien qu'il l'ait ici,
+
+01:40.640 --> 01:42.160
+mais et si nous voulions la base,
+
+01:42.160 --> 01:45.560
+disons à l'intérieur de la carte utilisateur,
+
+01:45.560 --> 01:47.160
+et si la carte utilisateur voulait la capacité
+
+01:47.160 --> 01:49.220
+pour augmenter également le décompte ?
+
+01:49.220 --> 01:50.920
+Pour le moment, il faudrait dupliquer ça,
+
+01:50.920 --> 01:52.040
+c'est un peu délicat,
+
+01:52.040 --> 01:53.840
+tu devrais probablement faire quelques accessoires
+
+01:53.880 --> 01:56.120
+pour que votre application gère cela,
+
+01:56.120 --> 01:57.560
+mais compter est quelque chose qui vraiment,
+
+01:57.560 --> 01:58.400
+si on y pense,
+
+01:58.400 --> 02:00.480
+il appartient vraiment au compteur de base en tant qu'état,
+
+02:00.480 --> 02:02.880
+mais ça n'a vraiment pas de sens de le mettre au niveau de l'application
+
+02:02.880 --> 02:05.520
+parce que l'application se soucie généralement de plein d'autres choses.
+
+02:05.520 --> 02:06.600
+Alors qu'est-ce qu'on a ?
+
+02:06.600 --> 02:10.080
+Nous avons des composables, comment ça marche ?
+
+02:10.080 --> 02:14.080
+Eh bien, commençons par créer un dossier appelé composables,
+
+02:14.080 --> 02:16.200
+c'est ce que vous verrez souvent dans les bases de code
+
+02:16.200 --> 02:18.400
+ces jours-ci pour la vue trois.
+
+02:18.400 --> 02:20.040
+Et ce que nous allons faire, c'est créer
+
+02:20.040 --> 02:21.800
+à l'intérieur de ces composables,
+
+02:21.840 --> 02:24.520
+Je vais créer quelque chose appelé un décompte,
+
+02:24.520 --> 02:26.040
+Je vais juste appeler ça un magasin de comptage,
+
+02:26.040 --> 02:26.880
+parce que c'est ce que je voulais faire,
+
+02:26.880 --> 02:29.880
+Je veux essentiellement stocker ce qui se passe avec count.
+
+02:29.880 --> 02:31.400
+Je vais donc diviser cela en deux colonnes,
+
+02:31.400 --> 02:33.520
+vous pouvez voir ce qui se passe.
+
+02:33.520 --> 02:35.520
+Et donc voilà, ce que nous voulons vraiment faire
+
+02:35.520 --> 02:36.840
+est-ce que nous voulons cette donnée,
+
+02:36.840 --> 02:39.040
+commençons simplement, faisons en sorte que cela soit partagé,
+
+02:39.040 --> 02:41.520
+afin que nous puissions le montrer à plusieurs endroits.
+
+02:41.520 --> 02:44.680
+Pour faire ça, nous allons importer une référence,
+
+02:44.680 --> 02:47.640
+et bien en fait non, nous allons faire de l'ingénierie inverse
+
+02:47.640 --> 02:49.160
+un peu plus facile.
+
+02:49.160 --> 02:51.040
+Pour ceux qui découvrent les modules JavaScript,
+
+02:51.040 --> 02:52.280
+cela peut paraître un peu intimidant,
+
+02:52.280 --> 02:54.640
+mais nous allons essentiellement le construire à partir de zéro.
+
+02:54.640 --> 02:56.720
+Lorsque vous avez un fichier JavaScript que vous souhaitez importer
+
+02:56.720 --> 03:00.360
+dans un autre fichier, la principale chose à faire
+
+03:00.360 --> 03:01.880
+c'est qu'il faut les exporter, non ?
+
+03:01.880 --> 03:03.080
+Donc normalement, vous auriez une exportation,
+
+03:03.080 --> 03:06.360
+comme compter jusqu'à 10, comme ça, d'accord ?
+
+03:06.360 --> 03:09.240
+En fait, faisons-en une centaine, comme ça.
+
+03:09.240 --> 03:12.000
+Et puis ce que nous pourrions faire, c'est que vous puissiez dire :
+
+03:12.000 --> 03:16.480
+importer un magasin de comptage, ou réellement importer,
+
+03:16.480 --> 03:18.040
+nous allons déstructurer cette partie,
+
+03:18.080 --> 03:21.960
+du magasin de nombre de barres composables.
+
+03:21.960 --> 03:23.800
+Et qu'est-ce qu'on est, on en retire,
+
+03:23.800 --> 03:26.000
+nous en retirons le décompte.
+
+03:26.000 --> 03:27.760
+Et en fait, faisons en sorte que ce nouveau compte
+
+03:27.760 --> 03:29.600
+pour que visuellement ce soit plus facile pour vous tous
+
+03:29.600 --> 03:31.400
+pour voir ce qui se passe ici.
+
+03:31.400 --> 03:34.400
+Et puis ce que nous pouvons faire ici se situe dans notre méthode de configuration,
+
+03:35.880 --> 03:38.840
+nous pourrions dire, ah oui, nous allons y aller et dire,
+
+03:40.120 --> 03:42.400
+renvoie un nouveau décompte.
+
+03:43.400 --> 03:46.880
+OK, donc pour vous montrer ce qui vient de se passer ici,
+
+03:48.720 --> 03:51.320
+nous venons d'écrire un JavaScript standard,
+
+03:51.320 --> 03:52.520
+oups, que se passe-t-il ?
+
+03:53.760 --> 03:56.600
+Faire, faire, faire, faire, échouer à résoudre, importer,
+
+03:56.600 --> 03:59.600
+composables, magasin de comptage.
+
+03:59.600 --> 04:00.600
+Vous pourriez en avoir un de secours.
+
+04:00.600 --> 04:03.800
+Oh, remontez d'un niveau, oui, le nom du fichier, c'est tout.
+
+04:03.800 --> 04:04.640
+Super appel.
+
+04:04.640 --> 04:06.120
+Et puis pour montrer que ça marche,
+
+04:06.120 --> 04:08.200
+nous allons rendre cela sur la page.
+
+04:08.200 --> 04:09.800
+H2, nouveau décompte.
+
+04:11.200 --> 04:14.480
+Vous pouvez voir, nous avons réussi à écrire un petit article
+
+04:14.480 --> 04:16.800
+de JavaScript qui réutilise désormais deux emplacements.
+
+04:16.800 --> 04:18.200
+Encore une fois, pour prouver que cela fonctionne,
+
+04:18.200 --> 04:20.280
+encore une fois, continuons à le prouver,
+
+04:20.280 --> 04:23.880
+c'est que nous importerons ensuite le même nouveau décompte
+
+04:23.880 --> 04:24.880
+sur la carte utilisateur.
+
+04:26.880 --> 04:29.480
+De même, nous utiliserons ici une méthode de configuration.
+
+04:29.480 --> 04:31.000
+Je ne vais pas passer du temps à tout convertir
+
+04:31.000 --> 04:32.800
+pour le moment, juste pour faire avancer le processus
+
+04:32.800 --> 04:33.880
+un peu plus facile.
+
+04:33.880 --> 04:36.400
+Mais nous allons revenir sur un nouveau décompte ici.
+
+04:36.400 --> 04:39.400
+Et puis nous pouvons en fait, en tant que H2,
+
+04:39.400 --> 04:41.220
+faites également un nouveau décompte.
+
+04:41.220 --> 04:42.360
+Donc à l'intérieur de la carte utilisateur,
+
+04:42.360 --> 04:44.200
+ce que nous allons faire maintenant, c'est également afficher un nouveau décompte,
+
+04:44.200 --> 04:45.920
+afin que nous puissions réellement prouver que cela a été un succès
+
+04:45.920 --> 04:47.120
+importé à deux endroits.
+
+04:47.120 --> 04:49.120
+Mais nous avons besoin que cela soit réellement affiché sur la page.
+
+04:49.120 --> 04:51.880
+Nous devons donc aller sur app.view,
+
+04:51.880 --> 04:54.520
+et allons-y et apportons notre carte d'utilisateur.
+
+04:54.520 --> 04:55.640
+Même si je dis en fait,
+
+04:55.640 --> 04:58.240
+oh ouais, la carte utilisateur est correcte, c'est parti, parfait.
+
+04:58.240 --> 05:00.560
+Donc carte utilisateur ici.
+
+05:01.600 --> 05:05.680
+Mais je crois que la carte utilisateur avait quelques accessoires,
+
+05:05.680 --> 05:08.580
+ne nécessitait pas d'accessoires, c'était le cas.
+
+05:08.580 --> 05:10.420
+Objet pour le nom et la nourriture, c'est bien,
+
+05:10.420 --> 05:11.680
+nous pouvons le faire très rapidement.
+
+05:11.680 --> 05:14.640
+Ce sera un utilisateur,
+
+05:16.160 --> 05:18.960
+avec un nom de Ben,
+
+05:18.960 --> 05:20.320
+et nous mettrons juste de la nourriture,
+
+05:20.320 --> 05:22.260
+cette fois, nous ferons du cheeseburger,
+
+05:23.240 --> 05:24.760
+même si je l'ai fait plus tôt.
+
+05:24.760 --> 05:28.000
+Alors pour faire quelque chose de nouveau,
+
+05:28.000 --> 05:30.960
+nous allons juste faire des ramen, en toute sécurité.
+
+05:30.960 --> 05:32.560
+Boum, d'accord.
+
+05:32.560 --> 05:35.560
+Donc vous pouvez voir maintenant, 100 apparaît ici dans le décompte,
+
+05:35.560 --> 05:37.180
+100 apparaît ici en bas.
+
+05:38.200 --> 05:42.200
+On peut donc le vérifier encore une fois en allant au magasin de comptage,
+
+05:42.200 --> 05:43.560
+en changeant cela en 200,
+
+05:43.560 --> 05:45.760
+et si vous pouvez voir et rafraîchir,
+
+05:45.760 --> 05:47.440
+tu verras qu'il se met à jour,
+
+05:47.440 --> 05:50.200
+mais encore une fois, c'est une constante, c'est un peu bizarre.
+
+05:50.200 --> 05:51.680
+Très bien, donc c'est cool,
+
+05:51.680 --> 05:52.880
+mais encore une fois,
+
+05:52.880 --> 05:56.280
+nous voulons avoir la possibilité de le changer.
+
+05:56.280 --> 05:59.120
+Alors allons à l'intérieur de notre comptoir de base,
+
+05:59.120 --> 06:01.320
+et cette fois nous pouvons,
+
+06:01.320 --> 06:03.880
+eh bien, que pourriez-vous faire instinctivement ?
+
+06:03.880 --> 06:05.960
+On pourrait y aller, eh bien, au lieu de ça,
+
+06:05.960 --> 06:08.680
+nous dirons ceci.newCount,
+
+06:08.680 --> 06:09.840
+et quand on clique dessus,
+
+06:09.840 --> 06:12.360
+nous voulons que newCount soit également incrémenté,
+
+06:12.360 --> 06:14.640
+et nous l'incrémenterons de 10.
+
+06:14.640 --> 06:18.080
+Donc nous allons enregistrer cela, nous actualiserons, nous y toucherons,
+
+06:18.080 --> 06:20.960
+et vous remarquerez, oh, ça marche en quelque sorte.
+
+06:20.960 --> 06:22.600
+C'est un peu bizarre,
+
+06:22.600 --> 06:25.760
+mais ensuite vous remarquerez que cela fonctionne dans ce contexte,
+
+06:25.760 --> 06:27.920
+mais ça ne marche pas dans ce contexte,
+
+06:27.920 --> 06:30.240
+et ceci est un petit aperçu
+
+06:30.240 --> 06:33.420
+du genre de bugs d'interface utilisateur auxquels nous avons dû faire face au fil du temps
+
+06:33.420 --> 06:35.600
+alors que les développeurs étaient confrontés à des changements d'état réactifs,
+
+06:35.600 --> 06:38.360
+et c'est ce que beaucoup de frameworks font bien pour nous.
+
+06:38.360 --> 06:41.880
+Voici donc l'affaire.
+
+06:41.920 --> 06:44.720
+Ce que nous voulons faire, c'est que voulons-nous faire ?
+
+06:44.720 --> 06:46.200
+Nous voulons en faire une référence réactive
+
+06:46.200 --> 06:47.640
+ce point de vue se contractera.
+
+06:47.640 --> 06:49.320
+Alors qu'est-ce qu'on fait ?
+
+06:49.320 --> 06:52.200
+Importer la référence depuis la vue.
+
+06:52.200 --> 07:01.200
+Enveloppez ceci dans une référence, enregistrez, frais, tout est connecté.
+
+07:01.200 --> 07:02.240
+Et juste comme ça,
+
+07:02.240 --> 07:04.800
+vous avez ce petit fichier JavaScript,
+
+07:04.800 --> 07:06.960
+quelle est la variable qui vous intéresse,
+
+07:06.960 --> 07:10.520
+partagé entre deux composants différents à différents niveaux,
+
+07:10.520 --> 07:12.720
+et tout se met à jour comme prévu.
+
+07:14.480 --> 07:17.160
+Et donc ce modèle ici que nous voyons
+
+07:17.160 --> 07:19.040
+concernant la combinaison d'une configuration
+
+07:19.040 --> 07:21.600
+en important tout ce que vous déposez
+
+07:21.600 --> 07:24.160
+en est un qui, je dirais, sera probablement vu davantage
+
+07:24.160 --> 07:25.200
+dans l'API des options,
+
+07:25.200 --> 07:27.240
+et c'est pourquoi nous passons autant de temps sur l'API de composition
+
+07:27.240 --> 07:28.840
+en cela, je dirais qu'à l'avenir
+
+07:28.840 --> 07:30.920
+à mesure que les architectures continuent d'évoluer,
+
+07:30.920 --> 07:33.840
+L'API de composition deviendra de plus en plus populaire dans les applications de visualisation.
+
+07:33.840 --> 07:37.120
+Cela ne veut pas dire que c'est la seule vraie bonne voie
+
+07:37.120 --> 07:38.760
+et que vous devez écrire vos applications de cette façon.
+
+07:38.800 --> 07:40.720
+C'est juste une technique très efficace,
+
+07:40.720 --> 07:42.880
+et essayer de l'ignorer pour le plaisir de l'ignorer
+
+07:42.880 --> 07:44.440
+cela n'a pas vraiment beaucoup de sens.
+
+07:44.440 --> 07:46.960
+Donc, pour ceux d'entre nous qui aiment toujours l'API d'options,
+
+07:46.960 --> 07:48.520
+il suffit de le saupoudrer comme ça,
+
+07:48.520 --> 07:51.080
+et puis vous bénéficiez des avantages de composer ensemble
+
+07:51.080 --> 07:52.280
+différentes fonctionnalités
+
+07:52.280 --> 07:54.160
+que vous pourrez réutiliser dans vos options,
+
+07:54.160 --> 07:56.280
+mais vous pouvez toujours bénéficier des avantages des options.
+
+07:56.280 --> 07:59.240
+Pour ceux d'entre nous qui souhaitent utiliser pleinement l'API de composition,
+
+07:59.240 --> 08:01.600
+alors c'est aussi simple que d'importer la chose
+
+08:01.600 --> 08:02.600
+puis l'utiliser.
+

@@ -1,0 +1,554 @@
+WEBVTT
+
+00:00.000 --> 00:02.040
+Et donc ce que nous allons faire aujourd'hui en ce qui concerne
+
+00:02.040 --> 00:04.200
+pour avancer essentiellement sur le reste de l'atelier,
+
+00:04.200 --> 00:06.600
+vous pouvez retrouver tous les différents instantanés de
+
+00:06.600 --> 00:09.920
+où nous commençons et nous arrêtons à l'intérieur des branches individuelles.
+
+00:09.920 --> 00:11.800
+Et donc en gros, O1 commence,
+
+00:11.800 --> 00:13.880
+laissez-moi continuer et tout ajouter.
+
+00:13.880 --> 00:16.760
+Alors laissez-moi vérifier, prendre le statut, qu'est-ce qu'on change ?
+
+00:16.760 --> 00:18.080
+On change de terrain de jeu.
+
+00:18.080 --> 00:19.400
+Le terrain de jeu était donc fait pour moi.
+
+00:19.400 --> 00:22.720
+Alors laissez-moi continuer, kit, fonctionnalité, ajout
+
+00:22.720 --> 00:26.040
+codage en direct pour l'essentiel.
+
+00:26.560 --> 00:30.480
+Voyons, données réactives dans la cour de récréation.
+
+00:31.560 --> 00:33.000
+D'accord.
+
+00:33.000 --> 00:35.320
+Alors je vais pousser ça vers le haut, oups, poussez-vous.
+
+00:35.320 --> 00:36.520
+Je ne l'ai pas encore fait.
+
+00:36.520 --> 00:38.040
+Laissez-moi faire ça très vite.
+
+00:39.960 --> 00:41.120
+Boom.
+
+00:41.120 --> 00:42.520
+Très bien, super.
+
+00:42.520 --> 00:46.480
+Et donc regardez O2, oh attendez, l’exercice O1.
+
+00:46.480 --> 00:49.320
+Obtenez l'exercice push, origin, O1.
+
+00:49.320 --> 00:50.160
+D'accord.
+
+00:51.200 --> 00:53.680
+Donc si vous continuez et affichez les dernières modifications maintenant,
+
+00:53.680 --> 00:55.520
+tu devrais pouvoir voir tout ce que j'ai fait
+
+00:55.520 --> 00:57.080
+à l'intérieur de la cour de récréation.
+
+00:57.080 --> 01:00.080
+Bien sûr, j'ai vu que certaines personnes codaient en même temps,
+
+01:00.080 --> 01:01.680
+ce que j'étais vraiment heureux de voir.
+
+01:01.680 --> 01:03.320
+Mais bien sûr, nous allons vous donner une chance
+
+01:03.320 --> 01:04.600
+pratiquer cela par vous-même
+
+01:04.600 --> 01:06.440
+sans aucune guidance.
+
+01:06.440 --> 01:08.160
+Alors comment ça va fonctionner
+
+01:09.720 --> 01:12.640
+c'est ce que je veux que tu fasses, c'est choisir ton émission de télévision préférée
+
+01:12.640 --> 01:14.960
+ou si tu ne regardes pas la télé, essaie le cinéma
+
+01:14.960 --> 01:17.880
+ou en gros tout ce qui vous est personnel
+
+01:17.880 --> 01:20.760
+et utilisez essentiellement la page index.html que nous avons là-dedans
+
+01:20.760 --> 01:23.160
+c'est déjà prêt pour que vous puissiez jouer avec.
+
+01:23.160 --> 01:25.280
+Et je veux que vous alliez de l'avant et reproduisiez ce que nous venons de faire.
+
+01:25.280 --> 01:27.200
+Pour ce qui est de créer cette application,
+
+01:27.200 --> 01:29.600
+créer une application de visualisation à l'aide du CDN,
+
+01:29.600 --> 01:31.040
+ajouter un suivi des données réactives
+
+01:31.040 --> 01:33.940
+pour suivre peut-être certains personnages de la série et ainsi de suite.
+
+01:33.940 --> 01:36.400
+Je veux que vous vous entraîniez à utiliser le VIF, V4.
+
+01:36.400 --> 01:39.320
+Donc VIF pour suivre s'il n'y a pas de caractères,
+
+01:39.320 --> 01:41.120
+il devrait afficher une sorte d'élément de texte qui dit :
+
+01:41.120 --> 01:42.320
+hé, pas de personnages.
+
+01:42.320 --> 01:44.840
+Et puis, quand il le remplit, il l'échange.
+
+01:44.840 --> 01:47.720
+Et puis allez-y et déposez autant de données réactives
+
+01:47.720 --> 01:49.920
+comme tu veux, encore une fois, joue, amuse-toi avec ça.
+
+01:49.920 --> 01:51.680
+Et ouais.
+
+01:52.680 --> 01:58.360
+Donc de mon côté, je vais ouvrir index.html
+
+01:58.360 --> 01:59.880
+comme vous l'avez tous fait.
+
+01:59.880 --> 02:02.680
+Et pour moi, je vais continuer et faire un avatar
+
+02:02.680 --> 02:03.680
+le dernier maître de l'air.
+
+02:03.680 --> 02:06.720
+C'est celui que je vais faire.
+
+02:06.720 --> 02:09.320
+Et donc à l'intérieur d'ici, nous allons continuer et copier
+
+02:09.320 --> 02:16.640
+l'inclusion CDN que j'ai utilisée plus tôt.
+
+02:16.640 --> 02:18.640
+Et puis à partir de là, nous irons de l'avant
+
+02:18.640 --> 02:20.160
+et nous commencerons à configurer l'application.
+
+02:20.160 --> 02:23.960
+Encore une fois, la convention ici est l'application div id.
+
+02:23.960 --> 02:26.760
+Et la raison en est que, généralement, les frameworks
+
+02:26.760 --> 02:29.120
+je vais continuer et restituer un tas de choses là-dedans.
+
+02:29.120 --> 02:31.880
+Donc le div, il n'a aucune valeur sémantique
+
+02:31.880 --> 02:34.320
+en ce qui concerne les lecteurs d'écran et ce genre de choses.
+
+02:34.320 --> 02:36.520
+C'est pourquoi la convention consiste généralement à utiliser un div.
+
+02:36.520 --> 02:39.680
+Mais si pour une raison quelconque vous souhaitez l'attacher à quelque chose
+
+02:39.680 --> 02:43.280
+sinon, je me sens certainement habilité à le faire.
+
+02:43.280 --> 02:44.360
+OK, alors qu'est-ce qu'on dit ?
+
+02:44.360 --> 02:45.760
+Nous allons créer des données.
+
+02:45.760 --> 02:51.160
+Disons donc que contre créer une application est égal à une vue.
+
+02:51.160 --> 02:52.840
+Et en fait, tu sais ce que je vais faire ?
+
+02:52.840 --> 02:56.840
+Juste pour vous montrer qu'ils sont équivalents,
+
+02:56.840 --> 03:01.200
+nous pouvons essentiellement faire view.createApp comme ça.
+
+03:01.200 --> 03:03.160
+Et puis cela peut être une fonction de données.
+
+03:03.160 --> 03:04.600
+Maintenant, je vais vous montrer une nouvelle syntaxe
+
+03:04.600 --> 03:06.520
+que je préfère personnellement utiliser, qui
+
+03:06.520 --> 03:10.240
+c'est que je vais utiliser la fonction flèche pour, en gros,
+
+03:10.240 --> 03:11.800
+attribuer une fonction aux données.
+
+03:11.800 --> 03:14.000
+Et puis je mettrai l'objet entre parenthèses.
+
+03:14.000 --> 03:16.120
+Cela permet donc d'économiser quelques lignes de code.
+
+03:16.120 --> 03:22.000
+Donc juste pour montrer la différence très rapidement,
+
+03:22.000 --> 03:24.440
+vous verrez ici c'est la différence, non ?
+
+03:24.440 --> 03:28.120
+Données avec les parenthèses, puis le retour explicite réel.
+
+03:28.120 --> 03:30.240
+Cela a le retour implicite avec la flèche.
+
+03:30.240 --> 03:32.200
+Et puis nous pouvons trouver nos données ici.
+
+03:32.200 --> 03:34.520
+Alors ici, je peux faire mes personnages comme ça.
+
+03:34.520 --> 03:36.280
+Et puis je vais aller de l'avant et effondrer ça maintenant,
+
+03:36.280 --> 03:38.600
+pour que nous ayons la seule colonne.
+
+03:38.600 --> 03:41.240
+OK, alors nous aurons quatre objets.
+
+03:41.240 --> 03:43.680
+Donc en fait, vous savez que je vais y aller et faire très vite.
+
+03:43.680 --> 03:47.520
+C'est 1, 2, 3, 4.
+
+03:47.520 --> 03:50.760
+Je vais utiliser une sélection multi-curseur en maintenant la commande enfoncée.
+
+03:50.760 --> 03:52.440
+Peut-être un contrôle pour Windows.
+
+03:52.440 --> 03:54.320
+Et puis je vais juste ouvrir, en gros, un objet
+
+03:54.320 --> 03:56.320
+pour ne pas avoir à le faire plusieurs fois.
+
+03:56.320 --> 03:57.080
+Super.
+
+03:57.080 --> 03:59.720
+Et puis sauvegardons cela très rapidement pour qu'il soit automatiquement formaté.
+
+03:59.720 --> 04:02.160
+Encore une fois, cliquons et ajoutons quelques propriétés.
+
+04:02.160 --> 04:06.320
+Nous aurons donc, en gros, le nom du personnage.
+
+04:06.320 --> 04:08.040
+Et c'est essentiellement tout.
+
+04:08.040 --> 04:09.960
+Donc dans ce cas, nous avons ng.
+
+04:09.960 --> 04:12.200
+Nous avons Zuko.
+
+04:12.200 --> 04:14.080
+Nous avons Tof.
+
+04:14.080 --> 04:16.640
+Et nous avons Katara.
+
+04:19.200 --> 04:19.680
+D'accord.
+
+04:22.480 --> 04:24.280
+Donc la première chose que nous allons faire maintenant, c'est :
+
+04:24.280 --> 04:26.280
+allons de l'avant et restituons réellement notre état vide.
+
+04:26.280 --> 04:28.760
+Donc ce que nous allons faire, c'est créer un élément p
+
+04:28.760 --> 04:31.920
+et disons qu'il n'y a pas de personnages.
+
+04:31.920 --> 04:33.680
+Et donc nous allons sauvegarder cela maintenant.
+
+04:33.680 --> 04:37.480
+Et allons-y et ouvrons-le dans le navigateur.
+
+04:37.480 --> 04:39.600
+Donc au lieu de terrain de jeu, nous irons à l'index.
+
+04:39.600 --> 04:39.920
+Voilà.
+
+04:39.920 --> 04:41.520
+Il n'y a pas de personnages.
+
+04:41.560 --> 04:44.120
+Et puis nous aurons l'ul ici.
+
+04:44.120 --> 04:47.720
+Et comme avant, nous allons maintenant pratiquer l'élément v4
+
+04:47.720 --> 04:48.680
+que nous avions.
+
+04:48.680 --> 04:53.400
+Donc pour chaque personnage dans les personnages, bien qu'en réalité,
+
+04:53.400 --> 04:55.920
+cela fait ressortir un point philosophique
+
+04:55.920 --> 04:58.640
+que j'aime faire quand il s'agit de nommer des choses.
+
+04:58.640 --> 05:00.640
+Les erreurs ponctuelles sont très courantes en programmation.
+
+05:00.640 --> 05:02.720
+Et je trouve que cela arrive aussi souvent avec l’orthographe.
+
+05:02.720 --> 05:05.800
+Et donc le 1 pluriel m’a attrapé à plusieurs reprises.
+
+05:05.800 --> 05:08.480
+Donc personnellement, j’aime simplement dire que c’est une liste.
+
+05:08.480 --> 05:10.280
+C'est un peu plus long, mais ensuite tu
+
+05:10.280 --> 05:11.720
+avoir cette distinction visuelle.
+
+05:11.720 --> 05:13.280
+C'est un personnage dans la liste des personnages.
+
+05:13.280 --> 05:17.520
+Et puis je peux simplement restituer Character.name, ce qui est génial.
+
+05:17.520 --> 05:19.320
+Mais, hmm, que se passe-t-il ici ?
+
+05:19.320 --> 05:20.880
+Pourquoi ça ne marche pas ?
+
+05:20.880 --> 05:22.480
+C'est une erreur courante que nous
+
+05:22.480 --> 05:24.520
+faire lorsque nous créons en quelque sorte l'application de cette façon
+
+05:24.520 --> 05:25.720
+c'est parce que ce que nous devons penser à faire
+
+05:25.720 --> 05:29.160
+est-ce que nous devons dire à la vue que nous devons la monter.
+
+05:29.160 --> 05:32.920
+Nous allons donc continuer et exécuter la commande mount à ce sujet.
+
+05:32.920 --> 05:35.040
+Et nous allons le monter sur l'application ID.
+
+05:35.040 --> 05:40.240
+Et une fois que nous avons fait cela, enregistrez, actualisez, euh-oh.
+
+05:40.240 --> 05:41.800
+J'ai cassé quelque chose.
+
+05:41.800 --> 05:44.200
+WarnSelector, pourquoi est-ce le cas ?
+
+05:44.200 --> 05:45.560
+Eh bien, des fautes de frappe.
+
+05:45.560 --> 05:47.560
+N'ai-je pas dit quelque chose à propos d'erreurs ponctuelles ici ?
+
+05:47.560 --> 05:49.840
+C'est celui qui vous prendra au dépourvu
+
+05:49.840 --> 05:52.240
+parce que dans votre esprit, vous pensez à CSSSelector,
+
+05:52.240 --> 05:55.440
+mais vous n'avez pas besoin du symbole hashtag supplémentaire.
+
+05:55.440 --> 05:56.200
+Hé, voilà.
+
+05:56.200 --> 05:57.360
+Tout fonctionne.
+
+05:57.360 --> 05:58.840
+Alors maintenant, tout ce que nous avons à faire,
+
+05:58.840 --> 06:00.560
+c'est terminer l'exercice en disant
+
+06:00.560 --> 06:08.160
+si CharacterList.length est égal à 0, alors affichez-le.
+
+06:08.200 --> 06:11.320
+Sinon, montrez-le.
+
+06:11.320 --> 06:13.320
+OK, comme vous pouvez le voir, boum, c'est parti.
+
+06:13.320 --> 06:14.320
+Ça marche.
+
+06:14.320 --> 06:17.120
+Si nous allons de l'avant et mettons cela à jour très rapidement,
+
+06:17.120 --> 06:21.000
+vous verrez qu'aucun personnage n'apparaît.
+
+06:21.000 --> 06:23.800
+Maintenant, quelque chose à noter à propos de la directive vif,
+
+06:23.800 --> 06:27.600
+cependant, est-ce que lorsque vous utilisez la directive vif, quelle vue
+
+06:27.600 --> 06:33.120
+ce que fait réellement, si nous regardons ici,
+
+06:33.120 --> 06:36.480
+est-ce l'UL que vous avez ici pour la condition else
+
+06:36.480 --> 06:39.040
+n'existe même pas sur le DOM.
+
+06:39.040 --> 06:42.520
+Donc en gros, les éléments sont détruits et recréés
+
+06:42.520 --> 06:44.160
+chaque fois que vous activez cela.
+
+06:44.160 --> 06:46.520
+Comme vous pouvez le voir ici maintenant, si nous jetons un coup d'œil à l'application,
+
+06:46.520 --> 06:48.880
+vous remarquerez ici que l'UL est président,
+
+06:48.880 --> 06:51.080
+que la balise p a disparu.
+
+06:51.080 --> 06:54.660
+Et donc cela est contraire à une autre directive
+
+06:54.660 --> 06:57.560
+que vous verrez dans la vue appelée v-show, qui est,
+
+06:57.560 --> 06:59.680
+Je dirai que c'est un cousin moins populaire.
+
+06:59.680 --> 07:01.360
+Et c'est parce que ce que fait v-show
+
+07:01.360 --> 07:05.280
+est-ce qu'il bascule la visibilité de l'élément via CSS.
+
+07:05.280 --> 07:07.240
+Et donc la raison pour laquelle vous voulez ces deux approches différentes
+
+07:07.240 --> 07:12.000
+c'est parce qu'il y a des moments où ça peut être une performance
+
+07:12.000 --> 07:15.880
+goulot d'étranglement lié à la destruction d'une liste de milliers d'éléments
+
+07:15.880 --> 07:17.920
+puis avoir le DOM recréé à chaque fois que quelqu'un
+
+07:17.920 --> 07:19.000
+l'active et le désactive.
+
+07:19.000 --> 07:21.040
+Et vous voudrez peut-être simplement l'afficher ou le masquer.
+
+07:21.040 --> 07:23.200
+C'est donc là que v-show, v-hide pourraient être très utiles
+
+07:23.200 --> 07:24.360
+à ces égards.
+
+07:24.360 --> 07:29.920
+Encore une fois, l'idée ici, en s'appuyant sur ce que nous savons
+
+07:29.920 --> 07:31.680
+et j'essaie de nous faciliter la tâche
+
+07:31.680 --> 07:33.000
+la bonne optimisation des performances.
+
+07:33.120 --> 07:35.320
+C'est un compromis à considérer lors de l'utilisation de vf.
+
+07:35.320 --> 07:37.240
+Mais encore une fois, je dirais que dans 95 % des cas,
+
+07:37.240 --> 07:38.480
+c'est ce que vous voulez utiliser.
+
+07:38.480 --> 07:41.000
+Mais dès le moment où vous commencez à penser, oh, les utilisateurs
+
+07:41.000 --> 07:42.360
+je vais beaucoup basculer cela,
+
+07:42.360 --> 07:46.840
+et cela pourrait coûter cher de le détruire, contactez v-show.
+

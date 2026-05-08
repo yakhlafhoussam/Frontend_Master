@@ -1,0 +1,560 @@
+WEBVTT
+
+00:00.000 --> 00:03.000
+Nous allons donc revenir à votre page index.html
+
+00:03.000 --> 00:05.000
+avec lesquels vous jouiez avec vos personnages.
+
+00:05.000 --> 00:07.000
+Et cette fois, sous chacun de vos personnages,
+
+00:07.000 --> 00:10.000
+Je veux que vous y ajoutiez un bouton favori.
+
+00:10.000 --> 00:13.000
+Et lorsqu'un utilisateur clique sur ce bouton favori,
+
+00:13.000 --> 00:17.000
+allez-y et mettez à jour une liste distincte qui suit vos personnages préférés.
+
+00:17.000 --> 00:19.000
+Et en bonus, si vous avez un peu de temps,
+
+00:19.000 --> 00:23.000
+allez-y et créez un formulaire qui vous permettra d'ajouter plus de caractères
+
+00:23.000 --> 00:26.000
+à tout ce que le préréglage de données existe déjà.
+
+00:30.000 --> 00:33.000
+Cool. Alors ce que je vais faire maintenant pour la solution
+
+00:33.000 --> 00:37.000
+c'est que nous allons aller de l'avant et parcourir tout cela.
+
+00:37.000 --> 00:42.000
+D'accord. Donc à l'intérieur de mon fichier index.html.
+
+00:42.000 --> 00:45.000
+D'accord. La première chose que nous allons faire est d'ajouter un bouton à chaque personnage.
+
+00:45.000 --> 00:48.000
+Eh bien, nous avons ici notre liste.
+
+00:48.000 --> 00:50.000
+Et tout ce que nous allons faire, c'est que je vais faire ça.
+
+00:50.000 --> 00:53.000
+Je vais juste, pour rendre les choses plus faciles,
+
+00:53.000 --> 00:57.000
+faisons en sorte que l'élément p s'enroule autour de cela.
+
+00:57.000 --> 00:59.000
+Nous gardons donc cela. C'est bien.
+
+00:59.000 --> 01:02.000
+Et puis nous pouvons continuer et ajouter un bouton.
+
+01:02.000 --> 01:05.000
+Alors faites-le.
+
+01:05.000 --> 01:08.000
+Et je vais ajouter une étoile ici comme favori.
+
+01:08.000 --> 01:11.000
+Et voilà. Nous avons un bouton favori. Super.
+
+01:13.000 --> 01:16.000
+Maintenant, ce que nous devons faire est d’ajouter un personnage préféré.
+
+01:16.000 --> 01:20.000
+Donc au clic, nous dirons personnage préféré.
+
+01:20.000 --> 01:22.000
+Nous n'avons pas encore écrit la méthode.
+
+01:22.000 --> 01:24.000
+Nous allons donc descendre à l'intérieur de notre application ici.
+
+01:24.000 --> 01:27.000
+Et donc, à l’intérieur des données, nous n’en avons pas besoin.
+
+01:27.000 --> 01:28.000
+Nous en avons donc besoin ici.
+
+01:28.000 --> 01:33.000
+Nous avons donc besoin de méthodes pour le personnage préféré.
+
+01:33.000 --> 01:36.000
+Et c’est là que l’argument entre réellement en jeu.
+
+01:36.000 --> 01:38.000
+Parce qu'à ce stade, eh bien, il y a plusieurs choses.
+
+01:38.000 --> 01:40.000
+Premièrement, nous avons besoin d’une liste de favoris.
+
+01:40.000 --> 01:44.000
+J’aime donc essayer de procéder par ordre alphabétique chaque fois que cela a du sens.
+
+01:44.000 --> 01:49.000
+Donc la liste des favoris, c'est juste un tableau.
+
+01:49.000 --> 01:53.000
+Et donc ce que nous voulons faire, c'est faire ceci.favoriteList.push.
+
+01:53.000 --> 01:54.000
+Que poussons-nous ?
+
+01:54.000 --> 01:56.000
+Nous voulons pousser le personnage qui est réellement appelé.
+
+01:56.000 --> 02:00.000
+Et donc la façon dont nous détectons cela est que nous entrons à l’intérieur de notre personnage préféré.
+
+02:00.000 --> 02:06.000
+Et nous sommes dans notre boucle, nous pouvons donc transmettre le caractère directement à notre fonction.
+
+02:06.000 --> 02:09.000
+Ce qui signifie que le personnage devrait maintenant être là.
+
+02:09.000 --> 02:13.000
+Et nous pouvons aller de l’avant et repousser cela.
+
+02:13.000 --> 02:17.000
+Et donc, pour montrer que cela fonctionne, ajoutons une autre liste ici.
+
+02:17.000 --> 02:23.000
+Cette fois, nous ajouterons simplement un h2 de personnages favoris.
+
+02:23.000 --> 02:25.000
+Encore une fois, je vois une faute de frappe.
+
+02:25.000 --> 02:27.000
+Je vais régler ça très vite.
+
+02:27.000 --> 02:30.000
+personnage v4 dans la liste des favoris.
+
+02:30.000 --> 02:34.000
+Et puis à l'intérieur d'ici, nous allons simplement restituer le personnage.
+
+02:34.000 --> 02:35.000
+D'accord?
+
+02:35.000 --> 02:38.000
+Comme nous pouvons le voir ici, rien ne s’affiche.
+
+02:38.000 --> 02:43.000
+Donc en fait, c’est un bon exemple où nous pourrions vouloir ne plus laisser de personnages favoris.
+
+02:43.000 --> 02:47.000
+C'est donc là que le vif fonctionne bien.
+
+02:47.000 --> 02:52.000
+Donc vifs personnages préférés ou listes de favoris.longueur.
+
+02:54.000 --> 02:55.000
+En fait, tu sais quoi ?
+
+02:55.000 --> 02:58.000
+Je préfère généralement le supérieur à zéro comme premier.
+
+02:58.000 --> 02:59.000
+Nous allons donc échanger cela.
+
+02:59.000 --> 03:03.000
+On va descendre ici et on échangera le vif contre l'ul
+
+03:03.000 --> 03:05.000
+aussi parce que c’est mon état par défaut préféré.
+
+03:05.000 --> 03:08.000
+Et cet état vide est en réalité une solution de repli pour celui qui ne l’a pas.
+
+03:08.000 --> 03:09.000
+Et voilà.
+
+03:09.000 --> 03:10.000
+Aucun personnage préféré pour l'instant.
+
+03:10.000 --> 03:11.000
+Nous serons Toph préféré.
+
+03:11.000 --> 03:12.000
+Et voilà.
+
+03:12.000 --> 03:15.000
+Toph, Zuko, Aang, Katara.
+
+03:15.000 --> 03:16.000
+Tout fonctionne.
+
+03:16.000 --> 03:18.000
+Maintenant, bien sûr, vous pouvez faire de la déduplication et toutes ces choses amusantes,
+
+03:18.000 --> 03:20.000
+mais je vous laisse tous jouer avec ça.
+
+03:20.000 --> 03:22.000
+Et puis voilà.
+
+03:22.000 --> 03:23.000
+Créer un formulaire.
+
+03:23.000 --> 03:24.000
+D'accord.
+
+03:24.000 --> 03:27.000
+Et puis allons-y et ajoutons également les personnages.
+
+03:27.000 --> 03:31.000
+Donc, ce que nous voulons faire ensuite, c'est ajouter un nouveau personnage.
+
+03:31.000 --> 03:32.000
+Comment fait-on cela ?
+
+03:32.000 --> 03:35.000
+Eh bien, à ce stade, la chose la plus simple à faire pour moi
+
+03:35.000 --> 03:38.000
+c'est allons de l'avant et créons un autre h2.
+
+03:38.000 --> 03:41.000
+Et ce h2 sera un nouveau personnage.
+
+03:41.000 --> 03:42.000
+Et puis qu’avons-nous ?
+
+03:42.000 --> 03:47.000
+Nous avons essentiellement un attribut, qui est le nom du personnage.
+
+03:47.000 --> 03:48.000
+Et alors disons le nom.
+
+03:48.000 --> 03:50.000
+Et puis nous aurons la contribution.
+
+03:50.000 --> 03:51.000
+Et ce sera du texte.
+
+03:51.000 --> 03:52.000
+C'est très bien.
+
+03:52.000 --> 03:56.000
+Et puis ce que nous allons faire, c'est que nous allons faire...
+
+03:56.000 --> 03:58.000
+Si nous réfléchissons à la structure de données que nous recherchons probablement,
+
+03:58.000 --> 04:00.000
+Finalement, les personnages ont plus d'attributs, n'est-ce pas ?
+
+04:00.000 --> 04:02.000
+Donc si nous réfléchissons aux données réactives que nous recherchons,
+
+04:02.000 --> 04:05.000
+on peut dire qu'il va y avoir un nouvel objet personnage
+
+04:05.000 --> 04:08.000
+que nous allons essentiellement suivre à l'intérieur d'ici.
+
+04:08.000 --> 04:13.000
+Donc avec cela, nous pouvons alors dire que vModel est égal à un nouveau caractère.
+
+04:13.000 --> 04:15.000
+Et tu sais quoi ? En fait, nous savons comment nous voulons que cela soit structuré.
+
+04:15.000 --> 04:17.000
+Nous allons donc procéder par défaut,
+
+04:17.000 --> 04:19.000
+allez-y et définissez réellement le nom à l'intérieur des données
+
+04:19.000 --> 04:23.000
+nous faisons donc comprendre aux futurs développeurs que ce n'est pas une chose implicite.
+
+04:23.000 --> 04:26.000
+Et puis un nouveau personnage.nom.
+
+04:26.000 --> 04:29.000
+Et donc pour montrer que ça marche, qu'est-ce qu'on va faire encore une fois
+
+04:29.000 --> 04:32.000
+c'est allons de l'avant et utilisons le pré-élément.
+
+04:32.000 --> 04:34.000
+Et donc le pré-élément est une petite astuce pratique
+
+04:34.000 --> 04:38.000
+pour restituer réellement vos données réactives d'une manière réellement lisible.
+
+04:38.000 --> 04:40.000
+Alors ici, je vais vous montrer la différence.
+
+04:40.000 --> 04:42.000
+Donc si nous enregistrons ici et actualisons,
+
+04:42.000 --> 04:46.000
+vous verrez que le nom est en fait rendu sous sa forme de bloc de code.
+
+04:46.000 --> 04:49.000
+Mais si vous n'avez pas fait de pré-élément et que vous avez juste aimé l'élément p, par exemple,
+
+04:49.000 --> 04:51.000
+c'est ce que je pourrais faire par défaut,
+
+04:51.000 --> 04:55.000
+vous verrez qu'il le restitue automatiquement sous la forme d'une chaîne normale.
+
+04:55.000 --> 04:58.000
+Et donc le pré-élément, ce n'est pas aussi évident dans ce cas particulier,
+
+04:58.000 --> 05:00.000
+mais lorsque vous avez des objets JSON similaires, c'est-à-dire plusieurs listes,
+
+05:00.000 --> 05:02.000
+c'est vraiment sympa de l'avoir formaté automatiquement
+
+05:02.000 --> 05:05.000
+en utilisant simplement un élément HTML sans rien faire de spécial.
+
+05:05.000 --> 05:07.000
+Alors voilà.
+
+05:07.000 --> 05:09.000
+Et maintenant, si nous venons ici, hé, nous y voilà.
+
+05:09.000 --> 05:11.000
+Écoutez, les choses changent réellement.
+
+05:11.000 --> 05:15.000
+Donc encore une fois, si je dis appa, c'est vrai, et puis, hmm, rien n'ajoute encore.
+
+05:15.000 --> 05:16.000
+Pourquoi?
+
+05:16.000 --> 05:19.000
+Parce que nous n’avons pas vraiment eu de moyen de pousser le personnage vers cela.
+
+05:19.000 --> 05:20.000
+Alors, comment pourrions-nous faire cela ?
+
+05:20.000 --> 05:22.000
+Eh bien, pour vous montrer à tous quelque chose de nouveau, n'est-ce pas,
+
+05:22.000 --> 05:24.000
+nous avons parlé de vModel et de tout ça,
+
+05:24.000 --> 05:28.000
+et on sait comment en faire, on peut cliquer sur le bouton pour l'ajouter.
+
+05:28.000 --> 05:30.000
+Et si, à la place, nous faisions quelque chose d’un peu plus amusant ?
+
+05:30.000 --> 05:32.000
+Ne faisons pas de bouton cette fois.
+
+05:32.000 --> 05:34.000
+Et si nous voulions faire une clé,
+
+05:34.000 --> 05:36.000
+et puis quand nous appuyons sur Entrée, nous le poussons.
+
+05:36.000 --> 05:37.000
+Comment cela fonctionnerait-il ?
+
+05:37.000 --> 05:41.000
+Eh bien, nous pouvons en fait faire un événement d'ajout de clé,
+
+05:41.000 --> 05:46.000
+et puis nous pouvons dire, en gros, ajouter un nouveau personnage.
+
+05:46.000 --> 05:49.000
+Et donc si nous venons ici et que nous examinons les méthodes,
+
+05:49.000 --> 05:52.000
+et nous allons ajouter un nouveau personnage,
+
+05:52.000 --> 05:55.000
+à ce stade, nous savons quel est le nouveau personnage,
+
+05:55.000 --> 05:57.000
+nous n'avons donc pas besoin de lui transmettre d'arguments
+
+05:57.000 --> 06:00.000
+car cela est déjà suivi dans nos données réactives.
+
+06:00.000 --> 06:04.000
+Donc, ce que nous pouvons faire, c'est faire this.characterList.push.
+
+06:04.000 --> 06:05.000
+Que poussons-nous ?
+
+06:05.000 --> 06:07.000
+Nous poussons le nouveau personnage.
+
+06:07.000 --> 06:09.000
+Et pas n’importe quel nouveau personnage.
+
+06:09.000 --> 06:11.000
+C'est ce nouveau personnage.
+
+06:11.000 --> 06:14.000
+Donc si on actualise ça et qu'on fait oppa,
+
+06:14.000 --> 06:16.000
+tu verras c'est bizarre.
+
+06:16.000 --> 06:18.000
+Ce qui se passe?
+
+06:18.000 --> 06:21.000
+Eh bien, des suppositions ?
+
+06:21.000 --> 06:22.000
+Chaque clé en place.
+
+06:22.000 --> 06:23.000
+Ouais.
+
+06:23.000 --> 06:25.000
+Chaque touche est comme un coup de feu.
+
+06:25.000 --> 06:27.000
+C'est comme ajouter, ajouter, ajouter, ajouter, ajouter, ajouter, ajouter, ajouter, ajouter.
+
+06:27.000 --> 06:28.000
+Nous ne voulons pas de cela.
+
+06:28.000 --> 06:34.000
+Nous voulons vraiment faire cela uniquement lorsque vous appuyez sur la touche Entrée.
+
+06:34.000 --> 06:37.000
+Et donc certains d'entre vous pensent probablement,
+
+06:37.000 --> 06:38.000
+ok, donc je sais ce que je vais faire.
+
+06:38.000 --> 06:39.000
+Je vais recevoir l'événement.
+
+06:39.000 --> 06:41.000
+Je vais faire event.target,
+
+06:41.000 --> 06:43.000
+et ensuite je dois trouver quel est le code clé.
+
+06:43.000 --> 06:46.000
+Mais je vous en ai tous donné un plus facile.
+
+06:46.000 --> 06:47.000
+Ouais.
+
+06:47.000 --> 06:48.000
+Donc le public l’a déjà compris.
+
+06:48.000 --> 06:50.000
+Alors ce que nous pouvons faire ici,
+
+06:50.000 --> 06:53.000
+J'ai déjà mentionné les modificateurs de l'API.
+
+06:53.000 --> 06:54.000
+Sur la clé en haut,
+
+06:54.000 --> 06:57.000
+Vue also knows we have common things we're using all the time.
+
+06:57.000 --> 07:00.000
+Et les touches d'entrée et d'échappement, celles-ci sont courantes.
+
+07:00.000 --> 07:03.000
+Donc tout ce que nous pouvons faire, c'est nous engager là-dessus.
+
+07:03.000 --> 07:05.000
+Rafraîchir.
+
+07:05.000 --> 07:07.000
+Oppa va bien.
+
+07:07.000 --> 07:08.000
+Appuyez sur Entrée.
+
+07:08.000 --> 07:09.000
+Et puis voilà.
+
+07:09.000 --> 07:11.000
+The reason it's blinking is because of that odd character.
+
+07:11.000 --> 07:12.000
+Alors en fait, laisse-moi,
+
+07:12.000 --> 07:15.000
+Je pense que cette fonctionnalité est fondamentalement terminée.
+
+07:15.000 --> 07:18.000
+Alors faisons, faisons, faisons.
+
+07:18.000 --> 07:20.000
+Ne fais pas ça.
+
+07:20.000 --> 07:21.000
+Ne le faites pas.
+
+07:21.000 --> 07:22.000
+Oh, c'est vrai.
+
+07:22.000 --> 07:23.000
+J'avais toute cette liste.
+
+07:23.000 --> 07:24.000
+C'est très bien.
+
+07:24.000 --> 07:25.000
+D'accord.
+
+07:25.000 --> 07:26.000
+Ensuite, si je l’ajoute juste deux fois, voilà.
+
+07:26.000 --> 07:28.000
+Maintenant, vous les verrez tous les deux.
+
+07:28.000 --> 07:29.000
+Et donc la dernière chose,
+
+07:29.000 --> 07:31.000
+du point de vue du nettoyage du code,
+
+07:31.000 --> 07:33.000
+c'est probablement juste une fois qu'on pousse le personnage,
+
+07:33.000 --> 07:36.000
+juste un nouveau personnage équivaut, tu sais,
+
+07:36.000 --> 07:40.000
+tout comme un nouvel objet.
+
+07:40.000 --> 07:42.000
+Et donc juste pour prouver que ça marche,
+
+07:42.000 --> 07:43.000
+oppa, entre.
+
+07:43.000 --> 07:44.000
+C'est très bien.
+
+07:44.000 --> 07:47.000
+Ensuite, nous pouvons dire, comme Azula.
+
+07:47.000 --> 07:48.000
+Et voilà.
+
+07:48.000 --> 07:49.000
+Oppa Azula.
+
+07:49.000 --> 07:53.000
+Et vous pouvez voir que notre saisie de nom est correctement réinitialisée.
+

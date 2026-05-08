@@ -1,0 +1,77 @@
+WEBVTT
+
+00:00.000 --> 00:10.000
+Dans des projets du monde réel, pourriez-vous expliquer et décrire un peu dans quels cas vous utiliseriez un ordinateur pour acquérir une propriété par rapport à un observateur ?
+
+00:10.000 --> 00:17.000
+La question ici est donc de prendre un exemple plus concret des raisons pour lesquelles les propriétés informatiques seraient avantageuses par rapport aux observateurs.
+
+00:17.000 --> 00:26.000
+Donc, dans l'exemple d'un modèle de visualisation de données, je pense que cela reste probablement l'un des meilleurs exemples,
+
+00:26.000 --> 00:32.000
+en ce sens, si vous deviez essayer de jeter un œil à n'importe quelle sorte d'animation SVG, il existe un graphique.
+
+00:37.000 --> 00:44.000
+Vous saurez que pour quelque chose comme celui-ci, de nombreux éléments entrent dans le calcul de la façon dont cela est dessiné.
+
+00:44.000 --> 00:51.000
+Cela peut être aussi simple que la taille du diagramme circulaire dessiné ou les données qui déterminent s'il est rempli ou non, de quelle couleur il peut être.
+
+00:51.000 --> 00:53.000
+Il se passe beaucoup de choses ici.
+
+00:53.000 --> 01:04.000
+Et donc, si vous essayez de surveiller toutes vos dépendances individuellement, ce que les gens ont découvert lorsqu'ils travaillaient avec ces bases de code plus volumineuses, c'est que s'ils ne faisaient pas attention à la façon dont ils suivaient leurs dépendances,
+
+01:04.000 --> 01:07.000
+ils pouvaient déclencher de nouveaux rendus dans leur code alors qu'ils ne s'y attendaient pas.
+
+01:07.000 --> 01:14.000
+Et pour ceux qui ont déjà travaillé sur des applications d’entreprise, il est presque impossible que vous soyez propriétaire de la base de code de bout en bout.
+
+01:14.000 --> 01:19.000
+Donc, bien souvent, vous ne savez même pas que quelqu'un dépend de ce pour quoi vous écrivez.
+
+01:20.000 --> 01:33.000
+Et donc les propriétés informatiques ont l'avantage, parce que les chaînes sont suivies de manière essentiellement explicite, lorsque vous utilisez les propriétés informatiques,
+
+01:33.000 --> 01:37.000
+non seulement vous contenez les dépendances, ce que je comprends que watch fait,
+
+01:37.000 --> 01:44.000
+parce que si nous y réfléchissons, lorsque nous avons regardé, vous devez réellement définir la valeur initiale que vous regardez.
+
+01:44.000 --> 01:48.000
+Donc dans ce cas, disons que c'était sans caractère.
+
+01:48.000 --> 02:02.000
+Et puis en plus de cela, pouvez-vous imaginer ce qui se passerait si this.characterList dépendait également de this.favoriteList ?
+
+02:02.000 --> 02:07.000
+Une fois que vous commencez à ajouter plusieurs éléments, notamment lorsque vous recevez des données d'une API,
+
+02:07.000 --> 02:10.000
+il devient vraiment difficile de commencer à suivre où tout se trouve.
+
+02:10.000 --> 02:17.000
+Et donc les propriétés de l'ordinateur, car vous pouvez simplement regrouper toutes vos dépendances dans une seule fonction de calcul,
+
+02:17.000 --> 02:24.000
+il dispose de l'algorithme dont vous avez besoin pour effectuer automatiquement toutes les optimisations de performances et la mise en cache que vous souhaitez effectuer.
+
+02:24.000 --> 02:26.000
+Je pense que c'est la meilleure façon dont je pourrais l'expliquer à ce stade.
+
+02:26.000 --> 02:31.000
+Et rappelez-vous, l’essentiel ici n’est pas que la montre soit mauvaise, c’est qu’elle soit bonne pour déclencher des effets secondaires.
+
+02:31.000 --> 02:38.000
+Et calculé, c'est un peu comme lorsque vous importez Load-ash et que vous effectuez une fonction anti-rebond sur un appel d'API parce que vous avez peur que les utilisateurs cliquent.
+
+02:38.000 --> 02:43.000
+Imaginez que le calcul ait un anti-rebond intégré afin que les choses ne se déclenchent pas automatiquement.
+
+02:43.000 --> 02:47.000
+Il sait comment vous protéger de ces choses. C'est l'avantage du calcul.
+

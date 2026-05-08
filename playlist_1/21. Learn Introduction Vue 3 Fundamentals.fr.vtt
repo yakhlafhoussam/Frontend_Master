@@ -1,0 +1,743 @@
+WEBVTT
+
+00:00.000 --> 00:04.200
+Alors maintenant que vous avez ces nouvelles connaissances,
+
+00:04.200 --> 00:07.280
+l'exercice doit maintenant se poursuivre
+
+00:07.280 --> 00:09.520
+votre parcours d'exploration des composants et maintenant vous
+
+00:09.520 --> 00:11.760
+ont essentiellement la possibilité de
+
+00:11.760 --> 00:14.320
+concevez vos composants comme bon vous semble.
+
+00:14.320 --> 00:16.240
+Voulez-vous aller de l'avant et simplement avoir
+
+00:16.240 --> 00:19.920
+ces composants d'affichage qui reçoivent des données du parent,
+
+00:19.920 --> 00:21.400
+et puis s'il apporte des changements,
+
+00:21.400 --> 00:23.600
+émets ça vers le haut ou est-ce que tu
+
+00:23.600 --> 00:24.720
+tu veux juste que tout reste au top ?
+
+00:24.720 --> 00:26.000
+Comme si tu pouvais comprendre comment tu veux
+
+00:26.000 --> 00:28.800
+jouez avec cela et voyez ce qui fonctionne bien pour vous.
+
+00:30.840 --> 00:33.800
+Très bien, et nous sommes de retour.
+
+00:33.800 --> 00:36.440
+Ainsi, l'une des questions qui ont été soulevées lors
+
+00:36.440 --> 00:39.240
+l'exercice, c'est comme si les gens jouaient,
+
+00:39.240 --> 00:40.720
+et ce qu'ils remarquent, c'est
+
+00:40.720 --> 00:42.300
+c'est que si tu mutes l'accessoire,
+
+00:42.300 --> 00:44.040
+tout semble fonctionner.
+
+00:44.040 --> 00:46.120
+En d'autres termes, si vous êtes ici par exemple,
+
+00:46.120 --> 00:52.560
+et nous avons dit que le nom du point de cet utilisateur point est égal à,
+
+00:52.560 --> 00:55.760
+faisons Dominique.
+
+00:56.760 --> 00:59.960
+Encore une fois, cela fonctionnera techniquement.
+
+00:59.960 --> 01:03.760
+Le principe que je veux souligner ici,
+
+01:03.760 --> 01:06.800
+ce n'est pas tant une question de savoir si ça marche ou pas,
+
+01:06.800 --> 01:12.720
+mais d'autant plus qu'en ce qui concerne les meilleures pratiques en matière d'architecture d'applications,
+
+01:12.720 --> 01:15.800
+vous voulez que le débogage de ce qui ne va pas soit aussi simple que possible.
+
+01:15.800 --> 01:19.280
+C'est pourquoi je suis également un grand fan des rapports d'erreurs,
+
+01:19.280 --> 01:21.760
+ou par exemple, nous parlerons de style plus tard,
+
+01:21.760 --> 01:26.880
+mais quand on va trop loin dans nos optimisations de like,
+
+01:26.880 --> 01:28.720
+eh bien, c'est plus facile de faire ça,
+
+01:28.720 --> 01:32.160
+il peut être difficile de savoir où les choses se passent.
+
+01:32.160 --> 01:34.040
+Alors, en ce qui concerne l'interface utilisateur,
+
+01:34.040 --> 01:37.040
+une grande partie finit par se retrouver là où se trouve votre source de vérité.
+
+01:37.040 --> 01:39.640
+Lorsque vous autorisez le démarrage de votre base de code
+
+01:39.640 --> 01:43.520
+jouer avec cette source de vérité à différents endroits,
+
+01:43.520 --> 01:45.360
+tout d'un coup, ça devient beaucoup plus compliqué
+
+01:45.360 --> 01:47.800
+comprendre pourquoi et quand quelque chose s'est produit.
+
+01:47.800 --> 01:49.640
+Alors que si vous suivez ce modèle de
+
+01:49.640 --> 01:51.640
+émettant pour les enfants aux parents,
+
+01:51.640 --> 01:54.200
+vous saurez toujours que si à l'avenir l'utilisateur a
+
+01:54.200 --> 01:57.120
+un bug où cette liste, par exemple, est cassée,
+
+01:57.120 --> 01:59.120
+vous saurez qu'en gros, vous devriez probablement regarder
+
+01:59.120 --> 02:03.320
+le parent et, en gros, vous pourrez probablement le résoudre tout seul.
+
+02:03.320 --> 02:05.640
+Mais si vous autorisez la mutation des accessoires ailleurs,
+
+02:05.640 --> 02:07.640
+tout d'un coup, cette garantie devient
+
+02:07.640 --> 02:10.480
+c'est beaucoup moins probable parce que vous ne savez tout simplement pas ce qui se passe.
+
+02:10.480 --> 02:13.720
+Donc je privilégie toujours la simplicité quand il s'agit
+
+02:13.720 --> 02:16.960
+à la maintenance et au débogage.
+
+02:17.720 --> 02:21.520
+Alors jetons un œil à cet exercice, d'accord ?
+
+02:21.520 --> 02:29.200
+D'accord. Ce n'est pas du tout ce que je voulais.
+
+02:29.200 --> 02:34.360
+D'accord, parfait. Alors ce que je vais faire, c'est m'ouvrir
+
+02:34.360 --> 02:36.080
+mon forum ATLA.
+
+02:36.080 --> 02:38.120
+En fait, laissez-moi juste, bien.
+
+02:38.120 --> 02:45.120
+Alors forum ATLA, super.
+
+02:45.280 --> 02:47.720
+Frais, frais. D'accord.
+
+02:47.720 --> 02:54.960
+Donc, un bon élément pour illustrer cela sera le bouton de favoris.
+
+02:54.960 --> 02:56.760
+Parce que nous pouvons voir ici qu'à l'intérieur
+
+02:56.760 --> 03:00.320
+App.View, nous gérons en fait nos listes de favoris ici tout en haut.
+
+03:00.320 --> 03:03.960
+Alors allons-y et créons ce composant de liste de favoris.
+
+03:03.960 --> 03:06.760
+Donc liste de favoris, super.
+
+03:06.760 --> 03:10.240
+En fait, tu sais quoi ? Je pense que les personnages préférés sont en fait un peu plus précis.
+
+03:10.240 --> 03:12.800
+Personnages préférés, super.
+
+03:13.480 --> 03:17.120
+Et puis j’ai réalisé qu’en fait, attendez, je me suis mal exprimé.
+
+03:17.120 --> 03:18.640
+Plutôt que les personnages préférés,
+
+03:18.640 --> 03:21.200
+nous voulons en fait créer des cartes de personnages individuelles.
+
+03:21.200 --> 03:22.400
+C'est ce que nous voulons.
+
+03:22.400 --> 03:24.480
+Alors laissez-moi le renommer maintenant en carte de personnage.
+
+03:26.560 --> 03:32.040
+Et donc ce que nous avons ici maintenant, ce que j'ai fait plus tôt au cas où les gens verraient ça,
+
+03:32.040 --> 03:35.200
+c'est juste une extension de code VS.
+
+03:35.200 --> 03:38.520
+Donc, ou non, une extension, c'est une des mains courtes.
+
+03:38.520 --> 03:40.440
+C'est donc un short code que j'ai personnalisé pour que lorsque je tape
+
+03:40.440 --> 03:42.120
+sfc pour un seul composant de fichier,
+
+03:42.120 --> 03:44.480
+cela cracherait automatiquement mes éléments de base pour moi.
+
+03:46.120 --> 03:52.280
+D'accord. Donc, ce que nous avons ici, c'est ce code HTML que nous voulons essentiellement refactoriser.
+
+03:52.280 --> 03:57.360
+C'est ce que nous parcourons ici.
+
+03:57.360 --> 04:03.640
+D'accord. Je vais donc aller de l'avant et copier ceci en tant que,
+
+04:03.640 --> 04:04.880
+dois-je le faire comme élément de liste ?
+
+04:04.880 --> 04:05.960
+Faisons-le simplement en tant que div.
+
+04:05.960 --> 04:09.480
+En fait, ce serait plus propre pour ne pas avoir à figurer dans la liste.
+
+04:09.520 --> 04:13.600
+Nous aurons donc un div, et le div contiendra tout ça.
+
+04:15.040 --> 04:17.600
+Maintenant, nous devons déplacer certaines fonctionnalités.
+
+04:17.600 --> 04:18.600
+Voici donc notre espace réservé.
+
+04:20.000 --> 04:22.080
+Nous devons déplacer la fonctionnalité du personnage préféré.
+
+04:27.960 --> 04:33.320
+D'accord. Et je pense que nous avons besoin d'un accessoire,
+
+04:33.320 --> 04:35.880
+parce que nous devons réellement savoir quel personnage nous rendons.
+
+04:35.880 --> 04:39.800
+Donc, le personnage, dans ce cas encore, serait un objet type.
+
+04:39.800 --> 04:42.280
+Et donc je ne vais pas réellement décomposer les propriétés individuelles.
+
+04:43.360 --> 04:46.080
+Et puis de cette façon, nous pouvons obtenir le caractère.nom.
+
+04:46.080 --> 04:49.360
+Et puis pour l’instant, ne nous inquiétons pas de cette fonction car cela va casser.
+
+04:50.400 --> 04:52.440
+Et puis c'est tout.
+
+04:53.600 --> 04:56.840
+D'accord. Donc, pour prouver que cela fonctionne, nous allons continuer et
+
+04:56.840 --> 04:59.560
+importer notre carte de personnage.
+
+05:02.920 --> 05:04.240
+Et puis déposez ça ici.
+
+05:06.520 --> 05:08.320
+Et puis nous allons l'utiliser à l'intérieur de notre espace réservé.
+
+05:12.160 --> 05:14.520
+Et nous transmettrons le personnage comme accessoire.
+
+05:16.280 --> 05:18.240
+Il s’agit donc de réutiliser tout ce que nous avons fait plus tôt.
+
+05:19.400 --> 05:21.600
+D'accord. Tout apparaît comme prévu.
+
+05:22.840 --> 05:25.760
+Maintenant, la différence ici, cependant, est que cette fonctionnalité de personnage préféré
+
+05:25.760 --> 05:29.120
+ne fonctionne pas parce que, devinez quoi, cette carte s'en fiche.
+
+05:29.120 --> 05:33.280
+Par exemple, sa responsabilité n'est pas de suivre la liste des favoris.
+
+05:33.280 --> 05:35.280
+Donc, pour en revenir à ce dont je parlais plus tôt,
+
+05:36.200 --> 05:40.320
+vous pouvez théoriquement transmettre la liste des favoris comme accessoire à ce composant.
+
+05:40.320 --> 05:43.720
+Et puis vous pourriez théoriquement avoir la liste des favoris de mise à jour des composants.
+
+05:43.720 --> 05:47.240
+Mais encore une fois, cela commence à compliquer la portée des données et la façon dont elles sont détenues.
+
+05:47.240 --> 05:48.480
+Ce n'est pas son objectif.
+
+05:48.480 --> 05:52.520
+Son but est de dire, hé, je vais montrer une carte de mes personnages.
+
+05:52.520 --> 05:55.360
+Et au fait, lorsque quelqu'un clique sur l'événement favori, je continue et
+
+05:55.360 --> 05:58.720
+informer le parent des contacts dans lesquels je me trouve et que l'utilisateur a décidé de vouloir
+
+05:58.720 --> 05:59.800
+Je préfère cette carte.
+
+05:59.800 --> 06:02.040
+Quoi que vous fassiez avec ça, cela dépend de vous.
+
+06:02.040 --> 06:06.600
+Donc, ce que nous devons faire ici, c'est définir notre appel d'émission.
+
+06:06.600 --> 06:08.480
+Et on va juste l'appeler, on va garder ça simple, en fait,
+
+06:08.480 --> 06:11.560
+car émet notre portée vers le composant spécifique.
+
+06:11.560 --> 06:13.000
+Nous l'appellerons simplement un événement favori.
+
+06:13.000 --> 06:13.680
+C'est exactement ce qui se passe.
+
+06:15.320 --> 06:18.520
+Alors maintenant que nous avons l'événement préféré, nous pouvons dire, d'accord, eh bien,
+
+06:19.600 --> 06:22.480
+lorsque cela se produit, ce point émet.
+
+06:22.480 --> 06:25.200
+Ce point émet, quel événement émettons-nous ?
+
+06:25.200 --> 06:26.480
+C'est ce qu'on appelle le favori.
+
+06:26.480 --> 06:31.600
+Mais plus important encore, ce que nous pouvons faire, c'est que nous pouvons réellement
+
+06:32.160 --> 06:37.160
+passer un argument à notre fonction émise, qui est ce caractère point.
+
+06:39.960 --> 06:41.240
+Nous pouvons donc sauvegarder cela.
+
+06:41.240 --> 06:46.760
+Et puis cette fois-ci, on peut cliquer, personnage préféré, ok, super.
+
+06:49.760 --> 06:53.520
+Maintenant que nous avons cela, nous pouvons venir ici et alors nous pourrons dire, ah, oui.
+
+06:53.520 --> 06:56.680
+Donc, sur la carte du personnage, nous avons cet événement préféré qui va se produire.
+
+06:56.680 --> 07:01.400
+Et quand c'est le cas, nous pouvons dire ajouter, voyons voir, ajouter un personnage préféré.
+
+07:03.040 --> 07:08.360
+Et donc si nous y jetons un œil maintenant, mettons à jour cette méthode.
+
+07:08.360 --> 07:10.240
+Cela s'appelle ajouter un personnage favori.
+
+07:10.240 --> 07:13.320
+Et ce que vous obtenez, parce que vous le faites passer comme argument,
+
+07:13.320 --> 07:14.120
+est une charge utile.
+
+07:14.120 --> 07:15.880
+En gros, vous pouvez le renommer comme vous le souhaitez.
+
+07:15.880 --> 07:19.680
+Mais d’une manière générale, nous appelons cela une charge utile car elle provient de l’événement.
+
+07:19.680 --> 07:21.960
+Encore une fois, la façon dont cela est connecté montre cela côte à côte.
+
+07:23.400 --> 07:26.960
+Ce point émet ceci comme nom d'événement.
+
+07:26.960 --> 07:30.520
+Et ici, le deuxième argument, sera essentiellement la charge utile.
+
+07:30.520 --> 07:34.040
+Il est donc généralement mal vu, par exemple, de continuer à ajouter des éléments à cela.
+
+07:34.040 --> 07:38.880
+Si vous vous dites, oh, je veux ajouter un identifiant personnalisé, comme 123, vous ne feriez pas ça.
+
+07:38.880 --> 07:41.320
+En fait, vous passeriez simplement un seul objet.
+
+07:41.320 --> 07:47.560
+C'est comme si c'était le personnage et ceci c'était la pièce d'identité.
+
+07:47.560 --> 07:49.800
+Les charges utiles sont donc généralement effectuées en un seul argument.
+
+07:49.800 --> 07:51.920
+Essayez de ne pas les étendre au-delà.
+
+07:51.920 --> 07:55.640
+Et comme je l'ai dit, si vous avez besoin de plus d'imbrication, utilisez certainement un objet.
+
+07:55.640 --> 07:57.080
+Mais nous n’avons pas besoin de faire cela.
+
+07:57.080 --> 08:00.240
+Alors allons-y et émettons simplement le personnage directement.
+
+08:00.240 --> 08:02.640
+Et puis, avec cette charge utile, nous pouvons simplement repousser cela.
+
+08:04.160 --> 08:06.480
+Alors allons-y et vérifions que cela fonctionne.
+
+08:06.480 --> 08:10.400
+Rafraîchir, boum, anezuko et bam.
+
+08:12.840 --> 08:13.520
+Et voilà.
+
+08:13.520 --> 08:17.360
+C'est une façon d'implémenter les accessoires de manière à vous permettre de restituer
+
+08:17.360 --> 08:18.600
+exactement ce dont vous avez besoin.
+
+08:18.600 --> 08:22.760
+Mais quand il est temps de faire quelque chose, l'enfant peut dire au parent
+
+08:22.760 --> 08:26.120
+que, hé, il y a cette chose que je demande, s'il te plaît, fais ce que tu veux avec.
+
+08:26.120 --> 08:32.240
+Quelqu'un a-t-il des questions concernant la solution que nous venons de présenter ?
+
+08:36.560 --> 08:38.880
+Si vous vouliez avoir votre favori, soyez séparé,
+
+08:38.880 --> 08:43.400
+comme un module favori, et donc si vous voulez appeler cela une fonction dans un autre
+
+08:43.400 --> 08:48.920
+module, un module enfant, à partir du code du modèle là-bas ou quelque chose du genre.
+
+08:48.920 --> 08:51.240
+Alors laissez-moi m'assurer d'avoir bien compris la question.
+
+08:51.240 --> 08:56.040
+Disons que dans le cas où vous mentionnez que la fonctionnalité préférée
+
+08:56.040 --> 08:58.240
+est quelque chose qui est partagé entre différents composants de l'interface utilisateur.
+
+08:58.240 --> 09:00.160
+Comment partagerions-nous cela entre les différentes composantes ?
+
+09:01.280 --> 09:04.680
+Ouais, ou je veux dire spécifiquement, vous avez un bouton avec un clic sur une annonce.
+
+09:04.680 --> 09:05.760
+C'est le personnage préféré.
+
+09:05.760 --> 09:08.080
+Et disons que cette fonction se trouve en fait dans un module différent.
+
+09:09.680 --> 09:13.360
+D'accord, donc avec ce bouton, vous dites que c'est dans un module différent.
+
+09:13.360 --> 09:14.320
+Ouais.
+
+09:14.320 --> 09:21.520
+Alors d'accord, vous dites que dans cet exemple, vous auriez aimé :
+
+09:21.520 --> 09:32.440
+disons que nous aurions un dossier d'utilitaires contenant un fichier favorite.js, par exemple.
+
+09:32.440 --> 09:36.760
+Et donc vous faites en quelque sorte référence à l'endroit où il y a une fonction qui ressemble à la volonté.
+
+09:37.960 --> 09:40.840
+Comme si je pensais à un composant qui affiche les favoris et
+
+09:40.840 --> 09:43.600
+puis ayez également une fonction de favori publicitaire à l'intérieur.
+
+09:43.600 --> 09:46.720
+Je vois, d'accord, je l'ai compris.
+
+09:46.720 --> 09:51.360
+Donc, la portée ici est que vous dites que le fait d'avoir la liste des favoris limitée à
+
+09:51.360 --> 09:55.560
+le composant directement, donc en fait, donc pas ce scénario.
+
+09:57.960 --> 10:01.240
+L'idée ici étant en fait celle-ci,
+
+10:01.240 --> 10:07.400
+Allons créer cette liste de favoris, ces personnages, cette vue par points.
+
+10:10.000 --> 10:12.240
+Et donc dans ce cas, faites-vous référence au fait que,
+
+10:12.240 --> 10:15.520
+nous rendrions alors la liste ici ?
+
+10:15.520 --> 10:16.960
+Ouais.
+
+10:16.960 --> 10:19.560
+Alors je l'ai, alors voilà, d'accord.
+
+10:20.560 --> 10:26.000
+Donc à l'intérieur d'ici, nous effectuons une autre refactorisation ici.
+
+10:26.000 --> 10:29.560
+Nos données constituent la véritable liste de favoris qui est suivie ici.
+
+10:30.680 --> 10:34.000
+Et puis c'est ici que nous affichons la liste des favoris,
+
+10:34.000 --> 10:36.880
+ce qui sera ce bloc ici.
+
+10:36.880 --> 10:40.240
+Et apparemment, nous avons une condition VLS, donc c'est tout ça.
+
+10:41.320 --> 10:42.960
+Et puis déposez ça ici.
+
+10:44.840 --> 10:47.280
+D'accord, donc ça devrait être bien.
+
+10:47.280 --> 10:48.520
+La liste des favoris est bonne.
+
+10:48.560 --> 10:51.240
+C'est bien, d'accord.
+
+10:51.240 --> 10:54.640
+Maintenant, la question ici est que nous devons importer les personnages favoris.
+
+10:55.640 --> 11:00.680
+Alors faisons ça très vite, personnages préférés, et abandonnons cela également.
+
+11:02.200 --> 11:05.560
+Et puis une fois que nous avons cela, vous avez dit que vous vouliez le restituer ici.
+
+11:08.320 --> 11:12.080
+Personnages préférés, comme celui-ci.
+
+11:12.080 --> 11:13.200
+D'accord.
+
+11:13.200 --> 11:17.200
+Et je suppose que tu me dis où tu placerais la fonction pour ajouter des favoris, mais
+
+11:17.280 --> 11:19.080
+la variable est à l'intérieur de ce module.
+
+11:19.080 --> 11:19.840
+Correct.
+
+11:19.840 --> 11:21.760
+Alors, comment procéderiez-vous ?
+
+11:21.760 --> 11:25.760
+D'accord, et puis les variables ici.
+
+11:27.120 --> 11:32.320
+Et je pense qu'il manque quelque chose, cependant, ce doit être un composant de résolution delta.
+
+11:32.320 --> 11:33.560
+Parce que je pense que je l'ai mal orthographié.
+
+11:35.240 --> 11:35.760
+Qu'as-tu dit ?
+
+11:35.760 --> 11:36.960
+Personnages préférés.
+
+11:36.960 --> 11:40.360
+Vous voyez, celui qui est éteint, le S me comprend.
+
+11:40.360 --> 11:44.160
+C'est pourquoi je fais généralement des listes, de toute façon.
+
+11:44.160 --> 11:45.360
+D'accord, pas encore de personnages préférés.
+
+11:45.360 --> 11:49.920
+OK, alors êtes-vous en train de dire que dans ce contexte particulier,
+
+11:49.920 --> 11:54.440
+vous dites que nous avons clairement la fonctionnalité préférée à l'intérieur de la carte ici.
+
+11:54.440 --> 11:58.040
+Et vous dites que et si nous avions une autre section qui avait aussi un favori
+
+11:58.040 --> 12:00.240
+bouton pour ajouter des caractères ?
+
+12:00.240 --> 12:02.680
+Je suppose que je suis juste, tel quel.
+
+12:02.680 --> 12:03.160
+Ouais.
+
+12:03.160 --> 12:06.120
+Comment transféreriez-vous les données dans la variable de liste des favoris,
+
+12:06.120 --> 12:09.280
+qui se trouve à l'intérieur du composant des personnages favoris ?
+
+12:09.280 --> 12:11.760
+Ouais, c'est là que ça devient délicat.
+
+12:11.760 --> 12:14.200
+Donc au moins avec les outils dont nous disposons actuellement,
+
+12:14.200 --> 12:18.800
+vous auriez essentiellement à le faire, d'accord, donc vous avez omis cela.
+
+12:21.360 --> 12:22.280
+Vous omettez cela.
+
+12:25.520 --> 12:27.760
+Je ne suis pas sûr que cela ait du sens, parce que
+
+12:27.760 --> 12:30.480
+ce dont nous devons nous rappeler lorsqu'il s'agit d'omissions et d'accessoires, c'est que c'est
+
+12:30.480 --> 12:32.840
+une relation descendante.
+
+12:32.840 --> 12:36.160
+Et le problème que nous essayons de résoudre ici est une relation fraternelle,
+
+12:36.160 --> 12:40.840
+parce que la carte de personnage contient des données que Benner statistiques,
+
+12:40.840 --> 12:43.000
+ou non, pas les statistiques de Benner.
+
+12:43.000 --> 12:46.280
+Les personnages préférés et la carte de personnage essaient de se parler essentiellement
+
+12:46.280 --> 12:47.440
+à ce stade.
+
+12:47.440 --> 12:50.680
+Et donc généralement, ce qui se passe à ce moment-là, c'est le moment où vous voulez une sorte de
+
+12:50.680 --> 12:55.800
+solution alternative de gestion d'état où vous avez essentiellement comme aperçu
+
+12:55.800 --> 12:59.680
+c'est que vous auriez des magasins et nous aurions probablement aimé avoir un magasin préféré.
+
+13:00.800 --> 13:04.000
+Et la boutique préférée devient un fichier qui devient essentiellement un module JavaScript
+
+13:04.000 --> 13:06.600
+cela est partagé entre les deux composants qui s'en soucient.
+
+13:06.600 --> 13:09.240
+Et ainsi la mise à jour devient plus propre.
+
+13:09.240 --> 13:11.800
+Et en fait, ce qui est plutôt intéressant, c'est qu'une fois que vous commencez à faire ces
+
+13:11.800 --> 13:15.200
+magasins, parfois l'omission disparaît en fait, parce que maintenant vous n'êtes plus réellement
+
+13:15.200 --> 13:18.120
+en pensant à émettre à un parent, vous mettez simplement à jour le magasin.
+
+13:19.240 --> 13:22.560
+Et donc cela peut faire beaucoup en termes de nettoyage du code et ce genre de choses.
+
+13:22.560 --> 13:25.240
+Mais je voulais au moins commencer par les principes fondamentaux : si vous êtes
+
+13:25.240 --> 13:28.840
+traitant de deux composants, parent-enfant, c'est un peu comme une bonne pratique
+
+13:28.840 --> 13:30.160
+pour la façon dont nous abordons les choses.
+
+13:30.160 --> 13:32.520
+Mais alors avec demain, une fois qu'on parlera de module magasin et
+
+13:32.520 --> 13:34.680
+ce genre de choses, ça va être très amusant, donc.
+
+13:34.680 --> 13:41.120
+La situation que vous avez ici, c'est là que ce composant de liste générique pourrait être utile.
+
+13:41.120 --> 13:41.640
+Ouais.
+
+13:41.640 --> 13:45.360
+Où vous transmettez comme accessoire la liste des personnages dans une seule liste,
+
+13:45.360 --> 13:47.080
+la liste des favoris dans les autres.
+
+13:47.080 --> 13:50.160
+Et puis utiliser des fonctions pour mettre à jour ces listes séparées.
+
+13:50.160 --> 13:50.880
+Exactement.
+
+13:50.880 --> 13:54.040
+Ouais. Super.
+

@@ -1,0 +1,431 @@
+WEBVTT
+
+00:00.000 --> 00:02.580
+Alors, c'est quoi ce mode histoire dont on nous crie dessus ?
+
+00:02.580 --> 00:04.800
+Le mode Historique est un moyen de définir essentiellement comment vous souhaitez
+
+00:04.800 --> 00:06.600
+vos URL à afficher.
+
+00:06.600 --> 00:08.560
+Traditionnellement parlant, lorsque vous regardez la vue
+
+00:08.560 --> 00:10.640
+documentation du routeur, et nous le vérifions ici.
+
+00:10.640 --> 00:12.840
+Donc, juste pour que vous le sachiez, traditionnellement, une seule page
+
+00:12.840 --> 00:15.200
+applications, car il ne s'agit que du fichier index.html
+
+00:15.200 --> 00:17.480
+lorsqu'ils sont servis sur la page Web, qu'est-ce que
+
+00:17.480 --> 00:19.160
+connu sous le nom d’historique de hachage Web.
+
+00:19.160 --> 00:21.960
+Donc, généralement, ce que vous constateriez, c'est que vous feriez essentiellement
+
+00:21.960 --> 00:24.600
+voir la page racine.
+
+00:24.600 --> 00:27.640
+Et puis il dirait router.vjs.org.
+
+00:27.720 --> 00:30.200
+Et puis ça fera ce symbole hashtag,
+
+00:30.200 --> 00:33.240
+puis il effectuera essentiellement le routage à partir de là.
+
+00:33.240 --> 00:35.480
+Le problème, c'est que ce n'est pas une véritable URL,
+
+00:35.480 --> 00:37.440
+et puis il y a les problèmes de référencement.
+
+00:37.440 --> 00:39.680
+Et donc ce à quoi la plupart d'entre nous sont habitués
+
+00:39.680 --> 00:43.440
+c'est ce qu'on appelle le mode HTML5, ou historique Web.
+
+00:43.440 --> 00:46.360
+En d’autres termes, c’est ainsi que vous vous attendez à ce que vos URL
+
+00:46.360 --> 00:48.080
+regarder normalement.
+
+00:48.080 --> 00:51.320
+Et donc en gros, il faut définir de quoi il s’agit.
+
+00:51.320 --> 00:54.180
+Donc pour nous, nous allons continuer et utiliser simplement le Web
+
+00:54.180 --> 00:55.640
+historique de hachage en ce moment, car il y a
+
+00:55.640 --> 00:58.600
+sont certaines choses que vous devez configurer pour le mode HTML5
+
+00:58.600 --> 01:00.840
+que je ne suis pas sûr que nous aurons le temps d'aborder.
+
+01:00.840 --> 01:05.680
+Donc à l'intérieur de notre routeur, nous avons l'historique,
+
+01:05.680 --> 01:10.840
+et nous dirions la fonction de création d'historique de hachage Web.
+
+01:10.840 --> 01:15.360
+Et cela peut être importé d’ici.
+
+01:15.360 --> 01:17.920
+OK, maintenant qu'on a ça, ça devrait commencer
+
+01:17.920 --> 01:19.880
+pour me sentir un peu mieux avec l'application.
+
+01:19.880 --> 01:22.120
+Oh, écoute, déjà quelque chose se manifeste.
+
+01:22.120 --> 01:25.840
+Permettez-moi de revenir à app.view pour notre terrain de jeu.
+
+01:25.840 --> 01:27.880
+Et cette fois, laissez-moi continuer et échanger la couleur,
+
+01:27.880 --> 01:31.000
+cependant, en blanc, pour qu'il soit en fait plus facile à lire.
+
+01:31.000 --> 01:31.520
+Et voilà.
+
+01:31.520 --> 01:33.480
+OK, maintenant c'est bon.
+
+01:33.480 --> 01:35.680
+Maintenant, vous remarquerez peut-être que si nous regardons ici,
+
+01:35.680 --> 01:38.400
+que c'est là que l'historique de hachage apparaît réellement.
+
+01:38.400 --> 01:39.240
+Tu vois ça ?
+
+01:39.240 --> 01:40.360
+Cela commence déjà à le faire.
+
+01:40.360 --> 01:43.400
+Mais vous réaliserez peut-être, attendez, mais n'est-ce pas
+
+01:43.400 --> 01:44.240
+définir une page d'accueil ?
+
+01:44.240 --> 01:46.040
+Genre, pourquoi ça n'apparaît pas ?
+
+01:46.040 --> 01:47.680
+Et la raison est que View Router
+
+01:47.680 --> 01:49.160
+nous fournit de nouveaux composants intégrés
+
+01:49.160 --> 01:50.920
+ça va faire toute la différence quand il s'agit de
+
+01:50.960 --> 01:53.000
+nous aidant à gérer le routage.
+
+01:53.000 --> 01:57.240
+Alors rappelez-vous comment dans SailorView, je faisais le,
+
+01:57.240 --> 01:59.360
+Je changeais manuellement la vue sur des choses.
+
+01:59.360 --> 02:02.800
+Nous allons donc sur app.view pour SailorView.
+
+02:02.800 --> 02:06.440
+À l'intérieur d'ici, j'avais ce composant qui l'échangeait dynamiquement.
+
+02:06.440 --> 02:11.800
+Eh bien, en gros, View Router nous en propose une version suralimentée,
+
+02:11.800 --> 02:16.280
+où nous pouvons simplement dire, OK, à l'intérieur de mon app.view,
+
+02:16.280 --> 02:22.600
+Je vais déposer un truc appelé RouterView.
+
+02:22.600 --> 02:26.440
+Et si vous le remarquez, ma page d'accueil est maintenant apparue.
+
+02:26.440 --> 02:29.480
+Et si je passe à Pokedex, OK, donc on voit quelques erreurs ici
+
+02:29.480 --> 02:30.760
+concernant le Pokédex.
+
+02:30.760 --> 02:33.320
+Et c'est parce que ça y ressemble
+
+02:33.320 --> 02:37.440
+a à voir avec le fait qu'une opération asynchrone se produit.
+
+02:37.440 --> 02:39.600
+Encore une fois, dans le but de faire une démonstration très rapide,
+
+02:39.600 --> 02:42.920
+parce que nous voulons nous concentrer sur la partie routage et pas ça,
+
+02:42.920 --> 02:47.080
+Je vais juste passer le H1 à Pokedex très rapidement.
+
+02:47.080 --> 02:48.360
+Et puis nous pouvons voir ici, nous y voilà.
+
+02:48.360 --> 02:50.760
+Nous l'avons ici et nous rentrons chez nous.
+
+02:50.760 --> 02:53.320
+Cela passe à la page d'accueil.
+
+02:53.320 --> 02:57.040
+Et c'est essentiellement ainsi que tout cela fonctionne, n'est-ce pas,
+
+02:57.040 --> 02:59.880
+si nous le construisons à partir de zéro.
+
+02:59.880 --> 03:02.600
+Et donc maintenant, avec RouterView, vous pensez peut-être, eh bien, OK,
+
+03:02.600 --> 03:05.080
+c'est bien, mais je n'ai pas besoin de mémoriser les liens.
+
+03:05.080 --> 03:06.640
+Ce n'est pas pratique.
+
+03:06.640 --> 03:09.120
+Je veux de vrais liens pour pouvoir les changer.
+
+03:09.120 --> 03:11.560
+Et donc vous pourriez penser, OK, eh bien, mon instinct naturel alors
+
+03:11.560 --> 03:14.360
+est de créer comme un élément de navigation, où j'ai un ahref,
+
+03:14.360 --> 03:18.640
+et je vais aller au Slash, au Pokedex, puis au Pokedex.
+
+03:18.640 --> 03:23.960
+Et puis j'en aurai un pour la maison, juste comme ça.
+
+03:23.960 --> 03:26.440
+Cela pourrait donc être votre premier réflexe.
+
+03:26.440 --> 03:28.560
+Mais si nous faisons cela et cliquons dessus,
+
+03:28.560 --> 03:30.640
+tu remarqueras que rien ne se passe,
+
+03:30.640 --> 03:35.400
+parce que si nous regardons ici, cela change en fait l'URL en quelque chose
+
+03:35.400 --> 03:36.880
+ce n'est pas vraiment avec le hachage.
+
+03:36.880 --> 03:39.640
+Vous voyez, ce que je veux dire, c'est comme si vous clignez des yeux.
+
+03:39.640 --> 03:41.800
+Ce que vous voulez qu'il fasse, c'est pouvoir dire :
+
+03:41.800 --> 03:43.800
+oh, c'est en fait de ce côté, parce que pourquoi ?
+
+03:43.800 --> 03:46.200
+Parce que ViewRouter est responsable de la gestion de cela,
+
+03:46.200 --> 03:48.720
+pas le navigateur.
+
+03:48.720 --> 03:51.960
+Alors ne vous inquiétez pas, c'est en fait assez simple à faire.
+
+03:51.960 --> 03:53.760
+C'est en fait assez facile à faire.
+
+03:53.760 --> 03:55.560
+Plutôt que d'utiliser la balise d'ancrage native,
+
+03:55.560 --> 03:57.040
+ce que tu finis par obtenir, c'est juste
+
+03:57.040 --> 04:01.160
+comme vous avez RouterView, vous disposez d'un composant RouterLink.
+
+04:01.160 --> 04:04.000
+Et c'est ainsi que ViewRouter vous aide à gérer les choses
+
+04:04.000 --> 04:06.800
+comme l'histoire, vous pouvez faire beaucoup de choses pour vous.
+
+04:06.800 --> 04:08.880
+Mais l'essentiel, c'est
+
+04:08.880 --> 04:12.600
+Ce qui est différent, c'est qu'il existe deux propriétés plutôt qu'un href.
+
+04:12.600 --> 04:15.840
+Parce que encore une fois, ce n'est pas vraiment une balise d'ancrage,
+
+04:15.840 --> 04:18.080
+il fait des trucs de programmation sous le capot
+
+04:18.080 --> 04:20.720
+pour vous aider à accéder aux pages souhaitées.
+
+04:20.720 --> 04:22.480
+Je vais donc garder ça.
+
+04:22.480 --> 04:25.000
+Et cette fois, quand on échange,
+
+04:25.000 --> 04:27.600
+vous pouvez voir qu'il le fait correctement.
+
+04:31.040 --> 04:32.840
+Et donc si nous pensons au RouterView,
+
+04:32.840 --> 04:35.320
+c'est vraiment comme le composant dynamique.
+
+04:35.320 --> 04:37.400
+Il s'agit simplement d'échanger des composants.
+
+04:37.400 --> 04:40.640
+Et puis nous avons cette très belle expérience utilisateur
+
+04:40.640 --> 04:43.440
+de l'avoir déjà fait automatiquement
+
+04:43.440 --> 04:46.040
+configuré pour nous.
+
+04:46.040 --> 04:48.600
+La seule chose que je noterai, au cas où vous vous poseriez la question,
+
+04:48.600 --> 04:50.320
+c'est que tu penses probablement, genre,
+
+04:50.320 --> 04:52.080
+c'était une quantité décente de configuration.
+
+04:52.080 --> 04:54.000
+Eh bien, je veux que tu le saches, alors je vais y aller
+
+04:54.000 --> 04:55.000
+et je vous montre ça très vite.
+
+04:55.000 --> 04:56.720
+Cela ne sera pas validé dans le cadre du code.
+
+04:59.120 --> 05:03.280
+Si nous continuons et exécutons la vue npm create 3,
+
+05:03.280 --> 05:05.760
+oups, ce n'était pas la bonne version.
+
+05:05.760 --> 05:08.560
+D'ACCORD.
+
+05:08.560 --> 05:10.880
+Vous vous souviendrez peut-être qu'il existe une opportunité
+
+05:10.880 --> 05:13.720
+pour ajouter réellement ViewRouter dans le cadre de votre configuration.
+
+05:13.720 --> 05:16.720
+Nous l'avons explicitement ignoré parce qu'il
+
+05:16.720 --> 05:19.760
+fait quelques choses que je suis sur le point de vous montrer.
+
+05:19.760 --> 05:21.680
+Alors je vais dire oui cette fois,
+
+05:21.680 --> 05:25.280
+et je vais vous montrer à quoi ça ressemble.
+
+05:25.280 --> 05:26.840
+Donc si nous regardons le ViewProject maintenant,
+
+05:26.840 --> 05:30.760
+vous remarquerez que cela semble en fait un peu différent.
+
+05:30.760 --> 05:32.400
+Il est désormais livré avec plus de passe-partout.
+
+05:32.400 --> 05:35.040
+Vous pouvez donc voir, à l'intérieur de main.js,
+
+05:35.040 --> 05:37.080
+le routeur est déjà utilisé.
+
+05:37.080 --> 05:39.680
+Il existe déjà un router.js en gros déjà
+
+05:39.680 --> 05:43.000
+créé avec tous ces trucs de base qui vous attendent déjà.
+
+05:43.000 --> 05:46.960
+En ce qui concerne une vue d'accueil, elle contient essentiellement des éléments de préfixe.
+
+05:46.960 --> 05:50.120
+Il a même généré un répertoire Views avec quelques exemples de pages.
+
+05:50.120 --> 05:51.880
+Et donc votre application est vue hors de la porte
+
+05:51.880 --> 05:54.040
+est en fait configuré pour déjà être utilisé.
+
+05:54.040 --> 05:55.680
+Vous pouvez voir le lien du routeur ici.
+
+05:55.680 --> 05:57.400
+Vous pouvez voir la vue du routeur ici.
+
+05:57.400 --> 05:59.840
+Alors sache juste que ce que j'ai fait c'est te montrer
+
+05:59.840 --> 06:02.400
+comment vous pourriez faire cela à partir de zéro.
+
+06:02.400 --> 06:04.280
+La plupart du temps, vous ne le ferez pas.
+
+06:04.280 --> 06:05.560
+Il sera déjà configuré pour vous.
+
+06:05.560 --> 06:07.680
+Vous allez y aller et apporter quelques modifications.
+
+06:07.680 --> 06:09.800
+Et encore une fois, si jamais tu veux une référence
+
+06:09.800 --> 06:11.160
+sur une manière propre de comment ils l'ont fait,
+
+06:11.160 --> 06:13.160
+vous pouvez toujours simplement étayer le nouveau projet avec,
+
+06:13.160 --> 06:15.360
+et vous obtiendrez tout ce dont vous avez besoin.
+
