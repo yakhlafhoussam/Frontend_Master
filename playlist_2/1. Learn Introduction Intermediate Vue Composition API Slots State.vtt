@@ -1,0 +1,314 @@
+WEBVTT
+
+00:00.000 --> 00:03.840
+Welcome everyone. Hopefully y'all are here for intermediate view with front masters.
+
+00:03.840 --> 00:06.320
+My name is Ben Hong. I'm on the view core team and I actually recently
+
+00:06.320 --> 00:09.760
+joined the Angular team as well. So I do a lot of things for the web and open source.
+
+00:09.760 --> 00:13.920
+And so primarily I get to do a lot of docs work and then basically just helping to make
+
+00:13.920 --> 00:17.200
+the web technology more accessible to everyone authors so that everyone can keep building
+
+00:17.200 --> 00:20.800
+awesome things on the web. As far as prerequisites for this course,
+
+00:20.800 --> 00:25.200
+basically we expect that you've taken some sort of view through fundamentals.
+
+00:25.200 --> 00:28.240
+So if you haven't, this is your kind of first four-way into it.
+
+00:28.240 --> 00:31.200
+We have view through fundamentals workshop that I've talked before.
+
+00:31.200 --> 00:34.400
+And so I also expect that you have a basic understanding of composition API.
+
+00:34.400 --> 00:37.680
+This workshop really is about diving more in depth into it and what we can do with it.
+
+00:38.320 --> 00:41.280
+And so as a result, also we'll be doing a lot with script setup.
+
+00:41.280 --> 00:44.800
+So if you're new to that, don't worry about it. It is basically just all composition
+
+00:44.800 --> 00:49.200
+API as supposed to some option, some composition API, essentially all it is.
+
+00:49.200 --> 00:51.680
+Once we dive into it, you'll get right into it.
+
+00:51.680 --> 00:57.120
+And then I say this with the utmost like in quotes, like basic understanding of type script.
+
+00:57.120 --> 00:59.680
+In the sense that there is type script in the code that you'll see,
+
+00:59.680 --> 01:02.640
+but we're not doing heavy type creation or anything.
+
+01:02.640 --> 01:06.640
+It's just there to help with some of the auto-completion type inferences that kind of thing.
+
+01:07.360 --> 01:11.040
+So fear not, if you see the type script in there, that's not what this course is focused on.
+
+01:11.040 --> 01:15.200
+So as far as setup goes for those in the chat and those here,
+
+01:15.200 --> 01:18.560
+hopefully you've had a chance to check out the repo on github.com.
+
+01:18.560 --> 01:22.960
+So it's under github.com slash bencozen slash intermediate-view.get.
+
+01:22.960 --> 01:26.560
+And if you're having a clone that down, basically that's where we'll be doing all our exercises.
+
+01:26.560 --> 01:30.720
+So as you see, the main branch right there, you can go ahead and empty them install.
+
+01:30.720 --> 01:32.560
+And that should basically get you up and running.
+
+01:32.560 --> 01:35.200
+And then basically going forward, I'll be checking out branches as we go through.
+
+01:35.200 --> 01:39.680
+So you have different stopping points and check points for you to kind of check back and go over different things.
+
+01:40.080 --> 01:46.640
+As far as the things we're going to cover, we're going to focus on four primary topics this today.
+
+01:46.640 --> 01:48.240
+And so we'll start off with components.
+
+01:48.640 --> 01:51.760
+And then we'll be looking at composables and really diving deep into that.
+
+01:51.760 --> 01:55.440
+Because I think this is where a lot of you ecosystem is currently kind of moving towards.
+
+01:55.520 --> 01:57.520
+So I want to get everyone very familiar with that.
+
+01:57.520 --> 02:01.760
+And then we'll have a section later on on routing as well as some of the sort of upcoming
+
+02:02.400 --> 02:06.080
+movements as far as where that's going from like an enterprise perspective.
+
+02:06.080 --> 02:09.920
+And as well as kind of taking a deeper dive into state management, where it's at,
+
+02:09.920 --> 02:14.640
+especially in a composition kind of world, where do we where are we with that?
+
+02:14.640 --> 02:16.880
+And what do we recommend as far as working with it?
+
+02:16.880 --> 02:19.200
+Okay, so the question is what are we building?
+
+02:19.840 --> 02:22.320
+Well, we're going to be building a to-do app.
+
+02:22.400 --> 02:25.280
+Just kidding, this is not an intro class.
+
+02:25.280 --> 02:29.120
+We've all been bored by the to-do app and done it way too many times.
+
+02:29.120 --> 02:33.440
+And so this is an intermediate course, which means we're going to be dropping you into,
+
+02:33.440 --> 02:35.520
+well, essentially a legacy code base.
+
+02:35.520 --> 02:38.000
+So just to give you a little bit of a tour of what you have.
+
+02:38.560 --> 02:43.280
+So we have essentially, as far as the structure goes, we have our front and up inside of the app folder.
+
+02:43.280 --> 02:46.960
+So this is your standard view three scaffolded with the view three app.
+
+02:47.600 --> 02:49.760
+And then there's a back end in quotes.
+
+02:50.080 --> 02:54.480
+Because it's really just a JSON file, and we're leveraging a library,
+
+02:54.480 --> 02:56.880
+if you haven't heard of before, called JSON server.
+
+02:56.880 --> 03:01.840
+And it basically, like it basically fakes an API rest point for a JSON file locally.
+
+03:01.840 --> 03:04.960
+So that's really all it is. Nothing fancy, so nothing's being sent to the cloud.
+
+03:05.520 --> 03:07.280
+Everything's just being done locally.
+
+03:07.280 --> 03:13.200
+And so let's go ahead and take a look at the enterprise app that y'all are going to be walking into.
+
+03:14.320 --> 03:16.240
+And so it's called point of view.
+
+03:16.240 --> 03:18.720
+And it's your own personal productivity dashboard.
+
+03:18.800 --> 03:21.840
+And so overall you can see here, this is like you, we got our home page.
+
+03:22.400 --> 03:26.400
+And then you know, you can choose your focus in terms of the like the things that you're intending to do.
+
+03:26.400 --> 03:28.800
+And we have like basically you see your task here.
+
+03:28.800 --> 03:30.560
+You can filter it down.
+
+03:30.560 --> 03:34.480
+We'd even look at the planner as far as like what's been planned for what week.
+
+03:34.480 --> 03:37.200
+You can switch the different weeks, look at it in detail.
+
+03:37.200 --> 03:42.400
+It gives you some metrics on like things that you plan, what you've actually spent time on.
+
+03:42.400 --> 03:46.240
+And there's even reflection page to kind of see how has your completion rate been
+
+03:46.240 --> 03:47.600
+along with your time efficiency.
+
+03:48.240 --> 03:51.280
+And you know, overall it looks pretty good, but I'm not going to lie.
+
+03:51.280 --> 03:52.240
+It's pretty buggy.
+
+03:53.520 --> 03:56.080
+Some of the features are missing that you would expect to be there.
+
+03:56.080 --> 03:59.840
+And AI may or may not have been involved in coding some of the tickets.
+
+04:00.400 --> 04:05.280
+And you know, so inside you'll see some of these coding practices don't look quite right.
+
+04:05.280 --> 04:08.480
+And you know, so in some ways, it's kind of your modern day enterprise app.
+
+04:09.520 --> 04:14.640
+So as far as this goes, basically the key thing I want to emphasize here is that you're walking into a
+
+04:14.640 --> 04:18.880
+code base that is already there's opportunities for improvement, lots of it.
+
+04:18.880 --> 04:20.800
+So do not take what you see in there as gospel.
+
+04:20.800 --> 04:22.400
+It's like, oh, that pattern.
+
+04:22.400 --> 04:25.280
+I should copy that like this is not, we're not at that point.
+
+04:26.400 --> 04:27.680
+So just reiterate.
+
+04:27.680 --> 04:31.040
+So what you're working on is you've inherited a legacy code base.
+
+04:31.040 --> 04:34.720
+And while it does work as far as some of the major features, it is far from perfect.
+
+04:34.720 --> 04:36.960
+And we're here to kind of improve it.
+
+04:36.960 --> 04:39.760
+So this is a quote when I was talking with David at his talk.
+
+04:39.760 --> 04:43.520
+And I love this because it says, LLMs weren't trained on good code.
+
+04:43.520 --> 04:47.840
+They were trained on your code and I thought that was a great quote because a lot of times
+
+04:47.840 --> 04:52.080
+as we know we live in a world where we have, you know, AI generated code and being injected in.
+
+04:52.800 --> 04:56.560
+But as you know, as we all keep playing around, you'll notice that something, it just
+
+04:56.560 --> 04:58.320
+does things that does not make sense.
+
+04:58.320 --> 05:03.760
+Like, for example, I think at one point it was trying to inject router functions so that it could
+
+05:03.760 --> 05:05.680
+add a button to navigate to another page.
+
+05:06.400 --> 05:07.920
+And that is just a big no-no, right?
+
+05:07.920 --> 05:08.720
+It's a button element.
+
+05:08.720 --> 05:11.040
+We should, we have anchor tags for reason.
+
+05:11.120 --> 05:14.800
+But for some reason, the LLMs have learned that like, oh, like a lot of people do this.
+
+05:14.800 --> 05:16.080
+So I'm going to do this too.
+
+05:16.640 --> 05:19.920
+And so it's just an interesting state of state that we're in right now.
+
+05:19.920 --> 05:23.760
+But so as a result, I just thought this was kind of a funny quote by David.
+
+05:23.760 --> 05:26.880
+So as far as participation tips for this workshop, first off,
+
+05:26.880 --> 05:28.480
+don't be afraid to deep dive in the code.
+
+05:29.200 --> 05:33.760
+Again, this workshop is about getting hands-on experience with the techniques and the patterns
+
+05:33.760 --> 05:34.960
+that we're talking about.
+
+05:34.960 --> 05:38.720
+So the best way to get experience with that is obviously to go in there, try stuff out.
+
+05:38.720 --> 05:40.880
+And so I have dedicated exercises for different things.
+
+05:40.880 --> 05:42.240
+We'll be trying to solve together.
+
+05:42.240 --> 05:46.640
+But there are, I left a lot of different things to explore so that you can go and try out
+
+05:46.640 --> 05:49.840
+different things and basically enhance the code as you see fit.
+

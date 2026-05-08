@@ -1,0 +1,356 @@
+WEBVTT
+
+00:00.000 --> 00:04.760
+So another problem that comes across a lot of developers as they're growing as a
+
+00:04.760 --> 00:09.680
+view developer is, at some point, they need to access a child-components data or
+
+00:09.680 --> 00:11.960
+methods from the parent.
+
+00:11.960 --> 00:15.360
+And now this might sound a little odd because most of us are, well, let's face it,
+
+00:15.360 --> 00:17.960
+the standard data flow model where you see it's top down, right?
+
+00:17.960 --> 00:21.600
+Parent pass is up to the child, child does stuff with it, and then if anything
+
+00:21.600 --> 00:25.360
+we have an event that like, we emit something that comes up, just like standard web
+
+00:25.360 --> 00:28.440
+model, and then again, it just flows down.
+
+00:28.440 --> 00:32.400
+However, there are times where you're just simply not going to have the ability to do so.
+
+00:32.400 --> 00:35.520
+It might be because you're using a third party library, or maybe your library author
+
+00:35.520 --> 00:40.120
+where you don't know what context your component is going to be ingested in.
+
+00:40.120 --> 00:45.280
+These are great candidates for this concept known as scope slots.
+
+00:45.280 --> 00:48.480
+On the podcast episode we did for fundamentals, we were talking about like one of the most
+
+00:48.480 --> 00:51.440
+commonly like confused concepts of you.
+
+00:51.440 --> 00:55.000
+And I would say that in my teaching experience, scope slots tends to be the one that a lot
+
+00:55.000 --> 00:58.400
+of people don't quite grasp because I think it's
+
+00:58.400 --> 01:01.680
+kind of unintuitive, and then, but hopefully we're going to go over this, it'll make
+
+01:01.680 --> 01:05.880
+more sense to people, and they'll feel more comfortable using it in their component design
+
+01:05.880 --> 01:09.920
+as they see, as they see fit.
+
+01:09.920 --> 01:20.640
+OK, so let's go ahead and what we're going to do, we're going to create a, let's do
+
+01:20.640 --> 01:27.680
+a slot demo.view, and then call it slot demo, and then we'll make sure
+
+01:27.680 --> 01:31.440
+it renders on our sandbox page.
+
+01:31.440 --> 01:42.080
+This time I'm actually going to delete some of this stuff so that we are slot demo perfect.
+
+01:42.080 --> 01:49.760
+Great, flip, flip, flip, all right.
+
+01:49.760 --> 01:55.640
+So going back to our sandbox page, all right, we have a slot demo component is rendering.
+
+01:55.640 --> 01:56.640
+Great.
+
+01:56.720 --> 02:03.160
+OK, so here's the kind of problem that ends up happening, is that in the event we have
+
+02:03.160 --> 02:07.760
+some, OK, so let's go ahead and actually let me sled up my slot demo here, and we're
+
+02:07.760 --> 02:11.600
+going to go ahead and we're going to do a main, and we're going to do three different blocks.
+
+02:11.600 --> 02:17.160
+OK, we're going to have a slot for the header, we're going to have a default, so let's see,
+
+02:17.160 --> 02:22.760
+let's see, oh, slot demo title.
+
+02:22.760 --> 02:27.440
+So this is how you set like default content, in case no one sets it up, then you have your
+
+02:27.440 --> 02:30.680
+default slot, which is where everything else will go, and then I'm going to do one more
+
+02:30.680 --> 02:38.920
+name slot called the footer, and then like this is the bottom.
+
+02:38.920 --> 02:44.520
+OK, so now that we have this, the way we have our sandbox page, actually let me close
+
+02:44.520 --> 02:51.400
+some of these, so we actually clean up the file up here a bit, so it's easier for everyone.
+
+02:51.400 --> 02:53.280
+OK, don't see it that.
+
+02:53.280 --> 02:59.400
+OK, so the way this would work is, right, when the typical slot component, you would have
+
+02:59.400 --> 03:05.120
+a template that would then have the V slot pass with the name, so in this case, let's
+
+03:05.120 --> 03:09.120
+say, actually we don't need header actually right now because that has demo content,
+
+03:09.120 --> 03:18.160
+so let's just call this and say, here is my normal body content, and then we'll also
+
+03:18.160 --> 03:27.240
+have a template for the footer, this is my footer content, and so if we save this and
+
+03:27.240 --> 03:34.400
+look over here, you'll see here, do do do do, slot demo title is here, and then up, we might
+
+03:34.400 --> 03:42.320
+have noticed that footer content and the main content is not showing up, do do, oh, it's
+
+03:42.320 --> 03:49.640
+because of this, there we go, OK, sorry, what we saw here, actually I should demo that,
+
+03:49.640 --> 03:52.960
+is that when you have a template here without basically designating what slot it is, as you
+
+03:52.960 --> 03:56.640
+can see here, it doesn't actually know where to go, and so if you wanted to wrap it in
+
+03:56.640 --> 04:02.080
+a template block, you can basically, it's called default, it means it's rapid like this,
+
+04:02.080 --> 04:04.960
+and we can see here, we still have all three.
+
+04:04.960 --> 04:12.960
+Now if we can envision a slot demo has some data that we want to get access to, right?
+
+04:12.960 --> 04:17.440
+So let's just use the simple counter example in this particular case, and so it's keeping
+
+04:17.440 --> 04:22.400
+track of the current count, and we'll just make it at a rough of 10.
+
+04:22.400 --> 04:25.400
+And so typically you would think, OK, well, again, this is a component, I want to render
+
+04:25.400 --> 04:33.160
+my thing, so I'm going to say, well, current count is this.
+
+04:33.160 --> 04:39.440
+And so now if I go ahead and take out the default slot, we'll see here, as you would expect,
+
+04:39.440 --> 04:41.000
+current count is 10, right?
+
+04:41.000 --> 04:42.880
+That makes sense.
+
+04:42.880 --> 04:46.800
+The content of the scope slots is what happens when you need the parent to actually kind
+
+04:46.800 --> 04:51.280
+of rearrange the, like, kind of get access to the data so that it can rearrange the way it
+
+04:51.280 --> 04:53.960
+actually wants it to be displayed.
+
+04:53.960 --> 04:59.280
+So in this case, let's say the parent is unable to reach into the child to say, actually
+
+04:59.280 --> 05:04.120
+what I wanted to say is current count is even, right?
+
+05:04.120 --> 05:08.680
+So what you would need to do in this case is you would actually need to scope slots is this
+
+05:08.680 --> 05:15.800
+concept of basically passing data into a slot as a prop that then surfaces to the parent.
+
+05:15.800 --> 05:21.040
+So think of it as a backward slot, and this is one of the reasons why it's kind of weird.
+
+05:21.040 --> 05:22.280
+So what do I mean by that?
+
+05:22.280 --> 05:24.400
+So what demo this real quick?
+
+05:24.400 --> 05:26.840
+We have our default slot here, right?
+
+05:26.840 --> 05:29.480
+And what we're going to do is we're going to say, okay, we're passing the count.
+
+05:29.480 --> 05:32.440
+This is like defining any other prop for any other component.
+
+05:32.440 --> 05:36.320
+We're defining a prop called count, although to be clear, there's no defined props up here.
+
+05:36.320 --> 05:38.720
+This is clearly just on the slot.
+
+05:38.720 --> 05:44.360
+And we're passing it the value of current count, although I need to bind this, okay?
+
+05:44.360 --> 05:47.360
+So all we've done is give a prop to a slot.
+
+05:47.360 --> 05:49.480
+That's all we've done so far.
+
+05:49.480 --> 05:54.040
+Now what we're going to do is inside, I'll be explicit with this one, so that's easy
+
+05:54.040 --> 05:55.760
+to see.
+
+05:55.800 --> 06:01.760
+Is that you're going to be able to access your slot props through this, basically, by accessing
+
+06:01.760 --> 06:02.760
+the value.
+
+06:02.760 --> 06:06.400
+So I usually like to demo it like this, so you get access to the slot props object,
+
+06:06.400 --> 06:11.120
+which you can already see, has the property count on it, waiting for you.
+
+06:11.120 --> 06:21.720
+So now I can be like, this is my cool slot props.count.
+
+06:21.720 --> 06:23.400
+Can you see here?
+
+06:23.400 --> 06:30.360
+Now the parent is the one controlling how the data from the child is being rendered.
+
+06:30.360 --> 06:33.800
+Again, you might be thinking, okay, when would I normally use this?
+
+06:33.800 --> 06:36.560
+And the fact is, you normally wouldn't, right?
+
+06:36.560 --> 06:39.720
+This is part of the whole intermediate view thing, right?
+
+06:39.720 --> 06:43.960
+This is a common example, let's say you're designing a select input, right?
+
+06:43.960 --> 06:46.280
+As we know select drop downs, they have a lot of different
+
+06:46.280 --> 06:48.640
+stylings that can be used in a lot of different scenarios.
+
+06:48.640 --> 06:51.360
+So you might want to create like a generic select drop down,
+
+06:51.360 --> 06:54.120
+that provides all the options, all the data in needs,
+
+06:54.120 --> 06:57.360
+but the context in which it's being used, right?
+
+06:57.360 --> 07:01.040
+Maybe in one select drop down, you have a picture being rendered on the left-hand side with some
+
+07:01.040 --> 07:03.480
+text and it has different styles.
+
+07:03.480 --> 07:07.600
+This, the scope slots or what I like to call slot props,
+
+07:07.600 --> 07:13.200
+allow you to basically have a generic component that then someone ingest and then can control
+
+07:13.200 --> 07:16.520
+like how things are being displayed.
+
+07:16.600 --> 07:20.000
+Again, so typically used for third party libraries,
+
+07:20.000 --> 07:28.000
+a perfect example of this is view multi-select, this one, there we go.
+
+07:28.000 --> 07:29.000
+So we can see here, right?
+
+07:29.000 --> 07:32.560
+This is the example of a drop down where you have the license on the left,
+
+07:32.560 --> 07:34.880
+but then you have images and stuff on the right.
+
+07:34.880 --> 07:38.120
+But then if we take a look at some of the other custom option templates,
+
+07:38.120 --> 07:42.080
+I mean, you can see here, in this case, they want the image on the left,
+
+07:42.080 --> 07:44.120
+they want the text on the right.
+
+07:44.120 --> 07:49.840
+And so what you'll see here is they're actually exposing the template, right?
+
+07:49.840 --> 07:51.800
+And they're saying, oh, here are the props.
+
+07:51.800 --> 07:54.520
+And then just display normal HTML as you want, right?
+
+07:54.520 --> 07:58.680
+The props have already been defined, take the image, take the labels,
+
+07:58.680 --> 08:01.800
+style it, however you see fit.
+
+08:01.800 --> 08:05.720
+And because, right, because if you're the author of this library for multi-select,
+
+08:05.720 --> 08:08.200
+you have no, like, first of all, whoever's using it,
+
+08:08.200 --> 08:10.400
+cannot just reach into your component to do it.
+
+08:10.400 --> 08:13.720
+You're providing a generic functionality, which is to be able to provide things,
+
+08:13.720 --> 08:19.080
+like multiple tagging, searching, like, you're providing generic logic
+
+08:19.080 --> 08:23.000
+and functionality for the component.
+
+08:23.000 --> 08:25.240
+Styling and stuff, that's up to how they ingest it.
+

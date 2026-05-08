@@ -1,0 +1,221 @@
+WEBVTT
+
+00:00.000 --> 00:05.760
+So first thing first composition API anytime you create a reusable function with composition API
+
+00:05.760 --> 00:11.000
+They we have landed on the turn composables not my favorite, but it's what we landed on so
+
+00:11.560 --> 00:13.060
+Just know that
+
+00:13.060 --> 00:16.380
+Going forward when you're looking at code bases and you see
+
+00:17.760 --> 00:19.760
+over here
+
+00:19.920 --> 00:21.920
+This little composables folder
+
+00:22.360 --> 00:27.700
+That is what that is referring to basically composition API functions that you will be using inside of your code base
+
+00:30.000 --> 00:37.480
+So the question is obviously what are composables exactly and so they're basically functionality that you want to be used throughout your components
+
+00:37.480 --> 00:41.160
+Let's really what they are. Let's just give a quick demo of what that means
+
+00:41.160 --> 00:46.200
+All right, I'm on my begin branch and then let me switch over to the exercise branch so that
+
+00:46.800 --> 00:48.800
+That can give committed right
+
+00:49.800 --> 00:51.800
+Okay, so
+
+00:51.800 --> 00:55.560
+We have our composables folder and let's so let's start by taking a look at our task page
+
+00:55.560 --> 00:57.560
+Right
+
+00:58.200 --> 01:02.200
+And so you notice here on the task page we got there's a lot of stuff happening here
+
+01:02.840 --> 01:10.040
+In fact, I'm noticing there is let's see there's a lot of weak stuff filter task. I mean, so look filter task
+
+01:10.040 --> 01:13.160
+This looks like a very task specific thing and
+
+01:14.240 --> 01:18.920
+As we can see here, it's actually being used in two different places is being used within the store
+
+01:18.920 --> 01:24.080
+Which we'll talk more about later as well as within this page here. So this is something that's
+
+01:24.840 --> 01:28.120
+Clearly right for some type of refactoring because
+
+01:29.720 --> 01:33.520
+Basically, yep, there's no point in them having two different places. So let's go ahead and just refactor this
+
+01:33.800 --> 01:36.000
+So we can use it. So first thing first
+
+01:36.200 --> 01:41.320
+We're going to go ahead and we're going to create a new file inside of our composables directory
+
+01:41.320 --> 01:46.160
+And so the standard for all composables is that you pre-fix it with the word use
+
+01:47.040 --> 01:51.280
+And so in this case, we're just calling it used tasks.ts and again
+
+01:51.280 --> 01:55.000
+It's a type fit file, but don't worry. We're really not using very much type fit, but all if any
+
+01:55.000 --> 02:02.160
+And so then what I basically would do is I would go ahead and basically cut this out and throw this over here
+
+02:04.960 --> 02:06.960
+And then that's gone
+
+02:08.960 --> 02:11.760
+And then I'd go ahead and take a look at the task store
+
+02:15.360 --> 02:17.360
+And where is that filter?
+
+02:17.920 --> 02:22.240
+Here you go. Here's the folder. So this is the actual method as we can see here. There is a lot going on here
+
+02:22.560 --> 02:28.160
+So what we're going to do is I'm going to do the controversial thing and we'll talk about this more when do stores later
+
+02:28.160 --> 02:31.440
+I am actually going to take this out of the store and put it in a composable
+
+02:32.480 --> 02:35.120
+So here we're going to take the filter task method and
+
+02:36.240 --> 02:38.320
+So this actually I'm just going to replace this one right here
+
+02:39.720 --> 02:42.720
+Okay, and then so we have the filters and
+
+02:43.680 --> 02:47.280
+Then the data and then that is a function
+
+02:50.080 --> 02:54.640
+That will yep, and then what we need to do then is be able to access the task list
+
+02:55.040 --> 03:01.120
+So what I'm going to do is I'm going to actually say task list is when to be a task like this that we're going to pass in
+
+03:02.080 --> 03:05.040
+And so it'll be basically an argument that we're passing into our composable
+
+03:05.920 --> 03:09.120
+And then I think everything is mostly good from there
+
+03:09.600 --> 03:16.160
+All we need to do now is import the type to to say it's a type task and that it uses task filters
+
+03:18.720 --> 03:25.040
+And then we're going to export this as such and there you go now. It's formatting correctly
+
+03:25.920 --> 03:28.960
+Okay, so now what we have here is a reusable JavaScript function
+
+03:29.440 --> 03:34.800
+Right that's what we have and so what we can do now is inside of our task store
+
+03:35.760 --> 03:40.400
+I actually can leave it out because the only the only place is actually being called was here
+
+03:41.120 --> 03:43.760
+Inside of the filter method, but I no longer need this anymore
+
+03:44.400 --> 03:48.640
+Because what I can do then is basically say okay, I'm going to import
+
+03:50.480 --> 03:54.400
+That that was a filter tasks from my composable use task
+
+03:56.160 --> 04:00.240
+That's really all the composable is it's allowing us to basically
+
+04:00.720 --> 04:05.920
+Module or eyes parts of our script set up block into different files that we can then import
+
+04:06.720 --> 04:08.720
+Really that's what it is that is simplest
+
+04:10.000 --> 04:15.360
+And I want to emphasize that because I remember when I first was introduced to this sort of concept and if you're new to jobs
+
+04:15.360 --> 04:19.920
+You can feel kind of intimidating to move stuff to files and then especially you don't know how imports work
+
+04:19.920 --> 04:21.920
+We'll talk a little bit more about naming strategy in a sec
+
+04:22.320 --> 04:24.320
+But that's this is really
+
+04:25.280 --> 04:32.320
+It's core what it is and so the reason composable has become very popular is because rather than grouping things via how they work in view
+
+04:32.320 --> 04:34.320
+So if we have like state
+
+04:34.320 --> 04:36.800
+Actions get or so we would organize them via data
+
+04:38.400 --> 04:41.280
+Compute it and all those things you can now organize them via
+
+04:41.760 --> 04:47.360
+functionality via features and so as this right rather than calling like some sort of filter
+
+04:47.600 --> 04:53.440
+We know that this is associated with our task feature so we can drag that in and so let's drag one more thing here
+
+04:54.400 --> 04:57.680
+Let's say format status this is very specific actually to
+
+04:58.640 --> 05:04.640
+Tests but it actually looks like it's generic but from what I remember this one is pretty specific so we can take that out
+
+05:05.760 --> 05:11.920
+And let's see I like to do things alphabetical as if I can so there you go this is filter
+
+05:12.560 --> 05:14.560
+So we're gonna have the format status but
+
+05:14.720 --> 05:16.720
+um
+
+05:18.160 --> 05:23.600
+Label I like to be very specific with these so that you can tell kind of what is going on here
+
+05:24.000 --> 05:27.040
+So for my task status label, I think we'd be good enough
+
+05:27.680 --> 05:31.840
+And then all we got to do to expose anything is the export keyword that is the main thing here
+
+05:32.480 --> 05:40.080
+Once you have that we can go ahead and now we can at the top we can import format task label
+
+05:40.720 --> 05:44.400
+But it was format status before so we need to make sure we update that
+
+05:45.440 --> 05:47.440
+format has status label
+
