@@ -1,0 +1,239 @@
+WEBVTT
+
+00:00.000 --> 00:06.420
+Your challenge for this section is to take a look at SailorView.
+
+00:06.420 --> 00:10.000
+I've intentionally left a lot of the styling in there very generic.
+
+00:10.000 --> 00:12.000
+In fact, there's a lot of duplication.
+
+00:12.000 --> 00:16.240
+You can try actually seeing if you can refactor it in a way that makes more sense to you.
+
+00:16.240 --> 00:18.480
+Maybe you want to do it in a global file,
+
+00:18.480 --> 00:21.320
+who knows and then you can play one with V-Bind.
+
+00:23.320 --> 00:26.760
+Hopefully, people had a chance to play around with some styles.
+
+00:26.760 --> 00:30.800
+Like I said, honestly, CSS has its own skill set.
+
+00:30.800 --> 00:33.720
+There are plenty of great workshops here on Front-of-Master,
+
+00:33.720 --> 00:36.760
+so be sure to check those out if you want to learn more about CSS architecture.
+
+00:36.760 --> 00:42.480
+But I hope that was useful in terms of a way to learn what techniques are available to you
+
+00:42.480 --> 00:44.680
+out of the gate when it comes to using View,
+
+00:44.680 --> 00:48.240
+so that you can use that to augment best practices with CSS.
+
+00:48.240 --> 00:51.200
+Because to be very clear, again, as someone who loves CSS,
+
+00:51.200 --> 00:54.000
+I'm not advocating for you to work around the Cascade.
+
+00:54.000 --> 00:55.760
+The Cascade is extremely powerful.
+
+00:55.880 --> 00:58.760
+But like a lot of things, you got to know when to use it in the right scenarios.
+
+00:58.760 --> 01:00.800
+And sometimes when it comes to certain components,
+
+01:00.800 --> 01:03.440
+it makes sense to just keep it scoped to ignore the Cascade.
+
+01:03.440 --> 01:05.920
+And so know that View provides you those options.
+
+01:05.920 --> 01:08.800
+And also, as we saw with the V-Bind as well,
+
+01:08.800 --> 01:13.960
+when it comes to customization and being able to easily connect your JavaScript with your CSS,
+
+01:13.960 --> 01:18.240
+like View tries to do its best to make that as easy as possible for you
+
+01:18.240 --> 01:21.680
+when it comes to using compiler-based optimizations.
+
+01:22.680 --> 01:24.440
+So I'll just go ahead and just, once again,
+
+01:24.440 --> 01:26.520
+let's demo some of that inside of Say Love View
+
+01:26.520 --> 01:29.560
+so that you can have that as a solution branch.
+
+01:29.560 --> 01:32.360
+And then we will go from there.
+
+01:32.360 --> 01:38.000
+So switching on over, CD Say Love View.
+
+01:38.000 --> 01:39.680
+Great.
+
+01:39.680 --> 01:40.560
+Perfect.
+
+01:40.560 --> 01:43.040
+All right.
+
+01:43.040 --> 01:47.800
+So first thing first, when I think of Say Love View, as we can see here,
+
+01:47.800 --> 01:50.080
+the user card actually is something that sticks out to me
+
+01:50.080 --> 01:54.560
+as something that we honestly are not going to share these styles at this moment.
+
+01:54.560 --> 01:58.360
+And so when I look at this, honestly, I do think this is probably a good case
+
+01:58.360 --> 02:03.920
+for just having the wrapper or these particular styles be scoped to this particular component.
+
+02:03.920 --> 02:07.840
+So we can go ahead and scope it like this.
+
+02:07.840 --> 02:10.520
+And then, however, though, if you're thinking about it and you're like,
+
+02:10.520 --> 02:13.320
+well, there are a lot of other cards out there.
+
+02:13.320 --> 02:16.120
+So what if I want to be really specific about this card?
+
+02:16.120 --> 02:19.320
+Then you know what, on second thought, let's just make this a CSS module.
+
+02:19.320 --> 02:22.360
+Since, again, the styles here are fairly innocuous,
+
+02:22.360 --> 02:24.240
+not a lot of reusability at the moment.
+
+02:24.240 --> 02:26.160
+So we can just do style.
+
+02:26.160 --> 02:28.880
+And then because it's the dash, though, this is where, unfortunately,
+
+02:28.880 --> 02:32.840
+the style syntax is a little bit on the uglier side comparatively.
+
+02:32.840 --> 02:36.560
+We can see now that it still works because we look at here.
+
+02:36.560 --> 02:41.640
+We can see there is our user card that's actually being rendered out as anticipated.
+
+02:41.640 --> 02:45.080
+OK, what about other opportunities for style refactoring?
+
+02:45.080 --> 02:48.520
+Well, if we take a look at the home page, we have a bunch of stuff here
+
+02:48.520 --> 02:51.040
+that's actually fairly generic.
+
+02:51.040 --> 02:53.720
+We have stuff in the login page that's being refactored.
+
+02:53.720 --> 02:58.200
+So what we could do, really, is we can just actually delete this stuff on the login page.
+
+02:58.200 --> 03:02.040
+And then if we refresh and take a look, home, login, everything still looks good.
+
+03:02.040 --> 03:05.720
+So that refactor was pretty easy.
+
+03:05.720 --> 03:08.760
+And then finally, let's find an opportunity for some scope styles.
+
+03:08.760 --> 03:11.440
+Well, if we're looking at the user page, actually, it looks like we're using
+
+03:11.440 --> 03:13.120
+a lot of stuff here as well.
+
+03:13.120 --> 03:17.120
+So let's go ahead and just wipe this out to finish the refactor.
+
+03:17.120 --> 03:20.240
+And if we take a look at home page, we do have that button green right here.
+
+03:20.240 --> 03:22.600
+So OK, that's good.
+
+03:22.600 --> 03:26.200
+In this case, to be honest, I'm not sure I'd want to scope the styles at this point
+
+03:26.200 --> 03:28.800
+because we're inside of home page.
+
+03:28.800 --> 03:31.920
+And home page we know is being shared across multiple files.
+
+03:31.920 --> 03:34.600
+So at this point, what I would probably do is I'd say, you know what?
+
+03:34.600 --> 03:38.520
+Home page styles are not just being shared for its own.
+
+03:38.520 --> 03:40.360
+It's being shared across the entire app.
+
+03:40.360 --> 03:43.880
+So let's actually just drop that inside of here.
+
+03:43.920 --> 03:47.320
+So at the bare minimum, it feels a little bit more proper in terms of cascade.
+
+03:47.320 --> 03:50.000
+App.view controls these things are being shared everywhere.
+
+03:50.000 --> 03:51.520
+So boom, it's now being shared.
+
+03:51.520 --> 03:54.480
+And there are certainly opportunities here to refactor things like, for example,
+
+03:54.480 --> 03:56.120
+we're seeing the navigation here.
+
+03:56.120 --> 04:01.040
+So you can imagine as this application grows, you can totally see an opportunity
+
+04:01.040 --> 04:05.120
+for us to actually refactor our header component into its own file,
+
+04:05.120 --> 04:08.280
+which then that might be a good use case for scope, for example.
+
+04:08.280 --> 04:10.320
+Anyhow, just want to talk to you some high-level refactoring,
+
+04:10.320 --> 04:11.480
+and that's how I might approach it.
+

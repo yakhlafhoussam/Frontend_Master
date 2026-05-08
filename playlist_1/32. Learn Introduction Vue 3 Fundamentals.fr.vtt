@@ -1,0 +1,422 @@
+WEBVTT
+
+00:00.000 --> 00:02.560
+Votre mission, si vous choisissez de l'accepter,
+
+00:02.560 --> 00:05.000
+est d'aller de l'avant et de refactoriser la page des utilisateurs
+
+00:05.000 --> 00:06.840
+sur lequel nous avons travaillé,
+
+00:06.840 --> 00:08.360
+et cette fois, vous allez utiliser la configuration du script
+
+00:08.360 --> 00:10.640
+pour réduire une partie de ce code.
+
+00:10.640 --> 00:13.200
+Ensuite, si vous avez des accessoires ou si vous admettez que vous voulez vous entraîner,
+
+00:13.200 --> 00:15.040
+vas-y et fais ça et sinon,
+
+00:15.040 --> 00:16.560
+continuez à déplacer des trucs,
+
+00:16.560 --> 00:18.800
+jouer, voir ce que vous ressentez.
+
+00:21.120 --> 00:24.840
+Bon retour à tous. Comment s’est passé l’exercice ?
+
+00:24.840 --> 00:27.400
+Si quelqu'un avait des questions sur la façon dont cela s'est passé,
+
+00:27.600 --> 00:30.120
+n'hésitez pas à déposer cela dans le chat.
+
+00:30.120 --> 00:32.720
+En attendant, je vais continuer et parcourir cette solution.
+
+00:33.960 --> 00:37.680
+Très bien, alors revenons pour dire je t'aime.
+
+00:44.120 --> 00:46.960
+Et puis lancez le développement, super.
+
+00:48.720 --> 00:50.600
+Super, d'accord.
+
+00:50.600 --> 00:52.800
+Donc nous n'avons pas besoin de voir ce qui se passe en ce moment,
+
+00:52.800 --> 00:54.480
+donc nous allons juste afficher ceci en plein écran
+
+00:54.480 --> 00:57.380
+pour que les gens puissent savoir ce qui se passe.
+
+00:57.380 --> 00:58.340
+Alors qu'est-ce qu'on fait ici ?
+
+00:58.340 --> 01:00.940
+Nous allons ouvrir notre page utilisateurs
+
+01:02.220 --> 01:03.500
+et voyons ce que nous avons.
+
+01:03.500 --> 01:05.020
+Eh bien, tout a déjà été migré
+
+01:05.020 --> 01:07.100
+en ce sens que tout se trouve dans la configuration asynchrone,
+
+01:07.100 --> 01:08.260
+donc c'est bien.
+
+01:08.260 --> 01:11.540
+Commençons donc par ajouter cet attribut de configuration.
+
+01:11.540 --> 01:13.340
+C'est la première étape à faire.
+
+01:13.340 --> 01:14.500
+Une fois que tu auras fait ça, tu réaliseras,
+
+01:14.500 --> 01:15.940
+oh, d'accord, c'est intéressant.
+
+01:15.940 --> 01:18.140
+Maintenant, nous devons commencer à supprimer certaines choses,
+
+01:18.140 --> 01:19.460
+alors commençons à supprimer cette exportation
+
+01:19.460 --> 01:20.940
+donc nous n'en avons plus besoin.
+
+01:20.940 --> 01:22.500
+Boum, c'est parti.
+
+01:22.500 --> 01:24.660
+Eh bien, nous avons mentionné auparavant que tous les composants
+
+01:24.660 --> 01:26.380
+sont automatiquement enregistrés une fois importés,
+
+01:26.380 --> 01:29.900
+donc ça a disparu aussi, donc nous le supprimons.
+
+01:29.900 --> 01:31.540
+Et puis finalement, on a déjà dit
+
+01:31.540 --> 01:32.900
+que le script doit être mis en place,
+
+01:32.900 --> 01:34.860
+donc nous supprimons également ce bloc.
+
+01:35.740 --> 01:37.880
+Et une fois que nous aurons fait cela, vous remarquerez que le réactif,
+
+01:37.880 --> 01:38.980
+qui grisait plus tôt,
+
+01:38.980 --> 01:40.660
+parce qu'il disait qu'il n'était pas utilisé,
+
+01:40.660 --> 01:42.780
+il a simplement détecté la portée de l'objet
+
+01:42.780 --> 01:45.360
+et c'était comme, je ne le vois pas dans le cadre du module,
+
+01:45.360 --> 01:48.020
+mais tout va bien maintenant car nous avons supprimé toutes ces exportations.
+
+01:48.020 --> 01:51.020
+Si nous gardons ça, oh, nous en avons encore un peu en fait,
+
+01:51.020 --> 01:52.320
+nous pouvons supprimer le retour.
+
+01:53.320 --> 01:56.720
+Et maintenant nous pouvons vérifier que tout fonctionne
+
+01:56.720 --> 01:58.880
+et juste pour être sûr que nous pouvons faire un, deux, trois,
+
+01:58.880 --> 02:02.600
+voilà, j'ai fait la mise à jour, fantastique.
+
+02:02.600 --> 02:03.680
+Maintenant, la seule autre chose aussi,
+
+02:03.680 --> 02:05.280
+c'est que nous voulons juste nous entraîner très vite
+
+02:05.280 --> 02:08.000
+en utilisant les accessoires et les émissions définis.
+
+02:08.000 --> 02:10.200
+La façon dont cela fonctionnerait serait d'aller de l'avant
+
+02:10.200 --> 02:14.080
+puis dites que const props est égal à definition props,
+
+02:14.080 --> 02:17.200
+et nous pourrions dire quelque chose comme titre, par exemple,
+
+02:17.200 --> 02:21.560
+et tapez chaîne, puis nous pouvons faire une valeur par défaut
+
+02:23.320 --> 02:24.280
+des utilisateurs.
+
+02:26.360 --> 02:30.160
+Et donc pour montrer que ça marche, nous viendrons ici,
+
+02:30.160 --> 02:32.400
+et commençons par dire que c'est un test.
+
+02:32.400 --> 02:37.400
+Nous testons donc, super, et nous pouvons échanger cela maintenant contre le titre.
+
+02:38.640 --> 02:40.840
+Rafraîchissez-vous, c'est parti.
+
+02:40.840 --> 02:43.080
+Maintenant, quelque chose a été évoqué,
+
+02:43.080 --> 02:44.440
+concernant attendez une seconde,
+
+02:44.440 --> 02:48.080
+comment avez-vous appelé définir des accessoires sans l'importer ?
+
+02:48.080 --> 02:51.080
+Et plus important encore, laissez-moi d'abord corriger cette partie,
+
+02:51.120 --> 02:52.440
+vous le remarquerez parce que nous ne sommes pas réellement
+
+02:52.440 --> 02:53.600
+appeler des accessoires n'importe où,
+
+02:53.600 --> 02:54.960
+ce n'est pas vraiment nécessaire de faire ça,
+
+02:54.960 --> 02:57.760
+vous pouvez donc le laisser comme ça pour le moment.
+
+02:57.760 --> 03:02.760
+Donc, mais la question ici autour de la définition des accessoires,
+
+03:02.880 --> 03:04.840
+pourquoi ne nous crie-t-il pas dessus
+
+03:04.840 --> 03:07.440
+que nous ne savons pas ce que cela recherche ?
+
+03:07.440 --> 03:08.960
+Donc la raison pour laquelle c'est le cas
+
+03:08.960 --> 03:10.800
+c'est parce que lorsque vous êtes dans la configuration du script,
+
+03:10.800 --> 03:12.960
+en gros, le compilateur sait
+
+03:12.960 --> 03:15.280
+que ces fonctions spécifiques vont exister.
+
+03:15.280 --> 03:17.360
+Donc en d'autres termes, définissez les accessoires et définissez les émissions,
+
+03:17.360 --> 03:19.000
+ce que je n'ai pas clarifié plus tôt,
+
+03:19.000 --> 03:21.320
+est uniquement spécifique à la configuration du script.
+
+03:21.320 --> 03:22.560
+Si vous essayez d'utiliser définir des émissions
+
+03:22.560 --> 03:24.160
+pour trouver des accessoires à l'intérieur d'une API d'options,
+
+03:24.160 --> 03:26.600
+ça va juste casser, parce que pourquoi le ferais-tu ?
+
+03:26.600 --> 03:29.560
+Si vous êtes dans l'API d'options exploitant la configuration,
+
+03:29.560 --> 03:31.800
+alors vous devriez déjà utiliser les autres options.
+
+03:31.800 --> 03:32.880
+Et donc en d'autres termes,
+
+03:32.880 --> 03:35.160
+le compilateur sait qu'il s'agit techniquement déjà d'un fichier global,
+
+03:35.160 --> 03:37.840
+alors traitez-le comme une importation globale pour cela.
+
+03:37.840 --> 03:40.920
+Cela dit, personnellement, je suis généralement un fan,
+
+03:40.920 --> 03:42.800
+surtout s'il s'agit d'une base de code plus récente,
+
+03:42.800 --> 03:45.320
+pour simplement laisser l'importation explicite.
+
+03:45.320 --> 03:47.400
+De cette façon, personne ne le savait, c'est comme, attends, que se passe-t-il ?
+
+03:47.400 --> 03:50.320
+Il n’y a aucune connaissance supposée ici, tout va bien.
+
+03:50.320 --> 03:52.560
+Alors pourquoi la réactivité n’est-elle pas comme ça ?
+
+03:52.560 --> 03:53.960
+Pourquoi le réactif n'est-il pas comme ça ?
+
+03:53.960 --> 03:57.000
+Nous supprimons donc cela et sauvegardons.
+
+03:57.000 --> 04:00.560
+La raison en est que la réaction ne peut pas être supposée
+
+04:00.560 --> 04:04.240
+c'est dans ce contexte qu'il sera importé.
+
+04:04.240 --> 04:05.960
+En d’autres termes, y penser autrement
+
+04:05.960 --> 04:09.000
+c'est que lorsque ce code est construit et compilé,
+
+04:09.000 --> 04:11.080
+définir les accessoires revient simplement en arrière
+
+04:11.080 --> 04:11.920
+à ses trucs normaux.
+
+04:11.920 --> 04:14.000
+Comme s'il y avait, s'il n'est pas détecté,
+
+04:14.000 --> 04:16.200
+il sera essentiellement supprimé.
+
+04:16.200 --> 04:17.680
+Il y a donc une sorte d’optimisation.
+
+04:17.680 --> 04:19.360
+Je ne peux pas en expliquer les détails,
+
+04:19.360 --> 04:21.200
+mais il y a une raison pour laquelle les beaux accessoires conviennent,
+
+04:21.200 --> 04:23.840
+mais ensuite d'autres méthodes d'assistance comme ref, reactive,
+
+04:23.840 --> 04:26.560
+la vue ne peut pas deviner intelligemment ces choses.
+
+04:26.560 --> 04:28.880
+Donc du coup, ça oblige à être très explicite
+
+04:28.880 --> 04:30.880
+que vous souhaitez utiliser ces méthodes d'assistance.
+
+04:32.760 --> 04:33.600
+Alors oui, ils s'appellent, je pense,
+
+04:33.600 --> 04:37.320
+fonctions d'assistance spécifiques au compilateur, mais quand même.
+
+04:37.320 --> 04:38.640
+Et puis l'autre chose que nous faisons dans la pratique
+
+04:38.640 --> 04:41.320
+c'est définir les émissions, et que l'on peut simplement dire,
+
+04:41.320 --> 04:45.080
+encore une fois, nous pouvons dire quelque chose comme mettre à jour la liste des utilisateurs.
+
+04:45.080 --> 04:46.960
+Et donc vous pouvez imaginer comment cela fonctionnerait
+
+04:46.960 --> 04:49.560
+si un utilisateur clique sur un bouton, cette liste d'utilisateurs est mise à jour,
+
+04:49.560 --> 04:51.080
+il l'enverrait au parent.
+
+04:51.080 --> 04:53.000
+Peut-être qu'il doit envoyer de nouvelles données.
+
+04:53.000 --> 04:55.560
+C’est ainsi que cela pourrait fonctionner.
+
+04:55.560 --> 04:56.560
+D'accord, non, je pense que tout va bien.
+
+04:56.560 --> 04:58.160
+Oh, c'est ça le problème.
+
+04:58.160 --> 05:00.040
+Dans le cas où quelqu'un ici viendrait de Vue2,
+
+05:00.040 --> 05:03.060
+et si vous utilisez Vitor comme extension VS Code,
+
+05:03.060 --> 05:05.400
+juste un rappel pour continuer et désactiver
+
+05:05.400 --> 05:07.560
+et installez-le lorsque vous travaillez sur des projets Vue3
+
+05:07.560 --> 05:09.640
+à l'avenir, car Volar et Vitor
+
+05:09.640 --> 05:11.120
+va fondamentalement entrer en collision.
+
+05:11.120 --> 05:12.560
+Je voulais donc juste prendre cette note.
+
+05:12.560 --> 05:13.720
+Oh, c'est parti.
+
+05:13.720 --> 05:14.840
+Au fait, tu vois ça ?
+
+05:14.880 --> 05:17.800
+Donc c'est juste comme un petit, laissez-vous savoir,
+
+05:17.800 --> 05:19.640
+accessoires définis, c'est une macro du compilateur,
+
+05:19.640 --> 05:21.160
+il n’est plus nécessaire d’importer.
+
+05:21.160 --> 05:24.120
+Encore une fois, ça n'aura pas vraiment d'importance en fin de compte,
+
+05:24.120 --> 05:25.540
+parce que tu vois qu'il ne te crie pas vraiment dessus
+
+05:25.540 --> 05:27.560
+à l'intérieur de votre éditeur de code,
+
+05:27.560 --> 05:28.440
+mais il essaie de vous le faire savoir
+
+05:28.440 --> 05:30.440
+qu'il s'agit techniquement d'une importation mondiale.
+
