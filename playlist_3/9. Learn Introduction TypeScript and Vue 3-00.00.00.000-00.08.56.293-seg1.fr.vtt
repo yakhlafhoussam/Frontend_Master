@@ -1,0 +1,334 @@
+WEBVTT
+
+00:00.000 --> 00:03.680
+Nous avons fait l'API opposée, au moins la fonctionnalité de base pour laquelle la plupart des gens l'utilisent.
+Et maintenant, il est temps de passer à l’API Bridge to Composition.
+Mais encore une fois, l'élément clé ici est le pont, car nous n'allons pas encore l'aborder en profondeur,
+nous allons voir en quelque sorte l'intermédiaire et apprendre en quelque sorte la progression des options à la composition.
+D'accord. Alors, jetons un œil à notre code.
+Laisse-moi ouvrir la page du restaurant.
+D'accord.
+Ainsi, nous avons appris que lorsqu'il s'agit d'intégrer des types avec une API d'objet ou une API d'options,
+nous pouvons voir ici que nous avons dû faire comme définir un composant, nous avons dû faire certaines, vous savez, des choses pour le transmettre, comme les données, pour que cela semble correct.
+Et puis, surtout en ce qui concerne les accessoires, nous avions des types d'accessoires, ne serait-ce pas bien que les choses soient juste un peu plus faciles, un peu plus natives ?
+Droite? Et si nous voulions plus de JavaScript standard, moins de garde-fous que l'API d'options nous offre ?
+Et c’est vraiment là que l’API de composition entre en jeu.
+Et donc, la seule chose que je dois beaucoup souligner en ce moment, et sur laquelle j'ai oublié d'animer, c'est que l'API de composition ne remplace pas l'API d'options.
+Contrairement à beaucoup de gens, je sais que les gens aiment les mots à la mode et les choses qui deviennent virales, et je pense qu'il y avait un article de blog dans lequel je pense que quelqu'un le affirmait à un moment donné.
+Donc, ce message était devenu un peu omniprésent, malheureusement.
+Et l'API d'options, croyez-le ou non, est quelque chose que nous pouvons très facilement prendre en charge en tant qu'équipe de visualisation, car sous-jacent à ce que nous avons écrit,
+L'API d'options est essentiellement un style d'écriture de composants.
+Donc, quand les gens se disent : oh, ça va disparaître, c'est juste un style d'écriture des composants.
+Il n'y a rien d'unique dans ce qui se passe là-bas, car l'API de composition et l'API d'options sont alimentées par la même bibliothèque principale.
+Donc, j'ai juste besoin que ce soit juste, continuez à faire passer ce message, pour que les gens n'aient pas l'impression que, oh, non, mon API d'options va disparaître.
+Non, ce n'est pas le cas, mais il existe une autre façon de nous aider à résoudre d'autres problèmes, que nous verrons dans un instant.
+Très bien, alors en regardant cela, commençons par voir à quoi pourrait ressembler l'API de composition.
+Ainsi, l’une des choses que j’ai mentionnées avec l’API de composition est qu’elle fait les choses un peu plus comme du JavaScript vanille.
+Ainsi, par exemple, ici avec les données, nous avons cette fonction qui renvoie un objet, puis nous avons les propriétés de l'ordinateur, nous avons tous ces garde-fous.
+Voyons plutôt à quoi cela pourrait ressembler à l'intérieur de l'API de composition.
+Et donc, la façon dont vous connaissez votre API de composition interne passe par le hook de cycle de vie de configuration.
+Donc, pour ceux qui viennent du deuxième point de vue, vous connaissez peut-être le type monté, créé tous ces hooks de cycle de vie.
+L'installation est la première qui s'exécute au début de toutes les méthodes de cycle de vie des composants.
+
+00:03.680 --> 00:07.560
+Et donc, ce que nous allons faire, c'est simplement migrer nos éléments d'API d'options vers l'API de composition, juste pour vous montrer où se trouve cette progression, de sorte que plus tard, lorsque nous ferons le prochain saut, ce ne sera pas si dessinant.
+Donc, tout d’abord, nous allons commencer par configurer nos données réactives.
+Et donc, rappelez-vous ce que j'ai dit dans l'API de composition, c'est que tout ce qui se trouve ici est du JavaScript vanille.
+Donc, en d’autres termes, lorsque vous configurez une constante de filtre de texte, c’est littéralement ce dont il s’agit.
+C'est une constante du texte filtré. Cela ne va pas changer. Il ne sera pas réactif car il s'agit d'un plan JavaScript vanille.
+Alors, de quoi avons-nous besoin ? Nous devons lui dire que nous avons besoin d'aide du point de vue.
+Et donc, la méthode d'aide que nous allons conserver pour cet atelier particulier va être rude.
+Alors, pensez à une référence réactive, c'est ce que c'est. Alors, nous disons, oh, ça va être une ébauche qui est une chaîne vide.
+Cela nous dit que, d'accord, cela va être l'équivalent de cela ici même, dans nos données.
+Donc, cela a été déplacé. Ensuite, nous allons continuer et déplacer la liste des restaurants.
+Alors, montre-moi quelqu'un pour copier la liste des restaurants ici.
+Et puis je vais également const cela, la liste de restaurants const équivaut à un tableau approximatif. Il s'agit donc d'un tableau réactif.
+Pas un tableau. Oui, un tableau réactif. D'accord.
+Enfin, nous devons déplacer notre nouveau formulaire d'affichage ici. Donc, je vais déplacer cela ici et const afficher un nouveau formulaire.
+Et cela ne sera pas faux, mais ce sera à peu près faux, juste comme ça.
+Et donc, maintenant que nous avons supprimé tout cela, vous remarquerez maintenant que nous sommes à nouveau dans une sorte de territoire non typé.
+Parce que lorsque nous regardons et survolons le texte filtré, vous verrez que nous avons maintenant ce nouveau type hérité appelé approximatif.
+Il s'agit d'une référence réactive. Alors pensez à ceci, comme lorsque vous regardiez l'API d'options et que vous aviez des méthodes de données similaires et tous ces types spécifiques.
+Cela veut dire maintenant que, d'accord, nous savons comment gérer ce type spécifique de brut, qui est une référence réactive en vue.
+Et donc, ici, vous verrez que la liste des restaurants dit en fait, oh, de la même manière, laissez-moi détecter la forme des objets que je remarque à l'intérieur de mon tableau.
+Mais nous voulons aller de l'avant et dire, hé, c'est dans un large éventail de restaurants. Donc, la façon dont nous procédons est avec le transtypage, tout comme nous l'avons fait auparavant, où nous disons, ah, cela devrait être un tableau de restaurant.
+Et juste comme ça, nous sommes maintenant allés de l'avant et avons défini correctement notre brut.
+Et donc, cela devrait commencer à ressembler un peu plus à un script de type.
+D'accord, et puis à partir d'ici, nous avons ici, nous avons une dure. C'est un booléen, donc nous sommes bons de ce côté-là.
+Donc, vous remarquerez cependant que rien de tout cela n'apparaît réellement comme étant utilisé, c'est vrai, en disant, oh, ce n'est pas utilisé.
+Et c'est parce qu'à l'intérieur de la fonction de configuration, encore une fois, nous sommes dans le pays du JavaScript vanille, nous devons donc être un peu plus explicites.
+
+00:07.560 --> 00:11.080
+Et donc, nous devons renvoyer manuellement ces variables spécifiques, alors que les données supposaient simplement que vous alliez les utiliser.
+Dans la fonction de configuration, vous pouvez en avoir certaines qui sont des variables privées, d'autres que vous souhaitez exposer.
+Nous voulons donc que vous soyez explicite dans ce format particulier de configuration lorsqu'il s'agit de renvoyer ces éléments.
+Donc, encore une fois, je peux renvoyer ceci, afficher un nouveau formulaire, et maintenant que j'ai cela, tout est maintenant, vous pouvez alimenter l'API d'options, comme vous le feriez normalement.
+Mais encore une fois, nous en apprenons davantage sur l’API de composition, alors continuons ce voyage et migrons tout.
+Donc, pour les propriétés informatiques maintenant, nous avons ces références réactives, nous avons une méthode d'assistance informatique, et c'est la méthode d'assistance informatique, c'est comme la réf.
+Là où nous disons en gros, il s'agira d'une propriété informatique basée sur la vue.
+Alors, allons-y et prenons ceci, commençons par le nombre de restaurants, c'est le plus simple.
+Donc, le nombre de restaurants ici va être une propriété informatique, donc c'est l'assistant calculé, et ce sera une fonction qui renvoie une variable réactive.
+Maintenant, ce que vous remarquerez en premier, c'est qu'il va nous crier dessus, parce que c'est, hé, attendez une seconde, où existent les listes de restaurants filtrées ?
+Eh bien, ce n'est pas le cas, car cela ne fonctionne plus, nous sommes dans le pays du JavaScript vanille, cela ne prend pas automatiquement soin de nous par l'API d'options.
+Mais ce que nous avons, nous avons ceci, oh attends, de quoi je parle ?
+C'est parce que la liste des restaurants filtrés est ici, et je vous montrerai ensuite de quoi je parle dans une seconde.
+D'accord, je peux donc calculer const égal, puis c'est une fonction qui renvoie ce genre de choses.
+Maintenant, encore une fois, nous sommes toujours confrontés à un problème similaire, car comme nous le remarquons, cela n'existe pas, il ne peut donc pas trouver cette propriété de liste de restaurants.
+Mais nous savons que la liste des restaurants existe ici, et donc votre première pensée pourrait être, eh bien, dans le pays JavaScript, c'est si simple, je vais aller de l'avant et simplement supprimer ceci, cela devrait fonctionner.
+Cela ne fonctionne pas, la raison en est que les références réactives jouent essentiellement sur une syntaxe de définition d'objet pour suivre la réactivité et les proxys, ce que nous n'allons pas aborder.
+Donc, fondamentalement, lorsque vous utilisez l'API de composition avec des références réactives, en particulier l'assistant ref, vous devez décompresser la valeur, car sinon c'est juste une constante avec laquelle vous travaillez, c'est pourquoi il n'y a pas de filtre.
+Et donc si nous ajoutons cette valeur de point à notre référence réactive, vous remarquez que quelque chose s'ouvre.
+Il sait ce qu'est le restaurant, il sait quoi prendre, et donc chaque fois que vous utilisez ref, rappelez-vous que vous avez cette valeur de point que vous devez déballer.
+Et donc pour ceux qui sont nouveaux dans l'API de composition, vous pensez peut-être, oh, c'est un peu bizarre, je ne sais pas si j'aime ça, parce que dans l'API d'options, ça a juste fonctionné, n'est-ce pas, ce point, liste de restaurants, allez-y.
+
+00:11.080 --> 00:15.680
+Le problème, c'est que, parce que vous êtes dans une sorte de pays illégitime, l'un des avantages que la valeur du point vous offre réellement est qu'elle indique très clairement aux développeurs que vous travaillez avec une référence réactive.
+Donc, si vous utilisez la méthode d'assistance réactive, que je vais juste vous montrer très rapidement.
+Donc, si nous disons que comme contre, faire un élément est égal à réactif, il s'agit donc d'une autre méthode d'assistance, où cela pourrait ressembler à ID123, même si en fait, laissez-moi simplement vous montrer l'arborescence des pages de texte, juste pour rappel, nous pouvons l'utiliser et simplement l'échafauder, puis comme le titre, obtenir du lait, n'est-ce pas.
+L'objet réactif vous permet simplement d'accéder au titre du point de l'élément, puis cela fonctionne.
+Mais s'il s'agissait d'une référence, vous devez indiquer le titre du point de valeur. Et donc certaines personnes disent, oh, eh bien, alors moi, je vais juste utiliser du réactif, et cela dépend entièrement de vous.
+Encore une fois, j'ai vu des gens aller dans les deux sens, cela dépend de vous et de votre équipe.
+J'utilise ref simplement parce que je pense que c'est celui qui a tendance à surprendre les gens lorsqu'ils ne sont pas habitués à l'utiliser.
+Je veux donc que les gens aient juste un peu plus de visibilité et que lorsque vous le voyez et que vous travaillez avec, vous ne soyez pas confus.
+Si tu veux juste,
+
+00:16.680 --> 00:19.120
+
+
+00:19.120 --> 00:22.040
+
+
+00:22.680 --> 00:23.680
+
+
+00:24.680 --> 00:30.680
+
+
+00:30.680 --> 00:38.680
+
+
+00:38.680 --> 00:44.680
+
+
+00:44.680 --> 00:49.680
+
+
+00:49.680 --> 00:52.680
+
+
+00:52.680 --> 01:01.680
+
+
+01:01.680 --> 01:08.680
+
+
+01:08.680 --> 01:12.680
+
+
+01:12.680 --> 01:19.680
+
+
+01:19.680 --> 01:22.680
+
+
+01:22.680 --> 01:26.680
+
+
+01:26.680 --> 01:34.680
+
+
+01:34.680 --> 01:40.680
+
+
+01:40.680 --> 01:45.680
+
+
+01:45.680 --> 01:49.680
+
+
+01:49.680 --> 01:54.680
+
+
+01:54.680 --> 02:01.680
+
+
+02:01.680 --> 02:06.680
+
+
+02:06.680 --> 02:11.680
+
+
+02:11.680 --> 02:17.680
+
+
+02:17.680 --> 02:22.680
+
+
+02:22.680 --> 02:32.680
+
+
+02:32.680 --> 02:36.680
+
+
+02:36.680 --> 02:42.680
+
+
+02:42.680 --> 02:47.680
+
+
+02:47.680 --> 02:52.680
+
+
+02:52.680 --> 02:56.680
+
+
+02:56.680 --> 03:01.680
+
+
+03:01.680 --> 03:08.680
+
+
+03:08.680 --> 03:14.680
+
+
+03:14.680 --> 03:18.680
+
+
+03:18.680 --> 03:22.680
+
+
+03:22.680 --> 03:31.680
+
+
+03:31.680 --> 03:35.680
+
+
+03:35.680 --> 03:42.680
+
+
+03:42.680 --> 03:48.680
+
+
+03:48.680 --> 03:57.680
+
+
+03:57.680 --> 04:03.680
+
+
+04:03.680 --> 04:09.680
+
+
+04:09.680 --> 04:15.680
+
+
+04:16.680 --> 04:25.680
+
+
+04:25.680 --> 04:39.680
+
+
+04:39.680 --> 04:44.680
+
+
+04:44.680 --> 04:49.680
+
+
+04:49.680 --> 04:57.680
+
+
+04:57.680 --> 05:01.680
+
+
+05:01.680 --> 05:06.680
+
+
+05:06.680 --> 05:12.680
+
+
+05:12.680 --> 05:16.680
+
+
+05:16.680 --> 05:21.680
+
+
+05:21.680 --> 05:32.680
+
+
+05:32.680 --> 05:38.680
+
+
+05:38.680 --> 05:47.680
+
+
+05:47.680 --> 05:52.680
+
+
+05:52.680 --> 05:57.680
+
+
+05:57.680 --> 06:11.680
+
+
+06:11.680 --> 06:18.680
+
+
+06:18.680 --> 06:26.680
+
+
+06:27.680 --> 06:32.680
+
+
+06:32.680 --> 06:38.680
+
+
+06:38.680 --> 06:49.680
+
+
+06:50.680 --> 06:57.680
+
+
+06:57.680 --> 07:07.680
+
+
+07:07.680 --> 07:17.680
+
+
+07:17.680 --> 07:27.680
+
+
+07:27.680 --> 07:33.680
+
+
+07:33.680 --> 07:42.680
+
+
+07:42.680 --> 07:54.680
+
+
+07:54.680 --> 08:04.680
+
+
+08:04.680 --> 08:08.680
+
+
+08:08.680 --> 08:27.680
+
+
+08:27.680 --> 08:33.680
+
+
+08:33.680 --> 08:42.680
+
+
+08:42.680 --> 08:45.680
+
+
+08:45.680 --> 08:50.680
+
+
+08:50.680 --> 08:55.680
+
+
+08:55.680 --> 08:57.680
+
+

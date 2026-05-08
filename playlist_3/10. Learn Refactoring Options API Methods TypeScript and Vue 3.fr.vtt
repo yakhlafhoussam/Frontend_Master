@@ -1,0 +1,194 @@
+WEBVTT
+
+00:00.000 --> 00:06.800
+Donc, votre exercice consiste à accéder à la page du disque et à essayer de faire ce que nous venons de faire, c'est-à-dire essentiellement
+
+00:06.800 --> 00:12.480
+migrez tout ce que vous voyez à l'intérieur des options, ce qui signifie les données, les calculs, les méthodes,
+
+00:12.480 --> 00:16.400
+et monté, et entraînez-vous à déplacer tout cela dans l'API de composition.
+
+00:21.200 --> 00:26.320
+Tout d'abord, nous allons aller de l'avant et ce dont nous avons besoin pour l'API de composition est une méthode de configuration.
+
+00:26.400 --> 00:29.040
+C’est le crochet du cycle de vie qui retiendra tout ici.
+
+00:29.600 --> 00:33.920
+Alors, allons-y et je vais simplement copier tout cela, donc c'était d'abord mes excellentes données.
+
+00:35.120 --> 00:40.320
+Donc, à l'intérieur d'ici, collez ça par-dessus, pour que nous ayons un concept, woo, c'était une faute de frappe,
+
+00:40.320 --> 00:45.520
+console, par texte, et ceci est une réf. Donc, encore une fois, je vais importer cela automatiquement.
+
+00:45.520 --> 00:49.760
+Donc, si vous le remarquez lors de la saisie semi-automatique, si votre code d'affichage fonctionne comme je l'espère,
+
+00:49.760 --> 00:54.080
+j'espère que c'est le cas, vous remarquerez que la référence devrait apparaître et si vous sélectionnez le package, je montrerai celui-là
+
+00:54.080 --> 00:59.920
+plus de temps. Si vous sélectionnez simplement celui du haut, cela fera simplement quelque chose de aléatoire, mais vous remarquerez
+
+00:59.920 --> 01:05.280
+cette référence ici, elle dira en fait que cela vient du, vous voyez ce petit paquet de vue.
+
+01:06.320 --> 01:10.000
+C'est comme ça que vous le savez, c'est de vue. Oh, c'est pour ça qu'il est déjà importé.
+
+01:10.000 --> 01:13.280
+Attends, laisse-moi revenir. Je veux m'assurer de montrer cela, d'obtenir cette capture d'écran.
+
+01:14.080 --> 01:18.480
+Donc, encore une fois, si je vais à la réf, vous verrez ça sur le côté droit, il y a ça, ça vous dit où c'est
+
+01:18.480 --> 01:21.680
+venant, et c'est ainsi que vous savez que vous souhaitez l'importer depuis la vue. Alors, c'est comme ça que je fais ça,
+
+01:21.680 --> 01:25.840
+donc quand j'appuie dessus, cela augmentera automatiquement mon importation ici. Alors, sache juste que
+
+01:25.840 --> 01:29.760
+c'est toute la magie qui opère. Très bien, référence de la chaîne, tout va bien,
+
+01:29.760 --> 01:36.880
+par contre, la liste des plats sera une référence du tableau de plats, et il nous suffira ensuite de la transmettre en tant que
+
+01:36.880 --> 01:43.920
+argument, alors mettez-le entre parenthèses, et nous sommes en or. Pourquoi ça ? Ils doivent regarder
+
+01:43.920 --> 01:50.480
+mieux. Et puis par contre, montrer que le nouveau formulaire est une référence qui est un booléen, mais nous allons laisser ça
+
+01:50.560 --> 01:54.400
+déduire automatiquement. Donc, comme vous le verrez, nous n’avons pas besoin de définir cela ici. Nous ne le faisons pas
+
+01:54.400 --> 01:59.680
+doit être comme un booléen, et nous n'avons pas besoin d'être comme une chaîne, car on suppose que
+
+01:59.680 --> 02:04.240
+ce sera le cas pour les deux. Très bien, alors allons-y et commençons simplement notre retour
+
+02:04.240 --> 02:09.920
+objet, parce que nous voulons réellement exposer tout cela, donc filtrer le texte, afficher un nouveau formulaire et
+
+02:10.000 --> 02:17.280
+liste de plats. Super. Maintenant, nous pouvons supprimer ces données, les données se forment ici en haut.
+
+02:20.080 --> 02:24.800
+Très bien, et continuons le voyage. Nous avons deux choses qui sont calculées. Alors,
+
+02:24.800 --> 02:30.480
+nous allons intervenir ici. Encore une fois, c'est un inconvénient, la coupelle filtrante, et quel genre de variable
+
+02:30.480 --> 02:34.960
+est-ce ? C'est une variable calculée. Donc, encore une fois, vous verrez la vue ici, appuyez dessus et vous verrez
+
+02:34.960 --> 02:39.120
+voyez cette importation ici, calculée tout en haut, et elle l'organise même par ordre alphabétique,
+
+02:39.120 --> 02:45.760
+ce qui est génial. Très bien, alors bousculade, boum, boum, c'est parti. Nous y reviendrons dans une seconde.
+
+02:46.720 --> 02:52.640
+Donc, ici, égal est calculé, et il nous suffit ensuite de transformer cela en fonction fléchée.
+
+02:53.440 --> 02:57.280
+Et en fait, petit à part, c'est en fait l'une des bonnes choses à propos du
+
+02:57.280 --> 03:01.680
+L'API de composition est que les fonctions de flèche dans l'API d'options briseraient cette référence
+
+03:01.680 --> 03:06.320
+parfois. Ainsi, vous ne pouviez pas utiliser la fonction de flèche dans l'API d'options lors de la définition des éléments.
+
+03:06.800 --> 03:10.640
+C'est donc une bonne chose de revenir vers vous si vous appréciez ce genre de syntaxe plus courte.
+
+03:11.440 --> 03:15.280
+Très bien, maintenant nous devons simplement récupérer tout ce qui contient ceci, car nous savons que nous utilisons
+
+03:15.280 --> 03:21.600
+des graphiques pour tout cela en gros, et ensuite nous avons juste besoin de le supprimer, puis de le remplacer par une valeur de point,
+
+03:21.600 --> 03:26.640
+parce que nous devons déballer nos références. Alors voilà, c'est prêt maintenant, et maintenant nous pouvons
+
+03:26.640 --> 03:33.920
+disons une liste de plats filtrée, puis nous avons notre nombre de plats. Super.
+
+03:35.520 --> 03:40.080
+Finalement, nous y sommes presque. Nous allons juste en fait, prenons tout ça et juste
+
+03:40.080 --> 03:51.680
+déplaçons-le. Prenons les méthodes, puis 1, 2, 3, const est égal à un saut en avant au niveau des flèches.
+
+03:51.760 --> 03:56.560
+C'est génial. Attends, j'ai foiré. Loin. Voilà. Sautez ici.
+
+03:57.360 --> 04:02.880
+Ensuite, on fait 1, 2, 3 égaux, puis on saute jusqu'à la fin, puis ça.
+
+04:04.000 --> 04:08.080
+Et puis nous sommes prêts à partir pour la plupart, il suffit de gérer ces virgules.
+
+04:08.800 --> 04:15.280
+Avec tout ça, ce truc, on peut juste trop rouler ça. 1, 2, 3, 4. J'utilise la commande D,
+
+04:15.280 --> 04:21.280
+pour moi, c'est ainsi que vous sélectionnez plusieurs éléments sur votre curseur, puis à partir de là, 1, 2, 3,
+
+04:21.840 --> 04:32.400
+pour la valeur du point. Enregistrez, allons bien, ajoutez un plat, supprimez un plat et masquez le formulaire pour le plaisir d'être
+
+04:33.120 --> 04:43.520
+alphabétique, et enfin nous avons notre démonté ici, et donc nous avons notre monté, et vous pouvez voir ici,
+
+04:43.520 --> 04:47.120
+il est maintenant en train de se compléter automatiquement avec les vues, donc je peux appuyer sur Entrée, et encore une fois, ce sera automatiquement le cas
+
+04:47.120 --> 04:52.240
+importez-le directement depuis la vue, puis nous devons simplement le transmettre dans la fonction de rappel qui
+
+04:52.240 --> 04:56.960
+s'exécutera à chaque fois qu'il atteint ce crochet de cycle de vie, mais nous ne l'avons pas, alors de quoi avons-nous besoin ?
+
+04:56.960 --> 05:03.600
+Nous avons besoin de use route, et nous l'importerons à partir de use router, et boum, encore une fois, la saisie semi-automatique en est une.
+
+05:03.600 --> 05:08.400
+des meilleures choses à propos de TypeScript pour être totalement honnête, même si vous n'annotez pas tout,
+
+05:08.400 --> 05:13.200
+parce que c'est l'un des avantages de l'utilisation de TypeScript, c'est que quiconque aime la bibliothèque
+
+05:13.200 --> 05:18.480
+d'autres qui ont fait l'effort de documenter tout cela, vous obtenez cela gratuitement, et donc
+
+05:18.480 --> 05:22.960
+c'est une autre pour être honnête, une autre raison pour laquelle j'aime recommander, dès le début avec TypeScript,
+
+05:22.960 --> 05:31.520
+même si vous ne l’appliquez pas partout. Ok, démonté, c'est bien, et je pense
+
+05:31.520 --> 05:36.800
+c'est tout. Donc je vous ai tous fait faire cet exercice pour une raison, c'est que certains d'entre vous ont probablement
+
+05:36.800 --> 05:41.280
+je pensais même pendant que j'écrivais, tu te dis, wow, c'est beaucoup de passe-partout,
+
+05:41.360 --> 05:47.920
+en particulier cette chose ici. Ce que je suis heureux de vous dire, c'est qu'il existe une meilleure façon de faire
+
+05:47.920 --> 05:52.400
+ceci, dont encore une fois, je voulais vous montrer juste un aperçu complet, pour que vous sachiez d'où tout cela vient,
+
+05:52.400 --> 05:56.480
+nous allons vous montrer en quelque sorte la manière la plus courante d'utiliser une API de composition à l'avenir,
+
+05:56.480 --> 06:00.480
+puis à partir de là, nous continuerons à développer nos connaissances sur l'utilisation de View et TypeScript.
+

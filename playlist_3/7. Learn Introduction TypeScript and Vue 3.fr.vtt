@@ -1,0 +1,413 @@
+WEBVTT
+
+00:00.000 --> 00:04.000
+Et puis, passons à certaines des choses populaires que nous utilisons en vous.
+
+00:04.000 --> 00:06.000
+c'est que nous avons des propriétés informatiques.
+
+00:06.000 --> 00:08.800
+Et c'est donc l'une de mes propriétés préférées chez vous, car ce que vous faites en fin de compte
+
+00:08.800 --> 00:13.360
+est-ce que vous créez une capacité de mettre facilement en cache des données réactives qui se mettent à jour automatiquement
+
+00:13.360 --> 00:15.360
+basé sur une autre donnée réactive.
+
+00:15.360 --> 00:19.760
+C'est donc particulièrement utile lorsqu'il s'agit d'animations et de suivi de données et ce genre de choses.
+
+00:19.760 --> 00:23.040
+parce que vous pouvez faire des choses vraiment incroyables et vous n'avez à vous soucier d'aucune chose.
+
+00:23.040 --> 00:26.560
+du pistolet de mise en cache auquel vous pourriez généralement avoir à faire face.
+
+00:26.640 --> 00:29.120
+Et donc dans ce cas, par exemple, nous avons cette liste de restaurants filtrée, n'est-ce pas ?
+
+00:30.000 --> 00:34.240
+Et encore une fois, lorsque les gens écrivent une méthode ou une propriété informatique, ils peuvent trouver ce qu'ils veulent.
+
+00:34.240 --> 00:38.320
+Mais il est utile d’être explicite sur ce qu’il renvoie.
+
+00:38.320 --> 00:42.720
+Donc tout ce que nous devons faire ici, si nous le voulons, c'est dire que nous attendons un restaurant et un
+
+00:42.720 --> 00:44.960
+gamme de restaurants. C'est ce à quoi nous nous attendons.
+
+00:45.920 --> 00:49.200
+Et donc comme ça si quelqu'un entre et donc disons de ce côté pour aimer,
+
+00:50.160 --> 00:53.360
+donc pas cette instruction return, cette instruction return renverra toujours un tableau de restaurants.
+
+00:54.080 --> 00:57.680
+Alors allons-y, bâillonnons ça très vite et revenons 1, 2, 3.
+
+00:59.280 --> 01:02.720
+Vous verrez ici, hé, attendez une seconde, ce retour n'est pas correct.
+
+01:03.920 --> 01:07.680
+Et honnêtement, si vous y réfléchissez, ce que nous faisons ici avec TypeScript est un peu similaire.
+
+01:07.680 --> 01:11.120
+à ce que vous attendez d'un traitement de texte comme le traitement de texte.
+
+01:11.120 --> 01:14.800
+Où si le dictionnaire attrape un steak, vous vouliez en quelque sorte vous le faire savoir.
+
+01:14.800 --> 01:17.600
+Vous ne voulez pas attendre de l'avoir imprimé et de l'envoyer à votre professeur pour
+
+01:17.600 --> 01:20.400
+notation et disons, Oups, j'ai le genre de là.
+
+01:20.400 --> 01:23.520
+C'est vrai, c'est l'une des choses que je pense que TypeScript fait très bien.
+
+01:23.520 --> 01:28.000
+Et comme vous pouvez le voir, nous ne faisons que saupoudrer progressivement sur un point ce qui est finalement
+
+01:28.000 --> 01:33.200
+documentation qui est ensuite convertie en info-bulles utiles pour faciliter notre vie de codage.
+
+01:34.320 --> 01:37.440
+Alors voilà. Nous avons une liste de restaurants de cette liste.
+
+01:38.240 --> 01:42.880
+Maintenant, d'accord, et qu'en est-il de ça ? Nombre de restaurants. Eh bien, comme vous pouvez le voir ici,
+
+01:42.880 --> 01:47.200
+nombre de restaurants se sont effectivement rendus, c'est là que ce qu'ils appellent en TypeScript type
+
+01:47.200 --> 01:50.960
+inférence, qui consiste essentiellement à déduire ou à supposer quel sera le type en fonction de la façon dont
+
+01:50.960 --> 01:55.840
+le code est écrit. Donc, dans ce cas, nous utilisons ici suffisamment de JavaScript vanille pour essentiellement
+
+01:55.840 --> 01:59.360
+pour que TypeScript reconnaisse qu'il s'agira probablement d'un nombre. Et dans ce cas,
+
+01:59.360 --> 02:02.960
+c'est tout à fait vrai. Et donc vous n’avez plus besoin de le définir. Parce que TypeScript
+
+02:02.960 --> 02:07.040
+essaie de faire le gros du travail autant que possible. Mais au cas où tu voudrais être explicite,
+
+02:07.040 --> 02:10.720
+encore une fois, faisons cela juste pour nous entraîner. Nous pouvons simplement dire, d'accord, nous nous attendons à un
+
+02:10.720 --> 02:15.040
+numéro quand cela reviendra. Mais encore une fois, certaines personnes considèrent cet encombrement de code. Encore une fois,
+
+02:15.040 --> 02:19.440
+Je vous laisse, à vous et à votre équipe, décider. Mais c’est aussi tout à fait valable. C'est déjà
+
+02:19.440 --> 02:27.680
+tapé. Donc en cas d'événement, nous essayons de faire quelque chose de funky comme ça. En fait, ça marcherait,
+
+02:27.680 --> 02:32.320
+parce que je pense que ça va le faire, ça va juste faire des choses géniales. Parce que maintenant, si tu fais toujours
+
+02:32.320 --> 02:36.720
+sur la partie inférence, vous verrez que vous pouvez toujours tout gâcher. Alors quand tu as des choses qui
+
+02:36.720 --> 02:42.320
+un peu plus dépendant du résultat, je préfère en fait être juste un peu
+
+02:42.480 --> 02:47.840
+un peu plus explicite. Et donc si nous y regardons, cette méthode de signature est en fait très similaire à
+
+02:47.840 --> 02:52.560
+data, car fondamentalement, vous avez une fonction et vous êtes essentiellement après les deux points, ce que vous retournez.
+
+02:52.560 --> 02:57.440
+Donc encore une fois, juste pour le spectacle, nous avons nos données ici, ce que nous retournons après les paramètres,
+
+02:58.160 --> 03:04.400
+propriétés calculées, même chose. D'accord, maintenant que nous avons vu cela, très similaire, nous allons regarder
+
+03:04.400 --> 03:08.880
+aux méthodes. Et c’est là que se trouvent les fonctions que nous allons utiliser à côté de nos composants de vue.
+
+03:09.200 --> 03:13.200
+Et donc à l’intérieur d’ici, commençons par ce que nous savons déjà, c’est-à-dire ce que nous espérons recevoir.
+
+03:13.200 --> 03:16.880
+Et c'est généralement le cas lorsque nous utilisons des méthodes, en particulier lorsqu'il s'agit de choses comme le clic
+
+03:16.880 --> 03:21.040
+les poignées et les gestionnaires de clics et ce genre de choses, vous ne renvoyez généralement rien.
+
+03:21.040 --> 03:25.280
+Ce n'est pas vraiment votre objectif. Et dans ce cas, vous remarquerez que lorsque je survole une annonce de restaurant,
+
+03:25.280 --> 03:30.720
+il déclare automatiquement un type de retour void. En gros, rien n'est retourné. C'est tout ça
+
+03:30.720 --> 03:35.200
+signifie. Et donc voilà, vous n’avez pas besoin d’être explicite à ce sujet. A moins que la seule fois où je pense que c'est
+
+03:35.200 --> 03:39.200
+vraiment utile si vous voulez vous assurer que personne ne renvoie quoi que ce soit, comme s'il y a un strict
+
+03:39.200 --> 03:43.360
+raison pour laquelle vous ne voulez pas que les gens rendent les choses, vous pouvez certainement la noter. Mais sinon,
+
+03:43.360 --> 03:50.080
+qu'est-ce qui est vraiment une chose facultative ? Mais c’est ici, une fois de plus, que l’on peut voir quelque chose
+
+03:50.080 --> 03:53.440
+auquel nous sommes souvent confrontés lorsqu'il s'agit de code, c'est-à-dire le nombre d'entre nous lorsque nous travaillons avec
+
+03:53.440 --> 03:58.640
+Événements JavaScript, nous avons une charge utile que nous transmettons. Et c'est comme, eh bien, quel genre de charge utile dois-je
+
+03:58.640 --> 04:02.880
+espérer ? Ce n'est pas très utile. Donc, vous pouvez toujours vous asseoir ici et aimer, je suis sûr que beaucoup d'entre eux
+
+04:02.880 --> 04:08.320
+nous l'avons fait, vraiment. Oh, la charge utile sera comme si c'était fait de cette façon pour en savoir plus. Mais nous avons
+
+04:08.320 --> 04:12.800
+TypeScript pour nous aider. Encore une fois, nous devons juste aider un peu. Et alors, comment définissons-nous
+
+04:12.800 --> 04:18.320
+types pour nos paramètres? Eh bien, c'est en fait juste les deux points, puis le type auquel nous nous attendons.
+
+04:18.320 --> 04:26.320
+Donc, si nous faisons cela pour les deux, vous verrez maintenant que cela a réellement commencé à faire un certain type de
+
+04:26.320 --> 04:33.520
+vérification. Donc si nous disons comme message aléatoire de point de charge utile, vous verrez que c'est comme, hé,
+
+04:33.520 --> 04:38.240
+whoa, whoa, whoa, whoa, attends une seconde. Il n’existe pas de message aléatoire sur cette charge utile. Comme,
+
+04:38.240 --> 04:44.240
+cette structure n'existe pas. Et encore une fois, une autre raison pour laquelle, genre, juste un petit peu de
+
+04:44.240 --> 04:48.240
+TypeScript peut faire une énorme différence à long terme, surtout quand nous savons tous que comme
+
+04:48.240 --> 04:51.840
+que ce soit vous-même qui gère la base de code, nous oublions souvent ce que nous avons décidé de faire
+
+04:52.640 --> 04:56.320
+et où d'autre avec ça, même si vous revenez à ce code un mois plus tard, il vous criera dessus.
+
+04:56.320 --> 05:00.000
+Vous n’aimerez pas plonger dans un terrier de lapin et ensuite oublier cela. À un moment donné, vous définissez un type
+
+05:00.000 --> 05:03.840
+quelque chose comme si vous vouliez que ce soit la forme, puis vous avez décidé de lui donner un autre nom. Tu ne le fais pas
+
+05:03.840 --> 05:09.920
+ne t'inquiète plus pour ça. Sinon, voyons voir, cachez le formulaire ici. Nous ne faisons rien ici,
+
+05:09.920 --> 05:13.440
+en plus de prendre l'uniforme du spectacle comme réactif et de le rendre faux. Il n'y a donc rien à
+
+05:14.320 --> 05:20.560
+tapez là. Et puis en fait, c'est une faute de frappe. Alors laissez-moi régler ça très rapidement.
+
+05:21.200 --> 05:26.800
+Il ne se passe rien ici. D'accord. C'est donc essentiellement la fonctionnalité de base de ce que
+
+05:26.800 --> 05:31.200
+la plupart des gens utilisent l'API d'options, n'est-ce pas ? Vous avez vos accessoires. Vous avez vos données. Vous avez votre
+
+05:31.200 --> 05:36.560
+méthodes et vous avez votre ordinateur. Alors maintenant que j'ai en quelque sorte rejeté cette information, faites-le
+
+05:36.560 --> 05:40.240
+les gens ont des questions sur ce que j’ai vécu ou devrais-je approfondir ? Ouais.
+
+05:40.240 --> 05:44.560
+Il y a une question à propos de, euh, donc comme vous parlez de la façon dont le traitement de texte vous donne ces
+
+05:45.360 --> 05:50.640
+quel genre d'erreurs comme ces erreurs de type provoquent comme une erreur de temps de construction ou
+
+05:50.640 --> 05:56.480
+ils exécutent le temps ou si l'éditeur ne me disait pas ce qui n'allait pas. Ouais. Alors testons cela.
+
+05:56.480 --> 06:01.040
+Donc juste pour réitérer, la question ici porte sur ce que l'erreur fournit en plus de simplement
+
+06:01.040 --> 06:05.600
+comme la bonne ligne ondulée. Alors allons-y et encore une fois, voyons ce message aléatoire ici et
+
+06:05.600 --> 06:11.680
+garde ça. Et donc vous verrez maintenant, si j'exécute et épingle des builds, oups, je suis dans le mauvais dossier,
+
+06:11.680 --> 06:19.840
+N, construction d'exécution de broches. Oui. D'accord. Parfois, les choses ne fonctionnent pas quand vous le souhaitez, mais cette fois-ci, c'est le cas.
+
+06:19.840 --> 06:24.720
+Vous verrez que cela arrête la construction. Maintenant, pour être clair, quelque chose en fait, pour les gens
+
+06:24.720 --> 06:29.440
+nouveau sur TypeScript, il ne fait pas de compilation à l'exécution, euh, si je ne me trompe pas. Donc en d'autres termes,
+
+06:29.440 --> 06:32.960
+une fois que vous l'avez expédié, il ne va pas aimer conserver les types puis tout vérifier pour
+
+06:32.960 --> 06:36.560
+assurez-vous que tout va bien. C'est vraiment pour pendant que vous vous développez. Euh, ça pourrait,
+
+06:36.560 --> 06:40.320
+cela pourrait changer à l’avenir. C'est comme ma grande mise en garde. Peut-être que les navigateurs s'installeront
+
+06:40.320 --> 06:44.720
+pour que ce soit, euh, provoqué et tout ça. Mais à partir de maintenant, c'est vraiment destiné à
+
+06:44.720 --> 06:48.480
+développement, puis lorsque vous le construisez pour aider à bloquer ce genre de choses, et ensuite,
+
+06:49.360 --> 06:55.120
+en gros, vous êtes seul après ça. C'est donc là que, euh, des choses comme vérifier votre
+
+06:55.120 --> 06:58.320
+les types sont toujours importants. Alors tapez guards, donc vous savez parfois dans les fonctions, vous serez comme,
+
+06:58.320 --> 07:01.920
+si ce n'est pas déjà fait, faites ceci, si c'est une chaîne, faites ceci, vous le ferez toujours avec
+
+07:01.920 --> 07:06.080
+Tapuscrit. Quoi qu'il en soit, cela ne vous protégera pas d'avoir à écrire ce code, mais ce que cela fera, c'est
+
+07:06.160 --> 07:10.400
+vous protéger des erreurs courantes comme celle-ci, où, oh, à un moment donné, vous appelez ça,
+
+07:10.400 --> 07:15.200
+Je, euh, comme, par exemple, euh, les restaurants, je l'appelle par son nom à un moment donné, mais à un moment donné j'appelle ce titre,
+
+07:15.200 --> 07:19.600
+aussi, euh, quand je construisais ça. Et donc je me suis dit, oh, attends, oh, c'est vrai. Maintenant je l'ai, et donc
+
+07:19.600 --> 07:22.960
+Autrement dit, si nous comptons sur notre cerveau pour nous souvenir des choses, nous trébuchons un peu.
+
+07:22.960 --> 07:27.040
+Et donc c'est un joli petit rappel que, hé, ça n'existe pas. Au lieu de cela, tu sais, si je peux juste vérifier
+
+07:27.040 --> 07:33.360
+très vite, oh, c'est vrai. Je l'ai nommé, euh, nom et ensemble. Devons-nous ajouter des types à l'argument
+
+07:33.360 --> 07:37.680
+à l'intérieur de la fonction de filtre ? La question ici concerne ce paramètre ici.
+
+07:39.040 --> 07:44.480
+La réponse courte est donc que vous n’êtes pas obligé de faire quoi que ce soit de tout cela. Et je pense que c'est quelque chose que je
+
+07:44.480 --> 07:49.840
+Ce que je veux souligner pendant une grande partie de cet atelier, c'est qu'il est vraiment basé sur, comme,
+
+07:50.720 --> 07:54.160
+en fonction de la façon dont votre équipe fonctionne, n'est-ce pas ? Parce qu'une des choses qui, je pense, a fait
+
+07:54.160 --> 07:58.240
+titre difficile à adapter, surtout au début quand on disait à tout le monde de faire tapis,
+
+07:58.240 --> 08:02.400
+c'est que les gens avaient l'impression qu'ils devaient tout taper. Et puis tout d'un coup, les choses se sont heurtées
+
+08:03.280 --> 08:06.720
+les connaissances des gens ne correspondaient pas tout à fait à ce qu'ils voulaient faire. Alors les gens giflaient
+
+08:06.720 --> 08:12.080
+n'importe qui sur tout. Et donc si vous ne le savez pas, n'importe lequel est essentiellement comme un code de triche pour, pour
+
+08:12.080 --> 08:15.840
+TypeScript pour se taire, c'est essentiellement ce que cela signifie. C'est juste comme, arrête de me crier dessus, juste comme,
+
+08:15.840 --> 08:22.080
+ignorez-le. Et à ce stade, c’est fondamentalement inutile. Et c'est pour ça que pour moi, pour ce genre de chose,
+
+08:22.720 --> 08:26.960
+si je regarde cette propriété informatique, honnêtement, ce qui m'importe le plus est ce qui est restitué.
+
+08:26.960 --> 08:30.720
+Dans le cas où je pense que le filtre va avoir des problèmes, et peut-être que quelqu'un pourrait
+
+08:30.800 --> 08:34.000
+je ne comprends pas le code. C'est peut-être quelque chose où je peux venir ici et dire simplement, d'accord,
+
+08:34.000 --> 08:37.680
+vous savez, juste pour la documentation, nous allons nous assurer que les gens savent que les paramètres
+
+08:37.680 --> 08:42.080
+devrait être de type restaurant. Mais comme le filtre est une méthode de tableau intégrée, ce n'est pas quelque chose
+
+08:42.080 --> 08:48.560
+Je personnalise, par exemple. C'est comme la syntaxe ES6 directe. Nous savons que ce sera fondamentalement
+
+08:48.560 --> 08:55.200
+parcourir n’importe quelle liste de restaurants. Et donc c'est fondamentalement, c'est fondamentalement un
+
+08:55.200 --> 08:59.120
+choisissez votre propre aventure, en quelque sorte. Mais dans ce cas particulier, je pourrais l'omettre dans ce cas,
+
+08:59.120 --> 09:04.160
+parce que je pense que l'essentiel est ce avec quoi vous travaillez une fois que tout a été rendu. Mais encore une fois,
+
+09:04.160 --> 09:08.640
+pas de bonne ou de mauvaise réponse. Mais vous pourriez le faire, c'est une partie intéressante de ce que vous pourriez dire. Exactement, non ?
+
+09:08.640 --> 09:11.760
+Et c'est un peu ce que je veux continuer à souligner, c'est que si tu es comme, je sens
+
+09:11.760 --> 09:15.520
+un peu plus confortable. En fait, nous allons simplement le laisser ici. Voilà. Vous l'avez annoté,
+
+09:15.520 --> 09:24.000
+les gens savent à quoi s'attendre. C'est tout ce qu'il y a à dire. Parce que, et puis juste pour souligner à nouveau,
+
+09:24.000 --> 09:29.280
+Je tiens à renforcer cela, vous verrez que le restaurant sans aucune définition de type hérite,
+
+09:29.280 --> 09:32.960
+par exemple, TypeScript fait une partie de ce travail pour vous. Ce n'est pas comme si c'était juste, oh ouais, j'en ai
+
+09:32.960 --> 09:38.240
+chose de tableau. Il sait que la liste des restaurants contient ce type de forme. Donc c'est le cas en gros
+
+09:38.240 --> 09:41.600
+supposons que pour chaque élément que je parcours, il hérite probablement de la forme.
+
+09:42.400 --> 09:46.240
+Et c'est garanti, il peut y avoir des raisons pour lesquelles cela pourrait changer, c'est pourquoi, comme mentionné,
+
+09:46.240 --> 09:51.120
+si vous le souhaitez, nous pouvons toujours l'augmenter selon vos besoins. Alors comment savait-il que le restaurant était un type
+
+09:51.120 --> 09:56.080
+restaurant sans ? Ouais. La raison est donc que, rappelez-vous, nous avons créé ce composant défini pour le dire :
+
+09:56.080 --> 10:00.560
+comme, TypeScript, comment trouver des choses ? Si nous remontons jusqu'aux données, c'est là que les données
+
+10:00.560 --> 10:07.520
+Shape lui a dit que, par exemple, lorsque vous faites ce point, quelque chose, oh, la liste des restaurants est du type restaurant.
+
+10:07.520 --> 10:12.240
+Et c’est donc une sorte de danse qui doit avoir lieu avec TypeScript et l’API d’options.
+
+10:12.240 --> 10:16.480
+à cause de cela, ce mot-clé. Parce que si vous survolez ça, c'est fondamentalement inutile. Mais,
+
+10:16.560 --> 10:21.360
+en fait, c'est drôle quand même. Vous pouvez voir ici que l'instance publique du composant de création le fait
+
+10:21.360 --> 10:26.880
+J'ai cette liste de restaurants filtrée avec le retour ici et puis-je réellement naviguer davantage ?
+
+10:26.880 --> 10:33.120
+Mais de toute façon, c'est comme ça, c'est savoir à travers tous ces sauts.
+
