@@ -1,0 +1,317 @@
+WEBVTT
+
+00:00.000 --> 00:07.480
+Now let's go back and talk about four loops and range and numerate and then we'll
+
+00:07.480 --> 00:16.200
+come back to the last part of this exercise afterwards.
+
+00:16.200 --> 00:21.000
+So we are talking about loops.
+
+00:21.000 --> 00:27.000
+Loops in Python don't necessarily look like they do in other programming languages.
+
+00:27.000 --> 00:32.040
+If you write JavaScript, Java, or some other languages, you might be used to loops that
+
+00:32.040 --> 00:38.160
+look something like this where you define a four, you define a starting point, you define
+
+00:38.160 --> 00:44.080
+what number you're looping two, and then define a condition that helps progress that
+
+00:44.080 --> 00:50.600
+starting value to the ending condition.
+
+00:50.600 --> 00:55.920
+Looping in Python is a lot simpler and cleaner and actually a lot of other programming
+
+00:55.920 --> 01:02.880
+languages have borrowed from Python syntax and now incorporates some of these nicer
+
+01:02.880 --> 01:07.200
+looping structures.
+
+01:07.200 --> 01:13.920
+So in the past we had used this in keyword to test if an item was inside of a sequence,
+
+01:13.920 --> 01:20.040
+but when we combine the in keyword with the four keyword, in can be used to indicate that
+
+01:20.040 --> 01:24.400
+you are looping over each item in a sequence.
+
+01:24.400 --> 01:31.040
+So this syntax for this is for a single item and that's going to be a temporary variable
+
+01:31.040 --> 01:38.760
+name in items which is a sequence followed by a colon, you're going to start a new line
+
+01:38.760 --> 01:44.360
+and then in-dent under to loop in that four loop.
+
+01:44.360 --> 01:50.520
+And again if you're in the repule, you'll need to press enter again in order to see the
+
+01:50.560 --> 01:55.200
+results.
+
+01:55.200 --> 02:06.360
+Instead, I'm going to make a new Python file called loop.py and we can start up here.
+
+02:06.360 --> 02:16.480
+So if I run, if I exit my repule here and I run this Python file in the terminal, I
+
+02:16.520 --> 02:23.200
+will see the color is red, green, blue, and orange.
+
+02:23.200 --> 02:41.880
+And I'm printing out the value of color, which I define right here inside of my loop.
+
+02:41.880 --> 02:49.920
+Something interesting that I want to point out is that loops don't have the same scope
+
+02:49.920 --> 02:51.840
+as functions.
+
+02:51.840 --> 02:57.640
+So here the four loop was updating the value of color, each time that we looped over
+
+02:57.640 --> 03:09.480
+the loop, when we are outside of the loop, this variable color still exists.
+
+03:09.520 --> 03:15.760
+And the value of that variable is the last value that was in the list.
+
+03:15.760 --> 03:19.160
+So something to be mindful of when you're thinking about scope.
+
+03:19.160 --> 03:27.600
+There's also a range function that lets you generate a range of numbers.
+
+03:27.600 --> 03:31.640
+You can pass in one value into it.
+
+03:31.640 --> 03:37.200
+If you want to see what is actually generated, you're going to need to pass this range
+
+03:37.240 --> 03:43.320
+into a list because this is what's called a generator type in Python.
+
+03:43.320 --> 03:47.520
+Python 2 used to be more inefficient in Python 3.
+
+03:47.520 --> 03:52.400
+If you pass a large number in here, it's not going to create a new data structure where
+
+03:52.400 --> 03:58.080
+the numbers from 1 to that very large number are all stored in memory at once.
+
+03:58.080 --> 04:04.320
+So if you want to take a look at this, let's pass it into the list constructor.
+
+04:04.360 --> 04:08.760
+And it would tell you what this would generate all at once.
+
+04:08.760 --> 04:13.840
+But generally, because you're going to be using this range to loop over something,
+
+04:13.840 --> 04:17.520
+you don't necessarily have to have that whole range in memory.
+
+04:17.520 --> 04:22.000
+You only care about what that value is while you're in the loop and what the next
+
+04:22.000 --> 04:23.240
+value might be.
+
+04:23.240 --> 04:28.000
+And that's an optimization that allows Python to save memory.
+
+04:28.040 --> 04:34.520
+You could also pass in two numbers where this would be the starting point and this would
+
+04:34.520 --> 04:39.920
+be the ending point, the ending point is not inclusive.
+
+04:39.920 --> 04:52.560
+So you can go ahead and use range along with the for loop.
+
+04:52.560 --> 04:59.240
+And that will go ahead and print out each item in this range.
+
+04:59.240 --> 05:08.720
+Now if you need to get a handle on an index, let's say that I have these colors.
+
+05:08.720 --> 05:14.360
+If you need to print out both the name of the color and the position that it was in,
+
+05:14.360 --> 05:18.040
+don't go back to your old style for loops.
+
+05:18.080 --> 05:23.160
+You don't need to declare a variable to keep track of I and then increment I and then
+
+05:23.160 --> 05:28.800
+print that out, there is a shortcut in Python for that called enumerate.
+
+05:28.800 --> 05:42.040
+And the enumerate function you pass it in a list or a set and it will return a tuple.
+
+05:42.040 --> 05:47.960
+So if we passed in the value of enumerate to look at it,
+
+05:47.960 --> 05:53.240
+we'll see that it returns a list of tuples where the first item is zero.
+
+05:53.240 --> 05:59.200
+So that's the index and the second item is what was contained in our list.
+
+05:59.200 --> 06:06.680
+So this matches a position with a value and then you can use that tuple unpacking that
+
+06:06.680 --> 06:14.880
+we saw earlier inside of a for loop in order to get at both of these values at once.
+
+06:14.880 --> 06:22.200
+So I can say for index color in enumerate colors.
+
+06:22.200 --> 06:39.080
+And then I can print out the index and the color without having to keep track of an
+
+06:39.080 --> 06:44.440
+I without incrementing it without creating any extra variables.
+
+06:44.440 --> 06:50.040
+The use of the enumerate function is one of those things that differentiates beginners
+
+06:50.040 --> 06:56.560
+to Python who don't necessarily understand the core concepts like all of you do with programmers
+
+06:56.560 --> 06:59.080
+and Python who are more intermediate.
+
+06:59.080 --> 07:03.680
+If I spot somebody using the enumerate function, I know that they have a pretty good
+
+07:03.680 --> 07:12.120
+understanding of what's going on under the hood and what Python code looks like.
+
+07:12.120 --> 07:20.760
+Now remember if we want to loop over a dictionary, we need to be mindful that by default
+
+07:20.760 --> 07:23.840
+a dictionary just gives us back the keys.
+
+07:23.840 --> 07:29.840
+So we need to explicitly ask for both keys and values.
+
+07:29.840 --> 07:39.000
+So I'm going to grab this dictionary right here with some hex colors.
+
+07:39.000 --> 07:52.120
+If I were going to loop over this, I would just get the keys.
+
+07:52.120 --> 07:59.160
+If I wanted to loop over keys and values at the same time, I would need to call hexcolors.items
+
+07:59.160 --> 08:02.120
+to get back the keys and the values.
+
+08:02.120 --> 08:09.240
+And look, this is returning a list of tuples that means that we can use tuple unpacking.
+
+08:09.240 --> 08:24.040
+So I can now say 4 key comma value in hexcolors.items print the key print something else
+
+08:24.040 --> 08:28.800
+and then print the value.
+
+08:28.800 --> 08:34.040
+So this is how I loop over both the key and the value in a dictionary at once and use
+
+08:34.040 --> 08:41.520
+tuple unpacking to get the key into a variable named key and the value into a variable
+
+08:41.520 --> 08:48.640
+named value so that I could then use them in my loop.
+
+08:48.640 --> 08:55.800
+Python also has wild loops and for those you will need to use some sort of counter.
+
+08:55.880 --> 09:02.560
+I'm not going to jump into wild loops because you all have some programming experience.
+
+09:02.560 --> 09:09.040
+And so I expect that wild loops look pretty similar to what they might in your programming
+
+09:09.040 --> 09:11.520
+language of choice.
+
+09:11.520 --> 09:16.880
+I will say that these syntax for wild loops looks something like this.
+
+09:16.880 --> 09:26.760
+So I can say maybe vowel is equal to 0 and then say while vowel is less than 5, print
+
+09:26.760 --> 09:36.200
+the value and then increase the value by 1, either by saying value equals vowel plus 1 or
+
+09:36.200 --> 09:43.640
+saying vowel plus equals 1 and that will go ahead and run a wild loop.
+
+09:43.640 --> 09:50.760
+So for wild loops you just do wild and an expression that evaluates to true or false.
+
+09:50.760 --> 09:56.640
+When you're doing wall loops make sure that you will eventually have a condition where
+
+09:56.640 --> 10:01.640
+this is false otherwise your program will run for forever.
+
+10:01.640 --> 10:07.160
+If you need to short circuit your loop you can use the return statement to break out
+
+10:07.160 --> 10:08.160
+of it.
+
+10:08.160 --> 10:18.760
+So let's say I had some names.
+
+10:18.760 --> 10:31.080
+If I wanted to loop over these names and stop when I found the target value so I can
+
+10:31.080 --> 10:45.680
+say if name is equal to stand oops sorry what I wanted to say was that you would want
+
+10:45.680 --> 10:52.880
+to use this in a function.
+
+10:52.880 --> 10:59.400
+Let's do this a little bit differently let's say return target and pass in the name of
+
+10:59.400 --> 11:16.400
+a target and now we could do the same for loop and make sure that it is indented correctly
+
+11:16.400 --> 11:29.360
+oops sorry if name is equal to the target we're going to return the name.
+
+11:29.360 --> 11:41.240
+Let me make sure that is indented correctly so now I can return target and it will print
+
+11:41.240 --> 11:50.560
+stand or I can make a new target of Nina and once that target is found the function will
+
+11:50.560 --> 11:55.120
+return so that's a way of short circuiting a loop a different way of short circuiting
+
+11:55.120 --> 11:58.760
+loops is with break and continue.
+
+11:58.800 --> 12:04.440
+These are more advanced concepts that I'm not going to cover but there is an optional chapter
+
+12:04.440 --> 12:07.560
+here in the course website where you can follow through on those.
+

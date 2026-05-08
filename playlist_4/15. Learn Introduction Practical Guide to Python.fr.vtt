@@ -1,0 +1,203 @@
+WEBVTT
+
+00:00.000 --> 00:07.600
+Ensuite, nous avons des ensembles qui sont également des types de données mutables, et ils vous permettent de stocker uniquement
+
+00:07.600 --> 00:11.680
+les éléments immuables qu'ils contiennent de manière non triée.
+
+00:11.680 --> 00:17.160
+Les ensembles sont modifiables, ce qui signifie que vous pouvez y ajouter des éléments, vous pouvez en supprimer des éléments,
+
+00:17.160 --> 00:24.480
+ils peuvent contenir d'autres types immuables comme une chaîne entière, un tuple car le tuple est immuable,
+
+00:24.480 --> 00:31.280
+mais pas de listes, ni d'ensembles, ni de dictionnaires, qui sont eux-mêmes mutables.
+
+00:31.280 --> 00:36.360
+Contrairement à une liste ou à un tuple, les ensembles ne peuvent contenir que des éléments uniques.
+
+00:36.360 --> 00:42.480
+Si vous créez un ensemble et que vous essayez d'ajouter des éléments de l'ensemble, au lieu d'une liste dans laquelle vous pouvez
+
+00:42.480 --> 00:47.120
+Si vous avez autant de copies que vous le souhaitez, l'ensemble va simplement les jeter.
+
+00:47.120 --> 00:52.400
+Et l'avantage de ceci est que les ensembles sont rapides, ils ont des tests d'adhésion rapides.
+
+00:52.400 --> 00:57.920
+Nous en reparlerons un peu plus tard, mais comme les éléments qu'ils contiennent sont immuables,
+
+00:57.920 --> 01:02.640
+vous pouvez exécuter une fonction appelée fonction de hachage et déterminer très rapidement si l'élément est
+
+01:02.640 --> 01:09.160
+Je recherche ou non dans l'ensemble, sans avoir à examiner chaque valeur qu'il contient.
+
+01:09.160 --> 01:14.080
+Et vous pouvez également utiliser des opérations d’ensemble puissantes, comme l’union, l’intersection, la différence.
+
+01:14.080 --> 01:19.600
+Je ne vais pas aborder ces sujets au cours de ce chapitre, mais il y a quelques
+
+01:19.600 --> 01:28.000
+exercices autour d'eux, set rapide, triche, triche ici en haut, et parlons des sets.
+
+01:28.000 --> 01:37.120
+Donc, si les listes ont des crochets et que les tuples sont des parenthèses et des virgules, vous pourriez penser
+
+01:37.120 --> 01:49.520
+ces ensembles sont des accolades, mais il y a un aha ici.
+
+01:50.320 --> 01:57.600
+Nous essayons de créer un ensemble vide avec juste des accolades.
+
+02:00.800 --> 02:07.520
+Nous allons plutôt nous retrouver avec un dictionnaire, car les dictionnaires sont aussi entourés de boucles
+
+02:07.520 --> 02:15.600
+accolades, donc si vous devez créer un ensemble vide dans ce cas, vous souhaiterez utiliser le constructeur d'ensemble
+
+02:15.760 --> 02:19.600
+et cela vous donnera l'ensemble vide que vous recherchez.
+
+02:22.480 --> 02:29.680
+L'ensemble peut contenir un élément ou plusieurs.
+
+02:31.120 --> 02:38.960
+Si nous avons un set où j'ai essayé de passer en trois, trois et quatre, quelqu'un sur zoom peut-il me le dire
+
+02:38.960 --> 02:40.960
+combien d'articles y aura-t-il dans l'ensemble ?
+
+02:43.840 --> 02:45.360
+Deux, génial.
+
+02:46.480 --> 02:52.640
+Parce que les ensembles ne peuvent pas contenir de valeurs en double. Si vous avez une liste de noms,
+
+02:52.640 --> 03:09.920
+et vous voulez qu'il duplique très rapidement cette liste, vous pouvez en fait simplement la transmettre dans le
+
+03:09.920 --> 03:20.960
+deuxième structure, plus de doublons. Ainsi, l'un des cas d'utilisation très pratiques des ensembles ne peut pas contenir
+
+03:20.960 --> 03:26.960
+types mutables. Sans avoir à toujours regarder l'aide-mémoire, comment savoir quels sont les types
+
+03:26.960 --> 03:37.360
+mutable, quels types ne le sont pas, un raccourci pour vérifier la mutabilité, consiste à utiliser la fonction de hachage intégrée.
+
+03:39.280 --> 03:48.240
+Puis-je appeler un hachage sur un entier ? Oui. Puis-je appeler un hachage sur une chaîne ? Oui.
+
+03:49.120 --> 03:55.280
+Puis-je appeler hash sur une liste ? Non, c'est mutable. C'est un type impossible à hacher.
+
+03:56.560 --> 04:03.120
+Que se passe-t-il si j'essaie d'avoir un ensemble contenant une liste ?
+
+04:05.120 --> 04:10.800
+Je vais obtenir la même liste de types d'erreur impossible à hacher. Vous allez probablement voir ça
+
+04:10.800 --> 04:18.560
+une exception assez fréquente, je vous encourage donc à vous en souvenir. Lorsque vous rencontrez des exceptions comme celle-ci,
+
+04:18.560 --> 04:24.960
+lisez-les simplement de bas en haut et réfléchissez à où ai-je vu cette exception, et ça va
+
+04:24.960 --> 04:37.680
+pour vous aider à aller à la racine du problème. Désormais, les ensembles n'ont plus d'ordre. Donc si je mets un tas d'articles
+
+04:37.760 --> 04:46.800
+dans un ensemble, il n'y a aucune garantie qu'ils seront dans le même ordre dans lequel je les ai mis.
+
+04:48.400 --> 04:56.560
+Parce que dans les ensembles, l’ordre n’a pas d’importance. Que va-t-il se passer si j'essaie d'obtenir le zéro avec l'élément ?
+
+04:56.560 --> 05:05.760
+dans l'ensemble ? Puis-je faire ça ? Non. Il va exploser et dire qu'un objet défini n'est pas
+
+05:06.720 --> 05:12.240
+inscriptible. Cela a beaucoup de sens, non ? Les ensembles n'ont pas de commande. Il n'y a aucun article
+
+05:12.240 --> 05:22.240
+au zéro avec index. Dans le même ordre d'idées, je ne peux pas dire que mon zéro défini est égal à un autre élément,
+
+05:22.240 --> 05:28.800
+car encore une fois, il n'y a pas d'ordre dans les ensembles et les ensembles ne prennent pas en charge l'attribution d'éléments. Si vous souhaitez ajouter
+
+05:28.800 --> 05:42.160
+et supprimer des ensembles, vous pouvez utiliser l'opération d'ajout, et encore une fois parce que j'appelle cela sur mon ensemble,
+
+05:42.160 --> 05:47.920
+et mon ensemble est mutable. En fait, cela change la donne. Je peux aussi appeler l'opération de suppression
+
+05:47.920 --> 06:05.280
+et cela continue et supprime l'élément de l'ensemble. Si j'avais deux sets et que je voulais combiner
+
+06:05.280 --> 06:16.160
+les ensemble, je pourrais utiliser la méthode de mise à jour. Je pourrais donc dire que les couleurs sont le rouge et l'orange.
+
+06:18.400 --> 06:25.840
+Oups, je vais nommer cela les couleurs et les nombres sont un ensemble composé de 1, 2 et 3.
+
+06:27.360 --> 06:33.040
+Donc si je regarde mes couleurs, je pourrais appeler des couleurs. mettre à jour et transmettre mes numéros.
+
+06:34.720 --> 06:40.880
+Et maintenant j'ai un nouvel ensemble. N'oubliez pas que set est mutable. J'ai appelé dot update à ce sujet et cela a
+
+06:40.880 --> 06:47.920
+en fait, il a modifié les données qu'il contient. Il existe des opérations définies comme l'intersection des différences.
+
+06:48.480 --> 06:54.880
+Je ne vais pas les aborder, mais il y a une section sur ceux-ci dans l'aide-mémoire des opérations de set.
+
+06:54.880 --> 07:03.120
+sur le site du cours. Les opérations sur les ensembles sont donc la fonctionnalité la plus utile et la plus puissante des ensembles.
+
+07:03.120 --> 07:10.000
+Vous pouvez rapidement déterminer quels éléments sont identiques entre deux ensembles. Quels articles sont différents
+
+07:10.000 --> 07:16.640
+et faites-le d'une manière très, très performante. Ensuite, nous avons des dictionnaires.
+
+07:18.160 --> 07:24.400
+Ce sont les dictionnaires qui sont un type de données qui permet de stocker des paires clé et valeur.
+
+07:25.680 --> 07:34.320
+Les dictionnaires eux-mêmes ne sont pas modifiables, mais tout comme les ensembles, les clés du dictionnaire ne peuvent être
+
+07:34.320 --> 07:43.360
+immuable. Pourquoi? Parce que les clés du dictionnaire doivent être hachables. Les dictionnaires permettent une recherche rapide des éléments
+
+07:43.360 --> 07:50.640
+et des tests d'adhésion rapides. Vous pouvez rapidement dire si, étant donné une clé, cette clé est-elle dans mon dictionnaire ou non.
+
+07:50.640 --> 07:56.640
+Et c'est parce que le hachage de la clé est comparé au hachage des clés dans le dictionnaire.
+
+07:56.640 --> 08:02.400
+Vous n'avez pas besoin de parcourir chaque élément de ce dictionnaire et de dire : êtes-vous l'élément ? Êtes-vous le
+
+08:02.400 --> 08:08.320
+l'article que je recherche ? Puis-je avoir une liste comme dictionnaire dans une clé ?
+
+08:09.600 --> 08:16.400
+Ou je suis désolé, une liste comme clé dans le dictionnaire. Je pose cette question correctement. J'obtiendrais une meilleure réponse.
+
+08:16.400 --> 08:23.280
+Non, n'est-ce pas ? Une liste est donc modifiable. Les clés du dictionnaire ne peuvent être qu'immuables. Nous ne pouvons pas avoir
+
+08:23.280 --> 08:29.600
+types de données mutables comme clés de dictionnaire. Pouvons-nous avoir un tuple comme clé de dictionnaire ?
+
+08:30.480 --> 08:39.440
+Oui, les tuples sont immuables. Nous pouvons donc les utiliser comme clé de dictionnaire. j'ai un dictionnaire
+
+08:39.440 --> 08:43.200
+aide-mémoire ici pour vous.
+

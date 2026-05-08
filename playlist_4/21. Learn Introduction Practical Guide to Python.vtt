@@ -1,0 +1,290 @@
+WEBVTT
+
+00:00.000 --> 00:09.000
+We can create functions with the Deaf keyword, so we had a function called add numbers.
+
+00:09.000 --> 00:13.000
+We can give our function optional arguments.
+
+00:17.000 --> 00:25.000
+And we want to, when we want to call the function, we use the function name,
+
+00:25.000 --> 00:30.000
+and then we pass in the correct number of required arguments.
+
+00:30.000 --> 00:40.000
+If we pass in too many, or too few, you will see that this argument takes two positional arguments,
+
+00:40.000 --> 00:45.000
+but three were given, or this function is missing one required positional argument,
+
+00:45.000 --> 00:47.000
+and it'll tell you which one.
+
+00:47.000 --> 00:51.000
+So in this case, the number of arguments matters.
+
+00:52.000 --> 00:57.000
+Remember that functions in Python don't have curly braces.
+
+00:57.000 --> 01:01.000
+So indentation is very important.
+
+01:01.000 --> 01:13.000
+If I tried to define a function here, and I did not indent, this is an indentation error.
+
+01:13.000 --> 01:19.000
+Python is telling me, I expected an indented block to signify the start of the function,
+
+01:19.000 --> 01:22.000
+and you did not give me one.
+
+01:22.000 --> 01:29.000
+So if you see an indentation error, it's likely that your indentation is not at the correct level.
+
+01:29.000 --> 01:32.000
+We talked about function scope.
+
+01:32.000 --> 01:38.000
+So if you have variables that are defined outside of your function,
+
+01:38.000 --> 01:48.000
+if you try to change them,
+
+01:48.000 --> 01:54.000
+if I check the value of x, it's two, if I call my function,
+
+01:54.000 --> 02:00.000
+it's three inside of the function, but that value of x that was defined outside of the function
+
+02:00.000 --> 02:04.000
+was not changed by this statement.
+
+02:04.000 --> 02:09.000
+Remember that we have positional arguments and keyword arguments?
+
+02:09.000 --> 02:25.000
+So if I have my add function here, I can have an optional argument about what to do.
+
+02:25.000 --> 02:30.000
+Let's call this one operation.
+
+02:30.000 --> 02:38.000
+And let's try to do here.
+
+02:38.000 --> 02:41.000
+Oh, I need to give these names, not values.
+
+02:41.000 --> 02:45.000
+All right, so I've defined my add numbers function,
+
+02:45.000 --> 02:50.000
+and I can say that if the operation is equal to the word add,
+
+02:50.000 --> 02:53.000
+we're going to return x plus y.
+
+02:53.000 --> 02:59.000
+Otherwise, we're going to subtract and return x minus y.
+
+02:59.000 --> 03:09.000
+So by default, add numbers will add.
+
+03:09.000 --> 03:15.000
+But if I pass in an operation, that's something else,
+
+03:15.000 --> 03:18.000
+it will instead subtract.
+
+03:18.000 --> 03:21.000
+This keyword argument is optional.
+
+03:21.000 --> 03:24.000
+If I don't pass one in, think default will be used.
+
+03:24.000 --> 03:28.000
+We talked a little bit about Boolean logic.
+
+03:28.000 --> 03:35.000
+So comparisons in Python less than less than equals greater than greater than equals,
+
+03:35.000 --> 03:39.000
+and then double equals and not equals.
+
+03:39.000 --> 03:44.000
+And a reminder that these operators test the object's value.
+
+03:44.000 --> 03:51.000
+You want to use is and is not in order to test if two objects are the same thing.
+
+03:51.000 --> 03:56.000
+And this is useful for those single tins that are defined in Python,
+
+03:56.000 --> 03:59.000
+like none and true and false.
+
+03:59.000 --> 04:05.000
+So none true and false are when you want to use the is keyword,
+
+04:05.000 --> 04:08.000
+because you're not comparing two different values.
+
+04:08.000 --> 04:20.000
+You want to make sure that the single tin is what that variable is pointing out.
+
+04:21.000 --> 04:25.000
+We talked a little bit about truthiness.
+
+04:25.000 --> 04:36.000
+So instead of saying three or five less than three is equal to true,
+
+04:36.000 --> 04:41.000
+and seeing some weird unexpected behavior,
+
+04:41.000 --> 04:47.000
+because remember in Python under the hood true is actually number one,
+
+04:48.000 --> 04:53.000
+we want to just use five less than three,
+
+04:53.000 --> 04:59.000
+and that will give us the correct result.
+
+04:59.000 --> 05:05.000
+So here we had three less than five is equal to true as false,
+
+05:05.000 --> 05:09.000
+even though it should be true.
+
+05:09.000 --> 05:15.000
+So use this and not that.
+
+05:15.000 --> 05:18.000
+We talked about Boolean operators.
+
+05:18.000 --> 05:22.000
+So X or Y, X and Y and not X.
+
+05:22.000 --> 05:27.000
+These work as expected the same way that they do in other languages,
+
+05:27.000 --> 05:32.000
+except in Python we use the keywords or and not.
+
+05:32.000 --> 05:38.000
+And that makes our statements read a little bit more like actual sentences in English,
+
+05:38.000 --> 05:42.000
+and makes Python code easy to understand.
+
+05:42.000 --> 05:47.000
+We talked about control statements like if and else.
+
+05:47.000 --> 05:53.000
+So typing if a true expression in this case,
+
+05:53.000 --> 05:57.000
+let's say true print.
+
+05:57.000 --> 05:59.000
+Hi.
+
+05:59.000 --> 06:04.000
+Otherwise print.
+
+06:04.000 --> 06:08.000
+By this will print hi and not buy.
+
+06:08.000 --> 06:13.000
+If this was false, we wouldn't instead skip all of the code inside of the if statement,
+
+06:13.000 --> 06:17.000
+and jump straight to the code in the all statement.
+
+06:17.000 --> 06:23.000
+If we were to we don't define any logic in the all statement,
+
+06:23.000 --> 06:28.000
+if we needed to define extra conditional statements,
+
+06:28.000 --> 06:32.000
+we would use the else if.
+
+06:32.000 --> 06:38.000
+So I could say if false print.
+
+06:38.000 --> 06:48.000
+One if I'll if true print to else print.
+
+06:48.000 --> 06:51.000
+Three this condition is false.
+
+06:51.000 --> 06:54.000
+It's going to evaluate this one next, which is true.
+
+06:54.000 --> 06:58.000
+So it will go ahead and print to.
+
+06:59.000 --> 07:02.000
+We can use.
+
+07:02.000 --> 07:07.000
+We can use these in complex ways by adding statements together.
+
+07:07.000 --> 07:10.000
+So if we wanted to define.
+
+07:10.000 --> 07:16.000
+Fizz buzz for example.
+
+07:16.000 --> 07:17.000
+For a number.
+
+07:17.000 --> 07:23.000
+We can say that if the number is divisible by three.
+
+07:23.000 --> 07:31.000
+And the number is divisible by five.
+
+07:31.000 --> 07:33.000
+Then print.
+
+07:33.000 --> 07:38.000
+Fizz buzz.
+
+07:38.000 --> 07:41.000
+So Fizz buzz of three.
+
+07:41.000 --> 07:44.000
+I think I missed my.
+
+07:44.000 --> 07:48.000
+Let me double check this.
+
+07:48.000 --> 07:51.000
+I think I should have had parentheses around this.
+
+07:51.000 --> 07:56.000
+So if you have any of you ran into the same issue.
+
+07:56.000 --> 08:06.000
+In this exercise.
+
+08:06.000 --> 08:08.000
+I don't know how to write the first time.
+
+08:08.000 --> 08:10.000
+Forgot what Fizz was did.
+
+08:10.000 --> 08:14.000
+So this only checks if it's divisible by both three and five.
+
+08:14.000 --> 08:17.000
+Which 15 is but three and five are not.
+
+08:17.000 --> 08:20.000
+So no parentheses necessary.
+
+08:20.000 --> 08:23.000
+Fizz buzz.
+

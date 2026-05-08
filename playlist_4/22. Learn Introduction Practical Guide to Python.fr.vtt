@@ -1,0 +1,317 @@
+WEBVTT
+
+00:00.000 --> 00:07.480
+Maintenant, revenons en arrière et parlons de quatre boucles, de la plage et de la numération, puis nous allons
+
+00:07.480 --> 00:16.200
+revenez ensuite à la dernière partie de cet exercice.
+
+00:16.200 --> 00:21.000
+Nous parlons donc de boucles.
+
+00:21.000 --> 00:27.000
+Les boucles en Python ne ressemblent pas nécessairement à celles des autres langages de programmation.
+
+00:27.000 --> 00:32.040
+Si vous écrivez du JavaScript, du Java ou d'autres langages, vous serez peut-être habitué aux boucles qui
+
+00:32.040 --> 00:38.160
+ressemble à ceci où vous définissez un quatre, vous définissez un point de départ, vous définissez
+
+00:38.160 --> 00:44.080
+quel nombre vous bouclez deux, puis définissez une condition qui aide à progresser
+
+00:44.080 --> 00:50.600
+valeur de départ à la condition de fin.
+
+00:50.600 --> 00:55.920
+Le bouclage en Python est beaucoup plus simple et plus propre et en fait beaucoup d'autres programmations
+
+00:55.920 --> 01:02.880
+les langages ont emprunté la syntaxe Python et intègrent désormais certaines de ces plus belles
+
+01:02.880 --> 01:07.200
+structures en boucle.
+
+01:07.200 --> 01:13.920
+Ainsi, dans le passé, nous avions utilisé ce mot-clé in pour tester si un élément se trouvait à l'intérieur d'une séquence,
+
+01:13.920 --> 01:20.040
+mais lorsque nous combinons le mot-clé in avec le mot-clé quatre, in peut être utilisé pour indiquer que
+
+01:20.040 --> 01:24.400
+vous parcourez chaque élément dans une séquence.
+
+01:24.400 --> 01:31.040
+Donc, cette syntaxe concerne un seul élément et ce sera une variable temporaire
+
+01:31.040 --> 01:38.760
+nom dans les éléments qui est une séquence suivie de deux points, vous allez commencer une nouvelle ligne
+
+01:38.760 --> 01:44.360
+puis in-dent sous pour boucler ces quatre boucles.
+
+01:44.360 --> 01:50.520
+Et encore une fois, si vous êtes dans la repule, vous devrez appuyer à nouveau sur Entrée pour voir le
+
+01:50.560 --> 01:55.200
+résultats.
+
+01:55.200 --> 02:06.360
+Au lieu de cela, je vais créer un nouveau fichier Python appelé loop.py et nous pourrons démarrer ici.
+
+02:06.360 --> 02:16.480
+Donc si je lance, si je quitte ma repule ici et que j'exécute ce fichier Python dans le terminal, je
+
+02:16.520 --> 02:23.200
+verra que la couleur est rouge, verte, bleue et orange.
+
+02:23.200 --> 02:41.880
+Et j'imprime la valeur de la couleur, que je définis ici même dans ma boucle.
+
+02:41.880 --> 02:49.920
+Quelque chose d'intéressant que je tiens à souligner, c'est que les boucles n'ont pas la même portée.
+
+02:49.920 --> 02:51.840
+comme fonctions.
+
+02:51.840 --> 02:57.640
+Donc ici, les quatre boucles mettaient à jour la valeur de la couleur, à chaque fois que nous bouclions
+
+02:57.640 --> 03:09.480
+la boucle, quand on est en dehors de la boucle, cette couleur variable existe toujours.
+
+03:09.520 --> 03:15.760
+Et la valeur de cette variable est la dernière valeur de la liste.
+
+03:15.760 --> 03:19.160
+C'est donc quelque chose dont il faut être conscient lorsque vous réfléchissez à la portée.
+
+03:19.160 --> 03:27.600
+Il existe également une fonction de plage qui vous permet de générer une plage de nombres.
+
+03:27.600 --> 03:31.640
+Vous pouvez y transmettre une valeur.
+
+03:31.640 --> 03:37.200
+Si vous voulez voir ce qui est réellement généré, vous devrez dépasser cette plage
+
+03:37.240 --> 03:43.320
+dans une liste car c'est ce qu'on appelle un type générateur en Python.
+
+03:43.320 --> 03:47.520
+Python 2 était plus inefficace dans Python 3.
+
+03:47.520 --> 03:52.400
+Si vous transmettez un grand nombre ici, cela ne créera pas une nouvelle structure de données où
+
+03:52.400 --> 03:58.080
+les nombres de 1 à ce très grand nombre sont tous stockés en mémoire en même temps.
+
+03:58.080 --> 04:04.320
+Donc, si vous voulez y jeter un œil, passons-le au constructeur de liste.
+
+04:04.360 --> 04:08.760
+Et cela vous dirait ce que cela générerait d’un seul coup.
+
+04:08.760 --> 04:13.840
+Mais en général, comme vous allez utiliser cette plage pour parcourir quelque chose,
+
+04:13.840 --> 04:17.520
+vous n'avez pas nécessairement besoin d'avoir toute cette plage en mémoire.
+
+04:17.520 --> 04:22.000
+Vous ne vous souciez que de cette valeur pendant que vous êtes dans la boucle et de la prochaine étape.
+
+04:22.000 --> 04:23.240
+la valeur pourrait être.
+
+04:23.240 --> 04:28.000
+Et c'est une optimisation qui permet à Python d'économiser de la mémoire.
+
+04:28.040 --> 04:34.520
+Vous pourriez également transmettre deux nombres où ce serait le point de départ et ce serait
+
+04:34.520 --> 04:39.920
+être le point final, le point final n’est pas inclusif.
+
+04:39.920 --> 04:52.560
+Vous pouvez donc continuer et utiliser range avec la boucle for.
+
+04:52.560 --> 04:59.240
+Et cela continuera et imprimera chaque élément de cette gamme.
+
+04:59.240 --> 05:08.720
+Maintenant, si vous avez besoin de maîtriser un index, disons que j'ai ces couleurs.
+
+05:08.720 --> 05:14.360
+Si vous devez imprimer à la fois le nom de la couleur et la position dans laquelle elle se trouvait,
+
+05:14.360 --> 05:18.040
+ne revenez pas à votre ancien style pour les boucles.
+
+05:18.080 --> 05:23.160
+Vous n'avez pas besoin de déclarer une variable pour garder une trace de I, puis d'incrémenter I, puis
+
+05:23.160 --> 05:28.800
+imprimez-le, il existe un raccourci en Python pour cela appelé enumerate.
+
+05:28.800 --> 05:42.040
+Et la fonction enumerate vous la transmettez dans une liste ou un ensemble et elle renverra un tuple.
+
+05:42.040 --> 05:47.960
+Donc, si nous transmettons la valeur d'enumerate pour l'examiner,
+
+05:47.960 --> 05:53.240
+nous verrons qu'il renvoie une liste de tuples dont le premier élément est zéro.
+
+05:53.240 --> 05:59.200
+Voilà donc l'index et le deuxième élément est ce qui était contenu dans notre liste.
+
+05:59.200 --> 06:06.680
+Donc, cela correspond à une position avec une valeur et vous pouvez ensuite utiliser ce tuple pour le décompresser
+
+06:06.680 --> 06:14.880
+nous avons vu plus tôt à l'intérieur d'une boucle for afin d'obtenir ces deux valeurs à la fois.
+
+06:14.880 --> 06:22.200
+Je peux donc dire pour la couleur d'index dans les couleurs énumérées.
+
+06:22.200 --> 06:39.080
+Et puis je peux imprimer l'index et la couleur sans avoir à garder une trace d'un
+
+06:39.080 --> 06:44.440
+Je ne l'incrémente pas sans créer de variables supplémentaires.
+
+06:44.440 --> 06:50.040
+L'utilisation de la fonction énumérer fait partie de ces choses qui différencient les débutants
+
+06:50.040 --> 06:56.560
+à Python qui ne comprend pas nécessairement les concepts de base comme vous le faites tous avec les programmeurs
+
+06:56.560 --> 06:59.080
+et Python qui sont plus intermédiaires.
+
+06:59.080 --> 07:03.680
+Si je repère quelqu'un qui utilise la fonction énumération, je sais qu'il a une assez bonne idée.
+
+07:03.680 --> 07:12.120
+comprendre ce qui se passe sous le capot et à quoi ressemble le code Python.
+
+07:12.120 --> 07:20.760
+N'oubliez pas que si nous voulons parcourir un dictionnaire, nous devons garder à l'esprit que par défaut
+
+07:20.760 --> 07:23.840
+un dictionnaire nous rend juste les clés.
+
+07:23.840 --> 07:29.840
+Nous devons donc demander explicitement à la fois les clés et les valeurs.
+
+07:29.840 --> 07:39.000
+Je vais donc récupérer ce dictionnaire ici avec quelques couleurs hexadécimales.
+
+07:39.000 --> 07:52.120
+Si je devais faire une boucle là-dessus, j'aurais juste les clés.
+
+07:52.120 --> 07:59.160
+Si je voulais parcourir les clés et les valeurs en même temps, je devrais appeler hexcolors.items
+
+07:59.160 --> 08:02.120
+pour récupérer les clés et les valeurs.
+
+08:02.120 --> 08:09.240
+Et regardez, cela renvoie une liste de tuples, ce qui signifie que nous pouvons utiliser le déballage des tuples.
+
+08:09.240 --> 08:24.040
+Je peux donc maintenant dire 4 valeurs de virgule clés dans hexcolors.items imprimer la clé imprimer autre chose
+
+08:24.040 --> 08:28.800
+puis imprimez la valeur.
+
+08:28.800 --> 08:34.040
+C'est ainsi que je boucle à la fois sur la clé et la valeur dans un dictionnaire et que j'utilise
+
+08:34.040 --> 08:41.520
+déballage de tuple pour obtenir la clé dans une variable nommée clé et la valeur dans une variable
+
+08:41.520 --> 08:48.640
+valeur nommée afin que je puisse ensuite les utiliser dans ma boucle.
+
+08:48.640 --> 08:55.800
+Python a également des boucles sauvages et pour celles-ci, vous devrez utiliser une sorte de compteur.
+
+08:55.880 --> 09:02.560
+Je ne vais pas me lancer dans des boucles folles car vous avez tous une certaine expérience en programmation.
+
+09:02.560 --> 09:09.040
+Et donc je m'attends à ce que les boucles sauvages ressemblent assez à ce qu'elles pourraient être dans votre programmation
+
+09:09.040 --> 09:11.520
+langue de choix.
+
+09:11.520 --> 09:16.880
+Je dirai que cette syntaxe pour les boucles sauvages ressemble à ceci.
+
+09:16.880 --> 09:26.760
+Donc je peux dire que peut-être que la voyelle est égale à 0, puis dire que tant que la voyelle est inférieure à 5, imprimer
+
+09:26.760 --> 09:36.200
+la valeur, puis augmentez la valeur de 1, soit en disant valeur égale voyelle plus 1, soit
+
+09:36.200 --> 09:43.640
+dire la voyelle plus est égale à 1 et cela continuera et exécutera une boucle sauvage.
+
+09:43.640 --> 09:50.760
+Donc, pour les boucles sauvages, vous faites simplement sauvage et une expression qui est évaluée à vrai ou faux.
+
+09:50.760 --> 09:56.640
+Lorsque vous effectuez des boucles murales, assurez-vous que vous finirez par avoir une condition dans laquelle
+
+09:56.640 --> 10:01.640
+c'est faux sinon votre programme fonctionnera pour toujours.
+
+10:01.640 --> 10:07.160
+Si vous devez court-circuiter votre boucle, vous pouvez utiliser l'instruction return pour sortir
+
+10:07.160 --> 10:08.160
+de celui-ci.
+
+10:08.160 --> 10:18.760
+Alors disons que j'avais des noms.
+
+10:18.760 --> 10:31.080
+Si je voulais parcourir ces noms et m'arrêter lorsque j'ai trouvé la valeur cible pour pouvoir
+
+10:31.080 --> 10:45.680
+dis si le nom est égal à stand oups désolé ce que je voulais dire c'est que tu voudrais
+
+10:45.680 --> 10:52.880
+pour l'utiliser dans une fonction.
+
+10:52.880 --> 10:59.400
+Faisons cela un peu différemment, disons retournons la cible et transmettons au nom de
+
+10:59.400 --> 11:16.400
+une cible et maintenant nous pourrions faire la même chose pour la boucle et nous assurer qu'elle est correctement indentée
+
+11:16.400 --> 11:29.360
+oups désolé si le nom est égal à la cible, nous allons renvoyer le nom.
+
+11:29.360 --> 11:41.240
+Permettez-moi de m'assurer que l'indentation est correcte afin que je puisse maintenant renvoyer la cible et elle s'imprimera
+
+11:41.240 --> 11:50.560
+debout ou je peux créer une nouvelle cible de Nina et une fois cette cible trouvée, la fonction sera
+
+11:50.560 --> 11:55.120
+revenir donc c'est une manière de court-circuiter une boucle une manière différente de court-circuiter
+
+11:55.120 --> 11:58.760
+les boucles sont avec pause et continuent.
+
+11:58.800 --> 12:04.440
+Ce sont des concepts plus avancés que je ne vais pas aborder mais il y a un chapitre facultatif
+
+12:04.440 --> 12:07.560
+ici sur le site Web du cours où vous pouvez suivre ceux-ci.
+
