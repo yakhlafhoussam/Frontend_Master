@@ -1,0 +1,635 @@
+WEBVTT
+
+00:00.000 --> 00:03.000
+Now that we've done that, we have the first component.
+
+00:06.840 --> 00:09.920
+Let's go ahead and let you all play around with creating
+
+00:09.920 --> 00:12.520
+your own components from your app.
+
+00:12.520 --> 00:16.080
+So the exercise here is to basically go inside of your
+
+00:16.080 --> 00:19.320
+forum app, so whether it's the office or community or
+
+00:19.320 --> 00:24.520
+whatever, and then look at your index.html file and go, OK,
+
+00:24.520 --> 00:25.920
+I want to create some components out of this.
+
+00:25.920 --> 00:27.120
+How will I do it?
+
+00:27.120 --> 00:30.600
+And to give some preface as well, you will run into a
+
+00:30.600 --> 00:32.760
+limitation pretty quickly as far as things that you'll want
+
+00:32.760 --> 00:33.560
+to do with it.
+
+00:33.560 --> 00:35.480
+But I want to just get you in the practice of creating some
+
+00:35.480 --> 00:38.400
+.view files, and just know that it'll functionally be
+
+00:38.400 --> 00:40.600
+broken until we get back together.
+
+00:40.600 --> 00:42.040
+But I just want to get you all in the
+
+00:42.040 --> 00:43.360
+habit of practicing that.
+
+00:43.360 --> 00:44.240
+Does that sound good?
+
+00:44.240 --> 00:46.720
+So you basically try scoping, like bringing stuff
+
+00:46.720 --> 00:49.440
+together, and seeing how that goes.
+
+00:52.320 --> 00:54.840
+OK, welcome back, everyone.
+
+00:54.880 --> 00:58.080
+So hopefully you all had some fun creating components.
+
+00:58.080 --> 01:01.680
+But I was kind of walking around and checking out how
+
+01:01.680 --> 01:02.760
+people were doing.
+
+01:02.760 --> 01:05.040
+You probably ran into a problem, basically, as you
+
+01:05.040 --> 01:07.920
+started migrating stuff, because a lot of your code is
+
+01:07.920 --> 01:09.600
+dependent on one another.
+
+01:09.600 --> 01:11.040
+And so you might have noticed that when you started moving
+
+01:11.040 --> 01:13.240
+stuff that it was like, wait, where's this thing you
+
+01:13.240 --> 01:17.040
+reference to, and had trouble talking to each other.
+
+01:17.040 --> 01:19.640
+So let's go ahead and show you what I mean by that.
+
+01:19.640 --> 01:26.360
+So let me start by opening up my app.view for my avatar
+
+01:26.360 --> 01:28.400
+las airbender.
+
+01:28.400 --> 01:32.000
+And so as we can see here, we have a couple sections here
+
+01:32.000 --> 01:33.840
+that could really make sense.
+
+01:33.840 --> 01:34.880
+We see a bunch of h2s.
+
+01:34.880 --> 01:36.560
+They could make sense as components, to be totally
+
+01:36.560 --> 01:39.320
+honest, as far as these are the characters.
+
+01:39.320 --> 01:40.760
+This is the character list.
+
+01:40.760 --> 01:43.480
+And so let's actually try something as simple as that.
+
+01:43.480 --> 01:46.000
+Let's go ahead and start by inside of our components.
+
+01:46.000 --> 01:50.800
+Let's create a character list.view.
+
+01:50.800 --> 01:53.080
+OK, and I'm going to bring this over.
+
+01:53.080 --> 01:55.960
+And then we have our script block that we're going to have.
+
+01:55.960 --> 01:59.520
+And we're going to have our template block.
+
+01:59.520 --> 02:01.120
+This time, I'm going to flip it a bit.
+
+02:01.120 --> 02:03.920
+And we're going to start by bringing over all the HTML.
+
+02:03.920 --> 02:08.160
+So the h2 up until this point is all to do with the
+
+02:08.160 --> 02:10.160
+characters.
+
+02:10.160 --> 02:12.600
+So if you save that, a lot of stuff is going to be missing,
+
+02:12.600 --> 02:14.800
+but that's totally fine.
+
+02:14.800 --> 02:17.000
+And let's just save placeholder for character list.
+
+02:19.960 --> 02:23.120
+And then up here, this is where it gets a little bit
+
+02:23.120 --> 02:24.280
+tricky now.
+
+02:24.280 --> 02:25.080
+OK, what do we want to do?
+
+02:25.080 --> 02:27.920
+Well, we know that character list here is relevant.
+
+02:27.920 --> 02:30.320
+So let's start by exporting a default object, because this
+
+02:30.320 --> 02:32.920
+is the object that defines our app.
+
+02:32.920 --> 02:34.560
+So character list is here.
+
+02:34.560 --> 02:36.280
+Great.
+
+02:36.280 --> 02:37.120
+Let's do that.
+
+02:37.120 --> 02:40.520
+So I need my data property.
+
+02:40.520 --> 02:41.920
+And then I can put my character list in here.
+
+02:41.920 --> 02:43.080
+Awesome.
+
+02:43.080 --> 02:46.880
+And then let's see.
+
+02:46.880 --> 02:47.480
+What else do we got?
+
+02:47.480 --> 02:48.320
+Well, we have that.
+
+02:48.320 --> 02:49.720
+Yep, length.
+
+02:49.720 --> 02:51.840
+This looks pretty good.
+
+02:51.840 --> 02:53.400
+Actually, this looks pretty good.
+
+02:53.400 --> 02:54.440
+Oh, actually here.
+
+02:54.440 --> 02:55.920
+We have a favorite character.
+
+02:55.920 --> 02:56.840
+OK.
+
+02:56.840 --> 02:57.360
+How do we do that?
+
+02:57.360 --> 02:57.680
+Let's see.
+
+02:57.680 --> 02:59.120
+Let's go here.
+
+02:59.120 --> 03:02.000
+Yes, we have a method here for favorite character.
+
+03:02.000 --> 03:04.120
+So I'm just going to copy the whole block knowing that I
+
+03:04.120 --> 03:08.120
+would delete the add new character.
+
+03:08.120 --> 03:10.240
+And this is probably what you started doing.
+
+03:10.240 --> 03:11.160
+And then you're like, oh, yes.
+
+03:11.160 --> 03:15.240
+There's also the this.favoriteList.
+
+03:15.240 --> 03:17.040
+And then we're like, OK, let's add that to here.
+
+03:17.040 --> 03:17.680
+FavoriteList.
+
+03:17.680 --> 03:19.160
+And then we save.
+
+03:19.160 --> 03:21.120
+And then you're thinking, OK, great.
+
+03:21.120 --> 03:28.320
+I'm going to import character list from components.characterList.view.
+
+03:28.320 --> 03:29.280
+OK.
+
+03:29.280 --> 03:30.840
+That's that.
+
+03:30.840 --> 03:33.400
+And then you're like, I'm going to register my component
+
+03:33.400 --> 03:35.280
+at characterList.
+
+03:35.280 --> 03:37.840
+Just like that.
+
+03:37.880 --> 03:41.720
+And then, whoops, this needs to be renamed properly.
+
+03:41.720 --> 03:43.360
+And then you probably came in and was like, OK,
+
+03:43.360 --> 03:45.440
+I'm going to try to call my character list component
+
+03:45.440 --> 03:46.160
+inside of here.
+
+03:50.240 --> 03:54.000
+Now, if we take a look at what's happening here,
+
+03:54.000 --> 03:56.120
+let me go ahead and close this.
+
+03:56.120 --> 03:58.920
+And then we're going to go ahead and get out of this,
+
+03:58.920 --> 04:05.440
+go over to our atla forum, run that dev, great.
+
+04:05.440 --> 04:08.120
+You're probably going to realize very shortly
+
+04:08.120 --> 04:09.280
+that nothing is working.
+
+04:11.960 --> 04:14.960
+Anyone have any guesses as to why nothing is working?
+
+04:14.960 --> 04:18.560
+Because your parent app relies on the character list
+
+04:18.560 --> 04:21.440
+for the bender statistics.
+
+04:21.440 --> 04:22.280
+OK.
+
+04:22.280 --> 04:26.960
+So as we can see here, we actually
+
+04:26.960 --> 04:30.120
+are relying on inside of app.view.
+
+04:30.120 --> 04:33.320
+Sorry, I technically moved this at this point.
+
+04:33.360 --> 04:35.720
+We're actually trying to reference this characterList
+
+04:35.720 --> 04:39.600
+property, but you'll notice it's gone.
+
+04:39.600 --> 04:41.520
+And this is what I was mentioning earlier.
+
+04:41.520 --> 04:43.720
+When you have components, the data's
+
+04:43.720 --> 04:46.520
+are scoped to the component.
+
+04:46.520 --> 04:48.240
+It's not scoped to the entire app.
+
+04:48.240 --> 04:50.280
+So in other words, this whole characterList component,
+
+04:50.280 --> 04:53.520
+which I made based on impulse, actually,
+
+04:53.520 --> 04:55.960
+if we think about Dataflow, it's the wrong way.
+
+04:55.960 --> 04:59.520
+Because the characterList is actually basically at the top.
+
+04:59.520 --> 05:02.760
+That's the thing that serves everything else.
+
+05:02.760 --> 05:06.480
+So let's rethink that over again.
+
+05:06.480 --> 05:08.520
+Because what we really want is the ability
+
+05:08.520 --> 05:11.480
+to have the app pushed down into a child's components.
+
+05:11.480 --> 05:14.720
+Single direction Dataflow is a very big topic these days.
+
+05:14.720 --> 05:16.440
+Because it helps to basically ensure
+
+05:16.440 --> 05:17.800
+that things are easier to track.
+
+05:17.800 --> 05:19.500
+I know that was one of the initial blowbacks
+
+05:19.500 --> 05:21.440
+when it came to two-way binding, is
+
+05:21.440 --> 05:24.280
+that people were confused about which way data was flowing.
+
+05:24.280 --> 05:25.920
+But that doesn't make two-way data binding
+
+05:25.920 --> 05:28.280
+like wrong in and of itself.
+
+05:28.280 --> 05:30.480
+We can see that when it's done in an encapsulated way,
+
+05:30.480 --> 05:31.840
+that's easy to understand.
+
+05:31.840 --> 05:32.560
+It's great.
+
+05:32.600 --> 05:34.760
+But when it comes to long data flows,
+
+05:34.760 --> 05:37.600
+we found as an industry that unidirectional Dataflow,
+
+05:37.600 --> 05:40.680
+basically from top down, is keeping that consistent,
+
+05:40.680 --> 05:43.080
+for the most part, has been very helpful for making things
+
+05:43.080 --> 05:48.240
+maintainable and easier to basically work on.
+
+05:48.240 --> 05:48.920
+OK.
+
+05:48.920 --> 05:52.000
+So actually, what I've done here as an exercise
+
+05:52.000 --> 05:54.440
+is an exercise in futility.
+
+05:54.440 --> 05:56.560
+So I'm going to go ahead and clear these changes.
+
+05:56.560 --> 05:57.800
+And we're going to go ahead and take
+
+05:57.800 --> 06:00.240
+a look how we should be thinking about character
+
+06:00.240 --> 06:02.440
+like componentizing our app.
+
+06:02.440 --> 06:06.640
+So I can go ahead and delete this.
+
+06:06.640 --> 06:11.200
+And then we can refresh the app now.
+
+06:11.200 --> 06:12.520
+OK, everything should be working.
+
+06:12.520 --> 06:15.440
+Oh, I think I made everything crash.
+
+06:15.440 --> 06:16.760
+OK, refresh.
+
+06:16.760 --> 06:18.480
+OK, everything's good.
+
+06:18.480 --> 06:19.840
+OK.
+
+06:19.840 --> 06:21.800
+So the way to think about components
+
+06:21.800 --> 06:23.440
+is really the component tree.
+
+06:23.440 --> 06:25.840
+Again, your app.view is at the very top.
+
+06:25.840 --> 06:28.000
+Everything else goes down from that.
+
+06:28.000 --> 06:29.800
+So let's pick something smaller to refactor
+
+06:29.800 --> 06:31.840
+to kind of show you what I mean.
+
+06:31.840 --> 06:33.800
+The easiest thing for here, it looks like,
+
+06:33.800 --> 06:36.480
+is actually probably the statistics module
+
+06:36.480 --> 06:37.960
+that we had just built.
+
+06:37.960 --> 06:41.160
+Because really, it has the one computed property here.
+
+06:41.160 --> 06:43.200
+And then after that, that's basically it.
+
+06:43.200 --> 06:44.920
+There's not really any other dependencies.
+
+06:44.920 --> 06:47.080
+So this is a nice small encapsulated one
+
+06:47.080 --> 06:48.640
+that we can practice on.
+
+06:48.640 --> 06:53.080
+So here, I'll tell it vendorstatistics.view.
+
+06:53.080 --> 06:54.760
+And this time, I'll blow it up to the side
+
+06:54.760 --> 06:57.240
+since we're not worried about how it looks right now.
+
+06:57.240 --> 06:58.720
+And so what we want to go ahead and do
+
+06:58.720 --> 07:00.320
+is go ahead and see what that looks like.
+
+07:00.320 --> 07:03.960
+So first, I'm going to grab the template.
+
+07:03.960 --> 07:05.160
+There we go.
+
+07:05.160 --> 07:06.680
+And the template is this short block.
+
+07:06.680 --> 07:08.880
+It's just this H2 statistics.
+
+07:08.880 --> 07:10.720
+And as well, we're going to loop through and find
+
+07:10.720 --> 07:13.160
+this vendorstatistics.
+
+07:13.160 --> 07:17.400
+So now we need that data property, script.
+
+07:17.400 --> 07:19.520
+And the data property we're looking for here
+
+07:19.520 --> 07:21.800
+is vendorstatistics here.
+
+07:21.800 --> 07:24.000
+And it looks like this is the only computed property
+
+07:24.000 --> 07:24.840
+in this entire app.
+
+07:24.840 --> 07:27.920
+So we can actually just cut the whole thing.
+
+07:27.920 --> 07:29.680
+And we can export our default object
+
+07:29.680 --> 07:34.040
+and paste in our computed property, which is great.
+
+07:34.040 --> 07:36.200
+Now, this is feeling better.
+
+07:36.200 --> 07:39.920
+However, as you mentioned before, we still have a block
+
+07:39.920 --> 07:42.800
+in that if we go ahead and open this up inside of VIT right
+
+07:42.800 --> 07:47.720
+now, so if I save, you'll notice that one, it's fine.
+
+07:47.720 --> 07:49.680
+The vendor statistic doesn't show up.
+
+07:49.680 --> 07:50.600
+No errors.
+
+07:50.600 --> 07:52.760
+And that's to be expected because, well, we're not
+
+07:52.760 --> 07:53.880
+calling anything.
+
+07:53.880 --> 07:59.600
+But when we import vendor statistics,
+
+07:59.600 --> 08:02.120
+and so that was an autocomplete, by the way, no magic there,
+
+08:02.120 --> 08:03.720
+just it's reading it.
+
+08:03.720 --> 08:04.400
+There we go.
+
+08:04.400 --> 08:05.720
+We can register it.
+
+08:05.720 --> 08:09.120
+So components, vendor, statistics.
+
+08:09.120 --> 08:12.080
+And then we can try to call it by rendering it out here.
+
+08:15.040 --> 08:16.520
+OK, boom.
+
+08:16.520 --> 08:17.320
+Big error.
+
+08:17.320 --> 08:18.120
+Why?
+
+08:18.120 --> 08:21.080
+Because if we look inside of the four each,
+
+08:21.080 --> 08:22.280
+what's it looking for?
+
+08:22.280 --> 08:23.760
+It's looking for characterless.
+
+08:23.760 --> 08:25.080
+It doesn't exist.
+
+08:25.080 --> 08:28.240
+So now we've proven both ways that data just doesn't magically
+
+08:28.240 --> 08:29.160
+get scoped out.
+
+08:29.200 --> 08:31.840
+And again, this is a good thing because you want things
+
+08:31.840 --> 08:35.520
+to inherently be scoped to the context in which they're in.
+
