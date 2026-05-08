@@ -1,0 +1,95 @@
+WEBVTT
+
+00:00.000 --> 00:04.880
+The final exercise per se is really about trying to put all of this together.
+
+00:04.880 --> 00:07.600
+And so this time, you're not going to have the base.
+
+00:07.600 --> 00:10.560
+What we're going to do is we're going to create an edit page.
+
+00:10.560 --> 00:12.800
+Because right now, you have the ability to delete something,
+
+00:12.800 --> 00:16.720
+but you don't have the ability to modify an existing type.
+
+00:16.720 --> 00:20.880
+And so this is going to come like, this will kind of stretch some people in this regard.
+
+00:20.880 --> 00:22.640
+So let me actually go ahead and do something real quick.
+
+00:22.640 --> 00:25.280
+Let me get never mind.
+
+00:25.280 --> 00:28.480
+In case I actually anyone asked me about that,
+
+00:28.480 --> 00:32.320
+I have an alias inside of my terminal,
+
+00:32.320 --> 00:37.040
+because I decided that get reset dash dash,
+
+00:37.040 --> 00:40.080
+off head till day one was too much to type.
+
+00:40.080 --> 00:42.240
+So get never mind is my way of just saying that,
+
+00:42.240 --> 00:47.200
+I don't want the last one, so get rid of it for me.
+
+00:47.200 --> 00:55.120
+So let me just drop that and then check out get push origin main force.
+
+00:55.120 --> 00:56.720
+OK, now that should be gone.
+
+00:56.720 --> 01:00.800
+All right, so we're going to check out 11 begin.
+
+01:00.800 --> 01:04.080
+And so just to give you just a little bit of a scaffold,
+
+01:04.080 --> 01:08.400
+what we're going to do, check out 11 exercise,
+
+01:08.400 --> 01:11.760
+is we're going to go inside the dishes page,
+
+01:11.760 --> 01:14.160
+because that's where you all have been working anyways.
+
+01:14.160 --> 01:16.800
+And then actually, we're going to wait any of the dish card.
+
+01:16.800 --> 01:22.640
+And the dish card is going to get another button called edit dish.
+
+01:22.640 --> 01:26.160
+And so this will be this will be broken just so you know, when you get this.
+
+01:26.160 --> 01:30.880
+So let's make it a yellow button is warning and let's say edit.
+
+01:30.880 --> 01:33.520
+And in fact, you know what, I'll leave you to hook it up yourself.
+
+01:33.520 --> 01:35.600
+And then edit, there you go.
+
+01:35.600 --> 01:38.960
+And so when you click on this, what I want you to do is either up to you,
+
+01:38.960 --> 01:42.000
+you can create a brand new page where the router will grab it,
+
+01:42.000 --> 01:45.600
+and then you can use your store to fetch the thing, type everything.
+
+01:45.600 --> 01:49.600
+Let's see where you can get to in the next 15 minutes.
+

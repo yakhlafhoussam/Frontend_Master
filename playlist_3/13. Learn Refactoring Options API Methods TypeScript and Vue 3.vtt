@@ -1,0 +1,86 @@
+WEBVTT
+
+00:00.000 --> 00:07.000
+I'm hoping it was basically like couple liners and then you might have realized that you had some other work to do, but we'll demo that all together right now.
+
+00:07.000 --> 00:16.000
+So to recap what I asked you to do is to take this value in here inside of the diet list and to make that available to us as a type.
+
+00:16.000 --> 00:21.000
+So I'm just going to copy and paste that just to make my life a little bit easier, but so if they type diet equals.
+
+00:21.000 --> 00:26.000
+And then so we need to use this pipe operator as sort of like the it's called a union operator.
+
+00:26.000 --> 00:33.000
+So even though I know that in JavaScript we typically think of it as or it's kind of how I say this.
+
+00:33.000 --> 00:39.000
+It's kind of an it is an or in this situation, but when you use this operator with an object, I will tell you right now it does not work that way.
+
+00:39.000 --> 00:45.000
+So I'm not going to dive into the why this is there are plenty of types of resources for you to get into the nitty and gritty of this stuff,
+
+00:45.000 --> 00:51.000
+but for now just if you think of it as an or for the basic like strings and that kind of stuff, I think that's the easiest way to think of it.
+
+00:52.000 --> 01:03.000
+So okay, so we have the diet here and I ask you to augment both things, right? So if you go into diet here and throw that in here and we put diet diet, that's fairly straightforward.
+
+01:03.000 --> 01:09.000
+But the thing is is if you happen to go back to any of your other files, it is very very mad.
+
+01:09.000 --> 01:15.000
+And that is because well, let's we don't have a diet for any of these.
+
+01:15.000 --> 01:26.000
+And so here's the thing, one of these you could do is we could only go in there manually add diet and say okay, let's force like a diet attribute and everything, but that's not always the most practical thing to do.
+
+01:26.000 --> 01:33.000
+And what you want to do sometimes with your types is to say well, maybe it doesn't have this property, maybe this is an optional property, how would we do that?
+
+01:33.000 --> 01:39.000
+Well, one of the things you might think of right with our new union operators like, well, we can just say it's like, oh, it could be undefined.
+
+01:39.000 --> 01:43.000
+And this is a way to like prevent it from doing that and then we say that does that really do anything.
+
+01:43.000 --> 01:51.000
+Not particularly, but this is the way that typically people would do if people like because types of people will sometimes yell at you for a value, right?
+
+01:51.000 --> 01:56.000
+And so sometimes you'll see people try to define things with the union operator for undefined.
+
+01:56.000 --> 02:06.000
+But the cleaner way to do this is if you haven't seen this yet is the question mark, this is trying to be introduced more into like JavaScript syntax of like does this thing exist?
+
+02:06.000 --> 02:09.000
+So within the test script realm, this basically says make this thing optional.
+
+02:09.000 --> 02:15.000
+It doesn't have to appear and more importantly, it takes care of that like if you don't have a diet and it's undefined, it's not going to yell at you.
+
+02:15.000 --> 02:18.000
+So it kind of does two things at once.
+
+02:18.000 --> 02:22.000
+So once you add that, now our restaurant page is much happier.
+
+02:22.000 --> 02:25.000
+And if we go to our just page, totally fine, it's good.
+
+02:25.000 --> 02:31.000
+But if we decided like, okay, now this time this one has a diet and I'm going to call this one paleo, right?
+
+02:31.000 --> 02:35.000
+Well, this time it's going to be like, well, by the way, paleo doesn't exist on this thing.
+
+02:35.000 --> 02:40.000
+But you also notice remember that optional thing, this is just I'll just approve the, the proof is in the pudding.
+
+02:40.000 --> 02:47.000
+You'll see that it says diet or undefined. So that question mark does automatically basically piece that together for you automatically.
+
+02:47.000 --> 02:53.000
+So yeah, if you're ever unsure you're going to get a value, be sure to use that optional operator.
+

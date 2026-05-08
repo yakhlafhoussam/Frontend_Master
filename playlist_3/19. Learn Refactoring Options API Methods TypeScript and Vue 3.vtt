@@ -1,0 +1,350 @@
+WEBVTT
+
+00:00.000 --> 00:04.000
+So the next thing we're going to do is talk about something that is common in a lot of apps
+
+00:04.000 --> 00:10.000
+particularly view and so we're going to talk about event handlers and so when we talk about event handlers as a brief recap
+
+00:10.000 --> 00:16.000
+if we take a look at let's go actually let's go to our new restaurant form this is probably the best place to take a look at this
+
+00:16.000 --> 00:20.000
+is that we have this thing down here when we're creating
+
+00:20.000 --> 00:26.000
+and you'll notice that we're inlining this admit right
+
+00:26.000 --> 00:30.000
+and it says oh admit new restaurant, ad new restaurant, past new restaurant
+
+00:30.000 --> 00:36.000
+but again one of the problems with this is that it's buried inside of our code
+
+00:36.000 --> 00:42.000
+and so let's go first up by refactoring this so we can talk more about what we're going to do with this
+
+00:42.000 --> 00:46.000
+so personally I tried to avoid inlining the dollar sign admit inside of the template whenever possible
+
+00:46.000 --> 00:50.000
+just because it's really oftentimes it's a bit of logic that you want to be able to call
+
+00:50.000 --> 00:52.000
+multiple times
+
+00:52.000 --> 00:56.000
+so what I would typically do then is let's go ahead and swap this over to setup
+
+00:56.000 --> 01:00.000
+we're going to delete these two
+
+01:00.000 --> 01:04.000
+then we'll define our emits
+
+01:04.000 --> 01:06.000
+such
+
+01:06.000 --> 01:10.000
+and then let's just comment that out real quick
+
+01:10.000 --> 01:12.000
+we'll cast it
+
+01:12.000 --> 01:16.000
+so the first one is an event called ad new restaurant
+
+01:16.000 --> 01:20.000
+where we take a type of restaurant which should be a type restaurant
+
+01:20.000 --> 01:24.000
+then basically we have the same thing for the second one
+
+01:24.000 --> 01:30.000
+but this one it's cancel new restaurant and actually it doesn't have a payload at all
+
+01:30.000 --> 01:34.000
+and then we just need to define what's being returned nothing
+
+01:34.000 --> 01:36.000
+so we just add void and there we go
+
+01:36.000 --> 01:40.000
+now we have that and then before we finish up let's do this
+
+01:40.000 --> 01:44.000
+cons new restaurant is a ref that is from view
+
+01:44.000 --> 01:46.000
+wrap all that
+
+01:46.000 --> 01:50.000
+and then what's nice now is that because restaurant side of the list is being imported
+
+01:50.000 --> 01:52.000
+I don't need to declare it a second time
+
+01:52.000 --> 01:56.000
+so this is how this ends up shaking out once we've migrated it
+
+01:56.000 --> 01:58.000
+okay
+
+01:58.000 --> 02:02.000
+so let me go ahead and start by just committing this to the
+
+02:02.000 --> 02:06.000
+exercise branch so you can see the progression
+
+02:06.000 --> 02:08.000
+the factor
+
+02:08.000 --> 02:10.000
+move
+
+02:10.000 --> 02:14.000
+new restaurant
+
+02:14.000 --> 02:16.000
+great
+
+02:16.000 --> 02:18.000
+so what we'll notice here now
+
+02:18.000 --> 02:20.000
+is we have this emit here happening
+
+02:20.000 --> 02:22.000
+but I actually just probably want to just call
+
+02:22.000 --> 02:24.000
+an ad restaurant function
+
+02:24.000 --> 02:26.000
+I think inlining it this way is the cleanest way
+
+02:26.000 --> 02:30.000
+to just be like okay there's going to be a function that's run on click
+
+02:30.000 --> 02:32.000
+no one has to worry about lightweight what's all the sign what's a bit
+
+02:32.000 --> 02:34.000
+no there's an ad function called ad restaurant
+
+02:34.000 --> 02:38.000
+okay then how are we going to define that well let's go ahead and do that
+
+02:38.000 --> 02:40.000
+so actually I'm going to add this below so
+
+02:40.000 --> 02:42.000
+constant ad restaurant
+
+02:42.000 --> 02:44.000
+is the function
+
+02:44.000 --> 02:46.000
+and that function
+
+02:46.000 --> 02:48.000
+when clicked upon will
+
+02:48.000 --> 02:50.000
+emits what will it emit
+
+02:50.000 --> 02:54.000
+well we can actually we don't have our emits defined so we just need to declare it here
+
+02:54.000 --> 02:56.000
+and then we can say emit what
+
+02:56.000 --> 02:58.000
+let's see emit click control space
+
+02:58.000 --> 03:00.000
+ah and you restaurant yes that's what I want
+
+03:00.000 --> 03:04.000
+I got a love autocomplete because I just reduced the number of
+
+03:04.000 --> 03:08.000
+typos I have and then new restaurant dot value
+
+03:08.000 --> 03:10.000
+I think that should do it
+
+03:10.000 --> 03:14.000
+except oh interesting look it's yelling at us why
+
+03:14.000 --> 03:16.000
+because it's saying wait what is this
+
+03:16.000 --> 03:20.000
+object you're passing me it's not really a restaurant well we can fix that
+
+03:20.000 --> 03:24.000
+we just pass it here and define it there
+
+03:24.000 --> 03:26.000
+and voila
+
+03:26.000 --> 03:30.000
+now you have everything very consistently typed as we've been learning so far
+
+03:30.000 --> 03:32.000
+and so now if we go ahead and go inside of our app
+
+03:32.000 --> 03:34.000
+go the other way
+
+03:34.000 --> 03:36.000
+so instead of new
+
+03:37.000 --> 03:38.000
+and then we'll be like
+
+03:38.000 --> 03:40.000
+uh been yay and the juts
+
+03:42.000 --> 03:44.000
+test dot com
+
+03:44.000 --> 03:46.000
+create
+
+03:46.000 --> 03:50.000
+for somebody the title disappeared but we'll figure that out in a second oh I think I know why
+
+03:50.000 --> 03:52.000
+uh I think I think I do know why
+
+03:52.000 --> 03:56.000
+okay so clearly something is being added to the
+
+03:56.000 --> 03:58.000
+because okay so actually let me explain this part
+
+03:58.000 --> 04:02.000
+because I forgot when we emit the restaurant what's happening is that
+
+04:02.000 --> 04:04.000
+the parent component that
+
+04:04.000 --> 04:06.000
+it lives on which is currently parent page
+
+04:08.000 --> 04:10.000
+you'll notice that when we scroll down
+
+04:12.000 --> 04:14.000
+restaurant uh the new restaurant form here
+
+04:14.000 --> 04:18.000
+this is where we're actually calling like basically we're listening for the event
+
+04:18.000 --> 04:22.000
+so I just multi-line this just make this a little bit easier to read
+
+04:22.000 --> 04:24.000
+but it's basically when you declare a custom event in view like
+
+04:24.000 --> 04:28.000
+adne restaurant it's basically saying we can listen to this thing called adne
+
+04:28.000 --> 04:30.000
+restaurant when this event is triggered
+
+04:30.000 --> 04:32.000
+run this function
+
+04:32.000 --> 04:34.000
+basically within the parent component
+
+04:34.000 --> 04:38.000
+so this ad restaurant here is being triggered
+
+04:38.000 --> 04:40.000
+right here
+
+04:40.000 --> 04:44.000
+and so this is where again now our work that we were doing before
+
+04:44.000 --> 04:48.000
+starts to come together because why we know that the payload is supposed to be restaurant
+
+04:48.000 --> 04:50.000
+and that's what's being passed defined at the emit
+
+04:50.000 --> 04:52.000
+so we have consistency here
+
+04:52.000 --> 04:54.000
+and then we know that okay restaurant lives value push
+
+04:54.000 --> 04:58.000
+great high form this is starting to come together really nicely
+
+04:58.000 --> 05:02.000
+okay so that looks good
+
+05:02.000 --> 05:06.000
+but we have this uh we have a slight problem so let me
+
+05:06.000 --> 05:10.000
+first start by let's refactor this one real quick to cancel
+
+05:10.000 --> 05:14.000
+restaurant new restaurant
+
+05:14.000 --> 05:16.000
+and then now that we have that
+
+05:16.000 --> 05:18.000
+we'll just copy this real quick
+
+05:18.000 --> 05:22.000
+and notice a cancel new restaurant
+
+05:22.000 --> 05:26.000
+emit what commands control space
+
+05:26.000 --> 05:28.000
+wait that's the wrong one
+
+05:28.000 --> 05:30.000
+trying to be smart because you have the second argument
+
+05:30.000 --> 05:34.000
+oh I think you're actually right
+
+05:34.000 --> 05:38.000
+because so um was mentioned in the class here is that
+
+05:38.000 --> 05:42.000
+currently it knows that cancel new restaurant does not have a parameter
+
+05:42.000 --> 05:46.000
+but adne restaurant does so we strip this out
+
+05:46.000 --> 05:48.000
+we should see there it is
+
+05:48.000 --> 05:52.000
+it's being a little bit too smart
+
+05:52.000 --> 05:54.000
+but that was very nice
+
+05:54.000 --> 05:56.000
+so now we have this now everything's refactor
+
+05:56.000 --> 05:58.000
+correctly we're good
+
+05:58.000 --> 06:00.000
+I do see a red squiggle line but we'll deal with that in a second
+
+06:00.000 --> 06:02.000
+okay so let's finish up that refactor
+
