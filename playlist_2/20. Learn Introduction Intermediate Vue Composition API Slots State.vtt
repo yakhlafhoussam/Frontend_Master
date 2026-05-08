@@ -1,0 +1,626 @@
+WEBVTT
+
+00:00.000 --> 00:09.000
+You all have now gotten essentially a good overview of what composables are, what they're capable of and some different patterns for implementing things.
+
+00:09.000 --> 00:13.000
+So what I have for you here is a fun challenge.
+
+00:13.000 --> 00:21.000
+We are first going to start by creating a used theme composable that allows you to switch between the different themes and you'll find this on the settings page.
+
+00:21.000 --> 00:29.000
+Then I want you to combine this with the view use which is already installed on as a dependency in your app.
+
+00:29.000 --> 00:36.000
+The used magic keys for a way to switch between different themes using just keyboard shortcuts.
+
+00:36.000 --> 00:43.000
+Your mission is to kind of go explore the docs because you shouldn't know how to go through the use theme, go into the settings.
+
+00:43.000 --> 00:56.000
+But now you're going to want to figure out how you can combine that with view uses used magic keys, which by the way one of my favorite things they did, which is part of the one you all play with it.
+
+00:56.000 --> 01:01.000
+And combine them and I'm kind of curious to see what you all want to do. Oh, end up doing with that.
+
+01:01.000 --> 01:05.000
+That said, in the event you're like, I don't know, I don't want to do that.
+
+01:05.000 --> 01:13.000
+Then what I exercise here is to use what you know about composables, pick something in view use that looks like it might be fun or might apply to your project.
+
+01:13.000 --> 01:22.000
+And then basically combine those and then see how it works.
+
+01:22.000 --> 01:26.000
+Again, what's fun about composition API is that you have a lot of different ways to do it.
+
+01:26.000 --> 01:32.000
+So what I'm going to be proposing is one way of doing it and then you know, compare it contrast and see how it compares to yours.
+
+01:32.000 --> 01:34.000
+Okay.
+
+01:34.000 --> 01:40.000
+So, first thing first, we look actually, we can look at the docs in a second.
+
+01:40.000 --> 01:51.000
+So first thing first, we know that we need to go ahead and abstract out the functionality that we see inside of settings that view because this is ultimately where we see the theme being ultimately managed.
+
+01:51.000 --> 01:59.000
+And so my first instinct with this is to go ahead as I think a lot of you did, we just have a used theme.ts.
+
+01:59.000 --> 02:01.000
+You don't need to get too fancy.
+
+02:01.000 --> 02:04.000
+And then I'm actually just going to grab everything.
+
+02:04.000 --> 02:09.000
+I don't think there's kind of a point not to.
+
+02:09.000 --> 02:14.000
+And so what we do know is that here we are clearly watching some of this stuff.
+
+02:14.000 --> 02:19.000
+So honestly, at this point to keep it easy, I am of the mind.
+
+02:19.000 --> 02:23.000
+I'm just going to make all of these individual things that I can export.
+
+02:23.000 --> 02:26.000
+I don't think I need a full store model just yet.
+
+02:26.000 --> 02:35.000
+Now the tricky thing though is that this watch life cycle hook is not something that you can just like, you can't just like export this, that's not like a thing.
+
+02:35.000 --> 02:39.000
+And so what you need to do instead is to have a function,
+
+02:39.000 --> 02:41.000
+that's basically something like use theme.
+
+02:41.000 --> 02:43.000
+So this is where the factory does come into play.
+
+02:43.000 --> 02:48.000
+Because then you're basically saying when you initiate this, initiate the watch and then set it accordingly.
+
+02:48.000 --> 02:54.000
+And then to make sure this is working, we just need to import everything from the composable.
+
+02:54.000 --> 02:59.000
+So composable slash use theme.
+
+02:59.000 --> 03:00.000
+Great.
+
+03:00.000 --> 03:02.000
+All right, so what do we need?
+
+03:02.000 --> 03:04.000
+We need current theme.
+
+03:04.000 --> 03:07.000
+And we need on theme change.
+
+03:07.000 --> 03:10.000
+Ooh, what was on theme change?
+
+03:10.000 --> 03:16.000
+Okay, looks like on theme change was most likely some sort of watch effect in that regard.
+
+03:16.000 --> 03:19.000
+So no, that doesn't make sense.
+
+03:19.000 --> 03:20.000
+Ah, okay, I know what it is.
+
+03:20.000 --> 03:24.000
+So we need to actually set the set theme.
+
+03:24.000 --> 03:30.000
+Yep, so we need to set the theme every time the selecting changes.
+
+03:30.000 --> 03:34.000
+And then why is it yelling at me now?
+
+03:34.000 --> 03:38.000
+The theme string is not available to parameter.
+
+03:38.000 --> 03:42.000
+What did I forget?
+
+03:42.000 --> 03:49.000
+On theme change.
+
+03:49.000 --> 03:52.000
+Yep, that did not exist though.
+
+03:52.000 --> 03:54.000
+Are we doing it with the watcher?
+
+03:54.000 --> 03:56.000
+Yeah, that's kind of funny.
+
+03:56.000 --> 03:58.000
+So I don't, yeah, it's so actually, you know what?
+
+03:58.000 --> 04:02.000
+I think now I remember, I think this is actually not relevant.
+
+04:02.000 --> 04:04.000
+This code, because we have a V model here already.
+
+04:04.000 --> 04:08.000
+So having a second function of method on that is irrelevant.
+
+04:08.000 --> 04:11.000
+So yeah, I think you're, you're spot on on that.
+
+04:11.000 --> 04:13.000
+So we have our themes here, which is great.
+
+04:13.000 --> 04:17.000
+Now everything's good, but I think y'all know where I'm headed with this.
+
+04:17.000 --> 04:22.000
+If we go ahead and test this out right now inside of our app.
+
+04:22.000 --> 04:24.000
+Okay, we're still off and running.
+
+04:24.000 --> 04:25.000
+Nothing is happening.
+
+04:25.000 --> 04:29.000
+And the reason for that is because we need the ability to watch the thing.
+
+04:29.000 --> 04:34.000
+So this is where our used theme function is going to come into play here.
+
+04:34.000 --> 04:38.000
+So like this, and then use theme like that.
+
+04:38.000 --> 04:44.000
+And I think fresh, there you go, now it works.
+
+04:44.000 --> 04:47.000
+Okay, so here's the question, right?
+
+04:47.000 --> 04:52.000
+We want to now use the view-use magic key.
+
+04:52.000 --> 04:55.000
+So we look at the magic keys.
+
+04:56.000 --> 04:58.000
+And again, this thing, I just love it.
+
+04:58.000 --> 05:01.000
+Like the fact that you, it just makes it like, look at that.
+
+05:01.000 --> 05:05.000
+If you push, and it like rotates, so it's like if you do view,
+
+05:05.000 --> 05:08.000
+and then you shift, you know, I don't know.
+
+05:08.000 --> 05:09.000
+Great demo.
+
+05:09.000 --> 05:10.000
+Where I came up with that.
+
+05:10.000 --> 05:13.000
+And so the fact that you can just name it by namespace, this is great.
+
+05:13.000 --> 05:17.000
+Okay, so knowing this is how it's possible to be used,
+
+05:17.000 --> 05:19.000
+let's see.
+
+05:19.000 --> 05:21.000
+I don't want to do this.
+
+05:22.000 --> 05:25.000
+You can export them out this way, or we can just do it.
+
+05:25.000 --> 05:28.000
+Let's see, and then also we can do combinations here, right?
+
+05:28.000 --> 05:30.000
+So this, we can just plus them together.
+
+05:30.000 --> 05:33.000
+Looks like this is another alternative as well,
+
+05:33.000 --> 05:34.000
+to like use underscores.
+
+05:34.000 --> 05:37.000
+So I'm going to do something like control shifts,
+
+05:37.000 --> 05:40.000
+and then like a number, to represent like the number,
+
+05:40.000 --> 05:42.000
+to the correspond with the themes.
+
+05:42.000 --> 05:44.000
+So in my mind, when I'm looking at this,
+
+05:44.000 --> 05:47.000
+so let me go ahead and I see the graph that.
+
+05:47.000 --> 05:49.000
+I should just grab this right here for now.
+
+05:51.000 --> 05:55.000
+I'm thinking, okay, so yes, this, this, this,
+
+05:55.000 --> 05:57.000
+composable is responsible for changing the theme,
+
+05:57.000 --> 05:59.000
+but I'm now going to have this different composable,
+
+05:59.000 --> 06:01.000
+because now I'm doing reactivity with hotkeys.
+
+06:01.000 --> 06:05.000
+So for me, I'm going to do one called use hotkeys.
+
+06:05.000 --> 06:10.000
+And then inside of here, we're basically going to do,
+
+06:10.000 --> 06:12.000
+let's see, how do we want to do this?
+
+06:12.000 --> 06:14.000
+We need to instantiate it because, ultimately,
+
+06:14.000 --> 06:16.000
+what we need to do is be able to listen for it.
+
+06:16.000 --> 06:19.000
+And so I've read this, the docs on this,
+
+06:19.000 --> 06:22.000
+and so there's actually this thing called whenever,
+
+06:22.000 --> 06:24.000
+which is a great, great utility function.
+
+06:24.000 --> 06:27.000
+Whenever this thing happened, this gets pressed,
+
+06:27.000 --> 06:30.000
+then do a callback function to do set thing.
+
+06:30.000 --> 06:34.000
+So this is where the composition starts to come into play, right?
+
+06:34.000 --> 06:38.000
+So in my mind, so export function, use hotkey,
+
+06:38.000 --> 06:41.000
+let's see, I'll say hot theme keys, that's what I'm going to call it.
+
+06:41.000 --> 06:45.000
+Because that's what specifically these hot keys do.
+
+06:45.000 --> 06:50.000
+And so I'm going to say cons keys equals use magic keys.
+
+06:50.000 --> 06:54.000
+And then just to make things a bit easier,
+
+06:54.000 --> 06:57.000
+then we'll basically say whenever keys dot
+
+06:57.000 --> 07:03.000
+and the size of control shifts one, then we get a function.
+
+07:03.000 --> 07:05.000
+And in order we want this function to do,
+
+07:05.000 --> 07:07.000
+well, I want it to change themes.
+
+07:07.000 --> 07:12.000
+So I'm going to import my themes, let's see, a set theme
+
+07:12.000 --> 07:14.000
+from my composable.
+
+07:14.000 --> 07:17.000
+But I also need to be able to reference the themes themselves.
+
+07:17.000 --> 07:23.000
+So that way, I should be able to do something like this.
+
+07:23.000 --> 07:28.000
+Oh, I need whenever, too.
+
+07:28.000 --> 07:30.000
+Okay?
+
+07:30.000 --> 07:32.000
+And so in terms of where I want to listen to this,
+
+07:32.000 --> 07:34.000
+if you put this on the settings page,
+
+07:34.000 --> 07:35.000
+that means that only we'll work on there.
+
+07:35.000 --> 07:38.000
+So my first instinct then is to go to the app.view page.
+
+07:39.000 --> 07:45.000
+And inside here is where I would say import use hot theme keys.
+
+07:45.000 --> 07:50.000
+And then here, let's do use hot theme keys like that.
+
+07:50.000 --> 07:56.000
+Okay, so let me just do a couple real quick.
+
+07:56.000 --> 07:59.000
+Let's see if this works.
+
+07:59.000 --> 08:01.000
+We could obviously just loop it, but just for now,
+
+08:01.000 --> 08:03.000
+for simplicity sake.
+
+08:03.000 --> 08:06.000
+Okay.
+
+08:06.000 --> 08:08.000
+Okay, we go to the home.
+
+08:08.000 --> 08:11.000
+And then control shift 1, 2, 3.
+
+08:11.000 --> 08:13.000
+Oh, there we go.
+
+08:13.000 --> 08:15.000
+And it's shifting.
+
+08:15.000 --> 08:17.000
+I did in my demo for some reason,
+
+08:17.000 --> 08:19.000
+it's not respecting the second theme.
+
+08:19.000 --> 08:22.000
+I don't know why to be honest with you.
+
+08:22.000 --> 08:25.000
+I'm hitting 2 and it's doing nothing.
+
+08:25.000 --> 08:27.000
+But it gives me the other ones.
+
+08:27.000 --> 08:30.000
+So that's something I'll say to bug for another time.
+
+08:30.000 --> 08:35.000
+But this is, I guess, one version of hot theme.
+
+08:36.000 --> 08:39.000
+How this might be implemented.
+
+08:39.000 --> 08:42.000
+And so the sort of, the way I was thinking of this,
+
+08:42.000 --> 08:44.000
+and this is where the composition comes into play.
+
+08:44.000 --> 08:48.000
+Because what we've done as we've taken this use theme here,
+
+08:48.000 --> 08:51.000
+which definitely lives on the settings page right here.
+
+08:51.000 --> 08:54.000
+And it's doing all the watching at this level.
+
+08:54.000 --> 08:59.000
+But then use hot keys only has to worry about setting the theme
+
+08:59.000 --> 09:02.000
+because we know that it's being washed elsewhere.
+
+09:02.000 --> 09:05.000
+And then it's, I guess,
+
+09:05.000 --> 09:08.000
+what we can see it's being, it's reactively updating accordingly.
+
+09:08.000 --> 09:12.000
+So then that's all, I think that solves the multi-watchers thing
+
+09:12.000 --> 09:14.000
+that you were running into, right?
+
+09:14.000 --> 09:17.000
+So, yeah.
+
+09:17.000 --> 09:23.000
+How does that compared to some of the stuff you all tried?
+
+09:23.000 --> 09:24.000
+I did that.
+
+09:24.000 --> 09:26.000
+Scycler that just ran through the indexes of the...
+
+09:26.000 --> 09:27.000
+Oh, nice.
+
+09:27.000 --> 09:29.000
+And then just like...
+
+09:29.000 --> 09:30.000
+Right, and then get back to zero.
+
+09:30.000 --> 09:31.000
+Nice.
+
+09:31.000 --> 09:33.200
+Yeah, definitely more elegant than this, for sure.
+
+09:33.200 --> 09:35.700
+Yeah.
+
+09:35.700 --> 09:42.900
+And so this kind of fun stuff, I want these like about things like view use, right?
+
+09:42.900 --> 09:47.000
+Because something like hotkeys is actually traditionally kind of a tricky thing that implement,
+
+09:47.000 --> 09:48.800
+right, if you're going to do it from scratch.
+
+09:48.800 --> 09:52.600
+And I do think, as more and more, we look at software where we're looking at keyboard accessibility and stuff.
+
+09:52.600 --> 09:57.600
+Being able to like users customize their hotkeys and do all sorts of cool combinations of whatever they want,
+
+09:57.600 --> 09:59.400
+so they can run whatever command they want.
+
+09:59.400 --> 10:04.400
+Like, I do think that opens the doorways for just all sorts of customization.
+
+10:04.400 --> 10:10.600
+So personally, this is one of the reasons why one of my favorite utilities that they provide.
+
+10:10.600 --> 10:15.600
+Because then it just becomes so easy to allow users to determine what they want to add.
+
+10:15.600 --> 10:18.600
+And then all of a sudden boom, you have personalization to that category.
+
+10:18.600 --> 10:20.600
+And so I can't stress this enough.
+
+10:20.600 --> 10:22.600
+This is just one way to do it.
+
+10:22.600 --> 10:26.600
+We already heard like, you know, doing more of a cyclical going through themes.
+
+10:26.600 --> 10:28.600
+Again, this is very hard-coded.
+
+10:28.600 --> 10:31.600
+But yeah, this is just one of the, have some separation of concerns.
+
+10:31.600 --> 10:35.600
+I mean, some people, you could even theoretically all do it within use theme as well.
+
+10:35.600 --> 10:36.600
+It's just up to you.
+
+10:36.600 --> 10:40.600
+And so that's why it's very much, programming isn't art in that way.
+
+10:40.600 --> 10:46.600
+As we decide what tools we want to use, how we want to architect things and what we think makes the most sense.
+
+10:46.600 --> 10:50.600
+As a final shout out to the things that I also think you should consider,
+
+10:50.600 --> 10:56.600
+whenever you have a chance for your apps.
+
+10:56.600 --> 11:00.600
+So earlier you mentioned the use media player.
+
+11:00.600 --> 11:05.600
+So for those who in the, is it using controls, right?
+
+11:05.600 --> 11:06.600
+Yeah.
+
+11:06.600 --> 11:11.600
+So even ever you had to create like a video player, you have to, you know,
+
+11:11.600 --> 11:13.600
+if you've ever done in the old days, you know, it's incredibly painful.
+
+11:13.600 --> 11:15.600
+Usually there was like a dedicated library that did it all for you.
+
+11:15.600 --> 11:17.600
+This thing can break it down.
+
+11:17.600 --> 11:19.600
+I think I don't want the sound to come on.
+
+11:19.600 --> 11:24.600
+We can see that like it has all these reactive properties of like the time being set,
+
+11:24.600 --> 11:31.600
+duration, is waiting, seeking, stall, like just, actually it even tells you how much is buffered.
+
+11:31.600 --> 11:37.600
+It's just the level of thought that's gone just on this stuff is wild, honestly.
+
+11:37.600 --> 11:42.600
+I just kudos to the team who spent the effort to do this.
+
+11:42.600 --> 11:47.600
+The whole tracks piece, which led to do the subtitles.
+
+11:47.600 --> 11:48.600
+Yeah.
+
+11:48.600 --> 11:52.600
+We're close captions for the, for the videos, also super helpful for accessibility.
+
+11:52.600 --> 11:55.600
+Yeah. So this is a fun one.
+
+11:55.600 --> 11:59.600
+Again, so if you ever doing like, I chopper is just a fun one.
+
+11:59.600 --> 12:03.600
+If you ever just want to like pick colors and then clipboard.
+
+12:03.600 --> 12:07.600
+Again, if you ever need access to use just clipboard history, it's just use clipboard.
+
+12:07.600 --> 12:10.600
+And then it's, it's there. I mean, that easy.
+
+12:11.600 --> 12:16.600
+And then the one that though I think most of us basically need though is use refistory.
+
+12:16.600 --> 12:19.600
+They also have a use debounce rest history in cases too much.
+
+12:19.600 --> 12:25.600
+And basically allowing you to then, you know, watch what happens to the,
+
+12:25.600 --> 12:30.600
+to the count and then actually then track, have some basic history.
+
+12:30.600 --> 12:34.600
+Because undo and redo is the thing that if you use this or becoming more and more used to being able to do.
+
+12:34.600 --> 12:38.600
+You know, as we see with emails and stuff like, oh, you know, do you want to undo what you just sent?
+
+12:38.600 --> 12:46.600
+So this kind of, this kind of helper can be a lot of help for those of us that are like, oh, actually, how do we undo this?
+

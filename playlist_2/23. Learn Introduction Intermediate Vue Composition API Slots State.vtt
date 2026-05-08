@@ -1,0 +1,86 @@
+WEBVTT
+
+00:00.000 --> 00:07.000
+As far as some best practice items, so I mentioned before about the whole global stores name space stores things.
+
+00:07.000 --> 00:13.000
+One of the things that I think, this is an artifact, so I think for most of you, this is at least here, this is not applicable.
+
+00:13.000 --> 00:24.000
+But like Eduardo and his course talks about this a lot in this, is that some clients, they got so used to just putting everything in a single store.
+
+00:25.000 --> 00:27.000
+Because it was incredibly convenient, right?
+
+00:27.000 --> 00:32.000
+I'll put my, every, I need all the everywhere, mine as well, just put it in the store and global store.
+
+00:32.000 --> 00:36.000
+You know, oh, I should track whether or not the cookies are tracked, that's global store.
+
+00:36.000 --> 00:43.000
+And so his whole thing, and which I have seen as well, is that don't be afraid to just create like a bunch of small stores.
+
+00:43.000 --> 00:51.000
+Like, just because it doesn't, it doesn't cost you anything and arguably it makes it easier because you've already modularized these single sources of truth.
+
+00:51.000 --> 00:56.000
+This is my off-store, this is my cookie store, this is my, you know, whatever, whatever you want to call it.
+
+00:56.000 --> 01:03.000
+And then as we saw earlier, actually, I think the magic keys plus the theme is an example of like, it's so easy to put them together.
+
+01:03.000 --> 01:10.000
+If you're like, oh, there's this, like, let's call it on like, you know, the settings page where like the author and the cookies need to lift together.
+
+01:10.000 --> 01:13.000
+Like, cool, just like, grab them, throw them in, like, no problem.
+
+01:14.000 --> 01:28.000
+And so if we think, as long as we think more like that about the stores being single sources of truth, because the moment what scary is when you have what a lot of you end up trying to do is they get caught up in storing like often multiple places.
+
+01:28.000 --> 01:34.000
+Right, because they're like, oh, well, I'm getting updating off here, and then here is where off authored to updated.
+
+01:34.000 --> 01:42.000
+So I keep like, and so if they incorrectly cash them and keep them separate source of truth, this is where our issues come in, right, ultimately, right, that's like a lot of our bugs.
+
+01:42.000 --> 01:50.000
+And so ensuring that your stores are small helps to ensure that they are a single source of truth, which means ultimately, you'll be less bugs over time.
+
+01:50.000 --> 01:56.000
+And so we've talked about this on different occasions now, but composing source of other source is the thing.
+
+01:56.000 --> 02:00.000
+So we saw, we now, you saw there was a time machine store that's a task store.
+
+02:00.000 --> 02:03.000
+Our exercise that will be to create a weak store.
+
+02:03.000 --> 02:09.000
+So you all can basically, you're going to convert your composable into like a penny of store and just basically see how you feel about that.
+
+02:10.000 --> 02:19.000
+And then what's nice is that using other stores within stores is as simple as you would expect, right, so in the event in my time entry store, I want to use.
+
+02:19.000 --> 02:28.000
+Let's say for whatever reason I want to collaborate this entry count with my total number of tasks, I could just go import used task store.
+
+02:28.000 --> 02:37.000
+And then here, I would just say, yes, const store equals use task store.
+
+02:37.000 --> 02:53.000
+And then I could say, const combine count is computed, and it's going to return entry count dot value plus task store dot task count.
+
+02:53.000 --> 03:05.000
+And just like that, you've taken two stores that are seemingly unrelated, and then because you've had the logic for it, boom, you've combined them, it pulls the piece you need, it works.
+
+03:05.000 --> 03:19.000
+And so that was part of Eduardo's thing is trying to get people to understand that unlike before it is actually very easy to kind of rip apart stores, piece them together, and then like mishmosh them in other places as well.
+
+03:19.000 --> 03:29.000
+And doing that, you'll find yourself with, yeah, hopefully some pretty, pretty elegantly crafted state management solutions for you and your team.
+
+03:29.000 --> 03:35.000
+Okay, and then we walk through the dev tools with Pinia already, so you saw kind of what we could walk through regarding that.
+
