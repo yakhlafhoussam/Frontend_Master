@@ -1,0 +1,269 @@
+WEBVTT
+
+00:00.000 --> 00:03.640
+Welcome, everyone, to the complete intro to Vue 3.
+
+00:03.640 --> 00:06.680
+My name is Ben Hong, and I'm excited to spend the next couple days with you
+
+00:06.680 --> 00:09.760
+as we go over the fundamentals of view and just get you all set up
+
+00:09.760 --> 00:12.480
+so that you feel confident trying out view for your next project.
+
+00:14.880 --> 00:16.840
+All right, so as far as a little bit of a welcome,
+
+00:16.840 --> 00:20.400
+a little fun fact I usually like to use is I'm a big fan of amusement park rides.
+
+00:20.400 --> 00:24.480
+So this is the one from Orlando Universal Studios.
+
+00:24.480 --> 00:28.280
+And so the one I really want to get up, though, is if you ever go to Disneyland,
+
+00:28.280 --> 00:30.880
+check out the, because this is the classic Jurassic Park one.
+
+00:30.880 --> 00:34.040
+They've redone the one in Disneyland to be the Jurassic World theme.
+
+00:34.040 --> 00:37.160
+And so they've done a lot of really cool 3D effects and stuff.
+
+00:37.160 --> 00:38.600
+Highly, highly recommend it.
+
+00:38.600 --> 00:44.680
+If you're having trouble finding me in the back, there I am raising my arms up there.
+
+00:44.680 --> 00:47.680
+But with that aside, a little bit about me.
+
+00:47.680 --> 00:51.400
+I'm a senior staff developer experience engineer at Netlify,
+
+00:51.400 --> 00:57.240
+a Vue.js core team member, Nux ambassador, Vue master instructor,
+
+00:57.280 --> 01:01.440
+and I'm a Google developer expert in web technologies as well as the MAT platform.
+
+01:01.440 --> 01:04.680
+All right, so if you're wondering who this workshop is for,
+
+01:04.680 --> 01:06.960
+this workshop, because this is a complete intro to Vue,
+
+01:06.960 --> 01:09.840
+covers people looking to get started with their first JavaScript framework
+
+01:09.840 --> 01:13.000
+for basically building web user interfaces.
+
+01:13.000 --> 01:16.800
+All the way to people who are looking to either learn about what makes Vue special
+
+01:16.800 --> 01:20.680
+and really gain the skills necessary so that if they want to try using Vue on their next project,
+
+01:20.680 --> 01:23.440
+they are certainly more than welcome to.
+
+01:23.440 --> 01:24.960
+And of course, everyone in between.
+
+01:25.000 --> 01:28.320
+So let's say we have a good gamut here of different experiences.
+
+01:28.320 --> 01:30.760
+And so yeah, hope to cover all that in this workshop today.
+
+01:33.880 --> 01:36.800
+All right, so a couple of things to know about this workshop.
+
+01:36.800 --> 01:40.680
+Some things you probably want to know if you're watching this and as far as like,
+
+01:40.680 --> 01:44.840
+we'll call it prerequisites, is basically if you have some familiarity with HTML,
+
+01:44.840 --> 01:45.960
+CSS, and JavaScript.
+
+01:45.960 --> 01:49.520
+So in other words, you don't need to be an expert in any of these fields.
+
+01:49.520 --> 01:52.960
+I designed it so that as long as you have the fundamentals for each of these,
+
+01:53.240 --> 01:55.520
+you'll be set to go.
+
+01:55.520 --> 01:57.640
+Familiarity with the code editor is also super helpful,
+
+01:57.640 --> 01:59.560
+as we'll be doing a lot of coding in this workshop.
+
+01:59.560 --> 02:02.200
+Because after all, while there's a lot of theoretical things to talk about,
+
+02:02.200 --> 02:05.320
+I want to get you all hands-on experience working with Vue to see how it feels
+
+02:05.320 --> 02:07.040
+when you're taking it for a test run.
+
+02:07.040 --> 02:09.080
+The code editor I'll be using is VS Code.
+
+02:09.080 --> 02:14.880
+And I recommend that one because the extensions that we'll be using also are in VS Code by default.
+
+02:14.880 --> 02:16.680
+And so if you can't follow along with that, that'd be great.
+
+02:16.680 --> 02:21.960
+But otherwise, no worries if you want to use whatever code editor that you prefer.
+
+02:21.960 --> 02:23.720
+We'll also be doing a little bit with the terminal as well,
+
+02:23.720 --> 02:26.640
+because as most of you know, when it comes to frameworks,
+
+02:26.640 --> 02:28.480
+build tools are a pretty big thing.
+
+02:28.480 --> 02:31.600
+So as you have some familiarity running some basic commands,
+
+02:31.600 --> 02:32.920
+that'll be useful as well.
+
+02:32.920 --> 02:34.840
+In addition, we'll be also using browser dev tools.
+
+02:34.840 --> 02:36.560
+So I'll be using Chrome in this instance.
+
+02:36.560 --> 02:39.640
+But whether it's Firefox or whatever your preferred browser of choice is,
+
+02:39.640 --> 02:44.080
+basically we'll be inside of there inspecting stuff and looking at how everything's working.
+
+02:44.080 --> 02:47.480
+And finally, basic knowledge of Git and MPM would be great as well,
+
+02:47.480 --> 02:51.640
+because all of the resources are going to be basically encapsulated in the repo that I have.
+
+02:51.680 --> 02:53.880
+And then we'll be installing the dependencies with MPM.
+
+02:53.880 --> 02:56.440
+So just as long as you've had some basic exposure to that,
+
+02:56.440 --> 02:57.800
+you should be good to go for this workshop.
+
+03:00.560 --> 03:03.040
+All right, and so the promised resource,
+
+03:03.040 --> 03:06.720
+everything is going to be living at this repo, which is github.com,
+
+03:06.720 --> 03:10.680
+slash Ben Code Zen, and then slash complete intro to View 3 Workshop.
+
+03:10.680 --> 03:14.160
+So if you just go to slash Ben Code Zen and Repos, you should see it at the very top.
+
+03:15.600 --> 03:17.200
+And if it looks a little barren in there, don't worry,
+
+03:17.200 --> 03:20.040
+we're going to be populating it as we go throughout the workshop.
+
+03:20.040 --> 03:23.720
+All right, as far as what you can expect from the workshop,
+
+03:23.720 --> 03:28.080
+I'm a big fan of the workshop format of learn, question, and apply.
+
+03:28.080 --> 03:31.760
+So basically, we'll be going through the process of starting with the learn step,
+
+03:31.760 --> 03:33.280
+which is every time we have a new concept,
+
+03:33.280 --> 03:35.280
+we'll be going through explanations and examples,
+
+03:35.280 --> 03:38.280
+so you can start getting exposed to what's going on.
+
+03:38.280 --> 03:40.320
+Then there'll always be opportunities to ask questions.
+
+03:40.320 --> 03:43.640
+So if any clarifications, what ifs, that's a great time to kind of get in there
+
+03:43.640 --> 03:45.880
+to start engaging with the material.
+
+03:45.880 --> 03:49.760
+And finally, arguably the most important step in my mind is that we go ahead and
+
+03:49.760 --> 03:51.000
+apply what we just learned.
+
+03:51.000 --> 03:54.160
+So there'll be lots of opportunity to do exercises.
+
+03:54.160 --> 03:57.840
+And most importantly, I encourage you to play and experiment with it.
+
+03:57.840 --> 04:01.080
+I'll provide some guidance regarding some things you can do with the exercise.
+
+04:01.080 --> 04:03.720
+But the more you kind of get into it and play around with it,
+
+04:03.720 --> 04:07.320
+the sicker it'll be for you when it comes to learning it.
+
+04:07.320 --> 04:10.320
+And finally, even though we're here talking about View,
+
+04:10.320 --> 04:12.600
+an important thing to remember is that all code is compromised.
+
+04:12.600 --> 04:15.880
+So earlier we heard from people coming from different frameworks.
+
+04:15.880 --> 04:19.120
+Different frameworks have made different choices and trade-offs along the way as
+
+04:19.120 --> 04:21.160
+their authors sort of created those things.
+
+04:21.160 --> 04:25.040
+So just know that whatever my opinion is, I encourage you to question and
+
+04:25.040 --> 04:28.840
+or disagree with it, because after all, your opinion and experience matters.
+
+04:28.840 --> 04:29.480
+At the end of the day,
+
+04:29.480 --> 04:31.520
+the most important thing is that you choose what's best for
+
+04:31.520 --> 04:33.560
+you and your team in order to serve your customers.
+
