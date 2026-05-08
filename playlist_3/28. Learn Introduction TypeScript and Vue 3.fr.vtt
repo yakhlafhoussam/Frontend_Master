@@ -1,0 +1,95 @@
+WEBVTT
+
+00:00.000 --> 00:04.880
+Le dernier exercice en soi consiste en réalité à essayer de rassembler tout cela.
+
+00:04.880 --> 00:07.600
+Et donc cette fois, vous n'aurez pas la base.
+
+00:07.600 --> 00:10.560
+Ce que nous allons faire, c'est créer une page d'édition.
+
+00:10.560 --> 00:12.800
+Parce qu'à l'heure actuelle, vous avez la possibilité de supprimer quelque chose,
+
+00:12.800 --> 00:16.720
+mais vous n'avez pas la possibilité de modifier un type existant.
+
+00:16.720 --> 00:20.880
+Et donc cela va arriver, cela va en quelque sorte mettre certaines personnes à rude épreuve à cet égard.
+
+00:20.880 --> 00:22.640
+Alors laissez-moi aller de l'avant et faire quelque chose de très rapide.
+
+00:22.640 --> 00:25.280
+Laissez-moi ne m'en soucier.
+
+00:25.280 --> 00:28.480
+Au cas où quelqu'un me poserait des questions à ce sujet,
+
+00:28.480 --> 00:32.320
+J'ai un alias dans mon terminal,
+
+00:32.320 --> 00:37.040
+parce que j'ai décidé de réinitialiser le tableau de bord,
+
+00:37.040 --> 00:40.080
+sans tête jusqu'au premier jour, c'était trop difficile à écrire.
+
+00:40.080 --> 00:42.240
+Alors ne vous en faites pas, c'est ma façon de dire ça,
+
+00:42.240 --> 00:47.200
+Je ne veux pas du dernier, alors débarrasse-le-moi.
+
+00:47.200 --> 00:55.120
+Alors laissez-moi simplement laisser tomber cela, puis vérifier obtenir la force principale d'origine push.
+
+00:55.120 --> 00:56.720
+OK, maintenant cela devrait disparaître.
+
+00:56.720 --> 01:00.800
+Très bien, nous allons donc vérifier le 11 pour commencer.
+
+01:00.800 --> 01:04.080
+Et donc juste pour vous donner un petit échafaudage,
+
+01:04.080 --> 01:08.400
+ce que nous allons faire, consultez 11 exercices,
+
+01:08.400 --> 01:11.760
+est-ce que nous allons entrer dans la page des plats,
+
+01:11.760 --> 01:14.160
+parce que c'est là que vous travaillez tous de toute façon.
+
+01:14.160 --> 01:16.800
+Et puis en fait, on va attendre n'importe quelle carte de plat.
+
+01:16.800 --> 01:22.640
+Et la carte de plat va avoir un autre bouton appelé modifier le plat.
+
+01:22.640 --> 01:26.160
+Et ainsi, cela sera brisé, juste pour que vous le sachiez, lorsque vous recevrez cela.
+
+01:26.160 --> 01:30.880
+Alors faisons en sorte qu'un bouton jaune soit un avertissement et disons modifier.
+
+01:30.880 --> 01:33.520
+Et en fait, vous savez quoi, je vous laisse le brancher vous-même.
+
+01:33.520 --> 01:35.600
+Et puis éditez, et voilà.
+
+01:35.600 --> 01:38.960
+Et donc quand vous cliquez dessus, ce que je veux que vous fassiez dépend de vous,
+
+01:38.960 --> 01:42.000
+vous pouvez créer une toute nouvelle page où le routeur la récupérera,
+
+01:42.000 --> 01:45.600
+et ensuite vous pouvez utiliser votre boutique pour récupérer la chose, tout taper.
+
+01:45.600 --> 01:49.600
+Voyons où vous pouvez arriver dans les 15 prochaines minutes.
+

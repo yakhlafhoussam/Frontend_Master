@@ -1,0 +1,152 @@
+WEBVTT
+
+00:00.000 --> 00:05.000
+Parlons des exceptions. Nous avons vu pas mal d'exceptions au cours de
+
+00:05.000 --> 00:11.000
+cette classe. Nous avons vu une erreur de type, une erreur de syntaxe, une erreur de valeur, une erreur d'indentation,
+
+00:11.000 --> 00:15.000
+mais nous n'avons pas vraiment compris quoi faire à leur sujet. Nous avons vu quelques simples
+
+00:15.000 --> 00:21.000
+des tri-sauf hier, mais ça ne suffit pas vraiment, ça ne suffit pas dans le cours de
+
+00:21.000 --> 00:26.000
+un programme plus complexe. Je vais donc vous parler un peu de
+
+00:26.000 --> 00:33.000
+hiérarchie des exceptions sur le déclenchement d'exceptions et sur la façon d'utiliser try catch et
+
+00:33.000 --> 00:41.000
+comment créer nos propres classes d'exceptions personnalisées. Alors un peu sur les exceptions.
+
+00:46.000 --> 00:51.000
+Les exceptions intégrées sont une gestion des exceptions. C'est vraiment sympa
+
+00:52.000 --> 00:58.000
+fonctionnalité de Python. Ces erreurs de syntaxe que nous avons vues font un très bon travail de
+
+00:58.000 --> 01:04.000
+nous dire ce qui n'a pas fonctionné, n'est-ce pas ? Si nous obtenons une erreur d'indentation, nous savons que
+
+01:04.000 --> 01:09.000
+nous n'avons pas indenté correctement notre code. Si nous obtenons une erreur de valeur, cela signifie que quelque chose
+
+01:09.000 --> 01:16.000
+est faux avec la contribution que nous avons donnée. Même si la syntaxe est totalement correcte,
+
+01:16.000 --> 01:23.000
+parfois des erreurs se produisent lorsque votre programme est erroné. Par exemple, si vous essayez d'exécuter notre
+
+01:23.000 --> 01:28.000
+dernier exercice d'introduction à Python et vous n'aviez pas de
+
+01:28.000 --> 01:33.000
+connexion Internet, cela soulèverait simplement une exception que nous n'avons pas détectée et
+
+01:33.000 --> 01:40.000
+quitter le programme. Ainsi, même si votre syntaxe est correcte à 100 %, votre programme peut toujours avoir
+
+01:41.000 --> 01:47.000
+exceptions. Les exceptions non gérées sont fatales à votre programme. ça va s'imprimer
+
+01:47.000 --> 01:53.000
+tracez une trace, puis quittez votre code là où il se trouvait à ce moment-là. Alors
+
+01:53.000 --> 01:58.000
+et cela arrêtera votre interprète, cela quittera votre programme. Alors comme pour
+
+01:58.000 --> 02:03.000
+code de production, avoir des exceptions non froides est plutôt mauvais, n'est-ce pas ? Prends juste
+
+02:03.000 --> 02:12.000
+sur votre site Web, en fonction de ce que vous voyez ou pour utiliser un serveur Web,
+
+02:12.000 --> 02:17.000
+votre utilisateur final verra une erreur 500 et ce n'est pas très bon, n'est-ce pas ?
+
+02:17.000 --> 02:22.000
+Mais une fois que vous en aurez appris un peu plus sur ces exceptions et sur la façon de les gérer
+
+02:22.000 --> 02:30.000
+eux, cela vous aidera à écrire des applications beaucoup plus robustes face aux problèmes.
+
+02:30.000 --> 02:35.000
+Ainsi, certains types courants d'exceptions que vous pourriez voir, il y en a quelques autres dans Python
+
+02:35.000 --> 02:42.000
+documentation, mais erreur d'attribut très rapidement si j'essayais d'utiliser un nom d'attribut qui
+
+02:42.000 --> 02:48.000
+n'était pas sur mon instance, j'obtiendrais cette erreur, erreur d'importation si j'essayais d'importer quelque chose
+
+02:48.000 --> 02:53.000
+cela n'a pas été trouvé. Erreur de clé, nous avons vu celle-ci si la clé n'était pas une
+
+02:53.000 --> 03:00.000
+erreur d'introduction, erreur de syntaxe, l'analyseur ne sait même pas quoi faire de votre fichier,
+
+03:00.000 --> 03:07.000
+erreur d'indentation, si vous jouez avec le niveau d'indentation des instructions if,
+
+03:07.000 --> 03:12.000
+classes, et cetera, fonctions pour lesquelles vous devez avoir votre première ligne de code
+
+03:12.000 --> 03:17.000
+en retrait d'un niveau. Et cette erreur d'interruption du clavier est intéressante.
+
+03:17.000 --> 03:32.000
+Donc pour ceux d'entre vous qui m'ont vu utiliser les décombres, vous m'avez vu frapper, peut-être contrôler
+
+03:32.000 --> 03:38.000
+C. Si j'écris quelque chose et que je me dis, oh, j'ai fait une erreur, je ne veux pas frapper
+
+03:38.000 --> 03:43.000
+et j'obtiens une erreur de syntaxe, je sais que ce n'est pas un code valide, je pourrais appuyer sur le contrôle C,
+
+03:43.000 --> 03:50.000
+il n'exécute pas mon code et, dans ce cas, il génère une erreur d'interruption du clavier.
+
+03:50.000 --> 03:59.000
+Donc, pour les programmes que vous exécutez en ligne de commande, si cela prend beaucoup de temps,
+
+03:59.000 --> 04:04.000
+J'ai écrit des scripts assez rapides, vous voulez en sortir, vous pouvez appuyer sur le contrôle C,
+
+04:04.000 --> 04:12.000
+cela générera une erreur de clavier et quittera votre programme pendant son exécution.
+
+04:12.000 --> 04:20.000
+Juste un petit mot sur cette erreur d'interruption du clavier, permettez-moi de jeter un œil à la documentation Python ici.
+
+04:20.000 --> 04:26.000
+Donc ces exceptions intégrées, nous verrons qu'il existe une classe de base d'exceptions,
+
+04:26.000 --> 04:34.000
+et toutes les exceptions utilisent principalement cette classe de base en termes de hiérarchie d'objets.
+
+04:34.000 --> 04:39.000
+Nous et notre code de programme ne voulons pas faire cela.
+
+04:39.000 --> 04:46.000
+Si nous devons gérer des exceptions, nous voulons toujours gérer les types qui sont des exceptions,
+
+04:46.000 --> 04:49.000
+ne basez jamais d’exception.
+
+04:49.000 --> 04:55.000
+L'exception est ici l'une des sous-classes de l'exception de base.
+
+04:55.000 --> 05:03.000
+Si nous captons une exception de base, nous allons également détecter ces erreurs d'interruption du clavier.
+
+05:03.000 --> 05:07.000
+Donc vous savez, quelqu'un va exécuter votre script, appuyez sur Ctrl C, et ça ne fera rien,
+
+05:07.000 --> 05:09.000
+et ils vont être assez en colère contre vous.
+
+05:09.000 --> 05:15.000
+Alors rappelez-vous cela, n'attrapez pas l'exception de base, attrapez l'exception et démarrez.
+

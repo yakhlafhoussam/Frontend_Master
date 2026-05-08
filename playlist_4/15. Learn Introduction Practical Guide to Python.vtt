@@ -1,0 +1,203 @@
+WEBVTT
+
+00:00.000 --> 00:07.600
+Next up, we have sets sets are also mutable data types, and they allow you to only store
+
+00:07.600 --> 00:11.680
+immutable items in them in an unsorted way.
+
+00:11.680 --> 00:17.160
+Sets are mutable meaning that you can add items to them, you can remove items from them,
+
+00:17.160 --> 00:24.480
+they can contain other immutable types like integer string, tuple because tuple is immutable,
+
+00:24.480 --> 00:31.280
+but not lists, not sets and not dictionaries, which are themselves mutable.
+
+00:31.280 --> 00:36.360
+Unlike a list or tuple, sets can only contain unique items in them.
+
+00:36.360 --> 00:42.480
+If you make a set and you try to add items from the set, instead of a list where you can
+
+00:42.480 --> 00:47.120
+have as many copies as you want, the set is just going to toss that away.
+
+00:47.120 --> 00:52.400
+And the benefit of this is that sets are fast, they have fast membership testing.
+
+00:52.400 --> 00:57.920
+We'll talk about this a little bit later, but because the items in them are immutable,
+
+00:57.920 --> 01:02.640
+you can run a function called a hash function, and very quickly figure out, is the item
+
+01:02.640 --> 01:09.160
+I'm looking for in the set or not, without having to look at every single value in it.
+
+01:09.160 --> 01:14.080
+And you can also use powerful set operations, like union, intersection, difference.
+
+01:14.080 --> 01:19.600
+I'm not going to jump into these during the course of this chapter, but there are some
+
+01:19.600 --> 01:28.000
+exercises around them, quick set, cheat, cheat here at the top, and let's talk about sets.
+
+01:28.000 --> 01:37.120
+So if lists have square brackets and tuples are parentheses and commas, you might think
+
+01:37.120 --> 01:49.520
+that sets are curly braces, but there's an aha here.
+
+01:50.320 --> 01:57.600
+We try to create an empty set with just curly braces.
+
+02:00.800 --> 02:07.520
+We are instead going to end up with a dictionary, because dictionaries are also surrounded by curly
+
+02:07.520 --> 02:15.600
+braces, so if you need to create an empty set in this case, you will want to use the set constructor
+
+02:15.760 --> 02:19.600
+and that will give you the empty set that you are looking for.
+
+02:22.480 --> 02:29.680
+Set can have one item in them, or multiples.
+
+02:31.120 --> 02:38.960
+If we have a set where I tried to pass in three, three and four, can anyone on zoom tell me
+
+02:38.960 --> 02:40.960
+how many items will be in the set?
+
+02:43.840 --> 02:45.360
+Two, awesome.
+
+02:46.480 --> 02:52.640
+Because sets can't contain duplicate values. If you have a list of names,
+
+02:52.640 --> 03:09.920
+and you want it to very quickly duplicate this list, you can actually just pass it into the
+
+03:09.920 --> 03:20.960
+second structure, no more duplicates. So one of the very handy use cases for sets cannot contain
+
+03:20.960 --> 03:26.960
+mutable types. Without having to always look at the cheat sheet, how do we know what types are
+
+03:26.960 --> 03:37.360
+mutable, what types are not, shortcut to check for mutability, is to use the built-in hash function.
+
+03:39.280 --> 03:48.240
+Can I call hash on an integer? Yes. Can I call hash on a string? Yes.
+
+03:49.120 --> 03:55.280
+Can I call hash on a list? No, it's mutable. It's an unhashable type.
+
+03:56.560 --> 04:03.120
+What happens if I try to have a set with a list in it?
+
+04:05.120 --> 04:10.800
+I'm going to get that same error unhashable type list. You're probably going to see this
+
+04:10.800 --> 04:18.560
+exception quite a bit, so I encourage you to remember it. When you run into exceptions like this,
+
+04:18.560 --> 04:24.960
+just read them from the bottom up and think where else have I seen this exception, and that's going
+
+04:24.960 --> 04:37.680
+to help you get to the root of the problem. Now sets don't have an order. So if I put a bunch of items
+
+04:37.760 --> 04:46.800
+into a set, there is no guarantee at all that they will be in the same order that I put them into.
+
+04:48.400 --> 04:56.560
+Because in sets order does not matter. What is going to happen if I try to get the zero with item
+
+04:56.560 --> 05:05.760
+in the set? Can I do this? Nope. It's going to blow up and say a set object is not
+
+05:06.720 --> 05:12.240
+subscriptable. That makes a whole lot of sense, right? Sets don't have an order. There is no item
+
+05:12.240 --> 05:22.240
+at the zero with index. In the same vein, I cannot say my set zero equals some other item,
+
+05:22.240 --> 05:28.800
+because again there is no order in sets and sets do not support item assignment. If you do want to add
+
+05:28.800 --> 05:42.160
+and remove from sets, you can use the add operation, and again because I'm calling this on my set,
+
+05:42.160 --> 05:47.920
+and my set is mutable. That does in fact change it. I can also call the discard operation
+
+05:47.920 --> 06:05.280
+and that goes ahead and removes the item from the set. If I had two sets and I wanted to combine
+
+06:05.280 --> 06:16.160
+them together, I could use the update method. So I could say that colors are red and orange.
+
+06:18.400 --> 06:25.840
+Oops, I'm going to name this colors and numbers are a set that is 1, 2, and 3.
+
+06:27.360 --> 06:33.040
+So if I look at my colors, I could call colors. update and pass in my numbers.
+
+06:34.720 --> 06:40.880
+And now I have a new set. Remember set is mutable. I called dot update on it and that has
+
+06:40.880 --> 06:47.920
+in fact changed the data in it. There are set operations like difference intersection.
+
+06:48.480 --> 06:54.880
+I'm not going to cover them, but there is a section on those in the set operations cheat sheet
+
+06:54.880 --> 07:03.120
+on the course website. So set operations are the most useful and most powerful feature of sets.
+
+07:03.120 --> 07:10.000
+You can quickly figure out what items are the same between two sets. What items are different
+
+07:10.000 --> 07:16.640
+and do that in a very, very performant way. Next up, we have dictionaries.
+
+07:18.160 --> 07:24.400
+These are the dictionaries are a data type that allows to store key and value pairs.
+
+07:25.680 --> 07:34.320
+Dictionaries themselves aren't mutable, but just like sets, dictionary keys can only be
+
+07:34.320 --> 07:43.360
+immutable. Why? Because dictionary keys need to be hashable. Dictionaries allow fast item look up
+
+07:43.360 --> 07:50.640
+and fast membership testing. You can quickly say, given a key is this key in my dictionary or not.
+
+07:50.640 --> 07:56.640
+And that's because the hash of the key is compared with the hash of the keys in the dictionary.
+
+07:56.640 --> 08:02.400
+Don't have to look through each item in that dictionary and say, are you the item? Are you the
+
+08:02.400 --> 08:08.320
+item that I'm looking for? So can I have a list as a dictionary in a key?
+
+08:09.600 --> 08:16.400
+Or I'm sorry, a list as a key in the dictionary. I ask that question correctly. I would get a better answer.
+
+08:16.400 --> 08:23.280
+No, right? So a list is mutable. Dictionary keys can only be immutable. We cannot have
+
+08:23.280 --> 08:29.600
+mutable data types as dictionary keys. Can we have a tuple as a dictionary key?
+
+08:30.480 --> 08:39.440
+Yes, tuples are immutable. So we can use them as a dictionary key. I have a dictionary
+
+08:39.440 --> 08:43.200
+cheat sheet here for you.
+

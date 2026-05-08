@@ -1,0 +1,38 @@
+WEBVTT
+
+00:00.000 --> 00:04.800
+By coding along with me in this intermediate Python workshop, you're going to learn how to use
+
+00:04.800 --> 00:09.680
+object-oriented programming to organize your code. You're going to learn how to diagnose
+
+00:09.680 --> 00:14.880
+problems in your Python programs by understanding exceptions and even writing your own.
+
+00:15.760 --> 00:20.160
+We're going to work with new features in Python 3 that make Python easier than ever,
+
+00:20.160 --> 00:25.360
+such as F strings. You're going to learn a little bit about generators, a Python feature that
+
+00:25.360 --> 00:30.400
+allows you to loop over large data sets in a memory efficient way. You're also going to learn
+
+00:30.400 --> 00:36.000
+about list comprehensions, dictionary comprehensions, and other advanced ways of looping Python.
+
+00:36.720 --> 00:43.440
+Lastly, for the final exercise, you're going to learn how to use an interactive API and build a
+
+00:43.440 --> 00:50.000
+web application efficiently using the Flask web framework to make a really cool site that let's
+
+00:50.000 --> 00:57.120
+us filter GitHub repositories for a particular language by their number of stars. Taking a peek at
+
+00:57.120 --> 01:05.680
+that final exercise, here we go. We can filter by languages, submit, and our little web app is going
+
+01:05.680 --> 01:09.040
+to hit the GitHub search API and come back with results.
+

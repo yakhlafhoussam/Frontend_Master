@@ -1,0 +1,260 @@
+WEBVTT
+
+00:00.000 --> 00:04.240
+we did a lot. I know it sounded like four sections when we first started with components,
+
+00:04.240 --> 00:09.120
+composables, routing, and state management. But as you know, the meat of today was really just
+
+00:10.000 --> 00:16.160
+getting our hands, you know, elbow deep in composables so that when you go back to your
+
+00:16.160 --> 00:19.920
+code bases, you're just going to be like, yeah, I'm just going to create one and you're not going
+
+00:19.920 --> 00:24.320
+to think twice about it. I think if we, if that's where people are feeling and then you got to
+
+00:25.040 --> 00:29.360
+get your hands on with some of those more, it's kind of call it advanced composition design patterns
+
+00:29.360 --> 00:33.920
+where there are more edge cases, but again, as software architect, we do need to understand how
+
+00:33.920 --> 00:39.440
+to navigate those things. And so, you know, those are things that we touched on as well. And then
+
+00:39.440 --> 00:43.040
+a lot of you got to play with file base routing, it seems for the first time which is fun.
+
+00:43.040 --> 00:48.240
+Yeah, so that's like, for me, it's such a big DX improvement. And then, finally, of course, you know,
+
+00:48.240 --> 00:53.920
+we kind of wrapped it up to show that like, all our work with composables really is not so far
+
+00:53.920 --> 00:58.720
+from the state management library we already have, that the official one we have for view. So again,
+
+00:58.800 --> 01:02.480
+I have met people at other workshops who they're like, you know, opinions great, but we decided
+
+01:02.480 --> 01:07.040
+to hand roll our own, we have our type safe, you know, we have our document away of doing it.
+
+01:07.040 --> 01:11.680
+And then I can't stress enough. If that works for you, you know, like, go for it.
+
+01:12.560 --> 01:17.440
+Just know that, you know, these, these prevole options are still very suitable and worth your time.
+
+01:17.440 --> 01:22.320
+Should you choose to use it? Just a comment in the chat that this is a very informative workshop
+
+01:22.320 --> 01:27.360
+and a really great addition to your fundamentals course. Right? I really appreciate that,
+
+01:27.440 --> 01:31.360
+but just kind of in terms of other final thoughts. So I just kind of, these are the things that we
+
+01:31.360 --> 01:37.280
+covered. Lots of different techniques within them. So do not sell yourself short of the things we did.
+
+01:37.280 --> 01:42.560
+So of course, the next question is now you've just finished the intermediate workshop. What is next?
+
+01:44.320 --> 01:50.160
+And so to you, I present in this comic, I hate myself. It's where it starts. Their fist combined
+
+01:50.160 --> 01:57.200
+says, look, TypeScript. And then, wow, I hate this even more. I kid. Now, the things that TypeScript
+
+01:57.200 --> 02:00.320
+I don't know. For me personally, I have a love hate relationship with it. There are times where
+
+02:00.320 --> 02:04.000
+I'm like, wow, this is great. It's doing exactly what I want. And then there's other time where the
+
+02:04.000 --> 02:09.040
+bill tool is breaking and I'm like, nothing works. I want to chuck all this in the bin. It's, it's,
+
+02:09.040 --> 02:14.400
+for me, it's a very much a love hate relationship. That said, it's more I said ingest. I mean,
+
+02:14.400 --> 02:20.080
+obviously we're here as a front end workshops, front end masters workshop, but view is ultimately,
+
+02:20.080 --> 02:23.440
+I tell this to people all the time. It's a framework about helping to get the craft out of the
+
+02:23.440 --> 02:28.320
+ways you can do what's important to you. And once we provided those fundamentals with composition
+
+02:28.320 --> 02:33.360
+API now, as we talked about, a lot of the next step really is to just about advancing your skills
+
+02:33.360 --> 02:37.680
+as a JavaScript software architect. Because the patterns we're talking about, singletons,
+
+02:37.680 --> 02:41.840
+factories, we talked about different ways to share a state, how to keep the modular.
+
+02:42.640 --> 02:47.840
+Those are all things that it shared across the fields we do. Regardless of whatever
+
+02:47.920 --> 02:52.800
+framework it is that you do. And so there are wonderful, as you know, workshops, or for those
+
+02:52.800 --> 02:57.040
+if you are new, wonderful workshops they have here that to kind of take your JavaScript or
+
+02:57.040 --> 03:02.160
+Typhoon knowledge further on. So if Typhoon is scary, definitely this is the place to check out.
+
+03:05.120 --> 03:10.240
+And then for those who haven't had the joy of doing checking this out, be sure to check out
+
+03:10.240 --> 03:18.400
+next. Nux is kind of this wonderful paradise of like DX enhancement that the things you love
+
+03:18.400 --> 03:22.080
+about view three, they're like cool. We're going to like just build stuff in that we think has
+
+03:22.080 --> 03:28.080
+worked really well. And then you just try it out. So things like the page, like the file based
+
+03:28.080 --> 03:31.760
+running that we did, that's built into this. So people who have been using Nux three have had this for
+
+03:31.760 --> 03:36.560
+quite some time. It's only recently come to view three as like a separate plugin. They have things
+
+03:36.560 --> 03:41.920
+like auto imports on your composables. They have already built in patterns for like how api libraries
+
+03:41.920 --> 03:46.720
+can or api fetching can be done. They have their own native use fetch as well because you know we
+
+03:46.720 --> 03:53.200
+we built like a very barebones one our own. And then more importantly Nux can handle all the SSR
+
+03:53.200 --> 03:58.320
+hydration. You know you want to do some stuff static. You want to do some stuff see it like client
+
+03:58.320 --> 04:03.120
+side rendered. It can do all that. And so the hybrid rendering like it makes like like just to show
+
+04:03.200 --> 04:10.560
+you like Nux hybrid rendering. Like I don't know if any of you have ever dove into this on your
+
+04:10.560 --> 04:25.280
+own but like SSR is a is a rabbit hole. And so what's cool? Like check this out. You can just set
+
+04:25.280 --> 04:31.760
+route rules and then tell it which strategy you wanted to use for what page. Yeah it's like cool
+
+04:31.760 --> 04:37.840
+pre-render this. Do like still well revalidate on that. I mean the acronyms kind of get all over the
+
+04:37.840 --> 04:43.760
+place but you can see here. I mean I don't know I don't know if it gets much easier than that right
+
+04:43.760 --> 04:49.360
+when it comes to mixing your renderings strategy for your site especially when a lot of things you
+
+04:49.360 --> 04:54.320
+don't need to be constantly re-rendered or not everything needs to be SSR. You know I think in software
+
+04:54.320 --> 04:59.760
+development we do have a tendency to like over index on like whatever the hot thing is. And so you know SSR
+
+04:59.760 --> 05:03.440
+was the way we always did it and then it's almost like we forgot about it and then it became a
+
+05:03.440 --> 05:06.640
+thing again and then everyone's like oh SSR everything it's like you know there's a world where
+
+05:06.640 --> 05:12.640
+everything plays together and so this this kind of stuff reminds me that like yeah we can have some
+
+05:12.640 --> 05:16.880
+stuff that's pre-rendered which is great. These statically generated other stuff like blog posts right
+
+05:16.880 --> 05:20.480
+you don't need that to be generated you know every especially on the client side just generating
+
+05:20.480 --> 05:27.120
+one so deployment cash it things like that. And so Nux is phenomenal if you have a chance to play
+
+05:27.280 --> 05:32.160
+around with another project and you're starting a new new view project again it can't
+
+05:32.160 --> 05:36.320
+speak highly enough of Nux the team is phenomenal. If you're looking for someone to follow Daniel Roe
+
+05:36.320 --> 05:41.520
+is the project lead on Nux he is fantastic. And then I'm curious has anyone here heard of Viet Press?
+
+05:42.400 --> 05:48.720
+Yay okay great for those who haven't this is the successor to Viet Press if you didn't hear
+
+05:48.720 --> 05:54.080
+about that one and essentially it's just a static site generator that creates a dock site
+
+05:54.720 --> 06:02.560
+that looks just like Viet Press.dev. It basically looks like this except everything is configured
+
+06:02.560 --> 06:11.600
+via Markdown and so like if you're getting started you can see here the home page is just like you
+
+06:11.600 --> 06:17.120
+add the title description some theme config stuff and then you get all this navigation you get
+
+06:17.120 --> 06:24.240
+theming you get the ability to have like next page like it's basically all marked out but
+
+06:24.240 --> 06:28.880
+the back end of it will statically generate for you and then it even uses view underneath the
+
+06:28.880 --> 06:33.840
+hood for theming and so there's actually a lot of open source projects use this these days and
+
+06:33.840 --> 06:38.640
+then they're not even view related they just wanted to create a dock site and Viet Press is incredibly
+
+06:38.640 --> 06:43.280
+easy like you start up the starter project you add some Markdown files while it works it's
+
+06:43.360 --> 06:48.080
+pretty great so shout out to Viet Press as well for those looking for like hey I want to spin up like a
+
+06:48.080 --> 06:53.120
+little internal dock site for my team this is great this is like I can't this is phenomenal for that kind
+
+06:53.120 --> 06:57.920
+of thing and people use it at scale like I think pinia all the docks you see in the view I think
+
+06:57.920 --> 07:04.720
+we all use Viet Press. The previous the whole like view next. I think nuts does have nuts docks
+
+07:04.720 --> 07:11.360
+though so that's where I hesitate so it's a little it's similar but yeah but nonetheless Viet Press
+
+07:11.360 --> 07:16.480
+on its own impressive and nuts docks I guess honorage honorable mention to them as well
+
+07:16.480 --> 07:21.280
+I'm having the chance to use them as much but they also create great stuff but yeah you can see
+
+07:21.280 --> 07:28.320
+five base routing yeah how's our congratulations you ought to be proud of your sales
+
+07:30.000 --> 07:34.960
+I really appreciate everyone spending the time with me today and I was been a long day but again
+
+07:34.960 --> 07:39.440
+with all your feedback and questions and stuff it really makes this a pleasurable experience so
+
+07:39.440 --> 07:41.440
+thanks everyone for coming by
+

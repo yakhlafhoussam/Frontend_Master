@@ -1,0 +1,98 @@
+WEBVTT
+
+00:00.000 --> 00:03.600
+Maintenant, nous avons brièvement évoqué les environnements virtuels.
+
+00:03.600 --> 00:07.520
+Ils constituent un moyen important de stocker les dépendances
+
+00:07.520 --> 00:10.320
+dont votre application Python a besoin,
+
+00:10.320 --> 00:12.640
+la création de cet environnement virtuel rendra
+
+00:12.640 --> 00:17.280
+un dossier autonome qui inclut cette installation complète de Python.
+
+00:17.280 --> 00:21.040
+Et cela va vous permettre d'installer des dépendances spécifiques
+
+00:21.040 --> 00:25.040
+à cette application et à une version spécifique de Python,
+
+00:25.040 --> 00:28.960
+sans possibilité de gâcher votre global
+
+00:28.960 --> 00:32.320
+version de Python, ce n'est peut-être pas la même version.
+
+00:32.320 --> 00:34.720
+Vous n'aurez pas les mêmes bibliothèques
+
+00:34.720 --> 00:37.200
+que vous utilisez entre différents projets,
+
+00:37.200 --> 00:40.880
+c'est pourquoi l'isolement d'un environnement virtuel est très important.
+
+00:42.160 --> 00:45.760
+Vous pourriez voir cela abrégé comme virtuel et pour faire court.
+
+00:47.600 --> 00:52.480
+Une norme que vous pourriez voir est un fichier exigences.txt inclus
+
+00:52.480 --> 00:57.040
+avec un projet Python. C'est un fichier spécial que nous allons utiliser pour dire
+
+00:57.840 --> 01:01.360
+juste l'outil de ligne de commande du gestionnaire de packages de Python,
+
+01:01.360 --> 01:06.480
+quelles dépendances installer pour ce package particulier.
+
+01:06.480 --> 01:12.080
+Le format est simple. Vous venez de mettre chaque dépendance manuellement sur une seule ligne
+
+01:12.080 --> 01:16.160
+dans ce fichier. Si vous devez spécifier une version spécifique,
+
+01:16.160 --> 01:20.960
+vous pouvez faire des doubles égaux et mettre la version après le nom de la bibliothèque.
+
+01:21.920 --> 01:27.440
+Ou vous pouvez simplement installer chaque dépendance dans votre environnement virtuel en utilisant
+
+01:27.440 --> 01:30.560
+pip directement. Une fois que tu as fait ça,
+
+01:30.560 --> 01:33.760
+probablement pendant que vous créez l'application,
+
+01:33.760 --> 01:38.400
+vous pouvez voir quels packages sont présents dans votre environnement virtuel
+
+01:38.400 --> 01:40.000
+avec une commande appelée pip freeze.
+
+01:42.640 --> 01:47.040
+Vous pouvez transférer cela dans un fichier exigences.txt pour le générer pour vous
+
+01:47.040 --> 01:52.400
+automatiquement. Malheureusement, cela inclut également un grand nombre de ces sous-dépendances.
+
+01:52.400 --> 01:59.040
+Je préfère que je travaille sur un projet simple pour gérer ces exigences.txt
+
+01:59.040 --> 02:02.160
+fichiers manuellement, mais ce n'est pas important.
+
+02:03.120 --> 02:06.640
+Si vous obtenez un projet avec un fichier exigences.txt,
+
+02:06.640 --> 02:10.720
+vous pouvez faire un pip install dash dans votre environnement virtuel
+
+02:10.720 --> 02:13.840
+pour installer toutes les dépendances spécifiées dans ce fichier.
+

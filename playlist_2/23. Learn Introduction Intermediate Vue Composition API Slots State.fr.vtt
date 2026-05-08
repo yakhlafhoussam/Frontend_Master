@@ -1,0 +1,86 @@
+WEBVTT
+
+00:00.000 --> 00:07.000
+En ce qui concerne certains éléments de bonnes pratiques, j'ai déjà mentionné l'ensemble des magasins d'espace de nommage des magasins mondiaux.
+
+00:07.000 --> 00:13.000
+Une des choses que je pense, c'est qu'il s'agit d'un artefact, donc je pense que pour la plupart d'entre vous, au moins ici, cela n'est pas applicable.
+
+00:13.000 --> 00:24.000
+Mais comme Eduardo et son cours en parlent beaucoup, c'est que certains clients se sont tellement habitués à tout mettre dans un seul magasin.
+
+00:25.000 --> 00:27.000
+Parce que c’était incroyablement pratique, n’est-ce pas ?
+
+00:27.000 --> 00:32.000
+Je vais mettre mon, tout, j'ai besoin de tout partout, le mien aussi, il suffit de le mettre dans le magasin et dans le magasin mondial.
+
+00:32.000 --> 00:36.000
+Vous savez, oh, je devrais savoir si les cookies sont suivis ou non, c'est le magasin mondial.
+
+00:36.000 --> 00:43.000
+Et donc tout son truc, et ce que j'ai vu aussi, c'est qu'il ne faut pas avoir peur de simplement créer un groupe de petits magasins.
+
+00:43.000 --> 00:51.000
+Par exemple, simplement parce que ce n'est pas le cas, cela ne vous coûte rien et cela facilite sans doute les choses parce que vous avez déjà modularisé ces sources uniques de vérité.
+
+00:51.000 --> 00:56.000
+C'est mon magasin hors magasin, c'est mon magasin de cookies, c'est mon, vous savez, peu importe, peu importe comment vous voulez l'appeler.
+
+00:56.000 --> 01:03.000
+Et puis, comme nous l'avons vu plus tôt, en fait, je pense que les clés magiques et le thème sont un exemple, c'est si facile de les assembler.
+
+01:03.000 --> 01:10.000
+Si vous vous dites, oh, il y a ceci, appelons-le comme, vous savez, la page des paramètres où l'auteur et les cookies doivent être soulevés ensemble.
+
+01:10.000 --> 01:13.000
+Genre, cool, juste comme, attrape-les, jette-les dedans, genre, pas de problème.
+
+01:14.000 --> 01:28.000
+Et donc si nous pensons, tant que nous pensons davantage comme cela, que les magasins sont des sources uniques de vérité, parce que le moment où ce qui est effrayant, c'est que beaucoup d'entre vous finissent par essayer de faire, c'est qu'ils se retrouvent occupés à stocker comme souvent plusieurs endroits.
+
+01:28.000 --> 01:34.000
+C'est vrai, parce qu'ils disent, oh, eh bien, je reçois la mise à jour ici, et puis voici où la création a été effectuée pour la mise à jour.
+
+01:34.000 --> 01:42.000
+Donc je garde le genre, et donc s'ils les encaissent de manière incorrecte et les gardent comme source de vérité distincte, c'est là que nos problèmes entrent en jeu, n'est-ce pas, en fin de compte, c'est comme beaucoup de nos bugs.
+
+01:42.000 --> 01:50.000
+Ainsi, en veillant à ce que vos magasins soient petits, vous garantissez qu'ils constituent une source unique de vérité, ce qui signifie qu'en fin de compte, vous aurez moins de bugs au fil du temps.
+
+01:50.000 --> 01:56.000
+Et donc nous en avons parlé à différentes occasions maintenant, mais la composition d'une source à partir d'une autre source est la clé.
+
+01:56.000 --> 02:00.000
+Nous avons donc vu, nous maintenant, vous avez vu qu'il y avait un magasin de machines à voyager dans le temps qui est un magasin de tâches.
+
+02:00.000 --> 02:03.000
+Notre exercice qui sera de créer un magasin faible.
+
+02:03.000 --> 02:09.000
+Donc, vous pouvez tous, en gros, convertir votre composable en un centime de magasin et voir simplement ce que vous en pensez.
+
+02:10.000 --> 02:19.000
+Et puis ce qui est bien, c'est que l'utilisation d'autres magasins au sein des magasins est aussi simple qu'on pourrait s'y attendre, n'est-ce pas, donc dans le cas où j'ai un accès au temps dans mon magasin, je souhaite l'utiliser.
+
+02:19.000 --> 02:28.000
+Disons que, pour une raison quelconque, je souhaite faire collaborer ce nombre d'entrées avec mon nombre total de tâches, je pourrais simplement importer le magasin de tâches utilisé.
+
+02:28.000 --> 02:37.000
+Et puis ici, je dirais simplement, oui, const store équivaut à utiliser le magasin de tâches.
+
+02:37.000 --> 02:53.000
+Et puis je pourrais dire que le nombre de combinaisons const est calculé, et il va renvoyer la valeur du point du nombre d'entrées plus le nombre de tâches du magasin de tâches.
+
+02:53.000 --> 03:05.000
+Et juste comme ça, vous avez pris deux magasins qui n'étaient apparemment pas liés, et puis parce que vous avez eu la logique, boum, vous les avez combinés, ça tire la pièce dont vous avez besoin, ça marche.
+
+03:05.000 --> 03:19.000
+Et donc cela faisait partie du travail d'Eduardo d'essayer de faire comprendre aux gens que contrairement à avant, il est en fait très facile de déchirer les magasins, de les reconstituer, puis de les mélanger ailleurs également.
+
+03:19.000 --> 03:29.000
+Et ce faisant, vous vous retrouverez avec, oui, espérons-le, de jolies solutions de gestion d'état assez élégantes pour vous et votre équipe.
+
+03:29.000 --> 03:35.000
+D'accord, et puis nous avons déjà parcouru les outils de développement avec Pinia, donc vous avez vu un peu ce que nous pourrions parcourir à ce sujet.
+

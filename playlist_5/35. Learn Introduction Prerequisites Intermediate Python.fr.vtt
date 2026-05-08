@@ -1,0 +1,209 @@
+WEBVTT
+
+00:00.000 --> 00:11.040
+Dans cet exercice sur la bibliothèque standard, vous allez utiliser le package OS et la bibliothèque standard
+
+00:11.040 --> 00:16.240
+bibliothèque pour obtenir un peu plus d'informations sur notre annuaire local et imprimer son
+
+00:16.240 --> 00:17.240
+contenu.
+
+00:17.240 --> 00:25.720
+Vous allez également utiliser le package SIS pour obtenir des informations sur notre système, quelle plateforme
+
+00:25.720 --> 00:31.800
+nous y sommes, et acceptons également des arguments dans nos scripts Python.
+
+00:31.800 --> 00:46.480
+Donc en utilisant la bibliothèque standard, je vais créer un nouveau fichier ici.
+
+00:46.480 --> 00:57.720
+Je vais importer le système d'exploitation et je le sauvegarderai ici, juste dans mon atelier pack, tout ce que je
+
+00:57.720 --> 01:01.440
+vivre, exemple.
+
+01:01.440 --> 01:07.440
+Alors oups, j'ai fait la mauvaise chose là-bas.
+
+01:07.440 --> 01:13.880
+Je veux créer un fichier, l'enregistrer sous, je veux que ce soit un fichier .py.
+
+01:13.880 --> 01:16.720
+Sinon, oui, le code ne sait pas.
+
+01:16.720 --> 01:23.040
+D'accord, alors importez le système d'exploitation, qu'est-ce que le système d'exploitation dans la bibliothèque standard, faites-le pour quoi ?
+
+01:23.040 --> 01:24.040
+C'est sacrément cool.
+
+01:24.040 --> 01:25.040
+Fonctions du système collaboratif.
+
+01:25.040 --> 01:27.640
+Fonctions du système d'exploitation.
+
+01:27.640 --> 01:37.240
+Je peux donc dire que mon dossier est égal, et je peux utiliser le module OS pour obtenir le CWD, CW signifie
+
+01:37.240 --> 01:42.080
+pour le répertoire de travail actuel.
+
+01:42.080 --> 01:55.760
+Et je peux imprimer, voici les fichiers, laissez-moi en faire une chaîne F, disons, mon
+
+01:55.760 --> 01:59.080
+dossier.
+
+01:59.080 --> 02:02.000
+Ce sera donc le nom du dossier.
+
+02:02.000 --> 02:07.960
+Laissez-moi exécuter ceci rapidement, pas désolé, ne démarrez pas Reball, et sélectionnez Exécuter le fichier Python
+
+02:07.960 --> 02:10.640
+en terminale.
+
+02:10.640 --> 02:15.680
+Et parce que j'ai commencé une nouvelle session Reball dans ce terminal, le code VS ne fonctionne pas vraiment
+
+02:15.680 --> 02:20.680
+je sais suivre, je vais devoir appuyer sur Ctrl C pour quitter le Reball, et ensuite je devrais
+
+02:20.680 --> 02:23.960
+pouvoir exécuter mon fichier dans le terminal.
+
+02:23.960 --> 02:27.320
+Voici donc le chemin complet.
+
+02:27.320 --> 02:36.400
+Et puis si je voulais parcourir ce dossier, je peux dire, avec le répertoire dot scan du système d'exploitation,
+
+02:36.400 --> 02:40.880
+mon dossier en tant que dossier.
+
+02:40.880 --> 02:48.080
+Et nous n'avons pas encore vu cela avec la syntaxe, mais il s'agit d'un gestionnaire de contexte.
+
+02:48.080 --> 02:54.200
+Et une fois le code de ce bloc exécuté, le gestionnaire de contexte est automatiquement
+
+02:54.200 --> 02:58.040
+je vais faire un peu de nettoyage du code.
+
+02:58.040 --> 03:03.480
+C'est donc généralement une bonne idée lorsque nous travaillons avec des fichiers, car le système voudra
+
+03:03.480 --> 03:05.920
+pour fermer les handles de ces fichiers.
+
+03:05.920 --> 03:12.000
+Vous verrez donc également cela avec la syntaxe lorsque vous travaillez ou écrivez 2 fichiers.
+
+03:12.000 --> 03:19.440
+OK, donc en utilisant l'étiquette as, nous allons obtenir le contenu de l'analyse du répertoire
+
+03:19.440 --> 03:21.760
+et attribuez-le au dossier.
+
+03:21.760 --> 03:34.680
+Je peux donc dire que pour une entrée dans un dossier, imprimez une suite du nom de l'entrée.
+
+03:34.680 --> 03:41.160
+Et si je lance ceci dans mon terminal, vous verrez tous les fichiers ici, le niveau supérieur, les fichiers
+
+03:41.160 --> 03:48.600
+dans ce répertoire.
+
+03:48.600 --> 03:51.040
+Ceci est une autre bibliothèque utile.
+
+03:51.040 --> 03:56.440
+Cela va vous donner accès aux variables et fonctions utilisées ou maintenues par Python.
+
+03:56.440 --> 03:57.440
+interprète.
+
+03:57.440 --> 04:00.680
+Je vais donc créer un nouveau fichier ici.
+
+04:00.680 --> 04:04.520
+Et je vais le sauvegarder comme exemple dot pui.
+
+04:04.520 --> 04:07.520
+Je vais importer ça.
+
+04:07.520 --> 04:16.920
+Et il y a une variable appelée systemrv qui est toujours définie sur les arguments de ligne de commande utilisés
+
+04:16.920 --> 04:19.040
+pour exécuter ce script.
+
+04:19.040 --> 04:30.160
+Je peux donc dire, imprimé, que nous avons reçu ces arguments.
+
+04:30.160 --> 04:35.240
+Et je vais juste les imprimer.
+
+04:35.240 --> 04:43.240
+Et puis je peux aussi dire, je vais imprimer un aftering et dire, nous courons actuellement
+
+04:43.240 --> 04:53.760
+sur un et utilisez sys.clapform, qui sera défini sur le système d'exploitation que vous utilisez la machine.
+
+04:53.760 --> 05:00.080
+OK, donc si je lance ceci dans le terminal, je verrai que nous avons reçu ces arguments.
+
+05:00.080 --> 05:09.240
+Et il y a déjà une valeur dans cette liste, même si nous n'avons rien transmis.
+
+05:09.240 --> 05:20.240
+Alors, en réexécutant cela en fournissant le chemin complet, quel est ce premier argument ?
+
+05:20.240 --> 05:21.520
+C'est le fichier.
+
+05:21.520 --> 05:22.760
+C'est le nom du fichier.
+
+05:22.760 --> 05:25.720
+Donc sys.rgv n'est jamais vide.
+
+05:25.720 --> 05:29.120
+Le zéro avec l'élément est toujours le nom du fichier.
+
+05:29.120 --> 05:35.000
+Et après cela, je peux transmettre toutes les valeurs que je veux.
+
+05:35.000 --> 05:38.960
+Et nous verrons que nous recevons ces arguments.
+
+05:38.960 --> 05:44.480
+Et chacun de ces arguments séparés par des espaces est transmis dans sys.rgv.
+
+05:44.480 --> 05:50.360
+Notez que même si j'ai transmis des entiers ici, les arguments sont toujours des chaînes.
+
+05:50.360 --> 05:58.000
+OK, en utilisant pipi.
+
+05:58.000 --> 06:05.000
+Si nous ne voulons pas ouvrir le site Web et que nous voulons en quelque sorte faire un peu d'exploration,
+
+06:05.000 --> 06:08.240
+pipi a une méthode de recherche très utile.
+
+06:08.240 --> 06:19.320
+Je pourrais donc dire un python, pip est l'outil associé à pipi, et je peux dire des requêtes de recherche pip.
+
+06:19.320 --> 06:27.320
+Et cela me permettra d'obtenir une liste des packages dont le nom contient des requêtes.
+
+06:27.320 --> 06:34.200
+Si je veux installer un package, je pourrais dire des requêtes python, pip et install.
+
+06:34.200 --> 06:36.800
+Et je l'ai déjà installé, mais ensuite il continuera et fera cela.
+

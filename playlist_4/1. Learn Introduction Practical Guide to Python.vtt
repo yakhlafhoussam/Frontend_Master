@@ -1,0 +1,341 @@
+WEBVTT
+
+00:00.000 --> 00:07.000
+Hi, everyone. Welcome to Practical Python. My name is Nina Zacharenko and I'm your instructor today.
+
+00:07.000 --> 00:15.000
+This is an immersive hands-on Python course and it requires a little bit of prerequisite knowledge.
+
+00:15.000 --> 00:22.000
+So in order to really succeed today, you should be comfortable on the command line. You not have to be a pro.
+
+00:23.000 --> 00:32.000
+And you should know a little bit about programming in some other language. So understand basic constructs like loops and variables.
+
+00:32.000 --> 00:36.000
+And those are going to be the things that set you on the path to success.
+
+00:36.000 --> 00:49.000
+If you're a little bit more of a beginner, you might enjoy the two-day course that I did for front-end masters last year called Introduction to Python and Python Fundamentals.
+
+00:50.000 --> 01:02.000
+Now, you might see this course website that I have up here. You can find this at practical.learnpython.dev.
+
+01:02.000 --> 01:06.000
+Let me bring that URL up for a minute.
+
+01:06.000 --> 01:10.000
+Practical.learnpython.dev.
+
+01:11.000 --> 01:28.000
+Now, I recommend that you don't just follow along on this website. Don't read because we're going to be moving pretty quickly today.
+
+01:28.000 --> 01:33.000
+And you're going to get most comfortable if you type along with me.
+
+01:33.000 --> 01:45.000
+So by typing along with me as I type, you're going to gain that muscle memory that's really going to help that knowledge stick.
+
+01:45.000 --> 01:48.000
+A little bit about me.
+
+01:48.000 --> 01:53.000
+My name is Nina Zackarenko and let's see here.
+
+01:54.000 --> 02:00.000
+I've been coding all together for probably about a decade now.
+
+02:00.000 --> 02:04.000
+I started out in Java. That is my secret.
+
+02:04.000 --> 02:12.000
+But I moved towards Python probably about six years ago now because I really liked the community.
+
+02:12.000 --> 02:17.000
+And I thought that the libraries and the ecosystem were really amazing.
+
+02:17.000 --> 02:23.000
+I started speaking at Python conferences and just completely fell in love with it.
+
+02:23.000 --> 02:29.000
+Recently, I've been elected to the board of directors for the Python software foundation, which is really great.
+
+02:29.000 --> 02:31.000
+I get to do a lot of good work.
+
+02:31.000 --> 02:36.000
+And I've also written code for companies like Reddit and Meetup and HBO.
+
+02:36.000 --> 02:42.000
+These days, I'm a principal cloud advocate at Microsoft focusing on Python.
+
+02:42.000 --> 02:48.000
+If you want to stay in touch with me, I'm on Twitter or LinkedIn or GitHub, all of the links are here.
+
+02:48.000 --> 02:55.000
+And then I also included links to some of the more popular conference talks that I've done over the years.
+
+02:55.000 --> 02:59.000
+You can also find my other courses on front and masters.
+
+02:59.000 --> 03:09.000
+One of my personal favorites is get in depth and as well as Python fundamentals and intermediate Python.
+
+03:09.000 --> 03:14.000
+A little bit about navigating the course.
+
+03:14.000 --> 03:21.000
+If you see any typos, which I have not made because I'm 100% perfect.
+
+03:21.000 --> 03:28.000
+But if you spot anything that you think shouldn't be there, there's an edit this page link at the top of every page.
+
+03:28.000 --> 03:32.000
+And that will take you directly to GitHub where you can open a pull request.
+
+03:32.000 --> 03:37.000
+There are navigation arrows here on the left and the right side.
+
+03:37.000 --> 03:43.000
+And you can also navigate by keyboard shortcuts, which is one of my favorite features.
+
+03:43.000 --> 03:48.000
+There are bread crumbs on the top left here for each section.
+
+03:48.000 --> 03:53.000
+And that will pull up a table of contents right here.
+
+03:53.000 --> 03:58.000
+Some sections look like this with double arrows that have additional contents.
+
+03:58.000 --> 04:01.000
+So you can just go ahead and click on that and that content will expand.
+
+04:02.000 --> 04:10.000
+If you want to copy any of the code or any of the commands, you can hit this button right here and it will copy to the clipboard.
+
+04:10.000 --> 04:18.000
+If we're working in the Python repo, for example, where there are extra control characters that are in that will be displayed on the course website,
+
+04:18.000 --> 04:22.000
+know that they won't be copied over.
+
+04:22.000 --> 04:25.000
+You can search in this text box up here.
+
+04:25.000 --> 04:30.000
+And as you go through the course, you'll see a little checkbox next to each chapter.
+
+04:30.000 --> 04:35.000
+You can go ahead and clear the history if you find that distracting.
+
+04:35.000 --> 04:42.000
+And again, I really suggest following along with me in the class and typing as much as possible.
+
+04:42.000 --> 04:48.000
+This is a resource for you to have because I know that when I'm done with the class, especially when that's all day,
+
+04:48.000 --> 04:50.000
+I feel like, oh, did I learn anything?
+
+04:50.000 --> 04:52.000
+I'm just going to forget everything.
+
+04:52.000 --> 04:54.000
+So it's here for you for afterwards.
+
+04:54.000 --> 04:59.000
+It's here for the exercises or if you need to go back and figure out how to do something.
+
+04:59.000 --> 05:01.000
+But I do not recommend reading it.
+
+05:01.000 --> 05:04.000
+I want to quickly go through the course agenda.
+
+05:04.000 --> 05:08.000
+So I'm going to explain to you why Python.
+
+05:08.000 --> 05:10.000
+Why you might want to reach for Python.
+
+05:10.000 --> 05:17.000
+Why you might want to choose Python for your project and talk a little bit about some of the philosophies and Python's design principles.
+
+05:17.000 --> 05:20.000
+Then we're going to move on to data types.
+
+05:20.000 --> 05:22.000
+Python is a dynamic language.
+
+05:22.000 --> 05:23.000
+What does that mean?
+
+05:23.000 --> 05:28.000
+We're going to learn how to work with numbers, strings, lists, and more.
+
+05:28.000 --> 05:33.000
+Then we're going to move on to some of the more advanced data types that Python offers,
+
+05:33.000 --> 05:36.000
+and those are sets, tuples, and dictionaries.
+
+05:36.000 --> 05:44.000
+These are container objects that let us organize other types of objects in different ways into other kinds of data structures.
+
+05:44.000 --> 05:49.000
+Then we're going to move on to functions, loops, and logic.
+
+05:49.000 --> 05:54.000
+Functions help us organize our code in a way that's more readable and reusable,
+
+05:54.000 --> 05:57.000
+and they accept arguments and defaults as needed.
+
+05:57.000 --> 06:02.000
+And loops are going to take us, let us take action on collections of different items.
+
+06:02.000 --> 06:06.000
+Boolean logic is going to allow us to control the flow of our program.
+
+06:06.000 --> 06:11.000
+We're going to cover some practical applications of what we've learned so far,
+
+06:11.000 --> 06:16.000
+including using advanced looping types like list comprehension,
+
+06:16.000 --> 06:22.000
+converting between different types and Python, which I believe is really one of its absolute strengths.
+
+06:22.000 --> 06:26.000
+And we're also going to cover how to work with files.
+
+06:26.000 --> 06:33.000
+Next is going to be object-oriented Python, which allows us to represent our code in a little bit of a different way.
+
+06:33.000 --> 06:39.000
+We can define reusable classes and define relationships between different objects,
+
+06:39.000 --> 06:42.000
+and build modular and reusable code.
+
+06:42.000 --> 06:45.000
+We're also going to cover libraries and modules.
+
+06:45.000 --> 06:49.000
+So now that you have all the foundational understanding of how Python works,
+
+06:49.000 --> 06:53.000
+you're going to learn how to structure your code and work with different libraries,
+
+06:53.000 --> 06:57.000
+both the standard library and external third-party packages.
+
+06:57.000 --> 07:00.000
+And then in the last chapter, we're going to cover bug frameworks,
+
+07:00.000 --> 07:03.000
+and we're going to talk about Django in particular.
+
+07:03.000 --> 07:08.000
+So we're going to practice all of our new Python knowledge by building a basic blog,
+
+07:08.000 --> 07:13.000
+a basic web application with some unit tests and a database.
+
+07:14.000 --> 07:20.000
+This is going to give you a great tour of everything that's available in Python.
+
+07:20.000 --> 07:24.000
+You might not be an expert in any one of these areas by the end of the day,
+
+07:24.000 --> 07:31.000
+but you will have the tools available to learn and discover more.
+
+07:31.000 --> 07:37.000
+Now, there are a few prerequisites for going through the course.
+
+07:37.000 --> 07:41.000
+You need to have a Linux Mac or Windows 10 machine.
+
+07:41.000 --> 07:46.000
+If you're using Windows 10, you need to make sure that you have administrative rights
+
+07:46.000 --> 07:49.000
+so that you can run your programs correctly.
+
+07:49.000 --> 07:52.000
+We're going to be working with the latest version of Python,
+
+07:52.000 --> 07:55.000
+which as of today is Python 39.
+
+07:55.000 --> 08:01.000
+We're going to be using Visual Studio Code and the Python extension for Visual Studio Code.
+
+08:02.000 --> 08:05.000
+Now, a lot of you are already programming.
+
+08:05.000 --> 08:07.000
+You already have your environments set up.
+
+08:07.000 --> 08:08.000
+Why VS Code?
+
+08:08.000 --> 08:12.000
+Well, I recommend that we're all on the same environment today,
+
+08:12.000 --> 08:15.000
+because if you run into any issues,
+
+08:15.000 --> 08:19.000
+this is really going to help us troubleshoot and figure out what's wrong.
+
+08:19.000 --> 08:24.000
+Once you're done with the class, feel free to go back to your editor of choice.
+
+08:24.000 --> 08:28.000
+I have a section here for how to set up VS Code with different key bindings.
+
+08:28.000 --> 08:31.000
+For example, I use VS Code with Emacs key bindings,
+
+08:31.000 --> 08:36.000
+and you can set up them or sublime or whatever you're most comfortable with.
+
+08:36.000 --> 08:40.000
+Really appreciate if we were all in the same environment,
+
+08:40.000 --> 08:44.000
+and that way you can follow the steps and you know there's nothing about your machine
+
+08:44.000 --> 08:48.000
+or your editor that's going to cause any problems.
+
+08:48.000 --> 08:52.000
+I'm going to review the set up instructions for Mac OS,
+
+08:52.000 --> 08:56.000
+because that's what I'm using, but instructions for Windows are available as well.
+
+08:56.000 --> 09:00.000
+And then I'm going to quickly show you how to configure VS Code
+
+09:00.000 --> 09:02.000
+for maximum productivity and Python.
+
+09:02.000 --> 09:07.000
+Alright, so here are all the things that you should have downloaded and set up.
+
+09:07.000 --> 09:12.000
+Python 3 Visual Studio Code and the Python extension for Visual Studio Code.
+
+09:12.000 --> 09:15.000
+If you don't have these set up right now,
+
+09:15.000 --> 09:19.000
+please go ahead and start installing these prerequisites on your machine
+
+09:19.000 --> 09:21.000
+while I continue talking.
+

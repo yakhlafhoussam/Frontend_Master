@@ -1,0 +1,341 @@
+WEBVTT
+
+00:00.000 --> 00:03.360
+Il existe plusieurs frameworks différents pour les écrire en Python.
+
+00:03.360 --> 00:04.840
+Ils sont tous assez similaires.
+
+00:04.840 --> 00:08.640
+Nous allons nous concentrer sur celui fourni avec la bibliothèque standard.
+
+00:08.640 --> 00:12.280
+C'est un terme assez simple.
+
+00:12.280 --> 00:14.480
+C'est ce qu'on appelle le test unitaire.
+
+00:14.480 --> 00:20.080
+Le test unitaire est à la fois un cadre d'écriture de tests et un exécuteur de tests.
+
+00:20.080 --> 00:24.320
+Cela signifie que vous pouvez l'utiliser pour exécuter vos tests
+
+00:24.320 --> 00:27.520
+et renvoie également les résultats.
+
+00:27.520 --> 00:32.800
+Afin d'écrire des tests unitaires en utilisant cette bibliothèque standard,
+
+00:32.800 --> 00:36.200
+nous devons écrire notre test sous forme de méthodes au sein d'une classe.
+
+00:36.200 --> 00:42.640
+Et nous devons utiliser une série d'affirmations qui viennent
+
+00:42.640 --> 00:49.920
+dans cette bibliothèque de tests unitaires, sans utiliser le mot-clé assert.
+
+00:49.920 --> 00:54.280
+OK, créons un fichier ici.
+
+00:54.280 --> 00:59.280
+Je vais l'appeler multiplier.py.
+
+00:59.280 --> 01:02.080
+Je vais juste l'appeler multiplier.py.
+
+01:02.080 --> 01:05.680
+Gardez-moi ferme sur le fait d'avoir plus d'erreurs de frappe.
+
+01:05.680 --> 01:09.160
+Et je vais définir ici une fonction appelée multiplier.
+
+01:09.160 --> 01:19.680
+Je vais prendre un x et un y, et ça va revenir x fois y.
+
+01:19.680 --> 01:22.760
+OK, c'est assez juste.
+
+01:22.800 --> 01:27.880
+Maintenant, écrivons un scénario de test pour cela.
+
+01:27.880 --> 01:31.880
+Habituellement, ces tests se trouvent dans un fichier séparé,
+
+01:31.880 --> 01:36.520
+généralement pour les projets plus importants dans un module séparé appelé tests
+
+01:36.520 --> 01:40.080
+afin que vous puissiez les séparer proprement de votre base de code.
+
+01:40.080 --> 01:44.000
+Mais pour cet exemple, je vais simplement les placer directement dans ce fichier.
+
+01:44.000 --> 01:49.200
+Je dirai donc que les tests sont généralement en direct dans un fichier ou un module de test.
+
+01:53.720 --> 01:56.600
+Pas en ligne.
+
+01:56.600 --> 01:59.320
+Et encore une fois, les importations sont généralement effectuées en haut du fichier,
+
+01:59.320 --> 02:04.160
+mais nous passons notre incrédulité ici.
+
+02:04.160 --> 02:08.760
+Je vais donc importer la bibliothèque de tests unitaires
+
+02:08.760 --> 02:10.520
+et ferme mon terminal là-bas.
+
+02:13.800 --> 02:19.320
+Je vais l'importer en haut ici,
+
+02:19.320 --> 02:23.280
+parce que ça me rend fou.
+
+02:23.280 --> 02:32.280
+Nous devons donc écrire nos tests dans une classe distincte.
+
+02:32.280 --> 02:35.920
+Et je vais appeler ce test de classe multiplier.
+
+02:35.920 --> 02:37.960
+L'appeler test multiplier ne signifie pas réellement
+
+02:37.960 --> 02:40.160
+créer une classe de test unitaire.
+
+02:40.160 --> 02:45.000
+Pour ce faire, nous devons sous-classer le test unitaire.taskase.
+
+02:45.000 --> 02:51.160
+Cela signifie que cette classe contient
+
+02:51.160 --> 02:54.040
+une collection de tests unitaires.
+
+02:54.040 --> 02:57.640
+Écrivons maintenant notre tout premier test unitaire.
+
+02:57.640 --> 03:03.240
+Vos méthodes de tests unitaires doivent commencer par le test de soulignement
+
+03:03.240 --> 03:04.120
+ou ils ne courront pas.
+
+03:04.120 --> 03:06.760
+Ils ne seront pas récupérés.
+
+03:06.760 --> 03:10.080
+Et nous allons passer en soi ici.
+
+03:10.080 --> 03:12.640
+Et je vais dire que la valeur de test pour x est 5
+
+03:12.640 --> 03:17.880
+et la valeur de test pour y est 10.
+
+03:17.880 --> 03:22.720
+Et nous voulons utiliser les assertions qui nous sont fournies
+
+03:22.720 --> 03:29.040
+par la classe de test unitaire ici.
+
+03:29.040 --> 03:31.160
+Pour retrouver le maximum d'affirmations,
+
+03:31.160 --> 03:33.240
+jetez un œil à la documentation Python.
+
+03:33.240 --> 03:36.400
+Je veillerai à ce qu'il y ait un lien vers celui-ci sur le site Web de la classe.
+
+03:36.400 --> 03:39.200
+Mais en attendant, il y en a quelques-uns standards.
+
+03:39.200 --> 03:40.560
+Et si vous utilisez du code VS,
+
+03:40.560 --> 03:42.640
+et votre interprète est correctement configuré,
+
+03:42.640 --> 03:44.880
+vous obtiendrez en fait quelques conseils utiles ici.
+
+03:44.880 --> 03:48.720
+Ils commencent tous par un service, ce qui est génial.
+
+03:48.720 --> 03:54.520
+Si je veux tester l'affirmation égale, je peux même appuyer sur le...
+
+03:56.880 --> 04:00.560
+Si je l'appelle sans arguments, le code VS me donnera
+
+04:00.560 --> 04:02.320
+le petit pop-up.
+
+04:02.320 --> 04:06.720
+Et ça va me dire quels sont les arguments
+
+04:06.720 --> 04:12.000
+premier, deuxième, le message est un paramètre facultatif ici
+
+04:12.000 --> 04:14.320
+que nous pouvons transmettre si nous voulons avoir notre propre erreur personnalisée
+
+04:14.320 --> 04:18.280
+message lorsque cela échoue.
+
+04:18.280 --> 04:22.040
+Et nous voulons échouer si les deux objets sont inégaux,
+
+04:22.040 --> 04:26.160
+tel que déterminé par l'opérateur égal, OK ?
+
+04:26.160 --> 04:34.440
+Nous allons donc appeler multiplier avec notre test x
+
+04:34.440 --> 04:36.400
+et notre test y.
+
+04:36.400 --> 04:42.400
+Et cela devrait être égal à 50, non ?
+
+04:46.320 --> 04:48.680
+Si nous avons juste quelques tests unitaires simples,
+
+04:48.680 --> 04:51.240
+nous ne nous soucions pas d'avoir quelque chose appelé un testeur.
+
+04:51.240 --> 04:55.840
+Le lanceur de tests vous aide à découvrir des tests et plusieurs répertoires.
+
+04:55.840 --> 05:01.080
+Donc je peux juste dire, si dendername est égal à dendermame,
+
+05:01.080 --> 05:02.840
+mettez du code dans une méthode principale ici.
+
+05:02.840 --> 05:05.360
+Donc si je lance cette multiplication, ou multiplication,
+
+05:05.360 --> 05:17.040
+p-i-f-o-directement, je veux appeler la méthode unitaire test.mean, OK ?
+
+05:17.040 --> 05:20.240
+Et exécutons cela.
+
+05:20.240 --> 05:23.600
+Nous verrons qu'il a effectué un test et que le test s'est déroulé correctement.
+
+05:27.000 --> 05:31.880
+Introduisons un bug dans notre code.
+
+05:31.880 --> 05:36.600
+Je vais changer notre méthode de multiplication pour faire une addition à la place.
+
+05:36.600 --> 05:42.360
+Maintenant, lorsque j'exécute ce test ou que j'exécute ce fichier contenant notre test,
+
+05:42.360 --> 05:44.320
+ça va dire échoué.
+
+05:44.320 --> 05:47.680
+Et les échecs étaient un échec, j'ai effectué un test,
+
+05:47.680 --> 05:48.600
+et a échoué à un test.
+
+05:53.880 --> 05:59.880
+Si j'ai fourni un message d'erreur personnalisé ici,
+
+05:59.880 --> 06:09.120
+cet argument facultatif devrait y voir un peu plus d'informations.
+
+06:09.120 --> 06:10.640
+Nous nous sommes donc lancés dans cette recherche par erreur.
+
+06:10.640 --> 06:14.440
+15 n’était pas égal à 50, devrait être 50, n’est-ce pas ?
+
+06:14.440 --> 06:18.480
+Cela nous aidera donc à détecter les bugs dans notre code.
+
+06:18.480 --> 06:21.480
+Quelques concepts importants ici, cas de test,
+
+06:21.480 --> 06:24.280
+que la classe doit être une sous-classe.
+
+06:24.280 --> 06:28.600
+Votre propre scénario de test doit être une sous-classe
+
+06:28.600 --> 06:30.760
+de test unitaire.cas de test.
+
+06:30.760 --> 06:34.480
+Les noms de vos fonctions doivent commencer par test.
+
+06:34.480 --> 06:37.720
+Et comme ces tests sont généralement
+
+06:37.720 --> 06:41.240
+vivre dans un fichier ou un module de test séparé, pas en ligne,
+
+06:41.240 --> 06:43.400
+n'oubliez pas d'importer le code que vous souhaitez tester.
+
+06:46.360 --> 06:49.400
+OK, donc exécuter le test, une façon courante de le faire,
+
+06:49.400 --> 06:56.240
+nous avons en quelque sorte vu, utilisions ce test unitaire de déclenchement.mean
+
+06:56.240 --> 06:57.720
+si nous sommes dans notre contexte principal.
+
+07:02.800 --> 07:12.320
+Si vous ignorez cette partie, l'autre façon d'exécuter votre test unitaire
+
+07:12.320 --> 07:15.160
+est d'utiliser ce drapeau Python DeshM.
+
+07:15.160 --> 07:19.360
+N'oubliez pas que cela dit que Python exécute cette prochaine étape en tant que module.
+
+07:19.360 --> 07:22.120
+Et vous pouvez réussir au nom du test unitaire
+
+07:22.120 --> 07:25.760
+avec votre fichier de test.
+
+07:25.760 --> 07:27.480
+Et ça ira et fera la même chose,
+
+07:27.480 --> 07:34.120
+même si je n'ai jamais dit nulle part d'exécuter explicitement ces tests.
+
+07:34.120 --> 07:40.160
+Lorsque vous exécutez votre test unitaire avec un test unitaire dash em,
+
+07:40.160 --> 07:43.840
+vous pouvez aussi, cela doit être après le dash em.
+
+07:43.840 --> 07:47.240
+Vous pouvez fournir un indicateur Dash V.
+
+07:47.240 --> 07:51.800
+Et si nous regardons notre production maintenant,
+
+07:51.800 --> 07:54.400
+nous verrons que notre sortie était beaucoup plus verbeuse.
+
+07:54.440 --> 07:57.760
+Au lieu de dire, vous savez, un test a échoué.
+
+07:57.760 --> 08:01.400
+Maintenant, il nous montre de quel test il s’agissait et dans quelle classe il se trouvait.
+

@@ -1,0 +1,341 @@
+WEBVTT
+
+00:00.000 --> 00:07.000
+Salut tout le monde. Bienvenue dans Python pratique. Je m'appelle Nina Zacharenko et je suis votre instructrice aujourd'hui.
+
+00:07.000 --> 00:15.000
+Il s'agit d'un cours pratique et immersif sur Python qui nécessite un peu de connaissances préalables.
+
+00:15.000 --> 00:22.000
+Donc, pour vraiment réussir aujourd’hui, vous devez être à l’aise avec la ligne de commande. Vous n'êtes pas obligé d'être un pro.
+
+00:23.000 --> 00:32.000
+Et vous devriez en savoir un peu plus sur la programmation dans un autre langage. Comprenez donc les constructions de base comme les boucles et les variables.
+
+00:32.000 --> 00:36.000
+Et ce sont ces choses qui vous mettront sur la voie du succès.
+
+00:36.000 --> 00:49.000
+Si vous êtes un peu plus débutant, vous apprécierez peut-être le cours de deux jours que j'ai suivi l'année dernière pour les maîtres front-end, intitulé Introduction à Python et aux principes fondamentaux de Python.
+
+00:50.000 --> 01:02.000
+Maintenant, vous pourriez voir ce site Web de cours que j'ai ici. Vous pouvez le trouver sur Practical.learnpython.dev.
+
+01:02.000 --> 01:06.000
+Permettez-moi d'évoquer cette URL pendant une minute.
+
+01:06.000 --> 01:10.000
+Pratique.learnpython.dev.
+
+01:11.000 --> 01:28.000
+Maintenant, je vous recommande de ne pas vous contenter de suivre ce site Web. Ne lisez pas car nous allons avancer assez vite aujourd’hui.
+
+01:28.000 --> 01:33.000
+Et vous serez plus à l'aise si vous tapez avec moi.
+
+01:33.000 --> 01:45.000
+Donc, en tapant avec moi pendant que je tape, vous allez acquérir cette mémoire musculaire qui va vraiment aider ces connaissances à perdurer.
+
+01:45.000 --> 01:48.000
+Un peu de moi.
+
+01:48.000 --> 01:53.000
+Je m'appelle Nina Zackarenko et voyons ici.
+
+01:54.000 --> 02:00.000
+Je code tous ensemble depuis probablement une décennie maintenant.
+
+02:00.000 --> 02:04.000
+J'ai débuté en Java. C'est mon secret.
+
+02:04.000 --> 02:12.000
+Mais je me suis tourné vers Python il y a probablement environ six ans maintenant parce que j'aimais vraiment la communauté.
+
+02:12.000 --> 02:17.000
+Et j’ai trouvé que les bibliothèques et l’écosystème étaient vraiment incroyables.
+
+02:17.000 --> 02:23.000
+J'ai commencé à prendre la parole lors de conférences Python et j'en suis complètement tombé amoureux.
+
+02:23.000 --> 02:29.000
+Récemment, j'ai été élu au conseil d'administration de la fondation logicielle Python, ce qui est vraiment génial.
+
+02:29.000 --> 02:31.000
+Je peux faire beaucoup de bon travail.
+
+02:31.000 --> 02:36.000
+Et j'ai également écrit du code pour des sociétés comme Reddit, Meetup et HBO.
+
+02:36.000 --> 02:42.000
+Ces jours-ci, je suis l'un des principaux défenseurs du cloud chez Microsoft, en me concentrant sur Python.
+
+02:42.000 --> 02:48.000
+Si vous souhaitez rester en contact avec moi, je suis sur Twitter ou LinkedIn ou GitHub, tous les liens sont ici.
+
+02:48.000 --> 02:55.000
+Et puis j'ai également inclus des liens vers certaines des conférences les plus populaires que j'ai faites au fil des ans.
+
+02:55.000 --> 02:59.000
+Vous pouvez également retrouver mes autres cours sur le front et le master.
+
+02:59.000 --> 03:09.000
+L'un de mes favoris personnels est l'approfondissement ainsi que les principes fondamentaux de Python et le Python intermédiaire.
+
+03:09.000 --> 03:14.000
+Un peu sur la navigation dans le cours.
+
+03:14.000 --> 03:21.000
+Si vous voyez des fautes de frappe, ce que je n'ai pas fait car je suis parfait à 100%.
+
+03:21.000 --> 03:28.000
+Mais si vous repérez quelque chose qui, selon vous, ne devrait pas être là, il y a un lien Modifier cette page en haut de chaque page.
+
+03:28.000 --> 03:32.000
+Et cela vous mènera directement à GitHub où vous pourrez ouvrir une pull request.
+
+03:32.000 --> 03:37.000
+Il y a des flèches de navigation ici à gauche et à droite.
+
+03:37.000 --> 03:43.000
+Et vous pouvez également naviguer à l'aide de raccourcis clavier, ce qui est l'une de mes fonctionnalités préférées.
+
+03:43.000 --> 03:48.000
+Il y a des miettes de pain en haut à gauche ici pour chaque section.
+
+03:48.000 --> 03:53.000
+Et cela fera apparaître une table des matières ici.
+
+03:53.000 --> 03:58.000
+Certaines sections ressemblent à ceci avec des doubles flèches contenant du contenu supplémentaire.
+
+03:58.000 --> 04:01.000
+Vous pouvez donc simplement cliquer dessus et ce contenu se développera.
+
+04:02.000 --> 04:10.000
+Si vous souhaitez copier le code ou l'une des commandes, vous pouvez appuyer sur ce bouton ici et il sera copié dans le presse-papiers.
+
+04:10.000 --> 04:18.000
+Si nous travaillons dans le dépôt Python, par exemple, où se trouvent des caractères de contrôle supplémentaires qui seront affichés sur le site Web du cours,
+
+04:18.000 --> 04:22.000
+sachez qu'ils ne seront pas copiés.
+
+04:22.000 --> 04:25.000
+Vous pouvez effectuer une recherche dans cette zone de texte ici.
+
+04:25.000 --> 04:30.000
+Et au fur et à mesure que vous avancez dans le cours, vous verrez une petite case à cocher à côté de chaque chapitre.
+
+04:30.000 --> 04:35.000
+Vous pouvez continuer et effacer l’historique si vous trouvez cela distrayant.
+
+04:35.000 --> 04:42.000
+Et encore une fois, je suggère vraiment de me suivre en classe et de taper autant que possible.
+
+04:42.000 --> 04:48.000
+C'est une ressource à votre disposition car je sais que lorsque j'ai fini le cours, surtout quand c'est toute la journée,
+
+04:48.000 --> 04:50.000
+J'ai l'impression, oh, est-ce que j'ai appris quelque chose ?
+
+04:50.000 --> 04:52.000
+Je vais juste tout oublier.
+
+04:52.000 --> 04:54.000
+Donc c'est là pour vous pour après.
+
+04:54.000 --> 04:59.000
+C'est ici pour les exercices ou si vous avez besoin de revenir en arrière et de comprendre comment faire quelque chose.
+
+04:59.000 --> 05:01.000
+Mais je ne recommande pas de le lire.
+
+05:01.000 --> 05:04.000
+Je veux passer rapidement en revue le programme du cours.
+
+05:04.000 --> 05:08.000
+Je vais donc vous expliquer pourquoi Python.
+
+05:08.000 --> 05:10.000
+Pourquoi vous voudrez peut-être utiliser Python.
+
+05:10.000 --> 05:17.000
+Pourquoi vous voudrez peut-être choisir Python pour votre projet et parler un peu de certaines philosophies et principes de conception de Python.
+
+05:17.000 --> 05:20.000
+Ensuite, nous allons passer aux types de données.
+
+05:20.000 --> 05:22.000
+Python est un langage dynamique.
+
+05:22.000 --> 05:23.000
+Qu'est-ce que cela signifie?
+
+05:23.000 --> 05:28.000
+Nous allons apprendre à travailler avec des nombres, des chaînes, des listes, etc.
+
+05:28.000 --> 05:33.000
+Ensuite, nous allons passer à certains des types de données les plus avancés proposés par Python,
+
+05:33.000 --> 05:36.000
+et ce sont des ensembles, des tuples et des dictionnaires.
+
+05:36.000 --> 05:44.000
+Ce sont des objets conteneurs qui nous permettent d'organiser d'autres types d'objets de différentes manières dans d'autres types de structures de données.
+
+05:44.000 --> 05:49.000
+Ensuite, nous allons passer aux fonctions, aux boucles et à la logique.
+
+05:49.000 --> 05:54.000
+Les fonctions nous aident à organiser notre code de manière plus lisible et réutilisable,
+
+05:54.000 --> 05:57.000
+et ils acceptent les arguments et les valeurs par défaut selon les besoins.
+
+05:57.000 --> 06:02.000
+Et les boucles vont nous emmener, agissons sur des collections de différents éléments.
+
+06:02.000 --> 06:06.000
+La logique booléenne va nous permettre de contrôler le flux de notre programme.
+
+06:06.000 --> 06:11.000
+Nous allons aborder quelques applications pratiques de ce que nous avons appris jusqu'à présent,
+
+06:11.000 --> 06:16.000
+y compris l'utilisation de types de boucles avancés comme la compréhension de liste,
+
+06:16.000 --> 06:22.000
+la conversion entre différents types et Python, ce qui, je pense, est vraiment l'une de ses forces absolues.
+
+06:22.000 --> 06:26.000
+Et nous allons également expliquer comment travailler avec des fichiers.
+
+06:26.000 --> 06:33.000
+Le prochain sera Python orienté objet, ce qui nous permettra de représenter notre code d'une manière un peu différente.
+
+06:33.000 --> 06:39.000
+Nous pouvons définir des classes réutilisables et définir des relations entre différents objets,
+
+06:39.000 --> 06:42.000
+et créer du code modulaire et réutilisable.
+
+06:42.000 --> 06:45.000
+Nous allons également couvrir les bibliothèques et les modules.
+
+06:45.000 --> 06:49.000
+Alors maintenant que vous avez toutes les connaissances fondamentales sur le fonctionnement de Python,
+
+06:49.000 --> 06:53.000
+vous allez apprendre à structurer votre code et à travailler avec différentes bibliothèques,
+
+06:53.000 --> 06:57.000
+à la fois la bibliothèque standard et les packages tiers externes.
+
+06:57.000 --> 07:00.000
+Et puis dans le dernier chapitre, nous allons aborder les frameworks de bogues,
+
+07:00.000 --> 07:03.000
+et nous allons parler de Django en particulier.
+
+07:03.000 --> 07:08.000
+Nous allons donc mettre en pratique toutes nos nouvelles connaissances sur Python en créant un blog de base,
+
+07:08.000 --> 07:13.000
+une application Web de base avec quelques tests unitaires et une base de données.
+
+07:14.000 --> 07:20.000
+Cela va vous donner un excellent aperçu de tout ce qui est disponible en Python.
+
+07:20.000 --> 07:24.000
+Vous n'êtes peut-être pas un expert dans aucun de ces domaines à la fin de la journée,
+
+07:24.000 --> 07:31.000
+mais vous disposerez des outils nécessaires pour apprendre et découvrir davantage.
+
+07:31.000 --> 07:37.000
+Maintenant, il y a quelques prérequis pour suivre le cours.
+
+07:37.000 --> 07:41.000
+Vous devez disposer d'un ordinateur Linux Mac ou Windows 10.
+
+07:41.000 --> 07:46.000
+Si vous utilisez Windows 10, vous devez vous assurer que vous disposez des droits d'administrateur
+
+07:46.000 --> 07:49.000
+afin que vous puissiez exécuter vos programmes correctement.
+
+07:49.000 --> 07:52.000
+Nous allons travailler avec la dernière version de Python,
+
+07:52.000 --> 07:55.000
+qui est à ce jour Python 39.
+
+07:55.000 --> 08:01.000
+Nous allons utiliser Visual Studio Code et l'extension Python pour Visual Studio Code.
+
+08:02.000 --> 08:05.000
+Maintenant, beaucoup d’entre vous programment déjà.
+
+08:05.000 --> 08:07.000
+Vos environnements sont déjà configurés.
+
+08:07.000 --> 08:08.000
+Pourquoi VS Code ?
+
+08:08.000 --> 08:12.000
+Eh bien, je recommande que nous soyons tous dans le même environnement aujourd'hui,
+
+08:12.000 --> 08:15.000
+parce que si vous rencontrez des problèmes,
+
+08:15.000 --> 08:19.000
+cela va vraiment nous aider à dépanner et à comprendre ce qui ne va pas.
+
+08:19.000 --> 08:24.000
+Une fois que vous avez terminé le cours, n'hésitez pas à revenir à l'éditeur de votre choix.
+
+08:24.000 --> 08:28.000
+J'ai une section ici expliquant comment configurer VS Code avec différentes combinaisons de touches.
+
+08:28.000 --> 08:31.000
+Par exemple, j'utilise VS Code avec les raccourcis clavier Emacs,
+
+08:31.000 --> 08:36.000
+et vous pouvez les configurer ou les sublimer ou ce avec quoi vous êtes le plus à l'aise.
+
+08:36.000 --> 08:40.000
+J'apprécierais vraiment si nous étions tous dans le même environnement,
+
+08:40.000 --> 08:44.000
+et de cette façon, vous pouvez suivre les étapes et vous savez qu'il n'y a rien sur votre machine
+
+08:44.000 --> 08:48.000
+ou votre éditeur, cela va poser des problèmes.
+
+08:48.000 --> 08:52.000
+Je vais revoir les instructions de configuration pour Mac OS,
+
+08:52.000 --> 08:56.000
+parce que c'est ce que j'utilise, mais des instructions pour Windows sont également disponibles.
+
+08:56.000 --> 09:00.000
+Et puis je vais vous montrer rapidement comment configurer VS Code
+
+09:00.000 --> 09:02.000
+pour une productivité maximale et Python.
+
+09:02.000 --> 09:07.000
+Très bien, voici donc tout ce que vous auriez dû télécharger et configurer.
+
+09:07.000 --> 09:12.000
+Python 3 Visual Studio Code et l'extension Python pour Visual Studio Code.
+
+09:12.000 --> 09:15.000
+Si vous ne les avez pas configurés pour le moment,
+
+09:15.000 --> 09:19.000
+veuillez continuer et commencer à installer ces prérequis sur votre machine
+
+09:19.000 --> 09:21.000
+pendant que je continue à parler.
+

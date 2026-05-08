@@ -1,0 +1,383 @@
+WEBVTT
+
+00:00.000 --> 00:05.280
+Functions in Python are defined with that deaf keyword that we saw earlier.
+
+00:05.280 --> 00:10.800
+It's followed by a function name, which is a lowercase
+
+00:10.800 --> 00:15.360
+separated with underscores, and then parentheses that contain zero
+
+00:15.360 --> 00:18.800
+or more arguments and a colon.
+
+00:19.760 --> 00:26.800
+Everything that is indented after the function belongs to that function.
+
+00:26.880 --> 00:31.280
+So early on in the class, if you remember, we tried to
+
+00:31.280 --> 00:36.720
+from future import braces, and we got a no way error never going to happen.
+
+00:36.720 --> 00:38.480
+That was a little Easter egg.
+
+00:38.480 --> 00:43.520
+Other programming languages like JavaScript use curly braces to
+
+00:43.520 --> 00:46.880
+delineate where is the start and end of a function.
+
+00:47.760 --> 00:52.080
+Python does not have it. Instead, it relies on weight space.
+
+00:52.080 --> 00:55.920
+And so going forward as we start talking about functions,
+
+00:55.920 --> 00:59.840
+classes, if statements, you're going to have to be very mindful
+
+00:59.840 --> 01:03.360
+of how you use white space, because if things are not
+
+01:03.360 --> 01:07.360
+indented at the correct level, you're going to get syntax errors.
+
+01:10.160 --> 01:16.320
+If we try to create functions that are missing some of those core components,
+
+01:17.520 --> 01:25.040
+so if I try to create a function that does not have that colon,
+
+01:25.040 --> 01:27.200
+I'm going to get an invalid syntax.
+
+01:28.320 --> 01:32.400
+So, death, the name of the function, parentheses,
+
+01:32.400 --> 01:35.840
+colon, and we'll see the Ripple shows us a helpful hint.
+
+01:35.840 --> 01:39.680
+Once we have that colon, it's going to turn into dot, dot, dot,
+
+01:39.680 --> 01:43.520
+prompt to say, hey, I'm expecting more input here.
+
+01:44.400 --> 01:47.040
+In the Ripple, you can just hit a tab.
+
+01:47.120 --> 01:57.040
+When I hit enter again, the Ripple is going to say, hey, I'm still waiting for more input.
+
+01:57.040 --> 02:01.680
+If you're done defining your function at this point, you can just hit enter again
+
+02:01.680 --> 02:08.560
+to get back to that three arrow prompts that we saw earlier.
+
+02:08.560 --> 02:13.280
+And that means that the function has now been defined, and it means that I can call it.
+
+02:13.680 --> 02:21.280
+When we are writing Python files, this extra new line after the function,
+
+02:21.840 --> 02:28.160
+if you don't have it, it's not a syntax error, but pep 8 does state that you should have a new line
+
+02:28.160 --> 02:31.600
+after your function definitions, just for readability sake.
+
+02:32.800 --> 02:40.720
+You can save the output of calling a function into a variable.
+
+02:40.800 --> 02:47.360
+I would have to change my function a little bit, so I would have to change my function to actually
+
+02:47.360 --> 02:54.320
+return something, because if I see what is in greeting right now, it's actually going to be a
+
+02:54.320 --> 02:58.720
+null value. The function only printed something, it's not returning any values.
+
+02:58.880 --> 03:14.400
+So I can redefine my function and have it return a value instead of printing it.
+
+03:16.080 --> 03:22.160
+Now when I call my function, it should return the string high, and now I can save that to a variable.
+
+03:22.240 --> 03:32.880
+So return statements allow you to do stuff in the function and then pass those values back to the
+
+03:32.880 --> 03:39.680
+color. You can return whatever you like. If you're going to be returning more than one value,
+
+03:39.680 --> 03:49.280
+you can use it to pull. Now, pretty straightforward calling functions with no arguments.
+
+03:49.280 --> 03:52.960
+How do we start making functions that do accept arguments?
+
+04:00.320 --> 04:05.120
+We define what arguments we want to accept by separating them with commas,
+
+04:05.680 --> 04:10.000
+separating the names that we expect them to be with commas in deeper emphasis.
+
+04:10.240 --> 04:16.080
+And then we can use them in our function.
+
+04:27.680 --> 04:34.320
+If we wanted to store the value of this, that would be pretty straightforward.
+
+04:34.800 --> 04:49.520
+Now result is an integer with 30. We can also have optional arguments and provide a default value for them.
+
+04:50.000 --> 05:12.080
+So you would not want to write a function like this in production. Your co-workers would be mad at you.
+
+05:12.080 --> 05:17.120
+It is a mystery function that does some weird stuff. But just for the sake of example,
+
+05:17.600 --> 05:24.880
+now I can still add my numbers. Let's say 35. I'm actually going to get nine
+
+05:26.000 --> 05:34.400
+because there is this default value in z that is one. But I can also pass in my own value for it.
+
+05:38.480 --> 05:44.720
+These arguments must be provided because they don't have defaults, providing these arguments is optional.
+
+05:45.280 --> 05:49.200
+And they need to be in this specific order.
+
+05:49.200 --> 05:55.280
+Required arguments need to be defined first. Optional arguments need to be defined last.
+
+05:55.280 --> 05:58.560
+If you mix up the order of these, you're going to get errors.
+
+06:07.600 --> 06:12.720
+And it's pretty helpful error. It's a syntax error, not non-default argument,
+
+06:12.720 --> 06:24.880
+follows default argument. One more thing about functions is that here we define them
+
+06:24.880 --> 06:32.320
+exactly in the order of the, as they were defined in the function. If you provided labels for these,
+
+06:32.320 --> 06:37.520
+when you call the function, you can pass, you can pass those in in any order you would like.
+
+06:37.520 --> 06:48.560
+So looking at the add numbers function here, I could call add numbers one two and three.
+
+06:49.920 --> 07:02.240
+Or I could say that y equals one z equals two and x equals three. And because I've helped
+
+07:02.240 --> 07:08.320
+Python out and told it, hey, I'm not calling these in order, but I am giving you the labels.
+
+07:08.320 --> 07:14.960
+It's able to figure out what your intent was. Does that make sense?
+
+07:17.040 --> 07:28.160
+Okay, cool. Now, we talked about default arguments. We talked about order.
+
+07:28.240 --> 07:38.560
+Um, if we try to call a function without all of its default arguments, we're going to get
+
+07:39.200 --> 07:47.600
+an exception. So for add numbers, I have two arguments that need to have values x and y.
+
+07:48.400 --> 07:54.080
+If I try to call this function with only one value, I'm going to get a pretty helpful error.
+
+07:54.640 --> 08:00.640
+It's a type error. It says add numbers is missing one required positional argument of y.
+
+08:01.920 --> 08:08.000
+Right? Because I passed an value for this, but not for this. And Python doesn't have a default
+
+08:08.000 --> 08:10.480
+value for it. Doesn't know what to do.
+
+08:15.280 --> 08:23.840
+If you have arguments that have default values for everything, you can then pass in none of them.
+
+08:24.320 --> 08:33.040
+Or some of them. Or all of them. You can mix and match. So we saw we had a create query method.
+
+08:35.040 --> 08:42.240
+And I can say that the language is JavaScript by default. And the number of stars is
+
+08:44.000 --> 08:48.560
+10 by default. And the sort order is descending by default.
+
+08:48.720 --> 09:02.400
+And this is just going to return an epsilon. That says our language is language and
+
+09:03.200 --> 09:09.840
+numbers stars is numbers stars and sort is sort.
+
+09:10.080 --> 09:21.600
+Now when I call this with no arguments, I get JavaScript. Or I can just provide the language
+
+09:25.200 --> 09:35.680
+or I can just provide the number of stars or any mix of them. So these default
+
+09:35.680 --> 09:45.200
+arguments are very, very helpful. One thing I want to cover before we move on from arguments is
+
+09:46.480 --> 09:55.760
+something that trips up beginners and Python quite a bit. Don't use mutable types as default
+
+09:55.840 --> 09:59.520
+arguments. They don't behave the way that you expect.
+
+10:06.720 --> 10:14.960
+So if I have a function and I want to have a default argument with a list.
+
+10:15.840 --> 10:32.480
+And say, a pen this string to my list. When I call it, when I call this function the first time,
+
+10:33.760 --> 10:39.840
+oops. Sorry, I want to go ahead and return that.
+
+10:40.080 --> 10:47.920
+So that we can actually see what happens. When I call it for the first time,
+
+10:51.040 --> 10:57.280
+it does the right thing. When I call it a second time, there's now two instances of stuff in this
+
+10:57.280 --> 11:07.120
+list and then three and then four. Do now use mutable arguments for defaults because the
+
+11:07.120 --> 11:13.840
+way that Python works under the hood is these get declared once. So with you do this,
+
+11:13.840 --> 11:20.160
+you are going to continue using that very same instance of my list. Every time you call that function,
+
+11:20.160 --> 11:28.800
+even though that is not what you intended to do. So this is the source of a lot of subtle
+
+11:28.800 --> 11:37.280
+bugs for beginners. So remember, no mutable default arguments. The way that you would want to do this
+
+11:37.280 --> 11:51.120
+instead is to have a have a placeholder here where you're using a non-value as a placeholder.
+
+11:53.520 --> 11:58.000
+And I'm going to introduce some concepts we haven't talked about yet, but then you can just say
+
+11:58.080 --> 12:07.200
+if I've passed an a list, then use it otherwise you can say, if not my list, which means
+
+12:08.640 --> 12:18.880
+if it's, if it's, I'm sorry, you want to say, if my list is equal to none, then make a new list
+
+12:19.920 --> 12:23.440
+here and then append to it.
+
+12:28.000 --> 12:38.960
+Now, when I call do stuff, it's going to do the right thing each time because I took care of
+
+12:38.960 --> 12:45.440
+creating the list in this function. I did not pass in an empty list as a keyboard argument.
+
+12:46.160 --> 12:49.920
+Wanted only append stuff in the case where my list isn't the file?
+
+12:50.960 --> 12:55.360
+Yes. Yeah, just a silly little example.
+
+12:58.320 --> 13:06.640
+So, right, I would want to move this over one to the left so that this example worked
+
+13:07.360 --> 13:14.080
+when I did pass in a list to start with. Good catch, thank you.
+
+13:16.400 --> 13:24.320
+Cool. So, these are arguments and I want to talk about scope a little bit.
+
+13:25.120 --> 13:32.320
+There is scope inside of a function. So, I'm going to exit my
+
+13:32.320 --> 13:37.840
+Ripple and start it from scratch to clear out everything that I might have defined already.
+
+13:41.040 --> 13:48.080
+If I have a function that takes a name and prints it,
+
+13:54.880 --> 14:02.320
+I cannot access this name variable outside of the function, outside of this
+
+14:02.320 --> 14:08.240
+indented zone because the name is only defined inside of the function.
+
+14:08.240 --> 14:16.880
+Once the function exits, that variable doesn't exist. So, Python scope works pretty similar to
+
+14:16.880 --> 14:20.400
+scope and other languages. This is something you want to be mindful of.
+
+14:24.640 --> 14:32.720
+You want to be very careful when you're using variables inside of a function that are defined
+
+14:32.720 --> 14:41.360
+outside of it because if you try to change the value of that variable inside of the function,
+
+14:41.360 --> 14:46.400
+the value is only going to apply for that scope. When your function exits,
+
+14:47.120 --> 14:53.360
+you're not actually going to be able to modify the value of the variable defined
+
+14:53.360 --> 14:58.720
+outside of the function. This can result in some weird subtle bugs. So, here's an example.
+
+14:59.040 --> 15:08.480
+And I can say prints out the name outside of the function.
+
+15:13.280 --> 15:17.520
+And then I'm going to make a method that says try to change the name.
+
+15:20.240 --> 15:22.800
+And I'm going to say that name in the function is max
+
+15:22.880 --> 15:35.840
+and print out names inside of the function.
+
+15:36.480 --> 15:57.760
+Now, if I call this method, try change name. The name inside of the function is max,
+
+15:58.400 --> 16:07.280
+but the name outside of the function is still Nina. So, don't try to change variables in a
+
+16:07.280 --> 16:15.200
+function that were declared outside of it. You will have access to them, which can be helpful
+
+16:15.200 --> 16:21.520
+if you have like a global variable defined that is like a URL or something that's static,
+
+16:21.520 --> 16:26.640
+that's not going to change, but don't try to update it. You're going to end up with some weird
+
+16:26.640 --> 16:39.040
+scopeing issues. And so, a use case for using a variable in a function that's decided to
+
+16:39.040 --> 16:45.280
+find outside of it is a constant. And to delineate that it's a constant, in that case,
+
+16:45.280 --> 16:53.920
+you can name it with all uppercase characters split with a underscore. And that's just
+
+16:53.920 --> 16:59.520
+convention. It doesn't mean that there's anything different about that variable.
+
+16:59.520 --> 17:05.600
+It's just named a little bit differently in order to signify something to the readers of the program.
+

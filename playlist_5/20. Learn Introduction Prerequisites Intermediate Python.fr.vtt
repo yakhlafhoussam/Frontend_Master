@@ -1,0 +1,146 @@
+WEBVTT
+
+00:00.000 --> 00:13.000
+Tout comme nous avons utilisé deer et help et tapé sur le repel, il existe également quelques méthodes très utiles associées aux instances et aux classes.
+
+00:14.000 --> 00:21.000
+Nous pouvons donc vérifier le type, comme nous l'avons fait, donc cars.car, c'est un type.
+
+00:22.000 --> 00:34.000
+Le type de ma Subaru, c'est le type, c'est cette classe elle-même, n'est-ce pas ?
+
+00:35.000 --> 00:42.000
+Donc, tout comme nous l’avons fait avec int, le type de int est un type de classe.
+
+00:42.000 --> 00:48.000
+Le type d’une instance de int est la classe elle-même.
+
+00:48.000 --> 00:57.000
+Il existe une méthode intégrée appelée is instance pour nous aider à répondre à la question de savoir si cette instance particulière de ce type particulier.
+
+00:57.000 --> 01:01.000
+C'est donc simplement intégré, vous n'avez pas besoin de l'importer de quelque manière que ce soit.
+
+01:01.000 --> 01:05.000
+Quelque part, je peux demander, l'instance 42 est-elle de type int ?
+
+01:05.000 --> 01:07.000
+Je vais devenir vrai.
+
+01:07.000 --> 01:10.000
+Est-ce une instance de Hello Worlds ?
+
+01:10.000 --> 01:13.000
+Est-ce une chaîne ?
+
+01:13.000 --> 01:15.000
+Oui.
+
+01:15.000 --> 01:20.000
+L'instance 42 est-elle une chaîne ?
+
+01:20.000 --> 01:23.000
+Non, ce n'est pas le cas.
+
+01:23.000 --> 01:31.000
+C'est par exemple ma Subaru, et int.
+
+01:31.000 --> 01:32.000
+Non.
+
+01:32.000 --> 01:42.000
+Si je demande par exemple ma voiture Subaru, c'est vrai, non ?
+
+01:42.000 --> 01:46.000
+Nous l’avons vu plus tôt lorsque nous avons examiné les types.
+
+01:47.000 --> 01:52.000
+Juste une sorte de fait intéressant et amusant ici.
+
+01:52.000 --> 01:56.000
+Ne l'utilisez pas dans le code de production.
+
+01:56.000 --> 02:09.000
+Si je vérifie l'instance d'un booléen à l'intérieur, je verrai vrai.
+
+02:09.000 --> 02:17.000
+Nous avons donc expliqué à quel point la valeur booléenne de véracité de zéro est fausse.
+
+02:17.000 --> 02:22.000
+La valeur de véracité de tout nombre sauf zéro est vraie.
+
+02:22.000 --> 02:28.000
+Les booléens ont été ajoutés en Python plus tard après les entiers.
+
+02:28.000 --> 02:34.000
+Et ils voulaient en quelque sorte s’assurer que cette nouvelle fonctionnalité linguistique minimise les perturbations.
+
+02:34.000 --> 02:40.000
+Les booléens en sont donc une sous-classe.
+
+02:40.000 --> 02:44.000
+Et encore une fois, ne fais pas ça.
+
+02:44.000 --> 02:47.000
+Mais vous pouvez les additionner.
+
+02:47.000 --> 02:51.000
+Ce n'est pas une erreur de syntaxe.
+
+02:51.000 --> 02:56.000
+C'est donc nécessaire, c'est pourquoi si vous avez un ensemble et que vous avez zéro, un vrai faux.
+
+02:56.000 --> 03:02.000
+En fait, vous n'obtenez que zéro et un car ce sont des doublons.
+
+03:02.000 --> 03:03.000
+Oups.
+
+03:03.000 --> 03:10.000
+Ce n'est pas ce que je voulais faire.
+
+03:10.000 --> 03:13.000
+Ne faites pas cela dans le code de production.
+
+03:13.000 --> 03:18.000
+C'est plutôt mauvais.
+
+03:18.000 --> 03:21.000
+Un endroit où vous pourriez trouver cela un peu utile.
+
+03:21.000 --> 03:25.000
+Ce n'est pas dans le site Web du cours juste pour m'éloigner un peu.
+
+03:25.000 --> 03:31.000
+Il existe deux méthodes vraiment utiles appelées all et any.
+
+03:31.000 --> 03:43.000
+Ainsi, vous pouvez transmettre une liste et elle dira si l'une de ces valeurs est véridique.
+
+03:43.000 --> 03:45.000
+Et c'est vraiment bizarre, non ?
+
+03:45.000 --> 03:46.000
+C'est un peu difficile à lire.
+
+03:46.000 --> 03:52.000
+J'ai même du mal à me rappeler que le négatif est vrai en Python, n'est-ce pas ?
+
+03:52.000 --> 04:00.000
+Donc la meilleure façon de procéder serait, vous savez, d’utiliser la vraie, la vraie, la fausse vérité.
+
+04:00.000 --> 04:05.000
+Et puis vous pouvez dire si tout cela est vrai.
+
+04:05.000 --> 04:10.000
+Vous pouvez également utiliser all et demander si tout cela est vrai et vous obtiendrez faux.
+
+04:10.000 --> 04:15.000
+Bref, petit fait intéressant.
+
+04:15.000 --> 04:26.000
+Et tout en Python est une sous-classe de ce type de type intégré supérieur que nous n'utilisons pas vraiment appelé objet.
+
+04:26.000 --> 04:36.000
+Donc des chaînes entières, des booléens sous la tête, ce sont tous des objets.
+

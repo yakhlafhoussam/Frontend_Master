@@ -1,0 +1,137 @@
+WEBVTT
+
+00:00.000 --> 00:10.160
+Il existe une valeur spéciale en Python pour none ou null, ce qui signifie aucune valeur, et qui a pour
+
+00:10.160 --> 00:16.840
+mot-clé spécial aucun. Si vous voyez, si je le tape dans le dépôt, je n'obtiens aucun résultat,
+
+00:16.840 --> 00:23.880
+ce qui, quand on y pense, a du sens, non ? Si j'essaie d'utiliser une variable qui
+
+00:23.880 --> 00:31.520
+Je n'ai pas du tout défini dans ma session, j'obtiendrai une erreur de nom indiquant le nom
+
+00:31.520 --> 00:38.800
+au revoir n'est pas défini. Mais si je veux avoir une variable d'espace réservé, je peux continuer et
+
+00:38.800 --> 00:45.360
+dire qu'au revoir est égal au mot clé none avec un N majuscule, et ensuite c'est défini
+
+00:45.360 --> 00:52.520
+dans le cadre de mon programme, même s'il n'a pas de valeur.
+
+00:52.520 --> 00:58.520
+Maintenant, il existe trois méthodes utiles dans le dépôt que vous allez utiliser toutes
+
+00:58.520 --> 01:02.880
+le temps. Donc, si vous avez un post-it à portée de main pour les choses que vous souhaitez retirer
+
+01:02.880 --> 01:11.280
+ce cours, je recommande d'écrire ces trois-là. Je les utilise tout le temps, jour après jour.
+
+01:11.280 --> 01:27.880
+Et voilà, nous avons de l'aide, tapez, et là.
+
+01:27.880 --> 01:34.600
+Maintenant, le premier va nous dire quel est le type d’une variable. Donc si j'ai un numéro
+
+01:34.600 --> 01:47.560
+ici, je peux transmettre cela dans la méthode intégrée au type, et cela renverra la classe.
+
+01:47.560 --> 01:55.520
+Je peux également transmettre une valeur. Donc, si vous n'êtes pas sûr du type de quelque chose
+
+01:55.520 --> 02:00.480
+c'est-à-dire que soit pendant que vous êtes dans le dépôt, soit en tant que code en cours d'exécution, vous pouvez le comprendre
+
+02:00.480 --> 02:14.280
+de cette façon. Essayons ceci avec la chaîne E. Que verrai-je à mon retour, quand je demanderai
+
+02:14.280 --> 02:24.400
+pour le type de nom, qui a été construit en classe ? Remuer. Oui, c'est tout à fait vrai.
+
+02:24.400 --> 02:33.160
+Maintenant que nous connaissons le type des objets, nous pouvons passer à d’autres méthodes. Stands DERS
+
+02:33.160 --> 02:38.640
+pour répertoire, ce qui signifie, montre-moi le répertoire de toutes les méthodes disponibles
+
+02:38.640 --> 02:48.040
+pour ce genre. Et je veux appeler DERS sur le type, pas sur le nom de la variable ou la valeur
+
+02:48.040 --> 02:53.800
+de la variable, mais sur le type lui-même. Donc dans ce cas, je peux demander le DERS de
+
+02:53.840 --> 02:59.280
+grappe. Parce que rappelez-vous, si je tape Stir dans mon dépôt ici, je verrai cluster. C'est
+
+02:59.280 --> 03:06.360
+un type intégré. Je n'ai pas besoin de le définir. Alors quand je tape DERS de Stir, je verrai tout
+
+03:06.360 --> 03:12.280
+des méthodes disponibles sur les chaînes. Vous pouvez, pour la plupart, ignorer tout
+
+03:12.280 --> 03:17.720
+ceux qui ont les doubles traits de soulignement. Ce sont des méthodes internes qui ne sont pas destinées à
+
+03:17.720 --> 03:22.760
+être utilisé. Et si vous jetez un œil aux autres, vous en verrez quelques-uns vraiment utiles.
+
+03:22.760 --> 03:30.800
+Genre, alpha signifie-t-il ? La chaîne ne contient-elle que des caractères et non des chiffres ? Il y a
+
+03:30.800 --> 03:41.200
+une méthode split pour diviser une chaîne en jetons. Il existe une méthode de titre pour la casse du titre
+
+03:41.200 --> 03:49.440
+quelque chose. C'est ainsi que vous pouvez voir très rapidement ce qui est disponible sur le type
+
+03:49.520 --> 03:57.360
+avec lequel je travaille. Maintenant, le dernier est super génial. Parce qu'il vous permet de voir la documentation
+
+03:57.360 --> 04:02.560
+pour Python directement dans votre dépôt sans avoir à ouvrir un navigateur, déterminez quelle version
+
+04:02.560 --> 04:09.520
+vous recherchez, naviguez et recherchez. Et c'est une aide. Donc, avec de l'aide, vous voulez aussi
+
+04:09.520 --> 04:18.520
+réussir dans une classe. Donc, si je tape help pour Stir, cela va m'ouvrir cette interface.
+
+04:19.320 --> 04:28.520
+Je peux appuyer sur espace pour faire défiler vers le bas ou appuyer sur Q pour quitter. Et c'est pour Linux et Mac
+
+04:28.520 --> 04:34.360
+systèmes. Et je serais quelque chose de différent sous Windows. Cela fait donc beaucoup de choses. Ce n'est pas
+
+04:34.360 --> 04:43.160
+très utile. Au lieu de cela, je trouve utile d'appeler de l'aide sur une méthode particulière. Et je peux faire ça
+
+04:43.240 --> 04:52.120
+en disant un point puis en choisissant l'un d'entre eux. Et cela affiche simplement l'aide pour cela
+
+04:52.120 --> 04:59.800
+méthode spécifique. Et cela me montre également quels arguments cette méthode attend. Alors, alpha renvoie vrai
+
+04:59.800 --> 05:05.800
+si la chaîne est une extraction alphabétique fausse sinon ? Si jamais tu n'es pas sûr, genre, oh, je ne le sais pas
+
+05:05.800 --> 05:10.440
+je me souviens du nom de cette méthode ou je ne me souviens pas de ce que cela fait ou je ne me souviens pas de quoi
+
+05:10.440 --> 05:17.560
+arguments que cela accepte. Vous pouvez toujours demander de l’aide. Et je crois que tu peux appeler de l'aide
+
+05:17.560 --> 05:30.920
+sur les valeurs également. Peut-être pas. Essayons ceci. Ouais. Donc Dirt est, euh, oh, désolé. Ce n'est pas ce que je voulais.
+
+05:31.400 --> 05:40.440
+J'ai un fichier nommé I. Ouais. Donc, euh, pour obtenir de l'aide, vous voulez aussi vous assurer que vous réussissez
+
+05:40.440 --> 05:48.120
+dans la classe et non, comme, un nom de variable ou une valeur. Assurez-vous de vous souvenir de ces trois
+
+05:48.120 --> 05:50.840
+commandes et vous ne vous retrouverez pas trop perdu.
+

@@ -1,0 +1,341 @@
+WEBVTT
+
+00:00.000 --> 00:03.360
+There are a few different frameworks for writing them in Python.
+
+00:03.360 --> 00:04.840
+They're all pretty similar.
+
+00:04.840 --> 00:08.640
+We're going to focus on the one that comes with the standard library.
+
+00:08.640 --> 00:12.280
+It's a pretty easy term number.
+
+00:12.280 --> 00:14.480
+It's called unit test.
+
+00:14.480 --> 00:20.080
+Unit test is both a framework for writing tests as well as a test runner.
+
+00:20.080 --> 00:24.320
+It means that you can meaning that you can use it to execute your tests
+
+00:24.320 --> 00:27.520
+and return the results as well.
+
+00:27.520 --> 00:32.800
+In order to write unit tests using this standard library,
+
+00:32.800 --> 00:36.200
+we need to write our test as methods within a class.
+
+00:36.200 --> 00:42.640
+And we need to use a series of assertions that come
+
+00:42.640 --> 00:49.920
+in this unit test library, not using the assert keyword.
+
+00:49.920 --> 00:54.280
+OK, let's make a file here.
+
+00:54.280 --> 00:59.280
+I'm going to call it multiply.py.
+
+00:59.280 --> 01:02.080
+I'm just going to call it multiply.py.
+
+01:02.080 --> 01:05.680
+Keep me firm on having more typo errors.
+
+01:05.680 --> 01:09.160
+And I'm going to define a function here called multiply.
+
+01:09.160 --> 01:19.680
+I'm going to take an x and a y, and it's going to return x times y.
+
+01:19.680 --> 01:22.760
+OK, fair enough.
+
+01:22.800 --> 01:27.880
+Now, let's write a test case for it.
+
+01:27.880 --> 01:31.880
+Usually, these tests are in a separate file,
+
+01:31.880 --> 01:36.520
+usually for larger projects in a separate module called tests
+
+01:36.520 --> 01:40.080
+so that you can cleanly break them up from your code base.
+
+01:40.080 --> 01:44.000
+But for this example, just going to put them right in this file.
+
+01:44.000 --> 01:49.200
+So I'll say usually tests live in a test file or module.
+
+01:53.720 --> 01:56.600
+Not in line.
+
+01:56.600 --> 01:59.320
+And again, usually imports live at the top of the file,
+
+01:59.320 --> 02:04.160
+but we're spending our disbelief here.
+
+02:04.160 --> 02:08.760
+So I'm going to import the unit test library
+
+02:08.760 --> 02:10.520
+and close my terminal there.
+
+02:13.800 --> 02:19.320
+I'm going to import it at the top here,
+
+02:19.320 --> 02:23.280
+because it's driving my nitpicking as crazy.
+
+02:23.280 --> 02:32.280
+So we need to write our tests in a separate class.
+
+02:32.280 --> 02:35.920
+And I'm going to call this class test multiply.
+
+02:35.920 --> 02:37.960
+Calling it test multiply doesn't actually
+
+02:37.960 --> 02:40.160
+make a unit test class.
+
+02:40.160 --> 02:45.000
+In order to do that, we need to subclass for unit test.taskase.
+
+02:45.000 --> 02:51.160
+That signifies that this class contains
+
+02:51.160 --> 02:54.040
+a collection of unit tests.
+
+02:54.040 --> 02:57.640
+Now let's write our very first unit test.
+
+02:57.640 --> 03:03.240
+Your unit test methods need to start with test underscore
+
+03:03.240 --> 03:04.120
+or they won't run.
+
+03:04.120 --> 03:06.760
+They won't be picked up.
+
+03:06.760 --> 03:10.080
+And we're going to pass in self here.
+
+03:10.080 --> 03:12.640
+And I'm going to say the test value for x is 5
+
+03:12.640 --> 03:17.880
+and the test value for y is 10.
+
+03:17.880 --> 03:22.720
+And we want to use the assertions provided to us
+
+03:22.720 --> 03:29.040
+by the unit test class here.
+
+03:29.040 --> 03:31.160
+To find the fullest of assertions,
+
+03:31.160 --> 03:33.240
+take a look at the Python documentation.
+
+03:33.240 --> 03:36.400
+I'll make sure that there's a link to it in the class website.
+
+03:36.400 --> 03:39.200
+But until then, there's a few standard ones.
+
+03:39.200 --> 03:40.560
+And if you're using VS code,
+
+03:40.560 --> 03:42.640
+and you're interpreter set up correctly,
+
+03:42.640 --> 03:44.880
+you'll actually get some helpful hints here.
+
+03:44.880 --> 03:48.720
+They all start with a serve, which is great.
+
+03:48.720 --> 03:54.520
+If I want to test assert equal, I can even hit the...
+
+03:56.880 --> 04:00.560
+If I call it without arguments, VS code will give me
+
+04:00.560 --> 04:02.320
+the little pop up.
+
+04:02.320 --> 04:06.720
+And it's going to tell me that what the arguments are
+
+04:06.720 --> 04:12.000
+first, second, message is an optional parameter here
+
+04:12.000 --> 04:14.320
+that we can pass in if we want to have our own custom error
+
+04:14.320 --> 04:18.280
+message when this fails.
+
+04:18.280 --> 04:22.040
+And we want to fail if the two objects are unequal,
+
+04:22.040 --> 04:26.160
+as determined by the equals operator, OK?
+
+04:26.160 --> 04:34.440
+So we're going to call multiply with our test x
+
+04:34.440 --> 04:36.400
+and our test y.
+
+04:36.400 --> 04:42.400
+And this should equal 50, right?
+
+04:46.320 --> 04:48.680
+If we just have a few simple unit tests,
+
+04:48.680 --> 04:51.240
+we don't care about having something called a test runner.
+
+04:51.240 --> 04:55.840
+The test runner helps you discover tests and multiple directories.
+
+04:55.840 --> 05:01.080
+So I can just say, if dendername is equal to dendermame,
+
+05:01.080 --> 05:02.840
+put in some code in a main method here.
+
+05:02.840 --> 05:05.360
+So if I run this multiply, or multiply,
+
+05:05.360 --> 05:17.040
+p-i-f-o-directly, I want to call the unit test.mean method, OK?
+
+05:17.040 --> 05:20.240
+And let's run this.
+
+05:20.240 --> 05:23.600
+We'll see that it ran one test and the test was OK.
+
+05:27.000 --> 05:31.880
+Let's introduce a bug into our code.
+
+05:31.880 --> 05:36.600
+I'm going to change our multiply method to do addition instead.
+
+05:36.600 --> 05:42.360
+Now when I run this test, or run this file that has our test in it,
+
+05:42.360 --> 05:44.320
+it's going to say failed.
+
+05:44.320 --> 05:47.680
+And the failures were one failure, ran one test,
+
+05:47.680 --> 05:48.600
+and failed one test.
+
+05:53.880 --> 05:59.880
+If I provided a custom error message here,
+
+05:59.880 --> 06:09.120
+that optional argument should see a little bit more information there.
+
+06:09.120 --> 06:10.640
+So we got in this search in error.
+
+06:10.640 --> 06:14.440
+15 was not equal to 50, should be 50, right?
+
+06:14.440 --> 06:18.480
+So this will help us catch bugs in our code.
+
+06:18.480 --> 06:21.480
+A few important concepts here, test case,
+
+06:21.480 --> 06:24.280
+that the class must be a subclass.
+
+06:24.280 --> 06:28.600
+Your own test case must be a subclass
+
+06:28.600 --> 06:30.760
+of unit test.test case.
+
+06:30.760 --> 06:34.480
+The names of your functions must begin with test.
+
+06:34.480 --> 06:37.720
+And because these tests usually
+
+06:37.720 --> 06:41.240
+live in a separate test file or module, not in line,
+
+06:41.240 --> 06:43.400
+don't forget to import the code that you want to test.
+
+06:46.360 --> 06:49.400
+OK, so running the test, one common way of doing it,
+
+06:49.400 --> 06:56.240
+we kind of saw, was using this triggering unit test.mean
+
+06:56.240 --> 06:57.720
+if we're in our main context.
+
+07:02.800 --> 07:12.320
+If you skip this part, the other way to run your unit test
+
+07:12.320 --> 07:15.160
+is to use that Python DeshM flag.
+
+07:15.160 --> 07:19.360
+Remember that says Python run this next thing as a module.
+
+07:19.360 --> 07:22.120
+And you can pass in the name of unit test
+
+07:22.120 --> 07:25.760
+along with your test file.
+
+07:25.760 --> 07:27.480
+And it'll go and do the same thing,
+
+07:27.480 --> 07:34.120
+even though I never said anywhere to explicitly run these tests.
+
+07:34.120 --> 07:40.160
+When you're running your unit test with a dash em unit test,
+
+07:40.160 --> 07:43.840
+you can also, it has to be after the dash em.
+
+07:43.840 --> 07:47.240
+You can provide a dash V flag.
+
+07:47.240 --> 07:51.800
+And if we look at our output now,
+
+07:51.800 --> 07:54.400
+we'll see that our output was a lot more verbose.
+
+07:54.440 --> 07:57.760
+Instead of saying, you know, one test failed.
+
+07:57.760 --> 08:01.400
+Now it shows us which test it was and which class it was in.
+

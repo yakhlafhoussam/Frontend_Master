@@ -1,0 +1,233 @@
+WEBVTT
+
+00:00.000 --> 00:02.000
+Here's what we want to try to solve first.
+
+00:02.000 --> 00:05.000
+When you go to a new form, what do we typically want to do?
+
+00:05.000 --> 00:08.000
+We want to autofocus on the first text input.
+
+00:08.000 --> 00:09.000
+That's fairly common.
+
+00:09.000 --> 00:13.000
+But the question, of course, is how do we actually do that thing?
+
+00:13.000 --> 00:16.000
+And so typically what you might do is you might throw an autofocus on the development.
+
+00:16.000 --> 00:21.000
+That sometimes works, but then we know that with JavaScript loading and stuff, things get a little bit funky.
+
+00:21.000 --> 00:25.000
+So what we're going to learn right now is to how to actually add autofocus to forms
+
+00:25.000 --> 00:27.000
+in a way that is consistent and works.
+
+00:27.000 --> 00:30.000
+What we want is the name to be the first thing that we focus on.
+
+00:30.000 --> 00:35.000
+And so the thing about reactive references is that they work both in the data context
+
+00:35.000 --> 00:37.000
+and they work in the template context.
+
+00:37.000 --> 00:41.000
+So in other words, if we want an actual HTML element to be a reference,
+
+00:41.000 --> 00:44.000
+we just tell it what the reference is going to be called.
+
+00:44.000 --> 00:50.000
+So in this case, I usually like to preface any element that's going to be an actual element with EL.
+
+00:50.000 --> 00:52.000
+So this is kind of back to the jQuery days.
+
+00:52.000 --> 00:54.000
+We might preface it with a dollar symbol.
+
+00:54.000 --> 00:56.000
+I just prefer to keep it consistent that way.
+
+00:56.000 --> 00:59.000
+And then I'll call this like name input, for example.
+
+00:59.000 --> 01:04.000
+And the way this works is up here inside of our reactive data, though, we do need to define it, though.
+
+01:04.000 --> 01:05.000
+And how do we define that?
+
+01:05.000 --> 01:08.000
+Well, we have this element called name input.
+
+01:08.000 --> 01:11.000
+And it's going to be a reactive reference just like the reference in the template.
+
+01:11.000 --> 01:16.000
+But we can actually tell it that it's going to be an HTML input element.
+
+01:16.000 --> 01:20.000
+Or we can say it's, I think, null is the one that's typically an option.
+
+01:20.000 --> 01:21.000
+Because here's the thing.
+
+01:21.000 --> 01:24.000
+When JavaScript is loading, this thing does not exist.
+
+01:24.000 --> 01:26.000
+So it has to be able to be null.
+
+01:26.000 --> 01:31.000
+However, we do know once it's loaded, it will basically put an input element in there.
+
+01:31.000 --> 01:35.000
+And so that's why believe it or not, that's all it takes for this thing to exist.
+
+01:35.000 --> 01:43.000
+So if I log right now, log, whoops, that was a wrong name input, save it.
+
+01:43.000 --> 01:51.000
+So you'll see that if I go to the new page, you'll see that it's already fetching that input automatically.
+
+01:51.000 --> 01:56.000
+I don't have to go on-mounted, check to see if that element exists, assign it to the rough,
+
+01:56.000 --> 01:59.000
+like that's just it's there, it works.
+
+01:59.000 --> 02:02.000
+And that's kind of a little bit of the magic sprinkling that view does for us,
+
+02:02.000 --> 02:05.000
+by assigning that rough to here.
+
+02:05.000 --> 02:07.000
+So it looks to map those two things.
+
+02:07.000 --> 02:10.000
+So that's a key thing to understand.
+
+02:10.000 --> 02:12.000
+Okay, now that we have this, we can say,
+
+02:12.000 --> 02:14.000
+when everything has been mounted properly,
+
+02:14.000 --> 02:19.000
+so we'll call our on-mounted lifecycle hook, there we go.
+
+02:19.000 --> 02:23.000
+So when you have it mounted, what your initial thought is probably going to say,
+
+02:23.000 --> 02:26.000
+okay, well, I have a name input and I'm just going to run focus on it.
+
+02:26.000 --> 02:30.000
+But as we see here, TypeScript is yelling at us because, again,
+
+02:30.000 --> 02:33.000
+we've said that it might be null, it might not be defined.
+
+02:33.000 --> 02:36.000
+So what I tried to do earlier here is I was like, okay,
+
+02:36.000 --> 02:37.000
+well, we can check, right?
+
+02:37.000 --> 02:41.000
+Like, you typically would, but if it exists, then just run this thing.
+
+02:41.000 --> 02:45.000
+But it's kind of being finicky because I think it's either the way,
+
+02:45.000 --> 02:49.000
+like the HTML element is being populated, like the truthy value.
+
+02:49.000 --> 02:54.000
+So the way this actually works is you actually want to provide a question mark at it.
+
+02:54.000 --> 02:57.000
+So we want to actually unpack the value because we don't forget,
+
+02:57.000 --> 03:00.000
+element name input is a reactive reference.
+
+03:00.000 --> 03:02.000
+It's not just, and it's still reactive reference,
+
+03:02.000 --> 03:04.000
+even though it's referring to a div element.
+
+03:04.000 --> 03:07.000
+But more importantly, this value here, it could be null.
+
+03:07.000 --> 03:10.000
+So by putting the question mark here, I think this is, I want to say,
+
+03:10.000 --> 03:11.000
+this is just vanilla JavaScript.
+
+03:11.000 --> 03:13.000
+It basically, option or chaining,
+
+03:13.000 --> 03:17.000
+checks to make sure this thing is valid before doing the next thing.
+
+03:17.000 --> 03:20.000
+Although it makes me wonder now real quick,
+
+03:20.000 --> 03:25.000
+I want to test this because I, if element input dot value,
+
+03:25.000 --> 03:27.000
+would that have done it?
+
+03:27.000 --> 03:29.000
+Ah, that works too.
+
+03:29.000 --> 03:30.000
+So that's the key.
+
+03:30.000 --> 03:32.000
+So this is where the unwrapping, that's why I say,
+
+03:32.000 --> 03:34.000
+I want to people to get used to seeing that,
+
+03:34.000 --> 03:36.000
+is because it's easy to forget this to be honest.
+
+03:36.000 --> 03:38.000
+And so I was just like, oh yeah, it's definitely,
+
+03:38.000 --> 03:39.000
+it's element value.
+
+03:39.000 --> 03:40.000
+Now it's, it's dot value.
+
+03:40.000 --> 03:41.000
+This, this works.
+
+03:41.000 --> 03:44.000
+But I gotta say, there is something clean about just saying,
+
+03:44.000 --> 03:48.000
+whenever this thing is available, just, just use it.
+
+03:48.000 --> 03:51.000
+So option or chaining here is a pretty nice solution for this.
+
+03:51.000 --> 03:54.000
+Now when we refresh the page and go to new,
+
+03:54.000 --> 03:57.000
+you can see automatically focused.
+

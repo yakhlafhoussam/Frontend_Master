@@ -1,0 +1,62 @@
+WEBVTT
+
+00:00.000 --> 00:19.000
+D'accord. C'est ça. C'est le compte à rebours final, la dernière ligne droite. Nous allons parler des frameworks Web en Python, puis vous deviendrez un pro Python vérifié avec un cachet d'approbation pour moi personnellement. Alors
+
+00:20.000 --> 00:28.000
+J'espère que vous êtes prêt. Nous allons utiliser certains des concepts que nous avons appris plus tôt pour travailler avec un framework plus avancé appelé Django.
+
+00:29.000 --> 00:44.000
+Maintenant, que sont les frameworks Web ? Eh bien, les frameworks Web sont conçus pour prendre en charge la création d'applications pour le Web tout en simplifiant et en faisant abstraction d'une grande partie de ce qui se passe sous le capot.
+
+00:45.000 --> 00:51.000
+Ils vont donc vous fournir la plomberie afin que vous puissiez vous concentrer uniquement sur la création de votre application.
+
+00:52.000 --> 01:05.000
+Il existe deux frameworks Web très populaires et Python. L'un est Django. Django est entièrement fonctionnel. Il s'agit d'un cadre de haut niveau pour la création d'applications Web et il se concentre sur l'automatisation et la fourniture autant que possible.
+
+01:05.000 --> 01:17.000
+De nombreux sites à grande échelle comme Instagram fonctionnent sur Django et comme Django propose beaucoup de choses prêtes à l'emploi, il est considéré comme un framework plutôt avisé.
+
+01:18.000 --> 01:24.000
+Django se présente comme le framework web pour les perfectionnistes avec des délais.
+
+01:24.000 --> 01:36.000
+Il y a pas mal de choses incluses dans Django. Il existe un ORM de base de données qui est un modèle relationnel objet permettant de rendre le travail avec des bases de données aussi simple que celui des instances Python.
+
+01:37.000 --> 01:49.000
+Il est facile de s'appuyer sur une interface d'administration back-end qui facilite la gestion de votre contenu avec de jolis formulaires avec validation et apparence.
+
+01:50.000 --> 01:58.000
+L'authentification des utilisateurs est intégrée. Il existe un langage de modèle. Il existe une protection contre les vulnérabilités de sécurité courantes et bien plus encore.
+
+01:58.000 --> 02:12.000
+Et vous pensez probablement, eh bien, tout cela semble génial et c'est génial jusqu'à ce que vous ayez besoin de faire quelque chose qui ne correspond pas vraiment au paradigme de Django. Et c’est à ce moment-là que les choses commencent à devenir complexes.
+
+02:13.000 --> 02:23.000
+Pour contraster avec Django, il existe un autre framework populaire en Python pour le Web appelé Flask et je dirais que Django et Flask partagent la même popularité.
+
+02:24.000 --> 02:36.000
+Flask se construit comme un micro-framework pour Python. Il est très facile de créer des API back-end et des applications Web de base avec beaucoup moins de code et beaucoup moins de configuration.
+
+02:36.000 --> 02:42.000
+Je pense que Flask est plus facile à comprendre et à configurer pour les débutants et il est beaucoup moins opiniâtre.
+
+02:42.000 --> 02:50.000
+L'inconvénient est que si vous souhaitez commencer à ajouter certains de ces composants supplémentaires à votre application, tels que des bases de données, l'authentification et d'autres couches.
+
+02:50.000 --> 02:57.000
+Vous devrez utiliser des plugins ou des packages tiers, car Flask ne vous en fournit pas beaucoup par défaut.
+
+02:57.000 --> 03:05.000
+Si vous n'aimez pas Flask ou Django, vous pouvez trouver une longue liste de frameworks Web Python sur le lien ici.
+
+03:05.000 --> 03:14.000
+Et pour les intégrations frontales avec Python, vous n'êtes pas obligé d'utiliser les modèles intégrés à Django ou Flask.
+
+03:14.000 --> 03:21.000
+Les deux frameworks fonctionnent très bien lorsqu'ils sont associés à des technologies frontales modernes telles que React, Angular et View.
+
+03:21.000 --> 03:25.000
+Et vous pouvez en apprendre beaucoup sur ces autres frameworks sur les maîtres front-end.
+

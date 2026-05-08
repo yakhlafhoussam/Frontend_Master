@@ -1,0 +1,248 @@
+WEBVTT
+
+00:00.000 --> 00:11.960
+Pour ce troisième exercice, une programmation orientée objet, nous allons découvrir les classes
+
+00:11.960 --> 00:21.080
+et les variables d'auto-instance, l'héritage et également l'utilisation de la sous-classe IS et des méthodes d'instance IS
+
+00:21.080 --> 00:25.040
+pour en savoir un peu plus sur notre structure de classe.
+
+00:25.040 --> 00:32.040
+Cette fois-ci, nous allons créer quelques fichiers, donc je vais créer un nouveau fichier et
+
+00:32.040 --> 00:42.560
+Je vais l'enregistrer sous classexample.py, juste à la racine ici.
+
+00:42.560 --> 00:46.760
+Et nous allons nous entraîner à créer un cours simple.
+
+00:46.760 --> 00:51.360
+Nous allons transmettre plusieurs variables puis nous allons les sauvegarder dans l'instance
+
+00:51.360 --> 00:54.240
+en utilisant soi-même.
+
+00:54.240 --> 01:04.000
+Nous allons donc taper le véhicule de classe, définir ce problème dans sa classe et que dois-je passer
+
+01:04.000 --> 01:06.000
+y tremper ?
+
+01:06.000 --> 01:08.000
+Soi.
+
+01:08.000 --> 01:13.560
+Même si je n'accepte aucun argument, le moi doit toujours être là, mais nous prendrons quelques arguments
+
+01:13.560 --> 01:22.680
+nous allons prendre une marque, un modèle, et le carburant sera du gaz.
+
+01:22.680 --> 01:29.400
+Et pour sauvegarder ces valeurs dans notre instance, nous allons devoir faire un self.make est égal
+
+01:29.400 --> 01:42.440
+pour faire, self.model est égal au modèle, self.fuel est égal à carburant.
+
+01:42.440 --> 01:48.360
+D'accord, hier, nous avons parlé des méthodes principales et du moment où nous voudrions mettre notre code dans
+
+01:48.360 --> 01:52.120
+une méthode principale, le rappel de distorsion n'est pas requis.
+
+01:52.120 --> 01:58.960
+Donc pour ces exercices simples, je vais juste mettre le code là où j'utilise la classe que j'ai définie
+
+01:58.960 --> 02:01.600
+juste en dessous ici dans le même fichier.
+
+02:01.600 --> 02:05.160
+N'oubliez pas que l'indentation est importante.
+
+02:05.160 --> 02:10.800
+Ce niveau d'indentation appartient donc à cette méthode.
+
+02:10.800 --> 02:14.720
+Ce niveau d'indentation où se trouve def appartient à la classe.
+
+02:14.720 --> 02:17.720
+Donc, si nous voulons utiliser cette classe, nous allons devoir en sortir.
+
+02:17.720 --> 02:19.840
+le niveau d'indentation de la classe.
+
+02:19.840 --> 02:29.720
+Et je vais dire que ma voiture quotidienne est un véhicule, et c'est un camion cross Subaru.
+
+02:29.720 --> 02:37.600
+D'accord, et jetons également un coup d'œil à ce que cela affiche.
+
+02:37.600 --> 02:44.640
+Alors rappelez-vous que le moyen le plus rapide d'exécuter cela en Python dans le code DS est simplement de dire Python
+
+02:44.680 --> 02:48.560
+exécutez le fichier Python dans le terminal.
+
+02:48.560 --> 02:50.560
+Et nous le voyons.
+
+02:50.560 --> 02:52.400
+Ouais, c'est vrai.
+
+02:52.400 --> 02:56.200
+Il indique qu'il s'agit d'un objet véhicule.
+
+02:56.200 --> 03:00.240
+Et vous voyez ce dundre principal ici.
+
+03:00.240 --> 03:03.440
+Nous avons expliqué pourquoi cela se trouvait dans le cours d'introduction.
+
+03:03.440 --> 03:08.160
+Quelqu'un peut-il me le rappeler ?
+
+03:08.160 --> 03:12.000
+Cela est défini lorsque nous exécutons ce script directement.
+
+03:12.000 --> 03:16.560
+C'est donc le même dundre main que vous recherchez si vous souhaitez avoir une méthode principale.
+
+03:16.560 --> 03:23.360
+Et c’est une adresse mémoire, donc rien d’utile.
+
+03:23.360 --> 03:26.760
+Mais nous avons accès aux variables.
+
+03:26.760 --> 03:30.720
+Et donc je vais commenter cela.
+
+03:30.720 --> 03:35.280
+Et à la place, j'imprimerai une chaîne F.
+
+03:35.280 --> 03:48.840
+Et je dirai que je conduis quotidiennement.make daily.model.
+
+03:48.840 --> 03:53.440
+Il fonctionne quotidiennement au carburant.
+
+03:53.440 --> 04:00.760
+D'accord, si je lance ceci, d'accord, une petite amélioration, n'est-ce pas ?
+
+04:00.760 --> 04:05.800
+Parce que je conduis une Subaru Cross Track et qu'elle fonctionne à l'essence.
+
+04:05.800 --> 04:13.080
+Et je vais juste mettre un point là pour terminer notre phrase.
+
+04:13.080 --> 04:25.920
+N'oubliez pas que la meilleure façon de procéder est de créer un repper ou un émoi.
+
+04:25.920 --> 04:32.880
+Faisons donc ici une méthode d'agitation rapide.
+
+04:32.880 --> 04:34.760
+Et cela prendra un soi.
+
+04:34.760 --> 04:40.400
+Pourquoi n’avons-nous pas besoin de transmettre aucun des autres arguments ?
+
+04:40.400 --> 04:42.760
+Fabriquez du carburant pour modèle.
+
+04:42.760 --> 04:46.960
+Désolé, vous avez postulé auprès d'eux que le moi y est attaché.
+
+04:46.960 --> 04:48.360
+C'est vrai, c'est attaché à soi.
+
+04:48.360 --> 04:51.600
+Il est attaché à l'instance.
+
+04:51.600 --> 04:58.040
+Alors maintenant je peux, je vais juste couper la chaîne ici et la coller ici.
+
+04:58.040 --> 04:59.600
+Mais cela ne fonctionnera pas.
+
+04:59.600 --> 05:00.600
+Pourquoi?
+
+05:00.600 --> 05:03.040
+Il y a deux problèmes.
+
+05:03.040 --> 05:04.440
+Je dois le retourner.
+
+05:04.440 --> 05:05.440
+Je dois le retourner.
+
+05:05.440 --> 05:07.600
+Il est donc nécessaire de renvoyer une chaîne.
+
+05:07.600 --> 05:09.880
+Quel est l'autre problème ici ?
+
+05:09.880 --> 05:13.400
+Le quotidien n’est pas une portée, ni un soi à sa place.
+
+05:13.400 --> 05:14.400
+Le quotidien est hors de portée.
+
+05:14.400 --> 05:19.560
+Nous voulons nous-mêmes, alors nous nous faisons nous-mêmes, nous nous modèleons nous-mêmes, nous nous alimentons nous-mêmes.
+
+05:19.560 --> 05:28.080
+Maintenant, je vais décommenter mon impression quotidiennement.
+
+05:28.080 --> 05:30.800
+Et devrait voir le même résultat.
+
+05:30.800 --> 05:36.920
+Ainsi, au lieu de devoir évoquer cette longue ficelle à chaque fois que je veux représenter mon véhicule,
+
+05:36.920 --> 05:42.120
+Je peux simplement utiliser remuer à la place, et ensuite c'est au même endroit.
+
+05:42.120 --> 05:46.600
+D'accord, nous avons également parlé des variables de classe.
+
+05:46.600 --> 05:55.480
+Cela permet que cela existe pour toutes les instances de cette classe, que vous soyez ou non, cela existe
+
+05:55.480 --> 05:58.600
+sur le type ainsi que sur toutes les instances de cette classe.
+
+05:58.600 --> 06:02.960
+Vous n’avez donc même pas besoin d’avoir une instance pour l’utiliser et le voir.
+
+06:02.960 --> 06:14.040
+Nous allons donc réaliser un certain nombre de roues, variable de classe ici.
+
+06:14.040 --> 06:18.600
+Et je vais en dire quatre.
+
+06:18.600 --> 06:31.120
+Et maintenant, je peux imprimer mon nombre de roues quotidien.
+
+06:31.120 --> 06:37.320
+Et je dirai simplement que c'est l'exemple de l'exemple.
+
+06:37.320 --> 06:57.960
+Je peux également imprimer la variable de classe ou de type.
+
+06:57.960 --> 07:09.400
+Comment accéder à cette classe, pas à une instance, juste à la classe ?
+
+07:09.400 --> 07:10.400
+C'est exact.
+
+07:10.400 --> 07:15.400
+Véhicule Capital V.
+
+07:15.400 --> 07:21.960
+D'accord, je vais lancer ça.
+
+07:21.960 --> 07:25.000
+Voyez pour la classe, c'est quatre, pour l'instance, c'est quatre.
+

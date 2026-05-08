@@ -1,0 +1,161 @@
+WEBVTT
+
+00:00.000 --> 00:06.000
+Nous voulons d’abord détecter l’exception la plus spécifique.
+
+00:06.000 --> 00:11.000
+Je vais donc faire une petite fonction ici.
+
+00:11.000 --> 00:14.000
+Et je vais appeler cela la division.
+
+00:14.000 --> 00:19.000
+Et il faudra le nombre par lequel diviser.
+
+00:19.000 --> 00:22.000
+Donc je vais juste appeler ce numéro.
+
+00:22.000 --> 00:28.000
+Et je vais dire, essayez.
+
+00:28.000 --> 00:31.000
+Le résultat est égal.
+
+00:31.000 --> 00:35.000
+Laissez-moi m'assurer que mon indentation est correcte ici.
+
+00:35.000 --> 00:43.000
+Le résultat sera égal à la valeur de pi divisée par le nombre saisi par l'utilisateur.
+
+00:43.000 --> 00:49.000
+Nous allons accepter une erreur arithmétique.
+
+00:50.000 --> 00:57.000
+Et imprimez que nous avons eu une erreur mathématique générale.
+
+00:57.000 --> 01:05.000
+Sinon, je vais également accepter un type spécial d'exception appelé erreur de division zéro.
+
+01:05.000 --> 01:08.000
+Pourquoi cela pourrait-il arriver ?
+
+01:08.000 --> 01:13.000
+Cela signifie que vous allez diviser par zéro et zéro.
+
+01:13.000 --> 01:17.000
+Donc si le nombre est zéro, oui.
+
+01:17.000 --> 01:21.000
+Je peux dire que je divise par zéro erreur.
+
+01:21.000 --> 01:25.000
+Je pense que vous allez avoir des problèmes parce que le calcul est toujours faux.
+
+01:25.000 --> 01:27.000
+Oh, vous avez raté le premier élément.
+
+01:27.000 --> 01:29.000
+Oh, merci.
+
+01:29.000 --> 01:35.000
+Quand nous remettons cela en place très rapidement.
+
+01:35.000 --> 01:39.000
+Le résultat est donc égal à 3,14 divisé par num.
+
+01:39.000 --> 01:43.000
+Et acceptez notre arithmétique.
+
+01:43.000 --> 01:44.000
+J'ai bien compris.
+
+01:44.000 --> 01:47.000
+Ouais, erreur.
+
+01:47.000 --> 01:52.000
+Je vais imprimer une erreur mathématique.
+
+01:52.000 --> 02:00.000
+Et puis je vais accepter l'erreur de division zéro.
+
+02:00.000 --> 02:07.000
+Et je vais imprimer la division zéro.
+
+02:07.000 --> 02:09.000
+D'accord.
+
+02:09.000 --> 02:15.000
+Si j'essaie de faire une division par zéro, nous allons voir quelque chose d'un peu inattendu.
+
+02:15.000 --> 02:17.000
+Je vais avoir une erreur mathématique.
+
+02:17.000 --> 02:23.000
+Et c'est parce que l'erreur de division zéro est l'erreur la plus spécifique.
+
+02:23.000 --> 02:26.000
+Et l’erreur arithmétique est la plus générale.
+
+02:26.000 --> 02:34.000
+Ainsi, en détectant d'abord l'exception la plus générale, j'ai avalé le message d'erreur le plus utile.
+
+02:35.000 --> 02:43.000
+Et pour comprendre cette hiérarchie des exceptions, vous pouvez consulter la page de documentation Python.
+
+02:43.000 --> 02:46.000
+Et vérifiez-le.
+
+02:46.000 --> 02:47.000
+Il y en a beaucoup là-bas.
+
+02:47.000 --> 02:51.000
+Le lien est sur le site du cours.
+
+02:51.000 --> 02:57.000
+En général, c'est plutôt mauvais d'intercepter une exception dans votre code.
+
+02:57.000 --> 03:02.000
+Parce que disons que j'utilisais l'API GitHub.
+
+03:02.000 --> 03:07.000
+Et j'ai eu une exception lorsque j'ai essayé de l'utiliser.
+
+03:07.000 --> 03:14.000
+J'ai tout simplement complètement perdu le contexte de ce qu'était l'exception générale.
+
+03:14.000 --> 03:20.000
+Et maintenant, je ne peux pas vraiment changer le déroulement de mon programme par ce que je peux en faire.
+
+03:20.000 --> 03:35.000
+La pire chose que vous puissiez faire est d’essayer du code, de l’accepter à exception.
+
+03:35.000 --> 03:40.000
+Et puis ne fais rien.
+
+03:40.000 --> 03:44.000
+Tout s'est bien passé, d'après mon code, n'est-ce pas ?
+
+03:45.000 --> 03:49.000
+C’est donc ce qu’on appelle avaler l’exception.
+
+03:49.000 --> 03:52.000
+Vous devriez au moins essayer de l'enregistrer ou de faire quelque chose.
+
+03:52.000 --> 03:57.000
+Peut-être appeler votre responsable des opérations, en fonction de la gravité de l'erreur.
+
+03:57.000 --> 04:02.000
+Mais en faisant cela, vous perdrez vraiment beaucoup de contexte.
+
+04:02.000 --> 04:06.000
+Et encore une fois, n’attrapez généralement pas l’exception de base.
+
+04:06.000 --> 04:09.000
+Ou maintenant en général, mais ne faites certainement pas ça.
+
+04:09.000 --> 04:10.000
+Peu importe.
+
+04:10.000 --> 04:12.000
+Mais c’est même la pire forme de cela.
+

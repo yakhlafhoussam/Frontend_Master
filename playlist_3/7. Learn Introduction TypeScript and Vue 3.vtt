@@ -1,0 +1,413 @@
+WEBVTT
+
+00:00.000 --> 00:04.000
+And then, let's go ahead and go on to some of the popular things that we use inside of you
+
+00:04.000 --> 00:06.000
+is we have computer properties.
+
+00:06.000 --> 00:08.800
+And so this is one of my favorite properties of you because what you're ultimately doing
+
+00:08.800 --> 00:13.360
+is you're creating an ability to easily cache reactive data that updates automatically
+
+00:13.360 --> 00:15.360
+based on another piece of reactive data.
+
+00:15.360 --> 00:19.760
+So this is particularly useful when it comes to animations and data tracking and that kind of
+
+00:19.760 --> 00:23.040
+stuff because you can do some really incredible things and you don't have to worry about any
+
+00:23.040 --> 00:26.560
+of the caching footgun that you might typically have to deal with.
+
+00:26.640 --> 00:29.120
+And so in this case, for example, we have this filtered restaurant list, right?
+
+00:30.000 --> 00:34.240
+And once again, when people write a method or a computer property, they can find whatever they want.
+
+00:34.240 --> 00:38.320
+But it's useful to actually be explicit regarding what it's returning.
+
+00:38.320 --> 00:42.720
+So all we need to do here if we want is we can say we're expecting a restaurant and a
+
+00:42.720 --> 00:44.960
+array of restaurants. That's what we're expecting.
+
+00:45.920 --> 00:49.200
+And so that way if someone comes in and so let's say this side to like,
+
+00:50.160 --> 00:53.360
+so not this return statement, this return statement will always return an array of restaurants.
+
+00:54.080 --> 00:57.680
+So let's go ahead and botch this real quick and return 1, 2, 3.
+
+00:59.280 --> 01:02.720
+You'll see here, hey, wait a second, this return is not right.
+
+01:03.920 --> 01:07.680
+And so honestly, if you think about it, what we're doing here with TypeScript is kind of similar
+
+01:07.680 --> 01:11.120
+to what you would expect on a word processing like word processor.
+
+01:11.120 --> 01:14.800
+Where if the dictionary catches them steak, you kind of wanted to let you know about it.
+
+01:14.800 --> 01:17.600
+You don't want to wait till you've printed it and shipped it off to your professor for
+
+01:17.600 --> 01:20.400
+grading and be like, Whoops, I have the type of there.
+
+01:20.400 --> 01:23.520
+Right, this is one of the things that I think TypeScript does really well.
+
+01:23.520 --> 01:28.000
+And as you can see, we're really just progressively sprinkling on some dot what is ultimately
+
+01:28.000 --> 01:33.200
+documentation that is then converted into helpful tooltips to make our coding lives easier.
+
+01:34.320 --> 01:37.440
+So there you go. We have a list of restaurants from that list.
+
+01:38.240 --> 01:42.880
+Now, okay, and what about this? Number of restaurants. Well, as you can see here,
+
+01:42.880 --> 01:47.200
+number of restaurants has actually been, this is where what in TypeScript they call type
+
+01:47.200 --> 01:50.960
+inference, which is basically it's inferring or assuming what the type will be based on how
+
+01:50.960 --> 01:55.840
+the code's written. So in this case, we're using enough vanilla JavaScript here to basically
+
+01:55.840 --> 01:59.360
+for TypeScript to recognize that this is probably going to be a number. And in this case,
+
+01:59.360 --> 02:02.960
+it's totally right. And so you actually don't need to define it anymore. Because TypeScript
+
+02:02.960 --> 02:07.040
+does try to do a lot of the heavy lifting whenever possible. But in case you do want to be explicit,
+
+02:07.040 --> 02:10.720
+once again, let's just do that for practice sake. We can just say, okay, we do expect a
+
+02:10.720 --> 02:15.040
+number when that comes back. But once again, some people do consider this code clutter. Again,
+
+02:15.040 --> 02:19.440
+I leave that to you and your team to decide. But this is also just perfectly valid. It's already
+
+02:19.440 --> 02:27.680
+typed. So that in the event, we try to do something funky like this. Actually, this would work,
+
+02:27.680 --> 02:32.320
+because I think it's going to, it'll just do some funky things. Because now, if you're always doing
+
+02:32.320 --> 02:36.720
+on the inference part, you'll see that you can still mess it up. So when you have things that
+
+02:36.720 --> 02:42.320
+a little bit more contingent on what the outcome is, I do actually prefer to be just a little
+
+02:42.480 --> 02:47.840
+bit more explicit. And so if we look though, this signature method is actually very similar to
+
+02:47.840 --> 02:52.560
+data, because basically you have a function and you're basically after the colon, what you're returning.
+
+02:52.560 --> 02:57.440
+So once again, just a show, we have our data here, what we're returning after the parameters,
+
+02:58.160 --> 03:04.400
+computed properties, same thing. Okay, so now that we've seen that, very similar, we're going to look
+
+03:04.400 --> 03:08.880
+at methods. And so this is where the functions that we're going to use within side of our view components.
+
+03:09.200 --> 03:13.200
+And so inside of here, let's start with what we already know, which is what we expect to be returned.
+
+03:13.200 --> 03:16.880
+And so typically, though, when we're using methods, particularly when it's things like click
+
+03:16.880 --> 03:21.040
+handles and click handlers and that kind of stuff, you're typically not actually returning anything.
+
+03:21.040 --> 03:25.280
+That's not really your goal. And in that case, you'll notice that when I hover over ad restaurant,
+
+03:25.280 --> 03:30.720
+it automatically declares a return type of void. Basically, nothing is being returned. That's all that
+
+03:30.720 --> 03:35.200
+means. And so there's, you don't need to be explicit about that. Unless, the only time I think this is
+
+03:35.200 --> 03:39.200
+really useful is if you want to make sure that no one returns anything, like, if there's a strict
+
+03:39.200 --> 03:43.360
+reason why you don't want people to return things, you can certainly jot that down. But otherwise,
+
+03:43.360 --> 03:50.080
+what is very much an optional thing? However, though, this is where, once again, we can see something
+
+03:50.080 --> 03:53.440
+that we often deal with when it comes to code, which is how many of us, when we're working with
+
+03:53.440 --> 03:58.640
+JavaScript events, we have a payload that we pass. And it's like, well, what kind of payload do I
+
+03:58.640 --> 04:02.880
+expect? This is not very helpful. So you can always sit here and you can like, I'm sure many of
+
+04:02.880 --> 04:08.320
+us have done this, really. Oh, payload is going to be like, done this way for more. But we have
+
+04:08.320 --> 04:12.800
+TypeScript to help us out. Again, we just need to help out a little bit. And so how do we define
+
+04:12.800 --> 04:18.320
+types for our parameters? Well, it's actually just the colon and then the type that we expect.
+
+04:18.320 --> 04:26.320
+So if we do that for both of these, you'll see now that it actually started doing some type
+
+04:26.320 --> 04:33.520
+checking. So that if we said like payload dot random message, you'll see that it's like, hey,
+
+04:33.520 --> 04:38.240
+whoa, whoa, whoa, whoa, wait a second. Random message does not exist on this payload. Like,
+
+04:38.240 --> 04:44.240
+this structure does not exist. And so again, another reason why, like, just just a little bit of
+
+04:44.240 --> 04:48.240
+TypeScript can make a huge difference in the long running, especially when we all know that like
+
+04:48.240 --> 04:51.840
+whether it's yourself that's maintaining the code base, we often forget what we set out to
+
+04:52.640 --> 04:56.320
+and where else with this, even if you come back to this code a month later, it will yell at you.
+
+04:56.320 --> 05:00.000
+You won't like dive into a rabbit hole and then forget that. At some point, you set a type
+
+05:00.000 --> 05:03.840
+something like you intended it to be the shape and then you decided to name it something else. You don't
+
+05:03.840 --> 05:09.920
+go worry about that anymore. Otherwise, let's see, hide form here. There's nothing we're doing here,
+
+05:09.920 --> 05:13.440
+besides basically taking the show uniform reactive and turning it false. So there's nothing to
+
+05:14.320 --> 05:20.560
+type there. And then actually, this here is a typo. So let me just fix this real quick.
+
+05:21.200 --> 05:26.800
+There's nothing happening in here. Okay. So that's basically the core functionality of what
+
+05:26.800 --> 05:31.200
+most people are using options API for, right? You have your props. You have your data. You have your
+
+05:31.200 --> 05:36.560
+methods and you have your computer. So now that I've kind of thrown that information out, do
+
+05:36.560 --> 05:40.240
+people have any questions about what I went through or should I dive in any deeper? Yeah.
+
+05:40.240 --> 05:44.560
+There's a question about, um, so like you talk about how the word processor is giving you these
+
+05:45.360 --> 05:50.640
+what kind of, what kind of the errors like these type errors cause like a build time error or
+
+05:50.640 --> 05:56.480
+they run time or if I didn't have the editor telling me what was wrong. Yeah. So let's test that out.
+
+05:56.480 --> 06:01.040
+So just to reiterate, so the question here is around what the error provides in addition to just
+
+06:01.040 --> 06:05.600
+like the right squiggly line. So let's go ahead and again, let's see this random message here and
+
+06:05.600 --> 06:11.680
+save this. And so you'll see now, if I run and pin run builds, oops, I'm in the wrong folder,
+
+06:11.680 --> 06:19.840
+N, pin run build. Yes. Okay. Sometimes things don't work when you want them to, but it did this time.
+
+06:19.840 --> 06:24.720
+You'll see that it actually stops the build. Now to be clear, something actually, for people
+
+06:24.720 --> 06:29.440
+new to TypeScript, it doesn't do runtime compilation, um, if I'm not mistaken. So in other words,
+
+06:29.440 --> 06:32.960
+once you've shipped this, it's not going to like retain the types and then check everything to
+
+06:32.960 --> 06:36.560
+make sure everything's fine. This is really for while you're developing. Um, this might,
+
+06:36.560 --> 06:40.320
+that might change in the future. That's like my big caveat. Maybe browsers will install away
+
+06:40.320 --> 06:44.720
+for it to be, um, brought on and stuff. But as of this moment, it's really meant for during
+
+06:44.720 --> 06:48.480
+development, and then when you build it to help block these kind of things, and then,
+
+06:49.360 --> 06:55.120
+basically, you're on your own after that. So this is where, um, things like checking for your
+
+06:55.120 --> 06:58.320
+types is still important. So type guards, so you know sometimes in functions, you'll be like,
+
+06:58.320 --> 07:01.920
+if this isn't already do this, if this is a string, do this, you'll still be doing that with
+
+07:01.920 --> 07:06.080
+TypeScript. You still, it won't protect you from having to write that code, but what it will do is
+
+07:06.160 --> 07:10.400
+protect you from, like, common mistakes like this, where like, oh, at one point you call that,
+
+07:10.400 --> 07:15.200
+I, uh, like, for example, uh, restaurants, I call it name at one point, but at one point I call that title,
+
+07:15.200 --> 07:19.600
+too, um, when I was building this. And so I was like, oh, wait, oh, that's right. Now I've, and so
+
+07:19.600 --> 07:22.960
+that's, if we rely on our brains to remember things, something we just get stumbled a little bit.
+
+07:22.960 --> 07:27.040
+And so it's a nice little reminder that, hey, it doesn't exist. Instead, you know, if I can just check
+
+07:27.040 --> 07:33.360
+real quick, oh, that's right. I named it, uh, name and set. Do we need to add types to the argument
+
+07:33.360 --> 07:37.680
+inside the filter function? The question here is regarding this parameter right here.
+
+07:39.040 --> 07:44.480
+So the short answer is, you don't have to do any of this. And I think that it's something I
+
+07:44.480 --> 07:49.840
+do want to underscore for a lot of this workshop is that it's really based on the, like,
+
+07:50.720 --> 07:54.160
+based on how your team works, right? Because one of the things that I think that made
+
+07:54.160 --> 07:58.240
+title difficult to adapt, especially earlier on when people were telling everyone to go all in,
+
+07:58.240 --> 08:02.400
+is that people felt like they had to type everything. And then all of a sudden things were colliding
+
+08:03.280 --> 08:06.720
+people's knowledge didn't quite match up to what they wanted to do. So then people were slapping
+
+08:06.720 --> 08:12.080
+any on everything. And so if you don't know, any is basically like a cheat code for, for
+
+08:12.080 --> 08:15.840
+TypeScript to shut up, that's basically what it means. It's just like, stop yelling at me, just like,
+
+08:15.840 --> 08:22.080
+ignore it. And at that point, it's basically useless. And so that's why to me, like, for this kind of thing,
+
+08:22.720 --> 08:26.960
+if I'm looking at this computer property, honestly, I care most about what's being returned.
+
+08:26.960 --> 08:30.720
+In the event that I do think the filter is going to have problems, and like, maybe someone might
+
+08:30.800 --> 08:34.000
+not understand the code. That might be something where I can come in here and just say, okay,
+
+08:34.000 --> 08:37.680
+you know, just for like documentation, we're going to make sure people know that the parameters
+
+08:37.680 --> 08:42.080
+should be of type restaurant. But because filter is a built-in array method, this is not something
+
+08:42.080 --> 08:48.560
+I customize, for example. This is like straight up ES6 syntax. We do know that it basically will
+
+08:48.560 --> 08:55.200
+iterate through whatever restaurant list is. And so that's basically, it's basically a
+
+08:55.200 --> 08:59.120
+choose your own adventure, kind of it. But in this particular case, I might omit it in this case,
+
+08:59.120 --> 09:04.160
+because I think the key thing is what you're working with after everything's been returned. But again,
+
+09:04.160 --> 09:08.640
+no right or wrong answer. But you could, that's a cool part of what you could say. Exactly, right?
+
+09:08.640 --> 09:11.760
+And that's kind of what I want to keep re-emphasizing with this is that if you're like, I feel
+
+09:11.760 --> 09:15.520
+a little bit more comfortable. In fact, we'll just leave it in here. There you go. You've annotated it,
+
+09:15.520 --> 09:24.000
+people know what to expect. That's all there is to it. Because, and then just to re-emphasize,
+
+09:24.000 --> 09:29.280
+like to reinforce this, you'll see that the restaurant without any type definition does inherit,
+
+09:29.280 --> 09:32.960
+like, TypeScript does some of that work for you. It's not like it's just like, oh yeah, I got some
+
+09:32.960 --> 09:38.240
+array thing. It does know that restaurant list contains this kind of shape. So it does basically
+
+09:38.240 --> 09:41.600
+assume that for every item I'm iterating through, it's probably inheriting the shape.
+
+09:42.400 --> 09:46.240
+And guaranteed, there may be reasons why this might change, which is why, as mentioned,
+
+09:46.240 --> 09:51.120
+if you want to, we can always augment it as needed. So how did it know that restaurant was a type
+
+09:51.120 --> 09:56.080
+restaurant without? Yeah. So the reason is because, remember we did that defined component to tell,
+
+09:56.080 --> 10:00.560
+like, TypeScript how to find things? If we scroll back up to the data, this is where the data
+
+10:00.560 --> 10:07.520
+shape told it that, like, when you do this dot something, oh, restaurant list is of type restaurant.
+
+10:07.520 --> 10:12.240
+And so this is kind of some of the dance that has to happen with TypeScript and options API
+
+10:12.240 --> 10:16.480
+because of this, this keyword. Because if you hover over this, it's basically useless. But,
+
+10:16.560 --> 10:21.360
+actually, it's funny though. You can see here that the create component public instance does
+
+10:21.360 --> 10:26.880
+have this filtered restaurant list with the return on here and then can I actually navigate any more?
+
+10:26.880 --> 10:33.120
+But anyhow, so that's how it's, it's knowing through all the, all that jumping.
+

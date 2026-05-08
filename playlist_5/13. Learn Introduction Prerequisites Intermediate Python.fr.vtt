@@ -1,0 +1,242 @@
+WEBVTT
+
+00:00.000 --> 00:07.000
+Une dernière chose serait la fonction zip.
+
+00:07.000 --> 00:15.000
+Disons que j'ai utilisé une compréhension de dictionnaire.
+
+00:15.000 --> 00:20.000
+Et je voulais construire un dictionnaire dont la clé était le nombre,
+
+00:20.000 --> 00:26.000
+et la valeur était ce nombre au carré pour tous les nombres de zéro à dix.
+
+00:27.000 --> 00:31.000
+Comment démarrer la compréhension de mon dictionnaire avec ma boucle ?
+
+00:31.000 --> 00:36.000
+Sur quoi est-ce que je boucle ?
+
+00:36.000 --> 00:42.000
+Je n'ai pas de chiffres, alors comment puis-je les obtenir ?
+
+00:42.000 --> 00:47.000
+Comment puis-je obtenir une liste de nombres de zéro à dix ?
+
+00:47.000 --> 00:54.000
+Et pour constituer mon dictionnaire, quelle est la clé que je veux ici ?
+
+00:54.000 --> 00:56.000
+Non.
+
+00:56.000 --> 00:59.000
+Et la valeur est non.
+
+00:59.000 --> 01:13.000
+Si je voulais voir toutes les clés de mon dictionnaire, quelle méthode appellerais-je ?
+
+01:14.000 --> 01:19.000
+La clé est dans toutes les valeurs.
+
+01:19.000 --> 01:22.000
+Ces deux-là ressemblent un peu à une liste, non ?
+
+01:22.000 --> 01:24.000
+C'est en quelque sorte une structure de données différente.
+
+01:24.000 --> 01:26.000
+Ils ressemblent un peu à une liste, non ?
+
+01:26.000 --> 01:31.000
+Et si je voulais obtenir les paires clé-valeur ?
+
+01:31.000 --> 01:35.000
+Les articles.
+
+01:35.000 --> 01:38.000
+D'accord, j'ignore en quelque sorte cette partie.
+
+01:38.000 --> 01:43.000
+À quelle sorte de structure de données ce résultat ressemble-t-il ?
+
+01:43.000 --> 01:45.000
+Une liste de deux balles.
+
+01:45.000 --> 01:47.000
+Est-ce que cela a du sens pour tout le monde ?
+
+01:47.000 --> 01:50.000
+D'accord.
+
+01:50.000 --> 02:01.000
+Si vous pensez que nous avions une liste de deux balles, peut-être y a-t-il un moyen de la transformer en dictionnaire ?
+
+02:01.000 --> 02:14.000
+D'accord, disons que j'avais une liste de joueurs.
+
+02:14.000 --> 02:22.000
+Et ces joueurs avaient des scores dans un match, donc j’ai évidemment obtenu le meilleur score.
+
+02:22.000 --> 02:30.000
+Bob a obtenu cinq points, et disons qu'Alice est finaliste.
+
+02:31.000 --> 02:43.000
+Un moyen rapide de combiner les valeurs de ces deux listes consiste à utiliser la fonction zip.
+
+02:43.000 --> 02:50.000
+Donc vous en passez deux ou plus, je crois.
+
+02:50.000 --> 02:53.000
+Je ne m'en souviens pas davantage, mais je vais devoir chercher.
+
+02:53.000 --> 02:58.000
+Mais nous parlerons de deux passages de deux listes différentes à compresser.
+
+02:58.000 --> 03:02.000
+Et nous avons quelque chose qui ressemble à ceci.
+
+03:02.000 --> 03:05.000
+Et c'est comme, d'accord, eh bien, qu'est-ce que c'est ?
+
+03:05.000 --> 03:08.000
+À quoi ressemble ce que nous avons vu ?
+
+03:08.000 --> 03:10.000
+Générateur, non ?
+
+03:10.000 --> 03:16.000
+Nous ne pouvons donc pas vraiment faire quoi que ce soit avec cette structure de données tant que nous ne l'avons pas parcourue en boucle.
+
+03:16.000 --> 03:20.000
+Alors faisons juste ça.
+
+03:20.000 --> 03:25.000
+Disons que nous ne savons pas vraiment ce que contient cette structure de données.
+
+03:25.000 --> 03:37.000
+Alors peut-être, imprimons simplement l'élément, tout comme l'élément dans les lecteurs et les scores zip.
+
+03:37.000 --> 03:41.000
+Imprimez l'article.
+
+03:41.000 --> 03:43.000
+Bon, c'est parti.
+
+03:43.000 --> 03:46.000
+Nous savons maintenant que nous avons une liste de deux balles.
+
+03:46.000 --> 03:54.000
+Comment pouvons-nous parcourir la liste de deux balles et utiliser deux balles et leur emballage pour extraire le nom et le score de chacune ?
+
+03:54.000 --> 03:58.000
+Sur quoi devrais-je boucler ?
+
+03:58.000 --> 04:00.000
+Nom, virgule, score.
+
+04:00.000 --> 04:03.000
+Nom, virgule, score.
+
+04:03.000 --> 04:09.000
+Et le zip des joueurs et des scores.
+
+04:09.000 --> 04:23.000
+Et je peux imprimer un message en amont et dire, genre, nom, nom, j'ai eu une note de note.
+
+04:23.000 --> 04:27.000
+Puis-je faire cela avec compréhension ?
+
+04:27.000 --> 04:29.000
+Ouais, c'est possible, n'est-ce pas ?
+
+04:29.000 --> 04:36.000
+Je parcourrais en boucle un score de quatre noms dans un zip de joueurs et de scores.
+
+04:36.000 --> 04:39.000
+Et je pourrais simplement imprimer mon même en amont.
+
+04:39.000 --> 04:45.000
+Nom, nom, avait score score.
+
+04:45.000 --> 04:51.000
+Et cela me donnerait une liste de cordes à quatre passe-partout.
+
+04:51.000 --> 05:09.000
+Ce qui est intéressant à propos du zip, c'est que vous devez faire attention, disons, à ma liste un et à y ajouter trois éléments, et à ma liste deux contenant deux éléments.
+
+05:09.000 --> 05:17.000
+Si nous essayons de compresser ces choses, vous savez, nous obtiendrons cet objet zip.
+
+05:17.000 --> 05:27.000
+Lorsque nous avons voulu examiner tout ce qu'un générateur, le générateur de portée, contenait, qu'ai-je fait rapidement pour déboguer cela ?
+
+05:27.000 --> 05:31.000
+J'ai utilisé un quatre lèvres, mais je peux aussi y passer.
+
+05:31.000 --> 05:35.000
+Ouais, je l'ai passé dans la liste.
+
+05:35.000 --> 05:38.000
+Donc, comme nous le verrons ici, zip ne fonctionne que.
+
+05:38.000 --> 05:43.000
+Il parcourt tous les éléments des deux listes et les fait correspondre un par un.
+
+05:43.000 --> 05:46.000
+La paire de un était a, celle de deux était b.
+
+05:46.000 --> 05:49.000
+Combien font trois = paire ?
+
+05:49.000 --> 05:51.000
+Je n'en avais pas, n'est-ce pas ?
+
+05:51.000 --> 05:58.000
+Il ne figure donc pas dans la liste finale des deux pôles.
+
+05:58.000 --> 06:09.000
+D'accord, revenons à notre liste de joueurs et de scores, je vais passer cela dans la liste juste pour que nous puissions l'examiner.
+
+06:09.000 --> 06:20.000
+Si Dictionary.items revient à la liste de deux pôles, peut-être pouvons-nous prendre cette liste de deux pôles et la transformer en dictionnaire, n'est-ce pas ?
+
+06:20.000 --> 06:23.000
+Et la façon de procéder est très simple.
+
+06:23.000 --> 06:30.000
+Tout comme j'ai passé le zip dans la liste ici pour le voir sous forme de liste.
+
+06:31.000 --> 06:41.000
+Je pourrais aussi simplement le transmettre à un niveau de deck et en extraire un dictionnaire.
+
+06:41.000 --> 06:49.000
+Et gardez à l’esprit que les deux pôles doivent être deux éléments, n’est-ce pas ?
+
+06:49.000 --> 06:54.000
+Le premier élément est la clé, le deuxième élément est le quoi ?
+
+06:54.000 --> 06:56.000
+La valeur.
+
+06:57.000 --> 07:07.000
+Vous savez, serait-il juste de dire que si vous créez un dictionnaire à partir d'un générateur zip, vous allez créer, vous allez utiliser de la mémoire pour cela.
+
+07:07.000 --> 07:11.000
+D'accord, c'est donc ça.
+
+07:11.000 --> 07:14.000
+Cela dépend en quelque sorte de votre résultat final, n'est-ce pas ?
+
+07:14.000 --> 07:18.000
+Par exemple, voulez-vous voir les données sous forme de valeur clé ?
+
+07:18.000 --> 07:23.000
+Vous souhaitez profiter d’un test d’adhésion très rapide ?
+
+07:23.000 --> 07:33.000
+Vous savez, savoir très rapidement si une clé est ou non dans le dictionnaire, ou souhaitez-vous parcourir tous les éléments et entreprendre une action ?
+
+07:33.000 --> 07:36.000
+Cela dépend donc du cas d’utilisation final.
+

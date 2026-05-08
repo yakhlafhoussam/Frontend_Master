@@ -1,0 +1,290 @@
+WEBVTT
+
+00:00.000 --> 00:02.720
+Those who are taking the view through fundamentals, I think the first time I covered
+
+00:02.720 --> 00:07.200
+Pena, we talked about options, and so I just need to do a quick overview on the composition
+
+00:07.200 --> 00:12.240
+stores, now that we are all on the same page regarding composable APIs and how they work.
+
+00:12.240 --> 00:15.520
+So the technique here is basically called composition or setup stores.
+
+00:15.520 --> 00:20.720
+I explicitly left the task store in here because, as you can see here, this is an example of an
+
+00:20.720 --> 00:25.760
+option store. And so this is actually useful context for those, especially if you were always
+
+00:25.760 --> 00:30.720
+pure composition API and you came into view three, it's neat as I've taught workshops over
+
+00:30.720 --> 00:35.120
+the years to see the audience change from like, I've never used composition API to people
+
+00:35.120 --> 00:40.720
+not saying I've never used options API, like things have changed, it's kind of wild. And so
+
+00:40.720 --> 00:45.600
+for those of you who have been pure composition API, this was kind of the elegance of the
+
+00:45.600 --> 00:50.480
+options API. In the sense that you knew exactly where to put stuff. State goes inside of this
+
+00:50.480 --> 00:55.600
+state key, getters, which are essentially computed, go inside of getters, and then your actions
+
+00:55.600 --> 01:01.200
+were essentially your methods or your functions. And so that was basically all it was.
+
+01:01.200 --> 01:05.040
+And that's one of the elements of the options API and one of the reasons it was so popular
+
+01:05.040 --> 01:09.440
+is because it allowed people who might not be a savvy from the JavaScript perspective to still
+
+01:09.440 --> 01:15.440
+come in and be to contribute to the code base. And so I think one of my stories I always
+
+01:15.440 --> 01:19.440
+like to share is that I'm teaching a workshop introductory to view as back in view two,
+
+01:19.440 --> 01:23.120
+it's not view three yet. And there's a designer who she told me, she almost didn't come to
+
+01:23.120 --> 01:27.360
+the workshop at all because she'd only been doing like, HTML and CSS for most of her coding,
+
+01:27.360 --> 01:30.800
+and she hadn't done that for years. And so she thought she was going to be completely way out
+
+01:30.800 --> 01:35.120
+of her death. But she decided to stick it out. And the workshop was I think about two hours.
+
+01:35.120 --> 01:38.880
+And by the end of it, she had a functioning view app and was able to understand the basics of
+
+01:38.880 --> 01:43.520
+like updating the state and whatnot. And it wasn't incredibly complicated, but I think the fact
+
+01:43.520 --> 01:48.960
+that she was able to do so speaks to, I mean, that is the power of standards and having people
+
+01:48.960 --> 01:54.640
+being able to follow those things. And so I, you know, like any cautionary tell, I love composition
+
+01:54.640 --> 01:58.480
+API, I love how flexible it is, but we do have to remember that we still want to try to keep
+
+01:58.480 --> 02:03.840
+our code as, you know, maintainable, scalable as humanly possible so that it is still accessible
+
+02:03.840 --> 02:10.000
+as much as humanly possible to our users when we can. Okay, so here, basically, what a set of
+
+02:10.000 --> 02:14.560
+sort is, is instead of just saying, hey, look, we're going to have this defined store that's
+
+02:14.560 --> 02:19.360
+an object that is the options. It basically just says, hey, look, we're going to have this defined
+
+02:19.360 --> 02:25.120
+store that has this key. And this time, we're going to have a function that returns a bunch of stuff.
+
+02:26.080 --> 02:30.800
+And so, for example, all this state, so just to keep it easy, I mean, delete this, this is state.
+
+02:31.280 --> 02:43.680
+All this stuff in here just becomes variables. Do, do, do, one, two, const, one, two, this.
+
+02:44.960 --> 02:52.400
+Okay, all of your getters. Well, I need to, actually, let me, let me do this first. Do, do, do,
+
+02:52.400 --> 02:57.840
+whoop, sorry, import ref. And that's just going to grab computer well on that.
+
+02:58.720 --> 03:04.480
+So, you storage is already done here. So, I'm just going to leave that alone so people have that to turn a different
+
+03:04.480 --> 03:14.240
+sheet that it really doesn't look as, can I wrap this whole thing? Apparently, I can. Okay,
+
+03:15.280 --> 03:22.960
+then, all of our getters here, which are essentially computed. So, these are ref or reactive,
+
+03:23.040 --> 03:26.960
+your choice. Generally, I recommend ref because it's just a bit more stable.
+
+03:28.000 --> 03:32.560
+And then, so we have one, two, let's say, okay, I'll just focus on these first const,
+
+03:33.840 --> 03:41.840
+equals, and then we have computed. And then we don't need the state anymore because it's inherently
+
+03:41.920 --> 03:51.520
+going to be reference, pass dot value dot length. That's it for that one. Then this one's
+
+03:51.520 --> 04:01.760
+computed, yep, returns, task dot value dot reduce. La, la, la, la, bum, bum, then I think that
+
+04:02.640 --> 04:18.480
+is covered. And then, we can put more, do, do, do, const dot dot dot, two, equals computed state.
+
+04:20.000 --> 04:28.560
+Whoops, we've got one. That goes here. And then set a state dot task,
+
+04:29.520 --> 04:38.000
+state dot value, task dot value, yep, that takes care of all the getters. And finally,
+
+04:38.000 --> 04:43.680
+luckily, actions are actually pretty easy, because they basically are just, you know, at the function
+
+04:43.680 --> 04:54.480
+in front of it. I need to update some of those in a second, da, da, da, da, da, da, da, da, da, da,
+
+04:54.560 --> 05:09.280
+function, function, function, and function. Okay, that was a lot to get through. And so then,
+
+05:10.160 --> 05:14.720
+remember, we're back in now set up world, so this no longer exists. So honestly what I'm going to do,
+
+05:14.720 --> 05:21.280
+I'm just going to grab all the, this, this dot tasks, do, do, do, do, do, do, do, and then we're just
+
+05:21.280 --> 05:28.320
+going to grab them, switch them to dot value. And then what else is airing out, this dot is loading,
+
+05:28.320 --> 05:34.240
+okay, oh wait, that's not what I want to, this dot error, that's what I want. Okay,
+
+05:36.560 --> 05:45.440
+and then this dot, uh, we dot, uh, dot, dot, value, excellent, this dot is loading,
+
+05:46.080 --> 05:53.040
+dot, dot, dot, dot, dot, dot, dot, dot,
+
+05:53.920 --> 06:00.640
+and we think we're almost done.
+
+06:04.960 --> 06:09.440
+Okay, I think that if first crilly bracket,
+
+06:09.440 --> 06:13.680
+we have a spare crilly bracket we're very bottom, all right, woo. I could call it,
+
+06:13.680 --> 06:22.320
+good call. And then this one, no, doesn't like it. Okay, this that update tasks just becomes
+
+06:22.320 --> 06:26.080
+update tasks. No need for that.
+
+06:26.080 --> 06:30.240
+Save something so funky.
+
+06:30.960 --> 06:32.480
+Good to bottom.
+
+06:34.480 --> 06:36.000
+This one, we don't need.
+
+06:36.000 --> 06:38.880
+You need an extra one. Yeah, you need your closing bracket,
+
+06:38.880 --> 06:43.920
+curl it or bracket the parenthesis and then bracket maybe,
+
+06:43.920 --> 06:48.480
+bracket parenthesis then bracket parenthesis then bracket parenthesis.
+
+06:48.480 --> 06:53.680
+Like this. Okay, beautiful. Yeah, all right, because we need to close this giant
+
+06:53.680 --> 07:02.080
+thing, this loop. Yeah, yeah, okay. Woo, okay, there you go. That is everything. Now the difference
+
+07:02.080 --> 07:06.480
+also being, right, we just switch everything over to composition API is that then you need to go
+
+07:06.560 --> 07:11.360
+ahead and return all the things. So this is where you have to be explicit regarding the
+
+07:11.360 --> 07:18.480
+fact that you're saying task is loading error. So now that's that. And then we have all our
+
+07:18.480 --> 07:29.040
+getters here. I'm just moving that in. So I just see them getters. So we have what task count,
+
+07:29.120 --> 07:44.480
+task by status, task by area, and then unique areas. Yep, then done, done, and then finally
+
+07:44.480 --> 07:49.280
+exposing all of these. Let me just collapse them in the middle of easier and create, update,
+
+07:49.280 --> 08:02.800
+speed, yep, and then some helper methods. Okay, let me do that. Do two actions create, update,
+
+08:03.760 --> 08:11.520
+delete. I think those are the three. I miss something update. No, yeah, yeah, yeah, update. Great.
+
+08:11.840 --> 08:19.840
+Finally, yep, I'll need that comment a second, and then these last helper methods. Woo, this is a
+
+08:19.840 --> 08:28.960
+long one. All right, what do we got? Get task by ID, get a task by week, get task by ID, great, get
+
+08:28.960 --> 08:38.160
+task, thank goodness for autocomplete, and then update task status, and then update task. Hi.
+
+08:39.120 --> 08:50.560
+Okay. This is your setup store. You can see it's actually, it's a little robust, just because
+
+08:50.560 --> 08:55.760
+you're setting everything manually now, right? That's what you get by doing this setup store.
+
+08:55.760 --> 09:00.960
+But it does mean that kind of like you're seeing here, you're able to then group things by like
+
+09:00.960 --> 09:06.560
+if you want by their like feature pieces if you really wanted. For example, like unique areas,
+
+09:06.640 --> 09:11.840
+this one, honestly, doesn't really make a lot of sense. It's like a meta attribute of tasks.
+
+09:11.840 --> 09:15.920
+And so if I were like fully refactoring this kind of thing, this would not probably live in here.
+
+09:16.880 --> 09:21.120
+Because I don't see why I would want to derive all unique areas from tasks that seems like
+
+09:21.120 --> 09:26.720
+expensive, from computation perspective. But then it's related to here, but task by area. So it's
+
+09:26.720 --> 09:31.840
+kind of interesting. So you get to like, whereas as we saw with the options store, you have to put
+
+09:31.840 --> 09:36.320
+it in state getters and actions like that is the order. This, you get to start thinking how you might
+
+09:36.320 --> 09:41.120
+want to redo it. And then more importantly, there's nothing stopping you from creating composables
+
+09:41.120 --> 09:46.640
+to make this store just more comprehensible, right? I know we talked about composables being often
+
+09:46.640 --> 09:51.520
+shared between components, but if they help to keep your sanity as far as like making your store
+
+09:51.520 --> 09:56.800
+shorter, making them easier to understand, that's to me as valuable in its own regard. And so it's
+
+09:56.800 --> 10:01.840
+to me that's ultimately our goal as programmers is to build things that people can easily understand
+
+10:01.920 --> 10:07.360
+and then maintain and update. And so whatever, by whatever tools you need to do that, that is what
+
+10:07.360 --> 10:09.360
+ultimately I think we should do.
+

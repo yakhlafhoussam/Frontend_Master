@@ -1,0 +1,587 @@
+WEBVTT
+
+00:00.000 --> 00:01.760
+This is something we shall be really familiar with,
+
+00:01.760 --> 00:04.240
+but when it comes to growing as a view developer,
+
+00:04.240 --> 00:05.840
+a lot of times, most of us are not so lucky
+
+00:05.840 --> 00:07.440
+as to inherit a brand new code base, right?
+
+00:07.440 --> 00:09.120
+We usually have things that we're working with,
+
+00:09.120 --> 00:10.960
+that are brand new or more importantly,
+
+00:10.960 --> 00:13.360
+you know, managers want us to ship quickly,
+
+00:13.360 --> 00:16.960
+so we bring in third party libraries and we wrap stuff up.
+
+00:16.960 --> 00:20.080
+But there is a question of how we properly manage those dependencies,
+
+00:20.080 --> 00:22.000
+because any of us who've done this long enough knows
+
+00:22.000 --> 00:23.920
+that redesigns often happen,
+
+00:23.920 --> 00:26.240
+and so having to rip out internals and refactor things
+
+00:26.240 --> 00:27.600
+is something that's common.
+
+00:27.600 --> 00:29.280
+And so what are some techniques we can do
+
+00:29.280 --> 00:31.600
+to kind of manage this particular problem?
+
+00:31.600 --> 00:34.640
+All right, so let's go ahead and take a look at the code that we have.
+
+00:34.640 --> 00:37.360
+So inside of our app, again, this is our standard view
+
+00:37.360 --> 00:39.760
+three app we're using view three router here.
+
+00:39.760 --> 00:42.160
+You'll notice here that we have a lot going on,
+
+00:42.160 --> 00:46.160
+basically we're using Daisy UI from a tailwind perspective,
+
+00:46.160 --> 00:48.400
+so like that's like the UI library being used.
+
+00:48.400 --> 00:50.240
+And one of the things that's being used a lot,
+
+00:50.240 --> 00:53.200
+and one that I think we can all share as a common pain point,
+
+00:53.200 --> 00:55.360
+is this icon component.
+
+00:55.440 --> 00:57.760
+And so this is from Daisy View, Daisy UI,
+
+00:57.760 --> 00:59.760
+in fact, this is from Iconify.
+
+00:59.760 --> 01:02.560
+And so we look at the number of instances of icon.
+
+01:02.560 --> 01:04.400
+You can see that it's actually used,
+
+01:04.400 --> 01:06.800
+as well, it's used quite a lot.
+
+01:06.800 --> 01:08.800
+And so this might not seem like a big deal at first,
+
+01:08.800 --> 01:11.520
+but as we know, design requirements do change,
+
+01:11.520 --> 01:14.160
+and oftentimes they'll come in and they'll want a random one off,
+
+01:14.160 --> 01:16.240
+or they'll want something changed about it.
+
+01:16.240 --> 01:17.600
+And so the question boils around,
+
+01:17.600 --> 01:21.840
+like how do we actually manage those changes and requests?
+
+01:21.840 --> 01:23.200
+And so let's say for instance,
+
+01:23.200 --> 01:27.360
+that a designer has discovered this amazing resource,
+
+01:27.360 --> 01:30.160
+which if you are not aware of, you should also be aware of,
+
+01:30.160 --> 01:33.840
+and it's called icons.js.org.
+
+01:33.840 --> 01:39.200
+And it's basically this collection of free icons across a lot of different ones.
+
+01:39.200 --> 01:42.240
+And so for example, if I want to look up like mountain icon,
+
+01:42.240 --> 01:44.640
+they'll give me a bunch from the different libraries.
+
+01:44.640 --> 01:47.200
+And what's cool about this is that I can pick anyone of these,
+
+01:47.200 --> 01:48.720
+let's choose this one, for example.
+
+01:50.400 --> 01:52.400
+And then it'll tell me where it came from,
+
+01:52.480 --> 01:55.120
+but then you can also let you generate basically like the SVG,
+
+01:55.120 --> 01:59.120
+or in this case, we can actually just click and copy the view component,
+
+01:59.120 --> 02:00.480
+you know, just populate that for you.
+
+02:02.000 --> 02:05.280
+And so let's say the designer wants this because what they want to do
+
+02:05.280 --> 02:09.840
+is they want to replace this icon that we have in the upper left.
+
+02:09.840 --> 02:12.000
+They want to replace it with a mountain instead.
+
+02:12.000 --> 02:15.680
+And so we know for a fact that this icon does not exist inside the icon,
+
+02:15.680 --> 02:16.480
+if I view.
+
+02:16.480 --> 02:19.120
+And so what you might be originally tempted to do is probably just either
+
+02:19.120 --> 02:22.800
+dropping the SVG or a custom component just in that one point.
+
+02:22.800 --> 02:26.000
+But as we know with Enterprise Act, things blow really quickly,
+
+02:26.000 --> 02:27.120
+things get reused.
+
+02:27.120 --> 02:29.200
+And so what we want to do is try to, as much as possible,
+
+02:29.200 --> 02:31.040
+maintain a single source of truth,
+
+02:31.040 --> 02:33.040
+that way we can centralize everything.
+
+02:33.040 --> 02:35.920
+And more importantly, when changes are being made or being swapped out,
+
+02:35.920 --> 02:38.720
+it's a lot easier to refactor and more importantly, easier to maintain.
+
+02:39.760 --> 02:41.040
+So how might we do this?
+
+02:42.320 --> 02:46.480
+So first thing first, I'll go ahead and create a component here,
+
+02:46.480 --> 02:49.840
+inside the component folder.
+
+02:49.840 --> 02:52.720
+I usually like to create a dedicated icons folder.
+
+02:52.720 --> 02:55.920
+So I'll call this icon mountain view.
+
+02:55.920 --> 03:00.000
+And then I'll just paste basically the template that they generate for us earlier.
+
+03:01.440 --> 03:04.560
+And so you see here, we just have a simple SVG.
+
+03:04.560 --> 03:07.200
+It has some widths defined as well as a view box.
+
+03:07.200 --> 03:10.160
+And so overall looks fairly straightforward.
+
+03:10.160 --> 03:12.720
+So I'm just going to go ahead and actually switch the name here,
+
+03:12.720 --> 03:14.320
+just icon mountain to simplify it.
+
+03:15.120 --> 03:21.120
+And so, as I mentioned before, one of these we want to do is centralize the work that we're doing,
+
+03:21.120 --> 03:25.920
+because as we saw when we looked at the icons, there are just so many different variations here.
+
+03:25.920 --> 03:29.600
+There's a lot of different widths going on as well as trying to figure out,
+
+03:29.600 --> 03:31.840
+okay, what exactly are we standardizing on?
+
+03:31.840 --> 03:33.600
+Especially if you want to start with like,
+
+03:33.600 --> 03:36.880
+all icons just start with 20 by 20 size, for example.
+
+03:37.920 --> 03:40.720
+That would be pretty tricky to do, especially if you're just doing a search end replace.
+
+03:41.680 --> 03:45.280
+And so the pattern that I generally recommend when it comes to this,
+
+03:45.280 --> 03:47.680
+is known as a vendor wrapper component.
+
+03:48.320 --> 03:53.520
+And so what that essentially does is it allows us to basically create a wrapper around the UI library
+
+03:53.520 --> 03:57.520
+components that we're using as a way to basically provide this single source to truth.
+
+03:58.880 --> 04:02.640
+And so the way that we look is that we would go ahead and create a base icon component.
+
+04:05.440 --> 04:09.360
+And so I'm going to use a little snippet here that I have basically this is a VS code snippet,
+
+04:09.360 --> 04:11.520
+and so just in case anyone is not sure what this is.
+
+04:11.520 --> 04:13.920
+And it basically allows me to scaffold a single file component
+
+04:13.920 --> 04:16.640
+uh, basically instantly, like that.
+
+04:18.080 --> 04:21.040
+How do you do that SFC shortcut?
+
+04:21.840 --> 04:22.640
+The which one?
+
+04:22.640 --> 04:23.280
+SFC.
+
+04:23.280 --> 04:25.840
+Oh yes, oh cool, I'm glad you asked about this.
+
+04:25.840 --> 04:29.360
+So when you're in VS code, if you go to your extension,
+
+04:29.360 --> 04:32.480
+so I'll do the command prompt way so command shift P,
+
+04:32.480 --> 04:34.080
+and then we'll go to our extensions.
+
+04:36.400 --> 04:37.680
+Can I just see my extensions?
+
+04:38.640 --> 04:43.280
+All right, the way I do it is command K E, but it aren't X, but anyways, it's right here.
+
+04:44.320 --> 04:48.960
+So Sarah Drasner, who used to be on the view core team and now is at Google,
+
+04:49.600 --> 04:52.640
+she created this thing called View VS Code snippets.
+
+04:54.240 --> 04:59.280
+And so highly recommended as an extension, and so I actually am one of the maintainers.
+
+04:59.280 --> 05:04.640
+So it has a bunch of different basically snippets for like things that you like to use.
+
+05:04.640 --> 05:10.560
+So whether, so you can see here that like if you do like, uh, so okay, let's see V base SS, right?
+
+05:10.960 --> 05:16.400
+So if I come inside here, and I'm inside of my view, V base.
+
+05:16.400 --> 05:18.640
+So you see here, there's like a bunch of different ones you can choose from,
+
+05:19.200 --> 05:22.880
+and then it'll just kind of, you can basically customize it.
+
+05:22.880 --> 05:26.080
+So the thing though is that you can install it, definitely play around with it,
+
+05:26.080 --> 05:28.880
+but what's, what I really love about the repo is that once you look at it,
+
+05:28.880 --> 05:31.600
+and you find one that you're like, I like that one, I just want to tweak it a little bit.
+
+05:32.400 --> 05:36.000
+VS Code snippets are actually fairly easy to create on your own, so then you're basically
+
+05:36.000 --> 05:41.040
+you're just copy it, be like, oh, I don't use SAS, I use less or post CSS, I just use hell in whatever,
+
+05:41.680 --> 05:44.720
+then you don't have to deal with like the, the boilerplate that comes with it.
+
+05:45.360 --> 05:51.920
+Okay, so we know a couple of things. We know one, we want to make sure we migrate all of the icons
+
+05:51.920 --> 05:57.280
+over, I can't apply, and so let's go ahead and do that first. So, look, search.
+
+05:57.360 --> 06:07.440
+So we have this import that we're going to grab here, and then we know as well that this is the general
+
+06:07.440 --> 06:13.440
+structure that we see at least for the iconify one. And so what's interesting though is that you'll
+
+06:13.440 --> 06:19.360
+see here that in the iconify icon, they use icon in order as like the prop to designate what the name is.
+
+06:19.360 --> 06:24.800
+But if you use other icon libraries as well, you'll notice that the API for it is different as
+
+06:24.800 --> 06:30.720
+well. So that's one of the reasons the vendor wrapper icon can be very advantageous, because for our
+
+06:30.720 --> 06:39.520
+example with the mountain icon, right? So I inch toward the icon mountain, for example, what we probably
+
+06:39.520 --> 06:45.920
+want to do then is we need to do two things. One, we need to set what our default is, and then basically
+
+06:45.920 --> 06:51.520
+what our override is going to be. So the default is, at this point, going to be iconify view,
+
+06:51.520 --> 06:55.840
+because this is obviously where a bulk of our icons are living. So what I like to do generally
+
+06:55.840 --> 07:05.280
+in this situation is we define a prop here, where we basically have the source be type of string,
+
+07:06.160 --> 07:14.480
+and then I default it to the main library that we're actually using. And so in this regard,
+
+07:14.560 --> 07:22.400
+so here we can say vif to do do do do, right? Source is equal to iconify.
+
+07:24.560 --> 07:29.040
+And then we go ahead and then designate the rest of it so we can say, okay, how do we want this API
+
+07:29.040 --> 07:34.080
+to look? Do we want to just call it icon? Or in this case, I do think what I've seen more normally,
+
+07:34.080 --> 07:40.400
+especially when it comes to icon naming is just the name itself. So then we can have a name string here
+
+07:41.360 --> 07:52.480
+and we'll go ahead and require it. And then we can bind this directly to name as well.
+
+07:56.160 --> 07:59.840
+And then we can go ahead and then with and height are also very common as well. So we'll go ahead
+
+07:59.840 --> 08:05.840
+and also just go ahead and designate those as well. So then default 20 and then we'll just copy this
+
+08:06.400 --> 08:18.640
+and make that height. And here we have the beginnings of our wrapper icon.
+
+08:21.840 --> 08:28.240
+Okay, so of course the question is now we need to deal with this icon mountain. How do we deal with this?
+
+08:28.240 --> 08:33.440
+Now if we think about this from another perspective, while it's easy to say, all right,
+
+08:33.440 --> 08:38.800
+what we're going to do is we're going to bring icon mountain here down here and we're just going to
+
+08:38.800 --> 08:44.400
+basically like veals. You could do something as simple as that if you really want to. However, obviously
+
+08:44.400 --> 08:49.600
+when it comes to scale, it's not going to work as well as you think. So what we ultimately want to do
+
+08:49.600 --> 08:53.840
+is provide the user the ability to basically define their name and then we're going to dynamically
+
+08:53.840 --> 09:00.160
+import that as it goes. So the way you do that is there is a helper function in view called
+
+09:00.160 --> 09:04.240
+define a sync component. And so what that's going to like do is basically define a path that
+
+09:04.240 --> 09:10.000
+can be brought in, basically based on how it's defined. So what I'm going to do here is then also
+
+09:10.000 --> 09:16.160
+I'm going to bring in computer as well because we're going to go ahead and make first we need to
+
+09:16.160 --> 09:21.120
+refer to our props. So I'm going to find it to a variable. And so then we're going to say,
+
+09:21.120 --> 09:28.480
+so our custom icons is going to be a computer value where basically if props.source is equal to
+
+09:29.440 --> 09:34.480
+or basically in this case we can say not equal to iconify. We can even go that far to say that at this point.
+
+09:35.440 --> 09:41.840
+Then we could say basically return define a sync component and then that takes a function that
+
+09:41.840 --> 09:47.760
+returns basically an import statement of the path. So in this case it'll be components. I believe
+
+09:47.760 --> 09:56.720
+I put it in icons. Yep. And then slash and then I can go ahead and just do the props.name.view.
+
+09:59.120 --> 10:06.000
+And then otherwise we'll just return no. Okay. Let's see. So let's see. It's
+
+10:06.880 --> 10:11.680
+can not find corresponding type declarations that is fine for now because this is a dynamically
+
+10:12.400 --> 10:19.440
+being brought in. Oh, I see what it is. Hang on. There you go. Yay for syntax highlighting.
+
+10:20.640 --> 10:27.200
+Okay. So now that you have this, what you can do is view has the built in dynamic component. So now we can say
+
+10:27.200 --> 10:32.880
+basically say for the component dynamic component we're going to make that equivalent to using the
+
+10:32.880 --> 10:39.600
+is parameter is prop to say custom icon. And so we're going to do now then is going to go ahead and
+
+10:39.600 --> 10:48.880
+find that header that we had. So app.view header here. So we have this icon here right with the target.
+
+10:48.880 --> 10:53.280
+We no longer want that. What we're going to do instead is we're just going to import our base icon
+
+10:54.160 --> 10:58.320
+and so this will go ahead and drag import that directly right here. Although sometimes it does
+
+10:58.320 --> 11:03.840
+it incorrectly and as a type. So that's actually a little bit frustrating sometimes. And then I'll say
+
+11:03.840 --> 11:13.520
+source. I have to say custom and then the name is going to be icon mountain. And now that we save,
+
+11:14.960 --> 11:21.200
+you can see voila. We have our base icon. And so this pattern is incredibly effective for
+
+11:21.200 --> 11:25.600
+essentially helping you centralize these things. And so I won't go through the process right now
+
+11:25.600 --> 11:30.880
+of like doing all the replace of the base icon. I'll do that later when we're doing exercises.
+
+11:30.880 --> 11:36.320
+But so this is the concept of the vendor wrapper. Now the other technique that I do want to
+
+11:36.320 --> 11:45.520
+mention here with the base icon is let me queue the slide here. It's known as the v-bind v on syntax.
+
+11:45.600 --> 11:50.720
+So here typically you would have like again let's say we wanted to customize the width to like 30
+
+11:50.720 --> 11:58.480
+and then the height also to 30. You know what's here one it's broken because partly because
+
+11:58.480 --> 12:04.080
+on the base icon I did not define the various props on here directly. So I'll go ahead and just
+
+12:04.080 --> 12:12.560
+copy this over real quick just so we can get rid of that error. A string is not assignable to number.
+
+12:12.640 --> 12:19.040
+All right we'll deal with that later. So what you can do actually is that in the event that you
+
+12:19.040 --> 12:24.640
+want to make this dynamic right so let's go ahead and say for example that we have custom source
+
+12:25.680 --> 12:31.040
+and it would just make this a ref real quick just to demonstrate this. And then we'll call this
+
+12:31.040 --> 12:40.480
+font awesome. And then we had a constant name equals ref and we'll call this upside down mountain
+
+12:41.440 --> 12:50.320
+and then we had constant width which is a ref of let's say 40 then we have our custom height.
+
+12:52.640 --> 12:57.200
+So one way you could define this is you could go ahead and come in and then v-bind each one of these
+
+12:57.280 --> 12:59.600
+individually. So this should look familiar to most people.
+
+13:11.600 --> 13:16.880
+You could do it like this. However, a lot of times when we're working with dynamic components you
+
+13:16.880 --> 13:21.680
+can't always control what attributes are being, it's really worth swapping out components.
+
+13:21.680 --> 13:24.720
+You're going to be swapping out different properties, different events. And so if you're hard
+
+13:24.720 --> 13:28.240
+coding them like this you're going to have basically extra code being passed to your components
+
+13:28.240 --> 13:33.760
+that don't need to be. And so what you can do instead is this can all actually be shortcut it to
+
+13:33.760 --> 13:40.400
+this v-bind syntax where you basically have an object and this is where the thing that we see here
+
+13:40.400 --> 14:00.480
+would be equivalent to this. And then what's nice about this is you can take this one step further
+
+14:01.280 --> 14:08.480
+in that if we just assume again let's say props object.
+
+14:09.440 --> 14:22.240
+And then you just basically did the source, the name and then the width and the height here
+
+14:23.440 --> 14:28.880
+is going to be going to assume this with height.
+
+14:29.040 --> 14:35.760
+This whole thing can be swapped down into just props object.
+
+14:39.920 --> 14:43.600
+And this is the reason I wanted to go over this is because this is going to be very common
+
+14:43.600 --> 14:48.240
+as we go through the rest of the patterns where we're going to be basically doing v-bind on
+
+14:48.240 --> 14:52.320
+dynamic attributes where we don't know what's being passed and so we basically need to just
+
+14:52.320 --> 14:57.280
+spread it out on the component and we kind of decide what's going on. And so this also, I won't
+
+14:57.360 --> 15:01.760
+demonstrate this explicitly, but in the event you have multiple events as well like
+
+15:01.760 --> 15:07.440
+mouse down, key up what not there's an equivalent for call it the events object, right?
+
+15:07.440 --> 15:12.640
+We can just write an object that pairs your events to whatever you want to function to want to
+
+15:12.640 --> 15:20.320
+sign them to. So both these are basically what they call the v-bind v-on objects in text.
+

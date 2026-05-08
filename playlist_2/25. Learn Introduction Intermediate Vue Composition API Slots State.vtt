@@ -1,0 +1,263 @@
+WEBVTT
+
+00:00.000 --> 00:04.160
+For your final coding exercise, we're going to take, we're going to do a week
+
+00:04.160 --> 00:08.800
+story with Pena. I recommend doing it doing the setup way just because just to get
+
+00:08.800 --> 00:13.760
+more opportunities to practice that. And then kind of see how it feels. And then if you
+
+00:13.760 --> 00:17.920
+can, see if you can get it to show up inside of your dev tools and then play around with
+
+00:17.920 --> 00:21.600
+like, and again, you can even just stub out the data. You don't have to worry too much about
+
+00:21.600 --> 00:27.440
+like, whether it works with the entire app or not, the idea here is to get you getting
+
+00:27.440 --> 00:43.760
+some time with Pena and set of sort. Okay, so we have the use week composed of what that we
+
+00:43.760 --> 00:48.400
+created together. And so you can see here, it's funny when you're looking at these side
+
+00:48.400 --> 01:00.320
+by sides. Let me open up the use tasks or task store. So what it is. If you look at them, they're actually
+
+01:01.360 --> 01:09.040
+not so different. It's kind of interesting. And so the main thing being that, you know, by opting
+
+01:09.040 --> 01:13.920
+into this defined store helper, there's a bunch of stuff that Pena will do for you, but from
+
+01:13.920 --> 01:20.160
+like a structure perspective, we're actually fairly fairly close there. So basically what I would
+
+01:20.160 --> 01:28.480
+do here is we would say, all right, so X-Ball export, cons, use week store, right, and we'll define
+
+01:28.480 --> 01:33.920
+the store. And I usually basically just call the key whatever the store name is, just to be consistent.
+
+01:34.640 --> 01:40.080
+And then we open it up with set function. So I'm just going to go ahead and do it like that,
+
+01:40.160 --> 01:44.720
+and then I'll close this now, just to give us our space back. And then let's just make sure we go
+
+01:44.720 --> 01:52.080
+it back down here, to make sure we get it right, although something looks funny, bump bump bump.
+
+01:53.360 --> 02:01.680
+That's good, that const async. Okay, that's good. Because of the return. Oh, this is all the way up here.
+
+02:01.680 --> 02:07.680
+Yep, yep, yep, yep, okay. Got it. So let's just, let me permanently comment this out so that
+
+02:07.680 --> 02:12.680
+this is not confusing, but you also have it, too.
+
+02:15.680 --> 02:19.400
+Okay, now this part is good, this part is not.
+
+02:21.520 --> 02:26.280
+Yes, good, and then, okay, we need to import the fine store
+
+02:27.280 --> 02:31.280
+from pinnea, which is great, there we have it.
+
+02:31.280 --> 02:33.560
+And then, as you can see, we already have our actions in our getter,
+
+02:33.560 --> 02:36.520
+so really what we need is just the state.
+
+02:36.600 --> 02:39.280
+And the state is all of the things we see here,
+
+02:39.280 --> 02:41.880
+so we can just grab this, I mean,
+
+02:41.880 --> 02:43.080
+it's gonna break a ton of things,
+
+02:43.080 --> 02:45.320
+because we know what happened last time I did this.
+
+02:45.320 --> 02:47.040
+But, this is the start.
+
+02:47.040 --> 02:50.920
+So here's our weeks, da, da, da, exposed,
+
+02:50.920 --> 02:53.080
+and then everything else here.
+
+02:53.080 --> 02:55.960
+And so this is where, at this point,
+
+02:55.960 --> 02:58.440
+I'm just not gonna bother with the read-only pattern,
+
+02:58.440 --> 03:00.360
+because we are in a store now,
+
+03:00.360 --> 03:05.160
+and I personally and not so convince that we need that.
+
+03:05.160 --> 03:08.800
+So there we go, Shred, state, this is it.
+
+03:08.800 --> 03:13.800
+And then, yep, that's the store.
+
+03:14.760 --> 03:15.880
+And then, actually, I think,
+
+03:15.880 --> 03:17.320
+we actually don't even need this anymore, right?
+
+03:17.320 --> 03:18.880
+Yeah, we don't.
+
+03:18.880 --> 03:20.360
+Yep.
+
+03:20.360 --> 03:24.160
+So then, this here then gets moved all the way down
+
+03:24.160 --> 03:29.160
+into stores, okay, and then we call it week store, okay.
+
+03:30.120 --> 03:35.760
+Okay, and now, I think there's gonna be a bunch of stuff
+
+03:35.760 --> 03:38.280
+that's gonna ultimately end up breaking,
+
+03:38.280 --> 03:40.200
+because this does not work the way we want it to,
+
+03:40.200 --> 03:42.880
+but we're gonna not gonna worry about that,
+
+03:42.880 --> 03:47.080
+just for the moment, we're just gonna ask any questions
+
+03:47.080 --> 03:48.280
+about sort of that convergence.
+
+03:48.280 --> 03:51.360
+Does anyone have any issues with that migration path?
+
+03:53.400 --> 03:56.640
+Thought overall familiar, given what we've been doing?
+
+03:56.640 --> 03:59.880
+Good, that's a good sign for me,
+
+03:59.880 --> 04:02.160
+because we felt different than, yeah, I mean,
+
+04:02.160 --> 04:05.400
+that I think when Eduardo was doing the design spec
+
+04:05.400 --> 04:08.560
+for PENIA or essentially what is UX5,
+
+04:08.560 --> 04:11.360
+it was this idea that, like, composition already API already,
+
+04:11.360 --> 04:14.440
+just has that light flexibility that clearly
+
+04:14.440 --> 04:16.200
+a lot of people have gravitated towards,
+
+04:16.200 --> 04:18.360
+and we really didn't want to step that far away from it.
+
+04:18.360 --> 04:21.080
+There was no point designing a whole new API
+
+04:21.080 --> 04:24.480
+just to, like, just because of the state management library.
+
+04:24.480 --> 04:28.640
+And so, yeah, so with that, that is your use week store.
+
+04:30.080 --> 04:32.880
+And let's see, is there anything else I had us do?
+
+04:32.880 --> 04:36.080
+Nope, composing stores, PENIA DevTools.
+
+04:36.080 --> 04:37.840
+I think that's mostly that.
+
+04:37.840 --> 04:40.080
+As the final result, there will be a branch,
+
+04:40.080 --> 04:41.640
+that's called like solution,
+
+04:41.640 --> 04:43.040
+and I'll basically make sure everything
+
+04:43.040 --> 04:45.480
+is at least talking to each other correctly,
+
+04:45.480 --> 04:47.800
+and that way, like, we can see how it all works together
+
+04:47.800 --> 04:48.640
+in the end.
+
+04:48.640 --> 04:52.360
+But again, I wanted to kind of create a really a playground
+
+04:52.360 --> 04:53.480
+for you all, whereas, like, I mean,
+
+04:53.480 --> 04:54.760
+this is what it's like working in some,
+
+04:54.760 --> 04:56.880
+honestly, some co-bases, right?
+
+04:56.880 --> 04:59.480
+Stuff's broken, stuff's weirdly dependent,
+
+04:59.480 --> 05:02.120
+there's some weird things are written in some funny ways.
+
+05:02.120 --> 05:04.800
+It's a how we make sense of that over time,
+
+05:04.800 --> 05:06.920
+and organize that, you know, make K,
+
+05:06.920 --> 05:08.520
+sorry, make order out of chaos,
+
+05:08.520 --> 05:09.560
+stuff the other way around.
+
+05:11.240 --> 05:13.800
+Yeah, I mean, that's really what we're trying to do as developers.
+
+05:13.800 --> 05:16.200
+So, yeah, there'll be some,
+
+05:16.200 --> 05:17.800
+and I'll make sure it's indicated on the repo,
+
+05:17.800 --> 05:20.240
+like, whatever, I probably would just call it solution.
+
+05:20.240 --> 05:21.080
+All right.
+

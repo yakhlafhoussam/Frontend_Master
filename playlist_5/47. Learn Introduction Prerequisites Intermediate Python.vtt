@@ -1,0 +1,17 @@
+WEBVTT
+
+00:00.000 --> 00:06.640
+That was all that we needed to make a functional web application in Python using Flask.
+
+00:06.640 --> 00:10.240
+It calls the GitHub search API under the hood.
+
+00:10.240 --> 00:16.320
+It uses Flask and Jinger templating to display our results in HTML.
+
+00:16.320 --> 00:20.320
+And there's no JavaScript in this repository.
+
+00:20.320 --> 00:24.320
+This is all possible without having to introduce another language.
+

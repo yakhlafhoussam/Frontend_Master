@@ -1,0 +1,323 @@
+WEBVTT
+
+00:00.000 --> 00:05.520
+Hier, nous avons parlé de boucles simples, nous avons parlé de quatre boucles comportant chacune une boucle.
+
+00:05.520 --> 00:07.040
+élément dans une liste.
+
+00:07.040 --> 00:12.880
+La compréhension des listes est l'une de ces fonctionnalités incroyables de Python qui, je pense, ont été
+
+00:12.880 --> 00:17.040
+se frayer un chemin vers d'autres langages de programmation lentement au fil du temps.
+
+00:17.040 --> 00:24.040
+Ils vous permettent de prendre une sorte de quatre boucles et de la condenser en une seule instruction.
+
+00:24.040 --> 00:29.040
+D'une manière qui est en fait assez lisible.
+
+00:29.040 --> 00:53.600
+Nous allons donc commencer par la compréhension de la liste et disons que j'ai ma liste de noms, donc juste une liste
+
+00:53.640 --> 01:01.640
+sur trois éléments, tous ceux qui tapent, vous pouvez utiliser les noms de votre choix.
+
+01:01.640 --> 01:12.440
+Plus tôt, je voulais créer une nouvelle liste contenant peut-être tous les noms en minuscules.
+
+01:12.440 --> 01:20.560
+Donc je sais que si j'appelle, si je dis chaîne point inférieur, ça me donnera les minuscules, si je dis
+
+01:20.600 --> 01:23.920
+string dot upper, ça me donnera les majuscules.
+
+01:23.920 --> 01:25.800
+D'accord, disons que je voulais faire des noms en majuscules.
+
+01:25.800 --> 01:30.400
+Disons que j'avais envie de les crier, en les lisant, tu cries, sache ça, tu sais,
+
+01:30.400 --> 01:33.000
+ces noms sont vraiment importants.
+
+01:33.000 --> 01:41.640
+Donc, avant de faire ma liste de noms en majuscules et de la parcourir en quatre boucles,
+
+01:41.640 --> 01:54.120
+à droite quatre noms dans les noms, je dirais que le nom en majuscule serait égal au nom point
+
+01:54.120 --> 02:01.600
+supérieur, puis quelle action devrais-je entreprendre ensuite pour constituer ma liste de noms supérieurs
+
+02:01.600 --> 02:03.360
+avec ces valeurs ?
+
+02:03.360 --> 02:08.560
+Comment ajouter à la fin d'une liste, un stylo ?
+
+02:08.560 --> 02:17.640
+Donc je dirais que les noms en majuscules sont pointés sur un stylo et mon nom en majuscule, d'accord.
+
+02:17.640 --> 02:23.240
+Si nous regardons maintenant nos noms supérieurs, nous verrons que nous avons parcouru cette liste en boucle, nous avons
+
+02:23.240 --> 02:30.760
+pris des mesures, c'est vrai, mais cela fait beaucoup de code et c'est une programmation assez courante
+
+02:30.760 --> 02:31.760
+paradigme.
+
+02:31.760 --> 02:34.400
+Nous faisons ce type de programmation tout le temps.
+
+02:34.400 --> 02:40.520
+Et donc Python a trouvé un raccourci très pratique pour cela.
+
+02:40.520 --> 02:47.760
+Pour faire une compréhension de liste, nous commençons par la syntaxe de la liste, donc ces crochets.
+
+02:47.760 --> 02:52.920
+Et puis, au fur et à mesure qu'on s'y habitue, je trouve que l'ordre se déclenche vraiment
+
+02:52.920 --> 02:53.920
+les gens debout.
+
+02:53.920 --> 03:00.160
+Et donc j'ai tendance à écrire le mien à l'envers, je réfléchis à ce sur quoi je veux faire une boucle
+
+03:00.160 --> 03:01.800
+et je tape ça en premier.
+
+03:01.800 --> 03:06.240
+Alors, sur quoi faisions-nous une boucle dans nos quatre boucles ?
+
+03:06.240 --> 03:11.640
+Ouais, donc je dirais quatre noms et noms.
+
+03:11.640 --> 03:15.960
+Voilà donc la seconde moitié de notre compréhension de la liste.
+
+03:15.960 --> 03:23.120
+Maintenant, déplacez votre curseur au début et placez-le juste à droite de celui-ci.
+
+03:23.120 --> 03:26.160
+premier support d'ouverture.
+
+03:26.160 --> 03:30.680
+La première partie de la compréhension de la liste est l’action que nous souhaitons entreprendre.
+
+03:30.680 --> 03:35.680
+Alors qu’est-ce que je faisais avec mon nom et l’exemple précédent ?
+
+03:35.680 --> 03:38.520
+Ouais, je le mettais en majuscule.
+
+03:38.520 --> 03:45.840
+Donc ici, sur le côté gauche, je dirais le nom dopper.
+
+03:45.840 --> 03:47.920
+Quel résultat obtenons-nous lorsque nous exécutons ceci ?
+
+03:47.920 --> 03:55.520
+C'est vrai, une liste de noms en majuscules, plutôt utile, non ?
+
+03:55.520 --> 04:05.160
+Nous pouvons, disons que nous voulions construire une liste de carrés, n'est-ce pas ?
+
+04:05.160 --> 04:12.080
+Quelle fonction pouvons-nous utiliser en Python pour générer une liste de nombres dans une séquence ?
+
+04:12.080 --> 04:13.080
+Gamme.
+
+04:13.080 --> 04:14.080
+Portée, non ?
+
+04:14.080 --> 04:18.040
+Alors petit récapitulatif de la gamme.
+
+04:18.040 --> 04:24.160
+Si nous appelons range sans faire de boucle dessus, nous verrons cette plage
+
+04:24.200 --> 04:25.160
+objet.
+
+04:25.160 --> 04:29.240
+C'est parce que chaque élément qu'il contient est généré à la volée, ce qui est génial, non ?
+
+04:29.240 --> 04:32.160
+C'est excellent pour les performances, excellent pour la mémoire.
+
+04:32.160 --> 04:50.520
+Au fur et à mesure que nous apprenons, si nous voulons jeter un coup d'œil à l'intérieur de la plage, nous oublions peut-être la syntaxe.
+
+04:50.760 --> 04:55.080
+Note rapide ici pour tous ceux qui n'y prêtent pas attention, comme ne pas appeler à distance sur une liste énorme
+
+04:55.080 --> 05:00.840
+des numéros et une liste d'appels autour parce que Nina vous l'a dit parce que ce n'est pas ce que je dis.
+
+05:00.840 --> 05:06.280
+Donc, si nous voulons jeter un coup d'œil à l'intérieur d'une plage, nous pouvons appeler une liste dessus, n'est-ce pas ?
+
+05:06.280 --> 05:15.360
+Ainsi, une plage avec un seul numéro ira jusqu'à ce numéro, mais non inclusif, donc exclusif.
+
+05:15.360 --> 05:20.720
+Si nous appelons une plage avec deux nombres, ce premier nombre est le numéro de départ.
+
+05:20.720 --> 05:29.920
+La plage inclura le numéro de départ, à l’exclusion du numéro de fin.
+
+05:29.920 --> 05:34.400
+Et le troisième argument de range est une étape.
+
+05:34.400 --> 05:39.560
+Donc si je voulais passer en revue tous les nombres pairs, ou je suis désolé, pas tous les nombres pairs,
+
+05:39.560 --> 05:46.560
+Je voulais passer de un à quatre et ajouter à chaque fois j'obtiendrais un et trois, alors c'est comme ça
+
+05:46.560 --> 05:49.000
+la gamme fonctionne.
+
+05:49.000 --> 05:54.120
+Disons que je voulais faire une liste de compréhension passant en revue tous les nombres de
+
+05:54.120 --> 06:00.400
+un à zéro à cinq et imprimé le carré.
+
+06:00.400 --> 06:08.840
+Donc je dirais un nombre de quatre dans la plage, je voulais les nombres de zéro à cinq, quelle plage
+
+06:08.840 --> 06:15.080
+en aurais-je besoin, quelle valeur devrais-je mettre dans la portée, c'est donc ce que nous allons faire
+
+06:15.080 --> 06:18.520
+boucle dans notre compréhension de liste.
+
+06:18.520 --> 06:25.960
+Et puis revenons au début de la ligne, les utilisateurs Windows, je ne sais pas, les utilisateurs Mac
+
+06:25.960 --> 06:33.360
+control a peut vous aider à amener votre ligne au début ou votre curseur au début de la ligne.
+
+06:33.360 --> 06:40.920
+Si je voulais faire les carrés, je dirais juste, vous savez, nombre nombre.
+
+06:40.920 --> 06:43.520
+Voilà rapidement tous nos carrés.
+
+06:43.520 --> 06:50.480
+Nous pouvons renvoyer une liste de tous les autres types dont nous avons parlé.
+
+06:50.480 --> 06:58.080
+Dans notre premier exemple, nous avons vu des chaînes, dans notre deuxième exemple, nous avons vu un nombre.
+
+06:58.080 --> 07:01.240
+Jetons un coup d'œil à un type de données plus compliqué.
+
+07:01.240 --> 07:06.680
+Disons que je voulais renvoyer une liste de tuples.
+
+07:06.680 --> 07:14.680
+Et la façon dont je ferais cela, donc je le ferais, vous savez, j'ai mes noms variables ici.
+
+07:14.680 --> 07:16.120
+Je ferais ma compréhension de liste.
+
+07:16.120 --> 07:21.040
+Je vais parcourir le nom et les noms.
+
+07:21.040 --> 07:23.160
+Et ce que je veux retourner, c'est un tuple.
+
+07:23.160 --> 07:26.680
+Je vais donc mettre ces parenthèses autour.
+
+07:26.680 --> 07:34.720
+Je veux un tuple contenant la longueur de la chaîne, par exemple, ainsi que la longueur du
+
+07:34.720 --> 07:35.720
+nom.
+
+07:35.720 --> 07:37.720
+Comment obtient-on la longueur d’une chaîne ?
+
+07:37.720 --> 07:39.720
+With length, really?
+
+07:39.720 --> 07:40.720
+Ouais.
+
+07:40.720 --> 07:41.720
+C'est exact.
+
+07:41.720 --> 07:49.200
+N'oubliez pas une parenthèse supplémentaire ici, et j'obtiendrais la longueur de mon nom.
+
+07:49.200 --> 07:56.040
+Ainsi, toute variable située à droite de ces quatre instructions est disponible pour
+
+07:56.040 --> 08:01.880
+que nous utilisons dans le côté gauche de cette équation.
+
+08:01.880 --> 08:08.760
+Hier, nous avons utilisé le déballage de tuples pour parcourir deux éléments qui, une fois, par exemple, si nous
+
+08:08.760 --> 08:12.360
+parcouraient une liste de tuples.
+
+08:12.360 --> 08:14.680
+Alors appelez cela la compréhension.
+
+08:14.680 --> 08:19.400
+Et j'obtiens la longueur du mot suivie de la longueur de chaque chaîne.
+
+08:19.400 --> 08:25.120
+Une dernière chose que je veux montrer avec split et join.
+
+08:25.120 --> 08:27.560
+Je vous ai montré des sortes de cordes, n'est-ce pas ?
+
+08:27.560 --> 08:31.040
+Alors disons que le nom est Nina.
+
+08:31.040 --> 08:35.000
+Et ma chaîne commence par un f.
+
+08:35.000 --> 08:46.600
+Ils peuvent dire que le nom est suivi du nom.
+
+08:46.600 --> 08:56.560
+Si je voulais faire la même chose pour une liste de noms et les imprimer séparés par des virgules
+
+08:56.560 --> 09:03.480
+chaîne, je peux le faire avec une jointure, n'est-ce pas ?
+
+09:03.480 --> 09:22.600
+Donc, si j'avais juste ma seule corde ici, ce serait plutôt génial, parce que c'est
+
+09:22.600 --> 09:26.360
+not a list.
+
+09:26.360 --> 09:33.080
+Vous pouvez transmettre une compréhension de liste en jointure, n'est-ce pas ?
+
+09:33.080 --> 09:34.080
+Join takes a list.
+
+09:34.080 --> 09:40.520
+Je peux donc prononcer quatre noms dans des noms comme je le faisais auparavant.
+
+09:40.520 --> 09:45.960
+Et je peux simplement aller vers la droite, placer mon curseur à droite de ce crochet ouvrant.
+
+09:45.960 --> 09:51.720
+Et je peux mettre une chaîne ici et dire que le nom est le nom.
+
+09:51.720 --> 09:57.160
+Je suis donc en train de rassembler certaines de ces pièces.
+

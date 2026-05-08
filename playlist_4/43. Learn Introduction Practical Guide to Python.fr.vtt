@@ -1,0 +1,128 @@
+WEBVTT
+
+00:00.000 --> 00:07.240
+Je souhaite vous montrer rapidement l'administrateur Django, puis aborder brièvement le test pour savoir comment vous pourriez
+
+00:07.240 --> 00:13.240
+exécutez-les dans Django, puis nous passerons à la pratique finale du projet.
+
+00:13.240 --> 00:18.800
+L'administrateur Django est vraiment l'une des fonctionnalités phares de ce framework Web et c'en est une
+
+00:18.800 --> 00:21.480
+des raisons pour lesquelles il est si populaire.
+
+00:21.480 --> 00:26.520
+Il vous permet d'interagir et de modifier facilement nos modèles de base de données dans une interface utilisateur très agréable avec
+
+00:26.520 --> 00:29.600
+configuration très, très minimale.
+
+00:29.600 --> 00:34.080
+Donc, pour utiliser l'administrateur, vous devrez créer un super utilisateur.
+
+00:34.080 --> 00:39.440
+Nous faisons donc cela en exécutant Python Managepy, en créant un super utilisateur.
+
+00:39.440 --> 00:52.720
+N'oubliez pas le mot de passe que vous avez défini.
+
+00:52.720 --> 00:56.240
+Cela vous permettra de savoir qu'un super utilisateur a été créé avec succès.
+
+00:56.240 --> 01:01.280
+Si nous revenons aux URL de l'interface utilisateur du blog pratique, nous verrons qu'il existe un chemin d'administration
+
+01:01.280 --> 01:02.520
+à retrouver ici.
+
+01:02.520 --> 01:08.640
+Vous n'êtes pas obligé d'utiliser l'administrateur si vous ne le souhaitez pas, vous laisseriez simplement cela de côté.
+
+01:08.640 --> 01:15.360
+Maintenant que j'ai créé un super utilisateur, je peux aller sur mon blog et au lieu de regarder un article,
+
+01:15.360 --> 01:20.960
+Je vais taper l'URL slash admin et je vais m'amener à une page de connexion et je peux
+
+01:20.960 --> 01:28.360
+connectez-vous maintenant avec le super utilisateur que j'ai créé et cela m'amènera à cette interface.
+
+01:28.360 --> 01:34.940
+Maintenant, ceux-ci ont été créés automatiquement par Django, mais ici nous verrons dans le blog des applications du blog
+
+01:34.940 --> 01:52.940
+l'application sont des articles et je peux cliquer ici et ajouter un article et lui donner un titre et lui donner un
+
+01:52.940 --> 01:59.740
+slog et enregistrez-le et nous verrons qu'il a été ajouté avec succès.
+
+01:59.740 --> 02:05.740
+Alors, quand nous revenons à l'index de notre blog, le voilà, c'est le deuxième article du blog.
+
+02:05.740 --> 02:13.100
+Et tout ce que j'avais à faire pour configurer cela était de créer et de remplir un fichier admin.py car
+
+02:13.100 --> 02:19.980
+il a déjà été créé pour nous, importez notre modèle de publication puis enregistrez-le.
+
+02:19.980 --> 02:27.140
+Donc admin.site.registerpost nous a offert tout cela presque gratuitement.
+
+02:27.140 --> 02:33.100
+Si nous voulions que Django génère automatiquement nos slugs pour nous lors de la création d'un nouvel article de blog,
+
+02:33.100 --> 02:38.380
+ce que je pense que nous faisons car créer n'importe quel slug manuellement est assez ennuyeux, nous pouvons commenter
+
+02:38.380 --> 02:50.020
+ceci et créez à la place une classe appelée post admin qui hérite du modèle admin
+
+02:50.020 --> 02:56.820
+puis enregistrez-le à la place.
+
+02:56.820 --> 03:05.540
+Si je sauvegarde cela, puis actualise cette page et accède à notre administrateur, nous remarquerons que Django
+
+03:05.540 --> 03:13.860
+est actuellement exécuté en mode débogage, ce qui signifie qu'il prendra en compte toutes les modifications
+
+03:13.860 --> 03:20.700
+automatiquement et actualisez simplement le serveur, vous ne voulez pas que cela soit activé en production.
+
+03:20.700 --> 03:25.740
+Donc juste pour information, c'est un paramètre que vous inverserez et settings.py.
+
+03:25.740 --> 03:31.020
+Si vous accédez ici à une URL qui n'existe pas, vous obtiendrez une page non fondatrice.
+
+03:31.020 --> 03:35.060
+Il vous dira pourquoi il a été généré, puis vous verrez un message en bas.
+
+03:35.060 --> 03:39.460
+disant que vous voyez cette erreur parce que vous avez débogué est égal à vrai en production,
+
+03:39.460 --> 03:44.100
+vous souhaitez probablement rediriger vers une page 404 standard.
+
+03:44.100 --> 03:51.060
+Alors maintenant, si nous regardons notre administrateur pour la publication, nous le verrons lorsque nous publierons une publication.
+
+03:51.060 --> 04:00.300
+Au fur et à mesure que je tape un titre, nous verrons que le slug est généré automatiquement.
+
+04:00.300 --> 04:06.660
+Ce qui est cool, c'est que certains mots comme A sont sautés et que vous ne vous en souciez pas vraiment.
+
+04:06.660 --> 04:15.580
+à propos du référencement.
+
+04:15.620 --> 04:23.660
+C’est donc ce que vous obtenez gratuitement avec Django.
+
+04:23.660 --> 04:25.820
+Vous pouvez faire bien plus avec.
+
+04:25.820 --> 04:29.300
+C'est très puissant, mais je voulais juste vous donner un aperçu.
+

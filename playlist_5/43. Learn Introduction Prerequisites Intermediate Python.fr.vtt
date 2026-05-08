@@ -1,0 +1,134 @@
+WEBVTT
+
+00:00.000 --> 00:08.000
+Donc très rapidement, hier nous avons examiné le cycle de requête et de réponse pour une API.
+
+00:08.000 --> 00:15.000
+Pensez au routage dans Flask comme à la même chose. Flask est notre application Web.
+
+00:15.000 --> 00:26.000
+Considérez notre serveur. Notre client est donc le navigateur. Dans ce cas, je demande l'URL racine de mon serveur.
+
+00:27.000 --> 00:33.000
+Et mon serveur renvoie une réponse, juste une vieille chaîne qui dit bonjour tout le monde.
+
+00:39.000 --> 00:49.000
+En déclarant des routes dans Flask, nous avons vu que la barre oblique se résout à la racine.
+
+00:49.000 --> 00:58.000
+Mais nous pouvons également créer autant de chemins que nous le souhaitons. Disons,
+
+00:58.000 --> 01:14.000
+Les mondes Funjora reviennent, les mondes Funjora. Par défaut, nous voulons que tous nos visiteurs voient bonjour les mondes.
+
+01:14.000 --> 01:21.000
+Mais en option, s'ils veulent emprunter le chemin spécial, disons, vers la France.
+
+01:21.000 --> 01:29.000
+Nous pouvons le faire. Nous voudrions donc déclarer une nouvelle route d'application. Donc toujours la barre oblique, c'est la racine.
+
+01:29.000 --> 01:35.000
+Mais maintenant, je vais dire barre oblique en français.
+
+01:35.000 --> 01:42.000
+Et assurez-vous que votre application Flask s'exécute ici.
+
+01:42.000 --> 01:47.000
+Avant de faire cela, je vais vous montrer quelque chose d'assez pratique.
+
+01:47.000 --> 02:00.000
+Dans Flask, vous pouvez avoir un mode de débogage pour votre environnement local où vous pouvez avoir votre site, rechargez simplement votre code en direct.
+
+02:00.000 --> 02:06.000
+Pour ne pas avoir à saisir votre nouvelle fonction, modifier votre itinéraire, jouer avec les choses.
+
+02:06.000 --> 02:15.000
+Tuez le serveur, redémarrez-le, processus assez fastidieux. Donc ici, tout comme nous avons défini l'application Flask sur hello.py.
+
+02:15.000 --> 02:21.000
+Nous voulons revenir un peu en arrière. Et nous voulons définir une nouvelle variable d'environnement.
+
+02:21.000 --> 02:29.000
+Et nous allons définir le soulignement n de Flask sur un développement égal.
+
+02:29.000 --> 02:32.000
+Je vais donc juste copier ça.
+
+02:32.000 --> 02:39.000
+Donc pour Mac, ce serait ça. Et pour Windows.
+
+02:44.000 --> 02:47.000
+J'espère que je suis désolé pour ça.
+
+02:47.000 --> 02:51.000
+Pour Windows, j'espère que je pourrai simplement me contacter sous forme de code.
+
+02:51.000 --> 02:53.000
+Vous ne collaborez pas avec moi aujourd'hui.
+
+02:53.000 --> 02:58.000
+J'espère que je pourrai simplement copier et coller tout cela et que cela fera le bon travail.
+
+02:58.000 --> 03:12.000
+Je dis donc que Flask n est égal au développement.
+
+03:12.000 --> 03:14.000
+Pour Windows.
+
+03:14.000 --> 03:24.000
+D'accord, maintenant, lorsque nous exécuterons Flask avec notre environnement de développement, nous verrons que le mode débogage est activé.
+
+03:24.000 --> 03:30.000
+Et il dira qu'en redémarrant avec stat, le débogueur est actif.
+
+03:30.000 --> 03:37.000
+Et maintenant, voyons si nous allons sur notre page Web, nous devrions pouvoir la charger très bien.
+
+03:37.000 --> 03:45.000
+Maintenant, si nous essayons d'ajouter le chemin français, nous verrons que l'itinéraire le plus spécifique a été récupéré.
+
+03:45.000 --> 03:51.000
+Ou je suis désolé, l'itinéraire pour le français a été repris.
+
+03:52.000 --> 04:01.000
+Vous pouvez faire beaucoup de choses avec cette option. itinéraire. Vous pouvez même accepter des paramètres.
+
+04:01.000 --> 04:06.000
+Vous pouvez donner des indications de type pour ces paramètres.
+
+04:06.000 --> 04:15.000
+Vous pouvez spécifier les méthodes HTTP que vous souhaitez accepter dans votre itinéraire, par exemple simplement obtenir ou simplement publier.
+
+04:15.000 --> 04:23.000
+Essayons de créer une nouvelle route qui accepte un paramètre.
+
+04:23.000 --> 04:29.000
+Je vais donc appeler cette route d'application.
+
+04:29.000 --> 04:37.000
+Pour le nom de la barre oblique, une barre oblique, puis un nouveau symbole ici, ces crochets.
+
+04:37.000 --> 04:47.000
+Et je vais mettre un nom ici.
+
+04:47.000 --> 04:53.000
+Maintenant, je peux dire que je vais assumer une nouvelle fonction ici.
+
+04:53.000 --> 05:01.000
+Et ma fonction doit accepter ce paramètre, car je l'ai défini dans la route de l'application.
+
+05:01.000 --> 05:04.000
+Et je vais renvoyer une chaîne F.
+
+05:04.000 --> 05:11.000
+Il va dire bonjour et nom.
+
+05:11.000 --> 05:16.000
+D'accord, maintenant, en sauvegardant ceci, je n'ai pas besoin d'arrêter et de démarrer mon serveur.
+
+05:16.000 --> 05:20.000
+Je vais aller au nom du chemin slash nina.
+
+05:20.000 --> 05:29.000
+Et maintenant, quoi que je mette à la fin de cette URL, nous serons utilisés comme paramètre.
+

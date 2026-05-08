@@ -1,0 +1,29 @@
+WEBVTT
+
+00:00.000 --> 00:09.800
+On the course website, you will find a handy list of test case assertions here at the bottom,
+
+00:09.800 --> 00:17.800
+so equals not equals a certain true asserting false. Using the standard library unit tests,
+
+00:17.800 --> 00:23.440
+it's fine for most projects, even have a reasonable size, but as your programs go,
+
+00:23.440 --> 00:28.880
+as your code organization becomes more complex, you might want to consider a more advanced
+
+00:28.880 --> 00:34.480
+alternate testing framework or test runner. There's a third-party tool called Knows
+
+00:34.480 --> 00:40.160
+and a third-party testing framework called Pytest that are very popular. Those modules are
+
+00:40.160 --> 00:46.080
+compatible with unit tests, but they do things slightly differently. And once you feel like
+
+00:46.080 --> 00:51.920
+your unit tests are getting out of control, it's a good way to, that's a good stopping point
+
+00:51.920 --> 00:54.240
+to do a little bit of experimentation.
+

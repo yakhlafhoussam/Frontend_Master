@@ -1,0 +1,266 @@
+WEBVTT
+
+00:00.000 --> 00:05.600
+Très bien, alors quel est l'intérêt d'utiliser Python ? En quoi est-il différent des autres langues ?
+
+00:05.600 --> 00:11.600
+Quels avantages offre-t-il ? Python est le langage de programmation dynamique et cela m'a vraiment attiré
+
+00:11.600 --> 00:18.800
+par surprise au début. Elle a été créée par Guido Van Rossam à la fin des années 1980. Cela signifie que Python
+
+00:18.800 --> 00:25.840
+a 30 ans. Cela signifie qu'il est plus âgé que certains d'entre vous. Il est en âge de voter.
+
+00:26.080 --> 00:33.760
+Beaucoup de gens pensent que Python est un nouveau langage ou qu’il est nouveau sur la scène. Cela
+
+00:33.760 --> 00:39.200
+n'est pas vrai. Cela fait juste une dizaine d'années qu'il gagne en popularité.
+
+00:40.480 --> 00:45.440
+Il existe également une idée fausse très répandue selon laquelle Python n'est qu'un langage de script. C'est vraiment
+
+00:45.440 --> 00:52.480
+simple et ce n’est pas vrai du tout. Django, un framework Web construit en Python, est utilisé pour
+
+00:52.480 --> 00:59.760
+dirigez Instagram, qui est l’un des plus grands sites Web au monde avec le plus grand nombre d’utilisateurs. Il alimente
+
+00:59.760 --> 01:06.640
+parties de Reddit. Il est utilisé chez Netflix et les premières versions de Dropbox étaient presque entièrement construites en Python.
+
+01:07.920 --> 01:14.480
+Dropbox attribue une grande partie de son succès à Python, car Python est facile à lire et à utiliser.
+
+01:14.480 --> 01:20.240
+écrire et il est facile pour les équipes de collaborer en Python. Ils ont eu cette idée et ils ont pu obtenir
+
+01:20.320 --> 01:26.480
+un produit le plus rapidement possible, puis quand ils ont dû évoluer, c'était quelque chose
+
+01:26.480 --> 01:32.400
+qu'ils ont commencé à gérer en remplaçant des parties de leur application par go ou d'autres plus
+
+01:32.400 --> 01:38.800
+langages performants mais ils n'ont pas optimisé quand ils n'en avaient pas besoin et cela leur a permis d'avoir cela
+
+01:38.800 --> 01:45.600
+entreprise très, très prospère. C'est également une langue de plus en plus populaire dans l'éducation.
+
+01:45.680 --> 01:54.160
+de tous âges. Il y a nos livres Python pour les enfants. Python est enseigné dans les universités et
+
+01:56.080 --> 02:02.720
+J'ai trouvé cette excellente citation selon laquelle en 2014, Python était le langage d'enseignement le plus populaire au sommet
+
+02:02.720 --> 02:09.680
+Les universités américaines et si vous connaissez Python, vous n'aurez peut-être pas de mal à trouver un emploi car c'en est un
+
+02:09.760 --> 02:16.560
+des langages de programmation à la croissance la plus rapide. Gido a dit que Python est désormais aussi le langage de
+
+02:16.560 --> 02:22.960
+amateurs et je le dis de la meilleure façon possible. Cela signifie que la langue est accessible à un grand nombre de
+
+02:22.960 --> 02:31.440
+les gens. L’un des avantages de Python est qu’il est open source. C'est un développement actif.
+
+02:31.440 --> 02:36.400
+Il existe une équipe engagée de principaux contributeurs et de nombreux problèmes sont également identifiés.
+
+02:36.480 --> 02:41.040
+accueillant pour les débutants. Ainsi, à mesure que vous avancez dans votre parcours Python, si vous décidez que vous souhaitez
+
+02:41.040 --> 02:47.840
+contribuer au langage, c’est quelque chose que vous pouvez facilement faire. Nous avons discuté un peu
+
+02:47.840 --> 02:54.640
+sur les versions en Python. Vous entendrez peut-être parler de Python 2 par rapport à Python 3. De quoi s'agit-il ?
+
+02:56.000 --> 03:01.760
+Il dira que c'est peut-être une petite tache dans l'histoire de Python. Python 3 était en fait
+
+03:01.840 --> 03:10.880
+sorti en 2008 et son adoption a été très lente. Il y avait beaucoup de frameworks très populaires qui
+
+03:11.600 --> 03:18.480
+je ne voulais pas migrer parce que cela aurait demandé beaucoup de travail et à cause de cela, beaucoup de gens
+
+03:18.480 --> 03:24.320
+collé à Python 2 au lieu de Python 3, des modifications importantes ont été introduites.
+
+03:24.320 --> 03:31.200
+À ce stade, ce chapitre est désormais entièrement clos. Python 2 7 qui était la dernière version de Python 2
+
+03:31.200 --> 03:38.240
+est obsolète. Il a atteint sa fin de vie. Il ne reçoit pas de mises à jour de sécurité critiques. Ce n'est pas
+
+03:38.240 --> 03:47.440
+obtenir de nouvelles fonctionnalités critiques que vous souhaiterez peut-être utiliser. Il est donc temps d'utiliser Python 3 et de passer à autre chose
+
+03:47.440 --> 03:54.320
+à partir de Python 2. Toutes ces bibliothèques et frameworks populaires ont désormais également migré et sont
+
+03:54.320 --> 04:01.040
+ne prend probablement pas en charge leurs fonctionnalités Python 2 car cela représente le double du travail. Donc ce cours se déroule
+
+04:01.040 --> 04:07.760
+me concentrer uniquement sur Python 3 et je vous encourage tous à utiliser Python 3 pour vos projets personnels
+
+04:07.760 --> 04:15.600
+et des projets au travail. Python possède une bibliothèque standard incroyablement riche et complète.
+
+04:18.000 --> 04:24.320
+Il y a un dicton selon lequel Python est livré avec des piles. Donc, tout ce que vous pourriez vouloir faire, comme
+
+04:24.400 --> 04:30.480
+travailler avec. Jason, tout cela est inclus dans la bibliothèque standard. Vous n'avez pas besoin d'installer
+
+04:30.480 --> 04:35.920
+tous les packages supplémentaires et il y a un lien ici vers la bibliothèque standard et vous y allez en quelque sorte
+
+04:35.920 --> 04:46.080
+par ici et voyez ce qui est disponible. Il y a beaucoup de choses. Il y a aussi le package Python
+
+04:46.160 --> 04:57.760
+index pour les packages tiers. Il existe aujourd'hui près de 300 000 projets et près de la moitié
+
+04:57.760 --> 05:06.240
+millions d'utilisateurs. C'est donc ici que vous allez et que vous voulez trouver quelque chose de peut-être plus moderne.
+
+05:06.240 --> 05:13.360
+ou plus de niche et il existe de nombreux packages tiers disponibles pour de nombreuses utilisations différentes.
+
+05:13.360 --> 05:22.240
+Il y a des tonnes de trucs pour l'IA et le ML, la science-fiction, les pandas numpy, la torche pi. Il existe d'excellentes options
+
+05:22.240 --> 05:27.040
+pour le matériel et les microcontrôleurs. Il existe deux frameworks de développement Web très populaires qui
+
+05:27.040 --> 05:35.360
+sont Django et Flask, de nombreux outils pour DevOps et la meilleure partie de Python est en fait
+
+05:35.360 --> 05:42.000
+l'incroyable communauté. Donc après ce cours, je vous encourage tous à continuer dans cette communauté,
+
+05:42.080 --> 05:50.000
+Python US est la plus grande conférence annuelle avec environ 4 000 participants. Il y a beaucoup de locaux
+
+05:50.000 --> 05:55.840
+groupes d'utilisateurs. Beaucoup d’entre eux sont répertoriés dans un wiki lié. Beaucoup de ces groupes sont maintenant
+
+05:55.840 --> 06:02.000
+avoir des événements en ligne et à distance auxquels vous pouvez participer. Et il existe également de nombreux événements formidables et
+
+06:02.000 --> 06:10.000
+groupes de soutien pour les femmes et les développeurs non binaires tels que les filles Pilates et Django. Et ceux-ci
+
+06:10.080 --> 06:17.120
+les organisations ont tendance à avoir des sections dans la plupart des grandes villes et elles font un travail vraiment très formidable.
+
+06:18.880 --> 06:26.320
+Alors un peu sur la philosophie de Python. De nombreuses idées en Python ont été formées par quelque chose
+
+06:26.320 --> 06:33.280
+appelé le Zen de Python. C'est un ensemble de 19 principes logiciels qui ont été envoyés à Python
+
+06:33.360 --> 06:41.440
+liste de diffusion en 1999. Et vous pouvez effectivement trouver le Zen de Python inclus dans la distribution Python
+
+06:41.440 --> 06:51.920
+comme un œuf de Pâques. Alors allons à notre repel partout où vous avez cet ouvert et tapez import this.
+
+06:56.400 --> 07:01.760
+Et nous n'allons pas lire tout cela mais les quelques principaux locataires
+
+07:01.760 --> 07:07.760
+Le beau vaut mieux que le laid, l’explicite vaut mieux qu’implicite, le simple vaut mieux que le complexe,
+
+07:07.760 --> 07:14.880
+mieux vaut complexe que compliqué. Mieux vaut plat qu'imbriqué, mieux vaut clairsemé que dense,
+
+07:14.880 --> 07:22.960
+et surtout, la lisibilité compte. Ainsi, à mesure que vous avancez dans votre carrière Python, vous verrez
+
+07:22.960 --> 07:31.440
+cela se produit de plus en plus dans la pratique. Le code Python doit être simple. Tu ne devrais pas essayer de faire
+
+07:31.440 --> 07:39.680
+le plus petit paquebot que personne d'autre ne peut comprendre. Python peut vous fournir ces outils.
+
+07:39.680 --> 07:46.160
+Vous pouvez le faire mais vous ne devriez pas. Vous devez vous efforcer de rendre votre code très clair, très simple,
+
+07:46.160 --> 07:55.920
+très lisible. Plat vaut mieux que imbriqué signifie ne pas avoir de code en forme de flèche. Alors non,
+
+07:55.920 --> 08:01.600
+instruction if, instruction if, instruction if, instruction if, pas une tonne de boucles imbriquées. Essayez de garder
+
+08:01.600 --> 08:11.200
+tout aussi près que possible de la marge gauche. Et concentrez-vous vraiment là-dessus. C'est ce qui fait
+
+08:11.200 --> 08:21.360
+Python différent de beaucoup d'autres langages de programmation. Maintenant, une façon dont Python vous encourage
+
+08:21.360 --> 08:27.680
+pour écrire du code simple et lisible, il faut suivre une directive de style incluse dans le
+
+08:28.880 --> 08:36.000
+langues liste des propositions officielles. Ça s'appelle Pep 8. Et si on regarde ça,
+
+08:36.000 --> 08:47.440
+Pep 8 donne les conventions de codage pour Python. Tout, de l'indentation à la longueur maximale de ligne
+
+08:47.440 --> 08:58.080
+à l'endroit où les lignes vides devraient se trouver, à l'endroit où fonctionne l'espacement autour du signe égal. Tu n'as pas
+
+08:58.080 --> 09:03.200
+pour mémoriser toutes ces règles car des outils appelés linters, vous devriez avoir installé un
+
+09:03.200 --> 09:08.080
+code inter-invincible. Nous vous afficherons des avertissements lorsque votre code ne répond pas aux normes Pep 8.
+
+09:08.880 --> 09:15.760
+Sachez que les avertissements donnés par les linters ne sont pas des erreurs de syntaxe. Votre code fonctionnera toujours,
+
+09:15.760 --> 09:21.680
+mais ce ne seront pas les normes de style de code Python acceptées. Ce n'est pas très important quand on travaille sur
+
+09:21.680 --> 09:26.800
+le vôtre, mais bien plus important lorsque vous travaillez en équipe et que vous collaborez avec d'autres.
+
+09:26.960 --> 09:33.920
+Il y a quelques autres œufs de Pâques que je vais vous montrer. En fait, je ne sais pas si ça
+
+09:33.920 --> 09:48.640
+l'un fonctionne en Python 3. C'était un œuf de Pâques Python 2. Et voilà. Donc, si vous tapez avec un trait de soulignement
+
+09:48.640 --> 09:54.880
+soulignez les futures accolades d'importation, comme si Python, le langage de programmation, obtiendrait jamais des accolades.
+
+09:55.760 --> 09:59.280
+Vous verrez une erreur de syntaxe et le message n'est pas un hasard.
+
+10:02.880 --> 10:07.760
+Ainsi, Python ne ressemblera plus à JavaScript dans un avenir proche. Et puis,
+
+10:08.480 --> 10:12.080
+l'un de mes œufs de Pâques préférés est si vous importez de l'anti-gravité.
+
+10:15.280 --> 10:21.600
+Cela vous amènera à une bande dessinée XKCD sur Python qui dit que vous volez comment
+
+10:22.560 --> 10:28.240
+avec Python. Je l'ai appris hier soir. Tout est si simple. Bonjour tout le monde est juste imprimé
+
+10:28.240 --> 10:36.480
+bonjour le monde. C'est Python 2 et Python 3, vous avez besoin de ces parenthèses. Alors oui, Python est un joli
+
+10:36.480 --> 10:44.160
+un langage amusant, mais il est aussi très, très puissant. Nous allons faire une petite pause avant de parler
+
+10:44.160 --> 10:49.360
+sur l'anatomie d'un programme Python et passez aux types de données.
+

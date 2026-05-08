@@ -1,0 +1,365 @@
+WEBVTT
+
+00:00.000 --> 00:11.120
+For this second exercise, we're going to practice our Comprehensions, our List Comprehensions
+
+00:11.120 --> 00:12.120
+and more.
+
+00:12.120 --> 00:25.440
+We're also going to take a closer look at slicing and use the zip function.
+
+00:25.440 --> 00:37.600
+Okay, so we talked about all sorts of different types of Comprehensions.
+
+00:37.600 --> 00:41.000
+Comprehension looks something like this.
+
+00:41.000 --> 00:48.280
+I can say, you know, give me all the even numbers from 0 to 99 by looping through and saying
+
+00:48.280 --> 00:58.920
+4-NOM, let me say, 4-NOM in range of 100.
+
+00:58.920 --> 01:03.360
+And going back to the beginning, I know that I just want the number, I don't want anything
+
+01:03.360 --> 01:06.280
+special with it.
+
+01:06.280 --> 01:13.320
+If I wanted to get just the even numbers, I would do a modular check and say that if the
+
+01:13.320 --> 01:19.680
+modulo 2 is 0, that's even.
+
+01:19.680 --> 01:25.720
+One important thing to remember here is that you have to use the equality operator to check
+
+01:25.720 --> 01:28.760
+that the value is explicitly 0.
+
+01:28.760 --> 01:36.440
+Otherwise, it's going to be falsie and you're going to get the odd values instead.
+
+01:36.440 --> 01:39.160
+Okay, there we go.
+
+01:39.160 --> 01:47.960
+I'm going to assign this to a variable.
+
+01:47.960 --> 01:54.680
+And I'm going to use something from the standard library.
+
+01:54.680 --> 02:01.720
+The random method is going to help me get a random number.
+
+02:01.720 --> 02:07.160
+In the wrap-all, you can type import random, but know that when you do imports in Python
+
+02:07.160 --> 02:12.000
+files, you always want to put your imports at the top.
+
+02:12.000 --> 02:21.120
+And as an aside, there's a command in the command palette called Organize imports.
+
+02:21.120 --> 02:27.440
+Once you start making Python files with a lot of imports, it'll just organize them in a really
+
+02:27.440 --> 02:30.000
+nice way for you.
+
+02:30.000 --> 02:39.680
+So I want to make a dictionary where the key is the random, the key is the number.
+
+02:39.680 --> 02:45.160
+And then the value is just a random number from I0 to 99.
+
+02:45.160 --> 02:51.320
+So to get a random number, I can say random dot random int.
+
+02:51.320 --> 02:56.920
+And let's say I didn't remember what this method did or with the arguments were, what
+
+02:56.960 --> 03:04.120
+can I use to give me a little bit of guidance to help my third year?
+
+03:04.120 --> 03:07.480
+So I can pass this whole thing into help.
+
+03:07.480 --> 03:14.040
+I'll say random, A and B, return a random integer in the range of A and B, including both
+
+03:14.040 --> 03:16.640
+and points.
+
+03:16.640 --> 03:26.400
+So I'll call random dot random int, 0 to 100, and call this multiple times, get new
+
+03:26.400 --> 03:28.840
+value each time that's random.
+
+03:28.840 --> 03:33.280
+So for my dictionary, I'm going to make a dictionary comprehension.
+
+03:33.280 --> 03:39.080
+And what's the difference between syntax between a dictionary comprehension and a set
+
+03:39.080 --> 03:40.080
+comprehension?
+
+03:40.080 --> 03:43.400
+The colon, right?
+
+03:43.400 --> 03:48.120
+So on the left side of the colon is my key.
+
+03:48.120 --> 03:56.360
+And on the right side, I'm going to use this random dot random int from 0 to 100.
+
+03:57.320 --> 04:01.120
+What am I looping over?
+
+04:01.120 --> 04:10.280
+Right, well, so I'm going to say for none in my list.
+
+04:10.280 --> 04:13.800
+And taking a look at my deck, there we go.
+
+04:13.800 --> 04:15.800
+Each value is a random number.
+
+04:19.960 --> 04:23.400
+Let me look at the values that we're generated.
+
+04:23.440 --> 04:26.240
+You can do that with my deck dot values.
+
+04:26.240 --> 04:30.960
+And it's likely that there are some duplicates here, not entirely sure, right?
+
+04:30.960 --> 04:32.640
+The number is a random.
+
+04:32.640 --> 04:43.200
+So if I wanted to quickly deduplicate this data structure, there's two ways that I could
+
+04:43.200 --> 04:44.040
+do it.
+
+04:44.080 --> 04:49.080
+The first would be to pass it into a set.
+
+04:53.360 --> 04:56.160
+Or I could use a set comprehension, too.
+
+04:56.160 --> 05:00.000
+Let's say I wanted to make some modifications before I dedupt it.
+
+05:00.000 --> 05:02.920
+That would be a good use for a set comprehension.
+
+05:02.920 --> 05:05.800
+So here I could just say for none.
+
+05:05.840 --> 05:11.240
+Number none in my deck dot values.
+
+05:16.920 --> 05:18.640
+Oops, sorry about that.
+
+05:18.640 --> 05:20.040
+There we go.
+
+05:20.040 --> 05:23.160
+And that'll do the same thing.
+
+05:23.160 --> 05:27.160
+For slicing, I'm going to make a new list.
+
+05:27.160 --> 05:30.920
+I can, with the numbers from 0 to 99.
+
+05:31.040 --> 05:33.440
+As we saw, I can do that in two ways.
+
+05:33.440 --> 05:43.800
+I could, if I have the range from 0 to 100, I can pass this into list.
+
+05:43.800 --> 05:48.680
+Or if I wanted to make some modifications to it, then a list comprehension would be a good
+
+05:48.680 --> 05:49.680
+way.
+
+05:49.680 --> 05:56.240
+I could just say, you know, number none in range of 100.
+
+05:56.240 --> 06:00.280
+And you know, my modifications would be here, but I'm just going to show you this as an example.
+
+06:00.280 --> 06:03.920
+I'm going to name this my list.
+
+06:03.920 --> 06:08.760
+And I'm going to take a slice of the list.
+
+06:08.760 --> 06:12.680
+In the wrap-all, it's easy to see the slicing as you go.
+
+06:12.680 --> 06:24.280
+So the first thing I want to do is take a slice from the 30th value to the 69th one.
+
+06:24.280 --> 06:30.080
+If I wanted to do the same slice, but take every other value instead, what is the
+
+06:30.080 --> 06:40.600
+third parameter I can pass, or I can add here, every other, that would give me every
+
+06:40.600 --> 06:43.440
+other one.
+
+06:43.440 --> 06:52.880
+If I had my list here, and I wanted to take, get all the values in it, but just in reverse,
+
+06:52.880 --> 06:56.880
+what is a shortcut using slicing?
+
+06:57.680 --> 07:02.720
+All in colon, negative one.
+
+07:02.720 --> 07:09.360
+From the introduction to Python course, what's another way that we can reverse all of the
+
+07:09.360 --> 07:12.480
+values in a list?
+
+07:12.480 --> 07:21.120
+That reverse, yeah, I can say, my list dot reverse does the same thing.
+
+07:21.120 --> 07:24.880
+What is the difference here?
+
+07:24.880 --> 07:28.400
+Does this didn't return anything, right?
+
+07:28.400 --> 07:29.680
+Sorted in place.
+
+07:29.680 --> 07:40.800
+Sorted in place, while this returns a copy.
+
+07:40.800 --> 07:47.760
+Okay, I'm going to dot reverse my list one more time so that we end up with the same thing.
+
+07:47.760 --> 07:54.360
+If I wanted to return a reverse copy of the list with one other way that I can do it.
+
+07:54.360 --> 08:05.120
+So that's not quite right.
+
+08:05.120 --> 08:14.520
+It will work on this sorted or this list of numbers, but that's because they're all already
+
+08:14.520 --> 08:15.520
+in order.
+
+08:15.600 --> 08:26.080
+Just to keep in mind that when we use that dot reverse and this, this syntax will return
+
+08:26.080 --> 08:34.640
+the list backwards, but if you use dot sort or sorted and pass in the reverse flag,
+
+08:34.640 --> 08:40.040
+it's going to do a descending sort.
+
+08:40.120 --> 08:47.320
+So hard to see with a list of numbers, but easier to see with other types of data structures.
+
+08:47.320 --> 08:50.600
+Okay, let's talk about zip.
+
+08:50.600 --> 09:04.600
+We have Nina Max, we have Floyd, and we have Lloyd, and they all have some scores in a game.
+
+09:05.240 --> 09:14.120
+Let's use random again here, and ask for a random integer between 0 and 100, and I'm going
+
+09:14.120 --> 09:16.360
+to loop through each name.
+
+09:19.960 --> 09:20.920
+Oh, no, I'm losing.
+
+09:24.760 --> 09:33.560
+Okay, so if I wanted to zip up these values, I can say four name and score in the zip of names
+
+09:33.560 --> 09:54.440
+and scores, and print out an app string that says, you know, name, got scores, points, oh, um,
+
+09:55.160 --> 09:57.880
+you want score, score, score, score, score, score. Thank you.
+
+10:02.520 --> 10:06.920
+Group pair programming is always the quickest way. Okay, there we go.
+
+10:08.840 --> 10:12.840
+What if I wanted a dictionary of these names to their scores?
+
+10:13.800 --> 10:21.000
+I can just pass that zip into the deduct constructor and end up with that.
+
+10:21.320 --> 10:27.960
+Someone asked a really good question while they were doing the exercise, and so I wanted to review
+
+10:27.960 --> 10:33.800
+that very quickly so that we're all clear on it. So if I look at the zip of names and scores,
+
+10:34.680 --> 10:39.320
+and get back something that looks like this, this is usually a hint that this type of object
+
+10:39.320 --> 10:46.600
+might be a what? Yeah, it might be a generator. And note this is kind of for
+
+10:47.560 --> 10:53.160
+these built-in types. If you make your own classes and you don't put in a string representation,
+
+10:53.160 --> 10:58.520
+you might also see something that looks like this, but it's not a generator. We just
+
+11:00.680 --> 11:04.440
+didn't go through with, you know, putting a representation function in there.
+
+11:05.080 --> 11:17.960
+If I, then assign this to a variable. So I'm going to show you what happens when a generator
+
+11:17.960 --> 11:23.560
+is exhausted. What's that? I'm going to say that my zip is the zip of the names and the scores.
+
+11:23.880 --> 11:40.280
+If I loop through this, and I'm just going to say for Z and my zip, print out Z, and it went through,
+
+11:41.560 --> 11:49.000
+each tuple and the list printed it out. We know that these generator expressions, they only know
+
+11:49.560 --> 11:54.280
+kind of their current value, that they're returning, and they know just the next step in the
+
+11:54.280 --> 11:59.640
+future. They don't know anything about the past, and they can't, they can't see far ahead into the
+
+11:59.640 --> 12:12.280
+future. So if I print out, if I print out, if I try to do this again and say,
+
+12:12.280 --> 12:33.080
+for Z and my zip print Z, what do you think I'll see? Nothing. Why is that? It's because
+
+12:33.080 --> 12:42.600
+used it up as what you go through? Yeah, I've already used it up. It's empty. It knew that, you know,
+
+12:42.600 --> 12:48.360
+the last step was, it finished the last step, and then it's gone. There's nothing more in it.
+
+12:49.080 --> 12:53.160
+So you can't reuse these generators. They're kind of a one-time use sort of thing.
+

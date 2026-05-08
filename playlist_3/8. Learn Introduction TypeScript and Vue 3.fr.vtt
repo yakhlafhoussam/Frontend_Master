@@ -1,0 +1,233 @@
+WEBVTT
+
+00:00.000 --> 00:05.040
+Nous passons essentiellement à la partie exercice où nous avons expliqué comment utiliser réellement
+
+00:05.040 --> 00:09.920
+types dans l'API d'options pour ses fonctionnalités de base, et donc votre exercice consiste maintenant à prendre
+
+00:09.920 --> 00:15.280
+la page de plat que nous voyons ici, et maintenant vous allez réappliquer tout ça, n'est-ce pas ?
+
+00:15.280 --> 00:19.360
+Vous devez vous assurer de le convertir en TypeScript, puis continuer et saisir les données.
+
+00:19.360 --> 00:22.960
+Allez-y et tapez les propriétés de l'ordinateur et les méthodes, selon ce qui vous semble logique.
+
+00:23.520 --> 00:31.280
+Donc, nous avons notre page de plats, et en fait, laissez-moi continuer et avant d'oublier, laissez-moi changer
+
+00:31.280 --> 00:34.560
+la branche à terminer pour que l'on ajoute la solution au fur et à mesure.
+
+00:35.920 --> 00:40.640
+Donc, à l'intérieur d'ici, tout d'abord, nous voulons utiliser TypeScript, alors allons-y et créons
+
+00:40.640 --> 00:45.920
+ce langage TypeScript, puis importez à nouveau le composant défini, en commençant, je suis
+
+00:45.920 --> 00:49.920
+je vais commencer à utiliser la saisie semi-automatique maintenant, maintenant que vous savez tous d'où viennent ces choses,
+
+00:49.920 --> 00:56.560
+donc le composant fin va ici, réduisons-le, réduisons-le, bien mieux, moins de défilement.
+
+00:57.360 --> 01:02.000
+D'accord, la prochaine chose que nous devons faire maintenant est de définir la forme des données,
+
+01:02.000 --> 01:08.720
+nous pouvons donc saisir la forme des données et nous savons que le texte du filtre sera une chaîne,
+
+01:10.080 --> 01:18.560
+et ensuite nous voulons que la liste des plats soit une gamme de plats, mais le plat n'existe pas encore.
+
+01:18.640 --> 01:23.200
+Donc, je vais aller chercher la carte ici, et je vais prendre ça ici,
+
+01:23.920 --> 01:27.920
+nous allons ouvrir les types, puis nous allons supprimer un ordre alphabétique,
+
+01:27.920 --> 01:30.880
+juste pour le rendre un peu plus facile à suivre, exportez TypeDish.
+
+01:32.080 --> 01:37.680
+Maintenant que nous avons exporté cela, nous pouvons maintenant importer le TypeDish, et voilà, à partir des types,
+
+01:37.680 --> 01:44.480
+parfait, tout fonctionne comme prévu. Ensuite, ici, nous ferons la même chose, importer TypeDish.
+
+01:44.560 --> 01:53.360
+On dirait que ça ne me donne pas ça, c'est bon, et puis voilà, donc on a notre plat,
+
+01:53.360 --> 01:57.840
+nous avons donc modularisé notre type de plat, et maintenant nous l'utilisons dans deux fichiers, et enfin nous en avons un
+
+01:57.840 --> 02:10.320
+plus de chose, et je crois que c'est un spectacle à faire, montrer une nouvelle forme. Forme, booléen, taux, alors maintenant qu'est-ce qu'on fait ?
+
+02:10.320 --> 02:15.120
+Nous revenons, nous disons que cela va être la forme des données, et donc nous y jetons un œil maintenant,
+
+02:15.120 --> 02:20.480
+c'est bien, nous avons un tas de plats, la liste des plats est une gamme de plats, c'est fantastique,
+
+02:21.520 --> 02:24.800
+et donc je suppose que quelque chose qui mérite probablement d'être mentionné est que vous avez peut-être remarqué que
+
+02:24.800 --> 02:29.120
+J'ai tendance à remarquer mes tableaux avec des listes de choses plutôt qu'un simple pluriel,
+
+02:29.120 --> 02:34.880
+donc au lieu de plats ou de restaurants, j'ai trouvé des erreurs ponctuelles lorsqu'il s'agissait de taper ces choses,
+
+02:34.880 --> 02:39.520
+cela arrive souvent, donc la liste des plats le rend vraiment explicite, vous avez tendance à compléter automatiquement
+
+02:39.520 --> 02:43.360
+un peu mieux, et vous ne rejetterez pas comme une lettre, une frappe, donc c'est juste
+
+02:43.360 --> 02:49.440
+une petite convention que je fais pour compenser une partie de cela. Ok, alors ok, à l'intérieur d'un
+
+02:49.440 --> 02:53.040
+ordinateur, allons-y et faisons quelques choses ici, nous avons toute une gamme de plats, parce que c'est ce que nous sommes
+
+02:53.040 --> 02:59.040
+en filtrant, puis juste pour documenter un peu plus, l'argument est un type de plat,
+
+02:59.040 --> 03:03.600
+ce qui est génial, et le nombre de plats sera un nombre, nous ne voulons pas que cela change un jour,
+
+03:03.600 --> 03:07.520
+parce que c'est ce que nous restituons lorsque nous comptons la chose, et puis à l'intérieur de
+
+03:07.520 --> 03:11.840
+méthodes, nos deux charges utiles seront simplement du type parabolique, parce que c'est ce que nous faisons,
+
+03:11.840 --> 03:15.760
+c'est vrai, nous ajoutons quelque chose au plat, puis nous supprimons quelque chose du plat,
+
+03:15.760 --> 03:19.760
+et c'est génial, et puis en fait juste pour annoter celui-ci, il y a un autre filtre ici,
+
+03:19.760 --> 03:24.400
+cela s'occupera de cela, et finalement, cacher le formulaire ne fait rien, puis monté,
+
+03:24.400 --> 03:30.880
+nous avons, non, il n'y a vraiment rien à faire là-bas, à ce stade, alors d'accord, c'est la solution
+
+03:30.880 --> 03:37.200
+pour l'exercice que nous venons de faire. Vous avez peut-être remarqué que je tape prendre,
+
+03:37.280 --> 03:44.080
+au lieu de git, ce n'est pas une faute de frappe, c'est en fait une extension conçue pour
+
+03:44.080 --> 03:52.080
+attendez, prenez git, c'est parti. C'est donc essentiellement une interface texte pour git, donc en gros vous remarquerez
+
+03:52.080 --> 03:55.920
+cela plutôt que de faire comme git status et de voir ce qui est disponible, puis de devoir être comme
+
+03:55.920 --> 04:02.480
+git, à la source, et je dois comprendre ça, ce qui prend du temps, prend le statut, ça me donne le genre
+
+04:02.480 --> 04:08.400
+en gros, une petite interface utilisateur, pour dire, oh, en fait, j'ai oublié, ce n'est pas le cas, ils ont déjà été mis en scène,
+
+04:08.400 --> 04:12.400
+mais vous pouvez voir que je peux réellement voir à quelles étapes se trouvent les différents fichiers, et c'est facile de
+
+04:12.400 --> 04:16.480
+sélectionnez-le individuellement avec mon clavier, je ne vais pas expliquer comment l'utiliser, mais au cas où vous le souhaiteriez
+
+04:16.480 --> 04:20.560
+regardez-y, c'est juste une petite amélioration de la qualité de vie que j'aime utiliser pour ma ligne de commande
+
+04:20.560 --> 04:24.880
+connard. Cela avance donc un peu, mais je ne veux pas perdre le contexte de cette question.
+
+04:25.440 --> 04:31.200
+La question ici de Daniel dans le chat concerne donc l'idée d'utiliser des génériques dans les scripts de type.
+
+04:31.280 --> 04:36.720
+le long de l'étendue. Je veux donc vous montrer à quoi ressemblaient les choses. En gros, comment tu faisais
+
+04:36.720 --> 04:42.160
+utilisez en fait un script de type sur la vue deux, ce que vous avez fait est comme une extension de vue, et ce que cela signifie essentiellement
+
+04:42.160 --> 04:48.320
+vous permet de faire, c'est comme définir un tas de propriétés différentes dessus, donc en reprenant ceci, vous verrez
+
+04:48.320 --> 04:52.880
+que c'est comme les méthodes de données, et donc l'interface, encore une fois, pour ceux qui ont déjà utilisé type script,
+
+04:52.880 --> 04:57.200
+considérez-le comme un type différent, une manière différente de définir des objets dans un script de type. C'est tout toi
+
+04:57.200 --> 05:01.760
+j'ai besoin de savoir maintenant. Il y a beaucoup de débats entre celui que vous devriez utiliser. Pensez juste
+
+05:01.760 --> 05:09.360
+d'un autre, d'un autre et d'un alias pour le type pour l'instant. Et donc cela vous permet de créer un type générique.
+
+05:09.360 --> 05:14.240
+Le concept de génériques dans les scripts de type est donc un sujet compliqué. À mon avis, et je pense que c'est là que
+
+05:14.240 --> 05:18.320
+beaucoup de gens se trompent, car c'est une chose d'annoter ce que vous avez l'intention de faire.
+
+05:18.320 --> 05:22.880
+C'est autre chose que d'être résumé en concepts génériques qui, souvent, lorsque vous regardez
+
+05:22.960 --> 05:26.880
+tapez des génériques de script, vous remarquerez que chaque fois que vous voyez des lettres simples dans des éléments de script de type,
+
+05:26.880 --> 05:31.440
+c'est à ce moment-là que vous utilisez des génériques, car ce sont essentiellement des variables d'espace réservé.
+
+05:32.160 --> 05:35.680
+Nous le sommes, je serai très explicite. Nous n'abordons pas cela ici, parce que je pense que c'est juste,
+
+05:35.680 --> 05:39.120
+il a tendance à digérer un peu trop profondément pour les gens qui débutent avec la typographie
+
+05:39.120 --> 05:43.760
+scénario. La plupart des gens peuvent simplement utiliser l'annotation directe, et cela fera déjà des merveilles
+
+05:43.760 --> 05:48.000
+pour les avoir aidés à documenter un peu mieux leur code. Mais pour ceux que ça intéresse
+
+05:48.000 --> 05:53.040
+théorie des types, je ne veux pas vous laisser derrière moi non plus. Et juste pour que vous le sachiez, plutôt que d'avoir
+
+05:53.040 --> 05:57.680
+Dans une certaine mesure, la question ici est la vue trois avec une composante définie, où va-t-elle à partir d'ici ?
+
+05:57.680 --> 06:02.960
+Il y a un excellent article de blog ici, dans lequel il explique comment cela fonctionne. Et donc en gros, vous pouvez voir
+
+06:02.960 --> 06:09.200
+ici pour ceux qui se demandent, imaginez que vous souhaitiez avoir une fonction qui génère un type spécifique de
+
+06:09.200 --> 06:13.840
+composant, où il vient avec ces types à chaque fois. On les appelle donc généralement des usines,
+
+06:13.840 --> 06:17.760
+donc vous pouvez voir ici que c'est comme s'il s'agissait d'une sélection d'entrée, mais nous voulons que des choses très spécifiques soient obtenues
+
+06:17.760 --> 06:23.200
+qui y est attaché. Il existe donc une manière de définir un composant qui prend
+
+06:23.200 --> 06:28.000
+ces génériques, vous voyez ces T ici, vous pouvez donc les définir, les transmettre. Il y a un moyen pour que cela
+
+06:28.000 --> 06:31.600
+arriver. Donc, si vous comprenez ce que sont les génériques et que cela vous intéresse, je ferai en sorte que cela
+
+06:31.600 --> 06:38.480
+est là comme une ressource. D'accord, maintenant que nous avons les fonctionnalités de base de l'API d'options,
+
+06:38.480 --> 06:42.240
+en nous occupant en quelque sorte, nous allons commencer maintenant à nous frayer un chemin vers l'API de composition.
+

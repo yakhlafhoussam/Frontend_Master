@@ -1,0 +1,644 @@
+WEBVTT
+
+00:00.000 --> 00:03.600
+This is kind of a culmination of a lot of things that we've been doing so I know that it's been a long day
+
+00:03.600 --> 00:09.040
+But I figured a bit of a challenge might be fun to get people trying out something where there's not like a base waiting for you
+
+00:09.440 --> 00:15.560
+So what I've gone ahead and done is I've gone ahead and duplicated the new dish form and just made it the edit dish form
+
+00:15.560 --> 00:17.560
+And so for the sake of
+
+00:17.560 --> 00:21.800
+Demoing it we could do the routes and everything but for the sake of time. I just kind of want to show how it works
+
+00:22.080 --> 00:24.720
+So to make sure everything works, so let's go ahead and make sure that
+
+00:25.440 --> 00:28.160
+See we're going to go inside of the dish page
+
+00:28.160 --> 00:33.600
+And so this time we're going to actually change show new form
+
+00:34.000 --> 00:38.960
+Show new form actually is no longer correct as far as what it is really what show new form should be
+
+00:39.440 --> 00:42.320
+Is a series of values and so for now
+
+00:42.320 --> 00:47.440
+We're just going to leave it as a string though, but basically it should either be new or it should be empty or it should be edit
+
+00:47.440 --> 00:49.680
+That's kind of what I'm thinking so actually what we can do though
+
+00:49.840 --> 00:54.520
+We're here to type stuff out. So let's go ahead and do show we'll call it a show state
+
+00:55.480 --> 00:59.480
+Show form state and this will be basically we'll have it empty
+
+01:00.040 --> 01:06.040
+It can be new or it can be edit and so then we'll type that to show form state and
+
+01:06.680 --> 01:10.040
+Then by default it will be an empty string so this is good
+
+01:10.360 --> 01:13.840
+We have some things to break though, so let's go ahead and do some things
+
+01:14.120 --> 01:15.720
+So hide form
+
+01:15.720 --> 01:20.080
+Basically whenever we hide the form we want to go back to empty string. We don't need it to show anything
+
+01:20.680 --> 01:22.680
+So that's taking care of and
+
+01:22.840 --> 01:28.120
+Then here now if the new query is showing we don't want it to be true, right?
+
+01:28.120 --> 01:32.280
+This is where touch will be helping us is saying what do we need it to be we need it to be new and
+
+01:32.520 --> 01:37.320
+Then now that I actually know this I'm actually I'm gonna I'm just gonna jump the gun to and say that if we get an
+
+01:37.880 --> 01:39.240
+Edit query on it
+
+01:39.240 --> 01:41.240
+Then show new form
+
+01:41.640 --> 01:47.720
+That value is going to be edit and so now that I think about it show new form as a whole is actually the wrong name
+
+01:47.880 --> 01:50.600
+So we're gonna rename all show new form to just show form
+
+01:51.320 --> 01:55.480
+And so I just did that with the multi select and so now that we have that let's see
+
+01:55.480 --> 01:56.680
+But bump bump bump bump
+
+01:56.680 --> 02:00.760
+Then we'll go through show form. Okay, so when we click on this
+
+02:01.240 --> 02:08.120
+We are going to show form is going to be equal to new. That's what we're going to do that will let us actually toggle the new form
+
+02:09.000 --> 02:15.320
+And then we'll scroll down. Okay, so we have here filter item. Okay, so now this is a little bit tricky
+
+02:15.880 --> 02:18.440
+Because after all our edit form
+
+02:19.240 --> 02:22.120
+Doesn't actually show up in this it actually lives in this card
+
+02:22.440 --> 02:25.560
+So now we got to dive into this card and we got to think okay well
+
+02:25.960 --> 02:30.360
+What we need to do is we need to actually emit an edit event. That's what we really need to do
+
+02:30.840 --> 02:35.800
+So let's go ahead and define that show. We so we have another event that we're gonna emit and this will be
+
+02:36.440 --> 02:38.040
+Update or edit dish
+
+02:38.040 --> 02:44.360
+This is call what it is and it's not alphabetical so I'm swap that real quick and then we'll pass up the dish that we want to edit
+
+02:44.600 --> 02:46.600
+It's basically what we do
+
+02:46.760 --> 02:49.400
+So then with that we know that happens
+
+02:49.880 --> 02:56.200
+So now we can go ahead and say let's see. I'm going to go ahead and similarly const edit dish will create a new function
+
+02:56.920 --> 03:04.440
+And then this will emit what we'll see let's see command space or control space edit dish perfect props dot dish
+
+03:05.080 --> 03:10.920
+That looks good and now we have our edit button here. So let's go ahead and add the click and when we click it
+
+03:11.000 --> 03:14.120
+We're gonna run edit dish and that is actually everything we need
+
+03:15.000 --> 03:20.360
+So once we have that we can jump back up to the page and the page now will actually be able to listen for this event
+
+03:20.760 --> 03:25.400
+So we have the edit dish and so what we can do here is we want to do
+
+03:26.440 --> 03:28.440
+Let's just name it edit dish again
+
+03:29.080 --> 03:31.720
+I'm maybe edit dish form that is a little bit cleaner
+
+03:32.440 --> 03:34.440
+So then here now we can do
+
+03:34.760 --> 03:36.440
+To
+
+03:36.440 --> 03:41.640
+Neat here makes most sense edit dish form and we have a payload which is of type dish
+
+03:42.440 --> 03:45.160
+And so now what we're going to do though is we're going to say show
+
+03:46.520 --> 03:47.880
+Form
+
+03:47.880 --> 03:53.160
+That values going to be edit and the reason this is valuable is because
+
+03:53.880 --> 03:57.960
+We need now to actually toggle that component that we just grabbed the edit dish form
+
+03:59.000 --> 04:04.040
+So again, there's going to be some repetition in here and I I know that that's always a little bit tricky
+
+04:04.520 --> 04:06.520
+Manage sometimes especially if
+
+04:07.800 --> 04:09.400
+See
+
+04:09.400 --> 04:11.000
+We're used to that do not repeat yourself
+
+04:11.800 --> 04:13.800
+context but
+
+04:14.600 --> 04:20.600
+It is helpful sometimes just to focus on getting something out the door first rather than sort of optimizing for it
+
+04:21.160 --> 04:23.160
+So this is the else if
+
+04:23.640 --> 04:28.280
+So you can see here now I've updated the logic so that basically if show form is new show the new for dish form
+
+04:28.760 --> 04:30.760
+Otherwise if the show form is edit
+
+04:31.080 --> 04:37.480
+Show the edit dish form and then otherwise we will show the thing and so the key thing here though is
+
+04:38.200 --> 04:41.320
+We're going to need to actually pass this into this
+
+04:43.080 --> 04:50.600
+Component so to make sure this works. Oh silly me. This is wrong. This needs at least I'll just strict equal that
+
+04:52.280 --> 04:56.520
+Okay, so to prove that this works, I'm going to go ahead and just say edit name right here
+
+04:57.880 --> 05:00.120
+And then we'll go ahead and check to make sure everything worked
+
+05:01.720 --> 05:03.240
+So
+
+05:03.240 --> 05:07.960
+Where's my app? Oh, I think I closed it. Okay, we bump this up
+
+05:08.840 --> 05:10.840
+Okay, we have our dishes
+
+05:10.840 --> 05:12.840
+We're missing semi-colon
+
+05:13.080 --> 05:15.080
+Dishes page. Let's find out
+
+05:15.720 --> 05:19.480
+Dishes page I guess that was that error that we saw earlier
+
+05:20.360 --> 05:22.360
+else oh silly me else if
+
+05:23.080 --> 05:26.280
+There we go. That's good now. All right, so now there we go
+
+05:27.080 --> 05:31.160
+All right, so we have the restaurants we have the dishes and now if we click on edit
+
+05:32.040 --> 05:38.360
+Okay, so edit name is appearing we have the right component coming in so now what we need to do is we actually need to fetch the ID
+
+05:38.680 --> 05:43.320
+So how are we going to do that? Well, what we can do is you can probably just for now let's see
+
+05:43.560 --> 05:48.840
+How are we checking this instead of this page currently we have a show form dish list
+
+05:49.720 --> 05:55.240
+Okay, so we know for a fact that edit dish is going to tell us the ID that's really what we ultimately need
+
+05:55.320 --> 05:58.440
+So what I'm going to do is we're just going to create a ref that we're going to track for now
+
+05:59.000 --> 06:04.440
+Called edit dish ID and this is going to be a ref that's just a string
+
+06:06.040 --> 06:11.160
+And what we're going to want to do then is on the point of edit we will do edit dish ID
+
+06:11.960 --> 06:18.600
+Value equals payload dot ID and we know that it happens because we know that dish itself has an ID property
+
+06:18.600 --> 06:20.760
+So again once again typing to the rescue for this
+
+06:21.240 --> 06:23.480
+Once we have this what this tells us is
+
+06:24.120 --> 06:30.440
+Inside of edit is form we can have a prop that takes in that specific ID right so I can say define props
+
+06:31.640 --> 06:34.520
+And then inside of the fine props we'll take a
+
+06:35.800 --> 06:38.360
+I don't want to call it ID because it'll conflict with HTML specs
+
+06:38.360 --> 06:42.760
+That's usually a rule. I try to establish whenever I write anything so we'll just call it dish ID and
+
+06:43.240 --> 06:45.720
+This will be basically a string
+
+06:45.720 --> 06:47.400
+We don't need to be anymore complicated than that
+
+06:48.040 --> 06:52.600
+So now that we've defined the props here we should be able to inside of our
+
+06:53.320 --> 06:55.320
+Edit dish component
+
+06:56.440 --> 07:01.960
+There we go we can then say dish ID is going to be equal to edit dish ID just like that
+
+07:03.480 --> 07:08.680
+And then I realize it's not always going to be true. We won't always have one so inside of our edit dish
+
+07:08.680 --> 07:10.680
+We're going to just make it optional
+
+07:10.680 --> 07:12.680
+So that doesn't yell at us
+
+07:12.920 --> 07:15.560
+Okay, that should do the trick and then to make sure this works
+
+07:15.960 --> 07:22.440
+We'll go ahead and render out the edit or dish ID. I think it's what I call it. Yeah, dish ID. That's what I call it
+
+07:23.320 --> 07:25.800
+Okay, let's see this works at all. So if I click edit
+
+07:27.800 --> 07:31.240
+Refresh edit there we go there's our ID
+
+07:32.040 --> 07:34.040
+If we go back
+
+07:34.600 --> 07:40.600
+I didn't I I didn't turn away the cancel it. That's a totally fine. Okay, so now that we have our ID what do we need to do?
+
+07:41.000 --> 07:45.320
+Okay, we need to actually get the thing from the store and the way we're going to do that
+
+07:45.640 --> 07:51.320
+Is inside of stores something you might not be aware of is that getters can actually receive an argument
+
+07:51.640 --> 07:56.920
+So we can basically pass in an argument to get to basically do a little bit of fetching
+
+07:57.480 --> 08:01.160
+So in this case we will say get so in this case it would be get dish
+
+08:02.280 --> 08:04.280
+by ID
+
+08:05.240 --> 08:11.400
+And so we know that we get the state by default right from our woo that's wrong. There you go
+
+08:12.360 --> 08:16.920
+And then what we're going to return though is we're going to return a dish that's something to that's important
+
+08:17.400 --> 08:18.920
+So what we're going to do is we're going to return
+
+08:20.200 --> 08:22.200
+the state dot
+
+08:22.200 --> 08:23.400
+the
+
+08:23.800 --> 08:25.800
+list.filter and
+
+08:25.800 --> 08:32.440
+We're going to filter what we're going to filter every dish inside of here and dish.id should be oh
+
+08:32.440 --> 08:37.960
+Sorry, we need a function first of this new edit dish ID
+
+08:38.200 --> 08:45.720
+So basically what we're doing is inside of the getter is a function returning a function and that's why we can pass in a parameter
+
+08:46.120 --> 08:48.840
+So the edit dish ID will return
+
+08:49.560 --> 08:58.440
+This filter dish and there should be enter in like this and then that should clean up the errors although it's slightly off
+
+08:59.720 --> 09:01.720
+Edit dish ID string
+
+09:02.760 --> 09:04.760
+Why is it not happy with this?
+
+09:04.920 --> 09:08.520
+So this is where it's an example of like unfortunately sometimes the errors aren't as helpful
+
+09:08.760 --> 09:12.680
+But we kind of got ahead of ourselves thinking oh well we'll get dish by ID not quite
+
+09:12.680 --> 09:17.000
+The thing that's getting the dish is actually the function and all we're actually returning is the function in this case
+
+09:17.640 --> 09:19.320
+Okay, let's now try this
+
+09:19.880 --> 09:23.480
+So if we go inside of our edit dish form we should be able to then say
+
+09:24.600 --> 09:26.600
+Cons edit
+
+09:26.760 --> 09:28.760
+Target dish is equal to
+
+09:29.720 --> 09:33.080
+We have this story yet. I don't have this story yet. Cons dish store
+
+09:33.800 --> 09:35.800
+Because use this store and
+
+09:36.520 --> 09:42.760
+Then because I dish store dot get dish by ID and then we need the props here
+
+09:42.920 --> 09:49.320
+So we say props that dish ID and then we can log target dish
+
+09:51.320 --> 09:55.720
+Do do do do but I think it's yelling at me because it's saying hey
+
+09:56.680 --> 09:58.680
+It might not be
+
+09:59.080 --> 10:01.400
+And it might not it might be undefined
+
+10:02.360 --> 10:04.840
+So I'll just do this it props
+
+10:05.720 --> 10:07.720
+That dish ID is true
+
+10:08.920 --> 10:10.920
+Then do that
+
+10:14.360 --> 10:16.360
+Yes, this is gonna be a little bit weird
+
+10:17.000 --> 10:21.400
+This is weird type wise already, but I want to see this works. So here we go
+
+10:22.040 --> 10:23.400
+So we have our console here
+
+10:23.960 --> 10:25.480
+We have our ghost peppers
+
+10:25.480 --> 10:28.440
+Okay, so we can see here now we've actually fetch the actual object
+
+10:29.000 --> 10:31.000
+So all we got to do now here is
+
+10:33.240 --> 10:36.600
+Inside of here once again we have an area to do
+
+10:37.480 --> 10:39.000
+Fix types
+
+10:39.160 --> 10:42.760
+But once again, we're trying to get to the finish line here
+
+10:43.080 --> 10:44.840
+So now that we actually have the dish
+
+10:45.160 --> 10:50.840
+What we want to be able to do is actually update it so in this particular case what I would say is
+
+10:51.720 --> 10:53.480
+How do we do this so we have edit name
+
+10:54.440 --> 10:57.480
+This name v model dish.name okay
+
+10:58.120 --> 11:04.040
+So what I actually could do instead is we can just say the value is new dish.name
+
+11:04.600 --> 11:07.640
+That's fine, but then on input
+
+11:08.200 --> 11:13.000
+We will then say or on key up that enter just like we did before
+
+11:13.640 --> 11:15.640
+Then we'll say update dish
+
+11:16.920 --> 11:19.800
+So the way we'll do that is cons update dish is
+
+11:20.120 --> 11:29.880
+Going to go ahead and it's just a normal function and then we're going to say target dish.name equals new dish dot value dot name
+
+11:30.680 --> 11:32.680
+Can I do that?
+
+11:35.080 --> 11:38.440
+Yeah, that's fine. I'll fix the types in a second. We just want to see this works. Okay
+
+11:39.240 --> 11:44.120
+Swap it on over so then we'll say mystery shrimp create
+
+11:44.680 --> 11:50.040
+Oh wait that one actually oh that should that should trigger it so now if I go back to dishes
+
+11:51.240 --> 11:53.240
+All it broke
+
+11:53.240 --> 11:55.240
+Okay edit
+
+11:55.240 --> 11:57.240
+Test create
+
+11:57.240 --> 11:58.600
+dishes
+
+11:58.600 --> 12:00.280
+Nope
+
+12:00.280 --> 12:02.280
+Does not like it update dish
+
+12:03.560 --> 12:05.160
+Oh, I didn't hit enter silly me
+
+12:06.520 --> 12:08.200
+Okay, that should do it now
+
+12:09.080 --> 12:11.080
+So then we'll refresh
+
+12:12.360 --> 12:15.320
+Edit here mystery shrimp enter
+
+12:16.440 --> 12:19.400
+Enter did something and then if I go back to dishes
+
+12:20.520 --> 12:23.800
+I want to go back oh I know why silly me
+
+12:24.760 --> 12:30.360
+Because I haven't actually so I thought I was doing routing this is this requires an actual switch
+
+12:30.920 --> 12:37.160
+So similarly we need to cancel an edit dish basically and I realized on the edit dish form for whatever reason
+
+12:37.560 --> 12:42.760
+Yeah, okay, this is what I need to switch so going back to the dishes page
+
+12:43.480 --> 12:46.920
+We'll go back to the dish card and so when we cancel
+
+12:48.680 --> 12:50.680
+Yeah, wait, wait, here we go
+
+12:52.360 --> 12:56.440
+Listen to cancel dish cancel new dish then we'll say cancel
+
+12:57.880 --> 13:00.360
+dish or cancel edit
+
+13:00.360 --> 13:05.880
+And so now we can do constant cancel edit
+
+13:06.520 --> 13:12.280
+Equals a function where we then say the show form dot value equals that so basically we're
+
+13:12.280 --> 13:16.360
+Reverting it back to the thing so the show that works will go ahead and edit
+
+13:16.920 --> 13:20.840
+We'll click cancel and it did not like it cancel
+
+13:22.280 --> 13:24.280
+Cannot admit that the
+
+13:24.840 --> 13:26.840
+I
+
+13:26.840 --> 13:33.640
+did not get declared okay, so this is where views trying to help us because I made up an event without actually declaring it
+
+13:34.280 --> 13:37.240
+So cancel edit dish like this that should do it
+
+13:38.360 --> 13:41.080
+Okay, so refresh again goes peppers
+
+13:42.280 --> 13:43.880
+Mystery oh actually cancel first
+
+13:45.080 --> 13:47.080
+It does not like it
+
+13:48.520 --> 13:49.960
+What is not picking up?
+
+13:50.920 --> 13:54.360
+I think it says cancel new dish on the template
+
+13:57.000 --> 13:58.760
+Oh, is that what it's saying on the template?
+
+13:59.320 --> 14:02.600
+Yes, I think you're right so be scroll down here. Yeah
+
+14:03.880 --> 14:06.120
+Wait nope wrong thing cancel edit dish
+
+14:07.800 --> 14:09.800
+Typing is fun
+
+14:09.800 --> 14:15.480
+Let's do this all right refresh edit cancel there we go now. We're good. So now mystery shrimp
+
+14:16.200 --> 14:19.880
+Enter that should update it
+
+14:21.560 --> 14:28.120
+It just overrided it but okay, but that's the general gist of it right there's kind of a lot of moving pieces here
+
+14:28.520 --> 14:34.680
+And so what I will make sure to do is that I'll make sure that the end result is updated because there's clearly a lot of moving pieces
+
+14:34.920 --> 14:39.320
+But a high level what we did see is that you basically need to be able to hop into the store
+
+14:39.640 --> 14:45.080
+Use getters to grab something out and then what's tricky and most likely what's happening at this point is that
+
+14:45.160 --> 14:51.880
+You basically need to make a copy of the reference before you go off and modify it. I was trying to take a shortcut here to just edit it directly
+
+14:52.200 --> 14:56.280
+But typically what you do want to do is you want to actually mod it like basically when you load it in
+
+14:56.760 --> 15:02.680
+Make a copy of it that way you have a local state change within your component of what you're modifying and then when you submit the change
+
+15:02.920 --> 15:07.640
+That would trigger an update event to the store that will then update the set item. That's the path you want to follow
+
+15:07.960 --> 15:12.200
+So once again that that solution will be published to the 11 finished branch
+
+15:12.520 --> 15:17.480
+But otherwise this is also a chance for you to just try and debug this out because this is honestly fairly common scenario too
+
+15:17.720 --> 15:21.320
+As far as you know, credit operations and updating forms and existing data
+

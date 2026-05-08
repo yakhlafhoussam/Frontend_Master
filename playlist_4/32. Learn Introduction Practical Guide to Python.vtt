@@ -1,0 +1,230 @@
+WEBVTT
+
+00:00.000 --> 00:03.760
+A little bit about tracebacks.
+
+00:03.760 --> 00:08.520
+We talked about how to read the traceback from a Python program earlier in the day that
+
+00:08.520 --> 00:13.520
+we want to start at the bottom and go up to the top.
+
+00:13.520 --> 00:20.920
+If we have any uncaught exceptions in our program, it is going to exit the program.
+
+00:20.920 --> 00:36.520
+So let's make a new file called exceptions.py and run this and we will see that end of the
+
+00:36.520 --> 00:43.440
+program never printed out because this through an exception I'm trying to ask Python to convert
+
+00:43.440 --> 00:48.240
+the letter A into an integer and it's like, I don't know what you're talking about.
+
+00:48.240 --> 00:53.480
+So you need to be mindful that your programs don't have any uncaught exceptions or they
+
+00:53.480 --> 00:56.480
+will behave in unpredictable ways.
+
+00:56.480 --> 01:04.360
+You want to catch your exceptions with syntax called try and accept.
+
+01:04.360 --> 01:11.200
+And let's look at what that looks like.
+
+01:11.200 --> 01:19.360
+Try is a keyword with a colon and you need to indent the code that you are trying.
+
+01:19.360 --> 01:32.720
+One level and then the accept keyword and following the accept keyword, this will work
+
+01:32.720 --> 01:37.040
+without any additional arguments.
+
+01:37.040 --> 01:44.720
+I can say an exception happened.
+
+01:44.720 --> 01:50.600
+So if I run this, it will print out an exception happened and then end of the program.
+
+01:50.600 --> 01:57.600
+Generally we want to catch exceptions that are specific as possible.
+
+01:57.600 --> 02:01.880
+And for the most part, Python gives us a helpful hint.
+
+02:01.880 --> 02:03.640
+What was the exception here?
+
+02:03.640 --> 02:05.400
+Well it was a value error.
+
+02:05.440 --> 02:10.360
+I tried to pass in a string into the integer.
+
+02:10.360 --> 02:16.000
+So I can just copy this class and paste it in after the accept.
+
+02:16.000 --> 02:23.720
+And that will catch the very specific exception that was thrown in this case.
+
+02:23.720 --> 02:35.360
+If I had another exception in here like a divide by zero, now that's also a value error.
+
+02:35.600 --> 02:37.760
+It's another good exception.
+
+02:37.760 --> 02:52.600
+But say I have a dictionary and I try to get a key that is not in that dictionary that will throw a key error.
+
+02:52.600 --> 02:56.600
+Is that also a value error?
+
+02:56.600 --> 02:59.920
+Here.
+
+02:59.920 --> 03:03.520
+Oh right, I would need to change the order of these.
+
+03:03.560 --> 03:08.160
+So because this through an exception first, it's getting caught here.
+
+03:08.160 --> 03:10.520
+I want to show you something else.
+
+03:10.520 --> 03:14.800
+This will throw a key error.
+
+03:14.800 --> 03:19.040
+And so now if I run this, I will see my key error.
+
+03:19.040 --> 03:22.720
+That's because this is the code that through the exception.
+
+03:22.720 --> 03:28.480
+If I change this back to just accept with no specific exception,
+
+03:28.480 --> 03:30.720
+it's going to catch both of them.
+
+03:30.760 --> 03:33.480
+Generally, this is a bad thing.
+
+03:33.480 --> 03:37.320
+You want to be a specific about catching your exceptions as possible,
+
+03:37.320 --> 03:42.160
+so that when you need to go back and figure out and debug and troubleshoot what weren't wrong,
+
+03:42.160 --> 03:47.840
+you have a pretty clear idea about which code caught, which exception.
+
+03:47.840 --> 03:53.240
+Now, you can also have different code run for different exceptions.
+
+03:53.240 --> 03:59.960
+So I can say accept value error, say a value exception happened.
+
+03:59.960 --> 04:04.280
+And then I can say accept key error,
+
+04:04.280 --> 04:15.120
+which I got the class from right here and print out a key was not found.
+
+04:15.120 --> 04:19.160
+And now because this was first, I got my key error first,
+
+04:19.160 --> 04:26.720
+if I switch the order of these, I will get my value error first.
+
+04:26.720 --> 04:31.440
+But now I'm caught, I have both scenarios covered.
+
+04:31.440 --> 04:35.840
+And I know exactly which exception was thrown and where.
+
+04:35.840 --> 04:38.640
+I'm not going to deep dive into exceptions,
+
+04:38.640 --> 04:43.520
+but I think they're pretty important fundamental concept of Python.
+
+04:43.520 --> 04:50.880
+So I recommend that you go back through and take a look at this detailed chapter.
+
+04:50.960 --> 05:02.400
+Most importantly, you never want to catch exceptions that aren't specific.
+
+05:02.400 --> 05:09.360
+If you try to catch from the exception, the all exceptions in herit from,
+
+05:09.360 --> 05:16.960
+you could end up with a program that doesn't let you exit it with control C or other weird and subtle bugs.
+
+05:16.960 --> 05:24.400
+So make sure that you have a pretty good understanding of how exceptions work.
+
+05:24.400 --> 05:30.880
+There's also a finally clause that you can include that is an optional block
+
+05:30.880 --> 05:36.640
+that will run after the try regardless of if an exception was thrown or not.
+
+05:36.640 --> 05:41.360
+So if you need to do some cleanup, that's the right place for it.
+
+05:41.360 --> 05:44.960
+So let's chat about the exception hierarchy.
+
+05:44.960 --> 05:50.880
+Python has a lot of useful built-in exceptions that you are probably going to encounter.
+
+05:50.880 --> 05:56.160
+You can find a detailed list of those built-in exceptions in the Python documentation.
+
+05:56.720 --> 06:02.640
+An important thing to know about exceptions is they like everything that else in Python are just objects.
+
+06:02.640 --> 06:11.520
+So they follow an inheritance hierarchy and more specific classes inherit from more general ones.
+
+06:11.600 --> 06:16.160
+For example, these zero division error is a subclass of arithmetic error,
+
+06:16.160 --> 06:20.880
+which is a subclass of exception, which is a subclass of base exception.
+
+06:21.760 --> 06:26.560
+That's why the best practice is to catch more specific exceptions first.
+
+06:28.880 --> 06:36.640
+And don't catch exception and especially don't catch base exception.
+
+06:36.640 --> 06:41.360
+If you catch base exception, you're going to swallow every type of exception.
+
+06:41.360 --> 06:47.680
+Including the one that is thrown when you press Ctrl C while a Python program is running.
+
+06:47.680 --> 06:50.720
+And that is the keyboard interrupt exception.
+
+06:50.720 --> 06:57.040
+If you catch base exception, it will cause your Python program not to respond to Ctrl C,
+
+06:57.040 --> 07:00.240
+which is not something that anybody wants. So don't do it.
+
+07:01.280 --> 07:09.200
+Because exceptions are regular classes, we can also inherit from them from our own custom exceptions,
+
+07:09.200 --> 07:14.240
+which makes it very easy to make our own custom specific exceptions.
+
+07:14.240 --> 07:16.560
+This makes their programs a lot more readable.
+
+07:18.160 --> 07:24.800
+And I'm not going to cover custom exceptions here, but there are custom exceptions that you can work through in practice.
+

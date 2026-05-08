@@ -1,0 +1,815 @@
+WEBVTT
+
+00:00.000 --> 00:07.000
+So your challenge, should you choose to accept it, is go ahead and look at either the way the task card is or the planner card.
+
+00:07.000 --> 00:12.000
+And so those you'll see they're being looped through, if you look for the V4 inside of the app.
+
+00:12.000 --> 00:15.000
+They got some pretty complex things going on there.
+
+00:15.000 --> 00:22.000
+So go ahead and see if you can refactor that out so that you're using slots to basically have some actions, some of the text being rendered.
+
+00:22.000 --> 00:29.000
+And then play around with it, see if you can go ahead and render the content differently, rearrange it as you see fit through the parent,
+
+00:29.000 --> 00:31.000
+through the parent rather than the child.
+
+00:31.000 --> 00:39.000
+And then if it should make sense, go ahead and try using the use slots helper function if you think it makes sense to hide certain things and whatnot.
+
+00:45.000 --> 00:50.000
+Our goal here is to create a planner card, it's called a new planner card at the time.
+
+00:50.000 --> 00:55.000
+Because basically if we take a look at, let's see if we go to V4,
+
+00:55.000 --> 01:04.000
+I had a weak, a sea reflection page, settings page, see lots of opportunity for refactoring, lots of ripe opportunities.
+
+01:04.000 --> 01:11.000
+But anyhow, weak detail page, although, oh, here's a planner page, I jumped all the way, okay.
+
+01:11.000 --> 01:22.000
+And then we want this one in particular, because this here, as we can see, is basically the card that displays, let's correspond this with overseeing.
+
+01:22.000 --> 01:26.000
+This corresponds with this particular card right here.
+
+01:26.000 --> 01:34.000
+So if we're taking a look at this, we can see that it's, I would say, roughly broken out into.
+
+01:34.000 --> 01:45.000
+Yeah, it's a, if we're being generous, or being, or yeah, we could say two sections here, because we have the tasks here that are basically showing all the stuff here.
+
+01:45.000 --> 01:48.000
+And then we have basically stuff about the weak here.
+
+01:48.000 --> 01:54.000
+So, and then I would say, though, this is a little bit maybe more meta.
+
+01:54.000 --> 01:59.000
+So arguably, you could make a slot here that, like, if you don't want to display this, that could be a choice.
+
+01:59.000 --> 02:03.000
+I think for now, I think, so what's going to do that, just to keep it, just give us a little bit more options.
+
+02:03.000 --> 02:08.000
+And so what I would do here is, all right, so let me take this, and then.
+
+02:08.000 --> 02:10.000
+Boop, boop, boop, boop.
+
+02:10.000 --> 02:13.000
+All right, let's close this stuff to me, it's easier to track.
+
+02:13.000 --> 02:15.000
+All right.
+
+02:15.000 --> 02:19.000
+The first thing we're going to want to do is we're going to create a new component.
+
+02:19.000 --> 02:22.000
+And I'll call it new planner card.
+
+02:22.000 --> 02:25.000
+Because this one is going to look different from the other one.
+
+02:25.000 --> 02:27.000
+It's kind of the whole point of this exercise.
+
+02:27.000 --> 02:31.000
+So I'm going to copy this entire thing.
+
+02:31.000 --> 02:35.000
+Actually, let's just collapse it that'll probably be faster.
+
+02:35.000 --> 02:36.000
+Copy this.
+
+02:36.000 --> 02:38.000
+Oh.
+
+02:38.000 --> 02:40.000
+And then drop that in here.
+
+02:40.000 --> 02:43.000
+Okay, lots of squigglies, lots and lots of squigglies.
+
+02:43.000 --> 02:45.000
+So first thing first, we definitely don't need this.
+
+02:45.000 --> 02:47.000
+If statement at the top.
+
+02:47.000 --> 02:49.000
+And then select it, we test.
+
+02:49.000 --> 02:51.000
+So that's something we're going to need to pass.
+
+02:51.000 --> 02:52.000
+It seems.
+
+02:52.000 --> 02:55.000
+So define props already.
+
+02:55.000 --> 02:56.000
+And then.
+
+02:56.000 --> 02:58.000
+So here we have an option.
+
+02:58.000 --> 03:02.000
+By the way, to, I think this is probably supposed to be an array.
+
+03:02.000 --> 03:03.000
+So let's see.
+
+03:03.000 --> 03:05.000
+Yep, this is a task array.
+
+03:05.000 --> 03:08.000
+So, you know, for those, if you are in need to type here, this is one of the benefits.
+
+03:08.000 --> 03:12.000
+And then the main objective is that you do get sort of cleaner type definitions.
+
+03:12.000 --> 03:13.000
+So understand what you're expecting.
+
+03:13.000 --> 03:14.000
+So I'm expecting an array.
+
+03:14.000 --> 03:17.000
+So just to do, do, do, do.
+
+03:17.000 --> 03:19.000
+So we just call it an array for now.
+
+03:19.000 --> 03:22.000
+We'll keep it real simple from a type perspective.
+
+03:22.000 --> 03:24.000
+Type array.
+
+03:24.000 --> 03:27.000
+And then, uh, require true.
+
+03:27.000 --> 03:28.000
+Okay.
+
+03:28.000 --> 03:30.000
+And then basically.
+
+03:30.000 --> 03:31.000
+So you might be thinking, okay.
+
+03:31.000 --> 03:33.000
+Then I'm just going to need this task.
+
+03:33.000 --> 03:35.000
+And then we'll call it, we'll call it today.
+
+03:35.000 --> 03:38.000
+Uh, I would propose something to consider is.
+
+03:38.000 --> 03:42.000
+I find that one off errors by the letter S happened a lot in terms of coding.
+
+03:42.000 --> 03:44.000
+It's just easy to get that off.
+
+03:44.000 --> 03:46.000
+So I actually usually like to just make arrays.
+
+03:46.000 --> 03:48.000
+I just, just a pen list instead.
+
+03:48.000 --> 03:49.000
+This is a bit cleaner.
+
+03:49.000 --> 03:52.000
+Uh, you just get fewer one off errors.
+
+03:52.000 --> 03:54.000
+Again, this is not a must do or anything.
+
+03:54.000 --> 03:56.000
+Just something thought I'd share.
+
+03:56.000 --> 03:57.000
+And then, okay.
+
+03:57.000 --> 03:58.000
+So we have a task.
+
+03:58.000 --> 03:59.000
+Uh, at this point, these are type errors.
+
+03:59.000 --> 04:00.000
+We're not going to find the type strip.
+
+04:00.000 --> 04:02.000
+That is not the point of this course.
+
+04:02.000 --> 04:04.000
+Uh, but I think.
+
+04:04.000 --> 04:06.000
+I have, though, if I could.
+
+04:06.000 --> 04:08.000
+Let me see if I can cheat this a little bit.
+
+04:08.000 --> 04:10.000
+Uh, prop type.
+
+04:10.000 --> 04:12.000
+So.
+
+04:12.000 --> 04:16.000
+There is a way I believe.
+
+04:16.000 --> 04:18.000
+This, let's see if this will work though.
+
+04:18.000 --> 04:20.000
+Oh, I am totally wrong.
+
+04:20.000 --> 04:21.000
+Whoops.
+
+04:21.000 --> 04:22.000
+Not here.
+
+04:22.000 --> 04:25.000
+Da, da, da, da.
+
+04:25.000 --> 04:27.000
+That did work.
+
+04:27.000 --> 04:28.000
+Okay.
+
+04:28.000 --> 04:30.000
+So a little type script, snippet.
+
+04:30.000 --> 04:32.000
+Uh, for you all to see.
+
+04:32.000 --> 04:35.240
+is that, again, if you're defining a props
+
+04:35.240 --> 04:38.120
+normally via composition API, this is what you're using.
+
+04:38.120 --> 04:40.120
+And then there is this ability in type
+
+04:40.120 --> 04:43.560
+of call to basically to typecast if I remember that correctly.
+
+04:43.560 --> 04:45.480
+And so the as basically tells it like, hey,
+
+04:45.480 --> 04:47.120
+I know what it's supposed to be.
+
+04:47.120 --> 04:49.200
+And then so you need to use this prop type helper
+
+04:49.200 --> 04:52.800
+from view that then you pass in the type it's supposed to be.
+
+04:52.800 --> 04:54.120
+That's all that's happening here.
+
+04:54.120 --> 04:56.840
+So I'll leave that snippet in here just because I think it's a nice one to know.
+
+04:56.840 --> 05:00.240
+It's just, again, just a little bit of type script.
+
+05:00.400 --> 05:02.600
+And we didn't go over this earlier, but there is like,
+
+05:02.600 --> 05:05.120
+all of the types that we are being using this code base
+
+05:05.120 --> 05:07.200
+should be managed mostly in here.
+
+05:07.200 --> 05:10.720
+So you can see here that all our tasks are defined right here.
+
+05:10.720 --> 05:12.600
+And so again, if you need to type script interface,
+
+05:12.600 --> 05:14.720
+it's basically just an rather than a type
+
+05:14.720 --> 05:17.680
+that's just like a bunch of strings or kind of like standard object,
+
+05:17.680 --> 05:21.480
+a standard values, interface usually represents an object.
+
+05:21.480 --> 05:24.480
+And there's a whole debate between types and interface
+
+05:24.480 --> 05:25.320
+of when it comes to objects.
+
+05:25.320 --> 05:26.920
+But generally speaking, people use interfaces
+
+05:26.920 --> 05:29.320
+when it comes to objects from what I've seen.
+
+05:29.320 --> 05:32.320
+All right, so anyways, that little detour explained.
+
+05:32.320 --> 05:34.960
+Okay, so we got that in cool, cool, cool.
+
+05:34.960 --> 05:38.480
+And so, all right, so now we mentioned that we want to break this up
+
+05:38.480 --> 05:41.480
+into like, I set three parts, but let's see,
+
+05:41.480 --> 05:42.880
+this part's being looped.
+
+05:43.920 --> 05:46.440
+This is a button to expand stuff.
+
+05:46.440 --> 05:51.440
+Huh, why do I feel like, okay, icon is expanded.
+
+05:51.440 --> 05:54.360
+Three more tasks show less VIF.
+
+05:55.320 --> 05:58.120
+Why do I feel like I miss something VIFs
+
+05:58.120 --> 06:00.240
+like the weak task border top?
+
+06:01.160 --> 06:03.360
+This looked like it's related.
+
+06:04.360 --> 06:07.280
+Yep, toggle a task list.
+
+06:07.280 --> 06:10.120
+Okay, but what we can do is to start though,
+
+06:10.120 --> 06:11.520
+let's just do this.
+
+06:12.800 --> 06:15.040
+We have this like the task, the duh, duh,
+
+06:15.040 --> 06:18.440
+then we have tasks here, task list.
+
+06:19.720 --> 06:21.840
+And then is task list expanded?
+
+06:21.840 --> 06:25.560
+Let's just replace all these first, is task list expanded.
+
+06:25.560 --> 06:27.480
+Okay, so then what we're cleaning here
+
+06:27.480 --> 06:32.160
+is we have something defining the visibility of something via here.
+
+06:32.160 --> 06:36.520
+So we can go ahead and then say is expanded.
+
+06:36.520 --> 06:38.920
+Is probably what I would go with, is a boolean,
+
+06:38.920 --> 06:43.200
+and then we'll default that to false, just like that.
+
+06:43.200 --> 06:45.960
+And then this way it'll be easier.
+
+06:50.560 --> 06:53.400
+Now the only tricky part is what is this toggle task list doing?
+
+06:53.400 --> 06:56.960
+So we're gonna go back, toggle task list,
+
+06:56.960 --> 06:59.120
+and so it looks like it's literally toggled
+
+06:59.120 --> 07:00.200
+in whether it's visible or not.
+
+07:00.200 --> 07:03.560
+So honestly, that's not something we need to pass down.
+
+07:03.560 --> 07:05.160
+That is something theoretically
+
+07:05.160 --> 07:06.800
+we can just click on our own.
+
+07:06.800 --> 07:11.800
+So in that regard, I just gonna make a toggle expanded,
+
+07:13.360 --> 07:15.560
+and then we're just gonna say,
+
+07:15.560 --> 07:18.280
+this is where it gets a little bit tricky.
+
+07:18.280 --> 07:20.560
+Because she should not be mutating your props.
+
+07:20.560 --> 07:29.560
+So if I wanna just, I'll follow that, follow that for now.
+
+07:32.240 --> 07:36.240
+And so we can say, we'll import computed from you.
+
+07:37.520 --> 07:40.480
+And then I'll say, oh, this is, this is mine.
+
+07:44.400 --> 07:45.480
+I don't wanna do this.
+
+07:45.680 --> 07:57.680
+Okay, is visible equals rough, false,
+
+07:57.680 --> 08:01.080
+I think that in, then again, if we're doing this
+
+08:01.080 --> 08:03.560
+like the proper lifecycle way,
+
+08:03.560 --> 08:04.760
+you're basically saying that, hey,
+
+08:04.760 --> 08:06.920
+when the component is mounted,
+
+08:06.920 --> 08:09.920
+you're gonna take is visible that value
+
+08:09.920 --> 08:12.760
+and set it to the props that is visible.
+
+08:13.320 --> 08:16.720
+That's how you would like to, wait, is expanded.
+
+08:16.720 --> 08:17.320
+Thank you.
+
+08:18.440 --> 08:19.760
+Yep, and so then you have that.
+
+08:19.760 --> 08:22.640
+So then we could basically say, is visible, is,
+
+08:24.640 --> 08:26.640
+is, is, is, is, is, is, is, is, is,
+
+08:30.640 --> 08:32.920
+like that, and then I usually like to put my mounted
+
+08:32.920 --> 08:34.880
+a lifecycle hooks at the bottom.
+
+08:36.520 --> 08:41.520
+So then we can toggle, expanded, and, yeah,
+
+08:43.760 --> 08:44.600
+then we'll do it.
+
+08:46.440 --> 08:49.000
+Okay, so then to see that that works,
+
+08:49.920 --> 08:54.440
+we can go down to, to, to, to the V4,
+
+08:55.440 --> 08:59.480
+when I find it, there it is.
+
+08:59.480 --> 09:02.320
+Okay, so we're gonna do, is we're just gonna do
+
+09:02.320 --> 09:03.800
+a new planar card here.
+
+09:05.320 --> 09:09.280
+And this time we are gonna say the task list,
+
+09:09.280 --> 09:11.760
+we know that is like the weak tasks.
+
+09:13.320 --> 09:16.440
+And then I think that's the only thing that I required
+
+09:17.960 --> 09:21.360
+is expanded, yep, default false.
+
+09:21.360 --> 09:23.520
+And let's see, are we doing anything interesting
+
+09:23.520 --> 09:24.760
+with that here?
+
+09:24.760 --> 09:26.600
+Hidden is task list expanded.
+
+09:26.600 --> 09:28.760
+Okay, so that means we do, in this regard,
+
+09:28.760 --> 09:31.840
+we can say, is expanded,
+
+09:33.840 --> 09:38.840
+it is equal to is task list expanded like that.
+
+09:40.040 --> 09:42.520
+Okay, so then we can refresh,
+
+09:42.520 --> 09:44.000
+and then you can see,
+
+09:46.000 --> 09:46.920
+fail to resolve component.
+
+09:46.920 --> 09:49.000
+Yeah, that would, that will do the trick.
+
+09:49.000 --> 09:51.520
+It looks like I dropped it in,
+
+09:51.520 --> 09:54.120
+but it did not import because,
+
+09:55.120 --> 09:56.840
+and the import type bites me again.
+
+10:00.080 --> 10:02.720
+Okay, now we have some other things we're doing with.
+
+10:02.720 --> 10:03.800
+No, no, no, no, no, no, no, no, no.
+
+10:03.800 --> 10:06.320
+New planar card format time is not a function.
+
+10:07.360 --> 10:08.200
+Where is that?
+
+10:09.440 --> 10:11.160
+Okay, got it.
+
+10:11.160 --> 10:12.000
+Okay.
+
+10:12.600 --> 10:13.640
+This will be relevant later,
+
+10:13.640 --> 10:15.200
+so we're just gonna copy this.
+
+10:15.200 --> 10:17.560
+We know that I write less,
+
+10:17.560 --> 10:19.640
+I am acknowledging that this is not dry code.
+
+10:19.640 --> 10:23.440
+This is just to also demonstrate
+
+10:23.440 --> 10:25.320
+some stuff we're gonna be doing later.
+
+10:25.320 --> 10:27.800
+In fact, let me just verify there aren't any other errors.
+
+10:27.800 --> 10:28.720
+Nope, okay, we go.
+
+10:31.240 --> 10:34.760
+Is expanded by access.n.to find on the instance.
+
+10:37.440 --> 10:39.760
+Ah, but we see here, here we go.
+
+10:39.760 --> 10:41.360
+There it is right here.
+
+10:41.360 --> 10:44.040
+So it looks like I took just a small segment of it.
+
+10:44.040 --> 10:46.000
+And so again, for the sake of just demonstrating
+
+10:46.000 --> 10:49.520
+what we did, as far as, in order to practice what we did.
+
+10:49.520 --> 10:52.560
+So really, this is the new planar card.
+
+10:52.560 --> 10:54.000
+Honestly, I'm just gonna call it body,
+
+10:54.000 --> 10:55.240
+because that's really what we just did.
+
+10:55.240 --> 10:57.600
+So what are we changing?
+
+10:57.600 --> 10:59.160
+Yes, please apply that.
+
+11:00.640 --> 11:02.920
+And then a new card,
+
+11:04.040 --> 11:09.040
+new planar card, body, new planar card,
+
+11:09.320 --> 11:12.400
+new planar card, body, great.
+
+11:12.400 --> 11:14.720
+Okay, now that we have that,
+
+11:14.720 --> 11:16.240
+then this is where we can practice exactly
+
+11:16.240 --> 11:17.080
+what we talked about.
+
+11:17.080 --> 11:20.960
+So in this regard, so we could say here in this slot,
+
+11:22.760 --> 11:28.080
+this here, we are clearly rendering like a bunch of,
+
+11:29.920 --> 11:34.120
+look to save, I did too much.
+
+11:34.120 --> 11:37.480
+Da, da, da, da.
+
+11:37.480 --> 11:41.360
+I want the slot to wrap around this stuff.
+
+11:45.160 --> 11:46.800
+Yes, there you go.
+
+11:47.920 --> 11:48.920
+All right, excellent.
+
+11:50.600 --> 11:53.880
+And this slot, let's see, we are basically displaying
+
+11:53.880 --> 11:56.480
+the list of tasks.
+
+11:56.480 --> 12:00.240
+So I can just call this name, task list to be honest.
+
+12:00.240 --> 12:02.600
+And then what we can do then is basically say,
+
+12:02.600 --> 12:05.800
+hey, look, on this slot, we're gonna provide,
+
+12:06.800 --> 12:11.800
+do do do do do, we're gonna provide the task list.
+
+12:14.240 --> 12:16.000
+And so in this case, again, this is more for the practice
+
+12:16.000 --> 12:18.480
+and not because you've only have access to it already,
+
+12:18.480 --> 12:19.320
+but that's what we would do.
+
+12:19.320 --> 12:22.240
+We would basically give the slot access to this thing.
+
+12:22.240 --> 12:24.800
+And then that way, when you're inside using it.
+
+12:24.800 --> 12:33.120
+But, but, but, again, to be clear, this is a little redundant
+
+12:33.120 --> 12:38.120
+because of the fact that you have tasks that's already access,
+
+12:40.720 --> 12:42.600
+this then gives you access to basically,
+
+12:42.600 --> 12:44.600
+and I'll just do it like this just so that we can just show
+
+12:44.600 --> 12:45.760
+that some things different.
+
+12:46.960 --> 12:49.320
+So two things I did here that I didn't explicitly
+
+12:49.320 --> 12:51.040
+explain before in case you're new to it.
+
+12:51.040 --> 12:56.440
+One, this here, the pound symbol, is a shorthand for v-slot.
+
+12:58.520 --> 13:02.040
+The reason why, and to be clear, it is only applicable on the template,
+
+13:02.040 --> 13:03.920
+you cannot use this shorthand anywhere else,
+
+13:03.920 --> 13:05.120
+because it's only for v-slot.
+
+13:06.120 --> 13:09.760
+Then pre here is a nice little shortcut for basically displaying data
+
+13:09.760 --> 13:12.160
+in a nice, like, JSON way.
+
+13:12.160 --> 13:14.680
+Because if you did it without the pre and you just did it as p,
+
+13:15.680 --> 13:18.160
+you'll see it's very, very unreadable.
+
+13:18.160 --> 13:20.520
+So the pre is a nice little legibility thing
+
+13:20.520 --> 13:23.160
+that, like, theoretically, can you console log?
+
+13:23.160 --> 13:25.880
+Yes, but I sometimes like to see my data on my UI.
+
+13:25.880 --> 13:29.320
+So this is something I use a lot, just to make it a little bit more visible.
+
+13:29.960 --> 13:32.280
+So yeah, so you can see here, we've exposed it.
+
+13:33.160 --> 13:35.080
+And then, yeah, that's basically that.
+
+13:35.800 --> 13:38.280
+And then if you really wanted to then practice to use slots,
+
+13:38.520 --> 13:40.080
+the way you would do that is you would say,
+
+13:40.080 --> 13:42.240
+con-slots equals use slots.
+
+13:43.520 --> 13:45.720
+And then we could basically double check it and be like,
+
+13:45.720 --> 13:50.720
+hey, look, if the slots.castlists is being used,
+
+13:52.560 --> 13:55.000
+then render this, otherwise, do not.
+
+13:55.960 --> 13:57.600
+And that kind of combines the two techniques.
+
+13:58.680 --> 14:01.000
+And that way you don't have this random spacer.
+
+14:01.000 --> 14:02.920
+So I guess, I guess, also worth mentioning for those
+
+14:02.920 --> 14:06.360
+if you're new to tailwind CSS, sort of these sort of utilities,
+
+14:06.360 --> 14:11.360
+CSS classes, these things basically apply CSS, like, as little.
+
+14:11.360 --> 14:12.920
+So this one says space vertically,
+
+14:13.160 --> 14:15.760
+I think this is going to be just two units of whatever that is.
+
+14:15.760 --> 14:16.600
+That's what that is.
+

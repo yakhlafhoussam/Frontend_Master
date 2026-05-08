@@ -1,0 +1,557 @@
+WEBVTT
+
+00:00.000 --> 00:08.000
+Donc, vous allez continuer et essayer de créer un composable en utilisant le modèle d'usine, car cette seule chose n'aura aucun sens pour une fonction de récupération.
+
+00:08.000 --> 00:12.000
+Droite? Vous allez avoir une nouvelle URL, vous êtes probablement en train d'analyser.
+
+00:12.000 --> 00:19.000
+Et fondamentalement, vous savez, à partir de ce que vous avez vu dans la base de code avec la récupération, voyez ce que vous pouvez, dans quelle mesure vous pouvez le refactoriser, jusqu'où vous voulez aller.
+
+00:19.000 --> 00:27.000
+Comme si quelqu'un avait déjà écrit sa propre fonction de récupération, vous savez probablement qu'il s'agit d'un terrier très profond de configuration de méthodes et d'autres éléments.
+
+00:27.000 --> 00:35.000
+Donc, ce que je vous propose, c'est simplement de garder les choses simples pour commencer, n'est-ce pas ? Si vous arrivez seulement à obtenir la réponse et à vous fournir JSON et c'est tout, comme si c'était toujours quelque chose.
+
+00:35.000 --> 00:42.000
+N'essayez pas d'aimer écrire une fonction de récupération complète. Il y a des gens qui sont très bons dans ce domaine et ils le font déjà pour nous.
+
+00:42.000 --> 00:46.000
+C’est plus pour la pratique qu’autre chose.
+
+00:47.000 --> 00:59.000
+Donc, ce que nous allons faire, je l'ai mentionné plus tôt dans l'exercice, mais nous allons faire une version simplifiée de fetch car encore une fois, c'est une version assez compliquée.
+
+00:59.000 --> 01:08.000
+Et puis j'ai réalisé plus tard, lors de la mise à jour, que nous avions déjà fait beaucoup de choses avec la semaine d'utilisation composable, donc dans le cas où vous recherchez, vous savez, vous voulez en fait un peu de pratique.
+
+01:08.000 --> 01:13.000
+La tâche d'utilisation composable n'utilise pas vraiment de modèle de conception de magasin, car nous avons fini par l'utiliser comme modèle.
+
+01:13.000 --> 01:20.000
+Nous recherchons une pratique supplémentaire, nous le ferons si vous le faites, mais allons-y et jetons un coup d'œil à ce à quoi pourrait ressembler un composable de récupération utilisé.
+
+01:20.000 --> 01:26.000
+Ainsi, comme nous pouvons le voir ici, nous examinons la base de code. Il y a beaucoup de récupérations natives.
+
+01:26.000 --> 01:36.000
+Et donc, le but de l'utilisation d'un tel composable lorsque j'ai posé cette question, et mes excuses ne sont pas claires avec cela, c'est moins que nous n'essayons pas nécessairement de reproduire l'API de récupération elle-même.
+
+01:36.000 --> 01:45.000
+Mais en regardant ce qui se passe, c'est assez cohérent dans le sens où, voyons, dans celui-ci, par exemple, cela prend deux semaines.
+
+01:45.000 --> 01:55.000
+Il propose des options personnalisées concernant une publication dans l'application, comme le type de format, mais il définit toujours la semaine, puis vérifie la réponse et peut donc générer une erreur.
+
+01:55.000 --> 01:58.000
+Ce modèle est assez cohérent.
+
+01:59.000 --> 02:11.000
+Nous le voyons ici également avec les semaines de récupération. Ici, nous allons récupérer l'URL de base de l'API pendant des semaines. Si la réponse n'est pas correcte, lancez une erreur, puis attendez que les semaines de récupération soient JSON.
+
+02:11.000 --> 02:16.000
+Et puis au fond, c’est ce qu’on veut, non ? Ils disent, c'est ce que je veux retourner.
+
+02:16.000 --> 02:23.000
+Donc, l'idée ici est que je pense qu'une version simplifiée de vous avez utilisé fetch regrouperait probablement quelque chose comme ça dans son ensemble.
+
+02:23.000 --> 02:28.000
+Pour qu'il renvoie exactement ce que nous voulons à la fin.
+
+02:28.000 --> 02:44.000
+Donc, la façon dont je procéderais est, en fait, allons-y et copions ceci pendant que j'y suis puisque je suis prêt ici, c'est que nous allons entrer dans notre dossier composables et nous allons créer une récupération d'utilisation.
+
+02:45.000 --> 02:54.000
+Et la raison pour laquelle nous le faisons, vous vous demandez peut-être pourquoi dans composable, c'est parce que j'ai l'intention de renvoyer un plan réactif, évidemment, sur l'utilisation de vues ou de réactivité dans le cadre de cela.
+
+02:54.000 --> 03:05.000
+Alors, vous avez le choix ici, n'est-ce pas ? Vous pensez peut-être : oh, eh bien, pourrais-je faire un seul dix pour ça, n'est-ce pas ? Comme utiliser fetch équivaut à quelque chose, mais utiliser fetch est une fonction.
+
+03:05.000 --> 03:13.000
+Vous allez donc en quelque sorte utiliser une fonction d'usine pour ce type de composable, car en fin de compte, vous n'essayez pas vraiment de partager un état entre vos récupérations.
+
+03:13.000 --> 03:21.000
+En fait, il y a certaines choses que nous partagerons et que nous verrons très prochainement, mais sinon, oui, donc quelques choses, d'accord, alors voici ce que nous voulons exporter.
+
+03:21.000 --> 03:28.000
+Nous savons que cette chose est tout à fait cohérente, c'est donc un exemple de quelque chose qui se trouve vraiment à l'extérieur.
+
+03:28.000 --> 03:34.000
+Donc, si vous basez l'URL et je pense que nous l'avons déjà.
+
+03:34.000 --> 03:46.000
+Et puis en fait, pour ceux qui se demandent ce que c'était, c'était un historique du presse-papiers Ray Cast, donc vous pouvez le parcourir, c'est plutôt sympa.
+
+03:46.000 --> 03:49.000
+Et puis, d’accord, alors nous avons compris.
+
+03:49.000 --> 03:55.000
+Et donc, fondamentalement, ici, je trouve que les gens ont généralement tendance à inclure la barre oblique lorsqu'ils aiment leurs URL.
+
+03:55.000 --> 04:01.000
+En conséquence, je vais simplement créer une URL qui sera une chaîne.
+
+04:02.000 --> 04:06.000
+Et puis qu'est-ce qu'on va revenir, on va revenir.
+
+04:06.000 --> 04:11.000
+En fait, je ne sais pas vraiment pourquoi nous avons mentionné que nous n'allions pas faire grand-chose avec les types pour le moment.
+
+04:11.000 --> 04:15.000
+D'accord, c'est donc là que cette partie entre en jeu.
+
+04:15.000 --> 04:18.000
+Nous mettons donc cela dans la récupération d'utilisation.
+
+04:18.000 --> 04:30.000
+Nous allons donc lui transmettre essentiellement l'URL de base de l'API, même si je n'ai pas besoin de le faire de cette façon en fait, l'URL de base de l'API, plus l'URL.
+
+04:30.000 --> 04:36.000
+C'est ce que nous joignons en annexe. Oh, cela doit être une synchronisation car nous avons une attente à l'intérieur d'ici.
+
+04:36.000 --> 04:45.000
+Alors nous disons, d'accord, lancez une erreur. Oui, c'est une chose générique, n'est-ce pas, si vous lancez une erreur, si la réponse n'est pas correcte.
+
+04:45.000 --> 04:51.000
+Sinon, ce que nous allons faire ici, et c'est là que nous allons avoir une taille plus générique, nous allons le faire.
+
+04:52.000 --> 04:56.000
+Retour de la réponse pondérale.
+
+04:56.000 --> 05:00.000
+Cela devrait faire l'affaire. Je l'ai lu correctement.
+
+05:00.000 --> 05:12.000
+D'accord, la principale autre chose que je dois faire est que j'aime faire le getter de référence peut-être, donc je vais laisser tomber ça ici de chaîne.
+
+05:12.000 --> 05:15.000
+D'accord, et ici, je pense que nous avons une meilleure fonction d'utilisation de base.
+
+05:15.000 --> 05:27.000
+Et donc, la façon dont nous pouvons tester cela est que nous pouvons aller de l'avant et essentiellement importer la récupération d'utilisation à partir de notre nouveau composable.
+
+05:27.000 --> 05:33.000
+Et encore une fois, allons-y et faisons comme ça.
+
+05:33.000 --> 05:35.000
+Des composibles comme ça.
+
+05:35.000 --> 05:37.000
+De cette façon, c'est plus cohérent.
+
+05:37.000 --> 05:43.000
+Très bien, à partir de là, nous savons maintenant que nous n’avons plus besoin de tout cela.
+
+05:44.000 --> 05:51.000
+Nous devrions pouvoir attendre des semaines de récupération d'occasion.
+
+05:51.000 --> 05:56.000
+Je crois que c'était des semaines.
+
+05:56.000 --> 05:59.000
+Oh, c'est celui sur lequel je l'avais ?
+
+05:59.000 --> 06:01.000
+Oui, c'était vrai.
+
+06:01.000 --> 06:12.000
+D'accord, des semaines, et puis c'est tout.
+
+06:13.000 --> 06:20.000
+D'accord, donc si cela fonctionne comme prévu, là où nous utilisons la semaine d'utilisation, nous l'utilisons actuellement.
+
+06:20.000 --> 06:24.000
+Voyons, il semble que nous l'utilisons à l'intérieur du planificateur.
+
+06:24.000 --> 06:28.000
+Alors j'attendrai, pas seulement en utilisant le composable.
+
+06:28.000 --> 06:35.000
+Où est appelée la semaine de récupération ?
+
+06:35.000 --> 06:40.000
+Nous l'appelons, d'accord, on dirait que nous l'appelons à l'intérieur du modèle de formulaire de tâche.
+
+06:40.000 --> 06:42.000
+C'est donc ici que nous allons le tester.
+
+06:42.000 --> 06:44.000
+Le serveur est en panne.
+
+06:44.000 --> 06:45.000
+Alors appelons ça.
+
+06:45.000 --> 06:48.000
+Laissez-moi changer de branche avant d'oublier.
+
+06:48.000 --> 06:51.000
+Obtenez le chèque.
+
+06:51.000 --> 06:53.000
+Oh, cinq solutions.
+
+06:53.000 --> 06:55.000
+D'accord, cool.
+
+06:55.000 --> 06:57.000
+Nous sommes opérationnels.
+
+06:57.000 --> 07:01.000
+Et puis si nous allons de l’avant et examinons notre tâche.
+
+07:01.000 --> 07:04.000
+Et puis.
+
+07:04.000 --> 07:06.000
+Attendez.
+
+07:06.000 --> 07:07.000
+Oh, modèle de tâche.
+
+07:07.000 --> 07:08.000
+C'est ce que c'est.
+
+07:08.000 --> 07:10.000
+Je dois donc le modifier.
+
+07:10.000 --> 07:11.000
+Mais.
+
+07:11.000 --> 07:13.000
+Okay, maintenant quelque chose ne va pas.
+
+07:13.000 --> 07:16.000
+Et si vous revenez soudainement des semaines après votre.
+
+07:16.000 --> 07:20.000
+Je ne suis donc pas revenu des semaines après avoir utilisé la fonction use fetch.
+
+07:20.000 --> 07:22.000
+En fait, vous n'en êtes pas revenu des semaines après.
+
+07:22.000 --> 07:23.000
+Euh-huh.
+
+07:23.000 --> 07:25.000
+Droite.
+
+07:25.000 --> 07:29.000
+Alors, fondamentalement, ce que nous devons faire ici.
+
+07:29.000 --> 07:30.000
+Inconvénients.
+
+07:30.000 --> 07:34.000
+Eh bien, oui.
+
+07:34.000 --> 07:35.000
+Droite.
+
+07:35.000 --> 07:40.000
+Je veux dire, nous pourrions dire ceci.
+
+07:40.000 --> 07:43.000
+C'est tout ?
+
+07:43.000 --> 07:44.000
+Je le crois.
+
+07:44.000 --> 07:45.000
+D'accord.
+
+07:45.000 --> 07:47.000
+Voyons si c'est abattu.
+
+07:47.000 --> 07:49.000
+Nous rafraîchissons.
+
+07:49.000 --> 07:52.000
+Nous modifions la tâche.
+
+07:52.000 --> 07:53.000
+Mm-hmm.
+
+07:53.000 --> 07:54.000
+Qu'est-ce qui me crie dessus ?
+
+07:54.000 --> 07:58.000
+Ce que j'ai probablement dit ne définirait pas le modèle basé sur l'instance.
+
+07:58.000 --> 08:02.000
+D'accord, donc quelque chose avec les semaines n'est pas défini correctement.
+
+08:02.000 --> 08:06.000
+Vous avez modifié la valeur qui était là.
+
+08:06.000 --> 08:07.000
+Celui-ci.
+
+08:07.000 --> 08:08.000
+Correct.
+
+08:08.000 --> 08:10.000
+Nous avons donc pensé que la valeur était égale.
+
+08:10.000 --> 08:12.000
+Avant cela, on l'appelait autrement.
+
+08:12.000 --> 08:13.000
+Était-ce ?
+
+08:13.000 --> 08:14.000
+Euh-huh.
+
+08:14.000 --> 08:16.000
+Cela se disait.
+
+08:16.000 --> 08:17.000
+D'accord.
+
+08:17.000 --> 08:20.000
+Dernier.
+
+08:20.000 --> 08:24.000
+C'était.
+
+08:24.000 --> 08:26.000
+semaines récupérées.
+
+08:26.000 --> 08:28.000
+Utilisez simplement le nom de la réponse.
+
+08:28.000 --> 08:29.000
+D'accord.
+
+08:29.000 --> 08:31.000
+Était-ce ? D'accord.
+
+08:31.000 --> 08:32.000
+Ouais.
+
+08:32.000 --> 08:33.000
+N'est-ce pas des semaines intéressantes ?
+
+08:33.000 --> 08:34.000
+Cela semble identique.
+
+08:34.000 --> 08:35.000
+Ouais.
+
+08:35.000 --> 08:36.000
+Donc ça ressemble.
+
+08:36.000 --> 08:37.000
+La signature semble correcte.
+
+08:37.000 --> 08:40.000
+Ce doit donc être une façon pour moi de mettre cela en œuvre.
+
+08:40.000 --> 08:42.000
+Cela fait que ce n'est pas le cas.
+
+08:42.000 --> 08:43.000
+Je veux dire.
+
+08:43.000 --> 08:45.000
+La chose la plus simple.
+
+08:45.000 --> 08:50.000
+Il vient d'enregistrer la réponse très rapidement.
+
+08:50.000 --> 08:52.000
+Euh, clair.
+
+08:52.000 --> 08:54.000
+Rafraîchir.
+
+08:54.000 --> 08:55.000
+C'est.
+
+08:55.000 --> 08:56.000
+C'est ça.
+
+08:56.000 --> 08:58.000
+Juste ici.
+
+08:59.000 --> 09:02.000
+Euh, oh, peut-être que ce n'est pas le cas.
+
+09:02.000 --> 09:03.000
+Ouais.
+
+09:03.000 --> 09:04.000
+C'est donc chose faite.
+
+09:04.000 --> 09:11.000
+Avons-nous dû faire référence à la valeur avec l'URL que nous avons transmise ?
+
+09:11.000 --> 09:12.000
+C'est une bonne question.
+
+09:12.000 --> 09:14.000
+Pour le moment, c'est le cas, vous avez tout à fait raison.
+
+09:14.000 --> 09:18.000
+Nous n’avons pas suivi ce modèle car la récupération d’utilisation utilise actuellement un peut-être.
+
+09:18.000 --> 09:24.000
+Mais en fait, pour l’instant, c’est une supposition.
+
+09:24.000 --> 09:25.000
+Euh, votre valeur L.
+
+09:25.000 --> 09:27.000
+C’est en supposant cela.
+
+09:27.000 --> 09:32.000
+Mais je ferai en sorte que cela soit au moins cohérent.
+
+09:32.000 --> 09:37.000
+J'imprimerais qu'il est tout à fait possible que cela ait été cassé il y a trois exercices et que cela n'ait pas été réalisé.
+
+09:37.000 --> 09:38.000
+Oh, c'est tout à fait vrai.
+
+09:38.000 --> 09:39.000
+Oui.
+
+09:39.000 --> 09:40.000
+C'est tout à fait juste.
+
+09:40.000 --> 09:45.000
+Euh, donc je veux dire, voyons, où est le journal de la console pendant la semaine d'utilisation.
+
+09:45.000 --> 09:48.000
+Alors oui, c'est tout à fait juste.
+
+09:48.000 --> 09:50.000
+Voyons.
+
+09:50.000 --> 09:52.000
+En fait, nous ne devrions pas le faire.
+
+09:52.000 --> 09:54.000
+Le planificateur devrait au moins l'avoir.
+
+09:54.000 --> 09:55.000
+Donc le planificateur ici.
+
+09:55.000 --> 09:56.000
+D'accord.
+
+09:56.000 --> 09:57.000
+Alors faisons-nous part du planificateur.
+
+09:57.000 --> 09:58.000
+Nous travaillons en ce moment.
+
+09:58.000 --> 10:00.000
+Alors allons-y et jetons un œil à cela.
+
+10:00.000 --> 10:02.000
+Donc les planificateurs ici.
+
+10:02.000 --> 10:07.000
+Oh, cela fait des semaines que nous sommes en train d'arriver en ce moment.
+
+10:07.000 --> 10:09.000
+En fait, ce genre d'intérêt.
+
+10:09.000 --> 10:11.000
+Oh, parce qu'il fait sa propre récupération ici.
+
+10:11.000 --> 10:12.000
+D'accord.
+
+10:12.000 --> 10:15.000
+Nous allons donc éliminer cela.
+
+10:15.000 --> 10:18.000
+Et nous allons voir si nous pouvons le faire fonctionner.
+
+10:18.000 --> 10:26.000
+Nous allons créer un magasin hebdomadaire, que nous n'avons pas importé.
+
+10:26.000 --> 10:27.000
+J'utiliserai le magasin de la semaine, non ?
+
+10:27.000 --> 10:32.000
+Et puis ici, le magasin hebdomadaire de la console équivaut à utiliser le magasin hebdomadaire.
+
+10:32.000 --> 10:33.000
+D'accord.
+
+10:33.000 --> 10:36.000
+C'est ça.
+
+10:36.000 --> 10:41.000
+Ensuite, il rafraîchit les semaines.
+
+10:41.000 --> 10:43.000
+Gérer la semaine créée.
+
+10:44.000 --> 10:46.000
+Ensuite, cela nécessite également un magasin d'une semaine.
+
+10:46.000 --> 10:49.000
+Cela prend des semaines.
+
+10:49.000 --> 10:50.000
+Et autre chose ?
+
+10:50.000 --> 10:53.000
+Oui, encore une semaine de magasin.
+
+10:53.000 --> 10:55.000
+Cela prend des semaines.
+
+10:55.000 --> 10:56.000
+D'accord.
+
+10:56.000 --> 10:58.000
+Je pense que c'est tout.
+
+10:58.000 --> 10:59.000
+Ouais.
+
+10:59.000 --> 11:04.000
+Ça a l'air bien.
+
+11:04.000 --> 11:05.000
+D'accord.
+
+11:05.000 --> 11:08.000
+On dirait que ça va.
+
+11:08.000 --> 11:12.000
+Donc, comme vous l'avez dit, il y a probablement quelque chose qui ne va pas
+
+11:12.000 --> 11:13.000
+côté.
+
+11:13.000 --> 11:16.000
+Nous ne faisons pas de refactorisation complète.
+
+11:16.000 --> 11:22.000
+Nous avons donc là un exemple d’une sorte de fonction de récupération d’utilisation, encore une fois, trop simplifiée.
+
+11:22.000 --> 11:27.000
+Encore une fois, si vous décidez de faire cela, regardez au moins ce que fait la prochaine équipe.
+
+11:27.000 --> 11:31.000
+De nombreuses personnes disposent déjà de ce type de fonctions de récupération composables qui sont très, très robustes.
+
+11:31.000 --> 11:34.000
+Configurable gère toutes les méthodes, bla, bla, bla.
+
+11:34.000 --> 11:35.000
+Superbes modèles.
+
+11:35.000 --> 11:37.000
+Assurez-vous donc de vérifier cela.
+
+11:37.000 --> 11:38.000
+Au revoir.
+

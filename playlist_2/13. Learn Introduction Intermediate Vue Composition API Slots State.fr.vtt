@@ -1,0 +1,563 @@
+WEBVTT
+
+00:00.000 --> 00:05.000
+Ainsi, lorsque vous créez vos composables, vous devez vous assurer que leurs arguments sont flexibles,
+
+00:05.000 --> 00:07.000
+mais ils ont un rendement standardisé.
+
+00:07.000 --> 00:08.000
+Qu’est-ce que je veux dire par là ?
+
+00:08.000 --> 00:12.000
+Nous avons discuté plus tôt de la façon dont FlutterTast, lorsque vous regardez ceci,
+
+00:12.000 --> 00:18.000
+cela ne semble pas particulièrement vrai, en fait, nous ne voyons rien du tout importé par vue ici.
+
+00:18.000 --> 00:21.000
+Le problème est que lorsque j'ai mentionné des arguments flexibles,
+
+00:21.000 --> 00:24.000
+est-ce que, rappelez-vous, lorsque nous les appelons dans nos composants,
+
+00:24.000 --> 00:28.000
+filtrer les tâches, voyons, où FlutterTast est-il appelé ?
+
+00:28.000 --> 00:30.000
+Nous avons un exemple.
+
+00:32.000 --> 00:37.000
+Dans ce cas particulier, il s'agit en fait de transmettre un objet de tâche,
+
+00:37.000 --> 00:44.000
+mais que se passerait-il si, comme une tâche, comme un nouveau magasin de tâches,
+
+00:44.000 --> 00:50.000
+c'était comme une référence de tâches ?
+
+00:50.000 --> 00:57.000
+Dans ce cas particulier, vous allez en fait obtenir une erreur,
+
+00:57.000 --> 01:02.000
+parce que ce que vous avez dit à JavaScript, c'est que je vous confie un ensemble de tâches.
+
+01:02.000 --> 01:05.000
+Mais à ce stade, il ne s’agit techniquement pas d’un ensemble de tâches.
+
+01:05.000 --> 01:09.000
+C'est une référence qui contient un éventail de tâches.
+
+01:09.000 --> 01:15.000
+Et puis, oh, oui, j'en vois.
+
+01:15.000 --> 01:18.000
+Je vais vous laisser voir cela pendant une seconde.
+
+01:18.000 --> 01:22.000
+Seriez-vous correct si vous transmettiez une valeur de la référence ?
+
+01:22.000 --> 01:28.000
+Correct. Si nous avons fait comme ça, maintenant c'est résolu.
+
+01:28.000 --> 01:32.000
+Mais c’est pourquoi il est recommandé ici de faire preuve de flexibilité à ce sujet.
+
+01:32.000 --> 01:36.000
+C'est parce que vous ne pouvez pas vraiment garantir comment vos développeurs souhaitent l'utiliser.
+
+01:36.000 --> 01:39.000
+Et ça semblera toujours un peu maladroit.
+
+01:39.000 --> 01:42.000
+Et donc, j'ai réfléchi à cela.
+
+01:42.000 --> 01:45.000
+Vous savez, nous voyons que les gens vivent cela.
+
+01:45.000 --> 01:50.000
+Comment pourrions-nous résoudre ce problème ? Eh bien, c'est en fait plutôt intelligent.
+
+01:50.000 --> 01:54.000
+Donc, nous avons, nous avons ici, nous avons dit que c'est un type de tâche,
+
+01:54.000 --> 01:57.000
+mais nous savons aussi qu'il pourrait s'agir d'une réf.
+
+01:57.000 --> 02:06.000
+Donc, en vue, nous avons ce type appelé peut-être réf.
+
+02:06.000 --> 02:10.000
+Et donc, dites-vous, peut-être que si c'est un arbitre, peut-être que ce n'est pas le cas,
+
+02:11.000 --> 02:13.000
+ou peut-être que c'est une valeur simple.
+
+02:13.000 --> 02:15.000
+L'un des deux.
+
+02:15.000 --> 02:19.000
+Nous ne savons pas si c'est réactif, mais de toute façon, nous allons trouver un moyen d'y faire face.
+
+02:19.000 --> 02:21.000
+Et je l'explique dans une seconde.
+
+02:21.000 --> 02:24.000
+Parce que, d'accord, alors maintenant vous vous demandez, n'est-ce pas ?
+
+02:24.000 --> 02:25.000
+D'accord, alors qu'est-ce que cela signifie, n'est-ce pas ?
+
+02:25.000 --> 02:29.000
+Il pourrait être réactif, ce qui signifie que c'est une référence, ce qui signifie qu'il a été déballé,
+
+02:29.000 --> 02:33.000
+ou c'est une valeur simple, et la valeur point ne fonctionnerait pas car c'est déjà une valeur simple.
+
+02:33.000 --> 02:36.000
+Et c'est là que la standardisation de ce que vous retournez est importante,
+
+02:36.000 --> 02:39.000
+parce qu'alors vous, en tant qu'auteur composable, devez décider,
+
+02:39.000 --> 02:41.000
+dans la suite de ce composable.
+
+02:41.000 --> 02:45.000
+Est-ce que je veux que ce paramètre soit une valeur plate,
+
+02:45.000 --> 02:48.000
+ou ai-je besoin qu'il soit réactif ?
+
+02:48.000 --> 02:50.000
+Si vous avez besoin que ce soit une valeur simple,
+
+02:50.000 --> 02:54.000
+il existe une méthode d'assistance de la vue appelée deux valeurs.
+
+02:54.000 --> 02:58.000
+Et en gros, donc en gros, nous dirions, par exemple,
+
+02:58.000 --> 03:01.000
+Je dirai juste tâche, rendons les choses faciles dans ce cas,
+
+03:01.000 --> 03:04.000
+deux valeurs sur la liste des tâches.
+
+03:04.000 --> 03:11.000
+Donc, force toujours une valeur de déballage.
+
+03:11.000 --> 03:14.000
+La prochaine étape est la fonction d'assistance à deux valeurs.
+
+03:14.000 --> 03:18.000
+Si ce n'est pas une réf, elle crachera simplement la valeur.
+
+03:18.000 --> 03:23.000
+S'il s'agit d'une référence, il la déballera, puis la précisera.
+
+03:23.000 --> 03:29.000
+Votre alternative, comme si vous l'étiez, certains d'entre vous l'auraient peut-être deviné,
+
+03:29.000 --> 03:33.000
+est simplement de l'envelopper dans une réf.
+
+03:33.000 --> 03:37.000
+Et si vous enveloppez une référence dans une référence, elle s'aplatit simplement en une référence.
+
+03:37.000 --> 03:43.000
+Ce n'est pas comme si vous imposiez une surcharge de performances supplémentaire.
+
+03:47.000 --> 03:49.000
+Et donc, c’est là que réside la cohérence.
+
+03:49.000 --> 03:53.000
+En d'autres termes, vous n'imposez pas la cohérence au niveau des paramètres,
+
+03:53.000 --> 03:55.000
+où, encore une fois, surtout avec les signatures d'appel.
+
+03:55.000 --> 03:58.000
+Vous ne savez tout simplement pas comment les développeurs vont essayer de l'appeler.
+
+03:58.000 --> 04:01.000
+Alors tu dis, cool, tant que tu me confies un éventail de tâches,
+
+04:01.000 --> 04:04.000
+quelle que soit la méthode, je m'en occuperai ensuite.
+
+04:04.000 --> 04:08.000
+Je vais le normaliser et je vais y donner suite.
+
+04:08.000 --> 04:11.000
+Et donc, pour en finir avec cette ligne de pensée particulière,
+
+04:11.000 --> 04:14.000
+cela signifie aussi que quoi que vous fassiez,
+
+04:14.000 --> 04:16.000
+vous devriez alors probablement être cohérent quant à savoir si vous êtes,
+
+04:16.000 --> 04:19.000
+renvoyant généralement une valeur réactive, ou vous renvoyant une valeur simple.
+
+04:19.000 --> 04:22.000
+Parce que c'est un autre choix que vous devez faire en tant qu'auteur.
+
+04:22.000 --> 04:26.000
+Parce que c'est quelque chose qu'on ferait probablement valoir
+
+04:26.000 --> 04:29.000
+que si c'est un composable, vous voulez généralement une valeur réactive
+
+04:30.000 --> 04:32.000
+parce qu'il s'agit probablement d'une question d'État.
+
+04:32.000 --> 04:35.000
+Et donc, vous voulez que quelqu'un puisse s'y abonner, le regarder, et cetera.
+
+04:35.000 --> 04:38.000
+Alors que, vous savez, si vous faisiez plutôt une fonction utilitaire,
+
+04:38.000 --> 04:42.000
+peut-être logique, alors une valeur simple est probablement la voie à suivre.
+
+04:42.000 --> 04:46.000
+Mais encore une fois, pour être très clair, cela dépend de votre digression en tant qu'auteur.
+
+04:46.000 --> 04:49.000
+de la fonction utilitaire composable que vous devriez choisir d'effectuer.
+
+04:49.000 --> 04:56.000
+Mais la clé ici est que les arguments flexibles sont standardisés comme l'exécution en son sein.
+
+04:56.000 --> 04:59.000
+Pour qu'ils se donnent la main.
+
+04:59.000 --> 05:02.000
+Et donc, je dois conclure avec une mise en garde supplémentaire,
+
+05:02.000 --> 05:05.000
+et je promets que ce n'est qu'une chose de plus.
+
+05:05.000 --> 05:09.000
+Donc, j'ai mentionné que vous avez des tâches régulières.
+
+05:09.000 --> 05:11.000
+Vous avez la valeur normale, qui dans ce cas est un tableau de tâches,
+
+05:11.000 --> 05:13.000
+et vous avez votre valeur approximative.
+
+05:13.000 --> 05:19.000
+Mais il y a aussi que vous pouvez techniquement obtenir des valeurs à partir d’une fonction.
+
+05:19.000 --> 05:23.000
+Et donc, dans ce cas particulier, vous pouvez l'imaginer,
+
+05:24.000 --> 05:28.000
+Je pense que c'est la signature.
+
+05:28.000 --> 05:33.000
+L'ordre des tâches de retour est une fonction qui renvoie une tâche, un tableau de tâches.
+
+05:33.000 --> 05:36.000
+Et donc, si vous mettez la tâche de retour stockée ici,
+
+05:36.000 --> 05:40.000
+cela va également être diffusé, car ce n'est pas une valeur simple.
+
+05:40.000 --> 05:42.000
+Ce n'est pas une réf. En fait, c'est une fonction.
+
+05:42.000 --> 05:46.000
+Nous l'appelons donc également un geter, car il récupère la valeur.
+
+05:46.000 --> 05:49.000
+Donc, la raison pour laquelle je veux tout dire d'un seul coup,
+
+05:49.000 --> 05:51.000
+parce que je ne veux pas que les gens prennent trop d'avance sur moi ici,
+
+05:51.000 --> 05:54.000
+ou c'est juste une fugue et commencer à faire des trucs.
+
+05:54.000 --> 05:57.000
+Peut-être que la référence est bonne, mais en réalité, ce que tu veux,
+
+05:57.000 --> 06:00.000
+est peut-être une référence ou un geter.
+
+06:02.000 --> 06:07.000
+Et cela complète l'évolution de votre peut-être réf, peut-être geter,
+
+06:07.000 --> 06:09.000
+peut-être une simple valeur.
+
+06:09.000 --> 06:12.000
+Et avec ce type, vous avez, essentiellement,
+
+06:12.000 --> 06:15.000
+le un paramètre parfaitement typé et flexible.
+
+06:15.000 --> 06:18.000
+Cela peut être utilisé dans n'importe quel contexte, peu importe,
+
+06:18.000 --> 06:22.000
+quelqu'un veut appeler quelque chose, parce qu'il a décidé de mettre une fonction à l'intérieur de votre
+
+06:22.000 --> 06:25.000
+méthode appelée peu importe, vous êtes couvert.
+
+06:25.000 --> 06:28.000
+Et tant que vous faites votre part dans les deux prochains morceaux,
+
+06:28.000 --> 06:35.000
+que ce soit du tricot plat ou que ce soit réactif, tu es bon, tu es bon G.
+
+06:35.000 --> 06:40.000
+Ne devriez-vous pas l'appeler si c'était un geter ?
+
+06:40.000 --> 06:45.000
+Non, c'est donc ça qui est drôle. Deux valeurs et deux références feront juste leur travail.
+
+06:46.000 --> 06:49.000
+C’est donc la beauté de le standardiser tout en haut.
+
+06:49.000 --> 06:51.000
+Vous pensez que je travaille avec des valeurs réactives.
+
+06:51.000 --> 06:52.000
+Boum, c'est ce que je fais.
+
+06:52.000 --> 06:54.000
+Ou non, tout simplement la valeur.
+
+06:57.000 --> 06:58.000
+Je parlais à l'équipe.
+
+06:58.000 --> 07:00.000
+J'aurais vraiment aimé qu'on puisse appeler ça peut-être réactif,
+
+07:00.000 --> 07:02.000
+parce que j'ai l'impression que ça aurait été assez bien,
+
+07:02.000 --> 07:05.000
+mais malheureusement, réactif est déjà un terme en vue.
+
+07:05.000 --> 07:08.000
+Donc, techniquement, ce serait trompeur, mais j'ai l'impression que c'est vraiment ce que nous disons.
+
+07:08.000 --> 07:12.000
+est-ce peut-être réactif, mais malheureusement, ce changement est scellé.
+
+07:12.000 --> 07:14.000
+Voilà donc ce que nous obtenons.
+
+07:16.000 --> 07:18.000
+De toute façon.
+
+07:18.000 --> 07:20.000
+Ouais.
+
+07:20.000 --> 07:25.000
+Si vous avez des questions sur ce modèle de paramètres flexibles,
+
+07:25.000 --> 07:27.000
+mais des sorties standardisées ?
+
+07:27.000 --> 07:30.000
+Je veux dire, peut-être que c'est juste moi, mais les paramètres flexibles,
+
+07:30.000 --> 07:34.000
+cela ressemble un peu à un médicament recherchant un état pathologique.
+
+07:34.000 --> 07:37.000
+Certaines personnes ont juste une méthode vraiment cool appelée,
+
+07:37.000 --> 07:39.000
+peut-être que les arbitres se réunissent, alors comment devrions-nous utiliser cela ?
+
+07:39.000 --> 07:43.000
+Je pense que cela vient en partie du fait que nous avons rencontré des gens incohérents
+
+07:43.000 --> 07:46.000
+avec la façon dont ils appelaient cette signature de fonction,
+
+07:46.000 --> 07:49.000
+et comme vous les utilisez souvent dans des composants,
+
+07:49.000 --> 07:51.000
+les gens passaient des valeurs réactives,
+
+07:51.000 --> 07:55.000
+mais ils ne le géraient pas correctement dans le cadre de la méthode,
+
+07:55.000 --> 07:58.000
+parce qu'alors vous, parce que certains d'entre nous, comme par exemple,
+
+07:58.000 --> 08:00.000
+J'ai tendance à utiliser par défaut des valeurs réactives,
+
+08:00.000 --> 08:03.000
+mais si je n'ai pas pris de signature là où ils s'attendent à ce que ce soit clair
+
+08:03.000 --> 08:06.000
+ou eux, alors ça gâche tout simplement le tout.
+
+08:06.000 --> 08:08.000
+Donc, plutôt que d'avoir ce genre d'instructions if else,
+
+08:08.000 --> 08:10.000
+ils ont proposé ces fonctions d'assistance.
+
+08:10.000 --> 08:13.000
+Mais encore une fois, je pense que si votre équipe n'a pas ce problème,
+
+08:13.000 --> 08:17.000
+c'est cool, si tu penses que chaque composable est une réf,
+
+08:17.000 --> 08:20.000
+genre, ne lui transmettez rien, mais vous pouvez tous vous en tenir à cela.
+
+08:20.000 --> 08:21.000
+Je veux dire, super.
+
+08:21.000 --> 08:23.000
+C'est à cela que sert TypeScript, n'est-ce pas ?
+
+08:23.000 --> 08:24.000
+C'est juste.
+
+08:24.000 --> 08:25.000
+Ouais.
+
+08:25.000 --> 08:29.000
+Donc je suppose que vous pourriez dire, vous pourriez faire valoir que c'est vraiment
+
+08:29.000 --> 08:32.000
+peut-être plus pour les auteurs de bibliothèques.
+
+08:32.000 --> 08:35.000
+Je viens de travailler sur du code comme certaines équipes où,
+
+08:35.000 --> 08:38.000
+vous savez, vos développeurs à l'autre bout du monde,
+
+08:38.000 --> 08:39.000
+et ils font des billets.
+
+08:39.000 --> 08:42.000
+Et tant pis si la communication n'est pas toujours là dans les standards
+
+08:42.000 --> 08:45.000
+ne sont pas aussi faciles à appliquer, alors des choses comme celle-ci peuvent aider
+
+08:45.000 --> 08:46.000
+pour réduire les frictions.
+
+08:46.000 --> 08:49.000
+Mais c'est exactement ce que vous disiez, si votre équipe utilise TypeScript d'une manière
+
+08:49.000 --> 08:51.000
+et est cohérent, ne vous inquiétez même pas pour cela.
+
+08:51.000 --> 08:55.000
+C'est juste agréable de savoir que c'est une option pour vous,
+
+08:55.000 --> 08:56.000
+Je suppose que c'est ce que je veux.
+
+08:56.000 --> 09:00.000
+L'honnêteté de ma philosophie d'enseignement consiste simplement à vous donner
+
+09:00.000 --> 09:02.000
+outils et aimer différents scénarios où cela pourrait être utile,
+
+09:02.000 --> 09:05.000
+et vous saurez alors mieux quand il est temps de l'utiliser ou non.
+
+09:05.000 --> 09:09.000
+Que nous dit TypeScript de l'autre côté de peut-être
+
+09:09.000 --> 09:10.000
+Réfrigérateur?
+
+09:10.000 --> 09:11.000
+Ouais.
+
+09:11.000 --> 09:14.000
+Donc c'est, en gros, pour ceux qui ne savent pas,
+
+09:14.000 --> 09:18.000
+T est essentiellement une lettre variable, essentiellement de n'importe quel type.
+
+09:18.000 --> 09:21.000
+Alors oui, ça dit essentiellement que c'est peut-être Reft of T,
+
+09:21.000 --> 09:26.000
+calculé Reft T, fonction de T, ou simplement T lui-même.
+
+09:26.000 --> 09:29.000
+C'est donc une union très élaborée, je pense qu'ils appellent ça une union, n'est-ce pas ?
+
+09:29.000 --> 09:30.000
+Je pense que c'est un type de syndicat.
+
+09:30.000 --> 09:34.000
+Faut-il également créer un paramètre dans le composable pour permettre
+
+09:34.000 --> 09:39.000
+à l'utilisateur de choisir le filtre ou comment filtrer ?
+
+09:39.000 --> 09:42.000
+Font-ils référence à celui-ci ici ?
+
+09:42.000 --> 09:46.000
+Parce que je pense que c'est ça, ce filtre de tâches.
+
+09:46.000 --> 09:49.000
+Oh, sont-ils en train de dire que cela devrait aussi être peut-être un réfrigérateur ?
+
+09:49.000 --> 09:50.000
+Si c’est le cas, ils ont raison.
+
+09:50.000 --> 09:54.000
+Au moins, si j'utilise mon modèle que j'explique en ce moment,
+
+09:54.000 --> 09:57.000
+est-ce à cela qu'ils font référence ?
+
+09:57.000 --> 09:59.000
+Ouais, je pense que c'est ce qu'ils voulaient dire.
+
+09:59.000 --> 10:00.000
+Ouais.
+
+10:00.000 --> 10:01.000
+Oui.
+
+10:01.000 --> 10:03.000
+Alors, à qui a dit ça et discutez de votre place ?
+
+10:03.000 --> 10:04.000
+Ouais.
+
+10:04.000 --> 10:06.000
+Donc encore plus de cohérence, ne mettez peut-être pas celle du réfrigérateur,
+
+10:06.000 --> 10:08.000
+et pas peut-être un réfrigérateur, l'autre.
+
+10:08.000 --> 10:11.000
+Par exemple, soyez tous flexibles ou soyez simplement très cohérents.
+
+10:11.000 --> 10:14.000
+En fait, c'est une question de cohérence.
+
+10:14.000 --> 10:15.000
+C'est la chose numéro un.
+
+10:15.000 --> 10:17.000
+La cohérence est le maître mot du jeu.
+

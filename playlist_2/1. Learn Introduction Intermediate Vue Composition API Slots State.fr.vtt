@@ -1,0 +1,314 @@
+WEBVTT
+
+00:00.000 --> 00:03.840
+Bienvenue à tous. J'espère que vous êtes tous là pour une vue intermédiaire avec les maîtres de façade.
+
+00:03.840 --> 00:06.320
+Je m'appelle Ben Hong. Je fais partie de l'équipe principale de visualisation et, en fait, j'ai récemment
+
+00:06.320 --> 00:09.760
+a également rejoint l'équipe Angular. Je fais donc beaucoup de choses pour le web et l'open source.
+
+00:09.760 --> 00:13.920
+Et donc, avant tout, je fais beaucoup de travail de documentation, puis j'aide simplement à créer
+
+00:13.920 --> 00:17.200
+la technologie web plus accessible à tous les auteurs pour que chacun puisse continuer à construire
+
+00:17.200 --> 00:20.800
+des choses géniales sur le Web. En ce qui concerne les prérequis pour ce cours,
+
+00:20.800 --> 00:25.200
+fondamentalement, nous nous attendons à ce que vous ayez adopté une sorte de point de vue à travers les fondamentaux.
+
+00:25.200 --> 00:28.240
+Donc, si ce n’est pas le cas, c’est votre premier plan à quatre.
+
+00:28.240 --> 00:31.200
+Nous avons une vision à travers l'atelier sur les principes fondamentaux dont j'ai déjà parlé.
+
+00:31.200 --> 00:34.400
+J’attends donc également que vous ayez une compréhension de base de l’API de composition.
+
+00:34.400 --> 00:37.680
+Cet atelier vise vraiment à approfondir ce sujet et ce que nous pouvons en faire.
+
+00:38.320 --> 00:41.280
+En conséquence, nous ferons également beaucoup de choses avec la configuration des scripts.
+
+00:41.280 --> 00:44.800
+Donc si vous débutez dans ce domaine, ne vous inquiétez pas. Il s'agit essentiellement de toute composition
+
+00:44.800 --> 00:49.200
+API comme supposée être une option, une API de composition, essentiellement tout ce que c'est.
+
+00:49.200 --> 00:51.680
+Une fois que nous y serons plongés, vous y entrerez directement.
+
+00:51.680 --> 00:57.120
+Et puis je dis cela avec le plus grand soin entre guillemets, comme une compréhension de base du script de type.
+
+00:57.120 --> 00:59.680
+Dans le sens où il y a un script de type dans le code que vous verrez,
+
+00:59.680 --> 01:02.640
+mais nous ne faisons pas de création de caractères lourde ou quoi que ce soit.
+
+01:02.640 --> 01:06.640
+C'est juste là pour aider avec certaines inférences de type auto-complétion, ce genre de choses.
+
+01:07.360 --> 01:11.040
+Alors n'ayez crainte, si vous voyez le script dactylographié là-dedans, ce n'est pas le sujet de ce cours.
+
+01:11.040 --> 01:15.200
+Donc, en ce qui concerne la configuration pour ceux du chat et ceux ici,
+
+01:15.200 --> 01:18.560
+j'espère que vous avez eu l'occasion de consulter le dépôt sur github.com.
+
+01:18.560 --> 01:22.960
+C'est donc sous github.com slash bencozen slash middle-view.get.
+
+01:22.960 --> 01:26.560
+Et si vous avez un clone de cela, c'est essentiellement là que nous ferons tous nos exercices.
+
+01:26.560 --> 01:30.720
+Donc, comme vous le voyez, la branche principale juste là, vous pouvez continuer et vider leur installation.
+
+01:30.720 --> 01:32.560
+Et cela devrait essentiellement vous permettre d’être opérationnel.
+
+01:32.560 --> 01:35.200
+Et puis, à l’avenir, je vérifierai les succursales au fur et à mesure de notre progression.
+
+01:35.200 --> 01:39.680
+Vous avez donc différents points d’arrêt et points de contrôle pour vous permettre de revenir en arrière et de revoir différentes choses.
+
+01:40.080 --> 01:46.640
+En ce qui concerne les sujets que nous allons aborder, nous allons nous concentrer aujourd'hui sur quatre sujets principaux.
+
+01:46.640 --> 01:48.240
+Nous allons donc commencer par les composants.
+
+01:48.640 --> 01:51.760
+Et puis nous examinerons les composables et approfondirons cela.
+
+01:51.760 --> 01:55.440
+Parce que je pense que c’est vers cela que beaucoup d’entre vous, votre écosystème, se dirigent actuellement.
+
+01:55.520 --> 01:57.520
+Je veux donc que tout le monde soit très familier avec cela.
+
+01:57.520 --> 02:01.760
+Et puis nous aurons une section plus tard sur le routage ainsi que sur certains types de prochains
+
+02:02.400 --> 02:06.080
+les mouvements jusqu'à savoir où cela va, comme du point de vue de l'entreprise.
+
+02:06.080 --> 02:09.920
+Et en plus d'approfondir en quelque sorte la gestion de l'État, où elle en est,
+
+02:09.920 --> 02:14.640
+surtout dans un monde de composition, où en sommes-nous, où en sommes-nous ?
+
+02:14.640 --> 02:16.880
+Et que recommandons-nous pour travailler avec ?
+
+02:16.880 --> 02:19.200
+D'accord, la question est donc : que construisons-nous ?
+
+02:19.840 --> 02:22.320
+Eh bien, nous allons créer une application de tâches.
+
+02:22.400 --> 02:25.280
+Je plaisante, ce n'est pas un cours d'introduction.
+
+02:25.280 --> 02:29.120
+Nous nous sommes tous ennuyés de l'application de tâches et nous l'avons fait trop souvent.
+
+02:29.120 --> 02:33.440
+Il s'agit donc d'un cours intermédiaire, ce qui signifie que nous allons vous y introduire,
+
+02:33.440 --> 02:35.520
+eh bien, essentiellement une base de code héritée.
+
+02:35.520 --> 02:38.000
+Alors juste pour vous faire un petit tour d’horizon de ce que vous avez.
+
+02:38.560 --> 02:43.280
+Nous avons donc essentiellement, en ce qui concerne la structure, notre front et notre dossier d'application.
+
+02:43.280 --> 02:46.960
+Il s'agit donc de votre échafaudage View Three standard avec l'application View Three.
+
+02:47.600 --> 02:49.760
+Et puis il y a un back-end entre guillemets.
+
+02:50.080 --> 02:54.480
+Parce qu'il ne s'agit en réalité que d'un fichier JSON et que nous exploitons une bibliothèque,
+
+02:54.480 --> 02:56.880
+si vous n'en avez jamais entendu parler auparavant, appelé serveur JSON.
+
+02:56.880 --> 03:01.840
+Et en gros, cela simule un point de repos API pour un fichier JSON localement.
+
+03:01.840 --> 03:04.960
+Donc c'est vraiment tout ce que c'est. Rien d'extraordinaire, donc rien n'est envoyé vers le cloud.
+
+03:05.520 --> 03:07.280
+Tout est simplement fait localement.
+
+03:07.280 --> 03:13.200
+Alors allons-y et jetons un coup d'œil à l'application d'entreprise dans laquelle vous allez tous entrer.
+
+03:14.320 --> 03:16.240
+Et c'est ce qu'on appelle le point de vue.
+
+03:16.240 --> 03:18.720
+Et c'est votre propre tableau de bord de productivité personnel.
+
+03:18.800 --> 03:21.840
+Et donc dans l’ensemble, vous pouvez voir ici, c’est comme vous, nous avons notre page d’accueil.
+
+03:22.400 --> 03:26.400
+Et puis, vous savez, vous pouvez choisir votre objectif en fonction des choses que vous avez l'intention de faire.
+
+03:26.400 --> 03:28.800
+Et nous avons comme si, en gros, vous voyiez votre tâche ici.
+
+03:28.800 --> 03:30.560
+Vous pouvez le filtrer.
+
+03:30.560 --> 03:34.480
+Nous examinerions même le planificateur pour savoir ce qui a été prévu pour quelle semaine.
+
+03:34.480 --> 03:37.200
+Vous pouvez changer les différentes semaines, regardez-le en détail.
+
+03:37.200 --> 03:42.400
+Il vous donne des mesures sur les choses que vous planifiez, sur ce sur quoi vous avez réellement consacré du temps.
+
+03:42.400 --> 03:46.240
+Et il y a même une page de réflexion pour voir comment a été votre taux d'achèvement
+
+03:46.240 --> 03:47.600
+ainsi que votre efficacité en termes de temps.
+
+03:48.240 --> 03:51.280
+Et vous savez, dans l’ensemble, ça a l’air plutôt bien, mais je ne vais pas mentir.
+
+03:51.280 --> 03:52.240
+C'est assez buggé.
+
+03:53.520 --> 03:56.080
+Il manque certaines fonctionnalités auxquelles on s'attendrait.
+
+03:56.080 --> 03:59.840
+Et l’IA peut avoir été impliquée ou non dans le codage de certains tickets.
+
+04:00.400 --> 04:05.280
+Et vous savez, à l’intérieur, vous verrez que certaines de ces pratiques de codage ne semblent pas tout à fait correctes.
+
+04:05.280 --> 04:08.480
+Et vous savez, d’une certaine manière, c’est en quelque sorte votre application d’entreprise moderne.
+
+04:09.520 --> 04:14.640
+Donc, en ce qui concerne tout cela, l'élément clé sur lequel je veux insister ici est que vous entrez dans une
+
+04:14.640 --> 04:18.880
+la base de code qui existe déjà présente de nombreuses possibilités d'amélioration.
+
+04:18.880 --> 04:20.800
+Alors ne prenez pas ce que vous voyez là-dedans comme un évangile.
+
+04:20.800 --> 04:22.400
+C'est comme, oh, ce modèle.
+
+04:22.400 --> 04:25.280
+Je devrais copier ça comme ça, non, nous n’en sommes pas à ce point.
+
+04:26.400 --> 04:27.680
+Alors répétez simplement.
+
+04:27.680 --> 04:31.040
+Donc, ce sur quoi vous travaillez, c'est que vous avez hérité d'une base de code héritée.
+
+04:31.040 --> 04:34.720
+Et même si cela fonctionne sur certaines des fonctionnalités principales, il est loin d’être parfait.
+
+04:34.720 --> 04:36.960
+Et nous sommes ici pour l’améliorer en quelque sorte.
+
+04:36.960 --> 04:39.760
+C'est donc une citation lorsque je parlais avec David lors de son discours.
+
+04:39.760 --> 04:43.520
+Et j'aime ça parce que cela dit que les LLM n'ont pas été formés sur un bon code.
+
+04:43.520 --> 04:47.840
+Ils ont été formés sur votre code et j'ai pensé que c'était une excellente citation car bien souvent
+
+04:47.840 --> 04:52.080
+comme nous le savons, nous vivons dans un monde où nous avons, vous savez, du code généré par l'IA et injecté.
+
+04:52.800 --> 04:56.560
+Mais comme vous le savez, alors que nous continuons à jouer, vous remarquerez que quelque chose, c'est juste
+
+04:56.560 --> 04:58.320
+fait des choses qui n’ont aucun sens.
+
+04:58.320 --> 05:03.760
+Par exemple, je pense qu'à un moment donné, il essayait d'injecter des fonctions de routeur afin de pouvoir
+
+05:03.760 --> 05:05.680
+ajoutez un bouton pour accéder à une autre page.
+
+05:06.400 --> 05:07.920
+Et c’est juste un gros non-non, n’est-ce pas ?
+
+05:07.920 --> 05:08.720
+C'est un élément bouton.
+
+05:08.720 --> 05:11.040
+Nous devrions, nous avons des balises d'ancrage pour une raison.
+
+05:11.120 --> 05:14.800
+Mais pour une raison quelconque, les LLM ont appris que beaucoup de gens font ça.
+
+05:14.800 --> 05:16.080
+Donc je vais faire ça aussi.
+
+05:16.640 --> 05:19.920
+C’est donc un état d’esprit intéressant dans lequel nous nous trouvons actuellement.
+
+05:19.920 --> 05:23.760
+Mais en conséquence, j’ai juste pensé que c’était une citation plutôt amusante de David.
+
+05:23.760 --> 05:26.880
+En ce qui concerne les conseils de participation à cet atelier, tout d'abord,
+
+05:26.880 --> 05:28.480
+n'ayez pas peur de plonger profondément dans le code.
+
+05:29.200 --> 05:33.760
+Encore une fois, cet atelier vise à acquérir une expérience pratique des techniques et des modèles.
+
+05:33.760 --> 05:34.960
+dont nous parlons.
+
+05:34.960 --> 05:38.720
+Donc la meilleure façon d’acquérir de l’expérience est évidemment d’y aller et d’essayer des trucs.
+
+05:38.720 --> 05:40.880
+Et donc j’ai des exercices dédiés à différentes choses.
+
+05:40.880 --> 05:42.240
+Nous allons essayer de résoudre ensemble.
+
+05:42.240 --> 05:46.640
+Mais il y en a, j'ai laissé beaucoup de choses différentes à explorer pour que vous puissiez aller essayer
+
+05:46.640 --> 05:49.840
+différentes choses et améliorez essentiellement le code comme bon vous semble.
+
