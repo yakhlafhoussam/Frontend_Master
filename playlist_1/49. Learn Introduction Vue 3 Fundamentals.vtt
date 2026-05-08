@@ -1,0 +1,452 @@
+WEBVTT
+
+00:00.000 --> 00:03.360
+Okay, with that, I think the final thing we want to end on
+
+00:03.360 --> 00:04.920
+is deploying your app.
+
+00:04.920 --> 00:07.600
+So we're going to take a couple minutes to take a look at that.
+
+00:07.600 --> 00:09.360
+So when it comes to deploying your app,
+
+00:09.360 --> 00:10.360
+if you do it the standard way,
+
+00:10.360 --> 00:12.600
+you usually have to do like an FTP server,
+
+00:12.600 --> 00:14.080
+and you got to build this thing, right?
+
+00:14.080 --> 00:17.880
+Because after all, if we take a look at our Say Love View app,
+
+00:17.880 --> 00:20.960
+this is not something that we can just drop on a server and it would just work.
+
+00:20.960 --> 00:22.680
+We need to actually build the thing.
+
+00:22.680 --> 00:24.400
+So the way this works,
+
+00:24.400 --> 00:28.800
+if you take a look at your package.json inside of Say Love View,
+
+00:29.040 --> 00:32.080
+you'll see that there's actually a build command that we can run.
+
+00:32.080 --> 00:34.080
+So let's go ahead and do that, shall we?
+
+00:34.080 --> 00:39.200
+So inside of here, we're going to Say Love View and NPM Run Build.
+
+00:39.200 --> 00:41.960
+And right now, there's a bunch of stuff in there,
+
+00:41.960 --> 00:44.360
+so let me clean that up real quick.
+
+00:48.960 --> 00:53.520
+Okay, NPM Run Build. There we go.
+
+00:53.520 --> 00:57.240
+Okay. And what that will build for you is a disk folder,
+
+00:57.240 --> 00:59.640
+which stands for basically to distributed folder.
+
+00:59.640 --> 01:02.400
+And inside of here, now this should look like something you can actually deploy
+
+01:02.400 --> 01:05.080
+where you have your index.html.
+
+01:05.080 --> 01:07.880
+You can see that there's generated hashes for your different assets,
+
+01:07.880 --> 01:10.880
+for CSS, JavaScript, managing those things.
+
+01:10.880 --> 01:12.080
+And you might notice that look,
+
+01:12.080 --> 01:15.400
+those chunks that we did when we did the routes, here they are.
+
+01:15.400 --> 01:19.440
+They're already parsed out for us because the bundler already did that for us.
+
+01:19.440 --> 01:21.920
+Now, of course, deploying this can be done a number of ways,
+
+01:21.920 --> 01:24.800
+but I'll just be showing you how to do this in sort of a
+
+01:24.840 --> 01:27.760
+Git-based format rather than just dropping it on the server.
+
+01:27.760 --> 01:30.440
+And so all this will take, so this is, I guess,
+
+01:30.440 --> 01:32.560
+shout out for the company I work for, Netlify.
+
+01:32.560 --> 01:36.320
+So if you have a free account, this will work fairly easily.
+
+01:36.320 --> 01:37.560
+So what I'm going to do here,
+
+01:37.560 --> 01:40.440
+I'm going to go ahead and log in to my account.
+
+01:40.440 --> 01:43.600
+And what we're going to do is just we're going to create a new site.
+
+01:43.600 --> 01:46.320
+And so the reason this is really nice is because what you're doing here
+
+01:46.320 --> 01:51.120
+is you're creating a pipeline that connects your GitHub repo
+
+01:51.120 --> 01:54.200
+that you're basically committing all your code to, to your deployments.
+
+01:54.200 --> 01:56.600
+So basically, it's similar to the way you want it to watch for
+
+01:56.600 --> 01:58.480
+reactive things and view to do things.
+
+01:58.480 --> 02:00.720
+This will watch your repo and when you make changes to it,
+
+02:00.720 --> 02:02.880
+it will then run new deployments.
+
+02:02.880 --> 02:07.840
+And so here, if we go complete intro, that should show up,
+
+02:07.840 --> 02:11.800
+do, do, once we give it a little bit.
+
+02:14.560 --> 02:17.200
+There we go, complete intro to view three.
+
+02:17.200 --> 02:18.560
+And then we have a branch to deploy.
+
+02:18.560 --> 02:23.720
+And so since my currently, my CELA view really does need to be 16,
+
+02:23.720 --> 02:25.600
+so I'm going to be deploying the 16 solution branch,
+
+02:25.600 --> 02:27.920
+but normally you'll be deploying your main branch.
+
+02:27.920 --> 02:29.680
+And then the base directory is, for me,
+
+02:29.680 --> 02:32.080
+it's going to be CELA view because we have multiple apps running
+
+02:32.080 --> 02:33.360
+inside of the project right now.
+
+02:33.360 --> 02:35.520
+So that's the specific one I want to build.
+
+02:35.520 --> 02:37.800
+And then we're going to run the command npm run build.
+
+02:37.800 --> 02:39.480
+And the directory though, we have to remember,
+
+02:39.480 --> 02:41.640
+is what's actually being outputted.
+
+02:41.640 --> 02:43.240
+It's a disk directory.
+
+02:43.240 --> 02:46.280
+And so that's what's being configured.
+
+02:46.280 --> 02:49.600
+And so once we run that, we get something that's pretty great.
+
+02:49.600 --> 02:51.960
+So for anyone who used to do things in the old days
+
+02:51.960 --> 02:53.080
+where you did FTP servers,
+
+02:53.120 --> 02:54.960
+you had to manage a lot of caching, right?
+
+02:54.960 --> 02:57.080
+If you uploaded a CSS file, you had to manage like,
+
+02:57.080 --> 02:59.120
+oh, is the user going to get the right thing?
+
+02:59.120 --> 03:00.560
+Like, are they looking at the same version?
+
+03:00.560 --> 03:02.440
+And so oftentimes when you're debugging things,
+
+03:02.440 --> 03:04.080
+it's hard to figure out what's going on
+
+03:04.080 --> 03:07.120
+because what your user's seeing might not be what you're seeing.
+
+03:07.120 --> 03:11.080
+And so in the effort of having Git deployments, basically,
+
+03:11.080 --> 03:12.680
+one of the things that Netlify does for you,
+
+03:12.680 --> 03:14.280
+and there are other companies that do this as well,
+
+03:14.280 --> 03:15.880
+so this is not the only one,
+
+03:15.880 --> 03:18.920
+is that you'll see here that automatically generated for me
+
+03:18.920 --> 03:21.560
+a random URL that I could share with people.
+
+03:21.560 --> 03:23.680
+And so you can see here that all my functionality
+
+03:23.680 --> 03:25.120
+is in here, actually.
+
+03:25.120 --> 03:28.160
+So if I can continue with emails, it's live,
+
+03:28.160 --> 03:29.000
+which is great.
+
+03:29.000 --> 03:30.880
+That happened in a matter of seconds.
+
+03:30.880 --> 03:33.000
+And then the other thing too is that with the domain settings,
+
+03:33.000 --> 03:35.600
+it's pretty easy for us to then say,
+
+03:35.600 --> 03:37.120
+let's go ahead and swap this out,
+
+03:37.120 --> 03:38.840
+and I'm going to call this say love you.
+
+03:38.840 --> 03:41.560
+Granted, this is where it gets to it first.
+
+03:41.560 --> 03:42.960
+But now that I've swapped it out,
+
+03:42.960 --> 03:45.760
+we can see now that when I open it up, there we go.
+
+03:45.760 --> 03:49.240
+Say love you.netlify.app, and it just works.
+
+03:49.240 --> 03:50.840
+And the beautiful part about this
+
+03:50.840 --> 03:52.240
+is not so much that it deploys,
+
+03:52.240 --> 03:54.160
+because again, there are many ways to deploy.
+
+03:54.160 --> 03:57.480
+It's the fact that it'll watch your GitHub repository.
+
+03:57.480 --> 03:59.040
+So in other words, if you go inside
+
+03:59.040 --> 04:03.400
+of the app.view right now for say love you,
+
+04:04.400 --> 04:07.600
+and then instead at the very top, we'll say something,
+
+04:07.600 --> 04:12.600
+let's see, from here, we'll say this is a new message.
+
+04:15.360 --> 04:16.920
+And then I think I did a triple S on that,
+
+04:16.920 --> 04:18.200
+let me fix that.
+
+04:18.240 --> 04:22.080
+And then if we commit this to our branch,
+
+04:22.080 --> 04:27.080
+so say love you here, and then ignore this stuff for now.
+
+04:28.880 --> 04:32.440
+One, two, three, four, five.
+
+04:32.440 --> 04:36.560
+Git commit feature, add new message.
+
+04:36.560 --> 04:39.920
+And then I push on this branch.
+
+04:43.800 --> 04:45.800
+One of the things you'll see is that in the deploy,
+
+04:45.800 --> 04:47.440
+it'll actually, basically there's a hook
+
+04:47.440 --> 04:48.840
+to watch GitHub repo, and it knows,
+
+04:48.840 --> 04:50.760
+hey, it's time to make another build.
+
+04:51.840 --> 04:54.240
+And so you can see here, it's going off, it's running,
+
+04:54.240 --> 04:56.520
+it's building the thing, that's fine.
+
+04:56.520 --> 04:58.200
+And so what's really cool about this though,
+
+04:58.200 --> 04:59.720
+is that when it's running this build,
+
+04:59.720 --> 05:02.020
+it's basically doing an atomic deploy.
+
+05:02.020 --> 05:03.860
+So what that means is that it's completely separate
+
+05:03.860 --> 05:05.840
+from the previous deploy, because that was a problem
+
+05:05.840 --> 05:07.040
+with a lot of enterprise systems,
+
+05:07.040 --> 05:08.720
+is that once you push a deploy,
+
+05:08.720 --> 05:10.160
+you weren't sure what the assets were,
+
+05:10.160 --> 05:13.720
+and so especially if you're having users with issues,
+
+05:13.720 --> 05:16.120
+it was hard to debug, and then let alone rollbacks,
+
+05:16.240 --> 05:18.280
+it was kind of a nightmare to deal with all of that.
+
+05:18.280 --> 05:20.760
+It's okay, our site is live, so we can see now,
+
+05:20.760 --> 05:24.040
+if I go over to my, over here, you see,
+
+05:24.040 --> 05:26.800
+hey look, this is a new message, it's right here.
+
+05:26.800 --> 05:29.200
+But again, in the effort of the atomic deploy model,
+
+05:29.200 --> 05:30.360
+what if your product manager is like,
+
+05:30.360 --> 05:31.880
+whoa, whoa, whoa, we don't want this message,
+
+05:31.880 --> 05:33.040
+that is a bug?
+
+05:33.040 --> 05:34.200
+Well, typically what you'd have to do is,
+
+05:34.200 --> 05:35.800
+you have to get your engineers, you have to be like,
+
+05:35.800 --> 05:37.440
+hurry up, we gotta figure out what's going on,
+
+05:37.440 --> 05:38.920
+and you gotta push the right code, right?
+
+05:38.920 --> 05:41.720
+But no, what you can do, because of the atomic deploy,
+
+05:41.720 --> 05:44.080
+is we can come in here, and if we can actually just say,
+
+05:44.080 --> 05:46.200
+you know what, we're gonna go ahead,
+
+05:46.200 --> 05:51.200
+and do, do, do, do, inside of here,
+
+05:52.080 --> 05:55.800
+we can publish this deploy instead, whoop, not this one,
+
+05:55.800 --> 05:59.480
+there you go, click publish deploy, and we publish it,
+
+06:00.360 --> 06:02.600
+and what you'll see now is that it's switched now,
+
+06:02.600 --> 06:04.400
+from the latest commit, and what we have here,
+
+06:04.400 --> 06:07.400
+when we go back to our URL, voila,
+
+06:08.200 --> 06:10.000
+users, everything's fixed.
+
+06:10.000 --> 06:13.240
+And so this is a kind of a, this is basically,
+
+06:13.240 --> 06:15.040
+I would say, the modern way when it comes to
+
+06:15.040 --> 06:16.720
+thinking of deployment, in that,
+
+06:16.720 --> 06:18.200
+especially because we use a lot of Git versioning,
+
+06:18.200 --> 06:20.640
+why shouldn't our deploys also be versioned in a way
+
+06:20.640 --> 06:24.080
+that allows us to go ahead, and whether it's split testing,
+
+06:24.080 --> 06:26.920
+or ensure that we deliver the same things to our users,
+
+06:26.920 --> 06:28.640
+this is just something that I wanted to show you all,
+
+06:28.640 --> 06:31.080
+and how you can deploy your app with view.
+

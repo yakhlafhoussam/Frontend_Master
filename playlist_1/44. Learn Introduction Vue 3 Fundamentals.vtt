@@ -1,0 +1,533 @@
+WEBVTT
+
+00:00.000 --> 00:03.500
+What happens when you want to look at a dynamic value?
+
+00:03.500 --> 00:06.780
+In other words, when you can't predict the route that you're going to.
+
+00:06.780 --> 00:09.860
+So take for instance, when we go into Pokédex,
+
+00:09.860 --> 00:12.540
+and Pokédex has different Pokemon,
+
+00:12.540 --> 00:14.900
+that is the way the Pokédex works.
+
+00:14.900 --> 00:17.580
+What if we wanted to actually render out the different Pokemon,
+
+00:17.580 --> 00:20.220
+but we wanted to do things based on the parameter in the URL?
+
+00:20.220 --> 00:22.260
+So an example of this might be,
+
+00:22.260 --> 00:26.700
+if we're looking at the Pokédex page and you say,
+
+00:26.700 --> 00:29.620
+okay, theoretically what I'd like to be able to do is also then
+
+00:29.620 --> 00:32.980
+go to a page that goes to like,
+
+00:32.980 --> 00:36.200
+go to slash Pokédex slash one,
+
+00:36.200 --> 00:37.780
+and that should call the first Pokemon.
+
+00:37.780 --> 00:40.940
+In other words, this part is dynamic because what we don't want to do is define
+
+00:40.940 --> 00:43.500
+one dot view, two dot view, and etc.
+
+00:43.500 --> 00:45.780
+So how might that actually work?
+
+00:45.780 --> 00:47.540
+Well, when it comes to that,
+
+00:47.540 --> 00:51.780
+what we're actually looking at is around the idea of dynamic param IDs.
+
+00:51.780 --> 00:56.420
+So the way this works is we go inside of our router,
+
+00:56.420 --> 00:58.820
+inside of Playground.
+
+00:58.900 --> 01:02.940
+What we have here is we have a path here,
+
+01:02.940 --> 01:08.020
+that's slash Pokédex slash with the colon ID,
+
+01:08.020 --> 01:10.860
+and this is what tells it that it's going to be dynamic.
+
+01:10.860 --> 01:13.340
+Then from here, we can then say,
+
+01:13.340 --> 01:15.920
+let's create a Pokemon page because this would fetch
+
+01:15.920 --> 01:18.220
+a specific Pokemon in this particular case.
+
+01:18.220 --> 01:21.980
+Let me FSC this and then let's just say Pokemon.
+
+01:21.980 --> 01:25.220
+For now, we'll just say number 100 to show that it's
+
+01:25.220 --> 01:27.460
+wrong as far as the URL is concerned.
+
+01:27.460 --> 01:30.060
+Then we'll just do component and this time we'll just
+
+01:30.060 --> 01:36.220
+import the path at views slash Pokemon page dot view. Save.
+
+01:36.220 --> 01:38.980
+So to prove that this works,
+
+01:38.980 --> 01:43.100
+we're going to go ahead and on the Pokédex page right here,
+
+01:43.100 --> 01:46.700
+we will have a router link that goes to slash
+
+01:46.700 --> 01:48.620
+Pokédex and this time we'll do slash 20,
+
+01:48.620 --> 01:49.900
+just to show something different.
+
+01:49.900 --> 01:52.380
+Go to Pokemon number 20.
+
+01:52.380 --> 01:55.080
+We see that here, and if we click on this,
+
+01:55.080 --> 01:58.920
+you'll see that it does correctly jump us over to the page.
+
+01:58.920 --> 02:00.280
+But what we need is we need to be able to
+
+02:00.280 --> 02:01.880
+pull in the dynamic data.
+
+02:01.880 --> 02:04.320
+Right? How does that work?
+
+02:04.320 --> 02:07.720
+Well, when you used to do it in View2,
+
+02:07.720 --> 02:09.680
+the way you would do it in Options API and you could still
+
+02:09.680 --> 02:11.960
+could is you do this dot route dot
+
+02:11.960 --> 02:14.680
+params that's usually what you would reach out for.
+
+02:14.680 --> 02:16.500
+But in an effort to get you all practicing with
+
+02:16.500 --> 02:17.600
+composition API and seeing what
+
+02:17.600 --> 02:19.800
+an alternative form might look like,
+
+02:19.800 --> 02:21.840
+what might you reach for?
+
+02:21.840 --> 02:23.360
+Probably a helper method, right?
+
+02:23.360 --> 02:28.040
+So we have something called useRoute because it's from ViewRouter.
+
+02:28.040 --> 02:31.720
+Then we can say constRoute equals useRoute.
+
+02:31.720 --> 02:33.040
+Then before we do anything,
+
+02:33.040 --> 02:35.800
+let's just log that out real quick and show you what we get.
+
+02:35.800 --> 02:38.080
+Oh, this is the Pokédex page, I need to go back.
+
+02:38.080 --> 02:39.480
+So on the Pokédex page,
+
+02:39.480 --> 02:42.360
+you'll see now that we expand this out to the target,
+
+02:42.360 --> 02:43.880
+it has a bunch of stuff actually,
+
+02:43.880 --> 02:45.880
+params, name, meta,
+
+02:45.880 --> 02:47.920
+and then if you broke it down to query stuff,
+
+02:47.920 --> 02:48.960
+there's a whole ton of stuff
+
+02:48.960 --> 02:50.400
+under there that you can unpack.
+
+02:50.400 --> 02:53.560
+But the one we care about is going to be the parameters.
+
+02:53.560 --> 02:56.000
+So let me go ahead and actually move this useRoute because
+
+02:56.000 --> 02:58.360
+where we need it is not the Pokédex page,
+
+02:58.360 --> 03:00.800
+we need it on the Pokemon page.
+
+03:00.800 --> 03:02.880
+Let me drop this over here instead.
+
+03:02.880 --> 03:05.440
+So now let's go ahead and go to Pokemon 20,
+
+03:05.440 --> 03:08.080
+and now we'll notice actually we refresh.
+
+03:08.080 --> 03:12.160
+There we go. We have our route being rendered,
+
+03:12.160 --> 03:13.760
+and we look at our params,
+
+03:13.760 --> 03:17.520
+you'll see that we have an ID of 20 in here.
+
+03:17.520 --> 03:19.120
+Where does this ID come from?
+
+03:19.120 --> 03:24.240
+This ID comes from what we named right here inside of our path.
+
+03:24.240 --> 03:26.320
+That's where it's actually being defined.
+
+03:26.320 --> 03:28.640
+So what we get if we want,
+
+03:28.640 --> 03:32.080
+we say route.params.id,
+
+03:32.080 --> 03:34.680
+and we do that and refresh the page,
+
+03:34.680 --> 03:37.160
+you'll see there it is, 20.
+
+03:37.160 --> 03:38.440
+That's all it takes.
+
+03:38.440 --> 03:42.360
+So now your imagination can go from here,
+
+03:42.360 --> 03:43.920
+you go to the Pokemon API,
+
+03:43.920 --> 03:45.160
+and then when you load the page,
+
+03:45.160 --> 03:46.960
+you can go ahead and fetch the right Pokemon,
+
+03:47.160 --> 03:49.240
+get its attributes, render it to the page,
+
+03:49.240 --> 03:51.560
+but for the sake of conciseness,
+
+03:51.560 --> 03:54.080
+we're just going to go ahead and show that here,
+
+03:54.080 --> 03:56.920
+just like this, route.params.id,
+
+03:56.920 --> 03:59.840
+and then just like that,
+
+03:59.840 --> 04:02.720
+you now have a dynamic page that can take any argument,
+
+04:02.720 --> 04:04.320
+and then however you see fit,
+
+04:04.320 --> 04:07.120
+you can programmatically set up else conditions,
+
+04:07.120 --> 04:10.920
+if else whatever, not to render the right stuff to your users.
+
+04:10.920 --> 04:14.280
+What about params for parent routes?
+
+04:14.280 --> 04:16.640
+Okay, so the question here is around params for parent routes.
+
+04:16.640 --> 04:19.720
+So what you're saying is that if it's like with,
+
+04:19.720 --> 04:21.480
+so basically let's sketch this out real quick,
+
+04:21.480 --> 04:22.680
+are you saying something like,
+
+04:22.680 --> 04:26.320
+if Pokedex had then like on top of ID for the Pokemon,
+
+04:26.320 --> 04:29.200
+there was like an additional thing for like element.
+
+04:29.200 --> 04:30.680
+So then you might be on like an element page,
+
+04:30.680 --> 04:32.720
+and you want to look at your ID params.
+
+04:32.720 --> 04:33.560
+Potentially.
+
+04:33.560 --> 04:37.760
+Yeah, so I believe the moment you do the route basically,
+
+04:38.760 --> 04:39.840
+you should basically get everything
+
+04:39.840 --> 04:41.720
+that comes as a part of that route.
+
+04:41.720 --> 04:44.600
+And so this goes beyond the scope
+
+04:44.600 --> 04:46.440
+of like the fundamentals review router,
+
+04:46.440 --> 04:48.040
+but there's even things like nested views
+
+04:48.040 --> 04:49.640
+and all those things that we can play around with.
+
+04:49.640 --> 04:51.080
+So you should be able to get the parent
+
+04:51.080 --> 04:52.880
+from that path without any problem.
+
+04:52.880 --> 04:55.400
+And that's why it would be a good practice, for example,
+
+04:55.400 --> 04:59.200
+not in your router.js to say,
+
+04:59.200 --> 05:03.960
+to define another route that uses the same parameter like name.
+
+05:03.960 --> 05:05.800
+Like you wouldn't want to be like ID ID.
+
+05:05.800 --> 05:07.600
+Cause I think that would actually probably,
+
+05:07.600 --> 05:09.880
+I'm almost certain that would break view router,
+
+05:09.880 --> 05:11.080
+cause it would be confused.
+
+05:11.080 --> 05:12.040
+And so in that particular case,
+
+05:12.040 --> 05:14.240
+that's where it's important to be just specific
+
+05:14.240 --> 05:15.840
+about what that parameter name is,
+
+05:15.840 --> 05:18.160
+and then the route should contain all of those parameters
+
+05:18.160 --> 05:20.860
+correctly appended into that object.
+
+05:22.760 --> 05:26.960
+So you said nested routes, could you have like region
+
+05:26.960 --> 05:28.280
+was the thing you were saying?
+
+05:28.280 --> 05:29.120
+Yeah.
+
+05:29.120 --> 05:31.800
+Region slash region ID, a region name.
+
+05:31.800 --> 05:32.640
+Yep.
+
+05:32.640 --> 05:35.360
+Underneath that have the pokedex for that region
+
+05:35.360 --> 05:37.720
+and then have a poked Pokemon page.
+
+05:37.720 --> 05:38.560
+Yeah.
+
+05:38.560 --> 05:39.720
+The ID parameter on that.
+
+05:39.720 --> 05:40.560
+We can.
+
+05:40.560 --> 05:42.280
+And so it's not part of this exercise,
+
+05:42.280 --> 05:43.400
+but since this is a question,
+
+05:43.400 --> 05:45.240
+I do want to show this for the nested.
+
+05:45.240 --> 05:47.040
+If we look at the docs right here,
+
+05:47.040 --> 05:48.840
+and we look at nested routes,
+
+05:49.880 --> 05:51.960
+the thing about nested routes is it's easy to think of it
+
+05:51.960 --> 05:53.000
+like what we just did,
+
+05:53.000 --> 05:55.280
+cause you see here a user Johnny profile, right?
+
+05:55.280 --> 05:58.400
+You're like, didn't we just do this pokedex slash Pokemon?
+
+05:58.400 --> 06:01.220
+This is different because a nested view means
+
+06:01.220 --> 06:03.920
+that you have a router view inside of a router view,
+
+06:03.920 --> 06:06.040
+meaning the rest of the page stays the same
+
+06:06.040 --> 06:08.920
+and just that one section of the page changes
+
+06:08.920 --> 06:10.640
+based on the URL.
+
+06:10.640 --> 06:12.800
+So as you can see here inside of this example,
+
+06:12.800 --> 06:14.080
+let me blow it up a lot,
+
+06:14.080 --> 06:15.280
+is that the user page out here,
+
+06:15.280 --> 06:17.520
+which is the shell, which is slash user,
+
+06:18.600 --> 06:21.600
+is currently bringing in the Johnny child, right?
+
+06:21.600 --> 06:23.240
+So it'd be user Johnny.
+
+06:23.240 --> 06:27.320
+But the nested view here is for the profile and the posts.
+
+06:27.320 --> 06:29.480
+And so you can almost think of it like tabs
+
+06:29.480 --> 06:31.360
+where you don't want the whole page to re-render
+
+06:31.360 --> 06:33.660
+if you click on post for Johnny.
+
+06:33.660 --> 06:34.720
+You want everything else to stay the same,
+
+06:34.720 --> 06:37.000
+you just want to switch the tab that's inside of it.
+
+06:37.000 --> 06:39.620
+And so nested views are basically this concept
+
+06:39.620 --> 06:42.200
+that without having to re-render the entire page,
+
+06:42.200 --> 06:43.840
+you can just render a portion of it
+
+06:43.840 --> 06:46.080
+and have that update based on the URL.
+
+06:46.080 --> 06:48.360
+And so that can be highly performant as well
+
+06:48.360 --> 06:49.600
+when it comes to doing things for your app.
+
+06:49.600 --> 06:53.280
+So I know it's funny that nested views have had a resurgence
+
+06:53.280 --> 06:54.440
+lately in the discussion,
+
+06:54.440 --> 06:56.280
+but this has been in view for quite a while.
+
+06:56.280 --> 06:57.880
+But I do want to make you all aware of it,
+
+06:57.880 --> 06:59.240
+so that if you ever find that you're like,
+
+06:59.240 --> 07:01.040
+oh, everything else needs to change,
+
+07:01.040 --> 07:02.640
+or sorry, everything needs to stay the same,
+
+07:02.640 --> 07:04.720
+except for this one part when the URL swaps,
+
+07:04.720 --> 07:07.580
+nested views are nested routes, check this out,
+
+07:07.580 --> 07:09.080
+this will solve your problems.
+

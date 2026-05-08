@@ -1,0 +1,242 @@
+WEBVTT
+
+00:00.000 --> 00:02.080
+L'autre bibliothèque, je veux juste faire une présentation rapide et raconter
+
+00:02.080 --> 00:05.400
+la démo est, si vous n'en avez pas entendu parler, cette bibliothèque
+
+00:05.400 --> 00:08.640
+ViewUse est une bibliothèque phénoménale.
+
+00:08.640 --> 00:12.600
+Il s'agit d'un ensemble de wrappers autour essentiellement des API du navigateur.
+
+00:12.600 --> 00:15.480
+Donc, les choses que vous pourriez généralement vouloir dire, je
+
+00:15.480 --> 00:18.160
+je ne sais pas, tu veux pouvoir faire quelque chose avec un clip
+
+00:18.160 --> 00:19.720
+planche ?
+
+00:19.720 --> 00:20.640
+Cela devrait vous sembler familier.
+
+00:20.640 --> 00:22.920
+Il dit, oh, c'est une fonction d'utilisation du presse-papiers que nous
+
+00:22.920 --> 00:24.040
+peut importer.
+
+00:24.040 --> 00:27.200
+Et lorsque vous l'importez, il sera en fait copié
+
+00:27.200 --> 00:32.480
+quoi que ce soit en tant que modèle en V et ainsi de suite, et cela fonctionne.
+
+00:32.480 --> 00:36.360
+Et donc pour vous montrer juste comme un spectacle et raconter quelque chose à ce sujet
+
+00:36.360 --> 00:39.400
+ce que nous souhaitons souvent faire lorsqu'il s'agit d'applications, c'est d'utiliser des
+
+00:39.400 --> 00:40.200
+stockage.
+
+00:40.200 --> 00:42.720
+Et si vous n'avez jamais fait ça à partir de zéro, c'est plutôt une bonne chose.
+
+00:42.720 --> 00:46.080
+API à utiliser, mais il y a un peu à faire jusqu'à manuellement
+
+00:46.080 --> 00:48.840
+configurer cela en plus de gérer l’état réactif.
+
+00:48.840 --> 00:51.840
+Donc, l'une de mes fonctions préférées est l'utilisation du stockage ici avec
+
+00:51.840 --> 00:52.320
+Pinnier.
+
+00:52.320 --> 00:56.480
+Donc, si nous regardons Pinnier utiliser le stockage avec ViewUse, vous pouvez
+
+00:56.480 --> 01:00.000
+voir ce ViewUse.
+
+01:00.000 --> 01:00.880
+OK, c'est parti.
+
+01:00.880 --> 01:03.480
+Il s'agit d'un article de blog qui montre réellement comment cela fonctionnerait.
+
+01:03.480 --> 01:06.400
+Donc en gros, si je fais défiler la page vers le bas, vous remarquerez que
+
+01:06.400 --> 01:09.240
+à l'intérieur de cette liste de choses à faire, vous avez cette ligne juste ici
+
+01:09.240 --> 01:11.560
+qui vous permet d'importer à partir du stockage d'utilisation.
+
+01:11.560 --> 01:13.480
+Et ce qu'il fait, c'est créer ce stockage local
+
+01:13.480 --> 01:16.760
+clé, puis à chaque mise à jour, lorsque Pinnier
+
+01:16.760 --> 01:20.000
+charges, il saura avec l'aide de ViewUse vérifier le local
+
+01:20.000 --> 01:21.760
+stockage d'abord pour voir s'il y a de nouvelles données.
+
+01:21.760 --> 01:23.640
+S'il existe déjà des données, elles commenceront en fait à partir de
+
+01:23.640 --> 01:27.040
+le stockage local et non à partir de cette valeur initialisée.
+
+01:27.040 --> 01:29.480
+Et donc ce que vous obtenez est vraiment élégant
+
+01:29.480 --> 01:33.320
+la réunion de votre fonctionnalité ViewUse avec votre
+
+01:33.320 --> 01:35.720
+données réactives à l'intérieur de votre ViewApp.
+
+01:35.720 --> 01:37.520
+Et donc d'autres qui sont vraiment amusants et que vous pourriez
+
+01:37.520 --> 01:40.640
+Je veux également vérifier la préférence de couleur, comme
+
+01:40.640 --> 01:41.880
+mode couleur.
+
+01:41.880 --> 01:44.680
+Et donc ce que vous voyez ici, c'est que ce que cela fait, c'est que
+
+01:44.680 --> 01:47.240
+c'est essentiellement une propriété réactive qui vous permet de
+
+01:47.240 --> 01:51.520
+basculez facilement l’état du thème de votre application.
+
+01:52.280 --> 01:54.200
+Il y a tellement de choses ici parce qu'en gros, ce qu'ils ont
+
+01:54.200 --> 01:56.840
+done, c'est prendre un tas d'API de navigateur et le rendre vraiment
+
+01:56.840 --> 01:59.120
+facile à intégrer dans votre ViewApp.
+
+01:59.120 --> 02:03.600
+Donc certainement fortement recommandé comme point de départ.
+
+02:03.600 --> 02:06.520
+L'autre dernière chose que je veux souligner concerne
+
+02:06.520 --> 02:07.680
+transitions dans la vue.
+
+02:10.080 --> 02:12.760
+Comme nous le savons, créer de bonnes expériences utilisateur est un
+
+02:12.760 --> 02:15.680
+une partie vraiment importante de la fabrication des choses
+
+02:15.680 --> 02:17.320
+plus facile à suivre pour les utilisateurs.
+
+02:17.320 --> 02:20.720
+Nous n'avons donc pas le temps d'entrer dans les détails à ce sujet, mais
+
+02:20.720 --> 02:22.760
+en gros, il y a des composants intégrés appelés
+
+02:22.760 --> 02:25.640
+transition et groupe de transition qui vous aident à gérer la façon dont
+
+02:25.640 --> 02:27.720
+les choses sont attachées à leur sortie.
+
+02:27.720 --> 02:29.800
+Donc l'exemple le plus courant que je vais montrer maintenant, parce que
+
+02:29.800 --> 02:33.120
+vous pouvez consulter la documentation, celle que j'aime montrer est
+
+02:33.120 --> 02:36.120
+celui du groupe de transition, car c'est celui qui
+
+02:36.120 --> 02:37.760
+Je pense que nous faisons beaucoup.
+
+02:37.760 --> 02:45.360
+Donc si je descends dans un groupe de transition, un groupe de transition, beaucoup
+
+02:45.360 --> 02:47.320
+d'entre nous rendent des listes.
+
+02:47.320 --> 02:51.160
+Plutôt que de les faire cligner des yeux comme ça, vous pouvez aussi avoir
+
+02:51.160 --> 02:53.520
+ils se déplacent d'une manière encore plus fluide.
+
+02:53.520 --> 02:57.480
+Vous voyez ici, cela vous permet en fait de mélanger des éléments.
+
+02:57.480 --> 02:59.360
+Et tout cela se fait, comment ?
+
+02:59.360 --> 03:02.920
+Cela se fait en encapsulant essentiellement votre composant
+
+03:02.920 --> 03:04.760
+à l'intérieur de ce groupe de transition.
+
+03:04.760 --> 03:06.960
+Il y a un peu de CSS qui se produit ici, mais je vais
+
+03:06.960 --> 03:09.280
+je vous laisse consulter la doc pour vous inspirer
+
+03:09.280 --> 03:09.800
+ça.
+
+03:09.800 --> 03:12.640
+Mais sachez simplement que ceci est intégré à la bibliothèque afin que
+
+03:12.640 --> 03:14.600
+si vous voulez essayer de jouer avec, en faisant le
+
+03:14.600 --> 03:16.840
+les utilisateurs peuvent plus facilement suivre les choses.
+
+03:16.880 --> 03:18.960
+C'est aussi là que les clés sont très importantes, car comme
+
+03:18.960 --> 03:21.600
+vous pouvez voir, nous faisons des choses comme mélanger ici.
+
+03:21.600 --> 03:24.960
+La vue doit pouvoir savoir de quel élément il s'agit, où il se trouve
+
+03:24.960 --> 03:27.440
+doit y aller car il déplace des choses.
+
+03:27.440 --> 03:32.600
+C'est donc un autre élément pour lequel si vous développez tous
+
+03:32.600 --> 03:35.040
+vos applications, consultez définitivement le groupe de transition et
+
+03:35.040 --> 03:37.600
+transition pour trouver des moyens d'améliorer votre expérience utilisateur.
+

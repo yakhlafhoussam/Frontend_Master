@@ -1,0 +1,728 @@
+WEBVTT
+
+00:00.000 --> 00:03.400
+So for this particular exercise,
+
+00:03.400 --> 00:06.880
+I want you to try practicing configuring it from scratch.
+
+00:06.880 --> 00:08.400
+Because I want you to get familiar with
+
+00:08.400 --> 00:10.760
+the files that are critical to how View Router works.
+
+00:10.760 --> 00:13.220
+So as a general guidance,
+
+00:13.220 --> 00:15.360
+use the View Router docs for reference.
+
+00:15.360 --> 00:17.200
+I do not expect you to memorize all this.
+
+00:17.200 --> 00:18.560
+In fact, if you do a lot of
+
+00:18.560 --> 00:21.040
+copy and paste from the sample code, that's totally fine.
+
+00:21.040 --> 00:23.120
+The goal is for you to here to configure,
+
+00:23.120 --> 00:24.960
+get a feel for how things are being
+
+00:24.960 --> 00:27.440
+basically configured out of raw directory.
+
+00:27.440 --> 00:29.120
+Then other than that,
+
+00:29.120 --> 00:31.880
+you can move any page components that you think is
+
+00:31.880 --> 00:35.080
+relevant inside of your SeleView app.
+
+00:35.080 --> 00:36.840
+Then after that, we'll go ahead and
+
+00:36.840 --> 00:38.080
+upgrade the App.View to use
+
+00:38.080 --> 00:39.800
+RouterLink and RouterView so that
+
+00:39.800 --> 00:41.960
+everything renders correctly.
+
+00:43.760 --> 00:47.160
+All right. Welcome back.
+
+00:47.160 --> 00:49.240
+How was that experience with a little bit
+
+00:49.240 --> 00:51.520
+harrowing from just all the configuration?
+
+00:51.520 --> 00:54.040
+Yeah, I completely understand.
+
+00:54.040 --> 00:56.600
+So we're going to do a run-through just again,
+
+00:56.640 --> 00:58.240
+just to reiterate those steps and
+
+00:58.240 --> 01:01.600
+well share some tips and tricks along the way.
+
+01:01.600 --> 01:07.000
+So how this will work is we're going to go over to SeleView.
+
+01:07.000 --> 01:11.520
+Let me go ahead and do SeleView.
+
+01:11.520 --> 01:14.720
+Great. Then let's play around with this.
+
+01:14.720 --> 01:19.120
+First thing first is we need to install View Router,
+
+01:19.120 --> 01:22.760
+version, not version R, version 4.
+
+01:22.760 --> 01:24.880
+There we go.
+
+01:24.880 --> 01:27.720
+Then what we're going to do is we're going to go
+
+01:27.720 --> 01:29.720
+ahead and configure our app.
+
+01:29.720 --> 01:31.040
+Actually, let me go ahead and run it as well
+
+01:31.040 --> 01:32.960
+so we can see the changes happening.
+
+01:32.960 --> 01:35.200
+There we go. We're in it.
+
+01:35.200 --> 01:39.160
+Okay. So inside of our main.js app,
+
+01:39.160 --> 01:41.000
+we'll see that we don't have a router right now.
+
+01:41.000 --> 01:42.360
+So let's go ahead and fix that.
+
+01:42.360 --> 01:45.840
+Import Create Router from,
+
+01:45.840 --> 01:47.760
+I usually prefer when I have the autocomplete,
+
+01:47.760 --> 01:49.520
+but I'm fairly confident in this one.
+
+01:49.520 --> 01:51.480
+Great. Yep. It's right.
+
+01:51.480 --> 01:54.480
+So what we can do now is your const app,
+
+01:54.560 --> 01:55.800
+is your create app.
+
+01:55.800 --> 01:57.520
+Then to make it more declarative,
+
+01:57.520 --> 02:00.600
+we'll do app.useRouter,
+
+02:00.600 --> 02:02.880
+which I need to define in a second,
+
+02:02.880 --> 02:07.080
+and then app.mount, whoops, not a board controller.
+
+02:07.080 --> 02:12.520
+Then we can just define our router this way to create router.
+
+02:12.520 --> 02:14.640
+We need to pass some options to it.
+
+02:14.640 --> 02:17.720
+So the history on this is going to be Create WebHassHistory.
+
+02:17.720 --> 02:20.760
+Again, the reason we're doing this is because it does
+
+02:20.760 --> 02:23.720
+require some server configurations in order to get it to work on
+
+02:23.720 --> 02:26.160
+the normal HTML5 mode.
+
+02:26.160 --> 02:28.520
+So again, I'll leave it to you and the docs,
+
+02:28.520 --> 02:30.440
+depending on how you're deploying it to do that.
+
+02:30.440 --> 02:32.120
+But generally speaking, what you're doing is you want it to
+
+02:32.120 --> 02:34.120
+redirect always to index.html,
+
+02:34.120 --> 02:35.640
+and again, plenty of docs to support
+
+02:35.640 --> 02:37.680
+probably wherever you're deploying it to.
+
+02:37.680 --> 02:40.720
+In the meantime, WebHassHistory is what we're going to use,
+
+02:40.720 --> 02:43.000
+because that is the most universal one in terms of
+
+02:43.000 --> 02:44.760
+like ensuring that things don't break,
+
+02:44.760 --> 02:46.800
+and that is a function that we need to run,
+
+02:46.800 --> 02:49.440
+and then we need to be able to find the routes.
+
+02:49.440 --> 02:51.400
+So just to do this slightly differently,
+
+02:51.400 --> 02:54.080
+so you can actually see what's actually going on here,
+
+02:54.080 --> 02:56.600
+we can actually just define the routes in here as well.
+
+02:56.600 --> 02:58.720
+I separate them out into a file normally
+
+02:58.720 --> 03:00.360
+to make it a little bit easier for management.
+
+03:00.360 --> 03:03.480
+But again, to help seal the mental model a little bit more,
+
+03:03.480 --> 03:04.680
+we're going to do it this way.
+
+03:04.680 --> 03:06.400
+So inside of the components,
+
+03:06.400 --> 03:08.580
+we can see what kind of pages do we already have.
+
+03:08.580 --> 03:11.400
+Well, we already got three actually aptly named pages.
+
+03:11.400 --> 03:13.640
+So let's go and create that folder for views,
+
+03:13.640 --> 03:15.960
+and let's just move them over.
+
+03:15.960 --> 03:18.440
+Yep. What does Vola want to do?
+
+03:18.440 --> 03:19.680
+Oh, it knows I want to change it.
+
+03:19.680 --> 03:21.640
+Great. Please do that for me.
+
+03:21.640 --> 03:23.480
+I'm going to move that as well.
+
+03:23.480 --> 03:27.280
+I'm going to trust it to do its thing. Great.
+
+03:27.280 --> 03:30.440
+All right. So now we should have a bunch of things moved over.
+
+03:30.440 --> 03:34.560
+But there was a good question that was asked earlier regarding,
+
+03:34.560 --> 03:37.800
+it's nice for us to be explicit about where the file path is,
+
+03:37.800 --> 03:40.280
+but anyone who's worked on a large app before will know that
+
+03:40.280 --> 03:41.680
+when it comes to moving files,
+
+03:41.680 --> 03:43.240
+that can be a bit of a pain when you're moving
+
+03:43.240 --> 03:44.720
+up directories, down directories,
+
+03:44.720 --> 03:46.440
+and isn't there an easier way to do this,
+
+03:46.440 --> 03:49.080
+that it always refers to the root directory.
+
+03:49.280 --> 03:50.240
+That way, no matter where you,
+
+03:50.240 --> 03:51.800
+as long as you're not doing a ton of nested folders,
+
+03:51.800 --> 03:53.760
+it should make life a lot easier.
+
+03:53.760 --> 03:55.480
+And so the secret to this actually,
+
+03:55.480 --> 03:57.440
+is that we actually do have that already built in,
+
+03:57.440 --> 03:59.160
+and that's the at symbol.
+
+03:59.160 --> 04:01.520
+And so when you do the at symbol, what that does is it says,
+
+04:01.520 --> 04:03.240
+please go to the source folder,
+
+04:03.240 --> 04:06.480
+and then start your file path from there.
+
+04:06.480 --> 04:08.200
+And it's a really nice alias to have.
+
+04:08.200 --> 04:09.600
+Now, I'm telling you this, and you might be like,
+
+04:09.600 --> 04:12.760
+ooh, that sounds like black magic. It's not.
+
+04:12.760 --> 04:14.440
+If you look inside of our V config,
+
+04:14.440 --> 04:15.960
+in fact, this is the default to be honest,
+
+04:15.960 --> 04:19.800
+but I'll just stick it to Cela V view.
+
+04:19.800 --> 04:21.880
+You'll see here that there actually is an alias
+
+04:21.880 --> 04:25.360
+being defined from V that says, hey, this is the at symbol,
+
+04:25.360 --> 04:27.600
+and what I want you to do is automatically put
+
+04:27.600 --> 04:32.080
+the file URL path to this dot slash source directory.
+
+04:32.080 --> 04:33.480
+And so what this means is you can configure it
+
+04:33.480 --> 04:34.320
+to whatever you want.
+
+04:34.320 --> 04:35.320
+It doesn't have to be at,
+
+04:35.320 --> 04:36.560
+but that does happen to be,
+
+04:36.560 --> 04:39.280
+that happens to be a convention for a lot of applications.
+
+04:39.280 --> 04:41.040
+So the at symbol is there for you,
+
+04:41.040 --> 04:42.240
+if you want to simplify the fact
+
+04:42.240 --> 04:43.680
+that you don't have to navigate now.
+
+04:43.680 --> 04:46.280
+Wait, what folder am I in and what's going on?
+
+04:46.280 --> 04:48.120
+Now that we have that, let's keep on going.
+
+04:48.120 --> 04:50.120
+So first thing first, what kind of routes do we have?
+
+04:50.120 --> 04:53.080
+Well, we're going to want to have a path for the homepage.
+
+04:53.080 --> 04:54.400
+And so what component is that?
+
+04:54.400 --> 04:57.880
+We're going to want to do the component for homepage.
+
+04:57.880 --> 05:00.640
+All right, so here we have homepage,
+
+05:00.640 --> 05:02.080
+but we need to import that.
+
+05:02.080 --> 05:05.200
+So we have homepage from, let's use our handy alias,
+
+05:05.200 --> 05:08.320
+components slash homepage dot view.
+
+05:08.320 --> 05:10.240
+And that's super convenient because I don't have to think
+
+05:10.240 --> 05:12.160
+where am I inside of the directory.
+
+05:12.160 --> 05:14.300
+It's super, super nice.
+
+05:14.300 --> 05:16.880
+Great, there was a comment in the audience that
+
+05:16.880 --> 05:18.680
+we moved it to views, it's not in components anymore.
+
+05:18.680 --> 05:20.240
+And that's correct, so that would break.
+
+05:20.240 --> 05:23.920
+But from not having to think about what directory I'm in,
+
+05:23.920 --> 05:24.760
+that is helpful.
+
+05:24.760 --> 05:26.680
+There we go, look, everything's showing up.
+
+05:26.680 --> 05:28.920
+Okay, then we have a path here.
+
+05:28.920 --> 05:32.080
+And let's just go ahead and copy this block real quick
+
+05:32.080 --> 05:34.040
+just to make this a little bit easier.
+
+05:34.040 --> 05:37.380
+So we have login and then we have user.
+
+05:38.880 --> 05:40.760
+Okay, user page, great.
+
+05:40.760 --> 05:44.960
+And then we have user page, login page.
+
+05:45.880 --> 05:48.080
+And this is how most of us would probably do this part.
+
+05:48.080 --> 05:50.880
+Log in, oh, login is an L.
+
+05:51.840 --> 05:56.640
+And then P or U for user page, there we go, save, great.
+
+05:56.640 --> 05:59.880
+And then what we can do now is go inside of our app.view
+
+05:59.880 --> 06:01.200
+for sale of view.
+
+06:01.200 --> 06:03.200
+And rather than having this all be managed now
+
+06:03.200 --> 06:04.880
+with the current page and whatnot,
+
+06:04.880 --> 06:06.400
+we can actually make this a lot simpler.
+
+06:06.400 --> 06:09.040
+So what we're going to do here is we're going to go ahead
+
+06:09.040 --> 06:10.940
+and rather than put the component here,
+
+06:10.940 --> 06:12.640
+we're just going to do, let me delete it first
+
+06:12.640 --> 06:14.360
+to show you that everything was working.
+
+06:14.360 --> 06:16.080
+Okay, great, it's gone.
+
+06:16.080 --> 06:18.180
+Now we're just going to put router view.
+
+06:19.560 --> 06:23.800
+And just like that, we have our pages.
+
+06:23.800 --> 06:26.120
+Your routes are all defined to go to home page.
+
+06:26.120 --> 06:29.120
+Yes, they are all defined to go to home page, good catch.
+
+06:29.120 --> 06:31.920
+So we no longer need to track any of these things
+
+06:31.920 --> 06:35.000
+because this is being now managed at the router level.
+
+06:35.000 --> 06:36.260
+So in case you've seen duplicates,
+
+06:36.260 --> 06:38.120
+you should not have duplicates.
+
+06:38.160 --> 06:40.760
+There you go, don't need that component.
+
+06:40.760 --> 06:42.760
+In fact, we don't need any of this
+
+06:42.760 --> 06:44.640
+because all of this is doing is trying to do
+
+06:44.640 --> 06:46.580
+all the programmatic things that viewrouter
+
+06:46.580 --> 06:47.880
+will do for us out of the gate.
+
+06:47.880 --> 06:50.280
+So I can actually just wipe out this whole thing.
+
+06:52.080 --> 06:56.000
+And then we can no longer reference any of these things.
+
+06:56.000 --> 06:58.240
+Let's comment that out real quick.
+
+06:58.240 --> 07:02.780
+And then I think we're good as far as that goes.
+
+07:02.780 --> 07:05.080
+Now we need to actually have the ability to switch it out.
+
+07:05.080 --> 07:08.080
+So rather than use the A tags,
+
+07:08.080 --> 07:12.000
+we're going to go ahead and use our anchors,
+
+07:12.000 --> 07:15.400
+use our router link, sorry, one, two, router link.
+
+07:17.120 --> 07:21.200
+Then we have this right here, one, two, router link.
+
+07:22.760 --> 07:24.840
+Then we no longer have to worry about the click
+
+07:24.840 --> 07:26.840
+and handling that and preventing that.
+
+07:26.840 --> 07:31.840
+So all that can be deleted, clean that up.
+
+07:32.320 --> 07:33.800
+And then instead of the href,
+
+07:33.800 --> 07:36.160
+what we're going to do is we're going to move that
+
+07:36.160 --> 07:38.080
+and then just do two.
+
+07:38.080 --> 07:39.360
+And then to what?
+
+07:39.360 --> 07:42.040
+And then we can go ahead correctly,
+
+07:42.040 --> 07:45.320
+then go login, user, home.
+
+07:46.500 --> 07:48.100
+Once we have that, there you go.
+
+07:49.140 --> 07:51.400
+Everything works just as you would expect.
+
+07:52.840 --> 07:53.680
+Okay.
+
+07:54.840 --> 07:57.400
+So before I wrap up this exercise though,
+
+07:57.400 --> 07:59.680
+the only thing I do want to show you,
+
+07:59.680 --> 08:01.320
+if you go back to the boilerplate
+
+08:01.400 --> 08:04.520
+that we created with view three,
+
+08:04.520 --> 08:09.520
+and this time adding the fact that we have,
+
+08:10.400 --> 08:11.760
+to do here's the router.
+
+08:11.760 --> 08:12.840
+Okay.
+
+08:12.840 --> 08:15.240
+You might notice something right here,
+
+08:15.240 --> 08:17.560
+which is kind of interesting in that you can actually
+
+08:17.560 --> 08:19.640
+write a function where the component is
+
+08:19.640 --> 08:23.600
+in order to dynamically import that view.
+
+08:23.600 --> 08:26.160
+And the reason this is a powerful technique,
+
+08:26.160 --> 08:28.560
+while relatively simple, is that it will then
+
+08:28.560 --> 08:30.820
+automatically generate a separate build chunk
+
+08:30.820 --> 08:33.740
+that will lazy load when it's being loaded.
+
+08:33.740 --> 08:34.740
+Because the problem right now,
+
+08:34.740 --> 08:37.300
+if we look at how we're actually loading the route right now
+
+08:37.300 --> 08:41.300
+in main.js, and say I love you,
+
+08:41.300 --> 08:43.540
+we're importing every single component
+
+08:43.540 --> 08:46.120
+that the app might possibly need to route to.
+
+08:46.120 --> 08:47.980
+And if that app gets pretty large,
+
+08:47.980 --> 08:49.980
+that's a lot to break apart.
+
+08:49.980 --> 08:53.740
+So generally speaking, it's considered best practice
+
+08:53.740 --> 08:57.140
+to go ahead and just like we see inside of this router.js,
+
+08:57.140 --> 08:59.940
+oops not this one, we're looking at this one,
+
+08:59.940 --> 09:02.260
+to go ahead and just import the path directly.
+
+09:02.260 --> 09:04.140
+So I'm gonna go ahead and do that for us,
+
+09:04.140 --> 09:06.940
+so that we can actually have that as a record of that.
+
+09:06.940 --> 09:09.100
+So again, rather than have these two up here,
+
+09:09.100 --> 09:11.180
+because we don't know when users are gonna log into that,
+
+09:11.180 --> 09:12.780
+we know that home page needs to be imported.
+
+09:12.780 --> 09:14.860
+So that cannot be dynamically imported.
+
+09:14.860 --> 09:17.900
+But everything else, that has potential.
+
+09:17.900 --> 09:21.740
+So we can go ahead and drop the imports here.
+
+09:21.740 --> 09:24.060
+And the way it works is it's a function
+
+09:25.660 --> 09:28.800
+that returns this path.
+
+09:30.020 --> 09:31.420
+And that's what that looks like.
+
+09:34.740 --> 09:36.100
+Delete that, delete that.
+
+09:36.100 --> 09:37.620
+I think I had that right.
+
+09:37.620 --> 09:39.580
+Let me just make sure one more time.
+
+09:39.580 --> 09:41.340
+Oop, that one's not easy to read.
+
+09:42.700 --> 09:44.260
+Import, yeah.
+
+09:44.260 --> 09:48.420
+So, oh, I mistakenly did that the other way.
+
+09:48.420 --> 09:53.420
+It is a function that does the import here,
+
+09:54.460 --> 09:57.120
+and imports the specific path, just like that.
+
+09:58.120 --> 10:01.240
+And so again, we can see user experience,
+
+10:01.240 --> 10:02.240
+why as far as development goes,
+
+10:02.240 --> 10:03.480
+you probably wouldn't really know the difference,
+
+10:03.480 --> 10:05.840
+but this optimization can help a lot
+
+10:05.840 --> 10:07.840
+when it comes to your apps going forward.
+
