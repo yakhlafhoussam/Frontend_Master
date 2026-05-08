@@ -1,0 +1,224 @@
+WEBVTT
+
+00:00.000 --> 00:02.280
+So if you pull down 08 exercise, you'll
+
+00:02.280 --> 00:05.200
+be able to see all the code that I just did.
+
+00:05.200 --> 00:06.680
+I want you to go ahead on your own app,
+
+00:06.680 --> 00:09.040
+create your own base layout, play around in slots,
+
+00:09.040 --> 00:11.280
+see how you might want to rearrange things,
+
+00:11.280 --> 00:14.200
+see how that feels when you have one slot
+
+00:14.200 --> 00:16.240
+versus having multiple slots with name slots.
+
+00:20.160 --> 00:22.360
+All right, how did everyone feel about playing around
+
+00:22.360 --> 00:24.760
+with slots?
+
+00:24.760 --> 00:27.440
+Good, fairly straightforward.
+
+00:27.440 --> 00:28.480
+That is great to hear.
+
+00:28.480 --> 00:31.480
+OK, so what I'm going to do is just basically
+
+00:31.480 --> 00:35.160
+I'm going to take a look at the ATL LA forum on my end,
+
+00:35.160 --> 00:39.520
+and we'll just do a quick one as far as that goes.
+
+00:39.520 --> 00:41.680
+So let me go ahead and check out a branch.
+
+00:41.680 --> 00:49.080
+Oh wait, solution, CD ATLA, great, run dev.
+
+00:49.080 --> 00:51.800
+Everything should be running as expected.
+
+00:51.800 --> 00:55.080
+Yep, perfect, OK.
+
+00:55.080 --> 00:58.280
+So when I'm looking at ATLA, I'm thinking, OK,
+
+00:58.280 --> 01:00.960
+well, base component, what does the base layout look like?
+
+01:00.960 --> 01:03.840
+So I'm going to go ahead, create my base layout,
+
+01:03.840 --> 01:06.120
+dot view.
+
+01:06.120 --> 01:09.360
+Inside of here, let's keep it simple.
+
+01:09.360 --> 01:10.920
+So we're just going to have the template,
+
+01:10.920 --> 01:14.200
+and all that it manages is where things are placed.
+
+01:14.200 --> 01:17.840
+So we'll actually just create basically
+
+01:17.840 --> 01:20.080
+as to how many things we have, four things.
+
+01:20.080 --> 01:24.520
+All right, so let's do a div, and then we'll have here,
+
+01:24.520 --> 01:28.840
+so we'll call this class grid.
+
+01:28.840 --> 01:31.840
+And then we'll say, do, do, do, do.
+
+01:31.840 --> 01:33.920
+Actually, this time we'll open the style block.
+
+01:33.920 --> 01:39.280
+And for grid, we'll display grid and grid template columns
+
+01:39.280 --> 01:45.040
+to repeat 2, 1, FR.
+
+01:45.040 --> 01:48.200
+Basically, this will repeat two columns inside of this.
+
+01:48.200 --> 01:50.240
+So div and div.
+
+01:50.240 --> 01:53.680
+And then for now, let's just go ahead and drop this
+
+01:53.720 --> 01:55.160
+to make this a slot.
+
+01:57.960 --> 02:01.400
+And then we'll say the name for this slot is 1.
+
+02:01.400 --> 02:03.640
+This will be the first one.
+
+02:03.640 --> 02:05.120
+And then we'll copy this.
+
+02:05.120 --> 02:09.520
+And then just drop it in here for 2.
+
+02:09.520 --> 02:10.880
+Autocomplete.
+
+02:10.880 --> 02:11.640
+Just slot.
+
+02:11.640 --> 02:13.360
+Thank you for catching that.
+
+02:13.360 --> 02:17.640
+OK, inside of our app, we're going to go ahead, grab that.
+
+02:17.640 --> 02:20.040
+And then this will be base layout.
+
+02:20.040 --> 02:21.840
+Go ahead and copy that.
+
+02:21.840 --> 02:24.640
+Base layout.
+
+02:24.640 --> 02:26.800
+Then we'll actually call it here.
+
+02:26.800 --> 02:30.880
+And this time in base layout, we'll go ahead and let's take
+
+02:30.880 --> 02:34.760
+our new character down here.
+
+02:34.760 --> 02:37.880
+I think that's all of this stuff.
+
+02:37.880 --> 02:40.440
+And then let's just drop that in the first slot to start.
+
+02:40.440 --> 02:43.200
+So where are we here?
+
+02:43.200 --> 02:48.800
+So we'll have the template here dropping in the new character.
+
+02:48.800 --> 02:52.400
+And the vslot we're looking for is 1.
+
+02:52.400 --> 02:55.680
+So if you save that, you'll see that we're actually, I guess
+
+02:55.680 --> 02:58.720
+let me show this so that it's a little bit clearer.
+
+02:58.720 --> 03:01.480
+Pi, Pi, Solid, Green.
+
+03:01.480 --> 03:03.000
+Actually, what's a fun?
+
+03:03.000 --> 03:04.240
+But Pyowit, I love that one.
+
+03:04.240 --> 03:05.120
+Let's do it.
+
+03:05.120 --> 03:06.920
+OK, not very accessible, though.
+
+03:06.920 --> 03:08.040
+I like the name.
+
+03:08.040 --> 03:11.440
+OK, so we can see here that that is showing up on the left
+
+03:11.440 --> 03:12.040
+hand side.
+
+03:12.040 --> 03:14.120
+And then all we need to do, if you want to swap it, for
+
+03:14.120 --> 03:16.600
+example, is just do vslot2.
+
+03:16.600 --> 03:19.000
+And you can see it jumps from left to right.
+
+03:19.000 --> 03:21.240
+And so that's just like a simple implementation of a
+
+03:21.240 --> 03:22.000
+possible grid.
+
+03:22.000 --> 03:23.920
+And you can imagine when you start combining these with
+
+03:23.920 --> 03:27.280
+CSS, slotting stuff around, you get some pretty powerful
+
+03:27.280 --> 03:29.120
+stuff when it comes to responsive design as well.
+

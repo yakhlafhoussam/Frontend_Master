@@ -1,0 +1,1034 @@
+WEBVTT
+
+00:00.000 --> 00:02.760
+Okay, so for the exercise,
+
+00:02.760 --> 00:04.000
+we're actually going to be using
+
+00:04.000 --> 00:07.960
+one of my new favorite APIs called JSON Placeholder.
+
+00:07.960 --> 00:10.160
+If you haven't heard about it, it's pretty great.
+
+00:10.160 --> 00:12.200
+Because what it does is it basically provides
+
+00:12.200 --> 00:13.840
+a bunch of static data that
+
+00:13.840 --> 00:15.920
+requires no authentication key or anything.
+
+00:15.920 --> 00:18.140
+What it allows you to do is it has
+
+00:18.140 --> 00:20.080
+a bunch of different datasets
+
+00:20.080 --> 00:21.600
+that allow you to relate between them.
+
+00:21.600 --> 00:22.920
+So basically, we'll see here,
+
+00:22.920 --> 00:25.120
+we take a look at users, for example.
+
+00:25.120 --> 00:26.560
+Users has an ID,
+
+00:26.560 --> 00:28.440
+it has all this data ready for you.
+
+00:28.440 --> 00:30.840
+But then, if you take a look at something like to-dos,
+
+00:30.840 --> 00:33.040
+you'll notice that it even has user ID
+
+00:33.040 --> 00:35.160
+and it relates back to those users.
+
+00:35.160 --> 00:37.020
+So what you basically have is,
+
+00:37.020 --> 00:40.920
+rather than having a dynamic database that oftentimes goes,
+
+00:40.920 --> 00:43.080
+like either un-maintained or eventually goes out of service,
+
+00:43.080 --> 00:46.360
+this is really just a bunch of static JSON,
+
+00:46.360 --> 00:49.520
+but we get to request it as if it were from the backend.
+
+00:49.520 --> 00:54.720
+So this is the API that I recommend you all use
+
+00:54.720 --> 00:57.840
+going forward when it comes to our exercises.
+
+00:58.040 --> 01:01.000
+So for our exercise,
+
+01:01.000 --> 01:02.520
+you're going to be using the SailorView app,
+
+01:02.520 --> 01:05.400
+and this time your product manager has come to you and says,
+
+01:05.400 --> 01:07.880
+we need a user page component.
+
+01:07.880 --> 01:10.800
+So we're going to give you some practice as far as basically,
+
+01:10.800 --> 01:13.640
+go ahead and create that user page inside of the component folder,
+
+01:13.640 --> 01:15.220
+and then inside of that component,
+
+01:15.220 --> 01:17.420
+go ahead and use that created lifecycle to go ahead and fetch
+
+01:17.420 --> 01:21.120
+all the users from that JSON placeholder API using what we just showed you.
+
+01:21.120 --> 01:24.240
+Then go ahead and render that however you see fit,
+
+01:24.240 --> 01:27.440
+and then go ahead and make sure you update app.view so that,
+
+01:27.680 --> 01:29.000
+if you want to use that dynamic component,
+
+01:29.000 --> 01:31.600
+that actually swaps it out correctly when you're using the navigation.
+
+01:35.920 --> 01:38.960
+Welcome back everybody. How is the exercise?
+
+01:38.960 --> 01:41.560
+All right. Yeah, it looks like people were successful.
+
+01:41.560 --> 01:42.840
+So no worries.
+
+01:42.840 --> 01:44.240
+In case you find that a little bit complicated,
+
+01:44.240 --> 01:46.560
+we're going to walk through the solution right now.
+
+01:47.760 --> 01:50.120
+So let's go ahead and do this.
+
+01:51.480 --> 01:55.000
+So let me close that, bring that over here.
+
+01:55.360 --> 01:56.520
+Actually, you know what I do?
+
+01:56.520 --> 01:57.800
+I do want this as a reference.
+
+01:57.800 --> 01:59.680
+I'm going to bring this as a new tab.
+
+01:59.680 --> 02:02.560
+Okay. All right.
+
+02:02.560 --> 02:05.400
+So I'm going to go ahead and I'm going to work in the Say Love You.
+
+02:05.400 --> 02:09.800
+Remember that if you are working in your TV forum app,
+
+02:09.800 --> 02:12.040
+you can go ahead and use whatever I'm doing in Say Love You as
+
+02:12.040 --> 02:16.200
+like an example for how the solution should look in your app.
+
+02:16.200 --> 02:20.960
+Okay. So I'm going to go ahead and check out the O9 branch solution.
+
+02:20.960 --> 02:23.040
+So that's where this will live.
+
+02:23.760 --> 02:26.480
+Okay. So first thing first, what do we want to do?
+
+02:26.480 --> 02:28.360
+We want to create a user page.
+
+02:28.360 --> 02:30.800
+All right. So what we're going to do inside of our components
+
+02:30.800 --> 02:32.880
+folder, user page dot view.
+
+02:33.800 --> 02:36.640
+And then I'm going to go ahead and let's set up the script block
+
+02:36.640 --> 02:38.520
+and let's set up the style block.
+
+02:39.560 --> 02:42.040
+And so taking a look at what we have here,
+
+02:42.040 --> 02:43.640
+we have some basic styles.
+
+02:43.640 --> 02:46.280
+And so for now, I'm just going to kind of keep it straightforward
+
+02:46.280 --> 02:48.880
+in the sense that like, let's just go ahead and pull what we
+
+02:48.880 --> 02:49.720
+already have.
+
+02:49.720 --> 02:51.600
+So I'm going to actually grab, I think,
+
+02:51.680 --> 02:54.120
+the login page is fine for me.
+
+02:54.120 --> 02:56.240
+So I'm going to go ahead and actually know it.
+
+02:56.240 --> 02:58.880
+Let's see, do-do-do-do, yeah, I'll just grab the login page.
+
+02:58.880 --> 03:03.400
+So I'll grab the login page, copy it over into our user page for now.
+
+03:03.400 --> 03:06.120
+And I'm going to actually delete these or I'll leave them
+
+03:06.120 --> 03:08.920
+because there will actually be a great discussion point for later.
+
+03:08.920 --> 03:11.200
+And for now, we'll just call this users,
+
+03:11.200 --> 03:14.320
+we'll delete this stuff and we'll just save.
+
+03:14.320 --> 03:18.440
+So now if we go back, we are on the home page.
+
+03:18.440 --> 03:19.520
+We won't be able to see this yet.
+
+03:19.520 --> 03:20.200
+Why?
+
+03:20.200 --> 03:25.040
+Because we actually need to update our app.view
+
+03:25.040 --> 03:26.840
+so that we actually show that page.
+
+03:26.840 --> 03:28.600
+And so for now, we're just going to make it easy
+
+03:28.600 --> 03:31.000
+and we're just going to say, OK, well, by default,
+
+03:31.000 --> 03:33.560
+we're just going to show the user page.
+
+03:33.560 --> 03:36.280
+But we want to show the user page, what do we got to do?
+
+03:36.280 --> 03:38.040
+We got to import it because we're actually
+
+03:38.040 --> 03:40.080
+going to call that component.
+
+03:40.080 --> 03:42.200
+So that way we call it, we register it,
+
+03:42.200 --> 03:44.520
+that way it can actually be called later on.
+
+03:44.520 --> 03:47.640
+So we save that and refresh, nothing's working, why is that?
+
+03:47.640 --> 03:50.400
+Well, we need local dev running.
+
+03:50.400 --> 03:51.600
+Let me close that one.
+
+03:51.600 --> 03:53.200
+Great, here we go.
+
+03:53.200 --> 03:57.160
+OK, so we have our user page up and running, looking good.
+
+03:57.160 --> 03:58.360
+And so what do we want to do?
+
+03:58.360 --> 04:02.600
+We want to go ahead and fetch our users from this API right here.
+
+04:02.600 --> 04:05.440
+So following our best practices, we'll
+
+04:05.440 --> 04:06.960
+do the export default object.
+
+04:06.960 --> 04:09.120
+And inside of our created, we're actually
+
+04:09.120 --> 04:10.720
+going to go ahead and run a function.
+
+04:10.720 --> 04:12.920
+What we want to run, ideally, we want something
+
+04:12.920 --> 04:14.800
+like this.fetch users.
+
+04:17.640 --> 04:20.240
+But we haven't written that, so let's go ahead and write that.
+
+04:20.240 --> 04:22.120
+So we'll create a methods here.
+
+04:22.120 --> 04:25.120
+And the methods option will contain fetch users.
+
+04:25.120 --> 04:26.440
+Inside of here, this is where we're
+
+04:26.440 --> 04:28.120
+going to go ahead and run our request.
+
+04:28.120 --> 04:31.160
+So we might have a this.userList equals what?
+
+04:31.160 --> 04:34.200
+We're going to fetch this API.
+
+04:34.200 --> 04:36.080
+And then we're going to take that response.
+
+04:36.080 --> 04:39.560
+And then we're going to JSONify by running response.json.
+
+04:39.560 --> 04:41.880
+Now again, this is an asynchronous request.
+
+04:41.880 --> 04:43.560
+So we need the await keyword.
+
+04:43.560 --> 04:46.080
+And we need to tell it that it's async.
+
+04:46.080 --> 04:48.440
+Not quite done yet though, because why?
+
+04:48.440 --> 04:49.960
+We have this this.userList.
+
+04:49.960 --> 04:51.200
+It hasn't been created yet.
+
+04:51.200 --> 04:52.600
+This is our reactive data.
+
+04:52.600 --> 04:56.480
+So we can go and go ahead and create that.
+
+04:56.480 --> 04:59.880
+And so we have our user list.
+
+04:59.880 --> 05:01.240
+And that will be an array.
+
+05:01.240 --> 05:04.120
+And then we can save.
+
+05:04.120 --> 05:05.040
+All right, everything formats.
+
+05:05.040 --> 05:05.880
+It looks good.
+
+05:05.880 --> 05:09.640
+The code editor is not yelling at us anymore.
+
+05:09.640 --> 05:11.480
+And so we aren't seeing anything yet.
+
+05:11.480 --> 05:12.760
+And that's totally fine, because why?
+
+05:12.760 --> 05:14.840
+We haven't actually rendered it to the screen.
+
+05:14.880 --> 05:16.200
+So user list, there we go.
+
+05:16.200 --> 05:18.040
+We saved, and we refreshed.
+
+05:18.040 --> 05:19.840
+OK, now that we do it, great.
+
+05:19.840 --> 05:21.920
+We can actually see all our users here.
+
+05:21.920 --> 05:24.240
+But we're going to go ahead and pretty that up a little bit,
+
+05:24.240 --> 05:26.400
+because that is pretty hard to read.
+
+05:26.400 --> 05:28.880
+So I'm just going to do an unordered list.
+
+05:28.880 --> 05:32.600
+And for every one of these users, so user in user list,
+
+05:32.600 --> 05:35.120
+we're going to make sure, because we're using a v4 loop,
+
+05:35.120 --> 05:37.720
+we're going to assign it a unique key.
+
+05:37.720 --> 05:39.720
+And that key can be just be the ID, actually,
+
+05:39.720 --> 05:41.040
+that we have up here.
+
+05:41.040 --> 05:44.280
+So I'm going to say, do, do.
+
+05:44.280 --> 05:48.120
+I'm going to use the ES6 templating, though,
+
+05:48.120 --> 05:51.120
+to say user.id.
+
+05:51.120 --> 05:53.440
+And the reason for this is because this data set
+
+05:53.440 --> 05:56.160
+is on the simpler side, as far as keeping the IDs just numbers.
+
+05:56.160 --> 05:58.480
+And so I do know in advance that there
+
+05:58.480 --> 06:01.880
+will be other elements that also have very simplistic IDs.
+
+06:01.880 --> 06:03.600
+And so prevent that from colliding,
+
+06:03.600 --> 06:06.440
+because when it does, view will tell you inside of the console
+
+06:06.440 --> 06:09.440
+log, hey, by the way, I'm seeing duplicate keys for elements.
+
+06:09.440 --> 06:12.160
+And that will create all sorts of havoc for you.
+
+06:12.160 --> 06:14.280
+So try to keep them unique whenever you can.
+
+06:14.280 --> 06:15.920
+Again, normally, these will be UU IDs,
+
+06:15.920 --> 06:18.400
+and you don't have to worry about it.
+
+06:18.400 --> 06:20.840
+And then we can basically render out the user.name.
+
+06:20.840 --> 06:23.920
+And then let's go ahead and just then let's just
+
+06:23.920 --> 06:26.240
+do what would be fun to do.
+
+06:26.240 --> 06:28.080
+Let's do their website, then.
+
+06:28.080 --> 06:31.200
+And then we have user.website, save.
+
+06:31.200 --> 06:32.080
+There we go.
+
+06:32.080 --> 06:34.120
+And we can see now, if we refresh.
+
+06:34.120 --> 06:35.840
+OK, we got a lot going on.
+
+06:35.840 --> 06:38.120
+Now, for a second here, I panicked, because I was like,
+
+06:38.120 --> 06:39.080
+why are we seeing double?
+
+06:39.080 --> 06:40.840
+The reason we're seeing double is because we
+
+06:40.840 --> 06:42.320
+have the pre-element still there.
+
+06:42.320 --> 06:43.720
+So we save that now and refresh.
+
+06:43.720 --> 06:45.440
+There you go, much better.
+
+06:45.440 --> 06:48.240
+And now we have all our users being rendered on the page.
+
+06:48.240 --> 06:51.360
+And is there a way with the dev tools
+
+06:51.360 --> 06:54.360
+to see the unique IDs of those items?
+
+06:54.360 --> 06:56.000
+Yeah, that's a great question.
+
+06:56.000 --> 06:58.920
+So if we take a look at what the context here is,
+
+06:58.920 --> 07:01.600
+is that this dynamic key that we're assigning, in this case,
+
+07:01.600 --> 07:04.280
+user-1 and so forth, the question here
+
+07:04.280 --> 07:07.320
+is around the idea if there is any way to expose that.
+
+07:07.320 --> 07:08.960
+And so honestly, off the top of my head,
+
+07:08.960 --> 07:11.080
+we can see here that if we're looking at the browser DevTools,
+
+07:11.080 --> 07:15.080
+there's nothing actually indicating what the keys are.
+
+07:15.080 --> 07:17.400
+And if we take a look at ViewDevTools,
+
+07:17.400 --> 07:19.320
+we can see here that one nice thing about DevTools
+
+07:19.320 --> 07:21.360
+is that it makes it very clear how you can expose
+
+07:21.360 --> 07:22.960
+the different properties of it.
+
+07:22.960 --> 07:24.920
+But it does look like, at first glance,
+
+07:24.920 --> 07:27.040
+there's nothing obvious kind of indicating
+
+07:27.040 --> 07:29.840
+its individual keys.
+
+07:29.840 --> 07:31.680
+Like, we can inspect the elements in here
+
+07:31.680 --> 07:33.440
+and all the data in here, so in case you ever
+
+07:33.440 --> 07:34.720
+debugging anything.
+
+07:34.720 --> 07:38.080
+And what's a nice little bonus about this, too, actually,
+
+07:38.080 --> 07:40.560
+is that the DevTools allow you to modify it directly.
+
+07:40.560 --> 07:43.720
+So if we come in here and just call like Selena
+
+07:43.720 --> 07:45.360
+as a middle name, you'll see that it'll actually
+
+07:45.360 --> 07:46.280
+update it directly.
+
+07:46.280 --> 07:48.960
+So it allows for a kind of a quicker feedback loop
+
+07:48.960 --> 07:51.560
+in case you're wondering if your data set is doing something
+
+07:51.560 --> 07:53.600
+specific with your code, you can just play around with it
+
+07:53.600 --> 07:57.040
+right there rather than call it going back to your component
+
+07:57.040 --> 07:58.360
+and faking the data set.
+
+07:58.360 --> 08:01.320
+The DevTools allows you to kind of do that in a centralized way.
+
+08:01.320 --> 08:11.360
+I wonder, can I do key equals render page like that?
+
+08:11.360 --> 08:13.760
+Oh, OK.
+
+08:13.760 --> 08:16.040
+Great, so we did discover this at the bare minimum
+
+08:16.040 --> 08:17.560
+through this exercise.
+
+08:17.560 --> 08:20.320
+If you provide keys to your components,
+
+08:20.320 --> 08:24.000
+these are showing up in your DevTools.
+
+08:24.000 --> 08:25.840
+So there's something to be said where
+
+08:25.840 --> 08:28.840
+if you're at the point where you're probably debugging keys,
+
+08:28.840 --> 08:31.240
+at least for your components, it probably is helpful to,
+
+08:31.240 --> 08:32.560
+I mean, to be honest, if we're thinking
+
+08:32.560 --> 08:34.360
+about like a real world scenario,
+
+08:34.360 --> 08:36.720
+the user page would be displaying probably
+
+08:36.720 --> 08:38.200
+a user card component.
+
+08:38.200 --> 08:40.160
+And then those should show those.
+
+08:40.160 --> 08:42.520
+And so for the sake of actually demoing that,
+
+08:42.520 --> 08:46.160
+because this is actually something that does occur in apps,
+
+08:46.160 --> 08:48.320
+let's do a user card real quick.
+
+08:48.320 --> 08:52.160
+And then I'm just going to go ahead and drop that.
+
+08:52.160 --> 08:53.560
+We're going to drop this ally.
+
+08:53.560 --> 08:54.480
+We're going to keep it simple.
+
+08:54.480 --> 08:56.360
+We're just going to assume all user cards are always
+
+08:56.360 --> 08:58.120
+list elements.
+
+08:58.120 --> 09:02.320
+And then I'm not going to worry about that piece.
+
+09:02.320 --> 09:07.600
+And then we're going to go ahead and quickly just define a prop,
+
+09:07.600 --> 09:13.040
+default props, and they'll get a user type of object.
+
+09:13.040 --> 09:15.080
+And required is true.
+
+09:15.080 --> 09:16.560
+Save.
+
+09:16.560 --> 09:18.160
+And then inside of user page now,
+
+09:18.160 --> 09:21.960
+we can actually import said user card.
+
+09:21.960 --> 09:23.360
+And then there we go.
+
+09:23.360 --> 09:24.960
+Just use the autocomplete for that.
+
+09:24.960 --> 09:28.680
+And then the components.
+
+09:28.680 --> 09:29.560
+There we go.
+
+09:29.560 --> 09:33.120
+And then again, dropping user card in here.
+
+09:33.120 --> 09:35.320
+And then we can then say user card
+
+09:35.320 --> 09:37.520
+is what we're going to use here.
+
+09:37.520 --> 09:39.200
+We're going to not worry about that.
+
+09:39.200 --> 09:43.640
+And then we're just going to make sure we pass user
+
+09:43.640 --> 09:46.720
+inside of here.
+
+09:46.720 --> 09:50.400
+Like that.
+
+09:50.400 --> 09:54.640
+That should self-close, save, OK.
+
+09:54.640 --> 09:59.440
+That should do the trick.
+
+09:59.440 --> 10:00.720
+It looks like everything's working.
+
+10:00.720 --> 10:02.600
+And to validate this real quick, what we're going to do
+
+10:02.600 --> 10:05.880
+is we're going to add a quick CSS class called user card.
+
+10:05.880 --> 10:13.080
+And I'm just going to say user card has order 2px solid.
+
+10:13.080 --> 10:14.400
+Let's just keep it simple.
+
+10:14.400 --> 10:16.000
+Let's just do like a black.
+
+10:16.000 --> 10:18.240
+And then just like a padding of 10 pixels.
+
+10:18.240 --> 10:18.760
+There we go.
+
+10:18.760 --> 10:19.320
+OK.
+
+10:19.320 --> 10:21.080
+So our cards are rendering.
+
+10:21.080 --> 10:23.440
+We have our user page here rendering our list of cards,
+
+10:23.440 --> 10:24.760
+which looks good.
+
+10:24.760 --> 10:26.680
+And now, if we go ahead and now open the DevTools,
+
+10:26.680 --> 10:28.840
+we should see, which I think I saw a glimpse of that
+
+10:28.840 --> 10:30.680
+a second ago.
+
+10:30.680 --> 10:31.720
+There we go.
+
+10:31.720 --> 10:34.080
+The keys are showing up in this case.
+
+10:34.080 --> 10:36.560
+So it does look like if you want to inspect the DOM element one,
+
+10:36.560 --> 10:38.360
+that remains to be a little bit elusive.
+
+10:38.360 --> 10:40.840
+But that said, still a worthy question
+
+10:40.840 --> 10:42.360
+worth investigating into.
+
+10:42.360 --> 10:47.240
+On the topic of keys, are those keys,
+
+10:47.240 --> 10:51.880
+do they need to be unique on a globally all items rendered
+
+10:51.880 --> 10:54.240
+on page, or is it kind of scoped to the component?
+
+10:54.240 --> 10:55.720
+So if your component renders one list,
+
+10:55.720 --> 10:58.400
+is it safe to just use key 1, 2, 3, 4?
+
+10:58.400 --> 10:59.760
+Yep.
+
+10:59.760 --> 11:00.960
+Oh, sorry.
+
+11:00.960 --> 11:02.480
+The yelp was acknowledging the question.
+
+11:02.480 --> 11:03.600
+OK.
+
+11:03.600 --> 11:06.960
+So the question here is around the scoping of keys,
+
+11:06.960 --> 11:08.720
+because we talked about scoping of data.
+
+11:08.720 --> 11:09.960
+Data is scoped to the components,
+
+11:09.960 --> 11:12.000
+and we have to be very explicit about how it's shared.
+
+11:12.040 --> 11:14.040
+Keys, however, are different, because it
+
+11:14.040 --> 11:16.040
+has to do with whatever's on the page.
+
+11:16.040 --> 11:17.960
+So there's no scoping in regards to keys.
+
+11:17.960 --> 11:19.520
+And this is very important, in particular when
+
+11:19.520 --> 11:21.560
+it comes to animation and transitions,
+
+11:21.560 --> 11:23.680
+is because if you want View to start managing some
+
+11:23.680 --> 11:26.520
+of those pieces, those keys do really need to be unique.
+
+11:26.520 --> 11:29.200
+Otherwise, you'll start seeing weird glitches of View
+
+11:29.200 --> 11:31.000
+trying to calculate how to move things around,
+
+11:31.000 --> 11:33.080
+and two or three things at once.
+
+11:33.080 --> 11:35.440
+And so yeah, I would treat keys as a universal thing.
+
+11:35.440 --> 11:38.840
+This is why knowing the data set that I have,
+
+11:38.840 --> 11:41.000
+let me close this.
+
+11:41.000 --> 11:42.640
+Knowing the data set that I have,
+
+11:42.640 --> 11:44.240
+that is why I prefixed it with user,
+
+11:44.240 --> 11:46.120
+so that later we can have photos or comments
+
+11:46.120 --> 11:49.440
+or whatever we decide to extend upon.
+
+11:49.440 --> 11:53.120
+So good question, though.
+
+11:53.120 --> 11:53.960
+Cool.
+
+11:53.960 --> 11:56.120
+So we have the ability to go back here to home and log in,
+
+11:56.120 --> 11:57.520
+but we don't have a user link.
+
+11:57.520 --> 12:00.200
+So let's actually just make sure we wrap that up properly.
+
+12:00.200 --> 12:02.680
+So for now, we're just going to keep it simple here.
+
+12:02.680 --> 12:04.760
+You might notice, though, when you're inspecting the nav,
+
+12:04.760 --> 12:07.760
+that I'm doing something a little bit hacky.
+
+12:07.760 --> 12:09.920
+One is that this is technically an anchor link,
+
+12:09.920 --> 12:11.240
+but the anchor link doesn't go anywhere.
+
+12:11.240 --> 12:12.840
+It actually goes to the top of the page.
+
+12:12.840 --> 12:14.600
+But on the click event, you'll notice
+
+12:14.600 --> 12:17.120
+that I'm adding this modifier dot prevent.
+
+12:17.120 --> 12:20.600
+If you're not familiar with this, think of it like a form.
+
+12:20.600 --> 12:23.320
+Form is the one where I typically show off the prevent.
+
+12:23.320 --> 12:24.640
+And so what happens a lot of times
+
+12:24.640 --> 12:26.480
+when you have forms on an HTML page?
+
+12:26.480 --> 12:28.760
+You want to actually stop the event from submitting
+
+12:28.760 --> 12:30.680
+and then do some stuff before you submit it.
+
+12:30.680 --> 12:32.240
+And so typically, what do you have to do?
+
+12:32.240 --> 12:36.800
+If you had a submit form that was like submit registration,
+
+12:36.800 --> 12:38.360
+inside of your submit registration function,
+
+12:38.360 --> 12:39.240
+you'd have to run what?
+
+12:39.240 --> 12:40.400
+You'd have to get the event.
+
+12:40.400 --> 12:42.200
+You'd have to run event dot prevent default.
+
+12:42.200 --> 12:45.520
+Well, View was like, wait, we do this so often.
+
+12:45.520 --> 12:47.760
+Why is that code polluting really logic that's
+
+12:47.760 --> 12:48.640
+separate from it?
+
+12:48.640 --> 12:51.760
+That's really just basically a logistical implementation.
+
+12:51.760 --> 12:54.760
+So by adding dot prevent to your submit,
+
+12:54.760 --> 12:56.520
+it automatically basically executes
+
+12:56.520 --> 12:59.360
+on that prevent default event so that your code can be cleaner
+
+12:59.360 --> 13:00.720
+and you don't have to worry about.
+
+13:00.720 --> 13:02.840
+Basically, it's easier to modularize things.
+
+13:02.840 --> 13:03.920
+Because otherwise, your functions
+
+13:03.920 --> 13:07.080
+have always this context of being attached to an event, which
+
+13:07.080 --> 13:08.640
+might not always be true.
+
+13:08.680 --> 13:12.360
+So this is a kind of something tactic sugar
+
+13:12.360 --> 13:14.360
+that's useful, that's being used.
+
+13:14.360 --> 13:16.200
+And so in this case, I'm using click.prevent
+
+13:16.200 --> 13:18.360
+to prevent it from actually doing the navigation.
+
+13:18.360 --> 13:20.320
+Again, to be very clear, this is hacky,
+
+13:20.320 --> 13:22.680
+because we are going to get into official routing
+
+13:22.680 --> 13:25.000
+and so we can change URLs and those sort of things.
+
+13:25.000 --> 13:26.520
+But for the sake of practice right now,
+
+13:26.520 --> 13:28.040
+this is why we have it.
+
+13:28.040 --> 13:31.160
+All right, that said, we have an hrf.
+
+13:31.160 --> 13:34.280
+Again, following just the same model, click.prevent.
+
+13:34.280 --> 13:36.560
+And this time, we're going to show user page.
+
+13:39.640 --> 13:44.440
+User, that looks good.
+
+13:44.440 --> 13:48.360
+And then here, show user page.
+
+13:48.360 --> 13:51.640
+This.currentPage equals user.
+
+13:51.640 --> 13:55.320
+OK, OK, that looks good.
+
