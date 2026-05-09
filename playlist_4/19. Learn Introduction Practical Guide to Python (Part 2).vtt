@@ -1,0 +1,157 @@
+WEBVTT
+
+00:00.000 --> 00:06.480
+We can then go ahead and use these in if statements. So, if statements will only run.
+
+00:06.480 --> 00:14.400
+If the expression is true, not if the expression is false. To define if statements,
+
+00:15.280 --> 00:21.360
+you just type the F keyword followed by an expression that evaluates to true or false.
+
+00:21.360 --> 00:26.240
+If you're not sure if your expression evaluates to true or false, you can pass it into bull.
+
+00:27.360 --> 00:37.520
+So, I can say if three is less than five. And that will run because my expression is true.
+
+00:38.320 --> 00:43.360
+If I try to do the same thing, but reverse the order, three is, um,
+
+00:45.600 --> 00:55.840
+I wanted to ask is a five less than three. This is false. And so, this will never run.
+
+01:00.240 --> 01:06.720
+You can use and or not all of those inside of the expression in your if statement.
+
+01:07.520 --> 01:14.320
+So, if I have a is true and b equals false, I can say if not be.
+
+01:17.920 --> 01:25.280
+Will this print out high or not? It will, right? Because b is false, I've now negated it in my
+
+01:25.280 --> 01:33.360
+abstainment. You want to be mindful of if statements and truthiness. All of those same things that
+
+01:33.360 --> 01:39.200
+we talked about earlier apply. So, if I try to say if empty list print high,
+
+01:40.400 --> 01:46.560
+the truthiness of an empty list is false. And so, nothing is going to happen. I can put some
+
+01:46.560 --> 01:54.960
+values in here and then that will print high. Same for zero is false. Any number, including negative
+
+01:55.040 --> 02:06.320
+is true. And if I have a variable like this, b is empty list, I can just say if b print high.
+
+02:13.920 --> 02:20.400
+So, um, pretty important Python syntax. I don't have to say if b is double equals to empty list
+
+02:20.480 --> 02:26.480
+or anything like that because that what really matters is the truthiness of the expression.
+
+02:27.200 --> 02:37.280
+So, that's a pretty important concept. Um, we want to be mindful of not using that double
+
+02:37.280 --> 02:45.760
+equals true in our if statements. So, I don't want to say if b double equals true, I don't do this
+
+02:46.720 --> 02:55.120
+print high. Because that's not, uh, well, it might work. That is not correct Python syntax.
+
+02:59.440 --> 03:05.280
+We can add an all statement to our if statement and that will only run if the if statement
+
+03:05.280 --> 03:12.800
+itself did not run. I just want to show you the syntax for that in Python. So, um, if 5 is less than
+
+03:12.800 --> 03:24.160
+3, print high. Else goes right beneath that if statement with a colon, there's no expression for
+
+03:24.160 --> 03:30.960
+else because else only runs if the if statement is not true. I also want to indent that.
+
+03:33.440 --> 03:39.840
+And now my all statement is going to run. I actually have had a question on dicks.
+
+03:40.400 --> 03:46.400
+Um, is it possible to delete a key? That's how I've been since it's a view over writing one
+
+03:46.400 --> 03:53.840
+by wasn't sure if you could. Yes, you can delete a key from a dictionary with the del keyword.
+
+03:53.840 --> 03:59.840
+You can also pop from a dictionary. So, let's quickly take a look at that.
+
+04:10.160 --> 04:25.200
+Oops. I need to use curly braces. So, my dictionary now has these keys in it. And I can pass
+
+04:25.200 --> 04:32.800
+in which one to delete. I recommend not using the syntax even though you might see it. I think
+
+04:32.800 --> 04:43.920
+it's kind of weird. I prefer pop instead because pop also returns the value of the key that you
+
+04:43.920 --> 04:49.920
+just deleted. And if you need to know more about pop, you can look at help on dicks.pop.
+
+04:52.160 --> 05:00.480
+You can also provide a defaults. So, you would have like a default once a pop. That's kind of
+
+05:01.440 --> 05:07.040
+Yeah, like the default would be what's returned by the pop. If the key is not found.
+
+05:09.520 --> 05:14.800
+So, kind of if you don't want to take that extra step of checking for an exception,
+
+05:14.800 --> 05:20.400
+because if I tried to delete from my dictionary a key that does not exist,
+
+05:21.680 --> 05:28.640
+I'm going to get a key error. So, if you don't want to do any extra exception handling,
+
+05:28.640 --> 05:37.440
+you can use pop and pass in a default. To return if that key isn't found instead of throwing an
+
+05:37.440 --> 05:47.680
+exception. Can you have a question regarding, still a little confused about the whole equals equals.
+
+05:48.240 --> 05:55.600
+For example, for example, I put this in the Zoom chat 3 is less than 5 equals equals to true
+
+05:55.920 --> 06:06.640
+the value of false. Yeah, you don't want to do that because generally expressions have their own
+
+06:08.960 --> 06:15.440
+truthiness. And so, you don't have to use that double equals to compare it to true or false. It
+
+06:15.440 --> 06:23.520
+just happens under the hood. And you can double check that by passing an E value or an expression to bull.
+
+06:25.920 --> 06:33.120
+So, I can say if 3 is less than 5, what's happening here is that Python is replacing this
+
+06:33.120 --> 06:36.880
+expression with the result of this under the hood.
+
+06:43.520 --> 06:49.440
+Okay, I think I understand why I don't have to do that, but I really understand why it
+
+06:50.320 --> 07:01.760
+the result seems to be counter to what I believe it should be. I think there's some, I'm not 100% sure
+
+07:01.760 --> 07:07.360
+because generally like I know it's best practice not to do this and so I don't. I think there's a
+
+07:07.360 --> 07:14.240
+weird order of operations thing happening here where this is getting evaluated first and this is
+
+07:14.240 --> 07:20.480
+getting evaluated second. I think that's why it's returning false. So, it's saying is 5 equals to true
+
+07:20.480 --> 07:29.040
+false is 3 less than false. Remember, false is actually a number. False is 0 and Python. So, then
+
+07:29.040 --> 07:35.440
+this expression becomes is 3 less than 0 which is false. So, you end up with some weird subtle bugs.

@@ -1,0 +1,319 @@
+WEBVTT
+
+00:00.000 --> 00:01.000
+Oh, I'm sorry.
+
+00:01.000 --> 00:05.000
+I had to do a vehicle dot vehicle.
+
+00:05.000 --> 00:08.000
+Usually we just say from vehicle import the vehicle class.
+
+00:08.000 --> 00:12.000
+But because I have to reload, we're kind of doing it this way.
+
+00:12.000 --> 00:13.000
+Okay.
+
+00:13.000 --> 00:19.000
+So now my 4 by 4, it has a make.
+
+00:19.000 --> 00:22.000
+It has a model.
+
+00:22.000 --> 00:25.000
+And it has a fuel.
+
+00:25.000 --> 00:30.000
+I'm going to make a new instance of car.
+
+00:31.000 --> 00:38.000
+So I'm going to say my Subaru is a vehicle dot cars.
+
+00:38.000 --> 00:41.000
+And the make is Subaru.
+
+00:41.000 --> 00:44.000
+And the model is cross track.
+
+00:44.000 --> 00:47.000
+And the fuel is diesel.
+
+00:47.000 --> 00:55.000
+I'm sorry I called it car.
+
+00:55.000 --> 00:57.000
+So vehicle dot car.
+
+00:57.000 --> 00:58.000
+Okay.
+
+00:58.000 --> 01:01.000
+So I have my Subaru instance now.
+
+01:01.000 --> 01:04.000
+My Subaru has a make.
+
+01:04.000 --> 01:07.000
+My Subaru has a model.
+
+01:07.000 --> 01:13.000
+My Subaru has fuel.
+
+01:13.000 --> 01:19.000
+Does my Subaru have the number of wheels variable?
+
+01:19.000 --> 01:21.000
+Does it?
+
+01:21.000 --> 01:24.000
+It's always default.
+
+01:24.000 --> 01:26.000
+That's right.
+
+01:27.000 --> 01:30.000
+Does see what did I name it here?
+
+01:30.000 --> 01:33.000
+My 4 by 4.
+
+01:33.000 --> 01:37.000
+Does my 4 by 4 have a number of wheels?
+
+01:37.000 --> 01:38.000
+Does it?
+
+01:38.000 --> 01:39.000
+No.
+
+01:39.000 --> 01:40.000
+Right?
+
+01:40.000 --> 01:42.000
+No.
+
+01:42.000 --> 01:46.000
+Vehicle object has no attribute number of wheels.
+
+01:46.000 --> 01:49.000
+My car does my vehicle doesn't.
+
+01:49.000 --> 01:51.000
+And this is a good opportunity for me now.
+
+01:51.000 --> 01:53.000
+If I wanted to make a motorcycle,
+
+01:53.000 --> 01:58.000
+you can make a new class that has the default number of wheels to be two.
+
+01:58.000 --> 02:02.000
+And that really kind of cuts down on data duplication.
+
+02:02.000 --> 02:05.000
+Makes this code a lot more.
+
+02:05.000 --> 02:09.000
+Composable a lot more easier to maintain.
+
+02:09.000 --> 02:10.000
+Right?
+
+02:10.000 --> 02:15.000
+If I had a method on vehicle.
+
+02:15.000 --> 02:22.000
+Let's say, you know.
+
+02:23.000 --> 02:26.000
+Is my fuel efficient?
+
+02:26.000 --> 02:30.000
+Is eco friendly?
+
+02:30.000 --> 02:32.000
+And I would take in self.
+
+02:32.000 --> 02:36.000
+And if the fuel is equal to gas,
+
+02:36.000 --> 02:39.000
+we're going to return false.
+
+02:39.000 --> 02:47.000
+Otherwise, we're going to ever turn true.
+
+02:47.000 --> 02:54.000
+My self.fuel, of course.
+
+02:54.000 --> 03:02.000
+And I know that this self.fuel is always on my vehicle.
+
+03:02.000 --> 03:09.000
+Even if I removed this, it wouldn't matter because the fuel here is by default gas.
+
+03:09.000 --> 03:11.000
+So now I'm going to go in.
+
+03:11.000 --> 03:20.000
+I'm going to reload this.
+
+03:20.000 --> 03:24.000
+And then I'm going to say, you know,
+
+03:24.000 --> 03:33.000
+I'm going to go back to my 4 by 4.
+
+03:33.000 --> 03:35.000
+And make a new instance.
+
+03:35.000 --> 03:43.000
+I'm going to make a new instance of my Subaru.
+
+03:43.000 --> 03:49.000
+Subaru, cross track.
+
+03:49.000 --> 03:51.000
+Does my 4 by 4?
+
+03:51.000 --> 03:53.000
+Can I call this?
+
+03:53.000 --> 03:55.000
+Is eco friendly?
+
+03:55.000 --> 04:01.000
+Method on it?
+
+04:01.000 --> 04:11.000
+Can I call it on my Subaru?
+
+04:11.000 --> 04:16.000
+No, because you didn't bring it in in Subaru.
+
+04:16.000 --> 04:18.000
+I didn't.
+
+04:18.000 --> 04:27.000
+But what did I do here by calling a super dye net?
+
+04:27.000 --> 04:31.000
+I made a called a net on my vehicle.
+
+04:31.000 --> 04:36.000
+And my car inherits from vehicle.
+
+04:36.000 --> 04:43.000
+So any methods available to my vehicle will also be available on my car.
+
+04:43.000 --> 04:47.000
+That's how we encourage car code reuse.
+
+04:47.000 --> 04:51.000
+If I made a new motorcycle class that inherited from vehicle,
+
+04:51.000 --> 04:54.000
+it would also have this eco friendly method.
+
+04:54.000 --> 04:59.000
+So instead of making motorcycle and car and a 4 by 4,
+
+04:49.000 --> 05:02.000
+that all have their own version of this method,
+
+05:02.000 --> 05:08.000
+we cut down on code duplication and put it in one place.
+
+05:08.000 --> 05:12.000
+The last topic here, I'm not going to talk about very much.
+
+05:12.000 --> 05:14.000
+I just want to give you a heads up.
+
+05:14.000 --> 05:18.000
+Unlike in other languages, in Python, you can have multiple inheritance.
+
+05:18.000 --> 05:23.000
+So you can inherit from multiple different other classes at once.
+
+05:24.000 --> 05:31.000
+And things get a bit hairy, but one use case of this is something called a mixing.
+
+05:31.000 --> 05:38.000
+So a mixing might be a class that just has a method like this on it.
+
+05:38.000 --> 05:42.000
+And I don't care if my 4 by 4 is eco friendly.
+
+05:42.000 --> 05:45.000
+I'm driving it through the grass and mowing it down.
+
+05:45.000 --> 05:50.000
+And what do I care if it's, you know, gas or solar?
+
+05:51.000 --> 05:55.000
+So where I, in the cases where I do care maybe like a car,
+
+05:55.000 --> 06:01.000
+I can have an additional class that I inherit from that just has this method.
+
+06:01.000 --> 06:05.000
+So one of my favorite, one common use case for this,
+
+06:05.000 --> 06:10.000
+you might see if you're declaring database tables in Python.
+
+06:10.000 --> 06:13.000
+You might have some mix-ins for something like a date column,
+
+06:13.000 --> 06:17.000
+where you don't necessarily want, you want to have a date,
+
+06:17.000 --> 06:23.000
+a created on date on all of your objects, just, you know, for compliance reasons.
+
+06:23.000 --> 06:27.000
+But you don't want to have to say, you know, class vehicle dot date equals whatever,
+
+06:27.000 --> 06:30.000
+class motor cycle dot date equals whatever.
+
+06:30.000 --> 06:35.000
+So you can just have a mix-in class that will create that column for you.
+
+06:35.000 --> 06:38.000
+And provide all of the methods that you might need to use it.
+
+06:38.000 --> 06:42.000
+I've seen Python code that on an objects that don't,
+
+06:42.000 --> 06:45.000
+or classes that don't inherit from anything else,
+
+06:45.000 --> 06:49.000
+but the object keyword is the object that they inherit from,
+
+06:49.000 --> 06:52.000
+instead of just saying the name of the class column,
+
+06:52.000 --> 06:56.000
+they'll have object after the class definition.
+
+06:56.000 --> 07:02.000
+So that is, yeah, that is one of the differences between Python 2 and Python 3.
+
+07:02.000 --> 07:06.000
+In Python 3, you don't need to do that anymore.
+
+07:06.000 --> 07:08.000
+It's redundant, you know,
+
+07:08.000 --> 07:11.000
+simple as better than complex.
+
+07:11.000 --> 07:15.000
+You can still do it, and it's not a syntax error.
+
+07:15.000 --> 07:18.000
+You just shouldn't.

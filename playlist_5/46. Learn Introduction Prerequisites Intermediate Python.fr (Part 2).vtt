@@ -1,0 +1,178 @@
+WEBVTT
+
+00:00.000 --> 00:05.720
+Et j'ai une méthode d'index ici.
+
+00:05.720 --> 00:11.720
+Si vous avez remarqué ici en haut, mon app.row prend une liste de méthodes qu'il accepte.
+
+00:11.720 --> 00:20.840
+Donc, si j'essaie d'appeler cette route avec une méthode qui n'est pas acceptée, comme put, mon serveur va simplement générer une erreur.
+
+00:20.840 --> 00:28.400
+Maintenant, si la méthode demandée était get, ce qui signifie que nous n'avons encore rien soumis, nous n'appuyons pas sur ce bouton de soumission.
+
+00:28.400 --> 00:34.600
+Je vais simplement définir les langues sélectionnées sur toutes les langues disponibles par défaut.
+
+00:34.600 --> 00:44.800
+Si la méthode était post-à la place, je vais utiliser cette variable de requête que j'ai importée de Flask.
+
+00:44.800 --> 00:56.080
+Cette variable a un formulaire qui est joint au formulaire que j'ai utilisé pour soumettre à ce point de terminaison.
+
+00:56.080 --> 01:00.320
+Et il existe une méthode d'assistance sur cette liste appelée get list.
+
+01:00.320 --> 01:08.640
+Et cela me dit quel formulaire j'aimerais examiner.
+
+01:08.640 --> 01:17.760
+Maintenant, j'obtiens mes résultats de la méthode des dépôts avec la plupart des étoiles, tout comme je l'ai fait dans mon exercice final d'introduction à Python.
+
+01:17.760 --> 01:25.360
+Cette fois, au lieu de transmettre toutes les langues, je vais simplement transmettre celles sélectionnées par l'utilisateur.
+
+01:25.360 --> 01:28.400
+Ensuite, je vais rendre mon modèle.
+
+01:28.400 --> 01:37.120
+Ainsi, le premier argument du modèle de rendu est index.hgml.
+
+01:37.120 --> 01:40.160
+Nous examinerons ce modèle dans une seconde.
+
+01:40.160 --> 01:50.960
+Je précise également quelles langues ont été sélectionnées, de sorte que lorsque la page se recharge, les langues que nous avions cochées restent cochées.
+
+01:50.960 --> 01:59.760
+Et je transmets cette liste de toutes les langues disponibles, afin que les cases à cocher sachent si elles sont sélectionnées ou non.
+
+01:59.760 --> 02:07.680
+Et pour afficher la vérification activée ou désactivée, je suis enfin, je transmets simplement une variable supplémentaire au modèle.
+
+02:07.680 --> 02:12.480
+Et voici notre liste de résultats, qui contiennent ces instances d'obtention de son dépôt.
+
+02:12.480 --> 02:14.640
+Il y a une dernière chose qui se passe ici.
+
+02:14.640 --> 02:16.800
+J'utilise un autre décorateur.
+
+02:16.800 --> 02:19.680
+Celui-ci s’appelle le gestionnaire app.ir.
+
+02:20.240 --> 02:24.000
+Et à ce décorateur, je peux transmettre un type d'exception.
+
+02:25.600 --> 02:32.400
+Et fournissez simplement une seule méthode qui s’exécutera si cette classe d’exception se produit.
+
+02:32.400 --> 02:36.800
+Et ici, je vais afficher un autre type de modèle, error.hgml.
+
+02:36.800 --> 02:41.600
+Et le message sera simplement la représentation sous forme de chaîne de l'erreur.
+
+02:41.600 --> 02:44.800
+Jetons un coup d'œil au contenu de ces modèles.
+
+02:44.800 --> 02:54.400
+Tout d'abord, je vais ouvrir error.hgml à partir de mes fichiers d'exercices finaux, et nous verrons que je crée un lien vers un
+
+02:54.400 --> 03:04.320
+feuille de style. J'ai un div ici, mais le plus important est que je vais juste afficher le message
+
+03:04.320 --> 03:15.200
+cela s'est passé en une seconde. Permettez-moi de fermer certains de ces fichiers.
+
+03:15.200 --> 03:21.600
+Et je vais ouvrir mon app.py. Oups, ce n'est pas ce que je voulais. Désolé, une seconde.
+
+03:21.600 --> 03:31.280
+App.py est ici. Et je vais ouvrir mon fichier error.hml.
+
+03:31.280 --> 03:37.120
+D'accord, laissez-moi voir si je peux les afficher côte à côte avec ma taille de police actuelle.
+
+03:37.120 --> 03:43.520
+D'accord, je renvoie donc ici le modèle de rendu. Je transmets le message, qui est le
+
+03:43.520 --> 03:51.920
+exception qui a été levée. Et ici, dans mon modèle, je regarde ce message, et avec ces boucles
+
+03:51.920 --> 04:04.320
+les accolades l'impriment. D'accord, je vais maintenant ouvrir index.hgml à partir du modèle d'exercice final.
+
+04:04.320 --> 04:14.240
+répertoire. Et nous verrons que j'ai un titre ici, mais le corps est plutôt solide. Le corps de
+
+04:14.240 --> 04:24.160
+c'est assez court, assez facile à lire. Voici donc la forme d'action que je prends. j'utilise
+
+04:24.160 --> 04:35.760
+ceci est intégré et disponible dans les modèles. Et je demande l'index, l'URL de cet index
+
+04:35.760 --> 04:41.680
+méthode que j'ai créée ici. Je n'ai donc pas besoin de faire des choses bizarres avec les chemins. Et je suis
+
+04:41.680 --> 04:51.040
+en précisant dans mon formulaire que la méthode est post. Maintenant, vous vous souviendrez qu'ici, dans ma méthode d'indexation,
+
+04:52.800 --> 04:56.560
+Je rends un modèle et je transmets quelques éléments à ce modèle. Les sélectionnés
+
+04:56.560 --> 05:04.160
+langues, les langues disponibles et les résultats. Je vais donc parcourir chaque langue de mon
+
+05:04.160 --> 05:13.920
+langues disponibles. Et je vais le faire, je vais définir la valeur de la langue pour cette case à cocher
+
+05:13.920 --> 05:19.920
+de sorte que lorsque je soumets ce formulaire, je dispose de cette langue. Et puis je vais revenir
+
+05:19.920 --> 05:27.360
+vérifié. Je vais insérer ici vérifié si la langue est dans les langues sélectionnées. Sinon,
+
+05:27.360 --> 05:34.240
+la case va être décochée. Et enfin, je vais imprimer l'étiquette de la langue.
+
+05:34.240 --> 05:42.720
+Cela génère cette section ici. Enfin, j'ai juste un bouton de soumission. Rappelez-vous que pour
+
+05:42.720 --> 05:49.360
+modèles de la junte, je vais devoir mettre fin à ces quatre déclarations, car comme chacune
+
+05:49.360 --> 05:56.400
+canal, il y a cette balise d'ouverture et une balise de fermeture. Maintenant, je vais imprimer mon populaire
+
+05:56.400 --> 06:05.040
+faites-la proposer par des stars. Et tout ce que je fais ici, encore une fois, j'ai transmis les résultats à mon modèle.
+
+06:05.760 --> 06:10.720
+S'il n'y a aucun résultat, je ne veux pas me soucier du rendu du tableau. Ça va avoir l'air moche.
+
+06:10.720 --> 06:15.680
+Au lieu de cela, je vais simplement imprimer aucun résultat. Sinon, je vais imprimer le
+
+06:15.680 --> 06:23.680
+en-tête du tableau. Maintenant, je vais parcourir chaque résultat dans mes résultats. Et pour les données de table,
+
+06:23.680 --> 06:32.800
+Je vais extraire le nom du résultat, la langue du résultat et les résultats. nombre d'étoiles. Et c'est tout. C'est un
+
+06:32.800 --> 06:42.720
+Fichier index.hml de 60 lignes. Et c'est tout ce dont nous avons besoin pour générer ce site Web fonctionnel.
+
+06:45.760 --> 06:52.320
+C’est le genre de projet que vous pouvez facilement réaliser en un après-midi. Encore une chose que je veux
+
+06:52.400 --> 07:02.800
+pour vous montrer, j'ai écrit quelques tests unitaires simples pour mon application. J'ai également écrit quelques tests unitaires
+
+07:02.800 --> 07:08.800
+pour une application simple. Ces tests sont inclus dans le dépôt. Alors si tu veux,
+
+07:08.800 --> 07:14.800
+jetez-y un œil et exécutez-les, et assurons-nous que notre application fonctionne.

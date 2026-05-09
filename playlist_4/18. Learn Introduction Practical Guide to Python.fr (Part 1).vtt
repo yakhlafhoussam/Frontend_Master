@@ -70,7 +70,7 @@ invite à dire, hé, j'attends plus de commentaires ici.
 Dans le Ripple, vous pouvez simplement appuyer sur un onglet.
 
 01:47.120 --> 01:57.040
-Lorsque j'appuie à nouveau sur Entrée, le Ripple va dire : hé, j'attends toujours plus d'informations.
+Lorsque j'appuie à nouveau sur Entrée, le Ripple va dire : hé, j'attends toujours plus d'informations.
 
 01:57.040 --> 02:01.680
 Si vous avez fini de définir votre fonction à ce stade, vous pouvez simplement appuyer à nouveau sur Entrée
@@ -118,7 +118,7 @@ couleur. Vous pouvez rendre ce que vous voulez. Si vous souhaitez renvoyer plusi
 vous pouvez l'utiliser pour tirer. Maintenant, appelez des fonctions assez simples sans arguments.
 
 03:49.280 --> 03:52.960
-Comment commencer à créer des fonctions qui acceptent des arguments ?
+Comment commencer à créer des fonctions qui acceptent des arguments ?
 
 04:00.320 --> 04:05.120
 Nous définissons les arguments que nous voulons accepter en les séparant par des virgules,
@@ -199,7 +199,7 @@ Si j'essaie d'appeler cette fonction avec une seule valeur, j'obtiendrai une err
 C'est une erreur de type. Il indique qu'il manque un argument de position requis pour ajouter des nombres de y.
 
 08:01.920 --> 08:08.000
-Droite? Parce que j'ai passé une valeur pour ceci, mais pas pour cela. Et Python n'a pas de valeur par défaut
+Droite ? Parce que j'ai passé une valeur pour ceci, mais pas pour cela. Et Python n'a pas de valeur par défaut
 
 08:08.000 --> 08:10.480
 valeur pour cela. Je ne sais pas quoi faire.
@@ -226,158 +226,4 @@ les nombres d'étoiles sont les nombres d'étoiles et le tri est le tri.
 Maintenant, quand j'appelle ceci sans argument, j'obtiens JavaScript. Ou je peux simplement fournir la langue
 
 09:25.200 --> 09:35.680
-ou je peux simplement fournir le nombre d'étoiles ou n'importe quelle combinaison d'entre elles. Donc ces valeurs par défaut
-
-09:35.680 --> 09:45.200
-les arguments sont très, très utiles. Une chose que je veux aborder avant de passer aux arguments est
-
-09:46.480 --> 09:55.760
-quelque chose qui fait trébucher un peu les débutants et Python. N'utilisez pas de types mutables par défaut
-
-09:55.840 --> 09:59.520
-arguments. Ils ne se comportent pas comme prévu.
-
-10:06.720 --> 10:14.960
-Donc si j'ai une fonction et que je veux avoir un argument par défaut avec une liste.
-
-10:15.840 --> 10:32.480
-Et dites, ajoutez cette chaîne à ma liste. Quand je l'appelle, quand j'appelle cette fonction pour la première fois,
-
-10:33.760 --> 10:39.840
-oups. Désolé, je veux continuer et rendre cela.
-
-10:40.080 --> 10:47.920
-Pour que nous puissions réellement voir ce qui se passe. Quand je l'appelle pour la première fois,
-
-10:51.040 --> 10:57.280
-ça fait la bonne chose. Quand je l'appelle une deuxième fois, il y a maintenant deux exemples de choses dans ce
-
-10:57.280 --> 11:07.120
-liste, puis trois, puis quatre. Utilisez maintenant des arguments mutables pour les valeurs par défaut car le
-
-11:07.120 --> 11:13.840
-La façon dont Python fonctionne sous le capot est que ceux-ci sont déclarés une fois. Alors avec toi fais ça,
-
-11:13.840 --> 11:20.160
-vous allez continuer à utiliser cette même instance de ma liste. Chaque fois que vous appelez cette fonction,
-
-11:20.160 --> 11:28.800
-même si ce n'est pas ce que vous aviez l'intention de faire. C'est donc la source de beaucoup de subtilités
-
-11:28.800 --> 11:37.280
-bugs pour les débutants. Alors rappelez-vous, pas d'arguments par défaut mutables. La façon dont tu voudrais faire ça
-
-11:37.280 --> 11:51.120
-il s'agit plutôt d'avoir un espace réservé ici où vous utilisez une non-valeur comme espace réservé.
-
-11:53.520 --> 11:58.000
-Et je vais introduire quelques concepts dont nous n'avons pas encore parlé, mais vous pourrez alors simplement dire
-
-11:58.080 --> 12:07.200
-si j'ai réussi une liste, alors utilisez-la sinon vous pouvez dire, sinon ma liste, ce qui signifie
-
-12:08.640 --> 12:18.880
-si c'est le cas, si c'est le cas, je suis désolé, tu veux dire, si ma liste est égale à aucune, alors fais une nouvelle liste
-
-12:19.920 --> 12:23.440
-ici, puis ajoutez-y.
-
-12:28.000 --> 12:38.960
-Maintenant, quand j'appelle pour faire des trucs, il fera la bonne chose à chaque fois parce que j'ai pris soin de
-
-12:38.960 --> 12:45.440
-créer la liste dans cette fonction. Je n'ai pas passé une liste vide comme argument clavier.
-
-12:46.160 --> 12:49.920
-Vous souhaitez ajouter des éléments uniquement dans le cas où ma liste n'est pas le fichier ?
-
-12:50.960 --> 12:55.360
-Oui. Ouais, juste un petit exemple idiot.
-
-12:58.320 --> 13:06.640
-Donc, c'est vrai, je voudrais déplacer ceci vers la gauche pour que cet exemple fonctionne
-
-13:07.360 --> 13:14.080
-quand j'ai réussi une liste pour commencer. Bonne prise, merci.
-
-13:16.400 --> 13:24.320
-Cool. Ce sont donc des arguments et je veux parler un peu de la portée.
-
-13:25.120 --> 13:32.320
-Il y a une portée à l'intérieur d'une fonction. Alors je vais quitter mon
-
-13:32.320 --> 13:37.840
-Ripple et recommencez à zéro pour effacer tout ce que j'ai déjà pu définir.
-
-13:41.040 --> 13:48.080
-Si j'ai une fonction qui prend un nom et l'imprime,
-
-13:54.880 --> 14:02.320
-Je ne peux pas accéder à cette variable de nom en dehors de la fonction, en dehors de cela
-
-14:02.320 --> 14:08.240
-zone en retrait car le nom n'est défini qu'à l'intérieur de la fonction.
-
-14:08.240 --> 14:16.880
-Une fois la fonction terminée, cette variable n'existe plus. Ainsi, la portée Python fonctionne de manière assez similaire à
-
-14:16.880 --> 14:20.400
-portée et d’autres langues. C’est quelque chose dont vous voulez être conscient.
-
-14:24.640 --> 14:32.720
-Vous devez être très prudent lorsque vous utilisez des variables à l'intérieur d'une fonction définie
-
-14:32.720 --> 14:41.360
-en dehors car si vous essayez de changer la valeur de cette variable à l'intérieur de la fonction,
-
-14:41.360 --> 14:46.400
-la valeur ne s'appliquera que pour cette portée. Lorsque votre fonction se termine,
-
-14:47.120 --> 14:53.360
-vous n'allez pas réellement pouvoir modifier la valeur de la variable définie
-
-14:53.360 --> 14:58.720
-en dehors de la fonction. Cela peut entraîner des bugs subtils et étranges. Voici donc un exemple.
-
-14:59.040 --> 15:08.480
-Et je peux dire qu'il imprime le nom en dehors de la fonction.
-
-15:13.280 --> 15:17.520
-Et puis je vais créer une méthode qui dit d'essayer de changer le nom.
-
-15:20.240 --> 15:22.800
-Et je vais dire que le nom dans la fonction est max
-
-15:22.880 --> 15:35.840
-et imprimez les noms à l’intérieur de la fonction.
-
-15:36.480 --> 15:57.760
-Maintenant, si j'appelle cette méthode, essayez de changer de nom. Le nom à l'intérieur de la fonction est max,
-
-15:58.400 --> 16:07.280
-mais le nom en dehors de la fonction est toujours Nina. Alors, n'essayez pas de modifier les variables dans un
-
-16:07.280 --> 16:15.200
-fonction qui ont été déclarées en dehors de celle-ci. Vous y aurez accès, ce qui peut être utile
-
-16:15.200 --> 16:21.520
-si vous avez défini une variable globale qui ressemble à une URL ou quelque chose de statique,
-
-16:21.520 --> 16:26.640
-cela ne va pas changer, mais n'essayez pas de le mettre à jour. Tu vas te retrouver avec des trucs bizarres
-
-16:26.640 --> 16:39.040
-problèmes de portée. Et donc, un cas d'utilisation pour utiliser une variable dans une fonction décidée à
-
-16:39.040 --> 16:45.280
-trouver à l'extérieur est une constante. Et pour souligner que c'est une constante, dans ce cas,
-
-16:45.280 --> 16:53.920
-vous pouvez le nommer avec tous les caractères majuscules séparés par un trait de soulignement. Et c'est juste
-
-16:53.920 --> 16:59.520
-convention. Cela ne veut pas dire qu’il y a quelque chose de différent dans cette variable.
-
-16:59.520 --> 17:05.600
-Son nom est juste un peu différent afin de signifier quelque chose aux lecteurs du programme.
-
+ou je peux simplement fournir le nombre d'étoiles ou n'importe quelle combinaison d'entre elles.

@@ -1,0 +1,154 @@
+WEBVTT
+
+00:00.000 --> 00:09.520
+les arguments sont très, très utiles. Une chose que je veux aborder avant de passer aux arguments est
+
+00:10.800 --> 00:20.080
+quelque chose qui fait trébucher un peu les débutants et Python. N'utilisez pas de types mutables par défaut
+
+00:20.160 --> 00:23.840
+arguments. Ils ne se comportent pas comme prévu.
+
+00:31.200 --> 00:39.440
+Donc si j'ai une fonction et que je veux avoir un argument par défaut avec une liste.
+
+00:40.320 --> 00:56.960
+Et dites, ajoutez cette chaîne à ma liste. Quand je l'appelle, quand j'appelle cette fonction pour la première fois,
+
+00:58.240 --> 01:04.320
+oups. Désolé, je veux continuer et rendre cela.
+
+01:04.560 --> 01:12.400
+Pour que nous puissions réellement voir ce qui se passe. Quand je l'appelle pour la première fois,
+
+01:15.520 --> 01:21.760
+ça fait la bonne chose. Quand je l'appelle une deuxième fois, il y a maintenant deux exemples de choses dans ce
+
+01:21.760 --> 01:31.600
+liste, puis trois, puis quatre. Utilisez maintenant des arguments mutables pour les valeurs par défaut car le
+
+01:31.600 --> 01:38.320
+La façon dont Python fonctionne sous le capot est que ceux-ci sont déclarés une fois. Alors avec toi fais ça,
+
+01:38.320 --> 01:44.640
+vous allez continuer à utiliser cette même instance de ma liste. Chaque fois que vous appelez cette fonction,
+
+01:44.640 --> 01:53.280
+même si ce n'est pas ce que vous aviez l'intention de faire. C'est donc la source de beaucoup de subtilités
+
+01:53.280 --> 02:01.760
+bugs pour les débutants. Alors rappelez-vous, pas d'arguments par défaut mutables. La façon dont tu voudrais faire ça
+
+02:01.760 --> 02:15.600
+il s'agit plutôt d'avoir un espace réservé ici où vous utilisez une non-valeur comme espace réservé.
+
+02:18.000 --> 02:22.480
+Et je vais introduire quelques concepts dont nous n'avons pas encore parlé, mais vous pourrez alors simplement dire
+
+02:22.560 --> 02:31.680
+si j'ai réussi une liste, alors utilisez-la sinon vous pouvez dire, sinon ma liste, ce qui signifie
+
+02:33.120 --> 02:43.360
+si c'est le cas, si c'est le cas, je suis désolé, tu veux dire, si ma liste est égale à aucune, alors fais une nouvelle liste
+
+02:44.400 --> 02:47.920
+ici, puis ajoutez-y.
+
+02:52.480 --> 03:03.440
+Maintenant, quand j'appelle pour faire des trucs, il fera la bonne chose à chaque fois parce que j'ai pris soin de
+
+03:03.440 --> 03:09.920
+créer la liste dans cette fonction. Je n'ai pas passé une liste vide comme argument clavier.
+
+03:10.640 --> 03:15.040
+Vous souhaitez ajouter des éléments uniquement dans le cas où ma liste n'est pas le fichier ?
+
+03:16.080 --> 03:20.480
+Oui. Ouais, juste un petit exemple idiot.
+
+03:23.440 --> 03:31.760
+Donc, c'est vrai, je voudrais déplacer ceci vers la gauche pour que cet exemple fonctionne
+
+03:32.480 --> 03:39.200
+quand j'ai réussi une liste pour commencer. Bonne prise, merci.
+
+03:41.520 --> 03:49.440
+Cool. Ce sont donc des arguments et je veux parler un peu de la portée.
+
+03:50.240 --> 03:57.440
+Il y a une portée à l'intérieur d'une fonction. Alors je vais quitter mon
+
+03:57.440 --> 04:02.960
+Ripple et recommencez à zéro pour effacer tout ce que j'ai déjà pu définir.
+
+04:06.160 --> 04:13.200
+Si j'ai une fonction qui prend un nom et l'imprime,
+
+04:20.000 --> 04:27.440
+Je ne peux pas accéder à cette variable de nom en dehors de la fonction, en dehors de cela
+
+04:27.440 --> 04:33.360
+zone en retrait car le nom n'est défini qu'à l'intérieur de la fonction.
+
+04:33.360 --> 04:42.000
+Une fois la fonction terminée, cette variable n'existe plus. Ainsi, la portée Python fonctionne de manière assez similaire à
+
+04:42.000 --> 04:45.520
+portée et d’autres langues. C’est quelque chose dont vous voulez être conscient.
+
+04:49.760 --> 04:57.840
+Vous devez être très prudent lorsque vous utilisez des variables à l'intérieur d'une fonction définie
+
+04:57.840 --> 05:06.480
+en dehors car si vous essayez de changer la valeur de cette variable à l'intérieur de la fonction,
+
+05:06.480 --> 05:11.520
+la valeur ne s'appliquera que pour cette portée. Lorsque votre fonction se termine,
+
+05:12.240 --> 05:18.480
+vous n'allez pas réellement pouvoir modifier la valeur de la variable définie
+
+05:18.480 --> 05:23.840
+en dehors de la fonction. Cela peut entraîner des bugs subtils et étranges. Voici donc un exemple.
+
+05:24.160 --> 05:33.600
+Et je peux dire qu'il imprime le nom en dehors de la fonction.
+
+05:38.400 --> 05:42.640
+Et puis je vais créer une méthode qui dit d'essayer de changer le nom.
+
+05:45.360 --> 05:47.920
+Et je vais dire que le nom dans la fonction est max
+
+05:48.000 --> 06:00.960
+et imprimez les noms à l’intérieur de la fonction.
+
+06:01.600 --> 06:22.880
+Maintenant, si j'appelle cette méthode, essayez de changer de nom. Le nom à l'intérieur de la fonction est max,
+
+06:23.520 --> 06:32.400
+mais le nom en dehors de la fonction est toujours Nina. Alors, n'essayez pas de modifier les variables dans un
+
+06:32.400 --> 06:40.320
+fonction qui ont été déclarées en dehors de celle-ci. Vous y aurez accès, ce qui peut être utile
+
+06:40.320 --> 06:46.640
+si vous avez défini une variable globale qui ressemble à une URL ou quelque chose de statique,
+
+06:46.640 --> 06:51.760
+cela ne va pas changer, mais n'essayez pas de le mettre à jour. Tu vas te retrouver avec des trucs bizarres
+
+06:51.760 --> 07:04.160
+problèmes de portée. Et donc, un cas d'utilisation pour utiliser une variable dans une fonction décidée à
+
+07:04.160 --> 07:10.400
+trouver à l'extérieur est une constante. Et pour souligner que c'est une constante, dans ce cas,
+
+07:10.400 --> 07:19.040
+vous pouvez le nommer avec tous les caractères majuscules séparés par un trait de soulignement. Et c'est juste
+
+07:19.040 --> 07:24.640
+convention. Cela ne veut pas dire qu’il y a quelque chose de différent dans cette variable.
+
+07:24.640 --> 07:30.720
+Son nom est juste un peu différent afin de signifier quelque chose aux lecteurs du programme.
