@@ -2,341 +2,1246 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>DebuGGers · Vue & Python Mastery by HYK</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DebuGGers by HYK</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
         :root {
-            --primary: #42b883;
-            --primary-dark: #36976d;
             --vue: #42b883;
-            --python: #306998;
-            --gray-50: #f8fafc;
-            --gray-100: #f1f5f9;
-            --gray-200: #e2e8f0;
-            --gray-700: #334155;
-            --gray-800: #1e293b;
-            --gray-900: #0f172a;
-            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+            --vue-glow: rgba(66,184,131,0.18);
+            --vue-dark: #2d9466;
+            --python: #4584b6;
+            --python-glow: rgba(69,132,182,0.18);
+            --python-dark: #2d6a97;
+            --accent: #f9c846;
+            --surface: #ffffff;
+            --surface-2: #f5f7f9;
+            --surface-3: #edf0f4;
+            --border: #e4e8ef;
+            --border-strong: #c9d1dd;
+            --text-1: #111827;
+            --text-2: #4b5563;
+            --text-3: #9ca3af;
+            --active: var(--vue);
+            --active-glow: var(--vue-glow);
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --radius-lg: 20px;
+            --radius-xl: 28px;
+            --shadow-card: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.06);
+            --shadow-modal: 0 24px 80px rgba(0,0,0,0.18);
+            --nav-h: 68px;
+            --sidebar-w: 270px;
+            --transition: 0.18s cubic-bezier(.4,0,.2,1);
         }
-        body {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, var(--gray-50) 0%, var(--gray-100) 100%);
-            color: var(--gray-800);
-            min-height: 100vh;
-            transition: background 0.3s, color 0.3s;
-        }
+
         body.dark {
-            background: linear-gradient(135deg, #0f172a 0%, #0a0f18 100%);
-            color: #e2e8f0;
+            --surface: #161b27;
+            --surface-2: #1e2636;
+            --surface-3: #252e42;
+            --border: #2c3850;
+            --border-strong: #3a4a65;
+            --text-1: #f0f4f8;
+            --text-2: #9bafc6;
+            --text-3: #566a87;
+            --shadow-card: 0 1px 3px rgba(0,0,0,0.25), 0 4px 16px rgba(0,0,0,0.25);
         }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--surface-2);
+            color: var(--text-1);
+            min-height: 100vh;
+            line-height: 1.5;
+            transition: background var(--transition), color var(--transition);
+        }
+
+        /* ── NAVBAR ── */
         .navbar {
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            height: var(--nav-h);
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
             position: sticky;
             top: 0;
-            z-index: 1000;
-        }
-        body.dark .navbar { background: rgba(15, 23, 42, 0.98); border-bottom-color: rgba(255,255,255,0.05); }
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
+            z-index: 900;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            height: 72px;
-            flex-wrap: wrap;
+            padding: 0 1.5rem;
+            gap: 1rem;
+            transition: background var(--transition), border-color var(--transition);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+        .logo-mark {
+            width: 38px; height: 38px;
+            border-radius: var(--radius-sm);
+            background: var(--active);
+            display: grid;
+            place-items: center;
+            color: white;
+            font-size: 1rem;
+            box-shadow: 0 0 0 4px var(--active-glow);
+            transition: background var(--transition), box-shadow var(--transition);
+        }
+        .logo-text {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--text-1);
+            letter-spacing: -0.5px;
+        }
+        .logo-sub {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.6rem;
+            color: var(--text-3);
+            font-weight: 400;
+        }
+        .logo-stack { display: flex; flex-direction: column; line-height: 1.1; }
+
+        /* Tech switcher */
+        .tech-switcher {
+            display: flex;
+            gap: 4px;
+            background: var(--surface-2);
+            border: 1px solid var(--border);
+            border-radius: 40px;
+            padding: 4px;
+            margin-left: auto;
+        }
+        .tech-btn {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            padding: 0.4rem 1rem;
+            border-radius: 30px;
+            border: none;
+            background: transparent;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 600;
+            cursor: pointer;
+            color: var(--text-2);
+            transition: all var(--transition);
+            white-space: nowrap;
+        }
+        .tech-btn:hover:not(:disabled) { color: var(--text-1); }
+        .tech-btn.active.vue { background: var(--vue); color: #fff; box-shadow: 0 2px 12px rgba(66,184,131,0.35); }
+        .tech-btn.active.python { background: var(--python); color: #fff; box-shadow: 0 2px 12px rgba(69,132,182,0.35); }
+        .tech-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+        .soon-tag {
+            font-size: 0.52rem;
+            background: var(--surface-3);
+            border-radius: 20px;
+            padding: 1px 5px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: var(--text-3);
+        }
+
+        /* Nav right controls */
+        .nav-right { display: flex; align-items: center; gap: 8px; margin-left: 1rem; }
+        .lang-pill {
+            display: flex;
+            gap: 2px;
+            background: var(--surface-2);
+            border: 1px solid var(--border);
+            border-radius: 30px;
+            padding: 3px;
+        }
+        .lang-btn {
+            border: none;
+            background: transparent;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.65rem;
+            font-weight: 700;
+            padding: 0.3rem 0.65rem;
+            border-radius: 20px;
+            cursor: pointer;
+            color: var(--text-3);
+            transition: all var(--transition);
+        }
+        .lang-btn.active { background: var(--active); color: white; }
+
+        .icon-btn {
+            width: 36px; height: 36px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            background: var(--surface);
+            display: grid;
+            place-items: center;
+            cursor: pointer;
+            color: var(--text-2);
+            font-size: 0.9rem;
+            transition: all var(--transition);
+        }
+        .icon-btn:hover { background: var(--surface-3); color: var(--text-1); }
+
+        /* ── LAYOUT ── */
+        .main-layout {
+            display: flex;
+            max-width: 1480px;
+            margin: 0 auto;
+            padding: 1.25rem 1.25rem 3rem;
+            gap: 1.25rem;
+            align-items: flex-start;
+        }
+
+        /* ── SIDEBAR ── */
+        .sidebar {
+            width: var(--sidebar-w);
+            flex-shrink: 0;
+            position: sticky;
+            top: calc(var(--nav-h) + 1.25rem);
+            display: flex;
+            flex-direction: column;
             gap: 1rem;
         }
-        .logo { display: flex; align-items: center; gap: 12px; }
-        .logo-icon {
-            width: 42px; height: 42px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            border-radius: 12px;
+
+        .sidebar-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+        }
+
+        .sidebar-head {
+            padding: 0.9rem 1.1rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .sidebar-head-title {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--text-3);
+            font-weight: 700;
+        }
+
+        .playlist-list { padding: 0.5rem; }
+        .playlist-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 0.75rem 0.85rem;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: background var(--transition);
+            position: relative;
+        }
+        .playlist-item:hover { background: var(--surface-2); }
+        .playlist-item.active { background: var(--active-glow); }
+        .playlist-item.active .pl-name { color: var(--active); font-weight: 700; }
+
+        .pl-icon {
+            width: 34px; height: 34px;
+            border-radius: var(--radius-sm);
+            background: var(--surface-3);
+            display: grid;
+            place-items: center;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+            transition: background var(--transition);
+        }
+        .playlist-item.active .pl-icon { background: var(--active); color: white; }
+        .pl-name { font-size: 0.82rem; font-weight: 500; color: var(--text-1); line-height: 1.3; flex: 1; }
+        .pl-count {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.6rem;
+            background: var(--surface-3);
+            border-radius: 20px;
+            padding: 2px 8px;
+            color: var(--text-3);
+            font-weight: 700;
+        }
+        .playlist-item.active .pl-count { background: var(--active); color: white; }
+
+        /* Stats mini card */
+        .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+        .stat-cell {
+            padding: 0.9rem 1rem;
+            border-right: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+        .stat-cell:nth-child(2n) { border-right: none; }
+        .stat-cell:nth-last-child(-n+2) { border-bottom: none; }
+        .stat-num {
+            font-family: 'Space Mono', monospace;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--active);
+            line-height: 1;
+            margin-bottom: 3px;
+        }
+        .stat-label { font-size: 0.68rem; color: var(--text-3); font-weight: 500; }
+
+        /* ── CONTENT AREA ── */
+        .content-area { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 1.25rem; }
+
+        /* Hero */
+        .hero {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-xl);
+            padding: 1.5rem 1.75rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            overflow: hidden;
+            position: relative;
+            box-shadow: var(--shadow-card);
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -40px; right: -40px;
+            width: 200px; height: 200px;
+            border-radius: 50%;
+            background: var(--active-glow);
+            pointer-events: none;
+            transition: background var(--transition);
+        }
+
+        .hero-icon {
+            width: 56px; height: 56px;
+            border-radius: var(--radius-md);
+            background: var(--active);
+            display: grid;
+            place-items: center;
+            font-size: 1.6rem;
+            color: white;
+            flex-shrink: 0;
+            box-shadow: 0 4px 20px var(--active-glow);
+            transition: background var(--transition), box-shadow var(--transition);
+        }
+
+        .hero-text h2 {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--text-1);
+            letter-spacing: -0.5px;
+            margin-bottom: 4px;
+        }
+        .hero-text p { font-size: 0.82rem; color: var(--text-2); }
+
+        .hero-meta { margin-left: auto; display: flex; align-items: center; gap: 1rem; flex-shrink: 0; }
+
+        /* Progress ring */
+        .progress-ring-wrap {
+            display: flex; flex-direction: column; align-items: center; gap: 4px;
+        }
+        .progress-ring-svg { transform: rotate(-90deg); }
+        .ring-track { fill: none; stroke: var(--surface-3); stroke-width: 4; }
+        .ring-fill { fill: none; stroke: var(--active); stroke-width: 4; stroke-linecap: round; transition: stroke-dashoffset 0.6s cubic-bezier(.4,0,.2,1), stroke var(--transition); }
+        .ring-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.65rem;
+            color: var(--text-3);
+            text-align: center;
+        }
+        .ring-pct {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--active);
+            text-align: center;
+            margin-top: -2px;
+        }
+
+        .reset-btn {
+            display: flex; align-items: center; gap: 6px;
+            background: var(--surface-2);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 0.45rem 0.9rem;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            cursor: pointer;
+            color: var(--text-2);
+            transition: all var(--transition);
+        }
+        .reset-btn:hover { background: var(--surface-3); color: var(--text-1); }
+
+        /* ── VIDEO GRID ── */
+        .section-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+        }
+
+        .section-head {
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+        .section-head-left { display: flex; align-items: center; gap: 10px; }
+        .section-head-title { font-size: 0.95rem; font-weight: 700; color: var(--text-1); }
+        .section-count-tag {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.6rem;
+            font-weight: 700;
+            background: var(--surface-2);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2px 9px;
+            color: var(--text-3);
+        }
+
+        .dl-all-btn {
+            display: flex; align-items: center; gap: 6px;
+            background: var(--surface-2);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 0.4rem 0.85rem;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 600;
+            cursor: pointer;
+            color: var(--text-2);
+            transition: all var(--transition);
+        }
+        .dl-all-btn:hover { background: var(--active); border-color: var(--active); color: white; }
+
+        /* Search bar */
+        .search-bar-wrap {
+            padding: 0.75rem 1.25rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .search-bar {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--surface-2);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 0.5rem 0.9rem;
+            transition: border-color var(--transition);
+        }
+        .search-bar:focus-within { border-color: var(--active); }
+        .search-bar i { color: var(--text-3); font-size: 0.8rem; }
+        .search-input {
+            flex: 1; border: none; background: transparent;
+            font-family: 'DM Sans', sans-serif; font-size: 0.82rem; color: var(--text-1);
+            outline: none;
+        }
+        .search-input::placeholder { color: var(--text-3); }
+
+        /* Filter chips */
+        .filter-row {
+            display: flex; gap: 6px; align-items: center;
+            padding: 0.6rem 1.25rem;
+            border-bottom: 1px solid var(--border);
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+        .filter-row::-webkit-scrollbar { display: none; }
+        .filter-chip {
+            display: flex; align-items: center; gap: 5px;
+            padding: 0.3rem 0.8rem;
+            border-radius: 30px;
+            border: 1px solid var(--border);
+            background: var(--surface);
+            font-size: 0.72rem;
+            font-weight: 600;
+            cursor: pointer;
+            color: var(--text-2);
+            white-space: nowrap;
+            transition: all var(--transition);
+        }
+        .filter-chip:hover { border-color: var(--active); color: var(--active); }
+        .filter-chip.active { background: var(--active); border-color: var(--active); color: white; }
+
+        /* Video grid */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+            gap: 1px;
+            background: var(--border);
+        }
+
+        .video-card {
+            background: var(--surface);
+            cursor: pointer;
+            transition: background var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+        .video-card:hover { background: var(--surface-2); }
+        .video-card.completed .vid-title { color: var(--active); }
+
+        .vid-thumb {
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, #0d1b2a 0%, #1a3a2a 100%);
+            position: relative;
+            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.3rem;
+        }
+        .vid-thumb-bg {
+            position: absolute; inset: 0;
+            opacity: 0.3;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 8px,
+                rgba(255,255,255,0.04) 8px,
+                rgba(255,255,255,0.04) 9px
+            );
+        }
+        .vid-tech-icon {
+            font-size: 2.4rem;
+            opacity: 0.15;
             color: white;
+            transition: opacity var(--transition), transform var(--transition);
         }
-        .logo h1 { font-size: 1.5rem; font-weight: 700; background: linear-gradient(135deg, var(--primary), var(--primary-dark)); -webkit-background-clip: text; background-clip: text; color: transparent; }
-        .creator-badge { font-size: 0.65rem; background: var(--gray-200); padding: 0.2rem 0.6rem; border-radius: 30px; margin-left: 8px; color: var(--gray-700); }
-        body.dark .creator-badge { background: #334155; color: #cbd5e1; }
-        
-        .tech-switcher { display: flex; gap: 0.5rem; background: var(--gray-100); padding: 0.25rem; border-radius: 48px; }
-        body.dark .tech-switcher { background: #1e293b; }
-        .tech-btn {
-            display: flex; align-items: center; gap: 8px; padding: 0.5rem 1.2rem; border-radius: 40px;
-            font-size: 0.85rem; font-weight: 600; cursor: pointer; background: transparent; border: none;
-            font-family: inherit; color: var(--gray-700); transition: 0.2s;
+        .video-card:hover .vid-tech-icon { opacity: 0.25; transform: scale(1.05); }
+        .vid-overlay {
+            position: absolute; inset: 0;
+            background: rgba(0,0,0,0);
+            display: flex; align-items: center; justify-content: center;
+            transition: background var(--transition);
         }
-        body.dark .tech-btn { color: #ffffff; }
-        .tech-btn.active { background: var(--primary); color: white; }
-        .tech-btn.vue.active { background: var(--vue); }
-        .tech-btn.python.active { background: var(--python); }
-        .tech-btn.coming-soon { opacity: 0.7; cursor: not-allowed; }
-        .tech-btn.coming-soon:hover::after {
-            content: "Coming Soon"; position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%);
-            background: var(--gray-800); color: white; padding: 4px 10px; border-radius: 20px; font-size: 0.7rem;
+        .video-card:hover .vid-overlay { background: rgba(0,0,0,0.4); }
+        .play-btn-wrap { opacity: 0; transform: scale(0.8); transition: all var(--transition); }
+        .video-card:hover .play-btn-wrap { opacity: 1; transform: scale(1); }
+        .play-circle {
+            width: 44px; height: 44px;
+            border-radius: 50%;
+            background: var(--active);
+            display: grid;
+            place-items: center;
+            color: white;
+            font-size: 0.9rem;
+            box-shadow: 0 0 0 8px rgba(255,255,255,0.15);
         }
-        .nav-controls { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
-        .subtitle-selector { display: flex; gap: 0.25rem; background: var(--gray-100); padding: 0.25rem; border-radius: 40px; }
-        body.dark .subtitle-selector { background: #1e293b; }
-        .subtitle-option {
-            background: transparent; border: none; padding: 0.4rem 0.9rem; border-radius: 32px;
-            cursor: pointer; font-weight: 600; font-size: 0.7rem; color: var(--gray-700);
+        .vid-num-badge {
+            position: absolute;
+            top: 8px; left: 8px;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.6rem;
+            font-weight: 700;
+            background: rgba(0,0,0,0.6);
+            color: rgba(255,255,255,0.8);
+            border-radius: 6px;
+            padding: 2px 7px;
+            backdrop-filter: blur(4px);
         }
-        .subtitle-option.active { background: var(--primary); color: white; }
-        .theme-toggle { background: var(--gray-200); border: none; padding: 0.5rem; border-radius: 50%; width: 38px; height: 38px; cursor: pointer; }
-        body.dark .theme-toggle { background: #334155; color: #fbbf24; }
-        
-        .main-layout { max-width: 1400px; margin: 0 auto; padding: 1.5rem; display: flex; gap: 1.5rem; }
-        .sidebar {
-            width: 280px; flex-shrink: 0; background: white; border-radius: 1rem; padding: 1.2rem;
-            height: fit-content; position: sticky; top: 88px; border: 1px solid var(--gray-200);
+        .vid-done-badge {
+            position: absolute;
+            top: 8px; right: 8px;
+            width: 22px; height: 22px;
+            border-radius: 50%;
+            background: var(--active);
+            display: grid;
+            place-items: center;
+            color: white;
+            font-size: 0.65rem;
+            display: none;
         }
-        body.dark .sidebar { background: #1e293b; border-color: #334155; }
-        .sidebar-header { display: flex; align-items: center; gap: 8px; margin-bottom: 1.2rem; padding-bottom: 0.75rem; border-bottom: 2px solid var(--primary); }
-        .playlist-nav { list-style: none; }
-        .playlist-nav-item {
-            padding: 0.75rem 0.9rem; margin-bottom: 0.4rem; border-radius: 0.6rem; cursor: pointer;
-            display: flex; align-items: center; gap: 12px; font-size: 0.85rem; font-weight: 500;
-            transition: 0.2s;
+        .video-card.completed .vid-done-badge { display: grid; }
+
+        .vid-body { padding: 0.75rem 0.9rem; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+        .vid-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-1);
+            line-height: 1.35;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
-        .playlist-nav-item:hover { background: var(--gray-100); }
-        body.dark .playlist-nav-item:hover { background: #334155; }
-        .playlist-nav-item.active { background: var(--primary); color: white; }
-        .playlist-nav-item .count-badge { margin-left: auto; font-size: 0.65rem; background: var(--gray-200); padding: 2px 8px; border-radius: 30px; }
-        
-        .content-area { flex: 1; min-width: 0; }
-        .hero-section {
-            background: linear-gradient(135deg, rgba(66,184,131,0.08), rgba(66,184,131,0.03));
-            border-radius: 1.2rem; padding: 1.5rem; margin-bottom: 1.5rem;
-            border: 1px solid rgba(66,184,131,0.15);
+        .vid-meta { display: flex; align-items: center; gap: 6px; margin-top: auto; }
+        .vid-tag {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.58rem;
+            color: var(--text-3);
+            background: var(--surface-2);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 1px 6px;
         }
-        .progress-wrapper {
-            background: white; border-radius: 1rem; padding: 1rem 1.2rem; margin-bottom: 1.5rem;
-            display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;
-            border: 1px solid var(--gray-200);
+        .vid-tag.has { color: var(--active); border-color: var(--active); background: var(--active-glow); }
+        .vid-mark-btn {
+            margin-left: auto;
+            display: flex; align-items: center; gap: 4px;
+            border: none;
+            background: transparent;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.68rem;
+            font-weight: 600;
+            cursor: pointer;
+            color: var(--text-3);
+            padding: 3px 6px;
+            border-radius: 6px;
+            transition: all var(--transition);
         }
-        body.dark .progress-wrapper { background: #1e293b; }
-        .progress-circle { width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; background: conic-gradient(var(--primary) 0deg, var(--gray-200) 0deg); }
-        .reset-btn { background: var(--gray-200); border: none; padding: 0.45rem 1rem; border-radius: 40px; cursor: pointer; font-size: 0.75rem; display: flex; align-items: center; gap: 6px; }
-        
-        .playlist-card { background: white; border-radius: 1rem; overflow: hidden; border: 1px solid var(--gray-200); display: none; }
-        .playlist-card.active-playlist { display: block; }
-        body.dark .playlist-card { background: #1e293b; }
-        .playlist-card-header { padding: 1rem 1.2rem; background: rgba(0,0,0,0.02); border-bottom: 1px solid var(--gray-200); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.8rem; }
-        .download-playlist { background: var(--gray-200); border: none; padding: 0.4rem 1rem; border-radius: 40px; cursor: pointer; font-size: 0.7rem; display: flex; align-items: center; gap: 6px; }
-        .download-playlist:hover { background: var(--primary); color: white; }
-        .video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 1rem; padding: 1.2rem; }
-        .video-card { background: white; border-radius: 0.8rem; overflow: hidden; border: 1px solid var(--gray-200); cursor: pointer; transition: 0.2s; }
-        body.dark .video-card { background: #0f172a; }
-        .video-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
-        .video-card.completed { border-left: 3px solid var(--primary); }
-        .video-thumb { aspect-ratio: 16/9; background: linear-gradient(135deg, #1a472a, #0d2818); display: flex; align-items: center; justify-content: center; position: relative; }
-        .play-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; opacity: 0; transition: 0.2s; }
-        .video-thumb:hover .play-overlay { opacity: 1; }
-        .play-icon { width: 42px; height: 42px; background: rgba(0,0,0,0.75); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; }
-        .video-info { padding: 0.8rem; }
-        .video-title { font-weight: 600; font-size: 0.75rem; display: flex; justify-content: space-between; margin-bottom: 6px; }
-        .lesson-num { background: var(--gray-200); padding: 2px 8px; border-radius: 20px; font-size: 0.6rem; }
-        .mark-btn { background: none; border: none; font-size: 0.65rem; cursor: pointer; padding: 4px 8px; border-radius: 20px; display: flex; align-items: center; gap: 5px; color: var(--gray-700); }
-        .mark-btn.completed { color: var(--primary); }
-        
-        .modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.96); backdrop-filter: blur(12px); z-index: 2000; display: none; justify-content: center; align-items: center; }
-        .modal-content { background: white; border-radius: 1.2rem; max-width: 1000px; width: 90%; max-height: 85vh; overflow-y: auto; }
-        body.dark .modal-content { background: #1e293b; }
-        .modal-video video { width: 100%; max-height: 48vh; background: black; }
-        .modal-footer { padding: 1.2rem; }
-        .video-controls { display: flex; gap: 0.8rem; align-items: center; flex-wrap: wrap; margin-bottom: 1rem; padding-bottom: 0.8rem; border-bottom: 1px solid var(--gray-200); }
-        .speed-control { display: flex; align-items: center; gap: 6px; background: var(--gray-100); padding: 0.3rem 0.8rem; border-radius: 40px; }
-        .speed-btn { background: transparent; border: none; padding: 0.2rem 0.6rem; border-radius: 20px; cursor: pointer; font-size: 0.7rem; font-weight: 600; }
-        .speed-btn.active { background: var(--primary); color: white; }
-        .resume-badge { background: var(--primary); color: white; font-size: 0.7rem; padding: 0.2rem 0.6rem; border-radius: 20px; }
-        .notes-section { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--gray-200); }
-        .note-textarea { width: 100%; padding: 10px; border-radius: 10px; border: 1px solid var(--gray-200); background: var(--gray-50); font-family: inherit; font-size: 0.8rem; resize: vertical; }
-        body.dark .note-textarea { background: #0f172a; border-color: #334155; color: white; }
-        .modal-actions { display: flex; gap: 0.6rem; margin-top: 1rem; flex-wrap: wrap; }
-        .toast { position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%); background: var(--gray-800); color: white; padding: 0.6rem 1.2rem; border-radius: 40px; font-size: 0.8rem; z-index: 3000; animation: slideUp 0.3s ease; }
-        @keyframes slideUp { from { opacity: 0; transform: translateX(-50%) translateY(20px); } to { opacity: 1; transform: translateX(-50%) translateY(0); } }
-        @media (max-width: 768px) { .main-layout { flex-direction: column; } .sidebar { width: 100%; position: relative; top: 0; } .nav-container { flex-direction: column; height: auto; } }
+        .vid-mark-btn:hover, .video-card.completed .vid-mark-btn { color: var(--active); }
+
+        /* ── MODAL ── */
+        .modal {
+            position: fixed; inset: 0;
+            background: rgba(0,0,0,0.88);
+            backdrop-filter: blur(16px);
+            z-index: 1000;
+            display: none;
+            place-items: center;
+            padding: 1rem;
+        }
+        .modal.open { display: grid; }
+
+        .modal-inner {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-xl);
+            width: 100%;
+            max-width: 920px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: var(--shadow-modal);
+            animation: modalIn 0.22s cubic-bezier(.4,0,.2,1);
+        }
+        @keyframes modalIn {
+            from { opacity: 0; transform: scale(0.96) translateY(12px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        .modal-video-wrap {
+            background: #000;
+            border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+            overflow: hidden;
+            line-height: 0;
+        }
+        .modal-video-wrap video { width: 100%; max-height: 50vh; display: block; }
+
+        .modal-body { padding: 1.25rem 1.5rem; }
+
+        .modal-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }
+        .modal-title { font-size: 1rem; font-weight: 700; color: var(--text-1); }
+        .modal-close {
+            width: 32px; height: 32px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: var(--surface-2);
+            display: grid; place-items: center;
+            cursor: pointer;
+            color: var(--text-2);
+            font-size: 0.85rem;
+            flex-shrink: 0;
+            transition: all var(--transition);
+        }
+        .modal-close:hover { background: var(--surface-3); color: var(--text-1); }
+
+        .modal-controls-row {
+            display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center;
+            padding: 0.85rem 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 1rem;
+        }
+
+        .speed-group {
+            display: flex; align-items: center; gap: 4px;
+            background: var(--surface-2);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 3px;
+        }
+        .speed-label { font-size: 0.65rem; font-weight: 700; color: var(--text-3); padding: 0 6px; text-transform: uppercase; letter-spacing: 0.5px; font-family: 'Space Mono', monospace; }
+        .spd-btn {
+            border: none;
+            background: transparent;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.65rem;
+            font-weight: 700;
+            padding: 0.28rem 0.6rem;
+            border-radius: 5px;
+            cursor: pointer;
+            color: var(--text-3);
+            transition: all var(--transition);
+        }
+        .spd-btn.active { background: var(--active); color: white; }
+        .spd-btn:hover:not(.active) { color: var(--text-1); }
+
+        .resume-chip {
+            display: flex; align-items: center; gap: 5px;
+            background: var(--active-glow);
+            border: 1px solid var(--active);
+            border-radius: 20px;
+            padding: 0.28rem 0.75rem;
+            font-size: 0.68rem;
+            font-weight: 600;
+            color: var(--active);
+        }
+
+        .notes-label {
+            display: flex; align-items: center; gap: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-2);
+            margin-bottom: 0.5rem;
+        }
+        .notes-ta {
+            width: 100%;
+            background: var(--surface-2);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 0.75rem 1rem;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.8rem;
+            color: var(--text-1);
+            resize: vertical;
+            min-height: 80px;
+            outline: none;
+            transition: border-color var(--transition);
+        }
+        .notes-ta:focus { border-color: var(--active); }
+        .notes-ta::placeholder { color: var(--text-3); }
+
+        .modal-actions {
+            display: flex; gap: 0.6rem; margin-top: 1rem; flex-wrap: wrap;
+        }
+        .modal-btn {
+            display: flex; align-items: center; gap: 7px;
+            padding: 0.55rem 1.1rem;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border);
+            background: var(--surface-2);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.78rem;
+            font-weight: 600;
+            cursor: pointer;
+            color: var(--text-2);
+            transition: all var(--transition);
+        }
+        .modal-btn:hover { background: var(--surface-3); color: var(--text-1); }
+        .modal-btn.primary { background: var(--active); border-color: var(--active); color: white; box-shadow: 0 2px 12px var(--active-glow); }
+        .modal-btn.primary:hover { filter: brightness(1.1); }
+
+        /* ── TOAST ── */
+        .toast-container { position: fixed; bottom: 1.5rem; left: 50%; transform: translateX(-50%); z-index: 2000; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+        .toast {
+            background: var(--text-1);
+            color: var(--surface);
+            padding: 0.55rem 1.1rem;
+            border-radius: 30px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            white-space: nowrap;
+            box-shadow: var(--shadow-modal);
+            animation: toastIn 0.2s ease;
+        }
+        @keyframes toastIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 900px) {
+            .main-layout { flex-direction: column; }
+            .sidebar { width: 100%; position: static; }
+            .stats-grid { grid-template-columns: repeat(4, 1fr); }
+            .stat-cell:nth-child(n) { border-bottom: none; }
+            .stat-cell:nth-child(2) { border-right: 1px solid var(--border); }
+            .stat-cell:nth-child(3) { border-right: 1px solid var(--border); }
+        }
+        @media (max-width: 640px) {
+            .navbar { flex-wrap: wrap; height: auto; padding: 0.75rem 1rem; }
+            .tech-switcher { margin-left: 0; }
+            .hero { flex-direction: column; align-items: flex-start; gap: 1rem; }
+            .hero-meta { margin-left: 0; }
+            .video-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 400px) {
+            .video-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
-    <nav class="navbar"><div class="nav-container">
-        <div class="logo"><div class="logo-icon"><i class="fas fa-bug"></i></div><h1>DebuGGers <span class="creator-badge">by HYK</span></h1></div>
-        <div class="tech-switcher">
-            <button class="tech-btn vue active" data-tech="vue"><i class="fab fa-vuejs"></i> Vue.js</button>
-            <button class="tech-btn python" data-tech="python"><i class="fab fa-python"></i> Python</button>
-            <button class="tech-btn coming-soon" disabled><i class="fab fa-react"></i> React <span style="font-size:0.6rem;">soon</span></button>
-            <button class="tech-btn coming-soon" disabled><i class="fab fa-angular"></i> Angular <span style="font-size:0.6rem;">soon</span></button>
-        </div>
-        <div class="nav-controls">
-            <div class="subtitle-selector">
-                <button class="subtitle-option active" data-lang="off">Off</button>
-                <button class="subtitle-option" data-lang="en">EN</button>
-                <button class="subtitle-option" data-lang="fr">FR</button>
-                <button class="subtitle-option" data-lang="ar">AR</button>
-            </div>
-            <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button>
-        </div>
-    </div></nav>
 
-    <div class="main-layout">
-        <aside class="sidebar"><div class="sidebar-header"><i class="fas fa-layer-group"></i><h3>COURSE PLAYLISTS</h3></div><ul class="playlist-nav" id="playlistNav"></ul></aside>
-        <div class="content-area" id="contentArea"></div>
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="logo">
+        <div class="logo-mark"><i class="fas fa-bug"></i></div>
+        <div class="logo-stack">
+            <span class="logo-text">DebuGGers</span>
+            <span class="logo-sub">by HYK</span>
+        </div>
     </div>
 
-    <div id="videoModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-video"><video id="modalVideo" controls crossorigin="anonymous" preload="metadata"></video></div>
-            <div class="modal-footer">
-                <div id="modalTitle" style="font-weight:700; margin-bottom:0.5rem;"></div>
-                <div class="video-controls">
-                    <div class="speed-control"><i class="fas fa-tachometer-alt"></i><span style="font-size:0.7rem;">Speed:</span>
-                        <button class="speed-btn" data-speed="0.5">0.5x</button>
-                        <button class="speed-btn" data-speed="0.75">0.75x</button>
-                        <button class="speed-btn active" data-speed="1">1x</button>
-                        <button class="speed-btn" data-speed="1.25">1.25x</button>
-                        <button class="speed-btn" data-speed="1.5">1.5x</button>
-                        <button class="speed-btn" data-speed="2">2x</button>
+    <div class="tech-switcher">
+        <button class="tech-btn vue active" data-tech="vue"><i class="fab fa-vuejs"></i> Vue.js</button>
+        <button class="tech-btn python" data-tech="python"><i class="fab fa-python"></i> Python</button>
+        <button class="tech-btn" disabled><i class="fab fa-react"></i> React <span class="soon-tag">soon</span></button>
+        <button class="tech-btn" disabled><i class="fab fa-angular"></i> Angular <span class="soon-tag">soon</span></button>
+    </div>
+
+    <div class="nav-right">
+        <div class="lang-pill">
+            <button class="lang-btn active" data-lang="off">Off</button>
+            <button class="lang-btn" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="fr">FR</button>
+            <button class="lang-btn" data-lang="ar">AR</button>
+        </div>
+        <button class="icon-btn" id="themeToggle" title="Toggle theme"><i class="fas fa-moon"></i></button>
+    </div>
+</nav>
+
+<!-- MAIN LAYOUT -->
+<div class="main-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="sidebar-card">
+            <div class="sidebar-head">
+                <i class="fas fa-layer-group" style="color:var(--active); font-size:0.75rem;"></i>
+                <span class="sidebar-head-title">Course Playlists</span>
+            </div>
+            <div class="playlist-list" id="playlistNav"></div>
+        </div>
+
+        <div class="sidebar-card">
+            <div class="stats-grid" id="statsGrid">
+                <div class="stat-cell"><div class="stat-num" id="statTotal">—</div><div class="stat-label">Total Lessons</div></div>
+                <div class="stat-cell"><div class="stat-num" id="statDone">—</div><div class="stat-label">Completed</div></div>
+                <div class="stat-cell"><div class="stat-num" id="statNotes">—</div><div class="stat-label">Notes Saved</div></div>
+                <div class="stat-cell"><div class="stat-num" id="statPct">—</div><div class="stat-label">Progress</div></div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- CONTENT AREA -->
+    <div class="content-area" id="contentArea"></div>
+</div>
+
+<!-- VIDEO MODAL -->
+<div id="videoModal" class="modal">
+    <div class="modal-inner">
+        <div class="modal-video-wrap">
+            <video id="modalVideo" controls crossorigin="anonymous" preload="metadata"></video>
+        </div>
+        <div class="modal-body">
+            <div class="modal-top">
+                <div class="modal-title" id="modalTitle"></div>
+                <button class="modal-close" id="modalCloseBtn"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-controls-row">
+                <div class="speed-group">
+                    <span class="speed-label">Speed</span>
+                    <button class="spd-btn" data-speed="0.5">0.5×</button>
+                    <button class="spd-btn" data-speed="0.75">0.75×</button>
+                    <button class="spd-btn active" data-speed="1">1×</button>
+                    <button class="spd-btn" data-speed="1.25">1.25×</button>
+                    <button class="spd-btn" data-speed="1.5">1.5×</button>
+                    <button class="spd-btn" data-speed="2">2×</button>
+                </div>
+                <div id="resumeChip" class="resume-chip" style="display:none;">
+                    <i class="fas fa-history"></i> Resuming from last position
+                </div>
+            </div>
+            <div style="margin-bottom:1rem;">
+                <div class="notes-label"><i class="fas fa-pen"></i> Personal Notes</div>
+                <textarea id="videoNote" class="notes-ta" rows="3" placeholder="Write your notes about this lesson…"></textarea>
+            </div>
+            <div class="modal-actions">
+                <button class="modal-btn primary" id="modalCompleteBtn"><i class="fas fa-check-circle"></i> Mark Complete</button>
+                <button class="modal-btn" id="modalDownloadBtn"><i class="fas fa-download"></i> Download</button>
+                <button class="modal-btn" id="modalCloseBtn2"><i class="fas fa-times"></i> Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+
+<script>
+/* ─── DATA ─── */
+function mkVid(id, num, title, base) {
+    return { id, num, title, mp4:`${base}.mp4`, vttEn:`${base}.vtt`, vttFr:`${base}.fr.vtt`, vttAr:`${base}.ar.vtt` };
+}
+
+const vuePlaylist1 = Array.from({length:50},(_,i)=>mkVid(`vue1_${i+1}`, i+1, `Vue 3 Fundamentals — Lesson ${i+1}`, `./playlist_1/${i+1}. Learn Introduction Vue 3 Fundamentals`));
+const vuePlaylist2 = Array.from({length:26},(_,i)=>mkVid(`vue2_${i+1}`, i+1, `Composition API & Slots — Lesson ${i+1}`, `./playlist_2/${i+1}. Learn Introduction Intermediate Vue Composition API Slots State`));
+const p3bases = ["1. Learn Introduction TypeScript and Vue 3","2. Learn Introduction TypeScript and Vue 3","3. Learn Introduction TypeScript and Vue 3","4. Learn Introduction TypeScript and Vue 3","5. Learn Introduction TypeScript and Vue 3","6. Learn Introduction TypeScript and Vue 3","7. Learn Introduction TypeScript and Vue 3","8. Learn Introduction TypeScript and Vue 3","9. Learn Introduction TypeScript and Vue 3","9. Learn Introduction TypeScript and Vue 3-00.00.00.000-00.08.56.293-seg1","9. Learn Introduction TypeScript and Vue 3-00.08.56.293-00.17.47.733-seg2","10. Learn Introduction TypeScript and Vue 3","11. Learn Introduction TypeScript and Vue 3","12. Learn Introduction TypeScript and Vue 3","13. Learn Introduction TypeScript and Vue 3","14. Learn Introduction TypeScript and Vue 3","15. Learn Introduction TypeScript and Vue 3","16. Learn Introduction TypeScript and Vue 3","17. Learn Introduction TypeScript and Vue 3","18. Learn Introduction TypeScript and Vue 3","19. Learn Introduction TypeScript and Vue 3","20. Learn Introduction TypeScript and Vue 3","10. Learn Refactoring Options API Methods TypeScript and Vue 3","11. Learn Refactoring Options API Methods TypeScript and Vue 3","12. Learn Refactoring Options API Methods TypeScript and Vue 3","13. Learn Refactoring Options API Methods TypeScript and Vue 3","14. Learn Refactoring Options API Methods TypeScript and Vue 3","15. Learn Refactoring Options API Methods TypeScript and Vue 3","16. Learn Refactoring Options API Methods TypeScript and Vue 3","17. Learn Refactoring Options API Methods TypeScript and Vue 3","18. Learn Refactoring Options API Methods TypeScript and Vue 3","19. Learn Refactoring Options API Methods TypeScript and Vue 3","20. Learn Refactoring Options API Methods TypeScript and Vue 3","21. Learn Introduction TypeScript and Vue 3","22. Learn Introduction TypeScript and Vue 3","23. Learn Introduction TypeScript and Vue 3","24. Learn Introduction TypeScript and Vue 3","25. Learn Introduction TypeScript and Vue 3","26. Learn Introduction TypeScript and Vue 3","27. Learn Introduction TypeScript and Vue 3","28. Learn Introduction TypeScript and Vue 3","29. Learn Introduction TypeScript and Vue 3"];
+const vuePlaylist3 = p3bases.map((b,i)=>{
+    let t = b.includes("Refactoring")?"Refactoring Options API":b.includes("seg1")?"TypeScript+Vue Pt.1":b.includes("seg2")?"TypeScript+Vue Pt.2":`TypeScript+Vue — Lesson ${b.split('.')[0]}`;
+    return mkVid(`vue3_${i+1}`, i+1, t, `./playlist_3/${b}`);
+});
+const p4nums = [1,2,3,4,5,6,7,8,9,10,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,45,46];
+const pythonPlaylist4 = p4nums.map(n=>mkVid(`py4_${n}`, n, `Python Core — Lesson ${n}`, `./playlist_4/${n}. Learn Introduction Practical Guide to Python`));
+const pythonPlaylist5 = Array.from({length:48},(_,i)=>mkVid(`py5_${i+1}`, i+1, `Intermediate Python — Lesson ${i+1}`, `./playlist_5/${i+1}. Learn Introduction Prerequisites Intermediate Python`));
+
+/* ─── STATE ─── */
+let completedVideos = new Set();
+let videoNotes = {};
+let videoProgress = {};
+let currentSubLang = 'off';
+let currentTech = 'vue';
+let currentPlaylistId = 'vue_playlist1';
+let currentVideoEl = null;
+let currentVideoData = null;
+let searchQuery = '';
+let filterMode = 'all'; // all | completed | pending | notes
+
+function getPlaylists() {
+    return currentTech === 'vue'
+        ? [{id:'vue_playlist1', name:'Playlist 1: Vue 3 Fundamentals', icon:'fa-vuejs', videos:vuePlaylist1},
+           {id:'vue_playlist2', name:'Playlist 2: Composition API', icon:'fa-vuejs', videos:vuePlaylist2},
+           {id:'vue_playlist3', name:'Playlist 3: TypeScript + Advanced', icon:'fa-vuejs', videos:vuePlaylist3}]
+        : [{id:'python_playlist4', name:'Playlist 4: Core Python', icon:'fa-python', videos:pythonPlaylist4},
+           {id:'python_playlist5', name:'Playlist 5: Intermediate Python', icon:'fa-python', videos:pythonPlaylist5}];
+}
+function getCurrentPlaylist() { return getPlaylists().find(p=>p.id===currentPlaylistId); }
+
+/* ─── STORAGE ─── */
+function loadData() {
+    try {
+        const c = localStorage.getItem('dg_completed'); if(c) completedVideos = new Set(JSON.parse(c));
+        const n = localStorage.getItem('dg_notes'); if(n) videoNotes = JSON.parse(n);
+        const p = localStorage.getItem('dg_progress'); if(p) videoProgress = JSON.parse(p);
+        const l = localStorage.getItem('dg_lang'); if(l) currentSubLang = l;
+        if(localStorage.getItem('dg_dark')==='true') document.body.classList.add('dark');
+    } catch(e) {}
+    syncSubUI(); syncThemeIcon();
+}
+function saveData() {
+    localStorage.setItem('dg_completed', JSON.stringify([...completedVideos]));
+    localStorage.setItem('dg_notes', JSON.stringify(videoNotes));
+    localStorage.setItem('dg_progress', JSON.stringify(videoProgress));
+    localStorage.setItem('dg_lang', currentSubLang);
+    localStorage.setItem('dg_dark', document.body.classList.contains('dark'));
+}
+
+/* ─── THEME ─── */
+function syncThemeIcon() {
+    const icon = document.querySelector('#themeToggle i');
+    icon.className = document.body.classList.contains('dark') ? 'fas fa-sun' : 'fas fa-moon';
+}
+
+/* ─── SUBTITLE UI ─── */
+function syncSubUI() {
+    document.querySelectorAll('.lang-btn').forEach(b=>{
+        b.classList.toggle('active', b.dataset.lang===currentSubLang);
+    });
+}
+function getSubUrl(video) {
+    if(currentSubLang==='en') return video.vttEn;
+    if(currentSubLang==='fr') return video.vttFr;
+    if(currentSubLang==='ar') return video.vttAr;
+    return null;
+}
+
+/* ─── ACTIVE COLOR ─── */
+function syncActiveColor() {
+    const root = document.documentElement;
+    if(currentTech==='vue') {
+        root.style.setProperty('--active', 'var(--vue)');
+        root.style.setProperty('--active-glow', 'var(--vue-glow)');
+    } else {
+        root.style.setProperty('--active', 'var(--python)');
+        root.style.setProperty('--active-glow', 'var(--python-glow)');
+    }
+}
+
+/* ─── SIDEBAR ─── */
+function renderSidebar() {
+    const nav = document.getElementById('playlistNav');
+    const playlists = getPlaylists();
+    nav.innerHTML = playlists.map(p=>`
+        <div class="playlist-item ${p.id===currentPlaylistId?'active':''}" data-pl="${p.id}">
+            <div class="pl-icon"><i class="fab ${p.icon}"></i></div>
+            <span class="pl-name">${p.name}</span>
+            <span class="pl-count">${p.videos.length}</span>
+        </div>
+    `).join('');
+    nav.querySelectorAll('.playlist-item').forEach(el=>{
+        el.addEventListener('click', ()=>{ currentPlaylistId = el.dataset.pl; searchQuery=''; filterMode='all'; renderSidebar(); renderContent(); });
+    });
+}
+
+/* ─── STATS ─── */
+function updateStats() {
+    const pl = getCurrentPlaylist();
+    if(!pl) return;
+    const done = pl.videos.filter(v=>completedVideos.has(v.id)).length;
+    const total = pl.videos.length;
+    const pct = total ? Math.round(done/total*100) : 0;
+    const notesCount = pl.videos.filter(v=>videoNotes[v.id]).length;
+    document.getElementById('statTotal').textContent = total;
+    document.getElementById('statDone').textContent = done;
+    document.getElementById('statNotes').textContent = notesCount;
+    document.getElementById('statPct').textContent = pct+'%';
+}
+
+/* ─── CONTENT ─── */
+function renderContent() {
+    const pl = getCurrentPlaylist();
+    if(!pl) return;
+    const done = pl.videos.filter(v=>completedVideos.has(v.id)).length;
+    const total = pl.videos.length;
+    const pct = total ? Math.round(done/total*100) : 0;
+    const circumference = 2 * Math.PI * 20;
+    const dashOffset = circumference - (pct/100)*circumference;
+    const techIcon = currentTech==='vue'?'fa-vuejs':'fa-python';
+    const techName = currentTech==='vue'?'Vue.js 3 Mastery':'Python Practical Guide';
+
+    const contentArea = document.getElementById('contentArea');
+    contentArea.innerHTML = `
+        <div class="hero">
+            <div class="hero-icon"><i class="fab ${techIcon}"></i></div>
+            <div class="hero-text">
+                <h2>${techName}</h2>
+                <p>${pl.name} &nbsp;·&nbsp; ${total} lessons &nbsp;·&nbsp; EN / FR / AR subtitles</p>
+            </div>
+            <div class="hero-meta">
+                <div class="progress-ring-wrap">
+                    <svg class="progress-ring-svg" width="52" height="52" viewBox="0 0 52 52">
+                        <circle class="ring-track" cx="26" cy="26" r="20"/>
+                        <circle class="ring-fill" cx="26" cy="26" r="20" id="ringFill"
+                            stroke-dasharray="${circumference}"
+                            stroke-dashoffset="${dashOffset}"/>
+                    </svg>
+                    <div class="ring-pct">${pct}%</div>
+                    <div class="ring-label">${done}/${total}</div>
+                </div>
+                <button class="reset-btn" id="resetBtn"><i class="fas fa-undo-alt"></i> Reset</button>
+            </div>
+        </div>
+
+        <div class="section-card">
+            <div class="section-head">
+                <div class="section-head-left">
+                    <span class="section-head-title">${pl.name}</span>
+                    <span class="section-count-tag" id="visibleCount">${total} lessons</span>
+                </div>
+                <button class="dl-all-btn" id="dlAllBtn"><i class="fas fa-download"></i> Download All</button>
+            </div>
+            <div class="search-bar-wrap">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input class="search-input" id="searchInput" type="text" placeholder="Search lessons…" value="${searchQuery}">
+                </div>
+            </div>
+            <div class="filter-row">
+                <button class="filter-chip ${filterMode==='all'?'active':''}" data-filter="all"><i class="fas fa-th-large"></i> All</button>
+                <button class="filter-chip ${filterMode==='pending'?'active':''}" data-filter="pending"><i class="fas fa-circle"></i> Pending</button>
+                <button class="filter-chip ${filterMode==='completed'?'active':''}" data-filter="completed"><i class="fas fa-check-circle"></i> Completed</button>
+                <button class="filter-chip ${filterMode==='notes'?'active':''}" data-filter="notes"><i class="fas fa-pen"></i> Has Notes</button>
+            </div>
+            <div class="video-grid" id="videoGrid"></div>
+        </div>
+    `;
+
+    // ring color
+    document.getElementById('ringFill').style.stroke = currentTech==='vue'?'#42b883':'#4584b6';
+
+    document.getElementById('resetBtn').onclick = ()=>{
+        if(!confirm(`Reset progress for "${pl.name}"?`)) return;
+        pl.videos.forEach(v=>completedVideos.delete(v.id));
+        saveData(); renderContent(); updateStats(); showToast('Playlist progress reset');
+    };
+    document.getElementById('dlAllBtn').onclick = ()=>downloadPlaylist(pl.videos, pl.name);
+    document.getElementById('searchInput').oninput = (e)=>{ searchQuery=e.target.value; renderVideoGrid(); };
+    document.querySelectorAll('.filter-chip').forEach(c=>{
+        c.onclick = ()=>{ filterMode=c.dataset.filter; renderContent(); };
+    });
+
+    renderVideoGrid();
+    updateStats();
+}
+
+function renderVideoGrid() {
+    const pl = getCurrentPlaylist();
+    const grid = document.getElementById('videoGrid');
+    const countTag = document.getElementById('visibleCount');
+    if(!pl||!grid) return;
+
+    let videos = pl.videos;
+    if(searchQuery.trim()) {
+        const q = searchQuery.toLowerCase();
+        videos = videos.filter(v=>v.title.toLowerCase().includes(q));
+    }
+    if(filterMode==='completed') videos = videos.filter(v=>completedVideos.has(v.id));
+    if(filterMode==='pending') videos = videos.filter(v=>!completedVideos.has(v.id));
+    if(filterMode==='notes') videos = videos.filter(v=>videoNotes[v.id]);
+
+    if(countTag) countTag.textContent = `${videos.length} lesson${videos.length!==1?'s':''}`;
+
+    if(videos.length===0) {
+        grid.style.background='none';
+        grid.innerHTML=`<div style="grid-column:1/-1;padding:3rem;text-align:center;color:var(--text-3);font-size:0.85rem;"><i class="fas fa-search" style="font-size:1.5rem;display:block;margin-bottom:0.75rem;"></i>No lessons match your search</div>`;
+        return;
+    }
+    grid.style.background='var(--border)';
+
+    const techIcon = currentTech==='vue'?'fa-vuejs':'fa-python';
+    grid.innerHTML = '';
+    videos.forEach(video=>{
+        const done = completedVideos.has(video.id);
+        const hasNote = !!videoNotes[video.id];
+        const hasProgress = (videoProgress[video.id]||0) > 5;
+        const card = document.createElement('div');
+        card.className = `video-card${done?' completed':''}`;
+        card.innerHTML = `
+            <div class="vid-thumb">
+                <div class="vid-thumb-bg"></div>
+                <i class="fab ${techIcon} vid-tech-icon"></i>
+                <div class="vid-overlay">
+                    <div class="play-btn-wrap">
+                        <div class="play-circle"><i class="fas fa-play"></i></div>
                     </div>
-                    <div id="resumeIndicator" class="resume-badge" style="display:none;"><i class="fas fa-play-circle"></i> Resume from last watch</div>
                 </div>
-                <div class="notes-section"><label><i class="fas fa-pen-fancy"></i> Personal Notes</label><textarea id="videoNote" class="note-textarea" rows="3" placeholder="Write your notes about this lesson..."></textarea></div>
-                <div class="modal-actions">
-                    <button id="modalCompleteBtn" class="reset-btn" style="background:var(--primary); color:white;"><i class="fas fa-check-circle"></i> Mark Complete</button>
-                    <button id="modalDownloadBtn" class="reset-btn"><i class="fas fa-download"></i> Download Video</button>
-                    <button id="modalCloseBtn" class="reset-btn"><i class="fas fa-times"></i> Close</button>
+                <div class="vid-num-badge">#${video.num}</div>
+                <div class="vid-done-badge"><i class="fas fa-check"></i></div>
+            </div>
+            <div class="vid-body">
+                <div class="vid-title">${video.title}</div>
+                <div class="vid-meta">
+                    ${hasProgress?'<span class="vid-tag has"><i class="fas fa-history"></i> Resume</span>':''}
+                    ${hasNote?'<span class="vid-tag has"><i class="fas fa-pen"></i> Note</span>':''}
+                    ${currentSubLang!=='off'?`<span class="vid-tag">${currentSubLang.toUpperCase()}</span>`:''}
+                    <button class="vid-mark-btn" data-id="${video.id}">
+                        <i class="fas ${done?'fa-check-circle':'fa-circle'}"></i>
+                        ${done?'Done':'Mark done'}
+                    </button>
                 </div>
             </div>
-        </div>
-    </div>
+        `;
+        card.querySelector('.vid-thumb').addEventListener('click', ()=>openModal(video));
+        card.querySelector('.vid-mark-btn').addEventListener('click', e=>{ e.stopPropagation(); toggleDone(video.id); });
+        grid.appendChild(card);
+    });
+}
 
-    <script>
-        function createVideo(id, num, title, basePath) { return { id, num, title, mp4: `${basePath}.mp4`, vttEn: `${basePath}.vtt`, vttFr: `${basePath}.fr.vtt`, vttAr: `${basePath}.ar.vtt` }; }
-        // Vue Playlists
-        const vuePlaylist1 = []; for (let i=1;i<=50;i++) vuePlaylist1.push(createVideo(`vue1_${i}`, i, `Vue 3 Fundamentals — Lesson ${i}`, `./playlist_1/${i}. Learn Introduction Vue 3 Fundamentals`));
-        const vuePlaylist2 = []; for (let i=1;i<=26;i++) vuePlaylist2.push(createVideo(`vue2_${i}`, i, `Composition API & Slots — Lesson ${i}`, `./playlist_2/${i}. Learn Introduction Intermediate Vue Composition API Slots State`));
-        const playlist3Bases = ["1. Learn Introduction TypeScript and Vue 3","2. Learn Introduction TypeScript and Vue 3","3. Learn Introduction TypeScript and Vue 3","4. Learn Introduction TypeScript and Vue 3","5. Learn Introduction TypeScript and Vue 3","6. Learn Introduction TypeScript and Vue 3","7. Learn Introduction TypeScript and Vue 3","8. Learn Introduction TypeScript and Vue 3","9. Learn Introduction TypeScript and Vue 3-00.00.00.000-00.08.56.293-seg1","9. Learn Introduction TypeScript and Vue 3-00.08.56.293-00.17.47.733-seg2","10. Learn Introduction TypeScript and Vue 3","11. Learn Introduction TypeScript and Vue 3","12. Learn Introduction TypeScript and Vue 3","13. Learn Introduction TypeScript and Vue 3","14. Learn Introduction TypeScript and Vue 3","15. Learn Introduction TypeScript and Vue 3","16. Learn Introduction TypeScript and Vue 3","17. Learn Introduction TypeScript and Vue 3","18. Learn Introduction TypeScript and Vue 3","19. Learn Introduction TypeScript and Vue 3","20. Learn Introduction TypeScript and Vue 3","10. Learn Refactoring Options API Methods TypeScript and Vue 3","11. Learn Refactoring Options API Methods TypeScript and Vue 3","12. Learn Refactoring Options API Methods TypeScript and Vue 3","13. Learn Refactoring Options API Methods TypeScript and Vue 3","14. Learn Refactoring Options API Methods TypeScript and Vue 3","15. Learn Refactoring Options API Methods TypeScript and Vue 3","16. Learn Refactoring Options API Methods TypeScript and Vue 3","17. Learn Refactoring Options API Methods TypeScript and Vue 3","18. Learn Refactoring Options API Methods TypeScript and Vue 3","19. Learn Refactoring Options API Methods TypeScript and Vue 3","20. Learn Refactoring Options API Methods TypeScript and Vue 3","21. Learn Introduction TypeScript and Vue 3","22. Learn Introduction TypeScript and Vue 3","23. Learn Introduction TypeScript and Vue 3","24. Learn Introduction TypeScript and Vue 3","25. Learn Introduction TypeScript and Vue 3","26. Learn Introduction TypeScript and Vue 3","27. Learn Introduction TypeScript and Vue 3","28. Learn Introduction TypeScript and Vue 3","29. Learn Introduction TypeScript and Vue 3"];
-        const vuePlaylist3 = playlist3Bases.map((base,idx)=>{ let title = base.includes("Refactoring")?"Refactoring Options API":base.includes("seg1")?"TypeScript+Vue Pt1":base.includes("seg2")?"TypeScript+Vue Pt2":`TypeScript+Vue Lesson ${base.split('.')[0]}`; return createVideo(`vue3_${idx+1}`, idx+1, title, `./playlist_3/${base}`); });
-        const pythonPlaylist4 = []; [1,2,3,4,5,6,7,8,9,10,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,45,46].forEach(n=>pythonPlaylist4.push(createVideo(`py4_${n}`, n, `Python Core — Lesson ${n}`, `./playlist_4/${n}. Learn Introduction Practical Guide to Python`)));
-        const pythonPlaylist5 = []; for(let i=1;i<=48;i++) pythonPlaylist5.push(createVideo(`py5_${i}`, i, `Intermediate Python — Lesson ${i}`, `./playlist_5/${i}. Learn Introduction Prerequisites Intermediate Python`));
+/* ─── COMPLETE TOGGLE ─── */
+function toggleDone(id) {
+    if(completedVideos.has(id)) completedVideos.delete(id);
+    else completedVideos.add(id);
+    saveData(); renderContent(); updateStats();
+    showToast(completedVideos.has(id)?'Marked as complete ✓':'Marked as pending');
+}
 
-        // Storage
-        let completedVideos = new Set(), videoNotes = {}, videoProgress = {};
-        let currentSubtitleLang = 'off', currentTech = 'vue', currentPlaylistId = 'vue_playlist1';
-        let currentVideoElement = null, currentVideoData = null;
+/* ─── MODAL ─── */
+function openModal(video) {
+    const modal = document.getElementById('videoModal');
+    const videoEl = document.getElementById('modalVideo');
+    const noteEl = document.getElementById('videoNote');
+    const resumeChip = document.getElementById('resumeChip');
+    const titleEl = document.getElementById('modalTitle');
 
-        function loadData() {
-            try {
-                const saved = localStorage.getItem('debuggers_completed'); if(saved) completedVideos = new Set(JSON.parse(saved));
-                const notes = localStorage.getItem('debuggers_notes'); if(notes) videoNotes = JSON.parse(notes);
-                const progress = localStorage.getItem('debuggers_progress'); if(progress) videoProgress = JSON.parse(progress);
-                const lang = localStorage.getItem('debuggers_subtitle_lang'); if(lang && ['off','en','fr','ar'].includes(lang)) currentSubtitleLang = lang;
-                if(localStorage.getItem('debuggers_dark') === 'true') document.body.classList.add('dark');
-            } catch(e) {}
-            updateSubtitleUI();
-        }
-        function saveData() {
-            localStorage.setItem('debuggers_completed', JSON.stringify([...completedVideos]));
-            localStorage.setItem('debuggers_notes', JSON.stringify(videoNotes));
-            localStorage.setItem('debuggers_progress', JSON.stringify(videoProgress));
-            localStorage.setItem('debuggers_subtitle_lang', currentSubtitleLang);
-            localStorage.setItem('debuggers_dark', document.body.classList.contains('dark'));
-        }
-        function isCompleted(id) { return completedVideos.has(id); }
-        function toggleComplete(id) { if(completedVideos.has(id)) completedVideos.delete(id); else completedVideos.add(id); saveData(); renderCurrentPlaylist(); }
-        function saveNote(videoId, note) { videoNotes[videoId] = note; saveData(); }
-        function getNote(videoId) { return videoNotes[videoId] || ''; }
-        function saveProgress(videoId, time) { if(time > 5) { videoProgress[videoId] = time; saveData(); } }
-        function getProgress(videoId) { return videoProgress[videoId] || 0; }
-        function getSubtitleUrl(video) { if(currentSubtitleLang === 'en') return video.vttEn; if(currentSubtitleLang === 'fr') return video.vttFr; if(currentSubtitleLang === 'ar') return video.vttAr; return null; }
-        function getPlaylists() { return currentTech === 'vue' ? 
-            [{ id:'vue_playlist1', name:'Playlist 1: Vue 3 Fundamentals', icon:'fab fa-vuejs', count:vuePlaylist1.length, videos:vuePlaylist1 },
-             { id:'vue_playlist2', name:'Playlist 2: Composition API', icon:'fab fa-vuejs', count:vuePlaylist2.length, videos:vuePlaylist2 },
-             { id:'vue_playlist3', name:'Playlist 3: TypeScript + Advanced', icon:'fab fa-vuejs', count:vuePlaylist3.length, videos:vuePlaylist3 }] :
-            [{ id:'python_playlist4', name:'Playlist 4: Core Python', icon:'fab fa-python', count:pythonPlaylist4.length, videos:pythonPlaylist4 },
-             { id:'python_playlist5', name:'Playlist 5: Intermediate Python', icon:'fab fa-python', count:pythonPlaylist5.length, videos:pythonPlaylist5 }];
-        }
-        function renderSidebar() {
-            const container = document.getElementById('playlistNav');
-            const playlists = getPlaylists();
-            container.innerHTML = playlists.map(p => `<li class="playlist-nav-item ${currentPlaylistId === p.id ? 'active' : ''}" data-playlist="${p.id}"><i class="${p.icon}"></i><span>${p.name}</span><span class="count-badge">${p.count}</span></li>`).join('');
-            document.querySelectorAll('.playlist-nav-item').forEach(el => el.addEventListener('click', () => { currentPlaylistId = el.dataset.playlist; renderSidebar(); renderCurrentPlaylist(); }));
-        }
-        function renderCurrentPlaylist() {
-            const playlists = getPlaylists();
-            const playlist = playlists.find(p => p.id === currentPlaylistId);
-            if(!playlist) return;
-            const completedCount = playlist.videos.filter(v => isCompleted(v.id)).length;
-            const percent = playlist.videos.length ? Math.round(completedCount / playlist.videos.length * 100) : 0;
-            const container = document.getElementById('contentArea');
-            container.innerHTML = `<div class="hero-section"><h2><i class="fab ${currentTech === 'vue' ? 'fa-vuejs' : 'fa-python'}"></i> ${currentTech === 'vue' ? 'Vue.js 3 Mastery' : 'Python Practical Guide'}</h2><p>${playlist.name} · ${playlist.count} lessons with EN/FR/AR subtitles</p></div>
-                <div class="progress-wrapper"><div class="progress-info" style="display:flex;align-items:center;gap:1rem;"><div class="progress-circle" id="currentProgressRing">${percent}%</div><div><strong>${playlist.name}</strong><br>${completedCount}/${playlist.count} completed</div></div>
-                <button class="reset-btn" id="resetPlaylistBtn"><i class="fas fa-undo-alt"></i> Reset Playlist</button></div>
-                <div class="playlist-card active-playlist"><div class="playlist-card-header"><h3><i class="fas fa-play-circle"></i> ${playlist.name}</h3><button class="download-playlist" id="downloadAllBtn"><i class="fas fa-download"></i> Download All</button></div><div class="video-grid" id="videoGrid"></div></div>`;
-            const grid = document.getElementById('videoGrid');
-            playlist.videos.forEach(video => {
-                const completed = isCompleted(video.id);
-                const hasNote = getNote(video.id) ? true : false;
-                const hasProgress = getProgress(video.id) > 0;
-                const card = document.createElement('div');
-                card.className = `video-card ${completed ? 'completed' : ''}`;
-                card.innerHTML = `<div class="video-thumb"><div class="tech-icon"><i class="fab ${currentTech === 'vue' ? 'fa-vuejs' : 'fa-python'}"></i></div><div class="play-overlay"><div class="play-icon"><i class="fas fa-play"></i></div></div></div>
-                    <div class="video-info"><div class="video-title"><span>${video.title.length>55?video.title.substring(0,52)+'...':video.title}</span><span class="lesson-num">#${video.num}</span></div>
-                    <div style="font-size:0.6rem;color:var(--gray-700);margin:4px 0;"><i class="fas fa-closed-captioning"></i> ${currentSubtitleLang==='off'?'No subtitles':currentSubtitleLang.toUpperCase()} ${hasProgress?' · <i class="fas fa-history"></i> Resume':''} ${hasNote?' · <i class="fas fa-pen"></i> Note':''}</div>
-                    <div class="complete-mark"><button class="mark-btn ${completed ? 'completed' : ''}" data-id="${video.id}"><i class="fas ${completed ? 'fa-check-circle' : 'fa-circle'}"></i> ${completed ? 'Completed' : 'Mark Complete'}</button></div></div>`;
-                grid.appendChild(card);
-                card.querySelector('.video-thumb').addEventListener('click', () => openVideoModal(video));
-                card.querySelector('.mark-btn').addEventListener('click', (e) => { e.stopPropagation(); toggleComplete(video.id); });
-            });
-            document.getElementById('resetPlaylistBtn')?.addEventListener('click', () => { if(confirm(`Reset ${playlist.name}?`)) { playlist.videos.forEach(v=>completedVideos.delete(v.id)); saveData(); renderCurrentPlaylist(); showToast(`${playlist.name} reset`); } });
-            document.getElementById('downloadAllBtn')?.addEventListener('click', () => downloadPlaylist(playlist.videos, playlist.name.replace(/ /g,'_')));
-            const ring = document.getElementById('currentProgressRing'); if(ring) ring.style.background = `conic-gradient(${currentTech==='vue'?'#42b883':'#306998'} ${percent*3.6}deg, var(--gray-200) ${percent*3.6}deg)`;
-        }
-        function openVideoModal(video) {
-            const modal = document.getElementById('videoModal'); const modalVideo = document.getElementById('modalVideo'); const modalTitle = document.getElementById('modalTitle'); const noteArea = document.getElementById('videoNote'); const resumeIndicator = document.getElementById('resumeIndicator');
-            currentVideoData = video; currentVideoElement = modalVideo;
-            modalVideo.pause();
-            modalVideo.src = video.mp4;
-            const oldTracks = modalVideo.querySelectorAll('track'); oldTracks.forEach(t=>t.remove());
-            const subUrl = getSubtitleUrl(video);
-            if(subUrl && currentSubtitleLang !== 'off') { const track = document.createElement('track'); track.kind='subtitles'; track.label=currentSubtitleLang.toUpperCase(); track.srclang=currentSubtitleLang; track.src=subUrl; track.default=true; modalVideo.appendChild(track); }
-            modalVideo.load();
-            const savedProgress = getProgress(video.id);
-            if(savedProgress > 5) { modalVideo.currentTime = savedProgress; resumeIndicator.style.display = 'inline-flex'; } else { resumeIndicator.style.display = 'none'; }
-            modalTitle.innerHTML = `<i class="fab ${currentTech==='vue'?'fa-vuejs':'fa-python'}"></i> ${video.title}`;
-            noteArea.value = getNote(video.id);
-            modal.style.display = 'flex';
-            modalVideo.play().catch(e=>console.log);
-            // Speed controls
-            document.querySelectorAll('.speed-btn').forEach(btn=>{ btn.classList.remove('active'); if(btn.dataset.speed==='1') btn.classList.add('active'); });
-            document.querySelectorAll('.speed-btn').forEach(btn=>{ btn.onclick = (e)=>{ const speed = parseFloat(btn.dataset.speed); modalVideo.playbackRate = speed; document.querySelectorAll('.speed-btn').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); showToast(`Speed: ${speed}x`); }; });
-            // Save progress on timeupdate
-            modalVideo.ontimeupdate = () => { if(modalVideo.currentTime > 5) saveProgress(video.id, modalVideo.currentTime); };
-            window.onbeforeunload = () => { if(modalVideo && modalVideo.currentTime>5) saveProgress(video.id, modalVideo.currentTime); };
-            document.getElementById('modalCompleteBtn').onclick = () => toggleComplete(video.id);
-            document.getElementById('modalDownloadBtn').onclick = () => downloadFile(video.mp4, `${currentTech}_${video.id}.mp4`);
-            noteArea.onchange = () => saveNote(video.id, noteArea.value);
-        }
-        function downloadFile(url, filename) { fetch(url).then(res=>res.blob()).then(blob=>{ const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=filename; a.click(); URL.revokeObjectURL(a.href); showToast(`Downloading ${filename}`); }).catch(()=>showToast('Error',true)); }
-        function downloadPlaylist(videos, name) { showToast(`Downloading ${videos.length} videos...`); videos.forEach((v,idx)=>setTimeout(()=>downloadFile(v.mp4, `${name}_${v.num}.mp4`), idx*200)); }
-        function showToast(msg, isError=false) { const t=document.createElement('div'); t.className='toast'; t.style.background=isError?'#b33a3a':'#1e293b'; t.innerText=msg; document.body.appendChild(t); setTimeout(()=>t.remove(),2500); }
-        function switchTech(tech) { currentTech=tech; currentPlaylistId=tech==='vue'?'vue_playlist1':'python_playlist4'; document.querySelectorAll('.tech-btn').forEach(b=>b.classList.remove('active')); document.querySelector(`.tech-btn.${tech}`).classList.add('active'); renderSidebar(); renderCurrentPlaylist(); }
-        function updateSubtitleUI() { document.querySelectorAll('.subtitle-option').forEach(btn=>{ btn.classList.remove('active'); if(btn.dataset.lang===currentSubtitleLang) btn.classList.add('active'); }); saveData(); renderCurrentPlaylist(); }
-        document.querySelectorAll('.tech-btn:not(.coming-soon)').forEach(btn=>btn.addEventListener('click',()=>switchTech(btn.dataset.tech)));
-        document.querySelectorAll('.subtitle-option').forEach(btn=>btn.addEventListener('click',()=>{ currentSubtitleLang=btn.dataset.lang; updateSubtitleUI(); }));
-        document.getElementById('themeToggle').addEventListener('click',()=>{ document.body.classList.toggle('dark'); saveData(); });
-        document.getElementById('modalCloseBtn').addEventListener('click',()=>{ document.getElementById('videoModal').style.display='none'; if(currentVideoElement) currentVideoElement.pause(); });
-        loadData(); renderSidebar(); renderCurrentPlaylist();
-    </script>
+    currentVideoData = video;
+    currentVideoEl = videoEl;
+
+    videoEl.pause();
+    videoEl.src = video.mp4;
+    videoEl.querySelectorAll('track').forEach(t=>t.remove());
+    const subUrl = getSubUrl(video);
+    if(subUrl) {
+        const track = document.createElement('track');
+        track.kind='subtitles'; track.label=currentSubLang.toUpperCase();
+        track.srclang=currentSubLang; track.src=subUrl; track.default=true;
+        videoEl.appendChild(track);
+    }
+    videoEl.load();
+
+    const savedTime = videoProgress[video.id]||0;
+    if(savedTime>5) { videoEl.currentTime=savedTime; resumeChip.style.display='flex'; }
+    else resumeChip.style.display='none';
+
+    titleEl.innerHTML = `<i class="fab ${currentTech==='vue'?'fa-vuejs':'fa-python'}" style="color:var(--active);margin-right:6px;"></i>${video.title}`;
+    noteEl.value = videoNotes[video.id]||'';
+
+    document.querySelectorAll('.spd-btn').forEach(b=>{ b.classList.toggle('active', b.dataset.speed==='1'); });
+    document.querySelectorAll('.spd-btn').forEach(b=>{
+        b.onclick = ()=>{
+            const s = parseFloat(b.dataset.speed);
+            videoEl.playbackRate=s;
+            document.querySelectorAll('.spd-btn').forEach(x=>x.classList.remove('active'));
+            b.classList.add('active');
+            showToast(`Speed: ${s}×`);
+        };
+    });
+
+    videoEl.ontimeupdate = ()=>{ if(videoEl.currentTime>5){ videoProgress[video.id]=videoEl.currentTime; saveData(); } };
+    noteEl.oninput = ()=>{ videoNotes[video.id]=noteEl.value; saveData(); updateStats(); };
+
+    document.getElementById('modalCompleteBtn').onclick = ()=>{
+        toggleDone(video.id);
+        document.getElementById('modalCompleteBtn').innerHTML = completedVideos.has(video.id)
+            ? '<i class="fas fa-check-circle"></i> Completed ✓'
+            : '<i class="fas fa-check-circle"></i> Mark Complete';
+    };
+    document.getElementById('modalDownloadBtn').onclick = ()=>dlFile(video.mp4, `${video.id}.mp4`);
+
+    modal.classList.add('open');
+    videoEl.play().catch(()=>{});
+}
+
+function closeModal() {
+    const modal = document.getElementById('videoModal');
+    modal.classList.remove('open');
+    if(currentVideoEl) currentVideoEl.pause();
+}
+
+/* ─── DOWNLOAD ─── */
+function dlFile(url, name) {
+    fetch(url).then(r=>r.blob()).then(blob=>{ const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=name; a.click(); URL.revokeObjectURL(a.href); showToast(`Downloading ${name}`); }).catch(()=>showToast('Download failed'));
+}
+function downloadPlaylist(videos, pname) {
+    showToast(`Starting ${videos.length} downloads…`);
+    videos.forEach((v,i)=>setTimeout(()=>dlFile(v.mp4, `${v.num}_${v.id}.mp4`), i*200));
+}
+
+/* ─── TOAST ─── */
+function showToast(msg) {
+    const c = document.getElementById('toastContainer');
+    const t = document.createElement('div'); t.className='toast'; t.textContent=msg; c.appendChild(t);
+    setTimeout(()=>{ t.style.opacity='0'; t.style.transition='opacity 0.3s'; setTimeout(()=>t.remove(),300); }, 2000);
+}
+
+/* ─── TECH SWITCH ─── */
+function switchTech(tech) {
+    currentTech=tech;
+    currentPlaylistId = tech==='vue'?'vue_playlist1':'python_playlist4';
+    searchQuery=''; filterMode='all';
+    syncActiveColor();
+    document.querySelectorAll('.tech-btn').forEach(b=>b.classList.remove('active','vue','python'));
+    const activeBtn = document.querySelector(`.tech-btn[data-tech="${tech}"]`);
+    if(activeBtn) activeBtn.classList.add('active', tech);
+    renderSidebar(); renderContent();
+}
+
+/* ─── EVENT LISTENERS ─── */
+document.querySelectorAll('.tech-btn[data-tech]').forEach(b=>b.addEventListener('click',()=>switchTech(b.dataset.tech)));
+document.querySelectorAll('.lang-btn').forEach(b=>b.addEventListener('click',()=>{ currentSubLang=b.dataset.lang; syncSubUI(); saveData(); renderVideoGrid(); showToast(b.dataset.lang==='off'?'Subtitles off':`Subtitles: ${b.dataset.lang.toUpperCase()}`); }));
+document.getElementById('themeToggle').addEventListener('click',()=>{ document.body.classList.toggle('dark'); saveData(); syncThemeIcon(); });
+document.getElementById('modalCloseBtn').addEventListener('click',closeModal);
+document.getElementById('modalCloseBtn2').addEventListener('click',closeModal);
+document.getElementById('videoModal').addEventListener('click',e=>{ if(e.target===document.getElementById('videoModal')) closeModal(); });
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeModal(); });
+
+/* ─── INIT ─── */
+loadData();
+syncActiveColor();
+renderSidebar();
+renderContent();
+</script>
 </body>
 </html>
