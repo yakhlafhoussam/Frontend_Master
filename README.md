@@ -1,1 +1,15 @@
-## HYK — From nothing to perfection. I correct life's mistakes, line by line. Because small steps lead to great victories. And no matter how much the bed rocks at night, no woman will give birth to one who can stop me. Let them rock as they please, and I love watching them try.
+## DebuGGers
+
+Live platform: [https://yakhlafhoussam.github.io/Frontend_Master/](https://yakhlafhoussam.github.io/Frontend_Master/)
+
+DebuGGers is a lightweight learning platform designed to organize and browse course playlists, lessons, and subtitles in one place.
+
+The project provides:
+
+- structured playlists grouped by technology
+- video playback with subtitle support
+- lesson progress tracking
+- personal notes per lesson
+- a responsive interface for desktop and mobile
+
+It is built as a static front-end experience and is optimized for quick access to course content and a clean learning workflow.
