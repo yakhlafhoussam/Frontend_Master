@@ -1,0 +1,2676 @@
+{
+  "generatedAt": "2026-05-11T21:59:01.904Z",
+  "playlists": [
+    {
+      "id": "vp1",
+      "tech": "vue",
+      "name": "Playlist 1: Vue 3 Fundamentals",
+      "icon": "fa-vuejs",
+      "folder": "playlist_1",
+      "videos": [
+        {
+          "id": "vp1_1_0",
+          "num": 1,
+          "part": null,
+          "base": "1. Learn Introduction Vue 3 Fundamentals",
+          "title": "Introduction to Vue 3 and Course Overview",
+          "files": {
+            "mp4": "playlist_1/1. Learn Introduction Vue 3 Fundamentals.mp4",
+            "en": "playlist_1/1. Learn Introduction Vue 3 Fundamentals.vtt",
+            "fr": "playlist_1/1. Learn Introduction Vue 3 Fundamentals.fr.vtt",
+            "ar": "playlist_1/1. Learn Introduction Vue 3 Fundamentals.ar.vtt"
+          }
+        },
+        {
+          "id": "vp1_2_0",
+          "num": 2,
+          "part": null,
+          "base": "2. Learn Introduction Vue 3 Fundamentals",
+          "title": "My Journey to Learning Vue.js",
+          "files": {
+            "mp4": "playlist_1/2. Learn Introduction Vue 3 Fundamentals.mp4",
+            "en": "playlist_1/2. Learn Introduction Vue 3 Fundamentals.vtt",
+            "fr": "playlist_1/2. Learn Introduction Vue 3 Fundamentals.fr.vtt",
+            "ar": "playlist_1/2. Learn Introduction Vue 3 Fundamentals.ar.vtt"
+          }
+        },
+        {
+          "id": "vp1_3_0",
+          "num": 3,
+          "part": null,
+          "base": "3. Learn Introduction Vue 3 Fundamentals",
+          "title": "Prerequisites and Getting Started with Vue",
+          "files": {
+            "mp4": "playlist_1/3. Learn Introduction Vue 3 Fundamentals.mp4",
+            "en": "playlist_1/3. Learn Introduction Vue 3 Fundamentals.vtt",
+            "fr": "playlist_1/3. Learn Introduction Vue 3 Fundamentals.fr.vtt",
+            "ar": "playlist_1/3. Learn Introduction Vue 3 Fundamentals.ar.vtt"
+          }
+        },
+        {
+          "id": "vp1_4_0",
+          "num": 4,
+          "part": null,
+          "base": "4. Learn Introduction Vue 3 Fundamentals",
+          "title": "Progressive Enhancement with Vue CDN",
+          "files": {
+            "mp4": "playlist_1/4. Learn Introduction Vue 3 Fundamentals.mp4",
+            "en": "playlist_1/4. Learn Introduction Vue 3 Fundamentals.vtt",
+            "fr": "playlist_1/4. Learn Introduction Vue 3 Fundamentals.fr.vtt",
+            "ar": "playlist_1/4. Learn Introduction Vue 3 Fundamentals.ar.vtt"
+          }
+        },
+        {
+          "id": "vp1_5_0",
+          "num": 5,
+          "part": null,
+          "base": "5. Learn Introduction Vue 3 Fundamentals",
+          "title": "Creating Your First Vue Application",
+          "files": {
+            "mp4": "playlist_1/5. Learn Introduction Vue 3 Fundamentals.mp4",
+            "en": "playlist_1/5. Learn Introduction Vue 3 Fundamentals.vtt",
+            "fr": "playlist_1/5. Learn Introduction Vue 3 Fundamentals.fr.vtt",
+            "ar": "playlist_1/5. Learn Introduction Vue 3 Fundamentals.ar.vtt"
+          }
+        },
+        {
+          "id": "vp1_6_0",
+          "num": 6,
+          "part": null,
+          "base": "6. Learn Introduction Vue 3 Fundamentals",
+          "title": "Conditional Rendering with v-if and v-else",
+          "files": {
+            "mp4": "playlist_1/6. Learn Introduction Vue 3 Fundamentals.mp4",
+            "en": "playlist_1/6. Learn Introduction Vue 3 Fundamentals.vtt",
+            "fr": "playlist_1/6. Learn Introduction Vue 3 Fundamentals.fr.vtt",
+            "ar": "playlist_1/6. Learn Introduction Vue 3 Fundamentals.ar.vtt"
+          }
+        },
+        {
+          "id": "vp1_7_0",
+          "num": 7,
+          "part": null,
+          "base": "7. Learn Introduction Vue 3 Fundamentals",
+          "title": "Handling User Input and Events",
+          "files": {
+            "mp4": "playlist_1/7. Learn Introduction Vue 3 Fundamentals.mp4",
+            "en": "playlist_1/7. Learn Introduction Vue 3 Fundamentals.vtt",
+            "fr": "playlist_1/7. Learn Introduction Vue 3 Fundamentals.fr.vtt",
+            "ar": "playlist_1/7. Learn Introduction Vue 3 Fundamentals.ar.vtt"
+          }
+        },
+        {
+          "id": "vp1_8_0",
+          "num": 8,
+          "part": null,
+          "base": "8. Learn Introduction Vue 3 Fundamentals",
+          "title": "Understanding Reactive Data Tracking",
+          "files": {
+            "mp4": "playlist_1/8. Learn Introduction Vue 3 Fundamentals.mp4",
+            "en": "playlist_1/8. Learn Introduction Vue 3 Fundamentals.vtt",
+            "fr": "playlist_1/8. Learn Introduction Vue 3 Fundamentals.fr.vtt",
+            "ar": "playlist_1/8. Learn Introduction Vue 3 Fundamentals.ar.vtt"
+          }
+        },
+        {
+          "id": "vp1_9_0",
+          "num": 9,
+          "part": null,
+          "base": "9. Learn Introduction Vue 3 Fundamentals",
+          "title": "Building Favorites List with User Interaction",
+          "files": {
+            "mp4": "playlist_1/9. Learn Introduction Vue 3 Fundamentals.mp4",
+            "en": "playlist_1/9. Learn Introduction Vue 3 Fundamentals.vtt",
+            "fr": "playlist_1/9. Learn Introduction Vue 3 Fundamentals.fr.vtt",
+            "ar": "playlist_1/9. Learn Introduction Vue 3 Fundamentals.ar.vtt"
+          }
+        },
+        {
+          "id": "vp1_10_0",
+          "num": 10,
+          "part": null,
+          "base": "10. Learn Introduction Vue 3 Fundamentals",
+          "title": "Watchers and Computed Properties Explained",
+          "files": {
+            "mp4": "playlist_1/10. Learn Introduction Vue 3 Fundamentals.mp4",
+            "en": "playlist_1/10. Learn Introduction Vue 3 Fundamentals.vtt",
+            "fr": "playlist_1/10. Learn Introduction Vue 3 Fundamentals.fr.vtt",
+            "ar": "playlist_1/10. Learn Introduction Vue 3 Fundamentals.ar.vtt"
+          }
+        },
+        {
+          "id": "vp1_11_0",
+          "num": 11,
+          "part": null,
+          "base": "11. Learn Introduction Vue 3 Fundamentals",
+          "title": "Real-world Computed Properties Examples",
+          "files": {
+            "mp4": "playlist_1/11. Learn Introduction Vue 3 Fundamentals.mp4",
+            "en": "playlist_1/11. Learn Introduction Vue 3 Fundamentals.vtt",
+            "fr": "playlist_1/11. Learn Introduction Vue 3 Fundamentals.fr.vtt",
+            "ar": "playlist_1/11. Learn Introduction Vue 3 Fundamentals.ar.vtt"
+          }
+        },
+        {
+          "id": "vp1_12_0",
+          "num": 12,
+          "part": null,
+          "base": "12. Learn Introduction Vue 3 Fundamentals",
+          "title": "List Rendering with Dynamic Data",
+          "files": {
+            "mp4": "playlist_1/12. Learn Introduction Vue 3 Fundamentals.mp4",
+            "en": "playlist_1/12. Learn Introduction Vue 3 Fundamentals.vtt",
+            "fr": "playlist_1/12. Learn Introduction Vue 3 Fundamentals.fr.vtt",
+            "ar": "playlist_1/12. Learn Introduction Vue 3 Fundamentals.ar.vtt"
+          }
+        },
+        {
+          "id": "vp1_13_0",
+          "num": 13,
+          "part": null,
+          "base": "13. Learn Introduction Vue 3 Fundamentals",
+          "title": "Progressive Enhancement Best Practices",
+          "files": {
+            "mp4": "playlist_1/13. Learn Introduction Vue 3 Fundamentals.mp4",
+            "en": "playlist_1/13. Learn Introduction Vue 3 Fundamentals.vtt",
+            "fr": "playlist_1/13. Learn Introduction Vue 3 Fundamentals.fr.vtt",
+            "ar": "playlist_1/13. Learn Introduction Vue 3 Fundamentals.ar.vtt"
+          }
+        },
+        {
+          "id": "vp1_14_0",
+          "num": 14,
+          "part": null,
+          "base": "14. Learn Introduction Vue 3 Fundamentals",
+          "title": "Moving to Build Tools and Single-File Components",
+          "files": {
+            "mp4": "playlist_1/14. Learn Introduction Vue 3 Fundamentals.mp4",
+            "en": "playlist_1/14. Learn Introduction Vue 3 Fundamentals.vtt",
+            "fr": "playlist_1/14. Learn Introduction Vue 3 Fundamentals.fr.vtt",
+            "ar": "playlist_1/14. Learn Introduction Vue 3 Fundamentals.ar.vtt"
+          }
+        },
+        {
+          "id": "vp1_15_0",
+          "num": 15,
+          "part": null,
+          "base": "15. Learn Introduction Vue 3 Fundamentals",
+          "title": "Setting Up Your Development Environment",
+          "files": {
+            "mp4": "playlist_1/15. Learn Introduction Vue 3 Fundamentals.mp4",
+            "en": "playlist_1/15. Learn Introduction Vue 3 Fundamentals.vtt",
+            "fr": "playlist_1/15. Learn Introduction Vue 3 Fundamentals.fr.vtt",
+            "ar": "playlist_1/15. Learn Introduction Vue 3 Fundamentals.ar.vtt"
+          }
+        },
+        {
+          "id": "vp1_16_0",
+          "num": 16,
+          "part": null,
+          "base": "16. Learn Introduction Vue 3 Fundamentals",
+          "title": "Advanced Component Logic and Organization",
+          "files": {
+            "mp4": "playlist_1/16. Learn Introduction Vue 3 Fundamentals.mp4",
+            "en": "playlist_1/16. Learn Introduction Vue 3 Fundamentals.vtt",
+            "fr": "playlist_1/16. Learn Introduction Vue 3 Fundamentals.fr.vtt",
+            "ar": "playlist_1/16. Learn Introduction Vue 3 Fundamentals.ar.vtt"
+          }
+        },
+        {
+          "id": "vp1_17_0",
+          "num": 17,
+          "part": null,
+          "base": "17. Learn Introduction Vue 3 Fundamentals",
+          "title": "Building a Forum Application Structure",
+          "files": {
+            "mp4": "playlist_1/17. Learn Introduction Vue 3 Fundamentals.mp4",
+            "en": "playlist_1/17. Learn Introduction Vue 3 Fundamentals.vtt",
+            "fr": "playlist_1/17. Learn Introduction Vue 3 Fundamentals.fr.vtt",
+            "ar": "playlist_1/17. Learn Introduction Vue 3 Fundamentals.ar.vtt"
+          }
+        },
+        {
+          "id": "vp1_18_0",
+          "num": 18,
+          "part": null,
+          "base": "18. Learn Introduction Vue 3 Fundamentals",
+          "title": "Props: Passing Data Down to Components",
+          "files": {
+            "mp4": "playlist_1/18. Learn Introduction Vue 3 Fundamentals.mp4",
+            "en": "playlist_1/18. Learn Introduction Vue 3 Fundamentals.vtt",
+            "fr": "playlist_1/18. Learn Introduction Vue 3 Fundamentals.fr.vtt",
+            "ar": "playlist_1/18. Learn Introduction Vue 3 Fundamentals.ar.vtt"
+          }
+        },
+        {
+          "id": "vp1_19_0",
+          "num": 19,
+          "part": null,
+          "base": "19. Learn Introduction Vue 3 Fundamentals",
+          "title": "Parent-Child Component Communication",
+          "files": {
+            "mp4": "playlist_1/19. Learn Introduction Vue 3 Fundamentals.mp4",
+            "en": "playlist_1/19. Learn Introduction Vue 3 Fundamentals.vtt",
+            "fr": "playlist_1/19. Learn Introduction Vue 3 Fundamentals.fr.vtt",
+            "ar": "playlist_1/19. Learn Introduction Vue 3 Fundamentals.ar.vtt"
+          }
+        },
+        {
+          "id": "vp1_20_0",
+          "num": 20,
+          "part": null,
+          "base": "20. Learn Introduction Vue 3 Fundamentals",
+          "title": "Event Emitting and Two-Way Communication",
+          "files": {
+            "mp4": "playlist_1/20. Learn Introduction Vue 3 Fundamentals.mp4",
+            "en": "playlist_1/20. Learn Introduction Vue 3 Fundamentals.vtt",
+            "fr": "playlist_1/20. Learn Introduction Vue 3 Fundamentals.fr.vtt",
+            "ar": "playlist_1/20. Learn Introduction Vue 3 Fundamentals.ar.vtt"
+          }
+        },
+        {
+          "id": "vp1_21_0",
+          "num": 21,
+          "part": null,
+          "base": "21. Learn Introduction Vue 3 Fundamentals",
+          "title": "Component Architecture Patterns",
+          "files": {
+            "mp4": "playlist_1/21. Learn Introduction Vue 3 Fundamentals.mp4",
+            "en": "playlist_1/21. Learn Introduction Vue 3 Fundamentals.vtt",
+            "fr": "playlist_1/21. Learn Introduction Vue 3 Fundamentals.fr.vtt",
+            "ar": "playlist_1/21. Learn Introduction Vue 3 Fundamentals.ar.vtt"
+          }
+        },
+        {
+          "id": "vp1_22_0",
+          "num": 22,
+          "part": null,
+          "base": "22. Learn Introduction Vue 3 Fundamentals",
+          "title": "Managing Multiple Components and State",
+          "files": {
+            "mp4": "playlist_1/22. Learn Introduction Vue 3 Fundamentals.mp4",
+            "en": "playlist_1/22. Learn Introduction Vue 3 Fundamentals.vtt",
+            "fr": "playlist_1/22. Learn Introduction Vue 3 Fundamentals.fr.vtt",
+            "ar": "playlist_1/22. Learn Introduction Vue 3 Fundamentals.ar.vtt"
+          }
+        },
+        {
+          "id": "vp1_23_0",
+          "num": 23,
+          "part": null,
+          "base": "23. Learn Introduction Vue 3 Fundamentals",
+          "title": "Working with Slots for Flexible Components",
+          "files": {
+            "mp4": "playlist_1/23. Learn Introduction Vue 3 Fundamentals.mp4",
+            "en": "playlist_1/23. Learn Introduction Vue 3 Fundamentals.vtt",
+            "fr": "playlist_1/23. Learn Introduction Vue 3 Fundamentals.fr.vtt",
+            "ar": "playlist_1/23. Learn Introduction Vue 3 Fundamentals.ar.vtt"
+          }
+        },
+        {
+          "id": "vp1_24_0",
+          "num": 24,
+          "part": null,
+          "base": "24. Learn Introduction Vue 3 Fundamentals",
+          "title": "Slots in Practice: Advanced Patterns",
+          "files": {
+            "mp4": "playlist_1/24. Learn Introduction Vue 3 Fundamentals.mp4",
+            "en": "playlist_1/24. Learn Introduction Vue 3 Fundamentals.vtt",
+            "fr": "playlist_1/24. Learn Introduction Vue 3 Fundamentals.fr.vtt",
+            "ar": "playlist_1/24. Learn Introduction Vue 3 Fundamentals.ar.vtt"
+          }
+        },
+        {
+          "id": "vp1_25_0",
+          "num": 25,
+          "part": null,
+          "base": "25. Learn Introduction Vue 3 Fundamentals",
+          "title": "Understanding Vue Lifecycle",
+          "files": {
+            "mp4": "playlist_1/25. Learn Introduction Vue 3 Fundamentals.mp4",
+            "en": "playlist_1/25. Learn Introduction Vue 3 Fundamentals.vtt",
+            "fr": "playlist_1/25. Learn Introduction Vue 3 Fundamentals.fr.vtt",
+            "ar": "playlist_1/25. Learn Introduction Vue 3 Fundamentals.ar.vtt"
+          }
+        },
+        {
+          "id": "vp1_26_0",
+          "num": 26,
+          "part": null,
+          "base": "26. Learn Introduction Vue 3 Fundamentals",
+          "title": "Provide and Inject for Deep Component Trees",
+          "files": {
+            "mp4": "playlist_1/26. Learn Introduction Vue 3 Fundamentals.mp4",
+            "en": "playlist_1/26. Learn Introduction Vue 3 Fundamentals.vtt",
+            "fr": "playlist_1/26. Learn Introduction Vue 3 Fundamentals.fr.vtt",
+            "ar": "playlist_1/26. Learn Introduction Vue 3 Fundamentals.ar.vtt"
+          }
+        },
+        {
+          "id": "vp1_27_0",
+          "num": 27,
+          "part": null,
+          "base": "27. Learn Introduction Vue 3 Fundamentals",
+          "title": "Template Refs and Direct DOM Access",
+          "files": {
+            "mp4": "playlist_1/27. Learn Introduction Vue 3 Fundamentals.mp4",
+            "en": "playlist_1/27. Learn Introduction Vue 3 Fundamentals.vtt",
+            "fr": "playlist_1/27. Learn Introduction Vue 3 Fundamentals.fr.vtt",
+            "ar": "playlist_1/27. Learn Introduction Vue 3 Fundamentals.ar.vtt"
+          }
+        },
+        {
+          "id": "vp1_28_0",
+          "num": 28,
+          "part": null,
+          "base": "28. Learn Introduction Vue 3 Fundamentals",
+          "title": "Teleport and Advanced Features",
+          "files": {
+            "mp4": "playlist_1/28. Learn Introduction Vue 3 Fundamentals.mp4",
+            "en": "playlist_1/28. Learn Introduction Vue 3 Fundamentals.vtt",
+            "fr": "playlist_1/28. Learn Introduction Vue 3 Fundamentals.fr.vtt",
+            "ar": "playlist_1/28. Learn Introduction Vue 3 Fundamentals.ar.vtt"
+          }
+        },
+        {
+          "id": "vp1_29_0",
+          "num": 29,
+          "part": null,
+          "base": "29. Learn Introduction Vue 3 Fundamentals",
+          "title": "Refactoring with Composition API",
+          "files": {
+            "mp4": "playlist_1/29. Learn Introduction Vue 3 Fundamentals.mp4",
+            "en": "playlist_1/29. Learn Introduction Vue 3 Fundamentals.vtt",
+            "fr": "playlist_1/29. Learn Introduction Vue 3 Fundamentals.fr.vtt",
+            "ar": "playlist_1/29. Learn Introduction Vue 3 Fundamentals.ar.vtt"
+          }
+        },
+        {
+          "id": "vp1_30_0",
+          "num": 30,
+          "part": null,
+          "base": "30. Learn Introduction Vue 3 Fundamentals",
+          "title": "Practical Composition API Example",
+          "files": {
+            "mp4": "playlist_1/30. Learn Introduction Vue 3 Fundamentals.mp4",
+            "en": "playlist_1/30. Learn Introduction Vue 3 Fundamentals.vtt",
+            "fr": "playlist_1/30. Learn Introduction Vue 3 Fundamentals.fr.vtt",
+            "ar": "playlist_1/30. Learn Introduction Vue 3 Fundamentals.ar.vtt"
+          }
+        },
+        {
+          "id": "vp1_31_0",
+          "num": 31,
+          "part": null,
+          "base": "31. Learn Introduction Vue 3 Fundamentals",
+          "title": "Reusing Logic with Composables",
+          "files": {
+            "mp4": "playlist_1/31. Learn Introduction Vue 3 Fundamentals.mp4",
+            "en": "playlist_1/31. Learn Introduction Vue 3 Fundamentals.vtt",
+            "fr": "playlist_1/31. Learn Introduction Vue 3 Fundamentals.fr.vtt",
+            "ar": "playlist_1/31. Learn Introduction Vue 3 Fundamentals.ar.vtt"
+          }
+        },
+        {
+          "id": "vp1_32_0",
+          "num": 32,
+          "part": null,
+          "base": "32. Learn Introduction Vue 3 Fundamentals",
+          "title": "Creating Your First Composable",
+          "files": {
+            "mp4": "playlist_1/32. Learn Introduction Vue 3 Fundamentals.mp4",
+            "en": "playlist_1/32. Learn Introduction Vue 3 Fundamentals.vtt",
+            "fr": "playlist_1/32. Learn Introduction Vue 3 Fundamentals.fr.vtt",
+            "ar": "playlist_1/32. Learn Introduction Vue 3 Fundamentals.ar.vtt"
+          }
+        },
+        {
+          "id": "vp1_33_0",
+          "num": 33,
+          "part": null,
+          "base": "33. Learn Introduction Vue 3 Fundamentals",
+          "title": "Advanced Composable Patterns",
+          "files": {
+            "mp4": "playlist_1/33. Learn Introduction Vue 3 Fundamentals.mp4",
+            "en": "playlist_1/33. Learn Introduction Vue 3 Fundamentals.vtt",
+            "fr": "playlist_1/33. Learn Introduction Vue 3 Fundamentals.fr.vtt",
+            "ar": "playlist_1/33. Learn Introduction Vue 3 Fundamentals.ar.vtt"
+          }
+        },
+        {
+          "id": "vp1_34_0",
+          "num": 34,
+          "part": null,
+          "base": "34. Learn Introduction Vue 3 Fundamentals",
+          "title": "Composition API Best Practices",
+          "files": {
+            "mp4": "playlist_1/34. Learn Introduction Vue 3 Fundamentals.mp4",
+            "en": "playlist_1/34. Learn Introduction Vue 3 Fundamentals.vtt",
+            "fr": "playlist_1/34. Learn Introduction Vue 3 Fundamentals.fr.vtt",
+            "ar": "playlist_1/34. Learn Introduction Vue 3 Fundamentals.ar.vtt"
+          }
+        },
+        {
+          "id": "vp1_35_0",
+          "num": 35,
+          "part": null,
+          "base": "35. Learn Introduction Vue 3 Fundamentals",
+          "title": "State Management Introduction",
+          "files": {
+            "mp4": "playlist_1/35. Learn Introduction Vue 3 Fundamentals.mp4",
+            "en": "playlist_1/35. Learn Introduction Vue 3 Fundamentals.vtt",
+            "fr": "playlist_1/35. Learn Introduction Vue 3 Fundamentals.fr.vtt",
+            "ar": "playlist_1/35. Learn Introduction Vue 3 Fundamentals.ar.vtt"
+          }
+        },
+        {
+          "id": "vp1_36_0",
+          "num": 36,
+          "part": null,
+          "base": "36. Learn Introduction Vue 3 Fundamentals",
+          "title": "Styling Strategies in Vue Applications",
+          "files": {
+            "mp4": "playlist_1/36. Learn Introduction Vue 3 Fundamentals.mp4",
+            "en": "playlist_1/36. Learn Introduction Vue 3 Fundamentals.vtt",
+            "fr": "playlist_1/36. Learn Introduction Vue 3 Fundamentals.fr.vtt",
+            "ar": "playlist_1/36. Learn Introduction Vue 3 Fundamentals.ar.vtt"
+          }
+        },
+        {
+          "id": "vp1_37_0",
+          "num": 37,
+          "part": null,
+          "base": "37. Learn Introduction Vue 3 Fundamentals",
+          "title": "Scoped Styles and CSS Modules",
+          "files": {
+            "mp4": "playlist_1/37. Learn Introduction Vue 3 Fundamentals.mp4",
+            "en": "playlist_1/37. Learn Introduction Vue 3 Fundamentals.vtt",
+            "fr": "playlist_1/37. Learn Introduction Vue 3 Fundamentals.fr.vtt",
+            "ar": "playlist_1/37. Learn Introduction Vue 3 Fundamentals.ar.vtt"
+          }
+        },
+        {
+          "id": "vp1_38_0",
+          "num": 38,
+          "part": null,
+          "base": "38. Learn Introduction Vue 3 Fundamentals",
+          "title": "Dynamic Styles and CSS Binding",
+          "files": {
+            "mp4": "playlist_1/38. Learn Introduction Vue 3 Fundamentals.mp4",
+            "en": "playlist_1/38. Learn Introduction Vue 3 Fundamentals.vtt",
+            "fr": "playlist_1/38. Learn Introduction Vue 3 Fundamentals.fr.vtt",
+            "ar": "playlist_1/38. Learn Introduction Vue 3 Fundamentals.ar.vtt"
+          }
+        },
+        {
+          "id": "vp1_39_0",
+          "num": 39,
+          "part": null,
+          "base": "39. Learn Introduction Vue 3 Fundamentals",
+          "title": "Introduction to Vue Router",
+          "files": {
+            "mp4": "playlist_1/39. Learn Introduction Vue 3 Fundamentals.mp4",
+            "en": "playlist_1/39. Learn Introduction Vue 3 Fundamentals.vtt",
+            "fr": "playlist_1/39. Learn Introduction Vue 3 Fundamentals.fr.vtt",
+            "ar": "playlist_1/39. Learn Introduction Vue 3 Fundamentals.ar.vtt"
+          }
+        },
+        {
+          "id": "vp1_40_0",
+          "num": 40,
+          "part": null,
+          "base": "40. Learn Introduction Vue 3 Fundamentals",
+          "title": "Building Navigation Systems",
+          "files": {
+            "mp4": "playlist_1/40. Learn Introduction Vue 3 Fundamentals.mp4",
+            "en": "playlist_1/40. Learn Introduction Vue 3 Fundamentals.vtt",
+            "fr": "playlist_1/40. Learn Introduction Vue 3 Fundamentals.fr.vtt",
+            "ar": "playlist_1/40. Learn Introduction Vue 3 Fundamentals.ar.vtt"
+          }
+        },
+        {
+          "id": "vp1_41_0",
+          "num": 41,
+          "part": null,
+          "base": "41. Learn Introduction Vue 3 Fundamentals",
+          "title": "Route Parameters and Dynamic Routing",
+          "files": {
+            "mp4": "playlist_1/41. Learn Introduction Vue 3 Fundamentals.mp4",
+            "en": "playlist_1/41. Learn Introduction Vue 3 Fundamentals.vtt",
+            "fr": "playlist_1/41. Learn Introduction Vue 3 Fundamentals.fr.vtt",
+            "ar": "playlist_1/41. Learn Introduction Vue 3 Fundamentals.ar.vtt"
+          }
+        },
+        {
+          "id": "vp1_42_0",
+          "num": 42,
+          "part": null,
+          "base": "42. Learn Introduction Vue 3 Fundamentals",
+          "title": "Programmatic Navigation",
+          "files": {
+            "mp4": "playlist_1/42. Learn Introduction Vue 3 Fundamentals.mp4",
+            "en": "playlist_1/42. Learn Introduction Vue 3 Fundamentals.vtt",
+            "fr": "playlist_1/42. Learn Introduction Vue 3 Fundamentals.fr.vtt",
+            "ar": "playlist_1/42. Learn Introduction Vue 3 Fundamentals.ar.vtt"
+          }
+        },
+        {
+          "id": "vp1_43_0",
+          "num": 43,
+          "part": null,
+          "base": "43. Learn Introduction Vue 3 Fundamentals",
+          "title": "Nested Routes and Layouts",
+          "files": {
+            "mp4": "playlist_1/43. Learn Introduction Vue 3 Fundamentals.mp4",
+            "en": "playlist_1/43. Learn Introduction Vue 3 Fundamentals.vtt",
+            "fr": "playlist_1/43. Learn Introduction Vue 3 Fundamentals.fr.vtt",
+            "ar": "playlist_1/43. Learn Introduction Vue 3 Fundamentals.ar.vtt"
+          }
+        },
+        {
+          "id": "vp1_44_0",
+          "num": 44,
+          "part": null,
+          "base": "44. Learn Introduction Vue 3 Fundamentals",
+          "title": "State Management with Pinia",
+          "files": {
+            "mp4": "playlist_1/44. Learn Introduction Vue 3 Fundamentals.mp4",
+            "en": "playlist_1/44. Learn Introduction Vue 3 Fundamentals.vtt",
+            "fr": "playlist_1/44. Learn Introduction Vue 3 Fundamentals.fr.vtt",
+            "ar": "playlist_1/44. Learn Introduction Vue 3 Fundamentals.ar.vtt"
+          }
+        },
+        {
+          "id": "vp1_45_0",
+          "num": 45,
+          "part": null,
+          "base": "45. Learn Introduction Vue 3 Fundamentals",
+          "title": "Deployment and Static Site Generation",
+          "files": {
+            "mp4": "playlist_1/45. Learn Introduction Vue 3 Fundamentals.mp4",
+            "en": "playlist_1/45. Learn Introduction Vue 3 Fundamentals.vtt",
+            "fr": "playlist_1/45. Learn Introduction Vue 3 Fundamentals.fr.vtt",
+            "ar": "playlist_1/45. Learn Introduction Vue 3 Fundamentals.ar.vtt"
+          }
+        },
+        {
+          "id": "vp1_46_0",
+          "num": 46,
+          "part": null,
+          "base": "46. Learn Introduction Vue 3 Fundamentals",
+          "title": "Performance Optimization",
+          "files": {
+            "mp4": "playlist_1/46. Learn Introduction Vue 3 Fundamentals.mp4",
+            "en": "playlist_1/46. Learn Introduction Vue 3 Fundamentals.vtt",
+            "fr": "playlist_1/46. Learn Introduction Vue 3 Fundamentals.fr.vtt",
+            "ar": "playlist_1/46. Learn Introduction Vue 3 Fundamentals.ar.vtt"
+          }
+        },
+        {
+          "id": "vp1_47_0",
+          "num": 47,
+          "part": null,
+          "base": "47. Learn Introduction Vue 3 Fundamentals",
+          "title": "Testing Your Vue Applications",
+          "files": {
+            "mp4": "playlist_1/47. Learn Introduction Vue 3 Fundamentals.mp4",
+            "en": "playlist_1/47. Learn Introduction Vue 3 Fundamentals.vtt",
+            "fr": "playlist_1/47. Learn Introduction Vue 3 Fundamentals.fr.vtt",
+            "ar": "playlist_1/47. Learn Introduction Vue 3 Fundamentals.ar.vtt"
+          }
+        },
+        {
+          "id": "vp1_48_0",
+          "num": 48,
+          "part": null,
+          "base": "48. Learn Introduction Vue 3 Fundamentals",
+          "title": "Debugging Vue Applications",
+          "files": {
+            "mp4": "playlist_1/48. Learn Introduction Vue 3 Fundamentals.mp4",
+            "en": "playlist_1/48. Learn Introduction Vue 3 Fundamentals.vtt",
+            "fr": "playlist_1/48. Learn Introduction Vue 3 Fundamentals.fr.vtt",
+            "ar": "playlist_1/48. Learn Introduction Vue 3 Fundamentals.ar.vtt"
+          }
+        },
+        {
+          "id": "vp1_49_0",
+          "num": 49,
+          "part": null,
+          "base": "49. Learn Introduction Vue 3 Fundamentals",
+          "title": "Building with Nuxt Framework",
+          "files": {
+            "mp4": "playlist_1/49. Learn Introduction Vue 3 Fundamentals.mp4",
+            "en": "playlist_1/49. Learn Introduction Vue 3 Fundamentals.vtt",
+            "fr": "playlist_1/49. Learn Introduction Vue 3 Fundamentals.fr.vtt",
+            "ar": "playlist_1/49. Learn Introduction Vue 3 Fundamentals.ar.vtt"
+          }
+        },
+        {
+          "id": "vp1_50_0",
+          "num": 50,
+          "part": null,
+          "base": "50. Learn Introduction Vue 3 Fundamentals",
+          "title": "As I mentioned, there's a lot of the ecosystem out there waiting for you.",
+          "files": {
+            "mp4": "playlist_1/50. Learn Introduction Vue 3 Fundamentals.mp4",
+            "en": "playlist_1/50. Learn Introduction Vue 3 Fundamentals.vtt",
+            "fr": "playlist_1/50. Learn Introduction Vue 3 Fundamentals.fr.vtt",
+            "ar": "playlist_1/50. Learn Introduction Vue 3 Fundamentals.ar.vtt"
+          }
+        }
+      ]
+    },
+    {
+      "id": "vp2",
+      "tech": "vue",
+      "name": "Playlist 2: Composition API",
+      "icon": "fa-vuejs",
+      "folder": "playlist_2",
+      "videos": [
+        {
+          "id": "vp2_1_0",
+          "num": 1,
+          "part": null,
+          "base": "1. Learn Introduction Intermediate Vue Composition API Slots State",
+          "title": "Intermediate Vue: Advanced Composition API Concepts",
+          "files": {
+            "mp4": "playlist_2/1. Learn Introduction Intermediate Vue Composition API Slots State.mp4",
+            "en": "playlist_2/1. Learn Introduction Intermediate Vue Composition API Slots State.vtt",
+            "fr": "playlist_2/1. Learn Introduction Intermediate Vue Composition API Slots State.fr.vtt",
+            "ar": "playlist_2/1. Learn Introduction Intermediate Vue Composition API Slots State.ar.vtt"
+          }
+        },
+        {
+          "id": "vp2_2_0",
+          "num": 2,
+          "part": null,
+          "base": "2. Learn Introduction Intermediate Vue Composition API Slots State",
+          "title": "Setup Function and Script Setup Syntax",
+          "files": {
+            "mp4": "playlist_2/2. Learn Introduction Intermediate Vue Composition API Slots State.mp4",
+            "en": "playlist_2/2. Learn Introduction Intermediate Vue Composition API Slots State.vtt",
+            "fr": "playlist_2/2. Learn Introduction Intermediate Vue Composition API Slots State.fr.vtt",
+            "ar": "playlist_2/2. Learn Introduction Intermediate Vue Composition API Slots State.ar.vtt"
+          }
+        },
+        {
+          "id": "vp2_3_0",
+          "num": 3,
+          "part": null,
+          "base": "3. Learn Introduction Intermediate Vue Composition API Slots State",
+          "title": "Advanced Component Patterns",
+          "files": {
+            "mp4": "playlist_2/3. Learn Introduction Intermediate Vue Composition API Slots State.mp4",
+            "en": "playlist_2/3. Learn Introduction Intermediate Vue Composition API Slots State.vtt",
+            "fr": "playlist_2/3. Learn Introduction Intermediate Vue Composition API Slots State.fr.vtt",
+            "ar": "playlist_2/3. Learn Introduction Intermediate Vue Composition API Slots State.ar.vtt"
+          }
+        },
+        {
+          "id": "vp2_4_0",
+          "num": 4,
+          "part": null,
+          "base": "4. Learn Introduction Intermediate Vue Composition API Slots State",
+          "title": "Composable Architecture and Reuse",
+          "files": {
+            "mp4": "playlist_2/4. Learn Introduction Intermediate Vue Composition API Slots State.mp4",
+            "en": "playlist_2/4. Learn Introduction Intermediate Vue Composition API Slots State.vtt",
+            "fr": "playlist_2/4. Learn Introduction Intermediate Vue Composition API Slots State.fr.vtt",
+            "ar": "playlist_2/4. Learn Introduction Intermediate Vue Composition API Slots State.ar.vtt"
+          }
+        },
+        {
+          "id": "vp2_5_0",
+          "num": 5,
+          "part": null,
+          "base": "5. Learn Introduction Intermediate Vue Composition API Slots State",
+          "title": "State Management with Composables",
+          "files": {
+            "mp4": "playlist_2/5. Learn Introduction Intermediate Vue Composition API Slots State.mp4",
+            "en": "playlist_2/5. Learn Introduction Intermediate Vue Composition API Slots State.vtt",
+            "fr": "playlist_2/5. Learn Introduction Intermediate Vue Composition API Slots State.fr.vtt",
+            "ar": "playlist_2/5. Learn Introduction Intermediate Vue Composition API Slots State.ar.vtt"
+          }
+        },
+        {
+          "id": "vp2_6_0",
+          "num": 6,
+          "part": null,
+          "base": "6. Learn Introduction Intermediate Vue Composition API Slots State",
+          "title": "Slots and Scoped Slots Deep Dive",
+          "files": {
+            "mp4": "playlist_2/6. Learn Introduction Intermediate Vue Composition API Slots State.mp4",
+            "en": "playlist_2/6. Learn Introduction Intermediate Vue Composition API Slots State.vtt",
+            "fr": "playlist_2/6. Learn Introduction Intermediate Vue Composition API Slots State.fr.vtt",
+            "ar": "playlist_2/6. Learn Introduction Intermediate Vue Composition API Slots State.ar.vtt"
+          }
+        },
+        {
+          "id": "vp2_7_0",
+          "num": 7,
+          "part": null,
+          "base": "7. Learn Introduction Intermediate Vue Composition API Slots State",
+          "title": "Advanced Slot Patterns",
+          "files": {
+            "mp4": "playlist_2/7. Learn Introduction Intermediate Vue Composition API Slots State.mp4",
+            "en": "playlist_2/7. Learn Introduction Intermediate Vue Composition API Slots State.vtt",
+            "fr": "playlist_2/7. Learn Introduction Intermediate Vue Composition API Slots State.fr.vtt",
+            "ar": "playlist_2/7. Learn Introduction Intermediate Vue Composition API Slots State.ar.vtt"
+          }
+        },
+        {
+          "id": "vp2_8_0",
+          "num": 8,
+          "part": null,
+          "base": "8. Learn Introduction Intermediate Vue Composition API Slots State",
+          "title": "Template and Render Functions",
+          "files": {
+            "mp4": "playlist_2/8. Learn Introduction Intermediate Vue Composition API Slots State.mp4",
+            "en": "playlist_2/8. Learn Introduction Intermediate Vue Composition API Slots State.vtt",
+            "fr": "playlist_2/8. Learn Introduction Intermediate Vue Composition API Slots State.fr.vtt",
+            "ar": "playlist_2/8. Learn Introduction Intermediate Vue Composition API Slots State.ar.vtt"
+          }
+        },
+        {
+          "id": "vp2_9_0",
+          "num": 9,
+          "part": null,
+          "base": "9. Learn Introduction Intermediate Vue Composition API Slots State",
+          "title": "Custom Directives Creation",
+          "files": {
+            "mp4": "playlist_2/9. Learn Introduction Intermediate Vue Composition API Slots State.mp4",
+            "en": "playlist_2/9. Learn Introduction Intermediate Vue Composition API Slots State.vtt",
+            "fr": "playlist_2/9. Learn Introduction Intermediate Vue Composition API Slots State.fr.vtt",
+            "ar": "playlist_2/9. Learn Introduction Intermediate Vue Composition API Slots State.ar.vtt"
+          }
+        },
+        {
+          "id": "vp2_10_0",
+          "num": 10,
+          "part": null,
+          "base": "10. Learn Introduction Intermediate Vue Composition API Slots State",
+          "title": "Using Third-Party Composables",
+          "files": {
+            "mp4": "playlist_2/10. Learn Introduction Intermediate Vue Composition API Slots State.mp4",
+            "en": "playlist_2/10. Learn Introduction Intermediate Vue Composition API Slots State.vtt",
+            "fr": "playlist_2/10. Learn Introduction Intermediate Vue Composition API Slots State.fr.vtt",
+            "ar": "playlist_2/10. Learn Introduction Intermediate Vue Composition API Slots State.ar.vtt"
+          }
+        },
+        {
+          "id": "vp2_11_0",
+          "num": 11,
+          "part": null,
+          "base": "11. Learn Introduction Intermediate Vue Composition API Slots State",
+          "title": "Vue Router in Composition API",
+          "files": {
+            "mp4": "playlist_2/11. Learn Introduction Intermediate Vue Composition API Slots State.mp4",
+            "en": "playlist_2/11. Learn Introduction Intermediate Vue Composition API Slots State.vtt",
+            "fr": "playlist_2/11. Learn Introduction Intermediate Vue Composition API Slots State.fr.vtt",
+            "ar": "playlist_2/11. Learn Introduction Intermediate Vue Composition API Slots State.ar.vtt"
+          }
+        },
+        {
+          "id": "vp2_12_0",
+          "num": 12,
+          "part": null,
+          "base": "12. Learn Introduction Intermediate Vue Composition API Slots State",
+          "title": "Advanced Routing Patterns",
+          "files": {
+            "mp4": "playlist_2/12. Learn Introduction Intermediate Vue Composition API Slots State.mp4",
+            "en": "playlist_2/12. Learn Introduction Intermediate Vue Composition API Slots State.vtt",
+            "fr": "playlist_2/12. Learn Introduction Intermediate Vue Composition API Slots State.fr.vtt",
+            "ar": "playlist_2/12. Learn Introduction Intermediate Vue Composition API Slots State.ar.vtt"
+          }
+        },
+        {
+          "id": "vp2_13_0",
+          "num": 13,
+          "part": null,
+          "base": "13. Learn Introduction Intermediate Vue Composition API Slots State",
+          "title": "Async Components and Code Splitting",
+          "files": {
+            "mp4": "playlist_2/13. Learn Introduction Intermediate Vue Composition API Slots State.mp4",
+            "en": "playlist_2/13. Learn Introduction Intermediate Vue Composition API Slots State.vtt",
+            "fr": "playlist_2/13. Learn Introduction Intermediate Vue Composition API Slots State.fr.vtt",
+            "ar": "playlist_2/13. Learn Introduction Intermediate Vue Composition API Slots State.ar.vtt"
+          }
+        },
+        {
+          "id": "vp2_14_0",
+          "num": 14,
+          "part": null,
+          "base": "14. Learn Introduction Intermediate Vue Composition API Slots State",
+          "title": "Error Handling and Suspense",
+          "files": {
+            "mp4": "playlist_2/14. Learn Introduction Intermediate Vue Composition API Slots State.mp4",
+            "en": "playlist_2/14. Learn Introduction Intermediate Vue Composition API Slots State.vtt",
+            "fr": "playlist_2/14. Learn Introduction Intermediate Vue Composition API Slots State.fr.vtt",
+            "ar": "playlist_2/14. Learn Introduction Intermediate Vue Composition API Slots State.ar.vtt"
+          }
+        },
+        {
+          "id": "vp2_15_0",
+          "num": 15,
+          "part": null,
+          "base": "15. Learn Introduction Intermediate Vue Composition API Slots State",
+          "title": "Performance Optimization Techniques",
+          "files": {
+            "mp4": "playlist_2/15. Learn Introduction Intermediate Vue Composition API Slots State.mp4",
+            "en": "playlist_2/15. Learn Introduction Intermediate Vue Composition API Slots State.vtt",
+            "fr": "playlist_2/15. Learn Introduction Intermediate Vue Composition API Slots State.fr.vtt",
+            "ar": "playlist_2/15. Learn Introduction Intermediate Vue Composition API Slots State.ar.vtt"
+          }
+        },
+        {
+          "id": "vp2_16_0",
+          "num": 16,
+          "part": null,
+          "base": "16. Learn Introduction Intermediate Vue Composition API Slots State",
+          "title": "Memory Leaks Prevention",
+          "files": {
+            "mp4": "playlist_2/16. Learn Introduction Intermediate Vue Composition API Slots State.mp4",
+            "en": "playlist_2/16. Learn Introduction Intermediate Vue Composition API Slots State.vtt",
+            "fr": "playlist_2/16. Learn Introduction Intermediate Vue Composition API Slots State.fr.vtt",
+            "ar": "playlist_2/16. Learn Introduction Intermediate Vue Composition API Slots State.ar.vtt"
+          }
+        },
+        {
+          "id": "vp2_17_0",
+          "num": 17,
+          "part": null,
+          "base": "17. Learn Introduction Intermediate Vue Composition API Slots State",
+          "title": "TypeScript Integration with Vue",
+          "files": {
+            "mp4": "playlist_2/17. Learn Introduction Intermediate Vue Composition API Slots State.mp4",
+            "en": "playlist_2/17. Learn Introduction Intermediate Vue Composition API Slots State.vtt",
+            "fr": "playlist_2/17. Learn Introduction Intermediate Vue Composition API Slots State.fr.vtt",
+            "ar": "playlist_2/17. Learn Introduction Intermediate Vue Composition API Slots State.ar.vtt"
+          }
+        },
+        {
+          "id": "vp2_18_0",
+          "num": 18,
+          "part": null,
+          "base": "18. Learn Introduction Intermediate Vue Composition API Slots State",
+          "title": "Type-Safe Components",
+          "files": {
+            "mp4": "playlist_2/18. Learn Introduction Intermediate Vue Composition API Slots State.mp4",
+            "en": "playlist_2/18. Learn Introduction Intermediate Vue Composition API Slots State.vtt",
+            "fr": "playlist_2/18. Learn Introduction Intermediate Vue Composition API Slots State.fr.vtt",
+            "ar": "playlist_2/18. Learn Introduction Intermediate Vue Composition API Slots State.ar.vtt"
+          }
+        },
+        {
+          "id": "vp2_19_0",
+          "num": 19,
+          "part": null,
+          "base": "19. Learn Introduction Intermediate Vue Composition API Slots State",
+          "title": "Custom Hooks and Utilities",
+          "files": {
+            "mp4": "playlist_2/19. Learn Introduction Intermediate Vue Composition API Slots State.mp4",
+            "en": "playlist_2/19. Learn Introduction Intermediate Vue Composition API Slots State.vtt",
+            "fr": "playlist_2/19. Learn Introduction Intermediate Vue Composition API Slots State.fr.vtt",
+            "ar": "playlist_2/19. Learn Introduction Intermediate Vue Composition API Slots State.ar.vtt"
+          }
+        },
+        {
+          "id": "vp2_20_0",
+          "num": 20,
+          "part": null,
+          "base": "20. Learn Introduction Intermediate Vue Composition API Slots State",
+          "title": "Testing Composition API Components",
+          "files": {
+            "mp4": "playlist_2/20. Learn Introduction Intermediate Vue Composition API Slots State.mp4",
+            "en": "playlist_2/20. Learn Introduction Intermediate Vue Composition API Slots State.vtt",
+            "fr": "playlist_2/20. Learn Introduction Intermediate Vue Composition API Slots State.fr.vtt",
+            "ar": "playlist_2/20. Learn Introduction Intermediate Vue Composition API Slots State.ar.vtt"
+          }
+        },
+        {
+          "id": "vp2_21_0",
+          "num": 21,
+          "part": null,
+          "base": "21. Learn Introduction Intermediate Vue Composition API Slots State",
+          "title": "Debugging Performance Issues",
+          "files": {
+            "mp4": "playlist_2/21. Learn Introduction Intermediate Vue Composition API Slots State.mp4",
+            "en": "playlist_2/21. Learn Introduction Intermediate Vue Composition API Slots State.vtt",
+            "fr": "playlist_2/21. Learn Introduction Intermediate Vue Composition API Slots State.fr.vtt",
+            "ar": "playlist_2/21. Learn Introduction Intermediate Vue Composition API Slots State.ar.vtt"
+          }
+        },
+        {
+          "id": "vp2_22_0",
+          "num": 22,
+          "part": null,
+          "base": "22. Learn Introduction Intermediate Vue Composition API Slots State",
+          "title": "Build Optimization Strategies",
+          "files": {
+            "mp4": "playlist_2/22. Learn Introduction Intermediate Vue Composition API Slots State.mp4",
+            "en": "playlist_2/22. Learn Introduction Intermediate Vue Composition API Slots State.vtt",
+            "fr": "playlist_2/22. Learn Introduction Intermediate Vue Composition API Slots State.fr.vtt",
+            "ar": "playlist_2/22. Learn Introduction Intermediate Vue Composition API Slots State.ar.vtt"
+          }
+        },
+        {
+          "id": "vp2_23_0",
+          "num": 23,
+          "part": null,
+          "base": "23. Learn Introduction Intermediate Vue Composition API Slots State",
+          "title": "Server-Side Rendering Basics",
+          "files": {
+            "mp4": "playlist_2/23. Learn Introduction Intermediate Vue Composition API Slots State.mp4",
+            "en": "playlist_2/23. Learn Introduction Intermediate Vue Composition API Slots State.vtt",
+            "fr": "playlist_2/23. Learn Introduction Intermediate Vue Composition API Slots State.fr.vtt",
+            "ar": "playlist_2/23. Learn Introduction Intermediate Vue Composition API Slots State.ar.vtt"
+          }
+        },
+        {
+          "id": "vp2_24_0",
+          "num": 24,
+          "part": null,
+          "base": "24. Learn Introduction Intermediate Vue Composition API Slots State",
+          "title": "Advanced State Management",
+          "files": {
+            "mp4": "playlist_2/24. Learn Introduction Intermediate Vue Composition API Slots State.mp4",
+            "en": "playlist_2/24. Learn Introduction Intermediate Vue Composition API Slots State.vtt",
+            "fr": "playlist_2/24. Learn Introduction Intermediate Vue Composition API Slots State.fr.vtt",
+            "ar": "playlist_2/24. Learn Introduction Intermediate Vue Composition API Slots State.ar.vtt"
+          }
+        },
+        {
+          "id": "vp2_25_0",
+          "num": 25,
+          "part": null,
+          "base": "25. Learn Introduction Intermediate Vue Composition API Slots State",
+          "title": "Global Application Patterns",
+          "files": {
+            "mp4": "playlist_2/25. Learn Introduction Intermediate Vue Composition API Slots State.mp4",
+            "en": "playlist_2/25. Learn Introduction Intermediate Vue Composition API Slots State.vtt",
+            "fr": "playlist_2/25. Learn Introduction Intermediate Vue Composition API Slots State.fr.vtt",
+            "ar": "playlist_2/25. Learn Introduction Intermediate Vue Composition API Slots State.ar.vtt"
+          }
+        },
+        {
+          "id": "vp2_26_0",
+          "num": 26,
+          "part": null,
+          "base": "26. Learn Introduction Intermediate Vue Composition API Slots State",
+          "title": "Open-Ended Project Development",
+          "files": {
+            "mp4": "playlist_2/26. Learn Introduction Intermediate Vue Composition API Slots State.mp4",
+            "en": "playlist_2/26. Learn Introduction Intermediate Vue Composition API Slots State.vtt",
+            "fr": "playlist_2/26. Learn Introduction Intermediate Vue Composition API Slots State.fr.vtt",
+            "ar": "playlist_2/26. Learn Introduction Intermediate Vue Composition API Slots State.ar.vtt"
+          }
+        }
+      ]
+    },
+    {
+      "id": "vp3",
+      "tech": "vue",
+      "name": "Playlist 3: TypeScript + Advanced",
+      "icon": "fa-vuejs",
+      "folder": "playlist_3",
+      "videos": [
+        {
+          "id": "vp3_1_0",
+          "num": 1,
+          "part": null,
+          "base": "1. Learn Introduction TypeScript and Vue 3",
+          "title": "TypeScript Fundamentals for Vue",
+          "files": {
+            "mp4": "playlist_3/1. Learn Introduction TypeScript and Vue 3.mp4",
+            "en": "playlist_3/1. Learn Introduction TypeScript and Vue 3.vtt",
+            "fr": "playlist_3/1. Learn Introduction TypeScript and Vue 3.fr.vtt",
+            "ar": "playlist_3/1. Learn Introduction TypeScript and Vue 3.ar.vtt"
+          }
+        },
+        {
+          "id": "vp3_2_0",
+          "num": 2,
+          "part": null,
+          "base": "2. Learn Introduction TypeScript and Vue 3",
+          "title": "Setting Up TypeScript in Vue Projects",
+          "files": {
+            "mp4": "playlist_3/2. Learn Introduction TypeScript and Vue 3.mp4",
+            "en": "playlist_3/2. Learn Introduction TypeScript and Vue 3.vtt",
+            "fr": "playlist_3/2. Learn Introduction TypeScript and Vue 3.fr.vtt",
+            "ar": "playlist_3/2. Learn Introduction TypeScript and Vue 3.ar.vtt"
+          }
+        },
+        {
+          "id": "vp3_3_0",
+          "num": 3,
+          "part": null,
+          "base": "3. Learn Introduction TypeScript and Vue 3",
+          "title": "Type Annotations and Interfaces",
+          "files": {
+            "mp4": "playlist_3/3. Learn Introduction TypeScript and Vue 3.mp4",
+            "en": "playlist_3/3. Learn Introduction TypeScript and Vue 3.vtt",
+            "fr": "playlist_3/3. Learn Introduction TypeScript and Vue 3.fr.vtt",
+            "ar": "playlist_3/3. Learn Introduction TypeScript and Vue 3.ar.vtt"
+          }
+        },
+        {
+          "id": "vp3_4_0",
+          "num": 4,
+          "part": null,
+          "base": "4. Learn Introduction TypeScript and Vue 3",
+          "title": "Using TypeScript with Composition API",
+          "files": {
+            "mp4": "playlist_3/4. Learn Introduction TypeScript and Vue 3.mp4",
+            "en": "playlist_3/4. Learn Introduction TypeScript and Vue 3.vtt",
+            "fr": "playlist_3/4. Learn Introduction TypeScript and Vue 3.fr.vtt",
+            "ar": "playlist_3/4. Learn Introduction TypeScript and Vue 3.ar.vtt"
+          }
+        },
+        {
+          "id": "vp3_5_0",
+          "num": 5,
+          "part": null,
+          "base": "5. Learn Introduction TypeScript and Vue 3",
+          "title": "Advanced TypeScript Features",
+          "files": {
+            "mp4": "playlist_3/5. Learn Introduction TypeScript and Vue 3.mp4",
+            "en": "playlist_3/5. Learn Introduction TypeScript and Vue 3.vtt",
+            "fr": "playlist_3/5. Learn Introduction TypeScript and Vue 3.fr.vtt",
+            "ar": "playlist_3/5. Learn Introduction TypeScript and Vue 3.ar.vtt"
+          }
+        },
+        {
+          "id": "vp3_6_0",
+          "num": 6,
+          "part": null,
+          "base": "6. Learn Introduction TypeScript and Vue 3",
+          "title": "TypeScript with Vue Router",
+          "files": {
+            "mp4": "playlist_3/6. Learn Introduction TypeScript and Vue 3.mp4",
+            "en": "playlist_3/6. Learn Introduction TypeScript and Vue 3.vtt",
+            "fr": "playlist_3/6. Learn Introduction TypeScript and Vue 3.fr.vtt",
+            "ar": "playlist_3/6. Learn Introduction TypeScript and Vue 3.ar.vtt"
+          }
+        },
+        {
+          "id": "vp3_7_0",
+          "num": 7,
+          "part": null,
+          "base": "7. Learn Introduction TypeScript and Vue 3",
+          "title": "Typing Props and Emits",
+          "files": {
+            "mp4": "playlist_3/7. Learn Introduction TypeScript and Vue 3.mp4",
+            "en": "playlist_3/7. Learn Introduction TypeScript and Vue 3.vtt",
+            "fr": "playlist_3/7. Learn Introduction TypeScript and Vue 3.fr.vtt",
+            "ar": "playlist_3/7. Learn Introduction TypeScript and Vue 3.ar.vtt"
+          }
+        },
+        {
+          "id": "vp3_8_0",
+          "num": 8,
+          "part": null,
+          "base": "8. Learn Introduction TypeScript and Vue 3",
+          "title": "Generic Components and Utilities",
+          "files": {
+            "mp4": "playlist_3/8. Learn Introduction TypeScript and Vue 3.mp4",
+            "en": "playlist_3/8. Learn Introduction TypeScript and Vue 3.vtt",
+            "fr": "playlist_3/8. Learn Introduction TypeScript and Vue 3.fr.vtt",
+            "ar": "playlist_3/8. Learn Introduction TypeScript and Vue 3.ar.vtt"
+          }
+        },
+        {
+          "id": "vp3_9_1",
+          "num": 9,
+          "part": 1,
+          "base": "9. Learn Introduction TypeScript and Vue 3-00.00.00.000-00.08.56.293-seg1",
+          "title": "Refactoring Options API to Composition API",
+          "files": {
+            "mp4": "playlist_3/9. Learn Introduction TypeScript and Vue 3-00.00.00.000-00.08.56.293-seg1.mp4",
+            "en": "playlist_3/9. Learn Introduction TypeScript and Vue 3-00.00.00.000-00.08.56.293-seg1.vtt",
+            "fr": "playlist_3/9. Learn Introduction TypeScript and Vue 3-00.00.00.000-00.08.56.293-seg1.fr.vtt",
+            "ar": "playlist_3/9. Learn Introduction TypeScript and Vue 3-00.00.00.000-00.08.56.293-seg1.ar.vtt"
+          }
+        },
+        {
+          "id": "vp3_9_2",
+          "num": 9,
+          "part": 2,
+          "base": "9. Learn Introduction TypeScript and Vue 3-00.08.56.293-00.17.47.733-seg2",
+          "title": "Migrating Methods to Composition API",
+          "files": {
+            "mp4": "playlist_3/9. Learn Introduction TypeScript and Vue 3-00.08.56.293-00.17.47.733-seg2.mp4",
+            "en": "playlist_3/9. Learn Introduction TypeScript and Vue 3-00.08.56.293-00.17.47.733-seg2.vtt",
+            "fr": "playlist_3/9. Learn Introduction TypeScript and Vue 3-00.08.56.293-00.17.47.733-seg2.fr.vtt",
+            "ar": "playlist_3/9. Learn Introduction TypeScript and Vue 3-00.08.56.293-00.17.47.733-seg2.ar.vtt"
+          }
+        },
+        {
+          "id": "vp3_10_0",
+          "num": 10,
+          "part": null,
+          "base": "10. Learn Refactoring Options API Methods TypeScript and Vue 3",
+          "title": "TypeScript Best Practices",
+          "files": {
+            "mp4": "playlist_3/10. Learn Refactoring Options API Methods TypeScript and Vue 3.mp4",
+            "en": "playlist_3/10. Learn Refactoring Options API Methods TypeScript and Vue 3.vtt",
+            "fr": "playlist_3/10. Learn Refactoring Options API Methods TypeScript and Vue 3.fr.vtt",
+            "ar": "playlist_3/10. Learn Refactoring Options API Methods TypeScript and Vue 3.ar.vtt"
+          }
+        },
+        {
+          "id": "vp3_11_0",
+          "num": 11,
+          "part": null,
+          "base": "11. Learn Refactoring Options API Methods TypeScript and Vue 3",
+          "title": "Advanced TypeScript Patterns",
+          "files": {
+            "mp4": "playlist_3/11. Learn Refactoring Options API Methods TypeScript and Vue 3.mp4",
+            "en": "playlist_3/11. Learn Refactoring Options API Methods TypeScript and Vue 3.vtt",
+            "fr": "playlist_3/11. Learn Refactoring Options API Methods TypeScript and Vue 3.fr.vtt",
+            "ar": "playlist_3/11. Learn Refactoring Options API Methods TypeScript and Vue 3.ar.vtt"
+          }
+        },
+        {
+          "id": "vp3_12_0",
+          "num": 12,
+          "part": null,
+          "base": "12. Learn Refactoring Options API Methods TypeScript and Vue 3",
+          "title": "Building Type-Safe Applications",
+          "files": {
+            "mp4": "playlist_3/12. Learn Refactoring Options API Methods TypeScript and Vue 3.mp4",
+            "en": "playlist_3/12. Learn Refactoring Options API Methods TypeScript and Vue 3.vtt",
+            "fr": "playlist_3/12. Learn Refactoring Options API Methods TypeScript and Vue 3.fr.vtt",
+            "ar": "playlist_3/12. Learn Refactoring Options API Methods TypeScript and Vue 3.ar.vtt"
+          }
+        },
+        {
+          "id": "vp3_13_0",
+          "num": 13,
+          "part": null,
+          "base": "13. Learn Refactoring Options API Methods TypeScript and Vue 3",
+          "title": "Testing TypeScript Vue Components",
+          "files": {
+            "mp4": "playlist_3/13. Learn Refactoring Options API Methods TypeScript and Vue 3.mp4",
+            "en": "playlist_3/13. Learn Refactoring Options API Methods TypeScript and Vue 3.vtt",
+            "fr": "playlist_3/13. Learn Refactoring Options API Methods TypeScript and Vue 3.fr.vtt",
+            "ar": "playlist_3/13. Learn Refactoring Options API Methods TypeScript and Vue 3.ar.vtt"
+          }
+        },
+        {
+          "id": "vp3_14_0",
+          "num": 14,
+          "part": null,
+          "base": "14. Learn Refactoring Options API Methods TypeScript and Vue 3",
+          "title": "Performance with TypeScript",
+          "files": {
+            "mp4": "playlist_3/14. Learn Refactoring Options API Methods TypeScript and Vue 3.mp4",
+            "en": "playlist_3/14. Learn Refactoring Options API Methods TypeScript and Vue 3.vtt",
+            "fr": "playlist_3/14. Learn Refactoring Options API Methods TypeScript and Vue 3.fr.vtt",
+            "ar": "playlist_3/14. Learn Refactoring Options API Methods TypeScript and Vue 3.ar.vtt"
+          }
+        },
+        {
+          "id": "vp3_15_0",
+          "num": 15,
+          "part": null,
+          "base": "15. Learn Refactoring Options API Methods TypeScript and Vue 3",
+          "title": "Enterprise Vue Applications",
+          "files": {
+            "mp4": "playlist_3/15. Learn Refactoring Options API Methods TypeScript and Vue 3.mp4",
+            "en": "playlist_3/15. Learn Refactoring Options API Methods TypeScript and Vue 3.vtt",
+            "fr": "playlist_3/15. Learn Refactoring Options API Methods TypeScript and Vue 3.fr.vtt",
+            "ar": "playlist_3/15. Learn Refactoring Options API Methods TypeScript and Vue 3.ar.vtt"
+          }
+        },
+        {
+          "id": "vp3_16_0",
+          "num": 16,
+          "part": null,
+          "base": "16. Learn Refactoring Options API Methods TypeScript and Vue 3",
+          "title": "Monorepo Setup and Tooling",
+          "files": {
+            "mp4": "playlist_3/16. Learn Refactoring Options API Methods TypeScript and Vue 3.mp4",
+            "en": "playlist_3/16. Learn Refactoring Options API Methods TypeScript and Vue 3.vtt",
+            "fr": "playlist_3/16. Learn Refactoring Options API Methods TypeScript and Vue 3.fr.vtt",
+            "ar": "playlist_3/16. Learn Refactoring Options API Methods TypeScript and Vue 3.ar.vtt"
+          }
+        },
+        {
+          "id": "vp3_17_0",
+          "num": 17,
+          "part": null,
+          "base": "17. Learn Refactoring Options API Methods TypeScript and Vue 3",
+          "title": "Advanced Tooling Configuration",
+          "files": {
+            "mp4": "playlist_3/17. Learn Refactoring Options API Methods TypeScript and Vue 3.mp4",
+            "en": "playlist_3/17. Learn Refactoring Options API Methods TypeScript and Vue 3.vtt",
+            "fr": "playlist_3/17. Learn Refactoring Options API Methods TypeScript and Vue 3.fr.vtt",
+            "ar": "playlist_3/17. Learn Refactoring Options API Methods TypeScript and Vue 3.ar.vtt"
+          }
+        },
+        {
+          "id": "vp3_18_0",
+          "num": 18,
+          "part": null,
+          "base": "18. Learn Refactoring Options API Methods TypeScript and Vue 3",
+          "title": "Building Design Systems",
+          "files": {
+            "mp4": "playlist_3/18. Learn Refactoring Options API Methods TypeScript and Vue 3.mp4",
+            "en": "playlist_3/18. Learn Refactoring Options API Methods TypeScript and Vue 3.vtt",
+            "fr": "playlist_3/18. Learn Refactoring Options API Methods TypeScript and Vue 3.fr.vtt",
+            "ar": "playlist_3/18. Learn Refactoring Options API Methods TypeScript and Vue 3.ar.vtt"
+          }
+        },
+        {
+          "id": "vp3_19_0",
+          "num": 19,
+          "part": null,
+          "base": "19. Learn Refactoring Options API Methods TypeScript and Vue 3",
+          "title": "Production-Ready Applications",
+          "files": {
+            "mp4": "playlist_3/19. Learn Refactoring Options API Methods TypeScript and Vue 3.mp4",
+            "en": "playlist_3/19. Learn Refactoring Options API Methods TypeScript and Vue 3.vtt",
+            "fr": "playlist_3/19. Learn Refactoring Options API Methods TypeScript and Vue 3.fr.vtt",
+            "ar": "playlist_3/19. Learn Refactoring Options API Methods TypeScript and Vue 3.ar.vtt"
+          }
+        },
+        {
+          "id": "vp3_20_0",
+          "num": 20,
+          "part": null,
+          "base": "20. Learn Refactoring Options API Methods TypeScript and Vue 3",
+          "title": "When you go to a new form, what do we typically want to do?",
+          "files": {
+            "mp4": "playlist_3/20. Learn Refactoring Options API Methods TypeScript and Vue 3.mp4",
+            "en": "playlist_3/20. Learn Refactoring Options API Methods TypeScript and Vue 3.vtt",
+            "fr": "playlist_3/20. Learn Refactoring Options API Methods TypeScript and Vue 3.fr.vtt",
+            "ar": "playlist_3/20. Learn Refactoring Options API Methods TypeScript and Vue 3.ar.vtt"
+          }
+        },
+        {
+          "id": "vp3_21_0",
+          "num": 21,
+          "part": null,
+          "base": "21. Learn Introduction TypeScript and Vue 3",
+          "title": "Now that we've practiced that, what I want you to do now is go ahead and do the…",
+          "files": {
+            "mp4": "playlist_3/21. Learn Introduction TypeScript and Vue 3.mp4",
+            "en": "playlist_3/21. Learn Introduction TypeScript and Vue 3.vtt",
+            "fr": "playlist_3/21. Learn Introduction TypeScript and Vue 3.fr.vtt",
+            "ar": "playlist_3/21. Learn Introduction TypeScript and Vue 3.ar.vtt"
+          }
+        },
+        {
+          "id": "vp3_22_0",
+          "num": 22,
+          "part": null,
+          "base": "22. Learn Introduction TypeScript and Vue 3",
+          "title": "Do now, we're going to graduate on to do more advanced event handlers.",
+          "files": {
+            "mp4": "playlist_3/22. Learn Introduction TypeScript and Vue 3.mp4",
+            "en": "playlist_3/22. Learn Introduction TypeScript and Vue 3.vtt",
+            "fr": "playlist_3/22. Learn Introduction TypeScript and Vue 3.fr.vtt",
+            "ar": "playlist_3/22. Learn Introduction TypeScript and Vue 3.ar.vtt"
+          }
+        },
+        {
+          "id": "vp3_23_0",
+          "num": 23,
+          "part": null,
+          "base": "23. Learn Introduction TypeScript and Vue 3",
+          "title": "What do now is, for your exercise, you'll notice that inside we have this…",
+          "files": {
+            "mp4": "playlist_3/23. Learn Introduction TypeScript and Vue 3.mp4",
+            "en": "playlist_3/23. Learn Introduction TypeScript and Vue 3.vtt",
+            "fr": "playlist_3/23. Learn Introduction TypeScript and Vue 3.fr.vtt",
+            "ar": "playlist_3/23. Learn Introduction TypeScript and Vue 3.ar.vtt"
+          }
+        },
+        {
+          "id": "vp3_24_0",
+          "num": 24,
+          "part": null,
+          "base": "24. Learn Introduction TypeScript and Vue 3",
+          "title": "There's an important topic that we haven't talked about yet, that is pretty…",
+          "files": {
+            "mp4": "playlist_3/24. Learn Introduction TypeScript and Vue 3.mp4",
+            "en": "playlist_3/24. Learn Introduction TypeScript and Vue 3.vtt",
+            "fr": "playlist_3/24. Learn Introduction TypeScript and Vue 3.fr.vtt",
+            "ar": "playlist_3/24. Learn Introduction TypeScript and Vue 3.ar.vtt"
+          }
+        },
+        {
+          "id": "vp3_25_0",
+          "num": 25,
+          "part": null,
+          "base": "25. Learn Introduction TypeScript and Vue 3",
+          "title": "What I'd like you to do is  and then you're going to practice creating a distor.",
+          "files": {
+            "mp4": "playlist_3/25. Learn Introduction TypeScript and Vue 3.mp4",
+            "en": "playlist_3/25. Learn Introduction TypeScript and Vue 3.vtt",
+            "fr": "playlist_3/25. Learn Introduction TypeScript and Vue 3.fr.vtt",
+            "ar": "playlist_3/25. Learn Introduction TypeScript and Vue 3.ar.vtt"
+          }
+        },
+        {
+          "id": "vp3_26_0",
+          "num": 26,
+          "part": null,
+          "base": "26. Learn Introduction TypeScript and Vue 3",
+          "title": "Before we embark on the final exercise, what I do want to go ahead and show you…",
+          "files": {
+            "mp4": "playlist_3/26. Learn Introduction TypeScript and Vue 3.mp4",
+            "en": "playlist_3/26. Learn Introduction TypeScript and Vue 3.vtt",
+            "fr": "playlist_3/26. Learn Introduction TypeScript and Vue 3.fr.vtt",
+            "ar": "playlist_3/26. Learn Introduction TypeScript and Vue 3.ar.vtt"
+          }
+        },
+        {
+          "id": "vp3_27_0",
+          "num": 27,
+          "part": null,
+          "base": "27. Learn Introduction TypeScript and Vue 3",
+          "title": "I know it's been a long day, but hopefully you found this useful.",
+          "files": {
+            "mp4": "playlist_3/27. Learn Introduction TypeScript and Vue 3.mp4",
+            "en": "playlist_3/27. Learn Introduction TypeScript and Vue 3.vtt",
+            "fr": "playlist_3/27. Learn Introduction TypeScript and Vue 3.fr.vtt",
+            "ar": "playlist_3/27. Learn Introduction TypeScript and Vue 3.ar.vtt"
+          }
+        },
+        {
+          "id": "vp3_28_0",
+          "num": 28,
+          "part": null,
+          "base": "28. Learn Introduction TypeScript and Vue 3",
+          "title": "The final exercise per se is really about trying to put all of this together.",
+          "files": {
+            "mp4": "playlist_3/28. Learn Introduction TypeScript and Vue 3.mp4",
+            "en": "playlist_3/28. Learn Introduction TypeScript and Vue 3.vtt",
+            "fr": "playlist_3/28. Learn Introduction TypeScript and Vue 3.fr.vtt",
+            "ar": "playlist_3/28. Learn Introduction TypeScript and Vue 3.ar.vtt"
+          }
+        },
+        {
+          "id": "vp3_29_0",
+          "num": 29,
+          "part": null,
+          "base": "29. Learn Introduction TypeScript and Vue 3",
+          "title": "This is kind of a culmination of a lot of things that we've been doing so I…",
+          "files": {
+            "mp4": "playlist_3/29. Learn Introduction TypeScript and Vue 3.mp4",
+            "en": "playlist_3/29. Learn Introduction TypeScript and Vue 3.vtt",
+            "fr": "playlist_3/29. Learn Introduction TypeScript and Vue 3.fr.vtt",
+            "ar": "playlist_3/29. Learn Introduction TypeScript and Vue 3.ar.vtt"
+          }
+        }
+      ]
+    },
+    {
+      "id": "pp4",
+      "tech": "python",
+      "name": "Playlist 4: Core Python",
+      "icon": "fa-python",
+      "folder": "playlist_4",
+      "videos": [
+        {
+          "id": "pp4_1_0",
+          "num": 1,
+          "part": null,
+          "base": "1. Learn Introduction Practical Guide to Python",
+          "title": "Introduction to Practical Python Course",
+          "files": {
+            "mp4": "playlist_4/1. Learn Introduction Practical Guide to Python.mp4",
+            "en": "playlist_4/1. Learn Introduction Practical Guide to Python.vtt",
+            "fr": "playlist_4/1. Learn Introduction Practical Guide to Python.fr.vtt",
+            "ar": "playlist_4/1. Learn Introduction Practical Guide to Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp4_2_0",
+          "num": 2,
+          "part": null,
+          "base": "2. Learn Introduction Practical Guide to Python",
+          "title": "Python Fundamentals and Setup",
+          "files": {
+            "mp4": "playlist_4/2. Learn Introduction Practical Guide to Python.mp4",
+            "en": "playlist_4/2. Learn Introduction Practical Guide to Python.vtt",
+            "fr": "playlist_4/2. Learn Introduction Practical Guide to Python.fr.vtt",
+            "ar": "playlist_4/2. Learn Introduction Practical Guide to Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp4_3_0",
+          "num": 3,
+          "part": null,
+          "base": "3. Learn Introduction Practical Guide to Python",
+          "title": "Variables, Data Types, and Operators",
+          "files": {
+            "mp4": "playlist_4/3. Learn Introduction Practical Guide to Python.mp4",
+            "en": "playlist_4/3. Learn Introduction Practical Guide to Python.vtt",
+            "fr": "playlist_4/3. Learn Introduction Practical Guide to Python.fr.vtt",
+            "ar": "playlist_4/3. Learn Introduction Practical Guide to Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp4_4_0",
+          "num": 4,
+          "part": null,
+          "base": "4. Learn Introduction Practical Guide to Python",
+          "title": "Control Flow and Loops",
+          "files": {
+            "mp4": "playlist_4/4. Learn Introduction Practical Guide to Python.mp4",
+            "en": "playlist_4/4. Learn Introduction Practical Guide to Python.vtt",
+            "fr": "playlist_4/4. Learn Introduction Practical Guide to Python.fr.vtt",
+            "ar": "playlist_4/4. Learn Introduction Practical Guide to Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp4_5_0",
+          "num": 5,
+          "part": null,
+          "base": "5. Learn Introduction Practical Guide to Python",
+          "title": "Functions and Code Organization",
+          "files": {
+            "mp4": "playlist_4/5. Learn Introduction Practical Guide to Python.mp4",
+            "en": "playlist_4/5. Learn Introduction Practical Guide to Python.vtt",
+            "fr": "playlist_4/5. Learn Introduction Practical Guide to Python.fr.vtt",
+            "ar": "playlist_4/5. Learn Introduction Practical Guide to Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp4_6_0",
+          "num": 6,
+          "part": null,
+          "base": "6. Learn Introduction Practical Guide to Python",
+          "title": "Working with Collections",
+          "files": {
+            "mp4": "playlist_4/6. Learn Introduction Practical Guide to Python.mp4",
+            "en": "playlist_4/6. Learn Introduction Practical Guide to Python.vtt",
+            "fr": "playlist_4/6. Learn Introduction Practical Guide to Python.fr.vtt",
+            "ar": "playlist_4/6. Learn Introduction Practical Guide to Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp4_7_0",
+          "num": 7,
+          "part": null,
+          "base": "7. Learn Introduction Practical Guide to Python",
+          "title": "String Manipulation and Formatting",
+          "files": {
+            "mp4": "playlist_4/7. Learn Introduction Practical Guide to Python.mp4",
+            "en": "playlist_4/7. Learn Introduction Practical Guide to Python.vtt",
+            "fr": "playlist_4/7. Learn Introduction Practical Guide to Python.fr.vtt",
+            "ar": "playlist_4/7. Learn Introduction Practical Guide to Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp4_8_0",
+          "num": 8,
+          "part": null,
+          "base": "8. Learn Introduction Practical Guide to Python",
+          "title": "File I/O and Working with Paths",
+          "files": {
+            "mp4": "playlist_4/8. Learn Introduction Practical Guide to Python.mp4",
+            "en": "playlist_4/8. Learn Introduction Practical Guide to Python.vtt",
+            "fr": "playlist_4/8. Learn Introduction Practical Guide to Python.fr.vtt",
+            "ar": "playlist_4/8. Learn Introduction Practical Guide to Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp4_9_0",
+          "num": 9,
+          "part": null,
+          "base": "9. Learn Introduction Practical Guide to Python",
+          "title": "Object-Oriented Programming Basics",
+          "files": {
+            "mp4": "playlist_4/9. Learn Introduction Practical Guide to Python.mp4",
+            "en": "playlist_4/9. Learn Introduction Practical Guide to Python.vtt",
+            "fr": "playlist_4/9. Learn Introduction Practical Guide to Python.fr.vtt",
+            "ar": "playlist_4/9. Learn Introduction Practical Guide to Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp4_10_0",
+          "num": 10,
+          "part": null,
+          "base": "10. Learn Introduction Practical Guide to Python",
+          "title": "Classes and Object Instances",
+          "files": {
+            "mp4": "playlist_4/10. Learn Introduction Practical Guide to Python.mp4",
+            "en": "playlist_4/10. Learn Introduction Practical Guide to Python.vtt",
+            "fr": "playlist_4/10. Learn Introduction Practical Guide to Python.fr.vtt",
+            "ar": "playlist_4/10. Learn Introduction Practical Guide to Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp4_12_0",
+          "num": 12,
+          "part": null,
+          "base": "12. Learn Introduction Practical Guide to Python",
+          "title": "Inheritance and Polymorphism",
+          "files": {
+            "mp4": "playlist_4/12. Learn Introduction Practical Guide to Python.mp4",
+            "en": "playlist_4/12. Learn Introduction Practical Guide to Python.vtt",
+            "fr": "playlist_4/12. Learn Introduction Practical Guide to Python.fr.vtt",
+            "ar": "playlist_4/12. Learn Introduction Practical Guide to Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp4_13_0",
+          "num": 13,
+          "part": null,
+          "base": "13. Learn Introduction Practical Guide to Python",
+          "title": "Encapsulation and Access Control",
+          "files": {
+            "mp4": "playlist_4/13. Learn Introduction Practical Guide to Python.mp4",
+            "en": "playlist_4/13. Learn Introduction Practical Guide to Python.vtt",
+            "fr": "playlist_4/13. Learn Introduction Practical Guide to Python.fr.vtt",
+            "ar": "playlist_4/13. Learn Introduction Practical Guide to Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp4_14_0",
+          "num": 14,
+          "part": null,
+          "base": "14. Learn Introduction Practical Guide to Python",
+          "title": "Built-in Methods and Dunder Methods",
+          "files": {
+            "mp4": "playlist_4/14. Learn Introduction Practical Guide to Python.mp4",
+            "en": "playlist_4/14. Learn Introduction Practical Guide to Python.vtt",
+            "fr": "playlist_4/14. Learn Introduction Practical Guide to Python.fr.vtt",
+            "ar": "playlist_4/14. Learn Introduction Practical Guide to Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp4_15_0",
+          "num": 15,
+          "part": null,
+          "base": "15. Learn Introduction Practical Guide to Python",
+          "title": "Exception Handling and Debugging",
+          "files": {
+            "mp4": "playlist_4/15. Learn Introduction Practical Guide to Python.mp4",
+            "en": "playlist_4/15. Learn Introduction Practical Guide to Python.vtt",
+            "fr": "playlist_4/15. Learn Introduction Practical Guide to Python.fr.vtt",
+            "ar": "playlist_4/15. Learn Introduction Practical Guide to Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp4_16_0",
+          "num": 16,
+          "part": null,
+          "base": "16. Learn Introduction Practical Guide to Python",
+          "title": "Working with Modules and Packages",
+          "files": {
+            "mp4": "playlist_4/16. Learn Introduction Practical Guide to Python.mp4",
+            "en": "playlist_4/16. Learn Introduction Practical Guide to Python.vtt",
+            "fr": "playlist_4/16. Learn Introduction Practical Guide to Python.fr.vtt",
+            "ar": "playlist_4/16. Learn Introduction Practical Guide to Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp4_17_0",
+          "num": 17,
+          "part": null,
+          "base": "17. Learn Introduction Practical Guide to Python",
+          "title": "Installing and Using External Libraries",
+          "files": {
+            "mp4": "playlist_4/17. Learn Introduction Practical Guide to Python.mp4",
+            "en": "playlist_4/17. Learn Introduction Practical Guide to Python.vtt",
+            "fr": "playlist_4/17. Learn Introduction Practical Guide to Python.fr.vtt",
+            "ar": "playlist_4/17. Learn Introduction Practical Guide to Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp4_18_1",
+          "num": 18,
+          "part": 1,
+          "base": "18. Learn Introduction Practical Guide to Python (Part 1)",
+          "title": "Web Scraping with Python",
+          "files": {
+            "mp4": "playlist_4/18. Learn Introduction Practical Guide to Python (Part 1).mp4",
+            "en": "playlist_4/18. Learn Introduction Practical Guide to Python (Part 1).vtt",
+            "fr": "playlist_4/18. Learn Introduction Practical Guide to Python.fr (Part 1).vtt",
+            "ar": "playlist_4/18. Learn Introduction Practical Guide to Python.ar (Part 1).vtt"
+          }
+        },
+        {
+          "id": "pp4_18_2",
+          "num": 18,
+          "part": 2,
+          "base": "18. Learn Introduction Practical Guide to Python (Part 2)",
+          "title": "Working with APIs and JSON",
+          "files": {
+            "mp4": "playlist_4/18. Learn Introduction Practical Guide to Python (Part 2).mp4",
+            "en": "playlist_4/18. Learn Introduction Practical Guide to Python (Part 2).vtt",
+            "fr": "playlist_4/18. Learn Introduction Practical Guide to Python.fr (Part 2).vtt",
+            "ar": "playlist_4/18. Learn Introduction Practical Guide to Python.ar (Part 2).vtt"
+          }
+        },
+        {
+          "id": "pp4_19_1",
+          "num": 19,
+          "part": 1,
+          "base": "19. Learn Introduction Practical Guide to Python (Part 1)",
+          "title": "Regular Expressions and Text Processing",
+          "files": {
+            "mp4": "playlist_4/19. Learn Introduction Practical Guide to Python (Part 1).mp4",
+            "en": "playlist_4/19. Learn Introduction Practical Guide to Python (Part 1).vtt",
+            "fr": "playlist_4/19. Learn Introduction Practical Guide to Python.fr (Part 1).vtt",
+            "ar": "playlist_4/19. Learn Introduction Practical Guide to Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp4_19_2",
+          "num": 19,
+          "part": 2,
+          "base": "19. Learn Introduction Practical Guide to Python (Part 2)",
+          "title": "Working with Databases",
+          "files": {
+            "mp4": "playlist_4/19. Learn Introduction Practical Guide to Python (Part 2).mp4",
+            "en": "playlist_4/19. Learn Introduction Practical Guide to Python (Part 2).vtt",
+            "fr": "playlist_4/19. Learn Introduction Practical Guide to Python.fr (Part 2).vtt",
+            "ar": "playlist_4/19. Learn Introduction Practical Guide to Python.ar (Part 2).vtt"
+          }
+        },
+        {
+          "id": "pp4_20_0",
+          "num": 20,
+          "part": null,
+          "base": "20. Learn Introduction Practical Guide to Python",
+          "title": "SQL Integration with Python",
+          "files": {
+            "mp4": "playlist_4/20. Learn Introduction Practical Guide to Python.mp4",
+            "en": "playlist_4/20. Learn Introduction Practical Guide to Python.vtt",
+            "fr": "playlist_4/20. Learn Introduction Practical Guide to Python.fr.vtt",
+            "ar": "playlist_4/20. Learn Introduction Practical Guide to Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp4_21_0",
+          "num": 21,
+          "part": null,
+          "base": "21. Learn Introduction Practical Guide to Python",
+          "title": "Building Command-Line Applications",
+          "files": {
+            "mp4": "playlist_4/21. Learn Introduction Practical Guide to Python.mp4",
+            "en": "playlist_4/21. Learn Introduction Practical Guide to Python.vtt",
+            "fr": "playlist_4/21. Learn Introduction Practical Guide to Python.fr.vtt",
+            "ar": "playlist_4/21. Learn Introduction Practical Guide to Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp4_22_0",
+          "num": 22,
+          "part": null,
+          "base": "22. Learn Introduction Practical Guide to Python",
+          "title": "Async Programming and Concurrency",
+          "files": {
+            "mp4": "playlist_4/22. Learn Introduction Practical Guide to Python.mp4",
+            "en": "playlist_4/22. Learn Introduction Practical Guide to Python.vtt",
+            "fr": "playlist_4/22. Learn Introduction Practical Guide to Python.fr.vtt",
+            "ar": "playlist_4/22. Learn Introduction Practical Guide to Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp4_23_0",
+          "num": 23,
+          "part": null,
+          "base": "23. Learn Introduction Practical Guide to Python",
+          "title": "Working with Threading",
+          "files": {
+            "mp4": "playlist_4/23. Learn Introduction Practical Guide to Python.mp4",
+            "en": "playlist_4/23. Learn Introduction Practical Guide to Python.vtt",
+            "fr": "playlist_4/23. Learn Introduction Practical Guide to Python.fr.vtt",
+            "ar": "playlist_4/23. Learn Introduction Practical Guide to Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp4_24_0",
+          "num": 24,
+          "part": null,
+          "base": "24. Learn Introduction Practical Guide to Python",
+          "title": "Process Management",
+          "files": {
+            "mp4": "playlist_4/24. Learn Introduction Practical Guide to Python.mp4",
+            "en": "playlist_4/24. Learn Introduction Practical Guide to Python.vtt",
+            "fr": "playlist_4/24. Learn Introduction Practical Guide to Python.fr.vtt",
+            "ar": "playlist_4/24. Learn Introduction Practical Guide to Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp4_25_0",
+          "num": 25,
+          "part": null,
+          "base": "25. Learn Introduction Practical Guide to Python",
+          "title": "Understanding Decorators",
+          "files": {
+            "mp4": "playlist_4/25. Learn Introduction Practical Guide to Python.mp4",
+            "en": "playlist_4/25. Learn Introduction Practical Guide to Python.vtt",
+            "fr": "playlist_4/25. Learn Introduction Practical Guide to Python.fr.vtt",
+            "ar": "playlist_4/25. Learn Introduction Practical Guide to Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp4_26_0",
+          "num": 26,
+          "part": null,
+          "base": "26. Learn Introduction Practical Guide to Python",
+          "title": "Creating Custom Decorators",
+          "files": {
+            "mp4": "playlist_4/26. Learn Introduction Practical Guide to Python.mp4",
+            "en": "playlist_4/26. Learn Introduction Practical Guide to Python.vtt",
+            "fr": "playlist_4/26. Learn Introduction Practical Guide to Python.fr.vtt",
+            "ar": "playlist_4/26. Learn Introduction Practical Guide to Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp4_27_0",
+          "num": 27,
+          "part": null,
+          "base": "27. Learn Introduction Practical Guide to Python",
+          "title": "Context Managers and Resource Management",
+          "files": {
+            "mp4": "playlist_4/27. Learn Introduction Practical Guide to Python.mp4",
+            "en": "playlist_4/27. Learn Introduction Practical Guide to Python.vtt",
+            "fr": "playlist_4/27. Learn Introduction Practical Guide to Python.fr.vtt",
+            "ar": "playlist_4/27. Learn Introduction Practical Guide to Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp4_28_0",
+          "num": 28,
+          "part": null,
+          "base": "28. Learn Introduction Practical Guide to Python",
+          "title": "Advanced Function Techniques",
+          "files": {
+            "mp4": "playlist_4/28. Learn Introduction Practical Guide to Python.mp4",
+            "en": "playlist_4/28. Learn Introduction Practical Guide to Python.vtt",
+            "fr": "playlist_4/28. Learn Introduction Practical Guide to Python.fr.vtt",
+            "ar": "playlist_4/28. Learn Introduction Practical Guide to Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp4_29_0",
+          "num": 29,
+          "part": null,
+          "base": "29. Learn Introduction Practical Guide to Python",
+          "title": "List Comprehensions and Generators",
+          "files": {
+            "mp4": "playlist_4/29. Learn Introduction Practical Guide to Python.mp4",
+            "en": "playlist_4/29. Learn Introduction Practical Guide to Python.vtt",
+            "fr": "playlist_4/29. Learn Introduction Practical Guide to Python.fr.vtt",
+            "ar": "playlist_4/29. Learn Introduction Practical Guide to Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp4_30_0",
+          "num": 30,
+          "part": null,
+          "base": "30. Learn Introduction Practical Guide to Python",
+          "title": "Functional Programming Concepts",
+          "files": {
+            "mp4": "playlist_4/30. Learn Introduction Practical Guide to Python.mp4",
+            "en": "playlist_4/30. Learn Introduction Practical Guide to Python.vtt",
+            "fr": "playlist_4/30. Learn Introduction Practical Guide to Python.fr.vtt",
+            "ar": "playlist_4/30. Learn Introduction Practical Guide to Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp4_31_0",
+          "num": 31,
+          "part": null,
+          "base": "31. Learn Introduction Practical Guide to Python",
+          "title": "Map, Filter, and Reduce",
+          "files": {
+            "mp4": "playlist_4/31. Learn Introduction Practical Guide to Python.mp4",
+            "en": "playlist_4/31. Learn Introduction Practical Guide to Python.vtt",
+            "fr": "playlist_4/31. Learn Introduction Practical Guide to Python.fr.vtt",
+            "ar": "playlist_4/31. Learn Introduction Practical Guide to Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp4_32_0",
+          "num": 32,
+          "part": null,
+          "base": "32. Learn Introduction Practical Guide to Python",
+          "title": "Anonymous Functions and Lambdas",
+          "files": {
+            "mp4": "playlist_4/32. Learn Introduction Practical Guide to Python.mp4",
+            "en": "playlist_4/32. Learn Introduction Practical Guide to Python.vtt",
+            "fr": "playlist_4/32. Learn Introduction Practical Guide to Python.fr.vtt",
+            "ar": "playlist_4/32. Learn Introduction Practical Guide to Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp4_33_0",
+          "num": 33,
+          "part": null,
+          "base": "33. Learn Introduction Practical Guide to Python",
+          "title": "Iterators and Iteration Protocols",
+          "files": {
+            "mp4": "playlist_4/33. Learn Introduction Practical Guide to Python.mp4",
+            "en": "playlist_4/33. Learn Introduction Practical Guide to Python.vtt",
+            "fr": "playlist_4/33. Learn Introduction Practical Guide to Python.fr.vtt",
+            "ar": "playlist_4/33. Learn Introduction Practical Guide to Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp4_34_0",
+          "num": 34,
+          "part": null,
+          "base": "34. Learn Introduction Practical Guide to Python",
+          "title": "Generator Functions",
+          "files": {
+            "mp4": "playlist_4/34. Learn Introduction Practical Guide to Python.mp4",
+            "en": "playlist_4/34. Learn Introduction Practical Guide to Python.vtt",
+            "fr": "playlist_4/34. Learn Introduction Practical Guide to Python.fr.vtt",
+            "ar": "playlist_4/34. Learn Introduction Practical Guide to Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp4_35_0",
+          "num": 35,
+          "part": null,
+          "base": "35. Learn Introduction Practical Guide to Python",
+          "title": "Optimization and Profiling",
+          "files": {
+            "mp4": "playlist_4/35. Learn Introduction Practical Guide to Python.mp4",
+            "en": "playlist_4/35. Learn Introduction Practical Guide to Python.vtt",
+            "fr": "playlist_4/35. Learn Introduction Practical Guide to Python.fr.vtt",
+            "ar": "playlist_4/35. Learn Introduction Practical Guide to Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp4_36_0",
+          "num": 36,
+          "part": null,
+          "base": "36. Learn Introduction Practical Guide to Python",
+          "title": "Memory Management",
+          "files": {
+            "mp4": "playlist_4/36. Learn Introduction Practical Guide to Python.mp4",
+            "en": "playlist_4/36. Learn Introduction Practical Guide to Python.vtt",
+            "fr": "playlist_4/36. Learn Introduction Practical Guide to Python.fr.vtt",
+            "ar": "playlist_4/36. Learn Introduction Practical Guide to Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp4_37_0",
+          "num": 37,
+          "part": null,
+          "base": "37. Learn Introduction Practical Guide to Python",
+          "title": "Python Performance Best Practices",
+          "files": {
+            "mp4": "playlist_4/37. Learn Introduction Practical Guide to Python.mp4",
+            "en": "playlist_4/37. Learn Introduction Practical Guide to Python.vtt",
+            "fr": "playlist_4/37. Learn Introduction Practical Guide to Python.fr.vtt",
+            "ar": "playlist_4/37. Learn Introduction Practical Guide to Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp4_38_0",
+          "num": 38,
+          "part": null,
+          "base": "38. Learn Introduction Practical Guide to Python",
+          "title": "Introduction to Flask Framework",
+          "files": {
+            "mp4": "playlist_4/38. Learn Introduction Practical Guide to Python.mp4",
+            "en": "playlist_4/38. Learn Introduction Practical Guide to Python.vtt",
+            "fr": "playlist_4/38. Learn Introduction Practical Guide to Python.fr.vtt",
+            "ar": "playlist_4/38. Learn Introduction Practical Guide to Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp4_39_0",
+          "num": 39,
+          "part": null,
+          "base": "39. Learn Introduction Practical Guide to Python",
+          "title": "Building Web Applications",
+          "files": {
+            "mp4": "playlist_4/39. Learn Introduction Practical Guide to Python.mp4",
+            "en": "playlist_4/39. Learn Introduction Practical Guide to Python.vtt",
+            "fr": "playlist_4/39. Learn Introduction Practical Guide to Python.fr.vtt",
+            "ar": "playlist_4/39. Learn Introduction Practical Guide to Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp4_40_0",
+          "num": 40,
+          "part": null,
+          "base": "40. Learn Introduction Practical Guide to Python",
+          "title": "Templating with Jinja2",
+          "files": {
+            "mp4": "playlist_4/40. Learn Introduction Practical Guide to Python.mp4",
+            "en": "playlist_4/40. Learn Introduction Practical Guide to Python.vtt",
+            "fr": "playlist_4/40. Learn Introduction Practical Guide to Python.fr.vtt",
+            "ar": "playlist_4/40. Learn Introduction Practical Guide to Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp4_41_0",
+          "num": 41,
+          "part": null,
+          "base": "41. Learn Introduction Practical Guide to Python",
+          "title": "Handling Forms and User Input",
+          "files": {
+            "mp4": "playlist_4/41. Learn Introduction Practical Guide to Python.mp4",
+            "en": "playlist_4/41. Learn Introduction Practical Guide to Python.vtt",
+            "fr": "playlist_4/41. Learn Introduction Practical Guide to Python.fr.vtt",
+            "ar": "playlist_4/41. Learn Introduction Practical Guide to Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp4_42_0",
+          "num": 42,
+          "part": null,
+          "base": "42. Learn Introduction Practical Guide to Python",
+          "title": "Database Integration",
+          "files": {
+            "mp4": "playlist_4/42. Learn Introduction Practical Guide to Python.mp4",
+            "en": "playlist_4/42. Learn Introduction Practical Guide to Python.vtt",
+            "fr": "playlist_4/42. Learn Introduction Practical Guide to Python.fr.vtt",
+            "ar": "playlist_4/42. Learn Introduction Practical Guide to Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp4_43_0",
+          "num": 43,
+          "part": null,
+          "base": "43. Learn Introduction Practical Guide to Python",
+          "title": "User Authentication and Sessions",
+          "files": {
+            "mp4": "playlist_4/43. Learn Introduction Practical Guide to Python.mp4",
+            "en": "playlist_4/43. Learn Introduction Practical Guide to Python.vtt",
+            "fr": "playlist_4/43. Learn Introduction Practical Guide to Python.fr.vtt",
+            "ar": "playlist_4/43. Learn Introduction Practical Guide to Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp4_45_0",
+          "num": 45,
+          "part": null,
+          "base": "45. Learn Introduction Practical Guide to Python",
+          "title": "RESTful API Development",
+          "files": {
+            "mp4": "playlist_4/45. Learn Introduction Practical Guide to Python.mp4",
+            "en": "playlist_4/45. Learn Introduction Practical Guide to Python.vtt",
+            "fr": "playlist_4/45. Learn Introduction Practical Guide to Python.fr.vtt",
+            "ar": "playlist_4/45. Learn Introduction Practical Guide to Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp4_46_0",
+          "num": 46,
+          "part": null,
+          "base": "46. Learn Introduction Practical Guide to Python",
+          "title": "Deployment and Production Setup",
+          "files": {
+            "mp4": "playlist_4/46. Learn Introduction Practical Guide to Python.mp4",
+            "en": "playlist_4/46. Learn Introduction Practical Guide to Python.vtt",
+            "fr": "playlist_4/46. Learn Introduction Practical Guide to Python.fr.vtt",
+            "ar": "playlist_4/46. Learn Introduction Practical Guide to Python.ar.vtt"
+          }
+        }
+      ]
+    },
+    {
+      "id": "pp5",
+      "tech": "python",
+      "name": "Playlist 5: Intermediate Python",
+      "icon": "fa-python",
+      "folder": "playlist_5",
+      "videos": [
+        {
+          "id": "pp5_1_0",
+          "num": 1,
+          "part": null,
+          "base": "1. Learn Introduction Prerequisites Intermediate Python",
+          "title": "Intermediate Python Course Overview",
+          "files": {
+            "mp4": "playlist_5/1. Learn Introduction Prerequisites Intermediate Python.mp4",
+            "en": "playlist_5/1. Learn Introduction Prerequisites Intermediate Python.vtt",
+            "fr": "playlist_5/1. Learn Introduction Prerequisites Intermediate Python.fr.vtt",
+            "ar": "playlist_5/1. Learn Introduction Prerequisites Intermediate Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp5_2_0",
+          "num": 2,
+          "part": null,
+          "base": "2. Learn Introduction Prerequisites Intermediate Python",
+          "title": "Advanced Data Structures",
+          "files": {
+            "mp4": "playlist_5/2. Learn Introduction Prerequisites Intermediate Python.mp4",
+            "en": "playlist_5/2. Learn Introduction Prerequisites Intermediate Python.vtt",
+            "fr": "playlist_5/2. Learn Introduction Prerequisites Intermediate Python.fr.vtt",
+            "ar": "playlist_5/2. Learn Introduction Prerequisites Intermediate Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp5_3_0",
+          "num": 3,
+          "part": null,
+          "base": "3. Learn Introduction Prerequisites Intermediate Python",
+          "title": "Working with Dictionaries",
+          "files": {
+            "mp4": "playlist_5/3. Learn Introduction Prerequisites Intermediate Python.mp4",
+            "en": "playlist_5/3. Learn Introduction Prerequisites Intermediate Python.vtt",
+            "fr": "playlist_5/3. Learn Introduction Prerequisites Intermediate Python.fr.vtt",
+            "ar": "playlist_5/3. Learn Introduction Prerequisites Intermediate Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp5_4_0",
+          "num": 4,
+          "part": null,
+          "base": "4. Learn Introduction Prerequisites Intermediate Python",
+          "title": "Sets and Frozensets",
+          "files": {
+            "mp4": "playlist_5/4. Learn Introduction Prerequisites Intermediate Python.mp4",
+            "en": "playlist_5/4. Learn Introduction Prerequisites Intermediate Python.vtt",
+            "fr": "playlist_5/4. Learn Introduction Prerequisites Intermediate Python.fr.vtt",
+            "ar": "playlist_5/4. Learn Introduction Prerequisites Intermediate Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp5_5_0",
+          "num": 5,
+          "part": null,
+          "base": "5. Learn Introduction Prerequisites Intermediate Python",
+          "title": "Tuples and Named Tuples",
+          "files": {
+            "mp4": "playlist_5/5. Learn Introduction Prerequisites Intermediate Python.mp4",
+            "en": "playlist_5/5. Learn Introduction Prerequisites Intermediate Python.vtt",
+            "fr": "playlist_5/5. Learn Introduction Prerequisites Intermediate Python.fr.vtt",
+            "ar": "playlist_5/5. Learn Introduction Prerequisites Intermediate Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp5_6_0",
+          "num": 6,
+          "part": null,
+          "base": "6. Learn Introduction Prerequisites Intermediate Python",
+          "title": "Object-Oriented Programming Deep Dive",
+          "files": {
+            "mp4": "playlist_5/6. Learn Introduction Prerequisites Intermediate Python.mp4",
+            "en": "playlist_5/6. Learn Introduction Prerequisites Intermediate Python.vtt",
+            "fr": "playlist_5/6. Learn Introduction Prerequisites Intermediate Python.fr.vtt",
+            "ar": "playlist_5/6. Learn Introduction Prerequisites Intermediate Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp5_7_0",
+          "num": 7,
+          "part": null,
+          "base": "7. Learn Introduction Prerequisites Intermediate Python",
+          "title": "Class Inheritance and MRO",
+          "files": {
+            "mp4": "playlist_5/7. Learn Introduction Prerequisites Intermediate Python.mp4",
+            "en": "playlist_5/7. Learn Introduction Prerequisites Intermediate Python.vtt",
+            "fr": "playlist_5/7. Learn Introduction Prerequisites Intermediate Python.fr.vtt",
+            "ar": "playlist_5/7. Learn Introduction Prerequisites Intermediate Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp5_8_0",
+          "num": 8,
+          "part": null,
+          "base": "8. Learn Introduction Prerequisites Intermediate Python",
+          "title": "Multiple Inheritance Patterns",
+          "files": {
+            "mp4": "playlist_5/8. Learn Introduction Prerequisites Intermediate Python.mp4",
+            "en": "playlist_5/8. Learn Introduction Prerequisites Intermediate Python.vtt",
+            "fr": "playlist_5/8. Learn Introduction Prerequisites Intermediate Python.fr.vtt",
+            "ar": "playlist_5/8. Learn Introduction Prerequisites Intermediate Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp5_9_0",
+          "num": 9,
+          "part": null,
+          "base": "9. Learn Introduction Prerequisites Intermediate Python",
+          "title": "Metaclasses and Advanced OOP",
+          "files": {
+            "mp4": "playlist_5/9. Learn Introduction Prerequisites Intermediate Python.mp4",
+            "en": "playlist_5/9. Learn Introduction Prerequisites Intermediate Python.vtt",
+            "fr": "playlist_5/9. Learn Introduction Prerequisites Intermediate Python.fr.vtt",
+            "ar": "playlist_5/9. Learn Introduction Prerequisites Intermediate Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp5_10_0",
+          "num": 10,
+          "part": null,
+          "base": "10. Learn Introduction Prerequisites Intermediate Python",
+          "title": "Protocols and Abstract Base Classes",
+          "files": {
+            "mp4": "playlist_5/10. Learn Introduction Prerequisites Intermediate Python.mp4",
+            "en": "playlist_5/10. Learn Introduction Prerequisites Intermediate Python.vtt",
+            "fr": "playlist_5/10. Learn Introduction Prerequisites Intermediate Python.fr.vtt",
+            "ar": "playlist_5/10. Learn Introduction Prerequisites Intermediate Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp5_11_0",
+          "num": 11,
+          "part": null,
+          "base": "11. Learn Introduction Prerequisites Intermediate Python",
+          "title": "Advanced Exception Handling",
+          "files": {
+            "mp4": "playlist_5/11. Learn Introduction Prerequisites Intermediate Python.mp4",
+            "en": "playlist_5/11. Learn Introduction Prerequisites Intermediate Python.vtt",
+            "fr": "playlist_5/11. Learn Introduction Prerequisites Intermediate Python.fr.vtt",
+            "ar": "playlist_5/11. Learn Introduction Prerequisites Intermediate Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp5_12_0",
+          "num": 12,
+          "part": null,
+          "base": "12. Learn Introduction Prerequisites Intermediate Python",
+          "title": "Custom Exception Hierarchies",
+          "files": {
+            "mp4": "playlist_5/12. Learn Introduction Prerequisites Intermediate Python.mp4",
+            "en": "playlist_5/12. Learn Introduction Prerequisites Intermediate Python.vtt",
+            "fr": "playlist_5/12. Learn Introduction Prerequisites Intermediate Python.fr.vtt",
+            "ar": "playlist_5/12. Learn Introduction Prerequisites Intermediate Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp5_13_0",
+          "num": 13,
+          "part": null,
+          "base": "13. Learn Introduction Prerequisites Intermediate Python",
+          "title": "Context Managers Implementation",
+          "files": {
+            "mp4": "playlist_5/13. Learn Introduction Prerequisites Intermediate Python.mp4",
+            "en": "playlist_5/13. Learn Introduction Prerequisites Intermediate Python.vtt",
+            "fr": "playlist_5/13. Learn Introduction Prerequisites Intermediate Python.fr.vtt",
+            "ar": "playlist_5/13. Learn Introduction Prerequisites Intermediate Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp5_14_0",
+          "num": 14,
+          "part": null,
+          "base": "14. Learn Introduction Prerequisites Intermediate Python",
+          "title": "Creating Context Manager Decorators",
+          "files": {
+            "mp4": "playlist_5/14. Learn Introduction Prerequisites Intermediate Python.mp4",
+            "en": "playlist_5/14. Learn Introduction Prerequisites Intermediate Python.vtt",
+            "fr": "playlist_5/14. Learn Introduction Prerequisites Intermediate Python.fr.vtt",
+            "ar": "playlist_5/14. Learn Introduction Prerequisites Intermediate Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp5_15_0",
+          "num": 15,
+          "part": null,
+          "base": "15. Learn Introduction Prerequisites Intermediate Python",
+          "title": "Decorators and Decorator Patterns",
+          "files": {
+            "mp4": "playlist_5/15. Learn Introduction Prerequisites Intermediate Python.mp4",
+            "en": "playlist_5/15. Learn Introduction Prerequisites Intermediate Python.vtt",
+            "fr": "playlist_5/15. Learn Introduction Prerequisites Intermediate Python.fr.vtt",
+            "ar": "playlist_5/15. Learn Introduction Prerequisites Intermediate Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp5_16_0",
+          "num": 16,
+          "part": null,
+          "base": "16. Learn Introduction Prerequisites Intermediate Python",
+          "title": "Stacking Multiple Decorators",
+          "files": {
+            "mp4": "playlist_5/16. Learn Introduction Prerequisites Intermediate Python.mp4",
+            "en": "playlist_5/16. Learn Introduction Prerequisites Intermediate Python.vtt",
+            "fr": "playlist_5/16. Learn Introduction Prerequisites Intermediate Python.fr.vtt",
+            "ar": "playlist_5/16. Learn Introduction Prerequisites Intermediate Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp5_17_0",
+          "num": 17,
+          "part": null,
+          "base": "17. Learn Introduction Prerequisites Intermediate Python",
+          "title": "Functional Programming with Python",
+          "files": {
+            "mp4": "playlist_5/17. Learn Introduction Prerequisites Intermediate Python.mp4",
+            "en": "playlist_5/17. Learn Introduction Prerequisites Intermediate Python.vtt",
+            "fr": "playlist_5/17. Learn Introduction Prerequisites Intermediate Python.fr.vtt",
+            "ar": "playlist_5/17. Learn Introduction Prerequisites Intermediate Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp5_18_0",
+          "num": 18,
+          "part": null,
+          "base": "18. Learn Introduction Prerequisites Intermediate Python",
+          "title": "Comprehensions and Generators",
+          "files": {
+            "mp4": "playlist_5/18. Learn Introduction Prerequisites Intermediate Python.mp4",
+            "en": "playlist_5/18. Learn Introduction Prerequisites Intermediate Python.vtt",
+            "fr": "playlist_5/18. Learn Introduction Prerequisites Intermediate Python.fr.vtt",
+            "ar": "playlist_5/18. Learn Introduction Prerequisites Intermediate Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp5_19_0",
+          "num": 19,
+          "part": null,
+          "base": "19. Learn Introduction Prerequisites Intermediate Python",
+          "title": "Generator Expressions and Generators",
+          "files": {
+            "mp4": "playlist_5/19. Learn Introduction Prerequisites Intermediate Python.mp4",
+            "en": "playlist_5/19. Learn Introduction Prerequisites Intermediate Python.vtt",
+            "fr": "playlist_5/19. Learn Introduction Prerequisites Intermediate Python.fr.vtt",
+            "ar": "playlist_5/19. Learn Introduction Prerequisites Intermediate Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp5_20_0",
+          "num": 20,
+          "part": null,
+          "base": "20. Learn Introduction Prerequisites Intermediate Python",
+          "title": "Yield and Advanced Generator Patterns",
+          "files": {
+            "mp4": "playlist_5/20. Learn Introduction Prerequisites Intermediate Python.mp4",
+            "en": "playlist_5/20. Learn Introduction Prerequisites Intermediate Python.vtt",
+            "fr": "playlist_5/20. Learn Introduction Prerequisites Intermediate Python.fr.vtt",
+            "ar": "playlist_5/20. Learn Introduction Prerequisites Intermediate Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp5_21_0",
+          "num": 21,
+          "part": null,
+          "base": "21. Learn Introduction Prerequisites Intermediate Python",
+          "title": "Itertools and iterators Module",
+          "files": {
+            "mp4": "playlist_5/21. Learn Introduction Prerequisites Intermediate Python.mp4",
+            "en": "playlist_5/21. Learn Introduction Prerequisites Intermediate Python.vtt",
+            "fr": "playlist_5/21. Learn Introduction Prerequisites Intermediate Python.fr.vtt",
+            "ar": "playlist_5/21. Learn Introduction Prerequisites Intermediate Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp5_22_1",
+          "num": 22,
+          "part": 1,
+          "base": "22. Learn Introduction Prerequisites Intermediate Python (Part 1)",
+          "title": "Standard Library Overview",
+          "files": {
+            "mp4": "playlist_5/22. Learn Introduction Prerequisites Intermediate Python (Part 1).mp4",
+            "en": "playlist_5/22. Learn Introduction Prerequisites Intermediate Python (Part 1).vtt",
+            "fr": "playlist_5/22. Learn Introduction Prerequisites Intermediate Python.fr (Part 1).vtt",
+            "ar": "playlist_5/22. Learn Introduction Prerequisites Intermediate Python.ar (Part 1).vtt"
+          }
+        },
+        {
+          "id": "pp5_22_2",
+          "num": 22,
+          "part": 2,
+          "base": "22. Learn Introduction Prerequisites Intermediate Python (Part 2)",
+          "title": "Collections Module Deep Dive",
+          "files": {
+            "mp4": "playlist_5/22. Learn Introduction Prerequisites Intermediate Python (Part 2).mp4",
+            "en": "playlist_5/22. Learn Introduction Prerequisites Intermediate Python (Part 2).vtt",
+            "fr": "playlist_5/22. Learn Introduction Prerequisites Intermediate Python.fr (Part 2).vtt",
+            "ar": "playlist_5/22. Learn Introduction Prerequisites Intermediate Python.ar (Part 2).vtt"
+          }
+        },
+        {
+          "id": "pp5_23_0",
+          "num": 23,
+          "part": null,
+          "base": "23. Learn Introduction Prerequisites Intermediate Python",
+          "title": "Functools and Partial Application",
+          "files": {
+            "mp4": "playlist_5/23. Learn Introduction Prerequisites Intermediate Python.mp4",
+            "en": "playlist_5/23. Learn Introduction Prerequisites Intermediate Python.vtt",
+            "fr": "playlist_5/23. Learn Introduction Prerequisites Intermediate Python.fr.vtt",
+            "ar": "playlist_5/23. Learn Introduction Prerequisites Intermediate Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp5_24_0",
+          "num": 24,
+          "part": null,
+          "base": "24. Learn Introduction Prerequisites Intermediate Python",
+          "title": "Type Hints and MyPy",
+          "files": {
+            "mp4": "playlist_5/24. Learn Introduction Prerequisites Intermediate Python.mp4",
+            "en": "playlist_5/24. Learn Introduction Prerequisites Intermediate Python.vtt",
+            "fr": "playlist_5/24. Learn Introduction Prerequisites Intermediate Python.fr.vtt",
+            "ar": "playlist_5/24. Learn Introduction Prerequisites Intermediate Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp5_25_0",
+          "num": 25,
+          "part": null,
+          "base": "25. Learn Introduction Prerequisites Intermediate Python",
+          "title": "Advanced Type Annotations",
+          "files": {
+            "mp4": "playlist_5/25. Learn Introduction Prerequisites Intermediate Python.mp4",
+            "en": "playlist_5/25. Learn Introduction Prerequisites Intermediate Python.vtt",
+            "fr": "playlist_5/25. Learn Introduction Prerequisites Intermediate Python.fr.vtt",
+            "ar": "playlist_5/25. Learn Introduction Prerequisites Intermediate Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp5_26_0",
+          "num": 26,
+          "part": null,
+          "base": "26. Learn Introduction Prerequisites Intermediate Python",
+          "title": "Protocols and Structural Typing",
+          "files": {
+            "mp4": "playlist_5/26. Learn Introduction Prerequisites Intermediate Python.mp4",
+            "en": "playlist_5/26. Learn Introduction Prerequisites Intermediate Python.vtt",
+            "fr": "playlist_5/26. Learn Introduction Prerequisites Intermediate Python.fr.vtt",
+            "ar": "playlist_5/26. Learn Introduction Prerequisites Intermediate Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp5_27_0",
+          "num": 27,
+          "part": null,
+          "base": "27. Learn Introduction Prerequisites Intermediate Python",
+          "title": "Testing with unittest",
+          "files": {
+            "mp4": "playlist_5/27. Learn Introduction Prerequisites Intermediate Python.mp4",
+            "en": "playlist_5/27. Learn Introduction Prerequisites Intermediate Python.vtt",
+            "fr": "playlist_5/27. Learn Introduction Prerequisites Intermediate Python.fr.vtt",
+            "ar": "playlist_5/27. Learn Introduction Prerequisites Intermediate Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp5_28_0",
+          "num": 28,
+          "part": null,
+          "base": "28. Learn Introduction Prerequisites Intermediate Python",
+          "title": "Testing with pytest",
+          "files": {
+            "mp4": "playlist_5/28. Learn Introduction Prerequisites Intermediate Python.mp4",
+            "en": "playlist_5/28. Learn Introduction Prerequisites Intermediate Python.vtt",
+            "fr": "playlist_5/28. Learn Introduction Prerequisites Intermediate Python.fr.vtt",
+            "ar": "playlist_5/28. Learn Introduction Prerequisites Intermediate Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp5_29_0",
+          "num": 29,
+          "part": null,
+          "base": "29. Learn Introduction Prerequisites Intermediate Python",
+          "title": "Mock Objects and Patching",
+          "files": {
+            "mp4": "playlist_5/29. Learn Introduction Prerequisites Intermediate Python.mp4",
+            "en": "playlist_5/29. Learn Introduction Prerequisites Intermediate Python.vtt",
+            "fr": "playlist_5/29. Learn Introduction Prerequisites Intermediate Python.fr.vtt",
+            "ar": "playlist_5/29. Learn Introduction Prerequisites Intermediate Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp5_30_0",
+          "num": 30,
+          "part": null,
+          "base": "30. Learn Introduction Prerequisites Intermediate Python",
+          "title": "Debugging and Profiling",
+          "files": {
+            "mp4": "playlist_5/30. Learn Introduction Prerequisites Intermediate Python.mp4",
+            "en": "playlist_5/30. Learn Introduction Prerequisites Intermediate Python.vtt",
+            "fr": "playlist_5/30. Learn Introduction Prerequisites Intermediate Python.fr.vtt",
+            "ar": "playlist_5/30. Learn Introduction Prerequisites Intermediate Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp5_31_0",
+          "num": 31,
+          "part": null,
+          "base": "31. Learn Introduction Prerequisites Intermediate Python",
+          "title": "Performance Optimization",
+          "files": {
+            "mp4": "playlist_5/31. Learn Introduction Prerequisites Intermediate Python.mp4",
+            "en": "playlist_5/31. Learn Introduction Prerequisites Intermediate Python.vtt",
+            "fr": "playlist_5/31. Learn Introduction Prerequisites Intermediate Python.fr.vtt",
+            "ar": "playlist_5/31. Learn Introduction Prerequisites Intermediate Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp5_32_0",
+          "num": 32,
+          "part": null,
+          "base": "32. Learn Introduction Prerequisites Intermediate Python",
+          "title": "Memory Profiling",
+          "files": {
+            "mp4": "playlist_5/32. Learn Introduction Prerequisites Intermediate Python.mp4",
+            "en": "playlist_5/32. Learn Introduction Prerequisites Intermediate Python.vtt",
+            "fr": "playlist_5/32. Learn Introduction Prerequisites Intermediate Python.fr.vtt",
+            "ar": "playlist_5/32. Learn Introduction Prerequisites Intermediate Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp5_33_0",
+          "num": 33,
+          "part": null,
+          "base": "33. Learn Introduction Prerequisites Intermediate Python",
+          "title": "Concurrency with Threading",
+          "files": {
+            "mp4": "playlist_5/33. Learn Introduction Prerequisites Intermediate Python.mp4",
+            "en": "playlist_5/33. Learn Introduction Prerequisites Intermediate Python.vtt",
+            "fr": "playlist_5/33. Learn Introduction Prerequisites Intermediate Python.fr.vtt",
+            "ar": "playlist_5/33. Learn Introduction Prerequisites Intermediate Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp5_34_0",
+          "num": 34,
+          "part": null,
+          "base": "34. Learn Introduction Prerequisites Intermediate Python",
+          "title": "Multiprocessing and Process Pools",
+          "files": {
+            "mp4": "playlist_5/34. Learn Introduction Prerequisites Intermediate Python.mp4",
+            "en": "playlist_5/34. Learn Introduction Prerequisites Intermediate Python.vtt",
+            "fr": "playlist_5/34. Learn Introduction Prerequisites Intermediate Python.fr.vtt",
+            "ar": "playlist_5/34. Learn Introduction Prerequisites Intermediate Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp5_35_0",
+          "num": 35,
+          "part": null,
+          "base": "35. Learn Introduction Prerequisites Intermediate Python",
+          "title": "Async/Await and Asyncio",
+          "files": {
+            "mp4": "playlist_5/35. Learn Introduction Prerequisites Intermediate Python.mp4",
+            "en": "playlist_5/35. Learn Introduction Prerequisites Intermediate Python.vtt",
+            "fr": "playlist_5/35. Learn Introduction Prerequisites Intermediate Python.fr.vtt",
+            "ar": "playlist_5/35. Learn Introduction Prerequisites Intermediate Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp5_36_0",
+          "num": 36,
+          "part": null,
+          "base": "36. Learn Introduction Prerequisites Intermediate Python",
+          "title": "Building Async Applications",
+          "files": {
+            "mp4": "playlist_5/36. Learn Introduction Prerequisites Intermediate Python.mp4",
+            "en": "playlist_5/36. Learn Introduction Prerequisites Intermediate Python.vtt",
+            "fr": "playlist_5/36. Learn Introduction Prerequisites Intermediate Python.fr.vtt",
+            "ar": "playlist_5/36. Learn Introduction Prerequisites Intermediate Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp5_37_0",
+          "num": 37,
+          "part": null,
+          "base": "37. Learn Introduction Prerequisites Intermediate Python",
+          "title": "Web Scraping Applications",
+          "files": {
+            "mp4": "playlist_5/37. Learn Introduction Prerequisites Intermediate Python.mp4",
+            "en": "playlist_5/37. Learn Introduction Prerequisites Intermediate Python.vtt",
+            "fr": "playlist_5/37. Learn Introduction Prerequisites Intermediate Python.fr.vtt",
+            "ar": "playlist_5/37. Learn Introduction Prerequisites Intermediate Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp5_38_0",
+          "num": 38,
+          "part": null,
+          "base": "38. Learn Introduction Prerequisites Intermediate Python",
+          "title": "Beautiful Soup and Selenium",
+          "files": {
+            "mp4": "playlist_5/38. Learn Introduction Prerequisites Intermediate Python.mp4",
+            "en": "playlist_5/38. Learn Introduction Prerequisites Intermediate Python.vtt",
+            "fr": "playlist_5/38. Learn Introduction Prerequisites Intermediate Python.fr.vtt",
+            "ar": "playlist_5/38. Learn Introduction Prerequisites Intermediate Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp5_39_0",
+          "num": 39,
+          "part": null,
+          "base": "39. Learn Introduction Prerequisites Intermediate Python",
+          "title": "Pandas for Data Analysis",
+          "files": {
+            "mp4": "playlist_5/39. Learn Introduction Prerequisites Intermediate Python.mp4",
+            "en": "playlist_5/39. Learn Introduction Prerequisites Intermediate Python.vtt",
+            "fr": "playlist_5/39. Learn Introduction Prerequisites Intermediate Python.fr.vtt",
+            "ar": "playlist_5/39. Learn Introduction Prerequisites Intermediate Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp5_40_0",
+          "num": 40,
+          "part": null,
+          "base": "40. Learn Introduction Prerequisites Intermediate Python",
+          "title": "Data Manipulation with Pandas",
+          "files": {
+            "mp4": "playlist_5/40. Learn Introduction Prerequisites Intermediate Python.mp4",
+            "en": "playlist_5/40. Learn Introduction Prerequisites Intermediate Python.vtt",
+            "fr": "playlist_5/40. Learn Introduction Prerequisites Intermediate Python.fr.vtt",
+            "ar": "playlist_5/40. Learn Introduction Prerequisites Intermediate Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp5_41_0",
+          "num": 41,
+          "part": null,
+          "base": "41. Learn Introduction Prerequisites Intermediate Python",
+          "title": "NumPy and Numerical Computing",
+          "files": {
+            "mp4": "playlist_5/41. Learn Introduction Prerequisites Intermediate Python.mp4",
+            "en": "playlist_5/41. Learn Introduction Prerequisites Intermediate Python.vtt",
+            "fr": "playlist_5/41. Learn Introduction Prerequisites Intermediate Python.fr.vtt",
+            "ar": "playlist_5/41. Learn Introduction Prerequisites Intermediate Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp5_42_0",
+          "num": 42,
+          "part": null,
+          "base": "42. Learn Introduction Prerequisites Intermediate Python",
+          "title": "Regular Expressions Mastery",
+          "files": {
+            "mp4": "playlist_5/42. Learn Introduction Prerequisites Intermediate Python.mp4",
+            "en": "playlist_5/42. Learn Introduction Prerequisites Intermediate Python.vtt",
+            "fr": "playlist_5/42. Learn Introduction Prerequisites Intermediate Python.fr.vtt",
+            "ar": "playlist_5/42. Learn Introduction Prerequisites Intermediate Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp5_43_0",
+          "num": 43,
+          "part": null,
+          "base": "43. Learn Introduction Prerequisites Intermediate Python",
+          "title": "Building Flask Web Applications",
+          "files": {
+            "mp4": "playlist_5/43. Learn Introduction Prerequisites Intermediate Python.mp4",
+            "en": "playlist_5/43. Learn Introduction Prerequisites Intermediate Python.vtt",
+            "fr": "playlist_5/43. Learn Introduction Prerequisites Intermediate Python.fr.vtt",
+            "ar": "playlist_5/43. Learn Introduction Prerequisites Intermediate Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp5_44_0",
+          "num": 44,
+          "part": null,
+          "base": "44. Learn Introduction Prerequisites Intermediate Python",
+          "title": "Flask Blueprints and Organization",
+          "files": {
+            "mp4": "playlist_5/44. Learn Introduction Prerequisites Intermediate Python.mp4",
+            "en": "playlist_5/44. Learn Introduction Prerequisites Intermediate Python.vtt",
+            "fr": "playlist_5/44. Learn Introduction Prerequisites Intermediate Python.fr.vtt",
+            "ar": "playlist_5/44. Learn Introduction Prerequisites Intermediate Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp5_45_0",
+          "num": 45,
+          "part": null,
+          "base": "45. Learn Introduction Prerequisites Intermediate Python",
+          "title": "Database Design with SQLAlchemy",
+          "files": {
+            "mp4": "playlist_5/45. Learn Introduction Prerequisites Intermediate Python.mp4",
+            "en": "playlist_5/45. Learn Introduction Prerequisites Intermediate Python.vtt",
+            "fr": "playlist_5/45. Learn Introduction Prerequisites Intermediate Python.fr.vtt",
+            "ar": "playlist_5/45. Learn Introduction Prerequisites Intermediate Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp5_46_1",
+          "num": 46,
+          "part": 1,
+          "base": "46. Learn Introduction Prerequisites Intermediate Python (Part 1)",
+          "title": "Advanced Flask Patterns",
+          "files": {
+            "mp4": "playlist_5/46. Learn Introduction Prerequisites Intermediate Python (Part 1).mp4",
+            "en": "playlist_5/46. Learn Introduction Prerequisites Intermediate Python (Part 1).vtt",
+            "fr": "playlist_5/46. Learn Introduction Prerequisites Intermediate Python.fr (Part 1).vtt",
+            "ar": "playlist_5/46. Learn Introduction Prerequisites Intermediate Python.ar (Part 1).vtt"
+          }
+        },
+        {
+          "id": "pp5_46_2",
+          "num": 46,
+          "part": 2,
+          "base": "46. Learn Introduction Prerequisites Intermediate Python (Part 2)",
+          "title": "If you've noticed here at the top, my app.row takes a list of methods that it…",
+          "files": {
+            "mp4": "playlist_5/46. Learn Introduction Prerequisites Intermediate Python (Part 2).mp4",
+            "en": "playlist_5/46. Learn Introduction Prerequisites Intermediate Python (Part 2).vtt",
+            "fr": "playlist_5/46. Learn Introduction Prerequisites Intermediate Python.fr (Part 2).vtt",
+            "ar": "playlist_5/46. Learn Introduction Prerequisites Intermediate Python.ar (Part 2).vtt"
+          }
+        },
+        {
+          "id": "pp5_47_0",
+          "num": 47,
+          "part": null,
+          "base": "47. Learn Introduction Prerequisites Intermediate Python",
+          "title": "That was all that we needed to make a functional web application in Python…",
+          "files": {
+            "mp4": "playlist_5/47. Learn Introduction Prerequisites Intermediate Python.mp4",
+            "en": "playlist_5/47. Learn Introduction Prerequisites Intermediate Python.vtt",
+            "fr": "playlist_5/47. Learn Introduction Prerequisites Intermediate Python.fr.vtt",
+            "ar": "playlist_5/47. Learn Introduction Prerequisites Intermediate Python.ar.vtt"
+          }
+        },
+        {
+          "id": "pp5_48_0",
+          "num": 48,
+          "part": null,
+          "base": "48. Learn Introduction Prerequisites Intermediate Python",
+          "title": "I highly recommend that you use source control while working on your Python…",
+          "files": {
+            "mp4": "playlist_5/48. Learn Introduction Prerequisites Intermediate Python.mp4",
+            "en": "playlist_5/48. Learn Introduction Prerequisites Intermediate Python.vtt",
+            "fr": "playlist_5/48. Learn Introduction Prerequisites Intermediate Python.fr.vtt",
+            "ar": "playlist_5/48. Learn Introduction Prerequisites Intermediate Python.ar.vtt"
+          }
+        }
+      ]
+    }
+  ]
+}

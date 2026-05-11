@@ -561,6 +561,51 @@ const TECHS = {
     feats:['Angular 17 signals & control flow','RxJS & NgRx state','Angular Material UI','Micro-frontends'],eta:'Q4 2026'}
 };
 
+function toUiVideo(v, plId, i){
+  const fs=v.files||{};
+  const title=(v.title||v.base||`Lesson ${v.num||i+1}`).trim();
+  return {
+    id:v.id||`${plId}_${v.num||i+1}_${v.part??0}_${i+1}`,
+    num:Number.isFinite(v.num)?v.num:(i+1),
+    title,
+    part:v.part??null,
+    mp4:fs.mp4?`./${fs.mp4}`:'',
+    vEn:fs.en?`./${fs.en}`:null,
+    vFr:fs.fr?`./${fs.fr}`:null,
+    vAr:fs.ar?`./${fs.ar}`:null,
+  };
+}
+
+function applyPlaylistMap(map){
+  if(!map||!Array.isArray(map.playlists))return false;
+  const byTech={vue:[],python:[]};
+  map.playlists.forEach((pl,idx)=>{
+    if(!pl||!Array.isArray(pl.videos)||!pl.videos.length)return;
+    if(!byTech[pl.tech])return;
+    const plIdMapped=pl.id||`${pl.tech}_${idx+1}`;
+    byTech[pl.tech].push({
+      id:plIdMapped,
+      name:pl.name||`Playlist ${idx+1}`,
+      ic:pl.icon||(pl.tech==='vue'?'fa-vuejs':'fa-python'),
+      vids:pl.videos.map((v,i)=>toUiVideo(v,plIdMapped,i)).filter(v=>v.mp4)
+    });
+  });
+  if(byTech.vue.length)TECHS.vue.pls=byTech.vue;
+  if(byTech.python.length)TECHS.python.pls=byTech.python;
+  return byTech.vue.length>0||byTech.python.length>0;
+}
+
+async function loadPlaylistMap(){
+  try{
+    const res=await fetch(`./map.json?v=${Date.now()}`);
+    if(!res.ok)return false;
+    const map=await res.json();
+    return applyPlaylistMap(map);
+  }catch(e){
+    return false;
+  }
+}
+
 let done=new Set(),notes={},prog={},lang='off',tech='vue',plId='vp1',curVid=null,curEl=null,q='',filt='all';
 
 function load(){
@@ -620,6 +665,7 @@ function applyTech(t){
 
 function switchTech(t){
   if(TECHS[t].coming){openCs(t);return}
+  if(!TECHS[t].pls?.length)return;
   tech=t;plId=TECHS[t].pls[0].id;q='';filt='all';
   applyTech(t);save();renderPlist();renderContent();
   closeSidebar();
@@ -936,10 +982,21 @@ document.addEventListener('keydown',e=>{
   }
 });
 
-load();
-applyTech(tech);
-document.querySelectorAll('.tb').forEach(b=>b.classList.toggle('on',b.dataset.tech===tech));
-renderPlist();renderContent();
+async function initApp(){
+  await loadPlaylistMap();
+  load();
+  if(!TECHS[tech]?.pls?.length){
+    tech='vue';
+  }
+  if(!TECHS[tech]?.pls?.some(p=>p.id===plId)){
+    plId=TECHS[tech]?.pls?.[0]?.id||plId;
+  }
+  applyTech(tech);
+  document.querySelectorAll('.tb').forEach(b=>b.classList.toggle('on',b.dataset.tech===tech));
+  renderPlist();renderContent();
+}
+
+initApp();
 </script>
 </body>
 </html>
