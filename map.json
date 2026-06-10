@@ -2671,6 +2671,665 @@
           }
         }
       ]
+    },
+    {
+      "id": "rp6",
+      "tech": "react",
+      "name": "Playlist 6: Complete Intro to React v9",
+      "icon": "fa-react",
+      "folder": "playlist_6",
+      "videos": [
+        {
+          "id": "rp6_1_0",
+          "num": 1,
+          "part": null,
+          "base": "1. Learn Introduction Complete Intro to React v9",
+          "title": "Complete Intro to React v9 — Lesson 1",
+          "files": {
+            "mp4": "playlist_6/1. Learn Introduction Complete Intro to React v9.mp4",
+            "en": "playlist_6/1. Learn Introduction Complete Intro to React v9.vtt",
+            "fr": "playlist_6/1. Learn Introduction Complete Intro to React v9.fr.vtt",
+            "ar": "playlist_6/1. Learn Introduction Complete Intro to React v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_2_0",
+          "num": 2,
+          "part": null,
+          "base": "2. Learn Introduction Complete Intro to React v9",
+          "title": "Complete Intro to React v9 — Lesson 2",
+          "files": {
+            "mp4": "playlist_6/2. Learn Introduction Complete Intro to React v9.mp4",
+            "en": "playlist_6/2. Learn Introduction Complete Intro to React v9.vtt",
+            "fr": "playlist_6/2. Learn Introduction Complete Intro to React v9.fr.vtt",
+            "ar": "playlist_6/2. Learn Introduction Complete Intro to React v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_3_0",
+          "num": 3,
+          "part": null,
+          "base": "3. Learn Introduction Complete Intro to React v9",
+          "title": "Complete Intro to React v9 — Lesson 3",
+          "files": {
+            "mp4": "playlist_6/3. Learn Introduction Complete Intro to React v9.mp4",
+            "en": "playlist_6/3. Learn Introduction Complete Intro to React v9.vtt",
+            "fr": "playlist_6/3. Learn Introduction Complete Intro to React v9.fr.vtt",
+            "ar": "playlist_6/3. Learn Introduction Complete Intro to React v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_4_0",
+          "num": 4,
+          "part": null,
+          "base": "4. Learn Introduction Complete Intro to React v9",
+          "title": "Complete Intro to React v9 — Lesson 4",
+          "files": {
+            "mp4": "playlist_6/4. Learn Introduction Complete Intro to React v9.mp4",
+            "en": "playlist_6/4. Learn Introduction Complete Intro to React v9.vtt",
+            "fr": "playlist_6/4. Learn Introduction Complete Intro to React v9.fr.vtt",
+            "ar": "playlist_6/4. Learn Introduction Complete Intro to React v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_5_0",
+          "num": 5,
+          "part": null,
+          "base": "5. Learn Introduction Complete Intro to React v9",
+          "title": "Complete Intro to React v9 — Lesson 5",
+          "files": {
+            "mp4": "playlist_6/5. Learn Introduction Complete Intro to React v9.mp4",
+            "en": "playlist_6/5. Learn Introduction Complete Intro to React v9.vtt",
+            "fr": "playlist_6/5. Learn Introduction Complete Intro to React v9.fr.vtt",
+            "ar": "playlist_6/5. Learn Introduction Complete Intro to React v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_6_0",
+          "num": 6,
+          "part": null,
+          "base": "6. Learn Introduction Complete Intro to React v9",
+          "title": "Complete Intro to React v9 — Lesson 6",
+          "files": {
+            "mp4": "playlist_6/6. Learn Introduction Complete Intro to React v9.mp4",
+            "en": "playlist_6/6. Learn Introduction Complete Intro to React v9.vtt",
+            "fr": "playlist_6/6. Learn Introduction Complete Intro to React v9.fr.vtt",
+            "ar": "playlist_6/6. Learn Introduction Complete Intro to React v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_7_0",
+          "num": 7,
+          "part": null,
+          "base": "7. Learn Introduction Complete Intro to React v9",
+          "title": "Complete Intro to React v9 — Lesson 7",
+          "files": {
+            "mp4": "playlist_6/7. Learn Introduction Complete Intro to React v9.mp4",
+            "en": "playlist_6/7. Learn Introduction Complete Intro to React v9.vtt",
+            "fr": "playlist_6/7. Learn Introduction Complete Intro to React v9.fr.vtt",
+            "ar": "playlist_6/7. Learn Introduction Complete Intro to React v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_8_0",
+          "num": 8,
+          "part": null,
+          "base": "8. Learn Introduction Complete Intro to React v9",
+          "title": "Complete Intro to React v9 — Lesson 8",
+          "files": {
+            "mp4": "playlist_6/8. Learn Introduction Complete Intro to React v9.mp4",
+            "en": "playlist_6/8. Learn Introduction Complete Intro to React v9.vtt",
+            "fr": "playlist_6/8. Learn Introduction Complete Intro to React v9.fr.vtt",
+            "ar": "playlist_6/8. Learn Introduction Complete Intro to React v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_9_0",
+          "num": 9,
+          "part": null,
+          "base": "9. Learn Introduction Complete Intro to React v9",
+          "title": "Complete Intro to React v9 — Lesson 9",
+          "files": {
+            "mp4": "playlist_6/9. Learn Introduction Complete Intro to React v9.mp4",
+            "en": "playlist_6/9. Learn Introduction Complete Intro to React v9.vtt",
+            "fr": "playlist_6/9. Learn Introduction Complete Intro to React v9.fr.vtt",
+            "ar": "playlist_6/9. Learn Introduction Complete Intro to React v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_10_0",
+          "num": 10,
+          "part": null,
+          "base": "10. Learn Introduction Complete Intro to React v9",
+          "title": "Complete Intro to React v9 — Lesson 10",
+          "files": {
+            "mp4": "playlist_6/10. Learn Introduction Complete Intro to React v9.mp4",
+            "en": "playlist_6/10. Learn Introduction Complete Intro to React v9.vtt",
+            "fr": "playlist_6/10. Learn Introduction Complete Intro to React v9.fr.vtt",
+            "ar": "playlist_6/10. Learn Introduction Complete Intro to React v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_11_0",
+          "num": 11,
+          "part": null,
+          "base": "11. Learn Introduction Complete Intro to React v9",
+          "title": "Complete Intro to React v9 — Lesson 11",
+          "files": {
+            "mp4": "playlist_6/11. Learn Introduction Complete Intro to React v9.mp4",
+            "en": "playlist_6/11. Learn Introduction Complete Intro to React v9.vtt",
+            "fr": "playlist_6/11. Learn Introduction Complete Intro to React v9.fr.vtt",
+            "ar": "playlist_6/11. Learn Introduction Complete Intro to React v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_12_0",
+          "num": 12,
+          "part": null,
+          "base": "12. Learn Introduction Complete Intro to React v9",
+          "title": "Complete Intro to React v9 — Lesson 12",
+          "files": {
+            "mp4": "playlist_6/12. Learn Introduction Complete Intro to React v9.mp4",
+            "en": "playlist_6/12. Learn Introduction Complete Intro to React v9.vtt",
+            "fr": "playlist_6/12. Learn Introduction Complete Intro to React v9.fr.vtt",
+            "ar": "playlist_6/12. Learn Introduction Complete Intro to React v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_13_0",
+          "num": 13,
+          "part": null,
+          "base": "13. Learn Introduction Complete Intro to React v9",
+          "title": "Complete Intro to React v9 — Lesson 13",
+          "files": {
+            "mp4": "playlist_6/13. Learn Introduction Complete Intro to React v9.mp4",
+            "en": "playlist_6/13. Learn Introduction Complete Intro to React v9.vtt",
+            "fr": "playlist_6/13. Learn Introduction Complete Intro to React v9.fr.vtt",
+            "ar": "playlist_6/13. Learn Introduction Complete Intro to React v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_14_0",
+          "num": 14,
+          "part": null,
+          "base": "14. Learn Introduction Complete Intro to React v9",
+          "title": "Complete Intro to React v9 — Lesson 14",
+          "files": {
+            "mp4": "playlist_6/14. Learn Introduction Complete Intro to React v9.mp4",
+            "en": "playlist_6/14. Learn Introduction Complete Intro to React v9.vtt",
+            "fr": "playlist_6/14. Learn Introduction Complete Intro to React v9.fr.vtt",
+            "ar": "playlist_6/14. Learn Introduction Complete Intro to React v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_15_0",
+          "num": 15,
+          "part": null,
+          "base": "15. Learn Introduction Complete Intro to React v9",
+          "title": "Complete Intro to React v9 — Lesson 15",
+          "files": {
+            "mp4": "playlist_6/15. Learn Introduction Complete Intro to React v9.mp4",
+            "en": "playlist_6/15. Learn Introduction Complete Intro to React v9.vtt",
+            "fr": "playlist_6/15. Learn Introduction Complete Intro to React v9.fr.vtt",
+            "ar": "playlist_6/15. Learn Introduction Complete Intro to React v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_16_0",
+          "num": 16,
+          "part": null,
+          "base": "16. Learn Introduction Complete Intro to React v9",
+          "title": "Complete Intro to React v9 — Lesson 16",
+          "files": {
+            "mp4": "playlist_6/16. Learn Introduction Complete Intro to React v9.mp4",
+            "en": "playlist_6/16. Learn Introduction Complete Intro to React v9.vtt",
+            "fr": "playlist_6/16. Learn Introduction Complete Intro to React v9.fr.vtt",
+            "ar": "playlist_6/16. Learn Introduction Complete Intro to React v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_17_0",
+          "num": 17,
+          "part": null,
+          "base": "17. Learn Introduction Complete Intro to React v9",
+          "title": "Complete Intro to React v9 — Lesson 17",
+          "files": {
+            "mp4": "playlist_6/17. Learn Introduction Complete Intro to React v9.mp4",
+            "en": "playlist_6/17. Learn Introduction Complete Intro to React v9.vtt",
+            "fr": "playlist_6/17. Learn Introduction Complete Intro to React v9.fr.vtt",
+            "ar": "playlist_6/17. Learn Introduction Complete Intro to React v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_18_0",
+          "num": 18,
+          "part": null,
+          "base": "18. Learn Introduction Complete Intro to React v9",
+          "title": "Complete Intro to React v9 — Lesson 18",
+          "files": {
+            "mp4": "playlist_6/18. Learn Introduction Complete Intro to React v9.mp4",
+            "en": "playlist_6/18. Learn Introduction Complete Intro to React v9.vtt",
+            "fr": "playlist_6/18. Learn Introduction Complete Intro to React v9.fr.vtt",
+            "ar": "playlist_6/18. Learn Introduction Complete Intro to React v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_19_0",
+          "num": 19,
+          "part": null,
+          "base": "19. Learn Introduction Complete Intro to React v9",
+          "title": "Complete Intro to React v9 — Lesson 19",
+          "files": {
+            "mp4": "playlist_6/19. Learn Introduction Complete Intro to React v9.mp4",
+            "en": "playlist_6/19. Learn Introduction Complete Intro to React v9.vtt",
+            "fr": "playlist_6/19. Learn Introduction Complete Intro to React v9.fr.vtt",
+            "ar": "playlist_6/19. Learn Introduction Complete Intro to React v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_20_0",
+          "num": 20,
+          "part": null,
+          "base": "20. Learn Introduction Complete Intro to React v9",
+          "title": "Complete Intro to React v9 — Lesson 20",
+          "files": {
+            "mp4": "playlist_6/20. Learn Introduction Complete Intro to React v9.mp4",
+            "en": "playlist_6/20. Learn Introduction Complete Intro to React v9.vtt",
+            "fr": "playlist_6/20. Learn Introduction Complete Intro to React v9.fr.vtt",
+            "ar": "playlist_6/20. Learn Introduction Complete Intro to React v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_21_0",
+          "num": 21,
+          "part": null,
+          "base": "21. Learn Introduction Complete Intro to React v9",
+          "title": "Complete Intro to React v9 — Lesson 21",
+          "files": {
+            "mp4": "playlist_6/21. Learn Introduction Complete Intro to React v9.mp4",
+            "en": "playlist_6/21. Learn Introduction Complete Intro to React v9.vtt",
+            "fr": "playlist_6/21. Learn Introduction Complete Intro to React v9.fr.vtt",
+            "ar": "playlist_6/21. Learn Introduction Complete Intro to React v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_22_0",
+          "num": 22,
+          "part": null,
+          "base": "22. Learn Introduction Complete Intro to React v9",
+          "title": "Complete Intro to React v9 — Lesson 22",
+          "files": {
+            "mp4": "playlist_6/22. Learn Introduction Complete Intro to React v9.mp4",
+            "en": "playlist_6/22. Learn Introduction Complete Intro to React v9.vtt",
+            "fr": "playlist_6/22. Learn Introduction Complete Intro to React v9.fr.vtt",
+            "ar": "playlist_6/22. Learn Introduction Complete Intro to React v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_23_0",
+          "num": 23,
+          "part": null,
+          "base": "23. Learn Introduction Complete Intro to React v9",
+          "title": "Complete Intro to React v9 — Lesson 23",
+          "files": {
+            "mp4": "playlist_6/23. Learn Introduction Complete Intro to React v9.mp4",
+            "en": "playlist_6/23. Learn Introduction Complete Intro to React v9.vtt",
+            "fr": "playlist_6/23. Learn Introduction Complete Intro to React v9.fr.vtt",
+            "ar": "playlist_6/23. Learn Introduction Complete Intro to React v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_24_0",
+          "num": 24,
+          "part": null,
+          "base": "24. Learn Introduction Complete Intro to React v9",
+          "title": "Complete Intro to React v9 — Lesson 24",
+          "files": {
+            "mp4": "playlist_6/24. Learn Introduction Complete Intro to React v9.mp4",
+            "en": "playlist_6/24. Learn Introduction Complete Intro to React v9.vtt",
+            "fr": "playlist_6/24. Learn Introduction Complete Intro to React v9.fr.vtt",
+            "ar": "playlist_6/24. Learn Introduction Complete Intro to React v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_25_0",
+          "num": 25,
+          "part": null,
+          "base": "25. Learn Introduction Complete Intro to React v9",
+          "title": "Complete Intro to React v9 — Lesson 25",
+          "files": {
+            "mp4": "playlist_6/25. Learn Introduction Complete Intro to React v9.mp4",
+            "en": "playlist_6/25. Learn Introduction Complete Intro to React v9.vtt",
+            "fr": "playlist_6/25. Learn Introduction Complete Intro to React v9.fr.vtt",
+            "ar": "playlist_6/25. Learn Introduction Complete Intro to React v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_26_0",
+          "num": 26,
+          "part": null,
+          "base": "26. Learn Introduction Complete Intro to React v9",
+          "title": "Complete Intro to React v9 — Lesson 26",
+          "files": {
+            "mp4": "playlist_6/26. Learn Introduction Complete Intro to React v9.mp4",
+            "en": "playlist_6/26. Learn Introduction Complete Intro to React v9.vtt",
+            "fr": "playlist_6/26. Learn Introduction Complete Intro to React v9.fr.vtt",
+            "ar": "playlist_6/26. Learn Introduction Complete Intro to React v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_27_0",
+          "num": 27,
+          "part": null,
+          "base": "27. Learn Introduction Complete Intro to React v9",
+          "title": "Complete Intro to React v9 — Lesson 27",
+          "files": {
+            "mp4": "playlist_6/27. Learn Introduction Complete Intro to React v9.mp4",
+            "en": "playlist_6/27. Learn Introduction Complete Intro to React v9.vtt",
+            "fr": "playlist_6/27. Learn Introduction Complete Intro to React v9.fr.vtt",
+            "ar": "playlist_6/27. Learn Introduction Complete Intro to React v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_28_0",
+          "num": 28,
+          "part": null,
+          "base": "28. Learn Introduction Complete Intro to React v9",
+          "title": "Complete Intro to React v9 — Lesson 28",
+          "files": {
+            "mp4": "playlist_6/28. Learn Introduction Complete Intro to React v9.mp4",
+            "en": "playlist_6/28. Learn Introduction Complete Intro to React v9.vtt",
+            "fr": "playlist_6/28. Learn Introduction Complete Intro to React v9.fr.vtt",
+            "ar": "playlist_6/28. Learn Introduction Complete Intro to React v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_29_0",
+          "num": 29,
+          "part": null,
+          "base": "29. Learn Introduction Complete Intro to React v9",
+          "title": "Complete Intro to React v9 — Lesson 29",
+          "files": {
+            "mp4": "playlist_6/29. Learn Introduction Complete Intro to React v9.mp4",
+            "en": "playlist_6/29. Learn Introduction Complete Intro to React v9.vtt",
+            "fr": "playlist_6/29. Learn Introduction Complete Intro to React v9.fr.vtt",
+            "ar": "playlist_6/29. Learn Introduction Complete Intro to React v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_30_0",
+          "num": 30,
+          "part": null,
+          "base": "30. Learn Introduction Complete Intro to React v9",
+          "title": "Complete Intro to React v9 — Lesson 30",
+          "files": {
+            "mp4": "playlist_6/30. Learn Introduction Complete Intro to React v9.mp4",
+            "en": "playlist_6/30. Learn Introduction Complete Intro to React v9.vtt",
+            "fr": "playlist_6/30. Learn Introduction Complete Intro to React v9.fr.vtt",
+            "ar": "playlist_6/30. Learn Introduction Complete Intro to React v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_31_0",
+          "num": 31,
+          "part": null,
+          "base": "31. Learn Introduction Complete Intro to React v9",
+          "title": "Complete Intro to React v9 — Lesson 31",
+          "files": {
+            "mp4": "playlist_6/31. Learn Introduction Complete Intro to React v9.mp4",
+            "en": "playlist_6/31. Learn Introduction Complete Intro to React v9.vtt",
+            "fr": "playlist_6/31. Learn Introduction Complete Intro to React v9.fr.vtt",
+            "ar": "playlist_6/31. Learn Introduction Complete Intro to React v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_32_0",
+          "num": 32,
+          "part": null,
+          "base": "32. Learn Introduction Complete Intro to React v9",
+          "title": "Complete Intro to React v9 — Lesson 32",
+          "files": {
+            "mp4": "playlist_6/32. Learn Introduction Complete Intro to React v9.mp4",
+            "en": "playlist_6/32. Learn Introduction Complete Intro to React v9.vtt",
+            "fr": "playlist_6/32. Learn Introduction Complete Intro to React v9.fr.vtt",
+            "ar": "playlist_6/32. Learn Introduction Complete Intro to React v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_33_0",
+          "num": 33,
+          "part": null,
+          "base": "33. Learn Introduction Complete Intro to React v9",
+          "title": "Complete Intro to React v9 — Lesson 33",
+          "files": {
+            "mp4": "playlist_6/33. Learn Introduction Complete Intro to React v9.mp4",
+            "en": "playlist_6/33. Learn Introduction Complete Intro to React v9.vtt",
+            "fr": "playlist_6/33. Learn Introduction Complete Intro to React v9.fr.vtt",
+            "ar": "playlist_6/33. Learn Introduction Complete Intro to React v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_34_0",
+          "num": 34,
+          "part": null,
+          "base": "34. Learn Introduction Complete Intro to React v9",
+          "title": "Complete Intro to React v9 — Lesson 34",
+          "files": {
+            "mp4": "playlist_6/34. Learn Introduction Complete Intro to React v9.mp4",
+            "en": "playlist_6/34. Learn Introduction Complete Intro to React v9.vtt",
+            "fr": "playlist_6/34. Learn Introduction Complete Intro to React v9.fr.vtt",
+            "ar": "playlist_6/34. Learn Introduction Complete Intro to React v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_35_0",
+          "num": 35,
+          "part": null,
+          "base": "35. Learn Introduction Complete Intro to React v9",
+          "title": "Complete Intro to React v9 — Lesson 35",
+          "files": {
+            "mp4": "playlist_6/35. Learn Introduction Complete Intro to React v9.mp4",
+            "en": "playlist_6/35. Learn Introduction Complete Intro to React v9.vtt",
+            "fr": "playlist_6/35. Learn Introduction Complete Intro to React v9.fr.vtt",
+            "ar": "playlist_6/35. Learn Introduction Complete Intro to React v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_36_0",
+          "num": 36,
+          "part": null,
+          "base": "36. Learn Introduction Complete Intro to React v9",
+          "title": "Complete Intro to React v9 — Lesson 36",
+          "files": {
+            "mp4": "playlist_6/36. Learn Introduction Complete Intro to React v9.mp4",
+            "en": "playlist_6/36. Learn Introduction Complete Intro to React v9.vtt",
+            "fr": "playlist_6/36. Learn Introduction Complete Intro to React v9.fr.vtt",
+            "ar": "playlist_6/36. Learn Introduction Complete Intro to React v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_37_0",
+          "num": 37,
+          "part": null,
+          "base": "37. Learn Introduction Complete Intro to React v9",
+          "title": "Complete Intro to React v9 — Lesson 37",
+          "files": {
+            "mp4": "playlist_6/37. Learn Introduction Complete Intro to React v9.mp4",
+            "en": "playlist_6/37. Learn Introduction Complete Intro to React v9.vtt",
+            "fr": "playlist_6/37. Learn Introduction Complete Intro to React v9.fr.vtt",
+            "ar": "playlist_6/37. Learn Introduction Complete Intro to React v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_38_0",
+          "num": 38,
+          "part": null,
+          "base": "38. Learn Introduction Complete Intro to React v9",
+          "title": "Complete Intro to React v9 — Lesson 38",
+          "files": {
+            "mp4": "playlist_6/38. Learn Introduction Complete Intro to React v9.mp4",
+            "en": "playlist_6/38. Learn Introduction Complete Intro to React v9.vtt",
+            "fr": "playlist_6/38. Learn Introduction Complete Intro to React v9.fr.vtt",
+            "ar": "playlist_6/38. Learn Introduction Complete Intro to React v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_39_0",
+          "num": 39,
+          "part": null,
+          "base": "39. Learn Introduction Complete Intro to React v9",
+          "title": "Complete Intro to React v9 — Lesson 39",
+          "files": {
+            "mp4": "playlist_6/39. Learn Introduction Complete Intro to React v9.mp4",
+            "en": "playlist_6/39. Learn Introduction Complete Intro to React v9.vtt",
+            "fr": "playlist_6/39. Learn Introduction Complete Intro to React v9.fr.vtt",
+            "ar": "playlist_6/39. Learn Introduction Complete Intro to React v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_40_0",
+          "num": 40,
+          "part": null,
+          "base": "40. Learn Introduction Complete Intro to React v9",
+          "title": "Complete Intro to React v9 — Lesson 40",
+          "files": {
+            "mp4": "playlist_6/40. Learn Introduction Complete Intro to React v9.mp4",
+            "en": "playlist_6/40. Learn Introduction Complete Intro to React v9.vtt",
+            "fr": "playlist_6/40. Learn Introduction Complete Intro to React v9.fr.vtt",
+            "ar": "playlist_6/40. Learn Introduction Complete Intro to React v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_41_0",
+          "num": 41,
+          "part": null,
+          "base": "41. Learn Introduction Complete Intro to React v9",
+          "title": "Complete Intro to React v9 — Lesson 41",
+          "files": {
+            "mp4": "playlist_6/41. Learn Introduction Complete Intro to React v9.mp4",
+            "en": "playlist_6/41. Learn Introduction Complete Intro to React v9.vtt",
+            "fr": "playlist_6/41. Learn Introduction Complete Intro to React v9.fr.vtt",
+            "ar": "playlist_6/41. Learn Introduction Complete Intro to React v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_42_0",
+          "num": 42,
+          "part": null,
+          "base": "42. Learn Introduction Complete Intro to React v9",
+          "title": "Complete Intro to React v9 — Lesson 42",
+          "files": {
+            "mp4": "playlist_6/42. Learn Introduction Complete Intro to React v9.mp4",
+            "en": "playlist_6/42. Learn Introduction Complete Intro to React v9.vtt",
+            "fr": "playlist_6/42. Learn Introduction Complete Intro to React v9.fr.vtt",
+            "ar": "playlist_6/42. Learn Introduction Complete Intro to React v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_43_0",
+          "num": 43,
+          "part": null,
+          "base": "43. Learn Introduction Complete Intro to React v9",
+          "title": "Complete Intro to React v9 — Lesson 43",
+          "files": {
+            "mp4": "playlist_6/43. Learn Introduction Complete Intro to React v9.mp4",
+            "en": "playlist_6/43. Learn Introduction Complete Intro to React v9.vtt",
+            "fr": "playlist_6/43. Learn Introduction Complete Intro to React v9.fr.vtt",
+            "ar": "playlist_6/43. Learn Introduction Complete Intro to React v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_44_0",
+          "num": 44,
+          "part": null,
+          "base": "44. Learn Introduction Complete Intro to React v9",
+          "title": "Complete Intro to React v9 — Lesson 44",
+          "files": {
+            "mp4": "playlist_6/44. Learn Introduction Complete Intro to React v9.mp4",
+            "en": "playlist_6/44. Learn Introduction Complete Intro to React v9.vtt",
+            "fr": "playlist_6/44. Learn Introduction Complete Intro to React v9.fr.vtt",
+            "ar": "playlist_6/44. Learn Introduction Complete Intro to React v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_45_0",
+          "num": 45,
+          "part": null,
+          "base": "45. Learn Introduction Complete Intro to React v9",
+          "title": "Complete Intro to React v9 — Lesson 45",
+          "files": {
+            "mp4": "playlist_6/45. Learn Introduction Complete Intro to React v9.mp4",
+            "en": "playlist_6/45. Learn Introduction Complete Intro to React v9.vtt",
+            "fr": "playlist_6/45. Learn Introduction Complete Intro to React v9.fr.vtt",
+            "ar": "playlist_6/45. Learn Introduction Complete Intro to React v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_46_0",
+          "num": 46,
+          "part": null,
+          "base": "46. Learn Introduction Complete Intro to React v9",
+          "title": "Complete Intro to React v9 — Lesson 46",
+          "files": {
+            "mp4": "playlist_6/46. Learn Introduction Complete Intro to React v9.mp4",
+            "en": "playlist_6/46. Learn Introduction Complete Intro to React v9.vtt",
+            "fr": "playlist_6/46. Learn Introduction Complete Intro to React v9.fr.vtt",
+            "ar": "playlist_6/46. Learn Introduction Complete Intro to React v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_47_0",
+          "num": 47,
+          "part": null,
+          "base": "47. Learn Introduction Complete Intro to React v9",
+          "title": "Complete Intro to React v9 — Lesson 47",
+          "files": {
+            "mp4": "playlist_6/47. Learn Introduction Complete Intro to React v9.mp4",
+            "en": "playlist_6/47. Learn Introduction Complete Intro to React v9.vtt",
+            "fr": "playlist_6/47. Learn Introduction Complete Intro to React v9.fr.vtt",
+            "ar": "playlist_6/47. Learn Introduction Complete Intro to React v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_48_0",
+          "num": 48,
+          "part": null,
+          "base": "48. Learn Introduction Complete Intro to React v9",
+          "title": "Complete Intro to React v9 — Lesson 48",
+          "files": {
+            "mp4": "playlist_6/48. Learn Introduction Complete Intro to React v9.mp4",
+            "en": "playlist_6/48. Learn Introduction Complete Intro to React v9.vtt",
+            "fr": "playlist_6/48. Learn Introduction Complete Intro to React v9.fr.vtt",
+            "ar": "playlist_6/48. Learn Introduction Complete Intro to React v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_49_0",
+          "num": 49,
+          "part": null,
+          "base": "49. Learn Introduction Complete Intro to React v9",
+          "title": "Complete Intro to React v9 — Lesson 49",
+          "files": {
+            "mp4": "playlist_6/49. Learn Introduction Complete Intro to React v9.mp4",
+            "en": "playlist_6/49. Learn Introduction Complete Intro to React v9.vtt",
+            "fr": "playlist_6/49. Learn Introduction Complete Intro to React v9.fr.vtt",
+            "ar": "playlist_6/49. Learn Introduction Complete Intro to React v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_50_0",
+          "num": 50,
+          "part": null,
+          "base": "50. Learn Introduction Complete Intro to React v9",
+          "title": "Complete Intro to React v9 — Lesson 50",
+          "files": {
+            "mp4": "playlist_6/50. Learn Introduction Complete Intro to React v9.mp4",
+            "en": "playlist_6/50. Learn Introduction Complete Intro to React v9.vtt",
+            "fr": "playlist_6/50. Learn Introduction Complete Intro to React v9.fr.vtt",
+            "ar": "playlist_6/50. Learn Introduction Complete Intro to React v9.ar.vtt"
+          }
+        }
+      ]
     }
   ]
 }
