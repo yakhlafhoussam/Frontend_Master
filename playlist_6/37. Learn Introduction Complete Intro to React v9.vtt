@@ -1,0 +1,473 @@
+WEBVTT
+
+00:00.000 --> 00:03.360
+We're doing everyone's favorite thing now, which is testing.
+
+00:06.880 --> 00:10.960
+Some people get pumped about it, other people are like, why are you wasting my time?
+
+00:12.400 --> 00:17.680
+I'm probably somewhere in the middle. I like tests when they prevent me from wasting time in
+
+00:17.680 --> 00:22.080
+the future and I hate tests that prevent that waste my time now and don't help me in the future.
+
+00:22.080 --> 00:30.640
+So again, I've been all over the map over the years of how I felt about testing. I went all the way
+
+00:30.640 --> 00:35.680
+from I can't be bothered, I got to ship stuff. I've been always like, let's do TDD. I've never
+
+00:35.680 --> 00:41.440
+actually been that militant about it. And I'm kind of more back towards like, let's write less tests
+
+00:41.440 --> 00:47.840
+that I like and let's not write tests that don't tell me anything. So I'm on the side of the camp
+
+00:47.840 --> 00:54.720
+that's like, let's test less. Yeah. Steve Kinney just released a testing fundamentals course.
+
+00:54.720 --> 00:59.760
+And I like what he said, which was when you get to the point where you feel overwhelmed with
+
+01:00.400 --> 01:05.120
+how many things are going on in your head, as far as the business rules and the code and whatever,
+
+01:05.120 --> 01:10.080
+when you feel that sort of like overwhelm or anxiety, like that's at that point, that's like
+
+01:10.080 --> 01:15.280
+a really great place to introduce tests because it can kind of like reduce that cognitive load
+
+01:15.920 --> 01:22.080
+that you're going to break something or forgot to think of a certain use case or whatever.
+
+01:22.080 --> 01:25.680
+That's a good way of putting it. I like that. Steve's a smart guy when it comes to that kind
+
+01:25.680 --> 01:30.880
+of stuff too. So I would say definitely check out his course. I wanted to show you how to test this
+
+01:30.880 --> 01:38.560
+app because I think there's some good things to do in here, but I don't know. I'm not the person
+
+01:38.640 --> 01:47.360
+that writes a ton of tests. The place where I find tests super useful is when someone gives
+
+01:47.360 --> 01:53.600
+me an issue that here's a bug that we need to go fix, I actually find a really good way to start
+
+01:53.600 --> 01:58.160
+is to write the test that would have caught that. And then you can be kind of confident later when
+
+01:58.160 --> 02:02.160
+you come back to it later. It's like, okay, I wrote this test beforehand. Now it's passing.
+
+02:02.160 --> 02:06.720
+Now I can launch it. And now I have a test to go out to production with it that we probably
+
+02:06.720 --> 02:17.920
+won't regress this way again. But I'm a really big on, I want tests to fail fast. I want them
+
+02:17.920 --> 02:22.800
+to fail loudly and I want them to be testing something important. And if it's not doing all
+
+02:22.800 --> 02:29.680
+three of those things, I generally don't want that test. I like integration tests, like big
+
+02:29.680 --> 02:34.960
+suites that cover like user experiences, like around something like this user can log in and
+
+02:34.960 --> 02:41.360
+buy something. Right. But I only want a few of those because if you've ever maintained like big
+
+02:41.360 --> 02:44.800
+suites of Selenium tests, you know what I'm talking about where you spend half of your life
+
+02:44.800 --> 02:49.040
+fighting tests, like where it's like false positives or false negatives or something like that.
+
+02:49.040 --> 02:55.600
+So in those cases, I want a few tests that I care deeply about. And then if I don't care deeply about
+
+02:55.600 --> 03:00.720
+it, or it's too finicky, I just delete it. Like deleting tests should be something that you do
+
+03:00.720 --> 03:07.840
+on a regular basis. I do feel strongly about that. So now that I've given you all the disclaimers of
+
+03:08.800 --> 03:15.760
+your learning from a crotchety old man about testing, I just wanted you to know my perspective
+
+03:15.760 --> 03:19.520
+on it. There's other people out there that are way more, let's test all the things, let's test
+
+03:19.520 --> 03:23.200
+none of the things that I'm more towards, let's test fewer things kind of side of the camp.
+
+03:23.200 --> 03:32.400
+So we're going to test with vitest today, which is a really cool thing made by the VT people themselves.
+
+03:32.400 --> 03:36.640
+It's really nice because we don't have to set it up again. Like in the old days when we were writing
+
+03:36.640 --> 03:41.280
+like mocha tests and stuff like that, you had to set up everything by hand. And the nice thing about
+
+03:41.280 --> 03:46.000
+vitest is that it reads your VT config and it just uses that, which is nice because we don't have to
+
+03:46.000 --> 03:50.240
+write any config, I don't think, not for a while at least. It's designed to be a drop in replacement
+
+03:50.240 --> 03:56.320
+for Jest, which is what I used to teach for this class. Jest was made by Facebook and is now
+
+03:56.320 --> 04:02.480
+OpenJS, so it's a totally open foundation. And vitest is just mimicking what Jest is like,
+
+04:02.480 --> 04:07.680
+and Jest was mimicking what Jasmine was like. So if you've written Jasmine, Jest, or vitest,
+
+04:07.680 --> 04:14.240
+they're all mimicking Jasmine originally. I think I even taught Jasmine for one of the courses here.
+
+04:15.280 --> 04:19.600
+Certainly mocha. I've taught a lot of different testing software because the flavor of the day
+
+04:19.600 --> 04:25.120
+tends to change quite a bit. Let's talk about vitest. I'm going to cancel my VT server here
+
+04:25.120 --> 04:32.000
+for a little bit, and I'm going to npm install. I'm just going to copy this from my notes here.
+
+04:32.000 --> 04:36.560
+Vitest and then testing library and happydom.
+
+04:37.120 --> 04:52.320
+So just to show you here, vitest 2.13, testing libraries at React at 16.01, and happydom at 15.7.4.
+
+04:54.480 --> 05:00.320
+Okay, vitest, I just explained to you what that is. That's the testing suite harness for Veet.
+
+05:00.560 --> 05:05.600
+Testing library slash React, this is a bunch of helper tools for writing React tests.
+
+05:05.600 --> 05:11.440
+It is definitely the one that everyone uses now. Years and years and years ago, Airbnb released
+
+05:11.440 --> 05:18.480
+one called Enzyme that people used for a long time, and it was finicky as hell. And now people
+
+05:18.480 --> 05:24.000
+use this instead. This is much easier to use, so definitely use this. And then happydom is a
+
+05:24.000 --> 05:29.680
+is a synthetic browser environment. So we used to use one called jsdom.
+
+05:31.040 --> 05:34.640
+It was just massive and it was quite slow, and someone got kind of sick of waiting on
+
+05:34.640 --> 05:38.480
+tests apparently, and so they stripped that down and made happydom, which is the much smaller
+
+05:38.480 --> 05:43.920
+version of this. It goes much faster. Has the benefit of being faster, has the downside of
+
+05:43.920 --> 05:50.800
+being less complete, right? So if you're doing strange stuff with browsers, which we all want
+
+05:50.800 --> 05:57.680
+to do, happydom might fail or might pass unexpectedly. So do be aware of that. That
+
+05:57.680 --> 06:07.040
+being said, I've never had that problem, to be honest with you. Cool. All right. So we have all
+
+06:07.040 --> 06:11.040
+those things now. We're going to go inside our directory here and we're going to make a directory
+
+06:11.040 --> 06:23.600
+called underscore underscore tests underscore underscore. So again, this is a Python thing
+
+06:23.600 --> 06:29.280
+that they kind of brought over to JavaScript, the double underscore on either side. And that is
+
+06:31.040 --> 06:35.920
+a signal to any future user that it's a magical name. I'm not making that up. That's what they
+
+06:35.920 --> 06:41.040
+call it. And it's magical in the sense that it's important that it be called that because the
+
+06:41.040 --> 06:45.920
+library that it's going to be used with is looking for that name specifically. So the double underscore
+
+06:45.920 --> 06:49.600
+on either side means don't change the name of this or you're going to break stuff, right?
+
+06:52.400 --> 06:56.160
+That's why you see the underscore underscore init underscore underscore dot
+
+06:56.160 --> 06:59.520
+PY for Python stuff. That's why it's called with the double underscores.
+
+06:59.760 --> 07:05.680
+Okay. So whatever we put in here, V test is just going to assume as a test. So you can call it
+
+07:05.680 --> 07:11.440
+whatever you want. I'm still going to call my stuff app dot test dot JSX or app dot spec dot
+
+07:11.440 --> 07:17.440
+JSX. Either one's fine. But you don't have to, if it's under the double underscore directory,
+
+07:19.440 --> 07:23.360
+um, by the same token, I'm not going to do this right now, but you can also just put it in the
+
+07:23.600 --> 07:28.800
+directly here. And it's also looking for files called app dot test, you know, something dot test
+
+07:28.800 --> 07:32.800
+dot JSX. Both of those, the test will find your tests automatically and run them.
+
+07:34.800 --> 07:38.800
+For some reason, I'm going to do both. I'm going to do both the double underscores and the dot test.
+
+07:42.560 --> 07:49.600
+Okay. So go to package dot JSON. We have all of the files that we're going to use. We're going to
+
+07:49.600 --> 07:57.040
+go to package dot JSON. We have all of our V test stuff in here right there.
+
+07:59.280 --> 08:06.000
+Test. Just change this to be V test like that. That's it. And it's smart enough to be able to
+
+08:06.000 --> 08:10.720
+read the V dot config dot JS. So we don't have to, we don't have to configure it any more than that.
+
+08:10.720 --> 08:14.000
+Oh, you know, there's one thing we need to configure, but we can put it directly into our
+
+08:15.040 --> 08:16.720
+V to config. We don't have to make a new file.
+
+08:19.600 --> 08:27.360
+Okay. So in your VIT directory here, we're just going to add one more thing, test, environment,
+
+08:30.240 --> 08:35.840
+and we're going to do it in Happydom. Just have to tell which browser environment that you want
+
+08:35.840 --> 08:42.240
+to do it in. Momentarily, I'm going to show you what's coming in V test, which they're going to
+
+08:42.240 --> 08:50.160
+do it with Playwright. That's kind of the new hotness coming in. And I tried to build this
+
+08:50.160 --> 08:55.920
+course with Playwright. It's just not ready yet. I just didn't feel comfortable telling you to do
+
+08:55.920 --> 09:00.880
+it yet. So we're going to stick with Happydom. I'm going to show you how to set up Playwright
+
+09:00.880 --> 09:05.360
+towards the end, but just know there's still gremlins and goblins in there. You got to be
+
+09:05.360 --> 09:08.960
+careful. Okay. So we're ready to go. Everything's ready to write tests.
+
+09:09.520 --> 09:16.320
+Um, just so you know, if you do need to write a specific V to config for your V test environment,
+
+09:17.040 --> 09:25.680
+you can write vitest.config.js, and this will be a specific V to config for your V test environment.
+
+09:25.680 --> 09:32.560
+We'll do that actually towards the end. Just be aware that you have to tell to extend your
+
+09:32.560 --> 09:36.560
+current V to config or else it will ignore it. And then you can get into weird places.
+
+09:37.520 --> 09:42.160
+But again, we'll talk about that here in a bit. We don't have to do that right now because
+
+09:42.160 --> 09:46.240
+luckily everything remains the same for us. So we're going to create a file called pizza,
+
+09:46.240 --> 09:54.960
+and you can either call this test.jsx or spec. Either of those fine with me. I think I called
+
+09:54.960 --> 10:01.360
+them spec in the past. I'm going to call it test this time. Just go with what the mood suits. We
+
+10:01.440 --> 10:08.720
+just want to test that the alt text renders. Like imagine that we got slapped by a, you know,
+
+10:10.080 --> 10:15.520
+lawsuit or a violation for not being accessible enough because our images didn't have alt text,
+
+10:15.520 --> 10:20.480
+and we want to make sure we need all pizzas to have alt text on them. And we're going to
+
+10:20.480 --> 10:24.960
+write a test that ensures that. I don't know, making stuff up here, but that's what we're going to do.
+
+10:24.960 --> 10:33.840
+So we're going to import render from app testing library slash react. We're going to import
+
+10:34.880 --> 10:44.240
+expect and test from the test and import pizza from, as you might have guessed, dot dot slash
+
+10:44.320 --> 10:55.280
+pizza. Okay. Now we're going to go in and we're going to say test this string that we put in here.
+
+10:56.320 --> 11:00.080
+I don't really care what you put in. Some people have very strong opinions of how you structure
+
+11:00.080 --> 11:07.360
+these. This is my only strong tip to give you here. I just want you to put something in here
+
+11:07.920 --> 11:16.080
+that says this test failed that you know which test failed. So alt text renders on image. That's
+
+11:16.080 --> 11:22.080
+what I have here. If I see that in my, or on pizza images, it would probably be even better.
+
+11:22.080 --> 11:30.320
+It will tell you that it failed in pizza dot test dot JSX. But just make sure that this is
+
+11:30.320 --> 11:34.640
+descriptive of what you're actually testing. And at a glance, you can tell what failed if it tells
+
+11:34.640 --> 11:39.200
+you that this failed. Okay. We're going to make this an async function.
+
+11:42.080 --> 11:46.400
+And we're going to say const name equals my favorite pizza.
+
+11:48.720 --> 11:55.840
+Const source equals, I just put in like a placeholder one. Pick some is one that I've
+
+11:55.840 --> 12:01.840
+been using lately and dot photos slash 200. So this is just a, I think if I just open it here,
+
+12:01.840 --> 12:09.760
+I can show you. It should just be a random image, right? So that's what it is today.
+
+12:11.920 --> 12:21.040
+Okay. Const screen equals render. And you just render out whatever you want to test.
+
+12:21.120 --> 12:36.400
+Const pizza name equals name description equals super cool pizza and image equals source.
+
+12:40.080 --> 12:47.040
+Okay. Const IMG equals screen dot get by role
+
+12:47.360 --> 12:57.360
+image. And then we just write some expectations here. Expect image dot source to be source.
+
+12:57.360 --> 13:14.320
+And expect image dot alt to be name. Very simple test here. But kind of wanted to just like easy
+
+13:15.280 --> 13:21.120
+into a little bit of like what testing looks like with Vitest. Render. This works like the,
+
+13:21.120 --> 13:27.840
+you know, the root dot render that we have from React DOM. But this is all being done in Node.js
+
+13:27.840 --> 13:33.760
+synthetically. So it's being much faster than it could be done in the browser.
+
+13:36.320 --> 13:41.360
+So we render that here. We get this thing called screen. This comes from React's testing library,
+
+13:42.320 --> 13:45.760
+which is a render result. And it has a bunch of functions available to it.
+
+13:47.440 --> 13:54.000
+But one of them is this get by role. I don't know if you noticed, but when I said screen dot,
+
+13:54.560 --> 14:02.880
+there's a lot of methods on this. It's like ways to get stuff out of your whatever you're looking
+
+14:02.880 --> 14:09.760
+for. And they do this kind of interesting way of testing. We all want to do it jQuery style where
+
+14:10.240 --> 14:16.320
+give me this class or this ID or something like that. And sometimes I still kind of long for those
+
+14:16.320 --> 14:19.760
+days because it makes a lot of sense for me to do it that way. But let me tell you why. I think
+
+14:19.760 --> 14:24.640
+there's this better even if it makes me think a little bit harder. Lord knows I don't want to
+
+14:24.640 --> 14:32.320
+think that hard. It's very user based. Right? It's very based on how is the person perceiving
+
+14:32.320 --> 14:36.720
+this? How are they using it? As opposed to as me, the developer, what's the CSS class?
+
+14:37.360 --> 14:43.200
+The user does not care if the CSS class is working or not. They do care if they can see the div or
+
+14:43.200 --> 14:48.400
+the image or not. Does that make sense? So they kind of change the focus around. In this case,
+
+14:48.400 --> 14:55.360
+get by role, image is a role, right? It's a thing that a user would experience. So in this case,
+
+14:55.360 --> 14:59.520
+we know pizza only has one image. So we can just say get by role image and be confident that that's
+
+14:59.520 --> 15:07.840
+going to be the only thing there. So that's why this works. But there's a bunch of them.
+
+15:09.040 --> 15:15.040
+Let's see if I can even show you. Yes, there's a bunch of things here. Get the fee, get the form,
+
+15:15.040 --> 15:19.680
+get the heading. The heading will be like the H2 or the H1 of it or something like that.
+
+15:21.200 --> 15:25.360
+But it's interesting. These are all things that they're very focused on. What would a user feel
+
+15:25.360 --> 15:30.320
+here? What would they experience? And then you do it that way. I'll show you later how to do it
+
+15:30.320 --> 15:34.640
+with test ID, which is kind of approaching more what we want is like, hey, I just want to get this
+
+15:34.640 --> 15:38.400
+thing. I don't know what role it's going to be, but I want this thing. I'll show you how to do that.
+
+15:40.480 --> 15:47.360
+Okay, so that is the most basic test. Let's go ahead and see if it works.
+
+15:47.520 --> 15:56.000
+So I'm just going to say npm run test, or if you're feeling extra lazy, npm test does work,
+
+15:56.000 --> 16:02.080
+or if you're feeling yet the laziest, npm t works specifically just for test.
+
+16:04.560 --> 16:11.520
+Lo and behold, we have written a test that works. Now, I am always extremely suspicious
+
+16:11.520 --> 16:16.160
+when my tests pass the first time that I write them that I probably f'd it up somewhere, right?
+
+16:16.400 --> 16:21.200
+So when that happens, on the rare occasions it does, I was like, I should go break this to make
+
+16:21.200 --> 16:28.800
+sure it actually breaks, right? So let's go break it. Breaking things fun. We want all text to be
+
+16:28.800 --> 16:38.960
+to lol no, right? And now, if I look at my test now, this was expected to be this, but I was
+
+16:39.680 --> 16:47.760
+expecting it to be my favorite pizza, and instead I received lol no, right? That's what we were
+
+16:47.760 --> 16:57.280
+expecting. And now, if I go back and I fix it again, pizza test, sorry, not that, pizza.jsx.
+
+17:01.200 --> 17:03.280
+Save it. Lo and behold, it is working.
+

@@ -1,0 +1,561 @@
+WEBVTT
+
+
+00:00.000 --> 00:06.760
+Donc, si vous rencontrez des problèmes ou si vous voulez simplement voir où j'en suis ici, nous sommes au 04-hooks,
+
+00:06.760 --> 00:13.960
+où nous avons découvert useState, de loin le hook le plus courant que vous utiliserez.
+
+00:13.960 --> 00:16.840
+La prochaine fois dont nous allons parler, le prochain crochet le plus courant que vous allez utiliser,
+
+00:16.840 --> 00:19.840
+qui est useEffect.
+
+00:19.840 --> 00:26.320
+Ainsi, l'état concerne l'état de votre composant, des choses qui peuvent changer avec le temps.
+
+00:26.320 --> 00:27.420
+dans votre composant.
+
+00:27.420 --> 00:33.220
+Cela sera fréquemment lié aux formulaires, mais vous pourriez facilement écrire comme une horloge, ou quelque chose comme ça.
+
+00:33.220 --> 00:34.220
+comme ça.
+
+00:34.220 --> 00:40.540
+L'autre chose est que les effets seront généralement également utilisés avec l'état, ils ont donc tendance à se combiner.
+
+00:40.540 --> 00:42.020
+et composer.
+
+00:42.020 --> 00:49.140
+Mais parlons des effets.
+
+00:49.140 --> 00:53.740
+Effets signifie effets secondaires, vous avez donc un composant et quelque chose qui est
+
+00:53.740 --> 00:57.340
+va se produire en dehors de cela.
+
+00:57.340 --> 01:00.540
+Personnellement, cela va ressembler à une requête API, vous allez donc contacter
+
+01:00.540 --> 01:07.340
+une API, elle reviendra avec des données, et vous le verrez.
+
+01:07.340 --> 01:12.100
+Cela pourrait être, disons que vous souhaitez afficher quelque chose sur une horloge, comme la date.
+
+01:12.100 --> 01:16.020
+temps ou quelque chose comme ça, vous pourriez faire cela avec un effet parce que vous pouvez
+
+01:16.020 --> 01:18.420
+considérez le temps comme un effet secondaire de votre composant.
+
+01:18.420 --> 01:21.780
+C'est tout ce qui va être entré dans votre composant et pas seulement une entrée utilisateur
+
+01:21.780 --> 01:24.860
+ou quelque chose comme ça.
+
+01:24.860 --> 01:31.540
+Alors allons faire ça.
+
+01:31.540 --> 01:37.820
+Assurez-vous donc que votre serveur API est en cours d'exécution, car nous allons réellement accéder à l'API maintenant.
+
+01:37.820 --> 01:47.740
+Alors allons sur order.jsx, client, assurez-vous simplement de l'avoir si vous ne l'avez pas.
+
+01:47.740 --> 01:59.420
+Et nous allons aller sur order.jsx, et nous allons importer l'effet d'utilisation de React.
+
+01:59.420 --> 02:04.020
+Et nous avons une pizza, cool.
+
+02:04.020 --> 02:10.700
+Nous allons faire quelques conversions de devises ici.
+
+02:10.700 --> 02:16.940
+Ceci est donc désormais simplement intégré au navigateur, ce qui est super sympa.
+
+02:17.140 --> 02:21.340
+Alors passons au format de commande, donnez lui le format que vous souhaitez, n'hésitez pas à mettre ça dedans
+
+02:21.340 --> 02:22.340
+votre propre région.
+
+02:22.340 --> 02:30.460
+Je vais vous montrer comment le faire avec des dollars.
+
+02:30.460 --> 02:38.140
+Il s’agit donc d’une monnaie, et je veux que la monnaie soit l’USD.
+
+02:38.140 --> 02:40.700
+Nous allons donc charger des types de pizza.
+
+02:40.700 --> 02:43.500
+Donc pour le moment, nous avons juste une liste plate de tous ces types de pizza, mais je veux ça
+
+02:43.500 --> 02:46.940
+être un peuplement dynamique de toutes nos différentes pizzas.
+
+02:46.940 --> 02:53.620
+En tant que généreux créateur de cours, j'ai créé 32 types de pizza pour vous.
+
+02:53.620 --> 02:57.740
+Et nous allons tous les utiliser.
+
+02:57.740 --> 03:02.460
+La plupart d’entre eux ont l’air horribles, rien que d’en être conscient.
+
+03:02.460 --> 03:07.820
+Donc const, un autre hook ici, un autre hook d'état d'utilisation.
+
+03:07.820 --> 03:23.740
+Types de pizza, définir les types de pizza équivaut à utiliser l'état avec un tableau vide, n'est-ce pas ?
+
+03:23.740 --> 03:29.980
+Donc, en gros, ça va dire, commencez avec rien, et ensuite nous progresserons à partir de
+
+03:29.980 --> 03:30.980
+là.
+
+03:30.980 --> 03:34.880
+Et puis je vais avoir un crochet de chargement.
+
+03:34.880 --> 03:36.880
+Cela va être utile pour cela.
+
+03:36.880 --> 03:41.120
+Vous pouvez dire que le chargement est vrai, et que nous pouvons montrer à l'utilisateur un joli spinner et
+
+03:41.120 --> 03:43.240
+ne pas restituer des éléments qui ne sont pas encore disponibles.
+
+03:43.240 --> 03:47.040
+Et puis une fois que tout est chargé, vous pouvez dire définir le chargement sur false, et ensuite vous pouvez
+
+03:47.040 --> 03:49.960
+montrez-leur tout ce qu'ils ont besoin de savoir.
+
+03:49.960 --> 03:54.680
+Alors utilisez state, nous allons commencer par charger le formulaire, n'est-ce pas ?
+
+03:54.680 --> 04:01.280
+Parce que toutes les pizzas ne seront pas encore chargées.
+
+04:01.280 --> 04:07.720
+D'accord, cool.
+
+04:07.720 --> 04:21.320
+Ici on va dire laisser le prix et la pizza sélectionnée, on va dire si elle ne charge pas,
+
+04:22.320 --> 04:41.880
+Ensuite, nous dirons que la pizza sélectionnée est égale aux types de pizza dot find pizza, type de pizza, triple
+
+04:41.880 --> 04:44.040
+est égal à l'ID du point de pizza.
+
+04:44.040 --> 04:45.040
+Alors pourquoi faisons-nous cela ?
+
+04:45.040 --> 04:50.880
+Nous allons garder une trace uniquement de l'identifiant du type de pizza sélectionné.
+
+04:50.880 --> 04:54.720
+Nous devons aller chercher dans notre gamme de types de pizzas, la bonne, et
+
+04:54.720 --> 04:56.920
+nous allons le faire par son identifiant.
+
+04:56.920 --> 05:02.560
+Et vous remarquez que ce ne sont pas des hooks malgré le fait qu'ils soient mutables.
+
+05:02.560 --> 05:04.920
+C'est parce que c'est une sorte d'état dérivé, n'est-ce pas ?
+
+05:04.920 --> 05:09.000
+Nous pouvons donc utiliser cet état ici pour trouver cet état.
+
+05:09.000 --> 05:13.080
+Donc, cela n'a pas besoin d'être un crochet parce que ce n'est pas le cas, ça le sera toujours.
+
+05:13.080 --> 05:18.440
+une fonction de ceux-ci, ou désolé, ce sont toujours une fonction de ceux-ci, n'est-ce pas ?
+
+05:18.440 --> 05:23.560
+Parce que le prix sera quel que soit le prix des pizzas sélectionnées, n'est-ce pas ?
+
+05:23.560 --> 05:31.440
+La pizza sélectionnée sera toujours le type de pizza qui correspond aux types de pizza, n'est-ce pas ?
+
+05:31.440 --> 05:34.520
+La vue a donc cela comme un concept d'état dérivé.
+
+05:34.520 --> 05:37.120
+Je pense que Svelte l'a aussi.
+
+05:37.120 --> 05:38.120
+N'existe pas dans React.
+
+05:38.120 --> 05:44.520
+Vous les suivez simplement dans des variables normales, d'accord ?
+
+05:44.520 --> 05:50.160
+Nous avons donc maintenant la garantie que la pizza sélectionnée sera le bon objet de pizza.
+
+05:50.160 --> 05:55.160
+que nous avons récupéré de notre API.
+
+05:55.160 --> 06:02.160
+Nous allons écrire ici une fonction appelée récupérer des pizzas, une fonction asynchrone récupérer des pizzas,
+
+06:02.160 --> 06:05.760
+des types de pizza plutôt, des types de pizza.
+
+06:05.760 --> 06:14.280
+Et ce sera juste une commande de récupération vraiment normale.
+
+06:14.280 --> 06:29.960
+Nous allons donc dire const pizza res égal à wait fetch slash API slash pizzas const pizza
+
+06:29.960 --> 06:41.880
+json est égal à wait pizza res dot json.
+
+06:41.880 --> 06:52.760
+Définissez les types de pizza sur pizza json.
+
+06:52.760 --> 06:59.800
+Et définissez le chargement sur false car nous aurons fini de charger à ce stade, n'est-ce pas ?
+
+06:59.800 --> 07:07.720
+Très bien, nous avons donc cette fonction d'effet secondaire que nous voulons appeler.
+
+07:07.720 --> 07:11.400
+Où l'appelle-t-on ?
+
+07:11.400 --> 07:14.720
+Je ne peux pas simplement dire d'aller chercher des types de pizza ici.
+
+07:14.720 --> 07:15.720
+Pourquoi est-ce une mauvaise idée ?
+
+07:15.720 --> 07:18.960
+Il s'exécuterait à chaque fois que le composant serait rendu.
+
+07:18.960 --> 07:19.960
+Vous l'avez.
+
+07:19.960 --> 07:21.680
+Il s'exécuterait à chaque fois que le composant serait rendu.
+
+07:21.680 --> 07:26.800
+Cela fait beaucoup, vous faites essentiellement du DDoSing vous-même, n'est-ce pas ?
+
+07:26.800 --> 07:28.000
+Ce n'est donc pas une bonne idée.
+
+07:28.000 --> 07:31.000
+Comment puis-je me contenter de lancer ça au début, n'est-ce pas ?
+
+07:31.000 --> 07:37.240
+C'est tout ce que je veux faire une seule fois lors du premier chargement du composant, n'est-ce pas ?
+
+07:37.240 --> 07:39.600
+Effets Vous avez trouvé le besoin d'effets.
+
+07:39.600 --> 07:42.400
+C’est exactement à cela que servent les effets.
+
+07:42.400 --> 07:47.280
+Utilisez l'effet, vous lui donnez une fonction du genre, hé, j'ai besoin que tu fasses ce genre de chose à l'extérieur
+
+07:47.280 --> 07:48.360
+du cycle de rendu.
+
+07:48.360 --> 07:52.400
+Donc, si vous trouvez que c'est exactement à cela que servent les effets, j'ai mes rendus et j'ai
+
+07:52.400 --> 07:56.160
+des choses qui doivent se produire en dehors des rendus et je veux en quelque sorte contrôler quand
+
+07:56.160 --> 07:58.320
+ça arrive.
+
+07:58.320 --> 08:03.160
+Donc dans ce cas, nous allons dire récupérer le type de pizza.
+
+08:03.160 --> 08:07.960
+Ce n’est pas encore tout à fait ce que nous souhaitons.
+
+08:07.960 --> 08:12.080
+Cela va toujours planifier un effet après chaque rendu.
+
+08:12.080 --> 08:17.120
+Alors, comment pouvons-nous lui dire, hé, nous voulons que cela ne change qu'une seule fois.
+
+08:17.120 --> 08:21.960
+Il y a un deuxième paramètre ici du genre, hé, chaque fois que cette variable est différente de la
+
+08:21.960 --> 08:25.800
+rendu précédent, recommencez.
+
+08:25.800 --> 08:33.000
+Alors disons que nous mettons ici, je ne sais pas, la taille d'une pizza.
+
+08:33.000 --> 08:37.880
+Désormais, chaque fois que l'utilisateur sélectionnait une taille de pizza différente, cette fonction s'exécutait
+
+08:37.880 --> 08:40.840
+et cet effet serait exécuté à nouveau.
+
+08:40.840 --> 08:43.120
+Ce n’est pas vraiment ce que nous voulons, n’est-ce pas ?
+
+08:43.120 --> 08:45.960
+Nous voulons qu'il s'exécute une fois, n'est-ce pas ?
+
+08:45.960 --> 08:46.960
+Juste au début.
+
+08:46.960 --> 08:47.960
+Alors, comment pouvons-nous faire cela ?
+
+08:47.960 --> 08:50.840
+Eh bien, nous ne lui donnons rien, n'est-ce pas ?
+
+08:50.840 --> 08:52.320
+Nous lui donnons simplement un tableau vide, n'est-ce pas ?
+
+08:52.320 --> 08:54.360
+Et ça veut dire, je m'en fiche.
+
+08:54.360 --> 08:57.600
+Exécutez ceci une fois et vous ne suivrez aucune variable ici, donc vous n'allez jamais
+
+08:57.600 --> 09:00.040
+pour l'exécuter à nouveau.
+
+09:00.040 --> 09:04.040
+Cela a du sens ?
+
+09:04.040 --> 09:13.120
+Vous devrez vous excuser comme si vous marchiez à l'envers, comme la logique là-bas, mais comme d'habitude
+
+09:13.120 --> 09:15.560
+les gens voient cela pour la première fois, c'est pourquoi y a-t-il un tableau vide là-bas ?
+
+09:15.560 --> 09:16.560
+Droite?
+
+09:16.560 --> 09:17.560
+Et cela les contrarie vraiment.
+
+09:17.560 --> 09:21.280
+J'essaie donc de vous expliquer pourquoi ce tableau vide existe là-bas.
+
+09:21.280 --> 09:23.120
+Cela a du sens.
+
+09:23.120 --> 09:29.240
+C'est un peu dense à regarder, comme s'il y avait beaucoup de syntaxe dans une seule ligne bouclée
+
+09:30.240 --> 09:34.680
+crochet, crochet, crochet, crochet ou parenthèses rondes, n'est-ce pas ?
+
+09:34.680 --> 09:36.640
+Cela a du sens.
+
+09:36.640 --> 09:42.840
+D'accord, prochaine question que les gens pourraient me poser, pourquoi ne puis-je pas simplement en faire une fonction asynchrone ?
+
+09:42.840 --> 09:45.360
+Je pense que Burton, tu viens littéralement de me demander ça.
+
+09:45.360 --> 09:47.560
+Les fonctions asynchrones renvoient quoi ?
+
+09:47.560 --> 09:48.800
+Des promesses.
+
+09:48.800 --> 09:50.480
+Ils rendent toujours une promesse quoi qu’il arrive.
+
+09:50.480 --> 09:54.240
+S'il s'agit d'une fonction asynchrone, le type de retour est toujours une promesse.
+
+09:54.240 --> 09:57.880
+Et les effets, le type de retour compte.
+
+09:58.000 --> 10:02.320
+Je ne vais rien vous montrer aujourd'hui là où cela compte, mais disons que vous le vouliez
+
+10:02.320 --> 10:07.560
+à exécuter une fois et vous vouliez qu'il s'exécute à la fin, pas au début.
+
+10:07.560 --> 10:09.440
+Cela peut être utile pour effacer les délais d'attente.
+
+10:09.440 --> 10:13.800
+C'est généralement le moment où je le fais ou que j'annule, comme utiliser un jeton d'abandon pour annuler un
+
+10:13.800 --> 10:16.280
+demande ou quelque chose comme ça.
+
+10:16.280 --> 10:23.560
+Vous pouvez renvoyer une fonction, vous débarrasser de cette asynchrone.
+
+10:23.560 --> 10:25.680
+C'est ainsi que vous procéderiez.
+
+10:25.680 --> 10:29.960
+Le retour ici est la fonction de nettoyage.
+
+10:29.960 --> 10:33.560
+Donc tout cela pour dire que vous n’avez pas besoin de faire ça pour le moment.
+
+10:33.560 --> 10:39.920
+C'est une chose assez rare que vous devez nettoyer, mais c'est ainsi que vous procéderiez.
+
+10:39.920 --> 10:42.400
+Et c'est pourquoi nous ne pouvons pas simplement rendre cela asynchrone, n'est-ce pas ?
+
+10:42.400 --> 10:45.640
+C'est pourquoi je crée une fonction asynchrone ici, puis je l'appelle pour mon effet.
+
+10:45.640 --> 10:48.040
+Et maintenant, j'ai sélectionné le prix de la pizza.
+
+10:48.040 --> 10:50.680
+Nous récupérons maintenant toutes les pizzas.
+
+10:50.680 --> 11:00.200
+Donc, à terme, cela va être plein de types de pizzas ici.
+
+11:00.200 --> 11:05.080
+Maintenant, c’est encore une fois l’une de mes choses préférées à propos de React.
+
+11:05.080 --> 11:08.600
+En faisant tout de cette façon, je pourrais en quelque sorte traiter tout mon code
+
+11:08.600 --> 11:12.000
+ici comme si les types de pizza existaient déjà.
+
+11:12.000 --> 11:15.480
+Cela se lit de manière très optimiste dans le sens où je suppose simplement que les données vont
+
+11:16.480 --> 11:17.480
+ici finalement.
+
+11:17.480 --> 11:22.000
+Et cela rend le code pas plein si cela, alors c'est vrai.
+
+11:22.000 --> 11:25.040
+C'est généralement comme lire comme si le code était ici, n'est-ce pas ?
+
+11:25.040 --> 11:33.880
+Allons remplacer les options ici.
+
+11:33.880 --> 11:44.360
+Types de pizza pizza à carte par points, et ici nous allons juste faire une touche d'option égale pizza
+
+11:44.360 --> 11:45.360
+ID de point.
+
+11:45.360 --> 11:48.280
+Nous allons faire nos clés ici dans une seconde.
+
+11:48.280 --> 11:52.000
+Et la valeur est égale à l'ID de point de pizza.
+
+11:52.000 --> 11:55.600
+Et puis nous voulons que le nom du point de pizza soit ici, le nom du point de pizza.
+
+11:55.600 --> 11:57.520
+Très bien, donc c'est un peu dense ici.
+
+11:57.520 --> 12:00.280
+Parlons-en juste une seconde.
+
+12:00.280 --> 12:04.600
+Ce sont tous des concepts que vous connaissez, cependant, entre les accolades peut se trouver n'importe quelle expression JavaScript.
+
+12:04.600 --> 12:08.920
+que ce soit, non ?
+
+12:08.920 --> 12:15.320
+Si vous êtes familier avec map, c'est une fonction JavaScript qui vous permet de prendre un tableau de quelque chose
+
+12:15.840 --> 12:19.000
+et vous transformez cela en une gamme d'autre chose, n'est-ce pas ?
+
+12:19.000 --> 12:25.160
+C'est juste une transformation à partir d'un tableau de 1, 2, 3, 4, et si vous dites map double, vous diriez
+
+12:25.160 --> 12:27.160
+obtenez 2, 4, 6, 8, n'est-ce pas ?
+
+12:27.160 --> 12:30.960
+Cela transformerait simplement l’un en l’autre.
+
+12:30.960 --> 12:38.000
+Nous avons toute une gamme de types de pizzas et nous voulons les transformer en une gamme de composants,
+
+12:38.000 --> 12:39.000
+n'est-ce pas ?
+
+12:39.000 --> 12:45.120
+Ou des éléments, pour ainsi dire, qui n’ont pas vraiment d’importance.
+
+12:45.120 --> 12:48.000
+C'est tout ce que nous faisons ici, c'est simplement transformer un tableau d'objets en un tableau.
+
+12:48.000 --> 12:50.280
+des trucs React, n'est-ce pas ?
+
+12:50.280 --> 12:57.080
+Et si vous vous souvenez de ce que nous avons vu sous le capot, en quoi JSX transforme-t-il cela ?
+
+12:57.080 --> 12:58.400
+C'est un tableau, non ?
+
+12:58.400 --> 13:02.280
+Ainsi, si nous lui donnons un ensemble de composants, il sait exactement quoi en faire.
+
+13:02.280 --> 13:03.680
+C'est pourquoi la carte ici fonctionne.
+
+13:03.680 --> 13:09.480
+Nous transformons une gamme de ces objets pizza en une gamme d'options.
+
+13:09.480 --> 13:10.480
+Cela a du sens ?
+
+13:10.480 --> 13:11.480
+On suit ?
+
+13:12.400 --> 13:16.960
+Très bien, donc je pense que si nous avons évidemment des erreurs ici, mais je pense que si nous actualisons
+
+13:16.960 --> 13:32.040
+ça, on devrait voir plein de types de pizzas, ce qui est plutôt cool, non ?
+
+13:32.040 --> 13:37.400
+Donc si nous actualisons, regardez ici le réseau, vous pouvez voir ici que nous avons un je cherche juste
+
+13:37.400 --> 13:41.360
+chez XHR, qui sont des requêtes Ajax ici.
+
+13:41.360 --> 13:42.920
+Vous pouvez voir qu'il atteint l'API.
+
+13:42.920 --> 13:48.840
+Il s'agit d'obtenir une réponse ici de tous les différents objets, n'est-ce pas ?
+
+13:48.840 --> 13:51.560
+Et cela transforme cela en une gamme d’options.
+

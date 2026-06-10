@@ -1,0 +1,284 @@
+WEBVTT
+
+00:00.320 --> 00:09.580
+Let's talk just a tiny, tiny moment about the API server for the rest of this project.
+
+00:09.580 --> 00:12.440
+So let's just open it in GitHub.
+
+00:12.440 --> 00:17.240
+So in the project that I had you clone earlier, there is an API directory.
+
+00:17.240 --> 00:20.920
+I wrote a little API for the rest of your project so that we can do some GET requests,
+
+00:20.920 --> 00:23.560
+some POST requests, and all that kind of stuff.
+
+00:23.560 --> 00:26.000
+It's just a little fastified Node.js app.
+
+00:26.000 --> 00:28.140
+I'm not even going to purport that it's any good.
+
+00:28.140 --> 00:32.220
+But it does work.
+
+00:32.220 --> 00:36.560
+I don't need you to edit it at all for the entire remainder of the course.
+
+00:36.560 --> 00:39.220
+You just got to run it.
+
+00:39.220 --> 00:41.800
+So let's just look at it.
+
+00:41.800 --> 00:48.420
+If we go to our GitHub here, it's this API directory.
+
+00:48.420 --> 00:51.240
+You can see it's a little package.json.
+
+00:51.240 --> 00:53.380
+It's got fastify.
+
+00:53.380 --> 00:55.720
+And that's about it.
+
+00:55.720 --> 00:57.780
+It has a SQLite database.
+
+00:57.780 --> 00:58.140
+Okay.
+
+00:58.140 --> 01:04.200
+And I think it's just a – it's got all of our static assets in there as well.
+
+01:04.200 --> 01:12.440
+So it has the CSS, all of the pizza images, and all of the – yeah, like all that stuff
+
+01:12.440 --> 01:15.900
+I didn't want you to have to deal with.
+
+01:15.900 --> 01:21.640
+So – and then you can see here in the server.js, it's just a fastify project and doesn't
+
+01:21.640 --> 01:25.780
+really do any much more than this.
+
+01:25.780 --> 01:27.780
+But not stuff that you have to worry about at all.
+
+01:28.140 --> 01:30.140
+Okay.
+
+01:30.140 --> 01:38.520
+So, in whatever terminal that you're in, navigate to your API directory.
+
+01:38.520 --> 01:44.580
+So you can see I'm in completeintro.reactv9project slash API.
+
+01:44.580 --> 01:55.140
+Two things, npm install – again, vulnerabilities, no – doesn't matter, it's okay.
+
+01:55.140 --> 01:57.280
+And then npm – let's take a look at that.
+
+01:57.280 --> 01:57.980
+Okay.
+
+01:57.980 --> 02:04.060
+Let's do run dev, because that'll be just fine.
+
+02:04.060 --> 02:05.060
+Okay.
+
+02:05.060 --> 02:12.740
+And you should see something like this.
+
+02:12.740 --> 02:17.140
+So if you go to localhost 3000, it's going to give you some sort of 404 error or something
+
+02:17.140 --> 02:20.480
+like this.
+
+02:20.480 --> 02:22.980
+I think it's API slash pizzas.
+
+02:22.980 --> 02:23.980
+Yeah.
+
+02:23.980 --> 02:24.980
+If you go to API slash pizzas on port 3000, you should get – I think it's API slash
+
+02:24.980 --> 02:25.980
+pizzas.
+
+02:25.980 --> 02:26.980
+Yeah.
+
+02:26.980 --> 02:32.360
+If you go to API slash pizzas on port 3000, you should get 31 pizzas, I think is how many
+
+02:32.360 --> 02:35.900
+I had in there, or 32 actually.
+
+02:35.900 --> 02:39.680
+So what we want to do is we want to use Vite as the proxy.
+
+02:39.680 --> 02:43.080
+And again, you don't really need to understand this too in depth, but essentially we want
+
+02:43.080 --> 02:48.580
+to run our front end and our back end on the same port, right?
+
+02:48.580 --> 02:52.740
+So we want everything running through port 5173 so that we don't have to worry about
+
+02:52.740 --> 02:53.740
+cores.
+
+02:53.740 --> 02:56.060
+And if you don't know what that is, bless you.
+
+02:56.060 --> 02:56.480
+Okay.
+
+02:56.980 --> 03:02.280
+If you do know what it is, you've been where I am, right?
+
+03:02.280 --> 03:03.900
+So we're going to run everything through Vite.
+
+03:03.900 --> 03:07.620
+Luckily, Vite makes this very easy to accomplish.
+
+03:07.620 --> 03:12.840
+So I want you to open your Vite.config.js, and we're just going to add one little thing
+
+03:12.840 --> 03:13.840
+here.
+
+03:13.840 --> 03:20.300
+We're going to add server, and we're going to put a comma there, and we're going to add
+
+03:20.300 --> 03:24.980
+a proxy.
+
+03:24.980 --> 03:26.900
+And so you add basically things that you want to run.
+
+03:26.900 --> 03:28.480
+Because you want to be proxied through this.
+
+03:28.480 --> 03:46.140
+And so for slash API, you want to run that through target http://localhost 3000.
+
+03:46.140 --> 03:51.000
+If you have not stopped your server from earlier in the course, please do that now, or else
+
+03:51.000 --> 03:54.780
+this will interfere with this, by the way.
+
+03:54.780 --> 03:56.760
+And then you want to add a change origin.
+
+03:56.760 --> 04:00.680
+As well, there you go, 3000.
+
+04:00.680 --> 04:06.880
+Change origin to be true, and we're going to do that as well for public.
+
+04:06.880 --> 04:17.880
+Actually literally the exact same thing for public.
+
+04:17.880 --> 04:18.880
+That's it.
+
+04:18.880 --> 04:23.660
+So I added this.
+
+04:23.660 --> 04:26.240
+This is going to proxy all of the requests from...
+
+04:26.760 --> 04:36.760
+Localhost colon 5173 on API and public to localhost 3000.
+
+04:36.760 --> 04:43.520
+So just to kind of prove my point here, I'm running my Vite server here.
+
+04:43.520 --> 04:49.980
+I'm going to open this in my localhost, and if I do slash API slash pizzas like we were
+
+04:49.980 --> 04:54.420
+just looking at, notice it still goes to that same API.
+
+04:54.420 --> 04:55.680
+So notice that this and this, despite the fact that they're on the same server, they're still
+
+04:55.680 --> 04:56.680
+on the same server.
+
+04:56.680 --> 04:58.560
+They're on different ports.
+
+04:58.560 --> 05:03.180
+Same thing, right?
+
+05:03.180 --> 05:04.820
+That's all that that does for you.
+
+05:04.820 --> 05:06.360
+It makes local dev much easier.
+
+05:06.360 --> 05:11.580
+You used to have to do some black magic and some seances to get this to work correctly.
+
+05:11.580 --> 05:13.360
+Now Vite makes it very easy.
+
+05:13.360 --> 05:14.360
+Yeah?
+
+05:14.360 --> 05:18.520
+Would that work for any localhost number then?
+
+05:18.520 --> 05:21.680
+It's just specifically looking for anything following API.
+
+05:21.680 --> 05:22.680
+Yep.
+
+05:22.680 --> 05:25.680
+So it's only processing things after the API, and it doesn't even have to be localhost,
+
+05:25.680 --> 05:26.680
+right?
+
+05:26.680 --> 05:30.800
+You can proxy it to your database in the cloud, right?
+
+05:30.800 --> 05:32.340
+Because you're just saying what the target is.
+
+05:32.340 --> 05:34.200
+The target can be anything, right?
+
+05:34.200 --> 05:40.080
+We're just doing it now in localhost, but this could be your lambdas on AWS or something
+
+05:40.080 --> 05:41.080
+like that.
+
+05:41.080 --> 05:44.760
+It's a pretty cool feature.
+
+05:44.760 --> 05:45.760
+I think it is.
+
+05:45.760 --> 05:48.020
+Even if this doesn't make total sense, as long as this is working, you don't have to
+
+05:48.020 --> 05:50.880
+think about it anymore, which is probably half the benefit as well.
+

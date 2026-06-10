@@ -1,0 +1,599 @@
+WEBVTT
+
+00:00.000 --> 00:03.840
+So we want to have a cart.
+
+00:03.840 --> 00:05.960
+Right now we have a pizza type.
+
+00:05.960 --> 00:08.260
+We have a pepperoni that kind of like displays
+
+00:08.260 --> 00:10.260
+to the one that you have selected there.
+
+00:12.140 --> 00:13.800
+Now we want to have a cart over here
+
+00:13.800 --> 00:15.520
+where basically people can click add to cart
+
+00:15.520 --> 00:17.980
+and it's not going to just hard refresh the page, right?
+
+00:17.980 --> 00:20.640
+Go to order.jsx.
+
+00:22.440 --> 00:27.440
+We're going to import cart from .slash cart,
+
+00:28.440 --> 00:31.120
+which we are going to build momentarily.
+
+00:33.000 --> 00:35.020
+One more hook here.
+
+00:35.020 --> 00:40.020
+Const cart set cart equals use state another empty array.
+
+00:42.560 --> 00:47.560
+And then on the form here, so form on submit,
+
+00:50.760 --> 00:55.360
+we want to write a function here with the event
+
+00:56.360 --> 00:57.880
+e.preventDefault.
+
+00:57.880 --> 00:59.280
+That's probably not going to be surprising
+
+00:59.280 --> 01:01.600
+to anyone that's written form code before.
+
+01:01.600 --> 01:03.740
+It prevents it from being submitted, right?
+
+01:05.880 --> 01:08.280
+And then we're just going to set cart
+
+01:08.280 --> 01:11.720
+and we're going to say dash dash dash cart.
+
+01:13.040 --> 01:15.760
+And then we're just going to add the pizza
+
+01:15.760 --> 01:16.960
+that they have selected.
+
+01:16.960 --> 01:21.960
+So it's selected pizza, size is pizza size and price.
+
+01:25.680 --> 01:26.640
+Oh yeah, it's bad right now
+
+01:26.640 --> 01:27.960
+because they don't have a cart component.
+
+01:27.960 --> 01:28.800
+That's not real yet.
+
+01:28.800 --> 01:30.120
+That's fine.
+
+01:30.120 --> 01:34.980
+So event, we're used to that, preventDefault.
+
+01:34.980 --> 01:37.240
+This is another spread operator.
+
+01:37.240 --> 01:40.760
+So the other thing we could have done is like cart.concat,
+
+01:40.760 --> 01:43.080
+right, and then put in that
+
+01:43.080 --> 01:46.120
+or cart.push would have worked as well.
+
+01:46.120 --> 01:47.200
+This is just another way of doing it
+
+01:47.200 --> 01:48.520
+called the spread operator is say like,
+
+01:48.520 --> 01:52.080
+hey, spread the entire cart before this
+
+01:52.080 --> 01:54.500
+and then add one more object after that.
+
+01:54.500 --> 01:56.180
+That's all that that does.
+
+01:56.180 --> 02:00.180
+Someone might ask me, hey,
+
+02:00.180 --> 02:02.680
+why don't you just put an onClick here
+
+02:02.680 --> 02:05.720
+instead of a onSubmit up there?
+
+02:05.720 --> 02:09.180
+You can, but let me tell you why I think this is better.
+
+02:10.700 --> 02:12.400
+What happens if they're on,
+
+02:12.400 --> 02:15.300
+what happens if you have a text input and someone hits enter?
+
+02:16.780 --> 02:18.180
+What happens?
+
+02:18.180 --> 02:22.120
+If you have just an onClick handler, nothing happens.
+
+02:22.120 --> 02:23.740
+And people expect when they're on a form
+
+02:23.740 --> 02:26.940
+and they hit enter that it submits the form, right?
+
+02:26.940 --> 02:28.300
+So that's why onSubmit is better
+
+02:28.300 --> 02:30.900
+because it handles both of those cases.
+
+02:30.900 --> 02:32.780
+Generally speaking, it's just more accessible
+
+02:32.780 --> 02:35.220
+that like screen readers and tools like that
+
+02:35.220 --> 02:37.740
+are very good at handling form elements.
+
+02:37.740 --> 02:38.940
+And so if you just kind of hook into
+
+02:38.940 --> 02:40.700
+the way browsers normally work,
+
+02:40.700 --> 02:43.000
+you get kind of all the accessibility for free.
+
+02:45.380 --> 02:49.900
+Okay, and then just inside the last closing div here,
+
+02:49.900 --> 02:51.620
+we're gonna put one more thing.
+
+02:51.620 --> 02:54.060
+We're gonna say, if it's loading,
+
+02:55.900 --> 02:58.240
+then we're gonna say h2 loading.
+
+03:00.740 --> 03:04.540
+And if it's not loading, then we're gonna say cart
+
+03:04.540 --> 03:08.420
+is assigned cart, cart, cart, cart, cart, cart, cart.
+
+03:09.480 --> 03:11.660
+The cart component, the property that we're gonna pass
+
+03:11.660 --> 03:13.000
+into it is the cart.
+
+03:14.100 --> 03:16.500
+And then we need to go build the cart after this.
+
+03:22.620 --> 03:23.440
+Okay.
+
+03:27.060 --> 03:30.860
+So please, if you will, make a cart.jsx.
+
+03:33.580 --> 03:36.140
+Let's make another price formatter.
+
+03:36.140 --> 03:40.100
+We might be running into the territory of wet, right?
+
+03:40.100 --> 03:41.260
+Right thrice.
+
+03:42.940 --> 03:44.660
+So I might end up making a function.
+
+03:44.660 --> 03:46.860
+If this was my project, I might end up making a function
+
+03:46.860 --> 03:49.780
+that like handle that or it could be a hook.
+
+03:49.780 --> 03:51.860
+It doesn't have to be a hook, but it could be a hook
+
+03:51.860 --> 03:54.280
+because it's just literally just one function.
+
+03:55.180 --> 03:57.060
+The only thing is like, imagine if you were doing
+
+03:57.060 --> 03:58.980
+internationalization and you did wanna switch
+
+03:58.980 --> 04:00.980
+between currencies, you'd have to go change this
+
+04:00.980 --> 04:04.000
+in every single place, whereas if it was one place,
+
+04:04.000 --> 04:04.840
+you could do it.
+
+04:06.500 --> 04:08.980
+But no one does that.
+
+04:08.980 --> 04:10.580
+Doesn't seem like a real thing people do.
+
+04:10.580 --> 04:11.940
+Just kidding, people do that all the time.
+
+04:11.940 --> 04:13.300
+That was my job at Netflix.
+
+04:14.300 --> 04:19.300
+Currency and then style, what am I doing here?
+
+04:23.340 --> 04:28.340
+Style is currency and then currency is USD.
+
+04:32.380 --> 04:37.380
+Okay, export, default, function, cart.
+
+04:37.900 --> 04:42.900
+Now I could put props here, but you can also destructure
+
+04:46.100 --> 04:47.620
+because that can be fun sometimes.
+
+04:47.620 --> 04:49.720
+So I'm gonna put cart and checkout in here.
+
+04:53.900 --> 04:55.540
+Let total equal zero.
+
+04:55.540 --> 04:58.880
+We need to tally up how much stuff is in our cart.
+
+04:58.880 --> 05:00.940
+So let's do that first.
+
+05:00.940 --> 05:05.940
+For let i equal zero, i is less than zero.
+
+05:07.380 --> 05:12.380
+Less than cart.length, i plus plus.
+
+05:14.140 --> 05:18.180
+And then we're just gonna say const current equals cart i.
+
+05:19.700 --> 05:24.700
+And total plus equals current.pizza.sizes,
+
+05:31.460 --> 05:32.560
+current.size.
+
+05:38.020 --> 05:38.860
+Okay.
+
+05:46.620 --> 05:48.020
+Someone might say, hey, Brian,
+
+05:48.020 --> 05:49.340
+why don't you use a reduce here?
+
+05:49.340 --> 05:51.800
+And to them I say, go back to Haskell.
+
+05:53.460 --> 05:55.780
+A former Brian in a former life would have written this
+
+05:55.780 --> 05:59.500
+as a reduce, but I realized way later that I was writing
+
+05:59.500 --> 06:00.740
+reduces because I thought they were fun
+
+06:00.740 --> 06:03.440
+and not because I thought they were clear.
+
+06:03.440 --> 06:06.760
+And so when I run into a lot of maps and reduces
+
+06:06.760 --> 06:08.160
+and stuff like that, I tend to just like,
+
+06:08.160 --> 06:09.880
+no, this is probably just easier as a for loop.
+
+06:09.880 --> 06:11.280
+It makes it more readable to not just you,
+
+06:11.280 --> 06:12.640
+but to everyone around you.
+
+06:13.600 --> 06:15.960
+So that is why I do not write this as a reduce.
+
+06:17.560 --> 06:18.960
+There's something extremely satisfying
+
+06:18.960 --> 06:20.760
+like writing like those long chains.
+
+06:22.560 --> 06:24.720
+But usually that satisfaction is smugness
+
+06:24.720 --> 06:27.320
+and not actually because it's good code.
+
+06:27.320 --> 06:31.720
+Anyway, div class name equals cart.
+
+06:32.000 --> 06:35.000
+The H2 we're going to put here is cart.
+
+06:37.160 --> 06:38.640
+And then we're going to do a UL
+
+06:38.640 --> 06:40.360
+because it's an unordered list.
+
+06:41.320 --> 06:46.320
+And then we're going to say cart.map.
+
+06:47.640 --> 06:50.040
+And then we're going to do item index.
+
+06:53.120 --> 06:55.640
+And we're going to do the forbidden thing
+
+06:55.640 --> 06:56.800
+that I told you not to do,
+
+06:56.800 --> 06:58.840
+where we're going to use index as the key.
+
+06:59.000 --> 06:59.840
+Why?
+
+06:59.840 --> 07:01.880
+Because none of the things in our cart
+
+07:01.880 --> 07:04.320
+are guaranteed unique, right?
+
+07:04.320 --> 07:06.960
+You can have three medium pepperoni pizzas,
+
+07:06.960 --> 07:08.440
+in which case what would be,
+
+07:09.320 --> 07:10.960
+there is no thing there, right?
+
+07:10.960 --> 07:13.880
+So this is a specific case where using the index
+
+07:13.880 --> 07:15.680
+as the key is what you're supposed to do.
+
+07:24.400 --> 07:26.120
+Okay, span.
+
+07:27.120 --> 07:32.120
+Okay, span class name equals size, item.size.
+
+07:38.680 --> 07:40.240
+And we have three of these.
+
+07:41.200 --> 07:44.160
+I'm going to make that one type.
+
+07:44.160 --> 07:49.160
+So this has to be dot pizza dot name, I guess.
+
+07:50.680 --> 07:51.880
+Okay, that's fine.
+
+07:52.920 --> 07:54.360
+And this has to be price.
+
+07:56.800 --> 08:00.760
+So you have size, size, pizza dot name,
+
+08:00.760 --> 08:02.680
+and item dot price.
+
+08:02.680 --> 08:03.520
+Cool.
+
+08:08.200 --> 08:09.880
+Then we're going to do p.
+
+08:12.800 --> 08:15.720
+Total is, and we're going to use our
+
+08:15.720 --> 08:20.720
+international format total.
+
+08:23.000 --> 08:24.160
+Close that.
+
+08:26.680 --> 08:28.880
+And then we're going to write another button.
+
+08:31.440 --> 08:33.200
+On click, here we're going to use on click
+
+08:33.200 --> 08:34.200
+because this isn't a form.
+
+08:34.200 --> 08:36.680
+There's nothing else to add to the cart form.
+
+08:36.680 --> 08:39.200
+So an on click here is the correct thing to do.
+
+08:41.760 --> 08:43.240
+And we're going to call just checkout.
+
+08:43.240 --> 08:45.760
+We need to go provide what checkout is going to do,
+
+08:45.760 --> 08:48.080
+but you'll see this kind of passing down
+
+08:48.080 --> 08:50.920
+of functions from parent to child fairly frequently.
+
+08:50.920 --> 08:52.280
+You're basically saying like, hey, component,
+
+08:52.280 --> 08:54.600
+whenever something happens, just call me back, right?
+
+08:54.600 --> 08:56.880
+Just call this function and I'll take care of it.
+
+08:58.280 --> 09:00.800
+So this cart component is kind of a dumb component, right?
+
+09:00.800 --> 09:02.880
+It doesn't really have much logic unto itself.
+
+09:02.880 --> 09:04.360
+It just displays stuff.
+
+09:05.280 --> 09:06.960
+Some people will take this to the extreme and say like,
+
+09:06.960 --> 09:09.160
+there's display components and functional components
+
+09:09.160 --> 09:12.560
+and they separate everything into display and functional.
+
+09:12.560 --> 09:15.040
+I think that is silly and I don't do it,
+
+09:15.040 --> 09:16.960
+but someone does and they are silly.
+
+09:16.960 --> 09:19.880
+Yeah, so we did an export default.
+
+09:19.880 --> 09:21.040
+So that is our cart.
+
+09:21.040 --> 09:22.240
+That seems like it's working okay.
+
+09:22.240 --> 09:23.520
+The checkout doesn't do anything yet.
+
+09:23.520 --> 09:25.840
+So this will be an undefined function.
+
+09:25.840 --> 09:27.720
+So if you click it, you're going to cause an error.
+
+09:27.720 --> 09:30.800
+Oh, we have to add a cart here or checkout.
+
+09:34.840 --> 09:35.680
+Okay.
+
+09:37.880 --> 09:39.760
+And it looks like I put the cart in the wrong place.
+
+09:39.760 --> 09:42.160
+Let's go figure out why that's in the wrong place.
+
+09:44.640 --> 09:47.000
+But this looks right, I think so far.
+
+09:48.720 --> 09:50.800
+So let's go back to order and figure out
+
+09:50.960 --> 09:52.680
+where this was supposed to be.
+
+09:53.800 --> 09:55.560
+CSS is easy.
+
+09:55.560 --> 09:56.640
+I don't know if anyone told you that.
+
+09:56.640 --> 09:58.360
+This is why this CSS is actually terrible
+
+09:58.360 --> 10:00.000
+because it's so reliant on structure
+
+10:00.000 --> 10:02.520
+to get the correct selectors.
+
+10:04.080 --> 10:07.640
+Yeah, I just wrapped everything here in an order page
+
+10:07.640 --> 10:08.480
+right there.
+
+10:09.640 --> 10:13.840
+And then I put my cart just inside that last div
+
+10:13.840 --> 10:16.280
+and that should get everything all laid out nicely.
+
+10:16.280 --> 10:17.480
+We're getting close here.
+
+10:17.720 --> 10:20.640
+We should be able to add to cart, okay, now.
+
+10:22.520 --> 10:24.320
+So if I click add to cart,
+
+10:29.800 --> 10:31.800
+notice that we get stuff that starts getting added.
+
+10:31.800 --> 10:34.640
+The total is being generated correctly.
+
+10:34.640 --> 10:37.280
+There's no spaces here, which probably seems like
+
+10:37.280 --> 10:41.240
+I might've messed up some class name somewhere.
+
+10:41.240 --> 10:43.240
+Okay, so we're going to the cart page
+
+10:43.240 --> 10:44.880
+and just after each one of these,
+
+10:44.920 --> 10:46.280
+we're just going to add a dash.
+
+10:47.960 --> 10:50.720
+And that's how I made these separate a little bit better.
+

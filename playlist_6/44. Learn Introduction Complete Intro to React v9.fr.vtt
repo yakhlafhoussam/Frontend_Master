@@ -1,0 +1,627 @@
+WEBVTT
+
+
+00:00.000 --> 00:06.840
+Faisons quelques trucs expérimentaux avec un navigateur expérimental. C'est en fait probablement encore plus dangereux
+
+00:07.220 --> 00:11.060
+Donc tout ce que je viens de vous apprendre est applicable à cent pour cent aujourd'hui
+
+00:11.060 --> 00:14.540
+Vous savez, allez dans vos entreprises et utilisez tout ce que je viens de vous apprendre sur le test B.
+
+00:16.180 --> 00:19.720
+Jusqu’à présent, tout cela est une science éprouvée. Je vais vous montrer ce qui va suivre
+
+00:20.940 --> 00:24.760
+Et j'ai failli te parler de ça comme ça, de la voie à suivre quoi qu'il arrive
+
+00:25.120 --> 00:28.420
+Mais il n'est tout simplement pas encore assez stable pour que je puisse le recommander, donc je ne vais pas le faire.
+
+00:29.140 --> 00:34.700
+Mais c'est bientôt la réponse est bientôt. Ce sera suffisamment stable pour que vous le fassiez, donc je veux que vous le sachiez
+
+00:35.100 --> 00:37.100
+alors viens dans ton
+
+00:37.900 --> 00:43.440
+Projet et nous allons faire npm installer dash capital D sur V tester le navigateur slash à
+
+00:44.940 --> 00:46.940
+2.1 point trois
+
+00:47.260 --> 00:49.260
+Nous allons avoir besoin d'un dramaturge
+
+00:49.620 --> 00:51.620
+Qu'est-ce qui est une affaire de Microsoft ?
+
+00:52.220 --> 00:58.100
+Si vous avez entendu parler de marionnettiste. C’est en quelque sorte un successeur spirituel du marionnettiste. C'est littéralement la même personne
+
+00:59.260 --> 01:00.540
+Pavel
+
+01:00.540 --> 01:05.980
+Il a créé marionnettiste chez Google puis Microsoft l'a volé puis il a créé dramaturge chez Microsoft
+
+01:06.220 --> 01:09.060
+Donc il continuait simplement son travail
+
+01:09.980 --> 01:11.980
+Navigateur de tableau de bord de test V
+
+01:12.380 --> 01:19.020
+Dash réagit et vous pouvez voir à quel point c'est expérimental, c'est zéro point zéro point un donc c'est le cas
+
+01:19.620 --> 01:21.620
+expérimental et pas encore fait
+
+01:22.220 --> 01:29.300
+Donc, je dirai aussi que celui-ci est particulièrement susceptible d'être cassé au moment où vous l'exécutez, car ils le feront.
+
+01:29.300 --> 01:31.300
+J'ai probablement changé cela plusieurs fois
+
+01:32.540 --> 01:34.540
+Vous devrez donc peut-être déboguer cela un peu
+
+01:37.380 --> 01:45.020
+D'accord, nous devons maintenant créer un fichier de configuration de test V
+
+01:45.900 --> 01:53.500
+Nous allons donc créer un nouveau fichier, nous allons l'appeler V test dot config dot JS
+
+01:55.340 --> 01:57.340
+Nous allons importer
+
+01:58.140 --> 02:01.740
+définir l'espace de travail définir l'espace de travail
+
+02:02.740 --> 02:05.860
+à partir de V test config dot JS, nous sommes en quelque sorte
+
+02:06.740 --> 02:11.020
+En piratant un peu, vous pouvez laisser le dot.js. De toute façon, il n'est pas nécessaire que ce soit là
+
+02:11.180 --> 02:13.780
+Espaces de travail destinés en fait aux dépôts mono
+
+02:14.300 --> 02:19.820
+Donc, si vous avez sept packages dans un seul référentiel, vous pouvez définir différents tests V
+
+02:20.860 --> 02:22.860
+des espaces de travail pour chacun d'entre eux
+
+02:23.180 --> 02:26.700
+C'est le but de définir un espace de travail, mais nous allons l'utiliser pour définir un
+
+02:27.340 --> 02:34.460
+Environnement DOM heureux pour nos anciens tests et environnement dramaturge pour nos nouveaux tests car je ne veux pas réécrire notre ancien test
+
+02:34.460 --> 02:36.460
+S'ils sont toujours bons, non ?
+
+02:36.620 --> 02:38.620
+Nous allons donc exporter par défaut
+
+02:39.820 --> 02:41.820
+définir l'espace de travail
+
+02:42.860 --> 02:48.780
+Et ce sera un tableau et nous allons lui donner deux fichiers de configuration différents, vous êtes essentiellement deux fichiers de configuration différents ici
+
+02:51.420 --> 02:58.220
+Donc, le premier, nous allons nous assurer que vous avez étendu le point slash VEAT dot config dot
+
+02:58.780 --> 03:05.820
+Donc, le premier, nous allons nous assurer que vous avez étendu la configuration de point VEAT à barre oblique
+
+03:08.700 --> 03:10.700
+Point JS
+
+03:12.380 --> 03:14.140
+Et
+
+03:14.140 --> 03:16.060
+tester
+
+03:16.060 --> 03:22.540
+Donc, fondamentalement, cela veut dire : apportez tout ce qui est dans ce fichier ici, mon fichier VEAT et je vais simplement écraser la partie test de celui-ci.
+
+03:24.540 --> 03:26.540
+Et nous allons dire inclure
+
+03:29.180 --> 03:32.700
+Nous voulons uniquement tester les fichiers qui ont
+
+03:36.860 --> 03:41.820
+Dot node dot test dot js ou jsx l'un ou l'autre
+
+03:43.740 --> 03:47.020
+D'accord, ceux-ci vont tous être exécutés dans l'environnement Happy Dom.
+
+03:48.460 --> 03:50.460
+Alors nous allons dire le nom
+
+03:53.740 --> 03:55.740
+Appelez-les heureux dom
+
+03:56.700 --> 04:00.620
+Et l'environnement que nous allons créer pour être heureux dom
+
+04:03.340 --> 04:06.700
+Donc, fondamentalement, nous voulons exécuter tous nos tests existants dans Happy Dom.
+
+04:07.500 --> 04:10.860
+Et il va falloir aller tous les renommer pour avoir un nœud point dans le titre
+
+04:11.420 --> 04:16.140
+C'est pour ça que j'ai dit plus tard que le nom de celui-ci allait devenir encore plus ridicule parce qu'il allait falloir
+
+04:17.160 --> 04:21.520
+Contact dot paresseux point nœud point test point jsx
+
+04:22.160 --> 04:24.160
+Je
+
+04:25.120 --> 04:30.720
+C'est à la fois absurde, mais moi non plus, je ne peux vraiment rien y faire, car il faut que ce soit ainsi.
+
+04:30.800 --> 04:34.240
+Donc c'est bien. Et puis nous allons en avoir un nouveau. Nous allons écrire de nouveaux tests avec
+
+04:35.040 --> 04:37.040
+et ce sera
+
+04:37.520 --> 04:39.520
+S'étend à nouveau
+
+04:39.520 --> 04:42.400
+S'étend, je suppose que nous n'avons pas besoin des guillemets
+
+04:43.680 --> 04:45.280
+même chose
+
+04:45.280 --> 04:47.840
+Point de configuration VEAT JS
+
+04:47.840 --> 04:49.840
+Tester
+
+04:50.080 --> 04:52.080
+Tester
+
+04:53.600 --> 04:57.760
+D'accord, et celui-ci a une configuration un peu plus complexe, il va contenir des fichiers de configuration
+
+04:58.880 --> 05:02.480
+Ce sont juste des choses qui sont exécutées avant l'exécution de vos tests et nous allons mettre Vitest
+
+05:03.760 --> 05:08.080
+Le navigateur réagit. Nous allons nous assurer que cela soit exécuté avant que nos tests ne soient exécutés.
+
+05:08.880 --> 05:12.720
+Nous allons inclure tout ce que nous incluons dans le navigateur dans le test
+
+05:13.920 --> 05:15.920
+donc
+
+05:16.160 --> 05:19.440
+L'autre chose au lieu de faire un nœud de points ou un navigateur de points
+
+05:19.440 --> 05:22.480
+Nous aurions pu simplement les mettre dans des répertoires séparés. Cela aurait été bien aussi
+
+05:23.600 --> 05:25.040
+euh
+
+05:25.040 --> 05:27.040
+C'est entièrement à vous de décider
+
+05:28.080 --> 05:30.320
+Je pense que ça m'a juste fait rire et donc j'ai continué à le faire
+
+05:32.160 --> 05:35.440
+Développement piloté par le chaos, si vous voulez un nom, nous allons appeler ce navigateur
+
+05:35.440 --> 05:38.640
+La raison pour laquelle nous mettons le nom ici est que, comme lorsque nous regardons notre test
+
+05:38.720 --> 05:41.840
+Cela vous donnera en fait une petite étiquette. Il dit que cela a été exécuté dans le navigateur
+
+05:41.920 --> 05:44.400
+Ceci est géré dans Happy Dom et cela permet de le savoir facilement en un coup d'œil.
+
+05:46.160 --> 05:49.540
+Navigateur et nous allons dire fournisseur
+
+05:51.680 --> 05:53.680
+Euh fournisseur
+
+05:53.680 --> 05:59.040
+Et vos deux choix sont le dramaturge, ce que je vous suggère fortement de choisir. je pense que tu peux aussi utiliser
+
+06:00.240 --> 06:02.480
+Webdriver, qui est la même chose en sélénium
+
+06:04.640 --> 06:06.640
+Activé vrai
+
+06:07.760 --> 06:09.520
+Et le nom
+
+06:09.520 --> 06:11.920
+Ici, vous pouvez indiquer le navigateur dans lequel vous souhaitez tester
+
+06:12.720 --> 06:15.760
+Je vais tester sur Firefox, mais n'hésitez pas à mettre
+
+06:16.560 --> 06:19.120
+Euh, Chrome peut y aller ou webkit si vous êtes dessus
+
+06:19.840 --> 06:21.840
+Euh, Mac OS
+
+06:23.120 --> 06:26.400
+Mais si vous voulez tester en chrome, mettez chrome ici
+
+06:28.000 --> 06:30.400
+Je pense que vous pouvez y mettre un avantage. C'est peut-être
+
+06:32.240 --> 06:38.480
+Ne me citez pas là-dessus. Quoi qu'il en soit, Firefox. C'est ce que je mets là. Très bien, alors allons les renommer
+
+06:39.200 --> 06:45.040
+Pour qu'ils aient un contact de nœud de point de nœud
+
+06:46.880 --> 06:48.880
+Nœud de point
+
+06:48.960 --> 06:53.280
+Non, pas là et c'est nul, mais malheureusement l'ordre est important
+
+06:54.240 --> 06:57.780
+Noeud donc contact dot paresseux dot noeud dot test dot jsx
+
+07:04.160 --> 07:07.120
+Et la pizza du jour je vais mettre ça
+
+07:08.880 --> 07:11.680
+Et ce sont tous nos tests de nœuds
+
+07:17.360 --> 07:25.360
+Oh, et si je me souviens bien, oui, donc le premier panier, en fait, peut être exécuté dans le navigateur parce que
+
+07:26.320 --> 07:30.880
+Euh, le dramaturge fait déjà des tests d'instantanés. Donc, cela fonctionnera dans l'un ou l'autre
+
+07:30.880 --> 07:37.200
+Et donc autant jeter cela dans notre environnement de navigateur. Donc, plutôt que le nœud de point de panier, nous allons créer un navigateur de point de panier
+
+07:39.040 --> 07:42.960
+Ces autres dépendent en fait du fait que nous sommes dans un pays heureux
+
+07:43.760 --> 07:47.360
+Et ils pourraient être réécrits pour fonctionner avec le navigateur
+
+07:47.360 --> 07:50.720
+Je ne veux tout simplement pas vous obliger à faire ça parce que je ne pense pas que ce soit un exercice utile pour vous en ce moment.
+
+07:53.520 --> 07:57.920
+Mais nous allons créer un autre test de pizza, nous allons donc créer un navigateur de points de pizza
+
+08:01.520 --> 08:03.520
+Et nous allons faire ça
+
+08:09.040 --> 08:10.800
+Alors
+
+08:10.800 --> 08:15.040
+Très bien, allons écrire notre test. Donc, dans le navigateur Pizza Dot, testez les points
+
+08:16.080 --> 08:18.080
+importation point jsx
+
+08:18.880 --> 08:20.480
+rendu à partir de
+
+08:20.480 --> 08:27.040
+Et nous allons l'obtenir de la réaction du navigateur Vitest. Cette bibliothèque vise donc à imiter la bibliothèque de tests
+
+08:27.680 --> 08:30.160
+donc nous n'avons pas du tout besoin de bibliothèque de tests
+
+08:30.960 --> 08:32.400
+dans
+
+08:32.400 --> 08:38.080
+L'environnement basé sur un navigateur, car Vitest Browser React fait tout ce que la bibliothèque de tests ferait pour nous
+
+08:38.640 --> 08:42.000
+Il vise à être principalement conforme à l’API. Alors
+
+08:43.680 --> 08:47.680
+Euh, si vous avez des questions à ce sujet, allez simplement consulter la documentation de la bibliothèque de tests. C'est généralement la même chose
+
+08:48.800 --> 08:50.800
+Ok, attends et teste
+
+08:51.760 --> 08:56.880
+De Vitest importer des pizzas de
+
+08:58.400 --> 09:02.160
+Source de pizza coupée en tranches. Oh majuscule p pizza
+
+09:04.320 --> 09:08.080
+D'accord, nous allons tester les rendus de texte alternatif
+
+09:09.040 --> 09:11.040
+sur
+
+09:11.120 --> 09:15.920
+Image et donc nous allons tester la même chose, mais nous allons le faire dans un environnement basé sur un navigateur
+
+09:17.200 --> 09:19.200
+Le test va finir par ressembler assez
+
+09:20.880 --> 09:25.360
+Le nom Const est égal à ma pizza préférée
+
+09:27.520 --> 09:29.520
+La source constante est égale à
+
+09:30.960 --> 09:33.360
+Notre belle photo, choisissez-en quelques-unes
+
+09:34.640 --> 09:36.640
+photo barre oblique 200
+
+09:36.880 --> 09:41.840
+Et l'écran const est égal au rendu
+
+09:44.320 --> 09:49.600
+Le nom de la pizza est égal au nom de la source est égal à la source
+
+09:52.960 --> 09:59.120
+Et oh, ce n'est pas la source. C'est l'image. Désolé, l'image est égale à la source et à la description
+
+10:00.960 --> 10:05.600
+C'est équivalent à des trucs sympas pour le navigateur, fermez votre tag ici
+
+10:07.600 --> 10:11.200
+Et nous allons dire que l'image const est égale à attendre
+
+10:12.640 --> 10:14.240
+écran
+
+10:14.240 --> 10:16.240
+Dot obtenu par rôle
+
+10:20.480 --> 10:23.920
+Et les matchs finissent par être un peu différents, nous devons utiliser cet élément d'attente
+
+10:25.280 --> 10:27.280
+Nous dirons const ou attendrons
+
+10:29.200 --> 10:31.200
+Attendre un élément
+
+10:33.440 --> 10:36.080
+Image à inclure dans le document
+
+10:37.040 --> 10:39.040
+photo
+
+10:39.280 --> 10:41.760
+Nous nous attendons donc à ce qu’il restitue une image, n’est-ce pas ?
+
+10:43.120 --> 10:45.120
+allons juste
+
+10:45.200 --> 10:47.200
+Faites-en deux ici
+
+10:47.440 --> 10:50.080
+Et nous allons dire avoir un attribut
+
+10:53.360 --> 10:55.360
+Source Source
+
+10:57.120 --> 11:01.120
+Et avoir l'attribut alt
+
+11:02.640 --> 11:04.640
+Nom
+
+11:04.960 --> 11:09.840
+Donc, si vous regardez ceci, c'est comme si cela semblait assez similaire, mais pas totalement pareil.
+
+11:10.800 --> 11:13.440
+Comme juste pour les mettre côte à côte juste une seconde
+
+11:18.240 --> 11:20.240
+Euh
+
+11:21.360 --> 11:23.520
+Voir l'écran ici l'écran ici
+
+11:24.320 --> 11:30.560
+Et celui-ci, vous pouvez simplement faire ces vérifications synchrones, car il s'agit simplement de lire le texte d'un document.
+
+11:31.360 --> 11:37.120
+C'est tout le navigateur qui va en fait dans Firefox en train de récupérer ça du don, nous devons attendre des choses
+
+11:38.400 --> 11:40.720
+Parce que c'est vraiment asynchrone. C'est vraiment dans un navigateur
+
+11:41.760 --> 11:47.840
+Je pense que vous allez devoir faire quelque chose comme npx playwright install si vous n'avez jamais exécuté playwright auparavant, allons simplement
+
+11:48.160 --> 11:50.800
+Je vais l'exécuter et voir ce qui se passe. J'ai déjà fait ça, donc ça pourrait
+
+11:52.240 --> 11:55.680
+Ouais, je pense que ça va juste sortir pour moi pour le reste d'entre vous
+
+11:55.680 --> 11:59.920
+Il va probablement dire : voulez-vous installer environ 300 Mo de trucs ? Est-ce que ça marche pour les gens ?
+
+12:00.160 --> 12:02.160
+D'accord, cool
+
+12:02.320 --> 12:05.360
+C'était de mémoire. Donc je suis juste inquiet. Je te donnais la mauvaise commande
+
+12:06.640 --> 12:13.380
+Ce qu'il fait, il va en fait installer des mini versions de Firefox, des mini versions de Chrome et une mini version de Webkit.
+
+12:17.040 --> 12:18.880
+D'accord
+
+12:18.880 --> 12:24.660
+Alors maintenant, vous devriez pouvoir exécuter npm run test et un navigateur devrait apparaître ou il devrait échouer lamentablement.
+
+12:24.660 --> 12:26.660
+Vraiment
+
+12:27.780 --> 12:29.620
+Échec du chargement de la configuration
+
+12:29.620 --> 12:33.060
+J'ai une question que nous avons peut-être sautée un peu plus tôt
+
+12:33.060 --> 12:38.980
+Mais il y avait une étape pour supprimer des éléments de vt.config.js. Oh, ouais, tu as absolument raison
+
+12:39.060 --> 12:42.980
+J'ai essayé de jouer avec ça, mais j'obtiens toujours cette erreur personnellement en ce moment. Donc je ne vais pas bien
+
+12:43.940 --> 12:48.900
+Non, tu as raison. Vous devez supprimer ces éléments de votre configuration ici car nous les mettons dans nos éléments les plus vitaux.
+
+12:49.540 --> 12:51.540
+Alors j'avais appelé ça
+
+12:52.260 --> 12:54.260
+vitest.config.workspace
+
+12:54.900 --> 12:58.580
+Ce qui est techniquement une bonne chose à appeler, mais ce n'est que pour un seul projet
+
+12:59.300 --> 13:05.220
+Je vous expliquais plus tôt que nous abusions techniquement d'un outil pour le définir pour plusieurs projets afin de pouvoir nous occuper d'un
+
+13:06.180 --> 13:12.820
+Environnement basé sur un navigateur et un environnement basé sur des nœuds et dans la documentation, ils recommandent comme oh, nous l'avons déjà pour les espaces de travail
+
+13:12.820 --> 13:14.900
+Donc nous procédons de cette façon
+
+13:14.900 --> 13:18.280
+Mais le plus important ici est de s'assurer qu'il s'agit de vitest.workspace.js
+
+13:18.280 --> 13:24.280
+Workspace.js et cela résoudra notre problème ici
+
+13:27.080 --> 13:30.040
+C'est un peu idiot pour moi que ce ne soit pas la même chose mais
+
+13:31.240 --> 13:33.720
+Je ne sais pas. Ce n'est pas moi qui écris le logiciel open source
+
+13:34.520 --> 13:35.480
+Très bien
+
+13:35.480 --> 13:41.320
+Alors vous faites tout ça et cet avis que je suis apparu. J'ai une autre fenêtre ici la nuit
+
+13:41.560 --> 13:45.480
+Il s'agit donc en fait de télécharger Firefox tous les soirs pour exécuter cela, n'est-ce pas ? C'est pour ça qu'on l'appelle tous les soirs
+
+13:45.800 --> 13:47.240
+Je
+
+13:47.240 --> 13:49.960
+J'ai une erreur ici dans mon test. Allons comprendre ce qui se passe avec ça
+
+13:50.840 --> 13:53.560
+échec de résolution de la source d'importation/pizza
+
+13:55.480 --> 13:57.480
+Donc je suis dedans
+
+13:58.680 --> 14:03.880
+Pizza Pizza.browser.test.jsx de la pizza source. Il semble que cela devrait être correct
+
+14:04.520 --> 14:07.080
+Alors oui, point point slash. Ce n'était pas une source là-bas
+
+14:08.600 --> 14:10.600
+Et maintenant nous avons un
+
+14:11.240 --> 14:13.480
+Test exécuté dans notre navigateur, ce qui est plutôt cool, non ?
+
+14:16.280 --> 14:18.280
+Alors
+
+14:18.280 --> 14:20.280
+Cela devrait pouvoir se rafraîchir et remarquer
+
+14:20.280 --> 14:25.400
+Cela devrait vous sembler familier avec la même interface utilisateur, mais il y a en fait quelque chose de plutôt cool à ce sujet si vous entrez dans votre
+
+14:26.200 --> 14:28.200
+tests de navigateur
+
+14:28.920 --> 14:34.760
+Euh, je dirai que cela se casse constamment et c'est comme si ça allait geler et donc juste un bon rafraîchissement le fait généralement
+
+14:36.760 --> 14:38.760
+Ouais, donc des trucs comme ça
+
+14:38.840 --> 14:41.240
+Ainsi, vous pouvez réellement voir le composant rendu sur la page
+
+14:41.320 --> 14:43.560
+Vous allez inclure le CSS et tout le reste et le rendre vraiment joli
+
+14:43.560 --> 14:46.600
+Nous ne faisons pas assez de choses et je ne suis pas très inquiet pour le moment
+
+14:47.800 --> 14:49.160
+euh
+
+14:49.160 --> 14:51.160
+C'est dommage que l'image ne fonctionne pas
+
+14:51.880 --> 14:53.880
+Mais l'image devrait fonctionner là aussi
+
+14:54.120 --> 14:56.120
+euh pizza.jsx
+
+14:59.080 --> 15:01.080
+Est-ce que je l'ai mal orthographié
+
+15:06.740 --> 15:10.460
+Photos, choisissez des photos à points
+
+15:10.460 --> 15:12.460
+Photos
+
+15:13.180 --> 15:19.420
+Et puis maintenant, si nous revenons à notre interface utilisateur ici ou à celle-ci, oui, vous verrez que cela restitue également l'image.
+
+15:21.660 --> 15:22.940
+Ça finit par être comme un
+
+15:22.940 --> 15:27.100
+Un genre de livre d'histoires où vous pouvez en quelque sorte montrer tous vos composants sous une forme individuelle.
+
+15:27.100 --> 15:30.000
+Bien sûr, en utilisant des tests, ce qui est plutôt cool aussi
+

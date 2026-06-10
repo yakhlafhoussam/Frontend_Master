@@ -1,0 +1,468 @@
+WEBVTT
+
+
+00:00.440 --> 00:04.180
+Faisons des actions de formulaire.
+
+00:06.240 --> 00:08.480
+Nous allons donc réellement mettre en œuvre cela.
+
+00:10.840 --> 00:15.840
+Il s'agit donc d'un futur avertissement pour les personnes qui regardent ce cours.
+
+00:15.920 --> 00:18.800
+Si vous regardez aujourd'hui avec moi, suivez-moi.
+
+00:18.800 --> 00:20.040
+Mais si vous regardez le cours,
+
+00:20.040 --> 00:21.320
+J'ai besoin que tu fasses quelque chose pour être sûr
+
+00:21.320 --> 00:23.280
+que vous obtenez la bonne version de React.
+
+00:24.820 --> 00:28.320
+Alors allez partout où votre serveur est en cours d'exécution ou où vous testez.
+
+00:28.320 --> 00:30.480
+Je vais annuler mes tests ici.
+
+00:30.480 --> 00:33.080
+J'ai besoin que tu fasses réagir npm info.
+
+00:34.680 --> 00:39.160
+Et vous verrez ici quelle est la balise correspondant au courant.
+
+00:39.160 --> 00:43.200
+Vous pouvez voir que la date actuelle est le 18.13.1.
+
+00:44.960 --> 00:49.920
+Si cela indique 19, alors faites simplement npm install réagissez à 19
+
+00:49.920 --> 00:51.240
+et tu es prêt à partir.
+
+00:51.240 --> 00:56.240
+Alors npm install réagissez à 19 ans et réagissez dom à 19 ans
+
+00:58.400 --> 01:01.080
+et tu devrais être prêt à y aller, non ?
+
+01:01.080 --> 01:03.360
+Si vous suivez et que ce n'est pas dit ça,
+
+01:03.360 --> 01:07.400
+il est toujours écrit 18, jetez un œil ici à RC.
+
+01:08.980 --> 01:11.600
+Et donc le mien est ici, vous pouvez voir le mien 19,0.
+
+01:11.600 --> 01:13.700
+C'est donc ce que je vais faire aujourd'hui.
+
+01:13.700 --> 01:16.600
+Je vais donc faire npm install réagir chez RC
+
+01:16.600 --> 01:19.480
+et réagissez-dom au RC.
+
+01:25.200 --> 01:28.240
+Et il faudra peut-être même forcer ou est-ce que le mien s'est bien passé ?
+
+01:28.800 --> 01:33.800
+Cela vous donne une tonne d'avertissements car la requête de réaction,
+
+01:34.160 --> 01:38.000
+un tas de choses comme, oh, je ne soutiens que la réaction 18.
+
+01:38.000 --> 01:39.480
+Ils font très attention à ne rien casser.
+
+01:39.480 --> 01:43.160
+Donc nos trucs devraient fonctionner, mais sachez simplement que c'est,
+
+01:43.160 --> 01:46.040
+tu es dans des eaux dangereuses maintenant
+
+01:46.040 --> 01:49.040
+en étant sur une version candidate au lieu de quelque chose de stable.
+
+01:52.600 --> 01:54.800
+D'accord, alors soyez très prudent ici
+
+01:54.800 --> 01:56.560
+ou si tu ne veux pas t'embêter avec ça,
+
+01:56.840 --> 01:58.680
+n'hésitez pas à me suivre.
+
+01:58.680 --> 02:02.320
+Donc, la majeure partie du développement Web, à mon avis,
+
+02:02.320 --> 02:05.540
+est une forme ou tourne autour d'une forme.
+
+02:05.540 --> 02:07.960
+Il s'agit principalement de prendre les données des utilisateurs et de faire quelque chose
+
+02:07.960 --> 02:10.160
+avec cela et en quelque sorte y être réactif.
+
+02:10.160 --> 02:11.600
+Ou en d'autres termes, tu ne peux vraiment pas t'en sortir
+
+02:11.600 --> 02:14.360
+de faire beaucoup de formulaires en tant que développeur Web.
+
+02:14.360 --> 02:16.440
+L'équipe React a donc pris cela à cœur
+
+02:16.440 --> 02:19.320
+et ils disent, d'accord, créons des formulaires encore plus simples
+
+02:19.320 --> 02:20.440
+avec réagir-dom.
+
+02:20.960 --> 02:25.960
+Alors faisons simplement fonctionner notre mutation
+
+02:29.160 --> 02:33.200
+à l'intérieur de contact.lazy.jsx un peu plus simple.
+
+02:36.760 --> 02:37.880
+Donc maintenant nous devons faire ce truc
+
+02:37.880 --> 02:40.680
+avec comme empêcher la valeur par défaut et créer les données du formulaire
+
+02:40.680 --> 02:42.760
+et ensuite nous pourrons faire tout ce genre de choses.
+
+02:43.760 --> 02:46.560
+Mais simplifions cela un peu.
+
+02:46.560 --> 02:51.560
+Accédez à votre formulaire ici
+
+02:52.840 --> 02:55.880
+où j'ai ce genre de fonction de soumission
+
+02:55.880 --> 02:58.160
+et vous voulez changer cela en action.
+
+03:03.120 --> 03:03.960
+D'accord.
+
+03:06.080 --> 03:09.240
+Et puis ça va faire toutes ces choses drôles
+
+03:09.240 --> 03:10.960
+ici pour vous.
+
+03:10.960 --> 03:13.200
+Vous pouvez donc simplement supprimer ces deux premières lignes
+
+03:13.200 --> 03:15.360
+et transformez ce E en données de formulaire.
+
+03:17.160 --> 03:20.960
+Non, je plaisante.
+
+03:20.960 --> 03:22.960
+C'est évidemment une chose assez simple
+
+03:22.960 --> 03:25.480
+mais c'est juste une petite subtilité.
+
+03:25.480 --> 03:29.320
+Cependant, nous faisons cela dans une requête React
+
+03:29.320 --> 03:30.920
+donc nous ne ferions pas ça.
+
+03:30.920 --> 03:32.320
+Mais ensuite vous entrez dans un corps fonctionnel
+
+03:32.320 --> 03:34.760
+et vous pouvez commencer à faire des choses comme utiliser le serveur ici
+
+03:34.760 --> 03:36.800
+et puis vous pouvez simplement gérer implicitement
+
+03:36.800 --> 03:37.960
+toutes les données sur le serveur.
+
+03:37.960 --> 03:41.040
+Et cela finit par être une interface vraiment sympa
+
+03:41.040 --> 03:45.720
+accepter les données, les envoyer au serveur,
+
+03:45.720 --> 03:47.920
+le serveur enregistre ensuite dans la base de données, n'est-ce pas ?
+
+03:50.800 --> 03:54.720
+C'est vraiment tout à fait ça.
+
+03:58.040 --> 04:03.040
+Voilà pour le contact.
+
+04:03.160 --> 04:06.080
+Allons faire ça pour la commande aussi.
+
+04:07.440 --> 04:09.000
+C'est donc aussi un formulaire.
+
+04:09.000 --> 04:11.800
+Nous allons donc descendre à notre formulaire
+
+04:11.800 --> 04:14.560
+et j'ai tout ça ici.
+
+04:14.560 --> 04:17.400
+Je pense qu'il suffit de sortir le chariot d'ici.
+
+04:19.640 --> 04:20.880
+Alors je vais juste prendre ça
+
+04:20.880 --> 04:22.240
+et je vais créer une autre fonction ici
+
+04:22.240 --> 04:25.440
+appelée fonction ajouter au panier.
+
+04:28.560 --> 04:30.720
+Mettez ce chariot ici.
+
+04:30.720 --> 04:35.720
+Et puis ce sera juste une action égale à ajouter au panier.
+
+04:40.360 --> 04:42.240
+Encore une fois, c'est devenu un peu plus simple, n'est-ce pas ?
+
+04:42.240 --> 04:45.960
+Un peu plus facile à lire, se lit un peu mieux.
+
+04:45.960 --> 04:48.400
+Alors oui, je suis un grand fan de ça.
+
+04:50.920 --> 04:54.240
+Ouais, et pour vous donner un meilleur exemple,
+
+04:54.240 --> 04:58.000
+imaginez que je suis venu ici et que j'ai fini par utiliser le serveur
+
+04:59.440 --> 05:04.440
+et maintenant je peux faire quelque chose comme SQL, insérer dans le panier,
+
+05:07.400 --> 05:10.240
+bla, bla, bla, et je fais tout mon truc sur le serveur
+
+05:10.240 --> 05:12.080
+et ce sont des insertions dans la base de données.
+
+05:13.480 --> 05:15.800
+Je me souviens quand Next a commencé à parler de ça pour la première fois
+
+05:15.800 --> 05:16.880
+et les gens ont commencé à se déchaîner.
+
+05:16.880 --> 05:18.760
+C'est comme, pourquoi faites-vous du SQL dans le navigateur ?
+
+05:18.760 --> 05:20.800
+Et c'est comme si nous ne le faisions pas, n'est-ce pas ?
+
+05:20.800 --> 05:21.640
+C'est bon.
+
+05:21.640 --> 05:23.120
+Comme si tout se passait sur le serveur,
+
+05:23.120 --> 05:26.160
+mais voir les composants React avec SQL
+
+05:26.160 --> 05:27.520
+ça a juste fait décourager certaines personnes.
+
+05:27.520 --> 05:30.120
+Ce n'est pas juste ça comme faire ça
+
+05:30.120 --> 05:31.920
+un peu plus simple à lire.
+
+05:31.920 --> 05:33.120
+Ils font aussi d'autres choses
+
+05:33.120 --> 05:35.400
+cela rend également le travail un peu plus facile.
+
+05:35.400 --> 05:36.840
+Je vais donc vous en montrer un.
+
+05:36.880 --> 05:41.960
+Alors je veux que vous alliez nous contacter
+
+05:43.080 --> 05:45.040
+et nous allons importer le haut ici.
+
+05:46.800 --> 05:51.800
+Utilisez le statut du formulaire de React-Dom, ne réagissez pas,
+
+05:53.480 --> 05:55.200
+assurez-vous de mettre le tableau de bord là-bas
+
+05:55.200 --> 05:58.920
+parce que ça va, les formes sont particulières aux dom,
+
+05:58.920 --> 05:59.760
+n'est-ce pas ?
+
+05:59.760 --> 06:01.000
+Ils ne vont pas forcément être en réaction native
+
+06:01.000 --> 06:03.040
+ou réagir trois ou quelque chose comme ça.
+
+06:03.040 --> 06:05.560
+C'est pourquoi cela vient de React Dom.
+
+06:05.600 --> 06:06.720
+Et qu'est-ce qu'il y a de cool à ce sujet
+
+06:06.720 --> 06:09.320
+est-ce que nous avons une sorte de composant enfant ici comme celui-ci,
+
+06:09.320 --> 06:13.120
+fonction, entrée de contact.
+
+06:16.000 --> 06:20.760
+Et nous allons dire, retournez simplement une entrée.
+
+06:20.760 --> 06:23.440
+C'est un exemple un peu artificiel, mais vous pouvez voir :
+
+06:23.440 --> 06:25.200
+imaginez que vous ayez une entrée
+
+06:25.200 --> 06:26.800
+c'est comme une partie de votre système de conception
+
+06:26.800 --> 06:28.920
+et il y a un tas de CSS autour
+
+06:28.920 --> 06:33.400
+et a des erreurs complexes et une validation complexe.
+
+06:33.400 --> 06:35.120
+Vous auriez une sorte de composant qui fait cela,
+
+06:35.120 --> 06:35.960
+n'est-ce pas ?
+
+06:38.920 --> 06:41.280
+En utilisant l'état du formulaire, nous pouvons réellement vérifier
+
+06:41.280 --> 06:45.200
+si le dépôt du formulaire est en attente, ce qui est utile,
+
+06:45.200 --> 06:46.320
+ou soumis.
+
+06:47.720 --> 06:50.720
+Nous allons donc dire désactivé = en attente
+
+06:53.120 --> 06:55.080
+et nous l'obtiendrons à partir de l'état de notre formulaire.
+
+06:55.080 --> 06:59.200
+Nous obtenons que le nom est égal à props.name.
+
+07:00.800 --> 07:02.840
+Faisons venir des accessoires ici également.
+
+07:03.400 --> 07:07.600
+Le type est égal à props.type
+
+07:08.520 --> 07:13.520
+et l'espace réservé est égal à props.placeholder.
+
+07:19.560 --> 07:22.160
+Ok, et maintenant nous voulons avoir besoin de cette chose en attente
+
+07:22.160 --> 07:23.000
+et c'est vraiment cool.
+
+07:23.000 --> 07:26.120
+Tout ce que nous avons à faire c'est de dire const en attente
+
+07:27.120 --> 07:30.600
+équivaut à utiliser le statut du formulaire.
+
+07:30.600 --> 07:32.280
+Il n'est pas nécessaire qu'il y ait vraiment un concept
+
+07:32.280 --> 07:34.440
+d'où vient le formulaire.
+
+07:34.440 --> 07:36.680
+Il peut être super enterré, comme un composant, un composant,
+
+07:36.680 --> 07:38.560
+composant, tout en bas là-dedans.
+
+07:38.560 --> 07:40.720
+Parce que React sait où il se trouve, il va dire :
+
+07:40.720 --> 07:43.720
+oh, vous êtes dans un formulaire et ce formulaire est en attente.
+
+07:43.720 --> 07:45.800
+Donc tu es handicapé, non ?
+
+07:46.960 --> 07:49.600
+Et maintenant, il ne nous reste plus qu'à mettre ça ici.
+
+07:49.600 --> 07:52.400
+Je pense que tu peux littéralement changer ça
+
+07:52.400 --> 07:57.400
+être une entrée de contact et le type est égal au texte.
+
+07:59.440 --> 08:01.120
+Et celui-ci, je pense que je peux littéralement dire
+
+08:01.120 --> 08:03.400
+entrée de contact et c'est parti.
+
+08:05.840 --> 08:08.280
+Cela fonctionnera, non ?
+
+08:08.280 --> 08:10.840
+Parce que maintenant, chaque fois que je soumets ce formulaire,
+
+08:10.840 --> 08:12.960
+imaginez que cela prend beaucoup de temps.
+
+08:12.960 --> 08:14.240
+Nous ne voulons pas que les gens tapent ici
+
+08:14.240 --> 08:16.760
+pendant qu'il est en attente.
+
+08:16.760 --> 08:19.200
+Quoi qu'il en soit, il suffit de dire que cela a toujours du sens
+
+08:19.200 --> 08:21.960
+et c'est toujours plutôt cool d'utiliser le statut du formulaire,
+
+08:21.960 --> 08:24.240
+tu peux le retirer malgré le fait
+
+08:24.240 --> 08:26.280
+que cela n'a aucune idée de l'endroit où il est rendu.
+
+08:26.280 --> 08:28.680
+C'est un peu le statut du formulaire de point d'utilisation.
+

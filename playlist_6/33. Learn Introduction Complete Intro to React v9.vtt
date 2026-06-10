@@ -1,0 +1,779 @@
+WEBVTT
+
+00:00.000 --> 00:08.000
+So, we have been talking so far only about function components.
+
+00:08.000 --> 00:11.000
+That used to be a very interesting and distinct word in the React world.
+
+00:11.000 --> 00:18.000
+And we've moved so far towards function components that we don't even remember class components.
+
+00:18.000 --> 00:21.000
+However, they are still there. They're not deprecated.
+
+00:21.000 --> 00:28.000
+And there is one use case, as far as I can tell, where you can only do it with a class component.
+
+00:28.000 --> 00:30.000
+And that is error boundaries.
+
+00:30.000 --> 00:40.000
+So, what happens if, let's say, our past lazy.jsx had an error with its API request and it was an uncaught error,
+
+00:40.000 --> 00:43.000
+it would just bubble up to the top of the app and crash the app, right?
+
+00:43.000 --> 00:46.000
+As you've seen several times happen in our app where it just says, like,
+
+00:46.000 --> 00:49.000
+I give up, the whole thing crashed, right?
+
+00:49.000 --> 00:53.000
+There's a thing called error boundaries that allow you to, like, catch those errors
+
+00:53.000 --> 00:59.000
+and, like, you know, prevent it from crashing your app.
+
+00:59.000 --> 01:01.000
+And you can only do it with class components.
+
+01:01.000 --> 01:05.000
+So, I'm kind of taking this as a dual opportunity to teach you error boundaries,
+
+01:05.000 --> 01:13.000
+which, frankly, I don't really write too much myself because there is React error boundary.
+
+01:13.000 --> 01:19.000
+This component here, written by a member of the, I think he's an ex-member of the React core team.
+
+01:19.000 --> 01:23.000
+I don't think Brian works there anymore, but he used to.
+
+01:23.000 --> 01:25.000
+He made a component that just does this for you.
+
+01:25.000 --> 01:28.000
+So, generally speaking, I'm going to recommend that you just use this
+
+01:28.000 --> 01:31.000
+and not write them yourself unless you need to.
+
+01:31.000 --> 01:34.000
+That's not going to stop me from teaching you how to write it yourself, though.
+
+01:34.000 --> 01:37.000
+And the reason being is I want you to see a class component
+
+01:37.000 --> 01:40.000
+because if you are going to hop into a company that's been writing React for a decade,
+
+01:40.000 --> 01:44.000
+you're definitely going to see some class components laying around
+
+01:44.000 --> 01:47.000
+because this used to be the only way to write React.
+
+01:47.000 --> 01:52.000
+Function components are a result of, I don't know, probably six years ago at this point
+
+01:52.000 --> 01:54.000
+where they were very first introduced, right?
+
+01:54.000 --> 01:57.000
+And over time, they've become so popular and hooks made it
+
+01:57.000 --> 02:00.000
+so that you actually don't ever need class components ever anymore.
+
+02:00.000 --> 02:02.000
+Let's talk about class components.
+
+02:02.000 --> 02:05.000
+Number one, no hooks.
+
+02:05.000 --> 02:08.000
+Cannot use hooks with class components.
+
+02:08.000 --> 02:14.000
+Just kind of sear that in your brain because you're going to be tempted to, but you can't.
+
+02:14.000 --> 02:19.000
+So, for example, if you made a custom hook like a used pizza of the day,
+
+02:19.000 --> 02:23.000
+it is not usable with a class component.
+
+02:23.000 --> 02:25.000
+Now, you can kind of hack it.
+
+02:25.000 --> 02:28.000
+What you do is you make a function component, you run the hook,
+
+02:28.000 --> 02:32.000
+and then you pass it into a class component as a prop, right?
+
+02:32.000 --> 02:37.000
+So you can kind of cheat a little bit, which you may need to,
+
+02:37.000 --> 02:41.000
+but inside of a class component, you can never use a hook.
+
+02:42.000 --> 02:46.000
+So there's no state, there's no use state, there's no use effect.
+
+02:46.000 --> 02:49.000
+It has its own set of APIs for doing that.
+
+02:50.000 --> 02:52.000
+So let's just start writing one.
+
+02:52.000 --> 02:54.000
+I think that's probably kind of the easiest way to do it.
+
+02:54.000 --> 03:00.000
+I want you to make a new file here, and it's going to be called errorboundary.jsx.
+
+03:00.000 --> 03:05.000
+Yeah, they're in this like weird state where they're not recommended,
+
+03:05.000 --> 03:10.000
+but they're not deprecated, and I don't really understand that.
+
+03:10.000 --> 03:14.000
+Like, either just say like we're going to maintain both of them,
+
+03:14.000 --> 03:19.000
+or say we're just deprecating one of them, right?
+
+03:19.000 --> 03:21.000
+I don't know.
+
+03:21.000 --> 03:23.000
+But I'm not in charge.
+
+03:23.000 --> 03:25.000
+No one asked me.
+
+03:25.000 --> 03:27.000
+But I'm not in charge.
+
+03:27.000 --> 03:29.000
+No one asked me.
+
+03:29.000 --> 03:35.000
+So we're going to import component from React,
+
+03:35.000 --> 03:44.000
+and we're going to do this thing, say class errorboundary extends component.
+
+03:44.000 --> 03:48.000
+Somewhere in chat right now, there's a Java developer just getting really excited,
+
+03:48.000 --> 03:51.000
+just pumped about what we're doing here,
+
+03:51.000 --> 03:54.000
+and everyone else is like, what's going on, right?
+
+03:55.000 --> 04:03.000
+And just down here at the bottom, we're going to export default errorboundary.
+
+04:03.000 --> 04:06.000
+I actually like class components.
+
+04:06.000 --> 04:08.000
+I don't write them anymore because no one does.
+
+04:08.000 --> 04:12.000
+But there actually used to be a React function
+
+04:12.000 --> 04:16.000
+because you do like react.create class like this,
+
+04:16.000 --> 04:21.000
+and then you would give it an object, and it would look a lot like this.
+
+04:21.000 --> 04:24.000
+This was the original way of writing React, years and years and years ago.
+
+04:24.000 --> 04:27.000
+If you look at like, complete Android React V2, right?
+
+04:27.000 --> 04:29.000
+This is all taught with create class.
+
+04:29.000 --> 04:31.000
+This was my favorite API.
+
+04:31.000 --> 04:32.000
+Don't tell anyone that.
+
+04:32.000 --> 04:34.000
+This is just between you and me.
+
+04:34.000 --> 04:37.000
+But I really liked that, and I kind of miss it.
+
+04:37.000 --> 04:40.000
+You know, like that Wolverine meme of him stroking a picture?
+
+04:40.000 --> 04:42.000
+That's me in create class.
+
+04:42.000 --> 04:44.000
+I do that with the docs.
+
+04:44.000 --> 04:45.000
+All right.
+
+04:45.000 --> 04:53.000
+So state equals, we're going to give it some amount of default state.
+
+04:53.000 --> 04:57.000
+And by default, it has no error.
+
+04:57.000 --> 05:03.000
+By the way, this is just a normal ES6 class or ES2015 class.
+
+05:03.000 --> 05:05.000
+So nothing special here.
+
+05:05.000 --> 05:10.000
+This is just React using JavaScript classes.
+
+05:10.000 --> 05:12.000
+Okay.
+
+05:12.000 --> 05:15.000
+It's got a weird thing called a static method.
+
+05:15.000 --> 05:18.000
+Again, if you're a Java developer, you're just pumped about life.
+
+05:18.000 --> 05:20.000
+You're just like, ready to roll here.
+
+05:20.000 --> 05:27.000
+Everyone else is like, I don't understand why are you writing Java in my JavaScript.
+
+05:27.000 --> 05:38.000
+A static method, so if you have like a class here, you can say error.errorBoundary.getDerivedStateFrom.
+
+05:38.000 --> 05:42.000
+And like it works directly on the uninstantiated class, right?
+
+05:42.000 --> 05:45.000
+As opposed to everything else is an instant method.
+
+05:45.000 --> 05:50.000
+So you have to say const eb equals new error boundary.
+
+05:50.000 --> 05:59.000
+And then if we have something here like lol, right, then you can call eb.lol, right?
+
+05:59.000 --> 06:02.000
+It happens on the thing that you nude up.
+
+06:02.000 --> 06:09.000
+Whereas something that is static is called directly on the uninstantiated class.
+
+06:09.000 --> 06:13.000
+If you're looking at me like I don't know or care about the difference, acceptable.
+
+06:13.000 --> 06:15.000
+That's fine.
+
+06:15.000 --> 06:20.000
+But I just wanted to tell you the difference of what the static is, right?
+
+06:20.000 --> 06:24.000
+The reason why they do this is because when it hits an error,
+
+06:24.000 --> 06:30.000
+it's going to call this error boundary function so that it can get the proper state of it.
+
+06:30.000 --> 06:32.000
+Because the thing is going to be busted, right?
+
+06:32.000 --> 06:34.000
+Because it caught an error.
+
+06:34.000 --> 06:36.000
+And so it has to kind of like rebuild itself.
+
+06:36.000 --> 06:38.000
+And it does that with this getDerivedStateFrom error.
+
+06:38.000 --> 06:40.000
+That's where it comes from.
+
+06:40.000 --> 06:45.000
+So we're just going to say whenever it hits this, whenever it gets busted,
+
+06:45.000 --> 06:49.000
+we just want to make sure that it has this state in here of hasError.
+
+06:49.000 --> 06:53.000
+We want that to be set to true, right?
+
+06:53.000 --> 06:57.000
+There is no lol function, by the way.
+
+06:57.000 --> 07:02.000
+So it's going to go from having a state of hasError false to having an error as true,
+
+07:02.000 --> 07:04.000
+whenever it gets busted.
+
+07:04.000 --> 07:08.000
+And then you're going to run this function called componentDidCatch.
+
+07:08.000 --> 07:13.000
+It's going to catch the error and info.
+
+07:13.000 --> 07:20.000
+And here if you had something like send to track.js or sentry or something like that,
+
+07:20.000 --> 07:25.000
+you would send it off and log your errors here.
+
+07:25.000 --> 07:29.000
+I'm going to show you this sophisticated technology of where I log all of my errors,
+
+07:29.000 --> 07:31.000
+which is console.
+
+07:31.000 --> 07:34.000
+Console.error.
+
+07:34.000 --> 07:42.000
+ErrorBondry caught some stupid error.
+
+07:42.000 --> 07:44.000
+I like my tools to tell me that I'm dumb.
+
+07:44.000 --> 07:46.000
+It motivates me.
+
+07:46.000 --> 07:49.000
+ErrorInfo.
+
+07:49.000 --> 07:51.000
+Okay.
+
+07:51.000 --> 07:54.000
+And then here's kind of the interesting thing.
+
+07:54.000 --> 08:00.000
+Every component, so every React component, class component, has a render function.
+
+08:00.000 --> 08:03.000
+Everything else is totally optional, but it must have a render function.
+
+08:03.000 --> 08:12.000
+And the render function is like 95% the same thing as just like a normal React component function body.
+
+08:12.000 --> 08:15.000
+So here's where you're going to return something.
+
+08:15.000 --> 08:26.000
+So if this.state.hasError, then you're going to return your error,
+
+08:26.000 --> 08:29.000
+whatever you want to show the user, right?
+
+08:29.000 --> 08:36.000
+So you're going to say something like ErrorBondry.
+
+08:36.000 --> 08:38.000
+H2.
+
+08:38.000 --> 08:40.000
+Uh-oh.
+
+08:40.000 --> 08:43.000
+P.
+
+08:43.000 --> 08:52.000
+It does an error with this listing or with this page.
+
+08:52.000 --> 08:56.000
+And then we'll pull in a link.
+
+08:56.000 --> 08:59.000
+Make sure we import that as well from up at the top.
+
+08:59.000 --> 09:07.000
+Import link from Tanstack React router.
+
+09:07.000 --> 09:11.000
+We're going to send this to just the home page.
+
+09:11.000 --> 09:28.000
+And click here to go back to the home page.
+
+09:28.000 --> 09:29.000
+Okay.
+
+09:29.000 --> 09:30.000
+All right.
+
+09:30.000 --> 09:34.000
+So if you have this error boundary wrapping your component,
+
+09:34.000 --> 09:39.000
+what do you want it to display if there is no error?
+
+09:39.000 --> 09:41.000
+You don't want it to add anything of itself, right?
+
+09:41.000 --> 09:46.000
+You just want it to just be a straight-on invisible pass-through, right?
+
+09:46.000 --> 09:49.000
+So in that particular case, instead of this one, rather,
+
+09:49.000 --> 09:55.000
+you're going to say return just this.props.children.
+
+09:55.000 --> 09:57.000
+It's not wrapping it or anything like that.
+
+09:57.000 --> 10:06.000
+It's just saying like if I have an error boundary around, you know, my component,
+
+10:06.000 --> 10:14.000
+let's make it even simpler and just say an h1 of something like this, right?
+
+10:14.000 --> 10:17.000
+If there's no error, be invisible, right?
+
+10:17.000 --> 10:19.000
+Don't show me anything, right?
+
+10:19.000 --> 10:20.000
+And that's what this does.
+
+10:20.000 --> 10:23.000
+This is just saying I'm an invisible pass-through.
+
+10:23.000 --> 10:24.000
+Do nothing.
+
+10:24.000 --> 10:28.000
+And then if this, for whatever reason, has an error, right, then display this.
+
+10:28.000 --> 10:30.000
+Don't do anything with the children, right?
+
+10:30.000 --> 10:36.000
+Just display this, and then that's how that works, right?
+
+10:36.000 --> 10:37.000
+Okay.
+
+10:37.000 --> 10:38.000
+That's it.
+
+10:38.000 --> 10:40.000
+That's it for an error boundary.
+
+10:40.000 --> 10:44.000
+Just a slight more on class components.
+
+10:44.000 --> 10:47.000
+I showed you one of these that are called lifecycle methods.
+
+10:47.000 --> 10:52.000
+So before we had effects, right, where you can kind of use effect
+
+10:52.000 --> 10:55.000
+to affect different parts of the component lifecycle.
+
+10:55.000 --> 10:58.000
+This had very strict named parts of the lifecycle,
+
+10:58.000 --> 11:03.000
+so you could do something like component did mount, right?
+
+11:03.000 --> 11:06.000
+And this would be like, you know, when we do use effect
+
+11:06.000 --> 11:09.000
+and give it an empty array so it only runs once, right?
+
+11:09.000 --> 11:13.000
+That's what component did mount does, right?
+
+11:13.000 --> 11:16.000
+Or component will unmount.
+
+11:16.000 --> 11:19.000
+This is like that returned function from a use effect, right?
+
+11:19.000 --> 11:22.000
+It runs once at the end.
+
+11:22.000 --> 11:29.000
+Or if you wanted to do, whereas component, there's component should update,
+
+11:29.000 --> 11:32.000
+not the one I'm looking for, component did update.
+
+11:32.000 --> 11:35.000
+That's what I'm looking for.
+
+11:35.000 --> 11:39.000
+This is like an effect that's rendering again and again based on like,
+
+11:39.000 --> 11:42.000
+remember when we were looking like pizza size, right,
+
+11:42.000 --> 11:46.000
+where we were having it run every time pizza size ran, right?
+
+11:46.000 --> 11:51.000
+Component did update runs every single time the component changes,
+
+11:51.000 --> 11:53.000
+like the state changes, right?
+
+11:53.000 --> 11:56.000
+The other thing I'll just mention kind of briefly,
+
+11:56.000 --> 11:58.000
+there's also a constructor.
+
+11:58.000 --> 12:01.000
+That's also something that you should know.
+
+12:01.000 --> 12:05.000
+If you ever have to do something when the component is very first created,
+
+12:05.000 --> 12:08.000
+you have to put in a constructor,
+
+12:08.000 --> 12:12.000
+and you have to do this thing called, you have to pass this up to React.
+
+12:12.000 --> 12:15.000
+And the way you do that is you pass it to the super,
+
+12:15.000 --> 12:18.000
+the class that's above it, which is the component.
+
+12:18.000 --> 12:22.000
+So you take the props in and you have to pass that to React.
+
+12:22.000 --> 12:24.000
+That's what the super props things does.
+
+12:24.000 --> 12:29.000
+Why I'm kind of grateful I don't have to teach this anymore is because
+
+12:29.000 --> 12:34.000
+you have to learn a lot about this.
+
+12:34.000 --> 12:36.000
+And if you've ever done a JavaScript interview,
+
+12:36.000 --> 12:39.000
+people love to talk about what this is, right?
+
+12:39.000 --> 12:44.000
+And like really the big problem here is like if I do something like,
+
+12:44.000 --> 12:49.000
+let's call this function, I don't know, celebrate error.
+
+12:55.000 --> 13:00.000
+Okay, and I say this dot set state, celebrate error,
+
+13:03.000 --> 13:06.000
+or something like that, celebration.
+
+13:06.000 --> 13:09.000
+Okay, and I want to put this like every time that you click on this,
+
+13:09.000 --> 13:16.000
+on click equals this dot celebrate error.
+
+13:16.000 --> 13:20.000
+This is not going to work yet, which sucks, right?
+
+13:20.000 --> 13:22.000
+Why?
+
+13:22.000 --> 13:25.000
+Because what is this here?
+
+13:25.000 --> 13:27.000
+Your answer to that question should be,
+
+13:27.000 --> 13:30.000
+I don't know, Brian, why are you asking this question, right?
+
+13:30.000 --> 13:33.000
+And the answer, I think it's undefined, or I don't know.
+
+13:33.000 --> 13:34.000
+Or something, right?
+
+13:34.000 --> 13:37.000
+Or like window.
+
+13:37.000 --> 13:40.000
+But it's not what you would expect it to be.
+
+13:40.000 --> 13:42.000
+So you have to go do something really silly,
+
+13:42.000 --> 13:50.000
+like this dot celebrate error equals this dot celebrate error dot bind this.
+
+13:50.000 --> 13:55.000
+And then this will actually bind the context so that this will be correct.
+
+13:55.000 --> 13:59.000
+Or you can get extra silly and you can say,
+
+13:59.000 --> 14:02.000
+celebrate error equals function.
+
+14:02.000 --> 14:07.000
+And you have to use an arrow function like this.
+
+14:07.000 --> 14:09.000
+Now, why does this work?
+
+14:09.000 --> 14:15.000
+It's because arrow functions have a different context setting methodology
+
+14:15.000 --> 14:17.000
+than normal functions.
+
+14:17.000 --> 14:20.000
+It's lexical, I think is the term that they use for it.
+
+14:20.000 --> 14:23.000
+Or it's the other way around, I can never keep them straight.
+
+14:23.000 --> 14:26.000
+But it's where it's written, not where it's called,
+
+14:26.000 --> 14:31.000
+whereas these functions, the context is set where it's invoked,
+
+14:31.000 --> 14:34.000
+not where it's created.
+
+14:34.000 --> 14:37.000
+Again, if you're looking at me like, am I speaking Chinese?
+
+14:37.000 --> 14:38.000
+I might be.
+
+14:38.000 --> 14:40.000
+I actually don't know, right?
+
+14:40.000 --> 14:44.000
+But I'm just kind of trying to survey the land of where the landmines are here.
+
+14:44.000 --> 14:49.000
+And so just be aware that you have to get into the weeds of what this is.
+
+14:49.000 --> 14:53.000
+I also see here that I called this dot set state.
+
+14:53.000 --> 14:57.000
+This is a React functionality for class components.
+
+14:57.000 --> 15:01.000
+This doesn't exist, obviously, on function components.
+
+15:01.000 --> 15:05.000
+But this is how, this is what it uses instead of use state, right?
+
+15:05.000 --> 15:08.000
+You do this dot set state and then you change the state.
+
+15:08.000 --> 15:11.000
+And this will be a massive object of all of the state, right?
+
+15:11.000 --> 15:14.000
+As opposed to having one hook for every single piece of state that you have,
+
+15:14.000 --> 15:17.000
+you got one big old object.
+
+15:17.000 --> 15:21.000
+And so, for example, right here you can see that I have has error.
+
+15:21.000 --> 15:22.000
+That's some state on here.
+
+15:22.000 --> 15:26.000
+This won't overwrite it because it does an object merge between the two.
+
+15:26.000 --> 15:30.000
+So just be aware of that.
+
+15:30.000 --> 15:34.000
+Last thing here is if you want to reference the props here,
+
+15:34.000 --> 15:38.000
+you just say console dot log like this dot props dot lol.
+
+15:38.000 --> 15:42.000
+Like whatever you would normally get props here, right?
+
+15:42.000 --> 15:48.000
+Instead, you just reference them here under this dot props.
+
+15:49.000 --> 15:52.000
+Okay.
+
+15:52.000 --> 15:55.000
+That's kind of a whirlwind tour of class components.
+
+15:55.000 --> 15:58.000
+Enough, hopefully, that you kind of get the lay of the land that if you have to use them,
+
+15:58.000 --> 16:00.000
+you know where everything is.
+
+16:00.000 --> 16:04.000
+I've kind of shown you like 95% of them.
+
+16:04.000 --> 16:10.000
+Beyond that, everything is kind of the same between class components and function components.
+
+16:10.000 --> 16:15.000
+One more thing I was going to show you, I kind of referenced it earlier.
+
+16:15.000 --> 16:18.000
+We had to use our custom hook here.
+
+16:18.000 --> 16:28.000
+I would do something like function with error boundary with hooks.
+
+16:28.000 --> 16:37.000
+And I would do something like const pizza of the day equals use pizza of the day.
+
+16:37.000 --> 16:48.000
+And then I would return error boundary with something like this, right?
+
+16:48.000 --> 16:51.000
+So you do all of the hooks above it in a function component,
+
+16:51.000 --> 16:57.000
+and then you pass them down into the component that way.
+
+17:01.000 --> 17:03.000
+Kind of silly, but it does work, right?
+
+17:03.000 --> 17:07.000
+You can kind of use the tools and compose them together.
+

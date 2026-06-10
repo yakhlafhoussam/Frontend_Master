@@ -1,0 +1,345 @@
+WEBVTT
+
+
+00:00.000 --> 00:05.920
+Parlons de Vite, et j'ai vérifié qu'il se prononce ainsi. Tu peux l'appeler
+
+00:05.920 --> 00:13.360
+Vite, mais c'est censé être français pour faire vite. C'est ce qu'on me dit. Je ne parle pas français.
+
+00:13.360 --> 00:21.440
+Alors Vite, un projet plutôt sympa du créateur de Vue. Ce que j'ai trouvé assez intéressant
+
+00:21.440 --> 00:27.840
+Vite, ce n'est pas réellement le bundler. Le bundler est enroulable, n'est-ce pas, et ce depuis
+
+00:27.840 --> 00:34.560
+le début, je pense. Ils ont simplement apporté une bien meilleure expérience de développement aux développeurs.
+
+00:37.040 --> 00:40.800
+roll up, car le roll up est une chose difficile à régler et à faire fonctionner correctement.
+
+00:41.840 --> 00:45.760
+Le roll up est idéal, en particulier pour regrouper des modules et des éléments que vous allez publier,
+
+00:46.720 --> 00:49.840
+mais ce n'est pas fait pour l'expérience des développeurs. C'est fait pour la performance.
+
+00:50.400 --> 00:54.960
+C'est pourquoi j'ai enseigné Parcel pendant si longtemps dans le cadre de ce cours. J'aime toujours Parcel. Tu es très
+
+00:54.960 --> 01:01.920
+bienvenue pour utiliser Parcel, mais Vite vient en quelque sorte de gagner à ce stade, n'est-ce pas ? Tout le monde a tendance à utiliser
+
+01:01.920 --> 01:05.600
+juste Vite. Il n'y a pas vraiment beaucoup de questions. L'outillage qui l'entoure ne cesse de s'améliorer
+
+01:05.600 --> 01:13.360
+et mieux. Vous verrez quand nous arriverons à la partie test. Vite rend le test Vite très simple à utiliser,
+
+01:14.960 --> 01:17.440
+et ils ne font que l'améliorer. Ils ont fondé une entreprise autour de ça maintenant,
+
+01:18.000 --> 01:22.880
+et ils vont passer du roll up au roll down en tant que bundler.
+
+01:25.920 --> 01:29.600
+Ouais, roll down, qui est un bundler basé sur Rust pour JavaScript.
+
+01:31.760 --> 01:37.600
+C'est plutôt cool. Cela va faire un tas de choses pour nous. À l'heure actuelle, nous avions un fichier en cours
+
+01:37.600 --> 01:44.880
+importé dans un répertoire index.html, et cela fonctionne sans étape de construction, mais maintenant, que se passe-t-il si
+
+01:44.880 --> 01:49.520
+nous voulons avoir plusieurs fichiers, et nous voulons les importer, et nous voulons en extraire différents
+
+01:49.520 --> 01:55.280
+des bibliothèques et des trucs comme ça. La complexité augmente de façon exponentielle, et donc du genre Vite
+
+01:55.280 --> 02:00.720
+cela nous aide à apprivoiser cela, vous pouvez simplement lire et écrire des fichiers comme s'ils étaient
+
+02:00.720 --> 02:06.880
+déjà présent, ce qui finit par être vraiment utile. Cela permet d'extraire des éléments de npm très facilement,
+
+02:07.760 --> 02:14.080
+et il gérera tout comme la réduction de notre code, toutes les autres techniques d'optimisation qui
+
+02:14.640 --> 02:17.040
+vous ne voulez pas vraiment avoir à y penser. Ils y ont déjà pensé pour toi,
+
+02:17.040 --> 02:23.680
+vous n'avez donc pas à vous en soucier. Dans les versions précédentes, nous utilisions Parcel, des projets géniaux.
+
+02:25.520 --> 02:32.880
+Ils pourraient également utiliser le roll up. Non, je pense qu'ils ont en fait écrit leur propre bundler. Quoi qu'il en soit,
+
+02:32.880 --> 02:37.440
+Parcel est cool, et l'ancien webpack principal, qui existe depuis toujours.
+
+02:37.840 --> 02:47.760
+Nous allons donc le faire. Nous allons obtenir Vite à la version 5.4.2 et le plugin Vite.js réagir. Ces
+
+02:47.760 --> 02:55.040
+sont en quelque sorte nos deux exigences minimales pour démarrer avec Vite. Nous allons donc simplement copier
+
+02:55.040 --> 03:06.800
+et collez-le ici, et cela devrait installer nos éléments pour nous. D'accord.
+
+03:07.840 --> 03:11.280
+Et puis ce que nous allons faire ici, c'est aller à index.html,
+
+03:12.240 --> 03:18.000
+fermez ceci pendant une seconde. Nous souhaitons nous débarrasser de ces deux balises de script.
+
+03:21.760 --> 03:29.440
+Et puis à partir de là, vous devez faire encore une chose. Vous allez devoir dire type égal
+
+03:29.440 --> 03:38.800
+modules. Vous devez faire savoir à Vite que vous allez travailler avec des modules. Et en fait,
+
+03:38.800 --> 03:41.600
+Je ne pense même plus que cela fonctionne avec CommonJS. En gros, ils ont juste dit, écoute,
+
+03:41.600 --> 03:45.760
+si vous voulez utiliser Vite, vous devez être sur esmodules. C'est de cela dont nous avons parlé
+
+03:45.760 --> 03:51.680
+à propos de tout ce temps. C'est tout. Cela ne devrait pas être grave. Mais oui, assure-toi de l'ajouter
+
+03:51.680 --> 04:03.120
+tapez égal à module ou il va vous crier dessus. D'accord. Créez maintenant des fichiers Vite.config.js.
+
+04:07.520 --> 04:16.480
+Et nous allons importer la configuration définie, pas à partir du rollup, depuis Vite.
+
+04:16.480 --> 04:29.920
+Nous allons importer la réaction à partir de la réaction slash du plugin Vite.js. Cool. Et puis nous allons
+
+04:29.920 --> 04:41.200
+pour exporter par défaut, définissez config. Et nous allons avoir des plugins. Encore une fois, j'adore cette auto
+
+04:41.200 --> 04:48.400
+achèvement. Et ce sera un tableau. Nous allons lui donner une réaction, qui est une fonction qui
+
+04:48.400 --> 04:55.520
+il faut invoquer. Et vous devriez vous retrouver avec quelque chose comme ça. Donc, à sa forme la plus élémentaire, Vite
+
+04:55.520 --> 04:59.120
+gère la plupart de ces choses dès la sortie de la boîte. Vous n'avez pas vraiment besoin de beaucoup le configurer.
+
+05:00.240 --> 05:03.760
+La seule chose que nous avons à dire, c'est qu'il s'agit d'un projet de réaction. Tu vas devoir faire
+
+05:03.760 --> 05:18.560
+réagir à des choses de type. Et c'est tout. D'accord. Revenons à notre terminal.
+
+05:22.240 --> 05:27.520
+Et nous allons faire npm i ou installer ce que vous voulez, mais pas le tiret D majuscule parce que
+
+05:27.520 --> 05:33.520
+nous allons installer certaines dépendances de production, pas des dépendances de développement. Au total
+
+05:33.520 --> 05:39.360
+remarque, cela n'a pas vraiment d'importance car vous allez toujours construire votre projet
+
+05:39.360 --> 05:43.680
+avant de passer en production. Donc, que ce soit la dépendance du développeur ou non, tout devient
+
+05:43.680 --> 05:52.480
+installé à chaque fois. Mais certaines personnes trouvent cette distinction extrêmement importante. Alors npm install
+
+05:52.480 --> 06:05.520
+réagir. Nous allons le faire au 18.3.1 et réagir au, oh ouais, désolé. Réagissez au tableau de bord Dom à 18.3.1. Maintenant,
+
+06:05.520 --> 06:12.480
+encore une fois, les gens me demandent : pourquoi ne faisons-nous pas 19 ? 19 n’est toujours pas officiellement stable.
+
+06:12.480 --> 06:16.240
+C'est en version candidate. C'est plutôt stable. Et nous en parlerons à la fin du cours.
+
+06:16.800 --> 06:22.160
+Mais une fois que React 19 sera stable, nous reviendrons et ferons une intro complète à React V10.
+
+06:22.960 --> 06:28.080
+Ce cours fonctionnera-t-il avec 19 ? Presque certainement. Ils ne changent pas beaucoup. Ils ne prennent pas
+
+06:28.080 --> 06:33.200
+très dehors. Tout ce que je vous enseigne aujourd'hui s'applique à 100% à 19 ans. Ils nous l'ont déjà dit
+
+06:33.200 --> 06:40.400
+tout ce qu'ils retirent. Je ne vous apprends rien de tout ça. C'est juste ça. Tellement extrêmement
+
+06:40.400 --> 06:46.000
+il est probable que si le 19 est sorti au moment où vous regardez ce cours, vous pourriez simplement utiliser le 19. Mais
+
+06:46.720 --> 06:54.640
+si vous faites le 18.3.1, je peux vous garantir tout ce que j'ai testé avec le 18. Et aussi tout s'applique
+
+06:54.640 --> 07:10.720
+à 19. N'ayez donc pas peur de prendre cela même avec la réaction 18. Intéressant. Il dit qu'il y a un
+
+07:10.720 --> 07:15.520
+vulnérabilité de sécurité. À propos, au moment où vous regarderez ce cours, il y aura certainement
+
+07:15.520 --> 07:21.440
+il y a beaucoup de failles de sécurité. C'est très normal. Je ne vous dis pas d'installer un Bitcoin
+
+07:21.440 --> 07:27.840
+mineur sur votre ordinateur. Juste le mien, pas celui de quelqu'un d'autre. Alors ne vous inquiétez pas trop pour ça.
+
+07:27.840 --> 07:32.800
+Si vous le souhaitez, vous pouvez voir si le correctif d'audit npm fonctionnera. Parfois non. Oh, écoute, nous l'avons fait. Je
+
+07:32.800 --> 07:40.560
+je l'ai fait. Nous l'avons réparé. J'ai réparé Internet. D'accord. Tout ce que ça fait, c'est aller chercher un paquet
+
+07:40.560 --> 07:44.400
+à utiliser s'il existe une version de correctif disponible qui résout simplement le problème. Si c'est le cas, alors
+
+07:44.400 --> 07:51.840
+installe cela. C'est tout ce qu'il fait. D'accord. Allons utiliser Vite. Nous allons donc aller à notre source
+
+07:51.840 --> 08:00.720
+répertoire. Et la première chose que je veux faire ici est que nous avons supprimé ces balises de script de notre code HTML.
+
+08:00.720 --> 08:10.320
+Cela signifie donc que React n'est plus disponible dans notre projet. Droite? Donc dans app.js, nous allons aller
+
+08:10.400 --> 08:21.440
+importer React pour que nous puissions l'utiliser. Nous allons dire importer React depuis React et importer créer racine
+
+08:26.640 --> 08:35.680
+de React-dom. Et puis ici, je pense que nous devrons supprimer le, ouais, React-dom.
+
+08:36.400 --> 08:44.480
+D'accord. Vite se chargera donc de brancher React ici pour que toutes ces références React soient désormais
+
+08:44.480 --> 08:52.960
+travail. Droite? Et quand vous n'avez pas d'accolades ici, cela signifie importer la bibliothèque entière comme une seule
+
+08:52.960 --> 09:00.720
+objet de niveau supérieur. Droite? Ou peut-être une manière différente de dire importer ce que l'auteur de la bibliothèque a
+
+09:01.680 --> 09:08.400
+désigné comme l'exportation par défaut de tout ce qu'est React. Et je dirai que c'est normalement tout le
+
+09:08.400 --> 09:14.960
+les choses comme un objet géant, mais ce n'est pas obligatoire. Et puis cela s'appelle une importation nommée où
+
+09:14.960 --> 09:22.880
+vous dites d'aller à la bibliothèque React-dom et d'obtenir uniquement la fonction de création de racine dans ce cas particulier
+
+09:22.880 --> 09:29.440
+cas. C'est ce que signifient ces accolades. Il s'agit d'une exportation par défaut. Il s'agit d'une exportation nommée.
+
+09:30.720 --> 09:38.480
+D'accord. Tout d’abord, l’une des choses intéressantes est que je pense que nous avons réparé les peluches. Je pense que si tu dis npm run
+
+09:38.480 --> 09:44.240
+lint, vous ne devriez obtenir aucune erreur maintenant car il n'y a plus de variables globales. Droite? Nous savons où tout
+
+09:44.240 --> 09:55.600
+vient de. Donc c'est plutôt cool. Et maintenant, faisons en sorte que nous puissions réellement courir
+
+09:55.600 --> 10:02.960
+N'hésitez pas à exécuter notre serveur. Je veux donc que vous alliez dans votre package.json, et nous allons ajouter
+
+10:02.960 --> 10:10.800
+quelques éléments supplémentaires dans nos scripts. Je ne sais pas pourquoi j'ai l'habitude de les classer par ordre alphabétique,
+
+10:12.480 --> 10:15.760
+mais c'est devenu une contrainte un jour et je ne l'ai jamais arrêté.
+
+10:16.400 --> 10:34.480
+Donc build, Vite build, dev, Vite et preview sont l'aperçu de Vite.
+
+10:34.480 --> 10:45.280
+Je ne sais pas. Certaines personnes pourraient dire, eh bien, ça ressemble mieux à ça. Je ne sais pas.
+
+10:45.280 --> 10:48.160
+Honnêtement, l’ordre ici n’a pas vraiment d’importance. Tout ce que tu veux faire me convient.
+
+10:49.040 --> 10:53.360
+Parlons donc de ces commandes que nous avons mises ici. Neuf fois sur dix quand tu viens
+
+10:53.360 --> 10:56.880
+votre environnement de développement local, vous allez juste dire Vite et vous allez juste obtenir
+
+10:56.880 --> 11:03.920
+va. Vous pouvez donc exécuter npm run dev et démarrer votre projet. J'ai une mémoire musculaire tellement forte
+
+11:03.920 --> 11:08.000
+faire npm run dev pour n'importe quel projet dans lequel je me lance et je m'assure que c'est toujours la commande que je
+
+11:08.000 --> 11:14.640
+veux courir. Build, c'est quelque chose que vous exécuteriez comme dans une action GitHub qui
+
+11:14.640 --> 11:20.320
+construisez réellement le projet dans des actifs statiques similaires et tels que vous puissiez ensuite l'expédier à Vercell
+
+11:20.320 --> 11:27.360
+ou AWS ou Netlify ou Fly ou quelque chose comme ça, et vous pouvez les servir à partir de là.
+
+11:28.320 --> 11:32.480
+Et puis l’aperçu est plutôt intéressant. Je ne sais pas si vous avez déjà eu un bug qui
+
+11:32.480 --> 11:36.000
+semblait se manifester chaque fois que vous construisiez le projet plutôt que de l'exécuter sur le serveur de développement.
+
+11:36.560 --> 11:40.640
+Preview vise à vous aider. C'est comme si j'allais construire ça pour la production et ensuite je
+
+11:40.640 --> 11:44.880
+je vais vous le servir comme s'il s'agissait d'une boîte de production pour vous aider à résoudre ces problèmes.
+
+11:46.720 --> 11:50.080
+Je ne l'utilise presque jamais, mais quand j'en ai besoin, je suis content qu'il soit là.
+
+11:50.080 --> 12:03.920
+Et puis encore une chose, assurez-vous d’ajouter un module de type.
+
+12:06.560 --> 12:08.400
+Encore une fois, l’ordre ici n’a pas d’importance.
+
+12:10.880 --> 12:17.760
+Cela indique simplement à tout outil qui utilise votre projet qu'il utilise des modules es plutôt que
+
+12:17.760 --> 12:23.600
+en utilisant du JS commun, qui est le style requis. Cela peut donc également être utile.
+
+12:31.920 --> 12:45.680
+D'accord. Alors maintenant, en théorie, npm exécute dev. Vous devriez obtenir quelque chose qui ressemble un peu à ceci.
+
+12:48.240 --> 12:54.080
+Vous vous demandez peut-être pourquoi cinq, un, sept, trois.
+
+12:56.000 --> 13:05.040
+J'en ai fait deux. C'est pourquoi je suis allé chercher. Combien font cinq en chiffres romains ? V. Vous comprenez maintenant ?
+
+13:07.920 --> 13:14.560
+V-I-T-E. Les chiffres romains et Leeds parlent. Ouais. Je veux dire, je me disais, c'est certainement exagéré, les gars.
+
+13:15.280 --> 13:20.720
+Ouais. Mais vous pouvez voir maintenant que tout fonctionne toujours exactement comme avant,
+
+13:20.720 --> 13:26.400
+mais maintenant, nous utilisons des importations pour nos réactions et elles sont servies sur cinq, un, sept, trois.
+
+13:26.400 --> 13:37.120
+Revenez donc à app.js. Et je l'ai déjà corrigé ici. Mais vous voyez réagir-dom. C'est à l'origine ce que je
+
+13:37.120 --> 13:43.600
+il y avait ici, le React-Dom. Il vous suffit de mettre le client slash React-Dom. C'est l'ancienne façon de
+
+13:43.600 --> 13:46.400
+l'écrire. C'est ainsi que les gens l'écrivaient, c'est pourquoi il est encore un peu brûlé
+
+13:46.400 --> 13:51.440
+dans mon cerveau. Et je pense que ça fonctionnera via React-18, mais ils pourraient le casser en React-19
+
+13:51.440 --> 13:58.160
+ou réagir-20 ou quelque chose comme ça. Alors mettez simplement le client slash React-Dom et tout devrait fonctionner.
+

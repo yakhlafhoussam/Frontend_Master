@@ -1,0 +1,845 @@
+WEBVTT
+
+00:00.000 --> 00:01.320
+Context.
+
+00:03.600 --> 00:06.800
+Context is a, I teach this intentionally pretty late
+
+00:06.800 --> 00:08.400
+in the course, or in terms of like late
+
+00:08.400 --> 00:10.640
+of the fundamentals of React.
+
+00:11.960 --> 00:14.960
+It's a powerful tool,
+
+00:14.960 --> 00:17.760
+and I see new React developers get tempted
+
+00:17.760 --> 00:18.840
+to use it all over the place
+
+00:18.840 --> 00:22.160
+because it simplifies the writing part of React,
+
+00:22.160 --> 00:23.840
+and I will say it greatly complicates
+
+00:23.840 --> 00:25.600
+the maintenance part of React.
+
+00:26.600 --> 00:28.920
+This is another way of me saying, me begging you,
+
+00:29.000 --> 00:30.400
+as your perhaps future coworkers,
+
+00:30.400 --> 00:33.720
+you'd be very sparing with your use of context.
+
+00:33.720 --> 00:35.720
+Use it, you know, with great power
+
+00:35.720 --> 00:37.040
+comes great responsibility.
+
+00:37.040 --> 00:39.440
+You know, that's, I think I'm the first person
+
+00:39.440 --> 00:40.320
+to ever say that.
+
+00:44.160 --> 00:46.800
+No, it's just, props come from parent to child,
+
+00:46.800 --> 00:49.400
+parent to child, and it becomes very explicit,
+
+00:49.400 --> 00:51.080
+the data flow of your app.
+
+00:51.080 --> 00:54.040
+Context is like being able to dump data into a portal,
+
+00:54.040 --> 00:56.880
+and then somewhere else being able to receive data
+
+00:56.880 --> 00:58.120
+out of the portal.
+
+00:58.120 --> 01:01.240
+And so if you have, you know, five components
+
+01:01.240 --> 01:03.240
+that are passing data from parent to child,
+
+01:03.240 --> 01:05.720
+parent to child, it can get a little annoying.
+
+01:05.720 --> 01:09.280
+That problem's called the prop drilling problem.
+
+01:11.400 --> 01:14.200
+It's tempting to use context there, right?
+
+01:16.440 --> 01:21.120
+I'm gonna say, unless you're using that context
+
+01:21.120 --> 01:25.360
+in multiple places, that state in multiple different places,
+
+01:25.360 --> 01:27.360
+just deal with the prop drilling.
+
+01:27.400 --> 01:29.440
+I know it's annoying, but it is helpful.
+
+01:30.680 --> 01:32.960
+But there are some things that are legitimately
+
+01:32.960 --> 01:35.440
+what I would call app level state.
+
+01:35.440 --> 01:37.560
+A really good example of this would be like a user, right?
+
+01:37.560 --> 01:39.720
+So if someone logs into your website,
+
+01:40.560 --> 01:42.800
+that doesn't just affect one part of your website,
+
+01:42.800 --> 01:45.320
+it affects everything in your website, right?
+
+01:45.320 --> 01:47.640
+You're showing the user their information,
+
+01:47.640 --> 01:49.520
+their checkout information, their address, right?
+
+01:49.520 --> 01:51.800
+And that's all pulling from the same piece
+
+01:51.800 --> 01:53.560
+of user information.
+
+01:53.560 --> 01:58.480
+So you could have like app.jsx have you state user, right?
+
+01:58.480 --> 02:00.400
+And then pass that into everything.
+
+02:01.560 --> 02:03.800
+That doesn't seem like a good idea to me, right?
+
+02:03.800 --> 02:05.760
+I think it's better to say like, hey,
+
+02:05.760 --> 02:09.000
+we have this app level state that is the user,
+
+02:09.000 --> 02:12.560
+and then anyone can pull out of the context who the user is.
+
+02:13.640 --> 02:15.440
+Does that make sense?
+
+02:15.440 --> 02:17.960
+So you're looking for what I call app level state
+
+02:17.960 --> 02:22.000
+as opposed to like view level state or like localized state.
+
+02:22.000 --> 02:24.760
+That's where context is useful.
+
+02:24.760 --> 02:28.120
+Theme is another one that will sometimes come up, right?
+
+02:28.120 --> 02:29.520
+If someone switches their theme,
+
+02:29.520 --> 02:32.040
+that affects not just one piece of your code,
+
+02:32.040 --> 02:34.360
+it affects a lot of the pieces of your code.
+
+02:34.360 --> 02:37.280
+So you might use theme as another piece of context.
+
+02:39.960 --> 02:43.200
+A lot of time libraries, so like react router
+
+02:43.200 --> 02:44.840
+or 10 stack router, which we're gonna look at here
+
+02:44.840 --> 02:47.720
+in a little bit, those will use context quite a bit.
+
+02:47.720 --> 02:48.900
+It's also made for those things,
+
+02:48.900 --> 02:50.040
+and you don't have to care about those things
+
+02:50.040 --> 02:52.640
+because that's their problem, not yours.
+
+02:52.640 --> 02:57.640
+So in our app here, we have a header,
+
+02:57.800 --> 03:01.400
+and I wanna put like a little like indicator there
+
+03:01.400 --> 03:02.560
+of what's in your cart.
+
+03:03.480 --> 03:06.360
+And then the other thing that you can say about cart
+
+03:06.360 --> 03:08.920
+being as a function of context is like,
+
+03:08.920 --> 03:12.840
+if someone navigates away from this order page,
+
+03:12.840 --> 03:15.240
+so let's say there was an about page or a contact page,
+
+03:15.240 --> 03:17.160
+which we'll build here in just a second.
+
+03:18.080 --> 03:19.600
+If they navigate it to the contact page
+
+03:19.600 --> 03:21.780
+and then they navigated back to the order page,
+
+03:21.780 --> 03:23.280
+what would happen to the cart?
+
+03:26.520 --> 03:28.120
+Disappear, right?
+
+03:28.120 --> 03:29.680
+Why?
+
+03:29.680 --> 03:34.680
+If this gets unmounted, all of its state goes away, right?
+
+03:34.720 --> 03:36.960
+It doesn't get saved if it gets removed from the DOM, right?
+
+03:36.960 --> 03:40.320
+So if I come over here to app.jsx,
+
+03:40.320 --> 03:41.520
+you know what, we can literally do this.
+
+03:41.520 --> 03:43.520
+We're gonna add a bunch of stuff right here.
+
+03:44.720 --> 03:47.460
+I'm just gonna remove this, okay?
+
+03:47.460 --> 03:49.240
+So I just removed it from the DOM,
+
+03:49.880 --> 03:52.200
+which would be the same thing from unrendering it, right?
+
+03:52.200 --> 03:53.760
+And then I'm gonna add it back.
+
+03:54.840 --> 03:56.200
+Notice that the cart is empty again, right?
+
+03:56.200 --> 03:58.840
+Because it got totally thrown away.
+
+03:58.840 --> 04:00.080
+It would be the same thing if you routed
+
+04:00.080 --> 04:02.840
+to a different page and came back.
+
+04:02.840 --> 04:06.240
+Now again, we are in the business of making pizza money,
+
+04:06.240 --> 04:07.840
+right?
+
+04:07.840 --> 04:10.600
+So we wanna keep that cart full, right?
+
+04:10.600 --> 04:12.760
+Always be keeping cart fulls.
+
+04:12.760 --> 04:14.520
+That's what they say, right?
+
+04:14.520 --> 04:15.360
+I think so.
+
+04:16.360 --> 04:19.560
+So we wanna preserve the cart between page loads.
+
+04:19.560 --> 04:20.400
+That's what I'm getting at.
+
+04:20.400 --> 04:22.960
+So we're gonna use context to do that.
+
+04:22.960 --> 04:25.960
+Now, really what you could do,
+
+04:25.960 --> 04:28.640
+which would be probably a much simpler model of doing this,
+
+04:28.640 --> 04:31.240
+is you would just say, use state cart right there, right?
+
+04:31.240 --> 04:33.600
+And just pass it into all of them.
+
+04:33.600 --> 04:34.800
+But we wanna learn about context.
+
+04:34.800 --> 04:37.000
+I'm gonna show you how to do it with context.
+
+04:38.240 --> 04:40.000
+So first thing, let's build the header
+
+04:40.000 --> 04:43.280
+that's going to read from the cart, okay?
+
+04:43.280 --> 04:47.400
+So new page, we're gonna make it called header.jsx.
+
+04:48.240 --> 04:53.240
+We're gonna say export default function header, okay?
+
+04:57.840 --> 05:02.840
+Return, and we're gonna put a nav
+
+05:03.640 --> 05:05.760
+because we all like semantic markup.
+
+05:06.800 --> 05:08.320
+Remember when that used to be like a really big thing
+
+05:08.320 --> 05:09.520
+and people would get all bent out of shape
+
+05:09.520 --> 05:11.640
+about semantic markup?
+
+05:11.680 --> 05:14.280
+Don't use divs, always use navs.
+
+05:14.280 --> 05:15.120
+What happened to those arguments?
+
+05:15.120 --> 05:16.960
+I feel like we should argue more about that.
+
+05:21.160 --> 05:24.800
+Padre Gino's Pizza, cool.
+
+05:25.680 --> 05:30.040
+And then we're gonna say div class name equals nav-cart.
+
+05:33.520 --> 05:37.320
+And then I'm gonna put an emoji in here of a cart.
+
+05:38.320 --> 05:43.320
+Span class name equals nav-cart-number.
+
+05:49.400 --> 05:50.560
+Put any number you want in here.
+
+05:50.560 --> 05:52.120
+I'm just gonna put five.
+
+05:53.840 --> 05:57.000
+And cool, that'll be enough for now for our header.
+
+05:57.960 --> 05:59.600
+Let's put that into app.jsx.
+
+05:59.600 --> 06:02.400
+I think we can just replace.
+
+06:02.400 --> 06:05.360
+So we're gonna import header from header.
+
+06:06.360 --> 06:08.640
+And I think we can just replace this.
+
+06:09.840 --> 06:11.840
+Yep, header.
+
+06:15.400 --> 06:16.880
+You'll see that this is kind of turning out
+
+06:16.880 --> 06:19.600
+to be just a composition of a lot of other functions
+
+06:19.600 --> 06:22.040
+that we've made or a lot of other components.
+
+06:23.240 --> 06:24.680
+It's kind of what React is for the most part.
+
+06:24.680 --> 06:27.480
+It's just composing components into other components.
+
+06:28.680 --> 06:31.440
+All right, so now we got this like a little fun cart thing
+
+06:31.440 --> 06:32.280
+up there, right?
+
+06:32.280 --> 06:33.520
+Obviously five is fake, right?
+
+06:33.520 --> 06:35.920
+This isn't actually reading from the real cart.
+
+06:37.200 --> 06:38.800
+So how would we do that?
+
+06:40.520 --> 06:41.800
+Well, think about this for a second now.
+
+06:41.800 --> 06:43.000
+How would you do that right now,
+
+06:43.000 --> 06:44.680
+not having learned about context yet?
+
+06:44.680 --> 06:45.680
+How would you do it?
+
+06:47.720 --> 06:49.560
+There's no cart in here, right?
+
+06:50.440 --> 06:52.360
+So you would have to do use state here
+
+06:52.360 --> 06:55.600
+and you'd have to say cart equals cart.
+
+06:56.480 --> 07:00.280
+And you would have to say cart equals cart here.
+
+07:00.280 --> 07:02.800
+But then we would have to actually pass in set cart here,
+
+07:03.240 --> 07:05.200
+because then you'd end up with a bunch
+
+07:05.200 --> 07:06.960
+of kind of fallout effects of that.
+
+07:08.320 --> 07:10.440
+Well, nobody wants to do that, right?
+
+07:10.440 --> 07:12.320
+So let's go ahead and do it a different way.
+
+07:12.320 --> 07:13.600
+Let's use context.
+
+07:16.240 --> 07:18.960
+So I've seen people do this with a bunch
+
+07:18.960 --> 07:19.800
+of different patterns.
+
+07:19.800 --> 07:20.920
+I saw one recently that I kind of liked,
+
+07:20.920 --> 07:21.960
+so I'm gonna teach that one today.
+
+07:21.960 --> 07:26.080
+They just created a file called contexts.jsx
+
+07:27.040 --> 07:31.240
+and they throw all of their context into one context file.
+
+07:31.240 --> 07:32.880
+Thought that was kind of cool,
+
+07:32.880 --> 07:34.160
+because it's never very much.
+
+07:34.160 --> 07:38.320
+My context files used to be like literally like one line
+
+07:38.320 --> 07:40.800
+and then I would export it and it was just very shortened
+
+07:40.800 --> 07:43.440
+and it's gonna shorten sweep and more shortened dumb.
+
+07:45.760 --> 07:49.040
+Sure, we're gonna say create context,
+
+07:49.040 --> 07:51.120
+which is gonna come from React.
+
+07:52.760 --> 07:57.320
+Okay, and then we're gonna export const.
+
+07:57.320 --> 07:59.160
+So this one you actually do wanna do a name.
+
+07:59.200 --> 08:00.520
+If you're gonna do this pattern
+
+08:00.520 --> 08:03.080
+where you have multiple different contexts
+
+08:03.080 --> 08:03.920
+coming from one file,
+
+08:03.920 --> 08:07.160
+it's important that you would do named exports, right?
+
+08:11.640 --> 08:16.640
+Import export const cart context equals create context.
+
+08:18.520 --> 08:20.480
+You can leave it like this if you want to
+
+08:20.480 --> 08:22.120
+and just call it good there.
+
+08:23.480 --> 08:27.840
+For the sake of maybe your future TypeScript self
+
+08:27.840 --> 08:30.400
+and or future testing self,
+
+08:31.640 --> 08:33.800
+it is useful with context to give it like,
+
+08:33.800 --> 08:36.560
+this is the shape of what is going to be held
+
+08:36.560 --> 08:38.160
+inside of this context.
+
+08:39.360 --> 08:42.080
+So we're gonna hold a hook in here, right?
+
+08:42.080 --> 08:43.080
+That's what we're gonna do
+
+08:43.080 --> 08:44.320
+because we're gonna hold a state
+
+08:44.320 --> 08:46.360
+that's both mutable and readable.
+
+08:47.760 --> 08:51.200
+So what is the return type for a hook?
+
+08:55.120 --> 08:55.960
+It's an array
+
+08:56.960 --> 08:58.280
+and what is cart?
+
+08:59.560 --> 09:00.400
+An array
+
+09:02.680 --> 09:04.200
+and then what is this?
+
+09:05.200 --> 09:06.040
+Some function.
+
+09:10.920 --> 09:11.920
+Right?
+
+09:11.920 --> 09:16.520
+That's the type, that's what a hook looks like, right?
+
+09:18.120 --> 09:21.400
+So I'm literally just gonna put that right here.
+
+09:21.400 --> 09:24.240
+So I show that to you because I know this looks obtuse
+
+09:24.240 --> 09:27.280
+and weird, but that's why you're doing it.
+
+09:28.240 --> 09:30.000
+Why this is nice.
+
+09:30.000 --> 09:31.520
+As soon as you pop this into TypeScript,
+
+09:31.520 --> 09:33.040
+TypeScript will be like, oh, okay, I got this.
+
+09:33.040 --> 09:34.280
+It's an array with this and this
+
+09:34.280 --> 09:36.680
+and it's just gonna check it and get it right away.
+
+09:38.120 --> 09:39.760
+So it's just a good habit to get into.
+
+09:43.160 --> 09:44.600
+And even though we're not using TypeScript
+
+09:44.600 --> 09:47.360
+anywhere in this project, VS Code does an okay job.
+
+09:47.360 --> 09:49.120
+It's just a good habit to get into.
+
+09:49.120 --> 09:50.360
+And even though we're not using TypeScript
+
+09:50.360 --> 09:52.200
+anywhere in this project, VS Code does an okay job
+
+09:52.200 --> 09:53.840
+of observing types in here.
+
+09:58.600 --> 09:59.760
+Okay.
+
+09:59.760 --> 10:04.200
+So let's go set up our context.
+
+10:05.320 --> 10:06.840
+Go to app.jsx.
+
+10:08.000 --> 10:12.400
+We're going to import cart context from contexts
+
+10:13.880 --> 10:15.600
+and the first thing we're gonna do
+
+10:15.600 --> 10:18.000
+is we're gonna wrap our app in this thing called
+
+10:18.000 --> 10:23.000
+cart context dot provider.
+
+10:29.080 --> 10:31.920
+Usually strict mode is always gonna be the outermost thing.
+
+10:31.920 --> 10:33.960
+The order inside of it really
+
+10:33.960 --> 10:36.280
+usually doesn't make a difference.
+
+10:36.280 --> 10:39.760
+So what is cart context provider doing for us?
+
+10:39.760 --> 10:40.640
+Well, the first thing is that
+
+10:40.640 --> 10:42.680
+that can be kind of strange with React.
+
+10:42.680 --> 10:44.000
+You can have components that
+
+10:44.000 --> 10:45.960
+don't actually render real markup.
+
+10:45.960 --> 10:47.640
+All they do is they act as kind of a pass-through,
+
+10:47.640 --> 10:48.960
+but they augment the ability
+
+10:48.960 --> 10:50.960
+of the components inside of them.
+
+10:50.960 --> 10:52.320
+And that's what this provider is doing.
+
+10:52.320 --> 10:54.920
+It's now making whatever value
+
+10:54.920 --> 10:55.880
+that we're gonna pass into it,
+
+10:55.880 --> 10:58.960
+which we'll do momentarily, we have not done yet.
+
+10:58.960 --> 11:02.400
+And it's gonna make that available everywhere inside of it.
+
+11:02.400 --> 11:04.440
+Now what's kind of cool about this
+
+11:04.440 --> 11:07.200
+is we're wrapping our whole app in it,
+
+11:07.200 --> 11:09.840
+but we could do something like this
+
+11:09.840 --> 11:13.480
+where now only pizza of the day has access to this context.
+
+11:14.760 --> 11:16.520
+Kind of cool, right?
+
+11:16.560 --> 11:19.520
+We could even have two different cart context providers
+
+11:19.520 --> 11:22.040
+and have each one of them wrapped in it.
+
+11:22.040 --> 11:23.240
+That seems like a weird idea,
+
+11:23.240 --> 11:26.120
+and I'm not super into that one, but you could do it.
+
+11:28.040 --> 11:30.960
+You can even have multiple cart contexts
+
+11:30.960 --> 11:32.880
+kind of layer out from each other.
+
+11:34.040 --> 11:34.880
+And what it's gonna do is
+
+11:34.880 --> 11:36.560
+it's gonna find the nearest one, right?
+
+11:36.560 --> 11:38.800
+So it's gonna find the one that's closest to it.
+
+11:39.760 --> 11:42.240
+So if I had this and then this,
+
+11:42.240 --> 11:45.920
+this is totally, I think it's value, yeah, okay.
+
+11:47.120 --> 11:52.120
+So if I tried to access the context from pizza of the day,
+
+11:52.320 --> 11:54.000
+what value would it get back?
+
+11:55.400 --> 11:56.240
+One.
+
+11:57.160 --> 11:59.200
+Now again, you might be thinking like, why would I do this?
+
+11:59.200 --> 12:02.080
+And I'm also asking you, why would you do that?
+
+12:02.080 --> 12:05.040
+I don't know why you would do that, but it is possible.
+
+12:06.240 --> 12:08.440
+And it's why they had this kind of weird API.
+
+12:11.960 --> 12:14.640
+Okay, so going back to where we were,
+
+12:14.640 --> 12:19.640
+we're gonna say cart context dot provider.
+
+12:21.400 --> 12:24.960
+A small footnote here, they're making it so in React 19,
+
+12:24.960 --> 12:26.920
+you can just say cart context like that
+
+12:26.920 --> 12:28.240
+and leave off the provider.
+
+12:28.240 --> 12:29.560
+It's kind of nice.
+
+12:33.520 --> 12:35.200
+So if you're watching this with React 19,
+
+12:35.200 --> 12:37.480
+just go ahead and drop the dot provider.
+
+12:39.080 --> 12:42.120
+Now we wanna hook that we wanna pass into the context.
+
+12:42.120 --> 12:47.120
+So what we can do is we can say const cart hook equals,
+
+12:47.280 --> 12:52.280
+notice we're not destructuring, use state like that.
+
+12:54.200 --> 12:59.200
+And then the value here equals cart hook.
+
+13:04.440 --> 13:05.280
+Okay.
+
+13:08.560 --> 13:11.440
+Remember, normally you would say cart, set cart
+
+13:11.480 --> 13:13.600
+and use that kind of destructuring here.
+
+13:13.600 --> 13:15.440
+Here we're passing the whole thing in.
+
+13:19.360 --> 13:21.360
+Does that mean that there's a setter
+
+13:21.360 --> 13:23.720
+that's also been assigned within the cart hook object?
+
+13:23.720 --> 13:24.680
+You got it.
+
+13:24.680 --> 13:26.520
+So now we can call that within order
+
+13:26.520 --> 13:28.240
+because we need to, right?
+
+13:28.240 --> 13:30.400
+We have to be able to set that hook from inside order
+
+13:30.400 --> 13:32.640
+or else this whole kind of thing falls apart.
+
+13:34.160 --> 13:35.960
+Now, you might be thinking to yourself like,
+
+13:35.960 --> 13:38.480
+well, does that mean you can set that hook anywhere?
+
+13:38.480 --> 13:41.000
+And yes, you can and yes, it is a foot gun,
+
+13:41.000 --> 13:42.880
+which is why I'm just like kind of
+
+13:42.880 --> 13:46.480
+trying to steer you away from context as much as possible.
+
+13:46.480 --> 13:47.400
+But there you go.
+

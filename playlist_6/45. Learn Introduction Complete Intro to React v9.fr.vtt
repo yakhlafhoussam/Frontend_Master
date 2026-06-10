@@ -1,0 +1,138 @@
+WEBVTT
+
+
+00:00.000 --> 00:03.760
+Une chose à garder à l'esprit ici, comme voir qu'il contient certains de ces navigateurs étiquetés,
+
+00:03.760 --> 00:06.720
+ceux-ci sont ceux qui se produisent réellement dans le navigateur, et ceux du DOM,
+
+00:07.600 --> 00:11.680
+vous pouvez les exécuter, mais cela ne se produit pas dans le navigateur. Cela se produit toujours dans Node,
+
+00:11.680 --> 00:16.800
+et il s'agit simplement de rendre compte de ce qui en ressort. Quelqu'un a posé une question plus tôt sur la couverture,
+
+00:16.800 --> 00:18.880
+ce qui est un bon point. Je ne les ai pas dans mes notes, mais je me dis,
+
+00:20.000 --> 00:23.120
+YOLO, vérifions. Je pense que cela devrait fonctionner, où vous pouvez simplement dire ici aussi :
+
+00:23.120 --> 00:34.960
+les mêmes trucs de couverture que nous avons dit. Donc la couverture, le texte, le JSON et le HTML, je pense, sont les trois.
+
+00:36.160 --> 00:45.120
+Je vais les mettre dans les deux, et nous devrions également en tirer les informations sur la couverture des tests.
+
+00:45.120 --> 00:59.920
+Reprenons tout. Je ne pense donc pas que les éléments de couverture des tests apparaissent nécessairement ici.
+
+00:59.920 --> 01:02.400
+Oh ouais, écoute, nous avons aussi notre caisse ici. C'est plutôt cool.
+
+01:04.960 --> 01:10.320
+Mais dans notre navigateur également, nous pouvons toujours exécuter notre couverture d'exécution npm, et cela devrait toujours fonctionner.
+
+01:10.960 --> 01:21.040
+Oh, c'est mon API. npm run start, c'est parti. Et ici, la couverture d'exécution npm devrait toujours fonctionner.
+
+01:24.400 --> 01:28.320
+Il se peut que cela ne fonctionne toujours pas avec les éléments du navigateur. Ouais, donc c'est un peu le
+
+01:29.520 --> 01:35.920
+La couverture Vitest ne fonctionne pas avec Playwright. Donc vous devez utiliser Istanbul pour celui-ci,
+
+01:36.880 --> 01:45.520
+ou ignorez-le simplement lors des tests de votre navigateur. Oh, ça va juste m'en vouloir tout le temps à cause de ça.
+
+01:45.520 --> 01:51.280
+C'est ennuyeux. D'accord, il semblerait que si nous le voulions, nous devrions déménager à Istanbul.
+
+01:51.840 --> 01:57.840
+totalement pour maintenir notre couverture également. Ce n'est donc pas très difficile à faire,
+
+01:57.840 --> 02:13.600
+pour, je veux dire, pour un centime, pour une livre, n'est-ce pas ? Couverture Vitest
+
+02:19.120 --> 02:25.440
+V8. Nous allons donc désinstaller celui-là. Et Istanbul.
+
+02:27.840 --> 02:42.400
+D'accord. Maintenant, YOLO, vois ce qui se passe.
+
+02:49.200 --> 02:56.880
+Oh, et vous devez passer à la couverture. Ce sous nécessite également du chrome, ce qui est plutôt amusant.
+
+02:56.880 --> 02:59.920
+Nous allons quand même définir cela sur Chrome, car cela démarrera Chrome au lieu de Firefox.
+
+03:02.000 --> 03:12.000
+Et puis le fournisseur de couverture. Oh, ça doit être le cas. Ouais, c'est vrai. Fournisseur de couverture,
+
+03:15.920 --> 03:25.840
+Istanbul et journaliste. Est-ce que c'est ça ? Et ça doit être un texte,
+
+03:26.480 --> 03:33.200
+JSON, HTML. Et nous ferons exactement la même chose ici.
+
+03:36.880 --> 03:44.800
+Et essayez encore une fois. Bien sûr.
+
+03:48.240 --> 03:52.320
+Je suppose, donc je suppose que vous avez besoin des deux. Alors relancez-le.
+
+03:55.840 --> 03:59.360
+Et voilà. Nous bénéficions désormais d'une couverture complète et tous nos tests fonctionnent.
+
+04:00.240 --> 04:03.760
+Et cela nécessitait juste neuf dépendances. Que Dieu bénisse le nœud.
+
+04:06.400 --> 04:10.080
+Mais une chose sympa, remarquez que ce n'est plus un soir. C'est sur Chrome,
+
+04:10.080 --> 04:17.040
+ce qui est plutôt cool. Droite. Et même chose. Je pense que c'est assez facile pour nous d'aller de l'avant
+
+04:17.040 --> 04:22.960
+et lancez-le pour que vous puissiez voir que tous mes articles de couverture sortent. D'accord. Aussi. Donc je pense que c'est le cas
+
+04:22.960 --> 04:32.160
+limitez-nous maintenant à être dans le monde du chrome, mais je pense que si vous le souhaitez, vous pouvez dire kit Web.
+
+04:33.280 --> 04:40.960
+Et cela apparaîtra. Cela devrait apparaître. Ouais, il va se plaindre de la couverture maintenant.
+
+04:42.560 --> 04:45.920
+Mais si vous, si nous n'avions pas toute la couverture ici, Safari apparaîtrait, n'est-ce pas ?
+
+04:45.920 --> 04:47.520
+Vous pouvez également exécuter tous vos tests dans Safari.
+
+04:48.240 --> 04:51.680
+D'accord. Alors on va, on va le laisser sur Chrome à Istanbul puisque nous voulons que tout fonctionne
+
+04:51.680 --> 04:58.240
+ensemble. Je voulais donc dire encore une chose ici. Il existe un cas de test de navigateur un peu plus compliqué.
+
+04:58.240 --> 05:01.920
+Si vous voulez aller le vérifier ici, il passe en revue des choses comme l'identification du test et des trucs comme ça.
+
+05:02.960 --> 05:06.320
+Nous allons continuer et continuer ici. Mais si tu veux jouer avec un autre test
+
+05:06.320 --> 05:12.000
+Par exemple, voici ce que vous regarderiez. Il teste l'en-tête dans le navigateur, ce qui est plutôt cool.
+
+05:12.080 --> 05:15.200
+Il teste l'en-tête dans le navigateur, ce qui est plutôt cool.
+
+05:16.160 --> 05:18.400
+N'hésitez donc pas à y jeter un œil si vous êtes intéressé.
+
+05:20.800 --> 05:23.840
+Et vous pouvez également simplement télécharger 14 tests de tableau de bord,
+
+05:23.840 --> 05:33.200
+parce que c'est de tous les tests dont nous allons parler.
+

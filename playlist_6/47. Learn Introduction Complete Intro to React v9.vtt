@@ -1,0 +1,467 @@
+WEBVTT
+
+00:00.440 --> 00:04.180
+Let's do form actions.
+
+00:06.240 --> 00:08.480
+So we're actually going to go implement this.
+
+00:10.840 --> 00:15.840
+So this is a future disclaimer to people watching this course.
+
+00:15.920 --> 00:18.800
+If you're watching today with me, just follow along with me.
+
+00:18.800 --> 00:20.040
+But if you're watching the course,
+
+00:20.040 --> 00:21.320
+I need you to do something to make sure
+
+00:21.320 --> 00:23.280
+that you get the right version of React.
+
+00:24.820 --> 00:28.320
+So go to wherever your server's running or you're testing.
+
+00:28.320 --> 00:30.480
+I'm going to cancel my testing here.
+
+00:30.480 --> 00:33.080
+I need you to do npm info react.
+
+00:34.680 --> 00:39.160
+And you'll see here what the tag is for what the current is.
+
+00:39.160 --> 00:43.200
+You can see the current as of today is 18.13.1.
+
+00:44.960 --> 00:49.920
+If this says 19, then just do npm install react at 19
+
+00:49.920 --> 00:51.240
+and you are good to go.
+
+00:51.240 --> 00:56.240
+So npm install react at 19 and react dom at 19
+
+00:58.400 --> 01:01.080
+and you should be good to go here, right?
+
+01:01.080 --> 01:03.360
+If you're following and it does not say that,
+
+01:03.360 --> 01:07.400
+it says 18 still, just take a look down here at RC.
+
+01:08.980 --> 01:11.600
+And so mine is here, you can see mine's 19.0.
+
+01:11.600 --> 01:13.700
+So that's what I'm going to do today.
+
+01:13.700 --> 01:16.600
+So I'm going to do npm install react at RC
+
+01:16.600 --> 01:19.480
+and react-dom at RC.
+
+01:25.200 --> 01:28.240
+And you might even have to force it or did mine go okay?
+
+01:28.800 --> 01:33.800
+It gives you a ton of warnings because react query,
+
+01:34.160 --> 01:38.000
+a bunch of these things like, oh, I only support react 18.
+
+01:38.000 --> 01:39.480
+They take a lot of care to not break stuff.
+
+01:39.480 --> 01:43.160
+So our stuff should work, but just be aware that this is,
+
+01:43.160 --> 01:46.040
+you're into kind of dangerous waters now
+
+01:46.040 --> 01:49.040
+by being on a release candidate instead of something stable.
+
+01:52.600 --> 01:54.800
+Okay, so just be extra cautious here
+
+01:54.800 --> 01:56.560
+or if you don't want to mess with it,
+
+01:56.840 --> 01:58.680
+just feel free to follow along with me.
+
+01:58.680 --> 02:02.320
+So most of web development, in my opinion,
+
+02:02.320 --> 02:05.540
+is a form or revolves around a form.
+
+02:05.540 --> 02:07.960
+It's mostly just taking user data and doing something
+
+02:07.960 --> 02:10.160
+with it and kind of being reactive to it.
+
+02:10.160 --> 02:11.600
+Or in other words, you really can't get away
+
+02:11.600 --> 02:14.360
+from doing a lot of forms as a web developer.
+
+02:14.360 --> 02:16.440
+So the React team kind of took that to heart
+
+02:16.440 --> 02:19.320
+and they're like, okay, let's make forms extra easy
+
+02:19.320 --> 02:20.440
+with react-dom.
+
+02:20.960 --> 02:25.960
+So let's just make our mutation function
+
+02:29.160 --> 02:33.200
+inside of contact.lazy.jsx a little bit simpler.
+
+02:36.760 --> 02:37.880
+So right now we have to do this stuff
+
+02:37.880 --> 02:40.680
+with like prevent default and create the form data
+
+02:40.680 --> 02:42.760
+and then we can do all this kind of stuff.
+
+02:43.760 --> 02:46.560
+But let's make this a little bit simpler.
+
+02:46.560 --> 02:51.560
+Go to your form down here
+
+02:52.840 --> 02:55.880
+where I have this like on submit function
+
+02:55.880 --> 02:58.160
+and you want to change this to action.
+
+03:03.120 --> 03:03.960
+Okay.
+
+03:06.080 --> 03:09.240
+And then this is going to do all of this funny stuff
+
+03:09.240 --> 03:10.960
+here for you.
+
+03:10.960 --> 03:13.200
+So you can just delete these top two lines
+
+03:13.200 --> 03:15.360
+and turn this E into form data.
+
+03:17.160 --> 03:20.960
+No, I'm just kidding.
+
+03:20.960 --> 03:22.960
+Obviously it's a pretty simple thing
+
+03:22.960 --> 03:25.480
+but it's just a nice little nicety.
+
+03:25.480 --> 03:29.320
+However, we're doing this inside of a React query
+
+03:29.320 --> 03:30.920
+so we wouldn't do this.
+
+03:30.920 --> 03:32.320
+But then you get into a function body
+
+03:32.320 --> 03:34.760
+and you can start doing things like use server in here
+
+03:34.760 --> 03:36.800
+and then you can just kind of like implicitly handle
+
+03:36.800 --> 03:37.960
+all the data on the server.
+
+03:37.960 --> 03:41.040
+And that ends up being like a really nice interface
+
+03:41.040 --> 03:45.720
+to accept data, send to the server,
+
+03:45.720 --> 03:47.920
+the server then saves to the database, right?
+
+03:50.800 --> 03:54.720
+That's really quite it.
+
+03:58.040 --> 04:03.040
+So that's it for contact.
+
+04:03.160 --> 04:06.080
+Let's go do this for order as well.
+
+04:07.440 --> 04:09.000
+So this is a form as well.
+
+04:09.000 --> 04:11.800
+So we're going to go down to our form
+
+04:11.800 --> 04:14.560
+and have all this stuff here.
+
+04:14.560 --> 04:17.400
+I think we really only need to grab the set cart out of here.
+
+04:19.640 --> 04:20.880
+So I'm just going to grab that
+
+04:20.880 --> 04:22.240
+and I'm going to make another function here
+
+04:22.240 --> 04:25.440
+called function add to cart.
+
+04:28.560 --> 04:30.720
+Put that set cart in here.
+
+04:30.720 --> 04:35.720
+And then this is just going to be action equals add to cart.
+
+04:40.360 --> 04:42.240
+Again, it just got a little simpler, right?
+
+04:42.240 --> 04:45.960
+A little bit easier to read, reads a little bit better.
+
+04:45.960 --> 04:48.400
+So yeah, I'm a big fan of this.
+
+04:50.920 --> 04:54.240
+Yeah, and to give you a better example of this,
+
+04:54.240 --> 04:58.000
+imagine I came in here and I had done use server
+
+04:59.440 --> 05:04.440
+and now I can do something like SQL, insert into cart,
+
+05:07.400 --> 05:10.240
+blah, blah, blah, and do all of my stuff on the server
+
+05:10.240 --> 05:12.080
+and that's inserts into the database.
+
+05:13.480 --> 05:15.800
+I remember when Next kind of first started talking about this
+
+05:15.800 --> 05:16.880
+and people started raging.
+
+05:16.880 --> 05:18.760
+It's like, why are you doing SQL in the browser?
+
+05:18.760 --> 05:20.800
+And it's like, we're not, right?
+
+05:20.800 --> 05:21.640
+It's okay.
+
+05:21.640 --> 05:23.120
+Like this is all happening on the server,
+
+05:23.120 --> 05:26.160
+but seeing React components together with SQL
+
+05:26.160 --> 05:27.520
+really just set some people off.
+
+05:27.520 --> 05:30.120
+It's not just this like making this
+
+05:30.120 --> 05:31.920
+a little bit simpler to read.
+
+05:31.920 --> 05:33.120
+They also do some other stuff
+
+05:33.120 --> 05:35.400
+that make it a little bit easier to work with as well.
+
+05:35.400 --> 05:36.840
+So I'm going to show you one of them.
+
+05:36.880 --> 05:41.960
+So I want you to head over to contact
+
+05:43.080 --> 05:45.040
+and we're going to import the top here.
+
+05:46.800 --> 05:51.800
+Use form status from react-dom, not react,
+
+05:53.480 --> 05:55.200
+make sure that you're putting the dash dom there
+
+05:55.200 --> 05:58.920
+because this is going to, forms are particular to the dom,
+
+05:58.920 --> 05:59.760
+right?
+
+05:59.760 --> 06:01.000
+They're not necessarily going to be in react native
+
+06:01.000 --> 06:03.040
+or react three or something like that.
+
+06:03.040 --> 06:05.560
+So that's why this comes from react dom.
+
+06:05.600 --> 06:06.720
+And what's cool about this
+
+06:06.720 --> 06:09.320
+is we have some sort of child component here like this,
+
+06:09.320 --> 06:13.120
+function, contact input.
+
+06:16.000 --> 06:20.760
+And we're going to say, return just input.
+
+06:20.760 --> 06:23.440
+This is kind of a contrived example, but you could see,
+
+06:23.440 --> 06:25.200
+like imagine you have like a input
+
+06:25.200 --> 06:26.800
+that's like a part of your design system
+
+06:26.800 --> 06:28.920
+and has a bunch of CSS around it
+
+06:28.920 --> 06:33.400
+and has like complex errors and complex validation.
+
+06:33.400 --> 06:35.120
+You would have some sort of component that does this,
+
+06:35.120 --> 06:35.960
+right?
+
+06:38.920 --> 06:41.280
+Using form status, we can actually check to see
+
+06:41.280 --> 06:45.200
+if the form submitting is pending, which is useful,
+
+06:45.200 --> 06:46.320
+or submitted.
+
+06:47.720 --> 06:50.720
+So we're going to say disabled equals pending
+
+06:53.120 --> 06:55.080
+and we'll get that from our form status.
+
+06:55.080 --> 06:59.200
+We get name equals props.name.
+
+07:00.800 --> 07:02.840
+Let's get props in coming in here as well.
+
+07:03.400 --> 07:07.600
+Type equals props.type
+
+07:08.520 --> 07:13.520
+and placeholder equals props.placeholder.
+
+07:19.560 --> 07:22.160
+Okay, and now we want to need this pending thing
+
+07:22.160 --> 07:23.000
+and it's really cool.
+
+07:23.000 --> 07:26.120
+All we have to do is say const pending
+
+07:27.120 --> 07:30.600
+equals use form status.
+
+07:30.600 --> 07:32.280
+It doesn't have to have any really concept
+
+07:32.280 --> 07:34.440
+of where the form is coming from.
+
+07:34.440 --> 07:36.680
+It can be super buried, like component, component,
+
+07:36.680 --> 07:38.560
+component, way down in there.
+
+07:38.560 --> 07:40.720
+Because React knows where it is, it's going to say like,
+
+07:40.720 --> 07:43.720
+oh, you're in a form and this form is pending.
+
+07:43.720 --> 07:45.800
+So you are disabled, right?
+
+07:46.960 --> 07:49.600
+And now we just have to put this up here.
+
+07:49.600 --> 07:52.400
+I think you can literally just change this
+
+07:52.400 --> 07:57.400
+to be contact input and type equals text.
+
+07:59.440 --> 08:01.120
+And this one, I think I can just literally just say
+
+08:01.120 --> 08:03.400
+contact input and it's good to go.
+
+08:05.840 --> 08:08.280
+This will work, right?
+
+08:08.280 --> 08:10.840
+Because now whenever I submit this form,
+
+08:10.840 --> 08:12.960
+imagine this takes a long time.
+
+08:12.960 --> 08:14.240
+We don't want people to be typing in there
+
+08:14.240 --> 08:16.760
+while it's pending.
+
+08:16.760 --> 08:19.200
+Anyway, suffice to say, this still makes sense
+
+08:19.200 --> 08:21.960
+and it's still kind of cool that use form status,
+
+08:21.960 --> 08:24.240
+you can pull that in despite the fact
+
+08:24.240 --> 08:26.280
+that this has no concept of where it's being rendered in.
+
+08:26.280 --> 08:28.680
+That's kind of the point of use form status.
+

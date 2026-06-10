@@ -1,0 +1,137 @@
+WEBVTT
+
+00:00.000 --> 00:03.760
+One thing to keep in mind here, like see that it has some of these labeled browser,
+
+00:03.760 --> 00:06.720
+these ones are the ones that actually occur in the browser, and the happy DOM ones,
+
+00:07.600 --> 00:11.680
+you can run those, but it's actually not occurring in the browser. It's still occurring in Node,
+
+00:11.680 --> 00:16.800
+and it's just reporting on stuff that's coming out of it. Someone asked earlier about coverage,
+
+00:16.800 --> 00:18.880
+which is a good point. I don't have those in my notes, but I'm like,
+
+00:20.000 --> 00:23.120
+YOLO, let's check. I think this should work, where you can just say in here as well,
+
+00:23.120 --> 00:34.960
+the same coverage stuff we said. So coverage, text, JSON, and HTML, I think are the three.
+
+00:36.160 --> 00:45.120
+I'm going to put those in both, and we should get the test coverage information out of this as well.
+
+00:45.120 --> 00:59.920
+Let's just rerun all. So I don't think the test coverage stuff necessarily shows up in here.
+
+00:59.920 --> 01:02.400
+Oh yeah, look, we have our checkout here as well. It's kind of cool.
+
+01:04.960 --> 01:10.320
+But in our browser as well, we can still run our npm run coverage, and it should still work.
+
+01:10.960 --> 01:21.040
+Oh, that's my API. npm run start, there we go. And here, npm run coverage should still work.
+
+01:24.400 --> 01:28.320
+It might not work with the browser stuff still. Yeah, so this is kind of the
+
+01:29.520 --> 01:35.920
+Vitest coverage does not work with Playwright. So you have to use Istanbul for this one,
+
+01:36.880 --> 01:45.520
+or just ignore it on your browser tests. Oh, it's just going to be mad at me all the time for it.
+
+01:45.520 --> 01:51.280
+That's annoying. Okay, so it looks like if we wanted to, we would have to switch to Istanbul
+
+01:51.840 --> 01:57.840
+totally to keep our coverage stuff up as well. So not that that's very hard to,
+
+01:57.840 --> 02:13.600
+to, I mean, in for a penny, in for a pound, right? Vitest coverage
+
+02:19.120 --> 02:25.440
+V8. So we'll uninstall that one. And Istanbul.
+
+02:27.840 --> 02:42.400
+All right. Now, YOLO, see what happens.
+
+02:49.200 --> 02:56.880
+Oh, and you have to switch to coverage. This sub requires chromium as well, which is kind of fun.
+
+02:56.880 --> 02:59.920
+We'll set this to chromium anyway, because it'll start up chromium instead of Firefox.
+
+03:02.000 --> 03:12.000
+And then coverage provider. Oh, this has to be. Yeah, that's right. Coverage provider,
+
+03:15.920 --> 03:25.840
+Istanbul, and reporter. Is that what it is? And this has to be text,
+
+03:26.480 --> 03:33.200
+JSON, HTML. And we'll do the exact same thing over here.
+
+03:36.880 --> 03:44.800
+And try one more time. Sure.
+
+03:48.240 --> 03:52.320
+I guess, so I guess you need both of them to do. So run it again.
+
+03:55.840 --> 03:59.360
+There we go. Now we're getting full coverage and all of our tests are working.
+
+04:00.240 --> 04:03.760
+And it just required like nine dependencies. God bless node.
+
+04:06.400 --> 04:10.080
+But one, one cool thing, notice that this is no longer a nightly. This is on chromium,
+
+04:10.080 --> 04:17.040
+which is pretty cool. Right. And same thing. I think it's pretty easy for us to just go ahead
+
+04:17.040 --> 04:22.960
+and throw so you can see like all my coverage stuff is coming out. Okay. As well. So I think this does
+
+04:22.960 --> 04:32.160
+limit us now to be in chromium world, but I think if you want it to, you can say web kit.
+
+04:33.280 --> 04:40.960
+And this will pop up. It should pop up. Yeah, it's going to complain about coverage now.
+
+04:42.560 --> 04:45.920
+But if you, if we didn't have all the cover stuff in here, it would pop up Safari, right?
+
+04:45.920 --> 04:47.520
+You could run all of your tests in Safari as well.
+
+04:48.240 --> 04:51.680
+All right. So we'll, we'll leave it on chromium in Istanbul since we want everything to work
+
+04:51.680 --> 04:58.240
+together. So I wanted to say one more thing here. There's a bit more complicated browser test case.
+
+04:58.240 --> 05:01.920
+If you want to go check it out here, it goes over things like test ID and stuff like that.
+
+05:02.960 --> 05:06.320
+We're going to go ahead and just keep going here. But if you want to play around with another test
+
+05:06.320 --> 05:12.000
+example, this is what you would look at. It tests the header in the browser, which is kind of cool.
+
+05:12.080 --> 05:15.200
+It tests the header in the browser, which is kind of cool.
+
+05:16.160 --> 05:18.400
+So feel free to have a look at that if you're interested.
+
+05:20.800 --> 05:23.840
+And you can also just go ahead and download 14 dash testing,
+
+05:23.840 --> 05:33.200
+because that is all the testing that we're going to talk about.
+

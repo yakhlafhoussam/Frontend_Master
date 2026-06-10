@@ -1,0 +1,197 @@
+WEBVTT
+
+00:00.100 --> 00:02.620
+Okay, let's talk about key really quick.
+
+00:02.620 --> 00:05.920
+Key is here.
+
+00:05.920 --> 00:07.240
+It seems kind of strange.
+
+00:07.240 --> 00:08.960
+Let's just delete it here for a second.
+
+00:08.960 --> 00:10.760
+Is this actually, oh yeah.
+
+00:10.760 --> 00:13.800
+Good for you, React, for remembering to tell me that.
+
+00:14.940 --> 00:16.840
+But it's gonna yell at you here in the console as well.
+
+00:16.840 --> 00:18.220
+It says that each thing should have a unique key.
+
+00:18.220 --> 00:21.220
+Probably seen that several times throughout the course here.
+
+00:21.220 --> 00:23.080
+What is this all about?
+
+00:23.080 --> 00:25.560
+All right, imagine you have
+
+00:25.560 --> 00:28.220
+extremely complicated components, right?
+
+00:28.220 --> 00:30.300
+And they render a bunch of images
+
+00:30.300 --> 00:32.220
+and text and stuff like that.
+
+00:32.220 --> 00:34.180
+And then the user refilters,
+
+00:34.180 --> 00:36.860
+and it just swaps like two components.
+
+00:36.860 --> 00:38.900
+Like what was here is now down here,
+
+00:38.900 --> 00:40.700
+and what is here is now up here.
+
+00:40.700 --> 00:42.580
+React doesn't have a concept of like
+
+00:42.580 --> 00:44.020
+what was here and what was where.
+
+00:44.020 --> 00:46.100
+And so what it's gonna do is it's going to tear down
+
+00:46.100 --> 00:49.500
+everything and rebuild everything from the ground up again.
+
+00:50.620 --> 00:52.500
+Sometimes that's okay.
+
+00:53.460 --> 00:55.620
+Sometimes it's not okay.
+
+00:55.620 --> 00:57.740
+What key does when you're doing like these kind of like
+
+00:57.740 --> 00:59.780
+map sort of things like we're doing here,
+
+00:59.780 --> 01:02.280
+and there's a lot of peer components next to each other,
+
+01:02.280 --> 01:04.060
+that could be rearranged.
+
+01:05.220 --> 01:07.820
+We don't rearrange these, but in theory we could.
+
+01:10.140 --> 01:13.860
+What key does is saying like here is a unique thing
+
+01:13.860 --> 01:15.800
+that's tied to this object.
+
+01:16.780 --> 01:20.100
+So like what's unique to a pizza, it's ID, right?
+
+01:20.100 --> 01:22.220
+And so that way if we swap two things, it's like,
+
+01:22.220 --> 01:25.100
+oh, you had this here and now you have it here
+
+01:25.100 --> 01:27.940
+because I have this like identifier that I can look at
+
+01:27.940 --> 01:30.180
+to see like this move from here to here.
+
+01:30.180 --> 01:31.660
+I'm just gonna swap the components
+
+01:31.660 --> 01:34.620
+as opposed to tearing everything down and rebuilding it.
+
+01:34.620 --> 01:36.020
+Right, does that make sense?
+
+01:37.000 --> 01:39.060
+So that's why it just yells at you constantly
+
+01:39.060 --> 01:40.500
+like please put a key on here.
+
+01:40.500 --> 01:42.920
+It's just a habit you wanna get into.
+
+01:42.920 --> 01:46.080
+I will say here is a very common misstep here.
+
+01:47.780 --> 01:49.600
+What happens if I grab the index?
+
+01:50.600 --> 01:52.640
+Why is this not okay?
+
+01:54.720 --> 01:56.000
+It's not stable.
+
+01:56.000 --> 01:57.320
+It's not tied to the object,
+
+01:57.320 --> 01:59.080
+which I think is what you're getting at, right?
+
+01:59.080 --> 02:04.080
+So if I move pepperoni from index zero to index five,
+
+02:04.760 --> 02:07.320
+pepperoni and zero weren't associated,
+
+02:07.320 --> 02:10.520
+so it's gonna think that as like, oh, okay,
+
+02:10.520 --> 02:12.920
+pepperoni or five stayed in the same place,
+
+02:12.920 --> 02:13.760
+so I'm not gonna change anything.
+
+02:13.760 --> 02:16.320
+And it actually did change, right?
+
+02:16.880 --> 02:19.160
+So that's why you can't do it that way
+
+02:19.160 --> 02:23.160
+because the index and the object are not tied to each other.
+
+02:23.160 --> 02:25.920
+There's no relation between those two things.
+
+02:26.880 --> 02:28.280
+That being said, there's sometimes,
+
+02:28.280 --> 02:31.160
+there's just not a key to associate with something.
+
+02:31.160 --> 02:34.840
+Sometimes it just doesn't matter if it gets reorganized.
+
+02:34.840 --> 02:36.320
+So you'll find me doing this sometimes
+
+02:36.320 --> 02:37.920
+where I just want the linter to shut up
+
+02:37.920 --> 02:39.680
+and get out of my way, right?
+
+02:39.680 --> 02:43.320
+You can do this this way and put the index there.
+
+02:43.320 --> 02:47.480
+So I'm gonna do this this way and put the index there.
+

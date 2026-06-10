@@ -1,0 +1,293 @@
+WEBVTT
+
+00:00.000 --> 00:02.700
+So, that's enough on class components.
+
+00:02.700 --> 00:05.300
+We shall never speak of it again.
+
+00:05.300 --> 00:10.420
+Let's go actually use it though.
+
+00:10.420 --> 00:14.180
+Let's go to pass order route.
+
+00:14.180 --> 00:18.180
+We're going to import our error boundary at the top.
+
+00:18.180 --> 00:25.380
+Import error boundary from error boundary and we're going to, one interesting thing
+
+00:25.380 --> 00:33.160
+about error boundaries, because of the way that the errors work, you can't put the error
+
+00:33.160 --> 00:34.160
+boundary here.
+
+00:34.160 --> 00:36.680
+So, I can't just say like error boundary here.
+
+00:36.680 --> 00:38.340
+Why?
+
+00:38.340 --> 00:42.200
+Because if this component has an error, the whole component blows up, right?
+
+00:42.200 --> 00:46.400
+So, I need to put it in a function component above it, right, so that I can catch things
+
+00:46.400 --> 00:47.400
+inside of it.
+
+00:47.400 --> 00:49.660
+Does that make sense?
+
+00:49.660 --> 00:52.680
+It's like you have to put things inside of the try for the catch to work.
+
+00:52.680 --> 00:54.440
+That's essentially what I'm saying.
+
+00:55.020 --> 01:00.020
+So, let me show you what I mean and then you can give me those perpex glances again.
+
+01:00.020 --> 01:03.420
+So, I'm going to put a, let's just do it above.
+
+01:03.420 --> 01:04.420
+I think I have it above.
+
+01:04.420 --> 01:05.660
+So, it's a little bit more clear.
+
+01:05.660 --> 01:17.620
+So, I'm going to write another function here called error boundary wrapped past order routes.
+
+01:17.620 --> 01:25.440
+And you're just going to say return error boundary and then inside of that past order
+
+01:25.440 --> 01:33.280
+route and then error boundary is going to be the thing that we actually export.
+
+01:33.280 --> 01:42.880
+So, the error boundary can only catch things that are being rendered inside of it.
+
+01:42.880 --> 01:47.520
+And so, if it's on the same level of this, so if it was actually inside of past order,
+
+01:47.540 --> 01:49.660
+it wouldn't get the opportunity to catch the error.
+
+01:49.660 --> 01:53.260
+So, it has to be outside of it.
+
+01:53.260 --> 01:57.020
+Which is why we have to have two components here and then we're actually shipping the
+
+01:57.020 --> 01:59.460
+error boundary one.
+
+01:59.460 --> 02:07.540
+Now, some of you might say, but Brian, what if there's being props passed into this?
+
+02:07.540 --> 02:11.500
+In this case, we're not passing any props into it, but what if we were, right?
+
+02:11.500 --> 02:18.480
+So, all you have to do here is we take in props here at this level and then there's
+
+02:18.480 --> 02:21.280
+this something here called the spread operator that works.
+
+02:21.280 --> 02:26.560
+And we're going to say whatever props we got here, just pass them on through.
+
+02:26.560 --> 02:28.680
+Now, why didn't I teach you this earlier?
+
+02:28.680 --> 02:31.720
+You're probably thinking, spread operator looks pretty cool.
+
+02:31.720 --> 02:34.400
+Why don't we use that a lot of places?
+
+02:34.400 --> 02:38.240
+And I intentionally do that because I don't want you to use it that frequently, right?
+
+02:38.260 --> 02:42.660
+It is nice that it's just saying like, hey, here's a grab bag of things, kind of spread
+
+02:42.660 --> 02:43.660
+them out.
+
+02:43.660 --> 02:51.140
+So, imagine this props, for example, was something like, I don't even comment this, it could
+
+02:51.140 --> 03:02.340
+be like, stuff, cool, other stuff, not cool, right?
+
+03:02.720 --> 03:10.440
+You could come in here and actually just do stuff equals props dot stuff and other stuff
+
+03:10.440 --> 03:14.360
+equals props dot other stuff, right?
+
+03:14.360 --> 03:19.120
+And you could go be more explicit about that, that's totally fine as well, but you might
+
+03:19.120 --> 03:23.920
+be like, it looks nicer to do just the spread operator.
+
+03:23.920 --> 03:31.160
+This makes it so opaque to read though, so this, for things that you're actually passing
+
+03:31.180 --> 03:37.660
+stuff into explicitly, I want to see this because it makes me know this is the API that
+
+03:37.660 --> 03:42.540
+I'm adhering to, these are like where the data from is coming from and where it's going.
+
+03:42.540 --> 03:46.980
+Again, the explicitness of React is one of its superpowers.
+
+03:46.980 --> 03:58.020
+And so by hiding it behind dot dot dot props like this, you make it pretty opaque of like,
+
+03:58.020 --> 04:01.560
+what is coming from where and where is it going?
+
+04:01.560 --> 04:07.320
+The only reason in this particular case that I am okay with the spread operator is that
+
+04:07.320 --> 04:11.920
+this particular component is meant to be a pass through, it's actually not meant to know
+
+04:11.920 --> 04:15.040
+about what's coming into it and where it's going, right?
+
+04:15.040 --> 04:18.760
+It's literally just meant to be going for like connecting two pipes together.
+
+04:18.760 --> 04:23.720
+And so this actually makes this less clear, right?
+
+04:23.720 --> 04:27.320
+And this is clear, this is a clear communication to the future developer, the reading this,
+
+04:27.320 --> 04:29.700
+which is likely yourself, right?
+
+04:29.700 --> 04:33.540
+That this isn't supposed to know where it's coming through it, right?
+
+04:33.540 --> 04:34.860
+It's just supposed to be the pass through.
+
+04:34.860 --> 04:43.980
+Do you know why AirBoundaries were left out of the new React or why they still require
+
+04:43.980 --> 04:45.460
+the classical component?
+
+04:45.460 --> 04:48.580
+It's a good question.
+
+04:48.580 --> 04:54.260
+My reading on the situation, which is Brian reading between the lines, is they didn't
+
+04:54.320 --> 05:00.280
+really have a elegant way to handle it that was better than doing it in the class component
+
+05:00.280 --> 05:01.280
+way.
+
+05:01.280 --> 05:04.800
+Because it doesn't have a get derived state from, it doesn't have all the things that
+
+05:04.800 --> 05:08.240
+a class will have.
+
+05:08.240 --> 05:11.720
+And so because of that, they decided like, well, we're going to leave in class components.
+
+05:11.720 --> 05:18.260
+They didn't have any intent to deprecate class components anyway.
+
+05:18.640 --> 05:25.400
+They left it that because, yeah, they would have made the library worse by trying to force
+
+05:25.400 --> 05:27.680
+it into this other pattern.
+
+05:27.680 --> 05:32.440
+And because they published that like React AirBoundary component, everyone can just use
+
+05:32.440 --> 05:33.440
+that.
+
+05:33.440 --> 05:37.240
+And can I just put an AirBoundary in my route?
+
+05:37.240 --> 05:38.240
+Sure can.
+
+05:38.240 --> 05:39.240
+People do it.
+
+05:39.240 --> 05:41.440
+And just have one AirBoundary handle everything?
+
+05:41.440 --> 05:44.280
+Yeah, you could definitely, I would put it here probably at root.
+
+05:45.260 --> 05:52.620
+Yeah, I would put it here and you could just do like AirBoundary right there, catch everything.
+
+05:52.620 --> 05:55.860
+If that was appropriate for you, yeah, hell yeah, absolutely.
+
+05:55.860 --> 05:59.980
+So let's actually like, make it work because, or like, try it.
+
+06:08.980 --> 06:09.980
+There you go.
+
+06:09.980 --> 06:14.480
+OMG, LOL, WTF.
+
+06:14.480 --> 06:17.480
+Is that our AirBoundary?
+
+06:17.480 --> 06:21.740
+There you go.
+
+06:21.740 --> 06:24.360
+So uh-oh, there was an error with this page.
+
+06:24.360 --> 06:27.100
+Click here to go back to the home page, right?
+
+06:27.100 --> 06:35.720
+So what you saw before, before my page had reloaded, was Vite catching my AirBoundary.
+
+06:35.720 --> 06:37.840
+But here, this actually makes sense, right?
+
+06:37.840 --> 06:40.040
+This actually is like a nice error page.
+
+06:40.040 --> 06:42.920
+There was an error, click here to go back to the home page and you caught everything
+
+06:42.920 --> 06:46.240
+and now it's like, it's caught in the flow of the app and everything looks like it works
+
+06:46.240 --> 06:47.240
+okay.
+
+06:47.240 --> 06:53.140
+Yeah, one of the advantages of putting this around the app is I think it would catch 404s,
+
+06:53.140 --> 06:54.140
+which would be nice, right?
+

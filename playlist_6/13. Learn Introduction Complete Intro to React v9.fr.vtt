@@ -1,0 +1,636 @@
+WEBVTT
+
+
+00:00.680 --> 00:05.440
+Mais parlons un peu de ce que nous avons fait ici.
+
+00:05.440 --> 00:06.440
+Nous avons un bon de commande.
+
+00:06.440 --> 00:08.080
+Cela finira par paraître plus joli
+
+00:08.080 --> 00:10.440
+une fois que nous aurons toutes les pièces assemblées.
+
+00:14.480 --> 00:17.280
+Je veux que vous essayiez de sélectionner un autre type de pizza.
+
+00:21.500 --> 00:23.360
+Ça ne marche pas, n'est-ce pas ?
+
+00:23.360 --> 00:28.360
+Cela a cassé le navigateur, ce qui est en fait assez difficile à faire, n'est-ce pas ?
+
+00:28.360 --> 00:32.360
+Comme le navigateur fonctionne très bien pour créer ce type de formulaires,
+
+00:32.360 --> 00:35.360
+et quoi que nous ayons fait avec React, cela n'a pas fonctionné,
+
+00:35.360 --> 00:38.360
+ce qui semble plutôt contre-productif, non ?
+
+00:38.360 --> 00:39.360
+Même chose avec la taille de la pizza.
+
+00:39.360 --> 00:41.360
+Cliquez sur l'un de ces autres boutons.
+
+00:41.360 --> 00:45.360
+Quoi qu’il en soit, vous choisirez toujours petit ou grand.
+
+00:47.360 --> 00:48.360
+Et c'est ennuyeux, non ?
+
+00:48.360 --> 00:51.360
+Nous nous attendons à ce que les boutons radio fonctionnent de manière à ce que vous puissiez sélectionner petit, moyen,
+
+00:52.360 --> 00:54.360
+ou grand.
+
+00:54.360 --> 00:57.360
+Eh bien, expliquez-moi pourquoi cela se produit.
+
+01:00.360 --> 01:01.360
+D'accord.
+
+01:01.360 --> 01:06.360
+Alors tu as du pepperoni ici, n'est-ce pas ?
+
+01:06.360 --> 01:07.360
+Quelle est la valeur ici.
+
+01:07.360 --> 01:10.360
+C’est pourquoi il choisit celui-là.
+
+01:10.360 --> 01:13.360
+Maintenant, je clique sur Hawaïen, n'est-ce pas ?
+
+01:13.360 --> 01:17.360
+Si je clique sur Hawaïen ici, que se passe-t-il ?
+
+01:17.360 --> 01:20.360
+React dit, hé, un événement s'est produit.
+
+01:20.360 --> 01:22.360
+L'utilisateur a fait quelque chose.
+
+01:22.360 --> 01:26.360
+Il est temps pour nous de restituer ce composant, n'est-ce pas ?
+
+01:26.360 --> 01:28.360
+Donc, cela passe et restitue ce composant.
+
+01:28.360 --> 01:31.360
+Il dit, oh, type pizza, pepperoni, n'est-ce pas ?
+
+01:31.360 --> 01:35.360
+Et donc il définit la valeur sur le type de pizza, pepperoni.
+
+01:35.360 --> 01:38.360
+Ainsi, même si l'utilisateur clique sur autre chose,
+
+01:38.360 --> 01:40.360
+ça le remet immédiatement là où il était,
+
+01:40.360 --> 01:43.360
+parce que ce n'est pas dynamique, n'est-ce pas ?
+
+01:43.360 --> 01:47.360
+Ceci est simplement attribué, et cela reste ainsi.
+
+01:47.360 --> 01:50.360
+Nous devons donc attribuer un type de pizza.
+
+01:50.360 --> 01:53.360
+être quelque chose de différent,
+
+01:53.360 --> 01:57.360
+ou alors, ce sera toujours ainsi.
+
+01:57.360 --> 02:00.360
+C'est juste une façon détournée pour moi de vous expliquer et de vous montrer
+
+02:00.360 --> 02:04.360
+cette liaison de données bidirectionnelle n'est pas gratuite dans React.
+
+02:04.360 --> 02:05.360
+Il existe d'autres cadres.
+
+02:05.360 --> 02:07.360
+Et c'est célèbre, Angular 1, à droite,
+
+02:07.360 --> 02:10.360
+était un grand cadre de liaison de données bidirectionnel,
+
+02:10.360 --> 02:12.360
+et ce n'est tout simplement plus vrai.
+
+02:12.360 --> 02:16.360
+Nous avons trouvé que c'était très amusant à écrire et très mauvais à maintenir,
+
+02:16.360 --> 02:18.360
+parce que ça devient de la magie très noire,
+
+02:18.360 --> 02:22.360
+genre, d'où vient cette variable ?
+
+02:22.360 --> 02:24.360
+Cela fait partie de la magie de React, c'est qu'il est verbeux.
+
+02:24.360 --> 02:27.360
+Je ne vais pas vous dire que ce n'est pas le cas...
+
+02:27.360 --> 02:32.360
+Cela pourrait être plus court ou plus concis ou quelque chose comme ça.
+
+02:32.360 --> 02:34.360
+C'est un peu moins amusant d'écrire,
+
+02:34.360 --> 02:37.360
+et c'est beaucoup plus amusant à entretenir.
+
+02:37.360 --> 02:38.360
+Et au fil de ma carrière,
+
+02:38.360 --> 02:42.360
+J’ai trouvé que cela vaut vraiment son pesant d’or, n’est-ce pas ?
+
+02:43.360 --> 02:46.360
+Je ne veux pas optimiser pendant quelques heures
+
+02:46.360 --> 02:47.360
+Je vais passer à écrire quelque chose.
+
+02:47.360 --> 02:49.360
+Je veux optimiser pour les centaines d'heures
+
+02:49.360 --> 02:53.360
+Je vais dépenser pour entretenir quelque chose.
+
+02:53.360 --> 02:56.360
+Okay, voilà donc mon discours expliquant pourquoi je pense que ça va,
+
+02:56.360 --> 03:01.360
+malgré le fait que c'est un peu ennuyeux.
+
+03:01.360 --> 03:03.360
+Intéressant si vous essayez quelque chose comme Solid.js,
+
+03:03.360 --> 03:06.360
+qui est très similaire à React à bien des égards.
+
+03:06.360 --> 03:10.360
+Ils ont trouvé un moyen de le faire fonctionner avec quelque chose appelé signaux.
+
+03:10.360 --> 03:12.360
+Je pense que les signaux sont également dans Preact maintenant.
+
+03:12.360 --> 03:14.360
+Je n'ai pas travaillé chez Preact depuis longtemps.
+
+03:14.360 --> 03:17.360
+Mais de toute façon, il suffit de dire :
+
+03:17.360 --> 03:19.360
+d'autres cadres ont des approches différentes à ce sujet,
+
+03:19.360 --> 03:22.360
+mais React adopte une approche très simple, très...
+
+03:22.360 --> 03:24.360
+Je veux l'appeler JavaScript-y,
+
+03:24.360 --> 03:27.360
+qu'ils travaillent juste en quelque sorte avec JavaScript
+
+03:27.360 --> 03:30.360
+pour le faire fonctionner comme JavaScript fonctionne normalement,
+
+03:30.360 --> 03:32.360
+au lieu d'avoir de la magie noire autour du cadre
+
+03:32.360 --> 03:34.360
+pour que cela fonctionne différemment.
+
+03:34.360 --> 03:39.360
+Alors faisons en sorte que cela fonctionne avec l'état, n'est-ce pas ?
+
+03:39.360 --> 03:42.360
+Nous allons utiliser quelque chose appelé un crochet,
+
+03:42.360 --> 03:49.360
+et nous allons faire cette chose appelée importer l'état d'utilisation depuis React.
+
+03:49.360 --> 03:52.360
+Tout ce que vous voyez utiliser dans React,
+
+03:52.360 --> 03:56.360
+l'alarme devrait sonner dans ta tête, c'est comme si c'était un crochet.
+
+03:56.360 --> 03:59.360
+D'accord?
+
+03:59.360 --> 04:02.360
+Donc au lieu de ces deux-là,
+
+04:02.360 --> 04:09.360
+disons const type de pizza définir le type de pizza
+
+04:09.360 --> 04:14.360
+est égal à l'état d'utilisation,
+
+04:14.360 --> 04:20.360
+puis vous lui donnez la première valeur par défaut, pepperoni.
+
+04:20.360 --> 04:22.360
+Même chose avec la taille d'une pizza.
+
+04:22.360 --> 04:29.360
+const taille de pizza définir la taille de la pizza
+
+04:29.360 --> 04:32.360
+est égal à l'état d'utilisation,
+
+04:32.360 --> 04:34.360
+et ce que vous voulez que soit la valeur par défaut.
+
+04:34.360 --> 04:36.360
+Nous l'avions en médium, nous allons simplement le laisser en médium,
+
+04:36.360 --> 04:38.360
+mais tu pourrais le changer en grand si, je ne sais pas,
+
+04:38.360 --> 04:43.360
+vous essayez d'augmenter vos marges ou quelque chose comme ça.
+
+04:43.360 --> 04:45.360
+Cela concerne aussi, bien sûr, le capitalisme.
+
+04:45.360 --> 04:48.360
+Je ne sais pas si je te l'ai dit, mais...
+
+04:48.360 --> 04:50.360
+Très bien.
+
+04:50.360 --> 04:55.360
+Alors maintenant, nous avons ce truc d'état d'utilisation,
+
+04:55.360 --> 04:59.360
+mais cela permet désormais de définir le type de pizza sur quelque chose de différent.
+
+04:59.360 --> 05:01.360
+Cela rend ce composant React avec état,
+
+05:01.360 --> 05:06.360
+mais nous devons quand même appeler ce type de pizza défini quelque part
+
+05:06.360 --> 05:09.360
+pour que nous puissions le changer.
+
+05:09.360 --> 05:14.360
+Donc, la façon dont nous allons procéder est de procéder à notre sélection ici.
+
+05:14.360 --> 05:19.360
+D'ailleurs, ceux-ci sont simplement mis en évidence parce qu'ils ne sont utilisés nulle part,
+
+05:19.360 --> 05:22.360
+mais nous le ferons dans une seconde.
+
+05:22.360 --> 05:24.360
+D'accord.
+
+05:24.360 --> 05:28.360
+Je vais donc juste mettre un peu d'espace ici pour que vous puissiez voir ce que j'écris.
+
+05:28.360 --> 05:32.360
+Nous ferons quelque chose ici appelé au changement,
+
+05:32.360 --> 05:38.360
+et la seule chose que nous allons faire, c'est dire
+
+05:38.360 --> 05:42.360
+E, qui ressemble à un événement de navigateur normal, n'est-ce pas ?
+
+05:42.360 --> 05:44.360
+Vous pourriez appeler cet événement.
+
+05:44.360 --> 05:47.360
+Depuis tant d'années que je fais ça, je l'appelle toujours E,
+
+05:47.360 --> 05:50.360
+donc c'est vraiment à vous de décider.
+
+05:50.360 --> 05:53.360
+Et nous allons juste donner cette fonction anonyme qui dit
+
+05:53.360 --> 05:59.360
+définissez le type de pizza sur E.target.value.
+
+06:03.360 --> 06:09.360
+Cela signifie donc que chaque fois qu'un événement de changement se produit lors de la sélection,
+
+06:09.360 --> 06:11.360
+appelez cette fonction.
+
+06:11.360 --> 06:15.360
+Cette fonction prend en compte un événement,
+
+06:15.360 --> 06:18.360
+et il appelle définir le type de pizza avec la valeur target.value.
+
+06:18.360 --> 06:21.360
+La cible sera l'une de ces options, n'est-ce pas,
+
+06:21.360 --> 06:23.360
+parce que c'est ce qui va réellement être le,
+
+06:23.360 --> 06:26.360
+eh bien, je pense que la cible est en fait la sélection, sans y penser,
+
+06:26.360 --> 06:29.360
+mais la valeur va changer, non ?
+
+06:29.360 --> 06:31.360
+La valeur sera donc quelle que soit l'option,
+
+06:31.360 --> 06:33.360
+donc cette valeur sera celle définie par l'utilisateur,
+
+06:33.360 --> 06:35.360
+et nous appellerons cela avec le type de pizza défini,
+
+06:35.360 --> 06:38.360
+ce qui finira alors par changer le type de pizza ici,
+
+06:38.360 --> 06:40.360
+qui lance un nouveau rendu,
+
+06:40.360 --> 06:45.360
+et maintenant, cela va rendre correctement la même chose.
+
+06:45.360 --> 06:48.360
+Donc si nous définissons cela, la taille ne fonctionnera toujours pas,
+
+06:48.360 --> 06:51.360
+nous ne l'avons pas encore fait, mais essayons celui-ci.
+
+06:51.360 --> 06:56.360
+Nous devrions pouvoir définir cela sur autre chose.
+
+06:56.360 --> 07:01.360
+Félicitations, nous l'avons rétabli, n'est-ce pas ?
+
+07:01.360 --> 07:06.360
+Très bien, donc ça s'appelle un crochet.
+
+07:06.360 --> 07:09.360
+Quelques règles autour du Fight Club.
+
+07:09.360 --> 07:11.360
+On ne parle pas de Fight Club.
+
+07:11.360 --> 07:15.360
+Quelques règles autour des crochets.
+
+07:15.360 --> 07:21.360
+Vous parlez de crochets, vous pouvez parler de crochets, c'est très bien.
+
+07:21.360 --> 07:23.360
+Ils ne peuvent jamais être à l'intérieur de conditions,
+
+07:23.360 --> 07:25.360
+alors ne faites jamais quelque chose comme ça.
+
+07:25.360 --> 07:30.360
+Si quelque chose est vrai, alors utilisez l'état.
+
+07:30.360 --> 07:34.360
+C'est un grand non-non, car la seule chose à propos des crochets
+
+07:34.360 --> 07:38.360
+c'est qu'ils dépendent d'être appelés dans le même ordre à chaque fois.
+
+07:38.360 --> 07:41.360
+Donc si je faisais un conditionnel là,
+
+07:41.360 --> 07:45.360
+alors il me les donnait parfois dans le désordre,
+
+07:45.360 --> 07:48.360
+donc en réalité, ce qui se passerait, c'est que parfois le médium apparaîtrait sous forme de pizza,
+
+07:48.360 --> 07:51.360
+ce qui n'est pas ce que vous voulez.
+
+07:51.360 --> 07:57.360
+Donc, en d'autres termes, les crochets ne rentrent jamais à l'intérieur des boucles for,
+
+07:57.360 --> 08:02.360
+les boucles while, font des boucles, elles ne rentrent jamais dans les conditions,
+
+08:02.360 --> 08:04.360
+ils sont toujours au plus haut niveau.
+
+08:04.360 --> 08:06.360
+Même si vous ne les utilisez pas, ce n'est pas grave,
+
+08:06.360 --> 08:08.360
+vous ne les mettez jamais au conditionnel.
+
+08:08.360 --> 08:12.360
+Vous n'êtes jamais obligé de le faire, alors parfois vous ignorez un crochet et c'est très bien,
+
+08:12.360 --> 08:16.360
+mais vous devez toujours l'appeler dans le même ordre à chaque fois.
+
+08:16.360 --> 08:23.360
+Il existe également des règles de peluchage qui vous aideront dans ce domaine.
+
+08:23.360 --> 08:25.360
+Alors pourquoi les appelle-t-on des crochets ?
+
+08:25.360 --> 08:30.360
+Dans ma tête, je n'ai jamais demandé ça à personne.
+
+08:30.360 --> 08:33.360
+c'est juste ce qui me vient à l'esprit, est-ce qu'il y a un crochet
+
+08:33.360 --> 08:35.360
+qui est appelé dans le même ordre à chaque fois,
+
+08:35.360 --> 08:37.360
+donc c'est comme si on ramassait un crochet,
+
+08:37.360 --> 08:40.360
+et ils sont récupérés dans le même ordre à chaque fois
+
+08:40.360 --> 08:46.360
+dans ces fonctions de rendu.
+
+08:46.360 --> 08:51.360
+Oui, les hooks reposent sur un ordre strict, nous en avons parlé.
+
+08:51.360 --> 08:53.360
+Oh ouais, certains d'entre vous pensent peut-être,
+
+08:53.360 --> 08:55.360
+cela semble être une API étrange, non ?
+
+08:55.360 --> 08:57.360
+C'est une API un peu bizarre si on y pense,
+
+08:57.360 --> 09:00.360
+Je suis tellement habitué à le voir si souvent que, encore une fois,
+
+09:00.360 --> 09:03.360
+Je suis une grenouille qui a bouilli, non ?
+
+09:03.360 --> 09:07.360
+Mais cela vous renvoie simplement un ensemble de deux choses,
+
+09:07.360 --> 09:11.360
+la chose réelle, puis le paramètre pour la chose réelle, n'est-ce pas ?
+
+09:11.360 --> 09:14.360
+C'est tout ce que c'est, n'est-ce pas ?
+
+09:14.360 --> 09:24.360
+Donc, vous pourriez certainement dire que const pizza hook est égal à l'état d'utilisation, n'est-ce pas ?
+
+09:24.360 --> 09:36.360
+Et puis vous diriez que le type de pizza const est égal au crochet à pizza zéro,
+
+09:36.360 --> 09:44.360
+puis définissez le type de pizza, n'est-ce pas ?
+
+09:44.360 --> 09:50.360
+Cette seule ligne est l'équivalent de ces trois lignes,
+
+09:50.360 --> 09:56.360
+mais nous sommes tous très paresseux et nous l'écrivons tous de cette façon.
+
+09:56.360 --> 10:00.360
+L'état d'utilisation est de loin celui le plus courant que vous utiliserez,
+
+10:00.360 --> 10:03.360
+mais je vais vous montrer quelques autres crochets,
+
+10:03.360 --> 10:08.360
+mais sachez simplement que l'état d'utilisation est de loin le plus courant.
+
+10:08.360 --> 10:11.360
+Quelqu'un en ligne vous demande simplement si vous pouvez vous connecter à la console.
+
+10:11.360 --> 10:14.360
+juste pour montrer le changement d’état.
+
+10:14.360 --> 10:23.360
+Bien sûr.
+
+10:23.360 --> 10:28.360
+Type, taille de pizza.
+
+10:28.360 --> 10:31.360
+D'accord.
+
+10:31.360 --> 10:38.360
+Mettons ça à la poubelle.
+
+10:38.360 --> 10:43.360
+Ainsi, vous pouvez voir chaque fois qu'un événement utilisateur se produit ici,
+
+10:43.360 --> 10:47.360
+il s'agit en fait d'un nouveau rendu.
+
+10:47.360 --> 10:51.360
+Il est intéressant qu'il soit suffisamment intelligent pour savoir que les événements qui se produisent
+
+10:51.360 --> 10:55.360
+dans d'autres parties des DOM ne sont pas observées,
+
+10:55.360 --> 10:58.360
+et donc il ne capture pas ces événements.
+
+10:58.360 --> 11:00.360
+React est devenu beaucoup plus intelligent au fil des années.
+
+11:00.360 --> 11:03.360
+Ils déclenchaient un nouveau rendu et ce n'est plus le cas.
+
+11:03.360 --> 11:12.360
+Alors faisons en sorte que cela fonctionne également avec la taille de la pizza.
+
+11:12.360 --> 11:18.360
+Donc, avec la taille de la pizza, il existe plusieurs façons de procéder.
+
+11:18.360 --> 11:24.360
+Je vais vous montrer la manière paresseuse dont le linter se plaindra.
+
+11:24.360 --> 11:29.360
+La diffusion d'événements fonctionne toujours également dans React.
+
+11:29.360 --> 11:35.360
+Donc, en théorie, vous pouvez procéder de cette façon.
+
+11:35.360 --> 11:55.360
+C'est la même chose, E définit la taille de la pizza sur E.target.value.
+
+11:55.360 --> 11:57.360
+Et puis ça commencera à fonctionner, n'est-ce pas,
+
+11:57.360 --> 12:01.360
+nous avons un écouteur d'événement sur l'élément parent, c'est vrai,
+
+12:01.360 --> 12:04.360
+et donc il n'écoute qu'une seule fois.
+
+12:04.360 --> 12:08.360
+React n'aime pas ça car il le considère comme inaccessible,
+
+12:08.360 --> 12:12.360
+ce que vous ne voulez généralement pas changer de gestionnaire sur des divs similaires
+
+12:12.360 --> 12:16.360
+parce que les lecteurs d'écran et tout ce genre de choses ne peuvent pas accéder aux divs,
+
+12:16.360 --> 12:20.360
+ils accèdent aux entrées, n'est-ce pas.
+
+12:20.360 --> 12:22.360
+Je pense que dans ce cas particulier, cela n'aurait pas d'importance
+
+12:22.360 --> 12:24.360
+parce que ça fait toujours bouillonner l'événement quoi qu'il arrive,
+
+12:24.360 --> 12:28.360
+et donc vous pouvez avoir un événement de changement sur une entrée et cela fonctionnera toujours.
+
+12:28.360 --> 12:33.360
+Mais apaisons simplement les dieux pelucheux
+
+12:33.360 --> 12:38.360
+et nous allons mettre cela sur toutes les entrées individuelles.
+
+12:38.360 --> 12:43.360
+C'est aussi plus explicite, donc nous allons simplement mettre ceci
+
+12:43.360 --> 12:48.360
+trois moments différents sur tout cela.
+
+12:48.360 --> 12:51.360
+Maintenant, vous pourriez dire, eh bien, ai-je besoin de E.target.value
+
+12:51.360 --> 12:56.360
+ou devrais-je faire S ici comme ça ?
+
+12:56.360 --> 13:01.360
+Tomate, tomate, même chose.
+
+13:01.360 --> 13:06.360
+Parce que la valeur vient d’ici, n’est-ce pas.
+
+13:06.360 --> 13:09.360
+Mais dans les deux cas ça marche.
+

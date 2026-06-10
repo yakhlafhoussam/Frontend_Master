@@ -1,0 +1,626 @@
+WEBVTT
+
+00:00.000 --> 00:06.840
+Let's do some experimental stuff experimental browser stuff. That's actually probably even more dangerous
+
+00:07.220 --> 00:11.060
+So everything that I just taught you a hundred percent of it applicable today
+
+00:11.060 --> 00:14.540
+You know go forth to your companies and use everything that I just taught you about b-test
+
+00:16.180 --> 00:19.720
+This is all tried-and-true science so far. I'm going to show you what's what's coming next
+
+00:20.940 --> 00:24.760
+And I almost talked to this to you as like that the way to go no matter what
+
+00:25.120 --> 00:28.420
+But it's just not stable enough for me to recommend yet, so I'm not going to
+
+00:29.140 --> 00:34.700
+But it's it's soon the answer is soon. This will be stable enough for you to do so I want you to know about it
+
+00:35.100 --> 00:37.100
+so come into your
+
+00:37.900 --> 00:43.440
+Project and we're going to do npm install dash capital D at V test slash browser at
+
+00:44.940 --> 00:46.940
+2.1 point three
+
+00:47.260 --> 00:49.260
+We're going to need playwright
+
+00:49.620 --> 00:51.620
+Which is a Microsoft thing?
+
+00:52.220 --> 00:58.100
+If you've heard of puppeteer. This is kind of a spiritual successor to puppeteer. It's literally the same person
+
+00:59.260 --> 01:00.540
+Pavel
+
+01:00.540 --> 01:05.980
+He created puppeteer at Google and then Microsoft stole him and then he created playwright at Microsoft
+
+01:06.220 --> 01:09.060
+So he was just kind of continuing on the line of work
+
+01:09.980 --> 01:11.980
+V test dash browser
+
+01:12.380 --> 01:19.020
+Dash react and you can see how experimental this is it's zero point zero point one so it is
+
+01:19.620 --> 01:21.620
+experimental and not done yet
+
+01:22.220 --> 01:29.300
+So I'll also say like this this one is in particular liable to be broken by the time that you run this because they'll
+
+01:29.300 --> 01:31.300
+Probably have changed this several times
+
+01:32.540 --> 01:34.540
+So you might need to debug this a little bit
+
+01:37.380 --> 01:45.020
+Okay, so we have that we now have to go and create a V test config file
+
+01:45.900 --> 01:53.500
+So we're going to create a new file, we're going to call it V test dot config dot JS
+
+01:55.340 --> 01:57.340
+We're going to import
+
+01:58.140 --> 02:01.740
+define workspace define workspace
+
+02:02.740 --> 02:05.860
+from V test config dot JS we're kind of
+
+02:06.740 --> 02:11.020
+Hacking around a little bit there you can leave the dot.js. It doesn't have to be there either way
+
+02:11.180 --> 02:13.780
+Workspaces that is actually for mono repos
+
+02:14.300 --> 02:19.820
+So if you have like seven packages in one repo you can define different V test
+
+02:20.860 --> 02:22.860
+workspaces for each one of them
+
+02:23.180 --> 02:26.700
+That's the point of define workspace, but we're going to use it to define a
+
+02:27.340 --> 02:34.460
+Happy DOM environment for our old tests and a playwright environment for our new tests because I don't want to rewrite our old test
+
+02:34.460 --> 02:36.460
+If they're still good, right?
+
+02:36.620 --> 02:38.620
+So we're going to export default
+
+02:39.820 --> 02:41.820
+define workspace
+
+02:42.860 --> 02:48.780
+And it's going to be an array and we're going to give it two different you're basically two different config files here
+
+02:51.420 --> 02:58.220
+So the first one we're going to make sure you have extends dot slash VEAT dot config dot
+
+02:58.780 --> 03:05.820
+So the first one we're going to make sure you have extends dot slash VEAT dot config
+
+03:08.700 --> 03:10.700
+Dot JS
+
+03:12.380 --> 03:14.140
+And
+
+03:14.140 --> 03:16.060
+test
+
+03:16.060 --> 03:22.540
+So basically this is saying bring everything in from this file here my VEAT file and i'm going to just overwrite the test part of it
+
+03:24.540 --> 03:26.540
+And we're going to say include
+
+03:29.180 --> 03:32.700
+We only want to test files that have
+
+03:36.860 --> 03:41.820
+Dot node dot test dot js or jsx either one of those
+
+03:43.740 --> 03:47.020
+Okay, these ones are all going to be run in the happy dom environment
+
+03:48.460 --> 03:50.460
+So we're going to say name
+
+03:53.740 --> 03:55.740
+Call them happy dom
+
+03:56.700 --> 04:00.620
+And environment we're going to set to be happy dom
+
+04:03.340 --> 04:06.700
+So basically all of our existing tests we want to run in happy dom
+
+04:07.500 --> 04:10.860
+And we're going to have to go rename all of them to have dot node in the title
+
+04:11.420 --> 04:16.140
+That's why I said later that the name of this one's going to get even more ridiculous because it's going to have to be
+
+04:17.160 --> 04:21.520
+Contact dot lazy dot node dot test dot jsx
+
+04:22.160 --> 04:24.160
+I
+
+04:25.120 --> 04:30.720
+It's both absurd but I also I can't really do anything about it like it does have to kind of be that way
+
+04:30.800 --> 04:34.240
+So that's fine. And then we're going to have a new one. We're going to write new tests with
+
+04:35.040 --> 04:37.040
+and that is going to be
+
+04:37.520 --> 04:39.520
+Extends again
+
+04:39.520 --> 04:42.400
+Extends, I guess we don't need the quotes extends
+
+04:43.680 --> 04:45.280
+same thing
+
+04:45.280 --> 04:47.840
+VEAT config dot JS
+
+04:47.840 --> 04:49.840
+Test
+
+04:50.080 --> 04:52.080
+Test
+
+04:53.600 --> 04:57.760
+Okay, and this one has a little bit more involved setup it's going to have some setup files
+
+04:58.880 --> 05:02.480
+This is just things that get run before your tests get run and we're going to put vitest
+
+05:03.760 --> 05:08.080
+Browser react. We're going to make sure that that gets run before our tests get run
+
+05:08.880 --> 05:12.720
+We're going to include anything that we include browser in the test
+
+05:13.920 --> 05:15.920
+so
+
+05:16.160 --> 05:19.440
+The other thing instead of doing uh dot node or dot browser
+
+05:19.440 --> 05:22.480
+We could have just put them in separate directories. That would have been fine as well
+
+05:23.600 --> 05:25.040
+um
+
+05:25.040 --> 05:27.040
+That's totally up to you
+
+05:28.080 --> 05:30.320
+I think this just made me laugh and so I kept doing it
+
+05:32.160 --> 05:35.440
+Chaos driven development if you will name we're going to call this browser
+
+05:35.440 --> 05:38.640
+The reason why we're putting the name here is so that like when we're looking at our test
+
+05:38.720 --> 05:41.840
+It'll it'll actually give you a little label. It says like this was run in the browser
+
+05:41.920 --> 05:44.400
+This is run in happy dom and it makes it easy to tell at a glance
+
+05:46.160 --> 05:49.540
+Browser and we're going to say provider
+
+05:51.680 --> 05:53.680
+Uh provider
+
+05:53.680 --> 05:59.040
+And your two choices are playwright, which I strongly suggest you go with. I think you can also use
+
+06:00.240 --> 06:02.480
+Webdriver, which is selenium same thing
+
+06:04.640 --> 06:06.640
+Enabled true
+
+06:07.760 --> 06:09.520
+And name
+
+06:09.520 --> 06:11.920
+Here you can put what browser you would like to test in
+
+06:12.720 --> 06:15.760
+I i'm going to test on firefox, but feel free to put
+
+06:16.560 --> 06:19.120
+Uh chromium can go there or webkit if you're on
+
+06:19.840 --> 06:21.840
+Uh mac os
+
+06:23.120 --> 06:26.400
+But if you want to test in in chrome you put chromium here
+
+06:28.000 --> 06:30.400
+I think you can put edge there. Maybe it's
+
+06:32.240 --> 06:38.480
+Don't quote me on that one. Anyway firefox. That's what i'm putting there. All right, so let's go rename these
+
+06:39.200 --> 06:45.040
+So that they have node dot node contact
+
+06:46.880 --> 06:48.880
+Dot node
+
+06:48.960 --> 06:53.280
+Nope, not there and it sucks, but unfortunately the order is important
+
+06:54.240 --> 06:57.780
+Node so contact dot lazy dot node dot test dot jsx
+
+07:04.160 --> 07:07.120
+And pizza of the day i'm going to put this
+
+07:08.880 --> 07:11.680
+And those are all of our node tests
+
+07:17.360 --> 07:25.360
+Oh, and if I remember correctly, yeah, so cart one this actually um can be run in the browser because
+
+07:26.320 --> 07:30.880
+Uh playwright already does snapshot testing. So this actually will run in either one of them
+
+07:30.880 --> 07:37.200
+And so we might as well just throw this into our browser environment. So rather than cart dot node, we're going to do cart dot browser
+
+07:39.040 --> 07:42.960
+These other ones actually depend on the fact that we're in happy dom
+
+07:43.760 --> 07:47.360
+And they could be rewritten to work with uh the browser
+
+07:47.360 --> 07:50.720
+I just don't want to make you do that because I don't think that's a useful exercise for you right now
+
+07:53.520 --> 07:57.920
+But we are going to create another pizza test so we're going to create pizza dot browser
+
+08:01.520 --> 08:03.520
+And we're going to do that
+
+08:09.040 --> 08:10.800
+So
+
+08:10.800 --> 08:15.040
+All right, let's go write our test. So in pizza dot browser dot test
+
+08:16.080 --> 08:18.080
+dot jsx import
+
+08:18.880 --> 08:20.480
+render from
+
+08:20.480 --> 08:27.040
+And we're going to get it from vitest browser react. So this library aims to mimic testing library
+
+08:27.680 --> 08:30.160
+so we actually don't need testing library at all
+
+08:30.960 --> 08:32.400
+in
+
+08:32.400 --> 08:38.080
+The browser-based environment because vitest browser react does all of the things that testing library would do for us
+
+08:38.640 --> 08:42.000
+It aims to be mostly api compliant. So
+
+08:43.680 --> 08:47.680
+Uh, if you have questions about it, just go look at the testing library docs. It's usually the same thing
+
+08:48.800 --> 08:50.800
+Okay expect and test
+
+08:51.760 --> 08:56.880
+From vitest import pizza from
+
+08:58.400 --> 09:02.160
+Source slash pizza. Oh capital p pizza
+
+09:04.320 --> 09:08.080
+Okay, we're going to test alt text renders
+
+09:09.040 --> 09:11.040
+on
+
+09:11.120 --> 09:15.920
+Image and so we're going to test the same thing, but we're going to do it in a browser browser-based environment
+
+09:17.200 --> 09:19.200
+The test is going to end up looking pretty similar
+
+09:20.880 --> 09:25.360
+Const name equals my favorite pizza
+
+09:27.520 --> 09:29.520
+Const source equals
+
+09:30.960 --> 09:33.360
+Our nice looking picture there pick some
+
+09:34.640 --> 09:36.640
+photo slash 200
+
+09:36.880 --> 09:41.840
+And const screen equals render
+
+09:44.320 --> 09:49.600
+Pizza name equals name source equals source
+
+09:52.960 --> 09:59.120
+And oh, it's not source. It's image. Sorry image equals source and description
+
+10:00.960 --> 10:05.600
+Equals cool browser stuff close your tag there
+
+10:07.600 --> 10:11.200
+And we're going to say const image equals await
+
+10:12.640 --> 10:14.240
+screen
+
+10:14.240 --> 10:16.240
+Dot get by role
+
+10:20.480 --> 10:23.920
+And the matches end up looking a little bit different we have to use this expect element thing
+
+10:25.280 --> 10:27.280
+We'll say const or await
+
+10:29.200 --> 10:31.200
+Expect element
+
+10:33.440 --> 10:36.080
+Image to be in the document
+
+10:37.040 --> 10:39.040
+image
+
+10:39.280 --> 10:41.760
+So we expect it to render an image at all, right?
+
+10:43.120 --> 10:45.120
+let's just
+
+10:45.200 --> 10:47.200
+Make two of these here
+
+10:47.440 --> 10:50.080
+And we're going to say to have attribute
+
+10:53.360 --> 10:55.360
+Source source
+
+10:57.120 --> 11:01.120
+And to have attribute alt
+
+11:02.640 --> 11:04.640
+Name
+
+11:04.960 --> 11:09.840
+So if you're looking at this is like this looks pretty similar right like and not totally the same
+
+11:10.800 --> 11:13.440
+Like just to put them side by side just for a second
+
+11:18.240 --> 11:20.240
+Um
+
+11:21.360 --> 11:23.520
+See the screen here screen here
+
+11:24.320 --> 11:30.560
+And this this one you're just able to just like do these like synchronous checks right because it's just really reading text out of a document
+
+11:31.360 --> 11:37.120
+This is the whole browser this is actually going into firefox grabbing this out of the don that's we have to await stuff
+
+11:38.400 --> 11:40.720
+Because it is it's truly asynchronous. It's really in a browser
+
+11:41.760 --> 11:47.840
+I think you're gonna have to do something like npx playwright install if you've never run playwright before let's just
+
+11:48.160 --> 11:50.800
+I'm gonna run it and see what happens. I've done this before so it might
+
+11:52.240 --> 11:55.680
+Yeah, I think it's just gonna exit for me for the rest of you
+
+11:55.680 --> 11:59.920
+It's probably gonna say like do you want to install like 300 megs of stuff? Is that working for people?
+
+12:00.160 --> 12:02.160
+Okay, cool
+
+12:02.320 --> 12:05.360
+That was from memory. So I'm just was worried. I was giving you the wrong command
+
+12:06.640 --> 12:13.380
+What it's doing it's going to actually install mini versions of firefox mini versions of chromium and a mini version of webkit
+
+12:17.040 --> 12:18.880
+Okay
+
+12:18.880 --> 12:24.660
+So now you should be able to run npm run test and it should pop up a browser or it should fail miserably
+
+12:24.660 --> 12:26.660
+Really
+
+12:27.780 --> 12:29.620
+Failed to load config
+
+12:29.620 --> 12:33.060
+I have one question that we maybe skipped a step a little bit earlier
+
+12:33.060 --> 12:38.980
+But there was a step to remove things from the vt.config.js. Oh, yeah, you're absolutely right
+
+12:39.060 --> 12:42.980
+I tried messing around with that, but i'm still getting that error personally right now. So I don't okay
+
+12:43.940 --> 12:48.900
+No, you're right. You do have to delete this stuff out of your config here because we put it in our vitest stuff
+
+12:49.540 --> 12:51.540
+So I had called this
+
+12:52.260 --> 12:54.260
+vitest.config.workspace
+
+12:54.900 --> 12:58.580
+Which technically is a valid thing to call it, but it's only for one project
+
+12:59.300 --> 13:05.220
+I was explaining to you earlier like we're technically abusing a tool to define it for multiple projects so we can take care of a
+
+13:06.180 --> 13:12.820
+Browser based environment and a node based environment and in the docs they recommend like oh we already have that for workspaces
+
+13:12.820 --> 13:14.900
+So we're doing it that way
+
+13:14.900 --> 13:18.280
+But the big thing here is make sure it's vitest.workspace.js
+
+13:18.280 --> 13:24.280
+Workspace.js and that'll fix our problem here
+
+13:27.080 --> 13:30.040
+It's kind of silly to me that that's not the same thing but
+
+13:31.240 --> 13:33.720
+I don't know. I'm not the one writing the open source software
+
+13:34.520 --> 13:35.480
+All right
+
+13:35.480 --> 13:41.320
+So you do all this and this notice that i'm popped up. I have another window here from nightly
+
+13:41.560 --> 13:45.480
+So this is actually downloading firefox nightly to run this right? That's why it's called nightly
+
+13:45.800 --> 13:47.240
+I
+
+13:47.240 --> 13:49.960
+Have an error here in my test. Let's go figure out what's going on with that
+
+13:50.840 --> 13:53.560
+failed to resolve import source/pizza
+
+13:55.480 --> 13:57.480
+So i'm in
+
+13:58.680 --> 14:03.880
+Pizza.browser.test.jsx pizza from source pizza. It seems like that should be correct
+
+14:04.520 --> 14:07.080
+So yes dot dot slash. That was no source there
+
+14:08.600 --> 14:10.600
+And now we have a
+
+14:11.240 --> 14:13.480
+Test running in our browser, which is kind of cool, right?
+
+14:16.280 --> 14:18.280
+So
+
+14:18.280 --> 14:20.280
+This should be able to refresh and notice
+
+14:20.280 --> 14:25.400
+This should feel familiar right the same ui right but there's actually something kind of cool about this if you come into your
+
+14:26.200 --> 14:28.200
+browser tests
+
+14:28.920 --> 14:34.760
+Um, I will say that this breaks constantly and it's like it will freeze and so just a good refresh usually does it
+
+14:36.760 --> 14:38.760
+Yeah, so stuff like this
+
+14:38.840 --> 14:41.240
+So you can actually see the component being rendered on the page
+
+14:41.320 --> 14:43.560
+You're gonna include the css and all the stuff and make it look really nice
+
+14:43.560 --> 14:46.600
+We're not doing enough stuff and i'm not super worried about it at the moment
+
+14:47.800 --> 14:49.160
+um
+
+14:49.160 --> 14:51.160
+That's too bad that the image is not working
+
+14:51.880 --> 14:53.880
+But the image should work there as well
+
+14:54.120 --> 14:56.120
+uh pizza.jsx
+
+14:59.080 --> 15:01.080
+Did I misspell it
+
+15:06.740 --> 15:10.460
+Photos pick some dot photos
+
+15:10.460 --> 15:12.460
+Photos
+
+15:13.180 --> 15:19.420
+And then now if we go back to our ui here or this one yeah, and then you'll see that actually renders out the image as well
+
+15:21.660 --> 15:22.940
+Kind of ends up being like a
+
+15:22.940 --> 15:27.100
+A little bit of a storybook kind of thing where you can kind of like show off all of your components in an individual kind
+
+15:27.100 --> 15:30.000
+Of way using tests, which is kind of cool as well
+

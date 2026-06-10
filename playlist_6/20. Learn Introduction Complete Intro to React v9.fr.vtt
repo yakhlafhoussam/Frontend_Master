@@ -1,0 +1,168 @@
+WEBVTT
+
+
+00:00.000 --> 00:06.000
+J'ai donc une mise en page cassée ici depuis un petit moment, si vous avez suivi, la mise en page était probablement correcte.
+
+00:06.000 --> 00:08.000
+Mais j'ai foiré certains de mes divs
+
+00:08.880 --> 00:12.360
+Alors allons-y et corrigeons la destination réelle de certains d'entre eux.
+
+00:13.400 --> 00:18.360
+Donc, une commande de pizza est en fait censée être à l'intérieur de ça
+
+00:19.320 --> 00:23.920
+Tout comme le prix, nous allons simplement déplacer ces deux éléments à l'intérieur de l'instruction if.
+
+00:25.320 --> 00:29.060
+C'est bien, et puis je pense ici en bas
+
+00:30.560 --> 00:35.880
+Je ferme le div ici. Ce n'est pas vraiment là qu'il est fermé. Cela devrait être fermé
+
+00:38.720 --> 00:40.840
+Juste avant le bouton Soumettre, je pense
+
+00:44.480 --> 00:46.480
+Ouais, c'est censé être fermé ici
+
+00:50.240 --> 00:54.440
+Et cela devrait vous amener davantage à quelque chose comme ça. J'imagine que c'est ce que vous voyez depuis un moment.
+
+00:55.640 --> 00:58.880
+Et la dernière chose que j'ai cassée si vous allez sur app.js x
+
+01:00.400 --> 01:02.400
+Tu donnes juste à ce h1 un
+
+01:03.040 --> 01:06.280
+Nom de classe du logo. Tu devrais avoir une belle
+
+01:07.240 --> 01:11.120
+Padre Gino est une autre sorte de chose amusante que nous pouvons faire avec des crochets
+
+01:11.880 --> 01:18.160
+Ici et utilisez la pizza du jour. Nous allons utiliser ici un hook supplémentaire appelé utiliser la valeur de débogage. je vais être honnête, je
+
+01:18.840 --> 01:22.160
+Utilisez-le avec parcimonie mais je vais vous le montrer car cela peut être utile
+
+01:23.200 --> 01:27.240
+Surtout si vous disposez d'une grande base de code et que vous gérez un ensemble de hooks qu'un groupe de développeurs utilisent.
+
+01:28.240 --> 01:33.960
+Disons que nous voulons pouvoir voir d'un coup d'œil dans les outils de développement de React quelle est la valeur de notre hook
+
+01:35.000 --> 01:39.840
+Parce qu'il n'est pas immédiatement visible dans la vue des composants, vous pouvez lui donner des indices
+
+01:41.120 --> 01:44.720
+C'est donc ce que nous allons faire ici. Nous allons donc dire d'utiliser la valeur de débogage
+
+01:45.720 --> 01:49.720
+Et si on a une pizza du jour, alors on va juste dire
+
+01:51.240 --> 01:53.720
+Quelque chose comme ça, je vais utiliser une chaîne de modèle de
+
+01:53.840 --> 01:55.840
+Nom du point de la pizza du jour
+
+01:57.160 --> 02:01.320
+Vous pouvez mettre ici tout ce que vous voulez, peut-être que je
+
+02:04.440 --> 02:06.440
+Je ne sais pas
+
+02:08.560 --> 02:10.040
+Descriptif
+
+02:10.040 --> 02:14.120
+Nous mettrons une description. Je ne sais pas quoi d'autre ici, que tout le monde aimerait voir
+
+02:14.640 --> 02:16.640
+Faisons peut-être une identification. C'est une bonne chose
+
+02:17.360 --> 02:20.560
+Faisons un nom ici. Nous ferons d'abord l'identification
+
+02:20.560 --> 02:22.560
+Et puis nous mettrons juste un deux-points entre eux
+
+02:23.920 --> 02:25.920
+Et puis tu as besoin d'un ternaire là
+
+02:28.520 --> 02:33.240
+Et s'il n'y a rien, alors vous voulez juste afficher comme chargement, n'est-ce pas
+
+02:38.360 --> 02:42.480
+Donc, cela ne renvoie rien, c'est uniquement pour les développements, c'est uniquement pour les outils de développement
+
+02:45.560 --> 02:47.560
+Quand c'est dans
+
+02:48.560 --> 02:52.760
+Lorsqu'il est en mode production, il ne sera pas déconnecté, je ne pense pas
+
+02:54.400 --> 03:01.440
+Alors maintenant, si nous regardons les outils de développement de React dans nos composants, et que je regarde ma pizza du jour, vous pouvez la voir ici
+
+03:04.680 --> 03:07.840
+Me dit mes crochets et remarque comme ça, joli
+
+03:10.480 --> 03:12.480
+Chaîne à côté. C'est la valeur de débogage
+
+03:13.080 --> 03:15.080
+Ce qui est plutôt sympa, n'est-ce pas
+
+03:16.440 --> 03:20.480
+Alors imaginez que si vous avez environ 30 hooks personnalisés, cela a de belles valeurs pour votre
+
+03:23.320 --> 03:25.320
+Pour votre
+
+03:25.320 --> 03:29.840
+Hooks personnalisés là-bas, je pense que vous ne pouvez utiliser la valeur de débogage qu'une seule fois, je pense que si j'essaie de l'utiliser à nouveau
+
+03:29.840 --> 03:32.600
+Cela ne fait rien ou peut-être que cela l'écrase
+
+03:32.640 --> 03:35.920
+Oh non, en fait, cela vous donne toute une série de choses
+
+03:38.000 --> 03:40.000
+Intéressant, je n'avais pas l'habitude de faire ça
+
+03:41.920 --> 03:43.920
+Plutôt utile
+
+03:46.240 --> 03:49.740
+Et rien ne vous empêche de tout jeter là-dessus, n'est-ce pas
+
+03:50.440 --> 03:53.800
+Vous n'avez pas nécessairement besoin de le faire car ce sera dans votre code
+
+03:54.560 --> 03:58.920
+Et ça ne sera pas là. Il ne sera pas là. Il ne sera pas là. ça ne sera pas là
+
+03:59.480 --> 04:04.040
+Vous n’avez pas nécessairement besoin de le faire car ce sera à l’intérieur de votre crochet, n’est-ce pas ?
+
+04:04.560 --> 04:08.280
+Donc, la plupart du temps, c'est juste quelque chose que vous voulez pouvoir voir, d'un seul coup d'œil, la différence entre chacun d'eux.
+
+04:08.640 --> 04:11.840
+En réalité, si c'était vraiment moi, je mettrais probablement simplement la pièce d'identité
+
+04:18.760 --> 04:23.700
+Parce que c'est très lisible d'un coup d'œil, n'est-ce pas l'ID du jardin vert, n'est-ce pas
+
+04:23.700 --> 04:32.900
+Il s'agit donc spécifiquement du cas d'utilisation de niche pour l'utilisation d'une valeur de bogue : les hooks personnalisés les identifient en un coup d'œil.
+
+04:32.900 --> 04:36.900
+Il s'agit donc spécifiquement du cas d'utilisation de niche pour l'utilisation d'une valeur de bogue : les hooks personnalisés les identifient en un coup d'œil.
+

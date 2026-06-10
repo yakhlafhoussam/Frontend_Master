@@ -1,0 +1,1073 @@
+WEBVTT
+
+00:00.120 --> 00:03.460
+We are gonna talk about linting.
+
+00:03.460 --> 00:05.520
+Who is pumped about linting?
+
+00:05.520 --> 00:06.360
+Get out.
+
+00:06.360 --> 00:07.200
+No, I'm just kidding.
+
+00:07.200 --> 00:10.100
+I'm just kidding.
+
+00:11.760 --> 00:13.160
+I got mixed feelings about linting.
+
+00:13.160 --> 00:15.760
+You know, I've gone all over the map from on linting.
+
+00:17.160 --> 00:19.160
+I used to be, and if you watch like,
+
+00:19.160 --> 00:21.880
+completed intro to React V2,
+
+00:21.880 --> 00:23.840
+like there comes in this like,
+
+00:23.840 --> 00:26.200
+different Brian Holt character that's just like,
+
+00:26.200 --> 00:28.640
+we're gonna lint the hell out of this project.
+
+00:28.640 --> 00:30.200
+It's gonna look like one person wrote it.
+
+00:30.200 --> 00:32.000
+And I was very much on that train of like,
+
+00:32.000 --> 00:34.160
+let's let the tools control you.
+
+00:35.360 --> 00:38.560
+And I've come all the way back the other way.
+
+00:38.560 --> 00:40.880
+And like, if you like watch like React V7,
+
+00:40.880 --> 00:42.400
+you get like this like hippie Brian,
+
+00:42.400 --> 00:44.880
+it's like free love and no linting, right?
+
+00:44.880 --> 00:46.280
+Where I'm just like,
+
+00:46.280 --> 00:48.600
+write whatever code you feel like, dude, right?
+
+00:48.600 --> 00:53.520
+And now I've come back more to like,
+
+00:53.520 --> 00:57.400
+help me catch very common and very easy to miss bugs
+
+00:57.400 --> 01:00.240
+and otherwise leave me the hell alone.
+
+01:00.240 --> 01:01.200
+This actually just kind of applies
+
+01:01.200 --> 01:04.960
+to my general thought process on building dev tools
+
+01:04.960 --> 01:08.240
+of your developer has something in mind
+
+01:08.240 --> 01:10.360
+that they wanna express in the code
+
+01:10.360 --> 01:14.640
+and don't interrupt them unless they're actually going to,
+
+01:14.640 --> 01:16.320
+unless you're helping them, right?
+
+01:17.580 --> 01:22.360
+Like just getting someone to write code in a certain format
+
+01:22.360 --> 01:24.880
+because you feel like it is adding more and more friction
+
+01:24.880 --> 01:27.480
+and it's more distance between someone expressing
+
+01:27.480 --> 01:28.640
+their idea and code.
+
+01:29.760 --> 01:31.960
+And so that's why I'm much more careful these days
+
+01:31.960 --> 01:35.960
+to be very light on the linting side.
+
+01:35.960 --> 01:40.240
+And just like, if it's not important, don't do it, right?
+
+01:41.120 --> 01:41.960
+Okay.
+
+01:43.720 --> 01:47.680
+So we're gonna do prettier and people frequently ask me like,
+
+01:47.680 --> 01:50.720
+what's the difference between linting and,
+
+01:50.720 --> 01:52.480
+or ES lint and prettier?
+
+01:53.480 --> 01:56.040
+ES lint is linting, obviously.
+
+01:56.040 --> 02:01.040
+Linting is much more like semantics and syntax
+
+02:02.280 --> 02:05.480
+and content focused where you're saying things like,
+
+02:07.040 --> 02:09.200
+you have to alphabetize all of your imports,
+
+02:09.200 --> 02:11.680
+which is like one of my very least favorite rules
+
+02:11.680 --> 02:15.280
+that you can enforce in ES lint.
+
+02:15.280 --> 02:16.400
+But it's things like that.
+
+02:16.400 --> 02:18.720
+It's things where you're enforcing an opinion on someone.
+
+02:18.720 --> 02:21.520
+Like it could be totally valid code, but you're saying,
+
+02:21.520 --> 02:23.400
+I don't want you to do this.
+
+02:23.400 --> 02:24.960
+One of the ones that I do find useful
+
+02:24.960 --> 02:27.720
+is don't use any globals, right?
+
+02:27.720 --> 02:30.200
+Because usually that means that like you misspelled
+
+02:30.200 --> 02:31.920
+something so it's gonna reach for a global
+
+02:31.920 --> 02:35.240
+as opposed to finding the one that you actually intended
+
+02:35.240 --> 02:36.360
+to name it, right?
+
+02:36.360 --> 02:37.760
+Prettier is just formatting.
+
+02:37.760 --> 02:40.600
+It's just white space and new lines.
+
+02:40.600 --> 02:42.600
+It does not enforce anything about the code.
+
+02:42.600 --> 02:44.320
+It's just making sure that all of the white space
+
+02:44.320 --> 02:46.320
+ends up in the right place.
+
+02:46.320 --> 02:48.320
+That's all that prettier does.
+
+02:48.320 --> 02:50.520
+There's some overlap that you can basically have ES lint
+
+02:50.520 --> 02:52.680
+do some of what prettier does.
+
+02:52.680 --> 02:54.280
+But if we're using both tools,
+
+02:54.280 --> 02:56.160
+prettier is much better at formatting.
+
+02:56.160 --> 02:57.680
+Leave the formatting to prettier.
+
+02:57.680 --> 03:01.480
+Just have lint for all of the linting rules.
+
+03:01.480 --> 03:02.800
+Yeah, Mark.
+
+03:02.800 --> 03:04.880
+Have you heard of OX lint?
+
+03:04.880 --> 03:06.000
+I have.
+
+03:06.000 --> 03:07.840
+I might even mention it down here.
+
+03:08.960 --> 03:10.160
+I do, look at that.
+
+03:11.360 --> 03:13.680
+I think this is actually supposed to be,
+
+03:13.680 --> 03:14.760
+is it supposed to be a zero?
+
+03:14.760 --> 03:16.360
+No, okay, no, I was right, it is.
+
+03:17.200 --> 03:19.440
+There's two projects to keep an eye on here,
+
+03:19.440 --> 03:21.480
+is OX lint and Biome.
+
+03:21.480 --> 03:23.040
+Biome used to be called Roam.
+
+03:24.800 --> 03:28.080
+Ox lint, I think, is, this is all written in Rust.
+
+03:29.080 --> 03:31.800
+And there's, I think, a couple of other projects.
+
+03:31.800 --> 03:36.800
+They're so new, and they both really lean on ES lint anyway
+
+03:36.800 --> 03:40.800
+for its rules, so, I'm interested.
+
+03:40.800 --> 03:42.240
+I'm keeping an eye on it.
+
+03:42.280 --> 03:44.840
+The creator of U and VEET, Evan U,
+
+03:44.840 --> 03:48.840
+started a new company around OX lint and VEET
+
+03:48.840 --> 03:51.160
+and all these tools, so I'm interested.
+
+03:51.160 --> 03:53.080
+But they're still so new.
+
+03:53.080 --> 03:54.200
+In this course, I'm trying to teach you
+
+03:54.200 --> 03:56.200
+to be job-ready today with React,
+
+03:56.200 --> 03:57.200
+and I'm not teaching you anything
+
+03:57.200 --> 03:59.400
+that's that far out on the edge.
+
+03:59.400 --> 04:02.400
+So, look at it, admire it, help,
+
+04:02.400 --> 04:06.840
+but if you're going to your day job, ship ES lint.
+
+04:06.840 --> 04:08.280
+It's just the safe choice right now,
+
+04:08.280 --> 04:09.800
+and it's a perfectly good choice.
+
+04:09.840 --> 04:11.440
+Like, it's just the safe choice right now,
+
+04:11.440 --> 04:13.640
+and it's a perfectly good piece of software.
+
+04:17.000 --> 04:18.440
+Okay.
+
+04:18.440 --> 04:19.680
+Yeah, like, a good example here is, like,
+
+04:19.680 --> 04:21.680
+you want to force people to never use with.
+
+04:21.680 --> 04:24.360
+Like, if with is technically a valid JavaScript,
+
+04:24.360 --> 04:27.240
+it was in ES 3, right?
+
+04:27.240 --> 04:29.760
+But you never want to have with in a modern code base.
+
+04:29.760 --> 04:31.920
+It would just make zero sense, right?
+
+04:31.920 --> 04:33.320
+So, you can have ES lint say, like,
+
+04:33.320 --> 04:34.560
+hey, you're using with.
+
+04:34.560 --> 04:35.480
+No one uses with.
+
+04:35.480 --> 04:36.720
+Please stop doing that.
+
+04:37.720 --> 04:39.560
+Okay.
+
+04:39.560 --> 04:41.440
+I'm going to have you install ES lint
+
+04:41.440 --> 04:44.000
+and these tools at specific versions.
+
+04:44.000 --> 04:45.800
+The reason why I'm going to have you do that now
+
+04:45.800 --> 04:48.400
+and for the rest of the course is, like,
+
+04:48.400 --> 04:50.360
+this course is a moment in time,
+
+04:50.360 --> 04:52.160
+and they're definitely going to release new changes
+
+04:52.160 --> 04:56.200
+and breaking changes, and I want people to stay
+
+04:56.200 --> 04:59.240
+on tools that I have verified work together.
+
+04:59.240 --> 05:03.160
+So, feel free to try and install later versions of ES lint
+
+05:03.160 --> 05:05.120
+or React or whatever you want,
+
+05:05.520 --> 05:07.720
+but just know when they release new minor
+
+05:07.720 --> 05:09.880
+or major versions of these things,
+
+05:09.880 --> 05:11.320
+probably going to break, right?
+
+05:11.320 --> 05:14.000
+There is a massive difference between ES lint 8
+
+05:14.000 --> 05:15.560
+and ES lint 9.
+
+05:15.560 --> 05:18.000
+React V8 uses ES lint 8,
+
+05:18.000 --> 05:20.440
+and I had to rewrite this entire portion of the course
+
+05:20.440 --> 05:23.480
+because it totally changed, right?
+
+05:23.480 --> 05:26.000
+So, go ahead and grab this.
+
+05:26.000 --> 05:27.960
+I would just copy and paste it directly.
+
+05:30.160 --> 05:31.600
+Go to your project,
+
+05:32.280 --> 05:37.280
+and we're just going to install dash D, right,
+
+05:37.280 --> 05:41.360
+for development, ES lint at 991,
+
+05:41.360 --> 05:43.360
+ES lint config at 910,
+
+05:43.360 --> 05:46.520
+and globals at 15.9.0.
+
+05:51.920 --> 05:53.400
+Cool.
+
+05:53.400 --> 05:55.120
+Again, you'll notice in our package.json,
+
+05:55.120 --> 05:58.680
+we now have a bunch more dev dependencies.
+
+05:59.680 --> 06:00.520
+Cool.
+
+06:02.840 --> 06:03.680
+Now,
+
+06:08.280 --> 06:10.320
+we're going to create a file in the root of our project.
+
+06:10.320 --> 06:15.320
+It's going to be called eslint.config.mjs.
+
+06:19.320 --> 06:21.400
+Now, every version of this course previously used
+
+06:21.400 --> 06:24.680
+eslintrc.json that is no longer supported.
+
+06:24.680 --> 06:27.240
+You actually have to do it this way now.
+
+06:28.200 --> 06:31.120
+And you might be asking why is it mjs?
+
+06:31.120 --> 06:33.360
+Because otherwise it assumes it is common js,
+
+06:33.360 --> 06:35.480
+and we want to use esmodules.
+
+06:36.360 --> 06:39.200
+So, the mjs here means that we're going to do
+
+06:39.200 --> 06:44.200
+import and export as opposed to require, right?
+
+06:44.520 --> 06:45.560
+So, that's why.
+
+06:48.000 --> 06:50.880
+And we are going to start writing a little eslint config.
+
+06:51.880 --> 06:56.880
+Import js from eslint slash js.
+
+07:00.360 --> 07:04.880
+Import globals from globals.
+
+07:05.920 --> 07:10.920
+And import prettier from eslint config prettier.
+
+07:14.560 --> 07:16.000
+All right.
+
+07:16.000 --> 07:17.840
+This is one of my favorite tricks
+
+07:18.800 --> 07:21.800
+with just VS code and TypeScript in general.
+
+07:23.400 --> 07:27.240
+This is not TypeScript, but I still love completions
+
+07:27.240 --> 07:29.120
+when I'm writing code, right?
+
+07:29.120 --> 07:32.120
+So, you can say at type
+
+07:35.520 --> 07:40.520
+import eslint.lintr.config
+
+07:40.520 --> 07:45.520
+dot lintr dot config array.
+
+07:48.400 --> 07:50.880
+Now, you can see the two stars here in the slash.
+
+07:50.880 --> 07:52.960
+This is a comment, right?
+
+07:52.960 --> 07:57.480
+But this is letting VS code know this is this type.
+
+07:57.480 --> 08:00.680
+Please give me all the type completions for this.
+
+08:00.680 --> 08:05.200
+So, now I can say export default and give it an array.
+
+08:06.800 --> 08:09.240
+And now I'm going to have proper type completions
+
+08:09.240 --> 08:11.000
+inside of this.
+
+08:11.000 --> 08:11.840
+This is totally optional.
+
+08:11.840 --> 08:13.360
+You can totally lead this off.
+
+08:13.360 --> 08:18.240
+If you're in something like Sublime or TextMate,
+
+08:18.240 --> 08:19.600
+I don't know why you're on TextMate.
+
+08:19.600 --> 08:21.120
+I have questions about that.
+
+08:21.120 --> 08:22.840
+But you probably wouldn't use this.
+
+08:22.840 --> 08:24.080
+This probably wouldn't be very helpful for you.
+
+08:24.080 --> 08:26.840
+But for VS code specifically, this is really quite nice.
+
+08:28.800 --> 08:32.080
+So, now I can say js.configs.
+
+08:34.560 --> 08:37.480
+And I'm going to give it dot recommended.
+
+08:38.320 --> 08:43.320
+So, we're going to export this array of rules for eslint.
+
+08:43.560 --> 08:48.040
+This is their new, what, flat configuration style.
+
+08:48.040 --> 08:52.280
+I find it configuration, I find it confusing.
+
+08:55.200 --> 08:56.400
+But this is the way you have to do it now.
+
+08:56.400 --> 08:58.240
+So, we're stuck with it.
+
+08:58.240 --> 09:02.360
+So, you export multiple different configurations
+
+09:02.360 --> 09:05.840
+and it kind of builds one upon the other.
+
+09:06.840 --> 09:10.480
+So, this will be executed, then the second one,
+
+09:10.480 --> 09:11.680
+then the third one, then the fourth one.
+
+09:11.680 --> 09:16.680
+So, the lower it is in the list, the last it is executed.
+
+09:17.000 --> 09:22.000
+So, one thing is this prettier config always has to be last.
+
+09:22.680 --> 09:23.560
+Just keep that in mind.
+
+09:23.560 --> 09:24.640
+Just drill it into your brain.
+
+09:24.640 --> 09:26.800
+The prettier config always has to be last.
+
+09:28.120 --> 09:29.760
+Why is that?
+
+09:29.760 --> 09:32.640
+The prettier config, all it does is turn off stuff.
+
+09:32.640 --> 09:33.880
+It doesn't add anything new.
+
+09:33.920 --> 09:36.200
+All it says is don't check formatting,
+
+09:36.200 --> 09:37.520
+don't check this kind of formatting,
+
+09:37.520 --> 09:40.400
+don't check new lines, don't check any of that kind of stuff.
+
+09:40.400 --> 09:43.640
+All this does is turn off formatting, which is useful.
+
+09:45.800 --> 09:47.920
+Otherwise, you get eslint yelling at you.
+
+09:47.920 --> 09:50.280
+It's like, hey, you didn't format this correctly
+
+09:50.280 --> 09:53.120
+and this will prevent it from yelling at you
+
+09:53.120 --> 09:54.680
+for stuff that doesn't matter.
+
+09:55.960 --> 09:57.920
+Okay, we're going to put our configuration
+
+09:57.920 --> 09:59.320
+here in the middle.
+
+09:59.320 --> 10:01.080
+So, js.configs.recommended.
+
+10:01.080 --> 10:03.160
+This is just a very small subset
+
+10:03.160 --> 10:06.840
+of non-controversial eslint rules, right?
+
+10:06.840 --> 10:08.520
+They're just purely value add.
+
+10:08.520 --> 10:11.960
+I've never had a problem with the recommended one.
+
+10:11.960 --> 10:14.720
+If you want everything that eslint can check for,
+
+10:14.720 --> 10:17.680
+you can do .all, but you are a glutton for punishment
+
+10:17.680 --> 10:18.520
+if you're doing that.
+
+10:18.520 --> 10:20.440
+It's going to check things that you don't care about,
+
+10:20.440 --> 10:21.360
+I promise.
+
+10:21.360 --> 10:23.520
+So, you know what?
+
+10:23.520 --> 10:25.640
+Again, I'm not your mom, do whatever you want.
+
+10:25.640 --> 10:27.040
+But I am not going to put that in there
+
+10:27.040 --> 10:28.720
+because it annoys me so quickly.
+
+10:29.720 --> 10:32.760
+Okay, we're going to tell it what files.
+
+10:32.760 --> 10:36.360
+So, okay, again, this type thing right here,
+
+10:36.360 --> 10:39.880
+the reason why it knows here this files
+
+10:39.880 --> 10:42.080
+is from that comment up there, right?
+
+10:42.080 --> 10:43.920
+Which I find extremely useful.
+
+10:46.080 --> 10:48.600
+Okay, and I'm going to tell it to check for everything
+
+10:48.600 --> 10:53.600
+to do with .js files.
+
+10:55.440 --> 10:57.040
+And if you want to get ahead of the game here,
+
+10:57.040 --> 10:58.840
+we're eventually going to be doing JSX.
+
+10:58.840 --> 11:01.440
+So, you might as well just check that in there as well.
+
+11:03.480 --> 11:05.280
+If you were doing TS and TSX,
+
+11:05.280 --> 11:06.960
+you'd put that in here as well, right?
+
+11:06.960 --> 11:10.840
+So, okay, language options.
+
+11:14.120 --> 11:17.160
+We are going to say, here's the globals
+
+11:17.160 --> 11:21.120
+that we want you to check or be aware of.
+
+11:21.800 --> 11:26.800
+We're going to do globals.browser and globals.node.
+
+11:36.120 --> 11:37.720
+Why this?
+
+11:37.720 --> 11:39.600
+It's so that when we go into like here,
+
+11:39.600 --> 11:44.080
+we can say things like window or document, right?
+
+11:44.080 --> 11:46.840
+Things that are globals in those environments.
+
+11:46.840 --> 11:49.240
+If you don't import and add those,
+
+11:49.240 --> 11:50.080
+it's going to be like,
+
+11:50.080 --> 11:52.080
+hey, I don't know what document is, right?
+
+11:53.640 --> 11:55.800
+So, that's what globals is.
+
+11:56.920 --> 11:58.840
+Sorry, back in here.
+
+11:58.840 --> 12:01.440
+This is just the spread operator, right?
+
+12:01.440 --> 12:02.840
+So, we could do like some sort of like
+
+12:02.840 --> 12:04.720
+object.assign here, right?
+
+12:04.720 --> 12:06.520
+But we can just use the spread operator.
+
+12:06.520 --> 12:08.160
+This is a little bit cleaner.
+
+12:08.160 --> 12:11.400
+This is just going to be the union of browser
+
+12:11.400 --> 12:13.400
+and node here, right?
+
+12:13.400 --> 12:14.600
+As one object.
+
+12:14.600 --> 12:16.680
+That's all the globals that we need for this project.
+
+12:16.680 --> 12:18.560
+Parser options.
+
+12:21.400 --> 12:23.320
+ECMA features.
+
+12:25.200 --> 12:27.040
+And we need JSX.
+
+12:30.520 --> 12:33.320
+And I think that should be good for us for a little bit.
+
+12:36.320 --> 12:38.200
+This is just going to allow us to use JSX,
+
+12:38.200 --> 12:39.920
+which we're about to do, right?
+
+12:39.920 --> 12:43.960
+Without this, ESLint's still going to be okay
+
+12:43.960 --> 12:46.120
+because it can parse JSX,
+
+12:46.120 --> 12:50.080
+but it's not going to understand how React is working
+
+12:50.080 --> 12:52.440
+and how it's importing things correctly.
+
+12:52.440 --> 12:54.400
+So, this becomes important.
+
+13:00.400 --> 13:01.920
+All right.
+
+13:04.640 --> 13:06.760
+So, again, let's go back into our package.json
+
+13:06.760 --> 13:09.720
+and make it so that this can run ESLint.
+
+13:11.280 --> 13:12.480
+We're going to say lint.
+
+13:13.480 --> 13:16.120
+And now we can just say ESLint.
+
+13:17.360 --> 13:19.080
+You used to have to put like this long string
+
+13:19.080 --> 13:20.360
+associated with it,
+
+13:20.360 --> 13:22.080
+but now it reads its config properly
+
+13:22.080 --> 13:23.520
+and you don't have to do that.
+
+13:28.880 --> 13:33.520
+So, now if we come in here and we say npm run lint,
+
+13:34.840 --> 13:37.160
+you'll see a bunch of these errors, right?
+
+13:38.000 --> 13:41.040
+And my notes here say that this should fix it
+
+13:41.040 --> 13:43.960
+if you say npm, or npm, wow.
+
+13:43.960 --> 13:47.400
+Yeah, something on the mind, I guess.
+
+13:47.400 --> 13:50.400
+Run lint dash dash dash dash fix.
+
+13:50.400 --> 13:52.000
+So, this dash dash just means like,
+
+13:52.000 --> 13:56.200
+hey, I want to pass this into ESLint.
+
+13:56.200 --> 13:59.200
+So, this will actually end up running ESLint dash dash fix.
+
+14:00.400 --> 14:03.000
+If you don't put this dash dash in there,
+
+14:03.000 --> 14:05.080
+it's going to apply a dash dash fix.
+
+14:06.000 --> 14:09.600
+It's going to apply a dash dash fix to npm,
+
+14:09.600 --> 14:10.960
+which doesn't make any sense, right?
+
+14:10.960 --> 14:12.800
+So, that's why you need the dash dash.
+
+14:15.200 --> 14:16.320
+Yeah, I didn't think so.
+
+14:16.320 --> 14:20.600
+So, what's something that it could fix automatically?
+
+14:20.600 --> 14:21.440
+I don't remember.
+
+14:22.800 --> 14:25.200
+But fix, some of your linting errors
+
+14:25.200 --> 14:26.480
+can be fixed automatically,
+
+14:26.480 --> 14:28.440
+like it contains transformations
+
+14:28.440 --> 14:31.440
+that'll just fix some of these things for you.
+
+14:31.440 --> 14:32.440
+We have nothing to fix right now,
+
+14:32.440 --> 14:35.080
+so that doesn't really help us that much.
+
+14:35.080 --> 14:39.200
+But that's kind of a fun trick to do sometimes.
+
+14:40.200 --> 14:42.000
+Another one, if you're debugging this,
+
+14:42.000 --> 14:44.680
+is debug is super useful.
+
+14:44.680 --> 14:48.600
+You get a lot of output of like ESLint working.
+
+14:49.760 --> 14:51.200
+It's telling you everything that it's parsing.
+
+14:51.200 --> 14:52.840
+It's telling you all the errors that it's found.
+
+14:52.840 --> 14:55.240
+It's telling you all the rules that it's loading.
+
+14:55.240 --> 14:57.080
+So, you can see these are all of the checks
+
+14:57.080 --> 15:02.200
+that it's running, which is kind of cool.
+
+15:03.320 --> 15:04.680
+Yeah, so I mean, here's a good one.
+
+15:04.680 --> 15:05.600
+No debugger.
+
+15:06.560 --> 15:09.320
+Let's say, I don't know if you've ever used this before.
+
+15:12.480 --> 15:15.120
+VS Code has a very useful debugger built into it.
+
+15:15.120 --> 15:16.240
+We won't be using it today,
+
+15:16.240 --> 15:18.680
+but like I use it quite a bit for my node projects.
+
+15:21.400 --> 15:25.000
+And so, now I think if I say npm run lint,
+
+15:25.000 --> 15:28.200
+it should give me an error around not using the debugger.
+
+15:28.960 --> 15:31.400
+Yeah, unexpected debugger statement.
+
+15:33.720 --> 15:35.280
+It'll catch things like that.
+
+15:35.280 --> 15:36.640
+You want this to error, right?
+
+15:36.640 --> 15:38.240
+Because I'm gonna put this in there,
+
+15:38.240 --> 15:41.040
+and I want this to stay here while I'm using it,
+
+15:41.040 --> 15:43.560
+but I don't ever wanna shift this to production, right?
+
+15:43.560 --> 15:45.600
+So, that's something that lint will catch for you.
+
+15:45.600 --> 15:47.760
+Oh yeah, let's install the extension.
+
+15:48.960 --> 15:50.320
+There is an ESLint extension.
+
+15:50.320 --> 15:53.920
+I will say that of the common extensions
+
+15:53.920 --> 15:56.320
+that I recommend people install,
+
+15:57.240 --> 16:01.160
+this one is the most finicky sometimes, the ESLint one.
+
+16:01.160 --> 16:02.000
+It should look like this.
+
+16:02.000 --> 16:03.720
+It's official from Microsoft.
+
+16:06.520 --> 16:08.960
+It just gets bent out of shape sometimes,
+
+16:08.960 --> 16:13.520
+and so if you find that it's highlighting something
+
+16:13.520 --> 16:15.120
+that it should or not highlighting something
+
+16:15.120 --> 16:19.800
+that it should, a good restart will usually fix
+
+16:19.800 --> 16:21.680
+a lot of stuff, either of VS Code itself
+
+16:21.680 --> 16:22.840
+or the whole computer.
+
+16:23.840 --> 16:24.680
+I don't know.
+
+16:25.040 --> 16:27.200
+Definitely one of the ones that annoys me the most,
+
+16:27.200 --> 16:28.880
+and sometimes I just end up disabling it
+
+16:28.880 --> 16:30.120
+because it's so annoying.
+
+16:30.120 --> 16:34.920
+The purpose of the npm script you wrote
+
+16:34.920 --> 16:39.160
+is only if somebody doesn't have prettier installed
+
+16:39.160 --> 16:40.440
+in their editor, correct?
+
+16:41.600 --> 16:45.520
+It's amongst the reasons that I would do it.
+
+16:45.520 --> 16:47.240
+Probably the chief reason is so that I can now
+
+16:47.240 --> 16:48.800
+run it in CI, CD, right?
+
+16:48.800 --> 16:50.920
+So, I can run it as like a GitHub action,
+
+16:50.920 --> 16:53.640
+so then it won't check in my, or it won't deploy my code
+
+16:53.640 --> 16:56.000
+if it's like failing lint or failing prettier.
+
+16:56.920 --> 16:58.880
+That's probably the biggest reason
+
+16:58.880 --> 17:01.040
+because almost everyone that I work with
+
+17:01.040 --> 17:04.880
+or have worked with has some version of prettier
+
+17:04.880 --> 17:06.480
+or lint built into their editor
+
+17:06.480 --> 17:08.320
+and they just fix it on the fly,
+
+17:08.320 --> 17:10.160
+and there's a few holdouts that'll just run it
+
+17:10.160 --> 17:12.720
+right before they commit, right?
+
+17:12.720 --> 17:15.600
+So, those are the two chief reasons I do it.
+

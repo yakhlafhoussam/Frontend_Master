@@ -1,0 +1,401 @@
+WEBVTT
+
+00:00.000 --> 00:08.360
+So, we've been centered on 18.3 so far, and we're going to be talking about 19.0.
+
+00:08.360 --> 00:14.060
+Some of this stuff has been coming for a long time, and some of this stuff is fairly recent.
+
+00:14.060 --> 00:18.820
+So the first thing I'm going to call out is keep an eye out for version 6 of my intermediate
+
+00:18.820 --> 00:20.800
+React course.
+
+00:20.800 --> 00:25.760
+That should be the first time that I talk about React 19.
+
+00:25.760 --> 00:30.040
+I'm imagining that it's going to be out by that point, and if it's not, we'll probably
+
+00:30.040 --> 00:35.520
+push the date further so it can be out before I go teach it.
+
+00:35.520 --> 00:39.920
+But I just want to really emphasize that what you've learned today, I am confident in asserting
+
+00:39.920 --> 00:45.480
+that it will be still useful five years from now, because React doesn't change that quickly.
+
+00:45.480 --> 00:49.320
+The core model, which is what I taught you today, doesn't change very much.
+
+00:49.320 --> 00:53.560
+So there's no reason to wait to take courses or anything like that.
+
+00:53.560 --> 00:56.520
+It's all React at the end of the day.
+
+00:56.520 --> 01:02.400
+Most of the stuff that's in React V8 of this course still applies, right?
+
+01:02.400 --> 01:06.960
+Most of the modifications here were fairly minor.
+
+01:06.960 --> 01:09.560
+So it's about to be out.
+
+01:09.560 --> 01:12.800
+They've been talking about it for probably about a year now, and I'm going to say 95%
+
+01:12.800 --> 01:17.560
+of what I show you, I'm pretty confident in saying it's going to be unchanged, and there
+
+01:17.560 --> 01:22.000
+might be some corners around the edges of maybe some slight API changes or something
+
+01:22.000 --> 01:24.160
+like that, but I think the core concepts are going to be the same.
+
+01:24.160 --> 01:28.440
+It's in release candidate right now and has been for some time.
+
+01:28.440 --> 01:33.880
+So they don't anticipate that it's going to change very much.
+
+01:33.880 --> 01:37.360
+One of the things is use client and use server.
+
+01:37.360 --> 01:41.240
+You'll notice today I did not talk about these, and I did not want to, because I don't think
+
+01:41.240 --> 01:46.880
+it's useful for you today.
+
+01:46.880 --> 01:51.880
+React is now being bundled into more of a meta framework, so things like Next.js and
+
+01:51.880 --> 01:56.360
+Remix and all of those things, and one of the cool features that those things allow
+
+01:56.360 --> 02:02.560
+you is they allow you to say run this component on the server only or run this component on
+
+02:02.560 --> 02:05.280
+the browser only.
+
+02:05.280 --> 02:10.280
+We were just doing client-side React today, so that was nonsensical for us to talk about,
+
+02:10.280 --> 02:12.600
+but this is kind of cool for the future.
+
+02:12.600 --> 02:17.360
+Imagine that you can do things like run database queries directly from your React component.
+
+02:17.360 --> 02:22.040
+If you're using a server component, you can do that, and it's totally safe.
+
+02:22.040 --> 02:29.400
+By the same token, if you're writing Figma, a very client-heavy application, you don't
+
+02:29.400 --> 02:30.880
+want that stuff to run in the server.
+
+02:30.880 --> 02:33.520
+That doesn't make a lot of sense to render that stuff in the server.
+
+02:33.520 --> 02:37.720
+You're going to render that in the browser, so you'd use client on that.
+
+02:37.920 --> 02:42.920
+Just to give you an example of what that API looks like, if we go to, I don't know, header
+
+02:42.920 --> 02:51.200
+for some whatever reason, you can put up here at the top, use client, and this is now going
+
+02:51.200 --> 02:54.680
+to be guaranteed to only run in the client.
+
+02:54.680 --> 02:56.320
+I think it works per block as well.
+
+02:56.320 --> 03:04.480
+You could do, if we didn't have this, then you can do it here and so on.
+
+03:04.480 --> 03:08.320
+There's a bunch of different places you can use that are called directives.
+
+03:08.320 --> 03:10.920
+Same thing, you could say use server here.
+
+03:10.920 --> 03:13.680
+What's cool about use server in this particular case, it's just going to send down the complete
+
+03:13.680 --> 03:14.680
+markup.
+
+03:14.680 --> 03:17.240
+It's not going to send down the actual JavaScript to run it.
+
+03:17.240 --> 03:20.400
+It's just going to run everything in the server first and then send it down to the client,
+
+03:20.400 --> 03:23.240
+which is kind of cool.
+
+03:23.240 --> 03:25.440
+I think you can do it with effects and stuff like that.
+
+03:25.440 --> 03:36.840
+You can say use effect and use server in here, and then you have a server side effect that
+
+03:36.840 --> 03:40.840
+you can run there, which is also kind of interesting as well.
+
+03:40.840 --> 03:46.640
+Again, this only applies to meta frameworks like next, remix.
+
+03:46.640 --> 03:50.760
+You can build those meta frameworks yourself, but you have to get your hands pretty dirty
+
+03:50.760 --> 03:52.440
+with how React works.
+
+03:52.960 --> 03:57.320
+One of the things that I found interesting and useful, what happens if I have an API
+
+03:57.320 --> 04:03.160
+key that I'm using in a use server component?
+
+04:03.160 --> 04:07.240
+All it takes is one developer to go in there and say, oh, I actually need this to run on
+
+04:07.240 --> 04:11.120
+the client too and just delete the directive, and all of a sudden you're sending your secret
+
+04:11.120 --> 04:13.760
+keys down to your clients.
+
+04:13.760 --> 04:18.320
+You're one line away from a data breach, which is very scary.
+
+04:18.320 --> 04:21.280
+They have these things called taint unique value and taint object reference.
+
+04:21.280 --> 04:26.120
+It says, for these things that are running on the server, I don't care if something tells
+
+04:26.120 --> 04:28.880
+you to send this down, never send this down.
+
+04:28.880 --> 04:32.920
+That's what the taint unique value and taint object reference do, is they're just saying,
+
+04:32.920 --> 04:37.040
+I am putting extra guardrails on this that this will never leak.
+
+04:37.040 --> 04:40.920
+I thought that was a cool way of doing that.
+
+04:40.920 --> 04:44.160
+Cool.
+
+04:44.160 --> 04:47.080
+Any questions about that?
+
+04:47.120 --> 04:51.880
+You're just kind of adding a directive of where you want stuff to run, which I thought
+
+04:51.880 --> 04:56.760
+was a cool idea.
+
+04:56.760 --> 05:01.440
+Something else that, for the longest time we've had to use a thing called React Helmet.
+
+05:01.440 --> 05:08.080
+If you want to add stuff to, change the name of the document, here it says Padre Gino's.
+
+05:08.080 --> 05:11.960
+If you wanted to change that to order on the order page and contact on the contact page
+
+05:11.960 --> 05:16.720
+and stuff like that, you had to use something called React Helmet, which is a library from
+
+05:16.720 --> 05:17.720
+the NFL.
+
+05:17.720 --> 05:21.600
+It's a fun fact.
+
+05:21.600 --> 05:24.000
+You would render something into the helmet and then the helmet would put it in the head
+
+05:24.000 --> 05:25.000
+for you.
+
+05:25.000 --> 05:26.680
+That's how it would work.
+
+05:26.680 --> 05:29.880
+In React 19, they're just building that into React directly.
+
+05:29.880 --> 05:33.480
+If you render something like title here, it's just going to automatically put that in the
+
+05:33.480 --> 05:34.480
+head for you.
+
+05:34.480 --> 05:35.480
+You don't have to do anything special.
+
+05:35.480 --> 05:36.480
+It's just like, oh, title.
+
+05:36.480 --> 05:38.480
+That goes in the head.
+
+05:38.480 --> 05:45.080
+Same thing with links, so adding CSS documents or meta tags or anything like that.
+
+05:45.080 --> 05:52.720
+All that stuff that we used to use React Helmet for is all just built into React 19 now.
+
+05:52.720 --> 05:59.080
+We talked a little bit about preloading Preconnect earlier in the course.
+
+05:59.080 --> 06:05.440
+If you need a more interesting introduction to this, I found this article, which is pretty
+
+06:05.440 --> 06:07.440
+cool.
+
+06:08.440 --> 06:15.560
+They're called browser hints, and they allow you to say, hey, pre-do all the HTTPS handshakes.
+
+06:15.560 --> 06:17.600
+That's what Preconnect is for.
+
+06:17.600 --> 06:22.000
+I might need this here in a second, and I want you to go as fast as possible.
+
+06:22.000 --> 06:26.280
+Preconnect is like, do the handshake, get ready for the secure connection, but don't
+
+06:26.280 --> 06:28.360
+download anything.
+
+06:28.360 --> 06:31.840
+Then preload is like, no, go ahead and download this.
+
+06:31.840 --> 06:33.160
+It's done through browser hints.
+
+06:33.920 --> 06:38.320
+Built into the browser, it's not a particular React kind of thing.
+
+06:38.320 --> 06:42.920
+You would do something like this in React, and it's like, hey, I know this is about to
+
+06:42.920 --> 06:46.400
+open a text editor, because obviously this is the link, so I click here to open the text
+
+06:46.400 --> 06:47.400
+editor.
+
+06:47.400 --> 06:52.120
+You hear, it's like, get ahead of the user, download this first, so that when they click
+
+06:52.120 --> 06:55.960
+this link, we're immediately ready to go.
+
+06:55.960 --> 06:59.920
+Kind of cool, really interesting way of doing a hinting.
+
+06:59.920 --> 07:02.080
+The cool thing about this is browsers can ignore it.
+
+07:02.080 --> 07:06.920
+If it's in low battery mode or something like that, the browser will just ignore it.
+
+07:06.920 --> 07:07.920
+But it doesn't break it.
+
+07:07.920 --> 07:09.520
+They'll just have to wait longer.
+
+07:09.520 --> 07:10.520
+Web components.
+
+07:10.520 --> 07:13.640
+People have been clamoring for this for a long, long time.
+
+07:13.640 --> 07:17.080
+They've kind of been possible for a long time, but now that it's kind of gotten first class
+
+07:17.080 --> 07:18.980
+support.
+
+07:18.980 --> 07:22.080
+Why do you care about this?
+
+07:22.080 --> 07:27.440
+I'm not going to encourage you to write directly web components yourself if you're using React.
+
+07:27.440 --> 07:29.040
+Just use React.
+
+07:29.040 --> 07:31.240
+Why this is actually interesting is for library authors.
+
+07:31.240 --> 07:36.480
+For an example, I was talking to an auth company, dscope, if you've heard of them, it's a perfectly
+
+07:36.480 --> 07:40.120
+fine auth provider, I quite like them.
+
+07:40.120 --> 07:45.480
+They get to build their auth components that you can import into your page once, and then
+
+07:45.480 --> 07:50.480
+they get to ship that to Angular, to React, to Vue, and they all just render a web component
+
+07:50.480 --> 07:52.800
+at the end of the day.
+
+07:52.800 --> 07:58.320
+It all encapsulates the logic, the CSS, the HTML, the JavaScript, and they get to write
+
+07:58.320 --> 08:00.160
+it once, and it just works everywhere.
+
+08:00.240 --> 08:04.560
+It's awesome for them instead of having to maintain seven different SDKs for seven different
+
+08:04.560 --> 08:06.800
+frameworks.
+
+08:06.800 --> 08:12.200
+It's awesome for providers and all that kind of stuff that they can ship one component
+
+08:12.200 --> 08:15.840
+to multiple libraries.
+
+08:15.840 --> 08:18.920
+They finally figured out how to do it really well with React, and so they're finally going
+
+08:18.920 --> 08:24.040
+to ship that, which I think is really cool.
+
+08:24.040 --> 08:27.360
+More stuff, I linked the stuff here.
+
+08:27.360 --> 08:29.400
+You can see that they announced this on April 25th.
+
+08:29.400 --> 08:32.880
+It's been some time since they announced all this stuff.
+
+08:32.880 --> 08:37.680
+There's more than what I talked about in here, but I think I kind of gave you the highlight.
+

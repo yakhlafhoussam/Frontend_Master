@@ -1,0 +1,671 @@
+WEBVTT
+
+00:00.320 --> 00:02.960
+So this is just kind of a brief overview
+
+00:02.960 --> 00:04.800
+on some helper things that you can do with React
+
+00:04.800 --> 00:07.960
+just to kind of like make it easier to work with.
+
+00:07.960 --> 00:10.640
+So one of them is, we're using Vite,
+
+00:10.640 --> 00:13.440
+so Vite will take care of NodeM for you automatically,
+
+00:13.440 --> 00:14.760
+but NodeM, if you're not familiar with it,
+
+00:14.760 --> 00:16.740
+is just basically telling the tools
+
+00:16.740 --> 00:17.580
+that you're working with,
+
+00:17.580 --> 00:18.840
+is like, am I in development mode
+
+00:18.840 --> 00:20.200
+or am I in production mode?
+
+00:20.200 --> 00:22.800
+And usually it's assumed that you're in production mode
+
+00:22.800 --> 00:24.560
+and then you only set it to development mode
+
+00:24.560 --> 00:27.160
+when you're actually doing dev work.
+
+00:27.160 --> 00:29.280
+This used to be a thing that you had to set it explicitly,
+
+00:29.320 --> 00:30.400
+and that's why I still mention it here.
+
+00:30.400 --> 00:31.580
+So if you're doing like webpack,
+
+00:31.580 --> 00:33.300
+you might still have to set it explicitly
+
+00:33.300 --> 00:36.660
+of like, I'm in dev mode right now.
+
+00:36.660 --> 00:39.880
+This is important to React because React has a lot
+
+00:39.880 --> 00:42.800
+of like helpers and better error messages
+
+00:42.800 --> 00:45.040
+and all that kind of stuff when you're in dev mode,
+
+00:45.040 --> 00:48.920
+but the actual executable of React is a lot slower
+
+00:48.920 --> 00:51.200
+and it's four times bigger.
+
+00:51.200 --> 00:52.320
+So, or at least that's what it was,
+
+00:52.320 --> 00:53.680
+I haven't checked recently how big it is,
+
+00:53.680 --> 00:55.260
+but it was quite big.
+
+00:56.900 --> 00:58.120
+So if you're using Vite,
+
+00:58.120 --> 00:59.840
+if you're following along with me,
+
+00:59.840 --> 01:01.680
+if you're using Next, if you're using Remix,
+
+01:01.680 --> 01:04.280
+they all set NodeM for you automatically.
+
+01:04.280 --> 01:06.400
+If you're using something like webpack directly,
+
+01:06.400 --> 01:08.040
+you might have to set it yourself.
+
+01:09.400 --> 01:10.720
+One of the reasons I also bring this up
+
+01:10.720 --> 01:14.480
+is that make sure this gets set to production
+
+01:14.480 --> 01:17.080
+when you actually do go out to production.
+
+01:17.080 --> 01:18.000
+That becomes important.
+
+01:18.000 --> 01:20.780
+Famously Slack shipped React in dev mode
+
+01:20.780 --> 01:22.600
+for a very, very long time,
+
+01:22.600 --> 01:24.320
+and they actually saw a massive increase
+
+01:24.320 --> 01:26.520
+in like performance at Slack
+
+01:26.520 --> 01:27.840
+because all they had to do was
+
+01:27.840 --> 01:30.000
+switch NodeM to production, right?
+
+01:30.000 --> 01:31.900
+Which is a very dumb reason
+
+01:31.900 --> 01:35.040
+to waste a lot of people's time and resources, right?
+
+01:35.040 --> 01:36.900
+So, that's one.
+
+01:38.680 --> 01:41.320
+Strict mode, let's go do that right now.
+
+01:43.560 --> 01:48.560
+So, strict mode is a kind of React mode
+
+01:49.680 --> 01:50.680
+you can set things in.
+
+01:50.680 --> 01:52.720
+So we're just gonna go to app.jsx
+
+01:53.720 --> 01:56.880
+and we're gonna say at the top,
+
+01:57.760 --> 02:02.760
+import strict mode from React,
+
+02:04.560 --> 02:07.720
+and we're just gonna wrap our entire app in it.
+
+02:07.720 --> 02:09.160
+Strict mode.
+
+02:14.220 --> 02:15.440
+So, what is strict mode?
+
+02:15.440 --> 02:17.440
+It's just like an extra set of checks
+
+02:17.440 --> 02:21.120
+that React will do things for you normally,
+
+02:21.120 --> 02:22.600
+but in strict mode it'll say like,
+
+02:22.600 --> 02:25.480
+hey, you're executing in strict mode,
+
+02:25.480 --> 02:27.000
+I'm not gonna let you do this.
+
+02:28.120 --> 02:31.140
+Usually what it is, is like,
+
+02:31.140 --> 02:32.680
+if you're using things that are about
+
+02:32.680 --> 02:34.120
+to be removed from React,
+
+02:34.120 --> 02:34.960
+it'll give you a big warning.
+
+02:34.960 --> 02:37.800
+It's like, hey, this has been warned
+
+02:37.800 --> 02:38.720
+that this is gonna be removed
+
+02:38.720 --> 02:40.000
+from a future version of React.
+
+02:40.000 --> 02:41.120
+I'm not going to let you use this
+
+02:41.120 --> 02:42.840
+because you're in strict mode.
+
+02:42.840 --> 02:45.360
+So they do that so that people know in advance
+
+02:45.360 --> 02:47.280
+that stuff's gonna be removed from React.
+
+02:47.280 --> 02:49.360
+So, that's what strict mode is.
+
+02:50.220 --> 02:51.880
+Yeah, continue to double render your components
+
+02:51.880 --> 02:54.880
+just to make sure that all the effects are run twice, right?
+
+02:56.120 --> 02:57.860
+It can catch subtle bugs of like,
+
+02:57.860 --> 02:59.960
+sometimes you have effects that are doing something one time
+
+02:59.960 --> 03:01.440
+and working differently another time.
+
+03:01.440 --> 03:03.640
+That's kind of what they're supposed to catch.
+
+03:05.040 --> 03:06.320
+If you're asking me how many times
+
+03:06.320 --> 03:07.360
+has that caught something for me,
+
+03:07.360 --> 03:08.480
+the answer is not really,
+
+03:08.480 --> 03:10.240
+because like once you're in the mindset
+
+03:10.240 --> 03:13.040
+of like how effects and state is supposed to work,
+
+03:13.040 --> 03:15.980
+it's pretty rare that you would get outside of that.
+
+03:19.120 --> 03:20.720
+Last thing here,
+
+03:20.760 --> 03:22.720
+we're gonna install the DevTools.
+
+03:22.720 --> 03:24.920
+So, I have a link down here for you.
+
+03:24.920 --> 03:27.560
+This should take you to the React docs.
+
+03:27.560 --> 03:29.800
+And they have DevTools available for Chrome,
+
+03:29.800 --> 03:32.160
+Firefox, and Edge.
+
+03:32.160 --> 03:36.060
+They used to have it for Safari,
+
+03:36.060 --> 03:39.800
+but I guess no one uses Safari, so they took it away.
+
+03:39.800 --> 03:40.640
+No one uses Firefox,
+
+03:40.640 --> 03:42.760
+but I'm happy they still maintain that one.
+
+03:45.000 --> 03:48.800
+So yeah, let me go show you Firefox.
+
+03:48.800 --> 03:51.520
+You should just be able to click in here and say add.
+
+03:51.520 --> 03:53.120
+I've already installed it, so mine's gonna stay there.
+
+03:53.120 --> 03:54.720
+It's the same thing with Chrome.
+
+03:55.840 --> 03:58.480
+And then what's cool about this,
+
+04:02.800 --> 04:04.840
+let me make my DevTools a little bit smaller.
+
+04:04.840 --> 04:06.960
+You should see down here at the end,
+
+04:08.560 --> 04:10.160
+components and profiler.
+
+04:12.360 --> 04:13.880
+So you get two little things that you get added
+
+04:13.880 --> 04:16.480
+by the React DevTools.
+
+04:16.480 --> 04:19.440
+And so let's just go look at components.
+
+04:19.440 --> 04:22.640
+You can see here I have an app component, order pizza.
+
+04:22.640 --> 04:25.200
+This is kind of the expected order of components
+
+04:25.200 --> 04:29.320
+that we have inside of our app here.
+
+04:29.320 --> 04:30.560
+If I click on order,
+
+04:30.560 --> 04:32.620
+I can also see all the hooks that happen,
+
+04:32.620 --> 04:33.620
+which is pretty cool, right?
+
+04:33.620 --> 04:36.800
+I can see everything coming in from,
+
+04:36.800 --> 04:38.600
+these are the pizza types, right?
+
+04:39.800 --> 04:42.960
+You can see I have a pepperoni medium.
+
+04:44.000 --> 04:45.240
+Here's something kind of fun you can do.
+
+04:45.240 --> 04:47.440
+You can actually edit this directly.
+
+04:47.440 --> 04:52.280
+So if I hit this to, I think it's something like that.
+
+04:52.280 --> 04:53.720
+I break it, that's cool.
+
+04:58.000 --> 04:58.960
+There we go.
+
+04:58.960 --> 05:00.680
+All right, so notice this is barbecue chicken.
+
+05:00.680 --> 05:03.280
+I can actually edit this directly to be pepperoni.
+
+05:03.280 --> 05:04.540
+And notice when I hit enter,
+
+05:04.540 --> 05:07.360
+this is gonna become pepperoni, right?
+
+05:09.760 --> 05:12.120
+Sometimes that can be useful, right?
+
+05:12.120 --> 05:14.240
+I can edit this to be small.
+
+05:14.240 --> 05:16.240
+It can be useful for debugging just to see like,
+
+05:16.240 --> 05:18.620
+if I change this to be this, what happens?
+
+05:24.360 --> 05:25.200
+Yeah, again here,
+
+05:25.200 --> 05:27.760
+you can see all the props that come into this one.
+
+05:27.760 --> 05:30.440
+Notice that props, does it actually let you,
+
+05:30.440 --> 05:31.720
+it does let you edit props.
+
+05:31.720 --> 05:33.240
+That used to not be true.
+
+05:33.240 --> 05:34.220
+How cool is that?
+
+05:40.920 --> 05:43.160
+So that's that.
+
+05:43.160 --> 05:46.000
+I'll show you one other trick that I find pretty useful.
+
+05:46.920 --> 05:47.880
+All right, so if I,
+
+05:47.880 --> 05:51.360
+let's say I wanna like investigate this radio buttons.
+
+05:51.360 --> 05:54.040
+I can click inspect here, right?
+
+05:54.040 --> 05:55.760
+So I click inspect.
+
+05:55.760 --> 05:57.480
+Obviously that takes me into the inspector.
+
+05:57.480 --> 06:01.120
+It doesn't take me into the React DevTools,
+
+06:01.120 --> 06:03.620
+but if I just go over to the React DevTools,
+
+06:05.960 --> 06:08.800
+usually it'll take you directly to that component,
+
+06:08.800 --> 06:10.760
+but it's probably because it's in the,
+
+06:14.120 --> 06:15.740
+larger component.
+
+06:15.740 --> 06:16.760
+Oh yeah, this time it did.
+
+06:16.760 --> 06:20.280
+Okay, so that time it took me over to the pizza, right?
+
+06:20.280 --> 06:22.760
+This helps, right now we only have three components.
+
+06:22.760 --> 06:23.600
+By the end of this course,
+
+06:23.600 --> 06:25.660
+we'll probably have like 50-ish,
+
+06:25.660 --> 06:28.560
+just because we'll introduce things like the router
+
+06:28.560 --> 06:30.160
+that have a lot of layers to it.
+
+06:33.200 --> 06:34.080
+That can be super useful
+
+06:34.080 --> 06:36.480
+for finding a component deeply buried in a tree.
+
+06:38.060 --> 06:40.440
+The last thing I'll show you is that we have that,
+
+06:40.480 --> 06:44.120
+and now I can hit dollar sign R.
+
+06:46.480 --> 06:49.600
+This is the component that I have selected
+
+06:49.600 --> 06:53.240
+in the React components, right?
+
+06:53.240 --> 06:56.020
+So you can see this is actually the pepperoni pizza.
+
+06:56.020 --> 06:58.120
+It's the last thing that I selected
+
+06:59.080 --> 07:03.320
+in the component tree here,
+
+07:03.320 --> 07:05.920
+which is more of a party trick
+
+07:05.920 --> 07:07.560
+than it is useful, to be honest with you.
+
+07:07.560 --> 07:08.960
+I don't find myself wanting
+
+07:08.960 --> 07:11.000
+to programmatically interact with it very much,
+
+07:11.000 --> 07:14.900
+but it is there, which is pretty cool.
+
+07:14.900 --> 07:17.260
+I mean, just another, this is totally unrelated to React,
+
+07:17.260 --> 07:18.800
+but I don't know if you click on this
+
+07:18.800 --> 07:22.080
+and you hit dollar sign zero,
+
+07:22.080 --> 07:24.720
+you'll get the last thing you selected in the inspector,
+
+07:25.680 --> 07:28.480
+which is that I find myself doing that quite a bit more.
+
+07:32.960 --> 07:35.180
+So I introduced those now to you,
+
+07:35.180 --> 07:36.480
+just so that for the rest of the course,
+
+07:36.480 --> 07:38.080
+if you have any questions or concerns,
+
+07:38.080 --> 07:40.920
+you can reference them kind of as we go.
+
+07:40.920 --> 07:42.220
+There is the profiler as well.
+
+07:42.220 --> 07:43.880
+We're gonna talk less about that,
+
+07:45.720 --> 07:48.240
+but let's see if I just start recording
+
+07:50.520 --> 07:54.000
+and do a bunch of stuff here.
+
+07:54.000 --> 07:55.820
+Oh, sorry, don't do that right now.
+
+07:58.200 --> 08:02.900
+All right, so blah, blah, blah.
+
+08:04.280 --> 08:05.740
+And I click stop.
+
+08:06.740 --> 08:09.820
+All right, Flame Graph isn't super interesting right now,
+
+08:09.820 --> 08:10.820
+neither is the ranked view,
+
+08:10.820 --> 08:12.940
+but this is gonna show you kind of the performance profile
+
+08:12.940 --> 08:13.780
+with the Flame Graph.
+
+08:13.780 --> 08:16.740
+And if you have a big React app
+
+08:16.740 --> 08:19.180
+and you wanna see what is going slow
+
+08:19.180 --> 08:20.260
+and what's broken down,
+
+08:20.260 --> 08:24.560
+this is designed to help you with that, specific to React.
+
+08:27.360 --> 08:28.200
+I mean, these are kind of cool.
+
+08:28.200 --> 08:30.260
+I hadn't seen these before.
+
+08:30.260 --> 08:32.680
+So the way that React works is it has commits, right?
+
+08:32.680 --> 08:34.160
+So they're basically like packets
+
+08:34.160 --> 08:35.560
+of things that have changed.
+
+08:36.580 --> 08:38.020
+And you can see what caused the update,
+
+08:38.020 --> 08:40.780
+how long it took, what the priority was,
+
+08:40.780 --> 08:43.300
+because you can have deferred and immediate updates.
+
+08:43.300 --> 08:45.860
+There's all sorts of fun stuff you can do.
+
+08:45.860 --> 08:47.140
+We're not talking about performance
+
+08:47.140 --> 08:48.860
+so much in this particular course.
+
+08:48.860 --> 08:51.140
+We might touch on that more intermediate
+
+08:51.140 --> 08:53.980
+or maybe in a different React performance course.
+
+08:56.140 --> 08:59.380
+One thing, just kind of as a general note with React,
+
+08:59.380 --> 09:01.820
+it's generally fast enough.
+
+09:02.700 --> 09:04.340
+And when I say that, you kind of get to write,
+
+09:04.340 --> 09:07.180
+React can be fairly naive in terms of like
+
+09:07.180 --> 09:08.540
+not worrying about performance,
+
+09:08.540 --> 09:10.160
+not worrying about commits or updates
+
+09:10.160 --> 09:11.780
+or anything like that.
+
+09:11.780 --> 09:14.700
+My advice to you is just continue writing React that way
+
+09:14.700 --> 09:15.900
+for the most part.
+
+09:15.900 --> 09:18.180
+Only introduce the performance enhancements
+
+09:18.180 --> 09:19.380
+when you have a problem.
+
+09:19.380 --> 09:22.120
+So state it differently, solve problems you have.
+
+09:22.120 --> 09:24.060
+Don't try to anticipate problems that you might have
+
+09:24.060 --> 09:25.220
+because you usually are wrong
+
+09:25.220 --> 09:27.260
+about the problems you're about to have.
+
+09:30.580 --> 09:34.020
+And while the performance enhancements for React work,
+
+09:34.020 --> 09:34.860
+they work great,
+
+09:37.700 --> 09:40.420
+they make the code harder to read and harder to debug.
+
+09:41.660 --> 09:45.660
+And that's why I say don't do the performance enhancements
+
+09:45.660 --> 09:46.540
+until you need them
+
+09:46.540 --> 09:48.940
+because it becomes harder to work with your code.
+

@@ -1,0 +1,462 @@
+WEBVTT
+
+
+00:00.000 --> 00:03.560
+JSX et nous passons maintenant aux concepts de base de React
+
+00:06.240 --> 00:07.960
+Alors
+
+00:07.960 --> 00:14.440
+encore une fois, je me souviens avoir regardé Pete Hunts parler. Je ne me souviens même pas de quelle conférence il s'agissait, mais cela aurait été
+
+00:16.760 --> 00:19.720
+2014 pas 2013. J'aurais regardé ça en 2013
+
+00:19.720 --> 00:24.640
+Je travaillais sur Reddit et il l'a montré et j'étais comme si ça avait l'air plutôt cool
+
+00:24.640 --> 00:29.520
+Et puis il a commencé à écrire son HTML et son JavaScript, c'est comme si j'étais sorti. j'aime je n'aime pas ça
+
+00:29.520 --> 00:31.440
+Je ne veux rien avoir à faire avec ça
+
+00:31.440 --> 00:35.280
+Prends ta magie démoniaque et pars, n'est-ce pas ? J'aime ça. Cela n'avait aucun sens pour moi
+
+00:36.080 --> 00:41.640
+et je lisais l'histoire de la façon dont ils ont fini par créer JSX, c'est qu'ils avaient créé React et comme ils pensent que c'est
+
+00:41.640 --> 00:47.680
+une bonne idée, mais ils ont dû convaincre un groupe de développeurs de hack de l'utiliser. Le hack est une version de PHP ou
+
+00:48.760 --> 00:52.160
+C'est peut-être, sinon tout à fait vrai, mais c'est très similaire à PHP
+
+00:53.160 --> 00:56.240
+Et donc ils ont piraté ensemble cette dernière minute
+
+00:57.000 --> 01:01.560
+Un truc JSX pour essayer de les convaincre et c'est comme les développeurs PHP qui aiment tout ça, c'est cool
+
+01:01.560 --> 01:06.600
+Nous pouvons utiliser ce droit et il s'est ensuite avéré être très populaire auprès des développeurs JavaScript également.
+
+01:06.600 --> 01:08.840
+Et c'est ainsi que JSX a fini par décoller
+
+01:08.840 --> 01:15.600
+Cela n'a jamais été prévu pour être le cas d'utilisation principal de React et pourtant, c'est toujours le cas et maintenant non seulement
+
+01:15.760 --> 01:21.360
+React l'utilise mais comme Solid JS l'utilise, vous pouvez l'utiliser avec comme V ou avec view et d'autres choses aussi
+
+01:21.360 --> 01:23.360
+Alors ça a vraiment décollé
+
+01:24.360 --> 01:31.360
+Alors laissez-moi vous expliquer pourquoi je suis revenu et quand quelqu'un a recadré cela pour moi, je suis encore une fois assez vieux pour m'en souvenir.
+
+01:32.360 --> 01:38.600
+JavaScript dans notre HTML où vous cliqueriez comme un gestionnaire de clic et tout le JavaScript vient d'être inséré dans le HTML
+
+01:38.720 --> 01:43.040
+C'était dégoûtant. C'était difficile à déboguer. C'était comme essayer de
+
+01:43.720 --> 01:47.840
+Déboguer le code minifié. C'était comme des mines terrestres dans tout votre HTML
+
+01:47.840 --> 01:51.400
+C'était tout simplement le pire et j'ai passé une bonne partie de mon premier boulot à déchirer
+
+01:52.040 --> 01:57.800
+JavaScript hors HTML et donc l'inverse me semblait tout aussi mauvais, c'est comme si je ne voulais pas de HTML avec mon JavaScript, n'est-ce pas ?
+
+01:59.200 --> 02:02.200
+Quel est le recadrage qui m'a finalement amené à
+
+02:03.680 --> 02:06.160
+Acceptez JSX ou au moins essayez-le plus longtemps
+
+02:07.680 --> 02:09.680
+Est-ce que nous venons juste d'écrire ceci correctement
+
+02:10.960 --> 02:17.720
+React crée un élément chacun identifiant le titre principal de mon site Web. Qu’est-ce que cela est censé finir par traduire ?
+
+02:19.040 --> 02:21.040
+C'est censé être
+
+02:21.440 --> 02:25.320
+Ce droit. Nous écrivons littéralement du code qui imite le HTML
+
+02:27.560 --> 02:29.560
+Ne devrions-nous pas simplement écrire le HTML
+
+02:29.880 --> 02:31.880
+au lieu d'essayer de l'imiter et
+
+02:32.800 --> 02:37.720
+Quand j'ai en quelque sorte eu ce recadrage, c'est comme, d'accord, cela a en fait beaucoup de sens pour moi et la citation quand j'ai compris comment
+
+02:38.360 --> 02:42.420
+JSX n'est qu'une très très fine couche au-dessus de JavaScript. Ce n'est pas vraiment un ajout
+
+02:43.560 --> 02:48.480
+Presque aucune sémantique pour JavaScript. Je me disais, d'accord, je pense que je peux tolérer ça et je dois avoir une marche construite de toute façon
+
+02:48.480 --> 02:50.480
+Alors, qui s'en soucie ?
+
+02:51.440 --> 02:53.440
+Alors
+
+02:53.640 --> 02:55.720
+Voilà à quoi ressemble notre pizza
+
+02:57.160 --> 03:00.800
+En fait, allons écrire ça alors ouvrez votre application point JS
+
+03:02.160 --> 03:05.080
+Créons simplement un nouveau fichier ici et appelons-le pizza
+
+03:05.840 --> 03:07.160
+point
+
+03:07.160 --> 03:10.480
+JS et ensuite nous allons ajouter juste un personnage supplémentaire ici X
+
+03:14.040 --> 03:18.040
+Et nous allons créer notre composant pizza, nous allons le déplacer de l'application dot JS vers
+
+03:18.880 --> 03:20.880
+Pizza point JSX
+
+03:21.240 --> 03:24.120
+Maintenant, si vous avez regardé les versions précédentes de ce cours
+
+03:24.120 --> 03:29.200
+Vous remarquerez que j'ai fait plusieurs allers-retours, passant de l'utilisation de JSX comme extension à la simple utilisation de JS.
+
+03:29.800 --> 03:31.800
+Et laissez-moi vous expliquer pourquoi ?
+
+03:32.840 --> 03:36.020
+Au départ, nous devions l'appeler JSX car les outils l'exigeaient
+
+03:36.560 --> 03:44.880
+Sinon, cela ne passerait pas de JSX à JavaScript, puis à Dan Abramov, un JavaScript bien connu.
+
+03:45.840 --> 03:49.680
+Ingénieur qui ne l'a pas lu ou qui n'a pas commencé, il était sur Facebook
+
+03:50.440 --> 03:53.400
+Il a créé Redux et maintenant il est au ciel bleu
+
+03:55.360 --> 04:03.000
+Il a tweeté une fois pour se demander pourquoi tout le monde appelle ce JSX, c'est juste du JavaScript et cela a provoqué un changement massif dans le monde.
+
+04:04.280 --> 04:07.840
+Communauté JavaScript pour revenir à l'autre façon de l'appeler simplement dot JS
+
+04:07.840 --> 04:10.720
+Et encore une fois, j'essaie de suivre les tendances de la mer
+
+04:10.720 --> 04:13.640
+Mais cette évolution particulière de ce que vous verrez normalement dans la nature
+
+04:13.640 --> 04:15.640
+Si vous êtes un développeur React professionnel
+
+04:16.800 --> 04:20.440
+La raison pour laquelle nous sommes de retour sur JSX maintenant pour ce cours est
+
+04:21.160 --> 04:26.680
+Beat l'exige, Beat n'exécutera pas la transformation JSX à moins que vous ne l'appeliez point JSX. Je
+
+04:27.360 --> 04:30.080
+Je ne sais même pas si vous pouvez configurer cela. Je n'ai pas vraiment essayé
+
+04:30.800 --> 04:32.800
+Nous sommes donc de retour sur JSX maintenant
+
+04:32.840 --> 04:37.400
+Mais j'espère que ce que je veux dire, c'est que peu importe qui s'en soucie, n'est-ce pas ?
+
+04:37.400 --> 04:39.400
+Comme si c'était la chose la plus stupide sur laquelle discuter
+
+04:39.520 --> 04:43.320
+Faites simplement ce dont vos outils ont besoin et n’y pensez pas beaucoup plus que cela
+
+04:45.400 --> 04:47.800
+D'accord, alors allez-y, copiez et collez
+
+04:48.480 --> 04:52.920
+Je vais juste couper ça d'ici et je vais mettre ça dans mon dossier de pizza
+
+04:54.240 --> 04:58.000
+Je vais mettre une pizza par défaut d'exportation en bas
+
+05:01.560 --> 05:03.560
+Et
+
+05:05.640 --> 05:09.080
+Nous allons juste commenter ceci et je vais juste le réimplémenter avec JSX
+
+05:09.680 --> 05:11.680
+et
+
+05:13.960 --> 05:21.600
+Donc une pizza constante est égale à des accessoires
+
+05:24.800 --> 05:26.800
+Et tu vas revenir
+
+05:29.240 --> 05:33.600
+Je vais vous suggérer ici de mettre une parenthèse ouvrante. Je vais te dire pourquoi dans une seconde
+
+05:34.960 --> 05:38.480
+Et tu vas juste commencer à écrire ta différence HTML
+
+05:39.600 --> 05:41.600
+et
+
+05:42.480 --> 05:48.160
+Nous n'avons pas donné de cours auparavant, mais nous allons en donner un maintenant, mais remarquez que nous allons l'appeler le nom du cours.
+
+05:48.160 --> 05:52.080
+Je pense qu'ils ont fait des allers-retours et qu'ils vont s'en débarrasser de toute façon
+
+05:52.720 --> 05:55.520
+La raison pour laquelle ils vous font appeler ce nom de classe et non la classe
+
+05:56.400 --> 06:02.300
+Est techniquement le mot classe et JavaScript est réservé aux classes JavaScript
+
+06:02.300 --> 06:06.560
+Et donc ils ne voulaient pas entrer en collision avec cela. Alors ils appellent le nom de la classe
+
+06:07.080 --> 06:09.640
+En fait, je veux dire, si tu as un
+
+06:11.760 --> 06:14.640
+X est égal à un nouveau ou à un document
+
+06:15.760 --> 06:17.760
+Obtenir l'élément par ID
+
+06:17.760 --> 06:20.400
+Sang, tu n'es pas obligé de copier ça. Je continue juste à prouver quelque chose
+
+06:21.320 --> 06:24.720
+La façon dont vous obtiendriez le nom de classe de X
+
+06:25.440 --> 06:29.080
+Ce seraient des noms de classe. Ils ont opté pour le nom réel de l'API JavaScript
+
+06:29.920 --> 06:35.360
+C'est juste de là que ça vient. Ils ne l'ont pas inventé, n'est-ce pas ? Quoi qu'il en soit, tu t'y habitueras, mais tu dois appeler ça une classe
+
+06:36.040 --> 06:38.040
+Nom au lieu de classe
+
+06:39.680 --> 06:42.400
+Et vos outils le détecteront pour vous, alors ne vous inquiétez pas trop
+
+06:44.600 --> 06:46.600
+D'accord, et ensuite nous aurons un h1
+
+06:47.560 --> 06:51.360
+Maintenant, je pourrais mettre le nom du point des accessoires ici, mais que se passerait-il ?
+
+06:52.880 --> 06:58.320
+Cela afficherait littéralement le nom du point des accessoires de texte, mais si je l'entoure d'accolades
+
+06:59.120 --> 07:05.320
+Vous pouvez mettre ici n'importe quelle expression JavaScript. Et donc votre question pourrait être : quelle est l’expression JavaScript ?
+
+07:05.600 --> 07:07.920
+C'est tout ce qui peut aller du côté droit d'un signe égal
+
+07:09.080 --> 07:11.080
+pour que je puisse mettre
+
+07:14.880 --> 07:16.880
+À droite
+
+07:17.160 --> 07:23.040
+Ce chapeau, cette moitié droite serait une expression, donc je peux mettre les accessoires, le nom du point.
+
+07:23.680 --> 07:27.280
+Mettre les paramètres régionaux en majuscules et ça fonctionnera, non ?
+
+07:31.240 --> 07:33.240
+D'accord
+
+07:33.560 --> 07:38.760
+Même chose avec notre paragraphe ici props dot description
+
+07:41.080 --> 07:44.720
+Et voilà, c'est JSX
+
+07:49.480 --> 07:55.800
+Assez simple, je pense que c'est vrai. Je pense que c'est plus simple comme comparer ça
+
+07:57.440 --> 07:59.440
+Avec ça
+
+08:00.440 --> 08:05.000
+Je dirai presque certainement, à moins que ton cerveau ne soit cassé
+
+08:06.520 --> 08:08.760
+Comme le mien, qui est fréquemment cassé
+
+08:10.040 --> 08:13.760
+C'est tout simplement beaucoup plus facile à lire, n'est-ce pas. C'est en fait ce que tu veux dire, non ?
+
+08:13.760 --> 08:20.280
+Il s'agit du balisage que vous avez l'intention de générer. Ceci imite le balisage que vous avez l'intention de générer
+
+08:20.320 --> 08:22.320
+D'accord, des questions à ce sujet ?
+
+08:25.360 --> 08:28.360
+Ouais, je suis un peu curieux de connaître l'utilisation de la valeur par défaut
+
+08:29.440 --> 08:34.480
+Cela n'a probablement pas de distinction significative avec une application simple comme celle-ci
+
+08:34.480 --> 08:40.500
+mais pouvez-vous donner un exemple de cas dans lesquels vous ne souhaitez peut-être pas que ce soit votre exportation par défaut et cela est lié au
+
+08:41.200 --> 08:44.280
+Module que vous exportez. Je ne comprends pas du tout le concept là-bas. Ouais
+
+08:45.040 --> 08:48.120
+donc j'ai ici exporté la pizza par défaut et
+
+08:50.040 --> 08:56.440
+Si nous allons ici, nous devons l'importer à partir de l'autre fichier, n'est-ce pas ? Alors on va dire importer de la pizza
+
+08:57.440 --> 08:59.440
+De la pizza à points, n'est-ce pas ?
+
+08:59.760 --> 09:05.240
+Le fait qu'il n'y ait pas d'accolades autour signifie qu'il s'agit de l'exportation par défaut de ce fichier particulier.
+
+09:05.240 --> 09:09.780
+D'accord, donc parce que j'ai dit par défaut, vous l'importez ici sans accolades
+
+09:10.560 --> 09:12.560
+Maintenant, si je voulais le faire différemment
+
+09:14.600 --> 09:18.360
+On pourrait dire qu'exporter une pizza const équivaut à une pizza
+
+09:20.440 --> 09:22.440
+Ou
+
+09:22.440 --> 09:24.440
+Je
+
+09:24.880 --> 09:30.560
+J'ai oublié exactement la syntaxe ici car ils ne le font jamais de cette façon, mais vous feriez quelque chose comme ça
+
+09:39.240 --> 09:46.880
+Ok, maintenant c'est une exportation nommée ici et donc maintenant ici, vous importerez ceci comme ceci
+
+09:47.440 --> 09:49.440
+Maintenant
+
+09:50.680 --> 09:56.400
+Pourquoi voudriez-vous le faire dans un sens plutôt que dans l'autre alors que vous avez nommé les exportations, maintenant je peux faire plusieurs exportations ici
+
+09:56.400 --> 09:58.160
+Je peux exporter const
+
+09:58.160 --> 10:00.160
+bla est égal
+
+10:01.680 --> 10:03.600
+À droite
+
+10:03.600 --> 10:05.760
+Et maintenant je peux importer deux choses ici
+
+10:06.920 --> 10:08.520
+blabla
+
+10:08.520 --> 10:12.400
+Les gens ont des opinions très arrêtées sur la manière dont vous êtes censé faire ou ne pas faire cela.
+
+10:13.400 --> 10:19.400
+Certaines personnes aiment tout le temps les exportations nommées. Le défaut est un anti-modèle et à ces personnes, je dis que je m'en fiche.
+
+10:21.400 --> 10:24.400
+Je m'en fiche, comme si c'était la chose la plus stupide sur laquelle discuter
+
+10:25.400 --> 10:27.400
+Je suis généralement d'avis que
+
+10:28.400 --> 10:34.400
+Un fichier, un composant. Les exportations par défaut ont donc du sens pour moi. C'est en quelque sorte un modèle fiable pour moi
+
+10:35.120 --> 10:39.440
+Parfois, je ferai quelque chose comme où je veux, tu peux avoir les deux d'ailleurs
+
+10:39.440 --> 10:43.520
+Ce qui ressemblerait à ceci, certains d'entre eux seraient à l'intérieur des bases bouclées, d'autres ne le seraient pas
+
+10:44.760 --> 10:48.280
+Et je ferai ça de temps en temps, ça ressemblera plutôt à ça
+
+10:49.680 --> 10:51.680
+Alors je vais prendre la pizza de celle-ci
+
+10:52.640 --> 10:54.640
+et puis j'aurai comme
+
+10:55.680 --> 11:01.000
+Testez les pizzas. Eh bien, il me faudra un peu de logique supplémentaire pour pouvoir le tester correctement, n'est-ce pas ?
+
+11:01.160 --> 11:04.160
+Et je vais lui faire faire quelque chose comme ça, n'est-ce pas ?
+
+11:05.160 --> 11:11.160
+Mais d'une manière générale, je suis une personne du genre à un seul fichier et à un seul composant et cela a beaucoup de sens pour moi.
+
+11:11.160 --> 11:14.640
+Une chose que je vais appeler ici, c'est de remarquer ce que tu devais faire
+
+11:16.360 --> 11:18.360
+Importer la réaction à partir de la réaction
+
+11:22.440 --> 11:24.440
+Nous n'avons plus besoin de faire ça
+
+11:25.320 --> 11:27.320
+Alors rappelez-vous comment cela est transpilé ?
+
+11:28.320 --> 11:34.320
+Alors rappelez-vous comment cela est transpilé pour réagir à l'élément de création de points, n'est-ce pas ? Donc partout où tu faisais
+
+11:35.320 --> 11:39.520
+React, vous avez dû importer React même si vous ne l'utilisiez pas directement
+
+11:41.800 --> 11:46.600
+Heureusement, les outils sont devenus suffisamment intelligents pour dire d'accord, si nous voyons JXX, nous allons importer une réaction pour vous.
+
+11:46.600 --> 11:49.560
+Donc ce n'est plus nécessaire, mais c'était nécessaire avant
+
+11:50.440 --> 11:53.480
+Mais vous constaterez peut-être cela dans les anciennes bases de code qui n'ont pas mis à jour leur
+
+11:54.120 --> 11:56.120
+construire des configurations
+
+11:57.320 --> 11:59.400
+Vous
+

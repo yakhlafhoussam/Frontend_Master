@@ -1,0 +1,600 @@
+WEBVTT
+
+
+00:00.000 --> 00:03.840
+Nous voulons donc avoir un chariot.
+
+00:03.840 --> 00:05.960
+En ce moment, nous avons un type de pizza.
+
+00:05.960 --> 00:08.260
+Nous avons un pepperoni qui ressemble un peu à des présentations
+
+00:08.260 --> 00:10.260
+à celui que vous y avez sélectionné.
+
+00:12.140 --> 00:13.800
+Maintenant, nous voulons avoir un chariot ici
+
+00:13.800 --> 00:15.520
+où les gens peuvent cliquer sur Ajouter au panier
+
+00:15.520 --> 00:17.980
+et cela ne va pas simplement actualiser la page, n'est-ce pas ?
+
+00:17.980 --> 00:20.640
+Accédez à order.jsx.
+
+00:22.440 --> 00:27.440
+Nous allons importer le panier depuis le panier .slash,
+
+00:28.440 --> 00:31.120
+que nous allons construire momentanément.
+
+00:33.000 --> 00:35.020
+Encore un crochet ici.
+
+00:35.020 --> 00:40.020
+Const cart set cart est égal à l'état d'utilisation d'un autre tableau vide.
+
+00:42.560 --> 00:47.560
+Et puis sur le formulaire ici, donc formulaire lors de la soumission,
+
+00:50.760 --> 00:55.360
+nous voulons écrire une fonction ici avec l'événement
+
+00:56.360 --> 00:57.880
+e.preventDefault.
+
+00:57.880 --> 00:59.280
+Cela ne sera probablement pas surprenant
+
+00:59.280 --> 01:01.600
+à tous ceux qui ont déjà écrit du code de formulaire.
+
+01:01.600 --> 01:03.740
+Cela empêche sa soumission, n'est-ce pas ?
+
+01:05.880 --> 01:08.280
+Et puis nous allons simplement définir le panier
+
+01:08.280 --> 01:11.720
+et nous allons dire dash dash dash cart.
+
+01:13.040 --> 01:15.760
+Et puis nous allons juste ajouter la pizza
+
+01:15.760 --> 01:16.960
+qu'ils ont sélectionnés.
+
+01:16.960 --> 01:21.960
+C'est donc une pizza sélectionnée, la taille correspond à la taille et au prix de la pizza.
+
+01:25.680 --> 01:26.640
+Oh ouais, c'est mauvais en ce moment
+
+01:26.640 --> 01:27.960
+parce qu'ils n'ont pas de composant de panier.
+
+01:27.960 --> 01:28.800
+Ce n'est pas encore réel.
+
+01:28.800 --> 01:30.120
+C'est très bien.
+
+01:30.120 --> 01:34.980
+Donc événement, nous sommes habitués à ça, PreventDefault.
+
+01:34.980 --> 01:37.240
+Ceci est un autre opérateur de propagation.
+
+01:37.240 --> 01:40.760
+Donc l'autre chose que nous aurions pu faire, c'est comme cart.concat,
+
+01:40.760 --> 01:43.080
+c'est vrai, puis mets ça
+
+01:43.080 --> 01:46.120
+ou cart.push aurait également fonctionné.
+
+01:46.120 --> 01:47.200
+C'est juste une autre façon de procéder
+
+01:47.200 --> 01:48.520
+appelé l'opérateur de propagation, c'est dire,
+
+01:48.520 --> 01:52.080
+hé, étale tout le chariot avant ça
+
+01:52.080 --> 01:54.500
+puis ajoutez un objet supplémentaire après cela.
+
+01:54.500 --> 01:56.180
+C'est tout ce que cela fait.
+
+01:56.180 --> 02:00.180
+Quelqu'un pourrait me demander, hé,
+
+02:00.180 --> 02:02.680
+pourquoi ne mets-tu pas simplement un clic ici
+
+02:02.680 --> 02:05.720
+au lieu d'un onSubmit là-haut ?
+
+02:05.720 --> 02:09.180
+Vous pouvez, mais laissez-moi vous dire pourquoi je pense que c'est mieux.
+
+02:10.700 --> 02:12.400
+Que se passe-t-il s'ils sont allumés,
+
+02:12.400 --> 02:15.300
+que se passe-t-il si vous saisissez du texte et que quelqu'un appuie sur Entrée ?
+
+02:16.780 --> 02:18.180
+Ce qui se produit?
+
+02:18.180 --> 02:22.120
+Si vous n'avez qu'un gestionnaire onClick, rien ne se passe.
+
+02:22.120 --> 02:23.740
+Et les gens s'attendent quand ils sont sur un formulaire
+
+02:23.740 --> 02:26.940
+et ils appuient sur Entrée pour soumettre le formulaire, n'est-ce pas ?
+
+02:26.940 --> 02:28.300
+C'est pourquoi onSubmit est meilleur
+
+02:28.300 --> 02:30.900
+car il gère ces deux cas.
+
+02:30.900 --> 02:32.780
+D'une manière générale, c'est juste plus accessible
+
+02:32.780 --> 02:35.220
+qui aiment les lecteurs d'écran et les outils comme ça
+
+02:35.220 --> 02:37.740
+sont très doués pour gérer les éléments de formulaire.
+
+02:37.740 --> 02:38.940
+Et donc si vous vous accrochez simplement à
+
+02:38.940 --> 02:40.700
+la façon dont fonctionnent normalement les navigateurs,
+
+02:40.700 --> 02:43.000
+vous obtenez en quelque sorte toute l’accessibilité gratuitement.
+
+02:45.380 --> 02:49.900
+Ok, et juste à l'intérieur du dernier div de clôture ici,
+
+02:49.900 --> 02:51.620
+nous allons mettre encore une chose.
+
+02:51.620 --> 02:54.060
+Nous allons dire, si ça charge,
+
+02:55.900 --> 02:58.240
+alors nous dirons chargement h2.
+
+03:00.740 --> 03:04.540
+Et si ça ne se charge pas, alors on va dire panier
+
+03:04.540 --> 03:08.420
+est attribué chariot, chariot, chariot, chariot, chariot, chariot, chariot.
+
+03:09.480 --> 03:11.660
+Le composant panier, la propriété que nous allons transmettre
+
+03:11.660 --> 03:13.000
+dedans se trouve le chariot.
+
+03:14.100 --> 03:16.500
+Et puis nous devons construire le chariot après ça.
+
+03:22.620 --> 03:23.440
+D'accord.
+
+03:27.060 --> 03:30.860
+Alors s'il vous plaît, si vous le souhaitez, créez un cart.jsx.
+
+03:33.580 --> 03:36.140
+Créons un autre formateur de prix.
+
+03:36.140 --> 03:40.100
+Nous sommes peut-être en train de tomber sur le territoire humide, n'est-ce pas ?
+
+03:40.100 --> 03:41.260
+Trois fois raison.
+
+03:42.940 --> 03:44.660
+Je pourrais donc finir par créer une fonction.
+
+03:44.660 --> 03:46.860
+Si tel était mon projet, je pourrais finir par créer une fonction
+
+03:46.860 --> 03:49.780
+ça aime gérer ça ou ça pourrait être un crochet.
+
+03:49.780 --> 03:51.860
+Il n'est pas nécessaire que ce soit un crochet, mais ça pourrait être un crochet
+
+03:51.860 --> 03:54.280
+parce que ce n'est littéralement qu'une seule fonction.
+
+03:55.180 --> 03:57.060
+La seule chose c'est, imagine si tu faisais
+
+03:57.060 --> 03:58.980
+l'internationalisation et tu voulais changer
+
+03:58.980 --> 04:00.980
+entre les devises, il faudrait aller changer ça
+
+04:00.980 --> 04:04.000
+partout, alors que si c'était un seul endroit,
+
+04:04.000 --> 04:04.840
+tu pourrais le faire.
+
+04:06.500 --> 04:08.980
+Mais personne ne fait ça.
+
+04:08.980 --> 04:10.580
+Cela ne semble pas être une chose réelle que font les gens.
+
+04:10.580 --> 04:11.940
+Je plaisante, les gens font ça tout le temps.
+
+04:11.940 --> 04:13.300
+C'était mon travail chez Netflix.
+
+04:14.300 --> 04:19.300
+Monnaie puis style, qu'est-ce que je fais ici ?
+
+04:23.340 --> 04:28.340
+Le style est la devise, puis la devise est l'USD.
+
+04:32.380 --> 04:37.380
+D'accord, export, défaut, fonction, panier.
+
+04:37.900 --> 04:42.900
+Maintenant, je pourrais mettre des accessoires ici, mais vous pouvez aussi déstructurer
+
+04:46.100 --> 04:47.620
+parce que ça peut être amusant parfois.
+
+04:47.620 --> 04:49.720
+Je vais donc mettre le panier et la caisse ici.
+
+04:53.900 --> 04:55.540
+Soit le total égal à zéro.
+
+04:55.540 --> 04:58.880
+Nous devons compter la quantité de produits présents dans notre panier.
+
+04:58.880 --> 05:00.940
+Alors faisons ça d'abord.
+
+05:00.940 --> 05:05.940
+Si i est égal à zéro, i est inférieur à zéro.
+
+05:07.380 --> 05:12.380
+Moins que la longueur du panier, i plus plus.
+
+05:14.140 --> 05:18.180
+Et puis nous allons juste dire que le courant const est égal au panier i.
+
+05:19.700 --> 05:24.700
+Et le total plus est égal à current.pizza.sizes,
+
+05:31.460 --> 05:32.560
+taille.actuelle.
+
+05:38.020 --> 05:38.860
+D'accord.
+
+05:46.620 --> 05:48.020
+Quelqu'un pourrait dire, hé, Brian,
+
+05:48.020 --> 05:49.340
+pourquoi n'utilisez-vous pas une réduction ici ?
+
+05:49.340 --> 05:51.800
+Et je leur dis : retournez à Haskell.
+
+05:53.460 --> 05:55.780
+Un ancien Brian dans une vie antérieure aurait écrit ceci
+
+05:55.780 --> 05:59.500
+en guise de réduction, mais j'ai réalisé bien plus tard que j'écrivais
+
+05:59.500 --> 06:00.740
+réduit parce que je pensais que c'était amusant
+
+06:00.740 --> 06:03.440
+et pas parce que je pensais qu'ils étaient clairs.
+
+06:03.440 --> 06:06.760
+Et donc quand je rencontre beaucoup de cartes et que je réduit
+
+06:06.760 --> 06:08.160
+et des trucs comme ça, j'ai tendance à aimer,
+
+06:08.160 --> 06:09.880
+non, c'est probablement plus simple qu'une boucle for.
+
+06:09.880 --> 06:11.280
+Cela le rend plus lisible non seulement pour vous,
+
+06:11.280 --> 06:12.640
+mais à tout le monde autour de vous.
+
+06:13.600 --> 06:15.960
+C'est pourquoi je n'écris pas ceci comme une réduction.
+
+06:17.560 --> 06:18.960
+Il y a quelque chose d'extrêmement satisfaisant
+
+06:18.960 --> 06:20.760
+comme écrire comme ces longues chaînes.
+
+06:22.560 --> 06:24.720
+Mais généralement cette satisfaction est de la suffisance
+
+06:24.720 --> 06:27.320
+et pas vraiment parce que c'est du bon code.
+
+06:27.320 --> 06:31.720
+Quoi qu'il en soit, le nom de la classe div est égal au panier.
+
+06:32.000 --> 06:35.000
+Le H2 que nous allons mettre ici est un chariot.
+
+06:37.160 --> 06:38.640
+Et puis nous allons faire un UL
+
+06:38.640 --> 06:40.360
+parce que c'est une liste non ordonnée.
+
+06:41.320 --> 06:46.320
+Et puis nous allons dire cart.map.
+
+06:47.640 --> 06:50.040
+Et puis nous allons faire l'index des éléments.
+
+06:53.120 --> 06:55.640
+Et nous allons faire la chose interdite
+
+06:55.640 --> 06:56.800
+que je t'ai dit de ne pas faire,
+
+06:56.800 --> 06:58.840
+où nous allons utiliser index comme clé.
+
+06:59.000 --> 06:59.840
+Pourquoi?
+
+06:59.840 --> 07:01.880
+Parce qu'aucune des choses dans notre panier
+
+07:01.880 --> 07:04.320
+sont garantis uniques, non ?
+
+07:04.320 --> 07:06.960
+Vous pouvez avoir trois pizzas moyennes au pepperoni,
+
+07:06.960 --> 07:08.440
+auquel cas, que serait-ce,
+
+07:09.320 --> 07:10.960
+il n'y a rien là-bas, non ?
+
+07:10.960 --> 07:13.880
+Il s'agit donc d'un cas particulier où l'utilisation de l'index
+
+07:13.880 --> 07:15.680
+car la clé est ce que vous êtes censé faire.
+
+07:24.400 --> 07:26.120
+D'accord, c'est fini.
+
+07:27.120 --> 07:32.120
+D'accord, le nom de la classe span est égal à la taille, item.size.
+
+07:38.680 --> 07:40.240
+Et nous en avons trois.
+
+07:41.200 --> 07:44.160
+Je vais faire ce type.
+
+07:44.160 --> 07:49.160
+Donc ça doit être le nom du point pizza point, je suppose.
+
+07:50.680 --> 07:51.880
+D'accord, c'est bien.
+
+07:52.920 --> 07:54.360
+Et cela doit être le prix.
+
+07:56.800 --> 08:00.760
+Vous avez donc la taille, la taille, le nom du point de pizza,
+
+08:00.760 --> 08:02.680
+et le prix du point de l'article.
+
+08:02.680 --> 08:03.520
+Cool.
+
+08:08.200 --> 08:09.880
+Ensuite, nous allons faire p.
+
+08:12.800 --> 08:15.720
+Le total est, et nous allons utiliser notre
+
+08:15.720 --> 08:20.720
+total au format international.
+
+08:23.000 --> 08:24.160
+Fermez ça.
+
+08:26.680 --> 08:28.880
+Et puis nous allons écrire un autre bouton.
+
+08:31.440 --> 08:33.200
+Au clic, ici nous allons utiliser au clic
+
+08:33.200 --> 08:34.200
+parce que ce n'est pas un formulaire.
+
+08:34.200 --> 08:36.680
+Il n'y a rien d'autre à ajouter au formulaire de panier.
+
+08:36.680 --> 08:39.200
+Donc, cliquer ici est la bonne chose à faire.
+
+08:41.760 --> 08:43.240
+Et nous allons juste appeler la caisse.
+
+08:43.240 --> 08:45.760
+Nous devons fournir ce que fera la caisse,
+
+08:45.760 --> 08:48.080
+mais tu verras ce genre de transmission
+
+08:48.080 --> 08:50.920
+des fonctions du parent à l'enfant assez fréquemment.
+
+08:50.920 --> 08:52.280
+En gros, vous dites, hé, composant,
+
+08:52.280 --> 08:54.600
+dès que quelque chose arrive, rappelle-moi, n'est-ce pas ?
+
+08:54.600 --> 08:56.880
+Appelez simplement cette fonction et je m'en occupe.
+
+08:58.280 --> 09:00.800
+Donc ce composant de panier est en quelque sorte un composant stupide, n'est-ce pas ?
+
+09:00.800 --> 09:02.880
+Cela n’a pas vraiment beaucoup de logique en soi.
+
+09:02.880 --> 09:04.360
+Il affiche simplement des trucs.
+
+09:05.280 --> 09:06.960
+Certaines personnes prendront cela à l'extrême et diront :
+
+09:06.960 --> 09:09.160
+il y a des composants d'affichage et des composants fonctionnels
+
+09:09.160 --> 09:12.560
+et ils séparent tout en affichage et fonctionnel.
+
+09:12.560 --> 09:15.040
+Je pense que c'est idiot et je ne le fais pas,
+
+09:15.040 --> 09:16.960
+mais quelqu'un le fait et il est idiot.
+
+09:16.960 --> 09:19.880
+Ouais, nous avons donc effectué une exportation par défaut.
+
+09:19.880 --> 09:21.040
+Voilà donc notre panier.
+
+09:21.040 --> 09:22.240
+On dirait que ça marche bien.
+
+09:22.240 --> 09:23.520
+La caisse ne fait encore rien.
+
+09:23.520 --> 09:25.840
+Ce sera donc une fonction indéfinie.
+
+09:25.840 --> 09:27.720
+Donc si vous cliquez dessus, vous allez provoquer une erreur.
+
+09:27.720 --> 09:30.800
+Oh, nous devons ajouter un panier ici ou passer à la caisse.
+
+09:34.840 --> 09:35.680
+D'accord.
+
+09:37.880 --> 09:39.760
+Et on dirait que j'ai mis le chariot au mauvais endroit.
+
+09:39.760 --> 09:42.160
+Voyons pourquoi c'est au mauvais endroit.
+
+09:44.640 --> 09:47.000
+Mais cela semble correct, je pense jusqu'à présent.
+
+09:48.720 --> 09:50.800
+Alors revenons à l'ordre et découvrons
+
+09:50.960 --> 09:52.680
+où c'était censé être.
+
+09:53.800 --> 09:55.560
+CSS est simple.
+
+09:55.560 --> 09:56.640
+Je ne sais pas si quelqu'un vous l'a dit.
+
+09:56.640 --> 09:58.360
+C'est pourquoi ce CSS est vraiment terrible
+
+09:58.360 --> 10:00.000
+parce que cela dépend tellement de la structure
+
+10:00.000 --> 10:02.520
+pour obtenir les bons sélecteurs.
+
+10:04.080 --> 10:07.640
+Ouais, je viens de tout envelopper ici dans une page de commande
+
+10:07.640 --> 10:08.480
+juste là.
+
+10:09.640 --> 10:13.840
+Et puis j'ai mis mon panier juste à l'intérieur de cette dernière division
+
+10:13.840 --> 10:16.280
+et cela devrait permettre à tout de bien être organisé.
+
+10:16.280 --> 10:17.480
+Nous nous rapprochons ici.
+
+10:17.720 --> 10:20.640
+Nous devrions pouvoir ajouter au panier, d'accord, maintenant.
+
+10:22.520 --> 10:24.320
+Donc si je clique sur Ajouter au panier,
+
+10:29.800 --> 10:31.800
+remarquez que nous obtenons des éléments qui commencent à être ajoutés.
+
+10:31.800 --> 10:34.640
+Le total est généré correctement.
+
+10:34.640 --> 10:37.280
+Il n'y a pas d'espace ici, ce qui semble probablement être
+
+10:37.280 --> 10:41.240
+J'ai peut-être foiré le nom d'une classe quelque part.
+
+10:41.240 --> 10:43.240
+D'accord, nous allons donc à la page du panier
+
+10:43.240 --> 10:44.880
+et juste après chacun d'eux,
+
+10:44.920 --> 10:46.280
+nous allons juste ajouter un tiret.
+
+10:47.960 --> 10:50.720
+Et c’est ainsi que j’ai amélioré un peu leur séparation.
+

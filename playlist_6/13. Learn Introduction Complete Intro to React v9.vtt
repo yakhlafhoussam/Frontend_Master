@@ -1,0 +1,635 @@
+WEBVTT
+
+00:00.680 --> 00:05.440
+But let's talk a little bit about what we've done here.
+
+00:05.440 --> 00:06.440
+We have an order form.
+
+00:06.440 --> 00:08.080
+This will eventually will look nicer
+
+00:08.080 --> 00:10.440
+once we have like all the pieces put together.
+
+00:14.480 --> 00:17.280
+I want you to try and select a different type of pizza.
+
+00:21.500 --> 00:23.360
+Doesn't work, right?
+
+00:23.360 --> 00:28.360
+It broke the browser, which is actually kind of hard to do, right?
+
+00:28.360 --> 00:32.360
+Like the browser works really well at creating these types of forms,
+
+00:32.360 --> 00:35.360
+and whatever we did with React made it not work,
+
+00:35.360 --> 00:38.360
+which seems kind of counterproductive, right?
+
+00:38.360 --> 00:39.360
+Same thing with the pizza size.
+
+00:39.360 --> 00:41.360
+Click on one of these other buttons.
+
+00:41.360 --> 00:45.360
+No matter what, you're always going to be selecting small or large.
+
+00:47.360 --> 00:48.360
+And that's annoying, right?
+
+00:48.360 --> 00:51.360
+We expect the radio buttons to work so that you can select small, medium,
+
+00:52.360 --> 00:54.360
+or large.
+
+00:54.360 --> 00:57.360
+Well, reason with me of why this is happening.
+
+01:00.360 --> 01:01.360
+All right.
+
+01:01.360 --> 01:06.360
+So you have pepperoni here, right?
+
+01:06.360 --> 01:07.360
+Which is the value here.
+
+01:07.360 --> 01:10.360
+So that's why it's selecting that one.
+
+01:10.360 --> 01:13.360
+Now I click Hawaiian, right?
+
+01:13.360 --> 01:17.360
+If I click Hawaiian here, what happens?
+
+01:17.360 --> 01:20.360
+React says, hey, an event happened.
+
+01:20.360 --> 01:22.360
+The user did something.
+
+01:22.360 --> 01:26.360
+It's time for us to re-render this component, right?
+
+01:26.360 --> 01:28.360
+So it goes through, and it re-renders this component.
+
+01:28.360 --> 01:31.360
+It says, oh, pizza type, pepperoni, right?
+
+01:31.360 --> 01:35.360
+And so it sets the value to be pizza type, pepperoni.
+
+01:35.360 --> 01:38.360
+So even though the user is clicking on something else,
+
+01:38.360 --> 01:40.360
+it's immediately setting it back to where it was,
+
+01:40.360 --> 01:43.360
+because this isn't dynamic, right?
+
+01:43.360 --> 01:47.360
+This is just assigned, and then it just stays that way.
+
+01:47.360 --> 01:50.360
+So we have to do some sort of assigning pizza type
+
+01:50.360 --> 01:53.360
+to be something different,
+
+01:53.360 --> 01:57.360
+or else it's just going to continually be that.
+
+01:57.360 --> 02:00.360
+This is just a roundabout way of me explaining and showing to you
+
+02:00.360 --> 02:04.360
+that two-way data binding is not free in React.
+
+02:04.360 --> 02:05.360
+There are some other frameworks.
+
+02:05.360 --> 02:07.360
+And famously, Angular 1, right,
+
+02:07.360 --> 02:10.360
+was a big two-way data binding framework,
+
+02:10.360 --> 02:12.360
+and that's just not true anymore.
+
+02:12.360 --> 02:16.360
+We found that that's very fun to write and very bad to maintain,
+
+02:16.360 --> 02:18.360
+because it becomes very black magic of,
+
+02:18.360 --> 02:22.360
+like, where did this variable come from?
+
+02:22.360 --> 02:24.360
+It's part of the magic of React is that it is verbose.
+
+02:24.360 --> 02:27.360
+I'm not going to argue with you that it is not...
+
+02:27.360 --> 02:32.360
+It could be shorter or more terse or something like that.
+
+02:32.360 --> 02:34.360
+It's a little less fun to write,
+
+02:34.360 --> 02:37.360
+and it's a lot more fun to maintain.
+
+02:37.360 --> 02:38.360
+And as I've gone through my career,
+
+02:38.360 --> 02:42.360
+I have found that that's actually worth its weight in gold, right?
+
+02:43.360 --> 02:46.360
+I don't want to optimize for the couple of hours
+
+02:46.360 --> 02:47.360
+I'm going to spend writing something.
+
+02:47.360 --> 02:49.360
+I want to optimize for the hundreds of hours
+
+02:49.360 --> 02:53.360
+I'm going to spend maintaining something.
+
+02:53.360 --> 02:56.360
+Okay, so that's my spiel of why I think this is okay,
+
+02:56.360 --> 03:01.360
+despite the fact that it is a little annoying.
+
+03:01.360 --> 03:03.360
+Interesting if you go try something like Solid.js,
+
+03:03.360 --> 03:06.360
+which is very similar to React in many ways.
+
+03:06.360 --> 03:10.360
+They found a way to kind of make it work with something called signals.
+
+03:10.360 --> 03:12.360
+I think signals are in Preact as well now.
+
+03:12.360 --> 03:14.360
+I haven't worked in Preact in a long time.
+
+03:14.360 --> 03:17.360
+But anyway, suffice to say,
+
+03:17.360 --> 03:19.360
+other frameworks have different approaches to this,
+
+03:19.360 --> 03:22.360
+but React takes a very straightforward, very...
+
+03:22.360 --> 03:24.360
+I want to call it JavaScript-y,
+
+03:24.360 --> 03:27.360
+that they're just kind of working with JavaScript
+
+03:27.360 --> 03:30.360
+to make it work the way that JavaScript normally works,
+
+03:30.360 --> 03:32.360
+as opposed to having black magic around the framework
+
+03:32.360 --> 03:34.360
+to make it work differently.
+
+03:34.360 --> 03:39.360
+So let's go make this work with state then, right?
+
+03:39.360 --> 03:42.360
+We're going to use something called a hook,
+
+03:42.360 --> 03:49.360
+and we're going to do this thing called import use state from React.
+
+03:49.360 --> 03:52.360
+Anything that you see use in React,
+
+03:52.360 --> 03:56.360
+the alarm should go off in your head, it's like, this is a hook.
+
+03:56.360 --> 03:59.360
+Okay?
+
+03:59.360 --> 04:02.360
+So instead of these two,
+
+04:02.360 --> 04:09.360
+let's say const pizza type set pizza type
+
+04:09.360 --> 04:14.360
+equals use state,
+
+04:14.360 --> 04:20.360
+and then you give it the default first value, pepperoni.
+
+04:20.360 --> 04:22.360
+Same thing with pizza size.
+
+04:22.360 --> 04:29.360
+const pizza size set pizza size
+
+04:29.360 --> 04:32.360
+equals use state,
+
+04:32.360 --> 04:34.360
+and whatever you want the default to be.
+
+04:34.360 --> 04:36.360
+We had it as medium, we'll just leave it as medium,
+
+04:36.360 --> 04:38.360
+but you could change it to large if, I don't know,
+
+04:38.360 --> 04:43.360
+you're trying to drive up your margins or something like that.
+
+04:43.360 --> 04:45.360
+This is also, of course, on capitalism.
+
+04:45.360 --> 04:48.360
+I don't know if I told you that, but...
+
+04:48.360 --> 04:50.360
+All right.
+
+04:50.360 --> 04:55.360
+So now we have this use state thing,
+
+04:55.360 --> 04:59.360
+but this now makes pizza type able to be set to be something different.
+
+04:59.360 --> 05:01.360
+It makes this React component stateful,
+
+05:01.360 --> 05:06.360
+but we still have to call this set pizza type somewhere
+
+05:06.360 --> 05:09.360
+so that we can change it.
+
+05:09.360 --> 05:14.360
+So the way that we're going to do it is we're going to go on our select here.
+
+05:14.360 --> 05:19.360
+By the way, these are just highlighted because they're not being used anywhere,
+
+05:19.360 --> 05:22.360
+but we'll do that in just a second.
+
+05:22.360 --> 05:24.360
+All right.
+
+05:24.360 --> 05:28.360
+So I'm just going to put some space here so you can see what I'm writing.
+
+05:28.360 --> 05:32.360
+We'll do something here called on change,
+
+05:32.360 --> 05:38.360
+and the only thing we're going to do is we're going to say
+
+05:38.360 --> 05:42.360
+E, which is like a normal browser event, right?
+
+05:42.360 --> 05:44.360
+You could call this event.
+
+05:44.360 --> 05:47.360
+Just for so many years of doing this, I just always call it E,
+
+05:47.360 --> 05:50.360
+so that's really up to you.
+
+05:50.360 --> 05:53.360
+And we're just going to give this anonymous function that says
+
+05:53.360 --> 05:59.360
+set pizza type to be E.target.value.
+
+06:03.360 --> 06:09.360
+So this is saying whenever a change event happens on select,
+
+06:09.360 --> 06:11.360
+call this function.
+
+06:11.360 --> 06:15.360
+This function takes in an event,
+
+06:15.360 --> 06:18.360
+and it calls set pizza type with the target.value.
+
+06:18.360 --> 06:21.360
+The target is going to be one of these options, right,
+
+06:21.360 --> 06:23.360
+because that's what's actually going to be the,
+
+06:23.360 --> 06:26.360
+well, I think the target is actually the select, not thinking about it,
+
+06:26.360 --> 06:29.360
+but the value will change, right?
+
+06:29.360 --> 06:31.360
+So the value will be whatever the option is,
+
+06:31.360 --> 06:33.360
+so this value will be whatever the user has set,
+
+06:33.360 --> 06:35.360
+and we'll call that with set pizza type,
+
+06:35.360 --> 06:38.360
+which will then end up changing the pizza type up here,
+
+06:38.360 --> 06:40.360
+which kicks off a re-render,
+
+06:40.360 --> 06:45.360
+and now it's going to be correctly rendering the same thing.
+
+06:45.360 --> 06:48.360
+So if we set this, size is still not going to work,
+
+06:48.360 --> 06:51.360
+we haven't done that yet, but let's go try this one.
+
+06:51.360 --> 06:56.360
+We should be able to set this to something else.
+
+06:56.360 --> 07:01.360
+Congratulations, we un-broke it, right?
+
+07:01.360 --> 07:06.360
+All right, so this is called a hook.
+
+07:06.360 --> 07:09.360
+Some rules around Fight Club.
+
+07:09.360 --> 07:11.360
+We don't talk about Fight Club.
+
+07:11.360 --> 07:15.360
+Some rules around hooks.
+
+07:15.360 --> 07:21.360
+You do talk about hooks, you can talk about hooks, that's fine.
+
+07:21.360 --> 07:23.360
+They can never be inside of conditionals,
+
+07:23.360 --> 07:25.360
+so never ever do something like this.
+
+07:25.360 --> 07:30.360
+If something, right, then use state.
+
+07:30.360 --> 07:34.360
+This is a big no-no because the one thing about hooks
+
+07:34.360 --> 07:38.360
+is that they depend on being called in the same order every single time.
+
+07:38.360 --> 07:41.360
+So if I did a conditional there,
+
+07:41.360 --> 07:45.360
+then it would sometimes give them to me out of order,
+
+07:45.360 --> 07:48.360
+so really what would happen is sometimes medium would show up in pizza type,
+
+07:48.360 --> 07:51.360
+which is not what you want.
+
+07:51.360 --> 07:57.360
+So, in other words, hooks never go inside of for loops,
+
+07:57.360 --> 08:02.360
+while loops, do loops, they never go inside of conditionals,
+
+08:02.360 --> 08:04.360
+they're just always top level.
+
+08:04.360 --> 08:06.360
+Even if you don't use them, that's fine,
+
+08:06.360 --> 08:08.360
+you just never put them in conditionals.
+
+08:08.360 --> 08:12.360
+You never have to, so sometimes you ignore a hook and that's fine,
+
+08:12.360 --> 08:16.360
+but you still have to call it in the same order every single time.
+
+08:16.360 --> 08:23.360
+There's linting rules that will help you with that as well.
+
+08:23.360 --> 08:25.360
+So why are they called hooks?
+
+08:25.360 --> 08:30.360
+In my head canon of why this is, I've never asked anyone this,
+
+08:30.360 --> 08:33.360
+this is just what occurs to me, is there's a hook
+
+08:33.360 --> 08:35.360
+that gets called in the same order every single time,
+
+08:35.360 --> 08:37.360
+so it's like a hook being picked up,
+
+08:37.360 --> 08:40.360
+and they get picked up in the same order every single time
+
+08:40.360 --> 08:46.360
+in these render functions.
+
+08:46.360 --> 08:51.360
+Yep, hooks rely on strict ordering, we talked about that.
+
+08:51.360 --> 08:53.360
+Oh yeah, some of you might be thinking,
+
+08:53.360 --> 08:55.360
+this seems like a weird API, right?
+
+08:55.360 --> 08:57.360
+It is kind of a weird API if you think about it,
+
+08:57.360 --> 09:00.360
+I'm just so used to seeing it so frequently that, again,
+
+09:00.360 --> 09:03.360
+I'm a frog that got boiled, right?
+
+09:03.360 --> 09:07.360
+But it's just returning to you an array of two things,
+
+09:07.360 --> 09:11.360
+the actual thing and then the setter for the actual thing, right?
+
+09:11.360 --> 09:14.360
+That's just all that is, right?
+
+09:14.360 --> 09:24.360
+So you could definitely say like const pizza hook equals use state, right?
+
+09:24.360 --> 09:36.360
+And then you would say const pizza type equals pizza hook zero,
+
+09:36.360 --> 09:44.360
+and then set pizza type, right?
+
+09:44.360 --> 09:50.360
+This one line is the equivalent of these three lines,
+
+09:50.360 --> 09:56.360
+but we're all very lazy and we all write it this way.
+
+09:56.360 --> 10:00.360
+Use state is by far the most common one that you will use,
+
+10:00.360 --> 10:03.360
+but I will show you a couple other hooks,
+
+10:03.360 --> 10:08.360
+but just know that use state is by far the most common one.
+
+10:08.360 --> 10:11.360
+Someone online is just asking if you could console log
+
+10:11.360 --> 10:14.360
+just to show kind of the state changing.
+
+10:14.360 --> 10:23.360
+Sure.
+
+10:23.360 --> 10:28.360
+Type, pizza size.
+
+10:28.360 --> 10:31.360
+All right.
+
+10:31.360 --> 10:38.360
+Let's just trash this.
+
+10:38.360 --> 10:43.360
+So you can see every time that a user event is happening here,
+
+10:43.360 --> 10:47.360
+it's actually doing a re-render.
+
+10:47.360 --> 10:51.360
+It's interesting that it is smart enough to know that events happening
+
+10:51.360 --> 10:55.360
+in other parts of the DOM are not being observed,
+
+10:55.360 --> 10:58.360
+and so it's not catching those events.
+
+10:58.360 --> 11:00.360
+React has gotten a lot smarter over the years.
+
+11:00.360 --> 11:03.360
+They used to have triggered a re-render and it doesn't anymore.
+
+11:03.360 --> 11:12.360
+So let's go make it work with pizza size as well.
+
+11:12.360 --> 11:18.360
+So with pizza size, there's a couple different ways to do this.
+
+11:18.360 --> 11:24.360
+I'll show you the lazy way that the linter will complain about.
+
+11:24.360 --> 11:29.360
+Event bubbling still works in React as well.
+
+11:29.360 --> 11:35.360
+So in theory, you can actually do it this way.
+
+11:35.360 --> 11:55.360
+Equals same thing, E set pizza size to be E.target.value.
+
+11:55.360 --> 11:57.360
+And then this will start working, right,
+
+11:57.360 --> 12:01.360
+we have one event listener on the parent element, right,
+
+12:01.360 --> 12:04.360
+and so it's listening for just the one time.
+
+12:04.360 --> 12:08.360
+React doesn't like this because it views it as inaccessible,
+
+12:08.360 --> 12:12.360
+which generally you don't want change handlers on like divs
+
+12:12.360 --> 12:16.360
+because screen readers and all that kind of stuff can't access divs,
+
+12:16.360 --> 12:20.360
+they access inputs, right.
+
+12:20.360 --> 12:22.360
+I think in this particular case it wouldn't matter
+
+12:22.360 --> 12:24.360
+because it's still bubbling the event no matter what,
+
+12:24.360 --> 12:28.360
+and so you can have a change event on a input and it'll still work.
+
+12:28.360 --> 12:33.360
+But let's just appease the linting gods
+
+12:33.360 --> 12:38.360
+and we're going to put this on all the individual inputs.
+
+12:38.360 --> 12:43.360
+It's more explicit as well, so we're just going to put this
+
+12:43.360 --> 12:48.360
+three different times on all of these.
+
+12:48.360 --> 12:51.360
+Now you might say like, well, do I need E.target.value
+
+12:51.360 --> 12:56.360
+or should I do S here like this?
+
+12:56.360 --> 13:01.360
+Tomato, tomato, same thing.
+
+13:01.360 --> 13:06.360
+Because the value is coming from here, right.
+
+13:06.360 --> 13:09.360
+But in both cases it works.
+

@@ -1,0 +1,672 @@
+WEBVTT
+
+
+00:00.320 --> 00:02.960
+Donc ceci n'est qu'un bref aperçu
+
+00:02.960 --> 00:04.800
+sur certaines choses d'aide que vous pouvez faire avec React
+
+00:04.800 --> 00:07.960
+juste pour faciliter le travail.
+
+00:07.960 --> 00:10.640
+Donc l'une d'entre elles est que nous utilisons Vite,
+
+00:10.640 --> 00:13.440
+donc Vite s'occupera automatiquement de NodeM pour vous,
+
+00:13.440 --> 00:14.760
+mais NodeM, si vous ne le connaissez pas,
+
+00:14.760 --> 00:16.740
+c'est simplement dire aux outils
+
+00:16.740 --> 00:17.580
+avec qui vous travaillez,
+
+00:17.580 --> 00:18.840
+c'est comme, suis-je en mode développement
+
+00:18.840 --> 00:20.200
+ou je suis en mode production ?
+
+00:20.200 --> 00:22.800
+Et généralement, on suppose que vous êtes en mode production.
+
+00:22.800 --> 00:24.560
+et ensuite vous le réglez uniquement en mode développement
+
+00:24.560 --> 00:27.160
+lorsque vous faites réellement du travail de développement.
+
+00:27.160 --> 00:29.280
+Auparavant, il fallait le définir explicitement,
+
+00:29.320 --> 00:30.400
+et c'est pourquoi je le mentionne encore ici.
+
+00:30.400 --> 00:31.580
+Donc si vous faites comme Webpack,
+
+00:31.580 --> 00:33.300
+vous devrez peut-être encore le définir explicitement
+
+00:33.300 --> 00:36.660
+ou plutôt, je suis en mode développement en ce moment.
+
+00:36.660 --> 00:39.880
+C'est important pour React car React a beaucoup
+
+00:39.880 --> 00:42.800
+d'aides similaires et de meilleurs messages d'erreur
+
+00:42.800 --> 00:45.040
+et tout ce genre de trucs quand tu es en mode développeur,
+
+00:45.040 --> 00:48.920
+mais l'exécutable réel de React est beaucoup plus lent
+
+00:48.920 --> 00:51.200
+et c'est quatre fois plus grand.
+
+00:51.200 --> 00:52.320
+Alors, ou du moins c'est ce que c'était,
+
+00:52.320 --> 00:53.680
+Je n'ai pas vérifié récemment quelle est sa taille,
+
+00:53.680 --> 00:55.260
+mais c'était assez gros.
+
+00:56.900 --> 00:58.120
+Donc si vous utilisez Vite,
+
+00:58.120 --> 00:59.840
+si vous me suivez,
+
+00:59.840 --> 01:01.680
+si vous utilisez Next, si vous utilisez Remix,
+
+01:01.680 --> 01:04.280
+ils configurent tous automatiquement NodeM pour vous.
+
+01:04.280 --> 01:06.400
+Si vous utilisez directement quelque chose comme webpack,
+
+01:06.400 --> 01:08.040
+vous devrez peut-être le régler vous-même.
+
+01:09.400 --> 01:10.720
+Une des raisons pour lesquelles j'en parle aussi
+
+01:10.720 --> 01:14.480
+est-ce qu'il faut s'assurer que cela soit mis en production
+
+01:14.480 --> 01:17.080
+quand vous vous lancez réellement dans la production.
+
+01:17.080 --> 01:18.000
+Cela devient important.
+
+01:18.000 --> 01:20.780
+Slack a livré React en mode développement
+
+01:20.780 --> 01:22.600
+depuis très, très longtemps,
+
+01:22.600 --> 01:24.320
+et ils ont en fait constaté une augmentation massive
+
+01:24.320 --> 01:26.520
+dans des performances similaires chez Slack
+
+01:26.520 --> 01:27.840
+parce que tout ce qu'ils avaient à faire était
+
+01:27.840 --> 01:30.000
+passer NodeM en production, n'est-ce pas ?
+
+01:30.000 --> 01:31.900
+C'est une raison très stupide
+
+01:31.900 --> 01:35.040
+faire perdre beaucoup de temps et de ressources aux gens, n'est-ce pas ?
+
+01:35.040 --> 01:36.900
+Donc, c'en est un.
+
+01:38.680 --> 01:41.320
+Mode strict, allons-y maintenant.
+
+01:43.560 --> 01:48.560
+Le mode strict est donc une sorte de mode React
+
+01:49.680 --> 01:50.680
+vous pouvez installer les choses.
+
+01:50.680 --> 01:52.720
+Nous allons donc simplement aller sur app.jsx
+
+01:53.720 --> 01:56.880
+et nous allons dire en haut,
+
+01:57.760 --> 02:02.760
+importer le mode strict depuis React,
+
+02:04.560 --> 02:07.720
+et nous allons simplement y envelopper l'intégralité de notre application.
+
+02:07.720 --> 02:09.160
+Mode strict.
+
+02:14.220 --> 02:15.440
+Alors, qu’est-ce que le mode strict ?
+
+02:15.440 --> 02:17.440
+C'est comme une série de chèques supplémentaires
+
+02:17.440 --> 02:21.120
+que React fera les choses pour vous normalement,
+
+02:21.120 --> 02:22.600
+mais en mode strict, ça dira,
+
+02:22.600 --> 02:25.480
+hé, tu exécutes en mode strict,
+
+02:25.480 --> 02:27.000
+Je ne vais pas te laisser faire ça.
+
+02:28.120 --> 02:31.140
+Habituellement, ce que c'est, c'est comme,
+
+02:31.140 --> 02:32.680
+si vous utilisez des choses qui concernent
+
+02:32.680 --> 02:34.120
+à supprimer de React,
+
+02:34.120 --> 02:34.960
+cela vous donnera un gros avertissement.
+
+02:34.960 --> 02:37.800
+C'est comme, hé, cela a été prévenu
+
+02:37.800 --> 02:38.720
+que cela va être supprimé
+
+02:38.720 --> 02:40.000
+à partir d'une future version de React.
+
+02:40.000 --> 02:41.120
+Je ne vais pas te laisser utiliser ça
+
+02:41.120 --> 02:42.840
+parce que vous êtes en mode strict.
+
+02:42.840 --> 02:45.360
+Alors ils font ça pour que les gens sachent à l'avance
+
+02:45.360 --> 02:47.280
+ce truc va être supprimé de React.
+
+02:47.280 --> 02:49.360
+Voilà donc ce qu'est le mode strict.
+
+02:50.220 --> 02:51.880
+Ouais, continuez à doubler le rendu de vos composants
+
+02:51.880 --> 02:54.880
+juste pour être sûr que tous les effets sont exécutés deux fois, n'est-ce pas ?
+
+02:56.120 --> 02:57.860
+Il peut attraper des bugs subtils comme,
+
+02:57.860 --> 02:59.960
+parfois tu as des effets qui font quelque chose une fois
+
+02:59.960 --> 03:01.440
+et travailler différemment une autre fois.
+
+03:01.440 --> 03:03.640
+C'est un peu ce qu'ils sont censés attraper.
+
+03:05.040 --> 03:06.320
+Si tu me demandes combien de fois
+
+03:06.320 --> 03:07.360
+est-ce que ça m'a attrapé quelque chose,
+
+03:07.360 --> 03:08.480
+la réponse n'est pas vraiment,
+
+03:08.480 --> 03:10.240
+parce qu'une fois que tu es dans l'état d'esprit
+
+03:10.240 --> 03:13.040
+de la façon dont les effets et l'état sont censés fonctionner,
+
+03:13.040 --> 03:15.980
+il est assez rare que vous sortiez de là.
+
+03:19.120 --> 03:20.720
+Dernière chose ici,
+
+03:20.760 --> 03:22.720
+nous allons installer les DevTools.
+
+03:22.720 --> 03:24.920
+J'ai donc un lien ici pour vous.
+
+03:24.920 --> 03:27.560
+Cela devrait vous amener à la documentation React.
+
+03:27.560 --> 03:29.800
+Et ils ont DevTools disponible pour Chrome,
+
+03:29.800 --> 03:32.160
+Firefox et Edge.
+
+03:32.160 --> 03:36.060
+Ils l'avaient pour Safari,
+
+03:36.060 --> 03:39.800
+mais je suppose que personne n'utilise Safari, alors ils l'ont supprimé.
+
+03:39.800 --> 03:40.640
+Personne n'utilise Firefox,
+
+03:40.640 --> 03:42.760
+mais je suis heureux qu'ils maintiennent toujours celui-là.
+
+03:45.000 --> 03:48.800
+Alors oui, laissez-moi vous montrer Firefox.
+
+03:48.800 --> 03:51.520
+Vous devriez simplement pouvoir cliquer ici et dire ajouter.
+
+03:51.520 --> 03:53.120
+Je l'ai déjà installé, donc le mien va rester là.
+
+03:53.120 --> 03:54.720
+C'est la même chose avec Chrome.
+
+03:55.840 --> 03:58.480
+Et puis, qu'est-ce qu'il y a de cool à ce sujet,
+
+04:02.800 --> 04:04.840
+permettez-moi de réduire un peu mes DevTools.
+
+04:04.840 --> 04:06.960
+Vous devriez voir ici à la fin,
+
+04:08.560 --> 04:10.160
+composants et profileur.
+
+04:12.360 --> 04:13.880
+Donc vous obtenez deux petites choses que vous ajoutez
+
+04:13.880 --> 04:16.480
+par React DevTools.
+
+04:16.480 --> 04:19.440
+Et donc, regardons simplement les composants.
+
+04:19.440 --> 04:22.640
+Vous pouvez voir ici que j'ai un composant d'application, commandez une pizza.
+
+04:22.640 --> 04:25.200
+C'est en quelque sorte l'ordre attendu des composants
+
+04:25.200 --> 04:29.320
+que nous avons à l'intérieur de notre application ici.
+
+04:29.320 --> 04:30.560
+Si je clique sur commander,
+
+04:30.560 --> 04:32.620
+Je peux aussi voir tous les crochets qui se produisent,
+
+04:32.620 --> 04:33.620
+ce qui est plutôt cool, non ?
+
+04:33.620 --> 04:36.800
+Je peux voir tout ce qui vient de,
+
+04:36.800 --> 04:38.600
+ce sont les types de pizza, non ?
+
+04:39.800 --> 04:42.960
+Vous pouvez voir que j'ai un support pepperoni.
+
+04:44.000 --> 04:45.240
+Voici quelque chose d’amusant que vous pouvez faire.
+
+04:45.240 --> 04:47.440
+Vous pouvez en fait le modifier directement.
+
+04:47.440 --> 04:52.280
+Donc si j'y arrive, je pense que c'est quelque chose comme ça.
+
+04:52.280 --> 04:53.720
+Je le casse, c'est cool.
+
+04:58.000 --> 04:58.960
+Et voilà.
+
+04:58.960 --> 05:00.680
+Très bien, alors remarquez que c'est du poulet barbecue.
+
+05:00.680 --> 05:03.280
+Je peux en fait modifier ceci directement pour qu'il soit pepperoni.
+
+05:03.280 --> 05:04.540
+Et remarquez quand j'appuie sur Entrée,
+
+05:04.540 --> 05:07.360
+ça va devenir du pepperoni, non ?
+
+05:09.760 --> 05:12.120
+Parfois, ça peut être utile, non ?
+
+05:12.120 --> 05:14.240
+Je peux modifier cela pour qu'il soit petit.
+
+05:14.240 --> 05:16.240
+Cela peut être utile pour le débogage juste pour voir,
+
+05:16.240 --> 05:18.620
+si je change ceci pour être ceci, que se passe-t-il ?
+
+05:24.360 --> 05:25.200
+Ouais, encore ici,
+
+05:25.200 --> 05:27.760
+vous pouvez voir tous les accessoires qui entrent dans celui-ci.
+
+05:27.760 --> 05:30.440
+Remarquez que les accessoires vous permettent-ils réellement,
+
+05:30.440 --> 05:31.720
+cela vous permet de modifier les accessoires.
+
+05:31.720 --> 05:33.240
+Ce n’était pas vrai avant.
+
+05:33.240 --> 05:34.220
+C'est pas cool ?
+
+05:40.920 --> 05:43.160
+Voilà donc ça.
+
+05:43.160 --> 05:46.000
+Je vais vous montrer une autre astuce que je trouve très utile.
+
+05:46.920 --> 05:47.880
+Très bien, donc si je,
+
+05:47.880 --> 05:51.360
+disons que je veux enquêter sur ces boutons radio.
+
+05:51.360 --> 05:54.040
+Je peux cliquer sur inspecter ici, n'est-ce pas ?
+
+05:54.040 --> 05:55.760
+Alors je clique sur inspecter.
+
+05:55.760 --> 05:57.480
+Évidemment, cela m’amène à l’inspecteur.
+
+05:57.480 --> 06:01.120
+Cela ne m'amène pas aux React DevTools,
+
+06:01.120 --> 06:03.620
+mais si je passe simplement aux React DevTools,
+
+06:05.960 --> 06:08.800
+généralement, cela vous mènera directement à ce composant,
+
+06:08.800 --> 06:10.760
+mais c'est probablement parce que c'est dans le,
+
+06:14.120 --> 06:15.740
+composante plus grande.
+
+06:15.740 --> 06:16.760
+Oh ouais, cette fois, c'est le cas.
+
+06:16.760 --> 06:20.280
+D'accord, alors cette fois-là, ça m'a amené à la pizza, n'est-ce pas ?
+
+06:20.280 --> 06:22.760
+Cela aide, pour le moment, nous n’avons que trois composants.
+
+06:22.760 --> 06:23.600
+A la fin de ce cours,
+
+06:23.600 --> 06:25.660
+nous en aurons probablement environ 50,
+
+06:25.660 --> 06:28.560
+juste parce que nous allons présenter des choses comme le routeur
+
+06:28.560 --> 06:30.160
+qui comporte de nombreuses couches.
+
+06:33.200 --> 06:34.080
+Cela peut être super utile
+
+06:34.080 --> 06:36.480
+pour trouver un composant profondément enfoui dans un arbre.
+
+06:38.060 --> 06:40.440
+La dernière chose que je vais vous montrer, c'est que nous avons ça,
+
+06:40.480 --> 06:44.120
+et maintenant je peux appuyer sur le signe dollar R.
+
+06:46.480 --> 06:49.600
+C'est le composant que j'ai sélectionné
+
+06:49.600 --> 06:53.240
+dans les composants React, n'est-ce pas ?
+
+06:53.240 --> 06:56.020
+Vous pouvez donc voir qu'il s'agit en fait de la pizza au pepperoni.
+
+06:56.020 --> 06:58.120
+C'est la dernière chose que j'ai sélectionnée
+
+06:59.080 --> 07:03.320
+dans l'arborescence des composants ici,
+
+07:03.320 --> 07:05.920
+ce qui est plutôt un truc de fête
+
+07:05.920 --> 07:07.560
+que c'est utile, pour être honnête avec vous.
+
+07:07.560 --> 07:08.960
+Je n'ai pas envie
+
+07:08.960 --> 07:11.000
+pour interagir beaucoup avec lui par programmation,
+
+07:11.000 --> 07:14.900
+mais c'est là, ce qui est plutôt cool.
+
+07:14.900 --> 07:17.260
+Je veux dire, juste un autre, ça n'a aucun rapport avec React,
+
+07:17.260 --> 07:18.800
+mais je ne sais pas si tu clique dessus
+
+07:18.800 --> 07:22.080
+et tu as atteint le signe dollar zéro,
+
+07:22.080 --> 07:24.720
+vous obtiendrez la dernière chose que vous avez sélectionnée dans l'inspecteur,
+
+07:25.680 --> 07:28.480
+c'est que je me retrouve à faire ça un peu plus.
+
+07:32.960 --> 07:35.180
+Alors je vous les ai présentés maintenant,
+
+07:35.180 --> 07:36.480
+juste pour que pour le reste du cours,
+
+07:36.480 --> 07:38.080
+si vous avez des questions ou des préoccupations,
+
+07:38.080 --> 07:40.920
+vous pouvez les référencer au fur et à mesure.
+
+07:40.920 --> 07:42.220
+Il y a aussi le profileur.
+
+07:42.220 --> 07:43.880
+On va moins parler de ça,
+
+07:45.720 --> 07:48.240
+mais voyons si je commence juste à enregistrer
+
+07:50.520 --> 07:54.000
+et fais un tas de trucs ici.
+
+07:54.000 --> 07:55.820
+Oh, désolé, ne fais pas ça maintenant.
+
+07:58.200 --> 08:02.900
+Très bien, alors bla, bla, bla.
+
+08:04.280 --> 08:05.740
+Et je clique sur stop.
+
+08:06.740 --> 08:09.820
+D'accord, Flame Graph n'est pas très intéressant en ce moment,
+
+08:09.820 --> 08:10.820
+la vue classée non plus,
+
+08:10.820 --> 08:12.940
+mais cela va vous montrer en quelque sorte le profil de performance
+
+08:12.940 --> 08:13.780
+avec le Flame Graph.
+
+08:13.780 --> 08:16.740
+Et si vous avez une grosse application React
+
+08:16.740 --> 08:19.180
+et tu veux voir ce qui se passe lentement
+
+08:19.180 --> 08:20.260
+et ce qui est en panne,
+
+08:20.260 --> 08:24.560
+ceci est conçu pour vous aider, spécifique à React.
+
+08:27.360 --> 08:28.200
+Je veux dire, ce sont plutôt cool.
+
+08:28.200 --> 08:30.260
+Je n'avais jamais vu ça auparavant.
+
+08:30.260 --> 08:32.680
+Donc, la façon dont React fonctionne est qu'il comporte des engagements, n'est-ce pas ?
+
+08:32.680 --> 08:34.160
+Donc ils sont essentiellement comme des paquets
+
+08:34.160 --> 08:35.560
+de choses qui ont changé.
+
+08:36.580 --> 08:38.020
+Et vous pouvez voir la cause de la mise à jour,
+
+08:38.020 --> 08:40.780
+combien de temps cela a pris, quelle était la priorité,
+
+08:40.780 --> 08:43.300
+car vous pouvez avoir des mises à jour différées et immédiates.
+
+08:43.300 --> 08:45.860
+Il y a toutes sortes de choses amusantes que vous pouvez faire.
+
+08:45.860 --> 08:47.140
+Nous ne parlons pas de performances
+
+08:47.140 --> 08:48.860
+tellement de choses dans ce cours particulier.
+
+08:48.860 --> 08:51.140
+Nous pourrions aborder ce point plus intermédiaire
+
+08:51.140 --> 08:53.980
+ou peut-être dans un autre cours de performances React.
+
+08:56.140 --> 08:59.380
+Une chose, juste une note générale avec React,
+
+08:59.380 --> 09:01.820
+c'est généralement assez rapide.
+
+09:02.700 --> 09:04.340
+Et quand je dis ça, tu peux en quelque sorte écrire,
+
+09:04.340 --> 09:07.180
+React peut être assez naïf en termes de like
+
+09:07.180 --> 09:08.540
+ne vous souciez pas des performances,
+
+09:08.540 --> 09:10.160
+ne vous souciez pas des commits ou des mises à jour
+
+09:10.160 --> 09:11.780
+ou quelque chose comme ça.
+
+09:11.780 --> 09:14.700
+Mon conseil est de continuer à écrire React de cette façon
+
+09:14.700 --> 09:15.900
+pour la plupart.
+
+09:15.900 --> 09:18.180
+Introduisez uniquement les améliorations de performances
+
+09:18.180 --> 09:19.380
+quand tu as un problème.
+
+09:19.380 --> 09:22.120
+Alors dites-le différemment, résolvez les problèmes que vous rencontrez.
+
+09:22.120 --> 09:24.060
+N'essayez pas d'anticiper les problèmes que vous pourriez rencontrer
+
+09:24.060 --> 09:25.220
+parce que tu as généralement tort
+
+09:25.220 --> 09:27.260
+sur les problèmes que vous êtes sur le point d'avoir.
+
+09:30.580 --> 09:34.020
+Et même si les améliorations de performances pour React fonctionnent,
+
+09:34.020 --> 09:34.860
+ils fonctionnent très bien,
+
+09:37.700 --> 09:40.420
+ils rendent le code plus difficile à lire et à déboguer.
+
+09:41.660 --> 09:45.660
+Et c'est pourquoi je dis de ne pas améliorer les performances.
+
+09:45.660 --> 09:46.540
+jusqu'à ce que tu en aies besoin
+
+09:46.540 --> 09:48.940
+car il devient plus difficile de travailler avec votre code.
+

@@ -1,0 +1,474 @@
+WEBVTT
+
+
+00:00.000 --> 00:03.360
+Nous faisons maintenant ce que tout le monde préfère, c'est-à-dire les tests.
+
+00:06.880 --> 00:10.960
+Certaines personnes sont excitées, d’autres se demandent : pourquoi me fais-tu perdre mon temps ?
+
+00:12.400 --> 00:17.680
+Je suis probablement quelque part au milieu. J'aime les tests quand ils m'évitent de perdre du temps
+
+00:17.680 --> 00:22.080
+l'avenir et je déteste les tests qui empêchent cela me font perdre du temps maintenant et ne m'aident pas à l'avenir.
+
+00:22.080 --> 00:30.640
+Encore une fois, j'ai parcouru la carte au fil des années sur ce que je pensais des tests. Je suis allé jusqu'au bout
+
+00:30.640 --> 00:35.680
+Je ne peux pas être dérangé, je dois expédier des trucs. J'ai toujours dit, faisons TDD. Je n'ai jamais
+
+00:35.680 --> 00:41.440
+en fait, j'ai été très militant à ce sujet. Et je suis un peu plus enclin à écrire moins de tests.
+
+00:41.440 --> 00:47.840
+que j'aime et n'écrivons pas des tests qui ne me disent rien. Donc je suis du côté du camp
+
+00:47.840 --> 00:54.720
+c'est comme, testons moins. Ouais. Steve Kinney vient de publier un cours sur les principes fondamentaux des tests.
+
+00:54.720 --> 00:59.760
+Et j'aime ce qu'il a dit, c'est-à-dire quand on arrive au point où on se sent dépassé par
+
+01:00.400 --> 01:05.120
+combien de choses se passent dans votre tête, en ce qui concerne les règles métier, le code et autres,
+
+01:05.120 --> 01:10.080
+quand vous ressentez ce genre d'accablement ou d'anxiété, comme si c'était à ce moment-là, c'est comme
+
+01:10.080 --> 01:15.280
+un très bon endroit pour introduire des tests car cela peut en quelque sorte réduire cette charge cognitive
+
+01:15.920 --> 01:22.080
+que vous allez casser quelque chose ou que vous avez oublié de penser à un certain cas d'utilisation ou autre.
+
+01:22.080 --> 01:25.680
+C'est une bonne façon de le dire. J'aime ça. Steve est un gars intelligent quand il s'agit de ce genre de choses
+
+01:25.680 --> 01:30.880
+de trucs aussi. Je dirais donc de vérifier absolument son cours. Je voulais te montrer comment tester ça
+
+01:30.880 --> 01:38.560
+app parce que je pense qu'il y a de bonnes choses à faire ici, mais je ne sais pas. je ne suis pas la personne
+
+01:38.640 --> 01:47.360
+qui écrit une tonne de tests. L'endroit où je trouve les tests super utiles, c'est quand quelqu'un donne
+
+01:47.360 --> 01:53.600
+moi un problème, voici un bug que nous devons corriger, je trouve en fait une très bonne façon de commencer
+
+01:53.600 --> 01:58.160
+est d'écrire le test qui aurait détecté cela. Et puis tu pourras être plus confiant plus tard quand
+
+01:58.160 --> 02:02.160
+vous y reviendrez plus tard. C'est comme si, d'accord, j'avais écrit ce test au préalable. Maintenant, ça passe.
+
+02:02.160 --> 02:06.720
+Maintenant, je peux le lancer. Et maintenant, j'ai un test pour passer en production avec et nous
+
+02:06.720 --> 02:17.920
+ne régressera plus de cette façon. Mais j'y tiens vraiment, je veux que les tests échouent rapidement. je les veux
+
+02:17.920 --> 02:22.800
+échouer bruyamment et je veux qu'ils testent quelque chose d'important. Et si ça ne fait pas tout
+
+02:22.800 --> 02:29.680
+trois de ces choses, je ne veux généralement pas de ce test. J'aime les tests d'intégration, comme les gros
+
+02:29.680 --> 02:34.960
+les suites qui couvrent des expériences utilisateur similaires, comme autour de quelque chose comme cet utilisateur peuvent se connecter et
+
+02:34.960 --> 02:41.360
+acheter quelque chose. Droite. Mais je n'en veux que quelques-uns parce que si tu as déjà maintenu un grand
+
+02:41.360 --> 02:44.800
+suites de tests Selenium, tu sais de quoi je parle là où tu passes la moitié de ta vie
+
+02:44.800 --> 02:49.040
+lutter contre les tests, comme lorsqu'il s'agit de faux positifs ou de faux négatifs ou quelque chose comme ça.
+
+02:49.040 --> 02:55.600
+Donc, dans ces cas-là, je veux quelques tests qui me tiennent profondément à cœur. Et puis si je m'en fiche profondément
+
+02:55.600 --> 03:00.720
+ou c'est trop capricieux, je viens de le supprimer. Comme si la suppression de tests devait être quelque chose que vous faisiez
+
+03:00.720 --> 03:07.840
+de façon régulière. Cela me tient à cœur. Alors maintenant que je vous ai donné tous les avertissements de
+
+03:08.800 --> 03:15.760
+vous avez appris d'un vieil homme grincheux sur les tests, je voulais juste que vous connaissiez mon point de vue
+
+03:15.760 --> 03:19.520
+dessus. Il y a d'autres personnes qui sont bien plus nombreuses, testons tout, testons
+
+03:19.520 --> 03:23.200
+Aucune des choses pour lesquelles je suis le plus favorable, testons moins de choses du côté du camp.
+
+03:23.200 --> 03:32.400
+Nous allons donc tester avec Vitest aujourd'hui, ce qui est une chose vraiment cool réalisée par les gens de VT eux-mêmes.
+
+03:32.400 --> 03:36.640
+C'est vraiment sympa car nous n'avons pas besoin de le reconfigurer. Comme autrefois quand nous écrivions
+
+03:36.640 --> 03:41.280
+comme les tests de moka et des trucs comme ça, il fallait tout configurer à la main. Et ce qui est bien avec
+
+03:41.280 --> 03:46.000
+vitest est qu'il lit votre configuration VT et l'utilise simplement, ce qui est bien car nous n'avons pas à le faire
+
+03:46.000 --> 03:50.240
+écrivez n'importe quelle configuration, je ne pense pas, pas avant un moment du moins. Il est conçu pour être un remplacement instantané
+
+03:50.240 --> 03:56.320
+pour Jest, c'est ce que j'enseignais pour ce cours. Jest a été créé par Facebook et est maintenant
+
+03:56.320 --> 04:02.480
+OpenJS, c'est donc une fondation totalement ouverte. Et Vitest imite simplement à quoi ressemble Jest,
+
+04:02.480 --> 04:07.680
+et Jest imitait à quoi ressemblait Jasmine. Donc si vous avez écrit Jasmine, Jest ou Vitest,
+
+04:07.680 --> 04:14.240
+ils imitent tous Jasmine à l'origine. Je pense que j'ai même enseigné à Jasmine pour l'un des cours ici.
+
+04:15.280 --> 04:19.600
+Certainement moka. J'ai enseigné beaucoup de logiciels de test différents parce que le goût du jour
+
+04:19.600 --> 04:25.120
+a tendance à changer un peu. Parlons de vitest. Je vais annuler mon serveur VT ici
+
+04:25.120 --> 04:32.000
+pendant un petit moment, et je vais installer npm. Je vais juste copier ceci de mes notes ici.
+
+04:32.000 --> 04:36.560
+Vitest puis test de la bibliothèque et du bonheur.
+
+04:37.120 --> 04:52.320
+Donc juste pour vous montrer ici, vitest 2.13, tester les bibliothèques chez React à 16.01 et happydom à 15.7.4.
+
+04:54.480 --> 05:00.320
+D'accord, vitest, je viens de t'expliquer ce que c'est. C'est le harnais de la suite de tests pour Veet.
+
+05:00.560 --> 05:05.600
+Bibliothèque de tests slash React, il s'agit d'un ensemble d'outils d'aide pour écrire des tests React.
+
+05:05.600 --> 05:11.440
+C’est définitivement celui que tout le monde utilise désormais. Il y a des années et des années, Airbnb a publié
+
+05:11.440 --> 05:18.480
+il y en avait un appelé Enzyme que les gens utilisaient depuis longtemps, et c'était vraiment capricieux. Et maintenant les gens
+
+05:18.480 --> 05:24.000
+utilisez ceci à la place. C'est beaucoup plus facile à utiliser, alors utilisez-le certainement. Et puis le bonheur est un
+
+05:24.000 --> 05:29.680
+est un environnement de navigateur synthétique. Nous en utilisions donc un appelé jsdom.
+
+05:31.040 --> 05:34.640
+C'était juste énorme et assez lent, et quelqu'un en avait un peu marre d'attendre.
+
+05:34.640 --> 05:38.480
+des tests apparemment, et donc ils ont dépouillé cela et ont créé le bonheur, qui est le bien plus petit
+
+05:38.480 --> 05:43.920
+version de ceci. Cela va beaucoup plus vite. A l'avantage d'être plus rapide, a l'inconvénient de
+
+05:43.920 --> 05:50.800
+c'est moins complet, non ? Donc, si vous faites des choses étranges avec les navigateurs, ce que nous souhaitons tous
+
+05:50.800 --> 05:57.680
+à faire, le bonheur pourrait échouer ou passer de manière inattendue. Alors soyez-en conscient. Cela
+
+05:57.680 --> 06:07.040
+Ceci étant dit, je n'ai jamais eu ce problème, pour être honnête avec vous. Cool. D'accord. Nous avons donc tout
+
+06:07.040 --> 06:11.040
+ces choses maintenant. Nous allons entrer dans notre répertoire ici et nous allons créer un répertoire
+
+06:11.040 --> 06:23.600
+appelés tests de soulignement de soulignement, soulignement de soulignement. Encore une fois, c'est une affaire de Python
+
+06:23.600 --> 06:29.280
+qu'ils ont en quelque sorte transférés vers JavaScript, le double trait de soulignement de chaque côté. Et c'est
+
+06:31.040 --> 06:35.920
+un signal à tout futur utilisateur que c'est un nom magique. Je n'invente pas ça. C'est ce qu'ils
+
+06:35.920 --> 06:41.040
+appelle-le. Et c'est magique dans le sens où c'est important qu'on l'appelle ainsi parce que le
+
+06:41.040 --> 06:45.920
+la bibliothèque avec laquelle il va être utilisé recherche spécifiquement ce nom. Donc le double soulignement
+
+06:45.920 --> 06:49.600
+de chaque côté signifie ne changez pas le nom de ceci ou vous allez casser des trucs, n'est-ce pas ?
+
+06:52.400 --> 06:56.160
+C'est pourquoi vous voyez le trait de soulignement soulignement init soulignement point de soulignement
+
+06:56.160 --> 06:59.520
+PY pour les trucs Python. C'est pourquoi on l'appelle avec des traits de soulignement doubles.
+
+06:59.760 --> 07:05.680
+D'accord. Donc, quoi que nous mettions ici, le test V sera simplement considéré comme un test. Alors tu peux l'appeler
+
+07:05.680 --> 07:11.440
+tout ce que tu veux. Je vais toujours appeler mes trucs app dot test dot JSX ou app dot spec dot
+
+07:11.440 --> 07:17.440
+JSX. L'un ou l'autre va bien. Mais ce n'est pas obligatoire, si c'est dans le répertoire double trait de soulignement,
+
+07:19.440 --> 07:23.360
+euh, de la même manière, je ne vais pas faire ça pour le moment, mais vous pouvez aussi simplement le mettre dans le
+
+07:23.600 --> 07:28.800
+directement ici. Et il recherche également des fichiers appelés app dot test, vous savez, quelque chose de dot test
+
+07:28.800 --> 07:32.800
+point JSX. Dans les deux cas, le test trouvera automatiquement vos tests et les exécutera.
+
+07:34.800 --> 07:38.800
+Pour une raison quelconque, je vais faire les deux. Je vais faire à la fois les doubles traits de soulignement et le test des points.
+
+07:42.560 --> 07:49.600
+D'accord. Alors allez au package point JSON. Nous avons tous les fichiers que nous allons utiliser. Nous allons
+
+07:49.600 --> 07:57.040
+allez au package point JSON. Nous avons tous nos tests V ici, là.
+
+07:59.280 --> 08:06.000
+Test. Changez simplement ceci pour être un test V comme ça. C'est ça. Et c'est assez intelligent pour pouvoir
+
+08:06.000 --> 08:10.720
+lisez le point de configuration V dot JS. Nous n’avons donc pas à le configurer, pas plus que cela.
+
+08:10.720 --> 08:14.000
+Oh, vous savez, il y a une chose que nous devons configurer, mais nous pouvons la mettre directement dans notre
+
+08:15.040 --> 08:16.720
+V à configurer. Nous n'avons pas besoin de créer un nouveau fichier.
+
+08:19.600 --> 08:27.360
+D'accord. Donc, dans votre répertoire VIT ici, nous allons juste ajouter une chose supplémentaire, test, environnement,
+
+08:30.240 --> 08:35.840
+et nous allons le faire dans Happydom. Il vous suffit d'indiquer quel environnement de navigateur vous souhaitez
+
+08:35.840 --> 08:42.240
+pour le faire. Momentanément, je vais vous montrer ce qui se passe dans le test V, qu'ils vont
+
+08:42.240 --> 08:50.160
+faites-le avec Playwright. C'est un peu la nouvelle tendance qui arrive. Et j'ai essayé de construire ça
+
+08:50.160 --> 08:55.920
+cours avec Dramaturge. Ce n'est tout simplement pas encore prêt. Je ne me sentais tout simplement pas à l'aise de te dire de le faire
+
+08:55.920 --> 09:00.880
+ça encore. Nous allons donc nous en tenir à Happydom. Je vais vous montrer comment configurer Playwright
+
+09:00.880 --> 09:05.360
+vers la fin, mais sachez qu'il y a encore des gremlins et des gobelins là-dedans. Tu dois être
+
+09:05.360 --> 09:08.960
+prudent. D'accord. Nous sommes donc prêts à partir. Tout est prêt pour écrire des tests.
+
+09:09.520 --> 09:16.320
+Euh, juste pour que vous le sachiez, si vous avez besoin d'écrire un V spécifique à configurer pour votre environnement de test V,
+
+09:17.040 --> 09:25.680
+vous pouvez écrire vitest.config.js, et ce sera un V spécifique à configurer pour votre environnement de test V.
+
+09:25.680 --> 09:32.560
+Nous le ferons en fait vers la fin. Sachez simplement que vous devez dire pour prolonger votre
+
+09:32.560 --> 09:36.560
+V actuel à configurer, sinon il l'ignorera. Et puis vous pouvez entrer dans des endroits étranges.
+
+09:37.520 --> 09:42.160
+Mais encore une fois, nous en reparlerons ici dans un instant. Nous n'avons pas à le faire maintenant parce que
+
+09:42.160 --> 09:46.240
+Heureusement, tout reste pareil pour nous. Nous allons donc créer un fichier appelé pizza,
+
+09:46.240 --> 09:54.960
+et vous pouvez soit appeler ceci test.jsx ou spec. L’un ou l’autre me convient. je crois que j'ai appelé
+
+09:54.960 --> 10:01.360
+eux spec dans le passé. Je vais appeler ça un test cette fois. Suivez simplement ce qui vous convient. Nous
+
+10:01.440 --> 10:08.720
+je veux juste tester le rendu du texte alternatif. Imaginez qu'on se fasse gifler par un, tu sais,
+
+10:10.080 --> 10:15.520
+un procès ou une violation pour ne pas être suffisamment accessible parce que nos images n'avaient pas de texte alternatif,
+
+10:15.520 --> 10:20.480
+et nous voulons nous assurer que toutes les pizzas doivent comporter un texte alternatif. Et nous allons
+
+10:20.480 --> 10:24.960
+écrivez un test qui garantit cela. Je ne sais pas, j'invente des trucs ici, mais c'est ce que nous allons faire.
+
+10:24.960 --> 10:33.840
+Nous allons donc importer le rendu à partir de la réaction slash de la bibliothèque de tests d'applications. Nous allons importer
+
+10:34.880 --> 10:44.240
+attendez et testez à partir du test et importez une pizza depuis, comme vous l'avez peut-être deviné, point point barre oblique
+
+10:44.320 --> 10:55.280
+des pizzas. D'accord. Maintenant, nous allons entrer et nous allons dire de tester cette chaîne que nous avons mise ici.
+
+10:56.320 --> 11:00.080
+Je me fiche de ce que vous mettez dedans. Certaines personnes ont des opinions très arrêtées sur la façon dont vous structurez
+
+11:00.080 --> 11:07.360
+ceux-ci. C’est mon seul conseil fort à vous donner ici. Je veux juste que tu mettes quelque chose ici
+
+11:07.920 --> 11:16.080
+cela dit que ce test a échoué et que vous savez quel test a échoué. Ainsi, le texte alternatif s'affiche sur l'image. C'est
+
+11:16.080 --> 11:22.080
+ce que j'ai ici. Si je vois cela sur mes images ou sur des images de pizza, ce serait probablement encore mieux.
+
+11:22.080 --> 11:30.320
+Il vous dira qu'il a échoué lors du test pizza dot dot JSX. Mais assurez-vous simplement que c'est bien
+
+11:30.320 --> 11:34.640
+descriptif de ce que vous testez réellement. Et d'un simple coup d'œil, vous pouvez savoir ce qui a échoué si cela vous indique
+
+11:34.640 --> 11:39.200
+vous que cela a échoué. D'accord. Nous allons en faire une fonction asynchrone.
+
+11:42.080 --> 11:46.400
+Et nous allons dire que const name est égal à ma pizza préférée.
+
+11:48.720 --> 11:55.840
+La source Const est égale, je viens de la mettre comme un espace réservé. Choisissez-en, c'est celui que j'ai
+
+11:55.840 --> 12:01.840
+que j'ai utilisé ces derniers temps et les photos en points slash 200. Donc c'est juste un, je pense que si je l'ouvre juste ici,
+
+12:01.840 --> 12:09.760
+Je peux vous montrer. Cela devrait juste être une image aléatoire, non ? C'est donc ce qui se passe aujourd'hui.
+
+12:11.920 --> 12:21.040
+D'accord. L'écran Const est égal au rendu. Et vous restituez simplement ce que vous voulez tester.
+
+12:21.120 --> 12:36.400
+Le nom de la pizza Const est égal à la description du nom est égal à une pizza super cool et l'image est égale à la source.
+
+12:40.080 --> 12:47.040
+D'accord. Const IMG est égal au point d'écran obtenu par rôle
+
+12:47.360 --> 12:57.360
+image. Et puis nous écrivons simplement quelques attentes ici. Attendez-vous à ce que la source de points de l'image soit la source.
+
+12:57.360 --> 13:14.320
+Et attendez-vous à ce que l'image point alt soit le nom. Test très simple ici. Mais je voulais juste aimer la simplicité
+
+13:15.280 --> 13:21.120
+un peu à quoi ressemblent les tests avec Vitest. Rendre. Cela fonctionne comme le,
+
+13:21.120 --> 13:27.840
+vous savez, le rendu du point racine que nous avons de React DOM. Mais tout cela se fait dans Node.js
+
+13:27.840 --> 13:33.760
+synthétiquement. Cela est donc beaucoup plus rapide que cela ne pourrait être fait dans le navigateur.
+
+13:36.320 --> 13:41.360
+Nous rendons donc cela ici. Nous obtenons cette chose appelée écran. Cela vient de la bibliothèque de tests de React,
+
+13:42.320 --> 13:45.760
+qui est un résultat de rendu. Et il dispose de nombreuses fonctions.
+
+13:47.440 --> 13:54.000
+Mais l’un d’eux est cette répartition par rôle. Je ne sais pas si tu l'as remarqué, mais quand j'ai dit point d'écran,
+
+13:54.560 --> 14:02.880
+il y a beaucoup de méthodes à ce sujet. C'est comme des moyens d'extraire des choses de ce que tu cherches
+
+14:02.880 --> 14:09.760
+pour. Et ils font ce genre de manière intéressante de tester. Nous voulons tous le faire à la manière de jQuery où
+
+14:10.240 --> 14:16.320
+donnez-moi cette classe ou cette pièce d'identité ou quelque chose comme ça. Et parfois j'ai encore un peu envie de ceux-là
+
+14:16.320 --> 14:19.760
+jours parce que cela a beaucoup de sens pour moi de procéder de cette façon. Mais laissez-moi vous dire pourquoi. je pense
+
+14:19.760 --> 14:24.640
+il y a mieux même si ça me fait réfléchir un peu plus fort. Dieu sait que je ne veux pas
+
+14:24.640 --> 14:32.320
+réfléchis bien. C'est très basé sur l'utilisateur. Droite? Cela dépend beaucoup de la façon dont la personne perçoit
+
+14:32.320 --> 14:36.720
+ça ? Comment l’utilisent-ils ? Contrairement à moi, le développeur, qu'est-ce que la classe CSS ?
+
+14:37.360 --> 14:43.200
+L'utilisateur ne se soucie pas de savoir si la classe CSS fonctionne ou non. Ils se soucient de savoir s'ils peuvent voir le div ou
+
+14:43.200 --> 14:48.400
+l'image ou pas. Est-ce que cela a du sens ? Donc ils changent en quelque sorte l’orientation. Dans ce cas,
+
+14:48.400 --> 14:55.360
+se débrouiller par rôle, l'image est un rôle, non ? C'est une chose qu'un utilisateur pourrait expérimenter. Donc dans ce cas,
+
+14:55.360 --> 14:59.520
+nous savons que la pizza n'a qu'une seule image. Nous pouvons donc simplement dire de se conformer à l'image de notre rôle et être sûrs que c'est le cas.
+
+14:59.520 --> 15:07.840
+ce sera la seule chose là-bas. C'est pourquoi cela fonctionne. Mais il y en a un tas.
+
+15:09.040 --> 15:15.040
+Voyons si je peux même vous montrer. Oui, il y a un tas de choses ici. Obtenez les frais, obtenez le formulaire,
+
+15:15.040 --> 15:19.680
+obtenez le titre. Le titre sera comme le H2 ou le H1 ou quelque chose comme ça.
+
+15:21.200 --> 15:25.360
+Mais c'est intéressant. Ce sont toutes des choses sur lesquelles ils se concentrent beaucoup. Que ressentirait un utilisateur
+
+15:25.360 --> 15:30.320
+ici ? Que vivraient-ils ? Et puis vous procédez de cette façon. Je te montrerai plus tard comment faire
+
+15:30.320 --> 15:34.640
+avec l'ID de test, qui se rapproche davantage de ce que nous voulons, c'est comme, hé, je veux juste avoir ça
+
+15:34.640 --> 15:38.400
+chose. Je ne sais pas quel rôle cela va être, mais je veux ce truc. Je vais vous montrer comment faire cela.
+
+15:40.480 --> 15:47.360
+D'accord, c'est donc le test le plus élémentaire. Allons-y et voyons si cela fonctionne.
+
+15:47.520 --> 15:56.000
+Donc je vais juste dire npm run test, ou si vous vous sentez très paresseux, npm test fonctionne,
+
+15:56.000 --> 16:02.080
+ou si vous vous sentez encore le plus paresseux, npm t fonctionne spécifiquement uniquement à des fins de test.
+
+16:04.560 --> 16:11.520
+Et voilà, nous avons écrit un test qui fonctionne. Maintenant, je suis toujours extrêmement méfiant
+
+16:11.520 --> 16:16.160
+quand mes tests réussissent la première fois que je les écris, je l'ai probablement foutu quelque part, n'est-ce pas ?
+
+16:16.400 --> 16:21.200
+Alors quand ça arrive, dans les rares occasions où ça arrive, je me disais, je devrais aller casser ça pour faire
+
+16:21.200 --> 16:28.800
+c'est sûr que ça casse, non ? Alors allons le casser. Briser les choses amusantes. Nous voulons que tout le texte soit
+
+16:28.800 --> 16:38.960
+à mdr non, non ? Et maintenant, si je regarde mon test maintenant, on s'attendait à ce que ce soit ça, mais j'étais
+
+16:39.680 --> 16:47.760
+je m'attendais à ce que ce soit ma pizza préférée, et à la place j'ai reçu mdr non, non ? C'est ce que nous étions
+
+16:47.760 --> 16:57.280
+en attendant. Et maintenant, si je reviens en arrière et que je le répare à nouveau, test de pizza, désolé, pas ça, pizza.jsx.
+
+17:01.200 --> 17:03.280
+Enregistrez-le. Et voilà, ça marche.
+

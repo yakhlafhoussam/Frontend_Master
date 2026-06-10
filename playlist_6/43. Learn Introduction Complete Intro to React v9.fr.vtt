@@ -1,0 +1,165 @@
+WEBVTT
+
+
+00:00.000 --> 00:04.000
+C'est plutôt amusant. C'est une nouveauté chez Vitest.
+
+00:04.000 --> 00:09.000
+Alors copiez celui-ci avec moi. Entrez ici et vous pourrez arrêter ça.
+
+00:09.000 --> 00:18.000
+On va dire npm install capital D chez Vitest
+
+00:18.000 --> 00:26.000
+barre oblique de l'interface utilisateur à 2.1.3.
+
+00:26.000 --> 00:30.000
+Et dans nos scripts ici, nous allons simplement en ajouter un autre ici.
+
+00:30.000 --> 00:36.000
+Ce sera un test de l'interface utilisateur du côlon.
+
+00:36.000 --> 00:43.000
+Et ce sera l'interface utilisateur de Vitest Dash Dash.
+
+00:43.000 --> 00:46.000
+Il n'y a rien de spécial à propos de ce côlon. C'est exactement comme ça que j'aime structurer mes commandes.
+
+00:46.000 --> 00:50.000
+Il s'agit d'un test, mais nous voulons la version UI de celui-ci.
+
+00:50.000 --> 00:53.000
+Vous pouvez également appeler ce test de couverture du côlon. C'est probablement ainsi que je l'appellerais.
+
+00:53.000 --> 00:58.000
+Mais tout le monde appelle comme une couverture, alors je m'en tiens simplement à la convention.
+
+00:58.000 --> 01:05.000
+Mais nous avons une interface utilisateur de test ici. Allons essayer ça. npm exécute le test de l'interface utilisateur du côlon.
+
+01:05.000 --> 01:10.000
+Et vous obtenez ce genre d’expérience de navigateur agréable avec Vitest.
+
+01:10.000 --> 01:15.000
+Vous pouvez donc voir qu'il a effectué mes tests. Ils ont tous passé le temps qu’il leur fallait.
+
+01:15.000 --> 01:22.000
+Vous ne pouvez regarder que ceux qui échouent. Vous pouvez les exécuter individuellement si vous le souhaitez.
+
+01:22.000 --> 01:26.000
+Vous ne pouvez pas exécuter celui de l'instantané car il s'agit d'un test d'instantané.
+
+01:26.000 --> 01:33.000
+Mais tout ça fonctionne. Il y a un graphique de module. Vous pouvez voir de quoi cela dépend, ce qui est plutôt cool.
+
+01:33.000 --> 01:37.000
+Ils se déplacent. C'est extrêmement utile. Vous pouvez voir le code derrière eux.
+
+01:37.000 --> 01:43.000
+Vous pouvez voir ce qu'ils se déconnectent de la console. Vous n’avez rien là-dedans, donc ça ne fera pas ça.
+
+01:43.000 --> 01:47.000
+Mais oui, c'est plutôt cool, non ? C'est ça. C'est tout.
+
+01:47.000 --> 01:52.000
+C'est chouette. Je devrais montrer ça aux gens, non ? C'est toute l'histoire.
+
+01:52.000 --> 01:56.000
+Vous savez quoi? Je ne vous l'ai pas montré jusqu'à présent. Allons-y et faisons-le maintenant.
+
+01:56.000 --> 02:01.000
+Nous n'avons pas téléchargé l'extension VS Code pour Vitest, et c'est très cool.
+
+02:01.000 --> 02:09.000
+Alors venez à VS Code. Entrez ici et faites Vitest. Je l'ai ici.
+
+02:09.000 --> 02:14.000
+Assurez-vous donc que vous obtenez Vitest de Vitest. Et installez ça.
+
+02:14.000 --> 02:18.000
+Je vais arrêter ça pendant une seconde pour pouvoir vous montrer ça.
+
+02:18.000 --> 02:22.000
+Une fois que vous aurez cela, vous aurez ce truc de test ici à côté.
+
+02:22.000 --> 02:26.000
+Pour une raison quelconque, le mien ne s'affichait pas. Alors si vous avez le même problème que moi,
+
+02:26.000 --> 02:30.000
+comme si il n'apparaissait pas avec le truc Vitest et disait, genre, vous devez installer des trucs Python ou quelque chose comme ça,
+
+02:30.000 --> 02:36.000
+accédez-y simplement, désactivez-le, désinstallez-le, puis réinstallez-le. Cela devrait fonctionner.
+
+02:36.000 --> 02:42.000
+Vous pouvez également toujours dire Shift-Command-P ou Control-Shift-P et recharger la fenêtre ici.
+
+02:42.000 --> 02:46.000
+Cela résout généralement presque tous mes problèmes VS Code.
+
+02:46.000 --> 02:53.000
+D'accord. Alors maintenant, j'ai ici mon répertoire source et mon répertoire test. Je peux voir tous mes tests.
+
+02:53.000 --> 02:58.000
+Vous pouvez réellement voir, vous pouvez également aller voir les tests individuels ici.
+
+02:58.000 --> 03:04.000
+Et allons-y et gérons tout, n'est-ce pas ? Soyons juste fous.
+
+03:04.000 --> 03:08.000
+Je vais vous donner tous les éléments de couverture des tests ici afin que vous puissiez voir toutes les différentes choses qu'il couvre.
+
+03:08.000 --> 03:13.000
+Vous pouvez exécuter des tests individuellement. C'est plutôt cool de venir ici.
+
+03:13.000 --> 03:20.000
+Et utilisons celui-ci et disons simplement, je ne sais pas, pour ne pas être nul ou quelque chose comme ça.
+
+03:20.000 --> 03:24.000
+Quelque chose qui va définitivement échouer. Notez qu'il y a une coche ici.
+
+03:24.000 --> 03:32.000
+Je vais garder ça. Et si je clique pour exécuter ceci, ce test sera exécuté individuellement.
+
+03:32.000 --> 03:37.000
+Et il va me dire que c'est pour cette raison que cette ligne est en panne.
+
+03:37.000 --> 03:42.000
+Plutôt cool de voir ça directement dans vos navigateurs. Comme si c'était la chose qui s'était cassée.
+
+03:42.000 --> 03:47.000
+Je pense que c'est assez convaincant. Très souvent, je n'exécute même pas le client en ligne de commande.
+
+03:47.000 --> 03:52.000
+Je vais juste compter sur cela pour le faire moi-même.
+
+03:52.000 --> 03:55.000
+Et maintenant, je peux le relancer et tout se passera très bien.
+
+03:55.000 --> 04:00.000
+Et puis vous pouvez effectuer le démarrage en continu.
+
+04:00.000 --> 04:07.000
+Faisons-le de cette façon. Courir. D'ACCORD. Ou je suppose que nous pouvons faire la couverture. C'est très bien.
+
+04:07.000 --> 04:16.000
+Et maintenant, je ne vais même plus appuyer sur le bouton. Je vais juste dire non et le garder.
+
+04:16.000 --> 04:18.000
+Et il va simplement l'exécuter immédiatement en arrière-plan.
+
+04:18.000 --> 04:21.000
+Chaque fois que j'enregistre le fichier, il continue à s'exécuter et à réexécuter mes tests, ce qui est plutôt cool.
+
+04:21.000 --> 04:28.000
+Et c'est en fait intelligent de dire que ce test teste uniquement ce fichier. Il n'exécutera que ceux-là spécifiques, ce qui est plutôt cool.
+
+04:28.000 --> 04:33.000
+C'est un peu comme s'il y avait plusieurs façons de procéder. Alors choisissez simplement votre préféré.
+
+04:33.000 --> 04:39.000
+Si vous aimez la CLI, respectez-la par tous les moyens. Si vous aimez la version UI, vous pouvez tout faire via l'interface utilisateur.
+
+04:39.000 --> 04:44.000
+Je suis dans VS Code toute la journée, j'ai donc tendance à utiliser VS Code ou la CLI, mais cela dépend entièrement de vous.
+

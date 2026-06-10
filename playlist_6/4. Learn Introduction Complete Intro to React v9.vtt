@@ -1,0 +1,566 @@
+WEBVTT
+
+00:00.680 --> 00:02.380
+Take a little bit of a break from React
+
+00:02.380 --> 00:04.780
+and we're gonna talk about tools,
+
+00:04.780 --> 00:06.280
+which seem to bother everyone but me.
+
+00:06.280 --> 00:07.120
+I love tools.
+
+00:07.120 --> 00:09.000
+That's why I've worked in DevTools for a very long time.
+
+00:09.000 --> 00:13.680
+I've shown you enough vanilla JavaScript React
+
+00:13.680 --> 00:15.200
+for you to know exactly what's happening
+
+00:15.200 --> 00:16.200
+underneath the hood.
+
+00:17.680 --> 00:20.040
+From here, we're gonna move into JSX,
+
+00:20.040 --> 00:22.880
+which was a huge barrier to adoption for a lot of people,
+
+00:22.880 --> 00:24.360
+especially early in the life of React,
+
+00:24.360 --> 00:25.920
+where they're like, hey, we don't really wanna write
+
+00:25.920 --> 00:28.680
+this compiled to JavaScript language.
+
+00:28.680 --> 00:29.700
+It feels weird.
+
+00:32.160 --> 00:33.440
+But we'll get there in just a second.
+
+00:33.440 --> 00:34.920
+For now, we're going to set up all the tools
+
+00:34.920 --> 00:36.220
+so that we can do that.
+
+00:37.780 --> 00:41.120
+So the first thing is we're gonna use NPM.
+
+00:41.120 --> 00:43.880
+I'm gonna use NPM for the life of this course.
+
+00:43.880 --> 00:45.080
+Feel free to use YARN.
+
+00:45.080 --> 00:48.520
+Previous versions of this course have used YARN before.
+
+00:48.520 --> 00:51.200
+PNPM, you can see I have a call out to that one as well.
+
+00:51.200 --> 00:53.400
+I think that's getting more and more popular.
+
+00:54.900 --> 00:58.320
+But it's kinda hard to go wrong with just straight up NPM.
+
+00:59.080 --> 01:00.160
+If you're not familiar with NPM,
+
+01:00.160 --> 01:02.320
+it does not stand for Node Package Manager,
+
+01:03.800 --> 01:06.840
+but it kinda stands for Node Package Manager.
+
+01:06.840 --> 01:07.680
+That's what they say.
+
+01:07.680 --> 01:08.800
+They say it doesn't stand for that.
+
+01:08.800 --> 01:10.280
+And then they just finish the sentence
+
+01:10.280 --> 01:11.120
+and don't say anything else.
+
+01:11.120 --> 01:12.560
+It's kind of annoying.
+
+01:12.560 --> 01:14.920
+Anyway, it is the package manager for Node.js.
+
+01:16.160 --> 01:17.480
+It allows you to install these things
+
+01:17.480 --> 01:19.120
+directly off of the NPM registry,
+
+01:19.120 --> 01:20.600
+which is now owned by GitHub,
+
+01:20.600 --> 01:22.440
+which is in turn owned by Microsoft.
+
+01:25.360 --> 01:28.400
+It allows you to do things like NPM install React,
+
+01:28.400 --> 01:29.600
+things like that.
+
+01:29.600 --> 01:34.020
+So in our project, let's go do the first thing here.
+
+01:34.020 --> 01:35.800
+You can go ahead and stop serve.
+
+01:35.800 --> 01:38.160
+We won't be using that anymore.
+
+01:38.160 --> 01:42.920
+That's Control C, if you're not familiar with Linux.
+
+01:42.920 --> 01:46.920
+All right, so I'm gonna do NPM init-y.
+
+01:49.240 --> 01:50.480
+The dash y just says,
+
+01:50.480 --> 01:52.200
+I don't wanna answer any of your dumb questions.
+
+01:52.200 --> 01:53.520
+Just generate a file for me.
+
+01:53.520 --> 01:54.760
+But if you wanna answer the questions,
+
+01:54.760 --> 01:56.060
+just leave off the dash y.
+
+01:56.820 --> 01:58.620
+And you'll see that you'll get out of here
+
+01:58.620 --> 02:00.420
+a package JSON here.
+
+02:00.420 --> 02:03.420
+And this allows you to start saving things to your project.
+
+02:04.420 --> 02:05.940
+The reason why this is useful to us
+
+02:05.940 --> 02:09.020
+is that we can say NPM install React.
+
+02:09.020 --> 02:10.340
+It'll go install React for us
+
+02:10.340 --> 02:12.140
+and it'll store the version of React
+
+02:12.140 --> 02:13.660
+that we're using in the project.
+
+02:13.660 --> 02:15.620
+So that when I share this with you later,
+
+02:15.620 --> 02:16.740
+you can go install it
+
+02:16.740 --> 02:18.080
+and you'll get the same version of React
+
+02:18.080 --> 02:22.340
+or a compatible version of React that I'm using.
+
+02:22.340 --> 02:24.420
+But I don't have to save React in my repo.
+
+02:24.420 --> 02:26.660
+So we don't have to have a trillion copies of React
+
+02:26.660 --> 02:28.380
+floating out on GitHub, right?
+
+02:28.380 --> 02:30.260
+We get one copy of React.
+
+02:31.980 --> 02:35.020
+And like if React has a critical vulnerability,
+
+02:35.020 --> 02:36.660
+like stuff like that happens,
+
+02:36.660 --> 02:37.820
+they're able to patch it
+
+02:37.820 --> 02:39.380
+so that next time you go to install,
+
+02:39.380 --> 02:40.780
+you'll get the patched version,
+
+02:40.780 --> 02:42.580
+not the insecure version.
+
+02:44.820 --> 02:47.300
+Okay, hopefully that worked for you.
+
+02:47.300 --> 02:51.860
+If not, you'll probably have to go to the Node.js page
+
+02:51.860 --> 02:55.100
+and install Node, however you choose to do that.
+
+02:55.100 --> 03:00.100
+But again, make sure you end up on Node 20.6 or above, please.
+
+03:03.980 --> 03:05.060
+Feel free to use pnpm.
+
+03:05.060 --> 03:06.660
+It does relatively the same thing.
+
+03:06.660 --> 03:08.860
+I'd be very, very confident
+
+03:08.860 --> 03:11.260
+that it would work just as well.
+
+03:11.260 --> 03:12.580
+Yarn, less so these days.
+
+03:12.580 --> 03:14.300
+I haven't used Yarn in a long time.
+
+03:17.760 --> 03:20.460
+You might've noticed when I've been writing code here
+
+03:21.460 --> 03:24.340
+that like if I do something like this and I,
+
+03:24.340 --> 03:27.260
+let's close this, come on.
+
+03:29.140 --> 03:31.060
+So if I do like this and I put a bunch of space
+
+03:31.060 --> 03:32.740
+and then whenever I hit save,
+
+03:33.700 --> 03:34.540
+oh, it doesn't like, did I?
+
+03:34.540 --> 03:35.860
+It's a slash on line 27.
+
+03:35.860 --> 03:36.700
+Oh, there you go, thank you.
+
+03:36.700 --> 03:39.700
+It just fixes all of my spacing for me automatically.
+
+03:41.140 --> 03:44.060
+I cannot be bothered to handle spacing anymore.
+
+03:44.060 --> 03:46.220
+Like that process in my brain
+
+03:46.220 --> 03:48.500
+that thinks about code formatting has just been shut down
+
+03:48.500 --> 03:50.300
+and at this point it's been shut down for so long
+
+03:50.300 --> 03:51.860
+that it's atrophied.
+
+03:51.860 --> 03:54.820
+So I literally cannot fathom how to write
+
+03:54.820 --> 03:56.020
+well-formatted code anymore
+
+03:56.020 --> 03:58.260
+because Prettier just does it for me automatically
+
+03:58.260 --> 03:59.200
+every single time.
+
+04:00.900 --> 04:03.740
+So all Prettier is is the code formatter.
+
+04:03.740 --> 04:07.660
+It takes in unformatted code and it spits out formatted code.
+
+04:08.740 --> 04:11.220
+It's my favorite tool in JavaScript ever.
+
+04:11.220 --> 04:13.980
+It's literally changed the way that I write code
+
+04:13.980 --> 04:16.940
+and blessed be to the Prettier gods.
+
+04:17.780 --> 04:22.780
+So let's go ahead and start this project for Prettier.
+
+04:24.980 --> 04:27.980
+All you have to do is create a file called .prettierrc
+
+04:30.460 --> 04:34.780
+and then I put the very controversial empty object
+
+04:34.780 --> 04:39.780
+as my config, which is just saying use all the defaults.
+
+04:42.980 --> 04:45.740
+My least favorite thing is bike shedding
+
+04:45.780 --> 04:48.900
+about code formatting.
+
+04:48.900 --> 04:49.740
+I hate it.
+
+04:49.740 --> 04:51.420
+I have been in so many meetings over the years
+
+04:51.420 --> 04:53.620
+with like we should be using tabs versus spaces
+
+04:53.620 --> 04:57.780
+or commas at the end or not commas
+
+04:57.780 --> 05:01.560
+or automated semicolon insertion or not,
+
+05:01.560 --> 05:03.060
+all those different things.
+
+05:03.060 --> 05:08.060
+And my message to you is I can't fathom any caring for it.
+
+05:09.900 --> 05:12.840
+I just, it's my least favorite thing to talk about.
+
+05:12.840 --> 05:14.240
+So that's why I put this empty object here
+
+05:14.240 --> 05:16.800
+is like whatever someone else chooses for me, I don't care.
+
+05:16.800 --> 05:19.720
+As long as it gets formatted in a uniform way, I don't care.
+
+05:19.720 --> 05:20.720
+So that's what that is.
+
+05:20.720 --> 05:22.040
+I have a VS code extension here.
+
+05:22.040 --> 05:24.440
+So if you're following along in VS code,
+
+05:24.440 --> 05:28.480
+I'm gonna suggest you install the Prettier code formatter.
+
+05:29.960 --> 05:31.240
+There's several, so make sure you get the one
+
+05:31.240 --> 05:32.580
+that's officially from Prettier
+
+05:32.580 --> 05:35.120
+and then go into one of your JS files
+
+05:35.120 --> 05:40.000
+and just you can hit, it's either shift command P on a Mac
+
+05:40.000 --> 05:45.000
+or control shift P on Linux and Windows
+
+05:45.640 --> 05:48.040
+and then choose format document.
+
+05:49.960 --> 05:51.560
+If this is your first time doing it, it's gonna say like,
+
+05:51.560 --> 05:55.760
+hey, you need to choose a formatter and just choose Prettier
+
+05:55.760 --> 05:59.720
+and then that'll set that up so that that formats
+
+05:59.720 --> 06:02.920
+your documents and then if you hit command comma
+
+06:02.920 --> 06:07.680
+or control comma and then you wanna do format on save
+
+06:08.200 --> 06:11.280
+and just make sure that that one's checked.
+
+06:14.200 --> 06:18.240
+Then you're ready to roll and then you'll get exactly
+
+06:18.240 --> 06:21.160
+the same thing so you can just like mess up formatting,
+
+06:21.160 --> 06:23.520
+make it terrible, let's de-indent everything
+
+06:23.520 --> 06:25.480
+because that just, it makes everyone able
+
+06:25.480 --> 06:28.320
+to look at that code and you just save it
+
+06:28.320 --> 06:29.600
+and it just fixes itself.
+
+06:29.600 --> 06:32.200
+I know I want everyone to use VS code
+
+06:34.400 --> 06:36.000
+but I also used to work with the Primogen.
+
+06:36.040 --> 06:40.880
+So not everyone's gonna use VS code, it turns out, right?
+
+06:40.880 --> 06:42.680
+So you need to set up all of your projects
+
+06:42.680 --> 06:46.280
+to work with anyone's tools, not just your own tool.
+
+06:46.280 --> 06:49.160
+So let's go ahead and set up Prettier to work with everybody.
+
+06:49.160 --> 06:54.160
+npm install dash dash save dev
+
+06:55.200 --> 06:58.880
+or if you're lazy like me, npm i dash capital D
+
+06:58.880 --> 07:02.120
+is the exact same thing and we're gonna put Prettier.
+
+07:06.800 --> 07:11.720
+And you can see here, we have a dev dependency, right?
+
+07:11.720 --> 07:14.880
+So this is a, this only needs to be installed
+
+07:14.880 --> 07:17.280
+in development environments, not for production environments.
+
+07:17.280 --> 07:19.960
+That's what the dev dependency means.
+
+07:19.960 --> 07:24.960
+And then under scripts, we're going to do this.
+
+07:27.600 --> 07:32.600
+I'm gonna set format and you're gonna do Prettier dash dash
+
+07:32.680 --> 07:37.680
+write and we're just gonna say,
+
+07:39.560 --> 07:41.720
+do everything in the source directory
+
+07:49.200 --> 07:54.200
+and then you need to do JS, JSX, TS, TSX,
+
+07:54.560 --> 07:57.040
+whatever file formats you want it to look at.
+
+07:58.440 --> 07:59.920
+That's probably a pretty good list.
+
+07:59.920 --> 08:02.880
+If you have, we're not gonna have any TypeScript in this.
+
+08:02.880 --> 08:04.880
+You could leave the TypeScript stuff out,
+
+08:05.920 --> 08:09.360
+but JS, JSX, CSS, you could put HTML in here as well.
+
+08:11.840 --> 08:12.880
+Prettier doesn't work with everything,
+
+08:12.880 --> 08:14.400
+but they're actually expanding it
+
+08:14.400 --> 08:16.000
+to a lot of other languages now.
+
+08:17.560 --> 08:19.720
+Make sure you need a comma there at the end.
+
+08:23.040 --> 08:28.040
+And now we should be able to run npm run format.
+
+08:28.440 --> 08:30.040
+That's what the scripts are for.
+
+08:30.040 --> 08:33.400
+It's basically like, please remember these bash commands
+
+08:33.400 --> 08:34.680
+for me so later, so I don't have to remember
+
+08:34.680 --> 08:36.160
+how to write this.
+
+08:37.360 --> 08:40.240
+You can just say npm run format and it'll run that for you.
+
+08:40.240 --> 08:42.920
+Oh, and I needed a closing quote here.
+
+08:42.920 --> 08:45.440
+Make sure you have the quotes here.
+
+08:45.440 --> 08:48.480
+The backslash is just an escape character, right?
+
+08:48.480 --> 08:49.640
+Reason why you want the quotes here
+
+08:49.640 --> 08:52.280
+is that you don't want your shell to do the file expansion.
+
+08:52.280 --> 08:55.000
+You want the actual, you want that passed in literally
+
+08:55.000 --> 08:57.800
+as a string to Prettier.
+
+08:57.840 --> 09:00.640
+So that it can go do all the finding of the correct files.
+
+09:03.120 --> 09:04.600
+Now mine's already running, right?
+
+09:04.600 --> 09:06.320
+Because every time I save the file, it's running,
+
+09:06.320 --> 09:09.040
+but you can see, so it says unchanged here.
+
+09:09.040 --> 09:11.200
+But if I had something to change there, it would say.
+

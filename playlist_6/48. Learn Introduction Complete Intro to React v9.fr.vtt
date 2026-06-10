@@ -1,0 +1,519 @@
+WEBVTT
+
+
+00:00.360 --> 00:04.280
+Parlons maintenant d'usage et de suspense.
+
+00:04.280 --> 00:07.880
+Nous en parlons de temps en temps depuis des années
+
+00:07.880 --> 00:09.200
+à ce stade, il s'agit de suspense.
+
+00:09.200 --> 00:11.240
+Ils l’ont annoncé il y a longtemps.
+
+00:11.240 --> 00:13.760
+Et puis on a l'impression qu'ils étaient vraiment sur le point de le sortir.
+
+00:13.760 --> 00:15.200
+Ils disent, non, nous ne voulons pas le publier.
+
+00:15.200 --> 00:16.480
+Et puis ils reviennent en quelque sorte
+
+00:16.480 --> 00:18.040
+et prêt à le publier à nouveau.
+
+00:18.040 --> 00:19.680
+Et ce qu'ils recommandent, c'est :
+
+00:19.680 --> 00:23.000
+nous ne voulons pas vraiment que vous utilisiez directement le suspense.
+
+00:23.000 --> 00:25.960
+Nous voulons que vous utilisiez des choses qui utilisent le suspense pour vous.
+
+00:26.960 --> 00:31.480
+C'est donc une API plutôt étrange,
+
+00:32.680 --> 00:34.280
+mais ils se rapprochent et React 19
+
+00:34.280 --> 00:36.800
+ce sera enfin stable.
+
+00:36.800 --> 00:39.000
+Et je vais vous montrer comment l'utiliser,
+
+00:41.280 --> 00:42.760
+ouais, je vais vous montrer comment l'utiliser aujourd'hui.
+
+00:42.760 --> 00:45.080
+Donc l'une des choses intéressantes, c'est qu'il est réellement utilisable
+
+00:45.080 --> 00:47.240
+par 10 requêtes de pile.
+
+00:47.240 --> 00:49.120
+Ils l'utiliseront pour vous, ce qui est plutôt cool.
+
+00:49.120 --> 00:50.760
+Alors nous allons faire ça.
+
+00:50.760 --> 00:53.280
+Alors je veux que tu ailles vers
+
+00:54.280 --> 00:57.760
+app.jsx.
+
+00:57.760 --> 00:59.200
+Et nous allons lui donner une configuration
+
+00:59.200 --> 01:00.600
+pour interroger le client ici.
+
+01:01.920 --> 01:04.640
+Et nous allons dire les options par défaut,
+
+01:07.640 --> 01:09.040
+requêtes.
+
+01:10.400 --> 01:13.880
+Et nous allons dire une prélecture expérimentale dans le rendu.
+
+01:13.880 --> 01:15.560
+Et nous allons faire en sorte que cela soit vrai.
+
+01:18.120 --> 01:21.280
+Très bien, revenons à past.jsx.
+
+01:21.280 --> 01:24.480
+Désolé, past.lazy.jsx.
+
+01:27.040 --> 01:29.120
+Et nous allons importer quelques choses ici
+
+01:29.120 --> 01:30.200
+de Réagir.
+
+01:31.320 --> 01:34.360
+Nous allons importer un état d'utilisation,
+
+01:35.200 --> 01:37.920
+ce que nous avons déjà, donc je n'ai pas besoin de le faire.
+
+01:37.920 --> 01:41.560
+Mais on va importer du suspense avec un S majuscule et utiliser.
+
+01:42.960 --> 01:43.840
+Utilisez simplement.
+
+01:43.840 --> 01:44.680
+Alors,
+
+01:49.680 --> 01:50.520
+donc,
+
+01:52.840 --> 01:55.800
+nous voulons montrer une très belle page de chargement
+
+01:55.800 --> 01:57.080
+ce n'est pas comme celui-ci
+
+01:59.320 --> 02:01.480
+lorsque nous chargeons des commandes passées.
+
+02:03.080 --> 02:06.160
+Donc ici, à l'intérieur de cette erreur de post-stockage,
+
+02:06.160 --> 02:09.040
+on va abuser un peu de ce composant de niveau supérieur
+
+02:09.040 --> 02:11.160
+et mets d'autres trucs ici.
+
+02:11.200 --> 02:15.440
+Donc premièrement, nous allons déplacer la page juste vers le haut dans ce composant.
+
+02:16.560 --> 02:21.560
+Et nous allons déplacer notre requête d'utilisation ici
+
+02:22.400 --> 02:24.960
+aussi bien là-dedans, non ?
+
+02:27.080 --> 02:27.920
+Ouais.
+
+02:38.000 --> 02:40.480
+Maintenant, la chose intéressante que nous allons faire ici
+
+02:40.480 --> 02:44.040
+c'est que je vais juste appeler cette promesse de chargement, promesse chargée.
+
+02:46.160 --> 02:49.000
+Et puis juste ici avant le point-virgule,
+
+02:49.000 --> 02:51.160
+Je veux mettre un point de promesse.
+
+02:51.160 --> 02:53.360
+Cela va vous donner accès directement à la promesse
+
+02:53.360 --> 02:56.000
+de cette requête d'utilisation qu'elle génère.
+
+02:58.560 --> 03:00.800
+Et puis à l'intérieur d'ici,
+
+03:01.640 --> 03:02.840
+donc à l'intérieur de la limite d'erreur,
+
+03:02.840 --> 03:05.080
+Je vais en mettre un appelé suspense.
+
+03:06.680 --> 03:08.640
+Et je vais lui donner une solution de repli.
+
+03:10.760 --> 03:12.800
+Quelque chose de sympa comme, hé, je charge.
+
+03:12.800 --> 03:13.760
+Alors je vais dire,
+
+03:15.480 --> 03:20.480
+le nom de la classe div est égal aux commandes passées
+
+03:22.760 --> 03:27.760
+et h2 de chargement des commandes passées.
+
+03:31.640 --> 03:33.080
+Et puis en dehors de ça,
+
+03:33.080 --> 03:35.880
+Je dirai suspense serré.
+
+03:36.960 --> 03:38.640
+Oh, cela doit aussi être fermé.
+
+03:40.480 --> 03:41.320
+D'accord.
+
+03:46.960 --> 03:49.720
+Maintenant que je suis en train de suivre la page et la promesse en dehors de ça,
+
+03:49.720 --> 03:54.200
+Je dois transmettre cela dans les commandes passées ici.
+
+03:56.120 --> 04:01.120
+Donc je vais dire qu'une promesse chargée équivaut à une promesse chargée
+
+04:04.400 --> 04:07.360
+et page est égale à page.
+
+04:10.480 --> 04:11.320
+Supportez-moi.
+
+04:11.320 --> 04:12.160
+Nous y arrivons.
+
+04:13.560 --> 04:14.400
+D'accord.
+
+04:14.400 --> 04:17.840
+Alors maintenant, cette promesse est passée.
+
+04:17.840 --> 04:19.360
+Dois-je également transmettre la page définie ?
+
+04:19.360 --> 04:20.200
+Je fais.
+
+04:20.200 --> 04:21.240
+Vous devez passer en page définie.
+
+04:21.240 --> 04:24.400
+Alors page et mise en page, désolé.
+
+04:29.040 --> 04:31.480
+Nous transmettons donc une promesse chargée, une page, une page définie.
+
+04:31.480 --> 04:32.840
+Vous pouvez ignorer ces accessoires
+
+04:32.840 --> 04:35.840
+parce qu'il n'y a pas vraiment d'accessoires qui nous intéressent,
+
+04:37.320 --> 04:39.640
+mais ils étaient là pour moi avant de les y mettre.
+
+04:39.680 --> 04:41.880
+Donc si vous le souhaitez, vous pouvez les laisser là.
+
+04:42.920 --> 04:43.760
+D'accord.
+
+04:45.160 --> 04:47.400
+Cette promesse chargée représente les données
+
+04:47.400 --> 04:50.720
+ça finira par être là, non ?
+
+04:50.720 --> 04:53.560
+C'est donc une promesse des données à venir.
+
+04:57.720 --> 05:02.720
+Alors ce que j'ai besoin que tu fasses, c'est que tu dises :
+
+05:03.280 --> 05:08.280
+const data est égal à use data.
+
+05:09.760 --> 05:14.240
+Cela doit venir des accessoires.
+
+05:14.240 --> 05:17.240
+Nous devons donc déstructurer cela.
+
+05:19.920 --> 05:23.600
+Donc on va mettre la page, définir la page et la promesse chargée
+
+05:25.120 --> 05:29.920
+et les données équivalent à utiliser la promesse chargée.
+
+05:31.000 --> 05:32.760
+Il y a trop de parenthèses ici.
+
+05:38.280 --> 05:39.120
+Et voilà.
+
+05:40.640 --> 05:43.360
+C'est donc cette ligne qui me préoccupe
+
+05:43.360 --> 05:46.880
+que vous pourriez regarder, qu'est-ce que c'est que ça ?
+
+05:46.880 --> 05:48.560
+Alors suivez-moi une seconde.
+
+05:48.560 --> 05:50.120
+Le suspense, c'est essentiellement dire :
+
+05:50.120 --> 05:53.800
+voici une limite dans laquelle des éléments à l'intérieur pourraient être chargés.
+
+05:54.680 --> 05:57.160
+Lors du chargement, effectuez le rendu de secours.
+
+05:58.400 --> 06:01.200
+Lorsqu'il ne se charge pas, restituez tout ce qu'il contient.
+
+06:02.880 --> 06:07.000
+Ce que nous faisons ici, c'est que nous passons
+
+06:07.880 --> 06:09.160
+une promesse des données.
+
+06:09.160 --> 06:11.240
+Donc la raison pour laquelle nous avons amené ça dehors
+
+06:11.240 --> 06:14.800
+de la limite du suspense, c'est que nous ne voulons pas,
+
+06:14.800 --> 06:16.240
+c'est comme si cela fonctionnait comme la limite d'erreur
+
+06:16.240 --> 06:20.320
+que cela doit exister en dehors du rendu
+
+06:20.320 --> 06:23.600
+parce qu'il ne peut pas être rendu si c'est comme si cela ne fonctionnait pas, n'est-ce pas ?
+
+06:25.520 --> 06:27.040
+Je suppose que nous devons passer le chargement.
+
+06:27.040 --> 06:28.680
+Je suppose que tu peux simplement supprimer ce truc de chargement
+
+06:28.680 --> 06:30.480
+parce que cela ne frappera jamais.
+
+06:30.480 --> 06:31.680
+Vous pouvez donc supprimer cela.
+
+06:33.440 --> 06:36.320
+Nous transmettons cette promesse, cette promesse chargée.
+
+06:36.320 --> 06:37.960
+Et ce qui se passe, c'est cette utilisation,
+
+06:37.960 --> 06:39.040
+c'est une autre chose de React.
+
+06:39.040 --> 06:42.720
+Ça dit, d'accord, si cette promesse n'est pas encore chargée,
+
+06:42.720 --> 06:44.400
+suspendre ce composant.
+
+06:44.400 --> 06:46.680
+Ne le restituez pas, arrêtez-vous ici
+
+06:46.680 --> 06:49.320
+et dis à ce composant de suspense au-dessus de moi,
+
+06:49.320 --> 06:51.360
+Je suis toujours en train de charger, non ?
+
+06:51.360 --> 06:52.760
+Donc ça va atteindre cette ligne.
+
+06:52.760 --> 06:55.520
+En fait, ce serait probablement bien si vous pouviez mettre cette ligne en premier
+
+06:55.520 --> 06:58.520
+parce que vous voulez exécuter le moins de code possible ici.
+
+06:58.520 --> 07:02.120
+Ça va remonter comme, hé, le suspense, je charge.
+
+07:02.120 --> 07:04.520
+Et puis il va charger cette solution de secours pour vous.
+
+07:05.440 --> 07:07.880
+Finalement, lorsque cette promesse se réalisera,
+
+07:07.880 --> 07:10.640
+ça va être cool, je vais bien maintenant.
+
+07:10.640 --> 07:13.000
+Et puis ça va laisser le rendu continuer.
+
+07:14.920 --> 07:17.840
+Maintenant, ce qui est cool, c'est ce qui arrive plus tard
+
+07:17.840 --> 07:20.400
+quand nous définissons la page pour qu'elle soit à nouveau quelque chose de différent,
+
+07:20.400 --> 07:22.360
+ça va le renvoyer au suspense
+
+07:22.360 --> 07:24.200
+et puis ça va aller et venir.
+
+07:27.360 --> 07:28.920
+Est-ce mieux que ce que nous avions ?
+
+07:30.000 --> 07:31.840
+Peut-être, je le pense.
+
+07:31.840 --> 07:34.960
+Car désormais ce composant n’a aucune notion de chargement.
+
+07:36.680 --> 07:39.800
+Comme une fois qu'il se libère,
+
+07:39.800 --> 07:41.600
+les données sont toutes chargées et cela se lit comme suit :
+
+07:41.600 --> 07:43.920
+tout cela ressemble à du code chargé linéaire.
+
+07:45.120 --> 07:46.680
+Je pense que c'est plutôt sympa.
+
+07:46.680 --> 07:49.480
+Si vous parvenez à surmonter cela, c'est une sorte d'API étrange.
+
+07:51.160 --> 07:53.320
+Mais tu peux, certains mettent comme un suspense
+
+07:53.320 --> 07:54.720
+au niveau supérieur de leur application et c'est comme,
+
+07:54.720 --> 07:57.200
+il s'agit d'un état de chargement pour l'ensemble de mon application.
+
+07:57.200 --> 07:58.800
+Ce n'est pas la chose la plus conviviale,
+
+07:58.800 --> 08:00.200
+mais tu pourrais le faire de cette façon.
+
+08:02.040 --> 08:03.640
+Et certaines personnes le feront comme ça
+
+08:03.640 --> 08:04.960
+où c'est plus localisé.
+
+08:06.480 --> 08:08.120
+Alors, je veux dire, assurons-nous
+
+08:08.120 --> 08:10.760
+que je ne vous dis pas tous des mensonges, cela pourrait arriver.
+
+08:12.160 --> 08:13.680
+C'était des ordres passés.
+
+08:13.680 --> 08:15.400
+Donc en chargeant les commandes passées,
+
+08:18.680 --> 08:19.520
+et chargez-le.
+
+08:20.680 --> 08:22.040
+Même chose, si on passe ensuite,
+
+08:22.040 --> 08:24.440
+ça va revenir à ce truc de chargement des commandes passées
+
+08:27.080 --> 08:28.720
+et puis c'est fait.
+
+08:28.720 --> 08:31.520
+Et puis, comme il s’agit d’une requête à 10 piles, tout est bien mis en cache.
+
+08:31.520 --> 08:33.560
+Ainsi, vous n’atteignez plus cet état de chargement.
+
+08:36.400 --> 08:37.800
+Je pense que c'est plutôt sympa.
+
+08:41.560 --> 08:42.800
+Un autre genre de fait amusant,
+
+08:42.800 --> 08:45.160
+Je me demande si je peux faire ça très rapidement ici ?
+
+08:47.600 --> 08:48.800
+Je ne l'ai pas ici.
+
+08:50.280 --> 08:52.080
+Mais regardons l'en-tête.
+
+08:52.080 --> 08:53.880
+Ouais, en-tête JX très rapide.
+
+08:54.960 --> 08:56.960
+Ils peuvent utiliser plusieurs choses.
+
+08:56.960 --> 09:00.400
+C'est comme si c'était devenu ça, ça y est.
+
+09:00.440 --> 09:02.080
+Où nous avons un contexte d'utilisation ici.
+
+09:03.760 --> 09:06.000
+Vous pouvez également simplement l'utiliser maintenant
+
+09:08.880 --> 09:09.960
+et fais ça.
+
+09:13.280 --> 09:15.560
+Surprise, tu pourrais dire qu'on s'en fiche
+
+09:15.560 --> 09:17.120
+et c'est une chose juste à dire,
+
+09:17.120 --> 09:19.320
+mais que vous pouvez désormais le faire avec React 19.
+

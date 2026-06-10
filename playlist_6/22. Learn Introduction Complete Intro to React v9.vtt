@@ -1,0 +1,224 @@
+WEBVTT
+
+00:00.000 --> 00:07.000
+So, inside the render body of order, we want to take care of the checkout at this particular level.
+
+00:11.000 --> 00:13.000
+Just to kind of show you how you would do this.
+
+00:18.000 --> 00:21.000
+So we're going to write an async function called checkout.
+
+00:31.000 --> 00:33.000
+We're going to set loading to true.
+
+00:37.000 --> 00:41.000
+Because we don't want people to be able to add and subtract things while we're checking out, right?
+
+00:42.000 --> 00:50.000
+And then we're going to say await fetch slash API slash order.
+
+00:53.000 --> 00:55.000
+And then we want it to be a post.
+
+00:55.000 --> 01:02.000
+So, method, post, headers, we have to tell it it's a JSON request.
+
+01:03.000 --> 01:12.000
+So, content type application slash JSON. Cool.
+
+01:14.000 --> 01:22.000
+We're going to have a body, which is JSON.stringify our cart.
+
+01:26.000 --> 01:34.000
+So, if you're not familiar, this is the same as saying cart colon cart.
+
+01:34.000 --> 01:38.000
+The name of the thing is cart and the name of the variable is cart.
+
+01:38.000 --> 01:43.000
+But in JavaScript, you can just condense that down if they're the same name and just call it cart like that.
+
+01:43.000 --> 01:48.000
+When someone checks out, they probably expect their cart to be emptied, right?
+
+01:49.000 --> 01:52.000
+So all you do with that is set cart to be empty array.
+
+01:53.000 --> 01:56.000
+And set loading to be false.
+
+01:56.000 --> 02:03.000
+By this point, because we're doing an await here, then it's just going to wait for this to finish first.
+
+02:03.000 --> 02:06.000
+And then once this is finished, then it'll do these things.
+
+02:06.000 --> 02:08.000
+That's the magic of await here.
+
+02:11.000 --> 02:14.000
+Okay. Last thing here, we have this function called checkout.
+
+02:14.000 --> 02:19.000
+We have the ability to call inside of cart, but we have to pass it from parent to child, right?
+
+02:20.000 --> 02:29.000
+So, down here on cart, we're just going to say checkout equals, you probably guessed it, checkout.
+
+02:31.000 --> 02:36.000
+And now that function is being passed from parent to child via the props, right?
+
+02:36.000 --> 02:42.000
+So that checkout function is now this checkout function, which now we can call very easily with the onClick here.
+
+02:42.000 --> 02:45.000
+Let's talk a second about props. We haven't really talked too, too much about it.
+
+02:45.000 --> 02:52.000
+It used to be kind of confusing the difference between props and state.
+
+02:54.000 --> 03:00.000
+I kind of really pull those concepts apart so that hopefully they're not confusing to each other.
+
+03:00.000 --> 03:03.000
+Props are things that are passed from parent to child, right?
+
+03:03.000 --> 03:09.000
+So in this particular case, you have the cart, and this is getting the actual cart itself is coming from the parent.
+
+03:09.000 --> 03:12.000
+And checkout is a function that's coming from the parent.
+
+03:12.000 --> 03:17.000
+But it's important to note here, cart is immutable or maybe stated differently,
+
+03:17.000 --> 03:21.000
+you cannot change cart because it came from the parent, right?
+
+03:21.000 --> 03:27.000
+So I can't say cart equals cart.push lol, right?
+
+03:27.000 --> 03:34.000
+This is not going to do anything because the cart of the parent is separated from the cart of the child.
+
+03:34.000 --> 03:38.000
+So, in other words, this is what's called one-way data flow,
+
+03:38.000 --> 03:41.000
+which is something that some people talk about sometimes with React,
+
+03:41.000 --> 03:47.000
+that data only flows down in components and never flows up, right?
+
+03:47.000 --> 03:56.000
+So there's no way I can say inside of this cart, like parent.cart.push or anything like that, doesn't exist.
+
+03:56.000 --> 04:00.000
+There's no way to do that directly from the child.
+
+04:00.000 --> 04:07.000
+The only way that a child component can affect the parent component is through something like this,
+
+04:07.000 --> 04:11.000
+where you pass a function down from the parent to the child and say,
+
+04:11.000 --> 04:16.000
+hey, child, when you want to affect the parent, call this function.
+
+04:16.000 --> 04:20.000
+So maybe stated differently, cart has no concept of its parent.
+
+04:20.000 --> 04:24.000
+It could be the top level component. It could not be the top level component.
+
+04:24.000 --> 04:28.000
+It could be rendered here. It could be rendered there. It has no concept of where it is.
+
+04:28.000 --> 04:32.000
+It doesn't matter, right? It's its own encapsulated component.
+
+04:32.000 --> 04:35.000
+This is different versus like the use state, right?
+
+04:35.000 --> 04:39.000
+It uses the mutable part of the child that it can modify itself, right?
+
+04:39.000 --> 04:42.000
+And a component can only modify its own state.
+
+04:42.000 --> 04:45.000
+It can't modify its child state. It can't modify its parent state.
+
+04:45.000 --> 04:48.000
+It can only modify its own state.
+
+04:48.000 --> 04:53.000
+So in other words, these components are self-encapsulated.
+
+04:53.000 --> 04:58.000
+It can be annoying because it makes it verbose to change things at various different levels.
+
+04:58.000 --> 05:01.000
+But it means that if I see that there's a problem with cart,
+
+05:01.000 --> 05:07.000
+let's say it is showing the wrong word for checkout.
+
+05:07.000 --> 05:13.000
+I'm like 99.99% that the problem is going to be inside of cart.
+
+05:13.000 --> 05:16.000
+It makes it very obvious of where problems are.
+
+05:16.000 --> 05:22.000
+And that's my favorite part about React is it's very debuggable from that perspective, right?
+
+05:22.000 --> 05:27.000
+If there's a problem with checkout here, it means it could mean that the props are passed in incorrectly,
+
+05:27.000 --> 05:31.000
+in which case I'd have to go up the parent tree to see, like, what are you passing down?
+
+05:31.000 --> 05:35.000
+But at that interface level, like, parent passes in this, child takes this,
+
+05:35.000 --> 05:38.000
+makes that interface really easy to debug.
+
+05:38.000 --> 05:41.000
+Because I can just open my DevTools, it's like, what are your props, right?
+
+05:41.000 --> 05:43.000
+What did you get?
+
+05:43.000 --> 05:49.000
+And if it's what I expect of what it gets, right, then I know the problem lies within the child.
+
+05:49.000 --> 05:54.000
+So let's go fix the problem that we had here.
+
+05:54.000 --> 05:59.000
+It is not header. It's headers.
+
+05:59.000 --> 06:01.000
+How dare you browse.
+
+06:01.000 --> 06:05.000
+So that's in order.jsx. That's the checkout function.
+
+06:05.000 --> 06:10.000
+Just make sure you have headers instead of header.
+
+06:10.000 --> 06:20.000
+All right. So then we can come back over here and get your Hawaiian pizza, a couple of those.
+
+06:20.000 --> 06:29.000
+Barbecue, add to cart, click checkout, and you can see we get a 200 with an order ID.
+
+06:29.000 --> 06:33.000
+So just so you know, this actually is being saved in your database, in the little SQLite file.
+
+06:33.000 --> 06:41.000
+So you'll be able to view your orders later, and you can just wonder why did you buy so many Napolitana pizzas?
+

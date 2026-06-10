@@ -1,0 +1,362 @@
+WEBVTT
+
+00:00.000 --> 00:06.240
+There's a question about, it looks like there's a number of ways that you can fetch data,
+
+00:06.240 --> 00:11.520
+whether using useEffect, React Query, or TanStack Query.
+
+00:11.520 --> 00:15.360
+They seem to share a lot of the same purposes.
+
+00:15.360 --> 00:19.280
+What's the use case I would use TanStack Query over, say, useEffect?
+
+00:19.280 --> 00:23.440
+That's a good question.
+
+00:23.440 --> 00:26.400
+You can choose for yourself, right?
+
+00:26.400 --> 00:33.040
+I've kind of shown you both ways because I wanted you to see.
+
+00:33.040 --> 00:34.040
+This is a personal preference.
+
+00:34.040 --> 00:39.540
+I'm going to say this is not a controversial opinion here, is that the industry tends to
+
+00:39.540 --> 00:45.640
+just use React Query when it comes to making API requests on a regular basis.
+
+00:45.640 --> 00:49.840
+This API is just a lot nicer.
+
+00:49.840 --> 00:53.960
+It has built-in caching into it.
+
+00:53.960 --> 00:55.720
+The hooks are super nice.
+
+00:55.760 --> 00:58.360
+It has refetching built into it.
+
+00:58.360 --> 01:02.200
+It has nice error handling, like all the stuff that you would have to kind of just reconstruct
+
+01:02.200 --> 01:04.440
+yourself.
+
+01:04.440 --> 01:09.680
+This is like, it's such an elegant tool, in my opinion, and honestly, one of the tools
+
+01:09.680 --> 01:14.840
+I hold up is a prime example of really good developer experiences because you can use
+
+01:14.840 --> 01:16.360
+React Query however you want.
+
+01:16.360 --> 01:18.600
+It really doesn't enforce an opinion too much on you.
+
+01:18.600 --> 01:22.000
+It's just a very useful tool that's generally applicable to almost every problem when it
+
+01:22.040 --> 01:26.040
+comes to React components making API requests.
+
+01:26.040 --> 01:31.440
+That's why I don't really feel too much controversy in saying, like, just always use this if you're
+
+01:31.440 --> 01:34.240
+using an API, right?
+
+01:34.240 --> 01:37.560
+If you want to refetch every single time, you just set the stale time to zero and all
+
+01:37.560 --> 01:41.240
+of a sudden, okay, now it's going to refetch it every single time, right?
+
+01:41.240 --> 01:46.280
+You can't remember if it's zero or infinity.
+
+01:46.280 --> 01:52.520
+I think what I did here is I think I made it always refetch or something like that.
+
+01:52.520 --> 01:53.520
+Maybe it's one.
+
+01:53.520 --> 01:57.240
+There might even be like no cache or something like that.
+
+01:57.240 --> 02:02.120
+You'd have to go look at what the actual, here it is.
+
+02:02.120 --> 02:05.760
+We'll use enabled here in just a second.
+
+02:05.760 --> 02:10.520
+You can tell it how many pages that you want it to hold max.
+
+02:10.520 --> 02:12.400
+There's a bunch of stuff.
+
+02:12.920 --> 02:16.040
+Anyway, maybe just make this one.
+
+02:16.040 --> 02:20.040
+Anyway, so when would I use use effect?
+
+02:20.040 --> 02:21.720
+Use effect still has its place.
+
+02:21.720 --> 02:28.600
+If I had to talk to local storage or something like that, I might find a library for that.
+
+02:28.600 --> 02:32.120
+I might just use an effect for that.
+
+02:32.120 --> 02:38.720
+A good example is like, okay, I loaded a component and I want to fire off analytics events.
+
+02:38.720 --> 02:41.440
+I'd use an effect for that, yeah.
+
+02:41.480 --> 02:43.520
+It still has its use cases.
+
+02:43.520 --> 02:51.360
+With remote state management, is Tantanstack a better solution or is something like ZooStan
+
+02:51.360 --> 02:55.080
+or Redux handle that better?
+
+02:55.080 --> 02:57.640
+I'm going to say that they're different tools for different jobs.
+
+02:57.640 --> 03:03.720
+You can use ZooStan or something like that with React Query.
+
+03:03.720 --> 03:05.720
+You certainly can use Redux as a cache.
+
+03:05.720 --> 03:11.040
+There's no reason that you couldn't, but they serve different purposes.
+
+03:11.040 --> 03:17.120
+The Tantanstack store is more directly competing with ZooStan and all of those.
+
+03:17.120 --> 03:22.680
+Like I said, I tend not to use any state management libraries anymore, but if I was building something
+
+03:22.680 --> 03:37.200
+like Figma, very big complicated browser app that's going to have a lot of browser-based
+
+03:37.200 --> 03:41.560
+data that's going to be shared across lots of teams, then I would use something like
+
+03:41.560 --> 03:49.440
+ZooStan to coordinate across a massive big app that has lots of app-level data.
+
+03:49.440 --> 03:53.040
+I'm not the person who's going to use it on a very small app, but on an enormous app,
+
+03:53.040 --> 03:58.400
+I think at that scale and with that many people looking at the app, it makes more sense to
+
+03:58.400 --> 03:59.400
+me.
+
+03:59.400 --> 04:04.360
+Katie Cromman uses ZooStan in our React Native courses that we just released, so if you're
+
+04:05.200 --> 04:06.920
+interested in ZooStan or you want to learn more about it.
+
+04:06.920 --> 04:11.360
+Yeah, I would say with an iOS app where you have many pages and it's all being stored
+
+04:11.360 --> 04:13.920
+in the same thing with React Native, that makes a lot of sense to me.
+
+04:13.920 --> 04:19.280
+Do you have any opinions about putting query code inside a custom hook?
+
+04:19.280 --> 04:21.720
+That's a good question.
+
+04:21.720 --> 04:26.000
+Why wouldn't I put this one in a custom hook?
+
+04:26.000 --> 04:33.080
+Because I don't think that makes it any clearer what this is doing, and I'm not going to write
+
+04:33.480 --> 04:35.600
+tests for React query.
+
+04:35.600 --> 04:40.520
+Tanner Lindley and the React or the TanStack team test it plenty more than I ever want
+
+04:40.520 --> 04:42.480
+to test it.
+
+04:42.480 --> 04:43.840
+I don't want to test my libraries.
+
+04:43.840 --> 04:46.760
+I assume my libraries test themselves.
+
+04:46.760 --> 04:52.040
+If I put this into a custom hook, there'd be nothing interesting to test about it, so
+
+04:52.040 --> 04:53.040
+I just wouldn't.
+
+04:53.040 --> 04:59.160
+However, if I had seven requests that were firing off in serial and I wanted to make
+
+04:59.160 --> 05:02.320
+sure that the right things were being called in the right order, yeah, I'd make that a
+
+05:02.360 --> 05:03.840
+custom hook.
+
+05:03.840 --> 05:07.960
+But for just one request, no, I'm okay just putting this directly in the component.
+
+05:07.960 --> 05:13.720
+I just chose these two because almost every app that you write has API requests.
+
+05:13.720 --> 05:19.400
+Almost every app you write has routing needs, or at least very frequently.
+
+05:19.400 --> 05:24.840
+So I chose these two, but there's other ones out there like virtual tables, those can be
+
+05:24.840 --> 05:30.160
+super useful, form libraries, all sorts of stuff like that.
+
+05:30.200 --> 05:33.960
+There's lots of things to talk about with CSS, and I decided to not talk too much about
+
+05:33.960 --> 05:37.080
+CSS in the intro to this.
+
+05:37.080 --> 05:42.520
+One, it's a pretty fractured ecosystem, so there's not an obvious one to teach you, like
+
+05:42.520 --> 05:47.880
+this is the answer.
+
+05:47.880 --> 05:53.240
+Once you understand React, layering in CSS is not super hard.
+
+05:53.240 --> 05:57.520
+I'll just throw in that I'm of the opinion typically, let's say if I have this pizza
+
+05:57.520 --> 06:04.520
+of the day, I'll just come in here and say pizza of the day dot CSS, and this will just
+
+06:07.920 --> 06:14.920
+be normal, not very interesting CSS, and then here in pizza of the day dot JSX, I'll just
+
+06:15.640 --> 06:22.640
+say import dot slash pizza of the day dot CSS.
+
+06:28.520 --> 06:35.520
+That's how I like to do it, it keeps it pretty simple, I'm just writing direct CSS, and actually
+
+06:37.600 --> 06:41.680
+if you really want to get into it, what I'll do is I'll actually have a directory, pizza
+
+06:41.680 --> 06:47.240
+of the day directory, I'll have the component in there, I'll have the CSS in there, I'll
+
+06:47.240 --> 06:49.640
+have all the tests for it in there.
+
+06:49.640 --> 06:53.960
+My favorite part about that pattern is, let's say we've decided later that we're going to
+
+06:54.040 --> 07:00.760
+pizza of the month, and now we need a whole new component with new tests and new CSS.
+
+07:00.760 --> 07:05.480
+If you don't do it this way, you have to go hunt for all the files and delete them individually,
+
+07:05.480 --> 07:08.800
+or even worse and even more likely is that you just don't and you leave dead code in
+
+07:08.800 --> 07:12.560
+your code base.
+
+07:12.560 --> 07:15.640
+If you structure it like that where it's just a directory of everything's kind of self-contained
+
+07:15.640 --> 07:19.840
+directory, you just delete the whole directory and you're just assured that all of the related
+
+07:19.840 --> 07:21.040
+code goes with it.
+
+07:21.080 --> 07:25.440
+I wasn't intending to talk about CSS or anything like that, but that's how I do handle it,
+
+07:25.440 --> 07:26.560
+nine times out of ten.
+
+07:26.560 --> 07:30.840
+I can hear chat now furiously just banging away, it's like, what about Tailwind?
+
+07:30.840 --> 07:35.480
+And it's like, oh, okay.
+
+07:35.480 --> 07:40.680
+I understand Tailwind, I've taught Tailwind as part of Intermediate, so if you want to
+
+07:40.680 --> 07:47.240
+see how I use Tailwind, it's Intermediate React V5, there's a section on Tailwind.
+
+07:47.280 --> 07:50.680
+I've kind of come back around to it as like, I don't really like using it.
+
+07:50.680 --> 07:56.440
+I kind of like writing CSS, but I don't judge those that do.
+
+07:56.440 --> 07:59.760
+I don't have any strong opinion of like I don't like the class names or anything like
+
+07:59.760 --> 08:00.760
+that.
+
+08:00.760 --> 08:04.920
+I am just personally have a bit of Stockholm Syndrome around CSS and I've been doing it
+
+08:04.920 --> 08:09.560
+for so long, but now I kind of like it, and so I'm just going to keep doing that.
+
+08:09.560 --> 08:17.680
+But if I hadn't had so many years of fighting floats, then I probably would be more drawn
+
+08:17.680 --> 08:19.640
+to something like Tailwind, right?
+
+08:19.640 --> 08:23.960
+So totally valid, if you use it in your code base, I'm not upset, I will happily contribute
+
+08:23.960 --> 08:30.000
+to a Tailwind code base, it's just not what I'm going to choose personally.
+
+08:30.000 --> 08:33.640
+And I will say, I think it's probably the most common thing with React now is to write
+
+08:33.640 --> 08:36.080
+Tailwind.
+
+08:36.080 --> 08:40.280
+That's just a feeling, I'm not sure if that's actually true, but certainly I see that being
+
+08:40.280 --> 08:40.880
+very common.
+

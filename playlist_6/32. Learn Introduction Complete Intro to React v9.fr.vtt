@@ -1,0 +1,279 @@
+WEBVTT
+
+
+00:00.000 --> 00:02.240
+Ce qui est cool avec ce modal, c'est que nous pouvons vraiment le mettre n'importe où.
+
+00:02.240 --> 00:03.920
+Je vais le mettre ici à la fin.
+
+00:03.920 --> 00:07.040
+Et c'est là que je disais que je diviserais probablement normalement cela en un document distinct.
+
+00:07.760 --> 00:12.160
+fichier. Mais je ne veux pas le faire aujourd’hui, donc nous n’allons pas le faire.
+
+00:14.160 --> 00:20.800
+Donc ordre ciblé, si nous avons un ordre ciblé, nous voulons le faire, nous voulons montrer notre modal,
+
+00:20.800 --> 00:25.360
+n'est-ce pas ? Et si nous n'avons pas de modal ciblé, que voulons-nous restituer ?
+
+00:26.320 --> 00:32.400
+Rien. Nul. Vous pouvez rendre null. C'est bon. Null signifie simplement ne rien rendre.
+
+00:35.200 --> 00:37.440
+Est-ce mieux que de faire juste des fragments ?
+
+00:38.880 --> 00:39.680
+Juste quelque chose comme...
+
+00:39.680 --> 00:43.600
+Ou, vous savez, comme, ouais, ceux-là. C'est ce que je fais habituellement...
+
+00:43.600 --> 00:48.000
+Mon intuition est que cela n'a pas vraiment d'importance. J'aime null parce que tu l'exprimes comme
+
+00:48.000 --> 00:49.760
+Je veux littéralement que rien ne soit ici. Ouais.
+
+00:49.760 --> 00:51.040
+C'est un peu ce que j'étais juste...
+
+00:52.400 --> 00:53.840
+Mais là encore, on coupe les cheveux en quatre.
+
+00:56.320 --> 01:00.160
+D'accord. Tellement modal. Et maintenant, nous pouvons mettre ce que nous voulons ici.
+
+01:00.160 --> 01:08.160
+Alors mettons notre modal. Donc on va dire ordre, numéro, et ensuite ça va être
+
+01:11.840 --> 01:22.480
+ordre ciblé. D'accord. Et puis nous devons nous assurer qu'il est chargé, n'est-ce pas ? Parce que
+
+01:22.480 --> 01:28.160
+l'utilisateur sélectionnera sa commande et le rendu modal sera rendu. Mais nous devons encore le faire,
+
+01:28.160 --> 01:30.640
+par exemple, attendez que les éléments soient réellement chargés à partir de l'API.
+
+01:32.160 --> 01:35.680
+Nous allons donc dire que lorsqu'il ne charge pas la commande passée,
+
+01:42.800 --> 01:48.080
+alors fais ceci. Sinon, encore une fois, nul. Ou en fait, je pense que j'ai un chargement là-bas. Ouais,
+
+01:48.080 --> 01:54.960
+Je le fais. D'accord. Donc ça va être... Qu'est-ce que j'ai ? Est-ce un P ? Oui, c'est un P.
+
+01:55.920 --> 02:07.680
+P chargement du slash P comme ça. Sinon, nous allons faire une autre de nos choses préférées.
+
+02:08.240 --> 02:19.920
+Des tableaux. Encore. Table, nourrie. Vous n'en avez pas marre de m'entendre dire ça. TR, TD, et c'est l'image,
+
+02:23.680 --> 02:29.680
+nom. Copieons et collons simplement quelques-uns de ceux-ci. J'ai besoin de taille, quantité, prix, total.
+
+02:30.400 --> 02:41.440
+C'est donc la taille. C'est la quantité. C'est le prix. Et c'est total. D'accord. Sous la Fed,
+
+02:42.880 --> 02:53.040
+nous sommes dans le corps. D'accord. Et puis à l'intérieur d'ici, nous allons faire notre carte de tous les
+
+02:53.600 --> 03:01.040
+données que nous récupérons à partir des données de commande passées. Données de commande passées, articles de commande par points
+
+03:02.640 --> 03:08.240
+carte de points. Et chacun d'entre eux sera une pizza que nous recevrons de l'API de commande.
+
+03:08.240 --> 03:25.440
+Et puis à l'intérieur de cela, vous avez une clé TR égale... Et j'ai une clé plus longue ici. D'accord.
+
+03:25.440 --> 03:30.960
+Ça a l'air bien. Encore une fois, il doit simplement s'agir de quelque chose d'unique à la chose particulière que nous recherchons.
+
+03:30.960 --> 03:48.720
+à. J'ai donc fait une identification de pizza dot pizza. ID du type de pizza. Et c'est pourquoi. Cela effondrera tout le...
+
+03:48.720 --> 03:55.040
+Comme si vous commandiez sept de ces pizzas au serpent Napolitana, cela réduirait tout cela au minimum.
+
+03:55.040 --> 04:02.160
+même quantité. Vous avez ainsi la garantie que la combinaison d'un identifiant de type de pizza et de la pizza
+
+04:02.160 --> 04:07.600
+la taille sera unique. C'est pourquoi je l'ai fait de cette façon. Encore une fois, nous n’allons pas procéder à une réorganisation ici.
+
+04:07.600 --> 04:13.440
+Il n’est donc pas nécessaire que nous soyons aussi surveillés avec notre clé. Mais ma recommandation
+
+04:13.440 --> 04:19.920
+car vous, vous savez, si vous, disons que vous devenez les nouveaux dominos et que vous avez construit ce système de pizza
+
+04:19.920 --> 04:24.320
+pour cela, vous devrez peut-être plus tard ajouter la possibilité de filtrer et de réorganiser et des trucs comme ça. Et
+
+04:24.320 --> 04:28.880
+il est préférable de construire ces choses maintenant, d'autant plus que ce n'est généralement pas très difficile à faire.
+
+04:29.840 --> 04:33.920
+D'accord. Donc pour ce TD, nous allons faire une source d'image égale
+
+04:36.800 --> 04:40.800
+l'image du point de pizza et l'alt est le nom du point de pizza.
+
+04:46.880 --> 04:51.280
+Et puis nous allons avoir un TD de nom, n'est-ce pas ? Nom du point de pizza.
+
+04:51.760 --> 04:58.080
+Et encore une fois, je vais juste être paresseux et copier et coller ceci plusieurs fois, taille, quantité,
+
+04:58.640 --> 05:10.640
+prix, total, taille, quantité. Et puis nous avons notre convertisseur de prix, n'est-ce pas ? Nous allons donc
+
+05:10.640 --> 05:20.080
+utilisez notre convertisseur de prix que nous venons de construire, le prix du point de pizza et le prix,
+
+05:21.360 --> 05:38.640
+convertisseur, total de points de pizza. D'accord. Ce sera bon pour nos rangées et attirera le corps, la table,
+
+05:38.640 --> 05:46.720
+le chargement, et nous avons besoin d'une certaine capacité pour pouvoir fermer. Donc avant ça, j'ai juste besoin d'un
+
+05:46.720 --> 05:56.320
+bouton juste là. C'est terminé. Comment allons-nous fermer notre modal ? Peut-être une meilleure façon de
+
+05:56.320 --> 06:03.680
+répondre, poser cette question est la suivante : comment annuler le rendu du modal ? Qu'est-ce que le rendu modal
+
+06:03.680 --> 06:12.560
+allumé ? Ordre ciblé, n'est-ce pas ? Alors, que se passe-t-il si nous définissons l'ordre ciblé comme étant nul, indéfini ou nul ?
+
+06:12.560 --> 06:19.680
+Ça va, ça va annuler le rendu, n'est-ce pas ? Il ne sera tout simplement plus là. Donc si nous disons que clic est égal,
+
+06:22.320 --> 06:27.280
+et nous pourrions simplement dire directement un ordre ciblé comme celui-là. Nous devons donc aller créer à l'intérieur
+
+06:27.280 --> 06:32.320
+de notre répertoire API, nous allons créer ici un autre fichier appelé get past order.
+
+06:34.320 --> 06:38.080
+Ce n’est pas déroutant, et ce n’est certainement pas mûr pour nous en cas d’erreurs de frappe.
+
+06:38.800 --> 06:51.840
+Rien à voir ici, avancez. Exporter la fonction asynchrone par défaut, récupérer la commande passée.
+
+06:58.160 --> 06:59.680
+Cela prend un numéro de commande
+
+07:00.480 --> 07:07.520
+et nous allons dire que la réponse const est égale à wait fetch
+
+07:10.080 --> 07:17.600
+slash API slash passé ordre de tiret slash ordre de signe dollar, juste comme ça.
+
+07:17.600 --> 07:29.840
+Les données const sont égales à l'attente de réponse point json et aux données renvoyées. Appelle l'API, à la recherche d'un passé
+
+07:29.840 --> 07:37.040
+commandez avec cela, attendez la réponse dot json et renvoyez les données. Très bien, donc nous sommes passés ici,
+
+07:37.040 --> 07:44.240
+c'est le chargement. Nous n’avons donc toujours aucun moyen d’ouvrir la page, n’est-ce pas ? Nous n'avons pas ajouté la possibilité de
+
+07:44.240 --> 07:57.760
+cliquez encore sur ces lignes, nous devons donc encore le faire. Accédez à votre commande passée ou à votre point passé
+
+07:57.760 --> 08:08.960
+lazy dot jsx et allez à l'endroit où nous rendons nos boutons ici. Donc, pour l'ID de commande, nous allons
+
+08:08.960 --> 08:19.440
+rendre cela cliquable. Ouais. Donc ici, à la ligne 50, nous allons juste en mettre un autre
+
+08:20.240 --> 08:29.120
+Élément HTML ici, ce sera un bouton. Au clic, nous allons simplement définir l'ordre ou
+
+08:29.200 --> 08:37.120
+l’ordre ciblé. Définissez l’ordre ciblé comme étant l’ID de l’ordre des points de commande.
+
+08:41.440 --> 08:46.960
+Je ne pense pas avoir besoin de faire grand-chose de plus que cela, non, sauf que nous mettrons simplement l'identifiant de la commande à l'intérieur.
+
+08:46.960 --> 08:52.960
+de celui-ci. Alors tout ce que j'ai fait, c'est ça. J'ai entouré cet identifiant de commande avec ce bouton ici.
+
+08:53.760 --> 08:58.640
+Maintenant, encore une fois, rappelez-vous, quelqu'un va cliquer sur ce bouton, cela va invoquer cette fonction,
+
+08:58.640 --> 09:04.560
+cela va définir l'ordre ciblé comme étant quel que soit l'ID de commande ici. Qu'est-ce que ça va faire ?
+
+09:05.600 --> 09:10.240
+Il va ensuite ouvrir le modal car il recherche simplement chaque fois qu'un ordre ciblé existe,
+
+09:10.640 --> 09:20.480
+je cherche juste chaque fois qu'une commande ciblée existe, n'est-ce pas ? Plutôt astucieux, non ?
+
+09:24.960 --> 09:28.080
+Très bien, maintenant nous avons de jolis boutons ici. Si je clique sur l'un d'eux,
+
+09:30.400 --> 09:31.840
+J'obtiens un joli petit modal.
+
+09:32.240 --> 09:36.960
+Très bien, et encore une fois, remarquez que lorsque je clique dessus, vous verrez ceux-ci comme les plus brefs.
+
+09:36.960 --> 09:54.000
+flash, et faisons notre bêtise et retardons-le intentionnellement. J'attendrai 10 secondes.
+
+10:01.840 --> 10:08.960
+D'accord, cela va donc faire attendre 10 secondes.
+
+10:14.000 --> 10:18.160
+Chaque fois que nous y arriverons, d'accord, nous allons cliquer sur celui-ci. Et puis maintenant, voyez,
+
+10:18.160 --> 10:20.000
+il va rester ici et se charger pendant un moment.
+
+10:23.760 --> 10:30.480
+Et une fois que cela sera terminé, nous devrions finir par voir nos jolies pages ici. Mais encore une fois,
+
+10:31.440 --> 10:37.120
+maintenant, si je clique à nouveau dessus, parce qu'il extrait du cache, il n'atteint pas cette fonction,
+
+10:37.120 --> 10:44.400
+ça va être instantané. Et encore une fois, si je frappe celui-là, ça va nous faire attendre,
+
+10:44.400 --> 10:49.840
+n'est-ce pas ? Parce que celui-ci n'est pas dans le cache pour le moment. Encore une fois, je parlais en quelque sorte de tu peux
+
+10:49.840 --> 10:54.320
+en fait, comme précharger le cache. Donc, si vous faites une sorte de rendu côté serveur
+
+10:54.320 --> 10:58.240
+ou quelque chose comme ça, ou une sorte de chargement optimiste, ce que vous pourriez faire, c'est vous
+
+10:58.240 --> 11:02.800
+pourriez aller charger les 10 premières commandes simplement parce que vous supposez que les gens vont principalement chercher
+
+11:02.800 --> 11:06.320
+aux 10 premières commandes et mettez-les dans le cache pour que vous n'ayez pas à faire ça 10 secondes
+
+11:06.320 --> 11:14.080
+attendez à chaque fois. Ou fait amusant, vous pouvez simplement supprimer l'attente ici. C'était
+
+11:14.080 --> 11:20.080
+performance instantanée et gratuite. C’était évidemment la partie la plus dense de ce que nous venons de faire.
+
+11:21.040 --> 11:26.960
+Je dirais que c'est comme l'un des concepts React les plus avancés ou peut-être
+
+11:28.240 --> 11:31.840
+Concepts React côté client plus avancés. Une fois que vous êtes côté serveur,
+
+11:31.840 --> 11:33.920
+des trucs bizarres commencent à se produire.
+

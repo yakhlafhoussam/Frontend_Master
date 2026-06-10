@@ -1,0 +1,452 @@
+WEBVTT
+
+00:00.000 --> 00:05.400
+Pass.lazy.jsx at the top here.
+
+00:05.400 --> 00:08.000
+So we're going to import another one up here
+
+00:08.000 --> 00:18.920
+called getPastOrder with no s from dot dot slash API slash
+
+00:18.920 --> 00:21.160
+getPastOrder.
+
+00:21.160 --> 00:22.920
+We'll go code that up in just a second.
+
+00:26.160 --> 00:28.200
+And then we're going to import our modal as well.
+
+00:28.200 --> 00:34.320
+Import modal from dot dot slash modal.
+
+00:34.320 --> 00:35.040
+Cool.
+
+00:35.040 --> 00:38.040
+All right.
+
+00:38.040 --> 00:40.560
+Everyone's favorite, we're going to make another currency
+
+00:40.560 --> 00:41.480
+converter here.
+
+00:45.600 --> 00:49.000
+Number format en dash us.
+
+00:52.400 --> 00:56.400
+And style is currency.
+
+00:56.400 --> 00:58.560
+Would you just put that in the utility?
+
+00:58.560 --> 00:59.200
+Oh, yeah.
+
+00:59.200 --> 01:01.480
+Yeah, no, I think this is the fourth time we've done it.
+
+01:01.480 --> 01:03.080
+I'm already regretting my decisions.
+
+01:03.080 --> 01:04.280
+All right, we're just doing it.
+
+01:04.280 --> 01:06.560
+All right, fine.
+
+01:06.560 --> 01:09.000
+We'll just do it.
+
+01:09.000 --> 01:14.360
+Use currency dot jsx.
+
+01:14.360 --> 01:16.800
+Don't say I never did anything for you.
+
+01:16.800 --> 01:22.800
+Export default function, use currency.
+
+01:22.800 --> 01:26.440
+This is going to take in some sort of price.
+
+01:26.440 --> 01:28.960
+We're going to have all that stupid stuff we keep writing
+
+01:28.960 --> 01:30.440
+over and over again that everyone
+
+01:30.440 --> 01:31.600
+keeps complaining about.
+
+01:35.080 --> 01:40.080
+Number format en dash us.
+
+01:40.080 --> 01:49.920
+It's going to be style currency currency usd.
+
+01:49.920 --> 01:58.120
+And we're really just going to return Intel dot format.
+
+01:58.120 --> 01:59.520
+Is it format to price?
+
+01:59.520 --> 02:00.040
+What is it?
+
+02:00.040 --> 02:03.480
+I've got to remember exactly.
+
+02:03.480 --> 02:04.200
+It's just format.
+
+02:04.200 --> 02:06.480
+OK, format price.
+
+02:11.280 --> 02:14.680
+Now, instead of doing it this way,
+
+02:14.680 --> 02:22.200
+we can say instead of here, we can dump that business.
+
+02:22.200 --> 02:31.680
+And our price is going to be something like const price
+
+02:31.680 --> 02:33.280
+equals use.
+
+02:33.280 --> 02:34.080
+What did I call it?
+
+02:39.160 --> 02:41.160
+Use currencies, is that what they call it?
+
+02:41.160 --> 02:44.360
+Oh, yeah, cool.
+
+02:44.360 --> 02:45.400
+Use currency.
+
+02:45.400 --> 02:49.440
+And this is going to be a little bit hairy now,
+
+02:49.440 --> 02:54.800
+because I actually have this inside of a map.
+
+02:54.800 --> 02:58.360
+In theory, you shouldn't use hooks that way.
+
+02:58.360 --> 03:03.800
+But you'd be able to say 15.10 here.
+
+03:03.800 --> 03:07.800
+And now price would be a properly formatted price.
+
+03:07.800 --> 03:09.560
+So in this case, it's actually probably not
+
+03:09.560 --> 03:11.320
+going to be useful, because we can't use it
+
+03:11.320 --> 03:14.320
+for our map here.
+
+03:14.320 --> 03:15.680
+So instead of making this a hook,
+
+03:15.680 --> 03:25.400
+probably what you would do is you would just say const price
+
+03:25.400 --> 03:47.800
+converter equals then we'll say intel.format price.
+
+03:47.800 --> 03:49.520
+So I guess this is exactly the same thing.
+
+03:49.520 --> 03:52.120
+It's just not a hook, right?
+
+03:52.200 --> 03:56.240
+You could have the hook return the just intl, right?
+
+03:56.240 --> 03:58.720
+And then you could just have this.
+
+04:06.200 --> 04:07.120
+Something like that.
+
+04:07.120 --> 04:09.360
+And then now you kind of cover both ways of doing it.
+
+04:13.040 --> 04:17.440
+All right, and now inside of past.lazy.jsx,
+
+04:17.440 --> 04:19.240
+instead of getting the use currency here,
+
+04:19.240 --> 04:21.760
+we can also get the price converter.
+
+04:21.760 --> 04:24.200
+And then this actually will be useful to us.
+
+04:24.200 --> 04:28.800
+So we're going to make another hook up here,
+
+04:28.800 --> 04:32.600
+which is focused order.
+
+04:32.600 --> 04:34.880
+So if a user clicks on one of the orders,
+
+04:34.880 --> 04:36.400
+we want them to pop up with a modal
+
+04:36.400 --> 04:40.600
+and see the details of that particular past order.
+
+04:40.600 --> 04:43.040
+So that's what the focused order is going to be.
+
+04:47.320 --> 04:48.760
+Use state.
+
+04:48.760 --> 04:50.080
+Again, you can put anything here.
+
+04:50.080 --> 04:52.800
+I just have this as empty, which is going to be undefined.
+
+04:52.800 --> 04:57.920
+So focused order is not going to have anything to begin with.
+
+04:57.920 --> 05:01.280
+But feel free to put null or whatever you want there.
+
+05:06.720 --> 05:08.120
+This is kind of a cool one.
+
+05:08.120 --> 05:10.240
+All right, so we're going to do another query here
+
+05:10.240 --> 05:11.880
+from Tanstack.
+
+05:11.880 --> 05:18.040
+So const is loading.
+
+05:18.040 --> 05:19.480
+We have to call this something else
+
+05:19.480 --> 05:21.320
+because is loading already exists here.
+
+05:21.320 --> 05:24.720
+So we have to call this something like is loading
+
+05:24.720 --> 05:25.480
+past order.
+
+05:28.720 --> 05:30.600
+That's all this is doing is just renaming it
+
+05:30.600 --> 05:34.000
+to a different variable.
+
+05:34.000 --> 05:39.640
+And data, again, is going to be past order data.
+
+05:39.640 --> 05:41.520
+And that's going to be equal to use query.
+
+05:45.680 --> 05:49.120
+What's our query key going to be?
+
+05:49.120 --> 05:51.960
+It's got to be unique to this particular order.
+
+05:51.960 --> 05:55.240
+So it's going to be past order.
+
+05:55.240 --> 05:58.080
+And we have to give it some unique kind of key to it,
+
+05:58.080 --> 06:05.720
+kind of like the keys that we use in React.
+
+06:05.720 --> 06:07.320
+Well, focused order itself, we know
+
+06:07.320 --> 06:09.780
+this is going to be unique to that particular focused order.
+
+06:09.780 --> 06:11.560
+So we can use that as the query key.
+
+06:11.560 --> 06:22.560
+OK, query function is just going to be getPastOrder,
+
+06:22.560 --> 06:25.060
+that one that we just imported that we haven't written yet.
+
+06:27.760 --> 06:29.400
+And it's going to be focusedOrder.
+
+06:29.400 --> 06:35.480
+Order, stale time.
+
+06:39.200 --> 06:42.520
+Now, something I said earlier in the course,
+
+06:42.520 --> 06:44.000
+I did not use AI anywhere.
+
+06:44.000 --> 06:46.120
+I'll confess I actually did use it here
+
+06:46.120 --> 06:49.120
+because I wanted to find out how many seconds are in a day
+
+06:49.120 --> 06:51.620
+because I didn't want to do that math off the top of my head.
+
+06:52.500 --> 07:00.900
+Stale time should be one day in milliseconds.
+
+07:09.100 --> 07:12.300
+So that is one place I did use it because I couldn't
+
+07:12.300 --> 07:13.780
+be bothered to Google it.
+
+07:13.780 --> 07:14.460
+That sounded hard.
+
+07:14.460 --> 07:23.500
+So we do have one weird problem that you're probably
+
+07:23.500 --> 07:27.580
+catching on to here, which is, wait,
+
+07:27.580 --> 07:31.700
+I don't have a focused order if there's no focused order.
+
+07:31.700 --> 07:34.700
+What happens if this runs on the first page right now?
+
+07:34.700 --> 07:39.020
+It's going to go try and request a focused order for something
+
+07:39.020 --> 07:41.100
+that doesn't exist yet.
+
+07:41.100 --> 07:43.500
+So how do we prevent it from doing that?
+
+07:43.500 --> 07:45.100
+We only want to request something
+
+07:45.100 --> 07:46.580
+if there is a focused order.
+
+07:46.580 --> 07:49.460
+And if there's not a focused order, then we don't want to.
+
+07:49.460 --> 07:50.620
+Right?
+
+07:50.620 --> 07:53.380
+That make sense?
+
+07:53.380 --> 07:57.180
+Well, turns out they thought of that, which is kind of cool.
+
+07:57.180 --> 08:00.260
+You just put in this enabled.
+
+08:00.260 --> 08:05.100
+And if there is a focused order, then you
+
+08:05.100 --> 08:06.940
+will go out and grab something.
+
+08:06.940 --> 08:09.860
+And if there's not, then you won't.
+
+08:09.860 --> 08:11.060
+So you'll see my note here.
+
+08:11.060 --> 08:12.360
+I have a double exclamation point.
+
+08:12.360 --> 08:16.680
+It's not that I'm just excited about focused orders.
+
+08:16.680 --> 08:22.280
+We've all seen something like this, if loading.
+
+08:22.280 --> 08:25.440
+This means not loading.
+
+08:25.440 --> 08:27.600
+This also has the fascinating feature
+
+08:27.600 --> 08:29.280
+of turning this into a Boolean.
+
+08:29.280 --> 08:32.320
+So this is actually literally false.
+
+08:32.320 --> 08:39.480
+So not loading is triple equal to false or true if it is.
+
+08:39.480 --> 08:44.640
+So what happens if I do not not loading?
+
+08:44.640 --> 08:48.600
+It's the same thing, but it's turned into a Boolean, right?
+
+08:48.600 --> 08:52.920
+So this is going to be either true or false.
+
+08:52.920 --> 08:56.200
+That's what the double exclamation point means.
+
+08:56.200 --> 08:56.720
+I do it.
+
+08:56.720 --> 08:58.920
+I understand that it's kind of like a little opaque,
+
+08:58.920 --> 09:05.680
+but it's common enough in coding that I just keep doing it.
+
+09:05.680 --> 09:08.040
+I don't think it's actually even technically necessary.
+
+09:08.080 --> 09:11.460
+I think this is just fine, but that's
+
+09:11.460 --> 09:13.080
+why that's in there in my notes.
+
+09:13.080 --> 09:14.920
+Does that make sense?
+
+09:14.920 --> 09:17.640
+To put it in another way, is it avoiding truthiness
+
+09:17.640 --> 09:21.240
+or implied truthiness and forcing a full Boolean?
+
+09:21.240 --> 09:24.360
+Yes, exactly.
+
+09:24.360 --> 09:26.800
+It's doing the type coercion right here,
+
+09:26.800 --> 09:28.600
+as opposed to letting TanStack query do it.
+

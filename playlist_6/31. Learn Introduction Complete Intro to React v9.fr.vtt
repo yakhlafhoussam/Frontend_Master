@@ -1,0 +1,453 @@
+WEBVTT
+
+
+00:00.000 --> 00:05.400
+Pass.lazy.jsx en haut ici.
+
+00:05.400 --> 00:08.000
+Nous allons donc en importer un autre ici
+
+00:08.000 --> 00:18.920
+appelé getPastOrder sans s de la barre oblique de l'API point point slash
+
+00:18.920 --> 00:21.160
+getPastOrder.
+
+00:21.160 --> 00:22.920
+Nous allons coder cela dans une seconde.
+
+00:26.160 --> 00:28.200
+Et puis nous allons également importer notre modal.
+
+00:28.200 --> 00:34.320
+Importer le modal à partir du modal point point slash.
+
+00:34.320 --> 00:35.040
+Cool.
+
+00:35.040 --> 00:38.040
+D'accord.
+
+00:38.040 --> 00:40.560
+Le préféré de tout le monde, nous allons créer une autre monnaie
+
+00:40.560 --> 00:41.480
+convertisseur ici.
+
+00:45.600 --> 00:49.000
+Format numérique et tirez-nous.
+
+00:52.400 --> 00:56.400
+Et le style est monnaie courante.
+
+00:56.400 --> 00:58.560
+Voudriez-vous simplement mettre cela dans l'utilitaire ?
+
+00:58.560 --> 00:59.200
+Oh ouais.
+
+00:59.200 --> 01:01.480
+Ouais, non, je pense que c'est la quatrième fois que nous le faisons.
+
+01:01.480 --> 01:03.080
+Je regrette déjà mes décisions.
+
+01:03.080 --> 01:04.280
+Très bien, nous le faisons juste.
+
+01:04.280 --> 01:06.560
+Très bien, très bien.
+
+01:06.560 --> 01:09.000
+Nous allons simplement le faire.
+
+01:09.000 --> 01:14.360
+Utilisez le point de devise jsx.
+
+01:14.360 --> 01:16.800
+Ne dis pas que je n'ai jamais rien fait pour toi.
+
+01:16.800 --> 01:22.800
+Fonction d'exportation par défaut, utilisez la devise.
+
+01:22.800 --> 01:26.440
+Cela va entraîner une sorte de prix.
+
+01:26.440 --> 01:28.960
+Nous allons avoir toutes ces conneries que nous continuons d'écrire
+
+01:28.960 --> 01:30.440
+encore et encore que tout le monde
+
+01:30.440 --> 01:31.600
+continue de se plaindre.
+
+01:35.080 --> 01:40.080
+Format numérique et tirez-nous.
+
+01:40.080 --> 01:49.920
+Ce sera le style devise devise USD.
+
+01:49.920 --> 01:58.120
+Et nous allons simplement revenir au format Intel Dot.
+
+01:58.120 --> 01:59.520
+Est-ce du format au prix ?
+
+01:59.520 --> 02:00.040
+Qu'est-ce que c'est?
+
+02:00.040 --> 02:03.480
+Je dois me souvenir exactement.
+
+02:03.480 --> 02:04.200
+C'est juste un format.
+
+02:04.200 --> 02:06.480
+OK, prix du format.
+
+02:11.280 --> 02:14.680
+Maintenant, au lieu de procéder de cette façon,
+
+02:14.680 --> 02:22.200
+nous pouvons dire qu'au lieu d'ici, nous pouvons laisser tomber cette affaire.
+
+02:22.200 --> 02:31.680
+Et notre prix sera quelque chose comme le prix constant
+
+02:31.680 --> 02:33.280
+équivaut à une utilisation.
+
+02:33.280 --> 02:34.080
+Comment je l'ai appelé ?
+
+02:39.160 --> 02:41.160
+Utiliser des devises, c'est comme ça qu'on appelle ça ?
+
+02:41.160 --> 02:44.360
+Oh, ouais, cool.
+
+02:44.360 --> 02:45.400
+Utilisez la monnaie.
+
+02:45.400 --> 02:49.440
+Et ça va être un peu poilu maintenant,
+
+02:49.440 --> 02:54.800
+parce que j'ai en fait cela à l'intérieur d'une carte.
+
+02:54.800 --> 02:58.360
+En théorie, vous ne devriez pas utiliser les hooks de cette façon.
+
+02:58.360 --> 03:03.800
+Mais vous pourriez dire 15h10 ici.
+
+03:03.800 --> 03:07.800
+Et maintenant, le prix serait un prix correctement formaté.
+
+03:07.800 --> 03:09.560
+Donc dans ce cas, ce n'est probablement pas le cas
+
+03:09.560 --> 03:11.320
+ça va être utile, parce que nous ne pouvons pas l'utiliser
+
+03:11.320 --> 03:14.320
+pour notre carte ici.
+
+03:14.320 --> 03:15.680
+Donc au lieu d'en faire un crochet,
+
+03:15.680 --> 03:25.400
+ce que vous feriez probablement, c'est de dire simplement prix constant
+
+03:25.400 --> 03:47.800
+convertisseur est égal alors nous dirons le prix intel.format.
+
+03:47.800 --> 03:49.520
+Donc je suppose que c'est exactement la même chose.
+
+03:49.520 --> 03:52.120
+Ce n'est tout simplement pas un crochet, n'est-ce pas ?
+
+03:52.200 --> 03:56.240
+Vous pourriez demander au crochet de renvoyer le juste international, n'est-ce pas ?
+
+03:56.240 --> 03:58.720
+Et puis tu pourrais avoir ça.
+
+04:06.200 --> 04:07.120
+Quelque chose comme ça.
+
+04:07.120 --> 04:09.360
+Et puis maintenant, vous couvrez en quelque sorte les deux façons de le faire.
+
+04:13.040 --> 04:17.440
+Très bien, et maintenant dans past.lazy.jsx,
+
+04:17.440 --> 04:19.240
+au lieu d'obtenir la devise d'utilisation ici,
+
+04:19.240 --> 04:21.760
+nous pouvons également obtenir le convertisseur de prix.
+
+04:21.760 --> 04:24.200
+Et puis cela nous sera effectivement utile.
+
+04:24.200 --> 04:28.800
+Nous allons donc faire une autre connexion ici,
+
+04:28.800 --> 04:32.600
+qui est un ordre ciblé.
+
+04:32.600 --> 04:34.880
+Ainsi, si un utilisateur clique sur l'une des commandes,
+
+04:34.880 --> 04:36.400
+nous voulons qu'ils apparaissent avec un modal
+
+04:36.400 --> 04:40.600
+et voir les détails de cette commande passée particulière.
+
+04:40.600 --> 04:43.040
+Voilà donc ce que sera l'ordre ciblé.
+
+04:47.320 --> 04:48.760
+Utiliser l'état.
+
+04:48.760 --> 04:50.080
+Encore une fois, vous pouvez mettre n'importe quoi ici.
+
+04:50.080 --> 04:52.800
+J'ai juste ceci comme vide, ce qui ne sera pas défini.
+
+04:52.800 --> 04:57.920
+Un ordre ciblé n’aura donc rien au départ.
+
+04:57.920 --> 05:01.280
+Mais n'hésitez pas à y mettre null ou ce que vous voulez.
+
+05:06.720 --> 05:08.120
+C'est plutôt cool.
+
+05:08.120 --> 05:10.240
+Très bien, nous allons donc faire une autre requête ici
+
+05:10.240 --> 05:11.880
+de Tanstack.
+
+05:11.880 --> 05:18.040
+Donc const se charge.
+
+05:18.040 --> 05:19.480
+Nous devons appeler cela autrement
+
+05:19.480 --> 05:21.320
+car le chargement existe déjà ici.
+
+05:21.320 --> 05:24.720
+Nous devons donc appeler cela quelque chose comme "chargement"
+
+05:24.720 --> 05:25.480
+commande passée.
+
+05:28.720 --> 05:30.600
+C'est tout ce que ça fait, c'est juste le renommer
+
+05:30.600 --> 05:34.000
+à une variable différente.
+
+05:34.000 --> 05:39.640
+Et les données, encore une fois, seront des données de commandes antérieures.
+
+05:39.640 --> 05:41.520
+Et cela équivaudra à utiliser une requête.
+
+05:45.680 --> 05:49.120
+Quelle sera notre clé de requête ?
+
+05:49.120 --> 05:51.960
+Cela doit être unique à cet ordre particulier.
+
+05:51.960 --> 05:55.240
+Ce sera donc dépassé.
+
+05:55.240 --> 05:58.080
+Et nous devons lui donner une sorte de clé unique,
+
+05:58.080 --> 06:05.720
+un peu comme les clés que nous utilisons dans React.
+
+06:05.720 --> 06:07.320
+Eh bien, l'ordre ciblé lui-même, nous le savons
+
+06:07.320 --> 06:09.780
+cela sera unique à cet ordre ciblé particulier.
+
+06:09.780 --> 06:11.560
+Nous pouvons donc l'utiliser comme clé de requête.
+
+06:11.560 --> 06:22.560
+OK, la fonction de requête sera simplement getPastOrder,
+
+06:22.560 --> 06:25.060
+celui que nous venons d'importer et que nous n'avons pas encore écrit.
+
+06:27.760 --> 06:29.400
+Et ça va être axé sur l'ordre.
+
+06:29.400 --> 06:35.480
+Commande, temps dépassé.
+
+06:39.200 --> 06:42.520
+Maintenant, quelque chose que j'ai dit plus tôt dans le cours,
+
+06:42.520 --> 06:44.000
+Je n’ai utilisé l’IA nulle part.
+
+06:44.000 --> 06:46.120
+J'avoue que je l'ai utilisé ici
+
+06:46.120 --> 06:49.120
+parce que je voulais savoir combien de secondes il y a dans une journée
+
+06:49.120 --> 06:51.620
+parce que je ne voulais pas faire ce calcul de tête.
+
+06:52.500 --> 07:00.900
+Le temps périmé doit être d’un jour en millisecondes.
+
+07:09.100 --> 07:12.300
+C'est donc un endroit où je l'ai utilisé parce que je ne pouvais pas
+
+07:12.300 --> 07:13.780
+être dérangé pour le rechercher sur Google.
+
+07:13.780 --> 07:14.460
+Cela semblait difficile.
+
+07:14.460 --> 07:23.500
+Nous avons donc un problème étrange auquel vous êtes probablement
+
+07:23.500 --> 07:27.580
+Je comprends ici, c'est-à-dire, attends,
+
+07:27.580 --> 07:31.700
+Je n’ai pas d’ordre ciblé s’il n’y a pas d’ordre ciblé.
+
+07:31.700 --> 07:34.700
+Que se passe-t-il si cela s'affiche immédiatement sur la première page ?
+
+07:34.700 --> 07:39.020
+Il va essayer de demander une commande ciblée pour quelque chose
+
+07:39.020 --> 07:41.100
+cela n'existe pas encore.
+
+07:41.100 --> 07:43.500
+Alors, comment pouvons-nous l’empêcher de faire cela ?
+
+07:43.500 --> 07:45.100
+Nous voulons seulement demander quelque chose
+
+07:45.100 --> 07:46.580
+s'il y a une commande ciblée.
+
+07:46.580 --> 07:49.460
+Et s’il n’y a pas d’ordre ciblé, nous ne voulons pas le faire.
+
+07:49.460 --> 07:50.620
+Droite?
+
+07:50.620 --> 07:53.380
+Cela a du sens ?
+
+07:53.380 --> 07:57.180
+Eh bien, il s’avère qu’ils y ont pensé, ce qui est plutôt cool.
+
+07:57.180 --> 08:00.260
+Vous venez de mettre ceci activé.
+
+08:00.260 --> 08:05.100
+Et s'il y a un ordre ciblé, alors vous
+
+08:05.100 --> 08:06.940
+je sortirai et prendrai quelque chose.
+
+08:06.940 --> 08:09.860
+Et si ce n’est pas le cas, vous ne le ferez pas.
+
+08:09.860 --> 08:11.060
+Vous verrez donc ma note ici.
+
+08:11.060 --> 08:12.360
+J'ai un double point d'exclamation.
+
+08:12.360 --> 08:16.680
+Ce n’est pas que je sois simplement enthousiasmé par les commandes ciblées.
+
+08:16.680 --> 08:22.280
+Nous avons tous vu quelque chose comme ça, en cas de chargement.
+
+08:22.280 --> 08:25.440
+Cela signifie ne pas charger.
+
+08:25.440 --> 08:27.600
+Cela a aussi la caractéristique fascinante
+
+08:27.600 --> 08:29.280
+de transformer cela en booléen.
+
+08:29.280 --> 08:32.320
+C’est donc littéralement faux.
+
+08:32.320 --> 08:39.480
+Donc, ne pas charger est triple égal à faux ou vrai si c'est le cas.
+
+08:39.480 --> 08:44.640
+Alors que se passe-t-il si je ne charge pas ?
+
+08:44.640 --> 08:48.600
+C'est la même chose, mais c'est transformé en booléen, non ?
+
+08:48.600 --> 08:52.920
+Cela sera donc soit vrai, soit faux.
+
+08:52.920 --> 08:56.200
+C'est ce que signifie le double point d'exclamation.
+
+08:56.200 --> 08:56.720
+Je le fais.
+
+08:56.720 --> 08:58.920
+Je comprends que c'est un peu opaque,
+
+08:58.920 --> 09:05.680
+mais c'est assez courant dans le codage pour que je continue à le faire.
+
+09:05.680 --> 09:08.040
+Je ne pense pas que ce soit même techniquement nécessaire.
+
+09:08.080 --> 09:11.460
+Je pense que c'est très bien, mais c'est
+
+09:11.460 --> 09:13.080
+pourquoi c'est là dans mes notes.
+
+09:13.080 --> 09:14.920
+Est-ce que cela a du sens ?
+
+09:14.920 --> 09:17.640
+Pour le dire autrement, est-ce que cela évite la vérité ?
+
+09:17.640 --> 09:21.240
+ou véracité implicite et forcer un booléen complet ?
+
+09:21.240 --> 09:24.360
+Oui, exactement.
+
+09:24.360 --> 09:26.800
+Il s'agit d'une sorte de coercition ici,
+
+09:26.800 --> 09:28.600
+au lieu de laisser la requête TanStack le faire.
+

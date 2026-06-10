@@ -1,0 +1,780 @@
+WEBVTT
+
+
+00:00.000 --> 00:08.000
+Nous n’avons donc parlé jusqu’à présent que des composants fonctionnels.
+
+00:08.000 --> 00:11.000
+C'était un mot très intéressant et distinct dans le monde React.
+
+00:11.000 --> 00:18.000
+Et nous sommes allés si loin vers les composants de fonction que nous ne nous souvenons même pas des composants de classe.
+
+00:18.000 --> 00:21.000
+Pourtant, ils sont toujours là. Ils ne sont pas obsolètes.
+
+00:21.000 --> 00:28.000
+Et il existe un cas d'utilisation, pour autant que je sache, où vous ne pouvez le faire qu'avec un composant de classe.
+
+00:28.000 --> 00:30.000
+Et ce sont les limites d’erreur.
+
+00:30.000 --> 00:40.000
+Alors, que se passe-t-il si, disons, notre ancien lazy.jsx avait une erreur avec sa requête API et qu'il s'agissait d'une erreur non détectée,
+
+00:40.000 --> 00:43.000
+cela remonterait simplement en haut de l'application et ferait planter l'application, n'est-ce pas ?
+
+00:43.000 --> 00:46.000
+Comme vous l'avez vu à plusieurs reprises dans notre application, il est simplement écrit :
+
+00:46.000 --> 00:49.000
+J'abandonne, tout s'est écrasé, non ?
+
+00:49.000 --> 00:53.000
+Il y a quelque chose appelé limites d'erreur qui vous permet de détecter ces erreurs.
+
+00:53.000 --> 00:59.000
+et, vous savez, empêchez-le de planter votre application.
+
+00:59.000 --> 01:01.000
+Et vous ne pouvez le faire qu’avec des composants de classe.
+
+01:01.000 --> 01:05.000
+Donc, je profite de ça comme d'une double opportunité pour vous apprendre les limites des erreurs,
+
+01:05.000 --> 01:13.000
+ce qui, franchement, je n'écris pas vraiment trop moi-même car il y a une limite d'erreur React.
+
+01:13.000 --> 01:19.000
+Ce composant ici, écrit par un membre de, je pense qu'il est un ancien membre de l'équipe principale de React.
+
+01:19.000 --> 01:23.000
+Je ne pense pas que Brian y travaille plus, mais il le faisait avant.
+
+01:23.000 --> 01:25.000
+Il a créé un composant qui fait cela pour vous.
+
+01:25.000 --> 01:28.000
+Donc, de manière générale, je vais vous recommander d'utiliser simplement ceci
+
+01:28.000 --> 01:31.000
+et ne les écrivez pas vous-même, sauf si vous en avez besoin.
+
+01:31.000 --> 01:34.000
+Cela ne m'empêchera pas de vous apprendre à l'écrire vous-même.
+
+01:34.000 --> 01:37.000
+Et la raison en est que je veux que vous voyiez un composant de classe
+
+01:37.000 --> 01:40.000
+parce que si vous envisagez de rejoindre une entreprise qui écrit React depuis une décennie,
+
+01:40.000 --> 01:44.000
+vous allez certainement voir des composants de classe traîner
+
+01:44.000 --> 01:47.000
+parce que c'était la seule façon d'écrire React.
+
+01:47.000 --> 01:52.000
+Les composants fonctionnels sont le résultat, je ne sais pas, d'il y a probablement six ans à ce stade
+
+01:52.000 --> 01:54.000
+où ils ont été introduits pour la première fois, n'est-ce pas ?
+
+01:54.000 --> 01:57.000
+Et au fil du temps, ils sont devenus si populaires et les crochets ont réussi
+
+01:57.000 --> 02:00.000
+afin que vous n'ayez plus jamais besoin de composants de classe.
+
+02:00.000 --> 02:02.000
+Parlons des composants de classe.
+
+02:02.000 --> 02:05.000
+Premièrement, pas de crochets.
+
+02:05.000 --> 02:08.000
+Impossible d'utiliser des hooks avec des composants de classe.
+
+02:08.000 --> 02:14.000
+Enregistrez simplement cela dans votre cerveau parce que vous allez être tenté de le faire, mais vous ne pouvez pas.
+
+02:14.000 --> 02:19.000
+Ainsi, par exemple, si vous avez réalisé un crochet personnalisé comme une pizza usagée du jour,
+
+02:19.000 --> 02:23.000
+il n'est pas utilisable avec un composant de classe.
+
+02:23.000 --> 02:25.000
+Maintenant, vous pouvez en quelque sorte le pirater.
+
+02:25.000 --> 02:28.000
+Ce que vous faites, c'est créer un composant fonctionnel, vous exécutez le hook,
+
+02:28.000 --> 02:32.000
+et ensuite vous le transmettez dans un composant de classe en tant qu'accessoire, n'est-ce pas ?
+
+02:32.000 --> 02:37.000
+Donc vous pouvez en quelque sorte tricher un peu, ce dont vous aurez peut-être besoin,
+
+02:37.000 --> 02:41.000
+mais à l'intérieur d'un composant de classe, vous ne pouvez jamais utiliser de hook.
+
+02:42.000 --> 02:46.000
+Il n’y a donc pas d’état, il n’y a pas d’état d’utilisation, il n’y a pas d’effet d’utilisation.
+
+02:46.000 --> 02:49.000
+Il dispose de son propre ensemble d’API pour ce faire.
+
+02:50.000 --> 02:52.000
+Alors commençons simplement à en écrire un.
+
+02:52.000 --> 02:54.000
+Je pense que c'est probablement la façon la plus simple de procéder.
+
+02:54.000 --> 03:00.000
+Je veux que vous créiez un nouveau fichier ici, et il s'appellera errorboundary.jsx.
+
+03:00.000 --> 03:05.000
+Ouais, ils sont dans un état bizarre où ils ne sont pas recommandés,
+
+03:05.000 --> 03:10.000
+mais ils ne sont pas obsolètes, et je ne comprends pas vraiment cela.
+
+03:10.000 --> 03:14.000
+Soit on dit simplement qu'on va les maintenir tous les deux,
+
+03:14.000 --> 03:19.000
+ou disons que nous déprécions simplement l'un d'entre eux, n'est-ce pas ?
+
+03:19.000 --> 03:21.000
+Je ne sais pas.
+
+03:21.000 --> 03:23.000
+Mais je ne suis pas responsable.
+
+03:23.000 --> 03:25.000
+Personne ne me l'a demandé.
+
+03:25.000 --> 03:27.000
+Mais je ne suis pas responsable.
+
+03:27.000 --> 03:29.000
+Personne ne me l'a demandé.
+
+03:29.000 --> 03:35.000
+Nous allons donc importer un composant depuis React,
+
+03:35.000 --> 03:44.000
+et nous allons faire cette chose, disons que la classe errorboundary étend le composant.
+
+03:44.000 --> 03:48.000
+Quelque part dans le chat en ce moment, il y a un développeur Java qui est vraiment excité,
+
+03:48.000 --> 03:51.000
+je suis juste excité par ce qu'on fait ici,
+
+03:51.000 --> 03:54.000
+et tout le monde se demande : que se passe-t-il, n'est-ce pas ?
+
+03:55.000 --> 04:03.000
+Et juste ici en bas, nous allons exporter la limite d'erreur par défaut.
+
+04:03.000 --> 04:06.000
+En fait, j'aime les composants de classe.
+
+04:06.000 --> 04:08.000
+Je ne les écris plus parce que personne ne le fait.
+
+04:08.000 --> 04:12.000
+Mais il y avait en fait une fonction React
+
+04:12.000 --> 04:16.000
+parce que vous aimez la classe React.create comme celle-ci,
+
+04:16.000 --> 04:21.000
+et ensuite vous lui donneriez un objet, et il ressemblerait beaucoup à ceci.
+
+04:21.000 --> 04:24.000
+C’était la façon originale d’écrire React, il y a des années et des années.
+
+04:24.000 --> 04:27.000
+Si vous regardez, complétez Android React V2, n'est-ce pas ?
+
+04:27.000 --> 04:29.000
+Tout cela est enseigné avec la classe de création.
+
+04:29.000 --> 04:31.000
+C'était mon API préférée.
+
+04:31.000 --> 04:32.000
+Ne le dis à personne.
+
+04:32.000 --> 04:34.000
+C'est juste entre toi et moi.
+
+04:34.000 --> 04:37.000
+Mais j’ai vraiment aimé ça et ça me manque un peu.
+
+04:37.000 --> 04:40.000
+Vous savez, comme ce mème de Wolverine où il caresse une photo ?
+
+04:40.000 --> 04:42.000
+C'est moi en classe de création.
+
+04:42.000 --> 04:44.000
+Je fais ça avec les documents.
+
+04:44.000 --> 04:45.000
+D'accord.
+
+04:45.000 --> 04:53.000
+Donc l'état est égal, nous allons lui donner un certain état par défaut.
+
+04:53.000 --> 04:57.000
+Et par défaut, il n’y a aucune erreur.
+
+04:57.000 --> 05:03.000
+À propos, il ne s'agit que d'une classe ES6 ou ES2015 normale.
+
+05:03.000 --> 05:05.000
+Donc rien de spécial ici.
+
+05:05.000 --> 05:10.000
+Il s'agit simplement de React utilisant des classes JavaScript.
+
+05:10.000 --> 05:12.000
+D'accord.
+
+05:12.000 --> 05:15.000
+Il y a une chose étrange appelée méthode statique.
+
+05:15.000 --> 05:18.000
+Encore une fois, si vous êtes un développeur Java, vous êtes simplement passionné par la vie.
+
+05:18.000 --> 05:20.000
+Vous êtes juste prêt à rouler ici.
+
+05:20.000 --> 05:27.000
+Tout le monde dit, je ne comprends pas pourquoi vous écrivez Java dans mon JavaScript.
+
+05:27.000 --> 05:38.000
+Une méthode statique, donc si vous avez une classe ici, vous pouvez dire error.errorBoundary.getDerivedStateFrom.
+
+05:38.000 --> 05:42.000
+Et comme si cela fonctionnait directement sur la classe non instanciée, n'est-ce pas ?
+
+05:42.000 --> 05:45.000
+Contrairement à tout le reste, c’est une méthode instantanée.
+
+05:45.000 --> 05:50.000
+Vous devez donc dire que const eb est égal à une nouvelle limite d'erreur.
+
+05:50.000 --> 05:59.000
+Et puis si nous avons ici quelque chose comme mdr, n'est-ce pas, alors vous pouvez appeler eb.lol, n'est-ce pas ?
+
+05:59.000 --> 06:02.000
+Il arrive que vous soyez nu.
+
+06:02.000 --> 06:09.000
+Alors que quelque chose de statique est appelé directement sur la classe non instanciée.
+
+06:09.000 --> 06:13.000
+Si vous me regardez comme si je ne connaissais pas la différence ou que je ne me souciais pas de la différence, c'est acceptable.
+
+06:13.000 --> 06:15.000
+C'est très bien.
+
+06:15.000 --> 06:20.000
+Mais je voulais juste vous dire la différence entre ce qu'est la statique, n'est-ce pas ?
+
+06:20.000 --> 06:24.000
+La raison pour laquelle ils font cela est que lorsqu'une erreur se produit,
+
+06:24.000 --> 06:30.000
+il va appeler cette fonction de limite d'erreur afin qu'elle puisse en obtenir le bon état.
+
+06:30.000 --> 06:32.000
+Parce que la chose va être cassée, n'est-ce pas ?
+
+06:32.000 --> 06:34.000
+Parce qu'il a détecté une erreur.
+
+06:34.000 --> 06:36.000
+Et donc il doit en quelque sorte se reconstruire.
+
+06:36.000 --> 06:38.000
+Et il le fait avec cette erreur getDerivedStateFrom.
+
+06:38.000 --> 06:40.000
+C'est de là que ça vient.
+
+06:40.000 --> 06:45.000
+Donc nous allons juste dire à chaque fois que ça arrive, à chaque fois qu'il est cassé,
+
+06:45.000 --> 06:49.000
+nous voulons juste nous assurer qu'il a cet état ici de hasError.
+
+06:49.000 --> 06:53.000
+Nous voulons que cela soit défini sur vrai, n'est-ce pas ?
+
+06:53.000 --> 06:57.000
+D'ailleurs, il n'y a pas de fonction mdr.
+
+06:57.000 --> 07:02.000
+Cela va donc passer d'un état hasError faux à une erreur vraie,
+
+07:02.000 --> 07:04.000
+chaque fois qu'il est cassé.
+
+07:04.000 --> 07:08.000
+Et puis vous allez exécuter cette fonction appelée composantDidCatch.
+
+07:08.000 --> 07:13.000
+Il va détecter l'erreur et les informations.
+
+07:13.000 --> 07:20.000
+Et ici, si vous aviez quelque chose comme send to track.js ou sentry ou quelque chose comme ça,
+
+07:20.000 --> 07:25.000
+vous l'enverriez et enregistreriez vos erreurs ici.
+
+07:25.000 --> 07:29.000
+Je vais vous montrer cette technologie sophistiquée où j'enregistre toutes mes erreurs,
+
+07:29.000 --> 07:31.000
+qui est une console.
+
+07:31.000 --> 07:34.000
+Console.erreur.
+
+07:34.000 --> 07:42.000
+ErrorBondry a détecté une erreur stupide.
+
+07:42.000 --> 07:44.000
+J'aime que mes outils me disent que je suis stupide.
+
+07:44.000 --> 07:46.000
+Cela me motive.
+
+07:46.000 --> 07:49.000
+ErreurInfo.
+
+07:49.000 --> 07:51.000
+D'accord.
+
+07:51.000 --> 07:54.000
+Et puis voici une chose intéressante.
+
+07:54.000 --> 08:00.000
+Chaque composant, donc chaque composant React, composant de classe, a une fonction de rendu.
+
+08:00.000 --> 08:03.000
+Tout le reste est totalement facultatif, mais il doit avoir une fonction de rendu.
+
+08:03.000 --> 08:12.000
+Et la fonction de rendu est à 95 % la même chose qu'un corps de fonction de composant React normal.
+
+08:12.000 --> 08:15.000
+C'est donc ici que vous allez retourner quelque chose.
+
+08:15.000 --> 08:26.000
+Donc si this.state.hasError, alors vous allez renvoyer votre erreur,
+
+08:26.000 --> 08:29.000
+tout ce que vous voulez montrer à l'utilisateur, n'est-ce pas ?
+
+08:29.000 --> 08:36.000
+Vous allez donc dire quelque chose comme ErrorBondry.
+
+08:36.000 --> 08:38.000
+H2.
+
+08:38.000 --> 08:40.000
+Euh-oh.
+
+08:40.000 --> 08:43.000
+P.
+
+08:43.000 --> 08:52.000
+Cela fait une erreur avec cette liste ou avec cette page.
+
+08:52.000 --> 08:56.000
+Et puis nous créerons un lien.
+
+08:56.000 --> 08:59.000
+Assurez-vous que nous importons cela également depuis le haut.
+
+08:59.000 --> 09:07.000
+Importez le lien depuis le routeur Tanstack React.
+
+09:07.000 --> 09:11.000
+Nous allons envoyer ceci uniquement à la page d'accueil.
+
+09:11.000 --> 09:28.000
+Et cliquez ici pour revenir à la page d'accueil.
+
+09:28.000 --> 09:29.000
+D'accord.
+
+09:29.000 --> 09:30.000
+D'accord.
+
+09:30.000 --> 09:34.000
+Donc, si cette limite d'erreur enveloppe votre composant,
+
+09:34.000 --> 09:39.000
+que veux-tu qu'il affiche s'il n'y a pas d'erreur ?
+
+09:39.000 --> 09:41.000
+Vous ne voulez pas qu’il ajoute quoi que ce soit, n’est-ce pas ?
+
+09:41.000 --> 09:46.000
+Vous voulez juste qu’il s’agisse d’un simple passage invisible, n’est-ce pas ?
+
+09:46.000 --> 09:49.000
+Donc dans ce cas particulier, au lieu de celui-ci, plutôt,
+
+09:49.000 --> 09:55.000
+vous allez dire de retourner juste this.props.children.
+
+09:55.000 --> 09:57.000
+Il ne s'agit pas de l'envelopper ou quoi que ce soit du genre.
+
+09:57.000 --> 10:06.000
+C'est juste dire que si j'ai une limite d'erreur autour, vous savez, de mon composant,
+
+10:06.000 --> 10:14.000
+Rendons les choses encore plus simples et disons simplement un h1 de quelque chose comme ça, n'est-ce pas ?
+
+10:14.000 --> 10:17.000
+S'il n'y a pas d'erreur, soyez invisible, n'est-ce pas ?
+
+10:17.000 --> 10:19.000
+Ne me montre rien, n'est-ce pas ?
+
+10:19.000 --> 10:20.000
+Et c'est ce que cela fait.
+
+10:20.000 --> 10:23.000
+Cela veut simplement dire que je suis un intermédiaire invisible.
+
+10:23.000 --> 10:24.000
+Ne faites rien.
+
+10:24.000 --> 10:28.000
+Et puis si, pour une raison quelconque, il y a une erreur, n'est-ce pas, affichez-la.
+
+10:28.000 --> 10:30.000
+Ne faites rien avec les enfants, n'est-ce pas ?
+
+10:30.000 --> 10:36.000
+Affichez simplement ceci, et c'est comme ça que ça fonctionne, n'est-ce pas ?
+
+10:36.000 --> 10:37.000
+D'accord.
+
+10:37.000 --> 10:38.000
+C'est ça.
+
+10:38.000 --> 10:40.000
+C'est tout pour une limite d'erreur.
+
+10:40.000 --> 10:44.000
+Juste un peu plus sur les composants de classe.
+
+10:44.000 --> 10:47.000
+Je vous en ai montré une, appelée méthode de cycle de vie.
+
+10:47.000 --> 10:52.000
+Donc, avant d'avoir des effets, c'est vrai, où vous pouvez en quelque sorte utiliser l'effet
+
+10:52.000 --> 10:55.000
+pour affecter différentes parties du cycle de vie des composants.
+
+10:55.000 --> 10:58.000
+Cela avait des parties nommées très strictes du cycle de vie,
+
+10:58.000 --> 11:03.000
+donc vous pourriez faire quelque chose comme si le composant était monté, n'est-ce pas ?
+
+11:03.000 --> 11:06.000
+Et ce serait comme, vous savez, quand nous utilisons l'effet
+
+11:06.000 --> 11:09.000
+et donnez-lui un tableau vide pour qu'il ne s'exécute qu'une seule fois, n'est-ce pas ?
+
+11:09.000 --> 11:13.000
+C'est ce que fait Mount, n'est-ce pas ?
+
+11:13.000 --> 11:16.000
+Ou le composant sera démonté.
+
+11:16.000 --> 11:19.000
+C'est comme cette fonction renvoyée par un effet d'utilisation, n'est-ce pas ?
+
+11:19.000 --> 11:22.000
+Il s'exécute une fois à la fin.
+
+11:22.000 --> 11:29.000
+Ou si vous vouliez faire, alors que le composant, il y a un composant qui devrait être mis à jour,
+
+11:29.000 --> 11:32.000
+pas celui que je recherche, le composant a été mis à jour.
+
+11:32.000 --> 11:35.000
+C'est ce que je recherche.
+
+11:35.000 --> 11:39.000
+C'est comme un effet qui est rendu encore et encore en fonction de ce qui suit :
+
+11:39.000 --> 11:42.000
+tu te souviens quand nous ressemblions à la taille d'une pizza, n'est-ce pas,
+
+11:42.000 --> 11:46.000
+où nous le faisions fonctionner à chaque fois que la taille d'une pizza courait, n'est-ce pas ?
+
+11:46.000 --> 11:51.000
+Le composant a été mis à jour à chaque fois que le composant change,
+
+11:51.000 --> 11:53.000
+comme si l'état changeait, non ?
+
+11:53.000 --> 11:56.000
+L'autre chose que je vais mentionner brièvement,
+
+11:56.000 --> 11:58.000
+il y a aussi un constructeur.
+
+11:58.000 --> 12:01.000
+C'est aussi quelque chose que vous devriez savoir.
+
+12:01.000 --> 12:05.000
+Si jamais vous devez faire quelque chose lors de la toute première création du composant,
+
+12:05.000 --> 12:08.000
+vous devez mettre un constructeur,
+
+12:08.000 --> 12:12.000
+et vous devez faire cette chose appelée, vous devez transmettre cela à React.
+
+12:12.000 --> 12:15.000
+Et pour faire ça, tu le transmets au super,
+
+12:15.000 --> 12:18.000
+la classe qui se trouve au-dessus, qui est le composant.
+
+12:18.000 --> 12:22.000
+Vous prenez donc les accessoires et vous devez les transmettre à React.
+
+12:22.000 --> 12:24.000
+C'est ce que font les super accessoires.
+
+12:24.000 --> 12:29.000
+Pourquoi je suis plutôt reconnaissant de ne plus avoir à enseigner ça, c'est parce que
+
+12:29.000 --> 12:34.000
+vous devez en apprendre beaucoup à ce sujet.
+
+12:34.000 --> 12:36.000
+Et si vous avez déjà réalisé une interview JavaScript,
+
+12:36.000 --> 12:39.000
+les gens adorent parler de ce que c'est, n'est-ce pas ?
+
+12:39.000 --> 12:44.000
+Et vraiment, le gros problème ici, c'est que si je fais quelque chose comme,
+
+12:44.000 --> 12:49.000
+appelons cette fonction, je ne sais pas, célébrons l'erreur.
+
+12:55.000 --> 13:00.000
+D'accord, et je dis cet état de point, célébrez l'erreur,
+
+13:03.000 --> 13:06.000
+ou quelque chose comme ça, une fête.
+
+13:06.000 --> 13:09.000
+OK, et je veux mettre ça comme ça à chaque fois que tu clique dessus,
+
+13:09.000 --> 13:16.000
+au clic équivaut à cette erreur de célébration du point.
+
+13:16.000 --> 13:20.000
+Cela ne va pas encore fonctionner, ce qui est nul, non ?
+
+13:20.000 --> 13:22.000
+Pourquoi?
+
+13:22.000 --> 13:25.000
+Car qu'est-ce que c'est ici ?
+
+13:25.000 --> 13:27.000
+Votre réponse à cette question devrait être :
+
+13:27.000 --> 13:30.000
+Je ne sais pas, Brian, pourquoi poses-tu cette question, n'est-ce pas ?
+
+13:30.000 --> 13:33.000
+Et la réponse, je pense qu'elle n'est pas définie, ou je ne sais pas.
+
+13:33.000 --> 13:34.000
+Ou quelque chose comme ça, non ?
+
+13:34.000 --> 13:37.000
+Ou comme une fenêtre.
+
+13:37.000 --> 13:40.000
+Mais ce n’est pas ce à quoi on pourrait s’attendre.
+
+13:40.000 --> 13:42.000
+Alors tu dois aller faire quelque chose de vraiment stupide,
+
+13:42.000 --> 13:50.000
+comme cette erreur de célébration de point est égale à cette erreur de célébration de point, liez ceci.
+
+13:50.000 --> 13:55.000
+Et puis cela liera le contexte pour que ce soit correct.
+
+13:55.000 --> 13:59.000
+Ou vous pouvez devenir encore plus stupide et dire :
+
+13:59.000 --> 14:02.000
+célébrer l’erreur est égal à la fonction.
+
+14:02.000 --> 14:07.000
+Et vous devez utiliser une fonction fléchée comme celle-ci.
+
+14:07.000 --> 14:09.000
+Maintenant, pourquoi ça marche ?
+
+14:09.000 --> 14:15.000
+C'est parce que les fonctions fléchées ont une méthodologie de définition de contexte différente
+
+14:15.000 --> 14:17.000
+que les fonctions normales.
+
+14:17.000 --> 14:20.000
+C'est lexical, je pense que c'est le terme qu'ils utilisent pour cela.
+
+14:20.000 --> 14:23.000
+Ou c'est l'inverse, je n'arrive jamais à les garder droits.
+
+14:23.000 --> 14:26.000
+Mais c'est là que c'est écrit, pas là où ça s'appelle,
+
+14:26.000 --> 14:31.000
+alors que ces fonctions, le contexte est défini là où il est invoqué,
+
+14:31.000 --> 14:34.000
+pas là où il est créé.
+
+14:34.000 --> 14:37.000
+Encore une fois, si vous me regardez, est-ce que je parle chinois ?
+
+14:37.000 --> 14:38.000
+Je pourrais l'être.
+
+14:38.000 --> 14:40.000
+En fait, je ne sais pas, n'est-ce pas ?
+
+14:40.000 --> 14:44.000
+Mais j'essaie juste d'étudier le terrain où se trouvent les mines terrestres.
+
+14:44.000 --> 14:49.000
+Et donc sachez simplement que vous devez entrer dans le vif du sujet.
+
+14:49.000 --> 14:53.000
+Je vois aussi ici que j'ai appelé cet état d'ensemble de points.
+
+14:53.000 --> 14:57.000
+Il s'agit d'une fonctionnalité React pour les composants de classe.
+
+14:57.000 --> 15:01.000
+Cela n’existe évidemment pas sur les composants fonctionnels.
+
+15:01.000 --> 15:05.000
+Mais c'est comme ça, c'est ce qu'il utilise au lieu d'utiliser l'état, n'est-ce pas ?
+
+15:05.000 --> 15:08.000
+Vous effectuez cet état de jeu de points, puis vous changez l'état.
+
+15:08.000 --> 15:11.000
+Et ce sera un objet massif de la part de tout l’État, n’est-ce pas ?
+
+15:11.000 --> 15:14.000
+Au lieu d'avoir un crochet pour chaque élément d'état que vous possédez,
+
+15:14.000 --> 15:17.000
+vous avez un gros vieil objet.
+
+15:17.000 --> 15:21.000
+Et ainsi, par exemple, ici vous pouvez voir que j'ai une erreur.
+
+15:21.000 --> 15:22.000
+C'est un état ici.
+
+15:22.000 --> 15:26.000
+Cela ne l'écrasera pas car cela fusionne un objet entre les deux.
+
+15:26.000 --> 15:30.000
+Alors soyez-en conscient.
+
+15:30.000 --> 15:34.000
+La dernière chose ici est que si vous souhaitez référencer les accessoires ici,
+
+15:34.000 --> 15:38.000
+vous dites simplement console dot log comme ce dot props dot mdr.
+
+15:38.000 --> 15:42.000
+Comme tout ce que vous auriez normalement des accessoires ici, n'est-ce pas ?
+
+15:42.000 --> 15:48.000
+Au lieu de cela, vous les référencez simplement ici sous ces accessoires de point.
+
+15:49.000 --> 15:52.000
+D'accord.
+
+15:52.000 --> 15:55.000
+C'est une sorte de visite éclair des composants de classe.
+
+15:55.000 --> 15:58.000
+Assez, espérons-le, pour que vous ayez une idée du terrain et que si vous devez les utiliser,
+
+15:58.000 --> 16:00.000
+tu sais où tout est.
+
+16:00.000 --> 16:04.000
+Je vous ai en quelque sorte montré que vous aimiez 95% d'entre eux.
+
+16:04.000 --> 16:10.000
+Au-delà de cela, tout est à peu près pareil entre les composants de classe et les composants de fonction.
+
+16:10.000 --> 16:15.000
+Encore une chose que j'allais vous montrer, j'y ai en quelque sorte fait référence plus tôt.
+
+16:15.000 --> 16:18.000
+Nous avons dû utiliser notre crochet personnalisé ici.
+
+16:18.000 --> 16:28.000
+Je ferais quelque chose comme une fonction avec limite d'erreur avec des crochets.
+
+16:28.000 --> 16:37.000
+Et je ferais quelque chose comme la const pizza du jour équivaut à utiliser la pizza du jour.
+
+16:37.000 --> 16:48.000
+Et puis je renverrais la limite d'erreur avec quelque chose comme ça, n'est-ce pas ?
+
+16:48.000 --> 16:51.000
+Donc, vous effectuez tous les hooks au-dessus dans un composant fonctionnel,
+
+16:51.000 --> 16:57.000
+puis vous les transmettez au composant de cette façon.
+
+17:01.000 --> 17:03.000
+C'est un peu idiot, mais ça marche, non ?
+
+17:03.000 --> 17:07.000
+Vous pouvez en quelque sorte utiliser les outils et les composer ensemble.
+

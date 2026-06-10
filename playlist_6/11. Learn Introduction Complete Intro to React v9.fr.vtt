@@ -1,0 +1,285 @@
+WEBVTT
+
+
+00:00.000 --> 00:04.260
+Allons tester cela brièvement, et ensuite tout ira bien.
+
+00:06.080 --> 00:09.120
+Alors tout d’abord, assurez-vous que votre serveur API est toujours en cours d’exécution.
+
+00:09.320 --> 00:10.920
+J'ai toujours le mien en cours d'exécution ici en arrière-plan.
+
+00:12.000 --> 00:14.420
+Vous pouvez donc voir toutes ces demandes arriver très bien.
+
+00:16.680 --> 00:20.520
+Allons à l'intérieur de la pizza.
+
+00:22.780 --> 00:27.920
+Nous allons faire à l'intérieur de la pizza, à l'intérieur du div, sous le paragraphe.
+
+00:27.920 --> 00:30.080
+Nous allons donc ici mettre une image.
+
+00:32.460 --> 00:39.440
+La source est égale à props.image.
+
+00:41.800 --> 00:46.960
+Et l'alt sera juste props.name.
+
+00:48.760 --> 00:50.340
+Et puis fermez-le automatiquement.
+
+00:50.440 --> 00:53.960
+Alors maintenant, nous allons commencer à avoir une image, et ensuite nous devons la lui fournir.
+
+00:57.460 --> 00:57.900
+Donc c'est bien.
+
+00:57.900 --> 00:57.920
+Donc c'est bien.
+
+00:57.960 --> 00:58.720
+Voilà donc la ligne ici.
+
+00:58.780 --> 01:00.000
+La ligne 6 est ce que j'ai ajouté.
+
+01:01.760 --> 01:03.460
+Allez maintenant sur app.jsx.
+
+01:07.240 --> 01:10.240
+Et pour tout cela, nous allons simplement ajouter une image.
+
+01:13.280 --> 01:16.220
+Et je vais faire une chose amusante où vous pouvez créer plusieurs curseurs à la fois.
+
+01:16.220 --> 01:27.260
+L'image équivaut à couper les pizzas publiques et à couper le pepperoni.
+
+01:27.260 --> 01:28.920
+Webp.
+
+01:28.920 --> 01:34.940
+Et puis nous allons simplement changer cela pour celui hawaïen.
+
+01:35.060 --> 01:35.760
+Nous mettrons hawaïen.
+
+01:38.540 --> 01:41.800
+Et pour l’Américain, je n’ai pas d’image de ça.
+
+01:41.880 --> 01:43.240
+Dieu merci, je ne voulais effrayer personne.
+
+01:45.000 --> 01:47.040
+Alors on va juste mettre de la grosse viande parce que c'est ce que j'ai fait.
+
+01:47.100 --> 01:48.000
+J'ai celui-là.
+
+01:50.720 --> 01:53.860
+D'accord, vous verrez que finalement, c'est comme si les lignes devenaient trop longues.
+
+01:53.920 --> 01:55.840
+Cela va commencer à mettre tout cela sur leurs propres lignes.
+
+01:56.280 --> 01:57.120
+Je pense que cela rend les choses assez faciles.
+
+01:57.120 --> 01:57.640
+C'est assez lisible.
+
+02:04.900 --> 02:10.520
+Donc l'image, c'est celle que nous avons mise dans ces trois lignes.
+
+02:16.040 --> 02:19.840
+La raison pour laquelle cela fonctionne maintenant est que nous disposons d’un public.
+
+02:20.740 --> 02:23.620
+Et encore une fois, si nous revenons à notre GitHub ici,
+
+02:24.120 --> 02:26.240
+dans l'annuaire public, vous voyez, nous avons du style.
+
+02:27.120 --> 02:28.300
+Nous avons là un joli SVG.
+
+02:28.440 --> 02:29.860
+Nous avons une police que nous pourrons utiliser plus tard.
+
+02:30.840 --> 02:33.100
+Et puis nous avons un tas de ces images.
+
+02:33.980 --> 02:38.200
+Webp, si vous ne le connaissez pas, n'est qu'un format de fichier de Google
+
+02:38.200 --> 02:41.360
+c'est plus efficace que JPEG ou PNG ou certains d'entre eux.
+
+02:41.900 --> 02:45.380
+C'est aussi ce que génère ChatGPT, et tout cela provient de ChatGPT.
+
+02:47.440 --> 02:49.660
+Alors s'ils semblent étrangement peu appétissants,
+
+02:51.560 --> 02:54.400
+c'est parce que ça a l'air terrible.
+
+02:55.000 --> 02:55.660
+Vous pouvez voir tous les...
+
+02:57.120 --> 02:58.840
+Je pense que ce sont censés être des sardines.
+
+03:00.640 --> 03:01.500
+Fantastique.
+
+03:01.500 --> 03:02.940
+Je suis content d'avoir choisi celui qui est dégoûtant.
+
+03:04.120 --> 03:05.220
+Ils ne sont pas tous si mauvais.
+
+03:08.920 --> 03:09.420
+D'accord.
+
+03:09.600 --> 03:12.440
+Vous pouvez donc voir maintenant que nous avons des photos qui apparaissent ici.
+
+03:16.360 --> 03:18.220
+Et plutôt cool.
+
+03:18.220 --> 03:19.900
+Encore une chose que j'aimerais que vous ajoutiez.
+
+03:21.480 --> 03:23.020
+Accédez à votre index.html.
+
+03:24.700 --> 03:26.140
+Nous allons mettre ici un titre de lien.
+
+03:26.140 --> 03:26.900
+Un titre de lien.
+
+03:26.900 --> 03:28.980
+Lien CSS.
+
+03:29.660 --> 03:31.220
+Et cela va juste aller à
+
+03:31.220 --> 03:32.220
+couper le public.
+
+03:35.400 --> 03:37.200
+Est-ce du style ou est-ce des styles ?
+
+03:37.280 --> 03:38.000
+Je ne m'en souviens jamais.
+
+03:38.180 --> 03:38.920
+Qu'est-ce que j'ai fait ici ?
+
+03:40.100 --> 03:40.500
+Style.
+
+03:40.800 --> 03:40.980
+D'accord.
+
+03:41.920 --> 03:43.000
+Style slash public.
+
+03:43.100 --> 03:43.480
+Juste là.
+
+03:45.180 --> 03:46.360
+Dans votre index.html.
+
+03:52.980 --> 03:53.380
+D'accord.
+
+03:53.380 --> 03:56.380
+Et vous devriez vous retrouver avec quelque chose comme...
+
+03:56.900 --> 03:57.400
+Ceci.
+
+03:57.400 --> 03:59.360
+Nous sommes maintenant sur O3.jsx.
+
+03:59.360 --> 04:02.160
+Donc si tu es en retard ou si quelque chose n'a pas fonctionné
+
+04:02.160 --> 04:03.000
+et tu veux aller voir,
+
+04:03.480 --> 04:07.620
+allez simplement dans O3.jsx.
+
+04:09.340 --> 04:11.320
+Quel est celui-ci.
+
+04:14.160 --> 04:15.300
+Voilà où nous en sommes.
+
+04:19.940 --> 04:22.540
+Et encore une fois, juste pour être sûr que c'est clair,
+
+04:23.260 --> 04:26.800
+vous devez exécuter deux processus npm en même temps.
+
+04:26.800 --> 04:26.880
+D'accord.
+
+04:26.900 --> 04:28.280
+Vous devez exécuter votre serveur API.
+
+04:28.460 --> 04:31.300
+Vous devez donc accéder à l'API, npm run dev ou run start.
+
+04:31.840 --> 04:34.300
+Vous avez également besoin que Vite soit exécuté en même temps.
+
+04:34.760 --> 04:36.080
+Donc dans un autre terminal.
+
+04:36.400 --> 04:41.300
+Alors ouvrez un nouveau terminal ou si vous êtes en VS Code comme moi,
+
+04:41.420 --> 04:43.020
+vous pouvez cliquer sur ce petit signe plus ici.
+
+04:43.120 --> 04:43.840
+Cela fera quelque chose.
+
+04:44.320 --> 04:45.360
+Ou vous pouvez cliquer sur la division.
+
+04:45.640 --> 04:46.600
+Cela fonctionne aussi.
+
+04:47.480 --> 04:50.400
+Juste un deuxième terminal, quelle que soit la manière dont vous choisissez de le manifester.
+
+04:51.080 --> 04:53.200
+Faites cela et vous exécuterez ensuite npm run dev
+
+04:53.200 --> 04:54.840
+à l'intérieur de votre projet également.
+
+04:54.840 --> 04:56.880
+Vous avez donc les deux serveurs API en cours d’exécution.
+
+04:57.440 --> 04:58.600
+Laissez cela fonctionner.
+
+04:58.740 --> 04:59.920
+Vous n'êtes pas obligé d'arrêter cela à nouveau.
+
+05:00.380 --> 05:02.680
+Et puis votre serveur Vite fonctionnera également.
+
+05:02.680 --> 05:02.760
+Merci.
+

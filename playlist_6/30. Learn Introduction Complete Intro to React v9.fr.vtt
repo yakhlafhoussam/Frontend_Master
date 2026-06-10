@@ -1,0 +1,429 @@
+WEBVTT
+
+
+00:00.000 --> 00:04.120
+Parlons de réaction avancée. C'étaient des choses qui aiment
+
+00:05.260 --> 00:08.660
+Vous n'avez pas vraiment besoin de les utiliser, alors peut-être des formulaires incontrôlés
+
+00:08.660 --> 00:14.840
+Vous les utiliserez un peu, mais les limites d'erreur et les portails sont beaucoup plus spécialisés dans leurs cas d'utilisation, mais ils sont toujours ressentis.
+
+00:16.500 --> 00:20.620
+Assez utile pour que je voulais que vous les ayez dans votre sac à outils même si vous ne les sortez pas beaucoup, n'est-ce pas ?
+
+00:20.620 --> 00:22.620
+Alors parlons-en
+
+00:23.140 --> 00:27.240
+Les portails que nous avons ne sont que le balisage de la page, n'est-ce pas ?
+
+00:27.600 --> 00:29.600
+Nous avons la racine ici
+
+00:30.600 --> 00:36.680
+Et c'est la seule chose que notre application peut restituer, disons que nous en avions 30, vous savez, 10 divs différents ici
+
+00:37.400 --> 00:42.280
+Notre application est actuellement limitée à sa racine, qui est cette racine ici
+
+00:44.600 --> 00:51.160
+Disons que vous n'aimez pas développer vos utilisateurs et que vous souhaitez leur montrer des modaux. Je
+
+00:51.800 --> 00:55.680
+Je pense que les mannequins sont une chose terrible. Je pense que celui qui les a inventés devrait avoir honte
+
+00:55.840 --> 00:57.840
+Et maintenant je vais vous montrer comment les faire
+
+00:59.520 --> 01:05.360
+C'était un énorme problème d'essayer de restituer des modaux avec React car il est vraiment difficile d'obtenir quelque chose
+
+01:06.000 --> 01:10.720
+Devant d'autres choses. Soit vous devez faire des choses impies avec z-index, soit
+
+01:12.000 --> 01:15.680
+Vous devez aimer trouver un moyen d'aimer le rendu de quelque chose
+
+01:16.640 --> 01:19.520
+D'abord dans votre application et ça devient vraiment difficile de bien faire
+
+01:19.520 --> 01:22.560
+Nous pourrions probablement aimer déconner et trouver comment le faire, quelqu'un
+
+01:22.560 --> 01:29.840
+Le contexte est correct, mais je vais vous montrer quelque chose de beaucoup plus simple qu'ils ont introduit pour rendre cela beaucoup plus simple et beaucoup plus courant.
+
+01:29.840 --> 01:35.600
+Je dirai une manière plus courante mais moins antagoniste d'utiliser les portails, comme disons que vous aviez comme
+
+01:36.800 --> 01:41.040
+Une navigation latérale qui restitue contextuellement les éléments en fonction de ce qui se trouve sur la page
+
+01:41.040 --> 01:46.240
+Et donc ce sont deux choses distinctes que vous pouvez utiliser un portail pour dire, d'accord, restituez ceci dans la navigation latérale
+
+01:46.240 --> 01:50.560
+Si vous êtes sur la navigation latérale, vous pouvez utiliser un portail pour dire, d'accord, restituez cela dans la navigation latérale
+
+01:50.800 --> 01:55.920
+Si vous êtes sur cette page, n'est-ce pas ? C'est en fait un cas d'utilisation très intéressant pour ça
+
+01:58.480 --> 02:04.320
+Ouais, un bon exemple de ceci si vous voulez juste visualiser ce dont je parle est la documentation Azure donc javascript
+
+02:05.280 --> 02:08.880
+Fonctions Azure. Voyons juste si je peux te montrer de quoi je parle
+
+02:08.880 --> 02:14.080
+Disons que sur cette page, vous avez la navigation ici, puis voici votre application de réaction ici au milieu.
+
+02:14.720 --> 02:20.160
+Vous disposez ici de ressources supplémentaires que vous entraînez et qui changent en fonction de ce que vous faites.
+
+02:20.160 --> 02:27.200
+En fonction de la page sur laquelle vous vous trouvez, vous pouvez utiliser un portail pour indiquer ces éléments dans les ressources supplémentaires lorsque vous êtes sur cette page.
+
+02:27.440 --> 02:31.760
+Cela vous permet d'effectuer un rendu en dehors de votre application, n'est-ce pas ? C'est donc un peu le cas d'utilisation. Nous sortons d'ici
+
+02:32.080 --> 02:34.080
+donc nous allons nous diriger vers notre
+
+02:35.520 --> 02:39.040
+Euh index point html et au-dessus de la racine
+
+02:39.920 --> 02:41.920
+Nous allons mettre un modal
+
+02:42.880 --> 02:44.880
+Alors
+
+02:45.920 --> 02:49.840
+Cette fois, nous n'allons rien mettre dans modal car nous ne voulons rien montrer.
+
+02:50.880 --> 02:57.600
+À moins qu’il y ait quelque chose de rendu, n’est-ce pas ? D'accord. Je veux que vous créiez un nouveau fichier ici. Appelez-le simplement modal dot jsx
+
+02:59.440 --> 03:02.080
+Avez-vous déjà regardé le bon endroit où cette émission de télévision
+
+03:02.640 --> 03:07.760
+J'ai l'impression que lorsque j'arrive aux portes nacrées, un de mes crimes contre l'humanité montre à tant de gens à quel point
+
+03:07.760 --> 03:09.760
+faire des modaux
+
+03:10.320 --> 03:15.360
+Très bien, effet d'importation et d'utilisation
+
+03:16.960 --> 03:21.920
+Et utilisez ref donc nous parlerons également de ref. Ce sera plutôt excitant de réagir
+
+03:24.480 --> 03:27.280
+Importer euh créer un portail
+
+03:31.280 --> 03:35.920
+De React Dash Dom, je vais juste dire que ce code est comme
+
+03:36.800 --> 03:41.200
+Comme 90 directement à partir des documents de réaction afin que vous créditiez là où le crédit est dû
+
+03:44.320 --> 03:47.840
+Alors peut-être que je peux transmettre mes péchés à leurs égaux modaux
+
+03:49.200 --> 03:54.720
+Nous parlons également des enfants. Il y a beaucoup d'informations amusantes ici sur la réaction de certains cas d'utilisation plus avancés
+
+03:58.240 --> 04:00.640
+Très bien, donc c'est un peu bizarre
+
+04:01.360 --> 04:03.040
+Mais comme ce que nous avons
+
+04:03.040 --> 04:08.640
+Un div qui représente la racine de notre portail qui sera ce modal que nous allons récupérer, n'est-ce pas ?
+
+04:09.360 --> 04:11.360
+Nous devons faire référence à la même chose
+
+04:11.920 --> 04:13.280
+div
+
+04:13.280 --> 04:17.680
+Entre les rendus, n'est-ce pas parce que ce modèle va continuer à être restitué parce qu'il réagit, n'est-ce pas ? C'est comme ça que fonctionne React
+
+04:18.320 --> 04:21.680
+Alors, comment pouvons-nous nous assurer que nous faisons toujours référence exactement à la même chose ?
+
+04:22.480 --> 04:27.440
+Div, nous ne voulons pas créer un nouveau div à chaque rendu. Nous voulons faire référence au même div entre les rendus
+
+04:28.320 --> 04:29.840
+Comment fait-on cela ?
+
+04:29.840 --> 04:31.280
+Nous ne le faisons pas
+
+04:31.280 --> 04:33.040
+veux
+
+04:33.040 --> 04:38.800
+Euh, faites un point de document pour obtenir l'identifiant de l'élément directement dans le rendu. C'est une API lente, n'est-ce pas ?
+
+04:39.360 --> 04:42.800
+Chaque fois que vous devez interagir avec le div direct ou directement avec le dom
+
+04:43.440 --> 04:46.320
+Vous vous retrouvez dans ce genre de chemin de code lent et vous ne voulez pas ça
+
+04:47.360 --> 04:50.800
+Entrez les réf. C'est ce que nous allons faire ici. Donc on va dire const
+
+04:52.720 --> 04:55.360
+L ref l étant élément
+
+04:57.120 --> 04:59.120
+Utilisez ref et nous allons le faire démarrer comme null
+
+04:59.920 --> 05:01.920
+C'est la valeur par défaut la première fois
+
+05:02.720 --> 05:04.720
+et ensuite nous dirons si
+
+05:05.280 --> 05:06.400
+non
+
+05:06.400 --> 05:08.400
+l réf point courant
+
+05:10.240 --> 05:18.240
+Ensuite, l ref dot current est égal à l'élément de création de point de document
+
+05:20.960 --> 05:22.960
+Division
+
+05:25.440 --> 05:29.360
+Donc une référence est un objet figé
+
+05:30.720 --> 05:34.000
+Nous n’utilisons pas vraiment trop la congélation. C'est généralement une affaire de bibliothèque
+
+05:34.880 --> 05:38.320
+Mais il n'y a qu'une seule chose que vous pouvez modifier dessus, qui est actuelle
+
+05:39.040 --> 05:42.960
+Pourquoi est-ce ainsi ? Parce qu'alors parce que la référence est un objet
+
+05:43.600 --> 05:49.520
+Nous pouvons modifier les valeurs dessus. Cela fera toujours référence à la même chose, non ? C'est le pointeur qui pointe vers la même chose
+
+05:51.440 --> 05:56.880
+Donc ce courant va être le même div donc nous allons seulement créer un seul div et nous allons référencer le même div
+
+05:57.360 --> 05:59.360
+chaque rendu
+
+06:00.320 --> 06:02.320
+Un peu étrange, je sais
+
+06:02.400 --> 06:05.120
+Mais reste avec moi et ça aura peut-être un peu plus de sens ici
+
+06:05.920 --> 06:11.200
+Gardez simplement à l'esprit que cette référence contient un div et que c'est le même div, peu importe le nombre de fois que j'exécute le rendu.
+
+06:11.600 --> 06:13.920
+Maintenant, notre vieil ami utilise l'effet
+
+06:20.000 --> 06:27.040
+La racine modale Const est égale au document dot obtenir l'élément par identifiant
+
+06:28.000 --> 06:30.000
+Modal
+
+06:32.640 --> 06:38.160
+Donc ça va être notre enfant d'ajout de point de racine modale
+
+06:40.080 --> 06:47.120
+L ref dot current donc maintenant notre div créé est inséré dans le dom. C'est cool
+
+06:50.000 --> 06:52.000
+Et
+
+06:52.080 --> 06:53.520
+Euh
+
+06:53.520 --> 06:57.120
+Attends on reviendra faire le retour ici dans une seconde car je veux expliquer ça plus en profondeur
+
+06:57.840 --> 06:59.840
+Combien de fois voulons-nous insérer notre div ?
+
+07:00.480 --> 07:03.680
+une fois le tableau vide, c'est vrai, vous l'avez
+
+07:05.040 --> 07:07.120
+Et puis ici en bas, nous allons revenir
+
+07:07.920 --> 07:09.920
+créer un portail
+
+07:11.600 --> 07:13.600
+De div
+
+07:18.400 --> 07:20.660
+Et nous allons rendre les enfants
+
+07:22.640 --> 07:24.640
+Et
+
+07:25.680 --> 07:30.080
+Ensuite, nous allons faire cela avec notre courant de point de référence l
+
+07:32.640 --> 07:34.640
+Et puis exporter
+
+07:36.320 --> 07:38.000
+Par défaut
+
+07:38.000 --> 07:40.000
+modal donc
+
+07:40.240 --> 07:41.840
+créer un portail
+
+07:41.840 --> 07:46.800
+Ce qui est cool avec ça, c'est que maintenant nous pouvons restituer cela n'importe où dans notre application et c'est comme si, oh, vous ne voulez pas cela directement ici
+
+07:47.040 --> 07:48.880
+Vous essayez de coller ça là-bas, n'est-ce pas ?
+
+07:48.880 --> 07:54.480
+Cela ne rendra donc pas ce que vous rendrez en tant qu'enfants. Il restera dans tout ce que vous mettrez dans le portail
+
+07:54.960 --> 07:56.960
+Parlons des enfants juste une seconde
+
+08:00.240 --> 08:04.480
+Donc, si j'ai un div ici et que j'ai mon h1, c'est comme euh
+
+08:07.680 --> 08:10.800
+Juste là, quels sont les enfants de cette division
+
+08:12.080 --> 08:14.080
+C'est ce qu'il y a à l'intérieur, n'est-ce pas ?
+
+08:14.640 --> 08:16.640
+Donc c'est la même chose avec le modal
+
+08:17.600 --> 08:19.600
+Quels sont les enfants du modal
+
+08:21.520 --> 08:24.480
+C'est tout ce qu'il y a à l'intérieur, comme tout ce que vous y mettez
+
+08:24.960 --> 08:28.160
+La plupart des choses que nous avons faites se sont fermées automatiquement, là où c'est comme une pizza.
+
+08:29.120 --> 08:32.160
+Parce que ça n'en fait pas, nous n'essayons pas de mettre quoi que ce soit à l'intérieur de la pizza, n'est-ce pas ?
+
+08:32.400 --> 08:38.480
+C'est pourquoi tout cela a été le mode à fermeture automatique mais que nous voulons en fait aimer contenir des éléments arbitraires.
+
+08:38.800 --> 08:43.840
+C'est donc ça les enfants, et les enfants arrivent via des accessoires. C'est un c'est un spécifiquement
+
+08:44.480 --> 08:45.440
+nommé
+
+08:45.440 --> 08:49.120
+Les accessoires que nous avons déstructurés ici, mais c'est normalement ce qu'on appelle des accessoires, n'est-ce pas ?
+
+08:49.760 --> 08:51.760
+Si tu le faisais de cette façon, tu dirais simplement
+
+08:52.240 --> 08:54.240
+les accessoires parsèment les enfants, n'est-ce pas ?
+
+08:55.680 --> 08:58.960
+Mais à la place on a fait de la déstructuration parce que je ne sais pas ça
+
+08:59.760 --> 09:01.760
+Je déstructure généralement
+
+09:01.920 --> 09:05.200
+Parce que j'aime les noms plus courts mais c'est à toi de décider, cool
+
+09:05.280 --> 09:10.160
+Nous avons utilisé un effet ici parce que nous voulons que cela se produise une fois que nous voulons qu'il soit programmé après le rendu initial.
+
+09:10.240 --> 09:12.240
+Cela a du sens
+
+09:12.240 --> 09:13.920
+D'accord
+
+09:13.920 --> 09:18.960
+Tel quel, c'est probablement un indice de ce à quoi je m'apprête à parler.
+
+09:20.080 --> 09:21.280
+euh
+
+09:21.280 --> 09:23.280
+Il y a une fuite de mémoire
+
+09:27.520 --> 09:29.520
+Euh, pourquoi
+
+09:31.840 --> 09:36.880
+Disons que je restitue, reloue et annule le rendu de ce modal mille fois
+
+09:40.560 --> 09:42.560
+Combien de divisions
+
+09:42.720 --> 09:44.720
+La racine modale va-t-elle contenir à l'intérieur ?
+
+09:45.840 --> 09:47.840
+mille
+
+09:48.560 --> 09:56.160
+Rien ne revient en arrière et ne supprime l ref dot current de cette racine modale, donc il va simplement continuer à laisser des divs derrière lui.
+
+09:57.600 --> 09:59.360
+À droite
+
+09:59.360 --> 10:01.360
+Nous devons donc aller nettoyer après nous
+
+10:02.240 --> 10:04.240
+à droite
+
+10:04.240 --> 10:06.400
+C'est donc l'un des plus étranges
+
+10:08.160 --> 10:10.240
+Apis pour réagir à mon avis
+
+10:11.200 --> 10:13.200
+Mais vous retournez une fonction ici
+
+10:15.440 --> 10:20.080
+Et vous faites juste tout votre nettoyage ici, donc le point racine modal supprime l'enfant
+
+10:22.720 --> 10:24.720
+Courant de point de référence L
+
+10:26.480 --> 10:28.160
+C'est notre fonction de nettoyage
+
+10:28.160 --> 10:32.960
+Ainsi, quelle que soit la fonction que vous exécutez ou que vous revenez de votre effet, elle sera exécutée une fois
+
+10:33.440 --> 10:36.900
+Une fois démonté, cela résoudra notre fuite de mémoire.
+

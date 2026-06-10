@@ -1,0 +1,504 @@
+WEBVTT
+
+
+00:00.000 --> 00:02.520
+Parlons donc de TanStack Query.
+
+00:02.520 --> 00:08.000
+Il s'agit de l'artiste anciennement connu sous le nom de React Query.
+
+00:08.000 --> 00:12.320
+Ils l'appellent maintenant TanStack Query car il fonctionne désormais sur plusieurs bibliothèques, pas seulement
+
+00:12.320 --> 00:13.320
+Réagissez.
+
+00:13.320 --> 00:17.580
+Il y a une requête angulaire, il y a une requête de vue, il y en a quelques-unes.
+
+00:17.580 --> 00:23.880
+Mais je dirais que le plus populaire est de loin TanStack Query.
+
+00:23.880 --> 00:30.880
+Nous allons donc créer une page de commandes passées, et cette page va rassembler toutes les
+
+00:30.880 --> 00:35.800
+les anciennes commandes afin que nous puissions en quelque sorte les parcourir.
+
+00:35.800 --> 00:40.920
+Ce qui est intéressant à propos de ces données, c'est qu'elles sont hautement, hautement, hautement mises en cache, n'est-ce pas ?
+
+00:40.920 --> 00:43.360
+Vos anciennes commandes ne changent pas vraiment d’un chargement de page à l’autre.
+
+00:43.360 --> 00:45.880
+Vous en aurez peut-être de nouveaux, n'est-ce pas ?
+
+00:45.880 --> 00:49.600
+Mais les anciens vont continuer à y rester, et surtout si vous cliquez sur le
+
+00:49.600 --> 00:50.600
+des détails, non ?
+
+00:50.600 --> 00:53.800
+Les détails d’une ancienne commande ne changent pas de minute en minute.
+
+00:53.800 --> 00:56.600
+Donc très hautement cacheable.
+
+00:56.600 --> 01:03.960
+Ce qui est bien avec TanStack Query, c'est qu'il permet de mettre en cache les requêtes API.
+
+01:03.960 --> 01:06.440
+tellement, si simple.
+
+01:06.440 --> 01:10.440
+Imaginez maintenant, avec tout ce que je vous ai montré avec l'effet d'utilisation, comment mettriez-vous en cache
+
+01:10.440 --> 01:12.440
+une réponse ?
+
+01:12.440 --> 01:13.440
+Vous pourriez, n'est-ce pas ?
+
+01:13.440 --> 01:17.640
+J'imagine que la plupart d'entre vous fabriqueraient une sorte d'objet, et que cet objet vivrait de
+
+01:17.640 --> 01:21.000
+peut-être un autre module externe, et vous définiriez une clé, et ensuite vous diriez comme si je suis
+
+01:21.400 --> 01:25.600
+vous demandez cela, alors ne le demandez pas, extrayez-le du cache, mais personne ne veut écrire cela
+
+01:25.600 --> 01:26.600
+logique, non ?
+
+01:26.600 --> 01:28.840
+Ensuite, vous devez écrire la logique d'expiration.
+
+01:28.840 --> 01:31.600
+Vous devez écrire comme une logique d'hydratation si vous souhaitez le précharger.
+
+01:31.600 --> 01:36.000
+Il y a un tas de choses comme ça, et vous n'êtes pas obligé parce que TanStack Query est du genre
+
+01:36.000 --> 01:37.960
+ou le fait pour vous.
+
+01:37.960 --> 01:43.280
+C'est presque au point que je n'ai presque plus besoin d'utiliser d'effet.
+
+01:43.280 --> 01:48.640
+J'utilise simplement TanStack Query pour presque toutes les choses pour lesquelles j'utilisais l'effet.
+
+01:48.640 --> 01:57.720
+Donc avec React, chaque fois que je démarre un tout nouveau projet, c'est npm install, réagissez, réagissez-darm,
+
+01:57.720 --> 02:01.640
+et TanStack Query presque tout le temps, n'est-ce pas ?
+
+02:01.640 --> 02:03.160
+Pour le reste, je n'ai pas toujours besoin de routage.
+
+02:03.160 --> 02:06.480
+Je n'ai pas toujours besoin de tous les autres outils, mais je finis presque toujours par utiliser TanStack Query
+
+02:06.480 --> 02:09.720
+juste parce que c'est meilleur et plus facile à utiliser.
+
+02:09.720 --> 02:14.520
+Et comme vous pouvez le voir, l'effet d'utilisation est que vous pouvez avoir des bugs assez étranges.
+
+02:14.520 --> 02:17.640
+Vous évitez simplement cela en utilisant TanStack Query.
+
+02:17.640 --> 02:20.360
+Je suis donc fan, comme vous pouvez le constater.
+
+02:20.360 --> 02:23.520
+Alors allons faire notre page de commandes passées.
+
+02:23.520 --> 02:27.240
+Ça va être amusant si vous avez un sens du plaisir pervers comme moi.
+
+02:27.240 --> 02:33.440
+Très bien, je vais réexécuter mon serveur, npm run dev.
+
+02:33.440 --> 02:40.680
+Maintenant, à l'intérieur des routes, je vais créer un nouveau fichier.
+
+02:40.680 --> 02:46.200
+Nous allons appeler cela past.lazy.jsx.
+
+02:46.200 --> 02:48.880
+Et cela va créer ce petit bout vraiment sympa pour nous.
+
+02:48.880 --> 02:53.880
+Merci, TanStack.
+
+02:53.880 --> 02:58.240
+Et tout cela a l'air bien.
+
+02:58.240 --> 03:02.560
+Alors avant d'aller trop loin, allons-y et installons toutes nos choses dont nous avons besoin.
+
+03:02.560 --> 03:06.000
+Je vais donc simplement extraire cela directement de la documentation.
+
+03:06.000 --> 03:12.320
+Nous allons utiliser TanStack 559.13 aujourd'hui.
+
+03:12.320 --> 03:17.120
+Et cette bibliothèque ne change pas vraiment beaucoup entre les versions.
+
+03:17.120 --> 03:19.880
+Il y a quelques fonctionnalités expérimentales qu'ils finiront sûrement par ajouter plus tard, mais
+
+03:19.880 --> 03:23.120
+nous n'utilisons aucune des fonctionnalités expérimentales aujourd'hui.
+
+03:23.120 --> 03:24.120
+En fait, ce n'est pas vrai.
+
+03:24.120 --> 03:25.120
+Vers la fin, nous le ferons.
+
+03:25.120 --> 03:26.120
+Ce sera amusant.
+
+03:26.120 --> 03:30.160
+Juste dans un autre terminal ici, je vais exécuter npm install sur tanstack slash réagir dash
+
+03:30.160 --> 03:31.160
+requête.
+
+03:31.160 --> 03:39.640
+Ici, nous allons installer la requête npm install tanstack react à 559.13.
+
+03:39.640 --> 03:41.120
+Allez-y et exécutez l'installation ici.
+
+03:41.120 --> 03:44.320
+Et puis nous allons en prendre un ici également.
+
+03:44.320 --> 03:46.840
+Ce n’est qu’un groupe d’entre eux.
+
+03:46.840 --> 03:50.880
+Il contient de très bons outils de développement et de belles règles de peluchage que nous allons
+
+03:50.880 --> 03:53.680
+apportez-le également.
+
+03:53.680 --> 04:01.280
+Donc npm install dash d, car ce sont des dépendances de développement, tanstack réagit aux outils de développement de requêtes.
+
+04:01.280 --> 04:03.040
+C'est comme les outils de développement du routeur.
+
+04:03.040 --> 04:05.600
+Je dirai que j'utilise davantage celles des requêtes que celles du routeur.
+
+04:05.600 --> 04:09.280
+Ceux-ci sont donc plus utiles à mon avis.
+
+04:09.280 --> 04:16.680
+Et puis nous allons également installer le plugin pour cela, pour ESLint en particulier.
+
+04:16.680 --> 04:24.480
+Et encore une fois, 559.13 et 559.7 sont les versions que j'utilise.
+
+04:24.480 --> 04:26.780
+Génial.
+
+04:26.780 --> 04:31.160
+Allons modifier notre configuration ESLint ici.
+
+04:31.160 --> 04:36.240
+Mettez ça là et puis...
+
+04:36.240 --> 04:38.360
+Nous allons donc importer par le haut.
+
+04:38.360 --> 04:51.480
+Importez la requête du plugin à partir de la requête du plugin tanstack ESLint.
+
+04:51.480 --> 05:00.680
+Et sous celui du runtime JSX ici, nous allons simplement dire requête de plugin point point point
+
+05:00.680 --> 05:14.960
+configurations de points barre oblique plate recommandée.
+
+05:14.960 --> 05:18.520
+Je pense m'être plaint de ce style de configuration environ sept fois dans cet atelier,
+
+05:18.520 --> 05:20.140
+mais écoute-moi encore une fois.
+
+05:20.140 --> 05:22.840
+C’est tout simplement absurde, n’est-ce pas ?
+
+05:22.840 --> 05:27.320
+Certains d’entre eux sont répandus, d’autres non.
+
+05:27.320 --> 05:32.320
+C'est difficile à suivre à mon avis.
+
+05:32.320 --> 05:37.800
+Franchement, j'ai passé beaucoup de temps à bien comprendre avant ce cours, non ?
+
+05:37.800 --> 05:42.240
+Quoi qu'il en soit, c'était mon problème mais pas le vôtre, mais votre problème futur.
+
+05:42.240 --> 05:44.720
+Alors peut-être pouvons-nous compatir.
+
+05:44.720 --> 05:46.380
+D'accord.
+
+05:46.380 --> 05:48.160
+Donc ça devrait marcher.
+
+05:48.160 --> 05:52.720
+Je veux dire, c'est toujours bien de lui donner un vieux npm run lint juste pour s'assurer que quelque chose
+
+05:52.720 --> 05:53.720
+cassé.
+
+05:54.720 --> 05:58.920
+D'accord.
+
+05:58.920 --> 06:02.840
+Alors assurons-nous que j'ai bien compris.
+
+06:02.840 --> 06:06.120
+Configurations de points de requête de plugin avec un s.
+
+06:06.120 --> 06:11.520
+Juste là.
+
+06:11.520 --> 06:14.360
+J'ai donc eu une config, c'est des configs.
+
+06:14.360 --> 06:15.360
+Essayons encore.
+
+06:15.360 --> 06:18.360
+Et voilà.
+
+06:18.360 --> 06:19.360
+D'accord.
+
+06:19.360 --> 06:20.360
+Bien.
+
+06:21.000 --> 06:26.000
+Mon serveur de développement fonctionne à nouveau.
+
+06:26.000 --> 06:32.600
+Très bien.
+
+06:32.600 --> 06:35.800
+Alors allons-y et ajoutons nos outils de développement.
+
+06:35.800 --> 06:36.800
+Ça pourrait être amusant.
+
+06:36.800 --> 06:39.500
+Ça pourrait être mignon.
+
+06:39.500 --> 06:49.000
+Donc nous allons rooter dot jsx et ici en haut nous allons juste en dessous, je ne le fais pas
+
+06:49.000 --> 07:03.800
+sais, où que tu veuilles importer ici des outils de développement de requêtes de réaction comme celui d'At Tan
+
+07:03.800 --> 07:07.880
+outils de développement de requêtes de réaction de pile.
+
+07:07.880 --> 07:10.480
+D'accord.
+
+07:10.480 --> 07:12.480
+Et puis je l'ai mis comme ici.
+
+07:12.480 --> 07:15.240
+Cela n’a pas vraiment d’importance, mais nous allons simplement le mettre ici.
+
+07:15.240 --> 07:18.760
+Outils de développement de requêtes React.
+
+07:18.760 --> 07:25.320
+Comme ça.
+
+07:25.320 --> 07:27.720
+Certains de ces outils de développement font tout juste leur apparition maintenant.
+
+07:27.720 --> 07:33.360
+Tu finiras comme, parce que je pense qu'il y en a un versell et un suivant js et je
+
+07:33.360 --> 07:36.800
+je pense que la boîte à outils React pourrait en avoir un.
+
+07:36.800 --> 07:39.720
+Vous pouvez donc avoir sept ensembles d’outils de développement dans votre application.
+
+07:39.720 --> 07:46.680
+Cela finira par ressembler à ces navigateurs Web 2.0 à l'ancienne qui contiennent 17 publicités qui
+
+07:46.680 --> 07:51.400
+tout apparaîtra mais ce ne sera que des outils de développement partout.
+
+07:51.400 --> 07:53.480
+Je n'arrive pas à décider si c'est utopique ou dystopique.
+
+07:53.480 --> 07:55.480
+Je pense que la réponse est les deux.
+
+07:55.480 --> 07:56.480
+D'accord.
+
+07:56.480 --> 07:59.480
+Nous avons donc maintenant des outils de développement.
+
+07:59.480 --> 08:04.320
+Je pense que si vous regardez simplement votre application maintenant, oh, ouais.
+
+08:04.320 --> 08:08.760
+C'est donc fou que nous n'ayons toujours pas encore installé la véritable bibliothèque de requêtes de réaction.
+
+08:08.800 --> 08:12.000
+C'est comme si je cherchais quelque chose auquel m'accrocher et que je ne le trouvais pas encore.
+
+08:12.000 --> 08:13.760
+C'est donc prévu.
+
+08:13.760 --> 08:30.400
+Donc app.jsx, nous allons devoir importer le client de requête et le fournisseur de client de requête depuis at tan
+
+08:30.400 --> 08:35.840
+requête de réaction empilée ici.
+
+08:35.840 --> 08:39.040
+Ce sont donc les deux choses que j’importe ici.
+
+08:39.040 --> 08:43.280
+Nous avons le routeur de création ici et ensuite nous devons créer en dessous une requête const
+
+08:43.280 --> 08:52.640
+client est égal à un nouveau client de requête.
+
+08:52.640 --> 08:53.640
+Il y a quelques configurations.
+
+08:53.640 --> 08:56.240
+Vous pouvez passer ça.
+
+08:56.240 --> 09:03.600
+Je ne me souviens pas nécessairement de ce qu'ils signifient.
+
+09:03.600 --> 09:04.600
+Vous pouvez le transmettre.
+
+09:04.600 --> 09:07.040
+Vous pouvez pré-remplir le cache, ce qui est plutôt cool.
+
+09:07.040 --> 09:09.080
+Désolé, c'est tout couvert.
+
+09:09.080 --> 09:15.120
+Supposons donc que vous ayez un certain nombre de demandes que vous savez que l'utilisateur est susceptible de faire.
+
+09:15.120 --> 09:21.040
+Dans notre exemple, disons que nous pourrions pré-remplir ceci avec les 10 dernières commandes, simplement en sachant
+
+09:21.040 --> 09:24.560
+que ce sont les commandes les plus susceptibles que les gens examineront.
+
+09:24.560 --> 09:26.520
+Vous pouvez transmettre cela et interroger le cache.
+
+09:26.520 --> 09:29.120
+Et donc vous pouvez pré-mettre en cache ces choses, ce qui est plutôt cool.
+
+09:29.960 --> 09:34.200
+La raison pour laquelle j'aime vraiment cela est que désormais toutes nos requêtes API semblent normales.
+
+09:34.200 --> 09:37.120
+Nous n'avons pas besoin de dire, d'accord, vérifiez d'abord le cache, puis effectuez la requête API.
+
+09:37.120 --> 09:38.880
+C'est comme, non, il suffit de passer l'appel.
+
+09:38.880 --> 09:41.840
+La requête Tan Stack est juste comme si je l'ai, je vous la donnerai déjà.
+
+09:41.840 --> 09:45.160
+Et si je ne l'ai pas, j'irai le chercher.
+
+09:45.160 --> 09:47.200
+Le cache de mutation est à peu près le même.
+
+09:47.200 --> 09:51.840
+Les mutations sont comme des demandes de publication dans lesquelles vous publiez quelque chose sur l'API.
+
+09:51.840 --> 09:52.680
+Vous pouvez mettre cela en cache.
+
+09:52.680 --> 09:53.760
+C'est un peu plus bizarre.
+
+09:53.760 --> 09:59.480
+Et puis les options par défaut ici, requêtes, mutations, hydrater, déshydrater.
+
+09:59.480 --> 10:01.960
+Il existe de nombreuses options pour faire des choses comme ça.
+
+10:01.960 --> 10:05.120
+Ce n'étaient que des types TypeScript, si cela pouvait prêter à confusion pour quelqu'un.
+
+10:05.120 --> 10:09.320
+Vous pouvez simplement cliquer sur des éléments et cela vous amènera aux types TypeScript.
+
+10:09.320 --> 10:12.200
+Je fais ça tout le temps juste pour, c'est comme, qu'est-ce que ça fait ?
+
+10:12.200 --> 10:14.160
+Pourquoi fait-il cela de cette façon ?
+
+10:14.160 --> 10:17.760
+Parfois, les types peuvent aider.
+
+10:17.760 --> 10:19.960
+OK, donc nous avons ça.
+
+10:19.960 --> 10:26.480
+Maintenant, nous devons le mettre, nous devons le donner à l'application avec le fournisseur de client de requête.
+
+10:26.480 --> 10:32.600
+Le client est égal au client de requête.
+
+10:32.600 --> 10:34.160
+Et nous allons le faire comme ça.
+
+10:39.920 --> 10:41.760
+Et voilà.
+
+10:41.760 --> 10:44.000
+Alors maintenant, si vous regardez notre page, elle se charge à nouveau.
+
+10:44.000 --> 10:49.520
+Et vous pouvez voir que nous avons ce joli petit palmier dans le coin.
+
+10:49.520 --> 10:51.600
+C'est très tropical.
+
+10:51.600 --> 10:52.800
+Et vous cliquez dessus.
+
+10:52.800 --> 10:55.760
+Nous ne l'utilisons pas encore, nos outils de développement sont donc vacants.
+
+10:55.760 --> 10:58.360
+Mais des choses vont commencer à apparaître ici, ce qui est plutôt cool.
+

@@ -1,0 +1,849 @@
+WEBVTT
+
+
+00:00.280 --> 00:03.080
+Formes incontrôlées.
+
+00:03.080 --> 00:05.880
+Pas seulement lorsque vous vous sentez hors de contrôle de votre vie,
+
+00:06.880 --> 00:08.760
+nous allons parler de certaines formes incontrôlées.
+
+00:08.760 --> 00:12.280
+J'y ai un peu fait allusion sur cette page de création de commande
+
+00:12.280 --> 00:15.340
+que nous avons contrôlé les intrants ici, n'est-ce pas ?
+
+00:16.520 --> 00:19.200
+Que nous utilisons en fait explicitement la valeur
+
+00:19.200 --> 00:20.040
+et nous le définissons,
+
+00:20.040 --> 00:22.480
+et nous utilisons des hooks pour tout suivre.
+
+00:22.480 --> 00:24.320
+Comme vous pouvez l'imaginer, cela s'appelle une forme contrôlée
+
+00:24.320 --> 00:27.080
+parce que nous utilisons React pour contrôler explicitement l'entrée
+
+00:27.080 --> 00:28.800
+et la sortie du formulaire.
+
+00:28.800 --> 00:32.120
+Je dirai que c'est plus inhabituel.
+
+00:32.120 --> 00:33.360
+Je dirais que d'habitude tu veux le faire
+
+00:33.360 --> 00:35.080
+ce qu'on appelle une forme incontrôlée,
+
+00:35.080 --> 00:37.360
+ce qui revient essentiellement à laisser le formulaire,
+
+00:37.360 --> 00:40.560
+laissez le navigateur gérer tout le contenu du formulaire pour vous
+
+00:40.560 --> 00:42.920
+et n'écoutez que les événements de soumission.
+
+00:42.920 --> 00:44.200
+C'est assez facile pour nous
+
+00:44.200 --> 00:45.560
+pour juste assommer très vite,
+
+00:45.560 --> 00:47.200
+alors allons-y et faisons-le.
+
+00:49.120 --> 00:51.600
+Je voulais aussi vous montrer comment faire un post
+
+00:51.600 --> 00:54.160
+ou une mutation avec requête 10-stack,
+
+00:54.160 --> 00:58.120
+nous allons donc assommer ces deux oiseaux d'une pierre.
+
+00:59.520 --> 01:04.520
+D'accord, donc dans votre répertoire API,
+
+01:06.040 --> 01:08.040
+nous allons passer des ordres de passage.
+
+01:08.040 --> 01:08.880
+Non, je plaisante.
+
+01:08.880 --> 01:13.880
+On va faire un fichier post contact ici,
+
+01:16.840 --> 01:19.720
+et ce sera l'exportation par défaut
+
+01:19.720 --> 01:24.000
+fonction asynchrone après contact.
+
+01:24.000 --> 01:27.160
+Prend le nom, l’e-mail et le message.
+
+01:29.440 --> 01:34.440
+Et la réponse du contact équivaut à wait fetch.
+
+01:40.280 --> 01:43.720
+Et nous allons publier sur slash API slash contact.
+
+01:46.440 --> 01:49.080
+Et nous devons lui donner un peu plus de configuration ici,
+
+01:49.080 --> 01:51.360
+il faut donc lui donner une méthode,
+
+01:51.360 --> 01:55.600
+qui sera les en-têtes de publication.
+
+01:55.600 --> 01:58.760
+Comme nous l'avons appris précédemment, il s'agit certainement d'en-têtes S.
+
+01:59.680 --> 02:04.680
+Nous travaillons sur le type de contenu, le slash d'application JSON,
+
+02:07.440 --> 02:12.440
+et le corps sera JSON.stringify,
+
+02:14.920 --> 02:17.920
+nom, e-mail et message.
+
+02:18.960 --> 02:20.120
+Donc si ce n'est pas encore évident,
+
+02:20.120 --> 02:21.640
+nous allons créer un formulaire de contact, d'accord,
+
+02:21.640 --> 02:24.440
+où quelqu'un peut entrer et mettre son nom, son adresse e-mail,
+
+02:24.440 --> 02:29.440
+et un message, puis nous les spammerons avec des e-mails.
+
+02:29.640 --> 02:34.640
+C'est un peu mon plan ici dans Brian's Capitalism 101.
+
+02:35.160 --> 02:37.360
+Donc si la réponse n'est pas bonne,
+
+02:39.520 --> 02:41.240
+alors nous lancerons simplement une erreur.
+
+02:44.480 --> 02:46.760
+C'est comme ça que tu veux gérer ça, en fait,
+
+02:46.760 --> 02:50.080
+parce que de cette façon, requête TanStack
+
+02:50.080 --> 02:51.480
+va réellement détecter l'erreur pour vous,
+
+02:51.480 --> 02:55.000
+puis il définira la propriété isError sur true,
+
+02:55.000 --> 02:57.400
+et ensuite vous pouvez gérer cela de manière appropriée, n'est-ce pas ?
+
+03:04.720 --> 03:09.720
+Et puis retournez réponse.json.
+
+03:10.400 --> 03:15.400
+C'est donc une fonction asynchrone,
+
+03:15.800 --> 03:17.720
+donc il renvoie toujours une promesse.
+
+03:17.720 --> 03:19.120
+Je pense que nous en avons parlé plus tôt,
+
+03:19.120 --> 03:21.960
+que les fonctions asynchrones reviennent toujours.
+
+03:21.960 --> 03:24.560
+Donc ce que nous aurions pu faire ici, c'est dire :
+
+03:28.040 --> 03:31.800
+const JSON est égal à réponse.json et renvoie JSON.
+
+03:31.800 --> 03:33.040
+C'est généralement ce que j'ai fait,
+
+03:33.040 --> 03:34.440
+mais j'ai obtenu ce code de la requête TanStack,
+
+03:34.440 --> 03:35.920
+et ils le font de cette façon.
+
+03:35.920 --> 03:38.520
+Et c'est parce que si tu rends une promesse,
+
+03:38.520 --> 03:39.880
+puis il fait quelque chose appelé chaînage de promesses
+
+03:39.880 --> 03:41.080
+qu'aucun de vous n'a jamais à penser
+
+03:41.080 --> 03:42.680
+à propos de ce terme plus jamais,
+
+03:42.680 --> 03:44.120
+mais c'est comme ça que ça s'appelle,
+
+03:44.120 --> 03:45.240
+où tu aimes fondamentalement la promesse,
+
+03:45.240 --> 03:47.160
+puis ceci, puis ceci, puis ceci, puis ceci,
+
+03:47.160 --> 03:48.320
+et donc si tu rends une promesse,
+
+03:48.320 --> 03:51.960
+il enchaîne implicitement cette promesse à la promesse actuelle.
+
+03:55.240 --> 03:56.360
+Ce n'est pas vraiment important pour toi,
+
+03:56.360 --> 03:58.680
+mais c'est pour ça que c'est normal qu'on n'attende pas ici,
+
+03:58.680 --> 04:03.400
+parce que vous pourriez le faire pour renvoyer wait réponse.json,
+
+04:04.840 --> 04:06.440
+mais tu n'en as pas besoin,
+
+04:06.440 --> 04:08.440
+et cela ne fait pas vraiment de différence.
+
+04:11.640 --> 04:14.160
+Encore une fois, des choses dont vous n'avez pas vraiment besoin de vous soucier.
+
+04:14.160 --> 04:16.920
+D'accord, passons à index.lazy.jsx.
+
+04:18.600 --> 04:21.600
+J'ai l'impression que la plupart des choses que j'apprends de ce genre de choses
+
+04:21.600 --> 04:23.000
+c'est comme, je vais regarder beaucoup de lignes,
+
+04:23.000 --> 04:24.760
+et je me demanderai, pourquoi diable ça marche comme ça ?
+
+04:24.760 --> 04:26.520
+Et puis je vais y entrer beaucoup trop profondément.
+
+04:26.520 --> 04:28.440
+C'est comme ça que j'ai trouvé celui-là.
+
+04:28.440 --> 04:32.520
+D'accord, index.lazy.jsx.
+
+04:32.520 --> 04:34.360
+Nous allons créer un formulaire de contact,
+
+04:34.360 --> 04:36.840
+alors nous allons juste faire un autre de ces Li
+
+04:36.840 --> 04:37.840
+avec un lien vers celui-ci.
+
+04:37.840 --> 04:40.280
+Cela va aller au contact,
+
+04:40.280 --> 04:42.600
+et nous allons le mettre comme un contact
+
+04:42.600 --> 04:43.600
+ou quelque chose comme ça.
+
+04:43.760 --> 04:46.760
+D'accord, et ensuite nous allons tracer un nouvel itinéraire ici.
+
+04:48.280 --> 04:53.280
+Donc ça va être contact.lazy.jsx.
+
+04:54.520 --> 04:59.520
+Obtenez ici un joli petit talon du routeur à 10 piles.
+
+05:02.280 --> 05:03.640
+Donc tout va bien.
+
+05:03.640 --> 05:05.200
+Nous avons besoin d'importer,
+
+05:06.760 --> 05:07.880
+utiliser,
+
+05:07.880 --> 05:10.880
+et ensuite nous allons créer un nouvel itinéraire ici.
+
+05:10.960 --> 05:11.800
+Importer,
+
+05:13.360 --> 05:14.760
+utiliser une mutation
+
+05:17.200 --> 05:19.000
+à partir d'une requête React à 10 piles,
+
+05:19.000 --> 05:24.000
+et nous avons besoin de notre postcontact de postcontact.
+
+05:24.400 --> 05:25.640
+Et voilà.
+
+05:25.640 --> 05:27.680
+Et puis nous allons créer une fonction appelée
+
+05:27.680 --> 05:31.040
+itinéraire ou page de contact ou peu importe comment vous voulez l'appeler.
+
+05:32.240 --> 05:34.240
+Et nous allons simplement mettre cela ici.
+
+05:37.760 --> 05:40.560
+D'accord, nous avons maintenant notre composant React.
+
+05:40.560 --> 05:42.400
+Alors maintenant nous allons faire une mutation,
+
+05:42.400 --> 05:46.200
+c'est juste une façon amusante de dire un message
+
+05:46.200 --> 05:48.160
+ou un put ou un patch ou quelque chose comme ça,
+
+05:48.160 --> 05:50.120
+mais ça change quelque chose.
+
+05:50.120 --> 05:52.600
+Une requête est, en théorie, vous pouvez appeler la requête
+
+05:52.600 --> 05:53.680
+autant de fois que vous le souhaitez.
+
+05:53.680 --> 05:54.880
+Cela ne change rien, non ?
+
+05:54.880 --> 05:57.520
+Il s'agit simplement de récupérer les données de l'API.
+
+05:57.520 --> 06:00.280
+Et une mutation, tu ne veux pas appeler ça
+
+06:00.280 --> 06:01.360
+comme un tas de moments différents
+
+06:01.360 --> 06:03.360
+parce que ça pourrait être sémantiquement différent
+
+06:03.360 --> 06:05.800
+ça dépend si tu le fais plusieurs fois, non ?
+
+06:06.680 --> 06:08.160
+Je ne veux pas entrer dans les subtilités de REST
+
+06:08.160 --> 06:10.640
+parce que, encore une fois, c'est une des choses les plus stupides
+
+06:10.640 --> 06:12.360
+dont les gens se disputent.
+
+06:12.360 --> 06:15.440
+C'est comme, est-ce que ça devrait être un put ou ça devrait être un patch
+
+06:15.440 --> 06:16.560
+ou cela devrait-il être un message ?
+
+06:16.560 --> 06:18.120
+Et ma réponse à cela est que cela n'a pas d'importance,
+
+06:18.120 --> 06:19.760
+écrivez simplement l'API, n'est-ce pas ?
+
+06:19.760 --> 06:21.840
+Qui s'en soucie?
+
+06:21.840 --> 06:24.800
+Donc, une pile de 10 enveloppe en quelque sorte toutes ces choses
+
+06:24.800 --> 06:26.720
+dans le put, patch, delete,
+
+06:26.720 --> 06:28.520
+tout ce genre de choses en une mutation, n'est-ce pas ?
+
+06:28.520 --> 06:31.360
+C'est quelque chose qui change côté serveur.
+
+06:32.360 --> 06:37.360
+Donc, la mutation const équivaut à la mutation d'utilisation.
+
+06:40.360 --> 06:45.360
+Ici une fonction de mutation, la fonction ee.preventDefault, non ?
+
+06:46.520 --> 06:49.160
+Parce que nous allons l'utiliser comme formulaire de soumission.
+
+06:50.720 --> 06:52.800
+Nous aurons donc un PreventDefault.
+
+06:52.800 --> 06:54.160
+Nous allons récupérer les données du formulaire.
+
+06:54.160 --> 06:57.320
+Donc on va dire ça par const form data
+
+06:57.320 --> 07:00.200
+est égal aux nouvelles données du formulaire.
+
+07:00.200 --> 07:05.120
+Les données de formulaire sont une API de navigateur.
+
+07:05.120 --> 07:08.440
+Cela vient donc du navigateur, pas de React.
+
+07:08.440 --> 07:10.840
+Et nous allons dire ee.target.
+
+07:10.840 --> 07:12.480
+ee.target dans ce cas particulier,
+
+07:12.480 --> 07:15.480
+parce que ce sera un événement de soumission à partir d'un formulaire,
+
+07:15.480 --> 07:17.680
+ee.target sera quoi ?
+
+07:17.680 --> 07:18.960
+La forme, non ?
+
+07:18.960 --> 07:22.440
+Ainsi, l'élément de formulaire sera en fait le ee.target ici.
+
+07:22.440 --> 07:24.280
+Ainsi, lorsque vous créez de nouvelles données de formulaire comme celle-ci,
+
+07:24.280 --> 07:26.240
+ça va ensuite retirer tout ça
+
+07:26.240 --> 07:28.240
+dans cet objet de données de formulaire.
+
+07:28.280 --> 07:31.000
+Et nous pouvons maintenant extraire toutes les informations du formulaire
+
+07:31.000 --> 07:32.880
+en utilisant cette API de données de formulaire.
+
+07:35.000 --> 07:40.000
+D'accord, et ensuite nous reviendrons après le contact,
+
+07:43.000 --> 07:44.000
+formulaire data.getName.
+
+07:49.600 --> 07:50.920
+Et nous allons faire ça trois fois,
+
+07:50.920 --> 07:55.920
+une fois pour l'e-mail et une fois pour le message.
+
+07:56.760 --> 08:00.040
+Juste pour être sûr que nous avons bien compris,
+
+08:00.040 --> 08:02.480
+nous allons chercher dans le message de contact son nom,
+
+08:04.760 --> 08:07.160
+nom, email, message.
+
+08:08.520 --> 08:10.760
+Débarrassez-vous de cela, n'économisez pas.
+
+08:10.760 --> 08:15.760
+Et à revoir dans contact, nom, email, message, non ?
+
+08:16.160 --> 08:19.520
+Il faut s'assurer que les choses y soient mises
+
+08:19.520 --> 08:20.400
+dans le bon ordre.
+
+08:20.400 --> 08:24.280
+Maintenant nous avons cette fonction de mutation ou un hook
+
+08:24.280 --> 08:25.440
+que nous pouvons appeler.
+
+08:27.240 --> 08:28.240
+Je ne veux pas appeler ça un crochet,
+
+08:28.240 --> 08:31.040
+mais c'est comme le résultat d'un crochet.
+
+08:31.040 --> 08:32.440
+Ce serait un objet d'une certaine variété.
+
+08:32.440 --> 08:33.280
+Comment l'appellent-ils ?
+
+08:33.280 --> 08:36.840
+C'est un résultat de mutation d'utilisation qui est le nom du type.
+
+08:38.280 --> 08:40.600
+Et maintenant, on ne l'appelle plus à chaque fois
+
+08:40.600 --> 08:41.880
+comme le fait la requête, n'est-ce pas ?
+
+08:41.880 --> 08:43.880
+En fait, il attend que vous l'invoquiez.
+
+08:44.920 --> 08:47.840
+Alors allons voir comment procéder.
+
+08:47.840 --> 08:50.280
+Commençons par créer notre balisage pour la page.
+
+08:51.120 --> 08:53.480
+Nous allons dire revenez ici
+
+08:53.480 --> 08:56.840
+et nous commencerons à créer notre page de contact.
+
+08:58.400 --> 09:02.280
+OK, H2, c'est un contact.
+
+09:04.040 --> 09:08.040
+Et puis nous dirons que si la mutation réussit,
+
+09:10.400 --> 09:14.240
+donc s'ils cliquent avec succès sur soumettre mon contact,
+
+09:14.240 --> 09:15.920
+nous ne voulons pas simplement les laisser sur la page de contact,
+
+09:15.920 --> 09:18.320
+on veut faire autre chose, non ?
+
+09:18.320 --> 09:21.040
+Nous allons donc dire que c'est le succès.
+
+09:23.160 --> 09:28.160
+Et si c'est réussi, alors nous dirons H3 soumis.
+
+09:32.360 --> 09:34.280
+En théorie, vous auriez probablement quelque chose de plus agréable ici
+
+09:34.280 --> 09:37.160
+ce serait comme les rediriger vers la page d'accueil
+
+09:37.160 --> 09:38.040
+ou quelque chose comme ça.
+
+09:38.040 --> 09:41.880
+Mais je ne sais pas, laissez-les travailler, laissez-les gagner.
+
+09:43.080 --> 09:45.960
+Ok, donc sinon, si on leur montre le formulaire
+
+09:45.960 --> 09:47.560
+de quelque chose qu'ils peuvent soumettre.
+
+09:48.920 --> 09:52.320
+Donc le formulaire et ensuite nous dirons lors de la soumission,
+
+09:56.160 --> 09:59.040
+nous allons dire point de mutation,
+
+09:59.920 --> 10:02.480
+vous ne devinerez jamais comment s'appelle la fonction.
+
+10:03.920 --> 10:04.840
+Muet, muté.
+
+10:07.760 --> 10:12.760
+Donc, à chaque fois que la soumission a lieu, n'est-ce pas ?
+
+10:12.920 --> 10:14.320
+Soit par quelqu'un qui appuie sur Entrée
+
+10:14.320 --> 10:16.000
+ou en appuyant sur le bouton Soumettre,
+
+10:16.000 --> 10:17.840
+ça va appeler cette fonction,
+
+10:17.840 --> 10:19.560
+qui, comme vous l'avez deviné, va probablement appeler
+
+10:19.560 --> 10:23.720
+la fonction de mutation sur ce crochet de mutation, n'est-ce pas ?
+
+10:26.480 --> 10:28.720
+Mais pas avant, ce qui est cool.
+
+10:28.720 --> 10:31.480
+Très bien, nous allons mettre quelques entrées ici.
+
+10:31.480 --> 10:33.560
+Le nom est égal au nom.
+
+10:35.840 --> 10:39.880
+Nous allons en avoir un pour l'espace réservé égal au nom.
+
+10:42.320 --> 10:46.020
+Et nous en aurons un autre ici pour le courrier électronique.
+
+10:46.860 --> 10:51.780
+Email et c'est également une bonne idée de mettre le type égal à email.
+
+10:51.780 --> 10:53.420
+Cela fera apparaître les différents claviers
+
+10:53.420 --> 10:56.900
+sur iOS et Android, non ?
+
+10:56.900 --> 10:59.300
+Et il effectue également quelques validations de base
+
+10:59.300 --> 11:01.140
+est-ce un email valide ?
+
+11:01.140 --> 11:01.980
+Ouais.
+
+11:01.980 --> 11:05.900
+Pourquoi appelons-nous une mutation dot muter ?
+
+11:05.900 --> 11:08.620
+Pourquoi cela va-t-il automatiquement à la fonction de point de mutation
+
+11:08.620 --> 11:12.300
+et pas nous qui appelons la fonction mutate dot mutate ?
+
+11:12.300 --> 11:13.500
+C'est une bonne question.
+
+11:13.500 --> 11:18.500
+Cela n'appelle donc pas directement la fonction de mutation use
+
+11:19.260 --> 11:22.980
+ici, ça appelle en fait autre chose
+
+11:22.980 --> 11:24.060
+à l'intérieur de la requête TanStack,
+
+11:24.060 --> 11:25.820
+qui fait d'abord un tas d'autres choses
+
+11:25.820 --> 11:27.820
+puis il appelle votre fonction.
+
+11:27.820 --> 11:28.660
+Ouais.
+
+11:28.660 --> 11:29.480
+Donc ça veut juste dire,
+
+11:29.480 --> 11:31.580
+hé, chaque fois que tu es prêt, appelle cette fonction.
+
+11:31.580 --> 11:32.580
+C'est la fonction que j'ai créée
+
+11:32.580 --> 11:34.340
+pour appeler réellement l'API.
+
+11:34.340 --> 11:35.820
+Mais il y a d'autres machines
+
+11:35.820 --> 11:37.460
+dont il doit s'occuper en premier.
+
+11:37.460 --> 11:38.500
+Cela a du sens ?
+
+11:38.500 --> 11:39.320
+Cool.
+
+11:39.320 --> 11:40.160
+Bonne question.
+
+11:41.160 --> 11:43.880
+D'accord, ce sont donc les entrées sur lesquelles nous travaillons.
+
+11:43.880 --> 11:45.160
+Alors email, email, email.
+
+11:45.160 --> 11:48.040
+L'espace réservé, nous devrions probablement faire ces majuscules
+
+11:48.040 --> 11:50.640
+parce que nous ne sommes pas des sauvages.
+
+11:50.640 --> 11:51.480
+D'accord.
+
+11:51.480 --> 11:55.080
+Et puis nous aurons une zone de texte en dessous.
+
+11:58.840 --> 12:03.080
+L'espace réservé est égal au message
+
+12:05.480 --> 12:08.360
+et le nom est égal au message
+
+12:09.200 --> 12:11.080
+et c'est bien pour ça.
+
+12:11.080 --> 12:12.240
+Et puis nous voulons juste un bouton à la fin de ça
+
+12:12.240 --> 12:17.240
+qui dit bouton Soumettre, soumettre.
+
+12:17.800 --> 12:19.560
+Si vous voulez vraiment être explicite ici,
+
+12:19.560 --> 12:22.060
+vous pouvez dire que type est égal à soumettre,
+
+12:24.160 --> 12:25.000
+mais tu n'en as pas besoin,
+
+12:25.000 --> 12:27.200
+c'est implicite sur les boutons, non ?
+
+12:29.260 --> 12:30.480
+Mais c'est à vous de décider.
+
+12:34.920 --> 12:37.200
+Et cool.
+
+12:37.200 --> 12:38.040
+D'accord.
+
+12:38.040 --> 12:40.140
+Je pense que c'est presque prêt à partir.
+
+12:42.080 --> 12:43.520
+Nous allons simplement actualiser la page ici.
+
+12:43.520 --> 12:47.580
+Nous irons chez Padre Gino, contactez-nous.
+
+12:48.820 --> 12:52.320
+Joli petit formulaire de contact que nous avons créé ici.
+
+12:52.320 --> 12:54.800
+Nous allons donc mettre Brian.
+
+12:54.800 --> 12:59.720
+Nous mettrons Brian sur example.com.
+
+12:59.720 --> 13:04.720
+Et pourquoi as-tu un serpent ?
+
+13:07.880 --> 13:09.540
+Poisson, pizza.
+
+13:11.680 --> 13:12.680
+C'est inquiétant.
+
+13:17.200 --> 13:19.720
+Cela vient probablement du FBI.
+
+13:19.720 --> 13:24.280
+Nous devrions donc pouvoir le soumettre maintenant, soumis.
+
+13:24.280 --> 13:29.280
+Et si nous regardons votre, vous pouvez voir là.
+
+13:29.400 --> 13:32.140
+Ceci est maintenant enregistré sur notre serveur API.
+
+13:33.640 --> 13:36.260
+Et comme tous les formulaires de contact client,
+
+13:36.260 --> 13:38.060
+il est simplement enregistré puis ignoré.
+
+13:40.060 --> 13:41.940
+Mais le point ici en est un,
+
+13:41.940 --> 13:43.580
+nous avons fait la mutation avec 10 requêtes de pile,
+
+13:43.580 --> 13:44.980
+ce qui est plutôt cool.
+
+13:44.980 --> 13:46.860
+Et nous avons aussi fait des formulaires incontrôlés,
+
+13:46.860 --> 13:50.140
+ce que je vais dire, il n'y a aucune raison
+
+13:50.140 --> 13:52.100
+qu'il faudrait forcément aimer
+
+13:52.100 --> 13:54.500
+garder une trace de tout dans un crochet ici, n'est-ce pas ?
+
+13:54.500 --> 13:55.340
+Parce que nous ne faisons rien
+
+13:55.340 --> 13:56.500
+c'est un peu réactif à cela.
+
+13:56.500 --> 14:00.180
+Nous ne faisons aucune sorte de type, tapez à l'avance ou aimez
+
+14:00.180 --> 14:03.020
+dans le cours précédent, j'en ai fait un avec l'adoption d'un animal de compagnie.
+
+14:03.020 --> 14:06.180
+Vous voudriez donc que le chat soit le type d'animal.
+
+14:07.020 --> 14:08.100
+Et puis il faudrait repeupler la liste des races.
+
+14:08.100 --> 14:11.380
+C'est donc réactif à ce qui se passe dans la première liste déroulante.
+
+14:11.380 --> 14:13.380
+Également connu sous le nom de problème de double liste déroulante.
+
+14:15.380 --> 14:17.140
+Celui-là tu dois faire un formulaire contrôlé
+
+14:17.140 --> 14:19.900
+parce qu'il faut réagir au premier, non ?
+
+14:19.900 --> 14:22.100
+Vous devez repeupler la liste déroulante des races
+
+14:22.100 --> 14:24.740
+basé sur ce qui est dans la première liste déroulante.
+
+14:24.740 --> 14:26.740
+Mais celui-ci, vous rassemblez simplement toutes les données du formulaire
+
+14:26.740 --> 14:28.100
+et vous le soumettez quelque part.
+
+14:28.100 --> 14:30.300
+C'est sous une forme incontrôlée que vous voulez procéder.
+

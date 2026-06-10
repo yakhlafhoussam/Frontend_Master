@@ -1,0 +1,341 @@
+WEBVTT
+
+00:00.000 --> 00:04.800
+Hooks. Let's talk about hooks. Hooks are the way that we can basically introduce like interactivity
+
+00:05.360 --> 00:11.440
+or side effects or some other things to a just a fairly normal React component.
+
+00:13.120 --> 00:18.480
+One thing we didn't chat too too much about is let's actually go school look at pizza.
+
+00:23.200 --> 00:28.160
+One of the key things here is this function body here. It's a very hot code path. And when I say
+
+00:28.160 --> 00:32.960
+that, I mean, it gets run a lot, right? So it renders and re-renders and re-renders. And if it
+
+00:32.960 --> 00:38.080
+sees like nothing's changing, it doesn't change anything in the DOM. But as soon as it sees
+
+00:38.080 --> 00:43.520
+something change, then it'll go update it. But the key here is this gets run more than you see,
+
+00:43.520 --> 00:48.800
+right? And so it's important that you keep this to be a very performant. Like you don't want to
+
+00:48.800 --> 00:53.520
+put like very heavy lifting inside of your render paths. You want to kind of pull it outside of the
+
+00:53.520 --> 00:59.920
+render path so it doesn't slow down your DOM rendering. Because that's key because people
+
+00:59.920 --> 01:06.400
+start to notice jank, right? Like things like shifting around if they're too slow. So this is
+
+01:06.400 --> 01:11.840
+actually, it's an important thing to be very performant on. So you don't have to follow this.
+
+01:11.840 --> 01:20.240
+I'm just going to kind of make an example really quick. But if I do something like const counter
+
+01:20.240 --> 01:36.640
+equals counter equals counter plus plus. And let counter equals zero. So instead of name for just
+
+01:36.640 --> 01:44.720
+to say, or just after this, we'll put counter. All right, so you notice this has zero on it,
+
+01:44.720 --> 01:51.600
+right? Right now nothing's actually happening to our component. But if we start adding things
+
+01:51.600 --> 02:00.160
+that like listen for events, right? So let's just say on click equals, we'll just do something that
+
+02:00.160 --> 02:06.560
+does literally nothing. So just like an empty function. So this is actually still smart enough
+
+02:06.560 --> 02:18.480
+to not render anything. That's that's pretty cool. Okay. Still probably not still smart enough to
+
+02:18.480 --> 02:27.760
+not do anything. But well, this is actually a good example. You could even do something like
+
+02:27.760 --> 02:37.920
+date dot now. So again, you would expect this to probably like keep re rendering itself, right?
+
+02:37.920 --> 02:41.760
+But the point I'm actually trying to drive home here is like, you don't actually really know when
+
+02:42.400 --> 02:45.200
+React is going to choose to re render your components. And when it's going to choose to
+
+02:45.200 --> 02:48.720
+re render, you can see none of these are running ever. In fact, these are actually different,
+
+02:48.720 --> 02:54.080
+which is funny to me, right? There was actually a millisecond or a millisecond difference between
+
+02:54.080 --> 03:01.680
+the two of these. That's because React is like doing this, like these re render paths,
+
+03:01.680 --> 03:04.960
+and it's only going to try and re render whenever it's necessary. And it tries to not re render
+
+03:04.960 --> 03:10.480
+when it's not necessary. But you need to make sure that it's going to display the same markup
+
+03:10.480 --> 03:15.120
+every single time given the same inputs. So something like this, we're date, not now or
+
+03:15.120 --> 03:20.000
+counter where we were counting before, you would call these an effect, right, like a side effect to
+
+03:20.000 --> 03:24.480
+your code. And you don't want to have any of those you want this to be make sure that no matter
+
+03:24.480 --> 03:28.240
+when it's run, because you don't know when it's going to run, it's always going to give you an
+
+03:28.240 --> 03:32.720
+expected results given the inputs that you give into it, right. So if you were trying to display
+
+03:32.720 --> 03:38.480
+something where it was going to display a clock, right, you would need to make sure that all of
+
+03:38.480 --> 03:43.200
+that was self contained and the effects were being handled properly. We'll get into that when we start
+
+03:43.200 --> 03:49.120
+talking about use effect, right. But my point here is, is stuff like this, we're keeping track
+
+03:49.120 --> 03:53.280
+of variables outside of react is a bad idea. And now I'm going to show you how you're supposed
+
+03:53.280 --> 04:00.400
+to keep track of statefulness inside of your your react components. So let's take away all
+
+04:00.400 --> 04:11.920
+this nonsense for now. All right, so let's go ahead and make a another component here,
+
+04:11.920 --> 04:15.840
+we're going to call it order.jsx. We're going to make an order page.
+
+04:20.800 --> 04:24.240
+Feel free to follow along with me if you want to. This is a somewhat of a long
+
+04:25.920 --> 04:30.240
+component. So if you want to just copy and paste from the
+
+04:31.920 --> 04:36.400
+the notes here, I'm not going to judge you too harshly, just a little.
+
+04:37.120 --> 04:41.200
+All right, so another opinion here. I think it's a pretty good opinion.
+
+04:42.720 --> 04:49.520
+Notice here in pizza, we have an arrow function. And we export default here and order I did it a
+
+04:49.520 --> 05:00.240
+different way. Where I'm doing a named function here called orders. 99.99% the same thing. The
+
+05:00.240 --> 05:04.080
+only thing where I actually kind of like this pattern better than the arrow function is the
+
+05:04.080 --> 05:10.160
+kind of like this pattern better than the arrow function pattern is that when your app crashes,
+
+05:10.160 --> 05:15.360
+so if I have an error in here, order being a named function is going to show up in the stack trace.
+
+05:15.360 --> 05:22.960
+So you can actually see order in your stack traces. It helps with debugging, right? This pizza here,
+
+05:22.960 --> 05:25.600
+it would tell you it came from the pizza component, but it would not tell you the
+
+05:25.600 --> 05:29.200
+name of the function because technically this is not a named function. It's an anonymous function.
+
+05:29.200 --> 05:32.640
+It would be the same thing if I did
+
+05:34.400 --> 05:43.680
+const pizza2 equals function blah, right? This is exactly the same thing. Pizza2 would not show up
+
+05:43.680 --> 05:53.120
+in the stack trace. Now you might ask yourself, how important is that to me? It's not super
+
+05:53.120 --> 05:58.080
+important, right? But it's probably enough for you to know that it's from the order
+
+05:59.200 --> 06:02.880
+file. You don't necessarily need to know that from the order function. So let's just start
+
+06:02.880 --> 06:06.960
+writing a bunch of code. Const pizza type. We're going to use this to keep track of what pizza
+
+06:06.960 --> 06:10.400
+type they've selected, right? So this is the order page where they're going to select what kind of
+
+06:10.400 --> 06:15.760
+pizza they want, what size they want, and they'll click order or rather add to cart. It's going to
+
+06:15.760 --> 06:22.560
+be a pepperoni pizza. And we're going to start with a pizza size of medium. These are like the
+
+06:22.560 --> 06:34.080
+defaults. Pizza size equals capital M for medium. And then we'll return a whole lot of markup.
+
+06:37.760 --> 06:44.000
+So we'll call this order. My CSS is structured in such a way that we don't have to write class name
+
+06:44.000 --> 06:49.040
+on every single thing. That's purely for the sake of this class so that you don't have to
+
+06:49.040 --> 06:54.160
+write class name a bunch. In general, please give everything a class. Don't do all the weird
+
+06:54.160 --> 07:00.640
+selector stuff that I did to make it easier for you. In other words, the CSS is intentionally bad
+
+07:00.640 --> 07:04.880
+to make it easier for you to write code. That's generally not this trade-off that you would want
+
+07:04.880 --> 07:13.520
+to make. All right. H2, this is going to be create order page. It's going to have a form
+
+07:14.480 --> 07:23.600
+and then it's going to have a div and another div. And then we're going to do a label. The label is
+
+07:23.600 --> 07:35.680
+going to be for pizza dash type, pizza type. Then we're going to have a select. Name equals
+
+07:36.480 --> 07:47.200
+pizza dash type. Oh, we're going to give it a value too. That'll be fun. Value equals pizza type.
+
+07:51.120 --> 07:55.200
+So value, just basically say you're going to set whatever the value of pizza type is
+
+07:55.200 --> 08:01.200
+to the value here. Okay. We're going to give it a couple of options.
+
+08:01.680 --> 08:18.160
+Option, value equals pepperoni. The pepperoni pizza. Okay. We're going to make a few of those.
+
+08:20.880 --> 08:21.920
+Hawaiian.
+
+08:22.160 --> 08:32.160
+Hawaiian. And this one was big underscore meat. The big meat pizza.
+
+08:35.200 --> 08:40.160
+Okay. So far, if it feels like we're just writing a normal HTML form, it's because we're writing
+
+08:40.160 --> 08:43.760
+in a normal HTML form. There's not a lot too interesting to talk about here.
+
+08:43.760 --> 08:51.600
+Okay. That's the first div that we're escaping there. Correct. Yep.
+
+08:55.920 --> 09:02.240
+Make another div in here. And we're making another label. This is for pizza size
+
+09:03.120 --> 09:10.320
+and pizza size. And this is pizza size. All right. Another div here. And we're going to
+
+09:10.320 --> 09:21.760
+have some radio buttons. It's out of spans. Input, checked equals
+
+09:24.960 --> 09:34.320
+pizza size, triple equals capital S. Again, this is my ligatures putting three equal signs together.
+
+09:35.280 --> 09:45.600
+That's why it looks like that fat equal sign. Type equals radio. Name equals
+
+09:47.360 --> 09:55.520
+pizza dash size. Value equals S. And ID equals pizza dash S.
+
+09:55.920 --> 10:06.240
+Okay. And then we'll close. Oops. Close that off. Get that all spaced out.
+
+10:08.640 --> 10:19.280
+And then we will do a label again for pizza dash S. And this is a small size. So we're doing radio
+
+10:19.280 --> 10:24.960
+buttons for all the various different sizes of pizza. Right? And then we're going to have
+
+10:25.920 --> 10:33.360
+a label. So I'm just going to go ahead and copy and paste this span. And so I have the top one,
+
+10:33.360 --> 10:39.520
+which is going to be small. This one is going to be medium. So we'll just change all the places
+
+10:39.520 --> 10:52.320
+where it says S to M. Right? So they're pretty similar. This one's just medium. This one's just
+
+10:52.320 --> 11:15.920
+small. Same thing here. This will be the large size. And large. Okay. Once we have that and span
+
+11:16.560 --> 11:32.240
+and div and next div. Button. Type is going to be submit. Add to cart.
+
+11:32.240 --> 11:53.680
+Okay. And then inside of that, we're going to put another div. Brian, you have too many divs. I'm
+
+11:53.680 --> 12:02.080
+not going to disagree with you. Order dash pizza. We're going to put a pizza in here.
+
+12:02.080 --> 12:04.960
+Right now we're just going to give it a normal pepperoni pizza, but eventually we'll make it
+
+12:04.960 --> 12:10.240
+dynamic to be the one that you have selected. Right? But for now we're just going to say
+
+12:10.240 --> 12:26.880
+pepperoni description equals another pizza. Whatever you want to put there, image is going
+
+12:26.880 --> 12:41.360
+to be assigned public pizzas, pepperoni.webp. And then close that tag. Okay. And then just
+
+12:41.360 --> 12:45.920
+underneath that, we just want to put the price. We'll put that in a P and we'll just say whatever
+
+12:45.920 --> 13:01.360
+you want to put there. $13.37. Okay. So basically we're just working on forms here. Right? The
+
+13:01.360 --> 13:05.440
+classic thing for most webs. Most stuff can be boiled down to you're just submitting a form
+
+13:05.440 --> 13:12.480
+somewhere. Right? Using some divs here. I know all the divs seem excessive, but it's for the
+
+13:12.560 --> 13:18.800
+styling, right? Just to kind of get everything grouped together visually. We got some radio
+
+13:18.800 --> 13:24.080
+buttons here so they can be small, medium or large. That sounds good. And we have a submit
+
+13:24.080 --> 13:28.800
+button that adds to cart, which will submit the form. We will get to how to handle that form
+
+13:28.800 --> 13:39.120
+submittal, but let's save here. So yeah, we've now created an order component. We have to go use it
+
+13:39.120 --> 13:44.880
+before anything's going to show up. Right? So let's go to our app.jsx.
+
+13:47.280 --> 13:50.880
+We're going to delete the pizza import because we're not going to use that now. We're going to
+
+13:50.880 --> 13:58.640
+say import order from dot slash order. Cool. And for now, we're just going to make this the default
+
+13:58.640 --> 14:10.720
+home page. So you're just going to say order. Okay. That got very wide. Cool. But you should
+
+14:10.720 --> 14:19.120
+see something akin to this. You'll probably have some errors in here. That's fine. Ignore those for
+
+14:19.120 --> 14:29.600
+now.
+

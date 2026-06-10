@@ -1,0 +1,317 @@
+WEBVTT
+
+00:00.440 --> 00:03.360
+Let's try another test here in pizza.test.jsx.
+
+00:05.960 --> 00:10.960
+Test to have default image if none is provided.
+
+00:16.760 --> 00:18.120
+Some of you might be looking at this like,
+
+00:18.120 --> 00:19.960
+but Brian, it doesn't have a default image.
+
+00:19.960 --> 00:23.080
+It's like, yeah, we've discovered a bug in our code.
+
+00:24.880 --> 00:25.720
+Async.
+
+00:25.720 --> 00:30.720
+And I'm gonna say something quite similar, const screen.
+
+00:33.120 --> 00:34.560
+You could probably even just copy and paste this
+
+00:34.560 --> 00:35.400
+if you wanted to.
+
+00:40.040 --> 00:43.600
+And just dump source here, right?
+
+00:43.600 --> 00:44.440
+You don't want that.
+
+00:44.440 --> 00:46.560
+And we want name to be something else.
+
+00:49.360 --> 00:50.600
+And I'm just gonna put something else
+
+00:50.600 --> 00:53.160
+because I'm not feeling clever at the moment.
+
+00:53.160 --> 00:57.720
+So notice that this has no image
+
+00:57.720 --> 00:59.520
+despite the fact that it expects one.
+
+01:00.600 --> 01:03.240
+And so I'm gonna say const image equals screen.
+
+01:03.240 --> 01:04.680
+Again, you can do this.
+
+01:07.480 --> 01:10.560
+And we're going to say we expect
+
+01:12.240 --> 01:17.240
+image.source not to be blank.
+
+01:17.560 --> 01:18.400
+Blank.
+
+01:21.720 --> 01:26.720
+Now, if we look at our thing, obviously it is, right?
+
+01:27.560 --> 01:28.400
+There we go.
+
+01:30.520 --> 01:32.600
+That gives you a bunch of just helper stuff
+
+01:32.600 --> 01:35.600
+to figure out what it needs here.
+
+01:37.160 --> 01:40.440
+But it tells you this is not working.
+
+01:40.440 --> 01:43.040
+Notice it's also saying something about this, right?
+
+01:43.040 --> 01:44.920
+Does my favorite pizza pick some?
+
+01:44.920 --> 01:46.280
+This doesn't make any sense, right?
+
+01:46.400 --> 01:49.000
+This was from the former test, right?
+
+01:49.000 --> 01:49.840
+Why is that?
+
+01:50.680 --> 01:53.760
+It's because screen is stateful and we didn't reset it.
+
+01:56.200 --> 01:57.440
+And that's why I'm putting this in here
+
+01:57.440 --> 02:00.160
+because I constantly forget to reset it.
+
+02:00.160 --> 02:02.520
+And I know you all are gonna constantly forget
+
+02:02.520 --> 02:03.600
+to reset it as well.
+
+02:03.600 --> 02:05.680
+So I want you to share in my pain mostly.
+
+02:05.680 --> 02:08.240
+This has been just a long con to make people suffer.
+
+02:10.680 --> 02:12.680
+So we're gonna clean up after ourselves.
+
+02:13.680 --> 02:15.880
+Inside of vitest here, we're gonna grab,
+
+02:17.000 --> 02:20.560
+or set it in vitest, but rather testing library react,
+
+02:20.560 --> 02:21.880
+the cleanup function.
+
+02:21.880 --> 02:25.720
+And then from vitest, we also need after each.
+
+02:28.160 --> 02:31.520
+And then you just gotta do one little, tiny,
+
+02:31.520 --> 02:34.840
+very easy thing after each cleanup.
+
+02:38.440 --> 02:39.720
+And now if we go back,
+
+02:39.720 --> 02:42.400
+this is gonna be a much cleaner error, right?
+
+02:42.440 --> 02:45.480
+It doesn't have all that other stuff.
+
+02:45.480 --> 02:46.960
+This is just basically telling,
+
+02:46.960 --> 02:50.360
+hey, after each one of these tests,
+
+02:50.360 --> 02:54.400
+run the testing library react to clean up itself.
+
+02:55.280 --> 02:56.440
+You might be looking at this like,
+
+02:56.440 --> 02:57.880
+why do I have to plumb this?
+
+02:57.880 --> 02:59.120
+This doesn't make a ton of sense to me.
+
+02:59.120 --> 03:02.560
+It's because testing library react
+
+03:02.560 --> 03:04.960
+doesn't know when each test starts or finishes.
+
+03:04.960 --> 03:07.800
+It's not the same thing as vitest, right?
+
+03:07.800 --> 03:11.240
+It's a separate library and it's usable across Mocha
+
+03:11.240 --> 03:13.840
+and all the other testing harnesses.
+
+03:13.840 --> 03:17.520
+So you just have to give it like, hey, I'm done.
+
+03:19.680 --> 03:21.800
+You also could have done, I'm pretty sure,
+
+03:21.800 --> 03:23.120
+something like this,
+
+03:25.840 --> 03:27.040
+and just called it right there.
+
+03:27.040 --> 03:29.040
+And I think this would have also worked.
+
+03:30.160 --> 03:33.320
+Yeah, right, so you can manually call it as well.
+
+03:33.320 --> 03:35.560
+This is just nice with vitest to say like,
+
+03:35.560 --> 03:37.280
+hey, after every single thing,
+
+03:37.280 --> 03:39.680
+please reset testing library back to where it was.
+
+03:42.240 --> 03:46.280
+Okay, so that works,
+
+03:46.280 --> 03:48.560
+but our test is still failing, obviously.
+
+03:48.560 --> 03:53.120
+So let's go modify pizza then to say,
+
+03:53.120 --> 03:55.240
+if there is an image, use it.
+
+03:57.760 --> 04:02.760
+Otherwise, use our little picksum.photo slash 200.
+
+04:03.240 --> 04:07.760
+picksum.photo slash 200.
+
+04:10.720 --> 04:13.120
+This 200 just means it's a 200 by 200 square.
+
+04:14.600 --> 04:16.360
+You guessed it if you wanted a three by 300 square.
+
+04:16.360 --> 04:18.800
+I think if you wanted like a three by 200, it's like this.
+
+04:18.800 --> 04:21.560
+It's useful, I use it from time to time for prototyping.
+
+04:24.840 --> 04:27.320
+So now, source will have something here
+
+04:27.320 --> 04:30.120
+if you didn't pass in an image.
+
+04:30.160 --> 04:34.960
+And in theory, our testing suite should be passing now.
+
+04:34.960 --> 04:36.840
+It is, so there we go.
+
+04:38.840 --> 04:43.840
+Why are our tests in here having the asynchronous functions
+
+04:43.880 --> 04:46.680
+if our pizza does not have any asynchronous calls to it?
+
+04:46.680 --> 04:47.880
+That's a good question.
+
+04:49.840 --> 04:53.080
+Let's look at the,
+
+04:54.200 --> 04:57.080
+so the very first answer to your question is,
+
+04:57.080 --> 04:58.840
+I just always make it async
+
+04:58.840 --> 05:01.240
+because later I might add asynchronous things.
+
+05:02.240 --> 05:03.720
+I don't remember, we don't have anything in here
+
+05:03.720 --> 05:05.120
+that we have to wait for.
+
+05:05.120 --> 05:06.600
+So no, this one we don't have to.
+
+05:06.600 --> 05:08.200
+You really could take these out.
+
+05:09.360 --> 05:10.440
+I'm not mistaken, right?
+
+05:10.440 --> 05:12.840
+It actually doesn't depend on those being async.
+
+05:13.720 --> 05:16.920
+But so frequently I end up adding async things later.
+
+05:16.920 --> 05:18.080
+I'm like, why is this not working?
+
+05:18.080 --> 05:20.280
+It's like, oh yeah, I gotta go add the async.
+
+05:21.360 --> 05:23.000
+Because as soon as you put like, I don't know,
+
+05:23.000 --> 05:25.000
+a wait here or something like that,
+
+05:25.000 --> 05:28.240
+it's gonna say it failed and I'll be like, why did it fail?
+
+05:28.240 --> 05:30.960
+Oh, well, at least it gives you a nice error message, right?
+
+05:32.160 --> 05:35.000
+But so in this particular case,
+
+05:35.000 --> 05:37.240
+the answer to your question is force a habit.
+
+05:39.880 --> 05:43.320
+There's no downside here because Vitest handles both.
+

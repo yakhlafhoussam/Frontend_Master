@@ -1,0 +1,410 @@
+WEBVTT
+
+00:00.000 --> 00:09.800
+So, I'm gonna say npm install dash capital D eslint dash plugin dash react.
+
+00:09.800 --> 00:14.160
+There's just several things that we kind of want eslint to guard against with react.
+
+00:14.160 --> 00:17.700
+There's just some common patterns.
+
+00:17.700 --> 00:21.820
+It's funny, I can't even really tell you what they are anymore because eslint has bloodied
+
+00:21.820 --> 00:25.100
+me over the years and I've forgotten how to do the bad things, which is probably what
+
+00:25.100 --> 00:27.360
+you want.
+
+00:27.440 --> 00:35.440
+It's written by error, but yeah, that's what we're gonna go fix right now.
+
+00:35.440 --> 00:36.440
+Yeah, Mark.
+
+00:36.440 --> 00:42.840
+Apart from class and class name, are there any gotchas when it comes to JSX that you
+
+00:42.840 --> 00:44.680
+should be aware of?
+
+00:44.680 --> 00:49.080
+The other big one that comes to mind is for, right?
+
+00:49.080 --> 00:50.440
+Thinking about labels, right?
+
+00:50.440 --> 00:53.600
+Label for this input, right?
+
+00:53.600 --> 00:57.760
+For is also a reserved word in JavaScript for for loops, right?
+
+00:57.760 --> 01:05.720
+So you have to do instead of, like let's say we had, I don't know, a label here.
+
+01:05.720 --> 01:09.760
+Oh, you can see it generates it for you.
+
+01:09.760 --> 01:10.760
+HTML for, right?
+
+01:10.760 --> 01:16.080
+And that's just to disambiguate it from for loops.
+
+01:16.080 --> 01:19.520
+That's the other one that comes to mind that I actually remember off the top of my head.
+
+01:19.520 --> 01:28.840
+I think there are a couple more, but they're much more rare than those two.
+
+01:28.840 --> 01:35.080
+Other than that, oh, you know, there is another one.
+
+01:35.080 --> 01:40.400
+If you do input, this is valid HTML.
+
+01:40.400 --> 01:44.900
+It is not valid at JSX.
+
+01:44.900 --> 01:47.240
+You have to put the self-closing tag on there.
+
+01:48.200 --> 01:51.400
+Just how JSX is sure to keep track of things, right?
+
+01:51.400 --> 01:55.240
+JSX is designed to not be as forgiving as the browser, which I think is generally a
+
+01:55.240 --> 01:57.080
+benefit, right?
+
+01:57.080 --> 02:01.040
+So anything that's self-closing, just make sure that you put that last slash in there.
+
+02:01.040 --> 02:05.960
+Even though that it's valid JavaScript, it's not technically valid JSX, okay?
+
+02:05.960 --> 02:13.420
+So we installed MPM ESLint plugin React 7.37.1 there.
+
+02:13.420 --> 02:17.000
+Please open your ESLint config.
+
+02:17.000 --> 02:24.320
+We're going to import a ESLint, or sorry, what do we call it here?
+
+02:24.320 --> 02:25.680
+React plugin.
+
+02:25.680 --> 02:35.960
+React plugin from ESLint plugin React.
+
+02:35.960 --> 02:44.520
+Okay, so we're going to add one more.
+
+02:45.320 --> 02:48.160
+Let's get rid of this.
+
+02:48.160 --> 02:58.640
+One more config object under this.
+
+02:58.640 --> 03:01.120
+And that needs a comma.
+
+03:01.120 --> 03:04.840
+And we're going to add our React config into this.
+
+03:04.880 --> 03:16.040
+So we're going to say dot dot dot React plugin dot configs dot flat dot recommended.
+
+03:16.040 --> 03:19.880
+Again, spread operator, this is just saying merge these two objects together.
+
+03:19.880 --> 03:21.920
+Give me the union of the two.
+
+03:21.920 --> 03:26.360
+But we're going to overwrite the settings of it.
+
+03:26.440 --> 03:38.280
+And we're going to say React colon version detect.
+
+03:38.280 --> 03:39.680
+This one kind of annoys me.
+
+03:39.680 --> 03:40.680
+It is necessary.
+
+03:40.680 --> 03:44.320
+Like, I don't know why this isn't the default.
+
+03:44.320 --> 03:47.800
+The ESLint plugin wants to know the version of React that you're working with.
+
+03:47.800 --> 03:48.800
+That tracks, right?
+
+03:48.800 --> 03:53.560
+It makes sense that you would want to, like, be linting for version 19 versus version 16.
+
+03:53.560 --> 03:54.560
+They're quite different, right?
+
+03:54.640 --> 03:57.480
+There's some difference there.
+
+03:57.480 --> 03:58.480
+And they have a really cool feature.
+
+03:58.480 --> 04:04.360
+It's like, hey, look at my package.json and use that, okay?
+
+04:04.360 --> 04:05.640
+Just always do that, right?
+
+04:05.640 --> 04:07.320
+That's always what I want you to do.
+
+04:07.320 --> 04:10.840
+There's never not the time that I don't want you to do that.
+
+04:10.840 --> 04:16.720
+Anyway, thank you for writing free and open source software that I get to use, but I'm
+
+04:16.720 --> 04:18.680
+cranky and I don't want to do that every single time.
+
+04:18.680 --> 04:19.680
+But you do.
+
+04:19.680 --> 04:23.120
+Anyway, this is what you have to do every single time.
+
+04:23.120 --> 04:33.000
+So, yep, and we need one more here underneath that.
+
+04:33.000 --> 04:47.640
+We need a React plugin.configs.flat, one called JSX Runtime.
+
+04:47.640 --> 04:54.800
+This one is the one that will fix the error around not importing React, right?
+
+04:54.800 --> 04:57.640
+Because otherwise it's going to be like, I expect React and React is not here.
+
+04:57.640 --> 05:02.040
+Make sure you added JSX here if you did not previously.
+
+05:02.040 --> 05:07.400
+Otherwise it will not lint your JSX files, which is kind of the damn point.
+
+05:07.400 --> 05:18.760
+And then after language options here, let's add some rules.
+
+05:18.760 --> 05:28.960
+The reason we need to put rules here and not in one of these other two, otherwise you'll
+
+05:28.960 --> 05:32.920
+overwrite their rules configs.
+
+05:32.920 --> 05:37.400
+These new ESLint configurations are tricky, right?
+
+05:37.400 --> 05:41.800
+So anyway, the order becomes extremely important.
+
+05:41.800 --> 05:53.440
+So React has two really annoying default rules and we're just going to turn them off because
+
+05:53.440 --> 05:54.760
+I don't want to deal with it.
+
+05:54.760 --> 05:58.200
+No unescaped entities.
+
+05:58.200 --> 06:09.400
+Yeah, it forces you to do weird, it wants you to directly escape hyphens and ampersands
+
+06:09.400 --> 06:10.400
+in your code.
+
+06:10.400 --> 06:11.760
+I don't want to do that.
+
+06:11.760 --> 06:13.760
+I want my tools to do that for me.
+
+06:13.760 --> 06:15.740
+So I turn that off always.
+
+06:15.740 --> 06:18.280
+And then React slash prop types.
+
+06:18.280 --> 06:19.900
+I don't know why this one still exists.
+
+06:19.900 --> 06:25.280
+There used to be a thing called prop types that as soon as TypeScript became a thing,
+
+06:25.280 --> 06:28.500
+just instantly went away as being useful at all, but it's still the default that it's
+
+06:28.500 --> 06:29.500
+on.
+
+06:29.500 --> 06:30.780
+I don't get that either.
+
+06:30.780 --> 06:37.400
+So like just to drive home, if you don't have this, you can't write single quotes inside
+
+06:37.400 --> 06:38.400
+of your strings.
+
+06:38.400 --> 06:43.740
+You have to write, what is it, and a POS, right?
+
+06:43.740 --> 06:46.560
+You have to write that instead of writing that.
+
+06:46.560 --> 06:49.100
+And after doing that like twice, I was like, yeah, this shit's for the birds.
+
+06:49.100 --> 06:53.060
+I'm not doing it.
+
+06:53.060 --> 06:59.580
+So that's why I turned that one off.
+
+06:59.580 --> 07:03.900
+Okay I think we can leave ESLint alone for a while now.
+
+07:03.900 --> 07:09.260
+Yeah, if you're wondering about flat, that's the new style of configuration for ESLint
+
+07:09.260 --> 07:10.260
+9.
+
+07:10.260 --> 07:14.540
+These are flat configs, which is where that flat word comes from.
+
+07:14.540 --> 07:20.340
+Okay, let's go convert app.js now.
+
+07:20.340 --> 07:24.500
+So first thing, rename this file to app.jsx.
+
+07:24.500 --> 07:33.540
+Okay, we're going to delete the React import because we talked about that.
+
+07:33.540 --> 07:37.740
+Import pizza from pizza, we did that.
+
+07:38.740 --> 07:44.740
+And let's make this a bit more nice looking app.
+
+07:44.740 --> 08:05.740
+Okay, return div, h1, we're going to call that Padre Gino's, order now.
+
+08:06.740 --> 08:12.740
+I can just do that in normal so it doesn't highlight it.
+
+08:12.740 --> 08:19.740
+And then we're going to do a pizza component like this.
+
+08:19.740 --> 08:40.740
+Name equals pepperoni, capital, description equals pep, cheese, stuff.
+
+08:40.740 --> 08:43.740
+Again, self-closing.
+
+08:43.740 --> 08:49.740
+So one thing to call out here, notice that this is h1, lowercase h1.
+
+08:49.740 --> 08:52.740
+Note that this is capital P, pizza.
+
+08:52.740 --> 08:58.740
+I don't do this just by convention, it's actually required in JSX and React.
+
+08:58.740 --> 09:04.740
+The lowercase means this is literally a DOM tag that I would like you to render just like this.
+
+09:04.740 --> 09:21.740
+So if I have x, my web component, this means it's going to expect to actually render that because this is lowercase.
+
+09:21.740 --> 09:27.740
+Whereas the capital P lets this know, it's like this is actually a synthetic one that I've created.
+
+09:27.740 --> 09:31.740
+And so you have to name these uppercase.
+
+09:31.740 --> 09:39.740
+One, it's both useful just from at a glance to be able to tell what's a DOM component versus what's a React component that I've created.
+
+09:39.740 --> 09:43.740
+It's required by the tools.
+
+09:43.740 --> 09:54.740
+You can see just like you give this a class name or something like that, you can pass in properties just like as if they were DOM properties.
+
+09:54.740 --> 10:00.740
+It's meant to mimic kind of the same kind of way of doing it.
+
+10:00.740 --> 10:06.740
+Okay, let's make a few more of these.
+
+10:06.740 --> 10:19.740
+Hawaiian ham, pineapple.
+
+10:19.740 --> 10:30.740
+And this was french fries.
+
+10:30.740 --> 10:33.740
+Okay.
+
+10:33.740 --> 10:42.740
+And then this one down here, instead of having React.CreateElementApp, we're just going to do app like that.
+
+10:42.740 --> 10:47.740
+Okay, save that.
+
+10:47.740 --> 10:48.740
+One more thing to do.
+
+10:48.740 --> 10:52.740
+Go look in your index.html.
+
+10:52.740 --> 10:55.740
+And we renamed the file, so we have to put the x there.
+
+10:55.740 --> 10:56.740
+Right.
+
+10:56.740 --> 10:58.740
+See if we can run our project now.
+
+10:58.740 --> 11:00.740
+NPM run dev.
+
+11:00.740 --> 11:01.740
+Have this open.
+
+11:01.740 --> 11:06.740
+Padre Gino's.
+
+11:06.740 --> 11:08.740
+This was wrong.
+
+11:08.740 --> 11:12.740
+5173.
+
+11:12.740 --> 11:17.740
+And you can see everything still works.
+
+11:17.740 --> 11:18.740
+Pretty cool, right?
+

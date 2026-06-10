@@ -1,0 +1,252 @@
+WEBVTT
+
+
+00:00.000 --> 00:03.000
+Faisons une couverture. Nous parlions justement d’une couverture de test à 100 %.
+
+00:03.000 --> 00:05.000
+Je vais vous montrer comment mesurer cela avec Vitest maintenant.
+
+00:05.000 --> 00:07.000
+Nous allons installer encore une chose.
+
+00:07.000 --> 00:23.000
+npm installe le majuscule D au tableau de bord de couverture slash vitest v8 2.1.3.
+
+00:23.000 --> 00:26.000
+D'accord.
+
+00:26.000 --> 00:29.000
+Je vous ai montré comment faire cela avec, je vais vous montrer comment faire avec la v8.
+
+00:29.000 --> 00:35.000
+Je pense que c'est la meilleure bibliothèque, mais si vous souhaitez utiliser Istanbul,
+
+00:35.000 --> 00:39.000
+vous pouvez le faire aussi, et cela obtiendra également celui d'Istanbul.
+
+00:39.000 --> 00:42.000
+Si cela ne fait aucune différence pour vous, restez simplement avec la v8.
+
+00:42.000 --> 00:46.000
+Istanbul est la référence depuis plus longtemps que ma carrière.
+
+00:46.000 --> 00:50.000
+C'est l'outil de couverture de test depuis toujours.
+
+00:50.000 --> 00:54.000
+Mais la v8 est la nouvelle tendance.
+
+00:54.000 --> 00:58.000
+D'accord. Je veux donc que vous accédiez très rapidement à votre configuration Vite.
+
+00:58.000 --> 01:07.000
+Et à l’intérieur, je pense que ça dit juste couverture.
+
+01:07.000 --> 01:09.000
+Nous allons donc faire une couverture ici.
+
+01:09.000 --> 01:11.000
+Est-ce à l'intérieur du test ? Je ne peux pas le dire.
+
+01:11.000 --> 01:14.000
+Ouais, c'est à l'intérieur du test. Mes notes ne disaient pas ça.
+
+01:14.000 --> 01:18.000
+Mais la couverture.
+
+01:18.000 --> 01:21.000
+Et puis nous allons faire notre journaliste.
+
+01:21.000 --> 01:25.000
+Et j'ai juste ici un texte. Je pense que je les ai tous.
+
+01:25.000 --> 01:28.000
+Mais vous pouvez en choisir seulement quelques-uns.
+
+01:28.000 --> 01:30.000
+JSON et HTML.
+
+01:30.000 --> 01:36.000
+Et cela générera tous les tests pour vos outils de couverture.
+
+01:36.000 --> 01:38.000
+Vous n’avez probablement pas besoin de tous.
+
+01:38.000 --> 01:41.000
+Nous examinerons celui en HTML, mais celui en JSON peut être comme ingéré dans votre
+
+01:41.000 --> 01:46.000
+comme des tableaux de bord ou quelque chose comme ça si vous voulez faire ça.
+
+01:46.000 --> 01:50.000
+D'accord. C'est vraiment ça, ce qui est plutôt cool de mettre ça en place.
+
+01:50.000 --> 01:53.000
+La seule chose que nous devons faire maintenant est dans notre package.json.
+
+01:53.000 --> 01:59.000
+Au lieu de nos scripts, nous allons en créer un appelé couverture.
+
+01:59.000 --> 02:02.000
+Je vais donc simplement mettre cela en bas.
+
+02:02.000 --> 02:09.000
+Couverture. Et tout ce que vous allez faire, c'est une couverture la plus rapide possible.
+
+02:09.000 --> 02:11.000
+Et il s'occupera du reste.
+
+02:11.000 --> 02:15.000
+Si vous n'avez jamais eu à établir une couverture manuellement, je ne sais pas,
+
+02:15.000 --> 02:19.000
+comme il y a huit ans, je veux juste que tu saches que c'était nul.
+
+02:19.000 --> 02:21.000
+Beaucoup.
+
+02:21.000 --> 02:24.000
+Tout instrumenter correctement pour exécuter la couverture de test.
+
+02:24.000 --> 02:32.000
+Et le fait que Vitest le fasse juste pour vous est tout simplement génial.
+
+02:32.000 --> 02:36.000
+npm run test colon, ou non, je viens de l'appeler couverture.
+
+02:36.000 --> 02:39.000
+npm run couverture, comme ça.
+
+02:39.000 --> 02:41.000
+Il va exécuter toute notre suite de tests.
+
+02:41.000 --> 02:46.000
+Et puis nous obtenons ce rapport vraiment sympa ici dans notre ligne de commande sur ce que
+
+02:46.000 --> 02:50.000
+les fichiers sont couverts, quels fichiers ne sont pas couverts.
+
+02:50.000 --> 02:57.000
+Et c'est cool que nous mettions cela directement dans notre base de code ou notre CLI.
+
+02:57.000 --> 02:59.000
+Mais nous pouvons réellement faire quelque chose d’encore plus cool.
+
+02:59.000 --> 03:03.000
+Je vais aller sur mon navigateur et je vais faire la commande open.
+
+03:03.000 --> 03:07.000
+Et je vais être chez Padre Gino ici.
+
+03:07.000 --> 03:10.000
+Vous obtenez ce répertoire de couverture.
+
+03:10.000 --> 03:15.000
+Et ouvrez simplement cet index.html dans le répertoire de couverture.
+
+03:15.000 --> 03:20.000
+Nous obtenons maintenant une page Web complète qui décrit toute la couverture des tests.
+
+03:20.000 --> 03:22.000
+Quand je parle de couverture, je dis simplement quels fichiers sont testés et quels
+
+03:22.000 --> 03:26.000
+les fichiers ne le sont pas et quelles lignes sont testées et quelles lignes ne le sont pas.
+
+03:26.000 --> 03:28.000
+Regardons donc notre répertoire source.
+
+03:28.000 --> 03:33.000
+Nous pouvons voir que pizza.jsx, chaque ligne était couverte.
+
+03:33.000 --> 03:35.000
+Vous pouvez voir que certains d’entre eux ont été exécutés deux fois.
+
+03:35.000 --> 03:37.000
+Certains d’entre eux ont été exécutés une fois.
+
+03:37.000 --> 03:38.000
+Cool.
+
+03:38.000 --> 03:40.000
+Allons voir le panier.
+
+03:40.000 --> 03:45.000
+Vous pouvez voir que toutes ces lignes ont été exécutées une seule fois.
+
+03:45.000 --> 03:48.000
+Mais vous pouvez voir qu’en réalité, il n’est jamais arrivé ici.
+
+03:48.000 --> 03:50.000
+Pourquoi donc?
+
+03:50.000 --> 03:51.000
+Eh bien, nous lui avons donné un chariot vide.
+
+03:51.000 --> 03:53.000
+Nous ne lui avons jamais donné un panier plein.
+
+03:53.000 --> 03:55.000
+Donc, cette boucle for n'est jamais exécutée.
+
+03:55.000 --> 04:01.000
+Ce cart.map n'est jamais exécuté car il n'y a jamais rien eu dans le panier.
+
+04:01.000 --> 04:03.000
+Ou utilisez la pizza du jour.
+
+04:03.000 --> 04:05.000
+Certains d’entre eux ont été exécutés deux fois.
+
+04:05.000 --> 04:06.000
+Cela a été exécuté quatre fois.
+
+04:06.000 --> 04:08.000
+C'est plutôt cool.
+
+04:09.000 --> 04:12.000
+Et vous pouvez voir, par exemple, l'en-tête jamais testé.
+
+04:12.000 --> 04:13.000
+Idem avec la source.
+
+04:13.000 --> 04:16.000
+Comme après le contact, cela semble avoir été exécuté, mais nous n'avons jamais rencontré le cas d'erreur.
+
+04:16.000 --> 04:21.000
+Nous ne savons donc pas si l’erreur est réellement correcte.
+
+04:21.000 --> 04:27.000
+Vous voyez donc ici qu'on a 16% de relevés en dessous de 17%, 45% d'agences,
+
+04:27.000 --> 04:29.000
+33% des fonctions.
+
+04:29.000 --> 04:32.000
+Évidemment, ce n’est pas une base de code bien testée.
+
+04:32.000 --> 04:34.000
+Je ne prétends pas que ce soit le cas.
+
+04:34.000 --> 04:38.000
+Mais je vais aussi dire que je ne pense pas qu’une couverture des tests à 100 % soit un objectif louable.
+
+04:38.000 --> 04:40.000
+Je pense que c'est une perte de temps la plupart du temps.
+
+04:40.000 --> 04:42.000
+Vous finissez par écrire des tests qui ne vous intéressent pas.
+
+04:42.000 --> 04:45.000
+Et les tests qui ne vous intéressent pas sont pires que les tests qui n’existent pas.
+
+04:45.000 --> 04:47.000
+Mais c'est plutôt sympa, non ?
+
+04:47.000 --> 04:50.000
+Que tout cela est généré automatiquement.
+
+04:50.000 --> 04:52.000
+Je pense que c'est cool.
+

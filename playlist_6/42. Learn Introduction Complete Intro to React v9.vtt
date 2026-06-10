@@ -1,0 +1,251 @@
+WEBVTT
+
+00:00.000 --> 00:03.000
+Let's do coverage. We were just talking about 100% test coverage.
+
+00:03.000 --> 00:05.000
+I'm going to show you how to measure that with vitest now.
+
+00:05.000 --> 00:07.000
+We are going to install one more thing.
+
+00:07.000 --> 00:23.000
+npm install capital D at vitest slash coverage dash v8 2.1.3.
+
+00:23.000 --> 00:26.000
+Okay.
+
+00:26.000 --> 00:29.000
+I showed you how to do this with, I'm going to show you how to do with v8.
+
+00:29.000 --> 00:35.000
+I think it's the better library, but if you are bent on using Istanbul,
+
+00:35.000 --> 00:39.000
+you can do that as well, and that will get the Istanbul one as well.
+
+00:39.000 --> 00:42.000
+If it doesn't make any difference to you, just stick with v8.
+
+00:42.000 --> 00:46.000
+Istanbul has been the gold standard for longer than my career.
+
+00:46.000 --> 00:50.000
+It's been the test coverage tool forever.
+
+00:50.000 --> 00:54.000
+But v8 is the new hotness.
+
+00:54.000 --> 00:58.000
+All right. So I want you to go to your Vite config really quick.
+
+00:58.000 --> 01:07.000
+And inside of, I think it just says coverage.
+
+01:07.000 --> 01:09.000
+So we are going to do coverage here.
+
+01:09.000 --> 01:11.000
+Is it inside of test? I can't tell.
+
+01:11.000 --> 01:14.000
+Yeah, it's inside of test. My notes didn't say that.
+
+01:14.000 --> 01:18.000
+But coverage.
+
+01:18.000 --> 01:21.000
+And then we are going to do our reporter.
+
+01:21.000 --> 01:25.000
+And I just have in here text. I think I have all of them.
+
+01:25.000 --> 01:28.000
+But you can choose just some of them.
+
+01:28.000 --> 01:30.000
+JSON and HTML.
+
+01:30.000 --> 01:36.000
+And this will generate all of the tests for your coverage tools.
+
+01:36.000 --> 01:38.000
+You probably don't need all of them.
+
+01:38.000 --> 01:41.000
+We'll look at the HTML one, but the JSON one can be like ingested into your
+
+01:41.000 --> 01:46.000
+like dashboards or something like that if you want to do that.
+
+01:46.000 --> 01:50.000
+Okay. That's really it, which is kind of cool to set this up.
+
+01:50.000 --> 01:53.000
+The only thing we got to go do now is in our package.json.
+
+01:53.000 --> 01:59.000
+Instead of our scripts, we're going to create one called coverage.
+
+01:59.000 --> 02:02.000
+So I'll just put this down at the bottom.
+
+02:02.000 --> 02:09.000
+Coverage. And all you're going to do is vitest dash dash coverage.
+
+02:09.000 --> 02:11.000
+And it will handle the rest.
+
+02:11.000 --> 02:15.000
+If you've never had to set up coverage by hand in like, I don't know,
+
+02:15.000 --> 02:19.000
+like eight years ago, I just want you to know that this used to suck.
+
+02:19.000 --> 02:21.000
+A lot.
+
+02:21.000 --> 02:24.000
+To instrument everything correctly to run test coverage.
+
+02:24.000 --> 02:32.000
+And the fact that vitest just does it for you is just, it's just great.
+
+02:32.000 --> 02:36.000
+npm run test colon, or no, I just called it coverage.
+
+02:36.000 --> 02:39.000
+npm run coverage, like that.
+
+02:39.000 --> 02:41.000
+It's going to run our entire testing suite.
+
+02:41.000 --> 02:46.000
+And then we get this really cool report here in our command line of what
+
+02:46.000 --> 02:50.000
+files are covered, what files aren't covered.
+
+02:50.000 --> 02:57.000
+And this is cool that we get this directly into our code base or our CLI.
+
+02:57.000 --> 02:59.000
+But we can actually do something that's even cooler.
+
+02:59.000 --> 03:03.000
+I'm going to go to my browser and I'm going to do command open.
+
+03:03.000 --> 03:07.000
+And I'm going to be in Padre Gino's here.
+
+03:07.000 --> 03:10.000
+You get this coverage directory.
+
+03:10.000 --> 03:15.000
+And just open this index.html inside of the coverage directory.
+
+03:15.000 --> 03:20.000
+Now we get like a full-on web page that describes all the test coverage.
+
+03:20.000 --> 03:22.000
+When I say coverage, I'm just saying like what files are tested and what
+
+03:22.000 --> 03:26.000
+files are not and what lines are tested and what lines are not.
+
+03:26.000 --> 03:28.000
+So let's look at our source directory.
+
+03:28.000 --> 03:33.000
+We can see that pizza.jsx, every line was covered.
+
+03:33.000 --> 03:35.000
+You can see some of them got run twice.
+
+03:35.000 --> 03:37.000
+Some of them got run once.
+
+03:37.000 --> 03:38.000
+Cool.
+
+03:38.000 --> 03:40.000
+Let's go look at cart.
+
+03:40.000 --> 03:45.000
+You can see that all of these lines were run once.
+
+03:45.000 --> 03:48.000
+But you can see it actually never got here.
+
+03:48.000 --> 03:50.000
+Why is that?
+
+03:50.000 --> 03:51.000
+Well, we gave it an empty cart.
+
+03:51.000 --> 03:53.000
+We never gave it a full cart.
+
+03:53.000 --> 03:55.000
+So this for loop never gets run.
+
+03:55.000 --> 04:01.000
+This cart.map never gets run because it never had anything in the cart.
+
+04:01.000 --> 04:03.000
+Or use pizza of the day.
+
+04:03.000 --> 04:05.000
+Some of these got run twice.
+
+04:05.000 --> 04:06.000
+This got run four times.
+
+04:06.000 --> 04:08.000
+That's kind of cool.
+
+04:09.000 --> 04:12.000
+And you can see, for example, header never tested.
+
+04:12.000 --> 04:13.000
+Same with source.
+
+04:13.000 --> 04:16.000
+Like post-contact looks like this got run, but we never hit the error case.
+
+04:16.000 --> 04:21.000
+So we don't know if it actually does the correct error.
+
+04:21.000 --> 04:27.000
+So you can see here we have 16% of statements under 17%, 45% of branches,
+
+04:27.000 --> 04:29.000
+33% of functions.
+
+04:29.000 --> 04:32.000
+Obviously, this is not a well-tested code base.
+
+04:32.000 --> 04:34.000
+I'm not purporting that it is.
+
+04:34.000 --> 04:38.000
+But I'm also going to say that I don't think 100% test coverage is a worthy goal.
+
+04:38.000 --> 04:40.000
+I think it's a waste of time most of the time.
+
+04:40.000 --> 04:42.000
+You end up writing tests that you don't care about.
+
+04:42.000 --> 04:45.000
+And tests that you don't care about are worse than tests that don't exist.
+
+04:45.000 --> 04:47.000
+It's pretty cool stuff, though, right?
+
+04:47.000 --> 04:50.000
+That this all just gets generated automatically.
+
+04:50.000 --> 04:52.000
+I think it's cool.
+

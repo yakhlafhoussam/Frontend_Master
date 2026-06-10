@@ -1,0 +1,518 @@
+WEBVTT
+
+00:00.360 --> 00:04.280
+Let's talk now about use and suspense.
+
+00:04.280 --> 00:07.880
+We've been talking about on and off for years
+
+00:07.880 --> 00:09.200
+at this point about suspense.
+
+00:09.200 --> 00:11.240
+They announced it forever ago.
+
+00:11.240 --> 00:13.760
+And then it's feel like they got really close to releasing it.
+
+00:13.760 --> 00:15.200
+They're like, no, we don't wanna release it.
+
+00:15.200 --> 00:16.480
+And then they're kind of coming back
+
+00:16.480 --> 00:18.040
+and ready to release it again.
+
+00:18.040 --> 00:19.680
+And kind of what they're recommending is like,
+
+00:19.680 --> 00:23.000
+we don't really want you to use suspense directly.
+
+00:23.000 --> 00:25.960
+We want you to use things that use suspense for you.
+
+00:26.960 --> 00:31.480
+So it's kind of a strange API,
+
+00:32.680 --> 00:34.280
+but they're getting closer and React 19
+
+00:34.280 --> 00:36.800
+it'll finally be stable.
+
+00:36.800 --> 00:39.000
+And I'm gonna show you how to use it kind of,
+
+00:41.280 --> 00:42.760
+yeah, I'm gonna show you how to use it today.
+
+00:42.760 --> 00:45.080
+So one of the cool things is it's actually usable
+
+00:45.080 --> 00:47.240
+by 10 stack query.
+
+00:47.240 --> 00:49.120
+They'll use it for you, which is pretty cool.
+
+00:49.120 --> 00:50.760
+So we're gonna do that.
+
+00:50.760 --> 00:53.280
+So I want you to head over to
+
+00:54.280 --> 00:57.760
+app.jsx.
+
+00:57.760 --> 00:59.200
+And we're gonna give this some configuration
+
+00:59.200 --> 01:00.600
+to query client here.
+
+01:01.920 --> 01:04.640
+And we're gonna say default options,
+
+01:07.640 --> 01:09.040
+queries.
+
+01:10.400 --> 01:13.880
+And we're gonna say experimental prefetch in render.
+
+01:13.880 --> 01:15.560
+And we're gonna set that to be true.
+
+01:18.120 --> 01:21.280
+All right, let's go back to past.jsx.
+
+01:21.280 --> 01:24.480
+Sorry, past.lazy.jsx.
+
+01:27.040 --> 01:29.120
+And we're gonna import a couple of things up here
+
+01:29.120 --> 01:30.200
+from React.
+
+01:31.320 --> 01:34.360
+We're gonna import a use state,
+
+01:35.200 --> 01:37.920
+which we have already, so I don't need to do that.
+
+01:37.920 --> 01:41.560
+But we're gonna import suspense with a capital S and use.
+
+01:42.960 --> 01:43.840
+Just use.
+
+01:43.840 --> 01:44.680
+So,
+
+01:49.680 --> 01:50.520
+so,
+
+01:52.840 --> 01:55.800
+we wanna show like a really nice loading page
+
+01:55.800 --> 01:57.080
+that's not like this one
+
+01:59.320 --> 02:01.480
+when we're loading past orders.
+
+02:03.080 --> 02:06.160
+So here inside of this error wrapped post storage,
+
+02:06.160 --> 02:09.040
+we're gonna abuse this higher level component a little bit
+
+02:09.040 --> 02:11.160
+and put some more stuff in here.
+
+02:11.200 --> 02:15.440
+So one, we're gonna move page just up into this component.
+
+02:16.560 --> 02:21.560
+And we're gonna move our use query here
+
+02:22.400 --> 02:24.960
+as well up into that, right?
+
+02:27.080 --> 02:27.920
+Yep.
+
+02:38.000 --> 02:40.480
+Now, the interesting thing that we're gonna do here
+
+02:40.480 --> 02:44.040
+is I'm gonna just call this loading promise, loaded promise.
+
+02:46.160 --> 02:49.000
+And then just here before the semicolon,
+
+02:49.000 --> 02:51.160
+I wanna put dot promise.
+
+02:51.160 --> 02:53.360
+This is gonna give you access directly to the promise
+
+02:53.360 --> 02:56.000
+of this use query that it's generating.
+
+02:58.560 --> 03:00.800
+And then inside of here,
+
+03:01.640 --> 03:02.840
+so inside of the error boundary,
+
+03:02.840 --> 03:05.080
+I'm gonna put one called suspense.
+
+03:06.680 --> 03:08.640
+And I'm gonna give it a fallback.
+
+03:10.760 --> 03:12.800
+Something nice like, hey, I'm loading.
+
+03:12.800 --> 03:13.760
+So I'm gonna say,
+
+03:15.480 --> 03:20.480
+div class name equals past orders
+
+03:22.760 --> 03:27.760
+and h2 of loading past orders.
+
+03:31.640 --> 03:33.080
+And then outside of that,
+
+03:33.080 --> 03:35.880
+I'm gonna say close suspense.
+
+03:36.960 --> 03:38.640
+Oh, this also needs to be closed.
+
+03:40.480 --> 03:41.320
+Okay.
+
+03:46.960 --> 03:49.720
+Now that I'm tracking page and the promise outside of this,
+
+03:49.720 --> 03:54.200
+I have to pass this into past orders here.
+
+03:56.120 --> 04:01.120
+So I'm gonna say loaded promise equals loaded promise
+
+04:04.400 --> 04:07.360
+and page equals page.
+
+04:10.480 --> 04:11.320
+Bear with me.
+
+04:11.320 --> 04:12.160
+We're getting there.
+
+04:13.560 --> 04:14.400
+All right.
+
+04:14.400 --> 04:17.840
+So now we have this promise being passed in.
+
+04:17.840 --> 04:19.360
+Do I have to pass in set page as well?
+
+04:19.360 --> 04:20.200
+I do.
+
+04:20.200 --> 04:21.240
+You have to pass in set page.
+
+04:21.240 --> 04:24.400
+So page and set page, sorry.
+
+04:29.040 --> 04:31.480
+So we're passing in loaded promise, page, set page.
+
+04:31.480 --> 04:32.840
+You can ignore these props
+
+04:32.840 --> 04:35.840
+because there's not actually any props that we care about,
+
+04:37.320 --> 04:39.640
+but they were there for me previously putting them there.
+
+04:39.680 --> 04:41.880
+So if you want to, you can leave them there.
+
+04:42.920 --> 04:43.760
+Okay.
+
+04:45.160 --> 04:47.400
+This loaded promise represents the data
+
+04:47.400 --> 04:50.720
+that's going to be there eventually, right?
+
+04:50.720 --> 04:53.560
+So it's a promise of the data that's coming.
+
+04:57.720 --> 05:02.720
+So what I need you to do is I need you to say,
+
+05:03.280 --> 05:08.280
+const data equals use data.
+
+05:09.760 --> 05:14.240
+This has to be coming from props.
+
+05:14.240 --> 05:17.240
+So we have to destructure this.
+
+05:19.920 --> 05:23.600
+So we're gonna put page, set page and loaded promise
+
+05:25.120 --> 05:29.920
+and data equals use loaded promise.
+
+05:31.000 --> 05:32.760
+There are too many parentheses here.
+
+05:38.280 --> 05:39.120
+There we go.
+
+05:40.640 --> 05:43.360
+So this is the line that I'm concerned
+
+05:43.360 --> 05:46.880
+that you might be looking at like, what the hell is that?
+
+05:46.880 --> 05:48.560
+So follow with me for a second.
+
+05:48.560 --> 05:50.120
+Suspense is basically saying like,
+
+05:50.120 --> 05:53.800
+here is a boundary that stuff inside of it might be loading.
+
+05:54.680 --> 05:57.160
+When it's loading, render the fallback.
+
+05:58.400 --> 06:01.200
+When it's not loading, render whatever is inside of it.
+
+06:02.880 --> 06:07.000
+What we're doing here is we are passing in
+
+06:07.880 --> 06:09.160
+a promise of the data.
+
+06:09.160 --> 06:11.240
+So the reason why we brought this outside
+
+06:11.240 --> 06:14.800
+of the suspense boundary is we don't want,
+
+06:14.800 --> 06:16.240
+it's like works like the error boundary
+
+06:16.240 --> 06:20.320
+that this has to exist outside of the rendering thing
+
+06:20.320 --> 06:23.600
+because it can't render if it's like not working, right?
+
+06:25.520 --> 06:27.040
+I guess we have to pass in the is loading.
+
+06:27.040 --> 06:28.680
+I guess you can just delete this loading thing
+
+06:28.680 --> 06:30.480
+because this will never hit.
+
+06:30.480 --> 06:31.680
+So you can delete that.
+
+06:33.440 --> 06:36.320
+We're passing in this promise, this loaded promise.
+
+06:36.320 --> 06:37.960
+And what's happening is this use,
+
+06:37.960 --> 06:39.040
+this is another React thing.
+
+06:39.040 --> 06:42.720
+It says like, all right, if this promise is not loaded yet,
+
+06:42.720 --> 06:44.400
+suspend this component.
+
+06:44.400 --> 06:46.680
+Don't render it, stop here
+
+06:46.680 --> 06:49.320
+and tell that suspense component above me,
+
+06:49.320 --> 06:51.360
+I'm still loading, right?
+
+06:51.360 --> 06:52.760
+So it's going to hit this line.
+
+06:52.760 --> 06:55.520
+It's actually probably good if you can put this line first
+
+06:55.520 --> 06:58.520
+because you wanna run as little code as possible here.
+
+06:58.520 --> 07:02.120
+It's going to go back up as like, hey, suspense, I'm loading.
+
+07:02.120 --> 07:04.520
+And then it's gonna load this fallback for you.
+
+07:05.440 --> 07:07.880
+Eventually, when this promise resolves,
+
+07:07.880 --> 07:10.640
+it's gonna be like, cool, I'm good now.
+
+07:10.640 --> 07:13.000
+And then it's gonna let this continue rendering.
+
+07:14.920 --> 07:17.840
+Now what's cool about that is what happens later
+
+07:17.840 --> 07:20.400
+when we set the page to be something different again,
+
+07:20.400 --> 07:22.360
+it's gonna send it back to suspense
+
+07:22.360 --> 07:24.200
+and then it's gonna go back and forth.
+
+07:27.360 --> 07:28.920
+Is this better than what we had?
+
+07:30.000 --> 07:31.840
+Maybe, I think so.
+
+07:31.840 --> 07:34.960
+Because now this component has no concept of loading.
+
+07:36.680 --> 07:39.800
+Like once it unsuspends itself,
+
+07:39.800 --> 07:41.600
+the data is all loaded and this reads like,
+
+07:41.600 --> 07:43.920
+it's all just like linear loaded code.
+
+07:45.120 --> 07:46.680
+I think it's kind of nice.
+
+07:46.680 --> 07:49.480
+If you can get past this, like this is kind of a weird API.
+
+07:51.160 --> 07:53.320
+But you can, some people put like one suspense
+
+07:53.320 --> 07:54.720
+at the top level of their app and it's like,
+
+07:54.720 --> 07:57.200
+this is a loading state for my entire app.
+
+07:57.200 --> 07:58.800
+It's not the most user friendly thing,
+
+07:58.800 --> 08:00.200
+but you could do it that way.
+
+08:02.040 --> 08:03.640
+And some people will do it like this
+
+08:03.640 --> 08:04.960
+where it's more localized.
+
+08:06.480 --> 08:08.120
+So, I mean, let's make sure
+
+08:08.120 --> 08:10.760
+that I'm not telling you all lies, that could happen.
+
+08:12.160 --> 08:13.680
+This was past orders.
+
+08:13.680 --> 08:15.400
+So loading past orders,
+
+08:18.680 --> 08:19.520
+and load it.
+
+08:20.680 --> 08:22.040
+Same thing, if we hit next,
+
+08:22.040 --> 08:24.440
+it's gonna go back to this loading past orders thing
+
+08:27.080 --> 08:28.720
+and then it's done.
+
+08:28.720 --> 08:31.520
+And then because it's 10 stack query, it's all cached well.
+
+08:31.520 --> 08:33.560
+So you don't hit that loading state again.
+
+08:36.400 --> 08:37.800
+I think this is quite nice.
+
+08:41.560 --> 08:42.800
+Another kind of fun fact,
+
+08:42.800 --> 08:45.160
+I wonder if I, can I do this really quick here?
+
+08:47.600 --> 08:48.800
+I don't have it in here.
+
+08:50.280 --> 08:52.080
+But let's go look at header.
+
+08:52.080 --> 08:53.880
+Yeah, header JX really quick.
+
+08:54.960 --> 08:56.960
+They may use do several things.
+
+08:56.960 --> 09:00.400
+Like it's become this like, there it is.
+
+09:00.440 --> 09:02.080
+Where we have use context here.
+
+09:03.760 --> 09:06.000
+You can also just use it with use now
+
+09:08.880 --> 09:09.960
+and do this.
+
+09:13.280 --> 09:15.560
+Surprise, you might say who cares
+
+09:15.560 --> 09:17.120
+and it's a fair thing to say,
+
+09:17.120 --> 09:19.320
+but that you can now do that with React 19.
+

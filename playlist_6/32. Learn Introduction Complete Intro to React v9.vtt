@@ -1,0 +1,278 @@
+WEBVTT
+
+00:00.000 --> 00:02.240
+What's cool about this modal is we really can put it anywhere.
+
+00:02.240 --> 00:03.920
+I'm going to put it right here at the end.
+
+00:03.920 --> 00:07.040
+And this is where I was saying, like, I probably would normally split this out into a separate
+
+00:07.760 --> 00:12.160
+file. But I don't want to today, so we're not going to.
+
+00:14.160 --> 00:20.800
+So focused order, if we have a focused order, we want to do, we want to show our modal,
+
+00:20.800 --> 00:25.360
+right? And if we don't have a focused modal, then what do we want to render?
+
+00:26.320 --> 00:32.400
+Nothing. Null. You can render null. That's okay. Null just means don't render anything.
+
+00:35.200 --> 00:37.440
+Is that better than doing, like, just fragments?
+
+00:38.880 --> 00:39.680
+Just something like...
+
+00:39.680 --> 00:43.600
+Or, you know, like, yeah, those. That's what I've usually...
+
+00:43.600 --> 00:48.000
+My intuition is it doesn't really matter. I like null because you're expressing it like
+
+00:48.000 --> 00:49.760
+I literally want nothing to be here. Yeah.
+
+00:49.760 --> 00:51.040
+That's kind of what I was just...
+
+00:52.400 --> 00:53.840
+But again, we're splitting hairs here.
+
+00:56.320 --> 01:00.160
+All right. So modal. And then now we can put whatever we want in here.
+
+01:00.160 --> 01:08.160
+So let's put our modal. So we're going to say order, number, and then it's going to be
+
+01:11.840 --> 01:22.480
+focused order. Okay. And then we do have to, like, make sure that it's loaded, right? Because
+
+01:22.480 --> 01:28.160
+the user will select their order, and it'll render the modal. But we still need to,
+
+01:28.160 --> 01:30.640
+like, wait until the stuff is actually loaded from the API.
+
+01:32.160 --> 01:35.680
+So we're going to say that when it's not loading past order,
+
+01:42.800 --> 01:48.080
+then do this. Otherwise, again, null. Or actually, I think I have, like, a loading there. Yeah,
+
+01:48.080 --> 01:54.960
+I do. All right. So this is going to be... What do I have? Is it a P? Yeah, it is a P.
+
+01:55.920 --> 02:07.680
+P loading slash P like that. Otherwise, we're going to do another one of our favorite things.
+
+02:08.240 --> 02:19.920
+Tables. Again. Table, fed. You are not sick of hearing me say that. TR, TD, and it's image,
+
+02:23.680 --> 02:29.680
+name. Let's just copy and paste a bunch of these. I need size, quantity, price, total.
+
+02:30.400 --> 02:41.440
+So this is size. This is quantity. This is price. And this is total. Okay. Under the fed,
+
+02:42.880 --> 02:53.040
+we are into the to body. Okay. And then inside of here, we're going to do our map of all the
+
+02:53.600 --> 03:01.040
+data that we're getting back from the past order data. Past order data dot order items
+
+03:02.640 --> 03:08.240
+dot map. And each one of these is going to be a pizza that we're getting back from the order API.
+
+03:08.240 --> 03:25.440
+And then inside of that, you have a TR key equals... And I have some longer key here. All right.
+
+03:25.440 --> 03:30.960
+Sounds good. Again, it just has to be something unique to the particular thing that we're looking
+
+03:30.960 --> 03:48.720
+at. So I did pizza dot pizza ID. Pizza type ID. And this is why. This will collapse all of the...
+
+03:48.720 --> 03:55.040
+Like if you ordered like seven of those Napolitana snake pizzas, it will collapse that down to the
+
+03:55.040 --> 04:02.160
+same quantity. So you're guaranteed that the combination of a pizza type ID and the pizza
+
+04:02.160 --> 04:07.600
+size will be unique. That's why I did it this way. Again, we're not going to do any reordering here.
+
+04:07.600 --> 04:13.440
+So it's actually kind of not necessary for us to be so guarded with our key. But my recommendation
+
+04:13.440 --> 04:19.920
+for you is, you know, if you, let's say you become the new dominoes and you built this pizza system
+
+04:19.920 --> 04:24.320
+for it, maybe later you do need to add the ability to filter and reorder and stuff like that. And
+
+04:24.320 --> 04:28.880
+it's better to just build these things now, especially since it's usually not very hard to.
+
+04:29.840 --> 04:33.920
+All right. So for this TD, we're going to do an image source equals
+
+04:36.800 --> 04:40.800
+pizza dot image and the alt is pizza dot name.
+
+04:46.880 --> 04:51.280
+And then we're going to have a TD of name, right? Pizza dot name.
+
+04:51.760 --> 04:58.080
+And again, I'm just going to be lazy and copy and paste this a bunch of times, size, quantity,
+
+04:58.640 --> 05:10.640
+price, total, size, quantity. And then we have our price converter, right? So we're going to
+
+05:10.640 --> 05:20.080
+use our price converter that we just built, pizza dot price, and price,
+
+05:21.360 --> 05:38.640
+converter, pizza dot total. Okay. That'll be good for our rows and drew to body, the table,
+
+05:38.640 --> 05:46.720
+the loading, and we need some ability for us to be able to close. So before this, just I need a
+
+05:46.720 --> 05:56.320
+button right there. That's a close. How are we going to close our modal? Maybe a better way of
+
+05:56.320 --> 06:03.680
+answering, asking that question is, is how do we un-render the modal? What is modal rendering based
+
+06:03.680 --> 06:12.560
+on? Focused order, right? So what happens if we set focused order to be null or undefined or zero?
+
+06:12.560 --> 06:19.680
+It'll, it'll un-render it, right? It just won't be there anymore. So if we say on click equals,
+
+06:22.320 --> 06:27.280
+and we could just say straight up set focused order like that. So we have to go create inside
+
+06:27.280 --> 06:32.320
+of our API directory, we're going to create another file here called get past order.
+
+06:34.320 --> 06:38.080
+Not confusing, definitely not ripe for us typo errors.
+
+06:38.800 --> 06:51.840
+Nothing to see here, move along. Export default async function, get past order.
+
+06:58.160 --> 06:59.680
+This takes in a order number
+
+07:00.480 --> 07:07.520
+and we're going to say const response equals await fetch
+
+07:10.080 --> 07:17.600
+slash API slash past dash order slash dollar sign order, just like that.
+
+07:17.600 --> 07:29.840
+Const data equals await response dot json and return data. Calls the API, looking for a past
+
+07:29.840 --> 07:37.040
+order with that, await response dot json and return the data. All right, so we have past here,
+
+07:37.040 --> 07:44.240
+this is loading. So we still have no way to open the page, right? We haven't added the ability to
+
+07:44.240 --> 07:57.760
+click on these rows yet, so we still have to go do that. Go into your past order or your past dot
+
+07:57.760 --> 08:08.960
+lazy dot jsx and go to where we're rendering our buttons here. So for the order ID, we're going to
+
+08:08.960 --> 08:19.440
+make that clickable. Yep. So here, on line 50 here, we're just going to put another
+
+08:20.240 --> 08:29.120
+HTML element in here, it's going to be a button. On click, we're going to just set the order or
+
+08:29.200 --> 08:37.120
+the focused order. Set focused order to be order dot order ID.
+
+08:41.440 --> 08:46.960
+I don't think I need to do much more than that, nope, except we'll just put the order ID inside
+
+08:46.960 --> 08:52.960
+of it. So all I did was this. I surrounded this order ID with this button here.
+
+08:53.760 --> 08:58.640
+Now, again, remember, someone's going to click this button, it's going to invoke this function,
+
+08:58.640 --> 09:04.560
+it's going to set the focused order to be whatever the order ID was here. What's that going to do?
+
+09:05.600 --> 09:10.240
+It's then going to open the modal because this is just looking for whenever a focused order exists,
+
+09:10.640 --> 09:20.480
+just looking for whenever a focused order exists, right? Pretty slick, right?
+
+09:24.960 --> 09:28.080
+All right, so now we have nice looking buttons here. If I click one of these,
+
+09:30.400 --> 09:31.840
+I get a nice little looking modal.
+
+09:32.240 --> 09:36.960
+All right, and then again, notice when I click these, these ones you'll see just like the briefest
+
+09:36.960 --> 09:54.000
+flash, and let's do our silly thing and intentionally delay it. I'll wait for 10 seconds.
+
+10:01.840 --> 10:08.960
+Okay, so that's going to make this wait for 10 seconds.
+
+10:14.000 --> 10:18.160
+Whenever we get there, okay, we're going to click this one. And then now see,
+
+10:18.160 --> 10:20.000
+it's going to be sit here and load for a while.
+
+10:23.760 --> 10:30.480
+And whenever that finishes, we should end up seeing our nice looking pages here. But again,
+
+10:31.440 --> 10:37.120
+now if I click it again, because it's pulling from cache, it's not hitting that function,
+
+10:37.120 --> 10:44.400
+it's going to be instant. And again, if I hit this one, it's gonna make us wait,
+
+10:44.400 --> 10:49.840
+right? Because that one's not in cache right now. So again, I was kind of talking about you can
+
+10:49.840 --> 10:54.320
+actually like preload the cache. So if you're doing like some sort of server side rendering
+
+10:54.320 --> 10:58.240
+or something like that, or some sort of like optimistic loading, what you could do is you
+
+10:58.240 --> 11:02.800
+could go load the first 10 orders just because you assume people are going to be mostly looking
+
+11:02.800 --> 11:06.320
+at the first 10 orders and stick those in cache and so that you wouldn't have to do that 10 second
+
+11:06.320 --> 11:14.080
+wait every single time. Or fun fact, you can just go and delete the await here. That was
+
+11:14.080 --> 11:20.080
+instant performance for free. This was obviously the most dense part of what we just did.
+
+11:21.040 --> 11:26.960
+I would say this is like one of the more advanced React concepts or maybe
+
+11:28.240 --> 11:31.840
+more advanced client side React concepts. Once you get on the server side,
+
+11:31.840 --> 11:33.920
+some weird stuff starts to pan out.
+

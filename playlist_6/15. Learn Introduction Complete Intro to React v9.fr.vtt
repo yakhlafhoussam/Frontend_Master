@@ -1,0 +1,426 @@
+WEBVTT
+
+
+00:00.360 --> 00:03.280
+Juste pour être facétieux une seconde,
+
+00:05.160 --> 00:07.960
+introduisons simplement ici une attente artificielle.
+
+00:08.840 --> 00:10.440
+Et je ne me souviens jamais comment écrire ça
+
+00:10.440 --> 00:12.960
+le dessus de ma tête, alors je vais demander à Coppola de le faire.
+
+00:12.960 --> 00:16.360
+Attendez ici pendant 10 secondes.
+
+00:16.360 --> 00:18.520
+Il crée une nouvelle promesse, il l'attend 10 secondes,
+
+00:18.520 --> 00:21.040
+puis après 10 secondes, il le résout.
+
+00:21.040 --> 00:22.360
+Alors maintenant, si vous regardez ça,
+
+00:22.360 --> 00:24.960
+ça va être vide pendant les 10 premières secondes, non ?
+
+00:26.120 --> 00:28.040
+Parce qu'il a récupéré les informations
+
+00:28.040 --> 00:29.440
+parce que tout est hôte local, n'est-ce pas ?
+
+00:29.440 --> 00:31.480
+Donc tout est instantané.
+
+00:31.480 --> 00:33.360
+Et puis après ça, pendant que ça revient
+
+00:33.360 --> 00:37.880
+et puis il définira enfin la chose comme ce dont vous avez besoin.
+
+00:40.560 --> 00:41.480
+Cela a du sens ?
+
+00:44.480 --> 00:45.840
+D'accord.
+
+00:47.040 --> 00:50.320
+Voilà donc notre pizza à emporter, voilà notre effet.
+
+00:50.320 --> 00:52.760
+C’est probablement la partie la plus intéressante de tout cela.
+
+00:55.760 --> 00:58.600
+Maintenant, juste pour m'amuser, nous mangeons notre pizza ici.
+
+00:58.600 --> 01:00.680
+Passons notre pizza sélectionnée.
+
+01:00.680 --> 01:04.800
+Nous avons donc sélectionné le nom du point de pizza,
+
+01:06.920 --> 01:11.920
+description du point de pizza sélectionné.
+
+01:15.240 --> 01:17.280
+Et je pense que c'est l'image de point de pizza sélectionnée.
+
+01:24.720 --> 01:25.560
+Voyez si cela fonctionne.
+
+01:25.560 --> 01:27.120
+Donc vous avez du pepperoni ici.
+
+01:27.960 --> 01:32.200
+Et remarquez que ça change le titre
+
+01:33.720 --> 01:35.640
+et le descriptif.
+
+01:35.640 --> 01:37.240
+Nous ne modifions pas encore le prix
+
+01:37.240 --> 01:38.800
+parce que nous n'avons pas mis cette partie
+
+01:38.800 --> 01:40.720
+dans notre composant pizza encore, mais.
+
+01:44.240 --> 01:45.080
+Voilà.
+
+01:45.080 --> 01:46.000
+Plutôt cool, non ?
+
+01:46.000 --> 01:49.240
+Alors maintenant, vous pouvez voir comment l'effet et l'état du calque
+
+01:49.240 --> 01:52.200
+les uns sur les autres pour créer ce genre d'interactivité.
+
+01:58.120 --> 02:00.280
+Encore un exemple stupide.
+
+02:00.280 --> 02:01.720
+Faisons juste la taille d'une pizza là-haut
+
+02:01.720 --> 02:03.080
+dont nous parlions.
+
+02:04.240 --> 02:07.440
+Taille de la pizza ici et effet d'utilisation.
+
+02:08.920 --> 02:11.040
+Je vais ouvrir mes outils de développement ici.
+
+02:12.080 --> 02:14.680
+Remarquez que maintenant, chaque fois que je clique dessus,
+
+02:17.560 --> 02:20.680
+Je reçois une autre requête Ajax adressée à l'API, n'est-ce pas ?
+
+02:20.680 --> 02:23.720
+Parce qu'il s'agit simplement de regarder pour voir quand cela change.
+
+02:23.720 --> 02:26.600
+Mais remarquez que si je change ça, laissez-moi le détruire
+
+02:26.600 --> 02:27.440
+pour que tu puisses voir.
+
+02:31.240 --> 02:33.160
+Je ne le fais pas, n'est-ce pas ?
+
+02:33.160 --> 02:35.360
+Parce que nous ne changeons pas en fonction du type de pizza.
+
+02:35.360 --> 02:37.400
+Nous changeons uniquement en fonction de la taille de la pizza.
+
+02:43.760 --> 02:47.640
+Et si tu voulais changer, si quelque chose change,
+
+02:48.640 --> 02:51.520
+ne lui donne aucun tableau et ça va devenir vraiment fou
+
+02:51.520 --> 02:54.120
+et remarquez ce DDoS vous-même, n'est-ce pas ?
+
+02:54.120 --> 02:56.560
+Pourquoi est-ce que je le fais moi-même ?
+
+02:57.520 --> 02:59.080
+Parce que ça fait beaucoup de re-rendu, non ?
+
+03:00.920 --> 03:03.680
+Regardez mon API ici, ça devient tout simplement fou.
+
+03:06.320 --> 03:07.520
+Oh mon Dieu, s'il te plaît, arrête.
+
+03:11.120 --> 03:14.240
+Très bien, alors pourquoi fait-il ça ?
+
+03:14.240 --> 03:15.640
+Qu'est-ce que je fais ici ?
+
+03:17.040 --> 03:20.680
+Je change d'état, ce qui provoque un nouveau rendu,
+
+03:20.680 --> 03:23.920
+qui programme un effet, qui change l'état,
+
+03:23.920 --> 03:25.680
+qui programme un effet, qui change l'état,
+
+03:25.680 --> 03:27.320
+qui programme un effet, non ?
+
+03:30.000 --> 03:30.840
+C'est pourquoi.
+
+03:32.240 --> 03:33.920
+Donc, si vous faites quelque chose comme ça,
+
+03:33.920 --> 03:35.960
+vous avez probablement oublié un tableau quelque part.
+
+03:39.320 --> 03:43.720
+Une règle générale utile est que si à l'intérieur de votre effet,
+
+03:43.720 --> 03:46.600
+vous faites référence à un morceau d'État,
+
+03:46.600 --> 03:50.040
+il devrait probablement être suivi à l'intérieur de votre,
+
+03:50.960 --> 03:53.080
+ils appellent ça vos dépendances, n'est-ce pas ?
+
+03:53.080 --> 03:54.320
+Votre état dépendant.
+
+03:56.200 --> 04:00.160
+Alors disons que je devais appeler les types de pizza avec la taille de la pizza
+
+04:00.160 --> 04:01.280
+pour quelque raison que ce soit,
+
+04:01.280 --> 04:04.760
+alors vous verriez normalement la taille d'une pizza ici.
+
+04:04.760 --> 04:07.320
+C'est juste une sorte de règle générale utile.
+
+04:09.720 --> 04:14.720
+Et encore une fois, vous pouvez mettre autant de choses ici que vous le souhaitez.
+
+04:14.720 --> 04:17.400
+J'ai donc ce prix ici,
+
+04:17.400 --> 04:22.080
+et je veux afficher le prix correct de mon order.jsx.
+
+04:22.960 --> 04:25.240
+Donc, si nous regardons à nouveau ma réponse,
+
+04:26.920 --> 04:28.920
+vous pouvez voir ici j'ai une taille.
+
+04:29.880 --> 04:32.280
+Donc ça dit le poulet barbecue,
+
+04:32.280 --> 04:34.960
+le plus petit 12,75, le moyen est 16,75,
+
+04:34.960 --> 04:37.360
+et le plus grand 20,75.
+
+04:37.360 --> 04:39.600
+Et je veux afficher le bon prix ici.
+
+04:41.800 --> 04:44.200
+Alors ce que je vais faire, c'est dire,
+
+04:45.680 --> 04:48.400
+Je vais juste afficher le prix ici, comme ça.
+
+04:48.960 --> 04:51.720
+Et puis augmentez le prix ici,
+
+04:51.720 --> 04:56.720
+Je vais dire que le prix est égal au format.
+
+04:57.640 --> 04:59.680
+Oh, et je dois faire ça sous la pizza sélectionnée,
+
+04:59.680 --> 05:01.480
+donc ça doit être en dessous ici, désolé.
+
+05:04.680 --> 05:08.680
+Taille de pizza sélectionnée,
+
+05:10.080 --> 05:12.320
+et puis nous allons lui donner la taille de la pizza
+
+05:12.320 --> 05:14.720
+qui a été sélectionné, donc juste là.
+
+05:15.560 --> 05:17.360
+Je suppose que je peux probablement simplement mettre ça là-dedans.
+
+05:18.720 --> 05:22.520
+Et puis le réglage ne sera effectué qu'avec la pizza sélectionnée.
+
+05:25.640 --> 05:27.240
+Laissez-moi m'assurer que c'est exact.
+
+05:27.240 --> 05:28.880
+Non, je l'ai cassé, qu'ai-je fait ?
+
+05:33.040 --> 05:35.120
+La pizza sélectionnée n'est pas définie.
+
+05:37.120 --> 05:39.720
+Et puis je vais lui donner la taille de la pizza
+
+05:39.720 --> 05:41.880
+qui a été sélectionné, donc juste là.
+
+05:44.720 --> 05:49.720
+Oh ouais, donc c'est juste bien pour nous de déboguer.
+
+05:54.040 --> 05:57.000
+Pourquoi la pizza sélectionnée n'est-elle pas définie ?
+
+05:57.000 --> 05:59.520
+Alors tout d'abord, rafraîchissement à chaud du module
+
+05:59.520 --> 06:03.000
+est une fonctionnalité merveilleuse dans laquelle le code est intégré à la volée,
+
+06:03.920 --> 06:05.360
+mais c'est pour ça que ça fonctionnait avant
+
+06:05.360 --> 06:07.760
+et ça ne marche pas maintenant, n'est-ce pas ?
+
+06:07.760 --> 06:11.880
+Parce que la pizza sélectionnée n'est pas réelle à ce stade, n'est-ce pas ?
+
+06:11.880 --> 06:14.520
+Donc si vous essayez de le définir sur autre chose,
+
+06:14.520 --> 06:16.920
+ça ne marchera pas, non ?
+
+06:16.920 --> 06:20.800
+Donc, la façon dont je vais procéder est de dire : chargement.
+
+06:24.000 --> 06:26.200
+Et si ça charge, je vais juste montrer,
+
+06:27.960 --> 06:29.800
+charger une pizza, mdr.
+
+06:31.880 --> 06:33.280
+Et s'il ne se charge pas,
+
+06:33.280 --> 06:35.040
+alors je vais juste montrer ma pizza.
+
+06:35.040 --> 06:38.040
+Et la taille de pizza sélectionnée, ai-je mal nommé cela ?
+
+06:40.360 --> 06:46.360
+Réseau, réponse, tailles, mon problème.
+
+06:51.760 --> 06:54.760
+Très bien, maintenant si je clique sur attacher le poulet ici
+
+06:54.760 --> 06:57.280
+et puis je l'ouvrirai,
+
+06:57.280 --> 07:01.240
+et ensuite je vais continuer et le régler à la taille d'une pizza.
+
+07:01.240 --> 07:03.880
+Maintenant, si je clique sur attacher le poulet ici
+
+07:03.880 --> 07:07.440
+et puis je regarde le prix en bas ici,
+
+07:07.440 --> 07:09.640
+ça passera de différents prix à différents prix
+
+07:09.640 --> 07:11.280
+en fonction de la taille que vous avez sélectionnée
+
+07:11.280 --> 07:12.840
+et la pizza que vous avez sélectionnée.
+
+07:14.400 --> 07:16.240
+Alors parlons du ternaire que j'ai mis là-dedans
+
+07:16.240 --> 07:19.040
+parce que c'est un peu bizarre aussi.
+
+07:20.960 --> 07:23.240
+Encore une fois, tout ce qui se trouve à l'intérieur des accolades
+
+07:23.240 --> 07:26.200
+peut être une expression JavaScript de n’importe quelle variété.
+
+07:26.200 --> 07:28.360
+Les ternaires ont l'avantage d'être des expressions,
+
+07:28.360 --> 07:29.400
+pas des déclarations.
+
+07:30.400 --> 07:32.080
+Une déclaration est une ligne entière,
+
+07:32.080 --> 07:33.680
+une expression fait partie d'une ligne.
+
+07:35.120 --> 07:38.800
+Je dis donc chargement, qui est un booléen, vrai ou faux.
+
+07:38.800 --> 07:42.400
+Si cela est vrai, faites la première chose.
+
+07:42.400 --> 07:45.840
+Donc, si c'est en cours de chargement, montrez-le très joliment
+
+07:45.840 --> 07:49.680
+et message de chargement descriptif conçu avec amour et soin
+
+07:49.680 --> 07:50.720
+et géré par le service juridique.
+
+07:51.680 --> 07:55.960
+Chargement de la pizza, et dès qu'elle est chargée,
+
+07:55.960 --> 07:58.560
+donc une fois le chargement est faux, c'est vrai,
+
+07:58.760 --> 07:59.760
+alors tu pourras montrer la pizza
+
+07:59.760 --> 08:02.320
+parce que nous y avons toutes les données dont nous avons besoin.
+
+08:04.920 --> 08:05.760
+Cela a du sens ?
+
+08:10.600 --> 08:12.200
+Les développeurs React adorent leurs ternaires.
+
+08:12.200 --> 08:14.600
+Vous les verrez partout dans React.
+

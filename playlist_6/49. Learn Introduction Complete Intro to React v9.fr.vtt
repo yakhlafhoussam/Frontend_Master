@@ -1,0 +1,564 @@
+WEBVTT
+
+
+00:00.280 --> 00:01.640
+Nous avons encore un truc sympa.
+
+00:01.640 --> 00:03.400
+Heureusement, celui-ci ne nécessite pas réellement,
+
+00:03.400 --> 00:05.400
+Je ne pense pas que vous ayez du code à écrire.
+
+00:07.600 --> 00:09.560
+Je vais parler du compilateur React,
+
+00:09.560 --> 00:11.640
+dont je n'ai pas vraiment pu parler,
+
+00:11.640 --> 00:13.940
+mais ils en parlent depuis longtemps.
+
+00:15.080 --> 00:17.880
+Le compilateur React sera donc essentiellement
+
+00:17.880 --> 00:19.520
+comme une optimisation gratuite pour votre code.
+
+00:19.520 --> 00:21.480
+Donc en théorie, cela devrait rendre votre code
+
+00:21.480 --> 00:25.280
+soit à peu près la même chose, soit plus rapide.
+
+00:25.280 --> 00:27.880
+Cela ne devrait donc pas être pire et cela pourrait être beaucoup plus rapide.
+
+00:28.720 --> 00:30.280
+Il y a deux crochets que je ne vous ai pas montrés
+
+00:30.280 --> 00:31.200
+et je l'ai fait intentionnellement,
+
+00:31.200 --> 00:33.740
+celui appelé utiliser le mémo et utiliser le rappel.
+
+00:34.600 --> 00:36.800
+Cela vous permet de dire qu'un composant ressemble à :
+
+00:36.800 --> 00:38.360
+vous êtes trop lent à rendre,
+
+00:38.360 --> 00:40.960
+s'il vous plaît, ne faites pas de rendu à moins que je vous le dise.
+
+00:43.400 --> 00:44.240
+Cela semble être une bonne chose.
+
+00:44.240 --> 00:46.680
+C'est comme, pourquoi est-ce que je ne dis pas ça à tous mes composants
+
+00:46.680 --> 00:49.200
+dont je sais qu'ils n'ont pas besoin de se restituer, n'est-ce pas ?
+
+00:49.200 --> 00:53.840
+Quel est un bon exemple de notre en-tête,
+
+00:53.840 --> 00:54.880
+non, ça change, non ?
+
+00:54.880 --> 00:56.600
+Pour cette raison, notre longueur de panier.
+
+00:57.480 --> 00:59.760
+Changements de pizza, changements de modèle.
+
+00:59.760 --> 01:01.080
+Nous avons une sorte de système de dinosaures
+
+01:01.080 --> 01:02.840
+dans toutes nos composantes, n'est-ce pas ?
+
+01:05.480 --> 01:07.880
+Ouais, donc nous ne pourrions pas vraiment
+
+01:07.880 --> 01:09.340
+en faire trop, trop.
+
+01:10.500 --> 01:15.500
+Mais imaginez que vous ayez un tableau que vous avez rendu
+
+01:18.640 --> 01:22.540
+qui contenait 5 000 choses
+
+01:22.540 --> 01:24.200
+et tu ne voulais vraiment pas qu'il soit restitué
+
+01:24.200 --> 01:26.320
+à moins que vous n'aimiez qu'il y avait quelque chose à restituer.
+
+01:26.320 --> 01:28.400
+Comme si ce n'était pas bon marché de restituer ce composant.
+
+01:28.400 --> 01:30.860
+Vous pouvez utiliser quelque chose appelé utiliser un mémo pour dire :
+
+01:30.860 --> 01:33.000
+ce composant, veuillez ne pas le restituer
+
+01:33.000 --> 01:34.560
+à moins que je te le dise.
+
+01:34.560 --> 01:37.520
+Utiliser le rappel en est une autre variante.
+
+01:41.240 --> 01:43.960
+Donc si vous rencontrez des problèmes de performances,
+
+01:43.960 --> 01:47.880
+premièrement, attendez d'abord d'avoir un réel problème de performances,
+
+01:47.880 --> 01:51.120
+alors vous pouvez utiliser le mémo et utiliser le rappel, n'est-ce pas ?
+
+01:51.120 --> 01:52.920
+C'est mon conseil fort pour toi
+
+01:52.920 --> 01:55.640
+car une fois que vous avez introduit l'utilisation du mémo et l'utilisation du rappel,
+
+01:55.640 --> 01:57.680
+votre code devient plus difficile à aimer
+
+01:57.680 --> 02:00.280
+parce que quelque chose ne sera pas mis à jour quand vous l'attendez
+
+02:00.280 --> 02:03.280
+et vous vous demandez pourquoi cela ne se met pas à jour, n'est-ce pas ?
+
+02:03.280 --> 02:05.480
+Tu vas changer comme un état ou quelque chose comme ça
+
+02:05.480 --> 02:07.040
+et cela ne mettra pas à jour la vue
+
+02:07.040 --> 02:09.080
+et vous vous demanderez pourquoi, n'est-ce pas ?
+
+02:09.080 --> 02:10.040
+Cela m'est arrivé,
+
+02:10.040 --> 02:11.680
+c'est pour ça que je vous en parle.
+
+02:11.680 --> 02:13.200
+Alors s'il vous plaît, ne l'utilisez pas avant d'avoir réellement
+
+02:13.200 --> 02:14.680
+résolvent un vrai problème
+
+02:14.680 --> 02:16.840
+parce que sinon tu te compliques la vie
+
+02:16.840 --> 02:17.680
+sans raison.
+
+02:19.080 --> 02:20.280
+La réaction est vraiment rapide.
+
+02:20.280 --> 02:22.880
+C'est vraiment bon pour créer des interfaces utilisateur
+
+02:22.880 --> 02:25.040
+et ils le rendent tout le temps plus rapide.
+
+02:25.040 --> 02:27.360
+Donc, en général, vous pouvez simplement lui faire confiance pour être rapide.
+
+02:29.600 --> 02:32.480
+Ok, alors pourquoi parlons-nous de ça maintenant
+
+02:32.480 --> 02:34.000
+avec le compilateur React ?
+
+02:34.000 --> 02:36.040
+Eh bien, le compilateur React va réellement fonctionner
+
+02:36.040 --> 02:37.160
+regarde ton code et dis,
+
+02:37.160 --> 02:40.360
+cette chose ne peut pas changer dans ces circonstances.
+
+02:40.360 --> 02:44.000
+Je vais donc optimiser cela prématurément pour eux
+
+02:44.000 --> 02:46.720
+et ensuite il gérera tout ça pour vous.
+
+02:46.720 --> 02:48.520
+Donc ça va faire une analyse statique de votre code
+
+02:48.520 --> 02:51.160
+c'est comme cette branche particulière du code,
+
+02:51.160 --> 02:52.400
+ça ne va pas se mettre à jour,
+
+02:52.400 --> 02:54.520
+Je vais juste dire que ça n'est jamais mis à jour
+
+02:54.520 --> 02:56.320
+et puis votre code devient plus rapide.
+
+02:56.320 --> 02:59.360
+Donc, il utilise essentiellement un mémo et un rappel,
+
+02:59.360 --> 03:03.120
+utilisez le mémo particulièrement pour vous.
+
+03:04.160 --> 03:05.400
+Donc je suis tout à fait pour ça,
+
+03:05.400 --> 03:07.000
+comme l'analyse statique et tout ce genre de choses
+
+03:07.000 --> 03:08.800
+et ils disent que cette branche de code peut être mise à jour,
+
+03:08.800 --> 03:09.960
+Je pense que c'est génial.
+
+03:10.960 --> 03:12.640
+C'était autrefois connu sous le nom de React Forget.
+
+03:12.640 --> 03:15.560
+Donc, si jamais vous entendez React, oubliez la référence,
+
+03:15.560 --> 03:16.720
+ils parlent du compilateur React.
+
+03:16.720 --> 03:18.640
+Si pour une raison quelconque, il essaie de faire quelque chose
+
+03:18.640 --> 03:21.240
+où tu peux le faire et où tu ne le veux pas,
+
+03:21.240 --> 03:22.880
+pour quelque raison que ce soit,
+
+03:22.880 --> 03:24.040
+tu peux aller en haut de la page
+
+03:24.040 --> 03:25.400
+et tu dis de ne pas utiliser de mémo
+
+03:25.400 --> 03:28.200
+et cela ne sera jamais optimisé.
+
+03:28.200 --> 03:30.000
+Ils demandent que si vous devez faire ça
+
+03:30.000 --> 03:32.400
+s'il vous plaît, dites-leur parce qu'ils veulent savoir pourquoi.
+
+03:33.360 --> 03:34.560
+Parce que ça ne devrait pas, n'est-ce pas ?
+
+03:34.560 --> 03:35.480
+Vous ne devriez jamais avoir à utiliser ça.
+
+03:35.480 --> 03:37.320
+Ils disent qu'ils finiront par éliminer
+
+03:37.320 --> 03:39.200
+tous les cas où cela devrait se produire.
+
+03:41.400 --> 03:42.880
+Alors faisons quelque chose d'amusant.
+
+03:42.880 --> 03:45.320
+Vous pouvez l'exécuter dans vos propres bases de code dès aujourd'hui.
+
+03:45.320 --> 03:47.520
+Cela n’exploitera que Bitcoin pour moi.
+
+03:48.920 --> 03:50.120
+C'est juste une plaisanterie.
+
+03:50.120 --> 03:52.200
+Ceci vient de l'équipe React pour voir,
+
+03:52.240 --> 03:54.120
+est-ce que cela serait utile à ma base de code ?
+
+03:54.120 --> 03:55.440
+Donc on va juste l'exécuter dans le nôtre,
+
+03:55.440 --> 03:59.600
+npx React-compiler-healthcheck en version bêta.
+
+04:01.320 --> 04:02.760
+Il pourrait vous demander, oui, voulez-vous installer ceci ?
+
+04:02.760 --> 04:04.200
+Tu vas dire oui.
+
+04:04.200 --> 04:06.040
+Et il va exécuter votre base de code et il dit :
+
+04:06.040 --> 04:09.840
+hé, j'ai pu affecter 12 de tes 13 composants.
+
+04:10.680 --> 04:12.560
+Je suis heureusement trouvé en mode strict et il dit :
+
+04:12.560 --> 04:15.520
+n'a trouvé aucune utilisation de bibliothèques incompatibles.
+
+04:16.480 --> 04:19.040
+Il s'avère donc que notre base de code est un bon cas d'utilisation
+
+04:19.040 --> 04:20.120
+pour le compilateur React.
+
+04:21.120 --> 04:24.120
+Alors allons-y, mettons-le dedans.
+
+04:24.120 --> 04:27.520
+Ce qu'ils ont dit officiellement de la part de l'équipe principale de React
+
+04:27.520 --> 04:31.160
+c'est comme si cela pouvait être installé en toute sécurité aujourd'hui sur n'importe quelle base de code.
+
+04:31.160 --> 04:35.560
+Cela ne devrait pas causer de problèmes.
+
+04:35.560 --> 04:39.120
+Par exemple, Blue Sky, qui ressemble à la nouvelle application sociale,
+
+04:39.120 --> 04:41.040
+ils sont allés le mettre sur l'application Blue Sky,
+
+04:41.040 --> 04:42.280
+qui est entièrement open source, n'est-ce pas ?
+
+04:42.280 --> 04:43.760
+Qui est une énorme application React.
+
+04:44.840 --> 04:47.640
+Et ils l'exécutent sur Blue Sky, ce qui est plutôt cool.
+
+04:47.640 --> 04:50.040
+Et cela fonctionne déjà évidemment sur Facebook.
+
+04:51.120 --> 04:53.720
+Alors voici ce que je veux que vous fassiez.
+
+04:53.720 --> 04:57.000
+Je veux que tu dises npm install dash capital D
+
+04:57.000 --> 05:02.000
+Babel Dash Plugin Dash React Compilateur Dash en version bêta.
+
+05:04.040 --> 05:06.560
+Encore une fois, si vous regardez ça à l'avenir,
+
+05:06.560 --> 05:08.240
+vous devrez peut-être vérifier les versions ici
+
+05:08.240 --> 05:09.640
+parce que ça a peut-être changé.
+
+05:10.600 --> 05:11.920
+Et puis tu dois y aller et lancer
+
+05:11.920 --> 05:13.840
+ce bon vieux Dash Dash Force là-bas
+
+05:13.840 --> 05:16.280
+parce que ça va vraiment devenir fou à propos des versions.
+
+05:20.800 --> 05:22.240
+Cool, d'accord.
+
+05:22.240 --> 05:24.760
+Alors maintenant, nous avons le compilateur ici
+
+05:27.080 --> 05:31.160
+et nous allons devoir faire une configuration supplémentaire
+
+05:31.160 --> 05:32.960
+sur notre config Vite.
+
+05:32.960 --> 05:35.840
+Donc ici avec React, il faut lui donner un objet.
+
+05:37.320 --> 05:42.160
+Babel, qui est un objet.
+
+05:42.160 --> 05:47.160
+Vous devez lui donner des plugins, qui sont un tableau.
+
+05:47.720 --> 05:49.280
+Ensuite, vous devez lui donner un autre tableau.
+
+05:49.280 --> 05:51.840
+N'hésitez pas à copier ceci car c'est obscène.
+
+05:52.880 --> 05:57.880
+Plugin Babel Dash, compilateur React Dash.
+
+06:03.160 --> 06:04.760
+Nous allons en cibler 19.
+
+06:04.760 --> 06:07.200
+Je pense que cela fonctionne techniquement sur 18.
+
+06:07.200 --> 06:08.760
+Nous allons en mettre 19
+
+06:08.760 --> 06:09.600
+parce que c'est ce que nous faisons, n'est-ce pas ?
+
+06:09.600 --> 06:11.160
+Réagissez 19.
+
+06:11.160 --> 06:16.160
+D'accord, et ensuite nous dirons npm run dev.
+
+06:17.000 --> 06:21.240
+D'accord, et nous devrions alors pouvoir ouvrir notre application.
+
+06:22.280 --> 06:24.000
+Et si tout se passait parfaitement,
+
+06:24.000 --> 06:26.160
+vous ne devriez rien remarquer.
+
+06:28.040 --> 06:29.640
+Le meilleur genre de chose,
+
+06:29.640 --> 06:33.160
+nous avons déployé beaucoup d'efforts et rien ne s'est produit.
+
+06:33.160 --> 06:35.520
+Mais laissez-moi vous montrer ce qui se passe réellement.
+
+06:35.520 --> 06:38.560
+Ouvrez vos outils de développement et ouvrez les outils de développement principaux de React
+
+06:38.560 --> 06:39.760
+ici, celui des composants.
+
+06:40.920 --> 06:45.440
+Maintenant, vous voyez cela comme un petit mémo magique ?
+
+06:45.440 --> 06:49.400
+Ce composant a été automatiquement mémorisé par le compilateur React.
+
+06:49.400 --> 06:51.240
+Donc ça va aller ici et te montrer,
+
+06:51.240 --> 06:54.000
+c'est comme si j'avais pu mémoriser ça pour toi.
+
+06:54.000 --> 06:56.360
+Donc l'en-tête, je suis capable de le mémoriser
+
+06:56.360 --> 06:59.920
+et il est capable de faire un tas de trucs vraiment cool
+
+06:59.920 --> 07:02.560
+de cette façon, ce qui est plutôt cool.
+
+07:02.560 --> 07:04.320
+Je pense que c'est génial qu'ils soient réellement capables de te montrer
+
+07:04.320 --> 07:07.120
+ce qui est réellement mémorisé par le compilateur React.
+
+07:10.800 --> 07:13.160
+Donc des trucs plutôt sympas.
+
+07:13.160 --> 07:14.720
+Ils en parlent depuis longtemps.
+
+07:14.720 --> 07:17.760
+Je pense qu'ils l'ont construit pour Instagram, point d'interrogation.
+
+07:17.760 --> 07:19.240
+Autrement dit, je ne suis pas sûr en fait
+
+07:19.240 --> 07:20.480
+de ce pour quoi ils l'ont réellement construit,
+
+07:20.480 --> 07:23.000
+mais ils l'ont exécuté en production
+
+07:23.000 --> 07:25.120
+depuis longtemps sur Facebook.
+
+07:25.120 --> 07:29.400
+Il est donc suffisamment stable pour tenter sa chance aujourd'hui.
+
+07:31.280 --> 07:35.040
+Et oui, des questions à ce sujet ?
+
+07:35.040 --> 07:37.200
+Et cela peut être utilisé sur les versions précédentes de React,
+
+07:37.200 --> 07:38.320
+pas seulement React 19.
+
+07:38.320 --> 07:42.120
+Je pense qu'il est 17, 18 et 19, je pense que c'est ce qu'ils ont dit.
+
+07:42.120 --> 07:46.320
+18 bien sûr, 17 vous devrez peut-être aller vérifier.
+
+07:47.440 --> 07:49.880
+Si vous êtes au 17, veuillez prendre le 18.
+
+07:49.880 --> 07:51.840
+Je suppose que c'est ce que je dirais à ce sujet.
+
+07:54.360 --> 07:59.360
+J'ai laissé ici un lien vers le discours de Lauren Tan de ReactConf.
+
+08:01.480 --> 08:04.920
+Fait amusant, je ne pense pas avoir enseigné à Lauren React
+
+08:04.920 --> 08:06.640
+et je ne vais pas le prétendre,
+
+08:06.640 --> 08:09.320
+mais elle a assisté à un de mes ateliers sur Netflix
+
+08:09.320 --> 08:12.720
+où j'ai enseigné mon atelier React à un groupe de personnes.
+
+08:12.720 --> 08:15.000
+Donc Lauren a été présente pendant un certain temps
+
+08:15.000 --> 08:15.920
+que j'enseignais à React.
+
+08:15.920 --> 08:17.680
+C'est un fait que je peux affirmer.
+
+08:19.000 --> 08:19.840
+Elle est très intelligente.
+
+08:19.840 --> 08:22.720
+Elle est donc désormais manager de l'équipe React.
+
+08:22.720 --> 08:24.040
+Alors tu devrais la regarder parler.
+
+08:24.040 --> 08:26.200
+C'est une excellente oratrice et elle en parle beaucoup
+
+08:26.200 --> 08:27.360
+à ReactConf cette année.
+

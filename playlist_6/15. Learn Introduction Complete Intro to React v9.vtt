@@ -1,0 +1,425 @@
+WEBVTT
+
+00:00.360 --> 00:03.280
+Just to be facetious for a second,
+
+00:05.160 --> 00:07.960
+let's just introduce an artificial await here.
+
+00:08.840 --> 00:10.440
+And I can never remember how to write this off
+
+00:10.440 --> 00:12.960
+the top of my head, so I'm gonna ask Coppola to do it.
+
+00:12.960 --> 00:16.360
+Wait here for 10 seconds.
+
+00:16.360 --> 00:18.520
+It creates a new promise, it waits it for 10 seconds,
+
+00:18.520 --> 00:21.040
+then after 10 seconds it resolves it.
+
+00:21.040 --> 00:22.360
+So now if you look at this,
+
+00:22.360 --> 00:24.960
+it's gonna be empty for the first 10 seconds, right?
+
+00:26.120 --> 00:28.040
+Cause it got the information back
+
+00:28.040 --> 00:29.440
+cause it's all local host, right?
+
+00:29.440 --> 00:31.480
+So it's all instantaneous.
+
+00:31.480 --> 00:33.360
+And then after that while it comes back
+
+00:33.360 --> 00:37.880
+and then it will finally set the thing to be what you need.
+
+00:40.560 --> 00:41.480
+Make sense?
+
+00:44.480 --> 00:45.840
+All right.
+
+00:47.040 --> 00:50.320
+So that is our fetch pizza, that's our effect.
+
+00:50.320 --> 00:52.760
+That's probably the most interesting part of this.
+
+00:55.760 --> 00:58.600
+Now, just for fun, we have our pizza down here.
+
+00:58.600 --> 01:00.680
+Let's pass our selected pizza in.
+
+01:00.680 --> 01:04.800
+So we have selected pizza dot name,
+
+01:06.920 --> 01:11.920
+selected pizza dot description.
+
+01:15.240 --> 01:17.280
+And I think it's selected pizza dot image.
+
+01:24.720 --> 01:25.560
+See if that works.
+
+01:25.560 --> 01:27.120
+So you have pepperoni here.
+
+01:27.960 --> 01:32.200
+And notice it's changing the title
+
+01:33.720 --> 01:35.640
+and the description.
+
+01:35.640 --> 01:37.240
+We're not changing the price yet
+
+01:37.240 --> 01:38.800
+because we haven't put that part
+
+01:38.800 --> 01:40.720
+into our pizza component yet, but.
+
+01:44.240 --> 01:45.080
+There you go.
+
+01:45.080 --> 01:46.000
+Kind of cool, right?
+
+01:46.000 --> 01:49.240
+So now you can see how effect and state kind of layer
+
+01:49.240 --> 01:52.200
+onto each other to create this kind of like interactivity.
+
+01:58.120 --> 02:00.280
+One more stupid example.
+
+02:00.280 --> 02:01.720
+Let's just do the pizza size one up there
+
+02:01.720 --> 02:03.080
+that we were talking about.
+
+02:04.240 --> 02:07.440
+Pizza size here and use effect.
+
+02:08.920 --> 02:11.040
+I'm gonna pop open my dev tools here.
+
+02:12.080 --> 02:14.680
+Notice that now every time that I click this,
+
+02:17.560 --> 02:20.680
+I'm getting another Ajax request to the API, right?
+
+02:20.680 --> 02:23.720
+Because it's just watching to see whenever that changes.
+
+02:23.720 --> 02:26.600
+But notice if I change this, let me trash this
+
+02:26.600 --> 02:27.440
+so you can see.
+
+02:31.240 --> 02:33.160
+Not doing it, right?
+
+02:33.160 --> 02:35.360
+Because we're not changing based on pizza type.
+
+02:35.360 --> 02:37.400
+We're only changing based on pizza size.
+
+02:43.760 --> 02:47.640
+And if you wanted to change, if anything changes,
+
+02:48.640 --> 02:51.520
+give it no array and it's gonna get real mad
+
+02:51.520 --> 02:54.120
+and notice that DDoS yourself, right?
+
+02:54.120 --> 02:56.560
+Why am I DDoSing it myself?
+
+02:57.520 --> 02:59.080
+Because it's re-rendering a lot, right?
+
+03:00.920 --> 03:03.680
+Look at my API here, it's just going hog wild.
+
+03:06.320 --> 03:07.520
+Oh my God, please stop.
+
+03:11.120 --> 03:14.240
+All right, so why is it doing that?
+
+03:14.240 --> 03:15.640
+What am I doing right here?
+
+03:17.040 --> 03:20.680
+I'm changing the state, which causes a re-render,
+
+03:20.680 --> 03:23.920
+which schedules an effect, which changes the state,
+
+03:23.920 --> 03:25.680
+which schedules an effect, which changes the state,
+
+03:25.680 --> 03:27.320
+which schedules an effect, right?
+
+03:30.000 --> 03:30.840
+That's why.
+
+03:32.240 --> 03:33.920
+So if you find yourself doing something like that,
+
+03:33.920 --> 03:35.960
+you probably forgot an array somewhere.
+
+03:39.320 --> 03:43.720
+A general useful rule of thumb is if inside of your effect,
+
+03:43.720 --> 03:46.600
+you refer to a piece of state,
+
+03:46.600 --> 03:50.040
+it should probably be tracked inside of your,
+
+03:50.960 --> 03:53.080
+they call this your dependencies, right?
+
+03:53.080 --> 03:54.320
+Your dependent state.
+
+03:56.200 --> 04:00.160
+So let's say I had to call pizza types with pizza size
+
+04:00.160 --> 04:01.280
+for whatever reason,
+
+04:01.280 --> 04:04.760
+then you would normally see pizza size go here.
+
+04:04.760 --> 04:07.320
+That's just kind of a useful rule of thumb.
+
+04:09.720 --> 04:14.720
+And again, you can put as many things in here as you want.
+
+04:14.720 --> 04:17.400
+So I have this price here,
+
+04:17.400 --> 04:22.080
+and I wanna show the correct price from my order.jsx.
+
+04:22.960 --> 04:25.240
+So if we look here again at my response,
+
+04:26.920 --> 04:28.920
+you can see here I have a sizes.
+
+04:29.880 --> 04:32.280
+So this is saying the barbecue chicken,
+
+04:32.280 --> 04:34.960
+the smallest 12.75, the medium is 16.75,
+
+04:34.960 --> 04:37.360
+and the largest 20.75.
+
+04:37.360 --> 04:39.600
+And I wanna display the right price here.
+
+04:41.800 --> 04:44.200
+So what I'm gonna do is I'm gonna say,
+
+04:45.680 --> 04:48.400
+I'm just gonna display price here, like that.
+
+04:48.960 --> 04:51.720
+And then price up here,
+
+04:51.720 --> 04:56.720
+I'm gonna say price is equal to format.
+
+04:57.640 --> 04:59.680
+Oh, and I have to do this underneath selected pizza,
+
+04:59.680 --> 05:01.480
+so it has to be underneath here, sorry.
+
+05:04.680 --> 05:08.680
+Selected pizza.size,
+
+05:10.080 --> 05:12.320
+and then we're gonna give it the pizza size
+
+05:12.320 --> 05:14.720
+that's been selected, so right there.
+
+05:15.560 --> 05:17.360
+I guess I can probably just put that in there.
+
+05:18.720 --> 05:22.520
+And then it'll only get set with the selected pizza.
+
+05:25.640 --> 05:27.240
+Let me make sure that's correct.
+
+05:27.240 --> 05:28.880
+Nope, I broke it, what did I do?
+
+05:33.040 --> 05:35.120
+Selected pizza is undefined.
+
+05:37.120 --> 05:39.720
+And then I'm gonna give it the pizza size
+
+05:39.720 --> 05:41.880
+that's been selected, so right there.
+
+05:44.720 --> 05:49.720
+Oh yeah, so this is just good for us to debug.
+
+05:54.040 --> 05:57.000
+Why is selected pizza undefined?
+
+05:57.000 --> 05:59.520
+So first of all, hot module refresh
+
+05:59.520 --> 06:03.000
+is a wonderful feature that code gets subbed in on the fly,
+
+06:03.920 --> 06:05.360
+but that's why it was working before
+
+06:05.360 --> 06:07.760
+and it's not working now, right?
+
+06:07.760 --> 06:11.880
+Because selected pizza is not real at this point, right?
+
+06:11.880 --> 06:14.520
+So if you try and set it to be something else,
+
+06:14.520 --> 06:16.920
+it's not gonna work, right?
+
+06:16.920 --> 06:20.800
+So the way I'm gonna do this is I'm gonna say, loading.
+
+06:24.000 --> 06:26.200
+And if it's loading, I'm just gonna show,
+
+06:27.960 --> 06:29.800
+loading pizza, lol.
+
+06:31.880 --> 06:33.280
+And if it's not loading,
+
+06:33.280 --> 06:35.040
+then I'm just gonna show my pizza.
+
+06:35.040 --> 06:38.040
+And selected pizza size, did I mis-name that?
+
+06:40.360 --> 06:46.360
+Network, response, sizes, my bad.
+
+06:51.760 --> 06:54.760
+All right, now if I click tie chicken here
+
+06:54.760 --> 06:57.280
+and then I will open it up,
+
+06:57.280 --> 07:01.240
+and then I'm gonna go ahead and set it to pizza size.
+
+07:01.240 --> 07:03.880
+Now if I click tie chicken here
+
+07:03.880 --> 07:07.440
+and then I watch the price down here,
+
+07:07.440 --> 07:09.640
+it'll move from various price to price
+
+07:09.640 --> 07:11.280
+based on what size you've selected
+
+07:11.280 --> 07:12.840
+and the pizza you've selected.
+
+07:14.400 --> 07:16.240
+So let's talk about the ternary that I put in there
+
+07:16.240 --> 07:19.040
+because that's a little weird looking too.
+
+07:20.960 --> 07:23.240
+Again, anything inside of the curly braces
+
+07:23.240 --> 07:26.200
+can be a JavaScript expression of any variety.
+
+07:26.200 --> 07:28.360
+Ternaries have the benefit of being expressions,
+
+07:28.360 --> 07:29.400
+not statements.
+
+07:30.400 --> 07:32.080
+A statement is an entire line,
+
+07:32.080 --> 07:33.680
+an expression is part of a line.
+
+07:35.120 --> 07:38.800
+So I'm saying loading, which is a Boolean, true or false.
+
+07:38.800 --> 07:42.400
+If this is true, you do the first thing.
+
+07:42.400 --> 07:45.840
+So if it's loading, show this very lovely
+
+07:45.840 --> 07:49.680
+and descriptive loading message crafted with love and care
+
+07:49.680 --> 07:50.720
+and run by legal.
+
+07:51.680 --> 07:55.960
+Loading pizza, and as soon as it's done being loaded,
+
+07:55.960 --> 07:58.560
+so once loading is false, right,
+
+07:58.760 --> 07:59.760
+then you can show the pizza
+
+07:59.760 --> 08:02.320
+because we have all the data there that we need.
+
+08:04.920 --> 08:05.760
+Make sense?
+
+08:10.600 --> 08:12.200
+React developers love their ternarys.
+
+08:12.200 --> 08:14.600
+You'll see them everywhere in React.
+

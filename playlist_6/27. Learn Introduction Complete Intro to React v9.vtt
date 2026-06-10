@@ -1,0 +1,503 @@
+WEBVTT
+
+00:00.000 --> 00:02.520
+So, let's talk about TanStack Query.
+
+00:02.520 --> 00:08.000
+This is the artist formerly known as React Query.
+
+00:08.000 --> 00:12.320
+They call it now TanStack Query because now it works across several libraries, not just
+
+00:12.320 --> 00:13.320
+React.
+
+00:13.320 --> 00:17.580
+There's an Angular Query, there's View Query, there's a couple of them.
+
+00:17.580 --> 00:23.880
+But I would say far and above the most popular one is TanStack Query.
+
+00:23.880 --> 00:30.880
+So we're going to make a past orders page, and this page is going to pull in all of the
+
+00:30.880 --> 00:35.800
+old orders so that we can kind of navigate through them.
+
+00:35.800 --> 00:40.920
+What's interesting about this data is it's highly, highly, highly cacheable, right?
+
+00:40.920 --> 00:43.360
+Your old orders aren't really changing from page load to page load.
+
+00:43.360 --> 00:45.880
+You might be getting new ones, right?
+
+00:45.880 --> 00:49.600
+But the old ones are going to keep staying there, and particularly if you click on the
+
+00:49.600 --> 00:50.600
+details, right?
+
+00:50.600 --> 00:53.800
+The details of an old order aren't changing minute to minute.
+
+00:53.800 --> 00:56.600
+So very highly cacheable.
+
+00:56.600 --> 01:03.960
+That's kind of the nice thing about TanStack Query is that it makes like caching API requests
+
+01:03.960 --> 01:06.440
+just so, so simple.
+
+01:06.440 --> 01:10.440
+Like imagine right now with everything I've shown you with use effect, how would you cache
+
+01:10.440 --> 01:12.440
+a response?
+
+01:12.440 --> 01:13.440
+You could, right?
+
+01:13.440 --> 01:17.640
+I imagine most of you would make some sort of object, and that object would live from
+
+01:17.640 --> 01:21.000
+maybe another external module, and you would set a key, and then you'd say like if I'm
+
+01:21.400 --> 01:25.600
+requesting this, then don't request it, pull it from cache, but no one wants to write that
+
+01:25.600 --> 01:26.600
+logic, right?
+
+01:26.600 --> 01:28.840
+Then you have to write the expiry logic.
+
+01:28.840 --> 01:31.600
+You have to write like hydration logic if you want to preload it.
+
+01:31.600 --> 01:36.000
+There's a bunch of stuff like that, and you don't have to because TanStack Query kind
+
+01:36.000 --> 01:37.960
+of does it for you.
+
+01:37.960 --> 01:43.280
+It's almost to the point that I almost never have to use effect anymore.
+
+01:43.280 --> 01:48.640
+I just use TanStack Query for almost all the things I was using use effect for.
+
+01:48.640 --> 01:57.720
+So with React, whenever I start a brand new project, it's npm install, react, react-darm,
+
+01:57.720 --> 02:01.640
+and TanStack Query almost all the time, right?
+
+02:01.640 --> 02:03.160
+Everything else, I don't always need routing.
+
+02:03.160 --> 02:06.480
+I don't always need all the other tools, but I almost always end up using TanStack Query
+
+02:06.480 --> 02:09.720
+just because it's better and easier to use.
+
+02:09.720 --> 02:14.520
+And use effect is just, as you can see, you can have some pretty strange bugs.
+
+02:14.520 --> 02:17.640
+You just kind of sidestep that by using TanStack Query.
+
+02:17.640 --> 02:20.360
+So I'm a fan, as you can tell.
+
+02:20.360 --> 02:23.520
+So let us go make our past orders page.
+
+02:23.520 --> 02:27.240
+It's going to be fun if you have a warped sense of fun like I do.
+
+02:27.240 --> 02:33.440
+All right, I'm going to run my server again, npm run dev.
+
+02:33.440 --> 02:40.680
+Now inside of routes, I'm going to make a new file.
+
+02:40.680 --> 02:46.200
+We're going to call this past.lazy.jsx.
+
+02:46.200 --> 02:48.880
+And it's going to create this really nice little stub for us.
+
+02:48.880 --> 02:53.880
+Thank you, TanStack.
+
+02:53.880 --> 02:58.240
+And that all looks good.
+
+02:58.240 --> 03:02.560
+So before we get too far here, let's go ahead and install all of our things that we need.
+
+03:02.560 --> 03:06.000
+So I'm just going to grab this directly out of the docs.
+
+03:06.000 --> 03:12.320
+We're going to be using TanStack 559.13 today.
+
+03:12.320 --> 03:17.120
+And this library doesn't really change too much between versions.
+
+03:17.120 --> 03:19.880
+There's some experimental features that I'm sure that they'll end up adding later, but
+
+03:19.880 --> 03:23.120
+we're not using any of the experimental features today.
+
+03:23.120 --> 03:24.120
+Actually that's not true.
+
+03:24.120 --> 03:25.120
+Towards the end, we will.
+
+03:25.120 --> 03:26.120
+It'll be fun.
+
+03:26.120 --> 03:30.160
+Just in another terminal here, I'm going to run npm install at tanstack slash react dash
+
+03:30.160 --> 03:31.160
+query.
+
+03:31.160 --> 03:39.640
+Here we're going to install npm install tanstack react query at 559.13.
+
+03:39.640 --> 03:41.120
+Go ahead and run install there.
+
+03:41.120 --> 03:44.320
+And then we're going to grab one out of here as well.
+
+03:44.320 --> 03:46.840
+This is just a bunch of them.
+
+03:46.840 --> 03:50.880
+It has some really nice dev tools and it has some nice linting rules that we're going to
+
+03:50.880 --> 03:53.680
+bring in as well.
+
+03:53.680 --> 04:01.280
+So npm install dash d, because these are dev dependencies, tanstack react query dev tools.
+
+04:01.280 --> 04:03.040
+This is like the router dev tools.
+
+04:03.040 --> 04:05.600
+I'll say that I use the query ones more than I use the router ones.
+
+04:05.600 --> 04:09.280
+So these ones are actually more useful in my opinion.
+
+04:09.280 --> 04:16.680
+And then we're going to install the plugin as well for it, for ESLint specifically.
+
+04:16.680 --> 04:24.480
+And again 559.13 and 559.7 are the versions I'm using.
+
+04:24.480 --> 04:26.780
+Awesome.
+
+04:26.780 --> 04:31.160
+Let's go modify our ESLint config here.
+
+04:31.160 --> 04:36.240
+Put that there and then...
+
+04:36.240 --> 04:38.360
+So we're going to import at the top.
+
+04:38.360 --> 04:51.480
+Import plugin query from at tanstack ESLint plugin query.
+
+04:51.480 --> 05:00.680
+And under the JSX runtime one here, we're just going to say dot dot dot plugin query
+
+05:00.680 --> 05:14.960
+dot configs flat slash recommended.
+
+05:14.960 --> 05:18.520
+I think I've complained about this style of config like seven times in this workshop,
+
+05:18.520 --> 05:20.140
+but hear me out one more time.
+
+05:20.140 --> 05:22.840
+This is just nonsensical looking, right?
+
+05:22.840 --> 05:27.320
+Some of them are spread, some of them are not.
+
+05:27.320 --> 05:32.320
+It's hard to keep track of in my opinion.
+
+05:32.320 --> 05:37.800
+Frankly I spent a lot of time getting it right before this course, right?
+
+05:37.800 --> 05:42.240
+Anyway, that was my problem but not yours, but your future problem.
+
+05:42.240 --> 05:44.720
+So maybe we can commiserate.
+
+05:44.720 --> 05:46.380
+All right.
+
+05:46.380 --> 05:48.160
+So that should work.
+
+05:48.160 --> 05:52.720
+I mean it's always good to just give her an old npm run lint just to make sure that something
+
+05:52.720 --> 05:53.720
+broke.
+
+05:54.720 --> 05:58.920
+All right.
+
+05:58.920 --> 06:02.840
+So let's make sure that I got this right.
+
+06:02.840 --> 06:06.120
+Plugin query dot configs with an s.
+
+06:06.120 --> 06:11.520
+Right there.
+
+06:11.520 --> 06:14.360
+So I had config, it's configs.
+
+06:14.360 --> 06:15.360
+Let's try that again.
+
+06:15.360 --> 06:18.360
+There we go.
+
+06:18.360 --> 06:19.360
+Okay.
+
+06:19.360 --> 06:20.360
+Good.
+
+06:21.000 --> 06:26.000
+My dev server running again.
+
+06:26.000 --> 06:32.600
+All righty.
+
+06:32.600 --> 06:35.800
+So let's go ahead and add our dev tools.
+
+06:35.800 --> 06:36.800
+Might be fun.
+
+06:36.800 --> 06:39.500
+Could be cute.
+
+06:39.500 --> 06:49.000
+So we're going to root dot jsx and here at the top we're going to just under, I don't
+
+06:49.000 --> 07:03.800
+know, wherever you want to under here import react query dev tools like that from at tan
+
+07:03.800 --> 07:07.880
+stack react query dev tools.
+
+07:07.880 --> 07:10.480
+Okay.
+
+07:10.480 --> 07:12.480
+And then I just put it like here.
+
+07:12.480 --> 07:15.240
+It doesn't really matter but we'll just put it like right there.
+
+07:15.240 --> 07:18.760
+React query dev tools.
+
+07:18.760 --> 07:25.320
+Like that.
+
+07:25.320 --> 07:27.720
+Some of these dev tools things are just popping up now.
+
+07:27.720 --> 07:33.360
+You'll end up like, because I think there's like a versell one and a next js one and I
+
+07:33.360 --> 07:36.800
+think react toolkit might have one.
+
+07:36.800 --> 07:39.720
+So you can have like seven sets of dev tools in your app.
+
+07:39.720 --> 07:46.680
+It's going to end up being like those old school web 2.0 browsers that have 17 ads that
+
+07:46.680 --> 07:51.400
+all pop up but it's going to be just dev tools everywhere.
+
+07:51.400 --> 07:53.480
+Can't decide if that's utopian or dystopian.
+
+07:53.480 --> 07:55.480
+I think the answer is both.
+
+07:55.480 --> 07:56.480
+Okay.
+
+07:56.480 --> 07:59.480
+So now we have dev tools in there.
+
+07:59.480 --> 08:04.320
+I think if you just look at your app now, oh, yeah.
+
+08:04.320 --> 08:08.760
+So it's mad that we still haven't put the actual react query library in yet.
+
+08:08.800 --> 08:12.000
+It's like I'm looking for something to hook onto and I can't find it yet.
+
+08:12.000 --> 08:13.760
+So that's expected.
+
+08:13.760 --> 08:30.400
+So app.jsx we're going to have to import query client and query client provider from at tan
+
+08:30.400 --> 08:35.840
+stacked react query here.
+
+08:35.840 --> 08:39.040
+So those are the two things I'm importing here.
+
+08:39.040 --> 08:43.280
+We have the create router here and then we have to create underneath that a const query
+
+08:43.280 --> 08:52.640
+client equals new query client.
+
+08:52.640 --> 08:53.640
+There's some configurations.
+
+08:53.640 --> 08:56.240
+You can pass this.
+
+08:56.240 --> 09:03.600
+I don't remember what they are necessarily off the top of my head.
+
+09:03.600 --> 09:04.600
+You can pass it in.
+
+09:04.600 --> 09:07.040
+You can pre-fill the cache, which is kind of cool.
+
+09:07.040 --> 09:09.080
+Sorry, that's covering it.
+
+09:09.080 --> 09:15.120
+So let's say you have a bunch of requests that you know that the user is likely to make.
+
+09:15.120 --> 09:21.040
+In our example, let's say we could pre-fill this with the last 10 orders just knowing
+
+09:21.040 --> 09:24.560
+that that's the most likely orders that people are going to look at.
+
+09:24.560 --> 09:26.520
+You could pass that in and query cache.
+
+09:26.520 --> 09:29.120
+And so you can pre-cache these things, which is kind of cool.
+
+09:29.960 --> 09:34.200
+The reason why I really like that is now all of our API requests get to look normal.
+
+09:34.200 --> 09:37.120
+We don't have to say, all right, check the cache first and then make the API request.
+
+09:37.120 --> 09:38.880
+It's like, no, just make the call.
+
+09:38.880 --> 09:41.840
+Tan stack query is just be like, if I have it, I'll give it to you already.
+
+09:41.840 --> 09:45.160
+And if I don't have it, I'll go get it.
+
+09:45.160 --> 09:47.200
+Mutation cache is much the same.
+
+09:47.200 --> 09:51.840
+Mutations are like post requests where you're posting something to the API.
+
+09:51.840 --> 09:52.680
+You can cache that.
+
+09:52.680 --> 09:53.760
+That's a bit more weird.
+
+09:53.760 --> 09:59.480
+And then the default options here, queries, mutations, hydrate, dehydrate.
+
+09:59.480 --> 10:01.960
+There's a bunch of options around doing stuff like that.
+
+10:01.960 --> 10:05.120
+Those were just the TypeScript types, if that was confusing to anyone.
+
+10:05.120 --> 10:09.320
+You can just command click on things, and it'll take you to the TypeScript types.
+
+10:09.320 --> 10:12.200
+I do that all the time just to, it's like, what does this do?
+
+10:12.200 --> 10:14.160
+Why does it do it this way?
+
+10:14.160 --> 10:17.760
+Sometimes the types can help.
+
+10:17.760 --> 10:19.960
+OK, so we have that.
+
+10:19.960 --> 10:26.480
+Now we have to put it, we have to give it to the app with the query client provider.
+
+10:26.480 --> 10:32.600
+Client equals query client.
+
+10:32.600 --> 10:34.160
+And we'll just do it like that.
+
+10:39.920 --> 10:41.760
+There we go.
+
+10:41.760 --> 10:44.000
+So now, if you look at our page, it's loading again.
+
+10:44.000 --> 10:49.520
+And you can see we have this nice little palm tree down in the corner.
+
+10:49.520 --> 10:51.600
+It's very tropical.
+
+10:51.600 --> 10:52.800
+And you click on that.
+
+10:52.800 --> 10:55.760
+We're not using it yet, so our dev tools are vacant.
+
+10:55.760 --> 10:58.360
+But stuff will start showing up here, which is kind of cool.
+

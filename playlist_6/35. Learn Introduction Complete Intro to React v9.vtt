@@ -1,0 +1,848 @@
+WEBVTT
+
+00:00.280 --> 00:03.080
+Uncontrolled forms.
+
+00:03.080 --> 00:05.880
+Not just from when you feel out of control of your life,
+
+00:06.880 --> 00:08.760
+we're gonna talk about some uncontrolled forms.
+
+00:08.760 --> 00:12.280
+I alluded to it a little bit on this create order page
+
+00:12.280 --> 00:15.340
+that we have controlled inputs here, right?
+
+00:16.520 --> 00:19.200
+That we're actually explicitly using the value
+
+00:19.200 --> 00:20.040
+and we're setting it,
+
+00:20.040 --> 00:22.480
+and we're using hooks to track everything.
+
+00:22.480 --> 00:24.320
+As you might imagine, that's called a controlled form
+
+00:24.320 --> 00:27.080
+because we're using React to explicitly control the input
+
+00:27.080 --> 00:28.800
+and the output of the form.
+
+00:28.800 --> 00:32.120
+I will say that this is more unusual.
+
+00:32.120 --> 00:33.360
+I would say usually you wanna do
+
+00:33.360 --> 00:35.080
+what's called an uncontrolled form,
+
+00:35.080 --> 00:37.360
+which is basically like let the form,
+
+00:37.360 --> 00:40.560
+let the browser just handle all of the form stuff for you
+
+00:40.560 --> 00:42.920
+and only listen for submit events.
+
+00:42.920 --> 00:44.200
+This is pretty easy for us
+
+00:44.200 --> 00:45.560
+to just kind of knock out really quick,
+
+00:45.560 --> 00:47.200
+so let's go ahead and go do that.
+
+00:49.120 --> 00:51.600
+I'm also wanted to show you how to do a post
+
+00:51.600 --> 00:54.160
+or a mutation with 10-stack query,
+
+00:54.160 --> 00:58.120
+so we'll knock out both of those birds with one stone.
+
+00:59.520 --> 01:04.520
+Okay, so inside of your API directory,
+
+01:06.040 --> 01:08.040
+we're gonna make a gets pass orders.
+
+01:08.040 --> 01:08.880
+No, I'm just kidding.
+
+01:08.880 --> 01:13.880
+We're gonna make a post contact file here,
+
+01:16.840 --> 01:19.720
+and it's gonna be export default
+
+01:19.720 --> 01:24.000
+async function post contact.
+
+01:24.000 --> 01:27.160
+Takes in name, email, and message.
+
+01:29.440 --> 01:34.440
+And contact response equals await fetch.
+
+01:40.280 --> 01:43.720
+And we're gonna post to slash API slash contact.
+
+01:46.440 --> 01:49.080
+And we have to give it some more configuration here,
+
+01:49.080 --> 01:51.360
+so we have to give it a method,
+
+01:51.360 --> 01:55.600
+which is going to be post headers.
+
+01:55.600 --> 01:58.760
+As we learned before, definitely S headers.
+
+01:59.680 --> 02:04.680
+We're doing content type, application slash JSON,
+
+02:07.440 --> 02:12.440
+and the body is going to be JSON.stringify,
+
+02:14.920 --> 02:17.920
+name, email, and message.
+
+02:18.960 --> 02:20.120
+So if this is not apparent yet,
+
+02:20.120 --> 02:21.640
+we're gonna make a contact form, right,
+
+02:21.640 --> 02:24.440
+where someone can go in and put name, email,
+
+02:24.440 --> 02:29.440
+and message, and then we will spam them with emails.
+
+02:29.640 --> 02:34.640
+It's kind of my plan here in Brian's Capitalism 101.
+
+02:35.160 --> 02:37.360
+So if the response is not okay,
+
+02:39.520 --> 02:41.240
+then we'll just throw an error.
+
+02:44.480 --> 02:46.760
+This is how you wanna handle this, actually,
+
+02:46.760 --> 02:50.080
+because that way TanStack query
+
+02:50.080 --> 02:51.480
+will actually catch the error for you,
+
+02:51.480 --> 02:55.000
+and then it'll set the isError property to be true,
+
+02:55.000 --> 02:57.400
+and then you can handle that appropriately, right?
+
+03:04.720 --> 03:09.720
+And then return response.json.
+
+03:10.400 --> 03:15.400
+So this is an async function,
+
+03:15.800 --> 03:17.720
+so it always returns a promise.
+
+03:17.720 --> 03:19.120
+I think we talked about that earlier,
+
+03:19.120 --> 03:21.960
+that async functions always return.
+
+03:21.960 --> 03:24.560
+So what we could have done here is it said like,
+
+03:28.040 --> 03:31.800
+const JSON equals response.json and return JSON.
+
+03:31.800 --> 03:33.040
+That's typically what I've done,
+
+03:33.040 --> 03:34.440
+but I got this code from TanStack query,
+
+03:34.440 --> 03:35.920
+and they do it this way.
+
+03:35.920 --> 03:38.520
+And it's because if you return a promise,
+
+03:38.520 --> 03:39.880
+then it does something called promise chaining
+
+03:39.880 --> 03:41.080
+that none of you ever have to think
+
+03:41.080 --> 03:42.680
+about that term ever again,
+
+03:42.680 --> 03:44.120
+but that's what it is called,
+
+03:44.120 --> 03:45.240
+where you basically do like promise,
+
+03:45.240 --> 03:47.160
+then this, then this, then this, then this,
+
+03:47.160 --> 03:48.320
+and so if you return a promise,
+
+03:48.320 --> 03:51.960
+it implicitly chains that promise to the current promise.
+
+03:55.240 --> 03:56.360
+Not that that really matters for you,
+
+03:56.360 --> 03:58.680
+but that's why it's okay that we're not awaiting here,
+
+03:58.680 --> 04:03.400
+because you could do it to return await response.json,
+
+04:04.840 --> 04:06.440
+but you don't need to,
+
+04:06.440 --> 04:08.440
+and it doesn't really make a difference.
+
+04:11.640 --> 04:14.160
+Again, stuff you just don't really have to care about.
+
+04:14.160 --> 04:16.920
+Okay, so let's go to index.lazy.jsx.
+
+04:18.600 --> 04:21.600
+I feel like most of the stuff I learn from stuff like this
+
+04:21.600 --> 04:23.000
+is like, I'll look at a lot of lines,
+
+04:23.000 --> 04:24.760
+and I'll be like, why the hell does that work that way?
+
+04:24.760 --> 04:26.520
+And then I'll get like way too deep into it.
+
+04:26.520 --> 04:28.440
+That's how I found that one.
+
+04:28.440 --> 04:32.520
+Okay, index.lazy.jsx.
+
+04:32.520 --> 04:34.360
+We're gonna make a contact form,
+
+04:34.360 --> 04:36.840
+so we'll just make another one of these li's
+
+04:36.840 --> 04:37.840
+with a link into it.
+
+04:37.840 --> 04:40.280
+This is gonna go to contact,
+
+04:40.280 --> 04:42.600
+and we're gonna put it like a contact us
+
+04:42.600 --> 04:43.600
+or something like that.
+
+04:43.760 --> 04:46.760
+Okay, and then we're gonna go make a new route here.
+
+04:48.280 --> 04:53.280
+So this is gonna be contact.lazy.jsx.
+
+04:54.520 --> 04:59.520
+Get a nice little stub here from 10-stack router.
+
+05:02.280 --> 05:03.640
+So that's all good.
+
+05:03.640 --> 05:05.200
+We need import,
+
+05:06.760 --> 05:07.880
+use,
+
+05:07.880 --> 05:10.880
+and then we're gonna make a new route here.
+
+05:10.960 --> 05:11.800
+Import,
+
+05:13.360 --> 05:14.760
+use mutation
+
+05:17.200 --> 05:19.000
+from 10-stack React query,
+
+05:19.000 --> 05:24.000
+and we need our postcontact from postcontact.
+
+05:24.400 --> 05:25.640
+There we go.
+
+05:25.640 --> 05:27.680
+And then we're gonna make a function called
+
+05:27.680 --> 05:31.040
+contact route or page or whatever you wanna call it.
+
+05:32.240 --> 05:34.240
+And we'll just put that up here.
+
+05:37.760 --> 05:40.560
+Okay, now we have our React component.
+
+05:40.560 --> 05:42.400
+So now we're gonna do a mutation,
+
+05:42.400 --> 05:46.200
+which is just a fun way of saying a post
+
+05:46.200 --> 05:48.160
+or a put or a patch or something like that,
+
+05:48.160 --> 05:50.120
+but it's changing something.
+
+05:50.120 --> 05:52.600
+A query is, in theory, you can call the query
+
+05:52.600 --> 05:53.680
+as many times as you want.
+
+05:53.680 --> 05:54.880
+It doesn't change anything, right?
+
+05:54.880 --> 05:57.520
+It's just getting data back from the API.
+
+05:57.520 --> 06:00.280
+And a mutation, you don't wanna call that
+
+06:00.280 --> 06:01.360
+like a bunch of different times
+
+06:01.360 --> 06:03.360
+because it could be semantically different
+
+06:03.360 --> 06:05.800
+depending on if you do it multiple times, right?
+
+06:06.680 --> 06:08.160
+I don't wanna get into the intricacies of REST
+
+06:08.160 --> 06:10.640
+because, again, it is one of the dumbest things
+
+06:10.640 --> 06:12.360
+that people argue about.
+
+06:12.360 --> 06:15.440
+It's like, should this be a put or should this be a patch
+
+06:15.440 --> 06:16.560
+or should this be a post?
+
+06:16.560 --> 06:18.120
+And my answer to that is it doesn't matter,
+
+06:18.120 --> 06:19.760
+just write the API, right?
+
+06:19.760 --> 06:21.840
+Who cares?
+
+06:21.840 --> 06:24.800
+So 10-stack kind of wraps all these things
+
+06:24.800 --> 06:26.720
+into the put, patch, delete,
+
+06:26.720 --> 06:28.520
+all that kind of stuff into a mutation, right?
+
+06:28.520 --> 06:31.360
+It's something that's changing on the server side.
+
+06:32.360 --> 06:37.360
+So const mutation equals use mutation.
+
+06:40.360 --> 06:45.360
+Here a mutation function, function ee.preventDefault, right?
+
+06:46.520 --> 06:49.160
+Because we're gonna use this as a form submit.
+
+06:50.720 --> 06:52.800
+So we'll have a preventDefault.
+
+06:52.800 --> 06:54.160
+We're gonna grab the form data.
+
+06:54.160 --> 06:57.320
+So we're gonna say that by const form data
+
+06:57.320 --> 07:00.200
+equals new form data.
+
+07:00.200 --> 07:05.120
+Form data is a browser API.
+
+07:05.120 --> 07:08.440
+So this comes from the browser, doesn't come from React.
+
+07:08.440 --> 07:10.840
+And we're gonna say ee.target.
+
+07:10.840 --> 07:12.480
+ee.target in this particular case,
+
+07:12.480 --> 07:15.480
+because this is gonna be a submit event from a form,
+
+07:15.480 --> 07:17.680
+ee.target will be what?
+
+07:17.680 --> 07:18.960
+The form, right?
+
+07:18.960 --> 07:22.440
+So the form element will actually be the ee.target here.
+
+07:22.440 --> 07:24.280
+So when you do new form data like this,
+
+07:24.280 --> 07:26.240
+it's going to then pull all this out
+
+07:26.240 --> 07:28.240
+into this form data object.
+
+07:28.280 --> 07:31.000
+And we can now pull all of the information out of the form
+
+07:31.000 --> 07:32.880
+using this form data API.
+
+07:35.000 --> 07:40.000
+Okay, and then we're gonna return post contact,
+
+07:43.000 --> 07:44.000
+form data.getName.
+
+07:49.600 --> 07:50.920
+And we're gonna do that three times,
+
+07:50.920 --> 07:55.920
+once for email and once for message.
+
+07:56.760 --> 08:00.040
+Just to make sure we got this right,
+
+08:00.040 --> 08:02.480
+we're gonna look in post contact is name,
+
+08:04.760 --> 08:07.160
+name, email, message.
+
+08:08.520 --> 08:10.760
+Get rid of that, don't save.
+
+08:10.760 --> 08:15.760
+And to look again in contact, name, email, message, right?
+
+08:16.160 --> 08:19.520
+It's gotta make sure that the things get put in there
+
+08:19.520 --> 08:20.400
+in the right order.
+
+08:20.400 --> 08:24.280
+Now we have this mutation function or a hook
+
+08:24.280 --> 08:25.440
+that we can call.
+
+08:27.240 --> 08:28.240
+I don't wanna call that a hook,
+
+08:28.240 --> 08:31.040
+but it's like the result of a hook.
+
+08:31.040 --> 08:32.440
+This would be an object of some variety.
+
+08:32.440 --> 08:33.280
+What do they call it?
+
+08:33.280 --> 08:36.840
+It's a use mutation result is the name of the type.
+
+08:38.280 --> 08:40.600
+And now this doesn't get called every time
+
+08:40.600 --> 08:41.880
+like query does, right?
+
+08:41.880 --> 08:43.880
+It actually waits for you to invoke it.
+
+08:44.920 --> 08:47.840
+So let's go check out how you do that.
+
+08:47.840 --> 08:50.280
+Let's go start building our markup for the page.
+
+08:51.120 --> 08:53.480
+We're gonna say return here
+
+08:53.480 --> 08:56.840
+and we'll start building our contact page.
+
+08:58.400 --> 09:02.280
+Okay, H2, this is a contact.
+
+09:04.040 --> 09:08.040
+And then we're gonna say if the mutation is successful,
+
+09:10.400 --> 09:14.240
+so if they successfully click submit my contact,
+
+09:14.240 --> 09:15.920
+we don't wanna just leave them on the contact page,
+
+09:15.920 --> 09:18.320
+we wanna do something else, right?
+
+09:18.320 --> 09:21.040
+So we're gonna say is success.
+
+09:23.160 --> 09:28.160
+And if it is successful, then we're gonna say H3 submitted.
+
+09:32.360 --> 09:34.280
+In theory, you would have probably some nicer thing here
+
+09:34.280 --> 09:37.160
+would be like redirect them back to the homepage
+
+09:37.160 --> 09:38.040
+or something like that.
+
+09:38.040 --> 09:41.880
+But I don't know, let them do some work, let them earn it.
+
+09:43.080 --> 09:45.960
+Okay, so otherwise, if we're gonna show them the form
+
+09:45.960 --> 09:47.560
+of something that they can submit.
+
+09:48.920 --> 09:52.320
+So the form and then we're gonna say on submit,
+
+09:56.160 --> 09:59.040
+we're gonna say mutation dot,
+
+09:59.920 --> 10:02.480
+you're never gonna guess what the function's called.
+
+10:03.920 --> 10:04.840
+Mute, mutate.
+
+10:07.760 --> 10:12.760
+So whenever the submit happens, right?
+
+10:12.920 --> 10:14.320
+Either by someone hitting enter
+
+10:14.320 --> 10:16.000
+or hitting the submit button,
+
+10:16.000 --> 10:17.840
+it's going to call this function,
+
+10:17.840 --> 10:19.560
+which as you guessed is probably gonna go call
+
+10:19.560 --> 10:23.720
+the mutation function on this use mutation hook, right?
+
+10:26.480 --> 10:28.720
+But not before then, which is cool.
+
+10:28.720 --> 10:31.480
+All right, we're gonna put a couple inputs in here.
+
+10:31.480 --> 10:33.560
+Name equals name.
+
+10:35.840 --> 10:39.880
+We're gonna have one for placeholder equals name.
+
+10:42.320 --> 10:46.020
+And we'll have another one here for email.
+
+10:46.860 --> 10:51.780
+Email and it's good idea as well to put type equals email.
+
+10:51.780 --> 10:53.420
+That'll bring up the different keyboard
+
+10:53.420 --> 10:56.900
+in iOS and Android, right?
+
+10:56.900 --> 10:59.300
+And it also do some basic validations
+
+10:59.300 --> 11:01.140
+like is this a valid email?
+
+11:01.140 --> 11:01.980
+Yeah.
+
+11:01.980 --> 11:05.900
+Why is it for us calling a mutation dot mutate?
+
+11:05.900 --> 11:08.620
+Why does that automatically go to mutate dot function
+
+11:08.620 --> 11:12.300
+and not us calling mutate dot mutate function?
+
+11:12.300 --> 11:13.500
+It's a good question.
+
+11:13.500 --> 11:18.500
+So this is not directly calling the use mutation function
+
+11:19.260 --> 11:22.980
+here, it's actually calling something else
+
+11:22.980 --> 11:24.060
+inside of TanStack query,
+
+11:24.060 --> 11:25.820
+which is doing a bunch of other stuff first
+
+11:25.820 --> 11:27.820
+and then it calls your function.
+
+11:27.820 --> 11:28.660
+Yeah.
+
+11:28.660 --> 11:29.480
+So this is just saying like,
+
+11:29.480 --> 11:31.580
+hey, whenever you're ready, call this function.
+
+11:31.580 --> 11:32.580
+This is the function that I've made
+
+11:32.580 --> 11:34.340
+to actually call the API.
+
+11:34.340 --> 11:35.820
+But there's some other machinery
+
+11:35.820 --> 11:37.460
+that it has to take care of first.
+
+11:37.460 --> 11:38.500
+That makes sense?
+
+11:38.500 --> 11:39.320
+Cool.
+
+11:39.320 --> 11:40.160
+Good question.
+
+11:41.160 --> 11:43.880
+Okay, so that's the inputs that we're on.
+
+11:43.880 --> 11:45.160
+So email, email, email.
+
+11:45.160 --> 11:48.040
+The placeholder, we should probably make these capital
+
+11:48.040 --> 11:50.640
+because we're not savages.
+
+11:50.640 --> 11:51.480
+All right.
+
+11:51.480 --> 11:55.080
+And then we'll have a text area underneath this.
+
+11:58.840 --> 12:03.080
+Placeholder equals message
+
+12:05.480 --> 12:08.360
+and name equals message
+
+12:09.200 --> 12:11.080
+and that's good for that.
+
+12:11.080 --> 12:12.240
+And then we just want a button at the end of this
+
+12:12.240 --> 12:17.240
+that says submit button, submit.
+
+12:17.800 --> 12:19.560
+If you really want to get explicit here,
+
+12:19.560 --> 12:22.060
+you can say type equals submit,
+
+12:24.160 --> 12:25.000
+but you don't need to,
+
+12:25.000 --> 12:27.200
+that's implicit on buttons, right?
+
+12:29.260 --> 12:30.480
+But that's up to you.
+
+12:34.920 --> 12:37.200
+And cool.
+
+12:37.200 --> 12:38.040
+All right.
+
+12:38.040 --> 12:40.140
+I think this is pretty close to good to go.
+
+12:42.080 --> 12:43.520
+We'll just refresh the page here.
+
+12:43.520 --> 12:47.580
+We'll go to Padre Gino's, contact us.
+
+12:48.820 --> 12:52.320
+Nice looking little contact form we've built out here.
+
+12:52.320 --> 12:54.800
+So we're gonna put Brian.
+
+12:54.800 --> 12:59.720
+We'll put Brian at example.com.
+
+12:59.720 --> 13:04.720
+And why do you have snake?
+
+13:07.880 --> 13:09.540
+Fish, pizza.
+
+13:11.680 --> 13:12.680
+This is disturbing.
+
+13:17.200 --> 13:19.720
+This is probably from the FBI.
+
+13:19.720 --> 13:24.280
+So we should be able to submit this now, submitted.
+
+13:24.280 --> 13:29.280
+And if we go look at your, you can see right there.
+
+13:29.400 --> 13:32.140
+This is now being logged in our API server.
+
+13:33.640 --> 13:36.260
+And like all customer contact forms,
+
+13:36.260 --> 13:38.060
+it just gets logged and then ignored.
+
+13:40.060 --> 13:41.940
+But the point being here is one,
+
+13:41.940 --> 13:43.580
+we did the mutation with 10 stack query,
+
+13:43.580 --> 13:44.980
+which is pretty cool.
+
+13:44.980 --> 13:46.860
+And we also did uncontrolled forms,
+
+13:46.860 --> 13:50.140
+which I'm gonna say there's no reason
+
+13:50.140 --> 13:52.100
+that we would need to necessarily like
+
+13:52.100 --> 13:54.500
+keep track of everything in a hook here, right?
+
+13:54.500 --> 13:55.340
+Cause we're not doing anything
+
+13:55.340 --> 13:56.500
+that's kind of reactive to that.
+
+13:56.500 --> 14:00.180
+We're not doing like any sort of like type ahead or like
+
+14:00.180 --> 14:03.020
+in the previous course, I did one with like pet adoption.
+
+14:03.020 --> 14:06.180
+So you would set like the cat to be the type of animal.
+
+14:07.020 --> 14:08.100
+And then you'd have to repopulate the breed list.
+
+14:08.100 --> 14:11.380
+So it's reactive to what's happening in the first dropdown.
+
+14:11.380 --> 14:13.380
+Also known as the double dropdown problem.
+
+14:15.380 --> 14:17.140
+That one you have to do a controlled form
+
+14:17.140 --> 14:19.900
+because you have to react to the first one, right?
+
+14:19.900 --> 14:22.100
+You have to repopulate the breed dropdown list
+
+14:22.100 --> 14:24.740
+based on what's in the first dropdown.
+
+14:24.740 --> 14:26.740
+But this one, you're just gathering all the form data
+
+14:26.740 --> 14:28.100
+and you're submitting it somewhere.
+
+14:28.100 --> 14:30.300
+Uncontrolled form is how you wanna do that.
+

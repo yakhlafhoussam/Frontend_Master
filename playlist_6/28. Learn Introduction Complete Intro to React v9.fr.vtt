@@ -1,0 +1,900 @@
+WEBVTT
+
+
+00:00.000 --> 00:02.200
+Dans notre répertoire ici,
+
+00:02.200 --> 00:04.900
+à l'intérieur de notre répertoire source en dehors des routes,
+
+00:04.900 --> 00:08.120
+créez un autre dossier appelé API.
+
+00:09.040 --> 00:11.760
+C'est juste quelque chose que je fais,
+
+00:11.760 --> 00:13.680
+pas même juste une chose spécifique à React,
+
+00:13.680 --> 00:16.520
+cela concerne beaucoup de choses.
+
+00:16.520 --> 00:18.040
+Je vais écrire ma requête API, c'est comme
+
+00:18.040 --> 00:22.320
+petites fonctions individuelles,
+
+00:22.320 --> 00:24.600
+et ensuite je les importerai pour les utiliser plus tard,
+
+00:24.600 --> 00:26.800
+et cela fonctionne très bien avec la requête Tamstack.
+
+00:26.800 --> 00:28.480
+Vous n'êtes pas obligé de procéder de cette façon.
+
+00:28.600 --> 00:29.600
+Je vais juste te montrer le chemin
+
+00:29.600 --> 00:32.800
+que je procéderais généralement à la structuration de cela.
+
+00:32.800 --> 00:37.800
+Donc à l'intérieur de cela, créez un fichier et appelez-le getPastOrders,
+
+00:40.480 --> 00:43.240
+et appelez-le .js, .jsx.
+
+00:43.240 --> 00:44.720
+Je pense que dans mes notes j'ai un .js,
+
+00:44.720 --> 00:46.680
+nous nous en tiendrons à cela, cela n'a pas d'importance.
+
+00:46.680 --> 00:51.680
+Exporter la fonction asynchrone par défaut getPastOrders,
+
+00:55.200 --> 00:56.560
+et ça prend une page,
+
+00:56.560 --> 00:58.120
+parce que c'est paginé, non ?
+
+00:59.120 --> 01:03.680
+La réponse Const est égale à wait fetch,
+
+01:03.680 --> 01:07.800
+et ensuite cela ira à l'API slash
+
+01:08.780 --> 01:13.600
+réduire les commandes passées,
+
+01:13.600 --> 01:18.360
+page est égale à page.
+
+01:18.360 --> 01:19.400
+Ceci est une chaîne de modèle,
+
+01:19.400 --> 01:21.240
+alors assurez-vous d'utiliser des graduations arrière ici,
+
+01:21.240 --> 01:23.080
+quel est celui à côté de celui
+
+01:23.080 --> 01:24.520
+sur la même clé que le tilde.
+
+01:27.000 --> 01:28.880
+Et puis cela mettra dans la page,
+
+01:28.880 --> 01:30.120
+quoi qu'on ait là,
+
+01:31.000 --> 01:36.000
+et ensuite nous dirons que const data est égal à wait
+
+01:37.520 --> 01:41.960
+réponse.json et renvoie les données.
+
+01:42.840 --> 01:44.040
+Assez simple ici,
+
+01:44.040 --> 01:46.360
+ça va aller vers l'API,
+
+01:46.360 --> 01:47.560
+tu vas lui donner une page,
+
+01:47.560 --> 01:49.120
+ça va appeler les commandes passées,
+
+01:49.120 --> 01:51.120
+ça va lui donner une page,
+
+01:51.120 --> 01:53.320
+et ensuite vous allez récupérer des données à partir de cela.
+
+01:53.320 --> 01:54.320
+Donc ça va être juste une promesse
+
+01:54.320 --> 01:57.400
+qui finit par vous restituer les données des commandes passées
+
+01:57.400 --> 01:58.320
+basé sur une page.
+
+02:00.640 --> 02:02.320
+D'accord, cool.
+
+02:02.320 --> 02:04.480
+Revenons à
+
+02:06.640 --> 02:08.200
+passé.lazy.jsx.
+
+02:11.480 --> 02:12.680
+Ouais, une chose que j'allais dire
+
+02:12.680 --> 02:15.400
+à propos de la fonction getPastOrders ici,
+
+02:15.400 --> 02:17.520
+c'est-à-dire que nous allons l'utiliser avec une requête à 10 piles,
+
+02:17.520 --> 02:20.160
+mais évidemment, vous pouvez l'utiliser n'importe où, n'est-ce pas ?
+
+02:20.160 --> 02:22.020
+Cela n'a pas besoin d'être utilisé avec une requête à 10 piles,
+
+02:22.020 --> 02:25.780
+cela pourrait être utilisé dans un effet, non ?
+
+02:25.780 --> 02:28.540
+Ou lors de vos tests, ou tout ce que vous voulez, n'est-ce pas ?
+
+02:28.540 --> 02:29.900
+C'est bien de résumer la logique
+
+02:29.900 --> 02:33.860
+en quelque sorte comme de petites informations réutilisables.
+
+02:33.860 --> 02:37.740
+Past.lazy.jsx, allons créer ce composant ici.
+
+02:38.940 --> 02:40.700
+Je vais donc créer une fonction ici,
+
+02:40.700 --> 02:44.900
+ça va s'appeler route des commandes passées,
+
+02:47.180 --> 02:51.340
+et je vais appeler cela la route des commandes juste après,
+
+02:51.340 --> 02:52.180
+juste comme ça.
+
+02:54.420 --> 02:55.940
+Celui-là, je ressemble un peu plus,
+
+02:55.940 --> 02:57.660
+J'aime avoir la fonction nommée ici,
+
+02:57.660 --> 02:59.460
+c'est pourquoi je ne le dis pas directement
+
+02:59.460 --> 03:01.000
+ici en composant.
+
+03:01.000 --> 03:03.940
+Avoir sur quelle page cela s'est produit dans votre trace de pile
+
+03:03.940 --> 03:07.220
+a tendance à être plus utile, le plus souvent.
+
+03:07.220 --> 03:10.780
+Ici, nous allons importer l'état d'utilisation,
+
+03:10.780 --> 03:12.060
+que nous allons utiliser pour encapsuler
+
+03:12.060 --> 03:16.140
+la page sur laquelle nous nous trouvons depuis React.
+
+03:16.140 --> 03:18.440
+Nous allons importer ce merveilleux nouveau crochet
+
+03:18.440 --> 03:23.440
+appelé utiliser la requête à partir de la requête React de la pile tan,
+
+03:26.480 --> 03:31.480
+et nous allons importer les commandes passées
+
+03:33.080 --> 03:35.180
+à partir de l'API, récupérez les commandes passées.
+
+03:38.200 --> 03:40.400
+D'accord, cela s'occupe de ça.
+
+03:40.400 --> 03:44.040
+Nous allons avoir un crochet ici pour la page.
+
+03:44.040 --> 03:47.360
+Page d'ensemble de pages, qui devrait vous sembler familière.
+
+03:47.400 --> 03:50.920
+Égal à l'état d'utilisation, et nous les commencerons à la première page.
+
+03:54.920 --> 03:59.920
+Et const est en cours de chargement et les données sont égales à la requête d'utilisation.
+
+04:06.320 --> 04:07.600
+Donc quelques choses ici.
+
+04:07.600 --> 04:09.780
+Nous devons lui donner une clé de requête.
+
+04:12.360 --> 04:16.160
+C'est un tableau, et c'est comme :
+
+04:16.200 --> 04:18.240
+combien d’entre vous ont déjà utilisé Redis auparavant ?
+
+04:18.240 --> 04:20.000
+Je demande probablement à la mauvaise personne ici.
+
+04:21.280 --> 04:24.040
+Mais Redis fonctionne à peu près de la même manière
+
+04:24.040 --> 04:25.760
+que vous donnez en quelque sorte ces clés de requête,
+
+04:25.760 --> 04:28.600
+et c'est comme comment il le stocke dans le cache, n'est-ce pas ?
+
+04:28.600 --> 04:29.640
+Et puis plus tard, tu pourras dire,
+
+04:29.640 --> 04:32.680
+hé, je cherche les commandes passées,
+
+04:32.680 --> 04:35.240
+et puis je cherche la page, non ?
+
+04:35.240 --> 04:37.520
+C'est une chose unique à cette requête
+
+04:37.520 --> 04:38.920
+pour qu'il sache plus tard quand ça se passera comme,
+
+04:38.920 --> 04:41.320
+hé, je recherche les commandes passées, page deux,
+
+04:41.320 --> 04:43.080
+ça va être comme, j'ai déjà vu ça,
+
+04:43.080 --> 04:46.080
+voilà, ou je n'ai jamais vu ça auparavant,
+
+04:46.560 --> 04:47.840
+ou autre chose que tu peux dire comme,
+
+04:47.840 --> 04:50.780
+J'ai déjà vu ça, mais mon cache est obsolète,
+
+04:50.780 --> 04:52.720
+donc je vais aller le chercher à nouveau, non ?
+
+04:53.920 --> 04:55.240
+C'est à cela que sert cette clé de requête.
+
+04:55.240 --> 05:00.240
+C'est pour le nom de la clé dans le cache.
+
+05:01.400 --> 05:02.740
+Et si Redis vous intéresse,
+
+05:02.740 --> 05:04.280
+Redis fonctionne à peu près de la même manière.
+
+05:07.140 --> 05:09.740
+D'accord, vous allez lui donner une fonction de requête,
+
+05:11.740 --> 05:13.240
+et tu vas juste dire,
+
+05:13.240 --> 05:17.900
+très bien, rends-moi, récupère les commandes passées avec page.
+
+05:21.680 --> 05:23.500
+Et puis le temps périmé,
+
+05:25.160 --> 05:27.660
+Je pense que je lui ai donné un temps périmé de 30 secondes.
+
+05:29.220 --> 05:30.960
+Pourquoi un délai si court ?
+
+05:30.960 --> 05:32.280
+Au fait, c'est en millisecondes.
+
+05:32.280 --> 05:33.440
+c'est pourquoi c'est 30 000.
+
+05:33.440 --> 05:35.540
+Très bien, alors imagine que tu es une pizzeria,
+
+05:35.540 --> 05:38.800
+et vous regardez les commandes passées,
+
+05:38.800 --> 05:40.860
+et c'est ainsi que vous préparez vos commandes.
+
+05:40.860 --> 05:43.260
+Vous voulez que ce soit assez à jour, n'est-ce pas ?
+
+05:43.260 --> 05:47.060
+Parce que vous voulez voir les commandes au fur et à mesure qu’elles arrivent.
+
+05:47.060 --> 05:49.480
+Donc je l'ai fait expirer toutes les 30 secondes
+
+05:49.480 --> 05:51.500
+afin que vous puissiez toujours être garanti toutes les 30 secondes,
+
+05:51.500 --> 05:53.260
+tu en as un nouveau,
+
+05:55.320 --> 05:58.840
+un jeu de mots est prévu là, regardez les pizzas, non ?
+
+05:59.940 --> 06:02.380
+Mais si vous faites plusieurs allers-retours,
+
+06:02.380 --> 06:04.100
+vous ne voulez pas simplement marteler l'API, n'est-ce pas ?
+
+06:04.100 --> 06:04.940
+Il est donc logique que vous ayez
+
+06:04.940 --> 06:07.820
+un peu de temps de cache là-bas.
+
+06:07.820 --> 06:09.900
+Donc 30 secondes me semblaient justes,
+
+06:09.900 --> 06:12.460
+mais c'est comme ça que tu l'ajusterais, non ?
+
+06:12.460 --> 06:13.300
+Il y a d'autres choses, en fait,
+
+06:13.300 --> 06:14.620
+l'un d'entre eux que nous sommes sur le point de faire,
+
+06:14.620 --> 06:16.560
+on va se cacher pendant une journée entière,
+
+06:16.560 --> 06:19.840
+parce que les commandes passées ne changent pas,
+
+06:19.840 --> 06:22.900
+et nous n'avons pas vraiment besoin de les actualiser très souvent.
+
+06:24.700 --> 06:26.460
+Tout dépend donc de vos besoins.
+
+06:28.380 --> 06:30.660
+La mise en cache en général est tout simplement difficile.
+
+06:30.660 --> 06:33.260
+Il est difficile de déterminer combien de temps les choses devraient durer.
+
+06:33.260 --> 06:35.900
+Donc une sorte de supposition et de vérification du genre de situation.
+
+06:37.640 --> 06:39.860
+Si je devais deviner, comme la plupart des bugs majeurs,
+
+06:40.860 --> 06:42.760
+tout au long de ma carrière ont été causés par des problèmes de mise en cache.
+
+06:44.140 --> 06:44.980
+Est-ce juste de le dire ?
+
+06:44.980 --> 06:46.500
+Ouais, je pense que c'est assez juste de le dire.
+
+06:48.140 --> 06:50.080
+Très bien, donc si le chargement est en cours,
+
+06:50.080 --> 06:53.260
+c'est une autre bonne chose à propos de la requête React.
+
+06:53.260 --> 06:54.100
+Il y en a un tas.
+
+06:54.100 --> 06:59.100
+C'est comme si c'était un succès, c'était récupéré, c'était chargé, c'était mis en pause,
+
+06:59.300 --> 07:02.500
+en attente, il s'agit de données d'espace réservé, il s'agit d'une erreur de récupération.
+
+07:02.500 --> 07:05.700
+Ils vous donnent un tas de choses différentes ici.
+
+07:05.700 --> 07:08.640
+Vous pouvez aussi simplement récupérer le statut, je pense.
+
+07:08.640 --> 07:10.080
+C'est comme un type énuméré
+
+07:10.080 --> 07:12.120
+au lieu d'être comme un booléen, n'est-ce pas ?
+
+07:12.120 --> 07:13.360
+Vous pouvez donc également l'utiliser.
+
+07:13.360 --> 07:18.360
+Si David Korsheed était là, le gars qui fait X,
+
+07:18.400 --> 07:21.480
+il serait très heureux que vous puissiez en faire une machine d'État.
+
+07:21.480 --> 07:22.880
+Je ne vais pas en faire une machine à états
+
+07:22.880 --> 07:24.080
+parce que je ne suis pas un nerd.
+
+07:24.080 --> 07:25.000
+Ce n'est pas vrai.
+
+07:25.000 --> 07:26.160
+Je suis un nerd.
+
+07:26.160 --> 07:27.720
+Il est probablement moins ringard que moi,
+
+07:27.720 --> 07:31.160
+mais quand tu me trouves, David, ça va.
+
+07:31.160 --> 07:32.680
+Donc si c'est en cours de chargement,
+
+07:33.320 --> 07:38.320
+renvoyer le nom de la classe div est égal aux commandes de tableau de bord passées.
+
+07:43.280 --> 07:44.400
+Et nous aurons, encore une fois,
+
+07:44.400 --> 07:48.200
+mon expérience très, très utilisateur s'est concentrée sur le chargement ici.
+
+07:50.200 --> 07:51.680
+J'espère que vous comprenez que je suis facétieux ici.
+
+07:51.680 --> 07:53.280
+Vous devriez avoir un bien meilleur état de chargement
+
+07:53.280 --> 07:55.360
+que de simplement retourner charger ici,
+
+07:55.360 --> 07:57.160
+mais je ne voulais pas passer la moitié de notre temps
+
+07:57.160 --> 08:00.600
+créer des pages de chargement, c'est pourquoi nous faisons cela.
+
+08:01.120 --> 08:03.520
+Veuillez vous soucier davantage de vos utilisateurs que je ne me soucie de vous.
+
+08:03.520 --> 08:04.360
+Non, je plaisante.
+
+08:04.360 --> 08:07.200
+C'est une blague.
+
+08:07.200 --> 08:09.680
+Je me soucie profondément de chacun d’entre vous.
+
+08:12.840 --> 08:14.400
+Je me suis réveillé et j'ai choisi la violence aujourd'hui.
+
+08:14.400 --> 08:15.640
+Bon, c'est parti.
+
+08:15.640 --> 08:16.640
+Retour.
+
+08:16.640 --> 08:18.200
+Donc si ça ne se charge pas,
+
+08:18.200 --> 08:20.520
+alors nous pouvons supposer que nos commandes passées ont été chargées
+
+08:20.520 --> 08:22.520
+et nous pouvons juste faire une jolie petite table ici
+
+08:22.520 --> 08:24.680
+de toutes nos commandes passées.
+
+08:24.680 --> 08:25.960
+N'hésitez pas à y aller
+
+08:25.960 --> 08:27.760
+et copiez simplement toutes les balises ici,
+
+08:27.760 --> 08:28.920
+mais je vais l'écrire ici à la main
+
+08:28.920 --> 08:29.760
+si vous voulez suivre.
+
+08:29.880 --> 08:30.840
+C'est cool aussi.
+
+08:30.840 --> 08:33.360
+Nous n'avons eu aucun problème avec moi pour oublier les divs
+
+08:33.360 --> 08:34.200
+ou quelque chose comme ça,
+
+08:34.200 --> 08:37.120
+je suis donc convaincu que cette fois-ci, ce ne sera pas différent.
+
+08:39.120 --> 08:43.640
+Table, T-head, Thed, comme j'aime le dire.
+
+08:46.840 --> 08:51.840
+Ligne du tableau, définition du tableau, ID.
+
+08:51.840 --> 08:53.320
+Voici donc nos premières lignes.
+
+08:53.320 --> 08:55.160
+Ceci est une pièce d'identité.
+
+08:55.160 --> 08:56.600
+C'est un rendez-vous.
+
+08:56.600 --> 08:57.920
+C'est le moment.
+
+08:58.320 --> 08:59.520
+C'est le moment.
+
+09:01.240 --> 09:03.640
+OK, et puis hors du Thed,
+
+09:03.640 --> 09:06.280
+voilà le Tabati, comme on dit.
+
+09:10.960 --> 09:12.720
+Ensuite, nous dirons données.
+
+09:12.720 --> 09:14.280
+Nous allons obtenir une carte sur nos données
+
+09:14.280 --> 09:17.600
+et transformez-les en lignes.
+
+09:18.720 --> 09:20.040
+Ordre des cartes.
+
+09:23.880 --> 09:26.600
+Vous pouvez en faire un retour bla, n'est-ce pas,
+
+09:26.600 --> 09:27.720
+et utilisez des accolades là-bas,
+
+09:27.720 --> 09:30.120
+mais parce que je suis paresseux,
+
+09:30.120 --> 09:31.480
+si vous utilisez des parenthèses ici,
+
+09:31.480 --> 09:33.800
+vous pouvez utiliser le retour implicite.
+
+09:33.800 --> 09:35.080
+Je pense que je l'ai déjà utilisé ici,
+
+09:35.080 --> 09:36.960
+mais nous allons refaire ça ici.
+
+09:36.960 --> 09:40.680
+C'est pourquoi il s'agit d'une parenthèse au lieu d'une accolade.
+
+09:44.200 --> 09:45.960
+Et dans ce cas, au cas où vous vous poseriez la question,
+
+09:45.960 --> 09:47.880
+les parenthèses en elles-mêmes ne font rien.
+
+09:47.880 --> 09:49.960
+Cela signifie simplement continuer au rang suivant, n'est-ce pas ?
+
+09:49.960 --> 09:52.520
+C'est pourquoi les parenthèses finissent par être mises ici.
+
+09:54.640 --> 09:55.640
+Tu pourrais certainement faire quelque chose
+
+09:55.640 --> 09:57.840
+comme il suffit de mettre le truc directement sur la même ligne,
+
+09:57.840 --> 10:00.120
+mais cela a l'air plus joli, alors nous allons procéder de cette façon.
+
+10:01.200 --> 10:04.840
+Très bien, tr, nous devons lui donner une clé.
+
+10:08.760 --> 10:11.320
+Et une bonne clé pour cela est la commande, l’ID de commande.
+
+10:15.800 --> 10:19.680
+Ok, et puis td,
+
+10:20.560 --> 10:24.360
+nous allons faire order.orderID.
+
+10:26.520 --> 10:27.840
+Quelques-uns de ceux-là.
+
+10:28.720 --> 10:30.200
+Le prochain sera la date.
+
+10:30.200 --> 10:31.640
+Le prochain sera le temps.
+
+10:35.600 --> 10:38.920
+D'accord, cela devrait nous donner nos lignes et nos tableaux.
+
+10:38.920 --> 10:42.160
+Et donc en dehors du tabati et de la table,
+
+10:43.520 --> 10:45.080
+nous allons avoir un autre div ici,
+
+10:45.080 --> 10:47.320
+et cela s'appellera des pages.
+
+10:48.240 --> 10:51.240
+Et nous allons juste avoir quelques boutons de pagination de base ici.
+
+10:51.240 --> 10:56.240
+Donc le bouton désactivé est égal à la page supérieure à
+
+11:00.440 --> 11:02.840
+ou inférieur et égal à un.
+
+11:02.840 --> 11:04.680
+Encore une fois, ce n'est que ma police
+
+11:04.680 --> 11:06.480
+combinant les deux en une seule chose,
+
+11:06.480 --> 11:10.400
+mais c'est inférieur ou égal à un.
+
+11:13.160 --> 11:14.560
+OK, onClick,
+
+11:15.160 --> 11:18.160
+est égal à setPage, ou c'est une fonction,
+
+11:19.840 --> 11:23.320
+setPage, page moins une.
+
+11:27.000 --> 11:28.960
+Et nous mettrons le précédent ici.
+
+11:30.880 --> 11:32.880
+Et puis le suivant semble vraiment similaire,
+
+11:32.880 --> 11:36.880
+donc je vais juste copier et coller tout ce bloc ici.
+
+11:36.880 --> 11:41.080
+Donc les handicapés, je sais que ça se ressemble,
+
+11:41.480 --> 11:46.200
+donc les handicapés, je sais qu'ils existent en longueurs de 10,
+
+11:46.200 --> 11:47.320
+et je ne voulais pas créer l'API
+
+11:47.320 --> 11:48.480
+c'est plus compliqué que ça,
+
+11:48.480 --> 11:50.960
+alors j'ai dit que data.length est inférieur à 10,
+
+11:50.960 --> 11:52.880
+parce que s'il renvoie environ huit résultats,
+
+11:52.880 --> 11:54.880
+tu sais que tu as atteint la fin, n'est-ce pas ?
+
+11:56.640 --> 11:58.520
+Le seul problème c'est : et s'il en reste exactement 10,
+
+11:58.520 --> 12:00.400
+tu vas avoir une page de zéro après ça.
+
+12:00.400 --> 12:02.600
+Encore une fois, une expérience utilisateur phénoménale.
+
+12:02.600 --> 12:03.520
+Tu devrais absolument m'écouter
+
+12:03.520 --> 12:05.520
+et engagez-moi pour consulter dans votre entreprise.
+
+12:06.880 --> 12:08.280
+C'est une blague, c'est une très mauvaise idée.
+
+12:08.280 --> 12:09.640
+mais c'est ce que nous faisons.
+
+12:09.640 --> 12:13.040
+Donc ça devrait être moins un ici,
+
+12:13.040 --> 12:16.360
+désolé, il devrait y avoir un espace ici à la ligne 46.
+
+12:17.560 --> 12:20.240
+Et comme ici, il devrait y avoir un plus un,
+
+12:20.240 --> 12:21.800
+il devrait y avoir un espace là-bas.
+
+12:24.000 --> 12:27.120
+Et puis au lieu du précédent ici, nous aurons le suivant.
+
+12:31.320 --> 12:36.400
+Il y a environ des milliers de commandes
+
+12:36.400 --> 12:38.720
+dans la base de données, sauf si vous vous ennuyez beaucoup
+
+12:38.720 --> 12:41.560
+et je veux les parcourir tous un jour,
+
+12:41.560 --> 12:43.360
+Je ne pense pas que beaucoup de gens trouveront la fin de ça
+
+12:43.360 --> 12:46.720
+et découvrez à quel point c'est une expérience terrible.
+
+12:46.720 --> 12:51.720
+Je pense que cela devrait nous suffire pour voir si cela fonctionne.
+
+12:52.000 --> 12:57.000
+Donc commandes passées, nous avons fait ce bouton précédemment,
+
+12:57.120 --> 13:00.040
+donc je pense que si on clique dessus, ça va se charger.
+
+13:03.800 --> 13:05.240
+Et c’est fait, ok, cool.
+
+13:05.920 --> 13:09.080
+Vous pouvez donc voir ici, tout au long du cours ici,
+
+13:09.080 --> 13:12.080
+J'ai soumis deux commandes ici, ce qui est plutôt cool.
+
+13:13.800 --> 13:15.280
+Parce que vous pouvez voir que c’est en 2024.
+
+13:15.280 --> 13:19.040
+J'ai récupéré un ensemble de données de Kaggle pour les commandes de pizza.
+
+13:19.040 --> 13:21.040
+C'est pourquoi tout cela date de 2015.
+
+13:22.000 --> 13:23.520
+Nous ne sommes pas comme voyager dans le temps dans le passé en ce moment.
+
+13:23.520 --> 13:27.440
+Et vous vous demandez, comment parle-t-il de React 18 en 2015 ?
+
+13:27.440 --> 13:29.440
+C'est parce que je le savais, je plaisante.
+
+13:30.600 --> 13:31.440
+Mais voilà.
+
+13:32.200 --> 13:33.040
+Voilà.
+
+13:33.040 --> 13:37.280
+Et vous pouvez donc voir que cela prend du temps.
+
+13:38.480 --> 13:39.600
+Est-ce que j'ai laissé ça ?
+
+13:40.480 --> 13:41.600
+Vérifions simplement mon API.
+
+13:41.600 --> 13:43.720
+Je pense que j'ai peut-être laissé le poids là-dedans.
+
+13:43.720 --> 13:44.800
+Ca c'est drôle.
+
+13:44.800 --> 13:45.840
+D'accord.
+
+13:45.840 --> 13:48.720
+Mais maintenant, si j'atteins le précédent, que va-t-il se passer ?
+
+13:50.520 --> 13:53.200
+Notez que ces charges sont instantanées
+
+13:53.200 --> 13:55.000
+entre ces deux que j'ai chargé auparavant.
+
+13:55.000 --> 13:58.000
+Mais si je clique à nouveau sur suivant, cela va le charger à nouveau, n'est-ce pas ?
+
+13:58.000 --> 13:59.560
+Cela revient donc à l'API.
+
+14:01.560 --> 14:04.160
+Ouais, je pense que j'ai mis un délai artificiel dans cette API
+
+14:04.160 --> 14:06.720
+pour que les gens puissent faire la différence.
+
+14:06.720 --> 14:08.640
+Mais maintenant, regardez vos 10 outils de développement de pile ouverts.
+
+14:08.640 --> 14:12.720
+Vous pouvez les voir utilisés ici.
+
+14:12.720 --> 14:15.760
+Donc si je le fais ensuite, ça te montrera les choses que j'ai
+
+14:15.760 --> 14:19.480
+dans ma cache ici, et ça va s'éteindre
+
+14:19.480 --> 14:20.800
+et prends celui-ci.
+
+14:20.800 --> 14:23.000
+Vous pouvez cliquer dessus, je pense.
+
+14:23.000 --> 14:28.080
+Et vous pouvez voir quelle est la clé.
+
+14:28.080 --> 14:29.280
+Cela n’a qu’un seul observateur.
+
+14:29.280 --> 14:30.160
+Mais si tu as un tas de choses
+
+14:30.160 --> 14:31.720
+que nous examinons ces clés de cache,
+
+14:31.720 --> 14:33.840
+il examinerait cela également.
+
+14:33.840 --> 14:35.880
+Et vous pouvez voir avec quoi il est revenu,
+
+14:35.880 --> 14:37.520
+les données réelles, n'est-ce pas ?
+
+14:37.520 --> 14:42.120
+Le numéro de commande, la date, l’heure, toutes sortes de trucs vraiment sympas.
+
+14:43.440 --> 14:44.280
+Assez utile.
+
+14:44.280 --> 14:46.680
+J'utilise assez fréquemment les outils de développement pour celui-ci.
+

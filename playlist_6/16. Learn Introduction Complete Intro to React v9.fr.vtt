@@ -1,0 +1,198 @@
+WEBVTT
+
+
+00:00.100 --> 00:02.620
+D'accord, parlons très rapidement de la clé.
+
+00:02.620 --> 00:05.920
+La clé est ici.
+
+00:05.920 --> 00:07.240
+Cela semble plutôt étrange.
+
+00:07.240 --> 00:08.960
+Supprimons-le ici pendant une seconde.
+
+00:08.960 --> 00:10.760
+Est-ce réellement, oh ouais.
+
+00:10.760 --> 00:13.800
+Bravo, React, d'avoir pensé à me le dire.
+
+00:14.940 --> 00:16.840
+Mais ça va aussi vous crier dessus ici dans la console.
+
+00:16.840 --> 00:18.220
+Il dit que chaque chose doit avoir une clé unique.
+
+00:18.220 --> 00:21.220
+Probablement vu cela plusieurs fois tout au long du cours ici.
+
+00:21.220 --> 00:23.080
+De quoi s’agit-il ?
+
+00:23.080 --> 00:25.560
+Très bien, imaginez que vous avez
+
+00:25.560 --> 00:28.220
+des composants extrêmement compliqués, non ?
+
+00:28.220 --> 00:30.300
+Et ils restituent un tas d'images
+
+00:30.300 --> 00:32.220
+et des textos et des trucs comme ça.
+
+00:32.220 --> 00:34.180
+Et puis l'utilisateur refiltre,
+
+00:34.180 --> 00:36.860
+et il échange simplement comme deux composants.
+
+00:36.860 --> 00:38.900
+Comme si ce qui était ici est maintenant ici,
+
+00:38.900 --> 00:40.700
+et ce qui est ici est maintenant ici.
+
+00:40.700 --> 00:42.580
+React n'a pas de concept de like
+
+00:42.580 --> 00:44.020
+ce qu'il y avait ici et ce qui était où.
+
+00:44.020 --> 00:46.100
+Et donc ce que ça va faire, c'est que ça va démolir
+
+00:46.100 --> 00:49.500
+tout et tout reconstruire à partir de zéro.
+
+00:50.620 --> 00:52.500
+Parfois, ça va.
+
+00:53.460 --> 00:55.620
+Parfois, ça ne va pas.
+
+00:55.620 --> 00:57.740
+Que fait la clé quand tu fais ce genre de choses ?
+
+00:57.740 --> 00:59.780
+cartographier ce genre de choses comme nous le faisons ici,
+
+00:59.780 --> 01:02.280
+et il y a beaucoup de composants homologues les uns à côté des autres,
+
+01:02.280 --> 01:04.060
+cela pourrait être réorganisé.
+
+01:05.220 --> 01:07.820
+Nous ne les réorganisons pas, mais en théorie nous le pourrions.
+
+01:10.140 --> 01:13.860
+Ce que fait Key, c'est dire comme ici, c'est une chose unique
+
+01:13.860 --> 01:15.800
+c'est lié à cet objet.
+
+01:16.780 --> 01:20.100
+Donc, comme ce qui est unique à une pizza, c'est une pièce d'identité, n'est-ce pas ?
+
+01:20.100 --> 01:22.220
+Et donc si on échange deux choses, c'est comme,
+
+01:22.220 --> 01:25.100
+oh, tu avais ça ici et maintenant tu l'as ici
+
+01:25.100 --> 01:27.940
+parce que j'ai cet identifiant que je peux regarder
+
+01:27.940 --> 01:30.180
+voir ainsi se déplacer d'ici à ici.
+
+01:30.180 --> 01:31.660
+Je vais juste échanger les composants
+
+01:31.660 --> 01:34.620
+au lieu de tout démolir et de tout reconstruire.
+
+01:34.620 --> 01:36.020
+D'accord, est-ce que cela a du sens ?
+
+01:37.000 --> 01:39.060
+C'est pour ça qu'il te crie dessus constamment
+
+01:39.060 --> 01:40.500
+comme s'il te plaît, mets une clé ici.
+
+01:40.500 --> 01:42.920
+C'est juste une habitude que tu veux prendre.
+
+01:42.920 --> 01:46.080
+Je dirai que voici un faux pas très courant ici.
+
+01:47.780 --> 01:49.600
+Que se passe-t-il si je récupère l'index ?
+
+01:50.600 --> 01:52.640
+Pourquoi ça ne va pas ?
+
+01:54.720 --> 01:56.000
+Ce n'est pas stable.
+
+01:56.000 --> 01:57.320
+Ce n'est pas lié à l'objet,
+
+01:57.320 --> 01:59.080
+je pense que c'est ce à quoi vous voulez en venir, n'est-ce pas ?
+
+01:59.080 --> 02:04.080
+Donc si je déplace le pepperoni de l'indice zéro à l'indice cinq,
+
+02:04.760 --> 02:07.320
+pepperoni et zéro n'étaient pas associés,
+
+02:07.320 --> 02:10.520
+donc ça va penser ça comme, oh, d'accord,
+
+02:10.520 --> 02:12.920
+pepperoni ou cinq sont restés au même endroit,
+
+02:12.920 --> 02:13.760
+donc je ne vais rien changer.
+
+02:13.760 --> 02:16.320
+Et ça a réellement changé, non ?
+
+02:16.880 --> 02:19.160
+C'est pourquoi tu ne peux pas le faire de cette façon
+
+02:19.160 --> 02:23.160
+car l'index et l'objet ne sont pas liés l'un à l'autre.
+
+02:23.160 --> 02:25.920
+Il n'y a aucun rapport entre ces deux choses.
+
+02:26.880 --> 02:28.280
+Ceci étant dit, il y a parfois,
+
+02:28.280 --> 02:31.160
+il n'y a tout simplement pas de clé à associer à quelque chose.
+
+02:31.160 --> 02:34.840
+Parfois, cela n’a pas d’importance si tout est réorganisé.
+
+02:34.840 --> 02:36.320
+Alors tu me trouveras en train de faire ça parfois
+
+02:36.320 --> 02:37.920
+où je veux juste que le linter se taise
+
+02:37.920 --> 02:39.680
+et écarte-toi de mon chemin, n'est-ce pas ?
+
+02:39.680 --> 02:43.320
+Vous pouvez procéder de cette façon et y placer l'index.
+
+02:43.320 --> 02:47.480
+Je vais donc procéder de cette façon et y mettre l'index.
+

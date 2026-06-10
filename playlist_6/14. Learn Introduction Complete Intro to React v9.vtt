@@ -1,0 +1,560 @@
+WEBVTT
+
+00:00.000 --> 00:06.760
+So, if you are having issues or just want to see where I'm at here, we're at 04-hooks,
+
+00:06.760 --> 00:13.960
+where we learned about useState, by far the most common hook that you'll use.
+
+00:13.960 --> 00:16.840
+The next we're going to talk about, the next most common hook that you're going to use,
+
+00:16.840 --> 00:19.840
+which is useEffect.
+
+00:19.840 --> 00:26.320
+So, state is all about statefulness in your component, things that can change over time
+
+00:26.320 --> 00:27.420
+in your component.
+
+00:27.420 --> 00:33.220
+This will be frequently tied to forms, but you could easily write like a clock, or something
+
+00:33.220 --> 00:34.220
+like that.
+
+00:34.220 --> 00:40.540
+The other thing is effects will usually be used with state as well, so they tend to combine
+
+00:40.540 --> 00:42.020
+and compose.
+
+00:42.020 --> 00:49.140
+But let's talk about effects.
+
+00:49.140 --> 00:53.740
+Effects stands for side effects, so you have some component and it has something that's
+
+00:53.740 --> 00:57.340
+going to happen outside of it.
+
+00:57.340 --> 01:00.540
+Personally this is going to be like an API request, so you're going to go reach out to
+
+01:00.540 --> 01:07.340
+some API, it's going to come back with data, and you'll see that.
+
+01:07.340 --> 01:12.100
+This could be like, let's say you have something that you want to show a clock, like the date
+
+01:12.100 --> 01:16.020
+time or something like that, you could be doing that with an effect because you can
+
+01:16.020 --> 01:18.420
+think of time as a side effect to your component.
+
+01:18.420 --> 01:21.780
+It's anything that's going to be inputting into your component that's not just user input
+
+01:21.780 --> 01:24.860
+or something like that.
+
+01:24.860 --> 01:31.540
+So let's go do that.
+
+01:31.540 --> 01:37.820
+So make sure your API server is running because we actually are going to hit the API now.
+
+01:37.820 --> 01:47.740
+So let's go to order.jsx, client, just make sure you have that if you don't.
+
+01:47.740 --> 01:59.420
+And we're going to go to order.jsx, and we're going to import use effect from react.
+
+01:59.420 --> 02:04.020
+And we have pizza, cool.
+
+02:04.020 --> 02:10.700
+We're going to be doing some currency conversions here.
+
+02:10.700 --> 02:16.940
+So this is now just built into the browser, which is super nice.
+
+02:17.140 --> 02:21.340
+So let's go to order format, give it what format you want, feel free to put this in
+
+02:21.340 --> 02:22.340
+your own locale.
+
+02:22.340 --> 02:30.460
+I'm going to show you how to do it with dollars.
+
+02:30.460 --> 02:38.140
+So this is currency, and I want the currency to be USD.
+
+02:38.140 --> 02:40.700
+So we're going to load in pizza types.
+
+02:40.700 --> 02:43.500
+So right now we just have like a flat list of all these pizza types, but I want this
+
+02:43.500 --> 02:46.940
+to be a dynamically populated of all of our different pizzas.
+
+02:46.940 --> 02:53.620
+I, being the generous course creator that I have, have created 32 pizza types for you.
+
+02:53.620 --> 02:57.740
+And we're going to use all of them.
+
+02:57.740 --> 03:02.460
+Most of them look terrible, just to be aware of that.
+
+03:02.460 --> 03:07.820
+So const, another hook here, another use state hook.
+
+03:07.820 --> 03:23.740
+Pizza types, set pizza types equals use state with an empty array, right?
+
+03:23.740 --> 03:29.980
+So this is basically going to say like, start with nothing, and then we will progress from
+
+03:29.980 --> 03:30.980
+there.
+
+03:30.980 --> 03:34.880
+And then I'm going to have a loading hook.
+
+03:34.880 --> 03:36.880
+This is going to be useful for that.
+
+03:36.880 --> 03:41.120
+You can say like set loading to be true, and like we can show the user a nice spinner and
+
+03:41.120 --> 03:43.240
+not render stuff that's not available yet.
+
+03:43.240 --> 03:47.040
+And then once everything has loaded, you can say set loading to false, and then you can
+
+03:47.040 --> 03:49.960
+show them whatever they need to know.
+
+03:49.960 --> 03:54.680
+So use state, we're going to start by having the form be loading, right?
+
+03:54.680 --> 04:01.280
+Because it won't have all the pizzas loaded yet.
+
+04:01.280 --> 04:07.720
+Okay, cool.
+
+04:07.720 --> 04:21.320
+Here we're going to say let price and selected pizza, we're going to say if it's not loading,
+
+04:22.320 --> 04:41.880
+Then we're going to say selected pizza equals pizza types dot find pizza, pizza type, triple
+
+04:41.880 --> 04:44.040
+equals pizza dot ID.
+
+04:44.040 --> 04:45.040
+So why are we doing this?
+
+04:45.040 --> 04:50.880
+We're going to be keeping track of just the ID of the pizza type that's been selected.
+
+04:50.880 --> 04:54.720
+We have to go actually find inside of our array of pizza types, the correct one, and
+
+04:54.720 --> 04:56.920
+we're going to do that by its ID.
+
+04:56.920 --> 05:02.560
+And you notice these are not hooks despite the fact that they're mutable.
+
+05:02.560 --> 05:04.920
+This is because it's kind of derivative state, right?
+
+05:04.920 --> 05:09.000
+So we can use this state up here to find this state.
+
+05:09.000 --> 05:13.080
+So this doesn't actually need to be a hook because it's not, it's always going to be
+
+05:13.080 --> 05:18.440
+a function of these, or sorry, these are always a function of these, right?
+
+05:18.440 --> 05:23.560
+Because the price is going to be whatever the select pizzas price is, right?
+
+05:23.560 --> 05:31.440
+The selected pizza is always going to be the pizza type that matches in pizza types, right?
+
+05:31.440 --> 05:34.520
+So view has this like a concept of derivative state.
+
+05:34.520 --> 05:37.120
+I think Svelte has it as well.
+
+05:37.120 --> 05:38.120
+Doesn't exist in React.
+
+05:38.120 --> 05:44.520
+You just keep track of them in normal variables, okay?
+
+05:44.520 --> 05:50.160
+So now we're guaranteed here that selected pizza is going to be the correct pizza object
+
+05:50.160 --> 05:55.160
+that we've gotten back from our API.
+
+05:55.160 --> 06:02.160
+We're going to write a function here called fetch pizzas, async function fetch pizzas,
+
+06:02.160 --> 06:05.760
+pizza types rather, pizza types.
+
+06:05.760 --> 06:14.280
+And this is just going to be a really normal fetch command.
+
+06:14.280 --> 06:29.960
+So we're going to say const pizza res equals await fetch slash API slash pizzas const pizza
+
+06:29.960 --> 06:41.880
+json equals await pizza res dot json.
+
+06:41.880 --> 06:52.760
+Set pizza types to be pizza json.
+
+06:52.760 --> 06:59.800
+And set loading to be false because we'll be done loading at that point, right?
+
+06:59.800 --> 07:07.720
+All right, so we have this side effect function that we want to call.
+
+07:07.720 --> 07:11.400
+Where do we call it?
+
+07:11.400 --> 07:14.720
+I can't just say fetch pizza types here.
+
+07:14.720 --> 07:15.720
+Why is this a bad idea?
+
+07:15.720 --> 07:18.960
+It would run each time the component is rendered.
+
+07:18.960 --> 07:19.960
+You got it.
+
+07:19.960 --> 07:21.680
+It would run every single time that the component rendered.
+
+07:21.680 --> 07:26.800
+That's a lot of, you're basically DDoSing yourself, right?
+
+07:26.800 --> 07:28.000
+So that's not a good idea.
+
+07:28.000 --> 07:31.000
+How can I be only like run this at the beginning, right?
+
+07:31.000 --> 07:37.240
+That's all I only want to do it once when the component first loads, right?
+
+07:37.240 --> 07:39.600
+Effects you found the need for effects.
+
+07:39.600 --> 07:42.400
+This is exactly what effects are for.
+
+07:42.400 --> 07:47.280
+Use effect, you give it a function of like, hey, I need you to do this kind of outside
+
+07:47.280 --> 07:48.360
+of the render cycle.
+
+07:48.360 --> 07:52.400
+So if you find that's exactly what effects are for is like, I have my renders and I have
+
+07:52.400 --> 07:56.160
+things that need to happen outside of the renders and I want to kind of control when
+
+07:56.160 --> 07:58.320
+that happens.
+
+07:58.320 --> 08:03.160
+So in this case, we're going to say fetch pizza type.
+
+08:03.160 --> 08:07.960
+This isn't still quite what we want it to do.
+
+08:07.960 --> 08:12.080
+This is still going to schedule an effect after every single render.
+
+08:12.080 --> 08:17.120
+So how do we tell it, hey, we only want this to change once.
+
+08:17.120 --> 08:21.960
+There's a second parameter here of like, hey, whenever this variable is different from the
+
+08:21.960 --> 08:25.800
+previous render, do it again.
+
+08:25.800 --> 08:33.000
+So let's say here we put like, I don't know, pizza size.
+
+08:33.000 --> 08:37.880
+Now every time that the user selected a different pizza size, this function would get running
+
+08:37.880 --> 08:40.840
+and this effect would get run again.
+
+08:40.840 --> 08:43.120
+That's not actually what we want, right?
+
+08:43.120 --> 08:45.960
+We want it to run once, right?
+
+08:45.960 --> 08:46.960
+Just at the beginning.
+
+08:46.960 --> 08:47.960
+So how do we do that?
+
+08:47.960 --> 08:50.840
+Well, we just don't give it anything, right?
+
+08:50.840 --> 08:52.320
+We just give it an empty array, right?
+
+08:52.320 --> 08:54.360
+And that's saying like, I don't care.
+
+08:54.360 --> 08:57.600
+Run this once and then you're not tracking any variables here, so you're never going
+
+08:57.600 --> 09:00.040
+to run it again.
+
+09:00.040 --> 09:04.040
+Make sense?
+
+09:04.040 --> 09:13.120
+You'll have to excuse like the backwards walk into like the logic there, but like usually
+
+09:13.120 --> 09:15.560
+people see this for the first time is like, why is there an empty array there?
+
+09:15.560 --> 09:16.560
+Right?
+
+09:16.560 --> 09:17.560
+And they get really upset by that.
+
+09:17.560 --> 09:21.280
+So I'm trying to walk you back into like why that empty array exists there.
+
+09:21.280 --> 09:23.120
+It does make sense.
+
+09:23.120 --> 09:29.240
+It's a little dense to look at, like that's a lot of syntax in one line of just curly
+
+09:30.240 --> 09:34.680
+bracket, square bracket, square bracket, round bracket, or round parentheses, right?
+
+09:34.680 --> 09:36.640
+It does make sense.
+
+09:36.640 --> 09:42.840
+Okay, next question people might ask me, why can't I just make this an async function?
+
+09:42.840 --> 09:45.360
+I think Burton, you literally just asked me this.
+
+09:45.360 --> 09:47.560
+Async functions return what?
+
+09:47.560 --> 09:48.800
+Promises.
+
+09:48.800 --> 09:50.480
+They always return a promise no matter what.
+
+09:50.480 --> 09:54.240
+If it's an async function, the return type is always a promise.
+
+09:54.240 --> 09:57.880
+And effects, the return type matters.
+
+09:58.000 --> 10:02.320
+I'm not going to show you anything today where it does matter, but let's say you wanted it
+
+10:02.320 --> 10:07.560
+to run once and you wanted it to run at the end, not the beginning.
+
+10:07.560 --> 10:09.440
+This can be useful for like clearing timeouts.
+
+10:09.440 --> 10:13.800
+That's usually the time that I do it or canceling, like using an abort token to like cancel a
+
+10:13.800 --> 10:16.280
+request or something like that.
+
+10:16.280 --> 10:23.560
+You can return a function, get rid of this async.
+
+10:23.560 --> 10:25.680
+This is how you would do that.
+
+10:25.680 --> 10:29.960
+The return here is the cleanup function.
+
+10:29.960 --> 10:33.560
+So all of this to say, you don't need to do that right now.
+
+10:33.560 --> 10:39.920
+It's a fairly rare thing that you need to clean up, but that's how you would do it.
+
+10:39.920 --> 10:42.400
+And that's why we can't just make this async, right?
+
+10:42.400 --> 10:45.640
+That's why I bake an async function up here and then I call it for my effect.
+
+10:45.640 --> 10:48.040
+And now I've selected pizza price.
+
+10:48.040 --> 10:50.680
+We're now fetching all of the pizzas.
+
+10:50.680 --> 11:00.200
+So eventually this is going to be full of pizza types here.
+
+11:00.200 --> 11:05.080
+Now this is like one of my favorite things again about React.
+
+11:05.080 --> 11:08.600
+By doing everything this way, I basically could just sort of like treat all of my code
+
+11:08.600 --> 11:12.000
+down here as if pizza types already existed.
+
+11:12.000 --> 11:15.480
+It reads very optimistically in the sense of like, I just assume that the data is going
+
+11:16.480 --> 11:17.480
+here eventually.
+
+11:17.480 --> 11:22.000
+And it makes the code not full of if this, then that's right.
+
+11:22.000 --> 11:25.040
+It's usually just like read as if the code is here, right?
+
+11:25.040 --> 11:33.880
+Let's go replace the options here.
+
+11:33.880 --> 11:44.360
+Pizza types dot map pizza, and here we're just going to do an option key equals pizza
+
+11:44.360 --> 11:45.360
+dot ID.
+
+11:45.360 --> 11:48.280
+We'll do our keys here in just a second.
+
+11:48.280 --> 11:52.000
+And value equals pizza dot ID.
+
+11:52.000 --> 11:55.600
+And then we want pizza dot name to be down here, pizza dot name.
+
+11:55.600 --> 11:57.520
+All right, so this is a little dense here.
+
+11:57.520 --> 12:00.280
+Let's talk about this for just a second.
+
+12:00.280 --> 12:04.600
+It's all concepts you know, though, between the curly braces can be any JavaScript expression
+
+12:04.600 --> 12:08.920
+whatsoever, right?
+
+12:08.920 --> 12:15.320
+If you're familiar with map, it's a JavaScript function that you're taking an array of something
+
+12:15.840 --> 12:19.000
+and you're turning that into an array of something else, right?
+
+12:19.000 --> 12:25.160
+It's just a transformation from an array of 1, 2, 3, 4, and you say map double, you'd
+
+12:25.160 --> 12:27.160
+get 2, 4, 6, 8, right?
+
+12:27.160 --> 12:30.960
+It would just transform one to the other.
+
+12:30.960 --> 12:38.000
+We have an array of pizza types, and we want to transform that into an array of components,
+
+12:38.000 --> 12:39.000
+right?
+
+12:39.000 --> 12:45.120
+Or elements, as it were, not that that really matters.
+
+12:45.120 --> 12:48.000
+That's all we're doing here is we're just turning an array of objects into an array
+
+12:48.000 --> 12:50.280
+of React stuff, right?
+
+12:50.280 --> 12:57.080
+And if you remember under the hood, like we saw, what is JSX transforming that into?
+
+12:57.080 --> 12:58.400
+It's an array, right?
+
+12:58.400 --> 13:02.280
+So if we give it an array of components, it knows exactly what to do with them.
+
+13:02.280 --> 13:03.680
+So that's why map here works.
+
+13:03.680 --> 13:09.480
+We're turning an array of these pizza objects just into an array of options.
+
+13:09.480 --> 13:10.480
+Make sense?
+
+13:10.480 --> 13:11.480
+We follow?
+
+13:12.400 --> 13:16.960
+All right, so I think if we obviously there's some errors here, but I think if we refresh
+
+13:16.960 --> 13:32.040
+this, we should see lots of pizza types, which is kind of cool, right?
+
+13:32.040 --> 13:37.400
+So if we refresh, look here at the network, you can see here we have a I'm looking just
+
+13:37.400 --> 13:41.360
+at XHR, which are Ajax requests here.
+
+13:41.360 --> 13:42.920
+You can see it's hitting the API.
+
+13:42.920 --> 13:48.840
+It's getting a response back here of all the different objects, right?
+
+13:48.840 --> 13:51.560
+And it's turning that into an array of options.
+

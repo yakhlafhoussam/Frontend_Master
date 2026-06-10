@@ -1,0 +1,827 @@
+WEBVTT
+
+00:00.160 --> 00:03.120
+So we have API requests in a bunch
+
+00:03.120 --> 00:05.220
+of our various different components.
+
+00:06.200 --> 00:07.280
+You have two choices here,
+
+00:07.280 --> 00:09.240
+and I'm gonna say you actually really only have one choice,
+
+00:09.240 --> 00:11.040
+but in theory, you could spin up your API
+
+00:11.040 --> 00:13.840
+and you could have it make real requests to a fake API
+
+00:13.840 --> 00:15.000
+or something like that.
+
+00:16.500 --> 00:19.600
+Don't do that, it usually ends in heartache.
+
+00:20.720 --> 00:22.840
+So in that case, you probably wanna like mock it,
+
+00:22.840 --> 00:26.880
+like make mock requests so that it goes to make a request
+
+00:26.880 --> 00:29.960
+and then it just gets faked and answered back to it.
+
+00:29.960 --> 00:32.180
+That's what I'm gonna teach you how to do now.
+
+00:32.180 --> 00:37.180
+So we're gonna install vitest-fetch-mock at 0.3.0.
+
+00:41.240 --> 00:43.040
+We didn't have to use vitest-fetch-mock,
+
+00:43.040 --> 00:45.640
+it's actually really easy to do directly with vitest.
+
+00:46.800 --> 00:47.960
+It just adds some niceties
+
+00:47.960 --> 00:50.720
+and I just didn't wanna make you code all that stuff,
+
+00:50.720 --> 00:52.880
+so we're just gonna stick with it.
+
+00:52.880 --> 00:55.920
+Let's write the code for testing.
+
+00:56.920 --> 01:01.200
+We're gonna test the contact page.
+
+01:01.200 --> 01:05.220
+So let's go create another test file in here,
+
+01:06.140 --> 01:07.800
+and this one gets to be called something
+
+01:07.800 --> 01:12.800
+that's kinda silly, it's contact.lazy.test.jsx.
+
+01:20.000 --> 01:21.160
+And if you're looking at it as like,
+
+01:21.160 --> 01:24.720
+that is the dumbest name of a file I've ever created,
+
+01:24.720 --> 01:27.840
+just wait, we're about to do one that's even sillier.
+
+01:27.840 --> 01:29.480
+But why?
+
+01:29.480 --> 01:32.000
+Well, lazy, it's being dependent on that
+
+01:32.000 --> 01:35.740
+for 10-stack router,
+
+01:35.740 --> 01:37.900
+and test, it's being dependent on that
+
+01:37.900 --> 01:39.760
+for the testing suite,
+
+01:39.760 --> 01:43.040
+so this is why I kinda get like a little hesitant
+
+01:43.040 --> 01:46.760
+about should file names be significant?
+
+01:46.760 --> 01:48.480
+Because then you end up with silly stuff like this,
+
+01:48.480 --> 01:51.280
+which obviously this is silly.
+
+01:51.280 --> 01:54.240
+But here we are, we're gonna use it anyway.
+
+01:54.240 --> 01:59.240
+So import render from at testing library slash react,
+
+02:05.440 --> 02:10.440
+import expect test, and another one here called vi
+
+02:11.960 --> 02:13.480
+that we're gonna talk about, I promise you,
+
+02:13.480 --> 02:16.700
+it is not vim, it is different than that.
+
+02:17.800 --> 02:18.900
+And in any case, I will show you
+
+02:18.900 --> 02:20.440
+how to get out of it afterwards.
+
+02:20.440 --> 02:25.440
+Import create fetch mock from vitest fetch mock,
+
+02:28.720 --> 02:33.320
+import query client provider,
+
+02:33.320 --> 02:37.700
+and query client from 10-stack router,
+
+02:37.700 --> 02:42.120
+sorry, 10-stack query, rather, query client,
+
+02:44.840 --> 02:49.840
+and import route from vitest provider,
+
+02:51.440 --> 02:54.160
+routes, contact.lazy.
+
+02:57.440 --> 03:00.000
+So why are we importing stuff from react query?
+
+03:00.000 --> 03:02.040
+That seems kinda strange, right?
+
+03:02.040 --> 03:05.040
+Well, it's because in order for react query to function,
+
+03:05.040 --> 03:07.160
+it depends on a query client being there,
+
+03:07.160 --> 03:11.520
+and we're not rendering it in the context of app, right?
+
+03:11.520 --> 03:14.540
+An app is what actually possesses the query client,
+
+03:14.540 --> 03:17.000
+so we have to create a fake one for it.
+
+03:17.000 --> 03:18.560
+It's not a fake one, it's actually a real one,
+
+03:18.600 --> 03:20.240
+but we have to create one for it.
+
+03:21.320 --> 03:22.660
+So that's exactly what we're gonna do here.
+
+03:22.660 --> 03:24.640
+We're gonna say const query client
+
+03:27.540 --> 03:30.300
+equals new query client.
+
+03:33.280 --> 03:34.120
+Okay?
+
+03:35.400 --> 03:38.000
+Let's talk about vi for a second.
+
+03:38.000 --> 03:42.560
+Vi is the name of the spy library inside of vitest,
+
+03:42.560 --> 03:47.020
+so if you've ever used cnon in old react testing,
+
+03:47.340 --> 03:50.700
+it's still current, you can still use cnon in lots of stuff.
+
+03:50.700 --> 03:52.420
+It's the same idea,
+
+03:52.420 --> 03:54.620
+but it's basically like a thing that's like,
+
+03:54.620 --> 03:57.020
+all right, I'm gonna create a fake version of this,
+
+03:57.020 --> 03:58.380
+and then I'm gonna ask later,
+
+03:58.380 --> 03:59.280
+did this get called,
+
+03:59.280 --> 04:01.840
+what functions did this get called with?
+
+04:01.840 --> 04:04.140
+That's called spying in testing,
+
+04:04.140 --> 04:05.740
+and that's what vi does for you.
+
+04:06.940 --> 04:10.500
+So we're gonna say const fetchMocker
+
+04:10.500 --> 04:13.820
+equals createFetchMock vi,
+
+04:13.860 --> 04:18.860
+and this is gonna kind of fetchMocker.enableMocks.
+
+04:20.420 --> 04:22.860
+What this does is it goes and monkey patches fetch
+
+04:22.860 --> 04:25.420
+to be now testable, right?
+
+04:25.420 --> 04:27.800
+It's not actually gonna go call really the API.
+
+04:27.800 --> 04:31.640
+It's just going to fake like it did, right?
+
+04:32.980 --> 04:34.500
+And now what's cool about that is we can say,
+
+04:34.500 --> 04:37.780
+hey fetch, what were you called with?
+
+04:37.780 --> 04:39.060
+And that's a good thing for us
+
+04:39.060 --> 04:40.300
+because now we can go back and say,
+
+04:40.300 --> 04:42.100
+did you call the right API?
+
+04:42.100 --> 04:43.020
+Did you do the right things
+
+04:43.020 --> 04:45.740
+given that these kinds of inputs, right?
+
+04:45.740 --> 04:46.760
+That's the point.
+
+04:48.500 --> 04:53.500
+All right, so we're gonna say test can submit contact form.
+
+04:55.080 --> 04:56.980
+Seems like a pretty good test, right?
+
+04:58.620 --> 05:00.020
+Async function.
+
+05:05.080 --> 05:06.220
+And this one's gonna have a little bit more,
+
+05:06.220 --> 05:08.740
+but we're gonna do actually like simulated test events,
+
+05:08.740 --> 05:09.900
+which is gonna be cool.
+
+05:13.140 --> 05:16.220
+All right, so first thing we're gonna say,
+
+05:16.220 --> 05:21.220
+fetchMocker mockResponse once, not just mockResponse.
+
+05:27.140 --> 05:27.980
+I don't think it matters
+
+05:27.980 --> 05:30.020
+because we're only gonna call it once.
+
+05:30.020 --> 05:33.260
+In any case, basically you're saying to the fetchMocker
+
+05:33.260 --> 05:35.660
+is like, hey, if you get called,
+
+05:35.660 --> 05:37.740
+respond with this from the API.
+
+05:40.300 --> 05:42.300
+Because we know like only one API
+
+05:42.300 --> 05:43.740
+is gonna be called in the course of this.
+
+05:43.740 --> 05:45.460
+We don't have to really think too much
+
+05:45.460 --> 05:47.500
+about like which one was called and why
+
+05:47.500 --> 05:48.860
+and that kind of stuff.
+
+05:48.860 --> 05:49.900
+But I can imagine like,
+
+05:49.900 --> 05:50.820
+let's say you have something
+
+05:50.820 --> 05:53.340
+that like has like nine different API calls.
+
+05:53.340 --> 05:54.580
+You have to get a bit more specific,
+
+05:54.580 --> 05:56.860
+like all right, to this route, respond with this.
+
+05:56.860 --> 05:58.860
+To this route, respond with this.
+
+05:58.860 --> 06:00.020
+We don't have to care too much about that
+
+06:00.020 --> 06:01.180
+so we're not going to.
+
+06:03.340 --> 06:06.500
+All right, and then this is gonna be just status okay,
+
+06:07.420 --> 06:09.660
+because that's what the API responds with now.
+
+06:10.660 --> 06:15.340
+All right, we're gonna say const screen equals render.
+
+06:16.300 --> 06:19.740
+And remember, we have to give it a queryClient provider.
+
+06:21.060 --> 06:26.060
+And a queryClient equals, as you might guess, queryClient.
+
+06:30.660 --> 06:35.660
+And we're gonna say route.options.component.
+
+06:40.260 --> 06:44.060
+So why this kind of strangeness?
+
+06:44.060 --> 06:47.940
+Well, if you remember from contact here,
+
+06:47.940 --> 06:52.940
+what gets exported is actually this lazy file route
+
+06:53.980 --> 06:55.660
+which has a bunch of machinery around it
+
+06:55.660 --> 07:00.060
+that the TanStack router uses.
+
+07:00.060 --> 07:02.260
+We don't need that, we just need the component.
+
+07:03.260 --> 07:05.860
+So that's why we're doing the route.options.component.
+
+07:05.860 --> 07:07.260
+That's where that comes from.
+
+07:08.260 --> 07:13.260
+All right, now let's simulate all of our input events.
+
+07:14.540 --> 07:19.540
+So we're gonna say const name input equals screen.
+
+07:20.140 --> 07:22.380
+And when you can do getByPlaceHolder,
+
+07:22.380 --> 07:25.700
+that seems like actually a pretty appropriate one.
+
+07:25.700 --> 07:26.620
+Because that's something that the user
+
+07:26.620 --> 07:27.980
+would experience, right?
+
+07:29.180 --> 07:32.420
+And we'll do three of those, and we'll do email input.
+
+07:33.420 --> 07:38.420
+Email and message text area.
+
+07:45.260 --> 07:47.220
+And it is message.
+
+07:49.340 --> 07:51.860
+All right, so now we have handles
+
+07:51.860 --> 07:54.460
+on all of our various different inputs.
+
+07:55.540 --> 07:59.020
+And we're going to put some test data together.
+
+07:59.020 --> 08:04.020
+const testData equals whatever you want in here.
+
+08:06.500 --> 08:10.900
+I'll just put Brian, email,
+
+08:16.180 --> 08:19.300
+Dustin's hate mail at example.com.
+
+08:19.300 --> 08:24.300
+And message, just let Brian teach Dustin.
+
+08:25.180 --> 08:29.140
+So we're gonna say name input.value
+
+08:29.140 --> 08:34.140
+is assigned testData.name.
+
+08:36.780 --> 08:39.260
+And again, we're gonna do that three times.
+
+08:39.260 --> 08:43.260
+The email input is gonna be email,
+
+08:43.260 --> 08:48.260
+and the message text area is going to be message.
+
+08:49.220 --> 08:50.540
+Again, this would just be like a user
+
+08:50.540 --> 08:51.860
+filling out a form, right?
+
+08:51.860 --> 08:52.700
+All right, after they fill out a form,
+
+08:53.700 --> 08:55.740
+what do they do next?
+
+08:57.060 --> 08:57.900
+Click the button.
+
+08:59.700 --> 09:02.700
+const btn equals screen.getByRoll.
+
+09:09.300 --> 09:10.700
+Button's a pretty good roll.
+
+09:10.700 --> 09:12.940
+There's only one button on the page as we know.
+
+09:12.940 --> 09:14.500
+What are you gonna do to the button?
+
+09:16.300 --> 09:17.140
+Click.
+
+09:20.020 --> 09:21.580
+Kind of a cool feature, right?
+
+09:23.340 --> 09:24.340
+Now, this one's kind of cool.
+
+09:24.340 --> 09:25.180
+I like this.
+
+09:27.180 --> 09:30.180
+Let's just go do it on our page and see what happens.
+
+09:35.940 --> 09:40.940
+Okay, how do we know that our page was submitted correctly?
+
+09:43.180 --> 09:45.140
+What did we do wrong here?
+
+09:45.140 --> 09:46.740
+Your server's not running.
+
+09:46.740 --> 09:47.580
+Is it not?
+
+09:47.580 --> 09:48.420
+Oh, it's not.
+
+09:48.420 --> 09:49.260
+It's not.
+
+09:49.260 --> 09:50.100
+It's not.
+
+09:50.100 --> 09:51.180
+It's not running.
+
+09:51.180 --> 09:52.100
+Is it not?
+
+09:52.100 --> 09:52.940
+Oh, it's not.
+
+09:52.940 --> 09:53.780
+You're right.
+
+09:58.820 --> 10:00.500
+I'm not gonna get it running right now,
+
+10:00.500 --> 10:01.980
+but what would eventually happen
+
+10:01.980 --> 10:04.220
+is the submitted shows up, right?
+
+10:04.220 --> 10:06.620
+That's what you would expect to show up here.
+
+10:06.620 --> 10:09.220
+But it's not instant, right?
+
+10:09.220 --> 10:10.700
+It goes to the loading state,
+
+10:10.700 --> 10:14.300
+and then eventually it settles in an H3 of saying submitted.
+
+10:14.300 --> 10:16.580
+But we know that the entire process went through
+
+10:16.580 --> 10:18.060
+once that H3 shows up.
+
+10:19.020 --> 10:24.020
+So what you can say is you can say const H3 equals await
+
+10:25.500 --> 10:29.900
+screen find by role.
+
+10:32.140 --> 10:35.300
+We're looking for a heading of level three,
+
+10:36.500 --> 10:39.500
+which is another way of saying level three or H3, right?
+
+10:42.860 --> 10:44.980
+This await means like,
+
+10:44.980 --> 10:47.740
+hey, this isn't gonna show up right away,
+
+10:47.900 --> 10:49.140
+but wait for this.
+
+10:49.140 --> 10:50.500
+Wait for it to happen.
+
+10:50.500 --> 10:52.740
+Once this shows up and it just pulls it, right?
+
+10:52.740 --> 10:53.860
+So it's like, is it there now?
+
+10:53.860 --> 10:54.700
+Is it there now?
+
+10:54.700 --> 10:55.540
+Is it there now?
+
+10:55.540 --> 10:57.300
+And once it's there, it's gonna be like, okay, cool.
+
+10:57.300 --> 10:58.340
+Here you go.
+
+10:58.340 --> 10:59.540
+And here's your H3.
+
+11:00.620 --> 11:02.420
+And then if it never finds it, it's gonna error out
+
+11:02.420 --> 11:04.140
+because it says like, well, you wanted this
+
+11:04.140 --> 11:05.660
+and it never showed up, right?
+
+11:08.100 --> 11:13.100
+Now we can say expect H3.intertext
+
+11:14.100 --> 11:19.100
+to contain submitted.
+
+11:21.820 --> 11:23.900
+To contain is nice here rather than to be.
+
+11:23.900 --> 11:24.740
+Like if you remember,
+
+11:24.740 --> 11:28.420
+I think it actually is submitted with an exclamation point.
+
+11:28.420 --> 11:31.420
+I just care that it shows them that it was submitted, right?
+
+11:31.420 --> 11:34.380
+So that's what I'm gonna do contain instead of to be.
+
+11:37.300 --> 11:39.460
+Some people might argue, you're good.
+
+11:39.460 --> 11:40.300
+You did it.
+
+11:40.300 --> 11:41.220
+You can stop here.
+
+11:41.540 --> 11:44.940
+I wanna go further and I wanna like say like,
+
+11:44.940 --> 11:48.180
+did they call the API with the right thing?
+
+11:48.180 --> 11:50.500
+I think that's user facing because it's like,
+
+11:50.500 --> 11:52.580
+if it doesn't call the API with the right thing,
+
+11:52.580 --> 11:55.540
+the user's data is getting lost, right?
+
+11:55.540 --> 11:58.660
+There are people that would argue that testing the API
+
+11:58.660 --> 12:02.500
+endpoint and the data is implementation details
+
+12:02.500 --> 12:03.740
+and shouldn't be tested.
+
+12:05.220 --> 12:08.660
+And I think, I mean, they're wrong and that's okay, right?
+
+12:08.660 --> 12:10.660
+Not everyone gets to be right all the time.
+
+12:11.620 --> 12:13.420
+Except me, because I'm teaching.
+
+12:14.900 --> 12:16.260
+So we're gonna test that.
+
+12:16.260 --> 12:19.260
+Requests equals fetchMocker.requests.
+
+12:23.340 --> 12:25.980
+And this is gonna give you back everything that it got.
+
+12:27.860 --> 12:29.380
+So the first thing I'm gonna say like,
+
+12:29.380 --> 12:33.060
+if you got more than one call, what happened?
+
+12:34.340 --> 12:39.340
+Expect request.length to be one.
+
+12:42.060 --> 12:45.540
+And then I'm gonna make sure that it called the right thing.
+
+12:45.540 --> 12:47.740
+Requests zero.
+
+12:48.940 --> 12:50.580
+It's the first thing, right?
+
+12:50.580 --> 12:54.140
+Dot URL to be, make sure that it called the right one,
+
+12:54.140 --> 12:56.220
+slash API slash contact.
+
+12:57.860 --> 13:02.860
+Expect fetchMocker.requests.
+
+13:05.300 --> 13:09.780
+And then you say to have been called with.
+
+13:12.060 --> 13:14.620
+Slash API slash contact.
+
+13:14.620 --> 13:16.500
+And then you give it what you expected
+
+13:16.500 --> 13:17.340
+to have been called with.
+
+13:17.340 --> 13:21.820
+So it's gonna be body JSON.stringify.
+
+13:21.820 --> 13:24.540
+This one I'm gonna say, this is getting dangerously close
+
+13:24.540 --> 13:29.580
+to implementation details, but headers,
+
+13:32.100 --> 13:36.860
+content type, application slash JSON,
+
+13:38.300 --> 13:40.340
+and method post.
+
+13:41.900 --> 13:44.180
+Nope, don't do that.
+
+13:46.180 --> 13:47.020
+Post.
+
+13:52.180 --> 13:53.380
+So this is basically saying like,
+
+13:53.380 --> 13:57.260
+I expect when they called fetch, they called it with this.
+
+13:57.260 --> 14:02.260
+The correct URL and the right test data,
+
+14:02.540 --> 14:06.100
+headers to be correct, method post, all that kind of stuff.
+
+14:06.620 --> 14:11.260
+So again, let's go ahead and say npm tests,
+
+14:11.260 --> 14:13.020
+and see what happens.
+
+14:13.020 --> 14:15.340
+Failed the tests, let's go see what happened.
+
+14:15.340 --> 14:19.460
+So use mutation, no query client set.
+
+14:21.420 --> 14:23.540
+Did I, I thought I did.
+
+14:26.820 --> 14:28.380
+Oh, it's client, not query client.
+
+14:28.380 --> 14:31.820
+So bear with me a second, come back up here.
+
+14:31.820 --> 14:34.460
+I said query client equals query client right there.
+
+14:34.460 --> 14:37.940
+This is actually just supposed to be client.
+
+14:43.300 --> 14:44.900
+This is something that if we had TypeScript,
+
+14:44.900 --> 14:46.540
+we would have yelled at us right away.
+
+14:46.540 --> 14:49.700
+So that is one of the nice things about TypeScript.
+
+14:49.700 --> 14:51.740
+Yeah, TypeScript will like immediately say like,
+
+14:51.740 --> 14:55.060
+when you don't pass in the right props that it expects,
+
+14:55.060 --> 14:57.540
+that's one of the nicest things
+
+14:57.540 --> 14:59.420
+about writing React with TypeScript.
+
+14:59.420 --> 15:04.060
+Okay, name input screen, get all.
+
+15:04.060 --> 15:08.100
+I don't want get all, I want get by placeholder text.
+
+15:12.660 --> 15:14.940
+Get by placeholder text.
+
+15:16.140 --> 15:17.740
+I'm surprised that actually works.
+
+15:20.620 --> 15:22.500
+Because otherwise it will get all of them
+
+15:22.500 --> 15:24.140
+and it gives you an array of them.
+
+15:27.780 --> 15:29.740
+But I guess you can set dot value in an array, right?
+
+15:29.740 --> 15:32.660
+It's not gonna yell about that, it's just weird.
+
+15:32.700 --> 15:34.060
+But let's see, did that fix it?
+
+15:34.060 --> 15:35.180
+It did fix it, okay.
+

@@ -1,0 +1,402 @@
+WEBVTT
+
+
+00:00.000 --> 00:08.360
+Nous avons donc été centrés sur 18,3 jusqu'à présent, et nous allons parler de 19,0.
+
+00:08.360 --> 00:14.060
+Certaines de ces choses existent depuis longtemps, et d’autres sont assez récentes.
+
+00:14.060 --> 00:18.820
+Donc la première chose que je vais vous signaler est de garder un œil sur la version 6 de mon intermédiaire
+
+00:18.820 --> 00:20.800
+Réagissez bien sûr.
+
+00:20.800 --> 00:25.760
+Cela devrait être la première fois que je parle de React 19.
+
+00:25.760 --> 00:30.040
+J'imagine qu'il sera disponible à ce moment-là, et si ce n'est pas le cas, nous le ferons probablement
+
+00:30.040 --> 00:35.520
+repoussez la date plus loin pour qu'elle puisse être publiée avant que j'aille l'enseigner.
+
+00:35.520 --> 00:39.920
+Mais je veux juste souligner que ce que vous avez appris aujourd'hui, je suis sûr de l'affirmer.
+
+00:39.920 --> 00:45.480
+qu'il sera encore utile dans cinq ans, car React ne change pas si vite.
+
+00:45.480 --> 00:49.320
+Le modèle de base, que je vous ai enseigné aujourd'hui, ne change pas beaucoup.
+
+00:49.320 --> 00:53.560
+Il n’y a donc aucune raison d’attendre pour suivre des cours ou quoi que ce soit du genre.
+
+00:53.560 --> 00:56.520
+En fin de compte, tout est React.
+
+00:56.520 --> 01:02.400
+La plupart des éléments contenus dans React V8 de ce cours s'appliquent toujours, n'est-ce pas ?
+
+01:02.400 --> 01:06.960
+La plupart des modifications ici étaient assez mineures.
+
+01:06.960 --> 01:09.560
+Il est donc sur le point de sortir.
+
+01:09.560 --> 01:12.800
+Ils en parlent depuis probablement environ un an maintenant, et je dirai que 95 %
+
+01:12.800 --> 01:17.560
+de ce que je vous montre, je suis assez confiant en disant que ça va rester inchangé, et là
+
+01:17.560 --> 01:22.000
+il pourrait y avoir quelques coins sur les bords de peut-être de légers changements d'API ou quelque chose du genre
+
+01:22.000 --> 01:24.160
+comme ça, mais je pense que les concepts de base seront les mêmes.
+
+01:24.160 --> 01:28.440
+Il est actuellement en version candidate et ce depuis un certain temps.
+
+01:28.440 --> 01:33.880
+Ils ne s’attendent donc pas à ce que cela change beaucoup.
+
+01:33.880 --> 01:37.360
+L'une des choses est d'utiliser le client et d'utiliser le serveur.
+
+01:37.360 --> 01:41.240
+Vous remarquerez aujourd'hui que je n'en ai pas parlé, et je ne voulais pas, parce que je ne pense pas
+
+01:41.240 --> 01:46.880
+c'est utile pour vous aujourd'hui.
+
+01:46.880 --> 01:51.880
+React est désormais intégré dans un méta-framework, donc des éléments comme Next.js et
+
+01:51.880 --> 01:56.360
+Remix et toutes ces choses, et l'une des fonctionnalités intéressantes que ces choses permettent
+
+01:56.360 --> 02:02.560
+vous est-ce qu'ils vous permettent de dire d'exécuter ce composant sur le serveur uniquement ou d'exécuter ce composant sur
+
+02:02.560 --> 02:05.280
+le navigateur uniquement.
+
+02:05.280 --> 02:10.280
+Nous faisions juste React côté client aujourd'hui, donc c'était absurde pour nous d'en parler,
+
+02:10.280 --> 02:12.600
+mais c'est plutôt cool pour l'avenir.
+
+02:12.600 --> 02:17.360
+Imaginez que vous puissiez faire des choses comme exécuter des requêtes de base de données directement à partir de votre composant React.
+
+02:17.360 --> 02:22.040
+Si vous utilisez un composant serveur, vous pouvez le faire et c'est totalement sûr.
+
+02:22.040 --> 02:29.400
+De la même manière, si vous écrivez Figma, une application très gourmande en clients, vous ne
+
+02:29.400 --> 02:30.880
+je veux que ce genre de choses s'exécute sur le serveur.
+
+02:30.880 --> 02:33.520
+Cela n'a pas beaucoup de sens de restituer ces éléments sur le serveur.
+
+02:33.520 --> 02:37.720
+Vous allez rendre cela dans le navigateur, vous utiliserez donc le client pour cela.
+
+02:37.920 --> 02:42.920
+Juste pour vous donner un exemple de ce à quoi ressemble cette API, si nous allons, je ne sais pas, à l'en-tête
+
+02:42.920 --> 02:51.200
+pour une raison quelconque, vous pouvez afficher ici en haut, utiliser le client, et cela se passe maintenant
+
+02:51.200 --> 02:54.680
+être garanti de fonctionner uniquement dans le client.
+
+02:54.680 --> 02:56.320
+Je pense que cela fonctionne également par bloc.
+
+02:56.320 --> 03:04.480
+Vous pourriez le faire, si nous n'avions pas cela, alors vous pourriez le faire ici et ainsi de suite.
+
+03:04.480 --> 03:08.320
+Il existe de nombreux endroits différents que vous pouvez utiliser, appelés directives.
+
+03:08.320 --> 03:10.920
+Même chose, vous pourriez dire utiliser le serveur ici.
+
+03:10.920 --> 03:13.680
+Ce qui est cool avec l'utilisation du serveur dans ce cas particulier, il va simplement envoyer le fichier complet
+
+03:13.680 --> 03:14.680
+balisage.
+
+03:14.680 --> 03:17.240
+Il n'enverra pas le JavaScript réel pour l'exécuter.
+
+03:17.240 --> 03:20.400
+Il va simplement tout exécuter sur le serveur d'abord, puis l'envoyer au client,
+
+03:20.400 --> 03:23.240
+ce qui est plutôt cool.
+
+03:23.240 --> 03:25.440
+Je pense que vous pouvez le faire avec des effets et des trucs comme ça.
+
+03:25.440 --> 03:36.840
+Vous pouvez dire utiliser l'effet et utiliser le serveur ici, et vous avez alors un effet secondaire sur le serveur qui
+
+03:36.840 --> 03:40.840
+vous pouvez y courir, ce qui est également assez intéressant.
+
+03:40.840 --> 03:46.640
+Encore une fois, cela ne s'applique qu'aux méta-frameworks comme next, remix.
+
+03:46.640 --> 03:50.760
+Vous pouvez créer ces méta-frameworks vous-même, mais vous devez vous salir les mains
+
+03:50.760 --> 03:52.440
+avec le fonctionnement de React.
+
+03:52.960 --> 03:57.320
+Une des choses que j'ai trouvée intéressante et utile, que se passe-t-il si j'ai une API
+
+03:57.320 --> 04:03.160
+clé que j'utilise dans un composant serveur d'utilisation ?
+
+04:03.160 --> 04:07.240
+Tout ce qu'il faut, c'est qu'un développeur vienne là-bas et dise, oh, j'ai vraiment besoin que ça fonctionne.
+
+04:07.240 --> 04:11.120
+le client aussi et supprimez simplement la directive, et tout d'un coup vous envoyez votre secret
+
+04:11.120 --> 04:13.760
+clés à vos clients.
+
+04:13.760 --> 04:18.320
+Vous êtes à une ligne d’une violation de données, ce qui est très effrayant.
+
+04:18.320 --> 04:21.280
+Ils ont ces choses appelées valeur unique de contamination et référence d'objet de contamination.
+
+04:21.280 --> 04:26.120
+Il dit, pour ces choses qui s'exécutent sur le serveur, je m'en fiche si quelque chose le dit
+
+04:26.120 --> 04:28.880
+à vous d'envoyer ceci, ne l'envoyez jamais.
+
+04:28.880 --> 04:32.920
+C'est ce que font la valeur unique de la teinte et la référence de l'objet de la teinte, c'est-à-dire qu'elles disent simplement :
+
+04:32.920 --> 04:37.040
+Je mets des garde-fous supplémentaires pour que cela ne fuie jamais.
+
+04:37.040 --> 04:40.920
+Je pensais que c'était une bonne façon de faire ça.
+
+04:40.920 --> 04:44.160
+Cool.
+
+04:44.160 --> 04:47.080
+Des questions à ce sujet ?
+
+04:47.120 --> 04:51.880
+Vous ajoutez simplement une directive indiquant où vous voulez que les choses s'exécutent, ce que je pensais
+
+04:51.880 --> 04:56.760
+C'était une bonne idée.
+
+04:56.760 --> 05:01.440
+Quelque chose d'autre qui, pendant très longtemps, nous avons dû utiliser une chose appelée React Helmet.
+
+05:01.440 --> 05:08.080
+Si vous souhaitez ajouter des éléments, changez le nom du document, ici il est écrit Padre Gino's.
+
+05:08.080 --> 05:11.960
+Si vous vouliez changer cela pour commander sur la page de commande et contacter sur la page contact
+
+05:11.960 --> 05:16.720
+et des trucs comme ça, il fallait utiliser quelque chose appelé React Helmet, qui est une bibliothèque de
+
+05:16.720 --> 05:17.720
+la NFL.
+
+05:17.720 --> 05:21.600
+C'est un fait amusant.
+
+05:21.600 --> 05:24.000
+Vous rendriez quelque chose dans le casque et ensuite le casque le mettrait dans la tête
+
+05:24.000 --> 05:25.000
+pour toi.
+
+05:25.000 --> 05:26.680
+C'est ainsi que cela fonctionnerait.
+
+05:26.680 --> 05:29.880
+Dans React 19, ils intègrent simplement cela directement dans React.
+
+05:29.880 --> 05:33.480
+Si vous affichez quelque chose comme le titre ici, cela le mettra automatiquement dans le
+
+05:33.480 --> 05:34.480
+tête vers toi.
+
+05:34.480 --> 05:35.480
+Vous n'avez rien de spécial à faire.
+
+05:35.480 --> 05:36.480
+C'est juste comme, oh, le titre.
+
+05:36.480 --> 05:38.480
+Cela va dans la tête.
+
+05:38.480 --> 05:45.080
+Même chose avec les liens, donc ajout de documents CSS ou de balises méta ou quelque chose comme ça.
+
+05:45.080 --> 05:52.720
+Tous les éléments pour lesquels nous utilisions React Helmet sont désormais intégrés à React 19.
+
+05:52.720 --> 05:59.080
+Nous avons parlé un peu du préchargement de Preconnect plus tôt dans le cours.
+
+05:59.080 --> 06:05.440
+Si vous avez besoin d'une introduction plus intéressante à ce sujet, j'ai trouvé cet article, qui est joli
+
+06:05.440 --> 06:07.440
+cool.
+
+06:08.440 --> 06:15.560
+On les appelle des astuces de navigateur et ils vous permettent de dire, hé, pré-effectuez toutes les poignées de main HTTPS.
+
+06:15.560 --> 06:17.600
+C'est à cela que sert Preconnect.
+
+06:17.600 --> 06:22.000
+J'en aurai peut-être besoin ici dans une seconde, et je veux que vous y alliez aussi vite que possible.
+
+06:22.000 --> 06:26.280
+La préconnexion, c'est comme, faites la poignée de main, préparez-vous pour la connexion sécurisée, mais ne le faites pas
+
+06:26.280 --> 06:28.360
+télécharger n'importe quoi.
+
+06:28.360 --> 06:31.840
+Ensuite, le préchargement est comme, non, allez-y et téléchargez ceci.
+
+06:31.840 --> 06:33.160
+Cela se fait via les astuces du navigateur.
+
+06:33.920 --> 06:38.320
+Intégré au navigateur, ce n'est pas un type particulier de React.
+
+06:38.320 --> 06:42.920
+Vous feriez quelque chose comme ça dans React, et c'est comme, hé, je sais que c'est sur le point de
+
+06:42.920 --> 06:46.400
+ouvre un éditeur de texte, car évidemment c'est le lien, donc je clique ici pour ouvrir le texte
+
+06:46.400 --> 06:47.400
+éditeur.
+
+06:47.400 --> 06:52.120
+Vous entendez, c'est comme, prenez de l'avance sur l'utilisateur, téléchargez ceci en premier, de sorte que lorsqu'il clique
+
+06:52.120 --> 06:55.960
+ce lien, nous sommes immédiatement prêts à partir.
+
+06:55.960 --> 06:59.920
+Une façon plutôt cool et vraiment intéressante de faire une allusion.
+
+06:59.920 --> 07:02.080
+Ce qui est cool, c'est que les navigateurs peuvent l'ignorer.
+
+07:02.080 --> 07:06.920
+S'il est en mode batterie faible ou quelque chose comme ça, le navigateur l'ignorera simplement.
+
+07:06.920 --> 07:07.920
+Mais ça ne le casse pas.
+
+07:07.920 --> 07:09.520
+Ils devront simplement attendre plus longtemps.
+
+07:09.520 --> 07:10.520
+Composants Web.
+
+07:10.520 --> 07:13.640
+Les gens le réclament depuis très, très longtemps.
+
+07:13.640 --> 07:17.080
+C'est en quelque sorte possible depuis longtemps, mais maintenant que c'est devenu de première classe
+
+07:17.080 --> 07:18.980
+soutien.
+
+07:18.980 --> 07:22.080
+Pourquoi vous souciez-vous de ça ?
+
+07:22.080 --> 07:27.440
+Je ne vais pas vous encourager à écrire vous-même directement des composants Web si vous utilisez React.
+
+07:27.440 --> 07:29.040
+Utilisez simplement React.
+
+07:29.040 --> 07:31.240
+La raison pour laquelle cela est réellement intéressant concerne les auteurs de bibliothèques.
+
+07:31.240 --> 07:36.480
+Par exemple, je parlais à une société d'authentification, dscope, si vous en avez entendu parler, c'est parfaitement
+
+07:36.480 --> 07:40.120
+bon fournisseur d'authentification, je les aime bien.
+
+07:40.120 --> 07:45.480
+Ils peuvent créer leurs composants d'authentification que vous pouvez importer une fois dans votre page, puis
+
+07:45.480 --> 07:50.480
+ils peuvent envoyer cela à Angular, à React, à Vue, et ils restituent tous simplement un composant Web
+
+07:50.480 --> 07:52.800
+en fin de journée.
+
+07:52.800 --> 07:58.320
+Tout cela encapsule la logique, le CSS, le HTML, le JavaScript, et ils peuvent écrire
+
+07:58.320 --> 08:00.160
+une fois, et ça marche partout.
+
+08:00.240 --> 08:04.560
+C'est génial pour eux, au lieu d'avoir à gérer sept SDK différents pour sept applications différentes.
+
+08:04.560 --> 08:06.800
+cadres.
+
+08:06.800 --> 08:12.200
+C'est génial pour les fournisseurs et tout ce genre de choses de pouvoir expédier un seul composant.
+
+08:12.200 --> 08:15.840
+à plusieurs bibliothèques.
+
+08:15.840 --> 08:18.920
+Ils ont finalement compris comment le faire très bien avec React, et ils vont enfin
+
+08:18.920 --> 08:24.040
+pour expédier ça, ce que je trouve vraiment cool.
+
+08:24.040 --> 08:27.360
+Plus de trucs, j'ai lié les trucs ici.
+
+08:27.360 --> 08:29.400
+Vous pouvez voir qu'ils l'ont annoncé le 25 avril.
+
+08:29.400 --> 08:32.880
+Cela fait un moment qu'ils n'ont pas annoncé tout ça.
+
+08:32.880 --> 08:37.680
+Il y a plus que ce dont j'ai parlé ici, mais je pense que je vous ai en quelque sorte donné le point culminant.
+

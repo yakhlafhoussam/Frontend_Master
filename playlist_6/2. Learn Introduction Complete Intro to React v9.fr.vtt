@@ -1,0 +1,627 @@
+WEBVTT
+
+
+00:00.360 --> 00:04.700
+Allons-y et commençons à écrire du React
+
+00:04.700 --> 00:07.680
+pour qu'on puisse éventuellement faire celui de Padre Gino.
+
+00:07.680 --> 00:08.520
+Donc vous pouvez voir ici,
+
+00:08.520 --> 00:11.080
+Je suis dans mon projet complet d'introduction à React V9.
+
+00:11.080 --> 00:13.720
+La façon dont je vais faire ça, c'est que je vais juste
+
+00:13.720 --> 00:15.280
+créez un nouveau répertoire ici
+
+00:15.280 --> 00:17.220
+et je vais juste commencer à travailler à partir de ce répertoire.
+
+00:17.220 --> 00:19.640
+Je pense que ce sera le plus simple pour moi.
+
+00:19.640 --> 00:20.760
+Ouais, faisons ça.
+
+00:23.160 --> 00:26.440
+Nous appellerons cela le,
+
+00:27.440 --> 00:28.720
+nous l'appellerons simplement celui de Padre Gino,
+
+00:28.720 --> 00:29.640
+parce que c'est ce que nous allons faire.
+
+00:29.640 --> 00:32.740
+D'accord, et ensuite je vais ouvrir ceci dans mon éditeur VS Code.
+
+00:32.740 --> 00:34.400
+Alors celui de Padre Gino,
+
+00:37.120 --> 00:38.200
+répertoire vide.
+
+00:38.200 --> 00:40.960
+Nous allons créer un index.html.
+
+00:45.600 --> 00:49.480
+D'accord, et nous allons commencer à construire React
+
+00:49.480 --> 00:51.720
+sans étape de construction.
+
+00:51.720 --> 00:54.600
+Nous allons donc écrire React de manière à ce que
+
+00:54.600 --> 00:56.600
+Je ne connais personne qui écrive réellement
+
+00:56.600 --> 00:58.200
+Réagissez sans étape de construction,
+
+00:58.200 --> 01:01.040
+mais je veux vous montrer que c'est effectivement possible.
+
+01:02.320 --> 01:04.440
+Donc l'un de mes codes de triche préférés dans
+
+01:06.720 --> 01:09.120
+VS Code est qu'Emmet est intégré.
+
+01:09.120 --> 01:11.840
+Donc je peux juste dire HTML deux-points cinq
+
+01:11.840 --> 01:13.040
+et puis je peux juste appuyer sur l'onglet
+
+01:13.040 --> 01:16.220
+et cela génère simplement un document HTML valide pour moi.
+
+01:17.200 --> 01:18.600
+Alors je vais faire ça
+
+01:19.580 --> 01:22.320
+et je vais appeler ça celui de Padre Gino.
+
+01:22.320 --> 01:27.320
+D'accord, et ensuite j'aurai un div qui sera root.
+
+01:33.160 --> 01:34.680
+Et j'aime mettre quelque chose ici
+
+01:34.680 --> 01:35.960
+parce que cela sera remplacé
+
+01:35.960 --> 01:37.680
+et donc si vous voyez non rendu sur la page,
+
+01:37.680 --> 01:39.120
+tu sais que quelque chose s'est mal passé.
+
+01:41.480 --> 01:44.280
+Et puis nous allons mettre quelques balises de script ici.
+
+01:45.760 --> 01:47.580
+Donc nous allons faire un script,
+
+01:48.500 --> 01:52.420
+scénario, source.
+
+01:54.580 --> 01:56.100
+Si j'étais toi, je les attraperais directement
+
+01:56.100 --> 01:59.380
+de ma page ici
+
+01:59.380 --> 02:01.820
+parce que sinon c'est vraiment chiant d'écrire à la main.
+
+02:09.220 --> 02:12.580
+Le déballage a été réellement créé
+
+02:12.580 --> 02:16.980
+par l'un des auteurs du routeur React
+
+02:16.980 --> 02:20.380
+et il s'agit essentiellement d'un CDN rempli de tous les packages NPM.
+
+02:20.380 --> 02:21.740
+C'est vraiment bien que tu puisses faire des choses comme ça
+
+02:21.740 --> 02:24.340
+où vous pouvez simplement charger des éléments directement à partir du CDN
+
+02:24.340 --> 02:27.020
+et commencez avec quelque chose hors de NPM
+
+02:27.020 --> 02:29.900
+sans étape de construction, ce qui est plutôt amusant.
+
+02:29.900 --> 02:32.900
+Nous obtenons donc unpkg.com de React 18.3.1.
+
+02:36.340 --> 02:39.820
+UMD signifie Définition universelle du module
+
+02:39.820 --> 02:43.140
+et nous prenons React et React Dom.
+
+02:43.980 --> 02:47.780
+Juste un petit mot expliquant pourquoi il existe deux packages.
+
+02:47.780 --> 02:50.860
+React est l'interface universelle pour React.
+
+02:50.860 --> 02:55.860
+Donc des choses comme React Native, React 3D, React 360,
+
+02:56.100 --> 03:00.180
+tous utilisent le même package React
+
+03:00.180 --> 03:02.260
+puis la couche de rendu réelle en dessous
+
+03:02.260 --> 03:04.660
+c'est spécifique au Dom au navigateur
+
+03:04.660 --> 03:05.860
+s'appelle le React Dom.
+
+03:06.820 --> 03:08.700
+Donc, si jamais vous travaillez dans un navigateur,
+
+03:08.700 --> 03:10.620
+vous n'aurez toujours que ces deux packages.
+
+03:10.620 --> 03:11.700
+Si vous travaillez dans React Native,
+
+03:11.700 --> 03:14.340
+vous aurez une boîte à outils React Native différente
+
+03:14.340 --> 03:17.380
+mais il utilisera toujours le même package React.
+
+03:17.380 --> 03:19.140
+Okay, je vais garder ça
+
+03:21.100 --> 03:23.980
+et puis je vais ouvrir mon terminal ici
+
+03:25.180 --> 03:26.660
+et nous pouvons faire un petit tour amusant ici
+
+03:26.660 --> 03:31.060
+ce que je vais faire, npx sert juste comme ça.
+
+03:33.060 --> 03:35.140
+Il vous demandera : est-ce que je peux installer ce package ?
+
+03:35.140 --> 03:36.380
+Vous pouvez dire oui.
+
+03:38.380 --> 03:40.260
+Et cela commencera simplement à le servir directement
+
+03:40.260 --> 03:42.820
+sur le port 3000 ici et vous pouvez voir,
+
+03:42.820 --> 03:46.900
+Je crée cette page sur localhost 3000.
+
+03:46.900 --> 03:51.420
+Il existe mille milliards de façons de fonctionner comme un serveur hôte local.
+
+03:51.420 --> 03:54.020
+C'est juste un très rapide utilisant le nœud
+
+03:54.020 --> 03:57.780
+mais vous pouvez faire du php-s, il y en a un en Python.
+
+03:57.780 --> 04:00.140
+Vous pouvez exécuter nginx via Docker.
+
+04:00.140 --> 04:01.780
+Vous pourriez littéralement l'ouvrir directement
+
+04:01.780 --> 04:06.100
+avec comme commande O et ouvrez-le dans le navigateur.
+
+04:06.100 --> 04:08.260
+Nous avons donc ceci, il s'ouvre sur notre page.
+
+04:08.260 --> 04:11.500
+Ça utilise le service, le service est fait par Vercel
+
+04:11.500 --> 04:13.260
+au cas où vous seriez curieux.
+
+04:13.260 --> 04:15.980
+Vous obtenez ici de jolis petits journaux de serveur, plutôt amusants.
+
+04:15.980 --> 04:17.700
+Nous avons nos deux balises de script ici,
+
+04:17.700 --> 04:20.780
+décompresser de React et React Dom
+
+04:21.980 --> 04:24.460
+et le dernier, nous allons mettre une balise de script supplémentaire
+
+04:24.460 --> 04:29.180
+ici et ça va juste aller à la source .slash
+
+04:29.180 --> 04:31.660
+coupez app.js.
+
+04:36.080 --> 04:37.940
+Comme vous pouvez l'imaginer, nous allons créer un répertoire ici.
+
+04:37.940 --> 04:39.860
+Nous allons l'appeler source
+
+04:39.860 --> 04:41.180
+et nous allons créer un fichier là-dedans
+
+04:41.180 --> 04:44.500
+et ça va s'appeler app.js.
+
+04:44.500 --> 04:46.820
+Donc, à l'intérieur de app.js,
+
+04:48.860 --> 04:53.100
+nous allons créer notre tout premier composant React.
+
+04:53.100 --> 04:56.980
+Donc nous allons dire que const app est égal à,
+
+04:56.980 --> 04:59.660
+Je vais juste faire une fonction de flèche ici.
+
+04:59.660 --> 05:02.620
+Si vous n'avez jamais vu cette grosse flèche auparavant,
+
+05:02.620 --> 05:06.540
+c'est ma combinaison de ligatures, quelle est la police, n'est-ce pas ?
+
+05:06.540 --> 05:09.700
+Combinaison d'un signe égal et d'un crochet angulaire.
+
+05:09.700 --> 05:10.900
+C'est ça une ligature.
+
+05:10.900 --> 05:14.620
+J'ai laissé une note à ce sujet dans ma partie configuration du cours.
+
+05:14.620 --> 05:16.220
+Si tu veux savoir comment faire ça.
+
+05:18.300 --> 05:22.300
+D'accord, et ensuite je reviendrai sur React.
+
+05:23.300 --> 05:24.260
+Non, pas ça.
+
+05:25.740 --> 05:27.540
+Créer un élément.
+
+05:30.140 --> 05:32.900
+D'accord, et ensuite nous allons mettre un div.
+
+05:33.740 --> 05:35.980
+Un objet vide, vous pouvez aussi mettre un tout ici.
+
+05:35.980 --> 05:37.060
+Les deux vont bien.
+
+05:38.420 --> 05:41.260
+Et puis un autre React.createElement
+
+05:42.420 --> 05:47.420
+d'un H1, d'un objet vide et peu importe comment vous voulez l'appeler.
+
+05:49.020 --> 05:51.100
+Je vais appeler le mien Padre Gino.
+
+05:56.340 --> 06:00.060
+D'accord, alors nous allons descendre ici
+
+06:00.060 --> 06:01.740
+et dites conteneur const.
+
+06:03.260 --> 06:08.260
+On va récupérer ça, où l'ai-je mis ?
+
+06:08.660 --> 06:10.260
+Celui-ci, root, n'est-ce pas ?
+
+06:11.580 --> 06:14.660
+Nous allons donc dire que le conteneur const est égal au document.
+
+06:18.300 --> 06:20.100
+getElementById.
+
+06:21.860 --> 06:22.700
+Racine.
+
+06:24.660 --> 06:28.220
+La racine Const est égale à React DOM.
+
+06:30.220 --> 06:31.060
+.createRoot.
+
+06:33.660 --> 06:34.500
+Conteneur.
+
+06:35.620 --> 06:38.340
+Et puis nous allons dire root.render.
+
+06:40.100 --> 06:44.100
+Application React.createElement.
+
+06:52.740 --> 06:53.580
+C'est ça.
+
+06:53.580 --> 06:55.740
+C'est votre toute première application React.
+
+06:55.740 --> 06:57.060
+Qu’espérons-nous qu’il se passe ?
+
+06:57.060 --> 06:58.700
+C'est ma question préférée avant
+
+06:58.700 --> 07:00.780
+et je fais ça tout le temps quand j'écris du code.
+
+07:00.780 --> 07:03.020
+Je reste assis là et avant de cliquer sur Enregistrer
+
+07:03.020 --> 07:05.660
+et courir et voir ce qui se passe, je me demande toujours,
+
+07:05.660 --> 07:08.260
+qu'est-ce que je m'attends à ce qu'il se passe avant de courir là-bas ?
+
+07:09.580 --> 07:12.740
+Eh bien, j'ai un truc avec l'application.
+
+07:12.740 --> 07:14.740
+Vous pourriez appeler cela un composant.
+
+07:14.740 --> 07:15.940
+Je ne sais pas, si tu te sens épicé,
+
+07:15.940 --> 07:17.500
+on pourrait appeler cela un composant.
+
+07:19.100 --> 07:23.980
+Et c'est un type de composant et ça renvoie
+
+07:25.340 --> 07:28.220
+quel que soit le résultat de ce createElement.
+
+07:28.220 --> 07:30.020
+Je vais deviner que React.createElement
+
+07:30.020 --> 07:31.620
+renvoie un élément.
+
+07:31.620 --> 07:32.540
+Je ne sais pas où j'ai eu ça,
+
+07:32.540 --> 07:35.780
+mais c'est probablement un bon pari là-bas.
+
+07:35.780 --> 07:37.420
+Et il va y avoir un div.
+
+07:38.540 --> 07:40.940
+Cette chose, c'est peut-être le cas, c'est comme les attributs.
+
+07:40.940 --> 07:42.700
+Donc il n'y aura probablement pas de pièce d'identité
+
+07:42.700 --> 07:45.940
+ou une classe ou un quatre ou quelque chose comme ça dessus.
+
+07:46.860 --> 07:50.020
+Et puis à l'intérieur, il y aura un h1
+
+07:50.020 --> 07:53.060
+ça va dire que Padre Gino est à l'intérieur.
+
+07:53.060 --> 07:56.660
+Cela va être rendu à l'intérieur du div ID racine
+
+07:56.660 --> 07:57.500
+sur la page.
+
+07:58.500 --> 08:00.740
+Très bien, allons voir si nous avons raison.
+
+08:04.700 --> 08:06.900
+Plutôt cool, non ?
+
+08:06.900 --> 08:09.260
+Voyons si nous avions réellement raison.
+
+08:09.260 --> 08:10.420
+Nous avons un div.
+
+08:10.420 --> 08:11.660
+C'est à l'intérieur du,
+
+08:11.660 --> 08:14.340
+voyons si je peux agrandir un peu ces outils de développement.
+
+08:18.380 --> 08:20.420
+Il y a la racine de l'ID là-bas, n'est-ce pas ?
+
+08:20.420 --> 08:22.740
+C'est celui que nous avons mis en premier sur la doc HTML
+
+08:22.740 --> 08:24.940
+et puis il y a un div à l'intérieur.
+
+08:24.940 --> 08:26.100
+Il y a un h1 à l'intérieur
+
+08:26.100 --> 08:28.140
+et il y a un Padre Gino à l'intérieur.
+
+08:29.100 --> 08:30.740
+C’est un peu ce à quoi nous nous attendions, n’est-ce pas ?
+
+08:31.940 --> 08:34.100
+Très bien, vous avez terminé.
+
+08:34.100 --> 08:35.660
+Disons que c'est un jour.
+
+08:39.780 --> 08:40.620
+Non, je plaisante.
+
+08:40.620 --> 08:43.020
+Il y a quelques autres choses à React que cela.
+
+08:45.060 --> 08:48.620
+Mais je vais aussi dire que c'est un peu l'essentiel de React,
+
+08:48.620 --> 08:49.460
+ce qui est plutôt cool.
+
+08:49.460 --> 08:51.900
+Comme le principe comme la boucle d'itération de base
+
+08:51.900 --> 08:53.660
+ce n'est pas très compliqué avec React,
+
+08:53.660 --> 08:55.660
+ce qui est l'une de mes parties préférées à ce sujet.
+
+08:56.980 --> 09:02.060
+Donc, React consiste avant tout à créer des composants, n'est-ce pas ?
+
+09:02.060 --> 09:05.940
+Nous avons créé ce composant d'application qui, à chaque fois que vous l'appelez,
+
+09:05.940 --> 09:07.820
+tu vas avoir un div, un h1 à l'intérieur
+
+09:07.820 --> 09:12.820
+et un texte là-dedans qui dit celui de Padre Gino.
+
+09:13.500 --> 09:14.740
+Et maintenant tu peux voir ça
+
+09:14.740 --> 09:18.140
+nous utilisons à nouveau create element, exactement le même.
+
+09:18.140 --> 09:20.260
+Ici, nous lui avons donné une chaîne, n'est-ce pas ?
+
+09:21.580 --> 09:24.620
+Et cela nous a donné la véritable balise div littérale sur la page.
+
+09:24.620 --> 09:26.540
+Donc, nous avons le div, nous avons le h1
+
+09:26.540 --> 09:28.380
+et puis nous avons ce composant.
+
+09:28.380 --> 09:31.340
+J'aime comparer cela à un tampon, n'est-ce pas ?
+
+09:31.340 --> 09:32.940
+Nous avons donc créé ce tampon d'application
+
+09:32.940 --> 09:35.420
+et maintenant on peut aller le tamponner autant de fois qu'on veut, non ?
+
+09:35.420 --> 09:38.660
+Parce que c'est un composant réutilisable.
+
+09:38.660 --> 09:41.700
+Vous pouvez imaginer que vous avez une pizza
+
+09:41.700 --> 09:43.660
+parce que c'est ce que nous sommes littéralement sur le point de créer
+
+09:43.660 --> 09:45.220
+ici dans une minute.
+
+09:45.220 --> 09:47.620
+Et si vous avez cinq types de pizza différents,
+
+09:47.620 --> 09:49.780
+vous pouvez l'effacer cinq fois différentes,
+
+09:49.780 --> 09:51.940
+mais vous créez votre petit cachet ici.
+
+09:51.940 --> 09:53.260
+Et puis, que fait l'élément de création,
+
+09:53.260 --> 09:54.100
+la seule chose que ça fait
+
+09:54.100 --> 09:57.460
+c'est comme si on tamponnait le tampon une fois, n'est-ce pas ?
+
+09:57.460 --> 10:00.820
+Donc, j'appelle le react.createElement ici avec l'application
+
+10:00.820 --> 10:02.060
+et je dis juste, hé,
+
+10:02.060 --> 10:04.540
+au lieu de root, allez tamponner l'application une fois, n'est-ce pas ?
+
+10:04.540 --> 10:06.780
+Et vous obtenez une instance de la classe
+
+10:06.780 --> 10:08.780
+ou une instance du composant.
+
+10:09.860 --> 10:12.980
+Donc, instance d'élément,
+
+10:12.980 --> 10:14.940
+vous pouvez en quelque sorte associer ces deux mots ensemble.
+
+10:14.940 --> 10:16.140
+Composant, classe,
+
+10:16.140 --> 10:17.900
+vous pouvez en quelque sorte associer ces deux mots ensemble.
+
+10:17.900 --> 10:19.740
+Si vous êtes un programmeur orienté objet,
+
+10:19.740 --> 10:20.700
+cela aura beaucoup de sens pour vous.
+
+10:20.700 --> 10:22.140
+Si ce n'est pas le cas, vous êtes comme ceux-là,
+
+10:22.140 --> 10:23.420
+tu dis juste des mots maintenant
+
+10:23.420 --> 10:26.300
+et me faire sentir bizarre, non ?
+
+10:26.300 --> 10:27.140
+Je comprends.
+
+10:28.580 --> 10:30.740
+Quoi qu'il en soit, composant réutilisable de l'application.
+
+10:30.740 --> 10:33.580
+C'est la partie que vous voulez vraiment retenir de tout cela.
+

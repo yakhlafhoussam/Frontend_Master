@@ -1,0 +1,828 @@
+WEBVTT
+
+
+00:00.160 --> 00:03.120
+Nous avons donc des requêtes API en masse
+
+00:03.120 --> 00:05.220
+de nos différents composants.
+
+00:06.200 --> 00:07.280
+Vous avez deux choix ici,
+
+00:07.280 --> 00:09.240
+et je vais dire que tu n'as en fait qu'un seul choix,
+
+00:09.240 --> 00:11.040
+mais en théorie, vous pourriez faire tourner votre API
+
+00:11.040 --> 00:13.840
+et vous pourriez lui faire faire de vraies requêtes à une fausse API
+
+00:13.840 --> 00:15.000
+ou quelque chose comme ça.
+
+00:16.500 --> 00:19.600
+Ne faites pas ça, cela se termine généralement par un chagrin d'amour.
+
+00:20.720 --> 00:22.840
+Donc dans ce cas, vous voudrez probablement vous en moquer,
+
+00:22.840 --> 00:26.880
+comme faire des requêtes fictives pour qu'il fasse une requête
+
+00:26.880 --> 00:29.960
+et puis cela est truqué et on y répond.
+
+00:29.960 --> 00:32.180
+C'est ce que je vais vous apprendre à faire maintenant.
+
+00:32.180 --> 00:37.180
+Nous allons donc installer vitest-fetch-mock en 0.3.0.
+
+00:41.240 --> 00:43.040
+Nous n'avons pas eu besoin d'utiliser vitest-fetch-mock,
+
+00:43.040 --> 00:45.640
+c'est en fait très facile à faire directement avec Vitest.
+
+00:46.800 --> 00:47.960
+Cela ajoute juste quelques subtilités
+
+00:47.960 --> 00:50.720
+et je ne voulais juste pas te faire coder tout ça,
+
+00:50.720 --> 00:52.880
+donc on va juste s'en tenir à ça.
+
+00:52.880 --> 00:55.920
+Écrivons le code pour les tests.
+
+00:56.920 --> 01:01.200
+Nous allons tester la page contact.
+
+01:01.200 --> 01:05.220
+Alors allons créer un autre fichier de test ici,
+
+01:06.140 --> 01:07.800
+et celui-ci doit s'appeler quelque chose
+
+01:07.800 --> 01:12.800
+c'est un peu idiot, c'est contact.lazy.test.jsx.
+
+01:20.000 --> 01:21.160
+Et si vous le regardez comme ça,
+
+01:21.160 --> 01:24.720
+c'est le nom de fichier le plus stupide que j'ai jamais créé,
+
+01:24.720 --> 01:27.840
+attendez, nous sommes sur le point d'en faire un qui est encore plus idiot.
+
+01:27.840 --> 01:29.480
+Mais pourquoi ?
+
+01:29.480 --> 01:32.000
+Eh bien, paresseux, ça dépend de ça
+
+01:32.000 --> 01:35.740
+pour un routeur à 10 piles,
+
+01:35.740 --> 01:37.900
+et tester, ça dépend de ça
+
+01:37.900 --> 01:39.760
+pour la suite de tests,
+
+01:39.760 --> 01:43.040
+c'est pour ça que j'hésite un peu
+
+01:43.040 --> 01:46.760
+à propos des noms de fichiers doivent-ils être significatifs ?
+
+01:46.760 --> 01:48.480
+Parce qu'alors tu te retrouves avec des trucs idiots comme ça,
+
+01:48.480 --> 01:51.280
+ce qui est évidemment idiot.
+
+01:51.280 --> 01:54.240
+Mais voilà, nous allons l'utiliser quand même.
+
+01:54.240 --> 01:59.240
+Alors importez le rendu depuis la réaction de la bibliothèque de tests,
+
+02:05.440 --> 02:10.440
+import wait test, et un autre ici appelé vi
+
+02:11.960 --> 02:13.480
+dont nous allons parler, je vous le promets,
+
+02:13.480 --> 02:16.700
+ce n'est pas vim, c'est différent de ça.
+
+02:17.800 --> 02:18.900
+Et de toute façon, je te montrerai
+
+02:18.900 --> 02:20.440
+comment s'en sortir après.
+
+02:20.440 --> 02:25.440
+Importer, créer une simulation de récupération à partir de la simulation de récupération de Vitest,
+
+02:28.720 --> 02:33.320
+fournisseur de client de requête d'importation,
+
+02:33.320 --> 02:37.700
+et interrogez le client à partir d'un routeur à 10 piles,
+
+02:37.700 --> 02:42.120
+désolé, requête à 10 piles, plutôt requête client,
+
+02:44.840 --> 02:49.840
+et l'itinéraire d'importation du fournisseur Vitest,
+
+02:51.440 --> 02:54.160
+itinéraires, contact.lazy.
+
+02:57.440 --> 03:00.000
+Alors pourquoi importons-nous des éléments à partir d'une requête de réaction ?
+
+03:00.000 --> 03:02.040
+Cela semble un peu étrange, non ?
+
+03:02.040 --> 03:05.040
+Eh bien, c'est parce que pour que la requête de réaction fonctionne,
+
+03:05.040 --> 03:07.160
+cela dépend de la présence d'un client de requête,
+
+03:07.160 --> 03:11.520
+et nous ne le rendons pas dans le contexte d'une application, n'est-ce pas ?
+
+03:11.520 --> 03:14.540
+Une application est ce qui possède réellement le client de requête,
+
+03:14.540 --> 03:17.000
+nous devons donc en créer un faux.
+
+03:17.000 --> 03:18.560
+Ce n'est pas un faux, c'est en fait un vrai,
+
+03:18.600 --> 03:20.240
+mais nous devons en créer un pour cela.
+
+03:21.320 --> 03:22.660
+C'est donc exactement ce que nous allons faire ici.
+
+03:22.660 --> 03:24.640
+Nous allons dire client de requête const
+
+03:27.540 --> 03:30.300
+équivaut à un nouveau client de requête.
+
+03:33.280 --> 03:34.120
+D'accord?
+
+03:35.400 --> 03:38.000
+Parlons de vi une seconde.
+
+03:38.000 --> 03:42.560
+Vi est le nom de la bibliothèque d'espionnage à l'intérieur de Vitest,
+
+03:42.560 --> 03:47.020
+donc si vous avez déjà utilisé cnon dans d'anciens tests de réaction,
+
+03:47.340 --> 03:50.700
+c'est toujours d'actualité, vous pouvez toujours utiliser cnon dans beaucoup de choses.
+
+03:50.700 --> 03:52.420
+C'est la même idée,
+
+03:52.420 --> 03:54.620
+mais c'est fondamentalement comme quelque chose qui ressemble à,
+
+03:54.620 --> 03:57.020
+très bien, je vais créer une fausse version de ça,
+
+03:57.020 --> 03:58.380
+et puis je demanderai plus tard,
+
+03:58.380 --> 03:59.280
+Est-ce que ça a été appelé,
+
+03:59.280 --> 04:01.840
+avec quelles fonctions cela a-t-il été appelé ?
+
+04:01.840 --> 04:04.140
+Cela s'appelle de l'espionnage dans les tests,
+
+04:04.140 --> 04:05.740
+et c'est ce que vi fait pour vous.
+
+04:06.940 --> 04:10.500
+Donc on va dire const fetchMocker
+
+04:10.500 --> 04:13.820
+est égal à createFetchMock vi,
+
+04:13.860 --> 04:18.860
+et ça va en quelque sorte fetchMocker.enableMocks.
+
+04:20.420 --> 04:22.860
+Ce que ça fait, c'est que ça va et que les patchs de singe récupèrent
+
+04:22.860 --> 04:25.420
+être désormais testable, non ?
+
+04:25.420 --> 04:27.800
+Cela ne va pas vraiment appeler l'API.
+
+04:27.800 --> 04:31.640
+Ça va juste faire semblant comme ça, non ?
+
+04:32.980 --> 04:34.500
+Et maintenant, ce qui est cool, c'est qu'on peut dire :
+
+04:34.500 --> 04:37.780
+Hé, va chercher, avec quoi as-tu été appelé ?
+
+04:37.780 --> 04:39.060
+Et c'est une bonne chose pour nous
+
+04:39.060 --> 04:40.300
+parce que maintenant nous pouvons revenir en arrière et dire,
+
+04:40.300 --> 04:42.100
+as-tu appelé la bonne API ?
+
+04:42.100 --> 04:43.020
+As-tu fait les bonnes choses
+
+04:43.020 --> 04:45.740
+étant donné ce genre d’entrées, n’est-ce pas ?
+
+04:45.740 --> 04:46.760
+C'est le point.
+
+04:48.500 --> 04:53.500
+Très bien, nous allons donc dire que le test peut soumettre un formulaire de contact.
+
+04:55.080 --> 04:56.980
+Cela semble être un très bon test, non ?
+
+04:58.620 --> 05:00.020
+Fonction asynchrone.
+
+05:05.080 --> 05:06.220
+Et celui-ci en aura un peu plus,
+
+05:06.220 --> 05:08.740
+mais nous allons en fait faire comme des événements de test simulés,
+
+05:08.740 --> 05:09.900
+ce qui va être cool.
+
+05:13.140 --> 05:16.220
+Très bien, alors première chose que nous allons dire,
+
+05:16.220 --> 05:21.220
+fetchMocker mockResponse une fois, pas seulement mockResponse.
+
+05:27.140 --> 05:27.980
+Je ne pense pas que ce soit important
+
+05:27.980 --> 05:30.020
+parce que nous ne l'appellerons qu'une fois.
+
+05:30.020 --> 05:33.260
+En tout cas, en gros, vous dites au fetchMocker
+
+05:33.260 --> 05:35.660
+c'est comme, hé, si on t'appelle,
+
+05:35.660 --> 05:37.740
+répondez avec ceci depuis l'API.
+
+05:40.300 --> 05:42.300
+Parce que nous ne connaissons qu'une seule API
+
+05:42.300 --> 05:43.740
+va être appelé au cours de cela.
+
+05:43.740 --> 05:45.460
+Nous n'avons pas vraiment besoin de trop réfléchir
+
+05:45.460 --> 05:47.500
+à propos de qui s'appelait et pourquoi
+
+05:47.500 --> 05:48.860
+et ce genre de choses.
+
+05:48.860 --> 05:49.900
+Mais je peux imaginer comme,
+
+05:49.900 --> 05:50.820
+disons que tu as quelque chose
+
+05:50.820 --> 05:53.340
+cela a environ neuf appels API différents.
+
+05:53.340 --> 05:54.580
+Il faut être un peu plus précis,
+
+05:54.580 --> 05:56.860
+comme si d'accord, sur cette route, répondez avec ceci.
+
+05:56.860 --> 05:58.860
+À cette route, répondez avec ceci.
+
+05:58.860 --> 06:00.020
+Nous n'avons pas à nous soucier trop de ça
+
+06:00.020 --> 06:01.180
+donc nous n'allons pas le faire.
+
+06:03.340 --> 06:06.500
+Très bien, et ensuite ce sera juste un statut, ok,
+
+06:07.420 --> 06:09.660
+parce que c'est ce avec quoi l'API répond maintenant.
+
+06:10.660 --> 06:15.340
+Très bien, nous allons dire que const screen est égal à render.
+
+06:16.300 --> 06:19.740
+Et rappelez-vous, nous devons lui attribuer un fournisseur queryClient.
+
+06:21.060 --> 06:26.060
+Et un queryClient équivaut, comme vous pouvez le deviner, à queryClient.
+
+06:30.660 --> 06:35.660
+Et nous allons dire route.options.component.
+
+06:40.260 --> 06:44.060
+Alors pourquoi ce genre d’étrangeté ?
+
+06:44.060 --> 06:47.940
+Eh bien, si vous vous souvenez d'un contact ici,
+
+06:47.940 --> 06:52.940
+ce qui est exporté est en fait cette route de fichier paresseuse
+
+06:53.980 --> 06:55.660
+qui est entouré d'un tas de machines
+
+06:55.660 --> 07:00.060
+que le routeur TanStack utilise.
+
+07:00.060 --> 07:02.260
+Nous n’avons pas besoin de cela, nous avons juste besoin du composant.
+
+07:03.260 --> 07:05.860
+C'est pourquoi nous créons le composant route.options.component.
+
+07:05.860 --> 07:07.260
+C'est de là que ça vient.
+
+07:08.260 --> 07:13.260
+Très bien, simulons maintenant tous nos événements d'entrée.
+
+07:14.540 --> 07:19.540
+Nous allons donc dire que l'entrée du nom const est égale à l'écran.
+
+07:20.140 --> 07:22.380
+Et quand vous pouvez faire getByPlaceHolder,
+
+07:22.380 --> 07:25.700
+cela semble en fait assez approprié.
+
+07:25.700 --> 07:26.620
+Parce que c'est quelque chose que l'utilisateur
+
+07:26.620 --> 07:27.980
+j'en ferais l'expérience, n'est-ce pas ?
+
+07:29.180 --> 07:32.420
+Et nous en ferons trois, et nous ferons la saisie par courrier électronique.
+
+07:33.420 --> 07:38.420
+Zone de texte des e-mails et des messages.
+
+07:45.260 --> 07:47.220
+Et c'est un message.
+
+07:49.340 --> 07:51.860
+Très bien, alors maintenant nous avons des poignées
+
+07:51.860 --> 07:54.460
+sur toutes nos différentes entrées.
+
+07:55.540 --> 07:59.020
+Et nous allons rassembler quelques données de test.
+
+07:59.020 --> 08:04.020
+const testData est égal à ce que vous voulez ici.
+
+08:06.500 --> 08:10.900
+Je vais juste mettre Brian, email,
+
+08:16.180 --> 08:19.300
+Le courrier haineux de Dustin sur example.com.
+
+08:19.300 --> 08:24.300
+Et message, laissez Brian enseigner à Dustin.
+
+08:25.180 --> 08:29.140
+Nous allons donc dire name input.value
+
+08:29.140 --> 08:34.140
+se voit attribuer testData.name.
+
+08:36.780 --> 08:39.260
+Et encore une fois, nous allons faire ça trois fois.
+
+08:39.260 --> 08:43.260
+L'entrée e-mail sera un e-mail,
+
+08:43.260 --> 08:48.260
+et la zone de texte du message sera un message.
+
+08:49.220 --> 08:50.540
+Encore une fois, ce serait comme si un utilisateur
+
+08:50.540 --> 08:51.860
+remplir un formulaire, n'est-ce pas ?
+
+08:51.860 --> 08:52.700
+Très bien, après avoir rempli un formulaire,
+
+08:53.700 --> 08:55.740
+que font-ils ensuite ?
+
+08:57.060 --> 08:57.900
+Cliquez sur le bouton.
+
+08:59.700 --> 09:02.700
+const btn est égal à screen.getByRoll.
+
+09:09.300 --> 09:10.700
+Button est un très bon rouleau.
+
+09:10.700 --> 09:12.940
+Il n'y a qu'un seul bouton sur la page comme nous le savons.
+
+09:12.940 --> 09:14.500
+Que vas-tu faire au bouton ?
+
+09:16.300 --> 09:17.140
+Cliquez.
+
+09:20.020 --> 09:21.580
+Une fonctionnalité plutôt intéressante, non ?
+
+09:23.340 --> 09:24.340
+Maintenant, celui-ci est plutôt cool.
+
+09:24.340 --> 09:25.180
+J'aime ça.
+
+09:27.180 --> 09:30.180
+Allons le faire sur notre page et voyons ce qui se passe.
+
+09:35.940 --> 09:40.940
+D'accord, comment savons-nous que notre page a été soumise correctement ?
+
+09:43.180 --> 09:45.140
+Qu'avons-nous fait de mal ici ?
+
+09:45.140 --> 09:46.740
+Votre serveur ne fonctionne pas.
+
+09:46.740 --> 09:47.580
+N'est-ce pas ?
+
+09:47.580 --> 09:48.420
+Oh, ce n'est pas le cas.
+
+09:48.420 --> 09:49.260
+Ce n'est pas le cas.
+
+09:49.260 --> 09:50.100
+Ce n'est pas le cas.
+
+09:50.100 --> 09:51.180
+Il ne fonctionne pas.
+
+09:51.180 --> 09:52.100
+N'est-ce pas ?
+
+09:52.100 --> 09:52.940
+Oh, ce n'est pas le cas.
+
+09:52.940 --> 09:53.780
+Tu as raison.
+
+09:58.820 --> 10:00.500
+Je ne vais pas le faire fonctionner maintenant,
+
+10:00.500 --> 10:01.980
+mais que se passerait-il finalement
+
+10:01.980 --> 10:04.220
+est-ce que le message soumis apparaît, n'est-ce pas ?
+
+10:04.220 --> 10:06.620
+C'est ce à quoi vous vous attendez ici.
+
+10:06.620 --> 10:09.220
+Mais ce n'est pas instantané, n'est-ce pas ?
+
+10:09.220 --> 10:10.700
+Il passe à l'état de chargement,
+
+10:10.700 --> 10:14.300
+et puis finalement ça s'installe dans un H3 de dire soumis.
+
+10:14.300 --> 10:16.580
+Mais nous savons que tout le processus s'est déroulé
+
+10:16.580 --> 10:18.060
+une fois que H3 apparaît.
+
+10:19.020 --> 10:24.020
+Donc ce que vous pouvez dire, c'est que const H3 est égal à attendre
+
+10:25.500 --> 10:29.900
+recherche d'écran par rôle.
+
+10:32.140 --> 10:35.300
+Nous recherchons une rubrique de niveau trois,
+
+10:36.500 --> 10:39.500
+ce qui est une autre façon de dire niveau trois ou H3, n'est-ce pas ?
+
+10:42.860 --> 10:44.980
+Cette attente signifie comme,
+
+10:44.980 --> 10:47.740
+hé, ça n'apparaîtra pas tout de suite,
+
+10:47.900 --> 10:49.140
+mais attends ça.
+
+10:49.140 --> 10:50.500
+Attendez que cela arrive.
+
+10:50.500 --> 10:52.740
+Une fois que cela apparaît et que ça le tire, n'est-ce pas ?
+
+10:52.740 --> 10:53.860
+Alors c'est comme si c'était là maintenant ?
+
+10:53.860 --> 10:54.700
+Est-ce là maintenant ?
+
+10:54.700 --> 10:55.540
+Est-ce là maintenant ?
+
+10:55.540 --> 10:57.300
+Et une fois là-bas, ça va être, d'accord, cool.
+
+10:57.300 --> 10:58.340
+Voici.
+
+10:58.340 --> 10:59.540
+Et voici votre H3.
+
+11:00.620 --> 11:02.420
+Et puis s'il ne le trouve jamais, il y aura une erreur
+
+11:02.420 --> 11:04.140
+parce que ça dit, eh bien, tu voulais ça
+
+11:04.140 --> 11:05.660
+et il n'est jamais apparu, n'est-ce pas ?
+
+11:08.100 --> 11:13.100
+Maintenant, nous pouvons dire qu'il faut s'attendre à H3.intertext
+
+11:14.100 --> 11:19.100
+contenir soumis.
+
+11:21.820 --> 11:23.900
+Contenir est ici agréable plutôt qu’être.
+
+11:23.900 --> 11:24.740
+Comme si tu te souviens,
+
+11:24.740 --> 11:28.420
+Je pense qu'il est en fait soumis avec un point d'exclamation.
+
+11:28.420 --> 11:31.420
+Je tiens juste à ce que cela leur montre qu'il a été soumis, n'est-ce pas ?
+
+11:31.420 --> 11:34.380
+C'est donc ce que je vais contenir au lieu d'être.
+
+11:37.300 --> 11:39.460
+Certaines personnes diront peut-être que vous êtes bon.
+
+11:39.460 --> 11:40.300
+Vous l'avez fait.
+
+11:40.300 --> 11:41.220
+Vous pouvez vous arrêter ici.
+
+11:41.540 --> 11:44.940
+Je veux aller plus loin et je veux dire,
+
+11:44.940 --> 11:48.180
+ont-ils appelé l'API avec la bonne chose ?
+
+11:48.180 --> 11:50.500
+Je pense que c'est destiné aux utilisateurs, car c'est comme :
+
+11:50.500 --> 11:52.580
+s'il n'appelle pas l'API correctement,
+
+11:52.580 --> 11:55.540
+les données de l'utilisateur sont perdues, n'est-ce pas ?
+
+11:55.540 --> 11:58.660
+Il y a des gens qui diraient que tester l'API
+
+11:58.660 --> 12:02.500
+point de terminaison et les données sont les détails de la mise en œuvre
+
+12:02.500 --> 12:03.740
+et ne devrait pas être testé.
+
+12:05.220 --> 12:08.660
+Et je pense, je veux dire, qu'ils ont tort et ce n'est pas grave, n'est-ce pas ?
+
+12:08.660 --> 12:10.660
+Tout le monde n’a pas toujours raison.
+
+12:11.620 --> 12:13.420
+Sauf moi, parce que j'enseigne.
+
+12:14.900 --> 12:16.260
+Nous allons donc tester cela.
+
+12:16.260 --> 12:19.260
+Les requêtes sont égales à fetchMocker.requests.
+
+12:23.340 --> 12:25.980
+Et cela va vous rendre tout ce qu'il a.
+
+12:27.860 --> 12:29.380
+Donc la première chose que je vais dire, c'est
+
+12:29.380 --> 12:33.060
+si vous recevez plusieurs appels, que se passe-t-il ?
+
+12:34.340 --> 12:39.340
+Attendez-vous à ce que request.length en soit un.
+
+12:42.060 --> 12:45.540
+Et puis je vais m'assurer que ça a bien appelé.
+
+12:45.540 --> 12:47.740
+Demande zéro.
+
+12:48.940 --> 12:50.580
+C'est la première chose, non ?
+
+12:50.580 --> 12:54.140
+Dotez l'URL, assurez-vous qu'elle appelle la bonne,
+
+12:54.140 --> 12:56.220
+slash API slash contact.
+
+12:57.860 --> 13:02.860
+Attendez-vous à fetchMocker.requests.
+
+13:05.300 --> 13:09.780
+Et puis vous dites avoir été appelé avec.
+
+13:12.060 --> 13:14.620
+Contact slash de l'API.
+
+13:14.620 --> 13:16.500
+Et puis tu lui donnes ce que tu espérais
+
+13:16.500 --> 13:17.340
+avoir été appelé avec.
+
+13:17.340 --> 13:21.820
+Ce sera donc le corps JSON.stringify.
+
+13:21.820 --> 13:24.540
+Celui-là, je vais le dire, il se rapproche dangereusement
+
+13:24.540 --> 13:29.580
+aux détails de mise en œuvre, mais aux en-têtes,
+
+13:32.100 --> 13:36.860
+type de contenu, barre oblique d'application JSON,
+
+13:38.300 --> 13:40.340
+et article de méthode.
+
+13:41.900 --> 13:44.180
+Non, ne fais pas ça.
+
+13:46.180 --> 13:47.020
+Poste.
+
+13:52.180 --> 13:53.380
+Donc, en gros, cela revient à dire :
+
+13:53.380 --> 13:57.260
+Je suppose que lorsqu'ils ont appelé fetch, ils l'ont appelé avec ça.
+
+13:57.260 --> 14:02.260
+La bonne URL et les bonnes données de test,
+
+14:02.540 --> 14:06.100
+les en-têtes doivent être corrects, la publication de méthode, tout ce genre de choses.
+
+14:06.620 --> 14:11.260
+Encore une fois, allons-y et disons les tests npm,
+
+14:11.260 --> 14:13.020
+et voyez ce qui se passe.
+
+14:13.020 --> 14:15.340
+J'ai échoué aux tests, allons voir ce qui s'est passé.
+
+14:15.340 --> 14:19.460
+Utilisez donc la mutation, aucun client de requête défini.
+
+14:21.420 --> 14:23.540
+Je l'ai fait, je pensais l'avoir fait.
+
+14:26.820 --> 14:28.380
+Oh, c'est le client, pas le client de requête.
+
+14:28.380 --> 14:31.820
+Alors supporte-moi une seconde, reviens ici.
+
+14:31.820 --> 14:34.460
+J'ai dit que le client de requête était égal au client de requête ici.
+
+14:34.460 --> 14:37.940
+C'est en fait juste censé être un client.
+
+14:43.300 --> 14:44.900
+C'est quelque chose que si nous avions TypeScript,
+
+14:44.900 --> 14:46.540
+nous nous aurions crié dessus tout de suite.
+
+14:46.540 --> 14:49.700
+C'est donc l'une des bonnes choses de TypeScript.
+
+14:49.700 --> 14:51.740
+Ouais, TypeScript dira immédiatement comme,
+
+14:51.740 --> 14:55.060
+quand vous ne transmettez pas les bons accessoires qu'il attend,
+
+14:55.060 --> 14:57.540
+c'est l'une des plus belles choses
+
+14:57.540 --> 14:59.420
+sur l'écriture de React avec TypeScript.
+
+14:59.420 --> 15:04.060
+D'accord, écran de saisie du nom, récupérez tout.
+
+15:04.060 --> 15:08.100
+Je ne veux pas tout obtenir, je veux obtenir un texte d'espace réservé.
+
+15:12.660 --> 15:14.940
+Obtenez par texte d'espace réservé.
+
+15:16.140 --> 15:17.740
+Je suis surpris que cela fonctionne réellement.
+
+15:20.620 --> 15:22.500
+Parce que sinon, il les aura tous
+
+15:22.500 --> 15:24.140
+et cela vous en donne un éventail.
+
+15:27.780 --> 15:29.740
+Mais je suppose que vous pouvez définir la valeur du point dans un tableau, n'est-ce pas ?
+
+15:29.740 --> 15:32.660
+Je ne vais pas crier dessus, c'est juste bizarre.
+
+15:32.700 --> 15:34.060
+Mais voyons, est-ce que cela a réglé le problème ?
+
+15:34.060 --> 15:35.180
+Cela a résolu le problème, d'accord.
+

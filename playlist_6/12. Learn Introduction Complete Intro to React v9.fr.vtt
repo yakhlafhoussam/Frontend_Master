@@ -1,0 +1,342 @@
+WEBVTT
+
+
+00:00.000 --> 00:04.800
+Crochets. Parlons des crochets. Les hooks sont le moyen par lequel nous pouvons introduire l'interactivité
+
+00:05.360 --> 00:11.440
+ou des effets secondaires ou d'autres choses sur un composant React assez normal.
+
+00:13.120 --> 00:18.480
+Une chose dont nous n'avons pas trop parlé, c'est d'aller à l'école voir la pizza.
+
+00:23.200 --> 00:28.160
+L’un des éléments clés ici est ce corps de fonction ici. C'est un chemin de code très chaud. Et quand je dis
+
+00:28.160 --> 00:32.960
+ça, je veux dire, ça tourne souvent, non ? Donc, il restitue et restitue et restitue. Et si c'est
+
+00:32.960 --> 00:38.080
+on voit que rien ne change, cela ne change rien dans le DOM. Mais dès qu'il voit
+
+00:38.080 --> 00:43.520
+quelque chose change, alors il ira le mettre à jour. Mais la clé ici est que ça se déroule plus que vous ne le voyez,
+
+00:43.520 --> 00:48.800
+n'est-ce pas ? Il est donc important que vous gardiez cela très performant. Comme si tu ne voulais pas
+
+00:48.800 --> 00:53.520
+mettre comme un travail très lourd à l'intérieur de vos chemins de rendu. Vous voulez en quelque sorte le tirer à l'extérieur du
+
+00:53.520 --> 00:59.920
+chemin de rendu afin qu'il ne ralentisse pas votre rendu DOM. Parce que c'est la clé parce que les gens
+
+00:59.920 --> 01:06.400
+je commence à remarquer des conneries, n'est-ce pas ? Comme des choses comme se déplacer si elles sont trop lentes. Donc c'est
+
+01:06.400 --> 01:11.840
+en fait, c'est une chose importante sur laquelle il faut être très performant. Vous n'êtes donc pas obligé de suivre cela.
+
+01:11.840 --> 01:20.240
+Je vais juste donner un exemple très rapide. Mais si je fais quelque chose comme const counter
+
+01:20.240 --> 01:36.640
+égal à compteur égal à compteur plus plus. Et laissez le compteur égal à zéro. Donc au lieu d'un nom juste pour
+
+01:36.640 --> 01:44.720
+dire, ou juste après, nous mettrons un compteur. Très bien, donc vous remarquez qu'il y a zéro dessus,
+
+01:44.720 --> 01:51.600
+n'est-ce pas ? Pour l’instant, rien n’arrive à notre composant. Mais si on commence à ajouter des choses
+
+01:51.600 --> 02:00.160
+ça aime écouter les événements, non ? Alors disons simplement que le clic est égal, nous ferons juste quelque chose qui
+
+02:00.160 --> 02:06.560
+ne fait littéralement rien. Donc, comme une fonction vide. Donc c'est encore assez intelligent
+
+02:06.560 --> 02:18.480
+ne rien rendre. C'est plutôt cool. D'accord. Je ne suis probablement pas encore assez intelligent pour
+
+02:18.480 --> 02:27.760
+ne fais rien. Mais bon, c'est en fait un bon exemple. Tu pourrais même faire quelque chose comme
+
+02:27.760 --> 02:37.920
+point de date maintenant. Encore une fois, vous vous attendriez à ce que cela continue probablement à se restituer, n'est-ce pas ?
+
+02:37.920 --> 02:41.760
+Mais ce que j'essaie de faire comprendre ici, c'est que vous ne savez pas vraiment quand
+
+02:42.400 --> 02:45.200
+React va choisir de restituer vos composants. Et quand il va choisir de
+
+02:45.200 --> 02:48.720
+Lors du rendu, vous pouvez voir qu'aucun d'entre eux ne fonctionne jamais. En fait, ce sont des choses différentes,
+
+02:48.720 --> 02:54.080
+ce qui me fait rire, non ? Il y avait en fait une milliseconde ou une milliseconde de différence entre
+
+02:54.080 --> 03:01.680
+les deux. C'est parce que React, c'est comme faire ça, comme ces chemins de rendu,
+
+03:01.680 --> 03:04.960
+et il va seulement essayer de restituer chaque fois que cela est nécessaire. Et il essaie de ne pas restituer
+
+03:04.960 --> 03:10.480
+quand ce n'est pas nécessaire. Mais vous devez vous assurer qu'il affichera le même balisage
+
+03:10.480 --> 03:15.120
+à chaque fois avec les mêmes entrées. Donc quelque chose comme ça, on sort ensemble, pas maintenant ou
+
+03:15.120 --> 03:20.000
+là où nous comptions auparavant, vous appelleriez cela un effet, n'est-ce pas, comme un effet secondaire de
+
+03:20.000 --> 03:24.480
+votre code. Et tu ne veux avoir aucun de ceux que tu veux, pour être sûr que peu importe
+
+03:24.480 --> 03:28.240
+quand il est exécuté, parce que vous ne savez pas quand il va s'exécuter, il vous donnera toujours un
+
+03:28.240 --> 03:32.720
+les résultats attendus compte tenu des contributions que vous y apportez, n'est-ce pas. Donc, si vous essayiez d'afficher
+
+03:32.720 --> 03:38.480
+quelque chose où il allait afficher une horloge, n'est-ce pas, vous deviez vous assurer que tout
+
+03:38.480 --> 03:43.200
+c'était autonome et les effets étaient gérés correctement. Nous y reviendrons lorsque nous commencerons
+
+03:43.200 --> 03:49.120
+je parle d'effet d'utilisation, c'est vrai. Mais ce que je veux dire ici, c'est que ce genre de choses, nous suivons
+
+03:49.120 --> 03:53.280
+des variables en dehors de React est une mauvaise idée. Et maintenant je vais te montrer comment tu es censé
+
+03:53.280 --> 04:00.400
+pour garder une trace de l'état à l'intérieur de vos composants de réaction. Alors enlevons tout
+
+04:00.400 --> 04:11.920
+cette absurdité pour l'instant. Très bien, alors allons-y et créons un autre composant ici,
+
+04:11.920 --> 04:15.840
+nous allons l'appeler order.jsx. Nous allons créer une page de commande.
+
+04:20.800 --> 04:24.240
+N'hésitez pas à me suivre si vous le souhaitez. C'est un peu long
+
+04:25.920 --> 04:30.240
+composant. Donc, si vous souhaitez simplement copier et coller à partir du
+
+04:31.920 --> 04:36.400
+les notes ici, je ne vais pas vous juger trop durement, juste un peu.
+
+04:37.120 --> 04:41.200
+Très bien, donc un autre avis ici. Je pense que c'est une assez bonne opinion.
+
+04:42.720 --> 04:49.520
+Remarquez ici dans pizza, nous avons une fonction flèche. Et nous exportons les valeurs par défaut ici et ordonnons que je l'ai fait un
+
+04:49.520 --> 05:00.240
+manière différente. Où je fais ici une fonction nommée appelée commandes. 99,99% la même chose. Le
+
+05:00.240 --> 05:04.080
+la seule chose pour laquelle j'aime mieux ce modèle que la fonction flèche, c'est le
+
+05:04.080 --> 05:10.160
+un peu comme ce modèle mieux que le modèle de fonction de flèche, c'est que lorsque votre application plante,
+
+05:10.160 --> 05:15.360
+donc si j'ai une erreur ici, l'ordre étant une fonction nommée va apparaître dans la trace de la pile.
+
+05:15.360 --> 05:22.960
+Ainsi, vous pouvez réellement voir l'ordre dans vos traces de pile. Cela aide au débogage, non ? Cette pizza ici,
+
+05:22.960 --> 05:25.600
+il vous dirait que cela vient du composant pizza, mais il ne vous dirait pas le
+
+05:25.600 --> 05:29.200
+nom de la fonction car techniquement ce n'est pas une fonction nommée. C'est une fonction anonyme.
+
+05:29.200 --> 05:32.640
+Ce serait la même chose si je le faisais
+
+05:34.400 --> 05:43.680
+const pizza2 est égal à la fonction bla, non ? C'est exactement la même chose. Pizza2 ne s'afficherait pas
+
+05:43.680 --> 05:53.120
+dans la trace de la pile. Maintenant, vous pourriez vous demander : à quel point cela est-il important pour moi ? Ce n'est pas super
+
+05:53.120 --> 05:58.080
+important, non ? Mais c'est probablement suffisant pour que tu saches que ça vient de la commande
+
+05:59.200 --> 06:02.880
+fichier. Vous n’avez pas nécessairement besoin de le savoir à partir de la fonction de commande. Alors commençons
+
+06:02.880 --> 06:06.960
+écrire un tas de code. Type de pizza const. Nous allons l'utiliser pour savoir quelle pizza
+
+06:06.960 --> 06:10.400
+type qu'ils ont sélectionné, n'est-ce pas ? Voici donc la page de commande où ils vont sélectionner le type de
+
+06:10.400 --> 06:15.760
+la pizza qu'ils veulent, quelle taille ils veulent, et ils cliqueront sur commander ou plutôt ajouter au panier. Ça va
+
+06:15.760 --> 06:22.560
+être une pizza au pepperoni. Et nous allons commencer avec une pizza de taille moyenne. Ce sont comme les
+
+06:22.560 --> 06:34.080
+valeurs par défaut. La taille de la pizza est égale à un M majuscule pour moyen. Et puis nous renverrons beaucoup de balisage.
+
+06:37.760 --> 06:44.000
+Nous appellerons donc cet ordre. Mon CSS est structuré de telle manière que nous n'avons pas besoin d'écrire le nom de la classe
+
+06:44.000 --> 06:49.040
+sur chaque chose. C'est uniquement pour le bien de ce cours afin que vous n'ayez pas à le faire.
+
+06:49.040 --> 06:54.160
+écrivez plusieurs noms de classe. En général, donnez un cours à tout. Ne fais pas tout ce qui est bizarre
+
+06:54.160 --> 07:00.640
+des trucs de sélection que j'ai fait pour vous faciliter la tâche. En d’autres termes, le CSS est intentionnellement mauvais
+
+07:00.640 --> 07:04.880
+pour vous permettre d'écrire plus facilement du code. Ce n'est généralement pas le compromis que vous voudriez
+
+07:04.880 --> 07:13.520
+faire. D'accord. H2, cela va être la page de création de commande. Il va avoir un formulaire
+
+07:14.480 --> 07:23.600
+et puis il y aura un div et un autre div. Et puis nous allons faire une étiquette. L'étiquette est
+
+07:23.600 --> 07:35.680
+ça va être pour le type pizza dash, type pizza. Ensuite, nous allons faire une sélection. Le nom est égal
+
+07:36.480 --> 07:47.200
+type de tiret de pizza. Oh, nous allons aussi lui donner une valeur. Ce sera amusant. La valeur est égale au type de pizza.
+
+07:51.120 --> 07:55.200
+Donc, valeur, dites simplement que vous allez définir la valeur du type de pizza.
+
+07:55.200 --> 08:01.200
+à la valeur ici. D'accord. Nous allons lui donner quelques options.
+
+08:01.680 --> 08:18.160
+Option, la valeur est égale au pepperoni. La pizza au pepperoni. D'accord. Nous allons en faire quelques-uns.
+
+08:20.880 --> 08:21.920
+Hawaïen.
+
+08:22.160 --> 08:32.160
+Hawaïen. Et celui-ci était de la grosse viande soulignée. La grande pizza à la viande.
+
+08:35.200 --> 08:40.160
+D'accord. Jusqu'à présent, si nous avons l'impression d'écrire simplement un formulaire HTML normal, c'est parce que nous écrivons
+
+08:40.160 --> 08:43.760
+sous une forme HTML normale. Il n’y a pas grand-chose de très intéressant à dire ici.
+
+08:43.760 --> 08:51.600
+D'accord. C'est la première division à laquelle nous nous échappons. Correct. Ouais.
+
+08:55.920 --> 09:02.240
+Faites un autre div ici. Et nous créons un autre label. C'est pour la taille d'une pizza
+
+09:03.120 --> 09:10.320
+et la taille de la pizza. Et c'est la taille d'une pizza. D'accord. Une autre div ici. Et nous allons
+
+09:10.320 --> 09:21.760
+avoir quelques boutons radio. C'est hors de portée. Entrée, vérifiée égale
+
+09:24.960 --> 09:34.320
+taille de pizza, triple est égal à S majuscule. Encore une fois, ce sont mes ligatures qui rassemblent trois signes égaux.
+
+09:35.280 --> 09:45.600
+C'est pourquoi cela ressemble à ce gros signe égal. Le type est égal à la radio. Le nom est égal
+
+09:47.360 --> 09:55.520
+taille du tiret de pizza. La valeur est égale à S. Et l'ID est égal à Pizza Dash S.
+
+09:55.920 --> 10:06.240
+D'accord. Et puis nous terminerons. Oups. Fermez ça. Espacez tout cela.
+
+10:08.640 --> 10:19.280
+Et puis nous refaireons une étiquette pour la pizza dash S. Et c'est une petite taille. Alors nous faisons de la radio
+
+10:19.280 --> 10:24.960
+boutons pour toutes les différentes tailles de pizza. Droite? Et puis nous aurons
+
+10:25.920 --> 10:33.360
+une étiquette. Je vais donc simplement copier et coller cette étendue. Et donc j'ai celui du haut,
+
+10:33.360 --> 10:39.520
+ce qui va être petit. Celui-ci va être moyen. Alors nous allons juste changer tous les endroits
+
+10:39.520 --> 10:52.320
+où il est écrit S à M. N'est-ce pas ? Ils sont donc assez similaires. Celui-ci est juste moyen. Celui-ci est juste
+
+10:52.320 --> 11:15.920
+petit. Même chose ici. Ce sera la grande taille. Et grand. D'accord. Une fois que nous avons cela et que nous enjambons
+
+11:16.560 --> 11:32.240
+et div et div suivant. Bouton. Le type va être soumis. Ajouter au panier.
+
+11:32.240 --> 11:53.680
+D'accord. Et puis à l’intérieur de cela, nous allons mettre un autre div. Brian, tu as trop de divs. je suis
+
+11:53.680 --> 12:02.080
+je ne serai pas en désaccord avec vous. Commandez une pizza rapide. Nous allons mettre une pizza ici.
+
+12:02.080 --> 12:04.960
+Pour l'instant, nous allons juste lui donner une pizza au pepperoni normale, mais nous finirons par la faire
+
+12:04.960 --> 12:10.240
+dynamique pour être celui que vous avez sélectionné. Droite? Mais pour l'instant nous allons juste dire
+
+12:10.240 --> 12:26.880
+la description du pepperoni équivaut à une autre pizza. Quoi que vous vouliez y mettre, l'image s'en va
+
+12:26.880 --> 12:41.360
+pour se voir attribuer des pizzas publiques, pepperoni.webp. Et puis fermez cette balise. D'accord. Et puis juste
+
+12:41.360 --> 12:45.920
+en dessous, nous voulons juste mettre le prix. Nous mettrons ça dans un P et nous dirons n'importe quoi
+
+12:45.920 --> 13:01.360
+vous voulez y mettre. 13,37 $. D'accord. Donc, fondamentalement, nous travaillons ici uniquement sur des formulaires. Droite? Le
+
+13:01.360 --> 13:05.440
+chose classique pour la plupart des sites Web. La plupart des choses peuvent se résumer au simple fait de soumettre un formulaire
+
+13:05.440 --> 13:12.480
+quelque part. Droite? Utiliser quelques divs ici. Je sais que tous les divs semblent excessifs, mais c'est pour le
+
+13:12.560 --> 13:18.800
+le style, non ? Juste pour que tout soit regroupé visuellement. Nous avons de la radio
+
+13:18.800 --> 13:24.080
+boutons ici pour qu’ils puissent être petits, moyens ou grands. Ça a l'air bien. Et nous avons un soumettre
+
+13:24.080 --> 13:28.800
+bouton qui ajoute au panier, qui soumettra le formulaire. Nous verrons comment gérer ce formulaire
+
+13:28.800 --> 13:39.120
+soumission, mais gardons ici. Alors oui, nous avons maintenant créé un composant de commande. Nous devons aller l'utiliser
+
+13:39.120 --> 13:44.880
+avant que quoi que ce soit n'apparaisse. Droite? Passons donc à notre app.jsx.
+
+13:47.280 --> 13:50.880
+Nous allons supprimer l'importation de pizza car nous n'allons pas l'utiliser maintenant. Nous allons
+
+13:50.880 --> 13:58.640
+disons l'ordre d'importation à partir de l'ordre de la barre oblique. Cool. Et pour l'instant, nous allons simplement en faire la valeur par défaut
+
+13:58.640 --> 14:10.720
+page d'accueil. Donc vous allez juste dire ordre. D'accord. Cela est devenu très large. Cool. Mais tu devrais
+
+14:10.720 --> 14:19.120
+voir quelque chose qui ressemble à ça. Vous aurez probablement des erreurs ici. C'est très bien. Ignorez ceux pour
+
+14:19.120 --> 14:29.600
+maintenant.
+

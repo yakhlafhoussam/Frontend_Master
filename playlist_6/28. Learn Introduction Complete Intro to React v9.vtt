@@ -1,0 +1,899 @@
+WEBVTT
+
+00:00.000 --> 00:02.200
+Inside of our directory here,
+
+00:02.200 --> 00:04.900
+inside of our source directory outside of routes,
+
+00:04.900 --> 00:08.120
+create another folder called API.
+
+00:09.040 --> 00:11.760
+This is just something I do,
+
+00:11.760 --> 00:13.680
+not even just a React-specific thing,
+
+00:13.680 --> 00:16.520
+this is just across many things.
+
+00:16.520 --> 00:18.040
+I'll write my API request is just like
+
+00:18.040 --> 00:22.320
+little individual functions,
+
+00:22.320 --> 00:24.600
+and then I'll import those to be used later,
+
+00:24.600 --> 00:26.800
+and that works really well with Tamstack query.
+
+00:26.800 --> 00:28.480
+You don't have to do it this way.
+
+00:28.600 --> 00:29.600
+I'm just going to show you the way
+
+00:29.600 --> 00:32.800
+that I would typically go about structuring this.
+
+00:32.800 --> 00:37.800
+So inside of this, make a file and call it getPastOrders,
+
+00:40.480 --> 00:43.240
+and call it .js, .jsx.
+
+00:43.240 --> 00:44.720
+I think in my notes I have a .js,
+
+00:44.720 --> 00:46.680
+we'll just stick with that, doesn't matter.
+
+00:46.680 --> 00:51.680
+Export default async function getPastOrders,
+
+00:55.200 --> 00:56.560
+and it takes in a page,
+
+00:56.560 --> 00:58.120
+because it's paginated, right?
+
+00:59.120 --> 01:03.680
+Const response equals await fetch,
+
+01:03.680 --> 01:07.800
+and then this is going to go to slash API
+
+01:08.780 --> 01:13.600
+slash past orders,
+
+01:13.600 --> 01:18.360
+page equals page.
+
+01:18.360 --> 01:19.400
+This is a template string,
+
+01:19.400 --> 01:21.240
+so make sure you're using back ticks here,
+
+01:21.240 --> 01:23.080
+which is the one next to the one
+
+01:23.080 --> 01:24.520
+on the same key as the tilde.
+
+01:27.000 --> 01:28.880
+And then this will put in the page,
+
+01:28.880 --> 01:30.120
+whatever we got there,
+
+01:31.000 --> 01:36.000
+and then we will say const data equals await
+
+01:37.520 --> 01:41.960
+response.json and return data.
+
+01:42.840 --> 01:44.040
+Fairly straightforward here,
+
+01:44.040 --> 01:46.360
+it's going to go out to the API,
+
+01:46.360 --> 01:47.560
+you're going to give it a page,
+
+01:47.560 --> 01:49.120
+it's going to call past orders,
+
+01:49.120 --> 01:51.120
+it's going to give it a page,
+
+01:51.120 --> 01:53.320
+and then you are going to get data back from this.
+
+01:53.320 --> 01:54.320
+So it's just going to be a promise
+
+01:54.320 --> 01:57.400
+that eventually gives you back past order data
+
+01:57.400 --> 01:58.320
+based on a page.
+
+02:00.640 --> 02:02.320
+Okay, cool.
+
+02:02.320 --> 02:04.480
+Let us go back to
+
+02:06.640 --> 02:08.200
+past.lazy.jsx.
+
+02:11.480 --> 02:12.680
+Yeah, one thing I was going to say
+
+02:12.680 --> 02:15.400
+about the getPastOrders function here,
+
+02:15.400 --> 02:17.520
+this is, we're going to use it with 10-stack query,
+
+02:17.520 --> 02:20.160
+but obviously you could use this anywhere, right?
+
+02:20.160 --> 02:22.020
+This doesn't have to be used with 10-stack query,
+
+02:22.020 --> 02:25.780
+this could be used in an effect, right?
+
+02:25.780 --> 02:28.540
+Or in your testing, or whatever you want, right?
+
+02:28.540 --> 02:29.900
+It's nice to encapsulate the logic
+
+02:29.900 --> 02:33.860
+in kind of like small reusable pieces of information there.
+
+02:33.860 --> 02:37.740
+Past.lazy.jsx, let's go make this component here.
+
+02:38.940 --> 02:40.700
+So I'm going to make a function down here,
+
+02:40.700 --> 02:44.900
+it's going to be called past orders route,
+
+02:47.180 --> 02:51.340
+and I'm going to call this just past orders route,
+
+02:51.340 --> 02:52.180
+just like that.
+
+02:54.420 --> 02:55.940
+This one I'm a little bit more like,
+
+02:55.940 --> 02:57.660
+I like having the named function here,
+
+02:57.660 --> 02:59.460
+which is why I'm not just putting it directly
+
+02:59.460 --> 03:01.000
+here in component.
+
+03:01.000 --> 03:03.940
+Having what page it happened on in your stack trace
+
+03:03.940 --> 03:07.220
+tends to be more useful, more often than not.
+
+03:07.220 --> 03:10.780
+Up here, we're going to import use state,
+
+03:10.780 --> 03:12.060
+which we're going to use to encapsulate
+
+03:12.060 --> 03:16.140
+the page that we're on from React.
+
+03:16.140 --> 03:18.440
+We're going to import this wonderful new hook
+
+03:18.440 --> 03:23.440
+called use query from at tan stack React query,
+
+03:26.480 --> 03:31.480
+and we're going to import get past orders
+
+03:33.080 --> 03:35.180
+from API get past orders.
+
+03:38.200 --> 03:40.400
+Okay, that takes care of that.
+
+03:40.400 --> 03:44.040
+We're going to get a hook here for the page.
+
+03:44.040 --> 03:47.360
+Page set page, that should look familiar to you.
+
+03:47.400 --> 03:50.920
+Equals use state, and we will start them on page one.
+
+03:54.920 --> 03:59.920
+And const is loading and data equals use query.
+
+04:06.320 --> 04:07.600
+So a couple of things here.
+
+04:07.600 --> 04:09.780
+We have to give it a query key.
+
+04:12.360 --> 04:16.160
+This is an array, and it's like,
+
+04:16.200 --> 04:18.240
+how many of you have ever used Redis before?
+
+04:18.240 --> 04:20.000
+Probably asking the wrong crowd here.
+
+04:21.280 --> 04:24.040
+But Redis much functions the same way
+
+04:24.040 --> 04:25.760
+that you kind of give out these query keys,
+
+04:25.760 --> 04:28.600
+and it's like how it stores it in the cache, right?
+
+04:28.600 --> 04:29.640
+And then later you can say like,
+
+04:29.640 --> 04:32.680
+hey, I'm looking for the past orders,
+
+04:32.680 --> 04:35.240
+and then I'm looking for the page, right?
+
+04:35.240 --> 04:37.520
+This is a unique thing to this query
+
+04:37.520 --> 04:38.920
+so that it knows later when it goes like,
+
+04:38.920 --> 04:41.320
+hey, I'm looking for past orders page two,
+
+04:41.320 --> 04:43.080
+it's going to be like, I have seen that before,
+
+04:43.080 --> 04:46.080
+here you go, or I have never seen this before,
+
+04:46.560 --> 04:47.840
+or another thing you can say like,
+
+04:47.840 --> 04:50.780
+I've seen this before, but my cache is stale,
+
+04:50.780 --> 04:52.720
+so I'm going to go get it again, right?
+
+04:53.920 --> 04:55.240
+That's what this query key is for.
+
+04:55.240 --> 05:00.240
+It's for the name of the key in the cache.
+
+05:01.400 --> 05:02.740
+And if you're interested in Redis,
+
+05:02.740 --> 05:04.280
+Redis works a lot the same way.
+
+05:07.140 --> 05:09.740
+Okay, you're going to give it a query function,
+
+05:11.740 --> 05:13.240
+and you're just going to say,
+
+05:13.240 --> 05:17.900
+all right, give me back, get past orders with page.
+
+05:21.680 --> 05:23.500
+And then stale time,
+
+05:25.160 --> 05:27.660
+I think I gave it a 30 second stale time.
+
+05:29.220 --> 05:30.960
+Why such a short stale time?
+
+05:30.960 --> 05:32.280
+This is in milliseconds, by the way,
+
+05:32.280 --> 05:33.440
+that's why it's 30,000.
+
+05:33.440 --> 05:35.540
+All right, so imagine you're a pizzeria,
+
+05:35.540 --> 05:38.800
+and you're looking at past orders,
+
+05:38.800 --> 05:40.860
+and this is how you put your orders together.
+
+05:40.860 --> 05:43.260
+You want it to be pretty up to date, right?
+
+05:43.260 --> 05:47.060
+Because you want to see the orders as they're rolling in.
+
+05:47.060 --> 05:49.480
+So I had it expiring every 30 seconds
+
+05:49.480 --> 05:51.500
+so that you can always be guaranteed every 30 seconds,
+
+05:51.500 --> 05:53.260
+you're getting a fresh,
+
+05:55.320 --> 05:58.840
+pun kind of intended there, look at the pizzas, right?
+
+05:59.940 --> 06:02.380
+But if you're going back and forth a bunch of times,
+
+06:02.380 --> 06:04.100
+you don't want to just hammer the API, right?
+
+06:04.100 --> 06:04.940
+So it makes sense that you would have
+
+06:04.940 --> 06:07.820
+a little bit of cache time there.
+
+06:07.820 --> 06:09.900
+So 30 seconds felt right to me,
+
+06:09.900 --> 06:12.460
+but this is how you would adjust it, right?
+
+06:12.460 --> 06:13.300
+There's other things, in fact,
+
+06:13.300 --> 06:14.620
+one of them that we're about to do,
+
+06:14.620 --> 06:16.560
+we're going to cache for a whole day,
+
+06:16.560 --> 06:19.840
+because the past orders don't change,
+
+06:19.840 --> 06:22.900
+and we don't really need to refresh those very often.
+
+06:24.700 --> 06:26.460
+So it all depends on your needs.
+
+06:28.380 --> 06:30.660
+Caching in general is just kind of is hard.
+
+06:30.660 --> 06:33.260
+It's hard to figure out how long things should be good for.
+
+06:33.260 --> 06:35.900
+So kind of a guess and check kind of situation.
+
+06:37.640 --> 06:39.860
+If I had to guess like most major bugs,
+
+06:40.860 --> 06:42.760
+throughout my career have been caused by caching issues.
+
+06:44.140 --> 06:44.980
+Is that fair to say?
+
+06:44.980 --> 06:46.500
+Yeah, I think that's pretty fair to say.
+
+06:48.140 --> 06:50.080
+All right, so if is loading,
+
+06:50.080 --> 06:53.260
+this is another nice thing about React query.
+
+06:53.260 --> 06:54.100
+There's a bunch of them.
+
+06:54.100 --> 06:59.100
+There's like is success, is fetched, is loading, is paused,
+
+06:59.300 --> 07:02.500
+pending, is placeholder data, is refetch error.
+
+07:02.500 --> 07:05.700
+They give you a bunch of different things here.
+
+07:05.700 --> 07:08.640
+You can also just grab the status, I think.
+
+07:08.640 --> 07:10.080
+This is like an enumerated type
+
+07:10.080 --> 07:12.120
+as opposed to being like a Boolean, right?
+
+07:12.120 --> 07:13.360
+So you can also use that as well.
+
+07:13.360 --> 07:18.360
+If David Korsheed was here, the guy that does X state,
+
+07:18.400 --> 07:21.480
+he'd be very happy that you could make it a state machine.
+
+07:21.480 --> 07:22.880
+I am not going to make it a state machine
+
+07:22.880 --> 07:24.080
+because I'm not a nerd.
+
+07:24.080 --> 07:25.000
+That's not true.
+
+07:25.000 --> 07:26.160
+I am a nerd.
+
+07:26.160 --> 07:27.720
+He's probably less nerdy than I am,
+
+07:27.720 --> 07:31.160
+but whenever find me, David, it's fine.
+
+07:31.160 --> 07:32.680
+So if is loading,
+
+07:33.320 --> 07:38.320
+return div class name equals past dash orders.
+
+07:43.280 --> 07:44.400
+And we're gonna have, again,
+
+07:44.400 --> 07:48.200
+my very, very user experience focused loading here.
+
+07:50.200 --> 07:51.680
+I hope you get that I'm being facetious here.
+
+07:51.680 --> 07:53.280
+You should have a much better loading state
+
+07:53.280 --> 07:55.360
+than just returning loading here,
+
+07:55.360 --> 07:57.160
+but I didn't want to spend half of our time
+
+07:57.160 --> 08:00.600
+building loading pages, so that's why we're doing this.
+
+08:01.120 --> 08:03.520
+Please care more about your users than I care about you.
+
+08:03.520 --> 08:04.360
+No, I'm just kidding.
+
+08:04.360 --> 08:07.200
+That's a joke.
+
+08:07.200 --> 08:09.680
+I do care deeply about each and every one of you.
+
+08:12.840 --> 08:14.400
+I woke up and chose violence today.
+
+08:14.400 --> 08:15.640
+Okay, here we go.
+
+08:15.640 --> 08:16.640
+Return.
+
+08:16.640 --> 08:18.200
+So if it's not loading,
+
+08:18.200 --> 08:20.520
+then we can assume that our past orders have loaded
+
+08:20.520 --> 08:22.520
+and we can just make like a nice little table here
+
+08:22.520 --> 08:24.680
+of all of our past orders.
+
+08:24.680 --> 08:25.960
+Feel free to just go into there
+
+08:25.960 --> 08:27.760
+and just copy all of the mark up here,
+
+08:27.760 --> 08:28.920
+but I'm gonna write it here by hand
+
+08:28.920 --> 08:29.760
+if you want to follow along.
+
+08:29.880 --> 08:30.840
+That's cool, too.
+
+08:30.840 --> 08:33.360
+We've had no problems with me forgetting divs
+
+08:33.360 --> 08:34.200
+or anything like that,
+
+08:34.200 --> 08:37.120
+so I'm very confident this time will be no different.
+
+08:39.120 --> 08:43.640
+Table, T-head, Thed, as I like to say.
+
+08:46.840 --> 08:51.840
+Table row, table definition, ID.
+
+08:51.840 --> 08:53.320
+So these are our head rows.
+
+08:53.320 --> 08:55.160
+This is an ID.
+
+08:55.160 --> 08:56.600
+This is a date.
+
+08:56.600 --> 08:57.920
+This is a time.
+
+08:58.320 --> 08:59.520
+This is a time.
+
+09:01.240 --> 09:03.640
+Okay, and then out of the Thed,
+
+09:03.640 --> 09:06.280
+there's the Tabati, as it is said.
+
+09:10.960 --> 09:12.720
+Then we're gonna say data.
+
+09:12.720 --> 09:14.280
+We're gonna get map across our data
+
+09:14.280 --> 09:17.600
+and make those into rows.
+
+09:18.720 --> 09:20.040
+Map order.
+
+09:23.880 --> 09:26.600
+You can make this into like the return blah, right,
+
+09:26.600 --> 09:27.720
+and use curly braces there,
+
+09:27.720 --> 09:30.120
+but because I'm lazy,
+
+09:30.120 --> 09:31.480
+if you use parentheses here,
+
+09:31.480 --> 09:33.800
+you can use the implicit return.
+
+09:33.800 --> 09:35.080
+I think I've used that here previously,
+
+09:35.080 --> 09:36.960
+but we're gonna do that again here.
+
+09:36.960 --> 09:40.680
+That's why this is a parentheses instead of a curly brace.
+
+09:44.200 --> 09:45.960
+And in this case, in case you're wondering,
+
+09:45.960 --> 09:47.880
+the parentheses in and of itself doesn't do anything.
+
+09:47.880 --> 09:49.960
+It just means continued on the next row, right?
+
+09:49.960 --> 09:52.520
+That's why the parentheses ends up being put here.
+
+09:54.640 --> 09:55.640
+You definitely could do something
+
+09:55.640 --> 09:57.840
+like just put the thing directly on the same row,
+
+09:57.840 --> 10:00.120
+but this looks nicer, so we'll do it this way.
+
+10:01.200 --> 10:04.840
+All right, tr, we have to give it a key.
+
+10:08.760 --> 10:11.320
+And a good key for this is order, order ID.
+
+10:15.800 --> 10:19.680
+Okay, and then td,
+
+10:20.560 --> 10:24.360
+we're gonna do order.orderID.
+
+10:26.520 --> 10:27.840
+Couple of those.
+
+10:28.720 --> 10:30.200
+Next one will be date.
+
+10:30.200 --> 10:31.640
+Next one will be time.
+
+10:35.600 --> 10:38.920
+Okay, that should give us our rows and our tables.
+
+10:38.920 --> 10:42.160
+And so outside of the tabati and the table,
+
+10:43.520 --> 10:45.080
+we're gonna have another div here,
+
+10:45.080 --> 10:47.320
+and this is gonna be called pages.
+
+10:48.240 --> 10:51.240
+And we're just gonna get some basic pagination buttons here.
+
+10:51.240 --> 10:56.240
+So button disabled equals page is greater than
+
+11:00.440 --> 11:02.840
+or less than and equal to one.
+
+11:02.840 --> 11:04.680
+So again, this is just my font
+
+11:04.680 --> 11:06.480
+combining the two into one thing,
+
+11:06.480 --> 11:10.400
+but it's less than or equal to one.
+
+11:13.160 --> 11:14.560
+Okay, onClick,
+
+11:15.160 --> 11:18.160
+equals setPage, or it's a function,
+
+11:19.840 --> 11:23.320
+setPage, page minus one.
+
+11:27.000 --> 11:28.960
+And we'll put previous here.
+
+11:30.880 --> 11:32.880
+And then the next one looks really similar,
+
+11:32.880 --> 11:36.880
+so I'm just gonna copy and paste that whole block here.
+
+11:36.880 --> 11:41.080
+So the disabled, I know these kind of look similar,
+
+11:41.480 --> 11:46.200
+so the disabled, I know these come in lengths of 10,
+
+11:46.200 --> 11:47.320
+and I didn't wanna make the API
+
+11:47.320 --> 11:48.480
+any more complicated than this,
+
+11:48.480 --> 11:50.960
+so I said data.length is less than 10,
+
+11:50.960 --> 11:52.880
+because if it returns like eight results,
+
+11:52.880 --> 11:54.880
+you know you've reached the end, right?
+
+11:56.640 --> 11:58.520
+The only problem is like, what if there's exactly 10 left,
+
+11:58.520 --> 12:00.400
+you're gonna get a page of zero after that.
+
+12:00.400 --> 12:02.600
+Again, phenomenal user experience.
+
+12:02.600 --> 12:03.520
+You should definitely listen to me
+
+12:03.520 --> 12:05.520
+and hire me to consult at your company.
+
+12:06.880 --> 12:08.280
+That's a joke, that's a terrible idea,
+
+12:08.280 --> 12:09.640
+but this is what we are doing.
+
+12:09.640 --> 12:13.040
+So this should be minus one here,
+
+12:13.040 --> 12:16.360
+sorry, there should be a space here on line 46.
+
+12:17.560 --> 12:20.240
+And as the same here, there should be a plus one,
+
+12:20.240 --> 12:21.800
+there should be a space there.
+
+12:24.000 --> 12:27.120
+And then instead of previous here, we're gonna have next.
+
+12:31.320 --> 12:36.400
+There's like some amount of thousands of orders
+
+12:36.400 --> 12:38.720
+in the database, unless you're very bored
+
+12:38.720 --> 12:41.560
+and want to page through all of them one day,
+
+12:41.560 --> 12:43.360
+I don't think many people are gonna find the end of this
+
+12:43.360 --> 12:46.720
+and discover what a terrible experience this is.
+
+12:46.720 --> 12:51.720
+I think that should be enough for us to see if it works.
+
+12:52.000 --> 12:57.000
+So past orders, we made this button previously,
+
+12:57.120 --> 13:00.040
+so I think if we click on that, it's gonna load.
+
+13:03.800 --> 13:05.240
+And it did, okay, cool.
+
+13:05.920 --> 13:09.080
+So you can see here, throughout the course here,
+
+13:09.080 --> 13:12.080
+I've submitted two orders here, which is pretty cool.
+
+13:13.800 --> 13:15.280
+Cause you can see those are in 2024.
+
+13:15.280 --> 13:19.040
+I grabbed a data set off of Kaggle for pizza orders.
+
+13:19.040 --> 13:21.040
+That's why all these are from 2015.
+
+13:22.000 --> 13:23.520
+We're not like time traveling in the past right now.
+
+13:23.520 --> 13:27.440
+And you're like, how is he talking about React 18 in 2015?
+
+13:27.440 --> 13:29.440
+It's cause I knew, I'm just kidding.
+
+13:30.600 --> 13:31.440
+But there you go.
+
+13:32.200 --> 13:33.040
+There you go.
+
+13:33.040 --> 13:37.280
+And so you can see these are taking a while.
+
+13:38.480 --> 13:39.600
+Did I leave that?
+
+13:40.480 --> 13:41.600
+Let's just check in my API.
+
+13:41.600 --> 13:43.720
+I think I might've left the weight in there.
+
+13:43.720 --> 13:44.800
+That's funny.
+
+13:44.800 --> 13:45.840
+All right.
+
+13:45.840 --> 13:48.720
+But now if I hit previous, what's gonna happen?
+
+13:50.520 --> 13:53.200
+Notice that these loads are instant
+
+13:53.200 --> 13:55.000
+between these two that I've loaded before.
+
+13:55.000 --> 13:58.000
+But if I hit next again, it's gonna load it again, right?
+
+13:58.000 --> 13:59.560
+So it's going back to the API.
+
+14:01.560 --> 14:04.160
+Yeah, I think I put an artificial delay into this API
+
+14:04.160 --> 14:06.720
+so that people could tell the difference.
+
+14:06.720 --> 14:08.640
+But now look at your open your 10 stack dev tools.
+
+14:08.640 --> 14:12.720
+You can see these being used here.
+
+14:12.720 --> 14:15.760
+So if I do next, it's gonna show you things I have
+
+14:15.760 --> 14:19.480
+in my cache here, and that it's gonna go out
+
+14:19.480 --> 14:20.800
+and get this one.
+
+14:20.800 --> 14:23.000
+You can click on that, I think.
+
+14:23.000 --> 14:28.080
+And you can see what the key is.
+
+14:28.080 --> 14:29.280
+This only has one observer.
+
+14:29.280 --> 14:30.160
+But if you have a bunch of things
+
+14:30.160 --> 14:31.720
+that we're looking at these cache keys,
+
+14:31.720 --> 14:33.840
+it would look at that as well.
+
+14:33.840 --> 14:35.880
+And you can see what it came back with,
+
+14:35.880 --> 14:37.520
+the actual data, right?
+
+14:37.520 --> 14:42.120
+The order ID, date, time, all sorts of really cool stuff.
+
+14:43.440 --> 14:44.280
+Pretty useful.
+
+14:44.280 --> 14:46.680
+I use the dev tools for this one somewhat frequently.
+

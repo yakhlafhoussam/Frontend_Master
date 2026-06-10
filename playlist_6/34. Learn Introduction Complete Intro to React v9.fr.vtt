@@ -1,0 +1,294 @@
+WEBVTT
+
+
+00:00.000 --> 00:02.700
+Cela suffit donc pour les composants de classe.
+
+00:02.700 --> 00:05.300
+Nous n'en reparlerons plus jamais.
+
+00:05.300 --> 00:10.420
+Mais allons-y, utilisons-le.
+
+00:10.420 --> 00:14.180
+Passons à la route des commandes.
+
+00:14.180 --> 00:18.180
+Nous allons importer notre limite d'erreur en haut.
+
+00:18.180 --> 00:25.380
+Importez la limite d'erreur à partir de la limite d'erreur et nous y allons, une chose intéressante
+
+00:25.380 --> 00:33.160
+sur les limites d'erreur, en raison de la façon dont les erreurs fonctionnent, vous ne pouvez pas mettre l'erreur
+
+00:33.160 --> 00:34.160
+frontière ici.
+
+00:34.160 --> 00:36.680
+Donc, je ne peux pas simplement dire comme limite d'erreur ici.
+
+00:36.680 --> 00:38.340
+Pourquoi?
+
+00:38.340 --> 00:42.200
+Parce que si ce composant présente une erreur, c'est tout le composant qui explose, n'est-ce pas ?
+
+00:42.200 --> 00:46.400
+Donc, je dois le mettre dans un composant fonctionnel au-dessus, n'est-ce pas, pour pouvoir saisir les choses
+
+00:46.400 --> 00:47.400
+à l'intérieur de celui-ci.
+
+00:47.400 --> 00:49.660
+Est-ce que cela a du sens ?
+
+00:49.660 --> 00:52.680
+C'est comme si vous deviez mettre les choses à l'intérieur de l'essai pour que le piège fonctionne.
+
+00:52.680 --> 00:54.440
+C'est essentiellement ce que je dis.
+
+00:55.020 --> 01:00.020
+Alors laissez-moi vous montrer ce que je veux dire et vous pourrez alors me lancer à nouveau ces regards perplexes.
+
+01:00.020 --> 01:03.420
+Donc, je vais mettre un, faisons-le ci-dessus.
+
+01:03.420 --> 01:04.420
+Je pense que je l'ai ci-dessus.
+
+01:04.420 --> 01:05.660
+Donc c'est un peu plus clair.
+
+01:05.660 --> 01:17.620
+Je vais donc écrire ici une autre fonction appelée limite d'erreur enveloppée dans les routes de commande passées.
+
+01:17.620 --> 01:25.440
+Et vous allez simplement dire renvoyer la limite d'erreur, puis à l'intérieur de cet ordre passé
+
+01:25.440 --> 01:33.280
+l'itinéraire, puis la limite d'erreur, seront ce que nous exportons réellement.
+
+01:33.280 --> 01:42.880
+Ainsi, la limite d’erreur ne peut détecter que les éléments qui y sont rendus.
+
+01:42.880 --> 01:47.520
+Et donc, si c'est au même niveau que celui-ci, donc si c'était réellement dans l'ordre passé,
+
+01:47.540 --> 01:49.660
+il n'aurait pas l'occasion de détecter l'erreur.
+
+01:49.660 --> 01:53.260
+Il faut donc que ce soit en dehors.
+
+01:53.260 --> 01:57.020
+C'est pourquoi nous devons avoir deux composants ici, puis nous expédions le
+
+01:57.020 --> 01:59.460
+limite d'erreur un.
+
+01:59.460 --> 02:07.540
+Maintenant, certains d'entre vous pourraient dire, mais Brian, et s'il y avait des accessoires passés là-dedans ?
+
+02:07.540 --> 02:11.500
+Dans ce cas, nous n’y transmettons aucun accessoire, mais et si c’était le cas, n’est-ce pas ?
+
+02:11.500 --> 02:18.480
+Donc, tout ce que vous avez à faire ici, c'est de prendre des accessoires ici à ce niveau et puis il y a
+
+02:18.480 --> 02:21.280
+c'est quelque chose ici appelé l'opérateur de propagation qui fonctionne.
+
+02:21.280 --> 02:26.560
+Et nous allons dire quels que soient les accessoires que nous avons ici, il suffit de les transmettre.
+
+02:26.560 --> 02:28.680
+Pourquoi ne t'ai-je pas appris ça plus tôt ?
+
+02:28.680 --> 02:31.720
+Vous pensez probablement que l'opérateur de propagation a l'air plutôt cool.
+
+02:31.720 --> 02:34.400
+Pourquoi n'utilisons-nous pas autant d'endroits ?
+
+02:34.400 --> 02:38.240
+Et je fais cela intentionnellement parce que je ne veux pas que vous l'utilisiez aussi fréquemment, n'est-ce pas ?
+
+02:38.260 --> 02:42.660
+C'est bien que ça dise juste, hé, voici un sac de choses à emporter, une sorte de diffusion
+
+02:42.660 --> 02:43.660
+les sortir.
+
+02:43.660 --> 02:51.140
+Alors, imaginez que ces accessoires, par exemple, c'était quelque chose comme, je ne commente même pas ça, ça pourrait
+
+02:51.140 --> 03:02.340
+être comme des trucs cool, d'autres trucs, pas cool, non ?
+
+03:02.720 --> 03:10.440
+Vous pourriez venir ici et faire des trucs égaux aux accessoires, aux points et à d'autres trucs
+
+03:10.440 --> 03:14.360
+égaux aux accessoires parsèment d'autres choses, n'est-ce pas ?
+
+03:14.360 --> 03:19.120
+Et vous pourriez être plus explicite à ce sujet, c'est très bien aussi, mais vous pourriez
+
+03:19.120 --> 03:23.920
+soit, il semble plus agréable de faire uniquement l'opérateur de propagation.
+
+03:23.920 --> 03:31.160
+Cela rend la lecture si opaque, donc ceci, pour les choses que vous transmettez réellement
+
+03:31.180 --> 03:37.660
+choses explicitement, je veux voir cela parce que cela me fait savoir que c'est l'API qui
+
+03:37.660 --> 03:42.540
+J'adhère à cela, c'est comme d'où viennent les données et où elles vont.
+
+03:42.540 --> 03:46.980
+Encore une fois, le caractère explicite de React est l’un de ses super pouvoirs.
+
+03:46.980 --> 03:58.020
+Et donc en le cachant derrière des accessoires point point point comme celui-ci, vous le rendez assez opaque, du genre :
+
+03:58.020 --> 04:01.560
+qu'est-ce qui vient d'où et où va-t-il ?
+
+04:01.560 --> 04:07.320
+La seule raison pour laquelle, dans ce cas particulier, je suis d'accord avec l'opérateur de spread, c'est que
+
+04:07.320 --> 04:11.920
+ce composant particulier est censé être un intermédiaire, il n'est en fait pas censé savoir
+
+04:11.920 --> 04:15.040
+sur ce qui s'y passe et où cela va, n'est-ce pas ?
+
+04:15.040 --> 04:18.760
+Il s'agit littéralement de connecter deux tuyaux ensemble.
+
+04:18.760 --> 04:23.720
+Et donc cela rend les choses moins claires, n'est-ce pas ?
+
+04:23.720 --> 04:27.320
+Et c'est clair, c'est une communication claire au futur développeur, la lecture de ceci,
+
+04:27.320 --> 04:29.700
+ce qui est probablement vous-même, n'est-ce pas ?
+
+04:29.700 --> 04:33.540
+Ce n'est pas censé savoir d'où ça vient, n'est-ce pas ?
+
+04:33.540 --> 04:34.860
+C'est juste censé être le passage.
+
+04:34.860 --> 04:43.980
+Savez-vous pourquoi AirBoundaries a été exclu du nouveau React ou pourquoi ils nécessitent toujours
+
+04:43.980 --> 04:45.460
+la composante classique ?
+
+04:45.460 --> 04:48.580
+C'est une bonne question.
+
+04:48.580 --> 04:54.260
+Ce que je comprends de la situation, c'est-à-dire Brian qui lit entre les lignes, c'est qu'ils n'ont pas
+
+04:54.320 --> 05:00.280
+j'ai vraiment une manière élégante de le gérer qui était meilleure que de le faire dans le composant de classe
+
+05:00.280 --> 05:01.280
+façon.
+
+05:01.280 --> 05:04.800
+Parce qu'il n'a pas d'état dérivé, il n'a pas toutes les choses que
+
+05:04.800 --> 05:08.240
+une classe aura.
+
+05:08.240 --> 05:11.720
+Et donc à cause de cela, ils ont décidé, eh bien, nous allons laisser les composants en classe.
+
+05:11.720 --> 05:18.260
+De toute façon, ils n’avaient pas l’intention de déprécier les composants de classe.
+
+05:18.640 --> 05:25.400
+Ils l'ont laissé ainsi parce que, oui, ils auraient rendu la bibliothèque pire en essayant de forcer
+
+05:25.400 --> 05:27.680
+dans cet autre modèle.
+
+05:27.680 --> 05:32.440
+Et parce qu'ils ont publié ce composant comme React AirBoundary, tout le monde peut simplement utiliser
+
+05:32.440 --> 05:33.440
+ça.
+
+05:33.440 --> 05:37.240
+Et puis-je simplement mettre un AirBoundary sur mon itinéraire ?
+
+05:37.240 --> 05:38.240
+Bien sûr.
+
+05:38.240 --> 05:39.240
+Les gens le font.
+
+05:39.240 --> 05:41.440
+Et laisser un seul AirBoundary gérer tout ?
+
+05:41.440 --> 05:44.280
+Ouais, vous pourriez certainement, je le mettrais ici probablement à la racine.
+
+05:45.260 --> 05:52.620
+Ouais, je le mettrais ici et vous pourriez simplement faire comme AirBoundary juste là, tout attraper.
+
+05:52.620 --> 05:55.860
+Si cela vous convenait, ouais, bon sang, absolument.
+
+05:55.860 --> 05:59.980
+Alors disons, faisons en sorte que cela fonctionne parce que, ou essayons-le.
+
+06:08.980 --> 06:09.980
+Voilà.
+
+06:09.980 --> 06:14.480
+OMG, MDR, WTF.
+
+06:14.480 --> 06:17.480
+Est-ce notre AirBoundary ?
+
+06:17.480 --> 06:21.740
+Voilà.
+
+06:21.740 --> 06:24.360
+Alors euh-oh, il y a eu une erreur avec cette page.
+
+06:24.360 --> 06:27.100
+Cliquez ici pour revenir à la page d'accueil, n'est-ce pas ?
+
+06:27.100 --> 06:35.720
+Donc, ce que vous avez vu auparavant, avant que ma page ne soit rechargée, c'était Vite attrapant mon AirBoundary.
+
+06:35.720 --> 06:37.840
+Mais ici, cela a du sens, non ?
+
+06:37.840 --> 06:40.040
+C'est en fait comme une belle page d'erreur.
+
+06:40.040 --> 06:42.920
+Il y a eu une erreur, cliquez ici pour revenir à la page d'accueil et vous avez tout récupéré
+
+06:42.920 --> 06:46.240
+et maintenant c'est comme si c'était pris dans le flux de l'application et tout semble fonctionner
+
+06:46.240 --> 06:47.240
+ok.
+
+06:47.240 --> 06:53.140
+Oui, l'un des avantages de mettre ça dans l'application est que je pense que cela permettrait de détecter les 404,
+
+06:53.140 --> 06:54.140
+ce qui serait bien, non ?
+

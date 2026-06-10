@@ -1,0 +1,629 @@
+WEBVTT
+
+00:00.000 --> 00:00.500
+All right.
+
+00:00.500 --> 00:02.500
+We're going to talk about custom hooks,
+
+00:02.500 --> 00:06.180
+because you just hadn't had enough hooks yet.
+
+00:06.180 --> 00:09.300
+You've got to make your own now.
+
+00:09.300 --> 00:12.420
+One thing that's kind of cool about hooks is they're composable.
+
+00:15.420 --> 00:18.700
+So let's say you had, well, let's just
+
+00:18.700 --> 00:21.500
+talk about the exact example that we wanted to build.
+
+00:21.500 --> 00:25.900
+Here at the bottom of my Padre Gino's page,
+
+00:25.900 --> 00:28.780
+I want to have a pizza of the day, right?
+
+00:28.800 --> 00:30.960
+It's going to be the same pizza every single day.
+
+00:30.960 --> 00:32.400
+Sorry, it's going to be the same pizza every day.
+
+00:32.400 --> 00:34.360
+It's going to be the same pizza throughout a day,
+
+00:34.360 --> 00:37.320
+and then it's going to change the next day, right?
+
+00:37.320 --> 00:39.240
+I could write a component that goes in,
+
+00:39.240 --> 00:41.920
+requests the pizza of the day, renders that correctly,
+
+00:41.920 --> 00:43.520
+blah, blah, blah.
+
+00:43.520 --> 00:45.120
+But let's say I use the pizza of the day
+
+00:45.120 --> 00:47.840
+in that particular piece of information seven places
+
+00:47.840 --> 00:49.240
+in my app.
+
+00:49.240 --> 00:52.480
+We really want people to buy this pizza of the day.
+
+00:52.480 --> 00:56.200
+We can write a custom hook that goes and just encapsulates
+
+00:56.200 --> 00:57.520
+all that logic into one thing.
+
+00:57.520 --> 01:00.260
+So rather than saying use state, use effect,
+
+01:00.260 --> 01:04.020
+and all these different things kind of intertwined,
+
+01:04.020 --> 01:07.460
+we create this one hook that says use pizza of the day,
+
+01:07.460 --> 01:10.740
+and then it encapsulates all of the logic for you, right?
+
+01:10.740 --> 01:14.420
+So it becomes this reusable, composable hook.
+
+01:14.420 --> 01:16.620
+That's what we're going to try and build now.
+
+01:17.860 --> 01:22.860
+So let's first make our pizza of the day component
+
+01:22.860 --> 01:24.660
+that's going to display the information
+
+01:24.660 --> 01:25.660
+from pizza of the day.
+
+01:26.120 --> 01:29.400
+So create a new component here.
+
+01:29.400 --> 01:34.140
+We're going to call it pizza of the day.jsx.
+
+01:35.300 --> 01:40.300
+Import use pizza of, I guess we'll write that here
+
+01:41.320 --> 01:43.280
+in just a second, but go ahead and write it
+
+01:43.280 --> 01:44.120
+if you want to.
+
+01:44.120 --> 01:49.120
+Use pizza of the day from dot slash use pizza of the day.
+
+01:56.360 --> 02:00.960
+We're going to do that same internationalization thing
+
+02:00.960 --> 02:01.800
+that we did earlier.
+
+02:01.800 --> 02:06.800
+It's new dot number format, yen dash us,
+
+02:12.000 --> 02:14.880
+because we're going to be formatting another price here,
+
+02:14.880 --> 02:16.920
+style currency.
+
+02:16.920 --> 02:20.720
+It's so nice that we don't have to get a library for this
+
+02:20.720 --> 02:22.620
+that it's just built into the browser.
+
+02:26.280 --> 02:27.840
+Okay, cool.
+
+02:30.080 --> 02:30.920
+And then we're just going to write
+
+02:30.920 --> 02:33.040
+kind of a dumb component here.
+
+02:35.400 --> 02:40.400
+Const pizza of the day equals an arrow function.
+
+02:45.120 --> 02:48.580
+And then down here, just make sure you export default
+
+02:48.580 --> 02:49.600
+pizza of the day.
+
+02:53.000 --> 02:53.840
+Okay.
+
+02:56.360 --> 02:59.560
+Const pizza of the day.
+
+03:00.720 --> 03:03.040
+How many times can I say that in one course?
+
+03:03.880 --> 03:06.640
+The answer is probably at least a couple of times more.
+
+03:07.700 --> 03:11.740
+Equals use pizza of the day.
+
+03:11.740 --> 03:12.580
+Okay.
+
+03:15.440 --> 03:16.920
+And again, the nice thing is like,
+
+03:16.920 --> 03:19.800
+I haven't written this yet, but now that I've done this,
+
+03:19.800 --> 03:22.200
+I kind of get to approach the rest of the app
+
+03:22.200 --> 03:24.120
+as like just as if it was written, right?
+
+03:24.120 --> 03:25.160
+Which is pretty cool.
+
+03:25.660 --> 03:26.500
+Okay.
+
+03:28.520 --> 03:30.680
+If there's no pizza of the day,
+
+03:30.680 --> 03:34.760
+then return some very fancy loading state,
+
+03:34.760 --> 03:36.760
+which I'm just going to put in a div.
+
+03:40.720 --> 03:41.640
+Loading.
+
+03:46.920 --> 03:51.120
+And then we're just going to write this component here.
+
+03:51.820 --> 03:56.580
+Pizza of the day.
+
+04:00.380 --> 04:02.420
+We're going to put pizza of the day.
+
+04:06.300 --> 04:07.740
+Another div.
+
+04:11.020 --> 04:13.260
+Pizza of the day info.
+
+04:13.320 --> 04:16.320
+So we're going to make that an H3.
+
+04:18.360 --> 04:23.360
+That's going to have pizza of the day dot name.
+
+04:26.400 --> 04:31.400
+P, we're going to have pizza of the day dot description.
+
+04:37.440 --> 04:42.440
+And then we're going to have pizza of the day dot description.
+
+04:44.080 --> 04:44.920
+Okay.
+
+04:46.440 --> 04:51.440
+And we're going to have pizza of the day price.
+
+04:58.160 --> 04:59.680
+And here we're just going to use,
+
+04:59.680 --> 05:00.980
+we're going to say from, right?
+
+05:00.980 --> 05:03.760
+Meaning that it starts at this price.
+
+05:03.760 --> 05:08.240
+And we're going to say international dot format.
+
+05:08.240 --> 05:12.480
+It's going to be the pizza of the day dot sizes dot S
+
+05:12.480 --> 05:14.500
+because the smallest size
+
+05:14.500 --> 05:17.020
+is always going to be the least expensive, right?
+
+05:23.500 --> 05:25.980
+Div, okay.
+
+05:25.980 --> 05:28.740
+And then we just want an image of that pizza of the day.
+
+05:34.780 --> 05:39.780
+Okay, class name equals pizza of the day image.
+
+05:42.900 --> 05:47.060
+Source equals pizza of the day dot image.
+
+05:48.620 --> 05:53.620
+And alt equals pizza of the day dot name.
+
+05:58.900 --> 06:02.900
+And that should be good.
+
+06:02.900 --> 06:04.380
+Now we just got to go write this,
+
+06:04.380 --> 06:06.700
+but this will display whatever pizza of the day
+
+06:06.700 --> 06:09.040
+that we get back from the API.
+
+06:09.940 --> 06:12.780
+Beyond that, nothing too interesting here
+
+06:12.780 --> 06:14.540
+in terms of components.
+
+06:14.540 --> 06:17.460
+We've written a bunch of this stuff before,
+
+06:17.460 --> 06:19.420
+but let's go write our custom hook now.
+
+06:20.940 --> 06:22.380
+So inside of your source directory,
+
+06:22.380 --> 06:26.100
+we're going to create a file called use pizza of the day
+
+06:28.260 --> 06:31.260
+dot JS, you can call it dot JSX.
+
+06:31.260 --> 06:32.900
+I don't really care.
+
+06:32.900 --> 06:36.820
+There's going to be no direct HTML or JSX rendered.
+
+06:36.820 --> 06:39.680
+So in theory, you could call it dot JS.
+
+06:40.800 --> 06:42.920
+I'm lazy and I just call everything dot JSX
+
+06:42.920 --> 06:44.120
+because later it might have it.
+
+06:44.120 --> 06:44.960
+I don't know.
+
+06:44.960 --> 06:45.780
+It's one of those things, again,
+
+06:45.780 --> 06:48.960
+like you can make a point for it either way.
+
+06:48.960 --> 06:50.400
+Either way, I'm just going to roll my eyes
+
+06:50.400 --> 06:52.560
+and say I don't care and do whatever you want.
+
+06:58.160 --> 07:01.960
+And export const use pizza of the day.
+
+07:01.960 --> 07:05.180
+So the nice thing is like to make a custom hook,
+
+07:05.220 --> 07:07.580
+it's just a function that calls other hooks.
+
+07:07.580 --> 07:09.860
+There's no wrapper for it.
+
+07:09.860 --> 07:13.260
+There's no additional function that you need for it.
+
+07:13.260 --> 07:15.320
+It really is just a function that calls other functions
+
+07:15.320 --> 07:16.520
+and that's it.
+
+07:16.520 --> 07:20.380
+That's the entire concept behind a custom hook.
+
+07:26.320 --> 07:27.160
+Okay.
+
+07:28.940 --> 07:31.140
+And we're just going to encapsulate use state
+
+07:31.140 --> 07:31.980
+and use effect.
+
+07:31.980 --> 07:33.100
+Like it's just going to be a combination
+
+07:33.100 --> 07:33.940
+of those two things,
+
+07:33.940 --> 07:36.820
+it's going to be encapsulated in just like one other hook.
+
+07:38.460 --> 07:41.860
+Pizza of the day and set pizza of the day.
+
+07:48.020 --> 07:49.620
+We're going to have this start out as null
+
+07:49.620 --> 07:51.880
+or undefined or something like that.
+
+07:53.340 --> 07:57.300
+Again, I would be fine with you putting undefined here,
+
+07:58.820 --> 08:02.160
+void zero, whatever you want to put there.
+
+08:02.160 --> 08:04.760
+My notes have null, so I'm going to put that in there.
+
+08:06.080 --> 08:09.040
+Use effect and then here we're just going to write
+
+08:09.040 --> 08:10.620
+our Ajax request.
+
+08:13.520 --> 08:18.520
+And I'll just going to put my async function in here.
+
+08:18.560 --> 08:20.240
+It doesn't really matter where you put it
+
+08:20.240 --> 08:22.800
+as long as it's in the function body.
+
+08:22.800 --> 08:25.800
+Fetch pizza of the day.
+
+08:26.680 --> 08:31.680
+Okay, const response equals await fetch slash API slash
+
+08:36.600 --> 08:39.540
+pizza of the day.
+
+08:41.840 --> 08:44.120
+Man, I would have called this like POTD
+
+08:44.120 --> 08:45.780
+if I realized how many times I'm going to get sick
+
+08:45.780 --> 08:47.400
+of writing pizza of the day.
+
+08:48.360 --> 08:49.360
+Holy hell.
+
+08:51.560 --> 08:55.220
+Await response dot json.
+
+08:55.920 --> 09:00.920
+Okay, and then set pizza of the day data
+
+09:04.760 --> 09:09.600
+and then fetch that.
+
+09:11.520 --> 09:13.400
+How many times do we want this to run?
+
+09:14.680 --> 09:15.520
+Just once.
+
+09:15.520 --> 09:16.360
+Just once?
+
+09:16.360 --> 09:17.180
+What did we put there?
+
+09:17.180 --> 09:18.020
+Empty array.
+
+09:18.020 --> 09:18.860
+You got it.
+
+09:21.880 --> 09:24.440
+In theory, if you're doing like pizza drops
+
+09:24.440 --> 09:25.520
+and people were really pumped about it,
+
+09:25.520 --> 09:26.600
+you'd want it to like change at midnight
+
+09:26.600 --> 09:27.440
+or something like that,
+
+09:27.440 --> 09:31.360
+but I imagine people are not that hyped about your pizzas.
+
+09:31.360 --> 09:32.320
+I don't know.
+
+09:32.320 --> 09:34.480
+I've waited in long lines for pizza in Seattle,
+
+09:34.480 --> 09:36.720
+so people do like their pizza.
+
+09:42.360 --> 09:44.420
+So again, this is a custom hook.
+
+09:44.420 --> 09:48.920
+This is a concept that people kind of associate with React,
+
+09:51.400 --> 09:54.720
+but it's just a function that calls other hooks, right?
+
+09:56.280 --> 09:58.640
+And this is like my pet peeve
+
+09:58.640 --> 10:00.520
+when it comes to like libraries
+
+10:00.520 --> 10:03.760
+and people like to associate these like high mighty concepts
+
+10:03.760 --> 10:05.960
+and give them like fancy computer science names.
+
+10:05.960 --> 10:07.560
+When I realized like, it's just a function,
+
+10:07.560 --> 10:10.680
+just start calling it a function, right?
+
+10:10.680 --> 10:12.080
+Because it makes things seem more unapproachable
+
+10:12.080 --> 10:13.580
+than they actually are, right?
+
+10:14.760 --> 10:17.080
+Nothing in here is new to you, right?
+
+10:18.040 --> 10:20.340
+But you probably heard the ideas like, oh, custom hooks.
+
+10:20.340 --> 10:22.160
+This is going to be like some amount of formality
+
+10:22.160 --> 10:25.340
+and I need my monocle and testing harness, right?
+
+10:25.340 --> 10:26.840
+No, it's just a function.
+
+10:28.580 --> 10:29.420
+That's it, right?
+
+10:29.420 --> 10:30.860
+And now pizza of the day works.
+
+10:34.580 --> 10:38.140
+Because like, just mentally model this with me, right?
+
+10:38.140 --> 10:39.900
+You have this pizza of the day function
+
+10:39.900 --> 10:42.820
+that you're calling, use this, right?
+
+10:42.820 --> 10:45.060
+Inside of this, this is gonna call two hooks.
+
+10:45.060 --> 10:46.500
+Now the thing that I told you before is like,
+
+10:46.500 --> 10:48.300
+don't put them in if statements,
+
+10:48.300 --> 10:50.000
+don't put them in for loops or while loops
+
+10:50.000 --> 10:50.840
+or anything like that.
+
+10:50.840 --> 10:53.100
+But what is this actually doing, right?
+
+10:53.100 --> 10:56.260
+Inside of it, it's just calling this hook,
+
+10:56.260 --> 10:58.380
+then it's calling this hook,
+
+10:58.380 --> 11:00.220
+and it's calling them in the same order no matter what,
+
+11:00.220 --> 11:01.060
+right?
+
+11:01.060 --> 11:04.260
+It's just in another file, which is okay.
+
+11:04.260 --> 11:06.460
+And that makes it a custom hook.
+
+11:09.060 --> 11:10.620
+Makes it a function, okay.
+
+11:11.740 --> 11:15.240
+So now we have a pizza of the day component.
+
+11:16.580 --> 11:18.420
+Let's go put that in app.jsx
+
+11:18.420 --> 11:20.240
+because we wanna show that to everyone
+
+11:20.240 --> 11:23.180
+all of the time we are pushing pizza.
+
+11:23.180 --> 11:25.480
+Again, this is Intro to Capitalism with Brian.
+
+11:27.900 --> 11:30.400
+By the end of this, you're all gonna be pizza barons.
+
+11:31.680 --> 11:33.920
+All right, pizza of the day there.
+
+11:33.920 --> 11:36.160
+Under order, I think is where I put it.
+
+11:36.160 --> 11:37.000
+Yep.
+
+11:38.080 --> 11:40.580
+Pizza of the day, there we go.
+
+11:43.680 --> 11:46.480
+So is my dev server still running?
+
+11:46.480 --> 11:48.360
+Make sure your dev server is still running.
+
+11:51.240 --> 11:55.340
+Look down here, and you have pizza of the day.
+
+11:59.080 --> 12:00.080
+Pretty cool, right?
+
+12:05.920 --> 12:07.240
+And this actually does change,
+
+12:07.240 --> 12:09.340
+so tomorrow it'll be something different.
+

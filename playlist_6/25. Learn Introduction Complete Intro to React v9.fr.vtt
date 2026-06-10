@@ -1,0 +1,1050 @@
+WEBVTT
+
+
+00:00.000 --> 00:04.680
+Parlons du routeur TanStack.
+
+00:05.120 --> 00:08.640
+Quelqu'un en train de discuter en ce moment est en train de briser son clavier.
+
+00:08.640 --> 00:10.480
+Qu’en est-il du routeur React ? Laisse-moi te rejoindre
+
+00:10.480 --> 00:13.880
+avant de me poser cette question,
+
+00:13.880 --> 00:15.520
+parce que je sais que quelqu'un est là-bas
+
+00:15.520 --> 00:17.600
+je me jette immédiatement sur ça.
+
+00:17.600 --> 00:22.240
+Qu’en est-il du routeur React ? Et ça ?
+
+00:22.240 --> 00:25.640
+C'est ça. Maintenant TanStack Router, je plaisante.
+
+00:25.640 --> 00:28.440
+TanStack Router, pourquoi avons-nous choisi TanStack Router pour
+
+00:28.480 --> 00:30.800
+ce cours en particulier ?
+
+00:30.800 --> 00:32.800
+Historiquement, j'ai enseigné React Router
+
+00:32.800 --> 00:34.720
+pour presque chaque itération de ceci.
+
+00:34.720 --> 00:36.840
+Il y en a un que j'ai enseigné à Reach Router,
+
+00:36.840 --> 00:38.520
+qui a ensuite été intégré à React Router.
+
+00:38.520 --> 00:40.960
+Donc, efficacement React Router.
+
+00:42.600 --> 00:43.800
+Quelques réflexions ici.
+
+00:44.800 --> 00:48.400
+Si vous voulez React Router, vous pouvez passer à la V8 de ce cours.
+
+00:48.400 --> 00:53.400
+Il s'agit donc simplement de cours organisés par React V8.
+
+00:54.520 --> 00:56.120
+Et vous pouvez voir ici, React Router,
+
+00:56.120 --> 01:01.120
+tout cela est très applicable, à jour.
+
+01:01.480 --> 01:03.520
+N'hésitez pas à y aller et à regarder ça.
+
+01:06.400 --> 01:08.000
+La raison pour laquelle j'ai choisi TanStack Router
+
+01:08.000 --> 01:10.960
+pour ce cours particulier, c'est ce routeur TanStack
+
+01:10.960 --> 01:14.720
+est très axé sur le routage React côté client.
+
+01:14.720 --> 01:15.640
+C'est quel est leur objectif.
+
+01:15.640 --> 01:17.960
+C'est leur principal cas d'utilisation.
+
+01:17.960 --> 01:22.680
+Et React Router l'a fait, je vais y aller avec la même attention
+
+01:22.680 --> 01:27.680
+pour le routage côté serveur avec AKA remix, non ?
+
+01:28.080 --> 01:30.240
+Et le routage côté client.
+
+01:30.240 --> 01:32.880
+Cela fonctionne très bien dans les situations côté client.
+
+01:32.880 --> 01:34.560
+N'hésitez pas à toujours utiliser React Router.
+
+01:34.560 --> 01:36.960
+Vous n'aurez qu'un léger regard de côté de ma part.
+
+01:36.960 --> 01:38.520
+Je plaisante, c'est génial.
+
+01:38.520 --> 01:40.800
+Tout à fait bien, et je l'utilise depuis des années.
+
+01:41.720 --> 01:44.840
+Mais j'ai apprécié la direction de TanStack Router
+
+01:44.840 --> 01:48.320
+et leur concentration exclusive sur le routage côté client,
+
+01:48.320 --> 01:51.200
+qui correspondent mieux à ce cours.
+
+01:51.200 --> 01:55.120
+Ils fonctionnent donc de manière assez similaire.
+
+01:55.120 --> 01:57.920
+Donc en apprenant un, tu vas avoir une sorte de sentiment difficile
+
+01:57.920 --> 02:00.200
+de la façon dont l'autre fonctionne de toute façon.
+
+02:02.240 --> 02:04.280
+Mais c'est pourquoi nous l'avons choisi pour celui-ci.
+
+02:04.280 --> 02:09.280
+Ils ont en fait annoncé que React Router V7 et son remix,
+
+02:09.800 --> 02:11.360
+ils convergent, ce sera la même chose.
+
+02:11.360 --> 02:14.120
+Donc, le remix sera finalement à nouveau React Router.
+
+02:15.400 --> 02:18.880
+J'espère donc que c'est une explication suffisante
+
+02:18.880 --> 02:20.680
+pourquoi j'ai choisi TanStack Router.
+
+02:20.680 --> 02:22.520
+C'était une décision un peu controversée,
+
+02:22.520 --> 02:25.480
+mais je pense que tu seras très agréablement surpris
+
+02:25.480 --> 02:27.680
+que c'est une très bonne expérience pour les développeurs.
+
+02:27.680 --> 02:28.800
+J'aime vraiment ça.
+
+02:28.800 --> 02:30.360
+Je l'utilise pas mal.
+
+02:33.200 --> 02:35.880
+Les documents sont donc géniaux.
+
+02:35.880 --> 02:38.760
+N'hésitez pas à venir ici et à consulter leurs documents.
+
+02:38.760 --> 02:41.480
+Nous allons également utiliser TanStack Query aujourd'hui,
+
+02:41.480 --> 02:43.200
+pour que ça s'adapte vraiment bien.
+
+02:44.240 --> 02:49.240
+TanStack start est un peu leur version du remix next,
+
+02:49.240 --> 02:51.320
+où il s'agit en quelque sorte d'une solution plus complète,
+
+02:51.320 --> 02:54.320
+ou peut-être encore plus près, comme créer une application React.
+
+02:54.320 --> 02:57.400
+C'est un peu leur méta-cadre plus opiniâtre
+
+02:57.400 --> 02:58.480
+pour TanStack.
+
+02:59.920 --> 03:03.120
+Et puis j'ai aussi regardé un peu en magasin.
+
+03:03.120 --> 03:06.800
+C'est essentiellement leur redux,
+
+03:06.800 --> 03:08.920
+que je n'ai pas du tout utilisé
+
+03:08.920 --> 03:10.640
+parce que je ne pense plus en avoir besoin.
+
+03:10.640 --> 03:13.440
+Quoi qu'il en soit, ils ont un tas de composants vraiment sympas.
+
+03:13.440 --> 03:14.860
+Les formulaires sont intéressants.
+
+03:15.960 --> 03:17.840
+Je pense que le virtuel est celui qui permet de faire,
+
+03:17.840 --> 03:20.080
+ouais, comme si tu avais une interface utilisateur massive.
+
+03:20.080 --> 03:22.840
+Disons que vous devez restituer un million de lignes d'un tableau.
+
+03:22.840 --> 03:25.600
+TanStack virtuel peut également vous aider avec des choses comme ça.
+
+03:27.120 --> 03:30.400
+En général, React a juste un écosystème phénoménal
+
+03:30.400 --> 03:31.360
+de trucs vraiment cool.
+
+03:31.360 --> 03:34.080
+Et aujourd'hui, nous allons utiliser deux éléments de TanStack
+
+03:34.080 --> 03:35.920
+juste parce qu'ils fonctionnent très bien ensemble,
+
+03:35.920 --> 03:38.360
+mais vous devriez absolument aller explorer.
+
+03:38.360 --> 03:39.920
+Si vous avez une idée de ce genre,
+
+03:39.920 --> 03:42.140
+mec, j'aurais aimé qu'il y ait un éditeur de code
+
+03:42.140 --> 03:43.720
+que je pourrais utiliser dans React.
+
+03:43.720 --> 03:45.720
+Et voilà, il y a définitivement un éditeur de code
+
+03:45.720 --> 03:47.280
+que vous pouvez utiliser dans React.
+
+03:47.280 --> 03:48.200
+Il y a un éditeur de texte.
+
+03:48.200 --> 03:50.640
+Il y a toutes sortes de trucs sympas.
+
+03:50.640 --> 03:52.440
+Nous utilisons un routeur aujourd'hui.
+
+03:52.440 --> 03:54.840
+Une autre chose à mentionner ici est dans React intermédiaire,
+
+03:54.840 --> 03:58.400
+nous utiliserons quelque chose de plus complet.
+
+03:58.400 --> 04:01.120
+Je n'ai pas encore décidé, mais probablement la prochaine fois, n'est-ce pas ?
+
+04:01.120 --> 04:01.960
+Juste parce qu'encore une fois,
+
+04:01.960 --> 04:04.120
+c'est le genre de ceux que les gens choisissent par défaut.
+
+04:07.480 --> 04:08.360
+Donc en d'autres termes,
+
+04:08.360 --> 04:11.820
+nous n'utiliserons pas le routeur TanStack en intermédiaire.
+
+04:11.820 --> 04:13.400
+Alors si quelque chose vous intéresse, restez à l’écoute.
+
+04:13.400 --> 04:14.440
+Nous en parlerons.
+
+04:15.120 --> 04:17.920
+Et encore une fois, je veux juste souligner,
+
+04:17.920 --> 04:19.520
+vous n'avez que l'embarras du choix ici.
+
+04:19.520 --> 04:20.840
+Il y a beaucoup de bons choix.
+
+04:20.840 --> 04:23.040
+Encore une fois, le routeur React, totalement valable ici.
+
+04:24.040 --> 04:29.040
+D'accord, alors ouvrez votre projet.
+
+04:29.360 --> 04:31.920
+Vous pouvez suspendre votre serveur VEAT pendant une seconde.
+
+04:33.040 --> 04:38.040
+Et nous allons installer MPM sur TanStack
+
+04:41.160 --> 04:42.360
+React-routeur.
+
+04:45.440 --> 04:48.400
+1.65.0.
+
+04:50.280 --> 04:52.280
+Il se peut qu'une nouvelle version soit disponible,
+
+04:52.280 --> 04:55.860
+mais encore une fois, ce sont toutes les versions que j'ai testées ensemble.
+
+04:57.240 --> 05:00.880
+Je vais faire MPM installer Dash Capital D.
+
+05:03.240 --> 05:05.160
+Encore une fois, je les récupérerais directement dans la documentation
+
+05:05.160 --> 05:08.100
+parce que c'est une bouchée à dire à voix haute.
+
+05:09.280 --> 05:10.400
+Mais c'est celui-ci ici.
+
+05:10.920 --> 05:15.920
+Donc TanStack nous l'avons mis dans les dépendances normales
+
+05:15.920 --> 05:18.400
+parce qu'il va en fait être mis en production, n'est-ce pas ?
+
+05:18.400 --> 05:20.760
+Et ceux-ci sont des outils de développement.
+
+05:20.760 --> 05:22.000
+Il y a donc un plugin de routeur
+
+05:22.000 --> 05:24.400
+que nous allons fournir à VEAT.
+
+05:24.400 --> 05:27.440
+Et il y a des outils de développement que nous allons également installer.
+
+05:27.440 --> 05:29.520
+Il y a donc de vrais outils qu'ils intègrent
+
+05:29.520 --> 05:30.880
+qui facilitent son utilisation.
+
+05:31.920 --> 05:34.340
+D'accord, alors installez les deux.
+
+05:35.180 --> 05:37.380
+Ce qui est bien avec React, c'est que
+
+05:37.380 --> 05:39.180
+TanStack fait cela aussi.
+
+05:39.180 --> 05:41.540
+Avez-vous remarqué que toutes les versions sont identiques ?
+
+05:42.340 --> 05:44.140
+C'est parce que chaque fois qu'ils préparaient une nouvelle version
+
+05:44.140 --> 05:48.100
+de chacun d’entre eux, ils ont juste coupé une nouvelle version de chacun d’eux.
+
+05:48.100 --> 05:51.660
+Et donc si vous utilisez la version 1.65.0, vous savez simplement :
+
+05:51.660 --> 05:52.860
+oh, je viens de prendre tout ça
+
+05:52.860 --> 05:54.740
+et je sais que tout cela travaille ensemble.
+
+05:54.740 --> 05:55.580
+Vous n'avez donc pas à vous inquiéter
+
+05:55.580 --> 05:57.060
+lequel dois-je utiliser avec lequel.
+
+06:00.940 --> 06:03.100
+C'est un peu comme, oh, je viens de prendre tout ça
+
+06:04.060 --> 06:04.900
+Mais c'est un peu ennuyeux,
+
+06:04.900 --> 06:06.100
+parce que tu finis par dire,
+
+06:06.100 --> 06:08.060
+il y en a plusieurs versions
+
+06:08.060 --> 06:09.180
+ça ne fait rien, non ?
+
+06:09.180 --> 06:11.540
+C'est littéralement juste une autre coupe du même précédent,
+
+06:11.540 --> 06:13.700
+mais le prix que vous payez.
+
+06:15.980 --> 06:20.980
+Bon, allons à VEAT, notre config VEAT.
+
+06:24.060 --> 06:28.660
+Et nous devons importer le routeur TanStack VEAT
+
+06:28.660 --> 06:33.660
+à partir du plugin de routeur TanStack slash VEAT.
+
+06:36.620 --> 06:38.740
+Vous pouvez donc voir qu'il existe également une version webpack de ceci,
+
+06:38.740 --> 06:42.260
+ainsi que notre spécification, que je connais moins sur celle-là.
+
+06:42.260 --> 06:44.260
+Je pense que c'est de la rouille.
+
+06:44.260 --> 06:47.300
+Quoi qu’il en soit, ce n’est certainement pas le but de ce cours.
+
+06:49.540 --> 06:52.740
+Plugins, assurez-vous de l'ajouter avant de réagir ici.
+
+06:52.740 --> 06:57.460
+On va juste mettre la même chose ici, juste comme ça.
+
+06:57.460 --> 06:59.700
+Cela rend un routeur TanStack conscient
+
+06:59.700 --> 07:01.420
+de la destination de tous vos itinéraires.
+
+07:01.420 --> 07:04.020
+Cela ajoute quelques subtilités,
+
+07:04.020 --> 07:06.460
+et je vous en montrerai quelques-uns au fur et à mesure.
+
+07:08.300 --> 07:11.020
+L'un d'eux est que vous verrez généré dans votre code
+
+07:11.020 --> 07:14.220
+est routetree.gen.ts.
+
+07:18.820 --> 07:21.660
+C'est bien que ce soit un fichier TypeScript,
+
+07:21.660 --> 07:23.380
+parce que VS Code peut le lire et lire les types,
+
+07:23.380 --> 07:24.220
+et ça va juste faire
+
+07:24.220 --> 07:26.500
+toutes les complétions de type fonctionnent très bien.
+
+07:26.500 --> 07:30.180
+Ceci est un fichier généré par le routeur TanStack
+
+07:30.180 --> 07:32.380
+que vous importerez dans votre projet.
+
+07:32.380 --> 07:33.900
+Vous l'archivez dans Git.
+
+07:33.900 --> 07:36.660
+Généralement, vous n'archivez aucun fichier généré dans Git,
+
+07:36.660 --> 07:38.260
+mais celui-ci, tu le fais,
+
+07:38.260 --> 07:40.100
+et il continuera simplement à se régénérer
+
+07:40.100 --> 07:41.220
+au fur et à mesure que votre projet avance.
+
+07:41.220 --> 07:43.940
+Donc, dans votre répertoire source,
+
+07:43.940 --> 07:46.780
+nous allons créer un nouveau répertoire à l'intérieur de celui-ci.
+
+07:49.140 --> 07:52.260
+Alors allons-y et cliquez sur plus,
+
+07:52.260 --> 07:54.140
+et nous allons simplement appeler ça des routes.
+
+07:54.780 --> 07:59.620
+Et faisons un trait de soulignement, un trait de soulignement,
+
+07:59.620 --> 08:01.700
+donc double soulignement, ou le Dunder,
+
+08:01.700 --> 08:03.620
+comme on m'a informé comme on l'appelle.
+
+08:03.620 --> 08:04.780
+Je n'ai pas inventé ça.
+
+08:05.620 --> 08:07.220
+Le Dunder.
+
+08:07.220 --> 08:08.780
+C'est un truc de Python, apparemment.
+
+08:10.780 --> 08:12.380
+Ce sont des Pythonistas tapageurs.
+
+08:13.620 --> 08:17.380
+Donc route.jsx.
+
+08:18.300 --> 08:21.300
+C'est essentiellement comme quel est votre itinéraire,
+
+08:21.300 --> 08:26.300
+ou quel sera chaque itinéraire de votre page ?
+
+08:27.460 --> 08:29.380
+Je veux dire, je suppose que ça vaut probablement la peine de prendre du recul
+
+08:29.380 --> 08:32.060
+par exemple, qu'est-ce qu'on fait ici en premier lieu ?
+
+08:32.060 --> 08:36.260
+Nous créons une application d'une seule page, un spa, n'est-ce pas,
+
+08:36.260 --> 08:38.540
+qui a plusieurs pages différentes.
+
+08:38.540 --> 08:40.500
+Donc il va y avoir une page de commande,
+
+08:40.500 --> 08:41.980
+il y aura une page de commandes passées,
+
+08:41.980 --> 08:45.220
+et il y aura une page de contact.
+
+08:45.220 --> 08:47.740
+Et nous voulons pouvoir passer de page en page.
+
+08:47.740 --> 08:49.860
+Nous voulons qu'ils aient des URL uniques.
+
+08:49.860 --> 08:50.700
+C'est tout ça
+
+08:50.700 --> 08:52.340
+sur lequel nous allons travailler en ce moment.
+
+08:52.340 --> 08:54.900
+Le fichier route.jsx ressemble essentiellement à :
+
+08:54.900 --> 08:58.100
+quel code tous ces éléments partagent-ils ensemble ?
+
+08:58.100 --> 09:00.060
+Genre, quel est l'itinéraire
+
+09:00.060 --> 09:02.020
+à quoi ressemblent tous ces fichiers de pages ?
+
+09:03.940 --> 09:05.700
+C'est donc ce que nous allons faire ici.
+
+09:09.380 --> 09:11.900
+Et c'est ce que nous allons y mettre.
+
+09:13.820 --> 09:18.820
+Nous allons dire importer, utiliser l'état,
+
+09:20.540 --> 09:25.540
+de réagir, importer, créer, acheminer, acheminer
+
+09:26.740 --> 09:30.980
+du routeur Tanstack, ainsi que de la prise.
+
+09:35.900 --> 09:39.140
+Nous allons importer les outils de développement Tanstack.
+
+09:43.620 --> 09:44.620
+Pizza du jour.
+
+09:45.500 --> 09:49.140
+Nous recréons essentiellement ce qui était dans app.jsx.
+
+09:49.140 --> 09:51.380
+Nous allons rendre app.jsx beaucoup plus petit,
+
+09:51.380 --> 09:53.620
+et la plupart des choses vivront sur la route.
+
+09:55.900 --> 09:57.140
+Importez l'en-tête.
+
+10:04.140 --> 10:09.140
+Et importez le contexte du panier à partir des contextes.
+
+10:10.380 --> 10:14.500
+Exporter la fonction par défaut à partir des contextes.
+
+10:15.460 --> 10:20.460
+Oh non, désolé, exportez, désolé, exportez la route const.
+
+10:24.820 --> 10:26.140
+Cela devient important avec,
+
+10:26.140 --> 10:28.260
+c'est juste une convention avec le routeur Tanstack
+
+10:28.260 --> 10:30.060
+ça va chercher un itinéraire.
+
+10:30.060 --> 10:31.660
+Il faut donc l'appeler ainsi.
+
+10:33.380 --> 10:34.700
+Créer un itinéraire.
+
+10:38.060 --> 10:40.660
+Et vous lui donnez simplement le composant qu'il attend.
+
+10:40.660 --> 10:43.180
+Maintenant, vous pouvez lui donner juste une fonction directement ici.
+
+10:43.180 --> 10:44.420
+Vous pourriez créer une autre fonction
+
+10:44.420 --> 10:45.660
+puis faites référence à cela là-dedans.
+
+10:45.660 --> 10:46.660
+Cela dépend entièrement de vous.
+
+10:46.660 --> 10:47.780
+Nous sommes juste, avec celui-ci,
+
+10:47.780 --> 10:49.340
+nous allons juste le mettre là-dedans.
+
+10:52.020 --> 10:55.620
+D'accord, crochet de chariot constant.
+
+10:55.620 --> 10:57.860
+En gros, je veux dire, tu pourrais même y aller
+
+10:57.860 --> 11:01.100
+dans app.jsx et obtenez-en un peu, n'est-ce pas ?
+
+11:01.100 --> 11:03.620
+Donc, fondamentalement, tout se déroule en mode strict.
+
+11:08.260 --> 11:09.100
+Retour.
+
+11:10.100 --> 11:13.300
+Et puis nous devons accrocher le chariot ici.
+
+11:23.540 --> 11:28.540
+D'accord, fournisseur de panier, placez-le dans un en-tête div.
+
+11:28.860 --> 11:30.900
+Nous allons remplacer l'ordre par autre chose.
+
+11:30.900 --> 11:32.900
+Nous allons appeler ce point de vente.
+
+11:34.620 --> 11:36.580
+C'est la pièce qui va être remplacée, n'est-ce pas ?
+
+11:36.580 --> 11:37.980
+C'est donc en fait ce qui va être rendu
+
+11:37.980 --> 11:39.220
+sur la page.
+
+11:39.220 --> 11:40.060
+Et puis nous pourrons changer
+
+11:40.060 --> 11:43.260
+toutes nos différentes pages sur cette chose particulière.
+
+11:43.260 --> 11:46.380
+Donc l’ordre est l’une des pages, n’est-ce pas ?
+
+11:46.380 --> 11:47.780
+Ensuite, ils vont cliquer sur la page à propos
+
+11:47.780 --> 11:48.860
+et la page à propos va se charger.
+
+11:48.860 --> 11:50.740
+Ensuite, ils vont cliquer dessus et ça va l'échanger.
+
+11:50.740 --> 11:52.820
+Le point de vente est l’endroit où cela aboutit réellement.
+
+11:52.820 --> 11:55.180
+Je vais te montrer encore un truc bizarre.
+
+11:55.180 --> 11:56.140
+Nous ne sommes pas obligés de procéder de cette façon,
+
+11:56.140 --> 11:58.260
+mais je voulais juste vous montrer comment faire ça.
+
+11:59.220 --> 12:00.860
+Disons que je voulais, ici en bas,
+
+12:00.860 --> 12:05.500
+mettre des outils de développement, n'est-ce pas ?
+
+12:05.500 --> 12:06.340
+C'est fou.
+
+12:06.340 --> 12:07.900
+Pourquoi est-ce fou ?
+
+12:08.740 --> 12:12.340
+Parce que vous ne pouvez en retourner qu’un seul ou aimer une seule chose.
+
+12:12.340 --> 12:13.660
+Ouais.
+
+12:13.660 --> 12:15.620
+C'est pour la même raison que je ne peux pas faire quelque chose comme ça,
+
+12:15.620 --> 12:19.260
+où je dis comme const chose égale une virgule cinq.
+
+12:22.060 --> 12:24.140
+Il existe des langages qui vous permettent de faire cela, n'est-ce pas ?
+
+12:24.140 --> 12:25.780
+Mais JavaScript n’en fait pas partie.
+
+12:27.060 --> 12:29.180
+Vous ne pouvez retourner qu'une seule chose à la fois
+
+12:29.180 --> 12:32.680
+et cela renvoie deux choses différentes, n'est-ce pas ?
+
+12:33.620 --> 12:36.340
+Cela renvoie ceci et cela.
+
+12:36.340 --> 12:38.500
+Parce qu'ils sont frères et sœurs et qu'il n'y a rien
+
+12:38.500 --> 12:42.260
+en encapsulant les deux, cela ne vous permettra pas de faire ça.
+
+12:42.260 --> 12:44.580
+Donc si je voulais que ce soit ces deux choses,
+
+12:44.580 --> 12:45.420
+que ferais-je ?
+
+12:46.300 --> 12:48.940
+Faites-en simplement un tableau, n'est-ce pas ?
+
+12:48.940 --> 12:50.380
+Maintenant, tout va bien, car vous n'avez qu'un seul tableau
+
+12:50.380 --> 12:52.140
+qui contient ces deux choses.
+
+12:52.140 --> 12:54.300
+Vous pouvez également le faire avec React.
+
+12:54.300 --> 12:56.940
+Et c'est avec cette syntaxe bizarre que ça ressemble à ça.
+
+13:02.940 --> 13:04.640
+C'est donc une balise vide, non ?
+
+13:05.640 --> 13:07.880
+Et puis c'est comme une balise de fermeture vide.
+
+13:09.840 --> 13:12.880
+Rappelez-vous, que fait React dans ces situations ?
+
+13:12.880 --> 13:15.220
+Il enveloppe simplement les éléments dans des tableaux, n'est-ce pas ?
+
+13:15.220 --> 13:16.560
+C'est donc littéralement ce que c'est.
+
+13:16.560 --> 13:18.960
+Il s'agit simplement d'envelopper ces deux éléments dans un tableau.
+
+13:20.800 --> 13:21.640
+Cela a du sens ?
+
+13:22.760 --> 13:25.600
+Ouais, c'est un peu étrange, mais c'est comme ça que ça marche.
+
+13:25.600 --> 13:26.560
+Donc si tu te trouves comme,
+
+13:26.560 --> 13:29.320
+Je veux rendre deux choses en tant que frère au sommet,
+
+13:29.320 --> 13:31.000
+c'est à ce moment-là que tu vas utiliser quelque chose comme ça.
+
+13:31.000 --> 13:33.240
+Je remarque que nous avons perdu le mode strict lors de la transition.
+
+13:33.240 --> 13:35.280
+Je ne sais pas si c'est important pour vous.
+
+13:35.280 --> 13:37.880
+Nous allons mettre ça dedans, nous allons laisser ça dans l'application.
+
+13:37.880 --> 13:39.200
+Oh, aha.
+
+13:41.080 --> 13:43.560
+Mais astucieux, c'est astucieux.
+
+13:43.560 --> 13:45.640
+Passons donc à app.jsx
+
+13:45.640 --> 13:47.880
+et apportons nos modifications ici également.
+
+13:49.360 --> 13:52.160
+Nous n'avons donc plus besoin d'utiliser l'état,
+
+13:52.160 --> 13:53.920
+parce que nous n'allons plus faire ça ici.
+
+13:53.920 --> 13:57.500
+Nous faisons cela dans la route racine.
+
+14:01.600 --> 14:02.960
+Nous devons créer une racine, c'est bien.
+
+14:02.960 --> 14:04.280
+Nous n'avons pas besoin de pizza du jour.
+
+14:04.280 --> 14:05.840
+Nous n'avons pas besoin d'ordre.
+
+14:05.840 --> 14:06.720
+Nous n'avons pas besoin d'en-tête.
+
+14:06.720 --> 14:08.960
+Tout cela existe dans notre route racine.
+
+14:08.960 --> 14:09.860
+Nous n’en avons pas besoin.
+
+14:12.400 --> 14:15.760
+Nous avons donc besoin de notre fournisseur de route d'importation
+
+14:17.600 --> 14:19.480
+du routeur Tanstack React.
+
+14:19.480 --> 14:22.920
+Et nous avons également besoin d'une fonction de création de routeur.
+
+14:24.200 --> 14:25.040
+Celui-ci.
+
+14:26.240 --> 14:27.080
+D'accord.
+
+14:29.440 --> 14:30.640
+Oh, et puis l'autre chose,
+
+14:30.640 --> 14:32.200
+nous devons utiliser ce fichier généré
+
+14:32.200 --> 14:34.560
+qu'il est sur le point de générer pour nous.
+
+14:34.560 --> 14:37.580
+Alors faites-moi confiance, il n'y a pas de dossier ici pour le moment,
+
+14:37.580 --> 14:39.880
+mais ce sera le cas au moment où nous nous en soucierons.
+
+14:41.120 --> 14:46.120
+Importer l'arborescence des routes à partir de celle-ci sera bientôt générée
+
+14:49.160 --> 14:53.760
+point barre oblique routeTree.gen.
+
+14:54.680 --> 14:56.040
+Encore une fois, ça n'existe pas encore,
+
+14:56.040 --> 14:58.200
+mais vous verrez cela apparaître sous peu.
+
+14:59.080 --> 15:04.080
+Const router équivaut à créer un routeur avec une arborescence racine.
+
+15:14.720 --> 15:16.880
+Débarrassez-vous de ce crochet de chariot ici.
+
+15:16.880 --> 15:18.440
+Débarrassez-vous de ça.
+
+15:18.440 --> 15:22.080
+En fait, la plupart de ces choses peuvent être distribuées
+
+15:22.080 --> 15:23.400
+ou simplement supprimé.
+
+15:23.400 --> 15:25.160
+Nous allons laisser le mode strict ici.
+
+15:25.160 --> 15:26.660
+Vous pourriez demander pourquoi.
+
+15:26.660 --> 15:28.460
+Il pourrait être déplacé vers l'autre,
+
+15:28.460 --> 15:32.220
+mais ma tendance est de tout envelopper en mode strict, non ?
+
+15:32.220 --> 15:33.460
+Voilà pourquoi.
+
+15:34.980 --> 15:38.260
+Et puis tout ce que nous avons à faire ici c'est de dire le fournisseur d'itinéraire,
+
+15:38.260 --> 15:42.940
+routeur est égal à routeur, et c'est tout.
+
+15:42.940 --> 15:45.580
+Tanstack Router s’occupe du reste pour nous.
+
+15:45.580 --> 15:50.360
+À l’heure actuelle, nous avons order.jsx comme simple composant.
+
+15:50.360 --> 15:52.540
+En réalité, c'est une sorte de route, non ?
+
+15:53.540 --> 15:55.860
+Laissez-moi, c'est un certificat.
+
+15:55.860 --> 15:58.660
+Autrement dit, c’est une route, donc nous devons en faire une route.
+
+16:00.300 --> 16:05.300
+Nous allons donc déplacer l'ordre dans les itinéraires.
+
+16:05.380 --> 16:06.700
+Nous allons déménager.
+
+16:07.520 --> 16:08.820
+Vous pouvez dire mettre à jour les importations.
+
+16:08.820 --> 16:10.140
+Oui s'il vous plait.
+
+16:11.060 --> 16:13.500
+Notez que ça va maintenant, au lieu de barre oblique,
+
+16:13.500 --> 16:14.700
+ça fait point point slash.
+
+16:14.700 --> 16:17.020
+Ce sont les mises à jour qu'il a faites pour nous.
+
+16:19.860 --> 16:22.100
+Et puis nous allons renommer cela en,
+
+16:22.140 --> 16:23.660
+et c'est leur convention.
+
+16:23.660 --> 16:25.740
+J'aurais été tenté de nommer cela avec une majuscule,
+
+16:25.740 --> 16:27.500
+mais ils ne le font pas.
+
+16:27.500 --> 16:32.500
+Commandez, o minuscule, et nous allons l'appeler lazy.jsx.
+
+16:35.380 --> 16:40.380
+Cela signifie pour Tanstack Router,
+
+16:40.420 --> 16:42.720
+Je veux que tu télécharges ça paresseusement.
+
+16:42.720 --> 16:43.780
+Alors tu le mets juste dans le nom,
+
+16:43.780 --> 16:44.940
+et il saura exactement ce que tu veux.
+
+16:44.940 --> 16:47.300
+C'est comme, d'accord, je vais diviser l'itinéraire,
+
+16:47.300 --> 16:50.340
+ou le package ici, et je le chargerai plus tard.
+
+16:50.340 --> 16:52.020
+Chaque fois que l'utilisateur demande la page de commande,
+
+16:52.020 --> 16:55.180
+ils l'auront, mais ils ne le chargeront pas d'ici là,
+
+16:55.180 --> 16:56.460
+ce qui est plutôt cool.
+
+16:56.460 --> 16:59.340
+Si je ne l'avais pas mis ici, et que c'était juste order.jsx,
+
+16:59.340 --> 17:01.260
+il le chargerait simplement immédiatement à chaque fois.
+
+17:01.260 --> 17:02.140
+Dans notre cas particulier,
+
+17:02.140 --> 17:04.820
+nos composants et nos itinéraires sont assez petits.
+
+17:04.820 --> 17:07.460
+Je ne les chargerais probablement pas paresseusement.
+
+17:07.460 --> 17:10.220
+Je chargerais probablement tout à chaque fois.
+
+17:10.220 --> 17:12.300
+Mais si vous créez une application de n'importe quelle taille,
+
+17:12.300 --> 17:14.080
+ces itinéraires ont tendance à devenir un peu plus grands
+
+17:14.080 --> 17:15.820
+à chaque fois.
+
+17:15.820 --> 17:17.660
+Donc dans ce cas, je les chargerais probablement paresseusement,
+
+17:17.660 --> 17:18.900
+c'est pourquoi je vais te montrer aujourd'hui
+
+17:18.900 --> 17:20.740
+tout ce que nous allons juste charger paresseux.
+

@@ -1,0 +1,659 @@
+WEBVTT
+
+00:00.000 --> 00:01.560
+Let's make another component up here.
+
+00:01.560 --> 00:02.840
+We're going to call it pizza.
+
+00:08.000 --> 00:11.840
+OK, this is going to be another component.
+
+00:11.840 --> 00:13.040
+And we're going to say return.
+
+00:16.440 --> 00:19.320
+Well, yeah, we have to do react.createElement return.
+
+00:23.960 --> 00:25.040
+This is going to be a div.
+
+00:25.040 --> 00:27.440
+It's going to be an empty object here.
+
+00:27.440 --> 00:34.400
+We're going to give it an array, just for fun,
+
+00:34.400 --> 00:36.800
+because we want to return multiple top-level React
+
+00:36.800 --> 00:37.360
+components.
+
+00:37.360 --> 00:38.400
+And that's how you do it.
+
+00:38.400 --> 00:40.000
+You do it with an array.
+
+00:40.000 --> 00:47.680
+React.createElement H1, empty object.
+
+00:47.680 --> 00:51.800
+And this is going to be the pepperoni pizza.
+
+00:51.800 --> 00:54.640
+Feel free to put in here whatever you want.
+
+00:54.640 --> 00:58.880
+If you like a pineapple on your pizza, no judgment here.
+
+01:04.920 --> 01:07.800
+So we've now made this pizza component.
+
+01:07.800 --> 01:09.200
+You see this is returning an array.
+
+01:09.200 --> 01:13.480
+This is the way that you return two siblings as a top-level
+
+01:13.480 --> 01:14.880
+component here.
+
+01:14.880 --> 01:17.160
+The other way that this could work,
+
+01:17.160 --> 01:19.160
+you can actually delete this and have it just
+
+01:19.160 --> 01:28.080
+be multiple parameters to the react.createElement function.
+
+01:28.080 --> 01:30.680
+Honestly, it doesn't really matter,
+
+01:30.680 --> 01:32.960
+because once we start getting into JSX,
+
+01:32.960 --> 01:35.360
+it's irrelevant of how it happens.
+
+01:35.360 --> 01:38.040
+But just so you know, under the hood,
+
+01:38.040 --> 01:40.720
+JSX will convert this to an array, which occasionally
+
+01:40.720 --> 01:45.640
+can be useful, or it's at least good to know, or irrelevant.
+
+01:45.640 --> 01:47.880
+I don't know, you might forget it, and who cares?
+
+01:47.880 --> 01:50.560
+Anyway, an array.
+
+01:50.560 --> 01:52.920
+So now we have this array, and we
+
+01:52.920 --> 01:59.600
+want to render a bunch of pizzas inside of our app.
+
+01:59.600 --> 02:03.400
+So we're also going to turn this into an array.
+
+02:03.400 --> 02:05.400
+I'm going to move this createElement inside of it
+
+02:05.400 --> 02:07.080
+as the first thing.
+
+02:07.080 --> 02:10.280
+And then I'm just going to create a bunch of pizzas.
+
+02:10.280 --> 02:17.240
+React.createElement pizza.
+
+02:17.240 --> 02:19.120
+And I'm just going to make a couple of those.
+
+02:27.680 --> 02:29.440
+So something you might be gathering here,
+
+02:29.440 --> 02:32.480
+if it's a string, it's going to literally output
+
+02:32.480 --> 02:36.320
+that string to the DOM as a DOM node.
+
+02:36.320 --> 02:41.600
+And if it's a function or a React component of some variety,
+
+02:41.600 --> 02:44.640
+it's going to try and render that function.
+
+02:44.640 --> 02:46.440
+But the cool thing about React is you kind of
+
+02:46.440 --> 02:47.520
+get to treat them the same.
+
+02:50.200 --> 02:53.760
+Now, you might be asking, well, what
+
+02:53.760 --> 02:57.840
+happened to this stuff, right?
+
+02:57.840 --> 02:59.040
+You can put it in there.
+
+02:59.040 --> 03:01.320
+So this will pass down properties into pizza,
+
+03:01.320 --> 03:03.120
+and we'll look about that in just a second.
+
+03:03.120 --> 03:06.400
+And you can give pizza children elements as well,
+
+03:06.400 --> 03:07.840
+which we'll also talk about later.
+
+03:07.840 --> 03:10.040
+But just so you know, it's the same function.
+
+03:10.040 --> 03:12.600
+It works exactly the same way.
+
+03:12.600 --> 03:14.720
+Because we have nothing to give it as children,
+
+03:14.720 --> 03:15.880
+because we have no properties to give it,
+
+03:15.880 --> 03:17.360
+we can just omit all of it, which
+
+03:17.360 --> 03:19.160
+is what we're doing here.
+
+03:19.160 --> 03:20.200
+OK.
+
+03:20.200 --> 03:22.440
+So again, my favorite thing to do,
+
+03:22.440 --> 03:25.800
+what do we expect to happen here?
+
+03:25.800 --> 03:28.360
+And I like to work at the top of the tree, which is app,
+
+03:28.360 --> 03:29.480
+and then work my way down.
+
+03:29.480 --> 03:29.980
+All right.
+
+03:29.980 --> 03:32.760
+So we're going to render into root app.
+
+03:32.760 --> 03:35.400
+So we're going to render this.
+
+03:35.400 --> 03:37.000
+Then we're going to have a div.
+
+03:37.000 --> 03:38.440
+And inside of that div, we're going
+
+03:38.440 --> 03:42.920
+to have an H1 with Padre Gino's, which is what we had before.
+
+03:42.920 --> 03:44.400
+But then we have pizza here.
+
+03:44.720 --> 03:46.160
+So this is going to go into pizza,
+
+03:46.160 --> 03:49.680
+and it's going to render an H1 with pepperoni pizza,
+
+03:49.680 --> 03:55.240
+and a P with mozzarella cheese and pepperoni.
+
+03:55.240 --> 03:57.360
+It does it once.
+
+03:57.360 --> 03:58.960
+And then it's going to do it again.
+
+03:58.960 --> 04:05.280
+Another H1, another P. And it does so five different times.
+
+04:05.280 --> 04:06.000
+So far, so good.
+
+04:06.000 --> 04:07.640
+Makes sense?
+
+04:07.640 --> 04:10.680
+So how many H1s do you expect?
+
+04:10.680 --> 04:11.960
+Mildly a trick question.
+
+04:15.400 --> 04:17.280
+Six, right?
+
+04:17.280 --> 04:19.240
+Because you're going to have five from the pizza
+
+04:19.240 --> 04:21.000
+and then one from Padre Gino's, right?
+
+04:21.000 --> 04:23.360
+That's why it says mildly a trick question.
+
+04:23.360 --> 04:25.960
+And then how many Ps do you expect?
+
+04:25.960 --> 04:27.440
+Five.
+
+04:27.440 --> 04:28.320
+All right.
+
+04:28.320 --> 04:29.040
+Let's take a look.
+
+04:35.040 --> 04:38.480
+A lot of pepperoni pizza.
+
+04:38.480 --> 04:40.280
+Pretty cool, though, right?
+
+04:40.280 --> 04:43.280
+You might react yelling at you.
+
+04:43.280 --> 04:44.240
+Is this about keys?
+
+04:44.640 --> 04:46.440
+Just go ahead and straight up ignore react.
+
+04:46.440 --> 04:49.440
+It doesn't know what it's talking about.
+
+04:49.440 --> 04:50.560
+We'll talk about that.
+
+04:50.560 --> 04:53.400
+But for now, just ignore react.
+
+04:53.400 --> 04:54.560
+What you're doing is fine.
+
+04:54.560 --> 04:57.200
+Now I want to have multiple types of pizza.
+
+04:57.200 --> 05:00.200
+I am a connoisseur of pizza, you might call me.
+
+05:00.200 --> 05:02.280
+You might not.
+
+05:02.280 --> 05:04.040
+So how do we do that?
+
+05:04.040 --> 05:05.880
+What's cool is pizza can accept what
+
+05:05.880 --> 05:08.280
+these things called props.
+
+05:08.280 --> 05:12.440
+Stands for properties, in case you're wondering.
+
+05:12.480 --> 05:14.240
+Probably was illuminating to no one.
+
+05:14.240 --> 05:15.840
+You probably got that right away.
+
+05:15.840 --> 05:16.360
+That's fine.
+
+05:16.360 --> 05:18.360
+It made me feel smart to say it.
+
+05:18.360 --> 05:21.680
+And we're going to say here on props,
+
+05:21.680 --> 05:25.160
+we can pull things off of it that we pass down into it.
+
+05:25.160 --> 05:28.680
+So we want to give it whatever the name of the pizza is.
+
+05:28.680 --> 05:31.400
+And then we want to give it a description, right?
+
+05:31.400 --> 05:33.760
+So we're going to say props.
+
+05:33.760 --> 05:34.560
+I call it description.
+
+05:34.560 --> 05:37.440
+I did.
+
+05:37.440 --> 05:38.440
+So cool.
+
+05:38.440 --> 05:40.080
+Now it's a bit more flexible.
+
+05:40.080 --> 05:41.120
+I can accept a name.
+
+05:41.120 --> 05:42.440
+I can accept a description.
+
+05:42.440 --> 05:47.520
+Let's go ahead and add these to our pizzas.
+
+05:47.520 --> 05:52.440
+So this is where this object is going to come in handy.
+
+05:52.440 --> 05:54.600
+Now we can come in here and say object.
+
+05:54.600 --> 05:57.280
+And we're going to give it a name.
+
+05:57.280 --> 06:02.960
+And we'll give it, this one can be the pepperoni pizza.
+
+06:02.960 --> 06:07.160
+And the description can be, I have
+
+06:07.160 --> 06:09.040
+like nice looking descriptions here.
+
+06:09.080 --> 06:10.680
+And I'm not going to do that because I
+
+06:10.680 --> 06:12.400
+don't want to type that much.
+
+06:12.400 --> 06:15.640
+So some dope pizza, yo, right?
+
+06:15.640 --> 06:17.920
+Something like that, whatever you want to put there.
+
+06:17.920 --> 06:18.560
+I'm not your mom.
+
+06:21.360 --> 06:25.840
+Name, we're going to put the Americano in here
+
+06:25.840 --> 06:28.080
+because I was just talking about it.
+
+06:28.080 --> 06:29.620
+And I want you to sit there and think
+
+06:29.620 --> 06:31.080
+about French fries on your pizza.
+
+06:31.080 --> 06:33.880
+That's really what I want from this.
+
+06:33.880 --> 06:37.000
+French fries and hot dogs.
+
+06:39.240 --> 06:41.000
+What the, WTF Italy.
+
+06:41.000 --> 06:42.080
+All right, there we go.
+
+06:44.960 --> 06:48.080
+Name, just to continue with the theme,
+
+06:48.080 --> 06:49.440
+we'll do the Hawaiian here next.
+
+06:52.160 --> 06:59.680
+Description, pineapple and ham, WTF America.
+
+06:59.680 --> 07:00.640
+All right, there we go.
+
+07:04.320 --> 07:07.120
+And now we have the world's worst pizza menu.
+
+07:09.400 --> 07:13.800
+All right, outside of indicting many cultures
+
+07:13.800 --> 07:17.800
+with their pizza attitudes, what is interesting and useful
+
+07:17.800 --> 07:23.920
+here is now this pizza component became far more useful to us.
+
+07:23.920 --> 07:27.040
+We get to create this encapsulated bit of logic
+
+07:27.040 --> 07:29.920
+that handles everything about having a pizza.
+
+07:29.920 --> 07:33.920
+So if you imagine working with our Padre Gino's website
+
+07:33.920 --> 07:35.960
+that we're about to go build, you
+
+07:35.960 --> 07:39.560
+imagine that we have to display pizza in various different parts
+
+07:39.560 --> 07:40.200
+of the website.
+
+07:40.200 --> 07:43.160
+On the pizza of the day, we have to show it.
+
+07:43.160 --> 07:45.440
+On the orders page, we have to show it.
+
+07:45.440 --> 07:48.360
+On the past orders page, we have to show it.
+
+07:48.360 --> 07:51.320
+And now we just get one pizza component
+
+07:51.320 --> 07:53.280
+that if you give it the right information,
+
+07:53.280 --> 07:55.840
+it's going to display nicely and encapsulate
+
+07:55.840 --> 08:01.840
+all of the logic for making a pizza, right?
+
+08:01.840 --> 08:03.800
+It's interesting to look at the history of React
+
+08:03.800 --> 08:05.640
+and why it's built this way.
+
+08:05.640 --> 08:09.280
+When React was created, the really big things on the market
+
+08:09.280 --> 08:14.280
+were model view controllers or model view view models
+
+08:14.280 --> 08:22.040
+frameworks, which was like Backbone, old Angular, Knockout.
+
+08:22.040 --> 08:23.680
+They all had these kind of like, they
+
+08:23.680 --> 08:26.120
+were copying basically what Rails was doing on the back end
+
+08:26.120 --> 08:28.520
+and they were trying to ship that logic to the front end.
+
+08:28.520 --> 08:30.920
+I wrote lots of it, pretty good code bases.
+
+08:30.920 --> 08:35.400
+I mean, I'm not actually going to really talk down too much
+
+08:35.400 --> 08:38.920
+to it, but React kind of had this like epiphany.
+
+08:38.920 --> 08:40.720
+It's like, you know what's actually really easy
+
+08:40.720 --> 08:42.760
+to write websites with?
+
+08:42.760 --> 08:45.000
+PHP, right?
+
+08:45.000 --> 08:47.080
+The page model really appealed to them
+
+08:47.080 --> 08:49.520
+where you have everything kind of mashed together
+
+08:49.520 --> 08:51.240
+for small things, right?
+
+08:51.240 --> 08:52.560
+So instead of trying to separate,
+
+08:52.560 --> 08:54.800
+here's my model that talks to the database,
+
+08:54.800 --> 08:56.440
+here's my view of what people look at it,
+
+08:56.440 --> 08:59.400
+and here's the view model, which connects the two things,
+
+08:59.400 --> 09:01.840
+they were like, let's take the model, the view,
+
+09:01.840 --> 09:03.480
+and the view model and shove it together
+
+09:03.480 --> 09:05.040
+so you have these components that
+
+09:05.040 --> 09:08.880
+contain everything for very small pieces of code.
+
+09:08.880 --> 09:12.400
+That was kind of the PHP way unintentionally at the time,
+
+09:12.400 --> 09:16.480
+but I'll say that my first job was I was a PHP dev.
+
+09:16.480 --> 09:17.840
+I was very productive, right?
+
+09:17.840 --> 09:20.240
+I shipped a lot of code very quickly.
+
+09:20.240 --> 09:22.560
+So that is the story of React of how
+
+09:22.560 --> 09:24.880
+we got this idea of like, we're going to take everything
+
+09:24.880 --> 09:26.040
+for these small components and we're
+
+09:26.040 --> 09:28.960
+going to shove them together so that you have everything
+
+09:28.960 --> 09:32.000
+for one concern in one place.
+
+09:32.000 --> 09:37.040
+And it turns out for UIs, that's extremely useful.
+
+09:37.040 --> 09:38.680
+Because now we can have this pizza logic,
+
+09:38.680 --> 09:40.960
+and instead of having to connect everything together,
+
+09:40.960 --> 09:42.380
+we have to connect the view model
+
+09:42.380 --> 09:44.160
+to all these different places.
+
+09:44.160 --> 09:46.720
+We just say, here's a pizza, and all the logic for pizza
+
+09:46.720 --> 09:48.280
+is contained in one space.
+
+09:48.280 --> 09:49.240
+That's great.
+
+09:49.240 --> 09:51.680
+I obviously have been doing it for a decade,
+
+09:51.680 --> 09:52.480
+so I stuck with it.
+
+09:52.480 --> 09:54.920
+So it's a really nice way of writing interfaces.
+
+09:54.920 --> 09:57.720
+You'll see this little checkered flag here.
+
+09:57.720 --> 10:00.560
+If you click this, this should take you to the directory
+
+10:00.560 --> 10:02.560
+that we were in.
+
+10:02.560 --> 10:05.840
+So this is the no-frills-react one.
+
+10:05.840 --> 10:06.720
+You'll click in there.
+
+10:06.720 --> 10:09.800
+You'll see that we have our app.js.
+
+10:09.800 --> 10:11.960
+This is a much more culturally sensitive version
+
+10:11.960 --> 10:12.960
+of what we were writing.
+
+10:17.680 --> 10:20.040
+So if you got stuck, feel free to go grab this code
+
+10:20.040 --> 10:21.960
+or take a look, and you can diff between the two
+
+10:21.960 --> 10:24.880
+and say what's different, what worked, what didn't work.
+
+10:24.880 --> 10:27.080
+And just look for those checkered flags
+
+10:27.080 --> 10:28.240
+throughout the course.
+

@@ -1,0 +1,660 @@
+WEBVTT
+
+
+00:00.000 --> 00:01.560
+Créons un autre composant ici.
+
+00:01.560 --> 00:02.840
+Nous allons l'appeler pizza.
+
+00:08.000 --> 00:11.840
+OK, cela va être un autre composant.
+
+00:11.840 --> 00:13.040
+Et nous allons dire retour.
+
+00:16.440 --> 00:19.320
+Eh bien, oui, nous devons faire un retour de réaction.createElement.
+
+00:23.960 --> 00:25.040
+Cela va être un div.
+
+00:25.040 --> 00:27.440
+Ce sera un objet vide ici.
+
+00:27.440 --> 00:34.400
+On va lui donner un tableau, juste pour s'amuser,
+
+00:34.400 --> 00:36.800
+parce que nous voulons renvoyer plusieurs React de haut niveau
+
+00:36.800 --> 00:37.360
+composants.
+
+00:37.360 --> 00:38.400
+Et c'est comme ça qu'on fait.
+
+00:38.400 --> 00:40.000
+Vous le faites avec un tableau.
+
+00:40.000 --> 00:47.680
+React.createElement H1, objet vide.
+
+00:47.680 --> 00:51.800
+Et ça va être la pizza au pepperoni.
+
+00:51.800 --> 00:54.640
+N'hésitez pas à mettre ici ce que vous voulez.
+
+00:54.640 --> 00:58.880
+Si vous aimez un ananas sur votre pizza, pas de jugement ici.
+
+01:04.920 --> 01:07.800
+Nous avons donc maintenant créé ce composant pizza.
+
+01:07.800 --> 01:09.200
+Vous voyez, cela renvoie un tableau.
+
+01:09.200 --> 01:13.480
+C'est ainsi que vous renvoyez deux frères et sœurs en tant que niveau supérieur
+
+01:13.480 --> 01:14.880
+composant ici.
+
+01:14.880 --> 01:17.160
+L'autre façon dont cela pourrait fonctionner,
+
+01:17.160 --> 01:19.160
+vous pouvez réellement supprimer ceci et l'avoir juste
+
+01:19.160 --> 01:28.080
+être plusieurs paramètres pour la fonction réagir.createElement.
+
+01:28.080 --> 01:30.680
+Honnêtement, ça n'a pas vraiment d'importance,
+
+01:30.680 --> 01:32.960
+parce qu'une fois qu'on commence à se lancer dans JSX,
+
+01:32.960 --> 01:35.360
+peu importe comment cela se produit.
+
+01:35.360 --> 01:38.040
+Mais juste pour que tu le saches, sous le capot,
+
+01:38.040 --> 01:40.720
+JSX le convertira en un tableau, qui occasionnellement
+
+01:40.720 --> 01:45.640
+peut être utile, ou c'est du moins bon à savoir, ou hors de propos.
+
+01:45.640 --> 01:47.880
+Je ne sais pas, vous pourriez l'oublier, et peu importe ?
+
+01:47.880 --> 01:50.560
+Quoi qu'il en soit, un tableau.
+
+01:50.560 --> 01:52.920
+Alors maintenant, nous avons ce tableau, et nous
+
+01:52.920 --> 01:59.600
+je veux restituer un tas de pizzas dans notre application.
+
+01:59.600 --> 02:03.400
+Nous allons donc également transformer cela en tableau.
+
+02:03.400 --> 02:05.400
+Je vais déplacer ce createElement à l'intérieur
+
+02:05.400 --> 02:07.080
+comme première chose.
+
+02:07.080 --> 02:10.280
+Et puis je vais juste créer un tas de pizzas.
+
+02:10.280 --> 02:17.240
+Pizza React.createElement.
+
+02:17.240 --> 02:19.120
+Et je vais juste en faire quelques-uns.
+
+02:27.680 --> 02:29.440
+Donc quelque chose que vous pourriez rassembler ici,
+
+02:29.440 --> 02:32.480
+si c'est une chaîne, ça va littéralement sortir
+
+02:32.480 --> 02:36.320
+cette chaîne au DOM en tant que nœud DOM.
+
+02:36.320 --> 02:41.600
+Et s'il s'agit d'une fonction ou d'un composant React d'une certaine variété,
+
+02:41.600 --> 02:44.640
+il va essayer de restituer cette fonction.
+
+02:44.640 --> 02:46.440
+Mais ce qui est cool avec React, c'est que vous êtes en quelque sorte
+
+02:46.440 --> 02:47.520
+arriver à les traiter de la même manière.
+
+02:50.200 --> 02:53.760
+Maintenant, vous vous demandez peut-être, eh bien, qu'est-ce que
+
+02:53.760 --> 02:57.840
+c'est arrivé à ce truc, non ?
+
+02:57.840 --> 02:59.040
+Vous pouvez le mettre là-dedans.
+
+02:59.040 --> 03:01.320
+Cela transmettra donc ses propriétés à la pizza,
+
+03:01.320 --> 03:03.120
+et nous y reviendrons dans une seconde.
+
+03:03.120 --> 03:06.400
+Et vous pouvez aussi donner des éléments aux pizzas aux enfants,
+
+03:06.400 --> 03:07.840
+dont nous parlerons également plus tard.
+
+03:07.840 --> 03:10.040
+Mais juste pour que vous le sachiez, c'est la même fonction.
+
+03:10.040 --> 03:12.600
+Cela fonctionne exactement de la même manière.
+
+03:12.600 --> 03:14.720
+Parce que nous n'avons rien à lui donner en tant qu'enfants,
+
+03:14.720 --> 03:15.880
+parce que nous n'avons aucune propriété à lui donner,
+
+03:15.880 --> 03:17.360
+nous pouvons simplement tout omettre, ce qui
+
+03:17.360 --> 03:19.160
+c'est ce que nous faisons ici.
+
+03:19.160 --> 03:20.200
+D'ACCORD.
+
+03:20.200 --> 03:22.440
+Encore une fois, ce que je préfère faire,
+
+03:22.440 --> 03:25.800
+qu'attendons-nous qu'il se passe ici ?
+
+03:25.800 --> 03:28.360
+Et j'aime travailler au sommet de l'arbre, qui est l'application,
+
+03:28.360 --> 03:29.480
+puis je descends.
+
+03:29.480 --> 03:29.980
+D'accord.
+
+03:29.980 --> 03:32.760
+Nous allons donc effectuer le rendu dans l'application racine.
+
+03:32.760 --> 03:35.400
+Nous allons donc rendre ceci.
+
+03:35.400 --> 03:37.000
+Ensuite, nous allons avoir un div.
+
+03:37.000 --> 03:38.440
+Et à l'intérieur de cette division, nous allons
+
+03:38.440 --> 03:42.920
+avoir un H1 avec Padre Gino, ce que nous avions avant.
+
+03:42.920 --> 03:44.400
+Mais ensuite, nous mangeons de la pizza ici.
+
+03:44.720 --> 03:46.160
+Donc ça va aller dans la pizza,
+
+03:46.160 --> 03:49.680
+et ça va rendre un H1 avec une pizza au pepperoni,
+
+03:49.680 --> 03:55.240
+et un P avec du fromage mozzarella et du pepperoni.
+
+03:55.240 --> 03:57.360
+Ça le fait une fois.
+
+03:57.360 --> 03:58.960
+Et puis ça va recommencer.
+
+03:58.960 --> 04:05.280
+Un autre H1, un autre P. Et il le fait cinq fois différentes.
+
+04:05.280 --> 04:06.000
+Jusqu'ici, tout va bien.
+
+04:06.000 --> 04:07.640
+Cela a du sens ?
+
+04:07.640 --> 04:10.680
+Alors, combien de H1 attendez-vous ?
+
+04:10.680 --> 04:11.960
+C'est une question piège.
+
+04:15.400 --> 04:17.280
+Six, non ?
+
+04:17.280 --> 04:19.240
+Parce que tu vas en prendre cinq de la pizza
+
+04:19.240 --> 04:21.000
+et puis un de chez Padre Gino, n'est-ce pas ?
+
+04:21.000 --> 04:23.360
+C'est pourquoi il s'agit d'une question piège.
+
+04:23.360 --> 04:25.960
+Et puis combien de Ps attendez-vous ?
+
+04:25.960 --> 04:27.440
+Cinq.
+
+04:27.440 --> 04:28.320
+D'accord.
+
+04:28.320 --> 04:29.040
+Jetons un coup d'oeil.
+
+04:35.040 --> 04:38.480
+Beaucoup de pizza au pepperoni.
+
+04:38.480 --> 04:40.280
+Plutôt cool, non ?
+
+04:40.280 --> 04:43.280
+Vous pourriez réagir en vous criant dessus.
+
+04:43.280 --> 04:44.240
+Est-ce à propos des clés ?
+
+04:44.640 --> 04:46.440
+Allez-y et ignorez directement la réaction.
+
+04:46.440 --> 04:49.440
+Il ne sait pas de quoi il parle.
+
+04:49.440 --> 04:50.560
+Nous en parlerons.
+
+04:50.560 --> 04:53.400
+Mais pour l’instant, ignorez simplement la réaction.
+
+04:53.400 --> 04:54.560
+Ce que tu fais est bien.
+
+04:54.560 --> 04:57.200
+Maintenant, je veux avoir plusieurs types de pizza.
+
+04:57.200 --> 05:00.200
+Je suis un connaisseur de pizza, vous pourriez m'appeler.
+
+05:00.200 --> 05:02.280
+Peut-être pas.
+
+05:02.280 --> 05:04.040
+Alors, comment pouvons-nous faire cela ?
+
+05:04.040 --> 05:05.880
+Ce qui est cool c'est que la pizza peut accepter quoi
+
+05:05.880 --> 05:08.280
+ces choses appelées accessoires.
+
+05:08.280 --> 05:12.440
+Signifie propriétés, au cas où vous vous poseriez la question.
+
+05:12.480 --> 05:14.240
+Cela n’éclairait probablement personne.
+
+05:14.240 --> 05:15.840
+Vous l’avez probablement compris tout de suite.
+
+05:15.840 --> 05:16.360
+C'est très bien.
+
+05:16.360 --> 05:18.360
+Cela m’a fait me sentir intelligent de le dire.
+
+05:18.360 --> 05:21.680
+Et nous allons dire ici sur les accessoires,
+
+05:21.680 --> 05:25.160
+nous pouvons en tirer des choses que nous y transmettons.
+
+05:25.160 --> 05:28.680
+Nous voulons donc lui donner quel que soit le nom de la pizza.
+
+05:28.680 --> 05:31.400
+Et puis nous voulons lui donner une description, n'est-ce pas ?
+
+05:31.400 --> 05:33.760
+Nous allons donc dire accessoires.
+
+05:33.760 --> 05:34.560
+J'appelle ça une description.
+
+05:34.560 --> 05:37.440
+Je l'ai fait.
+
+05:37.440 --> 05:38.440
+Tellement cool.
+
+05:38.440 --> 05:40.080
+Maintenant, c'est un peu plus flexible.
+
+05:40.080 --> 05:41.120
+Je peux accepter un nom.
+
+05:41.120 --> 05:42.440
+Je peux accepter une description.
+
+05:42.440 --> 05:47.520
+Allons-y et ajoutons-les à nos pizzas.
+
+05:47.520 --> 05:52.440
+C’est donc là que cet objet va s’avérer utile.
+
+05:52.440 --> 05:54.600
+Maintenant, nous pouvons venir ici et dire notre objection.
+
+05:54.600 --> 05:57.280
+Et nous allons lui donner un nom.
+
+05:57.280 --> 06:02.960
+Et on vous l'accorde, celle-ci peut être la pizza au pepperoni.
+
+06:02.960 --> 06:07.160
+Et la description peut être, j'ai
+
+06:07.160 --> 06:09.040
+comme de belles descriptions ici.
+
+06:09.080 --> 06:10.680
+Et je ne vais pas faire ça parce que je
+
+06:10.680 --> 06:12.400
+je ne veux pas écrire autant.
+
+06:12.400 --> 06:15.640
+Alors une super pizza, yo, non ?
+
+06:15.640 --> 06:17.920
+Quelque chose comme ça, peu importe ce que vous voulez y mettre.
+
+06:17.920 --> 06:18.560
+Je ne suis pas ta mère.
+
+06:21.360 --> 06:25.840
+Nom, nous allons mettre l'Americano ici
+
+06:25.840 --> 06:28.080
+parce que je parlais justement de ça.
+
+06:28.080 --> 06:29.620
+Et je veux que tu restes assis là et que tu réfléchisses
+
+06:29.620 --> 06:31.080
+à propos des frites sur votre pizza.
+
+06:31.080 --> 06:33.880
+C'est vraiment ce que j'attends de ça.
+
+06:33.880 --> 06:37.000
+Frites et hot-dogs.
+
+06:39.240 --> 06:41.000
+Qu'est-ce que c'est, WTF Italie.
+
+06:41.000 --> 06:42.080
+Très bien, c'est parti.
+
+06:44.960 --> 06:48.080
+Nom, juste pour continuer avec le thème,
+
+06:48.080 --> 06:49.440
+nous ferons l'hawaïen ici ensuite.
+
+06:52.160 --> 06:59.680
+Description, ananas et jambon, WTF America.
+
+06:59.680 --> 07:00.640
+Très bien, c'est parti.
+
+07:04.320 --> 07:07.120
+Et maintenant, nous avons le pire menu de pizzas au monde.
+
+07:09.400 --> 07:13.800
+Très bien, en dehors du fait d'accuser de nombreuses cultures
+
+07:13.800 --> 07:17.800
+avec leurs attitudes de pizza, ce qui est intéressant et utile
+
+07:17.800 --> 07:23.920
+voilà maintenant, ce composant pizza nous est devenu bien plus utile.
+
+07:23.920 --> 07:27.040
+Nous arrivons à créer ce morceau de logique encapsulé
+
+07:27.040 --> 07:29.920
+qui gère tout ce qui concerne la pizza.
+
+07:29.920 --> 07:33.920
+Alors si vous imaginez travailler avec le site Internet de notre Padre Gino
+
+07:33.920 --> 07:35.960
+que nous sommes sur le point d'aller construire, toi
+
+07:35.960 --> 07:39.560
+imaginez que nous devons exposer la pizza dans différentes parties
+
+07:39.560 --> 07:40.200
+du site Internet.
+
+07:40.200 --> 07:43.160
+Sur la pizza du jour, il faut le montrer.
+
+07:43.160 --> 07:45.440
+Sur la page des commandes, nous devons l'afficher.
+
+07:45.440 --> 07:48.360
+Sur la page des commandes passées, nous devons l'afficher.
+
+07:48.360 --> 07:51.320
+Et maintenant, nous n'avons qu'un seul composant de pizza
+
+07:51.320 --> 07:53.280
+que si vous lui donnez les bonnes informations,
+
+07:53.280 --> 07:55.840
+ça va s'afficher joliment et encapsuler
+
+07:55.840 --> 08:01.840
+toute la logique pour faire une pizza, non ?
+
+08:01.840 --> 08:03.800
+Il est intéressant de regarder l'histoire de React
+
+08:03.800 --> 08:05.640
+et pourquoi il est construit de cette façon.
+
+08:05.640 --> 08:09.280
+Lorsque React a été créé, les très grandes choses du marché
+
+08:09.280 --> 08:14.280
+étaient des contrôleurs de vue modèle ou des modèles de vue modèle
+
+08:14.280 --> 08:22.040
+frameworks, qui étaient comme Backbone, old Angular, Knockout.
+
+08:22.040 --> 08:23.680
+Ils avaient tous ce genre de genre, ils
+
+08:23.680 --> 08:26.120
+copiions essentiellement ce que Rails faisait sur le back-end
+
+08:26.120 --> 08:28.520
+et ils essayaient d'envoyer cette logique au front-end.
+
+08:28.520 --> 08:30.920
+J'en ai écrit beaucoup, de très bonnes bases de code.
+
+08:30.920 --> 08:35.400
+Je veux dire, je ne vais pas vraiment trop dénigrer
+
+08:35.400 --> 08:38.920
+à cela, mais React a en quelque sorte eu cette sorte d'épiphanie.
+
+08:38.920 --> 08:40.720
+C'est comme si tu savais ce qui est en fait très facile
+
+08:40.720 --> 08:42.760
+avec qui écrire des sites Web ?
+
+08:42.760 --> 08:45.000
+PHP, non ?
+
+08:45.000 --> 08:47.080
+Le modèle de page les a vraiment séduits
+
+08:47.080 --> 08:49.520
+où tout est en quelque sorte mélangé
+
+08:49.520 --> 08:51.240
+pour des petites choses, non ?
+
+08:51.240 --> 08:52.560
+Alors au lieu d'essayer de se séparer,
+
+08:52.560 --> 08:54.800
+voici mon modèle qui parle à la base de données,
+
+08:54.800 --> 08:56.440
+voici mon point de vue sur ce que les gens le regardent,
+
+08:56.440 --> 08:59.400
+et voici le modèle de vue, qui relie les deux choses,
+
+08:59.400 --> 09:01.840
+ils disaient, prenons le modèle, la vue,
+
+09:01.840 --> 09:03.480
+et le modèle de vue et rassemblez-le
+
+09:03.480 --> 09:05.040
+donc vous avez ces composants qui
+
+09:05.040 --> 09:08.880
+contenir tout pour de très petits morceaux de code.
+
+09:08.880 --> 09:12.400
+C'était un peu la méthode PHP involontairement à l'époque,
+
+09:12.400 --> 09:16.480
+mais je dirai que mon premier travail était que j'étais développeur PHP.
+
+09:16.480 --> 09:17.840
+J'étais très productif, non ?
+
+09:17.840 --> 09:20.240
+J'ai expédié beaucoup de code très rapidement.
+
+09:20.240 --> 09:22.560
+Voilà donc l'histoire de React sur la façon dont
+
+09:22.560 --> 09:24.880
+nous avons eu cette idée, nous allons tout prendre
+
+09:24.880 --> 09:26.040
+pour ces petits composants et nous sommes
+
+09:26.040 --> 09:28.960
+je vais les rassembler pour que tu aies tout
+
+09:28.960 --> 09:32.000
+pour une préoccupation en un seul endroit.
+
+09:32.000 --> 09:37.040
+Et il s’avère que pour les interfaces utilisateur, c’est extrêmement utile.
+
+09:37.040 --> 09:38.680
+Parce que maintenant nous pouvons avoir cette logique de pizza,
+
+09:38.680 --> 09:40.960
+et au lieu d'avoir à tout connecter ensemble,
+
+09:40.960 --> 09:42.380
+nous devons connecter le modèle de vue
+
+09:42.380 --> 09:44.160
+à tous ces différents endroits.
+
+09:44.160 --> 09:46.720
+On dit juste, voici une pizza, et toute la logique pour la pizza
+
+09:46.720 --> 09:48.280
+est contenu dans un seul espace.
+
+09:48.280 --> 09:49.240
+C'est super.
+
+09:49.240 --> 09:51.680
+Je le fais évidemment depuis une décennie,
+
+09:51.680 --> 09:52.480
+donc je suis resté avec.
+
+09:52.480 --> 09:54.920
+C'est donc une très bonne façon d'écrire des interfaces.
+
+09:54.920 --> 09:57.720
+Vous verrez ce petit drapeau à damier ici.
+
+09:57.720 --> 10:00.560
+Si vous cliquez dessus, cela devrait vous amener au répertoire
+
+10:00.560 --> 10:02.560
+dans lequel nous étions.
+
+10:02.560 --> 10:05.840
+C'est donc la réaction sans fioritures.
+
+10:05.840 --> 10:06.720
+Vous cliquerez là-dedans.
+
+10:06.720 --> 10:09.800
+Vous verrez que nous avons notre app.js.
+
+10:09.800 --> 10:11.960
+Il s'agit d'une version beaucoup plus sensible à la culture
+
+10:11.960 --> 10:12.960
+de ce que nous écrivions.
+
+10:17.680 --> 10:20.040
+Donc si vous êtes bloqué, n'hésitez pas à aller récupérer ce code
+
+10:20.040 --> 10:21.960
+ou jetez un œil, et vous pourrez faire la différence entre les deux
+
+10:21.960 --> 10:24.880
+et dites ce qui est différent, ce qui a fonctionné, ce qui n'a pas fonctionné.
+
+10:24.880 --> 10:27.080
+Et cherche juste ces drapeaux à damier
+
+10:27.080 --> 10:28.240
+tout au long du cours.
+

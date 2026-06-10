@@ -1,0 +1,401 @@
+WEBVTT
+
+00:00.000 --> 00:01.560
+I guess I just had a thought.
+
+00:01.560 --> 00:03.880
+I kind of answered it for myself here.
+
+00:03.880 --> 00:06.520
+But we put in those dev tools, so we put in the React
+
+00:06.520 --> 00:08.200
+and the 10-stack dev tools.
+
+00:08.200 --> 00:09.080
+And I was curious.
+
+00:09.080 --> 00:10.920
+My question to myself was, hey, can I
+
+00:10.920 --> 00:13.000
+inspect that call just there?
+
+00:13.000 --> 00:14.160
+And I absolutely can.
+
+00:14.160 --> 00:16.200
+But I'm wondering if, I guess maybe this
+
+00:16.200 --> 00:19.120
+is general for now or later, if there
+
+00:19.120 --> 00:22.600
+are any common uses you have of those dev tools.
+
+00:22.600 --> 00:24.880
+I think we put them in there, and I haven't really
+
+00:24.880 --> 00:25.800
+touched them since.
+
+00:25.800 --> 00:27.080
+Yep.
+
+00:27.080 --> 00:29.960
+So to your good point here, you can
+
+00:29.960 --> 00:33.120
+click the 10-stack query dev tools down here.
+
+00:33.120 --> 00:35.120
+You'll see both queries and mutations up here.
+
+00:35.120 --> 00:38.560
+You can see our query mutation right there.
+
+00:38.560 --> 00:40.280
+This is just helpful for me to see,
+
+00:40.280 --> 00:42.320
+did it happen and what data got sent?
+
+00:42.320 --> 00:44.880
+That's 95% of my question.
+
+00:44.880 --> 00:47.680
+The other thing, I could definitely just look at the network tab
+
+00:47.680 --> 00:50.600
+and see what happened there.
+
+00:50.600 --> 00:52.640
+But it's nice that it's here.
+
+00:52.640 --> 00:56.180
+I can see everything, like what happened, what came back,
+
+00:56.180 --> 00:58.760
+how many things were subscribed to it,
+
+00:58.760 --> 01:03.360
+what kind of event triggered it, all that kind of stuff.
+
+01:03.360 --> 01:08.080
+So do I need to see, is it cancelable all the time?
+
+01:08.080 --> 01:09.920
+No, probably not.
+
+01:09.920 --> 01:14.920
+Or probably never is probably closer to what I would say.
+
+01:14.920 --> 01:16.120
+But it's cool that it's there.
+
+01:16.120 --> 01:17.560
+And there are input validations.
+
+01:17.560 --> 01:20.320
+Should we be using uncontrolled forms?
+
+01:20.320 --> 01:22.580
+Not necessarily.
+
+01:22.580 --> 01:25.240
+It depends on how you want to do it.
+
+01:25.240 --> 01:31.120
+So first of all, the browser already has some built into it.
+
+01:31.120 --> 01:34.040
+So if I just do this, it's going to say,
+
+01:34.040 --> 01:37.080
+please enter an email address.
+
+01:37.080 --> 01:38.720
+That's from Firefox, right?
+
+01:38.720 --> 01:40.160
+That's not from anything.
+
+01:40.160 --> 01:42.040
+That's just from Firefox saying, this
+
+01:42.040 --> 01:43.880
+isn't at least remotely approaching
+
+01:43.880 --> 01:45.880
+a valid email address.
+
+01:45.880 --> 01:47.000
+It's pretty loose, right?
+
+01:47.000 --> 01:50.520
+So it will still allow some pretty weird things through.
+
+01:50.520 --> 01:52.160
+It probably will let that go.
+
+01:52.160 --> 01:53.260
+It didn't, right?
+
+01:53.260 --> 01:57.700
+And that's obviously not a valid email address.
+
+01:57.700 --> 02:00.340
+But if you were trying to do a valid date of birth,
+
+02:00.340 --> 02:01.720
+and you want to make sure that it's
+
+02:01.720 --> 02:07.700
+like within the past 150 years or something like that,
+
+02:07.700 --> 02:11.380
+I still probably would do that on submit.
+
+02:11.380 --> 02:12.180
+And why?
+
+02:12.180 --> 02:15.940
+Because I don't want, I hate, it's a huge pet peeve of mine.
+
+02:15.940 --> 02:19.500
+If I start typing my birthday, which is like 05,
+
+02:19.500 --> 02:21.660
+and then it turns red and it's like, oh, enter
+
+02:21.660 --> 02:22.660
+a valid birthday.
+
+02:22.660 --> 02:24.860
+I'm not done yet.
+
+02:24.860 --> 02:26.740
+Stop telling me that I don't have a valid,
+
+02:26.740 --> 02:28.020
+because I'm working on it.
+
+02:28.020 --> 02:31.420
+And so that's why I don't like using a controlled input,
+
+02:31.420 --> 02:32.960
+because it would immediately show you
+
+02:32.960 --> 02:34.460
+that something is wrong, right?
+
+02:34.460 --> 02:36.620
+When in reality, you want to show them at the end,
+
+02:36.620 --> 02:38.460
+it's like, no, actually you have to be born
+
+02:38.460 --> 02:40.700
+within the past 150 years for this to be valid.
+
+02:43.420 --> 02:49.540
+You would do that on submit, not on key down, right?
+
+02:49.540 --> 02:53.620
+So still I would use, I would do uncontrolled for that,
+
+02:53.620 --> 02:56.500
+and then just do it on the submit where I would do that.
+
+03:00.820 --> 03:03.020
+I don't know, there's probably other reasons as well.
+
+03:03.020 --> 03:06.500
+In my page, it has fields which has dependencies
+
+03:06.500 --> 03:09.180
+on other fields, for instance, state and city.
+
+03:09.180 --> 03:11.220
+For that, should we use controlled forms?
+
+03:11.220 --> 03:12.980
+Yeah, that's a really good place to do it.
+
+03:12.980 --> 03:18.140
+So let's say you put zip code, right?
+
+03:18.140 --> 03:20.660
+And for example, in my old zip code in Seattle,
+
+03:20.660 --> 03:22.500
+you could see this that you live in Seattle,
+
+03:22.500 --> 03:25.460
+or you could say you live in Greenwood.
+
+03:25.460 --> 03:28.740
+Both are technically valid places.
+
+03:28.740 --> 03:31.580
+And you would show that probably in a dropdown.
+
+03:31.580 --> 03:34.540
+And you would do that based on zip code, which
+
+03:34.540 --> 03:37.300
+wouldn't be populated until they put their zip code in.
+
+03:37.300 --> 03:40.740
+You would use a controlled input for that.
+
+03:44.100 --> 03:47.400
+I'm not telling you to do great, terrible things
+
+03:47.400 --> 03:52.080
+to avoid using controlled inputs,
+
+03:52.080 --> 03:54.560
+but just mostly that they're not necessary for things
+
+03:54.560 --> 04:01.320
+of this nature, where this is an extremely normal looking form.
+
+04:01.320 --> 04:04.920
+And therefore, it's very valid to just not have
+
+04:04.920 --> 04:06.640
+to do anything controlled about it.
+
+04:12.200 --> 04:14.040
+Cool.
+
+04:14.040 --> 04:17.200
+Again, we didn't hit any errors.
+
+04:17.200 --> 04:20.800
+Let's say that we hit like a 500, or what is it?
+
+04:20.800 --> 04:25.800
+437, I am a teapot error, something like that.
+
+04:25.800 --> 04:30.160
+But inside of post-contact, this response
+
+04:30.160 --> 04:34.680
+was not OK, which is basically anything that's under 400.
+
+04:34.680 --> 04:38.000
+It would throw the error here.
+
+04:38.000 --> 04:43.360
+And then inside of contact, we would get a flag here
+
+04:43.360 --> 04:47.400
+from 10-stack query.
+
+04:47.400 --> 04:53.720
+And you could do something like if, where is it?
+
+04:53.720 --> 04:57.000
+Mutation.isError.
+
+04:57.000 --> 04:58.560
+And you can see there's a bunch of them.
+
+04:58.560 --> 05:01.920
+IsPending, isPause, isIdle, isSuccess, blah, blah, blah.
+
+05:01.920 --> 05:06.720
+But if error, you can just return something, again,
+
+05:06.720 --> 05:09.760
+very customer friendly, like, well, no, something
+
+05:09.760 --> 05:10.560
+like that, right?
+
+05:13.800 --> 05:17.160
+And that's how you'd handle errors in their posts.
+
+05:17.160 --> 05:18.160
+Yeah, Mark?
+
+05:18.160 --> 05:22.120
+Is there a case where you'd use both uncontrolled forms
+
+05:22.120 --> 05:24.560
+but controlled input?
+
+05:24.560 --> 05:32.640
+Yeah, I mean, you can kind of see that I do that in order.
+
+05:37.080 --> 05:40.320
+So if you look here, we have this whole form.
+
+05:40.320 --> 05:44.920
+But I'm handling all of the data on submit.
+
+05:44.920 --> 05:46.920
+And then where am I taking that data?
+
+05:46.920 --> 05:48.560
+So this is a set card.
+
+05:48.560 --> 05:51.560
+So I guess I'm just doing this directly with the things
+
+05:51.560 --> 05:52.840
+that I have set in state.
+
+05:52.840 --> 05:54.760
+But there's no reason that I couldn't have just
+
+05:54.760 --> 06:01.440
+done something like const form data equals new form data,
+
+06:01.440 --> 06:05.440
+right, and done it the exact same way.
+
+06:05.440 --> 06:06.560
+Both are fine.
+
+06:06.560 --> 06:08.400
+At this point, you're kind of splitting hairs
+
+06:08.400 --> 06:10.240
+of what's controlled and what's uncontrolled
+
+06:10.240 --> 06:12.560
+to really the answer is it doesn't really matter, right?
+
+06:12.560 --> 06:14.160
+Just write the code that looks the best.
+
+06:16.440 --> 06:17.760
+But sure, yeah, there's certainly
+
+06:17.760 --> 06:21.640
+you're going to have things where some of the inputs
+
+06:21.640 --> 06:22.560
+will be controlled.
+
+06:22.560 --> 06:23.800
+Some of them will not be controlled.
+
+06:23.800 --> 06:25.520
+And you'll get it all off the form data.
+
+06:25.520 --> 06:28.720
+That would make sense to me.
+
+06:28.720 --> 06:31.880
+It's not a binary thing where either it's all controlled
+
+06:31.880 --> 06:33.160
+or all uncontrolled.
+
+06:33.160 --> 06:33.840
+You can do both.
+

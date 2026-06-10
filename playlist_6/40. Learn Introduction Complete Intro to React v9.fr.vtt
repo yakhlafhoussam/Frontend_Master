@@ -1,0 +1,528 @@
+WEBVTT
+
+
+00:00.000 --> 00:03.120
+Parlons du test des hooks personnalisés.
+
+00:03.120 --> 00:08.320
+C’est l’une des principales raisons pour lesquelles nous souhaitons réellement utiliser des hooks personnalisés.
+
+00:08.320 --> 00:13.400
+Nous allons donc utiliser ici la pizza du jour.
+
+00:13.400 --> 00:18.480
+Mais c'est vraiment bien que nous ayons ces hooks personnalisés car ils sont devenus extrêmement faciles à tester.
+
+00:18.480 --> 00:22.920
+Et vous pouvez vous en assurer, surtout si vous avez ce crochet important qui est utilisé dans de nombreux endroits.
+
+00:22.920 --> 00:27.040
+Encore une fois, si on vend des pizzas partout et qu'on utilise particulièrement la Pizza du Jour,
+
+00:27.040 --> 00:30.280
+nous allons l'utiliser à 30 endroits différents dans nos bases de codes.
+
+00:30.280 --> 00:35.120
+Nous pouvons tester cela de différentes manières pour nous assurer qu'il fonctionne dans différents environnements.
+
+00:35.120 --> 00:41.520
+Devient un morceau de code très stable et fiable.
+
+00:41.520 --> 00:46.320
+Ce qui me fait rire à propos de certains de ces tests, c'est qu'ils finissent presque toujours par être plus longs que le composant lui-même.
+
+00:46.320 --> 00:48.760
+C'est très normal. Créez un nouveau fichier ici.
+
+00:48.760 --> 00:58.400
+Appelez-le. Utilisez Pizza du jour dot test dot JSX.
+
+00:58.400 --> 01:02.120
+OK, nous allons dire importer.
+
+01:02.120 --> 01:09.800
+Attendre. Test VI du test.
+
+01:09.800 --> 01:13.000
+Importer le rendu.
+
+01:13.000 --> 01:18.720
+À partir de la bibliothèque de tests, la barre oblique réagit.
+
+01:18.720 --> 01:27.160
+Et importer. Créez une simulation de récupération.
+
+01:27.160 --> 01:34.320
+À partir du test, récupérez une simulation.
+
+01:34.320 --> 01:39.200
+Et puis, bien sûr, importez.
+
+01:39.600 --> 01:44.160
+Pizza. Utilisez la pizza du jour.
+
+01:44.160 --> 01:46.760
+Ouais, pour une raison quelconque, j'ai fait ça comme exportation de nom.
+
+01:46.760 --> 01:49.480
+C'est tellement bizarre que je fasse ça.
+
+01:49.480 --> 01:57.560
+Mais je l'ai fait. Nous allons donc l'importer de cette façon.
+
+01:57.560 --> 02:05.120
+Utilisez la pizza du jour comme ça.
+
+02:05.120 --> 02:10.000
+Const va chercher le moqueur.
+
+02:10.000 --> 02:12.160
+Égal à créer une simulation de récupération.
+
+02:12.160 --> 02:16.520
+Toutes les choses que nous avons faites auparavant passent dans VI.
+
+02:16.520 --> 02:19.760
+Récupérer le point moqueur activer les simulations.
+
+02:19.760 --> 02:26.000
+Et voilà. Nous allons faire une pizza test ici.
+
+02:26.000 --> 02:32.640
+J'ai donc mis Calabrese ici.
+
+02:32.680 --> 02:34.560
+Je pense que je viens littéralement de retirer cela de la base de données.
+
+02:34.560 --> 02:41.040
+Donc la pizza calabraise.
+
+02:41.040 --> 02:44.680
+Catégorie. Suprême.
+
+02:44.680 --> 02:48.040
+Je suppose que c'est une pizza et une description de style suprême.
+
+02:48.040 --> 02:51.880
+Je n’écris pas tout ça, donc ça va être juste quelque chose de plus court que ça.
+
+02:51.920 --> 02:55.440
+Alors pizza MDR de Calabre.
+
+02:55.440 --> 03:10.000
+Et l'image est slash public slash pizzas slash Calabrese dot webp.
+
+03:10.000 --> 03:16.640
+Et puis les tailles, ce sont les prix, non ?
+
+03:16.640 --> 03:23.480
+12 point 25. 16 point 25.
+
+03:23.480 --> 03:29.160
+Et le grand est 20, 25.
+
+03:29.160 --> 03:33.680
+OK, bon test de pizza là-bas.
+
+03:33.680 --> 03:44.000
+Bien. Alors, comment restituer un hook en dehors d’un composant ?
+
+03:44.240 --> 03:50.320
+Question piège. Vous ne pouvez pas écrire un hook qui fonctionne vraiment dans le contexte d'un composant.
+
+03:50.320 --> 03:54.120
+Nous allons donc dire fonction.
+
+03:54.120 --> 03:58.480
+Obtenez la pizza du jour.
+
+03:58.480 --> 04:00.200
+Et nous allons juste faire semblant.
+
+04:00.200 --> 04:06.640
+Nous allons dire laissez la pizza. Fonction.
+
+04:06.640 --> 04:13.160
+Composant de test.
+
+04:13.240 --> 04:22.240
+Nous allons dire que pizza équivaut à utiliser la pizza du jour et à renvoyer null.
+
+04:22.240 --> 04:27.960
+Nous allons dire composant de test de rendu.
+
+04:27.960 --> 04:31.640
+Et puis on va juste rendre la pizza, non ?
+
+04:31.640 --> 04:35.800
+Cela devrait fonctionner.
+
+04:35.800 --> 04:39.120
+Cela va donc créer un composant de test qui ne rend rien.
+
+04:39.120 --> 04:42.520
+Tout ce qu'il va faire, c'est simplement appeler le composant.
+
+04:42.520 --> 04:48.320
+Nous allons aller jusqu'à restituer le composant et le jeter, car en réalité, nous ne nous soucions pas vraiment de ce qu'il restitue à la fin.
+
+04:48.320 --> 04:50.400
+Ça va être nul.
+
+04:50.400 --> 04:55.040
+Mais nous allons simplement conserver cette variable de pizza qu'elle récupère en utilisant la pizza du jour.
+
+04:55.040 --> 04:59.560
+Et nous allons revenir quelle que soit cette pizza.
+
+04:59.560 --> 05:03.720
+Qu'est-ce que la pizza pour la première fois ?
+
+05:03.720 --> 05:07.240
+Non, c'est vrai. Utilisez la pizza du jour.
+
+05:07.240 --> 05:09.600
+Qu'est-ce que c'est la première fois ?
+
+05:09.600 --> 05:12.240
+Non. Et puis cela appelle l’effet d’utilisation.
+
+05:12.240 --> 05:16.400
+Et c’est ce que nous aborderons ensuite.
+
+05:16.400 --> 05:17.880
+Alors écrivons un test de cela.
+
+05:17.880 --> 05:21.800
+Nous voulons nous assurer que cela ne nous donne pas quelque chose de bizarre la première fois.
+
+05:21.800 --> 05:23.640
+Donne null lors du premier appel.
+
+05:23.640 --> 05:26.800
+C'est ce à quoi nous nous attendons.
+
+05:26.800 --> 05:30.640
+Fonction asynchrone.
+
+05:30.720 --> 05:38.560
+Et nous allons dire une fois de récupérer la réponse simulée du point.
+
+05:38.560 --> 05:47.520
+Réponse simulée une fois.
+
+05:47.600 --> 05:58.960
+Nous allons dire JSON JSON stringify test pizza.
+
+05:58.960 --> 06:04.280
+Const pizza équivaut à la pizza du jour.
+
+06:04.320 --> 06:10.120
+Et attendez-vous à ce que la pizza soit nulle.
+
+06:19.880 --> 06:20.840
+Et voilà.
+
+06:20.840 --> 06:22.280
+Ça marche.
+
+06:22.280 --> 06:26.400
+Allons en faire autre chose.
+
+06:26.400 --> 06:27.440
+Utilisez la pizza du jour.
+
+06:27.440 --> 06:28.880
+Nous voulons que cela revienne maintenant.
+
+06:28.880 --> 06:29.880
+Et voilà.
+
+06:29.880 --> 06:32.320
+Il s'attendait à null, et il a obtenu MDR.
+
+06:32.320 --> 06:36.320
+Donc ça ne marchera pas.
+
+06:36.320 --> 06:37.320
+Et voilà.
+
+06:37.320 --> 06:40.320
+Nul.
+
+06:40.320 --> 06:46.320
+Maintenant, vous regardez peut-être cela comme si cela semblait un peu bizarre, n'est-ce pas ?
+
+06:46.320 --> 06:51.320
+Que nous simulons un composant pour en tirer un crochet.
+
+06:51.320 --> 06:56.320
+Et je voulais que vous voyiez comment faire ça, parce que je vais vous montrer comment faire ça.
+
+06:56.520 --> 07:00.800
+Et je voulais que vous voyiez comment faire ça, parce que je vais vous montrer comment utiliser simplement le,
+
+07:00.800 --> 07:05.080
+comment s'appelle-t-elle, la fonction de hook de rendu, qui fait tout cela pour vous.
+
+07:05.080 --> 07:08.360
+Mais je voulais démystifier un peu ce que cela fait pour vous.
+
+07:08.360 --> 07:10.120
+Ça ne sert pas à grand chose, non ?
+
+07:10.120 --> 07:12.520
+C'est juste que ça crée un faux composant.
+
+07:12.520 --> 07:16.240
+Il le rend une fois, puis il en donne des éléments.
+
+07:16.240 --> 07:18.080
+C'est tout ce que cette chose fait pour vous.
+
+07:18.080 --> 07:21.400
+Mais nous allons rendre cela beaucoup plus simple maintenant.
+
+07:21.400 --> 07:23.640
+Débarrassez-vous de toutes ces ordures.
+
+07:23.640 --> 07:24.520
+Obtenez la pizza du jour.
+
+07:24.520 --> 07:26.120
+Personne n’aime ça.
+
+07:26.120 --> 07:32.440
+Et nous allons obtenir ici cette fonction appelée render hook de React.
+
+07:32.440 --> 07:37.440
+Donc, au lieu de rendre, nous voulons un crochet de rendu comme celui-ci.
+
+07:37.440 --> 07:51.840
+Et puis ce que nous voulons à la place, c'est sur cette ligne, nous allons dire const result est égal à render hook.
+
+07:51.840 --> 08:01.160
+Et vous lui donnez une fonction pour appeler la pizza du jour comme celle-ci.
+
+08:01.160 --> 08:09.400
+Et puis nous allons nous attendre à ce que le résultat dot current soit nul.
+
+08:09.400 --> 08:12.560
+C'est beaucoup plus succinct, non ?
+
+08:12.560 --> 08:14.640
+Cela semble un peu étrange, non ?
+
+08:14.640 --> 08:19.520
+Mais en même temps, nous devons écrire beaucoup moins de code.
+
+08:19.520 --> 08:22.920
+Tout cela ne fait que créer un faux composant sous le capot.
+
+08:22.920 --> 08:27.120
+Et puis il appelle cette fonction, qui va appeler notre hook pour nous.
+
+08:27.120 --> 08:31.520
+Et puis nous extrayons simplement les résultats.
+
+08:31.520 --> 08:35.360
+Est-ce que cela a du sens ?
+
+08:35.360 --> 08:35.800
+Ouais.
+
+08:35.800 --> 08:40.000
+Je me pose simplement des questions sur le formatage de la ligne 20 avec des résultats const entre accolades.
+
+08:40.000 --> 08:41.560
+Est-ce parce que tu as dit de le retirer ?
+
+08:41.560 --> 08:45.640
+Est-ce un objet plus complexe et nous prenons simplement quelque chose appelé résultat ?
+
+08:45.640 --> 08:47.240
+OK, cool.
+
+08:47.240 --> 08:50.080
+Même chose.
+
+08:50.080 --> 08:53.200
+Oui, vous déstructurez simplement ce que vous en retirez.
+
+08:53.200 --> 08:54.680
+Et assurons-nous que je ne vous dis pas de mensonges.
+
+08:54.680 --> 08:56.040
+Mais oui, ça passe.
+
+08:56.040 --> 08:57.080
+Plutôt cool.
+
+08:57.080 --> 08:59.840
+J’adore aussi les outils les plus rapides.
+
+08:59.840 --> 09:02.160
+C'est tellement agréable de travailler avec eux.
+
+09:02.160 --> 09:06.960
+Il est très simple d'exécuter tous vos tests en même temps ou d'en réexécuter certains.
+
+09:06.960 --> 09:13.680
+Par exemple, disons que je souhaite uniquement en exécuter certains modèles.
+
+09:13.760 --> 09:16.800
+Vous pouvez appuyer sur F pour réexécuter uniquement les tests ayant échoué, ce que je n'ai pas.
+
+09:16.800 --> 09:18.960
+Ce n'est donc pas le cas pour le moment.
+
+09:18.960 --> 09:21.680
+Vous pouvez écrire un filtre.
+
+09:21.680 --> 09:31.440
+Alors disons que je veux juste pouvoir mettre un contact.
+
+09:31.440 --> 09:35.040
+Et puis ce serait comme, OK, je vais seulement refaire ce test pour vous.
+
+09:35.040 --> 09:37.680
+C'est juste un outil très agréable avec lequel travailler.
+
+09:37.680 --> 09:40.800
+Mais il suffit d'appuyer sur H pour montrer ça, et ça vous montrera toutes les différentes choses
+
+09:40.800 --> 09:41.560
+ce qu'il peut faire.
+
+09:44.440 --> 09:44.920
+D'ACCORD.
+
+09:47.560 --> 09:50.760
+Ajoutons donc un autre test.
+
+09:50.760 --> 09:55.600
+Ce n'est pas très intéressant que ça devienne nul la première fois.
+
+09:55.600 --> 10:00.640
+Écrivons donc ici un autre test pour nous assurer qu'il appelle la bonne API.
+
+10:00.640 --> 10:08.640
+Nous allons en ajouter un autre ici sous la bibliothèque de tests appelée wait for.
+
+10:08.640 --> 10:11.240
+Nous l'utiliserons dans une seconde.
+
+10:12.240 --> 10:19.480
+Testez pour appeler l'API et redonner la pizza du jour.
+
+10:19.480 --> 10:24.360
+Async, je sais épeler, promis.
+
+10:27.920 --> 10:31.680
+OK, récupérez, vous pouvez également récupérer celui du haut ici.
+
+10:31.680 --> 10:33.760
+Alors je vais m'en emparer.
+
+10:33.760 --> 10:36.320
+Je ne sais même pas si c'est nécessaire, si nous sommes honnêtes.
+
+10:37.080 --> 10:53.640
+le résultat const est égal au crochet de rendu, même chose ici, utilisez la pizza du jour.
+
+10:53.640 --> 10:59.200
+Je ne sais pas pourquoi nous donnons ici une chaîne vide, vous n'êtes pas obligé de le faire.
+
+10:59.200 --> 11:01.920
+Attends, attends.
+
+11:02.760 --> 11:05.600
+Et c'est un peu la même chose avec celui que nous utilisions auparavant.
+
+11:05.600 --> 11:09.440
+Nous disions juste, hé, attendez que cela se produise et ça ressemble à ça.
+
+11:09.440 --> 11:22.360
+Nous allons donc dire d'attendre que le résultat attendu soit actuel pour égaler la pizza de test.
+
+11:22.760 --> 11:46.960
+OK, et ensuite vous vous attendez simplement à ce que le moqueur soit appelé avec l'API slash pizza du jour.
+
+11:46.960 --> 11:49.560
+Alors laissez-moi vous expliquer un peu plus sur l'attente.
+
+11:49.560 --> 11:51.080
+C'est une API plutôt intéressante.
+
+11:51.080 --> 11:56.920
+Attendez, en gros, dit, par exemple, exécutez cette fonction continuellement jusqu'à ce qu'elle ne génère plus d'erreur.
+
+11:57.920 --> 12:01.000
+Que fait Expect lorsqu’il échoue à un test ?
+
+12:01.000 --> 12:03.240
+Cela génère une erreur, non ?
+
+12:03.240 --> 12:06.520
+Donc, en gros, vous dites, genre, exécutez cette attente encore et encore et encore et encore et
+
+12:06.520 --> 12:10.600
+encore une fois jusqu'à ce qu'il ne génère pas d'erreur, n'est-ce pas ?
+
+12:10.600 --> 12:13.800
+Donc, jusqu'à ce que ce test soit réussi, réexécutez-le essentiellement.
+
+12:13.800 --> 12:16.280
+Et celui-ci attendra un peu plus longtemps que l’autre.
+
+12:16.280 --> 12:17.680
+Je pense que ça va attendre un bon moment avant.
+
+12:17.680 --> 12:19.680
+Je ne dis pas beaucoup de temps, mais ça va attendre un peu plus longtemps que notre autre
+
+12:19.680 --> 12:20.680
+un.
+
+12:21.280 --> 12:25.280
+Je ne dis pas beaucoup de temps, mais plusieurs secondes avant que cela finisse par échouer.
+
+12:25.280 --> 12:26.480
+Voyons donc comment nous avons fait ici.
+
+12:26.480 --> 12:35.640
+Cela a fonctionné, mais, vous savez, si vous avez fait cela, cela devrait attendre un peu.
+
+12:35.640 --> 12:42.160
+Ouais, je veux dire, ça fait environ deux secondes à ce moment-là, mais voilà.
+
+12:42.160 --> 12:44.640
+Attendre est également très agréable.
+
+12:44.640 --> 12:48.800
+Maintenant, c'est un petit crochet assez bien testé, n'est-ce pas ?
+
+12:48.920 --> 12:52.960
+Nous pouvons maintenant être assez confiants dans l'utilisation de cela dans toute notre base de code qui, au moins,
+
+12:52.960 --> 12:56.760
+avec null et avec des données appropriées, ça va marcher, non ?
+
+12:56.760 --> 12:57.760
+Donc j'aime ça.
+
+12:57.760 --> 13:00.560
+Vous devrez peut-être tester, par exemple, un cas d'erreur, comme ce qui se passe si la pizza du jour ne fonctionne pas
+
+13:00.560 --> 13:02.720
+revenir avec quelque chose ?
+
+13:02.720 --> 13:05.040
+Ou que se passe-t-il s'il n'y en a pas pour ce jour-là ou quelque chose comme ça ?
+
+13:05.040 --> 13:11.200
+Vous devrez peut-être ajouter certains de ces cas extrêmes, mais au moins les chemins heureux sont tous couverts.
+
+13:11.200 --> 13:12.800
+Les pizzas joyeuses, comme on pourrait dire.
+

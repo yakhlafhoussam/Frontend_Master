@@ -1,0 +1,513 @@
+WEBVTT
+
+
+00:00.000 --> 00:05.200
+Qui a déjà essayé d’obtenir une couverture de test à 100 % dans l’une de ses bases de code ?
+
+00:05.200 --> 00:09.040
+Levez la main pour que je puisse vous faire honte.
+
+00:09.040 --> 00:10.800
+Je pense que c'est une course folle, non ?
+
+00:10.800 --> 00:13.920
+Je pense que c'est une tâche insensée de viser une couverture de test à 100 %,
+
+00:13.920 --> 00:17.040
+et il y a des gens qui ne sont pas du tout d’accord avec moi.
+
+00:17.040 --> 00:19.120
+Mais je pense que ça te fait finir par tester des choses
+
+00:19.120 --> 00:23.120
+qui ne sont tout simplement pas importants à tester.
+
+00:23.120 --> 00:27.840
+Cela étant dit, je vais vous montrer le hack le plus simple et le plus efficace.
+
+00:27.920 --> 00:32.800
+pour effectuer une couverture de test à 100 %, et cela s'appelle Snapshot Testing.
+
+00:32.800 --> 00:38.320
+Et je vous le montre parce que c'est une méthode de test nécessitant peu d'effort et peu de confiance.
+
+00:39.680 --> 00:41.840
+Et dès que tu dis manque de confiance, je me retire.
+
+00:42.400 --> 00:44.240
+Si la confiance est faible, que dois-je faire ?
+
+00:44.240 --> 00:45.120
+Pourquoi je fais ça ?
+
+00:47.200 --> 00:51.440
+Mais ils sont si faciles à écrire que je vous laisse en quelque sorte en juger.
+
+00:52.080 --> 00:53.040
+Certaines personnes les aiment.
+
+00:53.040 --> 00:54.320
+Je pense qu'ils sont un peu découragés maintenant,
+
+00:54.320 --> 00:56.560
+mais ils sont si rapides à montrer que j'étais comme, ouais, autant le faire.
+
+00:57.440 --> 00:58.880
+Nous allons donc créer un autre fichier ici.
+
+00:58.880 --> 01:00.080
+Nous allons tester quel fichier ici.
+
+01:00.080 --> 01:04.000
+Nous allons tester cart.jsx, donc cart.test.jsx.
+
+01:04.800 --> 01:08.400
+C'est juste un composant d'affichage stupide, n'est-ce pas ?
+
+01:08.400 --> 01:10.400
+Il ne fait pas grand chose d'autre que d'afficher des éléments.
+
+01:10.400 --> 01:14.320
+Il s’agit donc en fait du meilleur scénario pour utiliser Snapshot Testing.
+
+01:14.880 --> 01:18.560
+La seule chose que fait Snapshot Testing est de restituer l'intégralité du composant.
+
+01:18.560 --> 01:22.320
+et dit que ça ressemble à ceci, puis il suit cela.
+
+01:22.320 --> 01:24.480
+Et donc si vous exécutez à nouveau ce test d'instantané,
+
+01:24.480 --> 01:26.720
+et il semble différent de la dernière fois que vous l'avez exécuté,
+
+01:27.360 --> 01:28.880
+alors il échoue au test.
+
+01:28.880 --> 01:30.320
+Cela dit que quelque chose a changé.
+
+01:31.120 --> 01:34.560
+Vous pouvez soit mettre à jour ceci, soit quelque chose s'est produit que vous n'aviez pas prévu.
+
+01:36.560 --> 01:37.280
+Je vais vous montrer ce que je veux dire.
+
+01:38.880 --> 01:44.160
+Importez, attendez et testez à partir du test.
+
+01:45.280 --> 01:52.480
+Importer, rendre à partir de la bibliothèque de tests.
+
+01:53.280 --> 01:59.120
+Et importez le chariot depuis le chariot Dash Dash.
+
+02:02.720 --> 02:07.440
+Testez l'instantané sans rien dans le panier.
+
+02:12.800 --> 02:14.480
+Vous pouvez rendre cela asynchrone si vous le souhaitez.
+
+02:14.480 --> 02:15.920
+Je ne l'ai pas fait dans mes notes, donc je ne le ferai pas ici.
+
+02:18.080 --> 02:20.800
+Vous pouvez donc dire const comme fragment.
+
+02:22.960 --> 02:23.920
+Égal au rendu.
+
+02:28.640 --> 02:29.360
+Et voilà.
+
+02:29.360 --> 02:32.000
+Chariot, chariot.
+
+02:39.760 --> 02:45.120
+D'accord, et ensuite vous allez dire "attendre en tant que fragment",
+
+02:45.840 --> 02:52.080
+qui est une fonction pour correspondre à Snapshot.
+
+02:52.880 --> 02:56.480
+C'est ça.
+
+02:56.480 --> 02:58.960
+C’est tout le test que vous devez écrire ici.
+
+03:00.880 --> 03:04.000
+Voyons donc ce que cela signifie réellement.
+
+03:04.000 --> 03:05.360
+En fait, il a déjà fonctionné, non ?
+
+03:05.360 --> 03:06.800
+Parce que j'ai mon vitest en cours d'exécution ici,
+
+03:06.800 --> 03:08.320
+donc c'est déjà exécuté pour la première fois.
+
+03:09.040 --> 03:11.200
+Vous remarquerez ce trait de soulignement magique,
+
+03:11.200 --> 03:14.800
+les instantanés de soulignement que nous n'avons pas créés sont apparus dans notre dossier.
+
+03:15.840 --> 03:16.880
+Et si vous cliquez dessus,
+
+03:17.760 --> 03:22.800
+vous verrez ce fichier aléatoire qu'il génère.
+
+03:25.520 --> 03:26.560
+Div, chariot, chariot.
+
+03:26.560 --> 03:28.320
+Donc c’est à ça que ça ressemble, n’est-ce pas ?
+
+03:28.320 --> 03:31.280
+Lorsque cela est rendu sans rien dans le panier.
+
+03:31.280 --> 03:32.800
+Au fait, vous enregistrez ça,
+
+03:32.800 --> 03:35.200
+parce que vous voulez vous assurer que même un cross commit,
+
+03:35.200 --> 03:37.200
+que cela ne change pas avec le temps.
+
+03:38.000 --> 03:41.200
+Mais disons simplement que je suis venu ici un jour par erreur
+
+03:41.200 --> 03:45.360
+et je change le nom en, eh bien, depuis que j'ai 12 ans, pet.
+
+03:47.840 --> 03:49.200
+Mon test va échouer, n'est-ce pas ?
+
+03:50.480 --> 03:53.040
+Il s'attendait à un chariot et il s'est fait péter.
+
+03:55.360 --> 03:57.440
+Et c’est le genre de test dont il s’agit, n’est-ce pas ?
+
+03:57.440 --> 03:59.680
+C'est juste comme entre tous les différents rendus,
+
+03:59.680 --> 04:01.680
+tout se ressemble.
+
+04:02.960 --> 04:05.040
+Je n'arrive pas à croire que j'ai dit péter professionnellement.
+
+04:05.680 --> 04:07.120
+Je suis adulte, je le promets.
+
+04:10.320 --> 04:11.440
+Mais maintenant, si je le change,
+
+04:11.440 --> 04:13.920
+vous verrez que le test a encore réussi, n'est-ce pas ?
+
+04:13.920 --> 04:15.280
+C'était une erreur honnête.
+
+04:15.280 --> 04:16.000
+Erreur honnête.
+
+04:17.120 --> 04:17.600
+N'importe qui.
+
+04:20.000 --> 04:23.760
+Alors disons que cela devient notre image de marque maintenant
+
+04:23.760 --> 04:24.640
+et c'est ce que nous voulons faire.
+
+04:25.280 --> 04:26.720
+Et c'est vraiment ce que nous voulons.
+
+04:26.720 --> 04:29.120
+Vous pouvez réellement entrer ici et appuyer sur U, n'est-ce pas ?
+
+04:30.880 --> 04:31.920
+Et cela le mettra à jour.
+
+04:34.160 --> 04:36.320
+Et maintenant, remarquez que ceci est maintenant écrit.
+
+04:36.320 --> 04:38.720
+Donc c'est écrit dans le marbre ou engage
+
+04:39.520 --> 04:41.600
+que c'est effectivement ce que nous avions prévu de lui faire faire.
+
+04:41.600 --> 04:45.760
+D'accord.
+
+04:45.760 --> 04:48.480
+Mais nous devrions probablement changer cela pour ne pas nous faire virer.
+
+04:50.800 --> 04:53.200
+Alors changez cela en panier, enregistrez-le.
+
+04:54.080 --> 04:56.000
+Nous échouerons au test, mais vous pouvez simplement cliquer sur mettre à jour
+
+04:56.640 --> 04:58.240
+et mettez à jour l'instantané.
+
+05:00.400 --> 05:03.440
+J'espère donc que vous voyez ce que je dis quand il s'agit d'un faible effort.
+
+05:03.440 --> 05:04.240
+C'était quoi ?
+
+05:04.240 --> 05:05.200
+Combien de lignes de code ?
+
+05:05.920 --> 05:06.480
+Pas beaucoup.
+
+05:07.600 --> 05:09.600
+Comme si le test lui-même n’en comptait littéralement que deux.
+
+05:12.240 --> 05:16.720
+Euh, mais le niveau de confiance est faible parce que c'est si facile à casser, n'est-ce pas ?
+
+05:17.680 --> 05:20.240
+Et disons que vous avez testé des composants similaires
+
+05:20.240 --> 05:21.920
+et les composants testés et les composants et vous avez comme,
+
+05:23.040 --> 05:26.160
+votre instantané encapsulera tout à travers tout cela.
+
+05:26.720 --> 05:30.400
+Donc si j'ai sept couches de profondeur, un autre composant et que ça change,
+
+05:30.400 --> 05:33.760
+cela va faire échouer tous les coffres d'instantanés jusqu'au bout.
+
+05:33.760 --> 05:34.260
+Droite.
+
+05:34.960 --> 05:37.840
+Voilà donc ce que je dis, je ne les utilise pas vraiment trop
+
+05:37.840 --> 05:41.120
+parce qu'ils cassent et qu'ils sont ennuyeux et qu'ils ne me disent rien.
+
+05:41.120 --> 05:41.620
+Droite.
+
+05:42.720 --> 05:44.880
+Comme l’interface utilisateur change constamment.
+
+05:44.880 --> 05:47.600
+Je pense que nous savons tous que si vous, si vous suivez ce cours,
+
+05:47.600 --> 05:49.440
+nous changeons et mettons à jour constamment et c'est comme,
+
+05:49.440 --> 05:51.280
+Je ne veux pas mettre à jour mes instantanés à chaque fois.
+
+05:52.240 --> 05:57.280
+Donc, à moins que j'ai quelque chose que j'ai vraiment l'intention de rester gravé dans le marbre,
+
+05:57.280 --> 05:59.040
+Je ne les utilise pas vraiment, je ne les utilise pas trop.
+
+05:59.040 --> 05:59.540
+Ouais.
+
+06:00.480 --> 06:03.360
+Je pense que vous êtes allé au cœur du problème, mais je m'interrogeais sur un cas d'utilisation
+
+06:04.000 --> 06:06.640
+pour ce genre de tests et il semble que quelque chose,
+
+06:06.640 --> 06:10.720
+cela semble être une fonctionnalité terminée qui ne devrait pas être affectée par d'autres choses.
+
+06:11.120 --> 06:14.880
+Mais pas à un niveau très élevé car cela va être impacté.
+
+06:14.880 --> 06:15.360
+Ouais.
+
+06:15.360 --> 06:18.560
+Et ce sera comme une jolie concentration sur l'interface utilisateur, car cela résume
+
+06:18.560 --> 06:20.240
+rien de la partie logique.
+
+06:20.240 --> 06:20.740
+Droite.
+
+06:21.840 --> 06:24.800
+Donc quelque chose comme un panier où ce n'est en réalité qu'un composant d'affichage stupide.
+
+06:26.240 --> 06:28.160
+Mais je ne sais toujours pas si je l'approuve.
+
+06:28.160 --> 06:28.660
+Droite.
+
+06:28.660 --> 06:31.840
+Les en-têtes, les pieds de page, les barres de navigation et tout le reste me conviennent.
+
+06:31.840 --> 06:32.340
+Pourrait.
+
+06:33.360 --> 06:33.860
+Pourrait.
+
+06:34.560 --> 06:36.880
+La raison pour laquelle j'ai évoqué la couverture de test à cent pour cent est comme
+
+06:36.880 --> 06:38.480
+cela aide vraiment à la couverture des tests.
+
+06:38.480 --> 06:40.480
+Droite. Parce que tout se déroule très facilement.
+
+06:40.480 --> 06:40.980
+Droite.
+
+06:41.760 --> 06:45.840
+Hum, donc le seul endroit où j'ai vu quelqu'un faire ça et je me suis dit, ok,
+
+06:45.840 --> 06:49.200
+cela me semble logique, c'est qu'ils l'utilisaient pour leurs formateurs d'API.
+
+06:49.200 --> 06:51.840
+Donc ce qui est bien avec les tests instantanés, je vous le montre avec React,
+
+06:52.480 --> 06:55.040
+mais vous pouvez les utiliser, les utiliser avec n'importe quel objet en JavaScript.
+
+06:55.040 --> 06:55.540
+Droite.
+
+06:56.480 --> 07:00.400
+Donc je ne sais pas si j'écris simplement un autre test aléatoire ici, test.
+
+07:01.920 --> 07:08.080
+Et je fais quelque chose comme ça et je dis, attends.
+
+07:08.080 --> 07:14.800
+Euh, eh bien, décrivons cette pizza test que j'ai mangée dans ces pizzas du jour.
+
+07:16.400 --> 07:18.240
+Disons que j'écrivais un service de nœud.
+
+07:19.600 --> 07:24.000
+Et c'est le résultat que je souhaitais redonner à l'utilisateur.
+
+07:29.120 --> 07:33.760
+Donc je dirais que ça ressemble à un instantané.
+
+07:34.240 --> 07:35.920
+Il va donc l'exécuter la première fois.
+
+07:35.920 --> 07:42.240
+Et maintenant, si je regarde mes instantanés, je pense que c'est assez convaincant parce que maintenant
+
+07:42.240 --> 07:46.000
+vous êtes comme si votre front-end et votre back-end étaient très en phase l'un avec l'autre.
+
+07:46.000 --> 07:48.720
+Ils doivent avoir le même contrat que l'API.
+
+07:49.680 --> 07:50.880
+Le back-end va envoyer ceci.
+
+07:50.880 --> 07:52.160
+Le front-end va recevoir cela.
+
+07:53.280 --> 07:57.680
+Cela me semble logique, car nous nous assurons que notre objet se forme pour
+
+07:57.680 --> 08:00.320
+Les retours de l'API restent synchronisés.
+
+08:00.320 --> 08:01.120
+Cela me semble logique.
+
+08:01.120 --> 08:01.600
+Je vais bien.
+
+08:01.600 --> 08:02.400
+Je suis d'accord avec ça.
+
+08:02.400 --> 08:08.480
+Cela semble être une bonne utilisation des tests d'instantanés pour moi, correspondant à quelque chose comme ça.
+
+08:09.280 --> 08:09.360
+Ouais.
+
+08:09.360 --> 08:11.360
+Je veux être honnête avec vous.
+
+08:13.440 --> 08:14.960
+Euh, j'allais te montrer encore une chose.
+
+08:14.960 --> 08:16.880
+C'est une façon un peu étrange de procéder.
+
+08:17.600 --> 08:19.280
+Je vais donc sauvegarder ça.
+
+08:19.280 --> 08:22.560
+Je pense que cela va échouer parce qu'il aura un instantané de moins qu'il n'en a.
+
+08:22.560 --> 08:24.160
+Il a un instantané obsolète.
+
+08:24.720 --> 08:28.880
+Donc je pense toujours qu'il faut dire, d'accord, je vais garder ça.
+
+08:28.880 --> 08:32.000
+Je pense toujours qu'il faut dire mise à jour.
+
+08:32.000 --> 08:32.480
+Voilà.
+
+08:36.800 --> 08:37.440
+Et voilà.
+
+08:37.440 --> 08:37.680
+D'accord.
+
+08:37.680 --> 08:38.560
+Alors ça a couru.
+
+08:38.560 --> 08:38.880
+Ouais.
+
+08:38.880 --> 08:40.880
+J'ai donc cassé l'instantané.
+
+08:40.880 --> 08:42.800
+Il existe une autre façon de procéder : elle s'appelle en ligne.
+
+08:45.040 --> 08:49.360
+Et je vais l'exécuter et il le remplira directement dans le fichier.
+
+08:51.760 --> 08:54.000
+Certaines personnes préfèrent cela aux fichiers instantanés.
+
+08:56.240 --> 08:57.120
+Je ne sais pas.
+
+08:57.120 --> 08:57.840
+Ça a l'air bizarre.
+
+08:57.840 --> 09:04.960
+Je n'aime pas, je l'aime mieux dans l'autre sens.
+

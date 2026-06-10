@@ -1,0 +1,225 @@
+WEBVTT
+
+
+00:00.000 --> 00:08.040
+D'accord, alors allons corriger l'ordre afin qu'il puisse être chargé paresseusement. Ici au sommet
+
+00:08.040 --> 00:17.320
+nous allons dire importer créer une route de fichiers paresseuse à partir d'un routeur de réaction à 10 piles.
+
+00:17.320 --> 00:25.040
+C'est exact. Si vous n'avez pas modifié, assurez-vous qu'il s'agit bien de points, points et barres obliques.
+
+00:25.040 --> 00:29.000
+au lieu d'une barre oblique car il s'agit évidemment d'un répertoire supérieur qui ne se trouve pas dans le
+
+00:29.000 --> 00:35.040
+même répertoire. Ok et ensuite ce que nous allons faire ici juste
+
+00:35.040 --> 00:40.000
+en dessous, nous allons dire export const route parce que rappelez-vous 10-stack
+
+00:40.000 --> 00:48.040
+le routeur s'attend à ce qu'il soit sur cette route nommée export et nous allons dire
+
+00:48.040 --> 00:55.000
+équivaut à créer une route de fichiers paresseuse. Nous allons lui dire où nous voulons qu'il soit
+
+00:55.000 --> 01:02.800
+je veux qu'il soit dans l'ordre slash et nous allons l'invoquer immédiatement
+
+01:02.800 --> 01:14.680
+ensuite avec le composant c minuscule désolé celui-là et on va passer un
+
+01:14.680 --> 01:25.800
+ordre donc nous transmettons cette fonction comme composant là-bas et cela ne fait pas
+
+01:25.800 --> 01:28.520
+il ne faut plus l'exporter pour que vous puissiez simplement le supprimer pour que ce soit juste une fonction
+
+01:28.520 --> 01:35.560
+l'ordre que vous pouvez n'a pas d'importance n'a pas d'importance je ne pense pas que cela compte mais
+
+01:35.560 --> 01:46.640
+ce n'est pas vraiment ça d'en faire un itinéraire maintenant c'est un itinéraire complet ça va
+
+01:46.640 --> 01:53.960
+être rendu dans ce point de vente chaque fois que les gens se trouvent sur l'URL de commande, c'est tout
+
+01:53.960 --> 02:01.000
+notre problème pour le moment est que nous n'avons pas de route d'index, nous avons besoin d'un index
+
+02:01.000 --> 02:06.120
+alors allons-y et créons ici un autre fichier appelé index dot lazy dot JS
+
+02:06.120 --> 02:15.880
+JSX index dot lazy dot JSX en fait, je veux vous montrer comme un vraiment cool
+
+02:15.880 --> 02:20.720
+truc pour que ça se fasse, donc je suis tu peux juste ignorer ça pendant une seconde si je dis
+
+02:20.720 --> 02:27.600
+NPM run dev ok, ça va vous dire tout ce qui se fait ici, vous verrez ça
+
+02:27.600 --> 02:32.800
+cette route dot gen dot TS a été générée, ne la modifiez jamais directement car elle
+
+02:32.800 --> 02:36.760
+il suffit d'être écrasé plus tard, c'est vrai, c'est du code généré, c'est généré par tan
+
+02:36.760 --> 02:41.520
+pile pour pile de bronzage, ignore-le mais je veux te montrer ça comme très agréable
+
+02:41.520 --> 02:44.760
+chose que j'ai découvert que le routeur tan stack fait pour vous, je vais créer un
+
+02:44.760 --> 02:54.160
+nouveau fichier ici index dot lazy dot JSX et il le supprime pour vous, je ne l'ai pas fait
+
+02:54.160 --> 02:57.000
+tout ce qu'il a fait pour cela, mais votre serveur VT doit fonctionner pendant
+
+02:57.000 --> 03:04.200
+ça doit arriver alors juste pour envoyer un texto comme oh tu fais un nouvel itinéraire et voilà, je
+
+03:04.200 --> 03:09.680
+j'ai pensé que mon ordinateur était hanté pendant un moment mais bon, alors sur notre page d'accueil
+
+03:09.680 --> 03:19.240
+ici, il a fait tout ça pour nous, nous allons également importer un lien pour que les liens soient
+
+03:19.240 --> 03:22.880
+juste des balises d'ancrage droites que vous utilisez sur la page, mais si vous utilisez un lien, alors
+
+03:22.880 --> 03:28.880
+il gérera tout le routage et fera une redirection côté client comme
+
+03:28.880 --> 03:33.120
+opposé à l'idée de faire une redirection de navigateur complète, mais cela reste
+
+03:33.120 --> 03:37.040
+gère correctement tout l'historique donc tout va bien donc en d'autres termes si
+
+03:37.040 --> 03:41.080
+vous utilisez un routeur comme celui-ci, utilisez le composant de liaison, n'utilisez pas de taxe, ce que je
+
+03:41.080 --> 03:47.280
+je veux dire d'accord et ensuite nous allons juste faire un nous allons appeler cet index
+
+03:47.280 --> 03:55.240
+index de fonction et nous allons juste renvoyer un tas de balises, n'hésitez pas à
+
+03:55.240 --> 03:58.560
+il suffit de copier et coller ceci, rien de tout cela n'est très intéressant en termes de like
+
+03:58.560 --> 04:01.960
+il n'y a rien de nouveau à apprendre ici
+
+04:01.960 --> 04:20.800
+Le nom de la classe div est égal à la marque du tiret d'index et je vais dire h1 La pizza P de Padre Gino
+
+04:20.800 --> 04:36.760
+et de l'art dans un endroit près de chez vous, vous LLI et ensuite nous dirons que le lien est ici
+
+04:36.760 --> 04:54.920
+je vais passer la commande et la même chose ici, lien vers le passé et ce sera passé
+
+04:54.920 --> 05:02.240
+ordonne, nous n'avons encore rien ici donc ça ne marchera pas mais ça ne marchera tout simplement pas
+
+05:02.240 --> 05:12.000
+n'importe où ouais cool ça devrait fonctionner la dernière chose de tête en-tête très vite
+
+05:12.000 --> 05:15.800
+nous allons juste envelopper celui-ci ici, tout le monde s'y attend si vous cliquez sur le
+
+05:15.800 --> 05:18.200
+en-tête, cela vous ramène à la page d'accueil, faisons en sorte que cela fonctionne vraiment
+
+05:18.200 --> 05:31.040
+très rapide donc importez le lien et nous allons y envelopper le h1, c'est tout le lien
+
+05:31.120 --> 05:48.160
+à égal à slash et nous allons simplement déplacer cela à l'intérieur, d'accord, alors allons voir quoi
+
+05:48.160 --> 05:57.960
+carnage, nous avons pourri alors Padre Gino a lu notre page d'accueil pizza et art un emplacement
+
+05:58.000 --> 06:04.720
+près de chez vous, on dirait qu'un génie du marketing a écrit qu'en fait c'était le
+
+06:04.720 --> 06:13.520
+designer qui a écrit ça, désolé Alex et maintenant, si vous cliquez sur commander, cela devrait
+
+06:13.520 --> 06:22.400
+amène-nous à notre page de commande, c'est plutôt cool ici, rafraîchis la page, ils vont
+
+06:22.400 --> 06:28.840
+regarde tout ça juste une seconde et je vais juste détruire ça pendant une seconde
+
+06:28.840 --> 06:37.880
+si je clique sur commander, je remarque qu'il a chargé la commande et la commande dot JSX pizza dot
+
+06:37.880 --> 06:46.360
+La carte JSX point JSX après avoir cliqué dessus si nous n'avions pas fait le chargement paresseux
+
+06:46.400 --> 06:52.680
+il n'y aurait eu qu'un seul paquet de fichiers qui aurait été chargé lorsque vous
+
+06:52.680 --> 06:57.240
+initialement chargé la page, mais comme nous effectuons un chargement paresseux, cela va
+
+06:57.240 --> 07:00.640
+je dis que je vais attendre de les charger jusqu'à ce que l'utilisateur demande quelque chose qui
+
+07:00.640 --> 07:12.840
+fait ça, c'est encore cool ça fait 27 kilo-octets de code ça ne vaut pas la peine
+
+07:12.960 --> 07:16.400
+en cours de chargement et une fois que nous l'aurons réellement réduit et fait tout ce genre de choses, ça va
+
+07:16.400 --> 07:22.960
+être des kilo-octets comme quelques-uns, mais imaginez si cette page contenait du 3JS
+
+07:22.960 --> 07:27.640
+c'est vrai, 3JS est un gros vieux bundle, n'est-ce pas ou si vous l'êtes, si vous chargez comme
+
+07:27.640 --> 07:32.480
+Monaco de VS code un énorme paquet qui a beaucoup de sens que vous voudriez
+
+07:32.480 --> 07:43.480
+pour faire ça, c'est cool, non désolé, nous avons un petit ami ici en bas
+
+07:43.480 --> 07:52.960
+Routeur 10 piles gauche, cliquez à nouveau dessus, une petite vue sympa sur ce que nous
+
+07:52.960 --> 08:00.000
+Honnêtement, je n'ai pas vraiment utilisé celui-ci parce que nous ne le sommes pas.
+
+08:00.000 --> 08:03.080
+je vais trop utiliser le routeur ici mais imaginez si vous avez une application géante
+
+08:03.080 --> 08:05.960
+avec un tas de règles de routage et des trucs comme ça, cela peut être utile pour trier
+
+08:05.960 --> 08:10.080
+de fouiller, comme pourquoi est-ce que cela est acheminé comme je l'ai fait
+
+08:10.080 --> 08:16.080
+les données circulent autour de tout ce genre de choses, donc je les charge là-dedans
+
+08:16.080 --> 08:20.040
+pour que vous puissiez y jeter un oeil, sachez qu'il existe et sachez à quel point il est facile à installer
+
+08:20.040 --> 08:24.520
+cela ne s'affichera que comme votre environnement de développement hôte local tant que
+
+08:24.520 --> 08:28.360
+votre nodeMV est égal à la production comme je vous l'ai déjà dit, rien de tout cela
+
+08:28.360 --> 08:32.320
+les choses sont expédiées, vous n'avez donc pas à vous soucier du fait que cela n'existera que dans
+
+08:32.320 --> 08:34.680
+développeur
+

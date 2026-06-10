@@ -1,0 +1,363 @@
+WEBVTT
+
+
+00:00.000 --> 00:06.240
+Il y a une question, il semble qu'il existe plusieurs façons de récupérer des données,
+
+00:06.240 --> 00:11.520
+que vous utilisiez useEffect, React Query ou TanStack Query.
+
+00:11.520 --> 00:15.360
+Ils semblent partager en grande partie les mêmes objectifs.
+
+00:15.360 --> 00:19.280
+Quel est le cas d'utilisation dans lequel j'utiliserais TanStack Query, par exemple, useEffect ?
+
+00:19.280 --> 00:23.440
+C'est une bonne question.
+
+00:23.440 --> 00:26.400
+Vous pouvez choisir vous-même, n'est-ce pas ?
+
+00:26.400 --> 00:33.040
+Je vous ai en quelque sorte montré les deux façons parce que je voulais que vous voyiez.
+
+00:33.040 --> 00:34.040
+Il s'agit d'une préférence personnelle.
+
+00:34.040 --> 00:39.540
+Je vais dire que ce n'est pas une opinion controversée ici, c'est que l'industrie a tendance à
+
+00:39.540 --> 00:45.640
+utilisez simplement React Query lorsqu'il s'agit de faire régulièrement des requêtes API.
+
+00:45.640 --> 00:49.840
+Cette API est tout simplement beaucoup plus agréable.
+
+00:49.840 --> 00:53.960
+Il intègre une mise en cache.
+
+00:53.960 --> 00:55.720
+Les crochets sont super sympas.
+
+00:55.760 --> 00:58.360
+La récupération est intégrée.
+
+00:58.360 --> 01:02.200
+Il a une bonne gestion des erreurs, comme tout ce qu'il faudrait simplement reconstruire
+
+01:02.200 --> 01:04.440
+vous-même.
+
+01:04.440 --> 01:09.680
+C'est un outil tellement élégant, à mon avis, et honnêtement, l'un des outils
+
+01:09.680 --> 01:14.840
+Je tiens le coup est un excellent exemple de très bonnes expériences de développement car vous pouvez utiliser
+
+01:14.840 --> 01:16.360
+Réagissez à la requête comme vous le souhaitez.
+
+01:16.360 --> 01:18.600
+Cela ne vous impose pas vraiment une opinion.
+
+01:18.600 --> 01:22.000
+C'est simplement un outil très utile qui s'applique généralement à presque tous les problèmes lorsqu'il
+
+01:22.040 --> 01:26.040
+vient aux composants React qui font des requêtes API.
+
+01:26.040 --> 01:31.440
+C'est pourquoi je ne ressens pas vraiment de controverse en disant, par exemple, utilise toujours ceci si tu es
+
+01:31.440 --> 01:34.240
+en utilisant une API, n'est-ce pas ?
+
+01:34.240 --> 01:37.560
+Si vous souhaitez récupérer à chaque fois, il vous suffit de définir le temps périmé sur zéro et tout
+
+01:37.560 --> 01:41.240
+d'un coup, d'accord, maintenant il va le récupérer à chaque fois, n'est-ce pas ?
+
+01:41.240 --> 01:46.280
+Vous ne pouvez pas vous rappeler si c'est zéro ou l'infini.
+
+01:46.280 --> 01:52.520
+Je pense que ce que j'ai fait ici, c'est que je pense que je l'ai fait toujours récupérer ou quelque chose comme ça.
+
+01:52.520 --> 01:53.520
+Peut-être que c'en est un.
+
+01:53.520 --> 01:57.240
+Il se peut même qu’il n’y ait pas de cache ou quelque chose comme ça.
+
+01:57.240 --> 02:02.120
+Il faudrait aller voir ce qu'il en est réellement, le voici.
+
+02:02.120 --> 02:05.760
+Nous utiliserons activé ici dans une seconde.
+
+02:05.760 --> 02:10.520
+Vous pouvez lui indiquer le nombre de pages que vous souhaitez qu'il contienne au maximum.
+
+02:10.520 --> 02:12.400
+Il y a un tas de choses.
+
+02:12.920 --> 02:16.040
+Quoi qu'il en soit, faites peut-être celui-ci.
+
+02:16.040 --> 02:20.040
+Quoi qu'il en soit, alors quand devrais-je utiliser l'effet d'utilisation ?
+
+02:20.040 --> 02:21.720
+L’effet d’usage a toujours sa place.
+
+02:21.720 --> 02:28.600
+Si je devais parler au stockage local ou quelque chose comme ça, je trouverais peut-être une bibliothèque pour cela.
+
+02:28.600 --> 02:32.120
+Je pourrais juste utiliser un effet pour ça.
+
+02:32.120 --> 02:38.720
+Un bon exemple est : d'accord, j'ai chargé un composant et je souhaite déclencher des événements d'analyse.
+
+02:38.720 --> 02:41.440
+J'utiliserais un effet pour ça, ouais.
+
+02:41.480 --> 02:43.520
+Il a encore ses cas d’utilisation.
+
+02:43.520 --> 02:51.360
+Avec la gestion d'état à distance, Tantanstack est-il une meilleure solution ou quelque chose comme ZooStan
+
+02:51.360 --> 02:55.080
+ou Redux gère mieux ça ?
+
+02:55.080 --> 02:57.640
+Je vais dire que ce sont des outils différents pour différents travaux.
+
+02:57.640 --> 03:03.720
+Vous pouvez utiliser ZooStan ou quelque chose comme ça avec React Query.
+
+03:03.720 --> 03:05.720
+Vous pouvez certainement utiliser Redux comme cache.
+
+03:05.720 --> 03:11.040
+Il n’y a aucune raison pour que vous ne le puissiez pas, mais ils servent à des fins différentes.
+
+03:11.040 --> 03:17.120
+Le magasin Tantanstack est en concurrence plus directe avec ZooStan et tous ceux-là.
+
+03:17.120 --> 03:22.680
+Comme je l'ai dit, j'ai tendance à ne plus utiliser de bibliothèques de gestion d'état, mais si je construisais quelque chose
+
+03:22.680 --> 03:37.200
+comme Figma, une très grosse application de navigateur compliquée qui va avoir beaucoup de fonctionnalités basées sur le navigateur
+
+03:37.200 --> 03:41.560
+des données qui vont être partagées entre de nombreuses équipes, alors j'utiliserais quelque chose comme
+
+03:41.560 --> 03:49.440
+ZooStan pour se coordonner sur une grande application massive contenant de nombreuses données au niveau de l'application.
+
+03:49.440 --> 03:53.040
+Je ne suis pas du genre à l'utiliser sur une toute petite application, mais sur une énorme application,
+
+03:53.040 --> 03:58.400
+Je pense qu'à cette échelle et avec autant de personnes qui consultent l'application, il est plus logique de
+
+03:58.400 --> 03:59.400
+moi.
+
+03:59.400 --> 04:04.360
+Katie Cromman utilise ZooStan dans nos cours React Native que nous venons de publier, donc si vous êtes
+
+04:05.200 --> 04:06.920
+vous êtes intéressé par ZooStan ou vous souhaitez en savoir plus.
+
+04:06.920 --> 04:11.360
+Ouais, je dirais avec une application iOS où vous avez de nombreuses pages et tout est stocké
+
+04:11.360 --> 04:13.920
+dans la même chose avec React Native, cela a beaucoup de sens pour moi.
+
+04:13.920 --> 04:19.280
+Avez-vous des opinions sur l'insertion du code de requête dans un hook personnalisé ?
+
+04:19.280 --> 04:21.720
+C'est une bonne question.
+
+04:21.720 --> 04:26.000
+Pourquoi ne mettrais-je pas celui-ci dans un hook personnalisé ?
+
+04:26.000 --> 04:33.080
+Parce que je ne pense pas que cela rende plus clair ce que cela fait, et je ne vais pas écrire
+
+04:33.480 --> 04:35.600
+tests pour la requête React.
+
+04:35.600 --> 04:40.520
+Tanner Lindley et l'équipe React ou TanStack le testent bien plus que je ne le souhaite
+
+04:40.520 --> 04:42.480
+pour le tester.
+
+04:42.480 --> 04:43.840
+Je ne veux pas tester mes bibliothèques.
+
+04:43.840 --> 04:46.760
+Je suppose que mes bibliothèques se testent elles-mêmes.
+
+04:46.760 --> 04:52.040
+Si je mets cela dans un hook personnalisé, il n'y aura rien d'intéressant à tester à ce sujet, donc
+
+04:52.040 --> 04:53.040
+Je ne le ferais tout simplement pas.
+
+04:53.040 --> 04:59.160
+Cependant, si j'avais sept requêtes lancées en série et que je voulais faire
+
+04:59.160 --> 05:02.320
+sûr que les bonnes choses étaient appelées dans le bon ordre, ouais, j'en ferais un
+
+05:02.360 --> 05:03.840
+crochet personnalisé.
+
+05:03.840 --> 05:07.960
+Mais pour une seule demande, non, je peux simplement mettre cela directement dans le composant.
+
+05:07.960 --> 05:13.720
+J'ai simplement choisi ces deux-là car presque toutes les applications que vous écrivez ont des requêtes API.
+
+05:13.720 --> 05:19.400
+Presque toutes les applications que vous écrivez ont des besoins de routage, ou du moins très fréquemment.
+
+05:19.400 --> 05:24.840
+J'ai donc choisi ces deux-là, mais il y en a d'autres comme les tables virtuelles, celles-là peuvent être
+
+05:24.840 --> 05:30.160
+super utile, des bibliothèques de formulaires, toutes sortes de trucs comme ça.
+
+05:30.200 --> 05:33.960
+Il y a beaucoup de choses à dire avec CSS, et j'ai décidé de ne pas trop en parler.
+
+05:33.960 --> 05:37.080
+CSS dans l'introduction de ceci.
+
+05:37.080 --> 05:42.520
+Premièrement, c'est un écosystème assez fracturé, donc il n'y en a pas un qui soit évident à vous apprendre, comme
+
+05:42.520 --> 05:47.880
+c'est la réponse.
+
+05:47.880 --> 05:53.240
+Une fois que vous avez compris React, la superposition en CSS n'est pas très difficile.
+
+05:53.240 --> 05:57.520
+Je vais juste ajouter que je suis généralement d'avis, disons si je mange cette pizza
+
+05:57.520 --> 06:04.520
+of the day, I'll just come in here and say pizza of the day dot CSS, and this will just
+
+06:07.920 --> 06:14.920
+être normal, CSS pas très intéressant, et puis ici dans pizza du jour dot JSX, je vais juste
+
+06:15.640 --> 06:22.640
+disons importer la pizza dot slash du jour dot CSS.
+
+06:28.520 --> 06:35.520
+C'est comme ça que j'aime faire, ça reste assez simple, j'écris juste du CSS direct, et en fait
+
+06:37.600 --> 06:41.680
+si tu veux vraiment t'y lancer, ce que je ferai, c'est d'avoir un répertoire, des pizzas
+
+06:41.680 --> 06:47.240
+du répertoire du jour, j'aurai le composant là-dedans, j'aurai le CSS là-dedans, je vais
+
+06:47.240 --> 06:49.640
+il y a tous les tests là-dedans.
+
+06:49.640 --> 06:53.960
+Ce que je préfère dans ce modèle, c'est que disons que nous avons décidé plus tard que nous allons
+
+06:54.040 --> 07:00.760
+pizza du mois, et maintenant nous avons besoin d'un tout nouveau composant avec de nouveaux tests et un nouveau CSS.
+
+07:00.760 --> 07:05.480
+Si vous ne procédez pas de cette façon, vous devez rechercher tous les fichiers et les supprimer individuellement,
+
+07:05.480 --> 07:08.800
+ou pire encore et encore plus probable, c'est que vous ne le faites pas et que vous laissez du code mort dans
+
+07:08.800 --> 07:12.560
+votre base de code.
+
+07:12.560 --> 07:15.640
+Si vous le structurez comme ça où c'est juste un répertoire de tout, en quelque sorte autonome
+
+07:15.640 --> 07:19.840
+répertoire, vous supprimez simplement tout le répertoire et vous êtes simplement assuré que tous les éléments associés
+
+07:19.840 --> 07:21.040
+le code va avec.
+
+07:21.080 --> 07:25.440
+Je n'avais pas l'intention de parler de CSS ou de quelque chose comme ça, mais c'est comme ça que je le gère,
+
+07:25.440 --> 07:26.560
+neuf fois sur dix.
+
+07:26.560 --> 07:30.840
+J'entends maintenant les discussions furieuses, c'est comme, et qu'en est-il de Tailwind ?
+
+07:30.840 --> 07:35.480
+Et c'est comme, oh, d'accord.
+
+07:35.480 --> 07:40.680
+Je comprends Tailwind, j'ai enseigné Tailwind dans le cadre du niveau intermédiaire, donc si vous voulez
+
+07:40.680 --> 07:47.240
+voyez comment j'utilise Tailwind, c'est Intermediate React V5, il y a une section sur Tailwind.
+
+07:47.280 --> 07:50.680
+J'y suis en quelque sorte revenu, car je n'aime pas vraiment l'utiliser.
+
+07:50.680 --> 07:56.440
+J'aime bien écrire du CSS, mais je ne juge pas ceux qui le font.
+
+07:56.440 --> 07:59.760
+Je n'ai pas d'opinion bien arrêtée sur le fait que je n'aime pas les noms de classe ou quoi que ce soit du genre
+
+07:59.760 --> 08:00.760
+ça.
+
+08:00.760 --> 08:04.920
+Personnellement, j'ai un peu le syndrome de Stockholm autour du CSS et je le fais
+
+08:04.920 --> 08:09.560
+depuis si longtemps, mais maintenant j'aime bien ça, et donc je vais continuer à faire ça.
+
+08:09.560 --> 08:17.680
+Mais si je n'avais pas eu autant d'années de combat contre des chars, je serais probablement plus attiré par
+
+08:17.680 --> 08:19.640
+à quelque chose comme Tailwind, non ?
+
+08:19.640 --> 08:23.960
+Donc totalement valable, si vous l'utilisez dans votre base de code, je ne suis pas contrarié, je contribuerai avec plaisir
+
+08:23.960 --> 08:30.000
+à une base de code Tailwind, ce n'est tout simplement pas ce que je vais choisir personnellement.
+
+08:30.000 --> 08:33.640
+Et je dirai que je pense que c'est probablement la chose la plus courante avec React maintenant, c'est d'écrire
+
+08:33.640 --> 08:36.080
+Vent arrière.
+
+08:36.080 --> 08:40.280
+C'est juste un sentiment, je ne suis pas sûr que ce soit réellement vrai, mais je pense certainement que c'est le cas.
+
+08:40.280 --> 08:40.880
+très courant.
+

@@ -1,0 +1,402 @@
+WEBVTT
+
+
+00:00.000 --> 00:01.560
+Je suppose que je viens d'avoir une pensée.
+
+00:01.560 --> 00:03.880
+J'y ai en quelque sorte répondu moi-même ici.
+
+00:03.880 --> 00:06.520
+Mais nous avons mis ces outils de développement, donc nous avons mis React
+
+00:06.520 --> 00:08.200
+et les outils de développement à 10 piles.
+
+00:08.200 --> 00:09.080
+Et j'étais curieux.
+
+00:09.080 --> 00:10.920
+Ma question était, hé, puis-je
+
+00:10.920 --> 00:13.000
+inspecter cet appel juste là ?
+
+00:13.000 --> 00:14.160
+Et je peux absolument.
+
+00:14.160 --> 00:16.200
+Mais je me demande si, je suppose que c'est peut-être ça
+
+00:16.200 --> 00:19.120
+est général pour maintenant ou plus tard, s'il y a
+
+00:19.120 --> 00:22.600
+Quelles sont les utilisations courantes que vous avez de ces outils de développement.
+
+00:22.600 --> 00:24.880
+Je pense que nous les avons mis là-dedans, et je ne l'ai pas vraiment fait
+
+00:24.880 --> 00:25.800
+les a touchés depuis.
+
+00:25.800 --> 00:27.080
+Ouais.
+
+00:27.080 --> 00:29.960
+Donc, pour votre bon point ici, vous pouvez
+
+00:29.960 --> 00:33.120
+cliquez sur les outils de développement de requêtes à 10 piles ici.
+
+00:33.120 --> 00:35.120
+Vous verrez ici à la fois les requêtes et les mutations.
+
+00:35.120 --> 00:38.560
+Vous pouvez voir notre mutation de requête ici.
+
+00:38.560 --> 00:40.280
+C'est juste utile pour moi de voir,
+
+00:40.280 --> 00:42.320
+est-ce arrivé et quelles données ont été envoyées ?
+
+00:42.320 --> 00:44.880
+C'est 95% de ma question.
+
+00:44.880 --> 00:47.680
+L'autre chose, je pourrais certainement simplement regarder l'onglet réseau
+
+00:47.680 --> 00:50.600
+et voyez ce qui s'est passé là-bas.
+
+00:50.600 --> 00:52.640
+Mais c'est bien que ce soit ici.
+
+00:52.640 --> 00:56.180
+Je peux tout voir, comme ce qui s'est passé, ce qui est revenu,
+
+00:56.180 --> 00:58.760
+combien de choses y ont été souscrites,
+
+00:58.760 --> 01:03.360
+quel genre d'événement l'a déclenché, tout ce genre de choses.
+
+01:03.360 --> 01:08.080
+Alors dois-je voir, est-ce annulable à tout moment ?
+
+01:08.080 --> 01:09.920
+Non, probablement pas.
+
+01:09.920 --> 01:14.920
+Ou probablement jamais, c'est probablement plus proche de ce que je dirais.
+
+01:14.920 --> 01:16.120
+Mais c'est cool que ce soit là.
+
+01:16.120 --> 01:17.560
+Et il y a des validations d'entrée.
+
+01:17.560 --> 01:20.320
+Devons-nous utiliser des formulaires non contrôlés ?
+
+01:20.320 --> 01:22.580
+Pas nécessairement.
+
+01:22.580 --> 01:25.240
+Cela dépend de la façon dont vous voulez le faire.
+
+01:25.240 --> 01:31.120
+Donc, tout d’abord, le navigateur en a déjà intégré.
+
+01:31.120 --> 01:34.040
+Donc si je fais juste ça, ça va dire,
+
+01:34.040 --> 01:37.080
+veuillez entrer une adresse e-mail.
+
+01:37.080 --> 01:38.720
+Cela vient de Firefox, n'est-ce pas ?
+
+01:38.720 --> 01:40.160
+Cela ne vient de rien.
+
+01:40.160 --> 01:42.040
+C'est juste ce que Firefox dit, ceci
+
+01:42.040 --> 01:43.880
+ne s'approche pas au moins de loin
+
+01:43.880 --> 01:45.880
+une adresse email valide.
+
+01:45.880 --> 01:47.000
+C'est assez lâche, non ?
+
+01:47.000 --> 01:50.520
+Cela permettra donc toujours de faire passer des choses assez étranges.
+
+01:50.520 --> 01:52.160
+Il va probablement laisser tomber cela.
+
+01:52.160 --> 01:53.260
+Ce n'est pas le cas, n'est-ce pas ?
+
+01:53.260 --> 01:57.700
+Et ce n'est évidemment pas une adresse e-mail valide.
+
+01:57.700 --> 02:00.340
+Mais si vous essayiez de donner une date de naissance valide,
+
+02:00.340 --> 02:01.720
+et vous voulez vous assurer que c'est bien
+
+02:01.720 --> 02:07.700
+comme au cours des 150 dernières années ou quelque chose comme ça,
+
+02:07.700 --> 02:11.380
+Je ferais probablement cela lors de la soumission.
+
+02:11.380 --> 02:12.180
+Et pourquoi ?
+
+02:12.180 --> 02:15.940
+Parce que je ne veux pas, je déteste, c'est une de mes énormes bêtes noires.
+
+02:15.940 --> 02:19.500
+Si je commence à taper mon anniversaire, qui est comme 05,
+
+02:19.500 --> 02:21.660
+et puis ça devient rouge et c'est comme, oh, entre
+
+02:21.660 --> 02:22.660
+un anniversaire valide.
+
+02:22.660 --> 02:24.860
+Je n'ai pas encore fini.
+
+02:24.860 --> 02:26.740
+Arrête de me dire que je n'ai pas de titre valide,
+
+02:26.740 --> 02:28.020
+parce que j'y travaille.
+
+02:28.020 --> 02:31.420
+Et c'est pour ça que je n'aime pas utiliser une entrée contrôlée,
+
+02:31.420 --> 02:32.960
+parce que cela te montrerait immédiatement
+
+02:32.960 --> 02:34.460
+que quelque chose ne va pas, n'est-ce pas ?
+
+02:34.460 --> 02:36.620
+Alors qu'en réalité, tu veux les montrer à la fin,
+
+02:36.620 --> 02:38.460
+c'est comme, non, en fait tu dois naître
+
+02:38.460 --> 02:40.700
+au cours des 150 dernières années pour que cela soit valable.
+
+02:43.420 --> 02:49.540
+Vous feriez cela lors de la soumission, pas lors de la touche enfoncée, n'est-ce pas ?
+
+02:49.540 --> 02:53.620
+Donc quand même j'utiliserais, je ferais du incontrôlé pour ça,
+
+02:53.620 --> 02:56.500
+et puis faites-le simplement sur la soumission où je ferais cela.
+
+03:00.820 --> 03:03.020
+Je ne sais pas, il y a probablement d'autres raisons aussi.
+
+03:03.020 --> 03:06.500
+Dans ma page, il y a des champs qui ont des dépendances
+
+03:06.500 --> 03:09.180
+sur d'autres domaines, par exemple l'État et la ville.
+
+03:09.180 --> 03:11.220
+Pour cela, faut-il utiliser des formulaires contrôlés ?
+
+03:11.220 --> 03:12.980
+Ouais, c'est un très bon endroit pour le faire.
+
+03:12.980 --> 03:18.140
+Alors disons que vous mettez le code postal, n'est-ce pas ?
+
+03:18.140 --> 03:20.660
+Et par exemple, dans mon ancien code postal à Seattle,
+
+03:20.660 --> 03:22.500
+tu pouvais voir que tu vis à Seattle,
+
+03:22.500 --> 03:25.460
+ou vous pourriez dire que vous vivez à Greenwood.
+
+03:25.460 --> 03:28.740
+Les deux sont des endroits techniquement valables.
+
+03:28.740 --> 03:31.580
+Et vous le montreriez probablement dans une liste déroulante.
+
+03:31.580 --> 03:34.540
+Et vous feriez cela en fonction du code postal, qui
+
+03:34.540 --> 03:37.300
+ne serait pas renseigné tant qu'ils n'auraient pas saisi leur code postal.
+
+03:37.300 --> 03:40.740
+Vous utiliseriez une entrée contrôlée pour cela.
+
+03:44.100 --> 03:47.400
+Je ne te dis pas de faire des choses formidables et terribles
+
+03:47.400 --> 03:52.080
+pour éviter d'utiliser des entrées contrôlées,
+
+03:52.080 --> 03:54.560
+mais surtout qu'ils ne sont pas nécessaires aux choses
+
+03:54.560 --> 04:01.320
+de cette nature, où il s'agit d'une forme d'apparence extrêmement normale.
+
+04:01.320 --> 04:04.920
+Et donc, c'est tout à fait valable de ne pas avoir
+
+04:04.920 --> 04:06.640
+faire quelque chose de contrôlé à ce sujet.
+
+04:12.200 --> 04:14.040
+Cool.
+
+04:14.040 --> 04:17.200
+Encore une fois, nous n’avons rencontré aucune erreur.
+
+04:17.200 --> 04:20.800
+Disons que nous atteignons environ 500, ou qu'est-ce que c'est ?
+
+04:20.800 --> 04:25.800
+437, je suis une erreur de théière, quelque chose comme ça.
+
+04:25.800 --> 04:30.160
+Mais après le contact, cette réponse
+
+04:30.160 --> 04:34.680
+n'était pas OK, ce qui correspond essentiellement à tout ce qui est inférieur à 400.
+
+04:34.680 --> 04:38.000
+Cela générerait l'erreur ici.
+
+04:38.000 --> 04:43.360
+Et puis à l'intérieur du contact, nous recevrions un drapeau ici
+
+04:43.360 --> 04:47.400
+à partir d'une requête à 10 piles.
+
+04:47.400 --> 04:53.720
+Et vous pourriez faire quelque chose comme si, où est-il ?
+
+04:53.720 --> 04:57.000
+Mutation.isError.
+
+04:57.000 --> 04:58.560
+Et vous pouvez voir qu'il y en a un certain nombre.
+
+04:58.560 --> 05:01.920
+IsPending, isPause, isIdle, isSuccess, bla, bla, bla.
+
+05:01.920 --> 05:06.720
+Mais en cas d'erreur, vous pouvez simplement renvoyer quelque chose, encore une fois,
+
+05:06.720 --> 05:09.760
+très convivial, genre, eh bien, non, quelque chose
+
+05:09.760 --> 05:10.560
+comme ça, non ?
+
+05:13.800 --> 05:17.160
+Et c'est ainsi que vous géreriez les erreurs dans leurs messages.
+
+05:17.160 --> 05:18.160
+Ouais, Marc ?
+
+05:18.160 --> 05:22.120
+Existe-t-il un cas où vous utiliseriez les deux formulaires non contrôlés
+
+05:22.120 --> 05:24.560
+mais une entrée contrôlée ?
+
+05:24.560 --> 05:32.640
+Ouais, je veux dire, vous pouvez en quelque sorte voir que je fais ça dans l'ordre.
+
+05:37.080 --> 05:40.320
+Donc si vous regardez ici, nous avons tout ce formulaire.
+
+05:40.320 --> 05:44.920
+Mais je gère toutes les données lors de la soumission.
+
+05:44.920 --> 05:46.920
+Et puis, où est-ce que je prends ces données ?
+
+05:46.920 --> 05:48.560
+C'est donc une carte établie.
+
+05:48.560 --> 05:51.560
+Donc je suppose que je fais ça directement avec les choses
+
+05:51.560 --> 05:52.840
+que j'ai mis en état.
+
+05:52.840 --> 05:54.760
+Mais il n'y a aucune raison pour que je ne puisse pas simplement
+
+05:54.760 --> 06:01.440
+fait quelque chose comme les données du formulaire const sont égales aux nouvelles données du formulaire,
+
+06:01.440 --> 06:05.440
+c'est vrai, et je l'ai fait exactement de la même manière.
+
+06:05.440 --> 06:06.560
+Les deux vont bien.
+
+06:06.560 --> 06:08.400
+À ce stade, tu es en quelque sorte en train de couper les cheveux en quatre
+
+06:08.400 --> 06:10.240
+de ce qui est contrôlé et de ce qui ne l'est pas
+
+06:10.240 --> 06:12.560
+En réalité, la réponse est que cela n'a pas vraiment d'importance, n'est-ce pas ?
+
+06:12.560 --> 06:14.160
+Écrivez simplement le code qui vous convient le mieux.
+
+06:16.440 --> 06:17.760
+Mais bien sûr, ouais, il y a certainement
+
+06:17.760 --> 06:21.640
+vous allez avoir des choses où certaines des entrées
+
+06:21.640 --> 06:22.560
+sera contrôlé.
+
+06:22.560 --> 06:23.800
+Certains d’entre eux ne seront pas contrôlés.
+
+06:23.800 --> 06:25.520
+Et vous obtiendrez tout cela à partir des données du formulaire.
+
+06:25.520 --> 06:28.720
+Cela aurait du sens pour moi.
+
+06:28.720 --> 06:31.880
+Ce n'est pas une chose binaire où tout est contrôlé
+
+06:31.880 --> 06:33.160
+ou tout cela est incontrôlé.
+
+06:33.160 --> 06:33.840
+Vous pouvez faire les deux.
+

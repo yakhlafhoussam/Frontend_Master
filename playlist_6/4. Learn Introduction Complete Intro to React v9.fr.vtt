@@ -1,0 +1,567 @@
+WEBVTT
+
+
+00:00.680 --> 00:02.380
+Faites une petite pause avec React
+
+00:02.380 --> 00:04.780
+et nous allons parler d'outils,
+
+00:04.780 --> 00:06.280
+ce qui semble déranger tout le monde sauf moi.
+
+00:06.280 --> 00:07.120
+J'adore les outils.
+
+00:07.120 --> 00:09.000
+C'est pourquoi je travaille dans DevTools depuis très longtemps.
+
+00:09.000 --> 00:13.680
+Je vous ai montré assez de JavaScript React vanille
+
+00:13.680 --> 00:15.200
+pour que tu saches exactement ce qui se passe
+
+00:15.200 --> 00:16.200
+sous le capot.
+
+00:17.680 --> 00:20.040
+A partir de là, nous allons passer à JSX,
+
+00:20.040 --> 00:22.880
+ce qui représentait un énorme obstacle à l'adoption pour beaucoup de gens,
+
+00:22.880 --> 00:24.360
+surtout au début de la vie de React,
+
+00:24.360 --> 00:25.920
+où ils disent, hé, nous ne voulons pas vraiment écrire
+
+00:25.920 --> 00:28.680
+ceci compilé en langage JavaScript.
+
+00:28.680 --> 00:29.700
+C'est bizarre.
+
+00:32.160 --> 00:33.440
+Mais nous y arriverons dans une seconde.
+
+00:33.440 --> 00:34.920
+Pour l'instant, nous allons configurer tous les outils
+
+00:34.920 --> 00:36.220
+pour que nous puissions le faire.
+
+00:37.780 --> 00:41.120
+Donc la première chose est que nous allons utiliser NPM.
+
+00:41.120 --> 00:43.880
+Je vais utiliser NPM pendant toute la durée de ce cours.
+
+00:43.880 --> 00:45.080
+N'hésitez pas à utiliser YARN.
+
+00:45.080 --> 00:48.520
+Les versions précédentes de ce cours utilisaient déjà YARN.
+
+00:48.520 --> 00:51.200
+PNPM, vous pouvez voir que j'ai également un appel pour celui-là.
+
+00:51.200 --> 00:53.400
+Je pense que cela devient de plus en plus populaire.
+
+00:54.900 --> 00:58.320
+Mais il est assez difficile de se tromper avec un simple NPM.
+
+00:59.080 --> 01:00.160
+Si vous n'êtes pas familier avec NPM,
+
+01:00.160 --> 01:02.320
+il ne signifie pas Node Package Manager,
+
+01:03.800 --> 01:06.840
+mais cela signifie un peu Node Package Manager.
+
+01:06.840 --> 01:07.680
+C'est ce qu'ils disent.
+
+01:07.680 --> 01:08.800
+Ils disent que ça ne vaut pas ça.
+
+01:08.800 --> 01:10.280
+Et puis ils finissent juste la phrase
+
+01:10.280 --> 01:11.120
+et ne dis rien d'autre.
+
+01:11.120 --> 01:12.560
+C'est plutôt ennuyeux.
+
+01:12.560 --> 01:14.920
+Quoi qu'il en soit, il s'agit du gestionnaire de packages pour Node.js.
+
+01:16.160 --> 01:17.480
+Il vous permet d'installer ces choses
+
+01:17.480 --> 01:19.120
+directement à partir du registre NPM,
+
+01:19.120 --> 01:20.600
+qui appartient désormais à GitHub,
+
+01:20.600 --> 01:22.440
+qui appartient à son tour à Microsoft.
+
+01:25.360 --> 01:28.400
+Il vous permet de faire des choses comme NPM, installer React,
+
+01:28.400 --> 01:29.600
+des choses comme ça.
+
+01:29.600 --> 01:34.020
+Donc dans notre projet, commençons par faire la première chose ici.
+
+01:34.020 --> 01:35.800
+Vous pouvez continuer et arrêter de servir.
+
+01:35.800 --> 01:38.160
+Nous ne l'utiliserons plus.
+
+01:38.160 --> 01:42.920
+C'est Control C, si vous n'êtes pas familier avec Linux.
+
+01:42.920 --> 01:46.920
+Très bien, donc je vais faire l'initialisation NPM.
+
+01:49.240 --> 01:50.480
+Le tiret dit simplement,
+
+01:50.480 --> 01:52.200
+Je ne veux répondre à aucune de vos questions stupides.
+
+01:52.200 --> 01:53.520
+Générez simplement un fichier pour moi.
+
+01:53.520 --> 01:54.760
+Mais si tu veux répondre aux questions,
+
+01:54.760 --> 01:56.060
+laissez simplement le tableau de bord y.
+
+01:56.820 --> 01:58.620
+Et tu verras que tu sortiras d'ici
+
+01:58.620 --> 02:00.420
+un package JSON ici.
+
+02:00.420 --> 02:03.420
+Et cela vous permet de commencer à enregistrer des éléments dans votre projet.
+
+02:04.420 --> 02:05.940
+La raison pour laquelle cela nous est utile
+
+02:05.940 --> 02:09.020
+c'est qu'on peut dire que NPM installe React.
+
+02:09.020 --> 02:10.340
+Ça va installer React pour nous
+
+02:10.340 --> 02:12.140
+et il stockera la version de React
+
+02:12.140 --> 02:13.660
+que nous utilisons dans le projet.
+
+02:13.660 --> 02:15.620
+Pour que quand je partagerai ça avec vous plus tard,
+
+02:15.620 --> 02:16.740
+tu peux aller l'installer
+
+02:16.740 --> 02:18.080
+et vous obtiendrez la même version de React
+
+02:18.080 --> 02:22.340
+ou une version compatible de React que j'utilise.
+
+02:22.340 --> 02:24.420
+Mais je n'ai pas besoin de sauvegarder React dans mon dépôt.
+
+02:24.420 --> 02:26.660
+Nous n'avons donc pas besoin d'avoir un billion de copies de React
+
+02:26.660 --> 02:28.380
+flottant sur GitHub, n'est-ce pas ?
+
+02:28.380 --> 02:30.260
+Nous obtenons une copie de React.
+
+02:31.980 --> 02:35.020
+Et comme si React avait une vulnérabilité critique,
+
+02:35.020 --> 02:36.660
+comme si des choses comme ça arrivaient,
+
+02:36.660 --> 02:37.820
+ils sont capables de le patcher
+
+02:37.820 --> 02:39.380
+pour que la prochaine fois que vous installez,
+
+02:39.380 --> 02:40.780
+vous obtiendrez la version corrigée,
+
+02:40.780 --> 02:42.580
+pas la version non sécurisée.
+
+02:44.820 --> 02:47.300
+D'accord, j'espère que cela a fonctionné pour vous.
+
+02:47.300 --> 02:51.860
+Sinon, vous devrez probablement vous rendre sur la page Node.js
+
+02:51.860 --> 02:55.100
+et installez Node, quelle que soit la manière dont vous choisissez de le faire.
+
+02:55.100 --> 03:00.100
+Mais encore une fois, assurez-vous de vous retrouver sur Node 20.6 ou supérieur, s'il vous plaît.
+
+03:03.980 --> 03:05.060
+N'hésitez pas à utiliser pnpm.
+
+03:05.060 --> 03:06.660
+Cela fait relativement la même chose.
+
+03:06.660 --> 03:08.860
+je serais très, très confiant
+
+03:08.860 --> 03:11.260
+que cela fonctionnerait tout aussi bien.
+
+03:11.260 --> 03:12.580
+Le fil, moins de nos jours.
+
+03:12.580 --> 03:14.300
+Je n'ai pas utilisé Yarn depuis longtemps.
+
+03:17.760 --> 03:20.460
+Vous l'avez peut-être remarqué lorsque j'écris du code ici
+
+03:21.460 --> 03:24.340
+c'est comme si je faisais quelque chose comme ça et moi,
+
+03:24.340 --> 03:27.260
+fermons ça, allez.
+
+03:29.140 --> 03:31.060
+Donc si j'aime ça et que je mets beaucoup d'espace
+
+03:31.060 --> 03:32.740
+et chaque fois que je clique sur Enregistrer,
+
+03:33.700 --> 03:34.540
+oh, ça n'aime pas, n'est-ce pas ?
+
+03:34.540 --> 03:35.860
+C'est une barre oblique sur la ligne 27.
+
+03:35.860 --> 03:36.700
+Oh voilà, merci.
+
+03:36.700 --> 03:39.700
+Il corrige automatiquement tout mon espacement pour moi.
+
+03:41.140 --> 03:44.060
+Je ne peux plus me soucier de gérer l’espacement.
+
+03:44.060 --> 03:46.220
+Comme ce processus dans mon cerveau
+
+03:46.220 --> 03:48.500
+qui pense au formatage du code vient d'être arrêté
+
+03:48.500 --> 03:50.300
+et à ce stade, il est fermé depuis si longtemps
+
+03:50.300 --> 03:51.860
+qu'il est atrophié.
+
+03:51.860 --> 03:54.820
+Donc je n'arrive littéralement pas à comprendre comment écrire
+
+03:54.820 --> 03:56.020
+plus de code bien formaté
+
+03:56.020 --> 03:58.260
+parce que Prettier le fait automatiquement pour moi
+
+03:58.260 --> 03:59.200
+à chaque fois.
+
+04:00.900 --> 04:03.740
+Donc, tout ce qui est plus joli, c'est le formateur de code.
+
+04:03.740 --> 04:07.660
+Il récupère du code non formaté et crache du code formaté.
+
+04:08.740 --> 04:11.220
+C'est mon outil préféré en JavaScript.
+
+04:11.220 --> 04:13.980
+Cela a littéralement changé ma façon d'écrire du code
+
+04:13.980 --> 04:16.940
+et béni soit les dieux les plus jolis.
+
+04:17.780 --> 04:22.780
+Alors allons-y et commençons ce projet pour Prettier.
+
+04:24.980 --> 04:27.980
+Il vous suffit de créer un fichier appelé .prettierrc
+
+04:30.460 --> 04:34.780
+et puis j'ai mis l'objet vide très controversé
+
+04:34.780 --> 04:39.780
+comme ma configuration, ce qui dit simplement d'utiliser toutes les valeurs par défaut.
+
+04:42.980 --> 04:45.740
+Ce que j'aime le moins, c'est le délestage des vélos
+
+04:45.780 --> 04:48.900
+sur le formatage du code.
+
+04:48.900 --> 04:49.740
+Je déteste ça.
+
+04:49.740 --> 04:51.420
+J'ai participé à tellement de réunions au fil des ans
+
+04:51.420 --> 04:53.620
+avec comme si nous devrions utiliser des tabulations plutôt que des espaces
+
+04:53.620 --> 04:57.780
+ou des virgules à la fin ou pas de virgules
+
+04:57.780 --> 05:01.560
+ou insertion automatique de point-virgule ou non,
+
+05:01.560 --> 05:03.060
+toutes ces choses différentes.
+
+05:03.060 --> 05:08.060
+Et mon message pour vous est que je ne peux pas imaginer que l'on puisse s'en soucier.
+
+05:09.900 --> 05:12.840
+C'est juste ce que j'aime le moins dire.
+
+05:12.840 --> 05:14.240
+C'est pourquoi j'ai mis cet objet vide ici
+
+05:14.240 --> 05:16.800
+c'est comme tout ce que quelqu'un d'autre choisit pour moi, je m'en fiche.
+
+05:16.800 --> 05:19.720
+Tant qu'il est formaté de manière uniforme, je m'en fiche.
+
+05:19.720 --> 05:20.720
+Voilà donc ce que c'est.
+
+05:20.720 --> 05:22.040
+J'ai une extension de code VS ici.
+
+05:22.040 --> 05:24.440
+Donc, si vous suivez le code VS,
+
+05:24.440 --> 05:28.480
+Je vais vous suggérer d'installer le formateur de code Prettier.
+
+05:29.960 --> 05:31.240
+Il y en a plusieurs, alors assurez-vous d'en prendre un
+
+05:31.240 --> 05:32.580
+ça vient officiellement de Prettier
+
+05:32.580 --> 05:35.120
+puis allez dans l'un de vos fichiers JS
+
+05:35.120 --> 05:40.000
+et vous pouvez simplement appuyer, c'est soit la commande Shift P sur un Mac
+
+05:40.000 --> 05:45.000
+ou control shift P sous Linux et Windows
+
+05:45.640 --> 05:48.040
+puis choisissez le format du document.
+
+05:49.960 --> 05:51.560
+Si c'est la première fois que tu le fais, ça va dire :
+
+05:51.560 --> 05:55.760
+hé, tu dois choisir un formateur et choisir simplement Prettier
+
+05:55.760 --> 05:59.720
+et puis cela configurera cela pour que ce format soit
+
+05:59.720 --> 06:02.920
+vos documents et ensuite si vous appuyez sur la commande virgule
+
+06:02.920 --> 06:07.680
+ou contrôlez la virgule et ensuite vous voulez formater lors de la sauvegarde
+
+06:08.200 --> 06:11.280
+et assurez-vous simplement que celui-ci est coché.
+
+06:14.200 --> 06:18.240
+Ensuite, vous êtes prêt à rouler et vous obtiendrez exactement
+
+06:18.240 --> 06:21.160
+la même chose pour que vous puissiez simplement gâcher le formatage,
+
+06:21.160 --> 06:23.520
+Rendez les choses terribles, désindentons tout
+
+06:23.520 --> 06:25.480
+parce que c'est juste que ça rend tout le monde capable
+
+06:25.480 --> 06:28.320
+regarder ce code et le sauvegarder
+
+06:28.320 --> 06:29.600
+et ça se répare tout seul.
+
+06:29.600 --> 06:32.200
+Je sais que je veux que tout le monde utilise le code VS
+
+06:34.400 --> 06:36.000
+mais je travaillais aussi avec le Primogen.
+
+06:36.040 --> 06:40.880
+Donc, il s'avère que tout le monde n'utilisera pas le code VS, n'est-ce pas ?
+
+06:40.880 --> 06:42.680
+Vous devez donc mettre en place tous vos projets
+
+06:42.680 --> 06:46.280
+travailler avec les outils de n'importe qui, pas seulement avec votre propre outil.
+
+06:46.280 --> 06:49.160
+Alors allons-y et configurons Prettier pour qu'il fonctionne avec tout le monde.
+
+06:49.160 --> 06:54.160
+npm installer dash dash sauvegarder dev
+
+06:55.200 --> 06:58.880
+ou si tu es paresseux comme moi, npm je tire un D majuscule
+
+06:58.880 --> 07:02.120
+c'est exactement la même chose et nous allons mettre Prettier.
+
+07:06.800 --> 07:11.720
+Et vous pouvez voir ici, nous avons une dépendance de développement, n'est-ce pas ?
+
+07:11.720 --> 07:14.880
+Donc c'est un, il suffit de l'installer
+
+07:14.880 --> 07:17.280
+dans les environnements de développement, pas pour les environnements de production.
+
+07:17.280 --> 07:19.960
+C'est ce que signifie la dépendance de développement.
+
+07:19.960 --> 07:24.960
+Et puis sous les scripts, nous allons faire ça.
+
+07:27.600 --> 07:32.600
+Je vais définir le format et tu vas faire un plus joli dash dash
+
+07:32.680 --> 07:37.680
+écris et nous allons juste dire,
+
+07:39.560 --> 07:41.720
+faire tout dans le répertoire source
+
+07:49.200 --> 07:54.200
+et ensuite vous devez faire JS, JSX, TS, TSX,
+
+07:54.560 --> 07:57.040
+quels que soient les formats de fichiers que vous souhaitez qu'il examine.
+
+07:58.440 --> 07:59.920
+C'est probablement une assez bonne liste.
+
+07:59.920 --> 08:02.880
+Si c’est le cas, nous n’aurons pas de TypeScript dedans.
+
+08:02.880 --> 08:04.880
+Vous pouvez laisser de côté les éléments TypeScript,
+
+08:05.920 --> 08:09.360
+mais JS, JSX, CSS, vous pouvez également mettre du HTML ici.
+
+08:11.840 --> 08:12.880
+Plus joli ne marche pas avec tout,
+
+08:12.880 --> 08:14.400
+mais ils l'étendent en fait
+
+08:14.400 --> 08:16.000
+dans beaucoup d'autres langues maintenant.
+
+08:17.560 --> 08:19.720
+Assurez-vous d'avoir besoin d'une virgule à la fin.
+
+08:23.040 --> 08:28.040
+Et maintenant, nous devrions pouvoir exécuter le format d'exécution npm.
+
+08:28.440 --> 08:30.040
+C'est à cela que servent les scripts.
+
+08:30.040 --> 08:33.400
+C'est essentiellement comme, s'il vous plaît, souvenez-vous de ces commandes bash
+
+08:33.400 --> 08:34.680
+pour moi plus tard, donc je n'ai pas besoin de m'en souvenir
+
+08:34.680 --> 08:36.160
+comment écrire ça.
+
+08:37.360 --> 08:40.240
+Vous pouvez simplement dire npm run format et il l'exécutera pour vous.
+
+08:40.240 --> 08:42.920
+Oh, et j'avais besoin d'une citation finale ici.
+
+08:42.920 --> 08:45.440
+Assurez-vous d'avoir les citations ici.
+
+08:45.440 --> 08:48.480
+La barre oblique inverse n'est qu'un caractère d'échappement, n'est-ce pas ?
+
+08:48.480 --> 08:49.640
+Raison pour laquelle vous voulez les citations ici
+
+08:49.640 --> 08:52.280
+c'est que vous ne voulez pas que votre shell effectue l'expansion du fichier.
+
+08:52.280 --> 08:55.000
+Vous voulez le réel, vous voulez que cela soit transmis littéralement
+
+08:55.000 --> 08:57.800
+comme une chaîne à Prettier.
+
+08:57.840 --> 09:00.640
+Pour qu'il puisse aller faire toute la recherche des bons fichiers.
+
+09:03.120 --> 09:04.600
+Maintenant, le mien fonctionne déjà, n'est-ce pas ?
+
+09:04.600 --> 09:06.320
+Parce qu'à chaque fois que j'enregistre le fichier, il s'exécute,
+
+09:06.320 --> 09:09.040
+mais vous pouvez voir, donc c'est écrit inchangé ici.
+
+09:09.040 --> 09:11.200
+Mais si j'avais quelque chose à changer là-bas, je le dirais.
+

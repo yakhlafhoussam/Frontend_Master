@@ -1,0 +1,527 @@
+WEBVTT
+
+00:00.000 --> 00:03.120
+Let's talk about testing custom hooks.
+
+00:03.120 --> 00:08.320
+Like one of the big reasons that we actually want to use custom hooks.
+
+00:08.320 --> 00:13.400
+So we're going to use Pizza of the Day here.
+
+00:13.400 --> 00:18.480
+But it's really nice that we have these custom hooks because they've become extremely easy to test.
+
+00:18.480 --> 00:22.920
+And you can make sure like, especially if you have this like important hook that's used in a bunch of places.
+
+00:22.920 --> 00:27.040
+Like again, if we're shilling pizza everywhere and we particularly use Pizza of the Day,
+
+00:27.040 --> 00:30.280
+we're going to use this in 30 different places in our code bases.
+
+00:30.280 --> 00:35.120
+We can test this in various different ways to make sure that it works across various different environments.
+
+00:35.120 --> 00:41.520
+Becomes a very well stable and reliable piece of code.
+
+00:41.520 --> 00:46.320
+The thing that makes me laugh about some of these tests, though, is they almost always end up being longer than the component themselves.
+
+00:46.320 --> 00:48.760
+It's very normal. Create a new file here.
+
+00:48.760 --> 00:58.400
+Call it. Use Pizza of the Day dot test dot JSX.
+
+00:58.400 --> 01:02.120
+OK, we're going to say import.
+
+01:02.120 --> 01:09.800
+Expect. Test VI from the test.
+
+01:09.800 --> 01:13.000
+Import render.
+
+01:13.000 --> 01:18.720
+From at testing library slash react.
+
+01:18.720 --> 01:27.160
+And import. Create fetch mock.
+
+01:27.160 --> 01:34.320
+From the test fetch mock.
+
+01:34.320 --> 01:39.200
+And then, of course, import.
+
+01:39.600 --> 01:44.160
+Pizza. Use Pizza of the Day.
+
+01:44.160 --> 01:46.760
+Yeah, for whatever reason, I did this as a name export.
+
+01:46.760 --> 01:49.480
+It's so weird that I would do that.
+
+01:49.480 --> 01:57.560
+But I did. So we're going to import it that way.
+
+01:57.560 --> 02:05.120
+Use Pizza of the Day like that.
+
+02:05.120 --> 02:10.000
+Const fetch mocker.
+
+02:10.000 --> 02:12.160
+Equals create fetch mock.
+
+02:12.160 --> 02:16.520
+All things that we've done before pass in VI.
+
+02:16.520 --> 02:19.760
+Fetch mocker dot enable mocks.
+
+02:19.760 --> 02:26.000
+There we go. We're going to make a test pizza here.
+
+02:26.000 --> 02:32.640
+So I put Calabrese in here.
+
+02:32.680 --> 02:34.560
+I think I literally just grabbed this out of the database.
+
+02:34.560 --> 02:41.040
+So the Calabrese pizza.
+
+02:41.040 --> 02:44.680
+Category. Supreme.
+
+02:44.680 --> 02:48.040
+I guess it's a supreme style pizza and description.
+
+02:48.040 --> 02:51.880
+I'm not writing all that, so it's just going to be something shorter than that.
+
+02:51.920 --> 02:55.440
+So LOL pizza from Calabria.
+
+02:55.440 --> 03:10.000
+And image is slash public slash pizzas slash Calabrese dot webp.
+
+03:10.000 --> 03:16.640
+And then the sizes is this is the prices, right?
+
+03:16.640 --> 03:23.480
+12 dot 25. 16 dot 25.
+
+03:23.480 --> 03:29.160
+And the large is 20, 25.
+
+03:29.160 --> 03:33.680
+OK, good test pizza there.
+
+03:33.680 --> 03:44.000
+Good. So how do you render a hook outside of a component?
+
+03:44.240 --> 03:50.320
+Trick question. You can't write a hook really works in the context of a component.
+
+03:50.320 --> 03:54.120
+So we're going to say function.
+
+03:54.120 --> 03:58.480
+Get pizza of the day.
+
+03:58.480 --> 04:00.200
+And we're just going to fake it out.
+
+04:00.200 --> 04:06.640
+We're going to say let pizza. Function.
+
+04:06.640 --> 04:13.160
+Test component.
+
+04:13.240 --> 04:22.240
+We're going to say pizza equals use pizza of the day and return null.
+
+04:22.240 --> 04:27.960
+We're going to say render test component.
+
+04:27.960 --> 04:31.640
+And then we're just going to return pizza, right?
+
+04:31.640 --> 04:35.800
+That should work.
+
+04:35.800 --> 04:39.120
+So it's going to create a test component that doesn't render anything.
+
+04:39.120 --> 04:42.520
+All it's going to do is just call the component.
+
+04:42.520 --> 04:48.320
+We're going to go as far to render the component and throw it away because we actually don't really care what it renders out at the end.
+
+04:48.320 --> 04:50.400
+It's going to be null.
+
+04:50.400 --> 04:55.040
+But we're going to just keep that pizza variable that it gets back from use pizza of the day.
+
+04:55.040 --> 04:59.560
+And we're going to return whatever that pizza is.
+
+04:59.560 --> 05:03.720
+What is pizza the first time?
+
+05:03.720 --> 05:07.240
+No. Right. Use pizza of the day.
+
+05:07.240 --> 05:09.600
+What is it the first time?
+
+05:09.600 --> 05:12.240
+No. And then it calls the use effect.
+
+05:12.240 --> 05:16.400
+And then that's what we're going to get on subsequent.
+
+05:16.400 --> 05:17.880
+So let's write a test of that.
+
+05:17.880 --> 05:21.800
+We want to make sure that it's not giving us something weird the first time.
+
+05:21.800 --> 05:23.640
+Gives null when first called.
+
+05:23.640 --> 05:26.800
+That's what we expect.
+
+05:26.800 --> 05:30.640
+Async function.
+
+05:30.720 --> 05:38.560
+And we're going to say fetch dot mock response once.
+
+05:38.560 --> 05:47.520
+Mock response once.
+
+05:47.600 --> 05:58.960
+We're going to say JSON JSON stringify test pizza.
+
+05:58.960 --> 06:04.280
+Const pizza equals get pizza of the day.
+
+06:04.320 --> 06:10.120
+And expect pizza to be null.
+
+06:19.880 --> 06:20.840
+There we go.
+
+06:20.840 --> 06:22.280
+It works.
+
+06:22.280 --> 06:26.400
+Let's go make it something else.
+
+06:26.400 --> 06:27.440
+Use pizza of the day.
+
+06:27.440 --> 06:28.880
+We want this to now return.
+
+06:28.880 --> 06:29.880
+And there we go.
+
+06:29.880 --> 06:32.320
+It expected null, and it got LOL.
+
+06:32.320 --> 06:36.320
+So that's not going to work.
+
+06:36.320 --> 06:37.320
+There we go.
+
+06:37.320 --> 06:40.320
+Null.
+
+06:40.320 --> 06:46.320
+Now, you might be looking at this like, this seems like it's kind of weird, right?
+
+06:46.320 --> 06:51.320
+That we're faking a component to get a hook out of it.
+
+06:51.320 --> 06:56.320
+And I wanted you to see how to do this, because I'm going to show you how to do this.
+
+06:56.520 --> 07:00.800
+And I wanted you to see how to do this, because I'm going to show you how to just use the,
+
+07:00.800 --> 07:05.080
+what is it called, render hook function, which just does all of this for you.
+
+07:05.080 --> 07:08.360
+But I wanted to demystify a little bit as like what this is doing for you.
+
+07:08.360 --> 07:10.120
+It doesn't do very much, right?
+
+07:10.120 --> 07:12.520
+It's just it's making a fake component.
+
+07:12.520 --> 07:16.240
+It's rendering it once, and then it's giving stuff out of it.
+
+07:16.240 --> 07:18.080
+That's all that this thing does for you.
+
+07:18.080 --> 07:21.400
+But we're going to make this so much simpler now.
+
+07:21.400 --> 07:23.640
+Get rid of all this just garbage.
+
+07:23.640 --> 07:24.520
+Get pizza of the day.
+
+07:24.520 --> 07:26.120
+No one likes that.
+
+07:26.120 --> 07:32.440
+And we're going to get this function here called render hook from react.
+
+07:32.440 --> 07:37.440
+So instead of render, we want render hook like this.
+
+07:37.440 --> 07:51.840
+And then what we want instead is on this line, we're going to say const result equals render hook.
+
+07:51.840 --> 08:01.160
+And you give it a function to call use pizza of the day like this.
+
+08:01.160 --> 08:09.400
+And then we're going to expect result dot current to be null.
+
+08:09.400 --> 08:12.560
+It's got a lot more succinct, right?
+
+08:12.560 --> 08:14.640
+This looks a little strange, right?
+
+08:14.640 --> 08:19.520
+But at the same time, it's very like, you know, way less code that we have to write.
+
+08:19.520 --> 08:22.920
+All this is doing is this is creating a fake component underneath the hood.
+
+08:22.920 --> 08:27.120
+And then it calls this function, which is going to call our hook for us.
+
+08:27.120 --> 08:31.520
+And then we're just pulling out the results there.
+
+08:31.520 --> 08:35.360
+Does that make sense?
+
+08:35.360 --> 08:35.800
+Yeah.
+
+08:35.800 --> 08:40.000
+Just wondering about the formatting on line 20 with const results in curly brackets.
+
+08:40.000 --> 08:41.560
+Is that because you said pulling it out?
+
+08:41.560 --> 08:45.640
+Is it a more complex object and we're just taking something called result?
+
+08:45.640 --> 08:47.240
+OK, cool.
+
+08:47.240 --> 08:50.080
+Same thing.
+
+08:50.080 --> 08:53.200
+Yep, you're just destructuring what you get back out of it.
+
+08:53.200 --> 08:54.680
+And let's make sure I'm not telling you lies.
+
+08:54.680 --> 08:56.040
+But yeah, that passes.
+
+08:56.040 --> 08:57.080
+Pretty cool.
+
+08:57.080 --> 08:59.840
+I just love the vitest tools as well.
+
+08:59.840 --> 09:02.160
+Like, they're just so nice to work with.
+
+09:02.160 --> 09:06.960
+It's very easy to run all of your tests all at once or rerun certain ones of them.
+
+09:06.960 --> 09:13.680
+Like, let's say I only want to run certain patterns of them.
+
+09:13.760 --> 09:16.800
+You can hit F to only rerun failed tests, which I don't have any.
+
+09:16.800 --> 09:18.960
+So it's not doing that right now.
+
+09:18.960 --> 09:21.680
+You can write a filter.
+
+09:21.680 --> 09:31.440
+So let's say I just want I could put like a contact.
+
+09:31.440 --> 09:35.040
+And then it'd be like, OK, I'll only rerun that test for you.
+
+09:35.040 --> 09:37.680
+It's just a very nice tool to work with.
+
+09:37.680 --> 09:40.800
+But it just hit H to show this, and it'll show you all the different things
+
+09:40.800 --> 09:41.560
+that it can do.
+
+09:44.440 --> 09:44.920
+OK.
+
+09:47.560 --> 09:50.760
+So let's add another test.
+
+09:50.760 --> 09:55.600
+It's not super interesting that it's just getting null the first time.
+
+09:55.600 --> 10:00.640
+So let's write another test here that we make sure that it calls the right API.
+
+10:00.640 --> 10:08.640
+We're going to add another one up here under testing library called wait for.
+
+10:08.640 --> 10:11.240
+We'll use that in just a second.
+
+10:12.240 --> 10:19.480
+Test to call the API and give back the pizza of the day.
+
+10:19.480 --> 10:24.360
+Async, I can spell, I promise.
+
+10:27.920 --> 10:31.680
+OK, fetch, you can actually just grab that from the top one here as well.
+
+10:31.680 --> 10:33.760
+So I'm going to grab that.
+
+10:33.760 --> 10:36.320
+I don't even know if this is necessary, if we're being honest.
+
+10:37.080 --> 10:53.640
+const result equals render hook, same thing here, use pizza of the day.
+
+10:53.640 --> 10:59.200
+I don't know why we're giving an empty string there, you don't have to.
+
+10:59.200 --> 11:01.920
+Wait, wait for.
+
+11:02.760 --> 11:05.600
+And it's kind of the same way with the one that we were using before.
+
+11:05.600 --> 11:09.440
+We were just saying like, hey, wait till this happens and it looks like this.
+
+11:09.440 --> 11:22.360
+So we're going to say wait for expect result dot current to equal test pizza.
+
+11:22.760 --> 11:46.960
+OK, and then you just expect fetch mocker to be called with API slash pizza of the day.
+
+11:46.960 --> 11:49.560
+So let me explain a little bit more on wait for.
+
+11:49.560 --> 11:51.080
+It's kind of an interesting API.
+
+11:51.080 --> 11:56.920
+Wait for basically says, like, run this function continually until it no longer throws an error.
+
+11:57.920 --> 12:01.000
+What does expect do when it fails a test?
+
+12:01.000 --> 12:03.240
+Throws an error, right?
+
+12:03.240 --> 12:06.520
+So you're basically saying, like, run this expectation again and again and again and
+
+12:06.520 --> 12:10.600
+again until it doesn't throw an error, right?
+
+12:10.600 --> 12:13.800
+So until this test passed, essentially run this again.
+
+12:13.800 --> 12:16.280
+And this one will wait a little bit longer than our other one.
+
+12:16.280 --> 12:17.680
+I think it'll wait quite a while before.
+
+12:17.680 --> 12:19.680
+I don't say quite a while, but it's going to wait a little bit longer than our other
+
+12:19.680 --> 12:20.680
+one.
+
+12:21.280 --> 12:25.280
+I don't say quite a while, but several seconds before it actually ends up failing.
+
+12:25.280 --> 12:26.480
+So let's see how we did here.
+
+12:26.480 --> 12:35.640
+It did work, but let's just, you know, if you did this, it should wait a while.
+
+12:35.640 --> 12:42.160
+Yeah, I mean, it's like two seconds there at that time, but there you go.
+
+12:42.160 --> 12:44.640
+Wait for is quite nice as well.
+
+12:44.640 --> 12:48.800
+Now, like, this is a pretty well-tested little hook, right?
+
+12:48.920 --> 12:52.960
+We can now be pretty confident in using this all over our code base that, like, at least
+
+12:52.960 --> 12:56.760
+with null and with proper data, it's going to work, right?
+
+12:56.760 --> 12:57.760
+So I like that.
+
+12:57.760 --> 13:00.560
+You might need to test, like, an error case, like what happens if pizza of the day doesn't
+
+13:00.560 --> 13:02.720
+come back with something?
+
+13:02.720 --> 13:05.040
+Or what if there isn't one for that day or something like that?
+
+13:05.040 --> 13:11.200
+You might have to add some of those edge cases, but at least the happy paths are all covered.
+
+13:11.200 --> 13:12.800
+The happy pizzas, as one might say.
+

@@ -1,0 +1,612 @@
+WEBVTT
+
+
+00:00.000 --> 00:03.600
+Bienvenue dans l'introduction complète de React.
+
+00:03.600 --> 00:07.300
+Je m'appelle Brian Holt. Je suis très heureux d'être ici.
+
+00:07.300 --> 00:10.400
+Et nous allons apprendre à faire du React aujourd'hui.
+
+00:10.400 --> 00:13.200
+Celui-ci est entièrement reconstruit à partir du V8,
+
+00:13.200 --> 00:16.100
+donc ça va être très amusant.
+
+00:16.100 --> 00:20.100
+Alors aujourd'hui, toi et moi allons construire
+
+00:20.100 --> 00:24.800
+une application de livraison de pizza, Padre Gino's.
+
+00:24.800 --> 00:28.100
+Je reconnais que Padre est bien espagnol et non italien,
+
+00:28.300 --> 00:31.300
+mais ça m'a amusé quand le créateur me l'a envoyé,
+
+00:31.300 --> 00:33.700
+donc je l'ai gardé.
+
+00:33.700 --> 00:35.300
+Il va donc y avoir une pizza du jour.
+
+00:35.300 --> 00:39.100
+Il y aura un panier, des commandes passées,
+
+00:39.100 --> 00:42.600
+un tas de choses vraiment sympas que nous allons faire aujourd'hui.
+
+00:42.600 --> 00:46.400
+Alors allons-y.
+
+00:46.400 --> 00:52.900
+Tout d'abord, je veux que vous vous rendiez sur React-v9.holt.courses.
+
+00:52.900 --> 00:57.300
+Cela devrait vous amener ici.
+
+00:57.300 --> 00:59.300
+Et vous voyez ici, j'ai deux ordinateurs.
+
+00:59.300 --> 01:02.000
+Littéralement, ce sont mes notes que j'ai ici,
+
+01:02.000 --> 01:04.500
+mais je les partage avec tout le monde.
+
+01:04.500 --> 01:06.400
+Ce sont des sources ouvertes. Ceux-ci sont gratuits.
+
+01:06.400 --> 01:11.400
+N'hésitez pas à les partager avec votre équipe ou avec vos amis.
+
+01:11.400 --> 01:12.600
+C'est tout à fait correct.
+
+01:12.600 --> 01:16.600
+Il est prévu que cela le rende partageable.
+
+01:16.600 --> 01:20.700
+Alors juste pour vous dire un peu comment le cours est structuré,
+
+01:20.700 --> 01:23.300
+vous verrez ici que nous avons ici la section intitulée Bienvenue,
+
+01:23.300 --> 01:26.300
+et nous avons la leçon appelée Intro.
+
+01:26.300 --> 01:29.600
+Et vous verrez que c'est également ici, en haut à droite.
+
+01:29.600 --> 01:33.000
+Donc si jamais vous vous perdez et que vous suivez ici,
+
+01:33.000 --> 01:35.500
+vous pouvez toujours simplement regarder le fil d'Ariane ici
+
+01:35.500 --> 01:38.500
+pour savoir où je suis.
+
+01:38.500 --> 01:43.200
+D'accord. Encore une fois, vous n’avez pas besoin d’avoir lu ou regardé la V8.
+
+01:43.200 --> 01:47.900
+Ce n'est que la neuvième itération de ce cours.
+
+01:47.900 --> 01:50.600
+Alors gardez cela à l’esprit. Vous pouvez commencer ici.
+
+01:50.600 --> 01:52.900
+C'est si vous apprenez React pour la première fois
+
+01:52.900 --> 01:55.400
+que vous êtes au bon endroit.
+
+01:55.400 --> 01:58.000
+Si vous perfectionnez également vos compétences React,
+
+01:58.000 --> 01:59.400
+vous êtes également au bon endroit.
+
+01:59.400 --> 02:01.400
+Parlons donc simplement de la façon dont je souhaite vous enseigner ce cours.
+
+02:01.400 --> 02:03.500
+Je suis un professeur de premiers principes.
+
+02:03.500 --> 02:06.200
+C'est juste le style qui me parle,
+
+02:06.200 --> 02:08.800
+et c'est donc la façon dont j'essaie d'enseigner aux autres.
+
+02:08.800 --> 02:12.500
+L'idée étant là, nous allons commencer par écrire React sans outils.
+
+02:12.500 --> 02:16.500
+Ce sera juste comme une balise de script sur une page HTML.
+
+02:16.500 --> 02:18.700
+Et puis nous allons ajouter des outils petit à petit au fur et à mesure,
+
+02:18.700 --> 02:21.700
+alors que nous nous heurtons à des barrières de complexité.
+
+02:21.800 --> 02:25.800
+Je fais cela parce que si vous accédez directement à l'ensemble d'outils complet,
+
+02:25.800 --> 02:28.300
+vous, un, ne comprenez pas ce qui se passe sous le capot.
+
+02:28.300 --> 02:31.000
+Cela rend le débogage difficile et vous apprenez à en vouloir à vos outils
+
+02:31.000 --> 02:36.300
+car les outils sont complexes, mais ils ajoutent également de la facilité.
+
+02:36.300 --> 02:38.500
+Et si vous obtenez juste la facilité et que vous ne comprenez pas la complexité
+
+02:38.500 --> 02:44.600
+qu'il résout, vous n'appréciez pas l'outil pour la complexité qu'il ajoute.
+
+02:44.600 --> 02:46.200
+Voilà donc ma méthodologie.
+
+02:46.200 --> 02:48.600
+Si tu ne l'aimes pas, tu es toujours coincé dans cette balade avec moi.
+
+02:48.600 --> 02:52.200
+Alors supportez-moi.
+
+02:52.200 --> 02:53.700
+A qui s'adresse ce cours ?
+
+02:53.700 --> 02:56.000
+J'espère que c'est pour toi.
+
+02:56.000 --> 03:01.900
+Mais c'est pour les personnes qui cherchent à se lancer dans React ou à approfondir les compétences React.
+
+03:01.900 --> 03:05.700
+Cela ne devrait probablement pas être la première fois que vous écrivez du JavaScript.
+
+03:05.700 --> 03:10.300
+Si c'est le cas, il existe d'autres excellents cours sur les maîtres front-end.
+
+03:10.300 --> 03:11.600
+Il y en a de Will Sentence.
+
+03:11.600 --> 03:12.600
+Il y en a un de moi.
+
+03:12.600 --> 03:16.400
+Il y en a quelques-uns très bons qui vous permettront d'atteindre ce genre de vitesse.
+
+03:16.400 --> 03:20.000
+Mais encore une fois, si vous venez, je ne sais pas, de Ruby ou quelque chose comme ça,
+
+03:20.000 --> 03:22.200
+et tu es vraiment doué pour ça et c'est ton premier JavaScript,
+
+03:22.200 --> 03:23.700
+vous continuerez probablement OK.
+
+03:23.700 --> 03:29.400
+Alors YOLO et bonne chance, c'est ce que je dirais à cela.
+
+03:29.400 --> 03:32.600
+Node, aucune expérience Node.js n'est nécessaire.
+
+03:32.600 --> 03:36.500
+Nous allons utiliser un peu Node dans le cadre du processus de build,
+
+03:36.500 --> 03:43.000
+mais nous n'écrirons aucun Node.js directement dans ce cours.
+
+03:43.000 --> 03:44.800
+OK, qui suis-je ?
+
+03:44.900 --> 03:48.500
+Je suis ce beau gentleman que vous voyez là-haut.
+
+03:48.500 --> 03:49.300
+Donc je m'appelle Brian.
+
+03:49.300 --> 03:52.700
+J'enseigne React et j'écris React depuis très longtemps.
+
+03:52.700 --> 03:57.500
+Mon titre de gloire est que j'ai lancé le premier code React de Reddit.
+
+03:57.500 --> 04:02.400
+Vous pouvez voir que ce tweet est daté de 2014.
+
+04:02.400 --> 04:05.400
+Je veux dire, pour faire court, l'un des développeurs dit :
+
+04:05.400 --> 04:06.700
+hé, ce truc de React a l'air intéressant.
+
+04:06.700 --> 04:09.200
+C'est comme si, non, je ne voulais pas vraiment écrire du HTML sur mon JavaScript.
+
+04:09.200 --> 04:10.900
+Cela semble être une mauvaise idée.
+
+04:10.900 --> 04:12.600
+Et puis je l’ai écrit et ça a fini par être génial.
+
+04:12.600 --> 04:15.300
+Nous avons donc fini par l'expédier sur Reddit.
+
+04:15.300 --> 04:18.700
+Cette base de code s'est finalement transformée en le frontal React moderne,
+
+04:18.700 --> 04:20.200
+ce qui est une histoire plutôt amusante.
+
+04:22.700 --> 04:24.700
+J'ai écrit React dans diverses grandes entreprises.
+
+04:24.700 --> 04:30.100
+Je l'ai expédié sur Netflix, sur LinkedIn, certainement sur Reddit,
+
+04:30.100 --> 04:34.300
+puis diverses autres sociétés depuis lors également.
+
+04:34.300 --> 04:38.700
+Je travaille actuellement dans cette entreprise appelée Neon, une entreprise plutôt cool,
+
+04:38.800 --> 04:42.900
+ça vaut le détour si vous aimez Postgres.
+
+04:42.900 --> 04:49.300
+Je suis chef de produit et j'ai également travaillé chez Snowflake, Microsoft,
+
+04:49.300 --> 04:53.500
+les autres sociétés que j'ai mentionnées, d'autres trucs amusants aussi.
+
+04:53.500 --> 04:57.200
+J'ai tout fait, du poste de vice-président du produit au développeur, en passant par l'ingénieur du personnel,
+
+04:57.200 --> 04:58.100
+au responsable technique.
+
+04:58.100 --> 05:02.700
+J'ai en quelque sorte parcouru toute la pile ici.
+
+05:02.700 --> 05:05.000
+Quand je ne travaille pas ou n'enseigne pas, tu me trouveras avec ma femme
+
+05:05.000 --> 05:08.200
+et mon fils et ma fille qui va bientôt arriver.
+
+05:08.200 --> 05:13.000
+J'ai vécu à Seattle ces six dernières années, mais je déménage actuellement à Sacramento,
+
+05:13.000 --> 05:15.100
+surtout pour pouvoir faire du snowboard à Tahoe.
+
+05:15.100 --> 05:19.100
+C'est environ 90% de la raison.
+
+05:19.100 --> 05:20.900
+N'hésitez pas à me rattraper.
+
+05:20.900 --> 05:23.200
+Ce sont mes réseaux sociaux ici.
+
+05:23.200 --> 05:24.800
+Je pense qu'ils sont également sur le pied de page.
+
+05:24.800 --> 05:27.200
+Je vais vous dire que je suis horrible à répondre aux DM,
+
+05:27.200 --> 05:30.300
+mais s'il vous plaît, connectez-vous avec moi.
+
+05:30.300 --> 05:34.500
+J'ai donc mis une petite note ici indiquant où déposer les problèmes.
+
+05:34.600 --> 05:39.100
+Si vous rencontrez un problème avec ce cours, veuillez signaler un problème sur le dépôt
+
+05:39.100 --> 05:40.100
+par opposition à DM moi.
+
+05:40.100 --> 05:43.000
+Comme ça tout le monde pourra venir le voir et on pourra répondre à la question
+
+05:43.000 --> 05:44.500
+et je peux le savoir et le réparer.
+
+05:44.500 --> 05:48.100
+S'il entre dans les DM et qu'il meurt dans les DM et que personne ne peut le retrouver plus tard.
+
+05:48.100 --> 05:53.400
+C'est pourquoi je pousse en quelque sorte les gens à signaler des problèmes ou à tirer des demandes.
+
+05:53.400 --> 05:58.100
+C'est donc quelque chose que vous devriez faire.
+
+05:58.100 --> 05:59.700
+Alors, comment fonctionne ce dépôt.
+
+05:59.700 --> 06:02.300
+Il existe donc un dépôt pour la classe dans laquelle vous êtes actuellement.
+
+06:02.300 --> 06:05.600
+Si vous avez besoin de corriger les notes ici, tout ici est en leçons, n'est-ce pas ?
+
+06:05.600 --> 06:08.700
+Donc tout est organisé et un peu comme vous le voyez là-bas.
+
+06:08.700 --> 06:12.400
+Et puis le projet sur lequel vous travaillez est ce dépôt,
+
+06:12.400 --> 06:14.500
+que j'ai ici ouvert également.
+
+06:14.500 --> 06:17.900
+Cette introduction complète au projet React v9.
+
+06:17.900 --> 06:21.900
+S'il vous plaît, allez cloner ceci si vous ne l'avez pas déjà fait.
+
+06:21.900 --> 06:23.300
+Nous allons l'utiliser un peu.
+
+06:23.300 --> 06:28.100
+Et surtout, l'API est ici et j'y reviendrai.
+
+06:28.100 --> 06:32.200
+Mais s'il vous plaît déjà, si vous ne l'avez pas cloné, faites-le.
+
+06:32.200 --> 06:37.300
+Mais vous pouvez voir que cela va dans l’ordre de 0 à 17 ?
+
+06:37.300 --> 06:39.100
+Ouais, je suis allé à 17 ici.
+
+06:39.100 --> 06:44.200
+Ce sont des instantanés à différents moments du cours qui ressemblent à des étapes complètes, n'est-ce pas ?
+
+06:44.200 --> 06:46.100
+Donc si vous allez en 0 6, n'est-ce pas ?
+
+06:46.100 --> 06:50.300
+C'est comme un instantané de ce à quoi devrait ressembler la base de code à ce stade.
+
+06:50.300 --> 06:54.000
+Donc, si quelque chose est cassé ou si vous voulez comparer ce que vous avez avec ce que j'ai
+
+06:54.000 --> 06:56.500
+ou vous voulez juste aimer sauter au milieu du parcours,
+
+06:56.500 --> 07:02.000
+vous pouvez simplement y accéder, exécuter npm install npm run dev et tout devrait fonctionner.
+
+07:02.000 --> 07:07.700
+Et bien sûr, pour caresser mon ego fragile, veuillez mettre ce repo en vedette.
+
+07:07.700 --> 07:08.700
+Cliquez ici.
+
+07:08.700 --> 07:10.800
+Nous allons commencer par là.
+
+07:10.800 --> 07:11.700
+Ça me fait du bien.
+
+07:11.700 --> 07:18.300
+Dans quelle mesure ce cours s'appuiera-t-il sur les fonctionnalités spécifiques de React 19 ?
+
+07:18.300 --> 07:20.800
+RSC et crochets et etc.
+
+07:20.800 --> 07:21.500
+Bonne question.
+
+07:21.500 --> 07:23.500
+Alors, jusqu’où allons-nous dépasser la réaction 19 ?
+
+07:23.600 --> 07:28.500
+Donc aujourd'hui, tout au long du cours, nous allons utiliser la version 18.2.
+
+07:28.500 --> 07:31.800
+Mais vous voyez à la fin ici, j'ai la suite.
+
+07:31.800 --> 07:37.900
+Et j'ai toute une section sur des trucs sympas à venir pour 19 et dont j'en suis presque sûr qu'elle sera pour l'essentiel stable.
+
+07:37.900 --> 07:46.400
+Et puis, quand nous ferons une réaction intermédiaire v6, tout sera réaction 19, comme
+
+07:46.400 --> 07:52.300
+plus précisément, ce cours React Complete Intro to React concerne la réaction côté client.
+
+07:52.300 --> 07:53.800
+Nous ne faisons donc aucun travail sur les nœuds aujourd'hui.
+
+07:53.800 --> 07:56.100
+Nous ne faisons aucun composant de serveur React.
+
+07:56.100 --> 07:59.100
+Tout cela est sauvegardé pour une réaction intermédiaire.
+
+07:59.100 --> 08:06.600
+Quelle est votre opinion sur le fait que l'équipe React ne recommande plus Plain React en utilisant Next JS ?
+
+08:06.600 --> 08:08.200
+C'est une bonne question.
+
+08:08.200 --> 08:12.700
+Il y a eu une certaine controverse à ce sujet et nous y reviendrons probablement davantage tout au long de la journée.
+
+08:12.700 --> 08:16.600
+Mais il y a eu une certaine controverse autour du fait que les documents de réaction vont tout droit.
+
+08:16.600 --> 08:19.500
+C'était comme simplement utiliser remix ou next ou quelque chose comme ça.
+
+08:19.500 --> 08:22.600
+Et ils ont en quelque sorte dissuadé les gens d'utiliser la réaction côté client.
+
+08:22.600 --> 08:24.400
+Je pense que c'est personnellement extrêmement erroné.
+
+08:24.400 --> 08:29.800
+J'écris des réactions côté client depuis une décennie et je me suis bien débrouillé.
+
+08:29.800 --> 08:39.100
+Et les sites sur lesquels j'ai travaillé ont été très rapides et très réactifs, sans aucun concept de composants côté serveur de réaction.
+
+08:39.100 --> 08:47.200
+Je pense que l'équipe de réaction résout des problèmes d'entreprise massifs comme des problèmes de taille Facebook,
+
+08:47.200 --> 08:52.600
+Des problèmes de taille Netflix, et la plupart d’entre nous n’ont pas ces problèmes, n’est-ce pas ?
+
+08:52.600 --> 08:56.800
+La réaction côté client fonctionne très bien par elle-même.
+
+08:56.800 --> 09:03.800
+Et donc je pense qu'il est 100 % viable de proposer une réaction côté client sans même avoir une idée du prochain JS.
+
+09:03.800 --> 09:06.900
+Je ne dénigre pas du tout le prochain JS, le prochain remix ou quoi que ce soit d'autre.
+
+09:06.900 --> 09:09.100
+Je pense aussi qu'ils sont extrêmement précieux pour ce qu'ils font.
+
+09:09.100 --> 09:12.600
+Mais si vous n’avez pas ce type de problèmes, vous ne devriez pas utiliser ce type d’outil.
+
+09:12.600 --> 09:15.900
+Je reçois toujours beaucoup de questions sur : hé, Brian, quel est le thème ?
+
+09:15.900 --> 09:17.500
+Ou comment avez-vous configuré cela ?
+
+09:17.500 --> 09:20.700
+Et donc j’ai juste une petite section pour que tout cela soit réglé.
+
+09:20.700 --> 09:22.700
+Croyez-moi, ce n'est en fait pas pour moi.
+
+09:22.700 --> 09:28.300
+Donc pas pour vous, car sinon je recevrai des questions sans fin du genre : Hé, Brian, quel thème utilises-tu ?
+
+09:28.300 --> 09:30.500
+C'est comme si j'utilisais simplement le dark plus par défaut.
+
+09:30.500 --> 09:31.800
+Ce n'est pas vraiment intéressant.
+
+09:31.800 --> 09:36.300
+Quoi qu'il en soit, alors s'il vous plaît.
+
+09:36.300 --> 09:39.400
+J'ai écrit le cours alors que je pense que nous sommes en fait en 2015.
+
+09:39.400 --> 09:40.900
+C'est peut-être 2016. Je ne m'en souviens pas.
+
+09:40.900 --> 09:46.400
+Mais de toute façon, 20.6, tant que vous êtes un nœud 20.6 ou supérieur, vous devriez être bon.
+
+09:46.400 --> 09:50.600
+J'ai essayé de l'exécuter avec Bun et cela a fonctionné.
+
+09:50.600 --> 09:53.800
+Je ne vais pas dire quoi que ce soit après ça.
+
+09:53.800 --> 09:54.600
+Je ne l'ai pas essayé avec Deno.
+
+09:54.600 --> 09:58.300
+Donc si vous l'avez essayé avec Deno, bonne chance.
+
+09:58.300 --> 10:01.900
+Mais cela a fonctionné avec le chignon la seule fois où je l'ai essayé.
+
+10:01.900 --> 10:05.700
+Vous pouvez donc essayer cela si vous êtes vraiment déterminé à utiliser le chignon.
+
+10:05.700 --> 10:10.800
+Mais s'il vous plaît, utilisez probablement simplement le nœud JS car vous passerez probablement un meilleur moment.
+
+10:10.800 --> 10:13.200
+Mes outils Code Visual Studio.
+
+10:13.200 --> 10:14.000
+J'avais l'habitude de travailler dessus.
+
+10:14.000 --> 10:20.500
+Je suis donc désormais obligé par serment de sang d'utiliser le code VS.
+
+10:20.500 --> 10:24.100
+Firefox, j'aime juste le fait qu'il y ait plus d'un concurrent dans le domaine des navigateurs.
+
+10:24.100 --> 10:27.100
+J'utilise donc Firefox depuis très longtemps.
+
+10:27.100 --> 10:33.500
+Et puis j'utilise l'application Terminal Dot, uniquement celle directe ou celle fournie avec Mac OS.
+
+10:33.500 --> 10:35.000
+Ce cours fonctionne sous Linux.
+
+10:35.000 --> 10:37.000
+Cela fonctionne sous Windows.
+
+10:37.000 --> 10:39.800
+Je ne vais pas trop parler de ces flux de travail.
+
+10:39.800 --> 10:42.400
+Si vous utilisez Linux, je suppose que vous savez ce que vous faites plus que moi.
+
+10:42.400 --> 10:51.000
+Et si vous êtes sous Windows, utilisez probablement simplement WSL pour simplifier beaucoup de choses.
+
+10:51.000 --> 10:56.700
+Le thème Dark plus est la police Mona Lisa avec des ligatures installées.
+
+10:56.700 --> 10:59.800
+J'ai laissé un tas de notes là-bas si vous voulez suivre cela.
+
+10:59.800 --> 11:02.800
+Mona Lisa n'est pas gratuite, mais je regarde une police toute la journée.
+
+11:02.800 --> 11:05.600
+Alors j'ai pensé que j'étais d'accord pour payer pour ça.
+
+11:05.600 --> 11:12.600
+Si vous en voulez un gratuit, j'aime celui du code Cascadia de Microsoft qui implique également des ligatures.
+
+11:12.600 --> 11:16.000
+J'utilise l'extension d'icônes de code VS pour le terminal.
+
+11:16.000 --> 11:17.300
+J'utilise Zsh.
+
+11:17.300 --> 11:25.300
+J'utilise l'invite Starship du thème Dracula et la police Cascadia Code Nerd.
+
+11:25.300 --> 11:31.900
+Si vous voulez voir de quoi je parle ici, cette invite vient de Starship.
+
+11:31.900 --> 11:38.900
+Et le fait que cela puisse dire comme Node.js et des trucs comme ça, tout cela vient de la police Cascadia Code Nerd.
+
+11:38.900 --> 11:43.400
+Je vous ai donc laissé tous les liens si vous souhaitez suivre la façon dont je l'ai fait.
+
+11:43.400 --> 11:48.300
+Mais encore une fois, c'est une question tellement courante que je ressens le besoin de l'aborder en premier.
+

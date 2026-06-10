@@ -1,0 +1,216 @@
+WEBVTT
+
+
+00:00.000 --> 00:08.000
+Alors, quand souhaitez-vous utiliser un hook personnalisé au lieu de simplement créer un autre composant ?
+
+00:08.000 --> 00:16.000
+Ouais, c'est une bonne question. Ma première réponse à votre question est que les opinions sont partagées sur la question.
+
+00:16.000 --> 00:25.000
+Il n’y a donc pas de bonne réponse ici. Le côté extrême de la situation, c'est que certaines personnes que je connais diront :
+
+00:25.000 --> 00:30.000
+ne mettez jamais d'effet dans votre composant, jamais, point, fin de phrase,
+
+00:30.000 --> 00:35.000
+et que tout effet doit toujours être effectué sur un hook personnalisé.
+
+00:35.000 --> 00:43.000
+C'est un aspect de la question. Il y a une certaine validité à cela, car l'avantage des hooks personnalisés est qu'ils deviennent faciles à tester de manière isolée,
+
+00:43.000 --> 00:52.000
+par opposition à comme une partie d’un grand composant. Vous pouvez simplement tester que le hook fonctionne. Ça peut être sympa, non ?
+
+00:52.000 --> 00:57.000
+L'autre côté des gens, c'est de ne jamais écrire de hooks personnalisés, de toujours les mettre dans le composant.
+
+00:57.000 --> 01:08.000
+Je pense que cela est moins valable. Je suis probablement plutôt du côté de la plupart des effets qui devraient probablement finir dans des hooks personnalisés
+
+01:08.000 --> 01:17.000
+s'ils sont partagés ou doivent être testés, lequel de ces éléments est généralement vrai, n'est-ce pas ?
+
+01:17.000 --> 01:27.000
+Ouais. Ce qui est bien avec ce hook, c'est que pendant la section de test, nous écrirons des tests pour ce hook, vous verrez donc comment tester les hooks.
+
+01:27.000 --> 01:34.000
+Nous pouvons tester qu'il appelle l'API, qu'il utilise les bons paramètres, qu'il fait la bonne chose quand il n'y a rien,
+
+01:34.000 --> 01:45.000
+il fait ce qu'il faut quand il y a quelque chose là-bas. Cela devient très, très simple et très facile à tester.
+
+01:45.000 --> 01:50.000
+Et puis maintenant, si j'avais un, disons que j'écrivais comme le tableau de bord d'administration pour ça,
+
+01:50.000 --> 01:58.000
+et j'avais besoin d'aller chercher la pizza du jour pour pouvoir afficher, vous savez, des statistiques sur le nombre de pizzas du jour que nous avons pu pousser,
+
+01:58.000 --> 02:06.000
+Je pourrais simplement réutiliser ce crochet, n'est-ce pas ? Ouais. Et cela me le rend immédiatement. Je n'ai pas besoin de réécrire la logique.
+
+02:06.000 --> 02:14.000
+J’espère donc que cela délimite la zone où devrait se situer votre opinion, n’est-ce pas ? Quelque part là-dedans.
+
+02:14.000 --> 02:21.000
+Dans ce cas précis où nous n'utilisons que la pizza du jour dans ce même endroit, je vais mettre le composant,
+
+02:21.000 --> 02:32.000
+parce que ce n'est pas un hook personnalisé assez intéressant pour que j'essaye de l'encapsuler ou de le tester en enfer et vice-versa, n'est-ce pas ?
+
+02:32.000 --> 02:40.000
+Je suis sûr que vous avez tous entendu parler du code sec, n'est-ce pas ? Ne vous répétez pas. Je suis un adepte du code mouillé.
+
+02:40.000 --> 02:48.000
+Écrivez tout trois fois. La troisième fois que je vais écrire, comme copier un morceau de logique, je me dis, d'accord, je devrais peut-être mettre cela dans un module et le réutiliser, n'est-ce pas ?
+
+02:48.000 --> 02:55.000
+Pour la première fois, absolument pas. La deuxième fois pourrait être un hasard. La troisième fois, c'est probablement comme le code d'une application que je dois tester.
+
+02:55.000 --> 03:00.000
+C'est un peu ma méthodologie, mais à vous de décider.
+
+03:00.000 --> 03:07.000
+Disons que l'appel réseau met beaucoup de temps à répondre. Cela entraînera-t-il un retard dans le rendu du hook personnalisé,
+
+03:07.000 --> 03:12.000
+ou renverra-t-il d'abord undéfini, puis lorsqu'il aura une valeur, renverra-t-il la valeur mise à jour ?
+
+03:12.000 --> 03:22.000
+Bonne question. Passons en revue. Pizza du jour. Une fois cette section terminée, je ne dirai plus jamais la pizza du jour.
+
+03:22.000 --> 03:27.000
+pour mémoire, jusqu'à ce que nous arrivions à la section des tests, puis je suis de retour sur le poney.
+
+03:27.000 --> 03:38.000
+J'ai cette fonction ici, qui appelle ceci. Ce n'est pas une attente ou quelque chose comme ça. Il s'agit simplement d'appeler directement la fonction.
+
+03:38.000 --> 03:49.000
+Cela n'attend pas. C'est la synchronisation. Cela va appeler ça. Cela va entrer ici, et cela va définir cela comme nul, n'est-ce pas ?
+
+03:49.000 --> 03:56.000
+Il va ensuite planifier l'exécution d'un effet. Gardez à l’esprit que les rendus se terminent avant que leurs effets ne se produisent.
+
+03:56.000 --> 04:01.000
+Votre premier rendu sera toujours effectué au moment où l'effet sera réellement exécuté.
+
+04:01.000 --> 04:11.000
+Cet effet, cette fonction ici, est prévu pour s'exécuter, mais ne s'exécute pas encore. Qu'est-ce qui est renvoyé lors du premier rendu ?
+
+04:12.000 --> 04:20.000
+Nul. C'est la valeur par défaut. Il s'agit de la pizza du jour pour le premier rendu avant l'exécution de cet effet.
+
+04:20.000 --> 04:32.000
+Ce retour ici va être nul, ce qui signifie ici qu'il est nul. Que se passe-t-il lorsque nous atteignons ce bloc avec null ?
+
+04:33.000 --> 04:39.000
+Il va simplement revenir au chargement. Ça revient, non ? Il s’agit d’un modèle de retour anticipé, n’est-ce pas ?
+
+04:39.000 --> 04:45.000
+Et donc rien de tout cela n’est exécuté. Cela renvoie juste cela en circuits courts ici.
+
+04:45.000 --> 04:51.000
+Maintenant, l'effet fonctionne. Nous revenons de l'API. Le set est appelé. Ceci est à nouveau rendu.
+
+04:51.000 --> 04:58.000
+Il s’agit désormais en réalité d’un objet renvoyé par l’API. Est-ce nul ? Non.
+
+04:58.000 --> 05:01.000
+Donc tout cela va être rendu.
+
+05:03.000 --> 05:12.000
+Donc, je veux dire, faisons en sorte que cela devienne angoissant. J'attendrai 10 secondes.
+
+05:14.000 --> 05:18.000
+Très bien, alors oui, je l'ai eu comme copilote.
+
+05:19.000 --> 05:25.000
+Vous voyez ce tout petit chargement ici ? Je suis très doué pour charger des spinners, comme vous pouvez le voir.
+
+05:26.000 --> 05:29.000
+Mais rien n'est rendu là-bas, et puis finalement cela apparaît.
+
+05:29.000 --> 05:36.000
+Avez-vous utilisé un u minuscule dans le nom de fichier du hook personnalisé car il s'agit d'une convention de dénomination ?
+
+05:36.000 --> 05:44.000
+Ouais, alors j'aime utiliser la pizza du jour ici. Ouais, parlons du nom en général.
+
+05:44.000 --> 05:48.000
+C'est un u minuscule parce que ce n'est pas un composant, n'est-ce pas ? Qu'est-ce que ça revient ?
+
+05:49.000 --> 05:54.000
+Cela renvoie un hook, qui n'est pas rendu en soi dans React.
+
+05:54.000 --> 06:01.000
+Cela fait partie d'une partie composable de ce qu'un composant peut utiliser pour obtenir des données.
+
+06:01.000 --> 06:08.000
+Alors peut-être dites-le différemment. Seuls les composants ont pour convention d'être nommés en majuscules.
+
+06:08.000 --> 06:12.000
+Et juste pour être très clair, les noms de fichiers n’ont pas vraiment d’importance.
+
+06:12.000 --> 06:17.000
+Vous verrez des gens appeler cela comme pizza.jsx comme ça.
+
+06:24.000 --> 06:29.000
+Parce que, comme Linux, les systèmes de fichiers sont insensibles et la plupart de nos produits fonctionnent toujours sous Linux, n'est-ce pas ?
+
+06:29.000 --> 06:35.000
+Vous pouvez donc rencontrer des problèmes en mettant en majuscules des choses qui me sont arrivées une fois sur Netflix.
+
+06:37.000 --> 06:39.000
+Cela n'a généralement pas d'importance. Habituellement, je n’ai pas à m’en soucier.
+
+06:39.000 --> 06:48.000
+Habituellement, la convention consistant à mettre des majuscules ici m'est utile en un coup d'œil pour dire qu'il s'agit d'un composant et qu'il exporte un composant.
+
+06:50.000 --> 06:56.000
+Donc, une autre façon de dire que ce n'est pas un composant et que tout ce qui n'est pas un composant, je porte toujours un nom en minuscules.
+
+06:56.000 --> 06:59.000
+En réalité, seuls les composants sont en majuscules.
+
+07:01.000 --> 07:07.000
+Et puis nous avons parlé plus tôt du fait que c'est important pour le nom de la chose.
+
+07:07.000 --> 07:14.000
+Donc, en regardant l'ordre ici, cette pizza doit être en majuscule P pour cela.
+
+07:15.000 --> 07:18.000
+Maintenant, la prochaine chose à dire est l'utilisation.
+
+07:20.000 --> 07:23.000
+Les crochets sont utiles devant. C'est une convention.
+
+07:24.000 --> 07:29.000
+Cela ne va pas nécessairement casser React, mais si vous utilisez use dans votre nom,
+
+07:29.000 --> 07:35.000
+alors tout le peluchage React détectera les erreurs que vous feriez potentiellement avec un crochet, n'est-ce pas ?
+
+07:35.000 --> 07:39.000
+Nous ne l'avons donc pas mis ici. En fait, je ne sais même pas si je le fais ici.
+
+07:42.000 --> 07:54.000
+Si nous allons manger une pizza ici aujourd'hui et si je dis quelque chose comme si c'est vrai ou quelque chose comme ça, est-ce que ça va comprendre ça ?
+
+07:56.000 --> 07:59.000
+C’est le cas. Regardez ça. Non, tant pis. Ce n'est pas le cas.
+
+07:59.000 --> 08:11.000
+Si j'avais les règles de charpie ES des crochets React ici, cela comprendrait cela car même si la pizza du jour n'est pas son propre type de crochet,
+
+08:11.000 --> 08:16.000
+il sait que c'est comme si cela commençait par l'utilisation et donc je sais que cela ne peut pas être dans une instruction if.
+
+08:19.000 --> 08:22.000
+Au-delà de cela, c'est très facile à voir d'un seul coup d'œil.
+
+08:22.000 --> 08:28.000
+Utilisez la pizza du jour, bien évident qu'il s'agit d'un crochet personnalisé, non ?
+
+08:29.000 --> 08:36.000
+Ainsi, même si vous n'êtes pas obligé de le faire, en tant que futur collègue, vous devez le faire.
+

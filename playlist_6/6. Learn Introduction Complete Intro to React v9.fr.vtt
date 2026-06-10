@@ -1,0 +1,183 @@
+WEBVTT
+
+
+00:00.000 --> 00:04.380
+Surtout, je veux que vous fassiez un gitignore à ce stade du cours.
+
+00:04.380 --> 00:10.180
+Donc git est évidemment notre suivi des sources pour notre projet.
+
+00:10.180 --> 00:13.480
+Et surtout, je veux juste que vous créiez un fichier gitignore pour des trucs.
+
+00:13.480 --> 00:18.540
+Cela aidera vraiment VS Code à être plus rapide pour un tas de choses, car VS Code
+
+00:18.540 --> 00:22.260
+dépend fortement de l'utilité de votre gitignore.
+
+00:22.260 --> 00:24.100
+Et je veux juste que tu dises que c'est bien.
+
+00:24.100 --> 00:28.480
+Tous mes projets, même s'ils n'arrivent pas sur GitHub, j'ai toujours l'habitude de m'engager
+
+00:28.480 --> 00:30.840
+et le suivi et tout ce genre de choses.
+
+00:30.840 --> 00:32.160
+Et la majeure partie finit sur git.
+
+00:32.160 --> 00:36.080
+De toute façon, j'ai tellement de déchets privés sur GitHub.
+
+00:36.080 --> 00:43.240
+Quoi qu'il en soit, la première chose que vous ignorez toujours dans votre gitignore, surtout si vous êtes
+
+00:43.240 --> 00:46.580
+sur votre Mac, et surtout si vous n'êtes pas sur Mac, se trouve DSStore.
+
+00:46.580 --> 00:48.440
+Cela apparaît dans tant de projets.
+
+00:48.440 --> 00:49.440
+C'est hilarant.
+
+00:49.440 --> 00:52.640
+Il s'agit d'un fichier généré automatiquement par macOS.
+
+00:53.640 --> 01:01.480
+Autant que je sache, si vous faites simplement glisser un fichier ici, c'est le positionnement dans la fenêtre macOS.
+
+01:01.480 --> 01:03.080
+Et c'est pourquoi il se trouve dans DSStore.
+
+01:03.080 --> 01:08.720
+Il se peut que ce soit autre chose aussi, mais de toute façon, c'est pourquoi DSStore se retrouve dans chaque fichier.
+
+01:08.720 --> 01:13.560
+Les modules de nœuds devraient également être ceux que vous ignorez immédiatement, n'est-ce pas ?
+
+01:13.560 --> 01:15.960
+Parce que ce sont des choses que vous ne voulez pas enregistrer, vous voulez juste installer npm
+
+01:15.960 --> 01:16.960
+à chaque fois.
+
+01:16.960 --> 01:18.560
+Avons-nous une différence là-dedans ?
+
+01:18.560 --> 01:19.560
+Je ne m'en souviens pas.
+
+01:19.560 --> 01:21.560
+Mais nous allons simplement copier ce que j'ai ici.
+
+01:22.480 --> 01:24.280
+Avons-nous un point ?
+
+01:24.280 --> 01:25.280
+Je ne m'en souviens pas non plus.
+
+01:25.280 --> 01:27.600
+Mais les fichiers .m, vous voulez toujours les ignorer.
+
+01:27.600 --> 01:30.800
+Couverture, nous en aurons une.
+
+01:30.800 --> 01:33.160
+Vous pouvez ignorer le .vscode ou non.
+
+01:33.160 --> 01:34.160
+C'est à vous de décider.
+
+01:34.160 --> 01:35.640
+J'ai tendance à l'ignorer.
+
+01:35.640 --> 01:40.000
+Ainsi, le répertoire .vscode est comme si vous souhaitiez effectuer des configurations spécifiquement pour votre
+
+01:40.000 --> 01:44.640
+projet lorsque vous l'ouvrez, il générera ce répertoire .vscode.
+
+01:44.640 --> 01:46.300
+C'est à vous de décider si vous souhaitez vérifier cela ou non.
+
+01:46.300 --> 01:51.360
+Si vous pensez qu'il est utile de partager cela avec vos collègues, enregistrez-le.
+
+01:52.160 --> 01:56.040
+Je peux penser à un exemple comme s'il s'agissait d'un projet Python, vous voulez vous assurer que tout le monde
+
+01:56.040 --> 01:59.200
+utiliser Pylance avec vos projets.
+
+01:59.200 --> 02:04.160
+Vous auriez un répertoire .vscode qui indiquerait leurs projets, veuillez installer Pylance
+
+02:04.160 --> 02:07.040
+pour eux.
+
+02:07.040 --> 02:12.320
+À toi de voir.
+
+02:12.320 --> 02:16.880
+Si vous avez besoin de plus d’instructions à ce sujet, Primogen propose certainement un cours.
+
+02:16.880 --> 02:19.160
+Tout ce que vous savez sur Git.
+
+02:19.960 --> 02:20.960
+Et aussi celui de Nina.
+
+02:20.960 --> 02:21.960
+Celui de Nina est également génial.
+
+02:21.960 --> 02:23.960
+Ouais, j'ai embauché Nina chez Reddit.
+
+02:23.960 --> 02:26.600
+Nous avons travaillé ensemble pendant longtemps, puis nous avons retravaillé ensemble chez Microsoft.
+
+02:26.600 --> 02:30.800
+La dernière chose que nous ferons est d'exécuter git init.
+
+02:30.800 --> 02:33.000
+Cela pourrait vous crier dessus.
+
+02:33.000 --> 02:34.000
+Ah non, ça va.
+
+02:34.000 --> 02:35.000
+D'accord.
+
+02:35.000 --> 02:40.880
+Cela lancera donc un projet Git vide.
+
+02:40.880 --> 02:44.640
+Même si je suis dans mon projet Git, c'est une sorte d'oignon.
+
+02:44.640 --> 02:47.080
+Il va au projet Git le plus proche.
+
+02:48.000 --> 02:50.760
+Et vous pouvez voir ici que j'ai un répertoire .git.
+
+02:50.760 --> 02:53.320
+C'est donc à vous de décider.
+
+02:53.320 --> 02:59.000
+Si vous voulez simplement le suivre dans le cadre de mon dépôt dans lequel vous étiez, c'est vrai, parce que je suis
+
+02:59.000 --> 03:04.600
+juste dans l'intro complète des projets React V9, c'est vrai, et j'ai celui de Padre Gino ici.
+
+03:04.600 --> 03:07.960
+Ou si vous voulez avoir votre propre dépôt, ceci est mon dépôt que j'ai construit, vous pouvez obtenir
+
+03:07.960 --> 03:09.960
+dedans là-dedans et vous pouvez le suivre dans le cadre de cela.
+
+03:09.960 --> 03:10.960
+Cela dépend entièrement de vous.
+

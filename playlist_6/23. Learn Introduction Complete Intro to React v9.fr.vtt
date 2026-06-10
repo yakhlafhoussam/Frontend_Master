@@ -1,0 +1,846 @@
+WEBVTT
+
+
+00:00.000 --> 00:01.320
+Contexte.
+
+00:03.600 --> 00:06.800
+Le contexte est un, j'enseigne cela intentionnellement assez tard
+
+00:06.800 --> 00:08.400
+en cours, ou en fin de compte
+
+00:08.400 --> 00:10.640
+des fondamentaux de React.
+
+00:11.960 --> 00:14.960
+C'est un outil puissant,
+
+00:14.960 --> 00:17.760
+et je vois les nouveaux développeurs React se laisser tenter
+
+00:17.760 --> 00:18.840
+pour l'utiliser partout
+
+00:18.840 --> 00:22.160
+car cela simplifie la partie écriture de React,
+
+00:22.160 --> 00:23.840
+et je dirai que cela complique grandement
+
+00:23.840 --> 00:25.600
+la partie maintenance de React.
+
+00:26.600 --> 00:28.920
+C'est une autre façon pour moi de dire, je vous en supplie,
+
+00:29.000 --> 00:30.400
+en tant que vos futurs collègues, peut-être,
+
+00:30.400 --> 00:33.720
+vous seriez très économe avec votre utilisation du contexte.
+
+00:33.720 --> 00:35.720
+Utilisez-le, vous savez, avec une grande puissance
+
+00:35.720 --> 00:37.040
+vient une grande responsabilité.
+
+00:37.040 --> 00:39.440
+Tu sais, c'est, je pense que je suis la première personne
+
+00:39.440 --> 00:40.320
+jamais dire ça.
+
+00:44.160 --> 00:46.800
+Non, c'est juste que les accessoires viennent de parent à enfant,
+
+00:46.800 --> 00:49.400
+parent à enfant, et cela devient très explicite,
+
+00:49.400 --> 00:51.080
+le flux de données de votre application.
+
+00:51.080 --> 00:54.040
+Le contexte, c'est comme pouvoir transférer des données dans un portail,
+
+00:54.040 --> 00:56.880
+puis ailleurs, pouvoir recevoir des données
+
+00:56.880 --> 00:58.120
+hors du portail.
+
+00:58.120 --> 01:01.240
+Et donc si vous avez, vous savez, cinq composants
+
+01:01.240 --> 01:03.240
+qui transmettent des données du parent à l'enfant,
+
+01:03.240 --> 01:05.720
+parent à enfant, cela peut devenir un peu ennuyeux.
+
+01:05.720 --> 01:09.280
+Ce problème s'appelle le problème du forage d'hélices.
+
+01:11.400 --> 01:14.200
+C'est tentant d'utiliser le contexte ici, n'est-ce pas ?
+
+01:16.440 --> 01:21.120
+Je vais dire, à moins que vous n'utilisiez ce contexte
+
+01:21.120 --> 01:25.360
+à plusieurs endroits, cet état à plusieurs endroits différents,
+
+01:25.360 --> 01:27.360
+il suffit de s'occuper du forage des hélices.
+
+01:27.400 --> 01:29.440
+Je sais que c'est ennuyeux, mais c'est utile.
+
+01:30.680 --> 01:32.960
+Mais il y a certaines choses qui sont légitimement
+
+01:32.960 --> 01:35.440
+ce que j'appellerais l'état au niveau de l'application.
+
+01:35.440 --> 01:37.560
+Un très bon exemple serait celui d’un utilisateur, n’est-ce pas ?
+
+01:37.560 --> 01:39.720
+Ainsi, si quelqu'un se connecte à votre site Web,
+
+01:40.560 --> 01:42.800
+cela n'affecte pas seulement une partie de votre site Web,
+
+01:42.800 --> 01:45.320
+cela affecte tout sur votre site Web, n'est-ce pas ?
+
+01:45.320 --> 01:47.640
+Vous montrez à l'utilisateur ses informations,
+
+01:47.640 --> 01:49.520
+leurs informations de paiement, leur adresse, n'est-ce pas ?
+
+01:49.520 --> 01:51.800
+Et tout cela vient du même morceau
+
+01:51.800 --> 01:53.560
+des informations sur les utilisateurs.
+
+01:53.560 --> 01:58.480
+Vous auriez donc pu, comme app.jsx, indiquer votre utilisateur, n'est-ce pas ?
+
+01:58.480 --> 02:00.400
+Et puis transmettez cela dans tout.
+
+02:01.560 --> 02:03.800
+Cela ne me semble pas être une bonne idée, n'est-ce pas ?
+
+02:03.800 --> 02:05.760
+Je pense qu'il vaut mieux dire, hé,
+
+02:05.760 --> 02:09.000
+nous avons cet état au niveau de l'application qui est l'utilisateur,
+
+02:09.000 --> 02:12.560
+et n'importe qui peut alors sortir du contexte qui est l'utilisateur.
+
+02:13.640 --> 02:15.440
+Est-ce que cela a du sens ?
+
+02:15.440 --> 02:17.960
+Vous recherchez donc ce que j'appelle l'état au niveau de l'application
+
+02:17.960 --> 02:22.000
+par opposition à un état de niveau de vue similaire ou à un état localisé similaire.
+
+02:22.000 --> 02:24.760
+C'est là que le contexte est utile.
+
+02:24.760 --> 02:28.120
+Le thème est un autre qui revient parfois, n'est-ce pas ?
+
+02:28.120 --> 02:29.520
+Si quelqu'un change de thème,
+
+02:29.520 --> 02:32.040
+cela n'affecte pas seulement un morceau de votre code,
+
+02:32.040 --> 02:34.360
+cela affecte de nombreux éléments de votre code.
+
+02:34.360 --> 02:37.280
+Vous pouvez donc utiliser le thème comme autre élément de contexte.
+
+02:39.960 --> 02:43.200
+Beaucoup de bibliothèques de temps, donc comme React Router
+
+02:43.200 --> 02:44.840
+ou un routeur à 10 stacks, que nous allons examiner ici
+
+02:44.840 --> 02:47.720
+dans un petit moment, ceux-ci utiliseront un peu le contexte.
+
+02:47.720 --> 02:48.900
+C'est aussi fait pour ces choses-là,
+
+02:48.900 --> 02:50.040
+et tu n'as pas à te soucier de ces choses
+
+02:50.040 --> 02:52.640
+parce que c'est leur problème, pas le vôtre.
+
+02:52.640 --> 02:57.640
+Donc dans notre application ici, nous avons un en-tête,
+
+02:57.800 --> 03:01.400
+et je veux y mettre un petit indicateur similaire
+
+03:01.400 --> 03:02.560
+de ce qu'il y a dans votre panier.
+
+03:03.480 --> 03:06.360
+Et puis l'autre chose que vous pouvez dire à propos du panier
+
+03:06.360 --> 03:08.920
+être en fonction du contexte, c'est comme,
+
+03:08.920 --> 03:12.840
+si quelqu'un quitte cette page de commande,
+
+03:12.840 --> 03:15.240
+alors disons qu'il y avait une page à propos ou une page de contact,
+
+03:15.240 --> 03:17.160
+que nous allons construire ici dans une seconde.
+
+03:18.080 --> 03:19.600
+S'ils accèdent à la page de contact
+
+03:19.600 --> 03:21.780
+puis ils sont retournés à la page de commande,
+
+03:21.780 --> 03:23.280
+qu'arriverait-il au chariot ?
+
+03:26.520 --> 03:28.120
+Disparaître, n'est-ce pas ?
+
+03:28.120 --> 03:29.680
+Pourquoi?
+
+03:29.680 --> 03:34.680
+Si celui-ci est démonté, tout son état disparaît, n'est-ce pas ?
+
+03:34.720 --> 03:36.960
+Il n'est pas enregistré s'il est supprimé du DOM, n'est-ce pas ?
+
+03:36.960 --> 03:40.320
+Donc si je viens ici sur app.jsx,
+
+03:40.320 --> 03:41.520
+vous savez quoi, nous pouvons littéralement faire ça.
+
+03:41.520 --> 03:43.520
+Nous allons ajouter un tas de choses ici.
+
+03:44.720 --> 03:47.460
+Je vais juste supprimer ça, d'accord ?
+
+03:47.460 --> 03:49.240
+Je viens donc de le supprimer du DOM,
+
+03:49.880 --> 03:52.200
+ce qui reviendrait à annuler le rendu, n'est-ce pas ?
+
+03:52.200 --> 03:53.760
+Et puis je vais le rajouter.
+
+03:54.840 --> 03:56.200
+Remarquez que le panier est à nouveau vide, n'est-ce pas ?
+
+03:56.200 --> 03:58.840
+Parce qu'il a été totalement jeté.
+
+03:58.840 --> 04:00.080
+Ce serait la même chose si tu routais
+
+04:00.080 --> 04:02.840
+sur une autre page et je suis revenu.
+
+04:02.840 --> 04:06.240
+Encore une fois, notre métier est de gagner de l'argent avec la pizza,
+
+04:06.240 --> 04:07.840
+n'est-ce pas ?
+
+04:07.840 --> 04:10.600
+Nous voulons donc garder ce chariot plein, n'est-ce pas ?
+
+04:10.600 --> 04:12.760
+Gardez toujours le panier plein.
+
+04:12.760 --> 04:14.520
+C'est ce qu'ils disent, non ?
+
+04:14.520 --> 04:15.360
+Je pense que oui.
+
+04:16.360 --> 04:19.560
+Nous voulons donc conserver le panier entre les chargements de pages.
+
+04:19.560 --> 04:20.400
+C'est à cela que je veux en venir.
+
+04:20.400 --> 04:22.960
+Nous allons donc utiliser le contexte pour faire cela.
+
+04:22.960 --> 04:25.960
+Maintenant, vraiment ce que tu pourrais faire,
+
+04:25.960 --> 04:28.640
+ce qui serait probablement un modèle beaucoup plus simple pour ce faire,
+
+04:28.640 --> 04:31.240
+est-ce que vous diriez simplement, utilisez le chariot d'état juste là, n'est-ce pas ?
+
+04:31.240 --> 04:33.600
+Et transmettez-le simplement à chacun d’eux.
+
+04:33.600 --> 04:34.800
+Mais nous voulons en savoir plus sur le contexte.
+
+04:34.800 --> 04:37.000
+Je vais vous montrer comment le faire avec le contexte.
+
+04:38.240 --> 04:40.000
+Alors tout d'abord, construisons l'en-tête
+
+04:40.000 --> 04:43.280
+ça va lire à partir du panier, d'accord ?
+
+04:43.280 --> 04:47.400
+Donc nouvelle page, nous allons l'appeler header.jsx.
+
+04:48.240 --> 04:53.240
+Nous allons dire exporter l'en-tête de la fonction par défaut, d'accord ?
+
+04:57.840 --> 05:02.840
+Revenez, et nous allons mettre un système de navigation
+
+05:03.640 --> 05:05.760
+parce que nous aimons tous le balisage sémantique.
+
+05:06.800 --> 05:08.320
+Tu te souviens quand c'était vraiment quelque chose de très important
+
+05:08.320 --> 05:09.520
+et les gens seraient tous déformés
+
+05:09.520 --> 05:11.640
+à propos du balisage sémantique ?
+
+05:11.680 --> 05:14.280
+N'utilisez pas de divs, utilisez toujours des nav.
+
+05:14.280 --> 05:15.120
+Qu’est-il arrivé à ces disputes ?
+
+05:15.120 --> 05:16.960
+J'ai l'impression que nous devrions en discuter davantage.
+
+05:21.160 --> 05:24.800
+La pizza de Padre Gino, cool.
+
+05:25.680 --> 05:30.040
+Et puis nous allons dire que le nom de la classe div est égal à nav-cart.
+
+05:33.520 --> 05:37.320
+Et puis je vais mettre un emoji ici sur un chariot.
+
+05:38.320 --> 05:43.320
+Le nom de la classe Span est égal au numéro de panier de navigation.
+
+05:49.400 --> 05:50.560
+Mettez ici le numéro que vous voulez.
+
+05:50.560 --> 05:52.120
+Je vais juste en mettre cinq.
+
+05:53.840 --> 05:57.000
+Et cool, ça suffira pour l'instant pour notre en-tête.
+
+05:57.960 --> 05:59.600
+Mettons cela dans app.jsx.
+
+05:59.600 --> 06:02.400
+Je pense que nous pouvons simplement remplacer.
+
+06:02.400 --> 06:05.360
+Nous allons donc importer l'en-tête depuis l'en-tête.
+
+06:06.360 --> 06:08.640
+Et je pense que nous pouvons simplement remplacer cela.
+
+06:09.840 --> 06:11.840
+Oui, en-tête.
+
+06:15.400 --> 06:16.880
+Vous verrez que cela se passe en quelque sorte
+
+06:16.880 --> 06:19.600
+être juste une composition de beaucoup d'autres fonctions
+
+06:19.600 --> 06:22.040
+que nous avons fabriqué ou de nombreux autres composants.
+
+06:23.240 --> 06:24.680
+C'est un peu ce qu'est React pour l'essentiel.
+
+06:24.680 --> 06:27.480
+Il s'agit simplement de composer des composants en d'autres composants.
+
+06:28.680 --> 06:31.440
+Très bien, alors maintenant nous avons ça, comme un petit truc de chariot amusant.
+
+06:31.440 --> 06:32.280
+là-haut, non ?
+
+06:32.280 --> 06:33.520
+Évidemment, cinq, c'est faux, n'est-ce pas ?
+
+06:33.520 --> 06:35.920
+Il ne s’agit pas réellement d’une lecture à partir du vrai panier.
+
+06:37.200 --> 06:38.800
+Alors, comment ferions-nous cela ?
+
+06:40.520 --> 06:41.800
+Eh bien, réfléchissez-y une seconde maintenant.
+
+06:41.800 --> 06:43.000
+Comment ferais-tu ça maintenant,
+
+06:43.000 --> 06:44.680
+vous n'avez pas encore appris le contexte ?
+
+06:44.680 --> 06:45.680
+Comment feriez-vous?
+
+06:47.720 --> 06:49.560
+Il n'y a pas de chariot ici, n'est-ce pas ?
+
+06:50.440 --> 06:52.360
+Vous devrez donc utiliser l'état ici
+
+06:52.360 --> 06:55.600
+et il faudrait dire que le chariot est égal au chariot.
+
+06:56.480 --> 07:00.280
+Et il faudrait dire que le panier est égal au panier ici.
+
+07:00.280 --> 07:02.800
+Mais il faudrait alors passer dans un chariot fixe ici,
+
+07:03.240 --> 07:05.200
+parce qu'alors tu te retrouverais avec un tas
+
+07:05.200 --> 07:06.960
+une sorte de retombées de cela.
+
+07:08.320 --> 07:10.440
+Eh bien, personne ne veut faire ça, n'est-ce pas ?
+
+07:10.440 --> 07:12.320
+Alors allons-y et procédons différemment.
+
+07:12.320 --> 07:13.600
+Utilisons le contexte.
+
+07:16.240 --> 07:18.960
+Donc j'ai vu des gens faire ça avec un groupe
+
+07:18.960 --> 07:19.800
+de modèles différents.
+
+07:19.800 --> 07:20.920
+J'en ai vu un récemment que j'aimais bien,
+
+07:20.920 --> 07:21.960
+donc je vais enseigner celui-là aujourd'hui.
+
+07:21.960 --> 07:26.080
+Ils viennent de créer un fichier appelé contexts.jsx
+
+07:27.040 --> 07:31.240
+et ils jettent tout leur contexte dans un seul fichier de contexte.
+
+07:31.240 --> 07:32.880
+Je pensais que c'était plutôt cool,
+
+07:32.880 --> 07:34.160
+parce que ce n'est jamais grand-chose.
+
+07:34.160 --> 07:38.320
+Mes fichiers contextuels ressemblaient littéralement à une seule ligne
+
+07:38.320 --> 07:40.800
+et puis je l'exportais et c'était juste très raccourci
+
+07:40.800 --> 07:43.440
+et ça va raccourcir le balayage et encore plus raccourcir le muet.
+
+07:45.760 --> 07:49.040
+Bien sûr, nous allons dire créer un contexte,
+
+07:49.040 --> 07:51.120
+qui viendra de React.
+
+07:52.760 --> 07:57.320
+D'accord, et ensuite nous allons exporter const.
+
+07:57.320 --> 07:59.160
+Donc celui-ci, tu veux vraiment lui donner un nom.
+
+07:59.200 --> 08:00.520
+Si tu veux faire ce modèle
+
+08:00.520 --> 08:03.080
+où vous avez plusieurs contextes différents
+
+08:03.080 --> 08:03.920
+provenant d'un fichier,
+
+08:03.920 --> 08:07.160
+il est important que vous fassiez des exportations nommées, n'est-ce pas ?
+
+08:11.640 --> 08:16.640
+Le contexte du panier const d’importation et d’exportation équivaut à créer un contexte.
+
+08:18.520 --> 08:20.480
+Tu peux le laisser comme ça si tu veux
+
+08:20.480 --> 08:22.120
+et appelez ça bien là-bas.
+
+08:23.480 --> 08:27.840
+Pour le bien peut-être de votre futur moi TypeScript
+
+08:27.840 --> 08:30.400
+et/ou de futurs auto-tests,
+
+08:31.640 --> 08:33.800
+c'est utile avec le contexte pour lui donner du goût,
+
+08:33.800 --> 08:36.560
+c'est la forme de ce qui va se dérouler
+
+08:36.560 --> 08:38.160
+à l'intérieur de ce contexte.
+
+08:39.360 --> 08:42.080
+Donc on va tenir un crochet ici, non ?
+
+08:42.080 --> 08:43.080
+C'est ce que nous allons faire
+
+08:43.080 --> 08:44.320
+parce que nous allons tenir un état
+
+08:44.320 --> 08:46.360
+c'est à la fois mutable et lisible.
+
+08:47.760 --> 08:51.200
+Alors, quel est le type de retour d’un hook ?
+
+08:55.120 --> 08:55.960
+C'est un tableau
+
+08:56.960 --> 08:58.280
+et qu'est-ce que le chariot ?
+
+08:59.560 --> 09:00.400
+Un tableau
+
+09:02.680 --> 09:04.200
+et puis qu'est-ce que c'est ?
+
+09:05.200 --> 09:06.040
+Certaines fonctions.
+
+09:10.920 --> 09:11.920
+Droite?
+
+09:11.920 --> 09:16.520
+C'est à ça que ressemble un crochet, n'est-ce pas ?
+
+09:18.120 --> 09:21.400
+Donc je vais littéralement mettre ça ici.
+
+09:21.400 --> 09:24.240
+Alors je te montre ça parce que je sais que ça a l'air obtus
+
+09:24.240 --> 09:27.280
+et bizarre, mais c'est pour ça que tu le fais.
+
+09:28.240 --> 09:30.000
+Pourquoi c'est sympa.
+
+09:30.000 --> 09:31.520
+Dès que vous insérez ceci dans TypeScript,
+
+09:31.520 --> 09:33.040
+TypeScript sera comme, oh, d'accord, j'ai compris.
+
+09:33.040 --> 09:34.280
+C'est un tableau avec ceci et cela
+
+09:34.280 --> 09:36.680
+et il va juste le vérifier et l'obtenir tout de suite.
+
+09:38.120 --> 09:39.760
+C'est donc juste une bonne habitude à prendre.
+
+09:43.160 --> 09:44.600
+Et même si nous n'utilisons pas TypeScript
+
+09:44.600 --> 09:47.360
+n'importe où dans ce projet, VS Code fait du bon travail.
+
+09:47.360 --> 09:49.120
+C'est juste une bonne habitude à prendre.
+
+09:49.120 --> 09:50.360
+Et même si nous n'utilisons pas TypeScript
+
+09:50.360 --> 09:52.200
+n'importe où dans ce projet, VS Code fait du bon travail
+
+09:52.200 --> 09:53.840
+des types d'observation ici.
+
+09:58.600 --> 09:59.760
+D'accord.
+
+09:59.760 --> 10:04.200
+Alors allons-y établir notre contexte.
+
+10:05.320 --> 10:06.840
+Accédez à app.jsx.
+
+10:08.000 --> 10:12.400
+Nous allons importer le contexte du panier à partir des contextes
+
+10:13.880 --> 10:15.600
+et la première chose que nous allons faire
+
+10:15.600 --> 10:18.000
+est-ce que nous allons envelopper notre application dans ce truc appelé
+
+10:18.000 --> 10:23.000
+fournisseur de points de contexte de panier.
+
+10:29.080 --> 10:31.920
+Habituellement, le mode strict sera toujours la chose la plus externe.
+
+10:31.920 --> 10:33.960
+L'ordre à l'intérieur est vraiment
+
+10:33.960 --> 10:36.280
+cela ne fait généralement aucune différence.
+
+10:36.280 --> 10:39.760
+Alors, que fait le fournisseur de contexte de panier pour nous ?
+
+10:39.760 --> 10:40.640
+Eh bien, la première chose est que
+
+10:40.640 --> 10:42.680
+cela peut être un peu étrange avec React.
+
+10:42.680 --> 10:44.000
+Vous pouvez avoir des composants qui
+
+10:44.000 --> 10:45.960
+ne restitue pas réellement un vrai balisage.
+
+10:45.960 --> 10:47.640
+Tout ce qu'ils font, c'est agir comme une sorte d'intermédiaire,
+
+10:47.640 --> 10:48.960
+mais ils augmentent la capacité
+
+10:48.960 --> 10:50.960
+des composants à l’intérieur d’eux.
+
+10:50.960 --> 10:52.320
+Et c'est ce que fait ce fournisseur.
+
+10:52.320 --> 10:54.920
+Il prend maintenant n'importe quelle valeur
+
+10:54.920 --> 10:55.880
+que nous allons y passer,
+
+10:55.880 --> 10:58.960
+ce que nous ferons dans un moment, nous ne l'avons pas encore fait.
+
+10:58.960 --> 11:02.400
+Et cela va rendre cela disponible partout à l'intérieur.
+
+11:02.400 --> 11:04.440
+Maintenant, qu'est-ce qu'il y a de cool à ce sujet
+
+11:04.440 --> 11:07.200
+c'est que nous y emballons toute notre application,
+
+11:07.200 --> 11:09.840
+mais nous pourrions faire quelque chose comme ça
+
+11:09.840 --> 11:13.480
+où désormais seule la pizza du jour a accès à ce contexte.
+
+11:14.760 --> 11:16.520
+Plutôt cool, non ?
+
+11:16.560 --> 11:19.520
+Nous pourrions même avoir deux fournisseurs de contexte de panier différents
+
+11:19.520 --> 11:22.040
+et enveloppez-les chacun dedans.
+
+11:22.040 --> 11:23.240
+Cela semble être une idée bizarre,
+
+11:23.240 --> 11:26.120
+et je n'aime pas trop celui-là, mais tu pourrais le faire.
+
+11:28.040 --> 11:30.960
+Vous pouvez même avoir plusieurs contextes de panier
+
+11:30.960 --> 11:32.880
+une sorte de couche les unes des autres.
+
+11:34.040 --> 11:34.880
+Et ce que ça va faire, c'est
+
+11:34.880 --> 11:36.560
+ça va trouver le plus proche, non ?
+
+11:36.560 --> 11:38.800
+Il va donc trouver celui qui s'en rapproche le plus.
+
+11:39.760 --> 11:42.240
+Donc si j'avais ceci et ensuite cela,
+
+11:42.240 --> 11:45.920
+c'est totalement, je pense que ça vaut le coup, ouais, d'accord.
+
+11:47.120 --> 11:52.120
+Donc si j'essayais d'accéder au contexte de la pizza du jour,
+
+11:52.320 --> 11:54.000
+quelle valeur cela rapporterait-il ?
+
+11:55.400 --> 11:56.240
+Un.
+
+11:57.160 --> 11:59.200
+Maintenant encore, vous vous demandez peut-être : pourquoi devrais-je faire ça ?
+
+11:59.200 --> 12:02.080
+Et je vous demande aussi, pourquoi feriez-vous cela ?
+
+12:02.080 --> 12:05.040
+Je ne sais pas pourquoi vous feriez cela, mais c'est possible.
+
+12:06.240 --> 12:08.440
+Et c'est pourquoi ils avaient ce genre d'API bizarre.
+
+12:11.960 --> 12:14.640
+Okay, donc revenons là où nous étions,
+
+12:14.640 --> 12:19.640
+nous allons dire fournisseur de points de contexte de panier.
+
+12:21.400 --> 12:24.960
+Une petite note de bas de page ici, ils le font ainsi dans React 19,
+
+12:24.960 --> 12:26.920
+tu peux juste dire le contexte du panier comme ça
+
+12:26.920 --> 12:28.240
+et laissez de côté le fournisseur.
+
+12:28.240 --> 12:29.560
+C'est plutôt sympa.
+
+12:33.520 --> 12:35.200
+Donc si vous regardez ça avec React 19,
+
+12:35.200 --> 12:37.480
+allez-y et abandonnez le fournisseur de points.
+
+12:39.080 --> 12:42.120
+Maintenant, nous voulons accrocher ce que nous voulons passer dans le contexte.
+
+12:42.120 --> 12:47.120
+Donc ce que nous pouvons faire, c'est dire que const cart hook est égal à,
+
+12:47.280 --> 12:52.280
+remarquez que nous ne déstructurons pas, utilisez l'état comme ça.
+
+12:54.200 --> 12:59.200
+Et puis la valeur ici est égale au crochet du chariot.
+
+13:04.440 --> 13:05.280
+D'accord.
+
+13:08.560 --> 13:11.440
+N'oubliez pas que normalement vous diriez panier, définissez le panier
+
+13:11.480 --> 13:13.600
+et utilisez ce genre de déstructuration ici.
+
+13:13.600 --> 13:15.440
+Ici, nous transmettons le tout.
+
+13:19.360 --> 13:21.360
+Est-ce que ça veut dire qu'il y a un passeur
+
+13:21.360 --> 13:23.720
+cela a également été attribué dans l'objet crochet de chariot ?
+
+13:23.720 --> 13:24.680
+Vous l'avez.
+
+13:24.680 --> 13:26.520
+Alors maintenant, nous pouvons appeler cela dans l'ordre
+
+13:26.520 --> 13:28.240
+parce que nous en avons besoin, non ?
+
+13:28.240 --> 13:30.400
+Nous devons être capables de fixer ce crochet depuis l'intérieur de l'ordre
+
+13:30.400 --> 13:32.640
+ou bien tout ce genre de choses s'effondre.
+
+13:34.160 --> 13:35.960
+Maintenant, vous pensez peut-être en vous-même,
+
+13:35.960 --> 13:38.480
+eh bien, cela signifie-t-il que vous pouvez installer ce crochet n'importe où ?
+
+13:38.480 --> 13:41.000
+Et oui, vous pouvez et oui, c'est un pistolet à pied,
+
+13:41.000 --> 13:42.880
+c'est pourquoi je suis en quelque sorte
+
+13:42.880 --> 13:46.480
+en essayant de vous éloigner autant que possible du contexte.
+
+13:46.480 --> 13:47.400
+Mais voilà.
+

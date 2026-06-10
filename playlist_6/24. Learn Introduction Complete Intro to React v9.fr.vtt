@@ -1,0 +1,183 @@
+WEBVTT
+
+
+00:00.000 --> 00:05.700
+Alors faisons en sorte que cela fonctionne avec order.jsx maintenant.
+
+00:05.700 --> 00:13.420
+Nous allons donc importer le contexte d'utilisation, un autre hook très amusant de React, et nous allons
+
+00:13.420 --> 00:21.320
+pour importer le contexte du panier à partir des contextes.
+
+00:21.320 --> 00:26.920
+Nous allons abandonner, en fait nous pouvons simplement remplacer cette pièce ici.
+
+00:26.920 --> 00:31.120
+Donc le panier est égal au panier défini, c'est vrai, cette partie, et la seule différence est que nous allons
+
+00:31.120 --> 00:38.040
+pour dire, nous allons dire le contexte d'utilisation, le contexte du panier.
+
+00:38.040 --> 00:42.560
+Et maintenant, tout ce qu'il y a dans ce contexte de panier, tout ce qu'il peut trouver au-dessus, cela va
+
+00:42.560 --> 00:46.200
+à transmettre ici.
+
+00:46.200 --> 00:48.040
+C'est plutôt une API agréable, n'est-ce pas ?
+
+00:48.040 --> 00:53.520
+Vous le transmettez simplement, et maintenant, il est disponible ici.
+
+00:53.520 --> 00:54.520
+Voici la partie amusante.
+
+00:54.520 --> 00:56.600
+Nous n’avons rien d’autre à changer.
+
+00:56.600 --> 01:04.480
+Tout le reste fonctionne de la même manière, ce qui est plutôt sympa.
+
+01:04.480 --> 01:12.300
+Et maintenant, utilisons-le également dans l'en-tête.
+
+01:12.300 --> 01:24.320
+Donc en haut de l'en-tête, nous allons dire importer le contexte d'utilisation depuis React, et nous allons
+
+01:24.320 --> 01:29.120
+pour importer à nouveau notre contexte de panier.
+
+01:29.120 --> 01:36.120
+Mec, j'ai mis trop de virelangues dans l'atelier d'aujourd'hui.
+
+01:36.120 --> 01:38.000
+Le contexte du panier va juste me tuer.
+
+01:38.000 --> 01:41.360
+Au moins, il n'y a pas de pizza du jour.
+
+01:41.360 --> 01:43.360
+D'accord.
+
+01:43.360 --> 01:46.880
+Ici, j'ai seulement besoin d'un chariot, n'est-ce pas, et en fait, je ne place le chariot nulle part, donc je
+
+01:46.880 --> 01:54.400
+je vais juste dire que const cart est égal au contexte d'utilisation.
+
+01:54.400 --> 01:55.400
+Contexte du panier.
+
+01:55.400 --> 01:59.120
+Encore une fois, je n'utilise le poseur nulle part, donc je ne vais pas le retirer.
+
+01:59.120 --> 02:07.080
+Et au lieu d'en avoir cinq ici, je vais juste avoir cart.length, c'est vrai, sauf ce qui est
+
+02:07.080 --> 02:08.080
+mal avec ça ?
+
+02:08.080 --> 02:09.680
+C'est une chaîne littérale.
+
+02:09.680 --> 02:10.680
+Littéralement une chaîne littérale.
+
+02:10.680 --> 02:13.680
+Et voilà.
+
+02:13.680 --> 02:16.480
+Cool.
+
+02:16.480 --> 02:28.680
+Donc idéalement, si je dis ajouter au panier, gros double, remarquez que le numéro ici est correct, n'est-ce pas ?
+
+02:28.680 --> 02:34.080
+S'il vous plaît, n'ajoutez pas 100 choses ici car le nombre déborde.
+
+02:34.080 --> 02:36.040
+Même deux chiffres, c'est un peu une esquisse.
+
+02:36.040 --> 02:41.280
+Encore une fois, l'API contextuelle est devenue bien meilleure qu'avant, mais ce qui est difficile,
+
+02:42.280 --> 02:46.720
+ce contexte d'utilisation, contexte de panier.
+
+02:46.720 --> 02:48.240
+Disons que ce nombre commence à augmenter.
+
+02:48.240 --> 02:51.400
+En fait, c’est en quelque sorte le problème classique des crochets en général.
+
+02:51.400 --> 02:57.000
+Je ne sais pas, je ne suis pas un utilisateur de Facebook, mais Facebook avait ce problème là où
+
+02:57.000 --> 03:00.320
+ce serait des notifications fantômes, n'est-ce pas, puis vous cliqueriez dessus et il y aurait
+
+03:00.320 --> 03:02.880
+il n'y aura aucune notification là-bas.
+
+03:02.880 --> 03:04.520
+C'était un problème de React.
+
+03:05.000 --> 03:12.880
+Nous sommes incapables de suivre correctement ces contextes, et c'était un sous-produit de cela.
+
+03:12.880 --> 03:16.720
+C’était vraiment ennuyeux et beaucoup de gens en étaient très ennuyés.
+
+03:16.720 --> 03:21.320
+Ils ont beaucoup amélioré cela, mais le problème est que c'est toute l'indirection de savoir où va
+
+03:21.320 --> 03:25.520
+d'où vient ce contexte et qu'est-ce qui le modifie ?
+
+03:25.520 --> 03:29.320
+Juste en regardant l'en-tête, disons que j'ai un bug avec l'en-tête et que ce numéro est toujours
+
+03:29.320 --> 03:33.980
+faux, qu'est-ce qui a modifié le contexte ?
+
+03:33.980 --> 03:41.420
+Cela ne ressort pas immédiatement de l'en-tête, car disons, d'accord, je sais que c'est le panier
+
+03:41.420 --> 03:47.220
+contexte, je vais chercher dans ma base de code le contexte du panier et je vais aller chercher
+
+03:47.220 --> 03:53.380
+dans l'application et je vais voir où cela est créé, mais cela ne le modifie pas.
+
+03:53.380 --> 03:55.380
+Où est-il modifié ?
+
+03:55.380 --> 04:02.380
+Encore une fois, en regardant ceci, si ce code vous est totalement inconnu, vous ne pouvez pas le voir.
+
+04:02.380 --> 04:06.500
+Vous devez parcourir toute la base de code pour comprendre ce qui modifie cela.
+
+04:06.500 --> 04:11.860
+Il faudra éventuellement atterrir sur commande.
+
+04:11.860 --> 04:15.180
+Maintenant, avec les importations, il est un peu plus facile de pouvoir s'y retrouver,
+
+04:15.180 --> 04:18.380
+pour pouvoir le trouver, mais ce n'était pas vrai.
+
+04:18.380 --> 04:24.500
+Avant, c'était très opaque quant à l'origine de ce message, mais sa structure est étrange.
+
+04:24.500 --> 04:30.060
+de cette application que faire quelque chose ici affecte quelque chose ici.
+
+04:30.060 --> 04:33.900
+Ils le prévoient parce que c’est ainsi que fonctionnent les sites Web, n’est-ce pas ?
+
+04:33.900 --> 04:38.220
+Mais en termes de code beau et propre, ça craint.
+

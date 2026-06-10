@@ -1,0 +1,1074 @@
+WEBVTT
+
+
+00:00.120 --> 00:03.460
+Nous allons parler de peluchage.
+
+00:03.460 --> 00:05.520
+Qui est excité par le peluchage ?
+
+00:05.520 --> 00:06.360
+Sortir.
+
+00:06.360 --> 00:07.200
+Non, je plaisante.
+
+00:07.200 --> 00:10.100
+C'est juste une plaisanterie.
+
+00:11.760 --> 00:13.160
+J'ai des sentiments mitigés à propos du peluchage.
+
+00:13.160 --> 00:15.760
+Vous savez, j'ai parcouru toute la carte à cause du peluchage.
+
+00:17.160 --> 00:19.160
+Je l'étais, et si vous regardez,
+
+00:19.160 --> 00:21.880
+introduction terminée à React V2,
+
+00:21.880 --> 00:23.840
+comme s'il y avait quelque chose comme ça,
+
+00:23.840 --> 00:26.200
+un autre personnage de Brian Holt qui ressemble à,
+
+00:26.200 --> 00:28.640
+nous allons foutre le bordel de ce projet.
+
+00:28.640 --> 00:30.200
+On dirait qu'une seule personne l'a écrit.
+
+00:30.200 --> 00:32.000
+Et j'étais vraiment dans ce train,
+
+00:32.000 --> 00:34.160
+laissons les outils vous contrôler.
+
+00:35.360 --> 00:38.560
+Et je suis revenu dans l'autre sens.
+
+00:38.560 --> 00:40.880
+Et comme, si vous aimez regarder comme React V7,
+
+00:40.880 --> 00:42.400
+tu deviens comme ça comme le hippie Brian,
+
+00:42.400 --> 00:44.880
+c'est comme l'amour libre et sans peluche, n'est-ce pas ?
+
+00:44.880 --> 00:46.280
+Où je suis comme,
+
+00:46.280 --> 00:48.600
+écris le code que tu veux, mec, n'est-ce pas ?
+
+00:48.600 --> 00:53.520
+Et maintenant je reviens davantage pour aimer,
+
+00:53.520 --> 00:57.400
+aidez-moi à détecter les bugs très courants et très faciles à manquer
+
+00:57.400 --> 01:00.240
+et sinon, laissez-moi tranquille.
+
+01:00.240 --> 01:01.200
+En fait, cela s'applique en quelque sorte
+
+01:01.200 --> 01:04.960
+à mon processus de réflexion général sur la création d'outils de développement
+
+01:04.960 --> 01:08.240
+de votre développeur a quelque chose en tête
+
+01:08.240 --> 01:10.360
+qu'ils veulent exprimer dans le code
+
+01:10.360 --> 01:14.640
+et ne les interrompez pas à moins qu'ils ne le fassent réellement,
+
+01:14.640 --> 01:16.320
+à moins que tu les aides, non ?
+
+01:17.580 --> 01:22.360
+C'est comme demander à quelqu'un d'écrire du code dans un certain format
+
+01:22.360 --> 01:24.880
+parce que tu as l'impression que ça ajoute de plus en plus de frictions
+
+01:24.880 --> 01:27.480
+et il y a plus de distance entre quelqu'un qui s'exprime
+
+01:27.480 --> 01:28.640
+leur idée et leur code.
+
+01:29.760 --> 01:31.960
+Et c'est pour ça que je suis beaucoup plus prudent ces jours-ci
+
+01:31.960 --> 01:35.960
+être très léger côté pelucheux.
+
+01:35.960 --> 01:40.240
+Et si ce n'est pas important, ne le fais pas, n'est-ce pas ?
+
+01:41.120 --> 01:41.960
+D'accord.
+
+01:43.720 --> 01:47.680
+Alors on va faire plus joli et les gens me demandent souvent :
+
+01:47.680 --> 01:50.720
+quelle est la différence entre le peluchage et,
+
+01:50.720 --> 01:52.480
+ou ES peluche et plus joli ?
+
+01:53.480 --> 01:56.040
+Les peluches ES sont des peluches, évidemment.
+
+01:56.040 --> 02:01.040
+Le linting ressemble beaucoup plus à la sémantique et à la syntaxe
+
+02:02.280 --> 02:05.480
+et un contenu axé sur le fait que vous dites des choses comme :
+
+02:07.040 --> 02:09.200
+vous devez classer par ordre alphabétique toutes vos importations,
+
+02:09.200 --> 02:11.680
+c'est comme l'une de mes règles que j'aime le moins
+
+02:11.680 --> 02:15.280
+que vous pouvez appliquer dans ES lint.
+
+02:15.280 --> 02:16.400
+Mais ce sont des choses comme ça.
+
+02:16.400 --> 02:18.720
+Ce sont des choses où vous imposez une opinion à quelqu'un.
+
+02:18.720 --> 02:21.520
+Comme si cela pouvait être un code totalement valide, mais vous dites :
+
+02:21.520 --> 02:23.400
+Je ne veux pas que tu fasses ça.
+
+02:23.400 --> 02:24.960
+Un de ceux que je trouve utiles
+
+02:24.960 --> 02:27.720
+c'est ne pas utiliser de variables globales, n'est-ce pas ?
+
+02:27.720 --> 02:30.200
+Parce que d'habitude, ça veut dire que tu as mal orthographié
+
+02:30.200 --> 02:31.920
+quelque chose donc ça va atteindre un niveau mondial
+
+02:31.920 --> 02:35.240
+au lieu de trouver celui que vous vouliez réellement
+
+02:35.240 --> 02:36.360
+pour le nommer, non ?
+
+02:36.360 --> 02:37.760
+Le plus joli est juste le formatage.
+
+02:37.760 --> 02:40.600
+C'est juste un espace blanc et de nouvelles lignes.
+
+02:40.600 --> 02:42.600
+Cela n’applique rien au code.
+
+02:42.600 --> 02:44.320
+Il s'agit simplement de s'assurer que tout l'espace blanc
+
+02:44.320 --> 02:46.320
+finit au bon endroit.
+
+02:46.320 --> 02:48.320
+C'est tout ce qu'il y a de plus joli.
+
+02:48.320 --> 02:50.520
+Il y a un certain chevauchement que vous pouvez essentiellement avoir des peluches ES
+
+02:50.520 --> 02:52.680
+faire des choses plus jolies.
+
+02:52.680 --> 02:54.280
+Mais si nous utilisons les deux outils,
+
+02:54.280 --> 02:56.160
+plus joli est bien meilleur en termes de formatage.
+
+02:56.160 --> 02:57.680
+Laissez le formatage plus joli.
+
+02:57.680 --> 03:01.480
+Ayez juste des peluches pour toutes les règles de peluchage.
+
+03:01.480 --> 03:02.800
+Ouais, Marc.
+
+03:02.800 --> 03:04.880
+Avez-vous entendu parler de la charpie OX ?
+
+03:04.880 --> 03:06.000
+J'ai.
+
+03:06.000 --> 03:07.840
+Je pourrais même le mentionner ici.
+
+03:08.960 --> 03:10.160
+Oui, regarde ça.
+
+03:11.360 --> 03:13.680
+Je pense que c'est en fait censé être le cas,
+
+03:13.680 --> 03:14.760
+est-ce censé être un zéro ?
+
+03:14.760 --> 03:16.360
+Non, d'accord, non, j'avais raison, ça l'est.
+
+03:17.200 --> 03:19.440
+Il y a deux projets à surveiller ici,
+
+03:19.440 --> 03:21.480
+est la charpie OX et Biome.
+
+03:21.480 --> 03:23.040
+Le biome s’appelait Roam.
+
+03:24.800 --> 03:28.080
+La charpie de bœuf, je pense, c'est que tout est écrit en Rust.
+
+03:29.080 --> 03:31.800
+Et il y a, je pense, quelques autres projets.
+
+03:31.800 --> 03:36.800
+Ils sont si nouveaux, et de toute façon, ils s'appuient vraiment tous les deux sur les peluches ES.
+
+03:36.800 --> 03:40.800
+pour ses règles, donc, je suis intéressé.
+
+03:40.800 --> 03:42.240
+Je garde un oeil dessus.
+
+03:42.280 --> 03:44.840
+Le créateur de U et VEET, Evan U,
+
+03:44.840 --> 03:48.840
+a lancé une nouvelle entreprise autour de la charpie OX et du VEET
+
+03:48.840 --> 03:51.160
+et tous ces outils, donc je suis intéressé.
+
+03:51.160 --> 03:53.080
+Mais ils sont encore si nouveaux.
+
+03:53.080 --> 03:54.200
+Dans ce cours, j'essaie de vous apprendre
+
+03:54.200 --> 03:56.200
+être prêt à travailler aujourd'hui avec React,
+
+03:56.200 --> 03:57.200
+et je ne t'apprends rien
+
+03:57.200 --> 03:59.400
+c'est si loin à la limite.
+
+03:59.400 --> 04:02.400
+Alors regardez-le, admirez-le, aidez-le,
+
+04:02.400 --> 04:06.840
+mais si vous allez à votre travail quotidien, expédiez des peluches ES.
+
+04:06.840 --> 04:08.280
+C'est juste le choix sûr pour le moment,
+
+04:08.280 --> 04:09.800
+et c'est un très bon choix.
+
+04:09.840 --> 04:11.440
+C'est juste le choix sûr pour le moment,
+
+04:11.440 --> 04:13.640
+et c'est un très bon logiciel.
+
+04:17.000 --> 04:18.440
+D'accord.
+
+04:18.440 --> 04:19.680
+Ouais, un bon exemple ici est, genre,
+
+04:19.680 --> 04:21.680
+vous voulez forcer les gens à ne jamais utiliser.
+
+04:21.680 --> 04:24.360
+Par exemple, si with est techniquement un JavaScript valide,
+
+04:24.360 --> 04:27.240
+c'était dans ES 3, non ?
+
+04:27.240 --> 04:29.760
+Mais vous ne voulez jamais avoir de with dans une base de code moderne.
+
+04:29.760 --> 04:31.920
+Cela n’aurait aucun sens, n’est-ce pas ?
+
+04:31.920 --> 04:33.320
+Donc, vous pouvez demander à ES Lint de dire, comme :
+
+04:33.320 --> 04:34.560
+hé, tu utilises avec.
+
+04:34.560 --> 04:35.480
+Personne ne l'utilise avec.
+
+04:35.480 --> 04:36.720
+S'il vous plaît, arrêtez de faire ça.
+
+04:37.720 --> 04:39.560
+D'accord.
+
+04:39.560 --> 04:41.440
+Je vais vous demander d'installer ES Lint
+
+04:41.440 --> 04:44.000
+et ces outils dans des versions spécifiques.
+
+04:44.000 --> 04:45.800
+La raison pour laquelle je vais te faire faire ça maintenant
+
+04:45.800 --> 04:48.400
+et pour le reste du cours, c'est comme,
+
+04:48.400 --> 04:50.360
+ce cours est un moment dans le temps,
+
+04:50.360 --> 04:52.160
+et ils vont certainement publier de nouveaux changements
+
+04:52.160 --> 04:56.200
+et des changements radicaux, et je veux que les gens restent
+
+04:56.200 --> 04:59.240
+sur des outils dont j'ai vérifié qu'ils fonctionnent ensemble.
+
+04:59.240 --> 05:03.160
+Alors n'hésitez pas à essayer d'installer des versions ultérieures d'ES lint
+
+05:03.160 --> 05:05.120
+ou React ou ce que vous voulez,
+
+05:05.520 --> 05:07.720
+mais sachez juste quand ils sortiront un nouveau mineur
+
+05:07.720 --> 05:09.880
+ou des versions majeures de ces choses,
+
+05:09.880 --> 05:11.320
+ça va probablement casser, non ?
+
+05:11.320 --> 05:14.000
+Il y a une énorme différence entre ES lint 8
+
+05:14.000 --> 05:15.560
+et ES peluche 9.
+
+05:15.560 --> 05:18.000
+React V8 utilise ES lint 8,
+
+05:18.000 --> 05:20.440
+et j'ai dû réécrire toute cette partie du cours
+
+05:20.440 --> 05:23.480
+parce que ça a complètement changé, non ?
+
+05:23.480 --> 05:26.000
+Alors, allez-y et prenez ceci.
+
+05:26.000 --> 05:27.960
+Je voudrais simplement le copier et le coller directement.
+
+05:30.160 --> 05:31.600
+Accédez à votre projet,
+
+05:32.280 --> 05:37.280
+et nous allons juste installer Dash D, c'est vrai,
+
+05:37.280 --> 05:41.360
+pour le développement, ES lint à 991,
+
+05:41.360 --> 05:43.360
+Configuration des peluches ES à 910,
+
+05:43.360 --> 05:46.520
+et les globals à 15.9.0.
+
+05:51.920 --> 05:53.400
+Cool.
+
+05:53.400 --> 05:55.120
+Encore une fois, vous remarquerez dans notre package.json,
+
+05:55.120 --> 05:58.680
+nous avons maintenant beaucoup plus de dépendances de développement.
+
+05:59.680 --> 06:00.520
+Cool.
+
+06:02.840 --> 06:03.680
+Maintenant,
+
+06:08.280 --> 06:10.320
+nous allons créer un fichier à la racine de notre projet.
+
+06:10.320 --> 06:15.320
+Il va s'appeler eslint.config.mjs.
+
+06:19.320 --> 06:21.400
+Désormais, toutes les versions de ce cours précédemment utilisées
+
+06:21.400 --> 06:24.680
+eslintrc.json qui n’est plus pris en charge.
+
+06:24.680 --> 06:27.240
+En fait, vous devez procéder de cette façon maintenant.
+
+06:28.200 --> 06:31.120
+Et vous vous demandez peut-être pourquoi c'est MJS ?
+
+06:31.120 --> 06:33.360
+Parce que sinon, il suppose que c'est du js commun,
+
+06:33.360 --> 06:35.480
+et nous voulons utiliser des esmodules.
+
+06:36.360 --> 06:39.200
+Donc, le mjs ici signifie que nous allons faire
+
+06:39.200 --> 06:44.200
+importer et exporter plutôt que d'exiger, n'est-ce pas ?
+
+06:44.520 --> 06:45.560
+Voilà pourquoi.
+
+06:48.000 --> 06:50.880
+Et nous allons commencer à écrire une petite configuration eslint.
+
+06:51.880 --> 06:56.880
+Importez js depuis eslint slash js.
+
+07:00.360 --> 07:04.880
+Importez des globals à partir des globals.
+
+07:05.920 --> 07:10.920
+Et importez plus joli depuis la configuration eslint plus joli.
+
+07:14.560 --> 07:16.000
+D'accord.
+
+07:16.000 --> 07:17.840
+C'est une de mes astuces préférées
+
+07:18.800 --> 07:21.800
+avec juste du code VS et TypeScript en général.
+
+07:23.400 --> 07:27.240
+Ce n'est pas TypeScript, mais j'aime toujours les complétions
+
+07:27.240 --> 07:29.120
+quand j'écris du code, n'est-ce pas ?
+
+07:29.120 --> 07:32.120
+Donc, vous pouvez dire au type
+
+07:35.520 --> 07:40.520
+importer eslint.lintr.config
+
+07:40.520 --> 07:45.520
+tableau de configuration de points dot lintr.
+
+07:48.400 --> 07:50.880
+Maintenant, vous pouvez voir les deux étoiles ici dans la barre oblique.
+
+07:50.880 --> 07:52.960
+C'est un commentaire, non ?
+
+07:52.960 --> 07:57.480
+Mais cela permet au code VS de savoir qu'il s'agit de ce type.
+
+07:57.480 --> 08:00.680
+S'il vous plaît, donnez-moi toutes les complétions de type pour cela.
+
+08:00.680 --> 08:05.200
+Donc, maintenant je peux dire exporter par défaut et lui donner un tableau.
+
+08:06.800 --> 08:09.240
+Et maintenant je vais avoir des complétions de type appropriées
+
+08:09.240 --> 08:11.000
+à l'intérieur de ceci.
+
+08:11.000 --> 08:11.840
+Ceci est totalement facultatif.
+
+08:11.840 --> 08:13.360
+Vous pouvez tout à fait lancer ça.
+
+08:13.360 --> 08:18.240
+Si vous êtes dans quelque chose comme Sublime ou TextMate,
+
+08:18.240 --> 08:19.600
+Je ne sais pas pourquoi vous êtes sur TextMate.
+
+08:19.600 --> 08:21.120
+J'ai des questions à ce sujet.
+
+08:21.120 --> 08:22.840
+Mais vous ne l'utiliseriez probablement pas.
+
+08:22.840 --> 08:24.080
+Cela ne vous serait probablement pas très utile.
+
+08:24.080 --> 08:26.840
+Mais pour le code VS en particulier, c'est vraiment très sympa.
+
+08:28.800 --> 08:32.080
+Donc maintenant je peux dire js.configs.
+
+08:34.560 --> 08:37.480
+Et je vais lui donner un point recommandé.
+
+08:38.320 --> 08:43.320
+Nous allons donc exporter cet ensemble de règles pour eslint.
+
+08:43.560 --> 08:48.040
+C'est leur nouveau style de configuration plate.
+
+08:48.040 --> 08:52.280
+Je trouve ça configuration, je trouve ça déroutant.
+
+08:55.200 --> 08:56.400
+Mais c’est ainsi que vous devez procéder maintenant.
+
+08:56.400 --> 08:58.240
+Donc, nous sommes coincés avec ça.
+
+08:58.240 --> 09:02.360
+Ainsi, vous exportez plusieurs configurations différentes
+
+09:02.360 --> 09:05.840
+et cela se construit en quelque sorte les uns sur les autres.
+
+09:06.840 --> 09:10.480
+Donc ceci sera exécuté, puis le deuxième,
+
+09:10.480 --> 09:11.680
+puis le troisième, puis le quatrième.
+
+09:11.680 --> 09:16.680
+Ainsi, plus il est bas dans la liste, plus il est exécuté en dernier.
+
+09:17.000 --> 09:22.000
+Donc, une chose est que cette plus jolie configuration doit toujours être la dernière.
+
+09:22.680 --> 09:23.560
+Gardez cela à l’esprit.
+
+09:23.560 --> 09:24.640
+Percez-le simplement dans votre cerveau.
+
+09:24.640 --> 09:26.800
+La plus jolie configuration doit toujours être la dernière.
+
+09:28.120 --> 09:29.760
+Pourquoi donc?
+
+09:29.760 --> 09:32.640
+La plus jolie configuration, tout ce qu'elle fait, c'est désactiver des trucs.
+
+09:32.640 --> 09:33.880
+Cela n’apporte rien de nouveau.
+
+09:33.920 --> 09:36.200
+Tout ce qu'il dit, c'est de ne pas vérifier le formatage,
+
+09:36.200 --> 09:37.520
+ne vérifiez pas ce genre de formatage,
+
+09:37.520 --> 09:40.400
+ne vérifiez pas les nouvelles lignes, ne vérifiez rien de ce genre de choses.
+
+09:40.400 --> 09:43.640
+Tout cela ne fait que désactiver le formatage, ce qui est utile.
+
+09:45.800 --> 09:47.920
+Sinon, Eslint vous crie dessus.
+
+09:47.920 --> 09:50.280
+C'est comme si tu n'avais pas formaté ça correctement
+
+09:50.280 --> 09:53.120
+et ça l'empêchera de te crier dessus
+
+09:53.120 --> 09:54.680
+pour des trucs qui n'ont pas d'importance.
+
+09:55.960 --> 09:57.920
+Bon, nous allons mettre notre configuration
+
+09:57.920 --> 09:59.320
+ici au milieu.
+
+09:59.320 --> 10:01.080
+Donc, js.configs.recommended.
+
+10:01.080 --> 10:03.160
+Ceci n'est qu'un très petit sous-ensemble
+
+10:03.160 --> 10:06.840
+des règles d'Eslint non controversées, n'est-ce pas ?
+
+10:06.840 --> 10:08.520
+Ils n’apportent qu’une simple valeur ajoutée.
+
+10:08.520 --> 10:11.960
+Je n'ai jamais eu de problème avec celui recommandé.
+
+10:11.960 --> 10:14.720
+Si vous voulez tout ce qu'Eslint peut vérifier,
+
+10:14.720 --> 10:17.680
+tu peux tout faire, mais tu es un gourmand de punition
+
+10:17.680 --> 10:18.520
+si tu fais ça.
+
+10:18.520 --> 10:20.440
+Il va vérifier des choses qui ne vous intéressent pas,
+
+10:20.440 --> 10:21.360
+Je le promets.
+
+10:21.360 --> 10:23.520
+Alors, tu sais quoi ?
+
+10:23.520 --> 10:25.640
+Encore une fois, je ne suis pas ta mère, fais ce que tu veux.
+
+10:25.640 --> 10:27.040
+Mais je ne vais pas mettre ça là-dedans
+
+10:27.040 --> 10:28.720
+parce que ça m'énerve si vite.
+
+10:29.720 --> 10:32.760
+D'accord, nous allons lui dire quels fichiers.
+
+10:32.760 --> 10:36.360
+Alors, ok, encore une fois, ce genre de chose ici,
+
+10:36.360 --> 10:39.880
+la raison pour laquelle il connaît ici ces fichiers
+
+10:39.880 --> 10:42.080
+ça vient de ce commentaire là-haut, n'est-ce pas ?
+
+10:42.080 --> 10:43.920
+Ce que je trouve extrêmement utile.
+
+10:46.080 --> 10:48.600
+D'accord, et je vais lui dire de tout vérifier
+
+10:48.600 --> 10:53.600
+à voir avec les fichiers .js.
+
+10:55.440 --> 10:57.040
+Et si vous voulez prendre une longueur d'avance ici,
+
+10:57.040 --> 10:58.840
+nous allons éventuellement faire du JSX.
+
+10:58.840 --> 11:01.440
+Donc, vous pourriez aussi bien vérifier cela ici également.
+
+11:03.480 --> 11:05.280
+Si vous faisiez du TS et du TSX,
+
+11:05.280 --> 11:06.960
+tu mettrais ça ici aussi, n'est-ce pas ?
+
+11:06.960 --> 11:10.840
+Alors, d'accord, les options linguistiques.
+
+11:14.120 --> 11:17.160
+Nous allons dire, voici les globales
+
+11:17.160 --> 11:21.120
+que nous souhaitons que vous vérifiiez ou dont vous soyez conscient.
+
+11:21.800 --> 11:26.800
+Nous allons faire globals.browser et globals.node.
+
+11:36.120 --> 11:37.720
+Pourquoi ça ?
+
+11:37.720 --> 11:39.600
+C'est pour ça que quand on entre comme ici,
+
+11:39.600 --> 11:44.080
+nous pouvons dire des choses comme fenêtre ou document, n'est-ce pas ?
+
+11:44.080 --> 11:46.840
+Des choses qui sont globales dans ces environnements.
+
+11:46.840 --> 11:49.240
+Si vous ne les importez pas et ne les ajoutez pas,
+
+11:49.240 --> 11:50.080
+ça va être comme,
+
+11:50.080 --> 11:52.080
+hé, je ne sais pas de quel document il s'agit, n'est-ce pas ?
+
+11:53.640 --> 11:55.800
+Voilà donc ce qu'est le global.
+
+11:56.920 --> 11:58.840
+Désolé, je reviens ici.
+
+11:58.840 --> 12:01.440
+C'est juste l'opérateur de spread, n'est-ce pas ?
+
+12:01.440 --> 12:02.840
+Donc, nous pourrions faire une sorte de genre
+
+12:02.840 --> 12:04.720
+object.assign ici, n'est-ce pas ?
+
+12:04.720 --> 12:06.520
+Mais nous pouvons simplement utiliser l’opérateur spread.
+
+12:06.520 --> 12:08.160
+C'est un peu plus propre.
+
+12:08.160 --> 12:11.400
+Ce sera juste l'union des navigateurs
+
+12:11.400 --> 12:13.400
+et nœud ici, non ?
+
+12:13.400 --> 12:14.600
+Comme un seul objet.
+
+12:14.600 --> 12:16.680
+C'est tout ce dont nous avons besoin pour ce projet.
+
+12:16.680 --> 12:18.560
+Options de l'analyseur.
+
+12:21.400 --> 12:23.320
+Fonctionnalités ECMA.
+
+12:25.200 --> 12:27.040
+Et nous avons besoin de JSX.
+
+12:30.520 --> 12:33.320
+Et je pense que cela devrait être bon pour nous pendant un petit moment.
+
+12:36.320 --> 12:38.200
+Cela va juste nous permettre d'utiliser JSX,
+
+12:38.200 --> 12:39.920
+ce que nous sommes sur le point de faire, n'est-ce pas ?
+
+12:39.920 --> 12:43.960
+Sans cela, ESLint ira toujours bien
+
+12:43.960 --> 12:46.120
+parce qu'il peut analyser JSX,
+
+12:46.120 --> 12:50.080
+mais il ne comprendra pas comment fonctionne React
+
+12:50.080 --> 12:52.440
+et comment il importe les choses correctement.
+
+12:52.440 --> 12:54.400
+Donc, cela devient important.
+
+13:00.400 --> 13:01.920
+D'accord.
+
+13:04.640 --> 13:06.760
+Alors, encore une fois, revenons à notre package.json
+
+13:06.760 --> 13:09.720
+et faites en sorte que cela puisse exécuter ESLint.
+
+13:11.280 --> 13:12.480
+Nous allons dire des peluches.
+
+13:13.480 --> 13:16.120
+Et maintenant, nous pouvons simplement dire ESLint.
+
+13:17.360 --> 13:19.080
+Avant, tu devais mettre cette longue ficelle
+
+13:19.080 --> 13:20.360
+qui y est associé,
+
+13:20.360 --> 13:22.080
+mais maintenant il lit correctement sa configuration
+
+13:22.080 --> 13:23.520
+et vous n'êtes pas obligé de faire ça.
+
+13:28.880 --> 13:33.520
+Donc, maintenant, si nous venons ici et disons npm run lint,
+
+13:34.840 --> 13:37.160
+vous verrez un tas de ces erreurs, n'est-ce pas ?
+
+13:38.000 --> 13:41.040
+Et mes notes ici disent que cela devrait résoudre le problème
+
+13:41.040 --> 13:43.960
+si vous dites npm, ou npm, wow.
+
+13:43.960 --> 13:47.400
+Ouais, j'ai quelque chose en tête, je suppose.
+
+13:47.400 --> 13:50.400
+Exécutez le correctif Lint Dash Dash Dash.
+
+13:50.400 --> 13:52.000
+Donc ce tiret tiret veut juste dire,
+
+13:52.000 --> 13:56.200
+hé, je veux transmettre ça à ESLint.
+
+13:56.200 --> 13:59.200
+Donc, cela finira par exécuter le correctif ESLint Dash Dash.
+
+14:00.400 --> 14:03.000
+Si vous ne mettez pas ce tableau de bord là-dedans,
+
+14:03.000 --> 14:05.080
+il va appliquer un correctif de tableau de bord.
+
+14:06.000 --> 14:09.600
+Il va appliquer un correctif Dash Dash à npm,
+
+14:09.600 --> 14:10.960
+ce qui n'a aucun sens, non ?
+
+14:10.960 --> 14:12.800
+C'est pourquoi vous avez besoin du Dash Dash.
+
+14:15.200 --> 14:16.320
+Ouais, je ne le pensais pas.
+
+14:16.320 --> 14:20.600
+Alors, qu'est-ce qu'il pourrait corriger automatiquement ?
+
+14:20.600 --> 14:21.440
+Je ne m'en souviens pas.
+
+14:22.800 --> 14:25.200
+Mais corrigez certaines de vos erreurs de peluchage
+
+14:25.200 --> 14:26.480
+peut être réparé automatiquement,
+
+14:26.480 --> 14:28.440
+comme s'il contenait des transformations
+
+14:28.440 --> 14:31.440
+cela réglera simplement certaines de ces choses pour vous.
+
+14:31.440 --> 14:32.440
+Nous n'avons rien à réparer pour le moment,
+
+14:32.440 --> 14:35.080
+donc cela ne nous aide pas vraiment beaucoup.
+
+14:35.080 --> 14:39.200
+Mais c'est une astuce plutôt amusante à faire parfois.
+
+14:40.200 --> 14:42.000
+Un autre, si vous déboguez ceci,
+
+14:42.000 --> 14:44.680
+ce débogage est super utile.
+
+14:44.680 --> 14:48.600
+Vous obtenez beaucoup de résultats comme ESLint.
+
+14:49.760 --> 14:51.200
+Il vous dit tout ce qu'il analyse.
+
+14:51.200 --> 14:52.840
+Il vous indique toutes les erreurs trouvées.
+
+14:52.840 --> 14:55.240
+Il vous indique toutes les règles qu'il charge.
+
+14:55.240 --> 14:57.080
+Donc, vous pouvez voir que ce sont tous les contrôles
+
+14:57.080 --> 15:02.200
+qu'il fonctionne, ce qui est plutôt cool.
+
+15:03.320 --> 15:04.680
+Ouais, donc je veux dire, en voici une bonne.
+
+15:04.680 --> 15:05.600
+Pas de débogueur.
+
+15:06.560 --> 15:09.320
+Disons que je ne sais pas si vous avez déjà utilisé cela auparavant.
+
+15:12.480 --> 15:15.120
+VS Code intègre un débogueur très utile.
+
+15:15.120 --> 15:16.240
+Nous ne l'utiliserons pas aujourd'hui,
+
+15:16.240 --> 15:18.680
+mais comme je l'utilise pas mal pour mes projets de nœuds.
+
+15:21.400 --> 15:25.000
+Et donc, maintenant je pense que si je dis npm run lint,
+
+15:25.000 --> 15:28.200
+cela devrait me donner une erreur concernant la non-utilisation du débogueur.
+
+15:28.960 --> 15:31.400
+Ouais, déclaration inattendue du débogueur.
+
+15:33.720 --> 15:35.280
+Ça va attraper des choses comme ça.
+
+15:35.280 --> 15:36.640
+Vous voulez que cette erreur se produise, n'est-ce pas ?
+
+15:36.640 --> 15:38.240
+Parce que je vais mettre ça là-dedans,
+
+15:38.240 --> 15:41.040
+et je veux que ça reste ici pendant que je l'utilise,
+
+15:41.040 --> 15:43.560
+mais je ne veux jamais passer ça à la production, n'est-ce pas ?
+
+15:43.560 --> 15:45.600
+C'est donc quelque chose que les peluches attraperont pour vous.
+
+15:45.600 --> 15:47.760
+Oh ouais, installons l'extension.
+
+15:48.960 --> 15:50.320
+Il existe une extension ESLint.
+
+15:50.320 --> 15:53.920
+Je dirai celui des extensions communes
+
+15:53.920 --> 15:56.320
+que je recommande aux gens d'installer,
+
+15:57.240 --> 16:01.160
+celui-ci est parfois le plus capricieux, celui d'ESLint.
+
+16:01.160 --> 16:02.000
+Cela devrait ressembler à ceci.
+
+16:02.000 --> 16:03.720
+C'est officiel de Microsoft.
+
+16:06.520 --> 16:08.960
+Il se déforme parfois,
+
+16:08.960 --> 16:13.520
+et donc si tu trouves que ça met en valeur quelque chose
+
+16:13.520 --> 16:15.120
+qu'il devrait ou non mettre en évidence quelque chose
+
+16:15.120 --> 16:19.800
+comme il se doit, un bon redémarrage résoudra généralement
+
+16:19.800 --> 16:21.680
+beaucoup de choses, soit VS Code lui-même
+
+16:21.680 --> 16:22.840
+ou tout l'ordinateur.
+
+16:23.840 --> 16:24.680
+Je ne sais pas.
+
+16:25.040 --> 16:27.200
+Certainement l'un de ceux qui m'énervent le plus,
+
+16:27.200 --> 16:28.880
+et parfois je finis par le désactiver
+
+16:28.880 --> 16:30.120
+parce que c'est tellement ennuyeux.
+
+16:30.120 --> 16:34.920
+Le but du script npm que vous avez écrit
+
+16:34.920 --> 16:39.160
+c'est seulement si quelqu'un n'a pas installé plus joli
+
+16:39.160 --> 16:40.440
+dans leur éditeur, n'est-ce pas ?
+
+16:41.600 --> 16:45.520
+C'est l'une des raisons pour lesquelles je le ferais.
+
+16:45.520 --> 16:47.240
+La raison principale est probablement que je puisse maintenant
+
+16:47.240 --> 16:48.800
+exécutez-le en CI, CD, n'est-ce pas ?
+
+16:48.800 --> 16:50.920
+Ainsi, je peux l'exécuter comme une action GitHub,
+
+16:50.920 --> 16:53.640
+alors il n'enregistrera pas mon code ou il ne déploiera pas mon code
+
+16:53.640 --> 16:56.000
+si c'est comme un échec de charpie ou un échec plus joli.
+
+16:56.920 --> 16:58.880
+C'est probablement la principale raison
+
+16:58.880 --> 17:01.040
+parce que presque tous ceux avec qui je travaille
+
+17:01.040 --> 17:04.880
+ou j'ai travaillé avec une version plus jolie
+
+17:04.880 --> 17:06.480
+ou des peluches intégrées à leur éditeur
+
+17:06.480 --> 17:08.320
+et ils le réparent à la volée,
+
+17:08.320 --> 17:10.160
+et il y a quelques résistants qui vont juste le faire fonctionner
+
+17:10.160 --> 17:12.720
+juste avant de s'engager, n'est-ce pas ?
+
+17:12.720 --> 17:15.600
+Ce sont donc les deux principales raisons pour lesquelles je le fais.
+
