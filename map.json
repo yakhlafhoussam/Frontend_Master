@@ -2684,7 +2684,7 @@
           "num": 1,
           "part": null,
           "base": "1. Learn Introduction Complete Intro to React v9",
-          "title": "Complete Intro to React v9 — Lesson 1",
+          "title": "Course Introduction & Padre Gino's Setup",
           "files": {
             "mp4": "playlist_6/1. Learn Introduction Complete Intro to React v9.mp4",
             "en": "playlist_6/1. Learn Introduction Complete Intro to React v9.vtt",
@@ -2697,7 +2697,7 @@
           "num": 2,
           "part": null,
           "base": "2. Learn Introduction Complete Intro to React v9",
-          "title": "Complete Intro to React v9 — Lesson 2",
+          "title": "Writing React without a Build Step",
           "files": {
             "mp4": "playlist_6/2. Learn Introduction Complete Intro to React v9.mp4",
             "en": "playlist_6/2. Learn Introduction Complete Intro to React v9.vtt",
@@ -2710,7 +2710,7 @@
           "num": 3,
           "part": null,
           "base": "3. Learn Introduction Complete Intro to React v9",
-          "title": "Complete Intro to React v9 — Lesson 3",
+          "title": "React Components and createElement",
           "files": {
             "mp4": "playlist_6/3. Learn Introduction Complete Intro to React v9.mp4",
             "en": "playlist_6/3. Learn Introduction Complete Intro to React v9.vtt",
@@ -2723,7 +2723,7 @@
           "num": 4,
           "part": null,
           "base": "4. Learn Introduction Complete Intro to React v9",
-          "title": "Complete Intro to React v9 — Lesson 4",
+          "title": "Setting up npm & Prettier Configuration",
           "files": {
             "mp4": "playlist_6/4. Learn Introduction Complete Intro to React v9.mp4",
             "en": "playlist_6/4. Learn Introduction Complete Intro to React v9.vtt",
@@ -2736,7 +2736,7 @@
           "num": 5,
           "part": null,
           "base": "5. Learn Introduction Complete Intro to React v9",
-          "title": "Complete Intro to React v9 — Lesson 5",
+          "title": "ESLint Configuration & Philosophy",
           "files": {
             "mp4": "playlist_6/5. Learn Introduction Complete Intro to React v9.mp4",
             "en": "playlist_6/5. Learn Introduction Complete Intro to React v9.vtt",
@@ -2749,7 +2749,7 @@
           "num": 6,
           "part": null,
           "base": "6. Learn Introduction Complete Intro to React v9",
-          "title": "Complete Intro to React v9 — Lesson 6",
+          "title": "Configuring Gitignore in VS Code",
           "files": {
             "mp4": "playlist_6/6. Learn Introduction Complete Intro to React v9.mp4",
             "en": "playlist_6/6. Learn Introduction Complete Intro to React v9.vtt",
@@ -2762,7 +2762,7 @@
           "num": 7,
           "part": null,
           "base": "7. Learn Introduction Complete Intro to React v9",
-          "title": "Complete Intro to React v9 — Lesson 7",
+          "title": "Setting Up Vite for React",
           "files": {
             "mp4": "playlist_6/7. Learn Introduction Complete Intro to React v9.mp4",
             "en": "playlist_6/7. Learn Introduction Complete Intro to React v9.vtt",
@@ -2775,7 +2775,7 @@
           "num": 8,
           "part": null,
           "base": "8. Learn Introduction Complete Intro to React v9",
-          "title": "Complete Intro to React v9 — Lesson 8",
+          "title": "Understanding JSX Core Concepts",
           "files": {
             "mp4": "playlist_6/8. Learn Introduction Complete Intro to React v9.mp4",
             "en": "playlist_6/8. Learn Introduction Complete Intro to React v9.vtt",
@@ -2788,7 +2788,7 @@
           "num": 9,
           "part": null,
           "base": "9. Learn Introduction Complete Intro to React v9",
-          "title": "Complete Intro to React v9 — Lesson 9",
+          "title": "ESLint React Plugin & JSX Gotchas",
           "files": {
             "mp4": "playlist_6/9. Learn Introduction Complete Intro to React v9.mp4",
             "en": "playlist_6/9. Learn Introduction Complete Intro to React v9.vtt",
@@ -2801,7 +2801,7 @@
           "num": 10,
           "part": null,
           "base": "10. Learn Introduction Complete Intro to React v9",
-          "title": "Complete Intro to React v9 — Lesson 10",
+          "title": "Fastify API Server & Vite Proxy Setup",
           "files": {
             "mp4": "playlist_6/10. Learn Introduction Complete Intro to React v9.mp4",
             "en": "playlist_6/10. Learn Introduction Complete Intro to React v9.vtt",
@@ -2814,7 +2814,7 @@
           "num": 11,
           "part": null,
           "base": "11. Learn Introduction Complete Intro to React v9",
-          "title": "Complete Intro to React v9 — Lesson 11",
+          "title": "Adding Pizza Images to Components",
           "files": {
             "mp4": "playlist_6/11. Learn Introduction Complete Intro to React v9.mp4",
             "en": "playlist_6/11. Learn Introduction Complete Intro to React v9.vtt",
@@ -2827,7 +2827,7 @@
           "num": 12,
           "part": null,
           "base": "12. Learn Introduction Complete Intro to React v9",
-          "title": "Complete Intro to React v9 — Lesson 12",
+          "title": "Introduction to React Hooks & useState",
           "files": {
             "mp4": "playlist_6/12. Learn Introduction Complete Intro to React v9.mp4",
             "en": "playlist_6/12. Learn Introduction Complete Intro to React v9.vtt",
@@ -2840,7 +2840,7 @@
           "num": 13,
           "part": null,
           "base": "13. Learn Introduction Complete Intro to React v9",
-          "title": "Complete Intro to React v9 — Lesson 13",
+          "title": "Handling Form State & Controlled Inputs",
           "files": {
             "mp4": "playlist_6/13. Learn Introduction Complete Intro to React v9.mp4",
             "en": "playlist_6/13. Learn Introduction Complete Intro to React v9.vtt",
@@ -2853,7 +2853,7 @@
           "num": 14,
           "part": null,
           "base": "14. Learn Introduction Complete Intro to React v9",
-          "title": "Complete Intro to React v9 — Lesson 14",
+          "title": "Introduction to the useEffect Hook",
           "files": {
             "mp4": "playlist_6/14. Learn Introduction Complete Intro to React v9.mp4",
             "en": "playlist_6/14. Learn Introduction Complete Intro to React v9.vtt",
@@ -2866,7 +2866,7 @@
           "num": 15,
           "part": null,
           "base": "15. Learn Introduction Complete Intro to React v9",
-          "title": "Complete Intro to React v9 — Lesson 15",
+          "title": "Fetching API Data & Loading States",
           "files": {
             "mp4": "playlist_6/15. Learn Introduction Complete Intro to React v9.mp4",
             "en": "playlist_6/15. Learn Introduction Complete Intro to React v9.vtt",
@@ -2879,7 +2879,7 @@
           "num": 16,
           "part": null,
           "base": "16. Learn Introduction Complete Intro to React v9",
-          "title": "Complete Intro to React v9 — Lesson 16",
+          "title": "The Key Prop in Lists",
           "files": {
             "mp4": "playlist_6/16. Learn Introduction Complete Intro to React v9.mp4",
             "en": "playlist_6/16. Learn Introduction Complete Intro to React v9.vtt",
@@ -2892,7 +2892,7 @@
           "num": 17,
           "part": null,
           "base": "17. Learn Introduction Complete Intro to React v9",
-          "title": "Complete Intro to React v9 — Lesson 17",
+          "title": "Dev vs Production Environments in Vite",
           "files": {
             "mp4": "playlist_6/17. Learn Introduction Complete Intro to React v9.mp4",
             "en": "playlist_6/17. Learn Introduction Complete Intro to React v9.vtt",
@@ -2905,7 +2905,7 @@
           "num": 18,
           "part": null,
           "base": "18. Learn Introduction Complete Intro to React v9",
-          "title": "Complete Intro to React v9 — Lesson 18",
+          "title": "Creating Custom Hooks (usePizzaOfTheDay)",
           "files": {
             "mp4": "playlist_6/18. Learn Introduction Complete Intro to React v9.mp4",
             "en": "playlist_6/18. Learn Introduction Complete Intro to React v9.vtt",
@@ -2918,7 +2918,7 @@
           "num": 19,
           "part": null,
           "base": "19. Learn Introduction Complete Intro to React v9",
-          "title": "Complete Intro to React v9 — Lesson 19",
+          "title": "Custom Hooks vs Component Logic Best Practices",
           "files": {
             "mp4": "playlist_6/19. Learn Introduction Complete Intro to React v9.mp4",
             "en": "playlist_6/19. Learn Introduction Complete Intro to React v9.vtt",
@@ -2931,7 +2931,7 @@
           "num": 20,
           "part": null,
           "base": "20. Learn Introduction Complete Intro to React v9",
-          "title": "Complete Intro to React v9 — Lesson 20",
+          "title": "Troubleshooting Layout & useDebugValue",
           "files": {
             "mp4": "playlist_6/20. Learn Introduction Complete Intro to React v9.mp4",
             "en": "playlist_6/20. Learn Introduction Complete Intro to React v9.vtt",
@@ -2944,7 +2944,7 @@
           "num": 21,
           "part": null,
           "base": "21. Learn Introduction Complete Intro to React v9",
-          "title": "Complete Intro to React v9 — Lesson 21",
+          "title": "Creating the Cart State in React",
           "files": {
             "mp4": "playlist_6/21. Learn Introduction Complete Intro to React v9.mp4",
             "en": "playlist_6/21. Learn Introduction Complete Intro to React v9.vtt",
@@ -2957,7 +2957,7 @@
           "num": 22,
           "part": null,
           "base": "22. Learn Introduction Complete Intro to React v9",
-          "title": "Complete Intro to React v9 — Lesson 22",
+          "title": "Implementing Checkout API Integration",
           "files": {
             "mp4": "playlist_6/22. Learn Introduction Complete Intro to React v9.mp4",
             "en": "playlist_6/22. Learn Introduction Complete Intro to React v9.vtt",
@@ -2970,7 +2970,7 @@
           "num": 23,
           "part": null,
           "base": "23. Learn Introduction Complete Intro to React v9",
-          "title": "Complete Intro to React v9 — Lesson 23",
+          "title": "React Context API Concepts & Tradeoffs",
           "files": {
             "mp4": "playlist_6/23. Learn Introduction Complete Intro to React v9.mp4",
             "en": "playlist_6/23. Learn Introduction Complete Intro to React v9.vtt",
@@ -2983,7 +2983,7 @@
           "num": 24,
           "part": null,
           "base": "24. Learn Introduction Complete Intro to React v9",
-          "title": "Complete Intro to React v9 — Lesson 24",
+          "title": "Implementing Cart Context with useContext",
           "files": {
             "mp4": "playlist_6/24. Learn Introduction Complete Intro to React v9.mp4",
             "en": "playlist_6/24. Learn Introduction Complete Intro to React v9.vtt",
@@ -2996,7 +2996,7 @@
           "num": 25,
           "part": null,
           "base": "25. Learn Introduction Complete Intro to React v9",
-          "title": "Complete Intro to React v9 — Lesson 25",
+          "title": "Client-Side Routing with TanStack Router",
           "files": {
             "mp4": "playlist_6/25. Learn Introduction Complete Intro to React v9.mp4",
             "en": "playlist_6/25. Learn Introduction Complete Intro to React v9.vtt",
@@ -3009,7 +3009,7 @@
           "num": 26,
           "part": null,
           "base": "26. Learn Introduction Complete Intro to React v9",
-          "title": "Complete Intro to React v9 — Lesson 26",
+          "title": "Lazy Loading Routes & Router DevTools",
           "files": {
             "mp4": "playlist_6/26. Learn Introduction Complete Intro to React v9.mp4",
             "en": "playlist_6/26. Learn Introduction Complete Intro to React v9.vtt",
@@ -3022,7 +3022,7 @@
           "num": 27,
           "part": null,
           "base": "27. Learn Introduction Complete Intro to React v9",
-          "title": "Complete Intro to React v9 — Lesson 27",
+          "title": "Introduction to TanStack Query (React Query)",
           "files": {
             "mp4": "playlist_6/27. Learn Introduction Complete Intro to React v9.mp4",
             "en": "playlist_6/27. Learn Introduction Complete Intro to React v9.vtt",
@@ -3035,7 +3035,7 @@
           "num": 28,
           "part": null,
           "base": "28. Learn Introduction Complete Intro to React v9",
-          "title": "Complete Intro to React v9 — Lesson 28",
+          "title": "Fetching Paginated Data with TanStack Query",
           "files": {
             "mp4": "playlist_6/28. Learn Introduction Complete Intro to React v9.mp4",
             "en": "playlist_6/28. Learn Introduction Complete Intro to React v9.vtt",
@@ -3048,7 +3048,7 @@
           "num": 29,
           "part": null,
           "base": "29. Learn Introduction Complete Intro to React v9",
-          "title": "Complete Intro to React v9 — Lesson 29",
+          "title": "TanStack Query vs useEffect & Tailwind Discussion",
           "files": {
             "mp4": "playlist_6/29. Learn Introduction Complete Intro to React v9.mp4",
             "en": "playlist_6/29. Learn Introduction Complete Intro to React v9.vtt",
@@ -3061,7 +3061,7 @@
           "num": 30,
           "part": null,
           "base": "30. Learn Introduction Complete Intro to React v9",
-          "title": "Complete Intro to React v9 — Lesson 30",
+          "title": "Advanced React: Portals & Cleanup Functions",
           "files": {
             "mp4": "playlist_6/30. Learn Introduction Complete Intro to React v9.mp4",
             "en": "playlist_6/30. Learn Introduction Complete Intro to React v9.vtt",
@@ -3074,7 +3074,7 @@
           "num": 31,
           "part": null,
           "base": "31. Learn Introduction Complete Intro to React v9",
-          "title": "Complete Intro to React v9 — Lesson 31",
+          "title": "Implementing useCurrency Hook & Past Orders Modal",
           "files": {
             "mp4": "playlist_6/31. Learn Introduction Complete Intro to React v9.mp4",
             "en": "playlist_6/31. Learn Introduction Complete Intro to React v9.vtt",
@@ -3087,7 +3087,7 @@
           "num": 32,
           "part": null,
           "base": "32. Learn Introduction Complete Intro to React v9",
-          "title": "Complete Intro to React v9 — Lesson 32",
+          "title": "Rendering Modals and Handling Null in React",
           "files": {
             "mp4": "playlist_6/32. Learn Introduction Complete Intro to React v9.mp4",
             "en": "playlist_6/32. Learn Introduction Complete Intro to React v9.vtt",
@@ -3100,7 +3100,7 @@
           "num": 33,
           "part": null,
           "base": "33. Learn Introduction Complete Intro to React v9",
-          "title": "Complete Intro to React v9 — Lesson 33",
+          "title": "React Class Components & Error Boundaries",
           "files": {
             "mp4": "playlist_6/33. Learn Introduction Complete Intro to React v9.mp4",
             "en": "playlist_6/33. Learn Introduction Complete Intro to React v9.vtt",
@@ -3113,7 +3113,7 @@
           "num": 34,
           "part": null,
           "base": "34. Learn Introduction Complete Intro to React v9",
-          "title": "Complete Intro to React v9 — Lesson 34",
+          "title": "Catching Errors with Error Boundaries",
           "files": {
             "mp4": "playlist_6/34. Learn Introduction Complete Intro to React v9.mp4",
             "en": "playlist_6/34. Learn Introduction Complete Intro to React v9.vtt",
@@ -3126,7 +3126,7 @@
           "num": 35,
           "part": null,
           "base": "35. Learn Introduction Complete Intro to React v9",
-          "title": "Complete Intro to React v9 — Lesson 35",
+          "title": "Uncontrolled Forms & Mutations in TanStack Query",
           "files": {
             "mp4": "playlist_6/35. Learn Introduction Complete Intro to React v9.mp4",
             "en": "playlist_6/35. Learn Introduction Complete Intro to React v9.vtt",
@@ -3139,7 +3139,7 @@
           "num": 36,
           "part": null,
           "base": "36. Learn Introduction Complete Intro to React v9",
-          "title": "Complete Intro to React v9 — Lesson 36",
+          "title": "TanStack Query DevTools & Hybrid Forms",
           "files": {
             "mp4": "playlist_6/36. Learn Introduction Complete Intro to React v9.mp4",
             "en": "playlist_6/36. Learn Introduction Complete Intro to React v9.vtt",
@@ -3152,7 +3152,7 @@
           "num": 37,
           "part": null,
           "base": "37. Learn Introduction Complete Intro to React v9",
-          "title": "Complete Intro to React v9 — Lesson 37",
+          "title": "Introduction to Testing with Vitest",
           "files": {
             "mp4": "playlist_6/37. Learn Introduction Complete Intro to React v9.mp4",
             "en": "playlist_6/37. Learn Introduction Complete Intro to React v9.vtt",
@@ -3165,7 +3165,7 @@
           "num": 38,
           "part": null,
           "base": "38. Learn Introduction Complete Intro to React v9",
-          "title": "Complete Intro to React v9 — Lesson 38",
+          "title": "Writing Unit Tests & Debugging in Vitest",
           "files": {
             "mp4": "playlist_6/38. Learn Introduction Complete Intro to React v9.mp4",
             "en": "playlist_6/38. Learn Introduction Complete Intro to React v9.vtt",
@@ -3178,7 +3178,7 @@
           "num": 39,
           "part": null,
           "base": "39. Learn Introduction Complete Intro to React v9",
-          "title": "Complete Intro to React v9 — Lesson 39",
+          "title": "Mocking API Requests in Vitest Tests",
           "files": {
             "mp4": "playlist_6/39. Learn Introduction Complete Intro to React v9.mp4",
             "en": "playlist_6/39. Learn Introduction Complete Intro to React v9.vtt",
@@ -3191,7 +3191,7 @@
           "num": 40,
           "part": null,
           "base": "40. Learn Introduction Complete Intro to React v9",
-          "title": "Complete Intro to React v9 — Lesson 40",
+          "title": "Testing Custom Hooks with Vitest",
           "files": {
             "mp4": "playlist_6/40. Learn Introduction Complete Intro to React v9.mp4",
             "en": "playlist_6/40. Learn Introduction Complete Intro to React v9.vtt",
@@ -3204,7 +3204,7 @@
           "num": 41,
           "part": null,
           "base": "41. Learn Introduction Complete Intro to React v9",
-          "title": "Complete Intro to React v9 — Lesson 41",
+          "title": "Snapshot Testing with Vitest",
           "files": {
             "mp4": "playlist_6/41. Learn Introduction Complete Intro to React v9.mp4",
             "en": "playlist_6/41. Learn Introduction Complete Intro to React v9.vtt",
@@ -3217,7 +3217,7 @@
           "num": 42,
           "part": null,
           "base": "42. Learn Introduction Complete Intro to React v9",
-          "title": "Complete Intro to React v9 — Lesson 42",
+          "title": "Measuring Test Coverage with Vitest",
           "files": {
             "mp4": "playlist_6/42. Learn Introduction Complete Intro to React v9.mp4",
             "en": "playlist_6/42. Learn Introduction Complete Intro to React v9.vtt",
@@ -3230,7 +3230,7 @@
           "num": 43,
           "part": null,
           "base": "43. Learn Introduction Complete Intro to React v9",
-          "title": "Complete Intro to React v9 — Lesson 43",
+          "title": "Interactive Testing with Vitest UI",
           "files": {
             "mp4": "playlist_6/43. Learn Introduction Complete Intro to React v9.mp4",
             "en": "playlist_6/43. Learn Introduction Complete Intro to React v9.vtt",
@@ -3243,7 +3243,7 @@
           "num": 44,
           "part": null,
           "base": "44. Learn Introduction Complete Intro to React v9",
-          "title": "Complete Intro to React v9 — Lesson 44",
+          "title": "Experimental Browser Testing with Playwright",
           "files": {
             "mp4": "playlist_6/44. Learn Introduction Complete Intro to React v9.mp4",
             "en": "playlist_6/44. Learn Introduction Complete Intro to React v9.vtt",
@@ -3256,7 +3256,7 @@
           "num": 45,
           "part": null,
           "base": "45. Learn Introduction Complete Intro to React v9",
-          "title": "Complete Intro to React v9 — Lesson 45",
+          "title": "Real Browser Environment vs Happy DOM in Tests",
           "files": {
             "mp4": "playlist_6/45. Learn Introduction Complete Intro to React v9.mp4",
             "en": "playlist_6/45. Learn Introduction Complete Intro to React v9.vtt",
@@ -3269,7 +3269,7 @@
           "num": 46,
           "part": null,
           "base": "46. Learn Introduction Complete Intro to React v9",
-          "title": "Complete Intro to React v9 — Lesson 46",
+          "title": "What's New in React 19",
           "files": {
             "mp4": "playlist_6/46. Learn Introduction Complete Intro to React v9.mp4",
             "en": "playlist_6/46. Learn Introduction Complete Intro to React v9.vtt",
@@ -3282,7 +3282,7 @@
           "num": 47,
           "part": null,
           "base": "47. Learn Introduction Complete Intro to React v9",
-          "title": "Complete Intro to React v9 — Lesson 47",
+          "title": "React 19 Form Actions & useFormStatus Hook",
           "files": {
             "mp4": "playlist_6/47. Learn Introduction Complete Intro to React v9.mp4",
             "en": "playlist_6/47. Learn Introduction Complete Intro to React v9.vtt",
@@ -3295,7 +3295,7 @@
           "num": 48,
           "part": null,
           "base": "48. Learn Introduction Complete Intro to React v9",
-          "title": "Complete Intro to React v9 — Lesson 48",
+          "title": "React 19 use Hook & Suspense API",
           "files": {
             "mp4": "playlist_6/48. Learn Introduction Complete Intro to React v9.mp4",
             "en": "playlist_6/48. Learn Introduction Complete Intro to React v9.vtt",
@@ -3308,7 +3308,7 @@
           "num": 49,
           "part": null,
           "base": "49. Learn Introduction Complete Intro to React v9",
-          "title": "Complete Intro to React v9 — Lesson 49",
+          "title": "The React Compiler & Auto-Memoization",
           "files": {
             "mp4": "playlist_6/49. Learn Introduction Complete Intro to React v9.mp4",
             "en": "playlist_6/49. Learn Introduction Complete Intro to React v9.vtt",
@@ -3321,7 +3321,7 @@
           "num": 50,
           "part": null,
           "base": "50. Learn Introduction Complete Intro to React v9",
-          "title": "Complete Intro to React v9 — Lesson 50",
+          "title": "Course Conclusion & Professional React Advice",
           "files": {
             "mp4": "playlist_6/50. Learn Introduction Complete Intro to React v9.mp4",
             "en": "playlist_6/50. Learn Introduction Complete Intro to React v9.vtt",
