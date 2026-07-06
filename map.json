@@ -2671,6 +2671,665 @@
           }
         }
       ]
+    },
+    {
+      "id": "rp6",
+      "tech": "react",
+      "name": "Playlist 6: Complete Intro to React v9",
+      "icon": "fa-react",
+      "folder": "playlist_6",
+      "videos": [
+        {
+          "id": "rp6_1_0",
+          "num": 1,
+          "part": null,
+          "base": "1. Learn Introduction Complete Intro to React v9",
+          "title": "Course Introduction & Padre Gino's Setup",
+          "files": {
+            "mp4": "https://yakhlafhoussam.github.io/React/React%20I/Videos/1.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.mp4",
+            "en": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleEN/1.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.vtt",
+            "fr": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleFR/1.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.fr.vtt",
+            "ar": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleAR/1.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_2_0",
+          "num": 2,
+          "part": null,
+          "base": "2. Learn Introduction Complete Intro to React v9",
+          "title": "Writing React without a Build Step",
+          "files": {
+            "mp4": "https://yakhlafhoussam.github.io/React/React%20I/Videos/2.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.mp4",
+            "en": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleEN/2.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.vtt",
+            "fr": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleFR/2.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.fr.vtt",
+            "ar": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleAR/2.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_3_0",
+          "num": 3,
+          "part": null,
+          "base": "3. Learn Introduction Complete Intro to React v9",
+          "title": "React Components and createElement",
+          "files": {
+            "mp4": "https://yakhlafhoussam.github.io/React/React%20I/Videos/3.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.mp4",
+            "en": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleEN/3.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.vtt",
+            "fr": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleFR/3.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.fr.vtt",
+            "ar": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleAR/3.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_4_0",
+          "num": 4,
+          "part": null,
+          "base": "4. Learn Introduction Complete Intro to React v9",
+          "title": "Setting up npm & Prettier Configuration",
+          "files": {
+            "mp4": "https://yakhlafhoussam.github.io/React/React%20I/Videos/4.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.mp4",
+            "en": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleEN/4.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.vtt",
+            "fr": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleFR/4.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.fr.vtt",
+            "ar": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleAR/4.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_5_0",
+          "num": 5,
+          "part": null,
+          "base": "5. Learn Introduction Complete Intro to React v9",
+          "title": "ESLint Configuration & Philosophy",
+          "files": {
+            "mp4": "https://yakhlafhoussam.github.io/React/React%20I/Videos/5.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.mp4",
+            "en": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleEN/5.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.vtt",
+            "fr": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleFR/5.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.fr.vtt",
+            "ar": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleAR/5.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_6_0",
+          "num": 6,
+          "part": null,
+          "base": "6. Learn Introduction Complete Intro to React v9",
+          "title": "Configuring Gitignore in VS Code",
+          "files": {
+            "mp4": "https://yakhlafhoussam.github.io/React/React%20I/Videos/6.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.mp4",
+            "en": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleEN/6.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.vtt",
+            "fr": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleFR/6.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.fr.vtt",
+            "ar": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleAR/6.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_7_0",
+          "num": 7,
+          "part": null,
+          "base": "7. Learn Introduction Complete Intro to React v9",
+          "title": "Setting Up Vite for React",
+          "files": {
+            "mp4": "https://yakhlafhoussam.github.io/React/React%20I/Videos/7.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.mp4",
+            "en": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleEN/7.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.vtt",
+            "fr": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleFR/7.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.fr.vtt",
+            "ar": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleAR/7.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_8_0",
+          "num": 8,
+          "part": null,
+          "base": "8. Learn Introduction Complete Intro to React v9",
+          "title": "Understanding JSX Core Concepts",
+          "files": {
+            "mp4": "https://yakhlafhoussam.github.io/React/React%20I/Videos/8.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.mp4",
+            "en": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleEN/8.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.vtt",
+            "fr": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleFR/8.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.fr.vtt",
+            "ar": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleAR/8.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_9_0",
+          "num": 9,
+          "part": null,
+          "base": "9. Learn Introduction Complete Intro to React v9",
+          "title": "ESLint React Plugin & JSX Gotchas",
+          "files": {
+            "mp4": "https://yakhlafhoussam.github.io/React/React%20I/Videos/9.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.mp4",
+            "en": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleEN/9.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.vtt",
+            "fr": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleFR/9.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.fr.vtt",
+            "ar": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleAR/9.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_10_0",
+          "num": 10,
+          "part": null,
+          "base": "10. Learn Introduction Complete Intro to React v9",
+          "title": "Fastify API Server & Vite Proxy Setup",
+          "files": {
+            "mp4": "https://yakhlafhoussam.github.io/React/React%20I/Videos/10.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.mp4",
+            "en": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleEN/10.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.vtt",
+            "fr": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleFR/10.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.fr.vtt",
+            "ar": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleAR/10.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_11_0",
+          "num": 11,
+          "part": null,
+          "base": "11. Learn Introduction Complete Intro to React v9",
+          "title": "Adding Pizza Images to Components",
+          "files": {
+            "mp4": "https://yakhlafhoussam.github.io/React/React%20I/Videos/11.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.mp4",
+            "en": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleEN/11.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.vtt",
+            "fr": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleFR/11.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.fr.vtt",
+            "ar": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleAR/11.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_12_0",
+          "num": 12,
+          "part": null,
+          "base": "12. Learn Introduction Complete Intro to React v9",
+          "title": "Introduction to React Hooks & useState",
+          "files": {
+            "mp4": "https://yakhlafhoussam.github.io/React/React%20I/Videos/12.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.mp4",
+            "en": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleEN/12.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.vtt",
+            "fr": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleFR/12.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.fr.vtt",
+            "ar": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleAR/12.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_13_0",
+          "num": 13,
+          "part": null,
+          "base": "13. Learn Introduction Complete Intro to React v9",
+          "title": "Handling Form State & Controlled Inputs",
+          "files": {
+            "mp4": "https://yakhlafhoussam.github.io/React/React%20I/Videos/13.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.mp4",
+            "en": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleEN/13.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.vtt",
+            "fr": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleFR/13.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.fr.vtt",
+            "ar": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleAR/13.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_14_0",
+          "num": 14,
+          "part": null,
+          "base": "14. Learn Introduction Complete Intro to React v9",
+          "title": "Introduction to the useEffect Hook",
+          "files": {
+            "mp4": "https://yakhlafhoussam.github.io/React/React%20I/Videos/14.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.mp4",
+            "en": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleEN/14.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.vtt",
+            "fr": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleFR/14.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.fr.vtt",
+            "ar": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleAR/14.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_15_0",
+          "num": 15,
+          "part": null,
+          "base": "15. Learn Introduction Complete Intro to React v9",
+          "title": "Fetching API Data & Loading States",
+          "files": {
+            "mp4": "https://yakhlafhoussam.github.io/React/React%20I/Videos/15.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.mp4",
+            "en": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleEN/15.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.vtt",
+            "fr": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleFR/15.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.fr.vtt",
+            "ar": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleAR/15.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_16_0",
+          "num": 16,
+          "part": null,
+          "base": "16. Learn Introduction Complete Intro to React v9",
+          "title": "The Key Prop in Lists",
+          "files": {
+            "mp4": "https://yakhlafhoussam.github.io/React/React%20I/Videos/16.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.mp4",
+            "en": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleEN/16.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.vtt",
+            "fr": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleFR/16.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.fr.vtt",
+            "ar": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleAR/16.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_17_0",
+          "num": 17,
+          "part": null,
+          "base": "17. Learn Introduction Complete Intro to React v9",
+          "title": "Dev vs Production Environments in Vite",
+          "files": {
+            "mp4": "https://yakhlafhoussam.github.io/React/React%20I/Videos/17.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.mp4",
+            "en": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleEN/17.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.vtt",
+            "fr": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleFR/17.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.fr.vtt",
+            "ar": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleAR/17.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_18_0",
+          "num": 18,
+          "part": null,
+          "base": "18. Learn Introduction Complete Intro to React v9",
+          "title": "Creating Custom Hooks (usePizzaOfTheDay)",
+          "files": {
+            "mp4": "https://yakhlafhoussam.github.io/React/React%20I/Videos/18.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.mp4",
+            "en": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleEN/18.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.vtt",
+            "fr": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleFR/18.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.fr.vtt",
+            "ar": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleAR/18.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_19_0",
+          "num": 19,
+          "part": null,
+          "base": "19. Learn Introduction Complete Intro to React v9",
+          "title": "Custom Hooks vs Component Logic Best Practices",
+          "files": {
+            "mp4": "https://yakhlafhoussam.github.io/React/React%20I/Videos/19.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.mp4",
+            "en": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleEN/19.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.vtt",
+            "fr": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleFR/19.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.fr.vtt",
+            "ar": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleAR/19.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_20_0",
+          "num": 20,
+          "part": null,
+          "base": "20. Learn Introduction Complete Intro to React v9",
+          "title": "Troubleshooting Layout & useDebugValue",
+          "files": {
+            "mp4": "https://yakhlafhoussam.github.io/React/React%20I/Videos/20.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.mp4",
+            "en": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleEN/20.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.vtt",
+            "fr": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleFR/20.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.fr.vtt",
+            "ar": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleAR/20.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_21_0",
+          "num": 21,
+          "part": null,
+          "base": "21. Learn Introduction Complete Intro to React v9",
+          "title": "Creating the Cart State in React",
+          "files": {
+            "mp4": "https://yakhlafhoussam.github.io/React/React%20I/Videos/21.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.mp4",
+            "en": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleEN/21.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.vtt",
+            "fr": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleFR/21.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.fr.vtt",
+            "ar": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleAR/21.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_22_0",
+          "num": 22,
+          "part": null,
+          "base": "22. Learn Introduction Complete Intro to React v9",
+          "title": "Implementing Checkout API Integration",
+          "files": {
+            "mp4": "https://yakhlafhoussam.github.io/React/React%20I/Videos/22.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.mp4",
+            "en": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleEN/22.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.vtt",
+            "fr": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleFR/22.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.fr.vtt",
+            "ar": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleAR/22.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_23_0",
+          "num": 23,
+          "part": null,
+          "base": "23. Learn Introduction Complete Intro to React v9",
+          "title": "React Context API Concepts & Tradeoffs",
+          "files": {
+            "mp4": "https://yakhlafhoussam.github.io/React/React%20I/Videos/23.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.mp4",
+            "en": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleEN/23.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.vtt",
+            "fr": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleFR/23.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.fr.vtt",
+            "ar": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleAR/23.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_24_0",
+          "num": 24,
+          "part": null,
+          "base": "24. Learn Introduction Complete Intro to React v9",
+          "title": "Implementing Cart Context with useContext",
+          "files": {
+            "mp4": "https://yakhlafhoussam.github.io/React/React%20I/Videos/24.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.mp4",
+            "en": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleEN/24.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.vtt",
+            "fr": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleFR/24.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.fr.vtt",
+            "ar": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleAR/24.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_25_0",
+          "num": 25,
+          "part": null,
+          "base": "25. Learn Introduction Complete Intro to React v9",
+          "title": "Client-Side Routing with TanStack Router",
+          "files": {
+            "mp4": "https://yakhlafhoussam.github.io/React/React%20I/Videos/25.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.mp4",
+            "en": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleEN/25.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.vtt",
+            "fr": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleFR/25.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.fr.vtt",
+            "ar": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleAR/25.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_26_0",
+          "num": 26,
+          "part": null,
+          "base": "26. Learn Introduction Complete Intro to React v9",
+          "title": "Lazy Loading Routes & Router DevTools",
+          "files": {
+            "mp4": "https://yakhlafhoussam.github.io/React/React%20I/Videos/26.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.mp4",
+            "en": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleEN/26.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.vtt",
+            "fr": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleFR/26.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.fr.vtt",
+            "ar": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleAR/26.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_27_0",
+          "num": 27,
+          "part": null,
+          "base": "27. Learn Introduction Complete Intro to React v9",
+          "title": "Introduction to TanStack Query (React Query)",
+          "files": {
+            "mp4": "https://yakhlafhoussam.github.io/React/React%20I/Videos/27.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.mp4",
+            "en": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleEN/27.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.vtt",
+            "fr": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleFR/27.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.fr.vtt",
+            "ar": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleAR/27.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_28_0",
+          "num": 28,
+          "part": null,
+          "base": "28. Learn Introduction Complete Intro to React v9",
+          "title": "Fetching Paginated Data with TanStack Query",
+          "files": {
+            "mp4": "https://yakhlafhoussam.github.io/React/React%20I/Videos/28.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.mp4",
+            "en": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleEN/28.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.vtt",
+            "fr": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleFR/28.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.fr.vtt",
+            "ar": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleAR/28.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_29_0",
+          "num": 29,
+          "part": null,
+          "base": "29. Learn Introduction Complete Intro to React v9",
+          "title": "TanStack Query vs useEffect & Tailwind Discussion",
+          "files": {
+            "mp4": "https://yakhlafhoussam.github.io/React/React%20I/Videos/29.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.mp4",
+            "en": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleEN/29.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.vtt",
+            "fr": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleFR/29.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.fr.vtt",
+            "ar": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleAR/29.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_30_0",
+          "num": 30,
+          "part": null,
+          "base": "30. Learn Introduction Complete Intro to React v9",
+          "title": "Advanced React: Portals & Cleanup Functions",
+          "files": {
+            "mp4": "https://yakhlafhoussam.github.io/React/React%20I/Videos/30.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.mp4",
+            "en": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleEN/30.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.vtt",
+            "fr": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleFR/30.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.fr.vtt",
+            "ar": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleAR/30.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_31_0",
+          "num": 31,
+          "part": null,
+          "base": "31. Learn Introduction Complete Intro to React v9",
+          "title": "Implementing useCurrency Hook & Past Orders Modal",
+          "files": {
+            "mp4": "https://yakhlafhoussam.github.io/React/React%20I/Videos/31.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.mp4",
+            "en": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleEN/31.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.vtt",
+            "fr": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleFR/31.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.fr.vtt",
+            "ar": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleAR/31.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_32_0",
+          "num": 32,
+          "part": null,
+          "base": "32. Learn Introduction Complete Intro to React v9",
+          "title": "Rendering Modals and Handling Null in React",
+          "files": {
+            "mp4": "https://yakhlafhoussam.github.io/React/React%20I/Videos/32.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.mp4",
+            "en": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleEN/32.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.vtt",
+            "fr": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleFR/32.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.fr.vtt",
+            "ar": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleAR/32.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_33_0",
+          "num": 33,
+          "part": null,
+          "base": "33. Learn Introduction Complete Intro to React v9",
+          "title": "React Class Components & Error Boundaries",
+          "files": {
+            "mp4": "https://yakhlafhoussam.github.io/React/React%20I/Videos/33.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.mp4",
+            "en": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleEN/33.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.vtt",
+            "fr": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleFR/33.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.fr.vtt",
+            "ar": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleAR/33.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_34_0",
+          "num": 34,
+          "part": null,
+          "base": "34. Learn Introduction Complete Intro to React v9",
+          "title": "Catching Errors with Error Boundaries",
+          "files": {
+            "mp4": "https://yakhlafhoussam.github.io/React/React%20I/Videos/34.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.mp4",
+            "en": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleEN/34.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.vtt",
+            "fr": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleFR/34.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.fr.vtt",
+            "ar": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleAR/34.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_35_0",
+          "num": 35,
+          "part": null,
+          "base": "35. Learn Introduction Complete Intro to React v9",
+          "title": "Uncontrolled Forms & Mutations in TanStack Query",
+          "files": {
+            "mp4": "https://yakhlafhoussam.github.io/React/React%20I/Videos/35.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.mp4",
+            "en": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleEN/35.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.vtt",
+            "fr": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleFR/35.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.fr.vtt",
+            "ar": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleAR/35.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_36_0",
+          "num": 36,
+          "part": null,
+          "base": "36. Learn Introduction Complete Intro to React v9",
+          "title": "TanStack Query DevTools & Hybrid Forms",
+          "files": {
+            "mp4": "https://yakhlafhoussam.github.io/React/React%20I/Videos/36.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.mp4",
+            "en": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleEN/36.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.vtt",
+            "fr": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleFR/36.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.fr.vtt",
+            "ar": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleAR/36.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_37_0",
+          "num": 37,
+          "part": null,
+          "base": "37. Learn Introduction Complete Intro to React v9",
+          "title": "Introduction to Testing with Vitest",
+          "files": {
+            "mp4": "https://yakhlafhoussam.github.io/React/React%20I/Videos/37.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.mp4",
+            "en": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleEN/37.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.vtt",
+            "fr": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleFR/37.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.fr.vtt",
+            "ar": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleAR/37.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_38_0",
+          "num": 38,
+          "part": null,
+          "base": "38. Learn Introduction Complete Intro to React v9",
+          "title": "Writing Unit Tests & Debugging in Vitest",
+          "files": {
+            "mp4": "https://yakhlafhoussam.github.io/React/React%20I/Videos/38.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.mp4",
+            "en": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleEN/38.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.vtt",
+            "fr": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleFR/38.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.fr.vtt",
+            "ar": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleAR/38.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_39_0",
+          "num": 39,
+          "part": null,
+          "base": "39. Learn Introduction Complete Intro to React v9",
+          "title": "Mocking API Requests in Vitest Tests",
+          "files": {
+            "mp4": "https://yakhlafhoussam.github.io/React/React%20I/Videos/39.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.mp4",
+            "en": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleEN/39.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.vtt",
+            "fr": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleFR/39.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.fr.vtt",
+            "ar": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleAR/39.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_40_0",
+          "num": 40,
+          "part": null,
+          "base": "40. Learn Introduction Complete Intro to React v9",
+          "title": "Testing Custom Hooks with Vitest",
+          "files": {
+            "mp4": "https://yakhlafhoussam.github.io/React/React%20I/Videos/40.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.mp4",
+            "en": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleEN/40.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.vtt",
+            "fr": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleFR/40.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.fr.vtt",
+            "ar": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleAR/40.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_41_0",
+          "num": 41,
+          "part": null,
+          "base": "41. Learn Introduction Complete Intro to React v9",
+          "title": "Snapshot Testing with Vitest",
+          "files": {
+            "mp4": "https://yakhlafhoussam.github.io/React/React%20I/Videos/41.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.mp4",
+            "en": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleEN/41.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.vtt",
+            "fr": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleFR/41.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.fr.vtt",
+            "ar": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleAR/41.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_42_0",
+          "num": 42,
+          "part": null,
+          "base": "42. Learn Introduction Complete Intro to React v9",
+          "title": "Measuring Test Coverage with Vitest",
+          "files": {
+            "mp4": "https://yakhlafhoussam.github.io/React/React%20I/Videos/42.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.mp4",
+            "en": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleEN/42.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.vtt",
+            "fr": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleFR/42.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.fr.vtt",
+            "ar": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleAR/42.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_43_0",
+          "num": 43,
+          "part": null,
+          "base": "43. Learn Introduction Complete Intro to React v9",
+          "title": "Interactive Testing with Vitest UI",
+          "files": {
+            "mp4": "https://yakhlafhoussam.github.io/React/React%20I/Videos/43.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.mp4",
+            "en": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleEN/43.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.vtt",
+            "fr": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleFR/43.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.fr.vtt",
+            "ar": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleAR/43.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_44_0",
+          "num": 44,
+          "part": null,
+          "base": "44. Learn Introduction Complete Intro to React v9",
+          "title": "Experimental Browser Testing with Playwright",
+          "files": {
+            "mp4": "https://yakhlafhoussam.github.io/React/React%20I/Videos/44.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.mp4",
+            "en": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleEN/44.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.vtt",
+            "fr": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleFR/44.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.fr.vtt",
+            "ar": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleAR/44.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_45_0",
+          "num": 45,
+          "part": null,
+          "base": "45. Learn Introduction Complete Intro to React v9",
+          "title": "Real Browser Environment vs Happy DOM in Tests",
+          "files": {
+            "mp4": "https://yakhlafhoussam.github.io/React/React%20I/Videos/45.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.mp4",
+            "en": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleEN/45.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.vtt",
+            "fr": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleFR/45.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.fr.vtt",
+            "ar": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleAR/45.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_46_0",
+          "num": 46,
+          "part": null,
+          "base": "46. Learn Introduction Complete Intro to React v9",
+          "title": "What's New in React 19",
+          "files": {
+            "mp4": "https://yakhlafhoussam.github.io/React/React%20I/Videos/46.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.mp4",
+            "en": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleEN/46.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.vtt",
+            "fr": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleFR/46.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.fr.vtt",
+            "ar": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleAR/46.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_47_0",
+          "num": 47,
+          "part": null,
+          "base": "47. Learn Introduction Complete Intro to React v9",
+          "title": "React 19 Form Actions & useFormStatus Hook",
+          "files": {
+            "mp4": "https://yakhlafhoussam.github.io/React/React%20I/Videos/47.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.mp4",
+            "en": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleEN/47.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.vtt",
+            "fr": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleFR/47.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.fr.vtt",
+            "ar": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleAR/47.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_48_0",
+          "num": 48,
+          "part": null,
+          "base": "48. Learn Introduction Complete Intro to React v9",
+          "title": "React 19 use Hook & Suspense API",
+          "files": {
+            "mp4": "https://yakhlafhoussam.github.io/React/React%20I/Videos/48.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.mp4",
+            "en": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleEN/48.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.vtt",
+            "fr": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleFR/48.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.fr.vtt",
+            "ar": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleAR/48.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_49_0",
+          "num": 49,
+          "part": null,
+          "base": "49. Learn Introduction Complete Intro to React v9",
+          "title": "The React Compiler & Auto-Memoization",
+          "files": {
+            "mp4": "https://yakhlafhoussam.github.io/React/React%20I/Videos/49.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.mp4",
+            "en": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleEN/49.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.vtt",
+            "fr": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleFR/49.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.fr.vtt",
+            "ar": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleAR/49.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.ar.vtt"
+          }
+        },
+        {
+          "id": "rp6_50_0",
+          "num": 50,
+          "part": null,
+          "base": "50. Learn Introduction Complete Intro to React v9",
+          "title": "Course Conclusion & Professional React Advice",
+          "files": {
+            "mp4": "https://yakhlafhoussam.github.io/React/React%20I/Videos/50.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.mp4",
+            "en": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleEN/50.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.vtt",
+            "fr": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleFR/50.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.fr.vtt",
+            "ar": "https://yakhlafhoussam.github.io/React/React%20I/SubtitleAR/50.%20Learn%20Introduction%20Complete%20Intro%20to%20React%20v9.ar.vtt"
+          }
+        }
+      ]
     }
   ]
 }
