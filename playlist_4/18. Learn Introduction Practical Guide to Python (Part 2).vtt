@@ -1,0 +1,154 @@
+WEBVTT
+
+00:00.000 --> 00:09.520
+So these default arguments are very, very helpful. One thing I want to cover before we move on from arguments is
+
+00:10.800 --> 00:20.080
+something that trips up beginners and Python quite a bit. Don't use mutable types as default
+
+00:20.160 --> 00:23.840
+arguments. They don't behave the way that you expect.
+
+00:31.200 --> 00:39.440
+So if I have a function and I want to have a default argument with a list.
+
+00:40.320 --> 00:56.960
+And say, a pen this string to my list. When I call it, when I call this function the first time,
+
+00:58.240 --> 01:04.320
+oops. Sorry, I want to go ahead and return that.
+
+01:04.560 --> 01:12.400
+So that we can actually see what happens. When I call it for the first time,
+
+01:15.520 --> 01:21.760
+it does the right thing. When I call it a second time, there's now two instances of stuff in this
+
+01:21.760 --> 01:31.600
+list and then three and then four. Do now use mutable arguments for defaults because the
+
+01:31.600 --> 01:38.320
+way that Python works under the hood is these get declared once. So with you do this,
+
+01:38.320 --> 01:44.640
+you are going to continue using that very same instance of my list. Every time you call that function,
+
+01:44.640 --> 01:53.280
+even though that is not what you intended to do. So this is the source of a lot of subtle
+
+01:53.280 --> 02:01.760
+bugs for beginners. So remember, no mutable default arguments. The way that you would want to do this
+
+02:01.760 --> 02:15.600
+instead is to have a have a placeholder here where you're using a non-value as a placeholder.
+
+02:18.000 --> 02:22.480
+And I'm going to introduce some concepts we haven't talked about yet, but then you can just say
+
+02:22.560 --> 02:31.680
+if I've passed an a list, then use it otherwise you can say, if not my list, which means
+
+02:33.120 --> 02:43.360
+if it's, if it's, I'm sorry, you want to say, if my list is equal to none, then make a new list
+
+02:44.400 --> 02:47.920
+here and then append to it.
+
+02:52.480 --> 03:03.440
+Now, when I call do stuff, it's going to do the right thing each time because I took care of
+
+03:03.440 --> 03:09.920
+creating the list in this function. I did not pass in an empty list as a keyboard argument.
+
+03:10.640 --> 03:15.040
+Wanted only append stuff in the case where my list isn't the file?
+
+03:16.080 --> 03:20.480
+Yes. Yeah, just a silly little example.
+
+03:23.440 --> 03:31.760
+So, right, I would want to move this over one to the left so that this example worked
+
+03:32.480 --> 03:39.200
+when I did pass in a list to start with. Good catch, thank you.
+
+03:41.520 --> 03:49.440
+Cool. So, these are arguments and I want to talk about scope a little bit.
+
+03:50.240 --> 03:57.440
+There is scope inside of a function. So, I'm going to exit my
+
+03:57.440 --> 04:02.960
+Ripple and start it from scratch to clear out everything that I might have defined already.
+
+04:06.160 --> 04:13.200
+If I have a function that takes a name and prints it,
+
+04:20.000 --> 04:27.440
+I cannot access this name variable outside of the function, outside of this
+
+04:27.440 --> 04:33.360
+indented zone because the name is only defined inside of the function.
+
+04:33.360 --> 04:42.000
+Once the function exits, that variable doesn't exist. So, Python scope works pretty similar to
+
+04:42.000 --> 04:45.520
+scope and other languages. This is something you want to be mindful of.
+
+04:49.760 --> 04:57.840
+You want to be very careful when you're using variables inside of a function that are defined
+
+04:57.840 --> 05:06.480
+outside of it because if you try to change the value of that variable inside of the function,
+
+05:06.480 --> 05:11.520
+the value is only going to apply for that scope. When your function exits,
+
+05:12.240 --> 05:18.480
+you're not actually going to be able to modify the value of the variable defined
+
+05:18.480 --> 05:23.840
+outside of the function. This can result in some weird subtle bugs. So, here's an example.
+
+05:24.160 --> 05:33.600
+And I can say prints out the name outside of the function.
+
+05:38.400 --> 05:42.640
+And then I'm going to make a method that says try to change the name.
+
+05:45.360 --> 05:47.920
+And I'm going to say that name in the function is max
+
+05:48.000 --> 06:00.960
+and print out names inside of the function.
+
+06:01.600 --> 06:22.880
+Now, if I call this method, try change name. The name inside of the function is max,
+
+06:23.520 --> 06:32.400
+but the name outside of the function is still Nina. So, don't try to change variables in a
+
+06:32.400 --> 06:40.320
+function that were declared outside of it. You will have access to them, which can be helpful
+
+06:40.320 --> 06:46.640
+if you have like a global variable defined that is like a URL or something that's static,
+
+06:46.640 --> 06:51.760
+that's not going to change, but don't try to update it. You're going to end up with some weird
+
+06:51.760 --> 07:04.160
+scopeing issues. And so, a use case for using a variable in a function that's decided to
+
+07:04.160 --> 07:10.400
+find outside of it is a constant. And to delineate that it's a constant, in that case,
+
+07:10.400 --> 07:19.040
+you can name it with all uppercase characters split with a underscore. And that's just
+
+07:19.040 --> 07:24.640
+convention. It doesn't mean that there's anything different about that variable.
+
+07:24.640 --> 07:30.720
+It's just named a little bit differently in order to signify something to the readers of the program.

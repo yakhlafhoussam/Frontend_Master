@@ -1,0 +1,410 @@
+WEBVTT
+
+00:00.000 --> 00:04.000
+Alors maintenant que nous avons cela, nous avons cette autre chose appelée émissions.
+
+00:04.000 --> 00:08.000
+Et donc, pour fournir en quelque sorte un aperçu rapide à ceux
+
+00:08.000 --> 00:10.000
+qui ne l'aurait peut-être pas utilisé dans la vue trois,
+
+00:10.000 --> 00:12.000
+si vous vous souvenez de l'intérieur de votre code,
+
+00:12.000 --> 00:14.000
+chaque fois que vous vouliez émettre un événement en vue,
+
+00:14.000 --> 00:16.000
+vous utiliseriez en fait l'émission du signe dollar.
+
+00:16.000 --> 00:18.000
+Alors disons ce gestionnaire de clics ici,
+
+00:18.000 --> 00:21.000
+vous dites émettre, puis une sorte d'événement.
+
+00:21.000 --> 00:23.000
+Alors soyons comme un événement test.
+
+00:23.000 --> 00:25.000
+Et alors où en suis-je sur la carte du restaurant ?
+
+00:25.000 --> 00:28.000
+Donc si nous allons sur notre application,
+
+00:28.000 --> 00:31.000
+et va à notre restaurant, ouais,
+
+00:31.000 --> 00:36.000
+on verra ici dans quelque chose, d'accord, ça va.
+
+00:36.000 --> 00:39.000
+Donc si nous allons dans les outils de développement de la vue,
+
+00:39.000 --> 00:42.000
+et puis on remonte ça un peu,
+
+00:42.000 --> 00:46.000
+attends, carte de restaurant, oui, ok, ouais, je suis au bon endroit.
+
+00:46.000 --> 00:48.000
+Et puis passons à la chronologie.
+
+00:48.000 --> 00:50.000
+Vous verrez que lorsque je clique sur Supprimer,
+
+00:50.000 --> 00:53.000
+en fait, ça me montre ici que,
+
+00:53.000 --> 00:56.000
+voilà, voici l'événement personnalisé.
+
+00:56.000 --> 01:00.000
+Et voilà, cet événement appelé événement de test est déclenché.
+
+01:00.000 --> 01:03.000
+Et donc c'est en fait pour ceux qui ne l'ont jamais utilisé auparavant,
+
+01:03.000 --> 01:06.000
+cela suit essentiellement les conventions de base du travail, n'est-ce pas ?
+
+01:06.000 --> 01:08.000
+Parce qu'il y a un événement qui est déclenché quelque part,
+
+01:08.000 --> 01:10.000
+ça bouillonne, et ensuite vous voulez en faire quelque chose.
+
+01:10.000 --> 01:14.000
+C'est ainsi que nous travaillons actuellement avec nos cartes,
+
+01:14.000 --> 01:18.000
+c'est qu'il émet un événement comme supprimer un restaurant,
+
+01:18.000 --> 01:21.000
+par exemple, puis le parent qui possède les données
+
+01:21.000 --> 01:25.000
+il irait alors de l'avant et effectuerait les tâches nécessaires pour y parvenir.
+
+01:26.000 --> 01:30.000
+Le problème est donc que, surtout selon la deuxième vue,
+
+01:30.000 --> 01:33.000
+c'est en fait tout ce que vous avez fait.
+
+01:33.000 --> 01:36.000
+Et ce qui s'est passé, c'est que les composants sont devenus un peu complexes,
+
+01:36.000 --> 01:39.000
+parce que tu as eu des événements émetteurs ici et là,
+
+01:39.000 --> 01:40.000
+est un peu difficile à suivre.
+
+01:40.000 --> 01:42.000
+Et donc dans la troisième vue, nous introduisons une option,
+
+01:42.000 --> 01:45.000
+similaire aux accessoires, où vous pouvez définir le type d'événements
+
+01:45.000 --> 01:47.000
+que le composant émet.
+
+01:47.000 --> 01:50.000
+Et donc généralement, ce que nous avons vu auparavant, c'est que c'est juste le bon
+
+01:50.000 --> 01:54.000
+sous forme de tableau avec la liste des noms des événements.
+
+01:54.000 --> 01:58.000
+Mais avec la macro du compilateur et TypeScript,
+
+01:58.000 --> 02:00.000
+Je pense que cela devient beaucoup plus propre.
+
+02:00.000 --> 02:04.000
+Nous avons donc ici, comme on peut le dire, des émissions définies,
+
+02:04.000 --> 02:08.000
+puis à l'intérieur des émissions définies, cela peut prendre un tableau,
+
+02:08.000 --> 02:11.000
+cela peut prendre un tableau comme celui-ci,
+
+02:11.000 --> 02:15.000
+ou plutôt que d'avoir juste un tableau comme celui-ci,
+
+02:15.000 --> 02:19.000
+Je vais commenter cela afin que nous ayons cela à titre de comparaison.
+
+02:19.000 --> 02:21.000
+Nous allons en fait donner un coup de pouce à nos événements,
+
+02:21.000 --> 02:23.000
+et c'est en fait très utile, en particulier pour les événements.
+
+02:24.000 --> 02:27.000
+Parce que ce que nous obtenons, c'est la capacité de dire :
+
+02:27.000 --> 02:30.000
+ok, donc nous avons un événement qui arrive,
+
+02:30.000 --> 02:32.000
+et on peut dire que c'est juste un événement générique,
+
+02:32.000 --> 02:34.000
+mais tu pourrais aussi être un particulier, tu pourrais être comme,
+
+02:34.000 --> 02:36.000
+oh, c'est un événement de clavier.
+
+02:36.000 --> 02:38.000
+Et cet événement de clavier peut alors,
+
+02:38.000 --> 02:40.000
+nous ferons plus de handles d'événements plus tard,
+
+02:40.000 --> 02:42.000
+mais c'est plutôt sympa.
+
+02:42.000 --> 02:45.000
+Donc pour l'instant, nous savons que cet événement va s'appeler
+
+02:45.000 --> 02:47.000
+Supprimer le restaurant, juste une double vérification,
+
+02:47.000 --> 02:49.000
+ouais, donc tu as ton E ici,
+
+02:49.000 --> 02:51.000
+vous passez au nom de l'événement qui va se produire.
+
+02:51.000 --> 02:54.000
+Et puis après cela, vous allez transmettre n'importe quelle charge utile
+
+02:54.000 --> 02:55.000
+qu'il attend,
+
+02:55.000 --> 02:57.000
+et puis si c'est censé retourner quelque chose ou non,
+
+02:57.000 --> 02:59.000
+et ce n'est généralement pas le cas, donc c'est nul.
+
+02:59.000 --> 03:02.000
+Donc dans ce cas particulier, nous avons E ici,
+
+03:02.000 --> 03:04.000
+nous savons qu'il y aura une charge utile,
+
+03:04.000 --> 03:06.000
+et la charge utile sera,
+
+03:06.000 --> 03:09.000
+deux, ça devrait être un restaurant,
+
+03:09.000 --> 03:13.000
+donc nous allons taper ça, juste comme ça.
+
+03:13.000 --> 03:15.000
+Bon, c'est parti.
+
+03:15.000 --> 03:17.000
+Alors qu'est-ce qu'il y a de bien à ce sujet maintenant,
+
+03:17.000 --> 03:20.000
+c'est à ce moment-là que nous voulons réellement l'utiliser, n'est-ce pas ?
+
+03:20.000 --> 03:23.000
+Parce qu'avant tout ce que vous pouviez faire c'était en définir le nom,
+
+03:23.000 --> 03:25.000
+alors maintenant, quand nous appelons les émissions,
+
+03:25.000 --> 03:28.000
+il se passe quelque chose d’assez cool.
+
+03:28.000 --> 03:30.000
+Quand nous émettons la chose,
+
+03:30.000 --> 03:33.000
+si j'appuie sur l'espace de commande et que je frappe,
+
+03:33.000 --> 03:36.000
+vous remarquez en fait qu'il répertorie les noms des événements
+
+03:36.000 --> 03:38.000
+que nous avons défini dans la saisie semi-automatique.
+
+03:38.000 --> 03:40.000
+Donc, même s'il s'agit d'une chaîne et non d'une constante,
+
+03:40.000 --> 03:41.000
+il le sait en fait, hé,
+
+03:41.000 --> 03:43.000
+En fait, je devrais chercher la chaîne,
+
+03:43.000 --> 03:45.000
+et donc non seulement je peux le faire,
+
+03:45.000 --> 03:46.000
+alors je peux même dire, d'accord,
+
+03:46.000 --> 03:48.000
+eh bien, si j'en aimais un, deux, trois, par exemple,
+
+03:48.000 --> 03:50.000
+ça dira, hé, au fait,
+
+03:50.000 --> 03:54.000
+cet événement particulier recherche un restaurant.
+
+03:54.000 --> 03:56.000
+Et c'est assez important car comme nous le savons,
+
+03:56.000 --> 03:58.000
+les événements peuvent être très difficiles à gérer en JavaScript,
+
+03:58.000 --> 04:00.000
+surtout parce qu'il y en a différents types,
+
+04:00.000 --> 04:02.000
+et nous nous attendons à ce qu'il fasse des choses différentes à des moments différents.
+
+04:02.000 --> 04:05.000
+Ainsi, être capable de saisir votre événement et d'être très précis sur
+
+04:05.000 --> 04:07.000
+à quel genre de chose nous nous attendons, c'est énorme.
+
+04:07.000 --> 04:09.000
+Alors maintenant, tout ce que nous devons faire,
+
+04:09.000 --> 04:13.000
+c'est fondamentalement que nous voulons le restaurant Props Dot.
+
+04:13.000 --> 04:15.000
+Et c'est tout.
+
+04:15.000 --> 04:17.000
+Et donc une fois avec toute cette saisie semi-automatique,
+
+04:17.000 --> 04:20.000
+vous obtenez cela parce que vous tapez vos événements,
+
+04:20.000 --> 04:23.000
+ce qui, encore une fois, est quelque chose que vous voudriez faire à mon avis,
+
+04:23.000 --> 04:26.000
+parce que quand tu ne fais pas quelque chose comme ça,
+
+04:26.000 --> 04:29.000
+et les mythes deviennent vraiment très difficiles à suivre,
+
+04:29.000 --> 04:31.000
+et encore moins essayer de comprendre ce qu'ils font.
+
+04:31.000 --> 04:33.000
+Tu sais, on dirait presque qu'à chaque fois que tu as
+
+04:33.000 --> 04:35.000
+l'événement de débogage qui est admis,
+
+04:35.000 --> 04:37.000
+vous devez recommencer en comprenant, comme la trace de la pile, pourquoi,
+
+04:37.000 --> 04:38.000
+c'est d'une certaine manière.
+
+04:38.000 --> 04:42.000
+Alors qu'ici, nous sommes si explicites qu'un événement de suppression de restaurant
+
+04:42.000 --> 04:46.000
+prendra une charge utile de type restaurant.
+
+04:46.000 --> 04:47.000
+C'est ça.
+
+04:47.000 --> 04:51.000
+Et cela, je pense, fait des merveilles pour nous quand il s'agit de,
+
+04:51.000 --> 04:56.000
+vous savez, nous mettons réellement à l'échelle notre code.
+
+04:56.000 --> 05:00.000
+Alors maintenant que nous sommes arrivés à la fin,
+
+05:00.000 --> 05:04.000
+Quelqu'un a-t-il des questions sur ce que nous venons de couvrir ?
+
+05:04.000 --> 05:05.000
+Oui.
+
+05:05.000 --> 05:10.000
+Pourquoi ne devons-nous pas importer pour trouver des mythes et trouver des accessoires ?
+
+05:10.000 --> 05:12.000
+C'est une excellente question.
+
+05:12.000 --> 05:15.000
+Donc, une des choses que je ressens comme la communauté JavaScript
+
+05:15.000 --> 05:17.000
+on fait en quelque sorte des allers-retours à ce sujet avec,
+
+05:17.000 --> 05:20.000
+c'est qu'ils essaient d'expédier toutes les importations mondiales
+
+05:20.000 --> 05:23.000
+dont tu pourrais avoir besoin juste pour en faire un
+
+05:23.000 --> 05:25.000
+moins de choses que vous devez importer.
+
+05:25.000 --> 05:26.000
+Et parce que la vue le sait,
+
+05:26.000 --> 05:28.000
+pour le fait que vos scripts ont été mis en place,
+
+05:28.000 --> 05:31.000
+ce sont en quelque sorte les macros du compilateur dont je parlais,
+
+05:31.000 --> 05:33.000
+où des optimisations sont effectuées à l'avance.
+
+05:33.000 --> 05:36.000
+Cependant, rien ne vous empêche de dire
+
+05:36.000 --> 05:38.000
+trouver des accessoires, trouver des mythes,
+
+05:38.000 --> 05:42.000
+parce que je peux tout à fait voir l’intérêt d’être explicite.
+
+05:42.000 --> 05:44.000
+Et il ne va pas vous crier dessus.
+
+05:44.000 --> 05:46.000
+Mais d'un autre côté, si vous faites partie de ces personnes qui veulent
+
+05:46.000 --> 05:48.000
+expédier autant qu'il est humainement possible,
+
+05:48.000 --> 05:49.000
+c'est là pour vous.
+
+05:49.000 --> 05:51.000
+Mais je vais continuer et laisser ça ici pour les archives,
+
+05:51.000 --> 05:52.000
+enregistrer, garder dire.
+
+05:52.000 --> 05:57.000
+Et puis en fait, je vais simplement les fusionner.
+
+05:57.000 --> 05:58.000
+Et voilà.
+

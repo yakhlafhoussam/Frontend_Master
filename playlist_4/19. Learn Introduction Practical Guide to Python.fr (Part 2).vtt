@@ -1,0 +1,154 @@
+WEBVTT
+
+00:00.000 --> 00:06.720
+Nous pouvons ensuite continuer et les utiliser dans les instructions "if". Ces instructions ne s'exécuteront que
+
+00:06.720 --> 00:14.640
+si l’expression est vraie, et non si l’expression est fausse. Pour définir les instructions "if",
+
+00:15.520 --> 00:21.600
+vous tapez simplement le mot-clé "if" suivi d'une expression qui est évaluée à vrai (True) ou faux (False).
+
+00:21.600 --> 00:26.480
+Si vous n'êtes pas sûr que votre expression soit vraie ou fausse, vous pouvez la passer à "bool()".
+
+00:27.600 --> 00:37.760
+Donc, je peux dire "si trois est inférieur à cinq". Et cela fonctionnera parce que mon expression est vraie.
+
+00:38.560 --> 00:43.600
+Si j'essaie de faire la même chose, mais en inversant l'ordre : "trois est...", euh,
+
+00:45.840 --> 00:56.080
+Je voulais demander si "cinq est inférieur à trois". C'est faux. Et donc, cela ne s'exécutera jamais.
+
+01:00.480 --> 01:06.960
+Vous pouvez utiliser "and", "or", ou "not" à l'intérieur de l'expression dans votre instruction "if".
+
+01:07.760 --> 01:14.560
+Donc, si j'ai "a = True" et "b = False", je peux dire "if not b:".
+
+01:18.160 --> 01:25.520
+Est-ce que l'affichage affichera "high" ou non ? Ce sera le cas, n'est-ce pas ? Parce que "b" est faux, et je l'ai nié dans mon
+
+01:25.520 --> 01:33.600
+instruction. Vous devez être conscient des instructions "if" et de la notion de "truthiness". Toutes ces choses dont
+
+01:33.600 --> 01:39.440
+nous avons parlé plus tôt s'appliquent. Donc, si j'essaie de dire "si la liste vide : print('high')",
+
+01:40.640 --> 01:46.800
+la "truthiness" d'une liste vide est fausse. Et donc, il ne se passera rien. Je peux mettre
+
+01:46.800 --> 01:55.200
+des valeurs ici et là, cela s'affichera. Pareil pour zéro, c'est faux. N'importe quel autre nombre, y compris négatif,
+
+01:55.280 --> 02:06.560
+est considéré comme vrai. Et si j'ai une variable comme "b = []" (liste vide), je peux simplement dire "if b: print('high')".
+
+02:14.160 --> 02:20.640
+C'est une syntaxe Python assez importante. Je n'ai pas besoin de dire "if b == []"
+
+02:20.720 --> 02:26.720
+ou quelque chose comme ça, parce que ce qui compte vraiment, c'est la valeur de vérité de l'expression.
+
+02:27.440 --> 02:37.520
+C'est donc un concept assez important. Nous voulons faire attention à ne pas utiliser le "double égal à True"
+
+02:37.520 --> 02:46.000
+dans nos instructions "if". Je ne veux pas écrire "if b == True:". Ne faites pas ça pour
+
+02:46.960 --> 02:55.360
+afficher quelque chose. Parce que, eh bien, ça pourrait marcher, mais ce n'est pas la syntaxe Pythonique correcte.
+
+02:59.680 --> 03:05.520
+Nous pouvons ajouter une instruction "else" à notre instruction "if", et elle ne s'exécutera que si le "if"
+
+03:05.520 --> 03:13.040
+lui-même n'a pas fonctionné. Je veux juste vous montrer la syntaxe pour cela en Python. Donc, si "5 < 3",
+
+03:13.040 --> 03:24.400
+print('high'). "Else" va juste en dessous de cette instruction "if" avec deux-points. Il n'y a pas d'expression pour
+
+03:24.400 --> 03:31.200
+"else", car il ne s'exécute que si l'instruction "if" n'est pas vraie. Je dois aussi indenter cela.
+
+03:33.680 --> 03:40.080
+Et maintenant, mon instruction va être exécutée. En fait, j'ai eu une question sur les dictionnaires (dicts).
+
+03:40.640 --> 03:46.640
+Euh, est-il possible de supprimer une clé ? Quelqu'un demandait s'il était sûr qu'on puisse le faire.
+
+03:46.640 --> 03:54.080
+Oui, vous pouvez supprimer une clé d'un dictionnaire avec le mot-clé "del".
+
+03:54.080 --> 04:00.080
+Vous pouvez également utiliser "pop". Jetons un coup d'œil rapide à cela.
+
+04:10.400 --> 04:25.440
+Oups. Je dois utiliser des accolades. Ainsi, mon dictionnaire contient désormais ces clés. Et je peux choisir
+
+04:25.440 --> 04:33.040
+laquelle supprimer. Je recommande de ne pas utiliser la syntaxe "del", même si vous la voyez. Je pense
+
+04:33.040 --> 04:44.160
+que c'est un peu bizarre. Je préfère "pop" car "pop" renvoie également la valeur de la clé que vous
+
+04:44.160 --> 04:50.160
+venez de supprimer. Si vous voulez en savoir plus, vous pouvez consulter l'aide sur "dict.pop".
+
+04:52.400 --> 05:00.720
+Vous pouvez également fournir des valeurs par défaut. La valeur par défaut serait ce qui est renvoyé par "pop"
+
+05:01.680 --> 05:07.280
+si la clé n'est pas trouvée.
+
+05:09.760 --> 05:15.040
+Donc, si vous ne voulez pas passer par l'étape de la gestion d'une exception...
+
+05:15.040 --> 05:20.640
+car si j'essayais de supprimer d'un dictionnaire une clé qui n'existe pas,
+
+05:21.920 --> 05:28.880
+je vais avoir une "KeyError". Donc, si vous ne souhaitez pas gérer d'exceptions supplémentaires,
+
+05:28.880 --> 05:37.680
+vous pouvez utiliser "pop" et passer une valeur par défaut à renvoyer si la clé n'est pas trouvée, au lieu de lever une
+
+05:37.680 --> 05:47.920
+exception. On me pose une autre question : "toujours un peu confus sur le '=='".
+
+05:48.480 --> 05:55.840
+Par exemple, dans le chat Zoom : "3 < 5 == True" donne
+
+05:56.160 --> 06:06.880
+la valeur "False". Ouais, vous ne voulez pas faire ça parce que généralement les expressions ont leur propre
+
+06:09.200 --> 06:15.680
+valeur de vérité. Vous n’avez pas besoin d’utiliser le double égal pour comparer à True ou False.
+
+06:15.680 --> 06:23.760
+Cela se passe automatiquement sous le capot. Vous pouvez vérifier cela en passant une expression à "bool()".
+
+06:26.160 --> 06:33.360
+Donc, si je dis "if 3 < 5", ce qui se passe, c'est que Python remplace cette
+
+06:33.360 --> 06:37.120
+expression par son résultat booléen en interne.
+
+06:43.760 --> 06:49.680
+D'accord, je pense comprendre pourquoi je n'ai pas besoin de faire ça, mais je vois pourquoi
+
+06:50.560 --> 07:02.000
+le résultat semble contraire à ce que l'on pense. En général, c'est une "best practice" de ne pas le faire.
+
+07:02.000 --> 07:07.600
+Je pense qu'il y a un ordre des opérations étrange ici : "5 == True" est évalué
+
+07:07.600 --> 07:14.480
+en premier, ou une évaluation en chaîne se produit.
+
+07:14.480 --> 07:20.720
+C'est pour ça qu'il renvoie "False". Rappelez-vous que "False" est en fait un nombre. "False" vaut 0 en Python.
+
+07:20.720 --> 07:29.280
+Alors cette expression devient "3 < 0", ce qui est faux. C'est ainsi que vous vous retrouvez avec des bugs étranges et subtils.

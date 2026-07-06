@@ -1,0 +1,128 @@
+WEBVTT
+
+00:00.000 --> 00:03.360
+Certains d’entre vous se demandent peut-être pourquoi avez-vous besoin d’une gestion étatique ?
+
+00:03.360 --> 00:06.640
+Après tout, vous avez le pouvoir des composables.
+
+00:06.640 --> 00:08.320
+Qui en a encore besoin ?
+
+00:08.320 --> 00:11.920
+Je peux tout faire. Nous n'avons pas besoin de magasins de gestion d'État.
+
+00:11.920 --> 00:14.960
+Oui, c'est vrai. Nous modélisons essentiellement le fonctionnement de la source de données,
+
+00:14.960 --> 00:17.200
+vous faites essentiellement votre état, vos getters, vos actions.
+
+00:18.160 --> 00:20.960
+Ce que je dis toujours aux gens à propos des bibliothèques de gestion d'État
+
+00:20.960 --> 00:24.640
+c'est que vous fournissez à votre équipe un ensemble de normes que tout le monde peut suivre.
+
+00:25.360 --> 00:29.520
+Maintenant accordé, si vous envisagez de créer votre propre bibliothèque de gestion d'état interne
+
+00:29.520 --> 00:33.600
+que vous documentez abondamment et que vous sauvegardez le type et si vous voulez faire tout cela,
+
+00:33.600 --> 00:36.560
+c'est génial et j'aime plus de pouvoir avec toi.
+
+00:37.360 --> 00:40.160
+Mais une des choses que des choses comme Piniad nous permettent de faire
+
+00:40.720 --> 00:43.840
+est le fait que vous avez ces mainteneurs open source à plein temps
+
+00:44.400 --> 00:49.040
+qui essaient essentiellement de créer, en particulier au sein de la communauté View,
+
+00:49.040 --> 00:52.800
+ils sont très motivés pour créer la meilleure UX qu'ils peuvent vous offrir.
+
+00:52.800 --> 00:55.440
+Et ainsi, par exemple, vous pouvez voir ici dans les nouveaux DevTools,
+
+00:56.080 --> 01:00.320
+voyons, voici comme la petite icône de Piniade, quel ananas.
+
+01:01.040 --> 01:04.240
+Vous pouvez voir ici, vous pouvez réellement voir tout cela, vous pouvez l'inspecter,
+
+01:04.240 --> 01:08.000
+vous pouvez même le modifier, si vous avez besoin de tester quelque chose, enregistrez-le.
+
+01:08.960 --> 01:12.640
+Il peut même suivre la chronologie en termes de mutations. Alors, je crois
+
+01:13.600 --> 01:17.200
+si j'entrais ici et changeais ça,
+
+01:18.480 --> 01:20.720
+ouais, je suppose que tu avais une tâche assez importante.
+
+01:20.800 --> 01:26.000
+Oh, oh, je crois que je ne savais pas pourquoi, celui-là n'est pas encore connecté.
+
+01:26.560 --> 01:28.480
+Mais vous pouvez voir ici, en gros, là,
+
+01:30.240 --> 01:31.360
+vous obtenez une grande partie de ce travail gratuitement.
+
+01:32.240 --> 01:35.600
+Et pour être honnête, si vous regardez sous Piniade en particulier,
+
+01:36.160 --> 01:39.840
+ce n'est vraiment pas si loin d'être composable. C'est juste un ensemble de normes qui ont été en quelque sorte
+
+01:39.840 --> 01:43.360
+convenu par la communauté. Donc, si vous avez peur de l'encombrement de ce genre de choses,
+
+01:44.160 --> 01:48.080
+Piniad a déjà, contrairement à ceux d'entre nous qui étaient à l'époque UX, la vue aussi,
+
+01:48.720 --> 01:51.440
+c'était plus lourd. Parce que bien souvent,
+
+01:51.440 --> 01:54.480
+il fallait faire beaucoup pour en optimiser manuellement les performances.
+
+01:54.480 --> 01:58.160
+Donc, à l'époque, beaucoup de gens utilisaient les magasins mondiaux, essentiellement un grand magasin,
+
+01:58.160 --> 02:01.520
+et ils divisaient les petits magasins. Mais ce qu'ils ne savaient pas, c'est que tout
+
+02:01.520 --> 02:04.800
+en quelque sorte être regroupés. Ainsi, chaque fois que quelqu'un chargeait quelque chose, il chargeait.
+
+02:04.800 --> 02:08.160
+C'était tout ça, de manière variée, et j'ai pu avoir le genre de truc de forêt tropicale.
+
+02:08.880 --> 02:11.600
+Et donc, Piniade, par défaut, chaque fois qu'on fait quelque chose,
+
+02:12.480 --> 02:16.240
+comme nous le voyons ici où nous faisons juste comme un magasin de test, un magasin de saisie du temps,
+
+02:16.240 --> 02:20.080
+ceux-ci sont déjà secoués, ils sont séparés. Ils sont fondamentalement équivalents à ceux-ci
+
+02:20.080 --> 02:24.240
+composables que nous avons ici où tant que vous les importez sur des fichiers spécifiques,
+
+02:24.240 --> 02:29.040
+comme si c'était déjà le cas pour toi. Il n'y a pas de planète géante qui se construit ensemble
+
+02:29.040 --> 02:34.720
+puis expédié via les utilisateurs. Et donc, pour cette raison, je trouve que d'une manière générale,
+
+02:34.720 --> 02:40.080
+Les bibliothèques de gestion d'état sont utiles pour les équipes particulièrement grandes. Des équipes qui ont besoin de quelques standards.
+

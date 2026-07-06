@@ -1,0 +1,92 @@
+WEBVTT
+
+00:00.000 --> 00:05.440
+In the next and final chapter chapter 8, we're going to talk about web frameworks.
+
+00:05.440 --> 00:12.080
+So web frameworks are a way for us to test and practice all of our new found Python knowledge.
+
+00:12.080 --> 00:21.520
+And build a very, very basic web application with unit tests using Python and the flask framework.
+
+00:25.040 --> 00:27.360
+Let's go through the basics of flask.
+
+00:30.960 --> 00:35.920
+There are a few different types of web frameworks in Python.
+
+00:35.920 --> 00:38.080
+Django is the very popular one.
+
+00:38.080 --> 00:43.120
+It's a fully featured high-level framework for building web apps.
+
+00:43.120 --> 00:47.200
+Django focuses on automating as much as possible.
+
+00:47.200 --> 00:49.760
+Many large scale sites run on Django.
+
+00:49.760 --> 00:51.760
+Instagram is one of them.
+
+00:53.040 --> 00:59.120
+Django started out as a CMS project, a content management system for a newspaper.
+
+00:59.440 --> 01:02.880
+And Django is a pretty heavy framework.
+
+01:02.880 --> 01:08.560
+It has a lot of opinions on how things should work and how things should be structured.
+
+01:08.560 --> 01:12.400
+If you want something lighter-weight, flask is a good choice.
+
+01:13.200 --> 01:16.000
+Flask is a micro framework for Python.
+
+01:16.000 --> 01:23.120
+And it allows users to make pretty basic back-end APIs and web apps with a minimum amount of code.
+
+01:23.760 --> 01:26.080
+Flask is a little bit easier for beginners.
+
+01:26.080 --> 01:28.000
+It's not quite as opinionated.
+
+01:28.000 --> 01:31.360
+There are less set-up steps, less requirements.
+
+01:31.360 --> 01:34.880
+So that's when I'm going to be focusing on for today's exercises.
+
+01:34.880 --> 01:40.400
+But don't think that flask is a simple web framework.
+
+01:40.400 --> 01:44.000
+The great thing about flask is as your web application grows,
+
+01:44.000 --> 01:48.000
+you can add on all sorts of different modules to help you
+
+01:49.920 --> 01:56.000
+add on functionality for databases or other types of things that your web application might
+
+01:56.160 --> 01:56.720
+want to do.
+
+01:58.720 --> 02:03.120
+Yeah, another web framework that you might hear of or see as pyramid.
+
+02:03.920 --> 02:07.600
+It's a fast and it's an advanced framework.
+
+02:07.600 --> 02:10.400
+It's a successor to the older pylons framework.
+
+02:12.000 --> 02:18.960
+So still popular and used, but not quite as popular for new projects.
+
+02:18.960 --> 02:21.840
+Pyramid is open source and also actively developed.
+

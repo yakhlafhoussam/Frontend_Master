@@ -1,0 +1,206 @@
+WEBVTT
+
+00:00.000 --> 00:03.760
+Let's talk about how Django interacts with databases.
+
+00:03.760 --> 00:10.320
+Let's control the out of this for just a moment and open up this folder in VS Code
+
+00:10.320 --> 00:18.960
+either with code.org by going to VS Code and saying file open and then opening this folder.
+
+00:20.240 --> 00:28.320
+And let's open a Python file by using the QuickFind Control P or Command P and opening models.py.
+
+00:29.200 --> 00:34.240
+And this will start the Python extension.
+
+00:34.240 --> 00:40.480
+Make sure you click down here and ensure that the right virtual environment is selected for
+
+00:40.480 --> 00:47.920
+me, it's dot m slash bin slash Python. And that will clear up any if you saw some squiggly
+
+00:47.920 --> 00:52.880
+is before under here. That's because Django was not installed in the virtual environment
+
+00:52.880 --> 00:58.160
+that VS Code selected. I'm not sure why it's not selecting the right thing at the moment
+
+00:58.160 --> 01:03.120
+or recognizing my virtual environments. Maybe it's a weird setting on my side because it is
+
+01:03.120 --> 01:14.400
+something that usually works quite well. So I've opened up models.py and models.py
+
+01:14.400 --> 01:19.360
+lives in the blog folder but I recommend that you open that up via the QuickFind.
+
+01:21.040 --> 01:27.760
+So this is a custom model that I've defined in Django. And it's got a few fields in it.
+
+01:28.240 --> 01:34.720
+It's got a title which is a character field with a max link of 300. It's got a body which is a
+
+01:34.720 --> 01:41.600
+text field. It's got a slug which is a newspaper term but you might see used commonly in blogs
+
+01:41.600 --> 01:48.240
+blogs. So a slug is a way of taking a title and then adding removing any special characters, adding
+
+01:48.240 --> 01:55.120
+dashes or underscores. So that some of that title can be in the URL for the blog post for SEO
+
+01:56.080 --> 02:03.760
+and then we also have a created at field which is a date time field and a string representation
+
+02:03.760 --> 02:15.520
+of our model. Now this model maps to a database, a SQLite database that we have on our systems
+
+02:15.520 --> 02:21.600
+and we don't need to know anything about SQL or databases in order to use databases with Django
+
+02:21.600 --> 02:28.960
+which is just great. Once we create our application here at the blog app, we're going to want to
+
+02:28.960 --> 02:36.720
+make sure that when we open settings.py which is the global settings for our Django application
+
+02:36.720 --> 02:43.760
+and we scroll down to installed apps. We want to make sure that we have a blog.apps.blog
+
+02:43.760 --> 02:56.160
+config in here that tells Django to register various applications. Now the practical blog directory
+
+02:56.160 --> 03:05.120
+is the project level directory where all the project specific settings live for this project.
+
+03:06.080 --> 03:12.800
+The blog directory has app specific stuff in it for my blog. When you're working on small Django
+
+03:12.880 --> 03:20.160
+projects, having multiple apps doesn't matter but let's say you are a company and practical blog
+
+03:20.160 --> 03:26.960
+is your project. Now you might have an app for a blog. You might have an app for an e-commerce site.
+
+03:26.960 --> 03:33.600
+You might have an app for a forum and those are all going to have their own individual folders in
+
+03:33.600 --> 03:41.520
+Django where you can define your models and views and routes and everything for that specific app
+
+03:41.520 --> 03:54.320
+in its own happy little namespace. Now I'm not going to talk about how to make my
+
+03:54.320 --> 03:59.440
+migrations but if you do want to complete the final exercise, I recommend that you go back to
+
+04:00.080 --> 04:07.760
+the section. Anytime you change your models, let's say you delete one of these or you add a new one,
+
+04:07.840 --> 04:14.960
+you need to tell Django to make instructions for the database to match the new model and then
+
+04:14.960 --> 04:21.920
+run those instructions. So let's say if you delete a field here, Django needs to issue instructions
+
+04:21.920 --> 04:30.240
+to drop a column from a table in a database. In order to do that, you need to run a command called
+
+04:30.240 --> 04:37.360
+make migrations. You can optionally pass in the name of the app here. It's called blog and then you
+
+04:37.360 --> 04:43.200
+can run the migrate command and that will go ahead and update your database so that it matches
+
+04:43.200 --> 04:52.160
+your latest models. If you want to work with models, you can do that in the Python shell.
+
+04:53.120 --> 05:04.240
+I'm going to open up my terminal here and type in Python managed.py followed by the word shell.
+
+05:05.840 --> 05:13.520
+This is going to bring up a special Django shell that knows a lot about how our project is structured.
+
+05:13.520 --> 05:20.560
+So it's a little bit different than just a standard rep old. Now we can work with our models
+
+05:20.560 --> 05:28.160
+and objects that we defined in Django in this shell. For example, I can say from blog.models
+
+05:29.040 --> 05:41.040
+import post and that is the model that I had defined up there. Now I can query that model by saying,
+
+05:41.360 --> 05:49.440
+sorry, post.objects.all is going to query all of the tables, all the rows in this table.
+
+05:50.240 --> 05:59.760
+Currently, we don't have any. If I wanted to, I have an example for creating posts from the command
+
+05:59.760 --> 06:11.920
+here. So let me just copy and paste this first post here. I'm defining all of the fields,
+
+06:11.920 --> 06:18.000
+providing values for all of the fields. I defined up here, title, body, and slug. Everything
+
+06:18.000 --> 06:24.320
+except for created at because I'm using this auto add auto now add equals true. That means when I
+
+06:24.320 --> 06:31.360
+create a row in this database, it's going to automatically add the created at timestamp.
+
+06:33.120 --> 06:40.160
+In order for me to save this into my database, I need to run first post.safe. And now,
+
+06:40.960 --> 06:49.680
+when I rerun my query, my first post is in here.
+
+06:49.760 --> 06:59.520
+Let's go ahead and open a new tab in VS code and start our server again. So Python managed
+
+06:59.520 --> 07:06.240
+up UI run server. If you never exited your server in the first place and you try to run it again,
+
+07:06.240 --> 07:11.680
+you might get an error about the port being busy or occupied. Know that means that you're
+
+07:11.680 --> 07:19.600
+probably already running your server in a different tab. So there is my first post reflected
+
+07:19.600 --> 07:30.560
+in the web page. We can interact with these models just like objects in Python.
+
+07:32.400 --> 07:44.400
+There's a get method. So I can pass in to get get me where the slug is equal to first post.
+
+07:44.800 --> 07:53.280
+And that will return the record I just created. If I say first post two, I'm going to get an
+
+07:53.280 --> 07:59.280
+exception here. Post does not exist. If there's no post matching your query, it should make sense.
+
+07:59.840 --> 08:11.520
+I can also use the .filter method. So get will get you one results.filter will get you a list.
+
+08:11.520 --> 08:19.040
+And you'll see that you got a query set back. So if you have multiple items that match that query,
+
+08:19.040 --> 08:26.560
+they'll come back there. This query set kind of acts like a list and you can treat it as one,
+
+08:26.560 --> 08:34.080
+so you can call. Let's save this to a variable called results. You can call length on results.
+
+08:34.720 --> 08:41.440
+You can get the first item in results. And just like a list, this will throw an exception
+
+08:41.440 --> 08:50.720
+because we only have one item. This there is list index at a range. So the Django or it features a lot
+
+08:50.720 --> 08:55.600
+of optimizations under the hood. And the best part is you really don't need to know about the
+
+08:55.600 --> 09:02.240
+internal workings of databases to take full advantage of them.
+

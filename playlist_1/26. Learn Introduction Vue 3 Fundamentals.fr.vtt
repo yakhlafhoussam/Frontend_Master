@@ -1,0 +1,1034 @@
+WEBVTT
+
+00:00.000 --> 00:02.760
+Bon, alors pour l'exercice,
+
+00:02.760 --> 00:04.000
+nous allons en fait utiliser
+
+00:04.000 --> 00:07.960
+une de mes nouvelles API préférées appelée JSON Placeholder.
+
+00:07.960 --> 00:10.160
+Si vous n'en avez pas entendu parler, c'est plutôt génial.
+
+00:10.160 --> 00:12.200
+Parce que ce qu'il fait, c'est qu'il fournit essentiellement
+
+00:12.200 --> 00:13.840
+un tas de données statiques qui
+
+00:13.840 --> 00:15.920
+ne nécessite aucune clé d'authentification ou quoi que ce soit.
+
+00:15.920 --> 00:18.140
+Ce qu'il vous permet de faire, c'est qu'il a
+
+00:18.140 --> 00:20.080
+un tas d'ensembles de données différents
+
+00:20.080 --> 00:21.600
+qui vous permettent d'établir des relations entre eux.
+
+00:21.600 --> 00:22.920
+Donc en gros, on verra ici,
+
+00:22.920 --> 00:25.120
+nous examinons par exemple les utilisateurs.
+
+00:25.120 --> 00:26.560
+Les utilisateurs ont un identifiant,
+
+00:26.560 --> 00:28.440
+toutes ces données sont prêtes pour vous.
+
+00:28.440 --> 00:30.840
+Mais ensuite, si vous jetez un oeil à quelque chose comme des choses à faire,
+
+00:30.840 --> 00:33.040
+vous remarquerez qu'il a même un identifiant utilisateur
+
+00:33.040 --> 00:35.160
+et cela concerne ces utilisateurs.
+
+00:35.160 --> 00:37.020
+Donc, en gros, ce que vous avez, c'est :
+
+00:37.020 --> 00:40.920
+plutôt que d'avoir une base de données dynamique qui disparaît souvent,
+
+00:40.920 --> 00:43.080
+comme s'il n'était pas entretenu ou s'il était finalement hors service,
+
+00:43.080 --> 00:46.360
+ce n'est en réalité qu'un tas de JSON statique,
+
+00:46.360 --> 00:49.520
+mais nous pouvons le demander comme s'il provenait du backend.
+
+00:49.520 --> 00:54.720
+C'est donc l'API que je vous recommande à tous d'utiliser
+
+00:54.720 --> 00:57.840
+aller de l'avant en ce qui concerne nos exercices.
+
+00:58.040 --> 01:01.000
+Alors pour notre exercice,
+
+01:01.000 --> 01:02.520
+vous allez utiliser l'application SailorView,
+
+01:02.520 --> 01:05.400
+et cette fois, votre chef de produit est venu vers vous et vous dit :
+
+01:05.400 --> 01:07.880
+nous avons besoin d'un composant de page utilisateur.
+
+01:07.880 --> 01:10.800
+Nous allons donc vous donner un peu de pratique, en gros :
+
+01:10.800 --> 01:13.640
+allez-y et créez cette page utilisateur dans le dossier du composant,
+
+01:13.640 --> 01:15.220
+puis à l'intérieur de ce composant,
+
+01:15.220 --> 01:17.420
+allez-y et utilisez ce cycle de vie créé pour aller de l'avant et récupérer
+
+01:17.420 --> 01:21.120
+tous les utilisateurs de cette API d'espace réservé JSON en utilisant ce que nous venons de vous montrer.
+
+01:21.120 --> 01:24.240
+Alors allez-y et rendez-le comme bon vous semble,
+
+01:24.240 --> 01:27.440
+puis continuez et assurez-vous de mettre à jour app.view afin que,
+
+01:27.680 --> 01:29.000
+si vous souhaitez utiliser ce composant dynamique,
+
+01:29.000 --> 01:31.600
+cela l'échange correctement lorsque vous utilisez la navigation.
+
+01:35.920 --> 01:38.960
+Bon retour à tous. Comment se déroule l’exercice ?
+
+01:38.960 --> 01:41.560
+D'accord. Oui, on dirait que les gens ont réussi.
+
+01:41.560 --> 01:42.840
+Donc pas de soucis.
+
+01:42.840 --> 01:44.240
+Au cas où vous trouveriez cela un peu compliqué,
+
+01:44.240 --> 01:46.560
+nous allons passer en revue la solution maintenant.
+
+01:47.760 --> 01:50.120
+Alors allons-y et faisons ceci.
+
+01:51.480 --> 01:55.000
+Alors laissez-moi clôturer cela, apporter cela ici.
+
+01:55.360 --> 01:56.520
+En fait, tu sais ce que je fais ?
+
+01:56.520 --> 01:57.800
+Je veux cela comme référence.
+
+01:57.800 --> 01:59.680
+Je vais apporter ceci comme un nouvel onglet.
+
+01:59.680 --> 02:02.560
+D'accord. D'accord.
+
+02:02.560 --> 02:05.400
+Alors je vais aller de l'avant et je vais travailler dans le Say Love You.
+
+02:05.400 --> 02:09.800
+N'oubliez pas que si vous travaillez dans votre application Forum TV,
+
+02:09.800 --> 02:12.040
+tu peux continuer et utiliser tout ce que je fais dans Say Love You comme
+
+02:12.040 --> 02:16.200
+comme un exemple de l'apparence de la solution dans votre application.
+
+02:16.200 --> 02:20.960
+D'accord. Je vais donc aller de l'avant et découvrir la solution de branche O9.
+
+02:20.960 --> 02:23.040
+C'est donc là que cela vivra.
+
+02:23.760 --> 02:26.480
+D'accord. Alors tout d’abord, que voulons-nous faire ?
+
+02:26.480 --> 02:28.360
+Nous voulons créer une page utilisateur.
+
+02:28.360 --> 02:30.800
+D'accord. Alors ce que nous allons faire à l'intérieur de nos composants
+
+02:30.800 --> 02:32.880
+dossier, vue par points de la page utilisateur.
+
+02:33.800 --> 02:36.640
+Et puis je vais continuer et configurer le bloc de script
+
+02:36.640 --> 02:38.520
+et configurons le bloc de style.
+
+02:39.560 --> 02:42.040
+Et donc en regardant ce que nous avons ici,
+
+02:42.040 --> 02:43.640
+nous avons quelques styles de base.
+
+02:43.640 --> 02:46.280
+Et donc pour l'instant, je vais juste rester simple
+
+02:46.280 --> 02:48.880
+dans le sens où, allons-y et tirons ce que nous
+
+02:48.880 --> 02:49.720
+l'avons déjà.
+
+02:49.720 --> 02:51.600
+Donc je vais en fait saisir, je pense,
+
+02:51.680 --> 02:54.120
+la page de connexion me convient.
+
+02:54.120 --> 02:56.240
+Je vais donc aller de l'avant et le savoir réellement.
+
+02:56.240 --> 02:58.880
+Voyons, fais-do-do-do, ouais, je vais juste récupérer la page de connexion.
+
+02:58.880 --> 03:03.400
+Je vais donc récupérer la page de connexion et la copier dans notre page utilisateur pour le moment.
+
+03:03.400 --> 03:06.120
+Et je vais les supprimer ou je les laisserai
+
+03:06.120 --> 03:08.920
+car il y aura en fait un excellent sujet de discussion pour plus tard.
+
+03:08.920 --> 03:11.200
+Et pour l'instant, nous appellerons simplement cela utilisateurs,
+
+03:11.200 --> 03:14.320
+nous supprimerons ces éléments et nous les sauvegarderons simplement.
+
+03:14.320 --> 03:18.440
+Alors maintenant, si nous revenons en arrière, nous sommes sur la page d'accueil.
+
+03:18.440 --> 03:19.520
+Nous ne pourrons pas encore voir cela.
+
+03:19.520 --> 03:20.200
+Pourquoi?
+
+03:20.200 --> 03:25.040
+Parce que nous devons réellement mettre à jour notre application.view
+
+03:25.040 --> 03:26.840
+afin que nous montrions réellement cette page.
+
+03:26.840 --> 03:28.600
+Et donc pour l'instant, nous allons simplement rendre les choses faciles
+
+03:28.600 --> 03:31.000
+et nous allons juste dire, OK, eh bien, par défaut,
+
+03:31.000 --> 03:33.560
+nous allons juste montrer la page utilisateur.
+
+03:33.560 --> 03:36.280
+Mais nous voulons afficher la page utilisateur, que devons-nous faire ?
+
+03:36.280 --> 03:38.040
+Nous devons l'importer parce que nous sommes en fait
+
+03:38.040 --> 03:40.080
+je vais appeler ce composant.
+
+03:40.080 --> 03:42.200
+Alors comme ça on l'appelle, on l'enregistre,
+
+03:42.200 --> 03:44.520
+de cette façon, il pourra être appelé plus tard.
+
+03:44.520 --> 03:47.640
+Donc nous sauvegardons cela et actualisons, rien ne fonctionne, pourquoi ?
+
+03:47.640 --> 03:50.400
+Eh bien, nous avons besoin d'un développement local en cours d'exécution.
+
+03:50.400 --> 03:51.600
+Permettez-moi de clore celui-là.
+
+03:51.600 --> 03:53.200
+Super, c'est parti.
+
+03:53.200 --> 03:57.160
+OK, notre page utilisateur est donc opérationnelle et semble bonne.
+
+03:57.160 --> 03:58.360
+Et alors, que voulons-nous faire ?
+
+03:58.360 --> 04:02.600
+Nous voulons aller de l'avant et récupérer nos utilisateurs à partir de cette API ici même.
+
+04:02.600 --> 04:05.440
+Ainsi, en suivant nos meilleures pratiques, nous allons
+
+04:05.440 --> 04:06.960
+faire l'objet par défaut d'exportation.
+
+04:06.960 --> 04:09.120
+Et à l'intérieur de notre création, nous sommes en fait
+
+04:09.120 --> 04:10.720
+je vais aller de l'avant et exécuter une fonction.
+
+04:10.720 --> 04:12.920
+Ce que nous voulons exécuter, idéalement, nous voulons quelque chose
+
+04:12.920 --> 04:14.800
+comme ça.fetch les utilisateurs.
+
+04:17.640 --> 04:20.240
+Mais nous ne l’avons pas écrit, alors allons-y et écrivons-le.
+
+04:20.240 --> 04:22.120
+Nous allons donc créer une méthode ici.
+
+04:22.120 --> 04:25.120
+Et l’option méthodes contiendra la récupération des utilisateurs.
+
+04:25.120 --> 04:26.440
+À l'intérieur d'ici, c'est là que nous sommes
+
+04:26.440 --> 04:28.120
+je vais aller de l'avant et exécuter notre demande.
+
+04:28.120 --> 04:31.160
+Nous pourrions donc avoir un this.userList égal à quoi ?
+
+04:31.160 --> 04:34.200
+Nous allons récupérer cette API.
+
+04:34.200 --> 04:36.080
+Et puis nous allons prendre cette réponse.
+
+04:36.080 --> 04:39.560
+Et puis nous allons JSONify en exécutant réponse.json.
+
+04:39.560 --> 04:41.880
+Là encore, il s’agit d’une requête asynchrone.
+
+04:41.880 --> 04:43.560
+Nous avons donc besoin du mot-clé wait.
+
+04:43.560 --> 04:46.080
+Et nous devons lui dire que c'est asynchrone.
+
+04:46.080 --> 04:48.440
+Mais ce n’est pas encore tout à fait fait, car pourquoi ?
+
+04:48.440 --> 04:49.960
+Nous avons ceci this.userList.
+
+04:49.960 --> 04:51.200
+Il n'a pas encore été créé.
+
+04:51.200 --> 04:52.600
+Ce sont nos données réactives.
+
+04:52.600 --> 04:56.480
+Nous pouvons donc continuer et créer cela.
+
+04:56.480 --> 04:59.880
+Et nous avons donc notre liste d’utilisateurs.
+
+04:59.880 --> 05:01.240
+Et ce sera un tableau.
+
+05:01.240 --> 05:04.120
+Et puis nous pouvons économiser.
+
+05:04.120 --> 05:05.040
+Très bien, tout est formaté.
+
+05:05.040 --> 05:05.880
+Ça a l'air bien.
+
+05:05.880 --> 05:09.640
+L'éditeur de code ne nous crie plus dessus.
+
+05:09.640 --> 05:11.480
+Et donc nous ne voyons encore rien.
+
+05:11.480 --> 05:12.760
+Et c'est tout à fait bien, parce que pourquoi ?
+
+05:12.760 --> 05:14.840
+Nous ne l'avons pas réellement rendu à l'écran.
+
+05:14.880 --> 05:16.200
+Alors la liste des utilisateurs, c'est parti.
+
+05:16.200 --> 05:18.040
+Nous avons économisé et nous nous sommes rafraîchis.
+
+05:18.040 --> 05:19.840
+OK, maintenant que nous le faisons, super.
+
+05:19.840 --> 05:21.920
+Nous pouvons réellement voir tous nos utilisateurs ici.
+
+05:21.920 --> 05:24.240
+Mais nous allons aller de l'avant et améliorer un peu cela,
+
+05:24.240 --> 05:26.400
+parce que c'est assez difficile à lire.
+
+05:26.400 --> 05:28.880
+Je vais donc juste faire une liste non ordonnée.
+
+05:28.880 --> 05:32.600
+Et pour chacun de ces utilisateurs, donc utilisateur dans la liste des utilisateurs,
+
+05:32.600 --> 05:35.120
+nous allons nous en assurer, car nous utilisons une boucle v4,
+
+05:35.120 --> 05:37.720
+nous allons lui attribuer une clé unique.
+
+05:37.720 --> 05:39.720
+Et cette clé peut être juste l'identifiant, en fait,
+
+05:39.720 --> 05:41.040
+que nous avons ici.
+
+05:41.040 --> 05:44.280
+Alors je vais dire, faites, faites.
+
+05:44.280 --> 05:48.120
+Je vais cependant utiliser le modèle ES6,
+
+05:48.120 --> 05:51.120
+dire user.id.
+
+05:51.120 --> 05:53.440
+Et la raison en est que cet ensemble de données
+
+05:53.440 --> 05:56.160
+est plus simple, en ce qui concerne la conservation des identifiants uniquement par des chiffres.
+
+05:56.160 --> 05:58.480
+Et donc je sais d'avance qu'il y a
+
+05:58.480 --> 06:01.880
+il y aura d'autres éléments qui ont également des identifiants très simplistes.
+
+06:01.880 --> 06:03.600
+Et ainsi éviter que cela n'entre en collision,
+
+06:03.600 --> 06:06.440
+parce que quand c'est le cas, la vue vous le dira à l'intérieur de la console
+
+06:06.440 --> 06:09.440
+log, hé, au fait, je vois des clés en double pour les éléments.
+
+06:09.440 --> 06:12.160
+Et cela créera toutes sortes de ravages pour vous.
+
+06:12.160 --> 06:14.280
+Essayez donc de les garder uniques chaque fois que vous le pouvez.
+
+06:14.280 --> 06:15.920
+Encore une fois, normalement, ce seront des identifiants UU,
+
+06:15.920 --> 06:18.400
+et vous n'avez pas à vous en soucier.
+
+06:18.400 --> 06:20.840
+Et puis nous pouvons essentiellement restituer le user.name.
+
+06:20.840 --> 06:23.920
+Et puis allons-y et alors, allons-y
+
+06:23.920 --> 06:26.240
+faire ce qui serait amusant à faire.
+
+06:26.240 --> 06:28.080
+Faisons leur site Web, alors.
+
+06:28.080 --> 06:31.200
+Et puis nous avons user.website, enregistrez.
+
+06:31.200 --> 06:32.080
+Et voilà.
+
+06:32.080 --> 06:34.120
+Et nous pouvons le voir maintenant, si nous actualisons.
+
+06:34.120 --> 06:35.840
+OK, il se passe beaucoup de choses.
+
+06:35.840 --> 06:38.120
+Maintenant, pendant une seconde, j'ai paniqué, parce que j'étais comme,
+
+06:38.120 --> 06:39.080
+pourquoi voit-on double ?
+
+06:39.080 --> 06:40.840
+La raison pour laquelle nous voyons double, c'est parce que nous
+
+06:40.840 --> 06:42.320
+avoir le pré-élément toujours là.
+
+06:42.320 --> 06:43.720
+Nous enregistrons donc cela maintenant et actualisons.
+
+06:43.720 --> 06:45.440
+Et voilà, c'est beaucoup mieux.
+
+06:45.440 --> 06:48.240
+Et maintenant, tous nos utilisateurs sont affichés sur la page.
+
+06:48.240 --> 06:51.360
+Et y a-t-il un moyen avec les outils de développement
+
+06:51.360 --> 06:54.360
+voir les identifiants uniques de ces éléments ?
+
+06:54.360 --> 06:56.000
+Ouais, c'est une excellente question.
+
+06:56.000 --> 06:58.920
+Donc, si nous regardons quel est le contexte ici,
+
+06:58.920 --> 07:01.600
+est-ce que cette clé dynamique que nous attribuons, dans ce cas,
+
+07:01.600 --> 07:04.280
+user-1 et ainsi de suite, la question ici
+
+07:04.280 --> 07:07.320
+est autour de l'idée s'il existe un moyen de l'exposer.
+
+07:07.320 --> 07:08.960
+Et honnêtement, du haut de ma tête,
+
+07:08.960 --> 07:11.080
+nous pouvons voir ici que si nous regardons les DevTools du navigateur,
+
+07:11.080 --> 07:15.080
+rien n'indique réellement quelles sont les clés.
+
+07:15.080 --> 07:17.400
+Et si nous jetons un œil à ViewDevTools,
+
+07:17.400 --> 07:19.320
+nous pouvons voir ici une chose intéressante à propos de DevTools
+
+07:19.320 --> 07:21.360
+c'est que cela montre très clairement comment vous pouvez exposer
+
+07:21.360 --> 07:22.960
+les différentes propriétés de celui-ci.
+
+07:22.960 --> 07:24.920
+Mais à première vue, il semble que
+
+07:24.920 --> 07:27.040
+il n'y a rien d'évident qui indique
+
+07:27.040 --> 07:29.840
+ses clés individuelles.
+
+07:29.840 --> 07:31.680
+Par exemple, nous pouvons inspecter les éléments ici
+
+07:31.680 --> 07:33.440
+et toutes les données ici, donc au cas où
+
+07:33.440 --> 07:34.720
+déboguer quoi que ce soit.
+
+07:34.720 --> 07:38.080
+Et quel est le petit bonus sympa à ce sujet aussi, en fait,
+
+07:38.080 --> 07:40.560
+est que les DevTools vous permettent de le modifier directement.
+
+07:40.560 --> 07:43.720
+Donc si nous venons ici et appelons comme Selena
+
+07:43.720 --> 07:45.360
+comme deuxième prénom, vous verrez que ce sera en fait
+
+07:45.360 --> 07:46.280
+mettez-le à jour directement.
+
+07:46.280 --> 07:48.960
+Cela permet donc une sorte de boucle de rétroaction plus rapide
+
+07:48.960 --> 07:51.560
+au cas où vous vous demanderiez si votre ensemble de données fait quelque chose
+
+07:51.560 --> 07:53.600
+spécifique à votre code, vous pouvez simplement jouer avec
+
+07:53.600 --> 07:57.040
+juste là plutôt que de l'appeler en revenant à votre composant
+
+07:57.040 --> 07:58.360
+et simuler l'ensemble de données.
+
+07:58.360 --> 08:01.320
+Les DevTools vous permettent de faire cela de manière centralisée.
+
+08:01.320 --> 08:11.360
+Je me demande, puis-je faire une page de rendu de clé égale à celle-là ?
+
+08:11.360 --> 08:13.760
+Oh d'accord.
+
+08:13.760 --> 08:16.040
+Génial, nous avons donc découvert cela au strict minimum
+
+08:16.040 --> 08:17.560
+à travers cet exercice.
+
+08:17.560 --> 08:20.320
+Si vous fournissez les clés de vos composants,
+
+08:20.320 --> 08:24.000
+ceux-ci apparaissent dans vos DevTools.
+
+08:24.000 --> 08:25.840
+Il y a donc quelque chose à dire là où
+
+08:25.840 --> 08:28.840
+si vous êtes probablement en train de déboguer des clés,
+
+08:28.840 --> 08:31.240
+au moins pour vos composants, il est probablement utile de,
+
+08:31.240 --> 08:32.560
+Je veux dire, pour être honnête, si nous pensons
+
+08:32.560 --> 08:34.360
+à peu près comme un scénario du monde réel,
+
+08:34.360 --> 08:36.720
+la page utilisateur s'afficherait probablement
+
+08:36.720 --> 08:38.200
+un composant de carte utilisateur.
+
+08:38.200 --> 08:40.160
+Et puis ceux-ci devraient les montrer.
+
+08:40.160 --> 08:42.520
+Et donc, pour le plaisir de faire une démonstration,
+
+08:42.520 --> 08:46.160
+parce que c'est en fait quelque chose qui se produit dans les applications,
+
+08:46.160 --> 08:48.320
+faisons une carte d'utilisateur très rapidement.
+
+08:48.320 --> 08:52.160
+Et puis je vais juste y aller et laisser tomber ça.
+
+08:52.160 --> 08:53.560
+Nous allons abandonner cet allié.
+
+08:53.560 --> 08:54.480
+Nous allons faire simple.
+
+08:54.480 --> 08:56.360
+Nous allons simplement supposer que toutes les cartes utilisateur sont toujours
+
+08:56.360 --> 08:58.120
+éléments de liste.
+
+08:58.120 --> 09:02.320
+Et puis je ne vais pas m'inquiéter pour cette pièce.
+
+09:02.320 --> 09:07.600
+Et puis nous allons continuer et définir rapidement un accessoire,
+
+09:07.600 --> 09:13.040
+les accessoires par défaut, et ils obtiendront un objet de type utilisateur.
+
+09:13.040 --> 09:15.080
+Et requis est vrai.
+
+09:15.080 --> 09:16.560
+Sauvegarder.
+
+09:16.560 --> 09:18.160
+Et puis à l'intérieur de la page utilisateur maintenant,
+
+09:18.160 --> 09:21.960
+on peut effectivement importer ladite carte utilisateur.
+
+09:21.960 --> 09:23.360
+Et puis voilà.
+
+09:23.360 --> 09:24.960
+Utilisez simplement la saisie semi-automatique pour cela.
+
+09:24.960 --> 09:28.680
+Et puis les composants.
+
+09:28.680 --> 09:29.560
+Et voilà.
+
+09:29.560 --> 09:33.120
+Et puis encore une fois, déposez la carte d'utilisateur ici.
+
+09:33.120 --> 09:35.320
+Et puis nous pouvons dire carte d'utilisateur
+
+09:35.320 --> 09:37.520
+c'est ce que nous allons utiliser ici.
+
+09:37.520 --> 09:39.200
+Nous n'allons pas nous inquiéter de cela.
+
+09:39.200 --> 09:43.640
+Et puis nous allons juste nous assurer de transmettre l'utilisateur
+
+09:43.640 --> 09:46.720
+à l'intérieur d'ici.
+
+09:46.720 --> 09:50.400
+Comme ça.
+
+09:50.400 --> 09:54.640
+Cela devrait se fermer automatiquement, enregistrer, OK.
+
+09:54.640 --> 09:59.440
+Cela devrait faire l'affaire.
+
+09:59.440 --> 10:00.720
+On dirait que tout fonctionne.
+
+10:00.720 --> 10:02.600
+Et pour valider ça très vite, qu'est-ce qu'on va faire
+
+10:02.600 --> 10:05.880
+est-ce que nous allons ajouter une classe CSS rapide appelée carte utilisateur.
+
+10:05.880 --> 10:13.080
+Et je vais juste dire que la carte utilisateur a un ordre solide de 2 pixels.
+
+10:13.080 --> 10:14.400
+Restons simples.
+
+10:14.400 --> 10:16.000
+Faisons comme un noir.
+
+10:16.000 --> 10:18.240
+Et puis tout comme un remplissage de 10 pixels.
+
+10:18.240 --> 10:18.760
+Et voilà.
+
+10:18.760 --> 10:19.320
+D'ACCORD.
+
+10:19.320 --> 10:21.080
+Nos cartes sont donc rendues.
+
+10:21.080 --> 10:23.440
+Nous avons ici notre page utilisateur qui rend notre liste de cartes,
+
+10:23.440 --> 10:24.760
+ce qui a l'air bien.
+
+10:24.760 --> 10:26.680
+Et maintenant, si nous allons de l'avant et ouvrons les DevTools,
+
+10:26.680 --> 10:28.840
+nous devrions voir, et je pense en avoir eu un aperçu
+
+10:28.840 --> 10:30.680
+il y a une seconde.
+
+10:30.680 --> 10:31.720
+Et voilà.
+
+10:31.720 --> 10:34.080
+Les clés apparaissent dans ce cas.
+
+10:34.080 --> 10:36.560
+Il semble donc que si vous souhaitez inspecter celui de l'élément DOM,
+
+10:36.560 --> 10:38.360
+cela reste un peu insaisissable.
+
+10:38.360 --> 10:40.840
+Mais cela dit, ça reste une question valable
+
+10:40.840 --> 10:42.360
+mérite d'être étudié.
+
+10:42.360 --> 10:47.240
+Au sujet des clés, ces clés sont-elles,
+
+10:47.240 --> 10:51.880
+doivent-ils être uniques sur tous les éléments rendus globalement
+
+10:51.880 --> 10:54.240
+sur la page, ou est-ce en quelque sorte limité au composant ?
+
+10:54.240 --> 10:55.720
+Donc, si votre composant affiche une liste,
+
+10:55.720 --> 10:58.400
+est-il sécuritaire d'utiliser simplement les touches 1, 2, 3, 4 ?
+
+10:58.400 --> 10:59.760
+Ouais.
+
+10:59.760 --> 11:00.960
+Oh, désolé.
+
+11:00.960 --> 11:02.480
+Le cri reconnaissait la question.
+
+11:02.480 --> 11:03.600
+D'ACCORD.
+
+11:03.600 --> 11:06.960
+La question ici concerne donc la portée des clés,
+
+11:06.960 --> 11:08.720
+parce que nous avons parlé de cadrage des données.
+
+11:08.720 --> 11:09.960
+Les données sont limitées aux composants,
+
+11:09.960 --> 11:12.000
+et nous devons être très explicites sur la manière dont cela est partagé.
+
+11:12.040 --> 11:14.040
+Les clés, cependant, sont différentes, car elles
+
+11:14.040 --> 11:16.040
+a à voir avec tout ce qui se trouve sur la page.
+
+11:16.040 --> 11:17.960
+Il n'y a donc aucune portée en ce qui concerne les clés.
+
+11:17.960 --> 11:19.520
+Et c'est très important, surtout quand
+
+11:19.520 --> 11:21.560
+il s'agit d'animation et de transitions,
+
+11:21.560 --> 11:23.680
+c'est parce que si vous voulez que View commence à gérer certains
+
+11:23.680 --> 11:26.520
+parmi ces pièces, ces clés doivent vraiment être uniques.
+
+11:26.520 --> 11:29.200
+Sinon, vous commencerez à voir des problèmes étranges dans View
+
+11:29.200 --> 11:31.000
+essayer de calculer comment déplacer les choses,
+
+11:31.000 --> 11:33.080
+et deux ou trois choses à la fois.
+
+11:33.080 --> 11:35.440
+Et donc oui, je traiterais les clés comme une chose universelle.
+
+11:35.440 --> 11:38.840
+C'est pourquoi connaissant l'ensemble de données dont je dispose,
+
+11:38.840 --> 11:41.000
+laissez-moi fermer ceci.
+
+11:41.000 --> 11:42.640
+Connaissant l'ensemble de données dont je dispose,
+
+11:42.640 --> 11:44.240
+c'est pourquoi je l'ai préfixé par user,
+
+11:44.240 --> 11:46.120
+pour que plus tard nous puissions avoir des photos ou des commentaires
+
+11:46.120 --> 11:49.440
+ou tout ce que nous décidons d'étendre.
+
+11:49.440 --> 11:53.120
+Mais c'est une bonne question.
+
+11:53.120 --> 11:53.960
+Cool.
+
+11:53.960 --> 11:56.120
+Nous avons donc la possibilité de revenir ici à la maison et de nous connecter,
+
+11:56.120 --> 11:57.520
+mais nous n'avons pas de lien utilisateur.
+
+11:57.520 --> 12:00.200
+Alors, assurons-nous simplement de bien terminer cela.
+
+12:00.200 --> 12:02.680
+Donc pour l’instant, nous allons simplement garder les choses simples ici.
+
+12:02.680 --> 12:04.760
+Cependant, vous remarquerez peut-être que lorsque vous inspectez le système de navigation,
+
+12:04.760 --> 12:07.760
+que je fais quelque chose d'un peu hacky.
+
+12:07.760 --> 12:09.920
+La première est qu'il s'agit techniquement d'un lien d'ancrage,
+
+12:09.920 --> 12:11.240
+mais le lien d'ancrage ne mène nulle part.
+
+12:11.240 --> 12:12.840
+En fait, cela va en haut de la page.
+
+12:12.840 --> 12:14.600
+Mais lors de l'événement de clic, vous remarquerez
+
+12:14.600 --> 12:17.120
+que j'ajoute ce modificateur dot Prevent.
+
+12:17.120 --> 12:20.600
+Si cela ne vous est pas familier, considérez-le comme un formulaire.
+
+12:20.600 --> 12:23.320
+La forme est celle dans laquelle je montre généralement la prévention.
+
+12:23.320 --> 12:24.640
+Et alors, que se passe-t-il souvent
+
+12:24.640 --> 12:26.480
+quand tu as des formulaires sur une page HTML ?
+
+12:26.480 --> 12:28.760
+Vous souhaitez réellement empêcher la soumission de l'événement
+
+12:28.760 --> 12:30.680
+puis faites quelques trucs avant de le soumettre.
+
+12:30.680 --> 12:32.240
+Et donc généralement, que devez-vous faire ?
+
+12:32.240 --> 12:36.800
+Si vous aviez un formulaire de soumission qui ressemblait à une inscription,
+
+12:36.800 --> 12:38.360
+à l'intérieur de votre fonction d'inscription de soumission,
+
+12:38.360 --> 12:39.240
+tu devrais courir quoi ?
+
+12:39.240 --> 12:40.400
+Il faudrait obtenir l'événement.
+
+12:40.400 --> 12:42.200
+Vous devrez exécuter l'événement dot Prevent default.
+
+12:42.200 --> 12:45.520
+Eh bien, View était comme, attendez, nous faisons ça si souvent.
+
+12:45.520 --> 12:47.760
+Pourquoi ce code pollue-t-il vraiment la logique ?
+
+12:47.760 --> 12:48.640
+s'en séparer ?
+
+12:48.640 --> 12:51.760
+Il s’agit en réalité d’une simple mise en œuvre logistique.
+
+12:51.760 --> 12:54.760
+Donc, en ajoutant dot Prevent à votre soumission,
+
+12:54.760 --> 12:56.520
+il s'exécute automatiquement
+
+12:56.520 --> 12:59.360
+sur cet événement par défaut afin que votre code puisse être plus propre
+
+12:59.360 --> 13:00.720
+et vous n'avez pas à vous inquiéter.
+
+13:00.720 --> 13:02.840
+Fondamentalement, il est plus facile de modulariser les choses.
+
+13:02.840 --> 13:03.920
+Parce que sinon, vos fonctions
+
+13:03.920 --> 13:07.080
+avoir toujours ce contexte d'attachement à un événement, ce qui
+
+13:07.080 --> 13:08.640
+ce n'est peut-être pas toujours vrai.
+
+13:08.680 --> 13:12.360
+Donc c'est une sorte de sucre tactique
+
+13:12.360 --> 13:14.360
+c'est utile, c'est utilisé.
+
+13:14.360 --> 13:16.200
+Et donc dans ce cas, j'utilise click.prevent
+
+13:16.200 --> 13:18.360
+pour l'empêcher de faire réellement la navigation.
+
+13:18.360 --> 13:20.320
+Encore une fois, pour être très clair, c'est hacky,
+
+13:20.320 --> 13:22.680
+parce que nous allons entrer dans le routage officiel
+
+13:22.680 --> 13:25.000
+et ainsi nous pouvons changer les URL et ce genre de choses.
+
+13:25.000 --> 13:26.520
+Mais par souci de pratique pour le moment,
+
+13:26.520 --> 13:28.040
+c'est pourquoi nous l'avons.
+
+13:28.040 --> 13:31.160
+Très bien, cela dit, nous avons un HRF.
+
+13:31.160 --> 13:34.280
+Encore une fois, en suivant exactement le même modèle, click.prevent.
+
+13:34.280 --> 13:36.560
+Et cette fois, nous allons afficher la page utilisateur.
+
+13:39.640 --> 13:44.440
+Utilisateur, ça a l'air bien.
+
+13:44.440 --> 13:48.360
+Et puis ici, affichez la page utilisateur.
+
+13:48.360 --> 13:51.640
+This.currentPage est égal à l'utilisateur.
+
+13:51.640 --> 13:55.320
+OK, OK, ça a l'air bien.
+

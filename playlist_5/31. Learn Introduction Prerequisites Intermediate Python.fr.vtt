@@ -1,0 +1,209 @@
+WEBVTT
+
+00:00.000 --> 00:12.040
+Nous allons faire un exercice dans lequel nous aborderons nos erreurs de syntaxe, nos exceptions personnalisées, parlerons
+
+00:12.040 --> 00:18.760
+à propos du tri-accept et voyez comment nous pourrions être en mesure de relancer les erreurs.
+
+00:18.760 --> 00:27.080
+Certains types courants d'exceptions que nous avons vus, j'essaie de définir une fonction, et je ne mets pas
+
+00:27.080 --> 00:33.760
+dans la bonne indentation, j'obtiendrai une erreur d'indentation ici.
+
+00:33.760 --> 00:44.080
+Nous avons vu une erreur de syntaxe hier, c'est un peu plus difficile de déclencher une erreur de syntaxe pour une liste
+
+00:44.080 --> 00:49.760
+ici, mais disons qu'il a fait quelque chose comme ça, c'est une erreur de syntaxe, une syntaxe invalide, et
+
+00:49.840 --> 00:51.840
+mettre la valeur.
+
+00:51.840 --> 00:58.960
+Si j'essaye de faire ça et que j'oublie la virgule entre les deux dernières valeurs, c'est aussi
+
+00:58.960 --> 01:06.920
+une erreur de syntaxe, donc quelques exceptions courantes que nous pourrions voir, un divisé par zéro, c'est
+
+01:06.920 --> 01:19.680
+cette erreur de division zéro que nous avons vue, et certaines de ces autres exceptions courantes sont
+
+01:19.680 --> 01:28.920
+erreur de type, donc si nous essayons d'ajouter un entier dans une chaîne, ce n'est pas pris en charge
+
+01:28.920 --> 01:35.720
+opérande à droite, nous aurions besoin d'appeler, remuer, sur ce numéro, avant de pouvoir les concaténer
+
+01:35.720 --> 01:42.040
+ensemble, une erreur de valeur comme nous l'avons vu plus tôt, si j'essaie de créer un entier à partir d'une chaîne
+
+01:42.040 --> 01:49.240
+a, c'est une erreur de valeur, je dirais, je ne sais pas ce que c'est, c'est un nombre, et enfin,
+
+01:49.240 --> 02:00.280
+l'erreur de clé, donc si j'essaye de faire un dictionnaire, avec ça, bonjour, pour la clé et un monde
+
+02:00.360 --> 02:12.640
+a la valeur de cette clé, et j'essaie d'utiliser une clé qui n'existe pas, et j'obtiens une erreur de clé.
+
+02:12.640 --> 02:22.760
+En termes de levée de nos propres exceptions, les classes que nous créons doivent hériter de l'exception,
+
+02:22.760 --> 02:31.480
+et se terminent généralement par, généralement vous verrez une erreur, très occasionnellement vous verrez une exception,
+
+02:31.480 --> 02:38.040
+mais généralement nommer ces erreurs plus courantes, comme vous l'avez vu l'erreur de valeur d'erreur de type,
+
+02:38.040 --> 02:45.720
+erreur de clé, et cetera, donc pour suivre cette convention, permettez-moi de nommer ceci mon erreur, et la sous-classe
+
+02:45.720 --> 02:55.400
+Par exception, dois-je avoir quelque chose dans cette classe, ou peut-elle simplement être vide, n'est-ce pas ?
+
+02:55.400 --> 03:03.520
+Et pour déclencher cette exception, j'utilise le mot clé soulevé, et cela générera cela
+
+03:03.520 --> 03:07.720
+remonter là-bas.
+
+03:07.720 --> 03:17.080
+Je peux également créer mes propres exceptions personnalisées un peu plus sophistiquées, afin de pouvoir dire classer mon erreur,
+
+03:17.080 --> 03:28.000
+s'étend de l'exception, fournit mon propre constructeur et dit soi et message.
+
+03:28.000 --> 03:40.480
+Et maintenant je vais changer mon message, et il dira erreur, système, échec.
+
+03:40.480 --> 03:55.720
+Je veux dire, c'est une erreur vraiment grave, suivie du message, et de quoi ai-je besoin ?
+
+03:55.720 --> 04:05.080
+fais, pour que ça, mon nouveau message se propage, super, super, bien et super volonté
+
+04:05.080 --> 04:12.200
+appelle le constructeur sur quelle classe, exception, c'est vrai, nous allons donc devoir appeler dot in
+
+04:12.200 --> 04:17.160
+là, et nous allons transmettre notre nouveau message.
+
+04:17.160 --> 04:29.360
+Maintenant, si je signale mon erreur, est-ce que cela fonctionnera, ce ne sera pas le cas, car un message est requis,
+
+04:29.360 --> 04:35.720
+et je n'en ai pas fourni, je vais donc fournir un message d'erreur utile ici, eh bien,
+
+04:35.720 --> 04:42.200
+ok, et c'est ce que nous obtenons.
+
+04:42.200 --> 04:48.320
+La programmation, c'est très sérieux, c'est du business très sérieux, on ne rigole pas beaucoup dans ce cours,
+
+04:48.320 --> 04:49.320
+je plaisante.
+
+04:49.320 --> 05:01.120
+D'accord, j'essaie d'accepter si j'ai un dictionnaire ici, la clé est bonjour et la valeur de
+
+05:01.120 --> 05:04.800
+cette clé est le monde.
+
+05:04.800 --> 05:15.040
+Je peux essayer d'imprimer mon dictionnaire, chercher une clé aléatoire, elle n'est pas là, n'est-ce pas ?
+
+05:15.040 --> 05:27.240
+Alors, qu'est-ce que je veux attraper dans ce cas, quel type de clé est, oui, oups, je pense que j'ai foiré
+
+05:27.240 --> 05:34.640
+en haut, voyons voir, ici, j'ai oublié ces parenthèses fermantes, d'accord, je vais accepter
+
+05:34.640 --> 05:50.360
+ici et n'imprime aucune clé trouvée, d'accord, fonctionne comme prévu, je peux aussi ajouter une étiquette à cette exception
+
+05:50.360 --> 05:55.880
+si je voulais en faire quelque chose, généralement plus utile pour nos propres exceptions personnalisées,
+
+05:55.880 --> 05:58.760
+n'est-ce pas ?
+
+05:58.760 --> 06:12.760
+Disons que j'allais essayer, vous savez, d'obtenir une clé aléatoire ici, et je pourrais accepter
+
+06:12.760 --> 06:22.760
+sur l'erreur de clé, et comment puis-je donner un nom de variable à cette erreur, n'est-ce pas, disons comme
+
+06:22.760 --> 06:33.880
+E, et maintenant je peux imprimer un message en amont, et il dira, oh non, la clé, et maintenant je peux être,
+
+06:33.880 --> 06:51.880
+la clé n'existe pas, et je peux dire qu'une erreur était là, on peut aussi relancer des exceptions,
+
+06:51.880 --> 07:01.320
+donc attraper une, vous savez, une erreur d'exécution ou quelque chose du genre, puis déclencher l'une de nos propres coutumes
+
+07:01.320 --> 07:16.480
+exceptions, cela pourrait être un bon cas, donc j'ai eu la classe mon exception, et juste
+
+07:16.480 --> 07:30.480
+pour rappel ici, quand je soulève mon exception, j'ai eu ça, je suis désolé, j'ai appelé ça mon erreur,
+
+07:30.480 --> 07:39.240
+lorsque j'indique mon erreur, je reçois ce message très utile, n'est-ce pas, alors peut-être que je veux
+
+07:39.240 --> 07:49.640
+ce que je fais ici, c'est que je vais parcourir une plage de nombres, et je vais le faire à l'envers,
+
+07:49.640 --> 08:02.840
+donc si j'appelle une plage avec 0 et 5 et moins 1, je vais vous montrer cela sous forme de liste,
+
+08:02.840 --> 08:16.520
+désolé, ce n'est pas ce que je veux, je vais commencer à 0, commencer à 5, aller à 0, donc si je voulais
+
+08:16.520 --> 08:22.520
+pour imprimer une liste de, parcourir une plage de nombres à l'envers, je ferais la valeur finale
+
+08:22.520 --> 08:27.640
+d'abord, la valeur de départ, ensuite, alors retournez-la et passez ensuite par un résultat négatif
+
+08:27.640 --> 08:39.400
+numéro ici, et pour rappel, ce deuxième argument n'est pas inclusif, et donc si je veux
+
+08:39.400 --> 08:50.680
+pour aller à 0, il faut y mettre moins 1, c'est vrai, donc je vais boucler ça et dire
+
+08:50.680 --> 09:05.000
+pour num dans cette plage, imprimez 5 divisé par le nombre, et finalement ça va obtenir
+
+09:05.000 --> 09:20.360
+à 0 et dire 0 erreur de division, donc à la place, je peux essayer tout ça, n'est-ce pas, et
+
+09:20.360 --> 09:28.680
+imprime 5 divisé par le nombre, d'accord, juste pour te montrer, nous avons eu mon, tu sais, mon erreur qui
+
+09:28.680 --> 09:36.520
+Je peux relancer, et je vais parcourir cette liste de chiffres, et je vais mettre ceci
+
+09:36.520 --> 09:43.560
+dans un bloc try, et je vais dire essayez de diviser 5 par ce nombre, je vais accepter
+
+09:43.560 --> 09:53.400
+sur l'erreur de division 0, et ensuite je vais soulever un autre type d'erreur, je vais
+
+09:53.400 --> 10:09.480
+pour signaler mon erreur, et dire, tu sais, eh bien, tu as essayé de diviser par 0, d'accord, alors nous verrons ça
+
+10:09.480 --> 10:15.480
+dans la repule, je dirai que lors du traitement de cette exception, une autre exception s'est produite,
+
+10:15.480 --> 10:21.400
+vous ne verrez pas ce détail particulier dans vos traces lorsque vous exécutez des programmes Python,
+
+10:22.040 --> 10:30.440
+donc cette exception en a provoqué une autre, et j'ai sur-relancé, j'ai attrapé celle-ci, et j'en ai relancé une autre
+
+10:30.440 --> 10:33.480
+un, et alors, vous savez, qu'essayez-vous de faire ici ?
+

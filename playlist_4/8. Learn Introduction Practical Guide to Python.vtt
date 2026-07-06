@@ -1,0 +1,137 @@
+WEBVTT
+
+00:00.000 --> 00:10.160
+There is a special value in Python for none or null, meaning no value, and that has the
+
+00:10.160 --> 00:16.840
+special keyword none. If you see, if I type it in the repo, I don't get any output,
+
+00:16.840 --> 00:23.880
+which when you think about it, kind of makes sense, right? If I try to use a variable that
+
+00:23.880 --> 00:31.520
+I have not defined in my session at all, I will get in name error that says name
+
+00:31.520 --> 00:38.800
+goodbye is not defined. But if I want to have a placeholder variable, I can go ahead and
+
+00:38.800 --> 00:45.360
+say that goodbye is equal to the keyword none with a capital N, and then it's defined
+
+00:45.360 --> 00:52.520
+within the scope of my program, even though it doesn't have a value.
+
+00:52.520 --> 00:58.520
+Now, there are three helpful methods in the repo that you're going to end up using all
+
+00:58.520 --> 01:02.880
+the time. So if you have a post-it note handy for things that you want to take away from
+
+01:02.880 --> 01:11.280
+this class, I recommend writing these three down. I use them all the time, day in, day out.
+
+01:11.280 --> 01:27.880
+And these are, we have help, type, and there.
+
+01:27.880 --> 01:34.600
+Now the first one is going to tell us what the type of a variable is. So if I have a number
+
+01:34.600 --> 01:47.560
+here, I can pass that into the type built in method, and it will return class in.
+
+01:47.560 --> 01:55.520
+I can also pass in a value as well. So if you're not sure about what the type of something
+
+01:55.520 --> 02:00.480
+is, either while you're in the repo or as your executing code, you can figure it out
+
+02:00.480 --> 02:14.280
+this way. Let's try this with E string. What will I see when I get back, when I ask
+
+02:14.280 --> 02:24.400
+for the type of name, which built in class? Stir. Yes, that's exactly right.
+
+02:24.400 --> 02:33.160
+Now, now that we know the objects type, we can move on to other methods. DERS stands
+
+02:33.160 --> 02:38.640
+for directory, which means, show me the directory of all the methods that are available
+
+02:38.640 --> 02:48.040
+for this type. And I want to call DERS on the type, not the variable name or the value
+
+02:48.040 --> 02:53.800
+of the variable, but on the type itself. So in this case, I can ask for the DERS of
+
+02:53.840 --> 02:59.280
+cluster. Because remember, if I type Stir in my repo here, I'll see cluster. This is
+
+02:59.280 --> 03:06.360
+a built in type. I don't have to define it. So when I type DERS of Stir, I will see all
+
+03:06.360 --> 03:12.280
+of the methods that are available on strings. You can, for the most part, ignore all of
+
+03:12.280 --> 03:17.720
+these that have the double underscores. Those are internal methods that aren't meant to
+
+03:17.720 --> 03:22.760
+be used. And if you take a look at the other ones, you'll see some really useful ones.
+
+03:22.760 --> 03:30.800
+Like, is alpha meaning? Does the string only contain characters and not numbers? There's
+
+03:30.800 --> 03:41.200
+a split method for splitting a string on tokens. There's a title method for title casing
+
+03:41.200 --> 03:49.440
+something. So that's how you can kind of very quickly see what is available on the type
+
+03:49.520 --> 03:57.360
+that I'm working with. Now, the last one is super awesome. Because it lets you see documentation
+
+03:57.360 --> 04:02.560
+for Python right in your repo without having to open a browser, figure out what version
+
+04:02.560 --> 04:09.520
+you're looking for, navigate, and search. And that is help. So with help, you also want to
+
+04:09.520 --> 04:18.520
+pass in a class. So if I type help for Stir, it's going to open this up for me, this interface.
+
+04:19.320 --> 04:28.520
+I can press space to scroll down, or I can press Q for to quit. And that is for Linux and Mac
+
+04:28.520 --> 04:34.360
+systems. And I'd be something different in Windows. So this is a lot of stuff. This isn't
+
+04:34.360 --> 04:43.160
+very helpful. Instead, I find it helpful to call help on a particular method. And I can do that
+
+04:43.240 --> 04:52.120
+by saying dot and then picking any one of these. And that just prints out the help for that
+
+04:52.120 --> 04:59.800
+specific method. And it also shows me what arguments this method expects. So is alpha returns true
+
+04:59.800 --> 05:05.800
+if the string is an alphabet-extring false otherwise? If you're ever not sure, like, oh, I don't
+
+05:05.800 --> 05:10.440
+remember the name of that method or I don't remember what this does or I don't remember what
+
+05:10.440 --> 05:17.560
+arguments this accepts. You can always reach for help. And I believe that you can call help
+
+05:17.560 --> 05:30.920
+on values as well. Maybe not. Let's try this out. Yeah. So Dirt is, um, oh, sorry. That is not what I wanted.
+
+05:31.400 --> 05:40.440
+I have a file named I. Yeah. So, um, for help you also want to make sure that you're passing
+
+05:40.440 --> 05:48.120
+in the class and not, like, a variable name or a value. Make sure that you remember these three
+
+05:48.120 --> 05:50.840
+commands and you will not find yourself too lost.
+

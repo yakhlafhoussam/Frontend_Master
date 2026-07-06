@@ -1,0 +1,530 @@
+WEBVTT
+
+00:00.000 --> 00:03.480
+La question est : comment transmettre les données à nos composants ?
+
+00:03.480 --> 00:06.920
+C'est donc ici que nous parlons de l'idée et cela s'appelle des accessoires,
+
+00:06.920 --> 00:08.960
+qui est un raccourci pour les propriétés.
+
+00:08.960 --> 00:12.400
+La raison pour laquelle j'aime beaucoup le concept d'accessoires est que si vous y réfléchissez,
+
+00:12.400 --> 00:15.080
+ce ne sont en réalité que des attributs de données sur votre élément HTML.
+
+00:15.080 --> 00:16.720
+Mais ça a l'air vraiment chic quand tu parles d'accessoires,
+
+00:16.720 --> 00:19.480
+mais en réalité, c'est juste que vous transmettez une valeur à un attribut,
+
+00:19.480 --> 00:22.080
+et ensuite ce composant peut accéder à cet attribut.
+
+00:22.080 --> 00:23.200
+C'est vraiment ce que c'est.
+
+00:23.200 --> 00:25.200
+Je considère donc les accessoires comme des attributs personnalisés.
+
+00:25.200 --> 00:27.720
+Eh bien, de quoi avons-nous besoin ? Nous avons besoin de la liste des personnages.
+
+00:27.880 --> 00:32.080
+Donc pour l'instant, je vais ajouter un accessoire appelé personnages,
+
+00:32.080 --> 00:36.360
+et cela va transmettre notre liste de personnages.
+
+00:36.360 --> 00:40.080
+Alors je peux continuer et le lier à une liste de personnages comme celle-ci.
+
+00:40.080 --> 00:43.400
+Alors, est-ce que quelqu'un sait ce qui me manque ici ?
+
+00:43.400 --> 00:46.680
+deux points, oui, parce que j'ai besoin de lier cela en V pour le rendre dynamique.
+
+00:46.680 --> 00:49.320
+Je vais donc simplement faire le raccourci pour deux points.
+
+00:49.320 --> 00:51.120
+Mais ce n'est pas suffisant,
+
+00:51.120 --> 00:55.040
+parce qu'après tout, ce que nous venons de faire, c'est de le transmettre sous forme de données.
+
+00:55.080 --> 00:57.960
+Mais une des choses que j'aime vraiment dans la vue,
+
+00:57.960 --> 00:59.920
+quand il s'agit, ce n'est pas spécifique à une vue,
+
+00:59.920 --> 01:02.560
+mais j'ai aimé ça quand j'ai commencé à en apprendre davantage,
+
+01:02.560 --> 01:05.480
+c'est qu'il s'agit vraiment d'essayer de documenter vos composants
+
+01:05.480 --> 01:07.280
+et le rendre plus facile à utiliser pour les gens.
+
+01:07.280 --> 01:09.280
+Ainsi, parmi vos options, vous avez la possibilité
+
+01:09.280 --> 01:12.160
+pour définir les accessoires que vous allez obtenir, n'est-ce pas ?
+
+01:12.160 --> 01:14.120
+Donc en fait, avant de faire celui de l'objet,
+
+01:14.120 --> 01:15.880
+la manière la plus simple de définir vos accessoires
+
+01:15.880 --> 01:17.240
+se fait à travers un tableau de chaînes.
+
+01:17.240 --> 01:19.800
+Donc je pourrais juste être comme des personnages comme ça.
+
+01:21.080 --> 01:24.320
+Et puis vous pouvez voir ici, laissez-moi garder ça, d'accord ?
+
+01:24.320 --> 01:28.680
+Ce que cela signifie maintenant, c'est que si je fais cela.
+
+01:28.680 --> 01:30.960
+la vue connaîtra la référence de ce personnage
+
+01:30.960 --> 01:32.560
+fait référence à cet accessoire ici.
+
+01:33.640 --> 01:36.320
+Et donc si je sauvegarde ceci maintenant et actualise,
+
+01:36.320 --> 01:39.360
+vous remarquerez que nos statistiques fonctionnent à nouveau soudainement.
+
+01:39.360 --> 01:41.920
+Mais maintenant, le problème est que je ne te montre que ça
+
+01:41.920 --> 01:43.480
+parce que si tu vois ça dans la nature,
+
+01:43.480 --> 01:47.240
+c'est une odeur de code, car encore une fois, les caractères sont sous forme de chaîne
+
+01:47.240 --> 01:49.720
+ne vous dit pas grand-chose sur ce que vous attendez en tant qu'accessoire.
+
+01:49.720 --> 01:51.840
+Si vous êtes intéressé par les modèles au niveau de l'entreprise
+
+01:51.840 --> 01:52.680
+et ce genre de trucs,
+
+01:52.680 --> 01:55.360
+assurez-vous de consulter la vue de qualité de production
+
+01:55.360 --> 01:56.400
+que j'ai enregistré auparavant.
+
+01:56.400 --> 01:58.120
+Et donc cela couvre beaucoup de modèles différents
+
+01:58.120 --> 01:59.520
+que vous verrez dans les applications d'entreprise.
+
+01:59.520 --> 02:01.880
+Et donc c'est un peu comme un extrait
+
+02:01.880 --> 02:03.720
+de quelque chose que j'ai mentionné.
+
+02:03.720 --> 02:05.400
+OK, donc quand il s'agit d'accessoires,
+
+02:05.400 --> 02:07.300
+Je recommande de le définir via un objet.
+
+02:07.300 --> 02:08.140
+Pourquoi?
+
+02:08.140 --> 02:10.360
+Parce que ce que nous pouvons faire, c'est pour les personnages,
+
+02:10.360 --> 02:12.800
+nous pouvons faire des choses comme définir quel type de type
+
+02:12.800 --> 02:14.000
+que nous attendons.
+
+02:14.000 --> 02:16.120
+Et encore une fois, ce n’est pas une perspective dactylographiée.
+
+02:16.120 --> 02:17.960
+Il s'agit plutôt d'une vérification d'exécution,
+
+02:17.960 --> 02:20.720
+comme si view vous aide lorsque vous transmettez quelque chose de drôle.
+
+02:20.720 --> 02:21.800
+Ce sera juste un moment fort comme,
+
+02:21.800 --> 02:23.680
+hé, tu m'as dit que tu voulais ça.
+
+02:23.680 --> 02:25.120
+Pourquoi est-ce quelque chose de différent ?
+
+02:25.120 --> 02:27.640
+Donc dans ce cas, je sais que ce sera juste un tableau.
+
+02:27.640 --> 02:30.640
+Plus important encore, je peux dire que c'est une propriété obligatoire.
+
+02:31.960 --> 02:35.120
+Ou je pourrais dire, je pourrais aussi définir
+
+02:35.120 --> 02:37.240
+une propriété par défaut dessus également.
+
+02:37.240 --> 02:38.400
+Mais pour ce cas particulier,
+
+02:38.400 --> 02:40.080
+tout ce dont nous devons nous inquiéter, c'est du fait que
+
+02:40.080 --> 02:42.240
+c'est une propriété obligatoire, et c'est important
+
+02:42.240 --> 02:44.120
+parce que ce que tu fais ici
+
+02:44.120 --> 02:46.040
+est fondamentalement auto-documenté le composant
+
+02:46.040 --> 02:49.040
+afin que les gens du futur puissent l'utiliser correctement.
+
+02:50.040 --> 02:51.800
+Et donc quand je sauvegarde ça ici,
+
+02:51.800 --> 02:53.920
+tu vois qu'on est rafraîchi, c'est bien.
+
+02:53.920 --> 02:55.200
+Mais quand nous revenons à app.view,
+
+02:55.200 --> 02:56.800
+disons que j'ai accidentellement essayé d'utiliser
+
+02:56.800 --> 02:59.760
+Statistiques de Bender sans passer le composant.
+
+02:59.760 --> 03:01.400
+Voyons si nous te laissons me crier dessus.
+
+03:02.640 --> 03:04.600
+Boum boum boum boum boum.
+
+03:04.600 --> 03:06.080
+Alors cette fois, ça ne me crie pas dessus.
+
+03:06.080 --> 03:08.520
+Mais il y a des moments où je pense,
+
+03:08.520 --> 03:10.520
+en fait, laisse-moi faire ça très vite.
+
+03:10.520 --> 03:15.280
+Si je fais des caractères, cela équivaut à un, deux, trois.
+
+03:16.240 --> 03:19.080
+Sauvegarder.
+
+03:19.080 --> 03:21.560
+On dirait qu'il n'effectue aucune vérification pour moi pour le moment.
+
+03:21.560 --> 03:22.880
+C'est un peu capricieux.
+
+03:22.880 --> 03:24.800
+Mais de toute façon, au strict minimum,
+
+03:24.800 --> 03:26.920
+quand tu fais ça, tu peux réellement voir
+
+03:26.920 --> 03:28.880
+c'est facile à lire, facile à comprendre,
+
+03:28.880 --> 03:30.120
+et puis plus important encore,
+
+03:30.120 --> 03:31.920
+rend votre application plus facile à maintenir.
+
+03:31.920 --> 03:34.600
+Encore une fois, nous sommes une liste de personnages comme celle-ci.
+
+03:35.480 --> 03:36.320
+Oups.
+
+03:37.640 --> 03:38.480
+D'accord.
+
+03:39.720 --> 03:42.560
+Et donc les accessoires sont essentiellement la colle
+
+03:42.560 --> 03:44.680
+auquel nous pouvons connecter nos composants parents
+
+03:44.680 --> 03:46.720
+dans nos composants enfants.
+
+03:46.720 --> 03:47.600
+Il y a une question cependant ?
+
+03:47.600 --> 03:49.000
+Fonctionne comme un accessoire.
+
+03:50.960 --> 03:51.800
+D'accord.
+
+03:51.800 --> 03:54.960
+C’est donc une question très controversée.
+
+03:54.960 --> 03:55.800
+D'accord.
+
+03:55.800 --> 03:57.480
+La question ici concerne donc le concept
+
+03:57.480 --> 03:59.000
+de fonctions comme accessoires.
+
+03:59.000 --> 04:02.240
+En d’autres termes, pour donner l’exemple ici,
+
+04:02.240 --> 04:05.720
+laissez-moi plutôt aller dans celui du bac à sable, juste pour montrer.
+
+04:07.360 --> 04:08.920
+D'accord.
+
+04:08.920 --> 04:11.920
+Disons que dans le compteur de base, nous avions un accessoire.
+
+04:11.920 --> 04:13.840
+Et c'est en fait quelque chose que je pense
+
+04:13.880 --> 04:16.040
+est plus courant dans les bases de code React.
+
+04:16.960 --> 04:21.960
+Ainsi, dans app.view, nous avons vu que nous
+
+04:22.280 --> 04:23.920
+en fait, la portée du compteur d'incréments
+
+04:23.920 --> 04:25.600
+directement au composant, non ?
+
+04:25.600 --> 04:28.680
+Eh bien, théoriquement, qu'est-ce que tu pourrais faire
+
+04:28.680 --> 04:31.680
+c'est avec ce concept que tu aurais
+
+04:31.680 --> 04:33.840
+vos méthodes au niveau de votre composant parent.
+
+04:33.840 --> 04:37.160
+Ce serait donc à ce niveau, non ?
+
+04:37.160 --> 04:39.240
+Et vous auriez cette fonction d'incrémentation.
+
+04:39.240 --> 04:42.160
+Et puis ce que vous transmettez au composant
+
+04:42.160 --> 04:43.880
+est la fonction d'incrémentation réelle.
+
+04:43.880 --> 04:47.720
+Donc ça ressemblerait à quelque chose comme ça, non ?
+
+04:47.720 --> 04:49.920
+Et puis, en termes de comment cela se passerait,
+
+04:49.920 --> 04:52.080
+à quoi cela ressemblerait du point de vue des composants,
+
+04:52.080 --> 04:55.000
+vous auriez cet accessoire d'incrémentation,
+
+04:55.000 --> 04:56.680
+et c'est comme une fonction de type, non ?
+
+04:56.680 --> 04:59.680
+Et puis dites simplement, oups, c'est obligatoire.
+
+05:00.760 --> 05:02.480
+Il y a un exemple d'accessoires.
+
+05:03.640 --> 05:06.480
+Personnellement, je ne suis pas fan de la transmission de fonctions
+
+05:06.480 --> 05:07.320
+comme accessoires.
+
+05:07.320 --> 05:10.080
+La raison en est que je le sais,
+
+05:10.080 --> 05:11.720
+surtout quand nous programmons,
+
+05:11.720 --> 05:14.800
+nous sommes occupés à essayer de réaliser des fonctions d'usine
+
+05:14.800 --> 05:16.320
+et avec des composants d'usine,
+
+05:16.320 --> 05:18.800
+où il devient très facile de tout généraliser.
+
+05:18.800 --> 05:20.680
+Et c'est pourquoi je pense que l'une des raisons
+
+05:20.680 --> 05:22.440
+il est même devenu populaire de transmettre des fonctions
+
+05:22.440 --> 05:24.120
+c'est parce que tu dis en gros,
+
+05:24.120 --> 05:26.760
+en tant que parent, je vais dire à l'enfant quoi courir.
+
+05:27.840 --> 05:29.440
+Mais ce que j'ai trouvé avec ça souvent
+
+05:29.440 --> 05:32.680
+c'est que maintenant tu commences à confondre les,
+
+05:32.680 --> 05:35.000
+comme si j'avais l'impression que le parent commence à faire trop de travail
+
+05:35.000 --> 05:38.000
+en termes de like, si la portée de l'enfant
+
+05:38.000 --> 05:40.040
+est censé augmenter,
+
+05:40.040 --> 05:42.080
+J'ai trouvé très peu de fois où cela n'avait pas de sens
+
+05:42.080 --> 05:45.280
+pour que l'enfant le possède dès le début,
+
+05:45.280 --> 05:47.080
+en ce qui concerne les fonctionnalités.
+
+05:47.880 --> 05:50.680
+Donc dans cet exemple, j'ai tendance à penser à ceci
+
+05:50.680 --> 05:55.400
+dans le formulaire d'ajout d'un nouveau maître de l'air.
+
+05:55.400 --> 05:59.560
+Comme l'application parent possède la liste des maîtres de l'air,
+
+05:59.560 --> 06:03.800
+et le formulaire indique ce qu'est un nouveau maître de l'air
+
+06:03.800 --> 06:05.360
+et comment puis-je le modifier.
+
+06:05.400 --> 06:08.560
+Mais quand je veux vraiment ajouter ça à cette liste,
+
+06:08.560 --> 06:11.320
+comme si je pouvais modifier la liste chez l'enfant,
+
+06:11.320 --> 06:13.600
+mais c'est plus sale que d'avoir le parent
+
+06:13.600 --> 06:15.640
+posséder cette fonction qui l'ajoute réellement à la liste.
+
+06:15.640 --> 06:16.760
+J'adore cette question.
+
+06:16.760 --> 06:20.920
+C’est donc en fait une bonne introduction après l’exercice.
+
+06:22.480 --> 06:26.840
+Je l'appellerai comme je considère le modèle le plus standard
+
+06:26.840 --> 06:27.680
+de gérer cela.
+
+06:27.680 --> 06:30.680
+Et donc pour récapituler, au cas où quelqu'un ne pourrait pas entendre,
+
+06:30.680 --> 06:33.880
+c'est que revenons à l'exemple évoqué
+
+06:33.880 --> 06:37.440
+était à l'intérieur du composant de mon avatar airbender.
+
+06:37.440 --> 06:39.320
+Plus tôt, vous m'avez peut-être entendu dire, par exemple :
+
+06:39.320 --> 06:41.800
+que le composant a atteint une limite, et il y a une raison à cela.
+
+06:41.800 --> 06:44.800
+Mais pour la liste des personnages favoris, comme cela a été mentionné,
+
+06:44.800 --> 06:47.400
+si nous devions dévoiler notre personnage préféré ici
+
+06:48.360 --> 06:52.000
+dans son propre composant, c'est délicat car à ce stade,
+
+06:52.000 --> 06:55.040
+la liste des favoris dépend également de like,
+
+06:56.680 --> 07:00.280
+c'est comme si les données existaient dans le parent.
+
+07:00.280 --> 07:02.120
+Et donc vous ne voulez pas nécessairement transmettre les données
+
+07:02.120 --> 07:04.520
+dans l'enfant pour que l'enfant puisse le modifier.
+
+07:04.520 --> 07:07.400
+Mais en même temps, on dirait que ce serait mieux
+
+07:07.400 --> 07:09.440
+pour ensuite passer une fonction à l'enfant
+
+07:09.440 --> 07:11.280
+pour lui dire quoi faire, non ?
+
+07:11.280 --> 07:13.560
+Mais je vais laisser ça un peu en suspens,
+
+07:13.560 --> 07:15.480
+mais sache juste qu'il existe un meilleur moyen
+
+07:15.480 --> 07:17.000
+que de transmettre des fonctions comme accessoires
+
+07:17.000 --> 07:18.400
+quand il s’agit de ce scénario.
+

@@ -1,0 +1,707 @@
+WEBVTT
+
+00:00.000 --> 00:02.160
+Plongeons dans notre application.
+
+00:02.160 --> 00:03.680
+L'une des questions qui pourraient se poser est la suivante :
+
+00:03.680 --> 00:06.120
+vous pensez peut-être, eh bien, d'accord, en vue trois,
+
+00:06.120 --> 00:08.400
+il existe deux manières de créer des composants.
+
+00:08.400 --> 00:10.760
+Il y a l'API d'options et l'API de composition,
+
+00:10.760 --> 00:12.200
+que nous utiliserons aujourd'hui.
+
+00:12.200 --> 00:14.360
+Je vais vous montrer les deux parce que les deux
+
+00:14.360 --> 00:16.920
+sont toujours des moyens valables d'écrire des composants en vue,
+
+00:16.920 --> 00:18.560
+mais nous y consacrerons certainement plus de temps
+
+00:18.560 --> 00:20.880
+en composition API car j'expliquerai plus tard pourquoi.
+
+00:20.880 --> 00:23.200
+Mais de cette façon, si les gens ont une idée de ce que l'on ressent
+
+00:23.200 --> 00:25.080
+être dans les deux de cette façon, tu ne te sens pas
+
+00:25.080 --> 00:27.880
+comme si tu devais faire l'un de l'autre quand il s'agit
+
+00:27.880 --> 00:30.600
+à construire votre propre projet.
+
+00:30.600 --> 00:32.960
+Alors commençons par un scénario dans lequel nous sommes tous
+
+00:32.960 --> 00:35.080
+assez familier en matière de visualisation.
+
+00:35.080 --> 00:38.800
+Allons-y et jetons un œil au composant de la barre de navigation.
+
+00:38.800 --> 00:41.600
+OK, donc ce composant de la barre de navigation,
+
+00:41.600 --> 00:43.360
+contextualisons ce qui se passe ici.
+
+00:43.360 --> 00:44.880
+Alors laissez-moi aller de l'avant et ouvrir ici.
+
+00:44.880 --> 00:47.840
+La barre de navigation est cette pièce en haut.
+
+00:47.840 --> 00:49.360
+Et donc généralement dans la barre de navigation,
+
+00:49.360 --> 00:51.680
+nous pourrions avoir, disons, un slogan comme problème
+
+00:51.680 --> 00:52.840
+que nous avions transmis.
+
+00:52.840 --> 00:55.480
+Donc si nous regardons app.view ici, nous avons la barre de navigation,
+
+00:55.480 --> 00:57.200
+et nous voulons définir ce que cela pourrait être, n'est-ce pas ?
+
+00:57.200 --> 00:58.680
+Donc, généralement, je pourrais me dire, d'accord,
+
+00:58.680 --> 01:06.680
+eh bien, mon slogan ici est de suivre tout ce que vous voulez manger.
+
+01:08.960 --> 01:09.480
+C'est génial.
+
+01:09.480 --> 01:11.000
+Et donc si nous revenons sur le site,
+
+01:11.000 --> 01:14.800
+vous verrez qu'il apparaît ici en haut à gauche.
+
+01:14.800 --> 01:17.360
+Tout semble plutôt bien.
+
+01:17.360 --> 01:20.040
+Mais pour tous ceux qui travaillent avec du code depuis un certain temps,
+
+01:20.040 --> 01:21.840
+vous remarquerez que l'un des problèmes ici
+
+01:21.840 --> 01:24.040
+avec la façon dont nous avons défini les accessoires, c'est que ce n'est pas le cas
+
+01:24.040 --> 01:26.480
+je vous dirai bien autre chose que son nom.
+
+01:26.480 --> 01:29.560
+Et donc ce que nous voulons faire, même avant TypeScript,
+
+01:29.560 --> 01:31.640
+c'est que nous voudrions réellement définir plus d'informations
+
+01:31.640 --> 01:32.840
+à propos des accessoires.
+
+01:32.840 --> 01:35.920
+Donc, la façon dont nous procédions généralement en vue standard,
+
+01:35.920 --> 01:37.240
+c'est que tu dirais, d'accord, nous fabriquerions des accessoires
+
+01:37.240 --> 01:39.120
+dans un objet au lieu d'un tableau.
+
+01:39.120 --> 01:41.520
+Et puis le slogan ici, nous pouvons réellement définir de quel type il s’agit.
+
+01:41.520 --> 01:43.600
+Nous pourrions donc nous dire que c'est une chaîne, par exemple.
+
+01:43.600 --> 01:45.080
+C'est ce à quoi nous nous attendons.
+
+01:45.080 --> 01:47.840
+Et donc généralement, vous plongerez même un peu plus loin
+
+01:47.840 --> 01:51.040
+en lui faisant dire, d'accord, tapez une chaîne.
+
+01:51.040 --> 01:53.280
+Et puis vous pouvez avoir l'une ou l'autre propriété par défaut
+
+01:53.280 --> 01:54.400
+ou la propriété requise.
+
+01:54.400 --> 01:58.080
+Donc, dans ce cas, nous allons aller de l'avant et faire cela très rapidement.
+
+01:58.080 --> 01:59.840
+Alors ça va beaucoup mieux, non ?
+
+01:59.840 --> 02:01.520
+C’est ce que la plupart d’entre nous connaissent.
+
+02:01.520 --> 02:04.200
+Et si nous voulions faire, genre, et donc c'était sympa
+
+02:04.200 --> 02:07.280
+parce que ce que nous pourrions faire, c'est dire, d'accord, maintenant
+
+02:07.280 --> 02:10.280
+nous pouvons faire des choses comme, d'accord, dans notre propriété de données,
+
+02:10.280 --> 02:14.160
+nous pouvons dire, d'accord, nous avons un slogan.
+
+02:14.160 --> 02:16.880
+Et c'est, disons simplement, une chaîne de test pour l'instant.
+
+02:16.880 --> 02:19.080
+Et nous pouvons maintenant en faire une propriété réactive,
+
+02:19.080 --> 02:19.920
+et c'est génial.
+
+02:19.920 --> 02:24.480
+Et comme on peut le voir ici, tout fonctionne toujours.
+
+02:24.480 --> 02:27.040
+Mais le problème était de savoir ce qui se passait lorsque quelqu'un dépassait
+
+02:27.040 --> 02:28.080
+la mauvaise chose ?
+
+02:28.080 --> 02:30.240
+Et donc c'est là que c'était sympa, parce que dans le cas
+
+02:30.240 --> 02:32.000
+quelqu'un a réussi, genre un, deux, trois, par exemple,
+
+02:32.000 --> 02:36.600
+et c'est un nombre, ce que nous trouvons c'est qu'à l'intérieur de notre application,
+
+02:36.600 --> 02:39.240
+quand nous l'ouvrirons, vous verrez qu'il y a un invalide
+
+02:39.240 --> 02:41.840
+vérification du type d'accessoire, ce qui est bien car quelque chose crie
+
+02:41.840 --> 02:42.840
+chez nous.
+
+02:42.840 --> 02:45.080
+Par contre, si vous n'avez pas votre console ouverte
+
+02:45.080 --> 02:47.200
+et tu n'y prêtes pas attention, si tu regardes en arrière
+
+02:47.200 --> 02:50.080
+dans notre code, il n'y a vraiment rien à indiquer
+
+02:50.080 --> 02:51.800
+que tout le reste est faux.
+
+02:51.800 --> 02:54.040
+Il s'agit donc d'une limitation sur la vérification du type d'hélice.
+
+02:54.040 --> 02:56.200
+Mais si nous y réfléchissons vraiment,
+
+02:56.200 --> 02:57.640
+c'est en fait le genre de modèle mental
+
+02:57.640 --> 02:59.520
+de toute façon, TypeScript est vraiment construit autour,
+
+02:59.520 --> 03:02.080
+qui consiste à documenter ce que vous avez l'intention de faire,
+
+03:02.080 --> 03:04.000
+et ensuite t'aider à t'empêcher en quelque sorte
+
+03:04.000 --> 03:06.000
+de commettre des erreurs à cet égard.
+
+03:06.000 --> 03:07.600
+Donc dans ce cas, dans l'événement, nous voulions vraiment
+
+03:07.600 --> 03:10.640
+être une chaîne ou un nombre.
+
+03:10.640 --> 03:13.080
+Nous pourrions simplement dire, oh, d'accord, eh bien, c'est une chaîne ou un nombre.
+
+03:13.080 --> 03:15.520
+C'était comme une syntaxe par défaut
+
+03:15.520 --> 03:17.280
+qui est construit dès la sortie de la boîte pour la vue,
+
+03:17.280 --> 03:18.240
+ce qui était vraiment sympa.
+
+03:19.880 --> 03:22.840
+Et voici donc une autre limitation que vous avez probablement rencontrée
+
+03:22.840 --> 03:24.760
+en ce qui concerne la vérification du type d'hélice
+
+03:24.760 --> 03:26.000
+que nous avons avec vous.
+
+03:26.000 --> 03:28.880
+Alors allons jeter un oeil à la carte de restaurant, par exemple.
+
+03:31.040 --> 03:33.040
+Je ne sais pas pour vous, combien de personnes ont déjà fait ça
+
+03:33.040 --> 03:35.760
+où vous avez un objet que vous transmettez
+
+03:35.760 --> 03:39.000
+à un composant et le type est juste un objet.
+
+03:39.000 --> 03:41.320
+Maintenant, c'est bien de savoir au moins ce qu'est la primitive,
+
+03:41.320 --> 03:44.600
+mais sinon tu n'as aucune idée de ce qu'il y a dedans
+
+03:44.600 --> 03:46.600
+forme, et puis souvent vous vous retrouvez à changer
+
+03:46.600 --> 03:48.720
+entre les fichiers, vous risquez de manquer certaines choses.
+
+03:48.720 --> 03:51.120
+Ce serait bien si c'était un peu mieux.
+
+03:51.120 --> 03:53.160
+Donc, tout d’abord, nous avons ce restaurant.
+
+03:53.160 --> 03:55.320
+Et voyons, encore une fois, comment allons-nous généralement déboguer cela ?
+
+03:55.320 --> 03:57.160
+Nous dirions, ok, eh bien, le restaurant est en train d'être
+
+03:57.160 --> 03:58.160
+où est-ce que cela est adopté ?
+
+03:58.160 --> 03:58.960
+Eh bien, jetons un oeil.
+
+03:58.960 --> 04:03.560
+Donc si je rentre ici et que je cherche une carte de restaurant,
+
+04:03.560 --> 04:07.480
+carte de restaurant I, elle est en cours d'importation sur la page du restaurant.
+
+04:07.480 --> 04:10.360
+Très bien, la page du restaurant est là, voyons le parchemin,
+
+04:10.360 --> 04:13.640
+en descendant, et tu te dis, oh, d'accord, voici où
+
+04:13.640 --> 04:16.400
+il est appelé et transmis par l'élément.
+
+04:16.400 --> 04:18.600
+L'élément est transmis par des listes de filtres.
+
+04:18.600 --> 04:21.480
+Donc, si je continue et que je maintiens l'option, cliquez dessus,
+
+04:21.480 --> 04:23.720
+cela me permettrait de filtrer les listes de restaurants,
+
+04:23.720 --> 04:26.880
+et puis moi, oui, voici les restaurants dans lesquels je peux sauter.
+
+04:26.880 --> 04:29.080
+Et bon, voici la forme de mes données, n'est-ce pas ?
+
+04:29.080 --> 04:30.760
+C’est un peu ainsi que se déroule le processus.
+
+04:30.760 --> 04:33.560
+C'est en fait assez normal pour nous de déboguer.
+
+04:33.560 --> 04:36.520
+Mais cela représente beaucoup de travail, surtout lorsque les bases de code
+
+04:36.520 --> 04:37.840
+peut devenir infiniment plus complexe.
+
+04:37.840 --> 04:40.240
+Maintenant, parce que certains d'entre vous auraient pu se dire, oh, eh bien,
+
+04:40.240 --> 04:42.360
+J'aurais deviné que c'était ça, mais nous le savons tous, n'est-ce pas ?
+
+04:42.360 --> 04:44.080
+le code ne s'organise pas toujours aussi bien.
+
+04:44.080 --> 04:46.240
+C'est généralement ainsi que vous pouvez le déboguer.
+
+04:46.240 --> 04:48.360
+Donc nous pourrions nous dire, d'accord, d'accord, donc nous savons que c'est le problème.
+
+04:48.360 --> 04:50.920
+Alors copions-le, passons à la carte du restaurant.
+
+04:50.920 --> 04:52.720
+Et documentons-le au moins quelque part, n'est-ce pas ?
+
+04:52.720 --> 04:56.160
+Nous pourrions donc nous dire : créons simplement un bloc de commentaires.
+
+04:56.160 --> 04:58.080
+et dis juste, d'accord, restaurant, alors qu'est-ce qu'on a ?
+
+04:58.080 --> 05:02.400
+Nous avons un identifiant, donc l'identifiant est généralement comme une chaîne,
+
+05:02.400 --> 05:05.080
+et puis nous avons, en fait, ce sont toutes des chaînes.
+
+05:05.080 --> 05:08.360
+Alors, au strict minimum, documentons la forme.
+
+05:08.360 --> 05:10.600
+Alors laissez-moi simplement multiplier, sélectionner le curseur.
+
+05:10.600 --> 05:11.880
+Alors pour ceux d'entre vous qui ne l'ont jamais fait auparavant,
+
+05:11.880 --> 05:15.160
+Je maintiens simplement une commande enfoncée tout en cliquant,
+
+05:15.160 --> 05:17.120
+Je pense que cela pourrait être un contrôle sous Windows.
+
+05:18.920 --> 05:23.600
+Voilà donc la forme générale que nous avons pour notre restaurant.
+
+05:24.680 --> 05:27.160
+Et donc une fois que nous avons ceci, normalement vous le lanceriez
+
+05:27.160 --> 05:29.240
+comme un bloc de documentation JS, et puis vous savez,
+
+05:29.240 --> 05:31.400
+j'espère que vous pourrez en récupérer une partie,
+
+05:31.400 --> 05:32.240
+et ce serait bien.
+
+05:32.240 --> 05:33.960
+Mais nous sommes ici pour en savoir plus sur TypeScript
+
+05:33.960 --> 05:35.360
+et à quoi ça ressemble, non ?
+
+05:35.360 --> 05:37.080
+Alors maintenant que nous avons cette forme, laissez-moi continuer
+
+05:37.080 --> 05:40.120
+et commentez ceci afin qu'il ne signale aucune erreur.
+
+05:40.120 --> 05:41.760
+Et allons-y et assurons-nous réellement
+
+05:41.760 --> 05:43.520
+que nous vous disons que nous voulons utiliser TypeScript
+
+05:43.520 --> 05:45.320
+pour ce composant spécifique.
+
+05:45.320 --> 05:48.480
+Et donc la façon dont nous procédons est que nous arrivons ici à l'intérieur du bloc de script
+
+05:48.480 --> 05:50.200
+et nous déclarons sa langue.
+
+05:50.200 --> 05:53.200
+Et donc le langage est égal à TS qui signifie TypeScript.
+
+05:53.200 --> 05:54.720
+C'est ça.
+
+05:54.720 --> 05:56.240
+Une fois que vous avez fait cela, vous vous êtes essentiellement dit
+
+05:56.240 --> 05:58.280
+il est temps d'utiliser le compilateur TypeScript.
+
+05:58.280 --> 05:59.800
+Et puis la prochaine chose que nous devons faire
+
+05:59.800 --> 06:03.560
+c'est que nous devons réellement dire à TypeScript
+
+06:03.560 --> 06:06.120
+quel genre d'objet nous allons y passer,
+
+06:06.120 --> 06:08.360
+parce que ce que vous remarquerez ici, c'est qu'à l'intérieur de vous,
+
+06:08.360 --> 06:10.280
+une des choses qui le distingue des encadreurs
+
+06:10.280 --> 06:13.120
+c'est qu'il fait cette chose d'exportation d'objet par défaut.
+
+06:13.120 --> 06:15.200
+Et cela a parfois un résultat mitigé,
+
+06:15.200 --> 06:16.880
+surtout quand il s'agit de types.
+
+06:16.880 --> 06:19.160
+Donc ce que nous avons, c'est cette fonction d'assistance
+
+06:19.160 --> 06:21.840
+appelé définir le composant à partir de la vue.
+
+06:21.840 --> 06:23.960
+Ainsi, lorsque vous importez ceci, cela indique essentiellement à TypeScript
+
+06:23.960 --> 06:26.720
+à quoi s'attendre et à peu près à quoi deviner
+
+06:26.720 --> 06:30.600
+quand il fait un tas d'hypothèses sur votre composant.
+
+06:30.600 --> 06:34.280
+Et donc, au lieu de simplement exporter un objet générique par défaut,
+
+06:34.280 --> 06:36.320
+maintenant nous allons dire que nous allons l'emballer
+
+06:36.320 --> 06:41.640
+dans la définition du composant, oups, puis nous enveloppons cela
+
+06:41.640 --> 06:49.240
+en bas, et puis c'est tout.
+
+06:49.240 --> 06:51.600
+Jusqu'ici, tout va bien.
+
+06:51.600 --> 06:53.360
+Bien sûr, la question est maintenant : OK, comment pouvons-nous
+
+06:53.360 --> 06:57.640
+lui dire que nous voulions réellement devenir ce type de restaurant ?
+
+06:57.640 --> 06:59.600
+Et donc pour l'instant, ce que nous allons faire
+
+06:59.600 --> 07:01.800
+c'est que nous allons apprendre comment déclarer des types.
+
+07:01.800 --> 07:03.960
+Et donc nous pouvons le faire directement à l’intérieur de ce composant.
+
+07:03.960 --> 07:05.520
+Nous n'allons pas devenir fous ici.
+
+07:05.520 --> 07:08.080
+Nous allons créer un type personnalisé appelé restaurant.
+
+07:08.080 --> 07:10.680
+Et donc ce mot-clé ici, si vous n'avez jamais utilisé TypeScript auparavant,
+
+07:10.680 --> 07:11.800
+est spécifique à TypeScript.
+
+07:11.800 --> 07:13.560
+En gros, c'est une location constante.
+
+07:13.560 --> 07:14.480
+Que déclarez-vous ?
+
+07:14.480 --> 07:15.600
+Déclarez-vous un type?
+
+07:15.600 --> 07:17.560
+Nous déclarons un type de restaurant.
+
+07:17.560 --> 07:20.480
+Et la forme de cet objet sera cette chose
+
+07:20.480 --> 07:22.560
+que je viens de créer.
+
+07:22.560 --> 07:28.880
+Je vais donc coller ceci ici et le montrer comme ceci.
+
+07:28.880 --> 07:30.480
+Et donc ce que vous remarquerez ici, c'est qu'il y a
+
+07:30.480 --> 07:32.640
+quelques choses syntaxiques qui peuvent paraître un peu étranges,
+
+07:32.640 --> 07:35.080
+comme s'il n'y avait pas de virgules ou quoi que ce soit.
+
+07:35.080 --> 07:37.800
+Mais c’est exactement ainsi qu’il est défini.
+
+07:37.800 --> 07:39.720
+Et pour ceux qui ont un peu de connaissances sur TypeScript,
+
+07:39.720 --> 07:41.480
+vous vous demandez peut-être, eh bien, qu'en est-il des interfaces
+
+07:41.480 --> 07:44.120
+et yada, dans le but de garder les choses
+
+07:44.120 --> 07:47.040
+accessible et simple, nous nous en tenons aux types pour l'instant.
+
+07:47.040 --> 07:50.120
+C'est l'une des choses pour lesquelles vous avez besoin d'une interface
+
+07:50.120 --> 07:51.440
+dans ce genre de choses, nous allons le chercher.
+
+07:51.440 --> 07:54.600
+Mais pour l’instant, nous allons simplement rester simple avec les types.
+
+07:54.600 --> 07:55.960
+OK, maintenant que nous avons ceci, vous êtes probablement
+
+07:55.960 --> 07:58.080
+en pensant, OK, je sais ce que je vais faire.
+
+07:58.080 --> 08:01.760
+Je vais entrer ici et je vais dire un restaurant.
+
+08:01.760 --> 08:04.200
+Et tout va être réparé.
+
+08:04.200 --> 08:07.920
+Sauf qu'attendez une seconde, que se passe-t-il ici ?
+
+08:07.920 --> 08:12.600
+Oh, ça dit que ça fait seulement référence à un type,
+
+08:12.600 --> 08:15.000
+mais il est utilisé comme valeur ici.
+
+08:15.000 --> 08:17.120
+Et c'est là que c'est un peu bizarre, non ?
+
+08:17.120 --> 08:20.560
+Parce que ce n’est pas ce à quoi on s’attend habituellement.
+
+08:20.560 --> 08:22.600
+Mais ce que nous avons ici, et c'est là
+
+08:22.600 --> 08:24.280
+vous devrez apprendre une nouvelle chose lorsque vous utiliserez
+
+08:24.280 --> 08:27.440
+API d'options, est-ce l'une des choses que nous devons faire
+
+08:27.440 --> 08:32.040
+in, lorsque vous utilisez TypeScript avec, l'utilise comme mot-clé.
+
+08:32.040 --> 08:33.800
+Et c'est ce qu'on appelle le transtypage, où
+
+08:33.800 --> 08:37.640
+en gros, dire explicitement à TypeScript ce que ça va être.
+
+08:37.640 --> 08:40.680
+Et comme nous utilisons l'API d'options, encore une fois,
+
+08:40.680 --> 08:42.760
+voici quelques-uns des hacks qui permettent de le faire
+
+08:42.760 --> 08:45.680
+un peu plus délicat par rapport à l'API de composition,
+
+08:45.680 --> 08:48.800
+c'est que nous avons besoin de quelque chose appelé un type d'accessoire.
+
+08:48.800 --> 08:55.680
+Donc, ce que je vais faire, c'est importer un type appelé prop type from view.
+
+08:55.680 --> 08:58.120
+Et donc c'est une de ces choses dont nous avons besoin,
+
+08:58.120 --> 09:00.400
+afin, encore une fois, d'aider TypeScript à comprendre
+
+09:00.400 --> 09:04.040
+la convention que l'API optionnelle fournit aux développeurs.
+
+09:04.040 --> 09:06.600
+Et donc ce que nous faisons, c'est dire, eh bien, nous avons besoin de l'objet
+
+09:06.600 --> 09:08.800
+être un type d'accessoire.
+
+09:08.800 --> 09:11.560
+Et puis nous avons cette nouvelle convention dans TypeScript,
+
+09:11.560 --> 09:15.280
+qui est la parenthèse, supérieure à inférieure à simple.
+
+09:15.280 --> 09:16.560
+Et si vous les considérez comme des parenthèses,
+
+09:16.560 --> 09:18.960
+comme si vous passiez une dispute, pensez-y comme ça.
+
+09:18.960 --> 09:20.920
+Comme tu dis, oh, j'ai un type d'accessoire qui est
+
+09:20.920 --> 09:22.600
+ça va être un restaurant de type.
+
+09:22.600 --> 09:25.920
+Mais comme il s'agit de TypeScript, il veut être explicite,
+
+09:25.920 --> 09:28.280
+alors c'est important, même pas important.
+
+09:28.280 --> 09:32.520
+Il doit s'agir de symboles plus grands et moins grands.
+
+09:32.520 --> 09:36.160
+Et comme ça maintenant, tu verras que si on survole un restaurant,
+
+09:36.160 --> 09:39.320
+cela vous fera en fait savoir qu'il s'agit d'un restaurant de type accessoire.
+
+09:39.320 --> 09:41.240
+Et maintenant, à partir de maintenant, vous pouvez en apprendre davantage
+
+09:41.240 --> 09:43.160
+à propos de la chose avec laquelle tu travailles
+
+09:43.160 --> 09:45.880
+avant de devoir parcourir différents fichiers.
+
+09:45.880 --> 09:47.960
+Et c'est super sympa.
+

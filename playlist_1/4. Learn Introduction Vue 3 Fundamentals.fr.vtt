@@ -1,0 +1,608 @@
+WEBVTT
+
+00:00.000 --> 00:04.280
+Donc, sur cette base, pour ceux qui travaillent avec des applications Web depuis un certain temps, vous
+
+00:04.280 --> 00:09.040
+peut-être déjà commencer à réaliser qu'il y a beaucoup de flexibilité avec cela, car maintenant tout
+
+00:09.040 --> 00:13.080
+du coup, si vous avez un back-end qui n'est pas tout à fait prêt à intégrer toute la build
+
+00:13.080 --> 00:17.640
+les outils et tout ce dont vous avez besoin pour le faire fonctionner, vous pouvez simplement sur une page spécifique
+
+00:17.640 --> 00:21.600
+lorsque vous proposez de commencer à migrer progressivement vos applications, vous pouvez dire à ce sujet
+
+00:21.600 --> 00:26.040
+page, nous allons supprimer le CDN et nous allons ajouter l'interactivité essentiellement
+
+00:26.040 --> 00:30.720
+vers cette page et, au fil du temps, migrera, puis une fois que nous aurons suffisamment de pages qui consolident
+
+00:30.720 --> 00:34.360
+ce point de vue, nous pouvons alors réellement investir du temps pour créer les outils de construction.
+
+00:34.360 --> 00:37.880
+Parce que je pense que souvent, lorsque nous pensons à la migration, les développeurs
+
+00:37.880 --> 00:42.520
+nous pensons que le code gèle tout, pas de nouvelles fonctionnalités, et nous arrêtons simplement le développement.
+
+00:42.520 --> 00:46.400
+Et nous savons qu’en pratique, cela fonctionne rarement pour les entreprises.
+
+00:46.400 --> 00:51.600
+C’est donc un très bon moyen pour nous d’aller de l’avant et de migrer une entreprise.
+
+00:51.600 --> 00:58.280
+app à quelque chose qui pourrait utiliser des technologies de cadre plus modernes.
+
+00:58.280 --> 01:01.240
+Cela dit, nous avons un message ici.
+
+01:01.240 --> 01:07.560
+Et si nous voulions, disons, l'afficher ou le masquer selon que le message
+
+01:07.560 --> 01:09.320
+c'est pair ou pas ?
+
+01:09.320 --> 01:13.520
+Eh bien, View est également connu pour ses directives.
+
+01:13.520 --> 01:16.560
+Et donc pour ceux qui viennent d’Angular, cela peut sembler un peu familier.
+
+01:16.560 --> 01:21.800
+Donc, la façon dont cela fonctionne est que nous aurions fondamentalement un élément HTML normal.
+
+01:21.800 --> 01:27.080
+Alors disons, enveloppons cela dans un élément P.
+
+01:27.080 --> 01:29.760
+Et puis celui-là, nous allons le dire même.
+
+01:29.760 --> 01:33.600
+Et celui-ci, nous allons le dire étrange.
+
+01:33.600 --> 01:38.680
+Et donc l'idée ici étant que ce que nous aimerions faire, c'est que si la longueur du message est paire,
+
+01:38.680 --> 01:43.040
+afficher le mot-clé pair, sinon afficher le mot-clé impair.
+
+01:43.040 --> 01:47.560
+Et donc une façon de procéder est d’utiliser quelque chose appelé directives d’affichage.
+
+01:47.560 --> 01:52.360
+Et la façon dont cela fonctionne est qu'il s'agit essentiellement d'un attribut que vous ajoutez à un élément HTML, et
+
+01:52.360 --> 01:55.160
+il est préfixé par v dash.
+
+01:55.160 --> 02:03.880
+Donc dans ce cas, si je vais v dash if est égal à message.length, et j'utiliserai le modulaire 2
+
+02:03.880 --> 02:06.800
+est égal à 0 pour déterminer que c'est pair.
+
+02:06.800 --> 02:11.280
+Et puis sinon, v else, ça affichera l'autre chose.
+
+02:11.280 --> 02:14.400
+Donc si on rafraîchit ça, on verra, ah, OK, c'est parti.
+
+02:14.400 --> 02:16.240
+On remarquera que c'est actuellement étrange.
+
+02:16.240 --> 02:22.440
+Et donc maintenant, si je supprime le point d'exclamation, cela devrait nous ramener à égalité.
+
+02:22.440 --> 02:27.480
+Et donc ce que nous voyons ici est, encore une fois, l'une des choses dont j'ai parlé en ce qui concerne
+
+02:27.480 --> 02:30.480
+Le point de vue est qu’il s’appuie sur ce que vous savez déjà.
+
+02:30.480 --> 02:32.560
+Ainsi, lorsque la plupart des gens travaillent avec HTML et CSS,
+
+02:32.560 --> 02:37.280
+il est très utile d'étendre les connaissances existantes des gens lorsqu'il s'agit
+
+02:37.280 --> 02:38.680
+à l'extension des API.
+
+02:38.680 --> 02:42.600
+Et donc à cet égard, en ayant essentiellement la convention du v dash et
+
+02:42.600 --> 02:44.280
+puis en utilisant les instructions if-else.
+
+02:44.280 --> 02:47.560
+Encore une fois, si vous connaissez JavaScript, en fait, vous n'avez même pas besoin de connaître JavaScript.
+
+02:47.560 --> 02:52.840
+Les gens comprendraient réellement cette propriété, certes, mais peut-être pas cette partie.
+
+02:52.840 --> 02:54.920
+Mais lorsque les gens naviguent dans le HTML,
+
+02:54.920 --> 02:56.400
+ils comprendraient réellement ce qui se passe ici.
+
+02:56.400 --> 03:00.600
+Plutôt que si vous aviez des gros blogs if-else qui contiennent un tas de fonctions,
+
+03:00.600 --> 03:04.320
+ce qui, encore une fois, je pense que parfois nous trouvons cela un peu délicat,
+
+03:04.320 --> 03:08.120
+Je pense que les composants React peuvent être plus difficiles à suivre.
+
+03:08.120 --> 03:10.960
+Surtout si vous n'avez pas autant d'expérience avec JavaScript.
+
+03:10.960 --> 03:16.880
+Mais ici, cela reste une manière visuellement et sémantiquement concise de dire aux gens ce qui se passe.
+
+03:19.080 --> 03:24.200
+Maintenant, l’autre directive dont je veux parler est celle-ci.
+
+03:25.320 --> 03:28.040
+Mais avant de faire cela, voici une diapositive pour en parler.
+
+03:28.040 --> 03:31.200
+Et cela date d'il y a quelque temps de Sansa Cone.
+
+03:31.200 --> 03:36.320
+Et ce qu'il est dit ici, c'est que 99,7 % du développement logiciel répond à une seule exigence.
+
+03:36.360 --> 03:39.320
+Un utilisateur doit pouvoir afficher une liste d’éléments.
+
+03:39.320 --> 03:41.360
+Et je pense toujours que c’est incroyablement pertinent aujourd’hui, n’est-ce pas ?
+
+03:41.360 --> 03:42.440
+C'est ce que nous faisons la moitié du temps.
+
+03:42.440 --> 03:45.440
+Nous prenons un tas de données et générons une liste.
+
+03:45.440 --> 03:50.000
+Et je ne sais pas pour vous tous, mais quand je faisais ça dans React à l'origine,
+
+03:50.000 --> 03:52.600
+J'ai réalisé qu'il existe de nombreuses façons différentes de le faire.
+
+03:52.600 --> 03:54.440
+Et je sais qu’il existe désormais davantage de bonnes pratiques.
+
+03:54.440 --> 03:57.960
+Mais cela peut être déroutant pour les utilisateurs, surtout s'ils disposent d'une fonction qui
+
+03:57.960 --> 04:00.720
+exécute la carte ou peut-être dans ce cas, utilisez la boucle for.
+
+04:00.720 --> 04:04.200
+Il y a beaucoup de choses à décider quoi faire.
+
+04:04.200 --> 04:07.920
+Allons donc de l'avant et montrons comment fonctionne le rendu d'une liste en vue.
+
+04:07.920 --> 04:11.880
+Donc dans ce cas, je vais juste faire une liste de chiffres ici, juste pour que ça reste simple.
+
+04:11.880 --> 04:15.880
+Et donc un, deux, trois, quatre, cinq, et nous avons ici un tableau.
+
+04:17.200 --> 04:21.960
+Et puis ce que nous allons faire ici, c'est simplement faire une liste non ordonnée.
+
+04:21.960 --> 04:23.800
+Et puis qu’essayons-nous de répéter, n’est-ce pas ?
+
+04:23.800 --> 04:25.600
+Nous essayons de répéter l'élément de liste.
+
+04:25.600 --> 04:28.560
+Donc ce que nous allons avoir, si vous voulez deviner,
+
+04:28.560 --> 04:31.640
+c'est que nous avons la directive v4, n'est-ce pas ?
+
+04:31.640 --> 04:33.920
+Utilisation du concept de boucle for de JavaScript.
+
+04:33.920 --> 04:34.840
+Et pourquoi faisons-nous une boucle ?
+
+04:34.840 --> 04:41.000
+Pour chaque nombre dans la liste des nombres, nous allons continuer et
+
+04:41.000 --> 04:42.080
+il suffit de mettre le numéro.
+
+04:44.240 --> 04:44.600
+C'est ça.
+
+04:46.200 --> 04:49.360
+Et si vous actualisez, voilà, c'est fait.
+
+04:49.360 --> 04:51.560
+Votre liste est rendue, c'est fantastique.
+
+04:54.000 --> 04:58.280
+Et donc ce qui est vraiment bien là-dedans, encore une fois, c'est que nous essayons d'étendre
+
+04:58.280 --> 05:02.080
+sur les connaissances de base de JavaScript sans trop se lancer dans les mauvaises herbes.
+
+05:02.080 --> 05:05.480
+Encore une fois, la syntaxe est écrite d'une manière accessible pour
+
+05:05.480 --> 05:07.960
+les gens aiment en quelque sorte dans un anglais simple, vraiment.
+
+05:07.960 --> 05:09.640
+Pour le numéro dans la liste des numéros, imprimez le numéro.
+
+05:09.640 --> 05:11.840
+Super, je comprends ce que cela signifie, même si je ne connais pas JavaScript.
+
+05:13.320 --> 05:17.240
+L'autre fait amusant sur le rendu déclaratif des accolades ici est
+
+05:17.240 --> 05:19.000
+qu'il ne s'agit pas simplement d'imprimer des variables.
+
+05:19.000 --> 05:21.840
+Il évalue en fait les instructions JavaScript.
+
+05:21.840 --> 05:26.560
+Donc, si dans le cas de, disons que nous voulions être vraiment enthousiasmés par le fait que
+
+05:26.560 --> 05:31.200
+c'est même, nous pouvons en fait mettre deux majuscules ici et l'exécuter.
+
+05:32.240 --> 05:34.440
+Et puis vous verrez que cela transformera réellement le texte,
+
+05:34.440 --> 05:37.240
+exécutez essentiellement le JavaScript à l’intérieur immédiatement.
+
+05:37.240 --> 05:39.000
+Donc en théorie, vous pourriez aussi faire des choses comme, eh bien,
+
+05:39.000 --> 05:43.840
+multiplions simplement comme math.random ici et actualisons cela, boum.
+
+05:43.840 --> 05:46.840
+Je veux dire, s'il vous plaît, nous avons des chiffres intéressants ici.
+
+05:46.840 --> 05:49.040
+Mais c'est quelque chose à considérer.
+
+05:49.040 --> 05:51.480
+Le problème, c'est que lorsque les gens découvrent cela,
+
+05:51.480 --> 05:53.080
+parfois, ils se laissent vraiment emporter.
+
+05:53.080 --> 05:56.120
+Et nous parlons comme des déclarations ternaires et des déclarations ternaires.
+
+05:56.120 --> 05:59.920
+Et pour moi, c'est une philosophie très, je dirais, anti-view dans la mesure où nous essayons de
+
+05:59.920 --> 06:02.240
+permettre aux gens de comprendre facilement la base de code, n'est-ce pas ?
+
+06:02.240 --> 06:04.960
+Je dirais donc qu'en ce qui concerne l'intégration de votre JavaScript
+
+06:04.960 --> 06:08.240
+à l'intérieur de ces doubles accolades, je dirais de le garder au minimum et
+
+06:08.240 --> 06:10.640
+essayez d'abstraire cette logique autant que cela est humainement possible.
+
+06:10.640 --> 06:14.080
+La question que nous nous posons ici concerne donc les différences entre le View2Way
+
+06:14.080 --> 06:15.120
+et le View3Way.
+
+06:15.120 --> 06:18.920
+Ainsi, le View3Way, comme nous le voyons ici, consiste à extraire une fonction d'assistance de
+
+06:18.920 --> 06:25.600
+View ou si pour ceux qui connaissent View2Way, nous avions View, c'était NewView.
+
+06:25.600 --> 06:28.760
+Vous instancieriez une application NewView de cette façon.
+
+06:29.760 --> 06:34.040
+Et donc une partie de la raison pour laquelle cette approche a changé est parce que View3 a
+
+06:34.040 --> 06:36.680
+devenir beaucoup pour devenir modulaire et performant.
+
+06:36.680 --> 06:40.520
+En d’autres termes, être capable de séparer les choses dont vous n’avez pas besoin.
+
+06:40.520 --> 06:44.320
+Avec ce type d’approche NewView, tout est instancié.
+
+06:44.320 --> 06:47.200
+avec et c'était beaucoup plus difficile du point de vue du regroupement,
+
+06:47.200 --> 06:49.280
+comme y penser du point de vue de la maintenance de la bibliothèque.
+
+06:49.280 --> 06:52.760
+C'est en grande partie ce qui a motivé cette nouvelle approche,
+
+06:52.760 --> 06:56.640
+ce que vous verrez beaucoup plus dans View3CodeBases, c'est qu'il y a beaucoup d'aide
+
+06:56.640 --> 06:59.720
+fonctions que nous verrons réellement dans cet atelier et qui vous permettent essentiellement de
+
+06:59.720 --> 07:02.600
+diviser les éléments de View qui sont utiles dans certains cas.
+
+07:02.600 --> 07:06.760
+Et sinon, il saura soit abandonner certaines choses et s'optimiser.
+
+07:06.760 --> 07:11.960
+Je m'attendais à ce que la V4 soit à l'intérieur de l'UL plutôt que dans LI.
+
+07:11.960 --> 07:17.720
+La question ici concerne donc l'idée de l'élément V4 qui ressemble fondamentalement à
+
+07:17.720 --> 07:21.200
+quelqu'un ayant l'impression qu'il pensait le mettre sur l'UL
+
+07:21.200 --> 07:22.600
+élément.
+
+07:22.600 --> 07:25.600
+Mais la raison pour laquelle ce n’est pas le cas est que nous devons réfléchir à ce que
+
+07:25.640 --> 07:28.240
+exactement, nous voulons que le moteur de rendu boucle, n'est-ce pas ?
+
+07:28.240 --> 07:30.240
+Quel est l'élément que nous répétons ?
+
+07:30.240 --> 07:35.880
+Et dans ce cas, nous répétons la liste à cet égard et ne disons pas :
+
+07:35.880 --> 07:37.280
+nous ne voulons pas de la liste entière non ordonnée.
+
+07:37.280 --> 07:42.800
+Donc par exemple, si on faisait ça, vous verrez, on montrera juste la différence.
+
+07:44.480 --> 07:45.560
+Nous pouvons donc procéder ainsi.
+
+07:46.680 --> 07:51.240
+Et si nous l'actualisons, vous remarquerez qu'à première vue, cela ressemble un peu à la même chose.
+
+07:51.240 --> 07:53.080
+Mais quand on regarde en dessous,
+
+07:54.080 --> 07:57.840
+vous verrez qu'il existe des listes individuelles non ordonnées dans ce cas.
+
+07:57.840 --> 07:58.880
+Alors ne vous méprenez pas.
+
+07:58.880 --> 08:02.800
+Si dans le cas, vous avez beaucoup de choses du genre, d'accord, donnons simplement cet exemple.
+
+08:02.800 --> 08:07.480
+Si c’est le cas, nous avons des choses différentes que nous faisons dans chaque élément.
+
+08:07.480 --> 08:11.720
+Alors disons que, d'accord, donc un, deux, trois, quatre, cinq.
+
+08:11.720 --> 08:13.440
+Nous avons donc ici comme un objet.
+
+08:13.440 --> 08:19.520
+Et disons comme nom, laissez-moi faire un texte de un à trois.
+
+08:19.520 --> 08:24.360
+Et puis ID, faisons simplement de la pâtisserie textuelle UUID.
+
+08:24.360 --> 08:29.320
+Oups, j'ai besoin de ce premier UUID de pâtisserie textuelle, boum.
+
+08:29.320 --> 08:30.440
+D'accord, sauvegarde.
+
+08:30.440 --> 08:33.080
+D'accord, nous avons donc ici un ensemble de données plus complexe, n'est-ce pas ?
+
+08:34.800 --> 08:36.520
+Nous avons un tas d'objets dans chacun.
+
+08:36.520 --> 08:41.440
+Donc, si je rafraîchis ceci maintenant, vous remarquerez peut-être que, eh bien, rien à faire.
+
+08:41.440 --> 08:42.760
+Ai-je raté quelque chose au niveau de la syntaxe ?
+
+08:42.760 --> 08:45.120
+Avez-vous des calculs à ce sujet ?
+
+08:45.120 --> 08:47.480
+Oh, je fais des maths, d'accord, c'est tout à fait logique.
+
+08:47.480 --> 08:48.920
+Très bien, d'accord, c'est parti.
+
+08:48.920 --> 08:54.440
+Maintenant, si je sauvegarde ça, donc dans ce cas particulier, peut-être qu'à l'intérieur d'ici,
+
+08:54.440 --> 08:56.280
+nous avons alors une sous-liste.
+
+08:56.280 --> 08:58.840
+Je réalise donc que je n’ai même pas ajouté l’autre chose dont j’avais besoin.
+
+08:59.920 --> 09:04.120
+Nous pourrions donc même dire qu’à l’intérieur d’ici, nous avions une autre liste à l’intérieur d’ici.
+
+09:04.120 --> 09:06.640
+C'était alors un, deux, trois, par exemple.
+
+09:06.640 --> 09:09.800
+Alors nous pourrions dire, par exemple, dans cette liste particulière,
+
+09:09.800 --> 09:13.440
+nous voulons que le premier élément affiche l'ID.
+
+09:13.440 --> 09:15.440
+Nous disons donc numéro.ID.
+
+09:15.440 --> 09:17.600
+Et puis nous pourrions intégrer une deuxième liste et
+
+09:17.600 --> 09:22.600
+c'est là que nous parcourrions number.list comme ceci.
+
+09:24.200 --> 09:27.680
+Donc au lieu de numéro, je vais dire, changez ceci en élément,
+
+09:27.680 --> 09:29.880
+parce que maintenant c'est plus précis.
+
+09:29.880 --> 09:36.520
+Et puis numérotez dans la liste de numéros, puis numérotez comme ceci.
+
+09:36.520 --> 09:37.840
+Alors nous actualisons cela.
+
+09:37.840 --> 09:39.080
+J'ai cassé quelque chose.
+
+09:39.080 --> 09:39.800
+Liste d'articles.
+
+09:39.800 --> 09:41.040
+Liste d'articles.
+
+09:41.040 --> 09:43.480
+Liste d'articles.
+
+09:43.480 --> 09:46.200
+Le numéro et la liste de numéros doivent être une liste de numéros et d'éléments.
+
+09:46.240 --> 09:49.000
+Numéro, oui, bonne prise.
+
+09:49.000 --> 09:49.840
+Bon, c'est parti.
+
+09:51.520 --> 09:54.400
+Et c'est donc un exemple dans lequel vous pourriez éventuellement vouloir faire une boucle.
+
+09:54.400 --> 09:55.920
+Même si à ce stade, il pourrait même s'agir d'un div.
+
+09:55.920 --> 09:58.160
+C'est gentil de te demander pourquoi tu voudrais juste celui-là.
+
+09:58.160 --> 10:02.200
+Mais fondamentalement, réfléchissez à la façon dont vous voulez que le code HTML sémantique soit
+
+10:02.200 --> 10:03.760
+rendu en fin de journée.
+
+10:03.760 --> 10:04.480
+Et c'est l'essentiel.
+
+10:07.520 --> 10:09.320
+Un petit mot avant la prochaine question.
+
+10:09.320 --> 10:12.680
+Au cas où quelqu'un se demanderait comment j'ai fait le remplissage des données,
+
+10:12.680 --> 10:18.440
+c'est l'extension de code Text Pastry VS qui est très sous-utilisée.
+
+10:18.440 --> 10:22.440
+Mais c'est vraiment génial pour générer des choses à la volée en ce qui concerne les portées et
+
+10:22.440 --> 10:27.720
+également des UUID personnalisés, ce qui est idéal pour les données aléatoires lorsque vous effectuez
+
+10:27.720 --> 10:29.040
+du codage sandbox comme je l'ai fait.
+
+10:30.880 --> 10:31.320
+Question suivante.
+
+10:32.560 --> 10:36.000
+S'agit-il de l'attribut de données et de l'application de création ?
+
+10:36.000 --> 10:41.960
+Est-ce obligatoire ou pouvons-nous le renommer quelque chose comme state ?
+
+10:41.960 --> 10:45.720
+La question ici concerne donc ces données de mots clés particulières.
+
+10:45.720 --> 10:48.920
+Dans ce contexte particulier, lorsque vous transmettez un objet de configuration à
+
+10:48.920 --> 10:54.480
+créer une application, il s'agit essentiellement d'un mot-clé réservé dans la mesure où il s'appelle data et
+
+10:54.480 --> 10:55.760
+c'est ce que ça doit être.
+
+10:55.760 --> 10:59.760
+Cependant, je vais vous dire tout de suite que si vous êtes plutôt fan de l'appeler État,
+
+10:59.760 --> 11:02.960
+il y aura un autre style de composants que nous couvrirons
+
+11:02.960 --> 11:05.560
+vous permettra essentiellement de nommer les choses comme bon vous semble.
+
+11:05.560 --> 11:10.360
+Mais fondamentalement, ce que vous voyez ici est essentiellement un aperçu de ce qui est connu dans
+
+11:10.360 --> 11:14.800
+affichera deux ou affichera deux et affichera trois car l'API d'options dans cette vue le fera
+
+11:14.800 --> 11:18.440
+vous fournit un ensemble d'options pour faire ce que vous devez faire dans votre application.
+
+11:18.440 --> 11:21.760
+Et cette configuration et ces garde-corps sont en fait, à mon avis,
+
+11:21.760 --> 11:24.520
+très puissant lorsqu'il s'agit d'intégration de personnes pour visualiser
+
+11:24.520 --> 11:27.520
+la première fois ou quand ils cherchent à établir comme une norme et
+
+11:27.520 --> 11:30.920
+cohérence au sein de leur équipe, l’API d’options peut être incroyablement puissante.
+
+11:30.920 --> 11:34.400
+Mais nous montrerons un peu plus comment cela fonctionne avant d'entrer dans l'autre
+
+11:34.400 --> 11:37.240
+un, qui est l'API de composition, qui, pour la personne qui a posé cette question,
+
+11:37.240 --> 11:39.040
+cela pourrait vous intéresser davantage lorsque nous y arriverons.
+

@@ -1,0 +1,41 @@
+WEBVTT
+
+00:00.000 --> 00:06.640
+Le genre de chose amusante à propos de Python, dans des langages comme Java, vous devez créer
+
+00:06.640 --> 00:12.560
+getters et setters pour modifier des éléments dans votre classe, mais Python est un peu plus
+
+00:12.560 --> 00:22.720
+bon gré mal gré. Donc, je peux simplement changer la valeur des courses de points pour ma Subaru, pour mon exemple.
+
+00:22.720 --> 00:32.240
+Je n'ai pas nécessairement besoin d'utiliser un getter ou un setter. Les utiliser est, vous savez, une bonne pratique
+
+00:32.240 --> 00:37.440
+dans des projets logiciels pour éliminer une partie du mystère, mais vous n'obtiendrez pas de syntaxeur,
+
+00:37.440 --> 00:44.640
+ou Python ne vous empêchera pas de faire ce type de modification. Alors maintenant, si j'appelle
+
+00:44.640 --> 00:50.080
+ma Subaru dot start, et elle prend un nom, donc je vais devoir en repasser un.
+
+00:50.960 --> 00:53.520
+Que vais-je voir imprimé ?
+
+00:55.520 --> 01:00.800
+Tout est cassé. Il est temps de suivre davantage de cours de maîtrise front-end pour payer la réparation.
+
+01:02.800 --> 01:07.600
+D'accord, donc self- c'est auto-variable, cela fait référence à une instance.
+
+01:09.280 --> 01:16.240
+Et si je fabrique une nouvelle voiture, appelons-la une voiture Mustang.
+
+01:21.040 --> 01:27.920
+Si je vérifie les performances d'une voiture Mustang, qu'obtiendrai-je ? C'est vrai, non ?
+
+01:27.920 --> 01:32.400
+Ainsi, les modifications que j'ai apportées à ma Subaru ne s'appliquaient qu'à mon instance Subaru.
+

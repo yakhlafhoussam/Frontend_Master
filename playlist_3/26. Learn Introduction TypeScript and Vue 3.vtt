@@ -1,0 +1,404 @@
+WEBVTT
+
+00:00.000 --> 00:03.200
+Before we embark on the final exercise,
+
+00:03.200 --> 00:04.720
+what I do want to go ahead and show you is
+
+00:04.720 --> 00:06.520
+that we've built all this stuff.
+
+00:06.520 --> 00:08.800
+And then so in case anyone hasn't had the chance to use it,
+
+00:08.800 --> 00:09.960
+I'm going to show you how to deploy your app
+
+00:09.960 --> 00:11.680
+because after all once you've built something,
+
+00:11.680 --> 00:14.080
+it'd be nice to actually deploy it and share it with people.
+
+00:14.080 --> 00:15.720
+So let's go ahead and do that right now
+
+00:15.720 --> 00:18.600
+and I'll show you how to do that with NetLify.
+
+00:18.600 --> 00:20.000
+So none of this has any code.
+
+00:20.000 --> 00:23.120
+So basically NetLify is a deployment service somewhere
+
+00:23.120 --> 00:25.120
+to I think Versel, AWS CloudFair.
+
+00:25.120 --> 00:26.320
+There's a bunch of them out there.
+
+00:26.320 --> 00:28.120
+I just happened to be showing you NetLify.
+
+00:28.120 --> 00:30.040
+And so basically with the free account
+
+00:30.040 --> 00:33.800
+what all that we need to do here is we just add any site.
+
+00:33.800 --> 00:37.000
+So I can import it from any project from GitHub directly
+
+00:37.000 --> 00:41.720
+and we'll see why this is important in just a moment.
+
+00:41.720 --> 00:44.280
+So basically authorizes it with my GitHub credentials.
+
+00:44.280 --> 00:48.440
+And then we just did the TypeScript, let's see,
+
+00:48.440 --> 00:52.840
+TypeScript, search search, maybe I do that.
+
+00:52.840 --> 00:59.040
+And there you go, TypeScript and ViewWorkshop.
+
+00:59.040 --> 01:01.080
+And so what we'll do is it'll detect a few things
+
+01:01.080 --> 01:03.240
+as far as the owner, branch it to deploy.
+
+01:03.240 --> 01:05.280
+And so currently for me, normally your app
+
+01:05.280 --> 01:06.320
+is going to be in your root directory.
+
+01:06.320 --> 01:07.960
+But for me, it's currently an app.
+
+01:07.960 --> 01:11.840
+And then the build command is going to be NPM run built.
+
+01:11.840 --> 01:14.880
+And then after that, all I do is hit deploy site.
+
+01:19.880 --> 01:21.880
+And so what's really cool, I think
+
+01:21.880 --> 01:24.080
+about deployment these days, if anyone's done any old school
+
+01:24.080 --> 01:25.720
+deployment, is that a lot of things
+
+01:25.720 --> 01:27.480
+have been automated for you.
+
+01:27.480 --> 01:29.920
+So because we've hooked it up directly to our GitHub repo,
+
+01:29.920 --> 01:32.480
+we get a lot of basically benefits out of this.
+
+01:32.480 --> 01:35.440
+And so even just for the free projects of,
+
+01:35.440 --> 01:36.360
+it's pretty incredible.
+
+01:36.360 --> 01:39.800
+So you can see here that we have an isolated container
+
+01:39.800 --> 01:42.320
+that's currently going to go ahead and building all the things
+
+01:42.320 --> 01:43.720
+and it's deploying it.
+
+01:43.720 --> 01:45.800
+And what's great is that once you're done with this,
+
+01:45.800 --> 01:48.560
+you can see that, OK, well, I can still show you
+
+01:48.560 --> 01:51.080
+some things while this thing is broken.
+
+01:51.080 --> 01:53.880
+But because it's actually hooked up to your GitHub repo,
+
+01:53.880 --> 01:57.200
+what it does, it means that it auto-tracks and deployments.
+
+01:57.200 --> 02:00.120
+So in the instance, for example, let's say that we
+
+02:00.120 --> 02:02.480
+wanted to update our tagline.
+
+02:02.480 --> 02:06.840
+So if I go to the nav bar, for example,
+
+02:06.840 --> 02:11.400
+and inside the tagline, that's currently being imported on that.
+
+02:11.400 --> 02:14.360
+So I say tagline, it looks like it got deleted at some point.
+
+02:14.360 --> 02:17.280
+So track whatever you want to eat.
+
+02:20.720 --> 02:27.240
+And then, if I just commit this, oh, I know why it's broken.
+
+02:27.240 --> 02:28.480
+OK, it's fine.
+
+02:28.480 --> 02:32.360
+Get commit to do, to do, to do, to do, to do.
+
+02:32.360 --> 02:38.640
+So feature a tagline, let me check out, I forgot.
+
+02:38.640 --> 02:40.960
+It's watching the main branch.
+
+02:40.960 --> 02:42.960
+So we're all the way up and like 11.
+
+02:42.960 --> 02:45.120
+So just to show you that this works real quick,
+
+02:45.120 --> 02:49.320
+inside of my app.view, we can go ahead and just add
+
+02:49.320 --> 02:51.280
+like an H1 to say hello.
+
+02:51.280 --> 02:53.040
+So I'm going to delete this commit later.
+
+02:53.040 --> 03:02.720
+So get commit, title, delete, me, later, get push.
+
+03:02.720 --> 03:06.080
+OK, so one thing that it does for you by default
+
+03:06.080 --> 03:08.920
+is that because it's watching your main branch,
+
+03:08.920 --> 03:10.840
+you notice that it automatically picks up that change
+
+03:10.840 --> 03:12.560
+and then automatically deploy it.
+
+03:12.560 --> 03:14.360
+And what's really nice about the deployment services
+
+03:14.360 --> 03:17.080
+these days, especially for those getting started with new projects,
+
+03:17.080 --> 03:19.520
+is that it, particularly with NetLify,
+
+03:19.520 --> 03:21.160
+all of your deploy are atomic.
+
+03:21.160 --> 03:23.920
+In other words, they live independently of one another.
+
+03:23.920 --> 03:25.480
+So in the event you ever need to roll back,
+
+03:25.480 --> 03:28.440
+it really is as simple as basically clicking on the deploy
+
+03:28.440 --> 03:31.480
+that you want, and basically saying, hey, let's go ahead
+
+03:31.480 --> 03:34.800
+and lock it to this particular branch.
+
+03:34.800 --> 03:36.640
+And this is huge when it comes to deployment efforts,
+
+03:36.640 --> 03:39.000
+because you can iterate a lot faster and more importantly,
+
+03:39.000 --> 03:40.440
+you don't have to worry that rollbacks
+
+03:40.440 --> 03:42.920
+are going to be really expensive in case something breaks.
+
+03:42.920 --> 03:46.920
+But otherwise, just notice that if you're using building any apps,
+
+03:46.920 --> 03:48.320
+check out these deployment services,
+
+03:48.320 --> 03:50.760
+so they can do a lot for your workflow.
+
+03:50.760 --> 03:53.960
+And when they deploy everything, they all have their own CDN
+
+03:53.960 --> 03:55.720
+and all that caching and stuff taken care of,
+
+03:55.720 --> 03:57.640
+which, as those of you who've done that in the past,
+
+03:57.640 --> 04:00.360
+no, it's really painful to manage that on your own.
+
+04:00.360 --> 04:03.320
+So that's basically my little pitch just to something
+
+04:03.320 --> 04:05.840
+to keep in mind when you're trying to deploy your next project.
+
+04:05.840 --> 04:08.160
+And so a lot of them have really generous tiers
+
+04:08.160 --> 04:09.400
+free tiers in that kind of stuff.
+
+04:09.400 --> 04:10.520
+So be sure to check it out.
+
+04:10.520 --> 04:13.280
+And that's not even to talk about serverless functions,
+
+04:13.280 --> 04:15.360
+which is the whole thing of itself, so that,
+
+04:15.360 --> 04:17.640
+but I did manage to deploy working.
+
+04:17.640 --> 04:20.280
+So I thought I might show you what happened,
+
+04:20.280 --> 04:23.600
+and then that way you can learn from my mistake.
+
+04:23.600 --> 04:26.560
+So we check out the build and deploy configuration,
+
+04:26.560 --> 04:29.320
+basically, for how it is being built.
+
+04:29.320 --> 04:31.360
+Prior to this, actually, this is what it looks like.
+
+04:31.360 --> 04:35.160
+So let me just delete this real quick and save.
+
+04:35.160 --> 04:37.200
+So typically, when you're deploying your app
+
+04:37.200 --> 04:38.280
+and it's on the root directory,
+
+04:38.280 --> 04:40.480
+it will automatically fetch some configuration,
+
+04:40.480 --> 04:42.320
+like automatically detect that you need to deploy
+
+04:42.320 --> 04:44.760
+the disk folder, all that fun stuff.
+
+04:44.760 --> 04:46.360
+Well, what you might have noticed is,
+
+04:46.360 --> 04:48.120
+if you're looking at my builds right now,
+
+04:48.120 --> 04:49.840
+it knows that my base directory is app,
+
+04:49.840 --> 04:50.800
+because that's what I configured.
+
+04:50.800 --> 04:53.040
+But I forgot to tell it that the published directory
+
+04:53.040 --> 04:55.560
+is gonna be the disk folder within the app.
+
+04:55.560 --> 04:57.280
+And so basically, once I came in here
+
+04:57.280 --> 04:59.600
+and then dropped in the disk folder,
+
+04:59.600 --> 05:01.720
+that's what made everything work, which is why here,
+
+05:01.720 --> 05:03.720
+now when I click on the deploy, you'll see,
+
+05:03.720 --> 05:06.360
+hey, look, everything works now, we have our restaurants,
+
+05:06.360 --> 05:08.240
+we have our dishes, this is great.
+
+05:08.520 --> 05:09.840
+And then now that we have that working,
+
+05:09.840 --> 05:11.920
+something that's fun that you might want to know about,
+
+05:11.920 --> 05:14.720
+is that this randomly generated hash here,
+
+05:14.720 --> 05:15.800
+you can actually customize that.
+
+05:15.800 --> 05:17.800
+So for me, I'm just gonna go ahead,
+
+05:17.800 --> 05:21.360
+and this would be the two-eat NVC app.
+
+05:21.360 --> 05:25.480
+And so if I save that, you'll see that within a matter of seconds,
+
+05:25.480 --> 05:27.240
+it's already been swapped out as a subdomain
+
+05:27.240 --> 05:28.800
+since it's available.
+
+05:28.800 --> 05:30.360
+And you can see it actually does work,
+
+05:30.360 --> 05:32.000
+and now that can be shared, it's like the promo link
+
+05:32.000 --> 05:33.680
+for the app, which is actually pretty cool.
+
+05:33.680 --> 05:35.240
+When you think about the fact that we spend
+
+05:35.240 --> 05:37.840
+on the time building and creating things,
+
+05:37.840 --> 05:40.080
+I mean, we wanna need to share it, right,
+
+05:40.080 --> 05:41.520
+to share it with the world so people can use it
+
+05:41.520 --> 05:42.600
+and do things with it.
+

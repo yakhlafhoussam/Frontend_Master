@@ -1,0 +1,182 @@
+WEBVTT
+
+00:00.000 --> 00:05.600
+You saw me use PIP to install requests in introduction to Python.
+
+00:05.600 --> 00:12.320
+That all happened very fast, and I didn't really talk about where I might go to find out
+
+00:12.320 --> 00:16.640
+more information about the request package that I use.
+
+00:16.640 --> 00:39.880
+So PIPI, PIPI lives at PIPI.org, and you can find install published Python packages
+
+00:39.880 --> 00:41.840
+with this Python package index.
+
+00:41.840 --> 00:51.120
+So here I could search for requests, and as of right now, there are 172,000 projects
+
+00:51.120 --> 00:54.520
+stored in PIPI.
+
+00:54.520 --> 01:01.280
+So I can search for requests, and we'll see a few things here.
+
+01:01.280 --> 01:05.160
+Looks like request 3 is a name squad.
+
+01:05.160 --> 01:07.560
+That's why they put that there.
+
+01:07.560 --> 01:12.120
+So this is in quite the package that we're looking for.
+
+01:12.120 --> 01:16.120
+Let's look at this one, and this is a version number.
+
+01:16.120 --> 01:19.040
+Here we go, it gives us a project description.
+
+01:19.040 --> 01:28.240
+So it's the non-GMO HTTP library for easier HTTP consumption.
+
+01:28.240 --> 01:31.440
+And we can look at the release history, we can download the files.
+
+01:31.440 --> 01:39.720
+The project will usually have a link at the home page.
+
+01:39.720 --> 01:52.720
+We can click here to view the statistics for this, and it's like this is a specific version.
+
+01:52.720 --> 01:58.720
+But these two, as statistics right here, we'll see who the maintainers are on the left
+
+01:58.720 --> 02:06.120
+hand side, what the license is, the development status, if it's just beta version, and
+
+02:06.120 --> 02:08.960
+which versions it supports.
+
+02:08.960 --> 02:12.200
+And this is a really, really great tool, a great resource.
+
+02:12.200 --> 02:20.120
+You can search for all sorts of external packages here, and to install this library, it
+
+02:20.120 --> 02:23.840
+will give you set up instructions right here.
+
+02:23.840 --> 02:32.480
+So the new, you'll see PIP being used here, but the new recommended way of installing
+
+02:32.480 --> 02:33.480
+packages.
+
+02:33.480 --> 02:36.000
+I know I'm going to exit out of my repel.
+
+02:36.000 --> 02:45.520
+So I would say don't do this because, as we talked about, as you install more versions
+
+02:45.520 --> 02:51.160
+of Python on your system, you'll usually have a Python 2 and a Python 3.
+
+02:51.160 --> 02:57.080
+You end up with multiple versions of PIP, and if you don't use the right one or depending
+
+02:57.080 --> 03:02.120
+on your system set up, you can install your external libraries to the wrong playus using
+
+03:02.120 --> 03:03.840
+the wrong path.
+
+03:03.840 --> 03:09.000
+So the safest way of doing this is to be in your virtual environment, and then you just
+
+03:09.000 --> 03:16.280
+know exactly where Python points, right, if I say Python dash version here, I know that
+
+03:16.280 --> 03:20.920
+it's my Python 3, 7, 2 from my environment because it's activated.
+
+03:20.920 --> 03:26.160
+So the better way of doing this is to say Python dash M, which means Python run this as
+
+03:26.160 --> 03:33.720
+a module, and give the name of the module as PIP, and then you can say install requests.
+
+03:33.720 --> 03:38.720
+This way you're guaranteed to have the right path.
+
+03:38.720 --> 03:44.600
+And when you're first starting out or actually just in general, it's important to know
+
+03:44.600 --> 03:45.600
+your packages.
+
+03:45.600 --> 03:52.840
+So there are a lot of packages on PIPI, sometimes they're not up to date, a good way
+
+03:52.840 --> 04:00.680
+of checking, we'll see here, we can look at the product homepage, by the way, that
+
+04:00.680 --> 04:08.160
+PIP install is right here, and let's actually look at the base requests.
+
+04:08.160 --> 04:14.560
+That's the one that we've been using, this is the base version.
+
+04:14.560 --> 04:19.680
+You'll see when it was last released, so the package was last released in 2016, chances
+
+04:19.680 --> 04:26.880
+are that this probably not very popular.
+
+04:26.880 --> 04:33.960
+Let me see if the statistics for this library, here we go.
+
+04:33.960 --> 04:43.560
+So if you click on this, the libraries.io link, you should see some helpful information here.
+
+04:43.560 --> 04:48.920
+So I'll show you how many dependencies it has, it'll show you how many dependent packages
+
+04:48.920 --> 04:55.320
+there are in dependent repository, so 124,000 projects on GitHub use the library.
+
+04:55.320 --> 04:58.800
+It's one of the most popular in Python, if not the most.
+
+04:58.800 --> 05:01.400
+37 and a half thousand stars, et cetera.
+
+05:01.400 --> 05:06.160
+So this is a good place to go to, see if your packages legit, you should also click
+
+05:06.160 --> 05:10.880
+through to the GitHub, check out the code if you want to.
+
+05:10.880 --> 05:16.520
+So it's good practice to copy and paste this exact command.
+
+05:16.520 --> 05:19.280
+There is a button right here that will help you do that.
+
+05:19.280 --> 05:26.920
+If you make a typo and don't type in the correct package name, there have been known to
+
+05:26.920 --> 05:29.800
+be typosquatters, right?
+
+05:29.800 --> 05:36.000
+So packages with security vulnerability is that take advantage of people mis typing these
+
+05:36.000 --> 05:40.560
+package names and then they'll go in install a malicious version of the library.
+
+05:40.560 --> 05:43.440
+So there are some security considerations here.
+

@@ -1,0 +1,626 @@
+WEBVTT
+
+00:00.000 --> 00:09.000
+Vous avez maintenant tous un bon aperçu de ce que sont les composables, de ce dont ils sont capables et de différents modèles d'implémentation.
+
+00:09.000 --> 00:13.000
+Donc, ce que j'ai pour vous ici est un défi amusant.
+
+00:13.000 --> 00:21.000
+Nous allons d'abord commencer par créer un thème composable utilisé qui vous permet de basculer entre les différents thèmes et vous le trouverez sur la page des paramètres.
+
+00:21.000 --> 00:29.000
+Ensuite, je veux que vous combiniez cela avec l'utilisation de la vue qui est déjà installée en tant que dépendance dans votre application.
+
+00:29.000 --> 00:36.000
+Les touches magiques utilisées pour basculer entre différents thèmes en utilisant uniquement des raccourcis clavier.
+
+00:36.000 --> 00:43.000
+Votre mission est en quelque sorte d'aller explorer la documentation car vous ne devriez pas savoir comment parcourir le thème d'utilisation, allez dans les paramètres.
+
+00:43.000 --> 00:56.000
+Mais maintenant, vous allez vouloir comprendre comment vous pouvez combiner cela avec la vue qui utilise des touches magiques, ce qui d'ailleurs est l'une de mes choses préférées qu'ils ont faites, qui fait partie de celle avec laquelle vous jouez tous.
+
+00:56.000 --> 01:01.000
+Et combinez-les et je suis plutôt curieux de voir ce que vous voulez tous faire. Oh, finis par faire ça.
+
+01:01.000 --> 01:05.000
+Cela dit, si vous dites, je ne sais pas, je ne veux pas faire ça.
+
+01:05.000 --> 01:13.000
+Ensuite, ce que je m'exerce ici, c'est d'utiliser ce que vous savez sur les composables, de choisir quelque chose à utiliser qui semble susceptible d'être amusant ou de s'appliquer à votre projet.
+
+01:13.000 --> 01:22.000
+Et puis combinez-les et voyez comment cela fonctionne.
+
+01:22.000 --> 01:26.000
+Encore une fois, ce qui est amusant avec l'API de composition, c'est que vous disposez de nombreuses façons différentes de le faire.
+
+01:26.000 --> 01:32.000
+Donc, ce que je vais proposer, c'est une façon de le faire, puis vous savez, comparez-le et voyez comment il se compare au vôtre.
+
+01:32.000 --> 01:34.000
+D'accord.
+
+01:34.000 --> 01:40.000
+Donc, tout d’abord, nous regardons en fait, nous pouvons consulter la documentation dans une seconde.
+
+01:40.000 --> 01:51.000
+Donc, tout d’abord, nous savons que nous devons aller de l’avant et faire abstraction des fonctionnalités que nous voyons à l’intérieur des paramètres de cette vue, car c’est finalement là que nous voyons le thème être finalement géré.
+
+01:51.000 --> 01:59.000
+Et donc mon premier réflexe est d'aller de l'avant comme je pense que beaucoup d'entre vous l'ont fait, nous avons juste un thème utilisé.ts.
+
+01:59.000 --> 02:01.000
+Vous n'avez pas besoin d'être trop sophistiqué.
+
+02:01.000 --> 02:04.000
+Et puis, en fait, je vais tout récupérer.
+
+02:04.000 --> 02:09.000
+Je ne pense pas que cela serve à quelque chose de ne pas le faire.
+
+02:09.000 --> 02:14.000
+Et donc ce que nous savons, c’est que nous observons clairement certaines de ces choses.
+
+02:14.000 --> 02:19.000
+Honnêtement, à ce stade, je suis d’avis de garder les choses faciles.
+
+02:19.000 --> 02:23.000
+Je vais juste fabriquer toutes ces choses individuelles que je peux exporter.
+
+02:23.000 --> 02:26.000
+Je ne pense pas avoir encore besoin d'un modèle de magasin complet.
+
+02:26.000 --> 02:35.000
+Maintenant, le problème, c'est que ce crochet du cycle de vie d'une montre n'est pas quelque chose que vous pouvez simplement aimer, vous ne pouvez pas simplement aimer exporter ceci, ce n'est pas comme une chose.
+
+02:35.000 --> 02:39.000
+Et donc ce que vous devez faire à la place, c'est avoir une fonction,
+
+02:39.000 --> 02:41.000
+c'est essentiellement quelque chose comme utiliser le thème.
+
+02:41.000 --> 02:43.000
+C’est donc là que l’usine entre en jeu.
+
+02:43.000 --> 02:48.000
+Parce qu'alors vous dites essentiellement que lorsque vous lancez cela, démarrez la montre, puis réglez-la en conséquence.
+
+02:48.000 --> 02:54.000
+Et puis pour être sûr que cela fonctionne, il suffit de tout importer du composable.
+
+02:54.000 --> 02:59.000
+La barre oblique composable utilise donc le thème.
+
+02:59.000 --> 03:00.000
+Super.
+
+03:00.000 --> 03:02.000
+Très bien, alors de quoi avons-nous besoin ?
+
+03:02.000 --> 03:04.000
+Nous avons besoin d'un thème actuel.
+
+03:04.000 --> 03:07.000
+Et nous avons besoin d'un changement de thème.
+
+03:07.000 --> 03:10.000
+Ooh, qu'y avait-il dans le changement de thème ?
+
+03:10.000 --> 03:16.000
+D'accord, on dirait que le changement de thème était très probablement une sorte d'effet de montre à cet égard.
+
+03:16.000 --> 03:19.000
+Donc non, ça n'a pas de sens.
+
+03:19.000 --> 03:20.000
+Ah, d'accord, je sais ce que c'est.
+
+03:20.000 --> 03:24.000
+Nous devons donc réellement définir le thème défini.
+
+03:24.000 --> 03:30.000
+Oui, nous devons donc définir le thème à chaque fois que la sélection change.
+
+03:30.000 --> 03:34.000
+Et puis pourquoi est-ce qu'il me crie dessus maintenant ?
+
+03:34.000 --> 03:38.000
+La chaîne de thème n'est pas disponible en paramètre.
+
+03:38.000 --> 03:42.000
+Qu'est-ce que j'ai oublié ?
+
+03:42.000 --> 03:49.000
+Sur le changement de thème.
+
+03:49.000 --> 03:52.000
+Oui, mais cela n’existait pas.
+
+03:52.000 --> 03:54.000
+Est-ce qu'on le fait avec l'observateur ?
+
+03:54.000 --> 03:56.000
+Ouais, c'est plutôt drôle.
+
+03:56.000 --> 03:58.000
+Donc je ne le fais pas, ouais, c'est le cas en fait, tu sais quoi ?
+
+03:58.000 --> 04:02.000
+Je pense que maintenant que je me souviens, je pense que ce n'est en fait pas pertinent.
+
+04:02.000 --> 04:04.000
+Ce code, car nous avons déjà un modèle V ici.
+
+04:04.000 --> 04:08.000
+Donc, avoir une deuxième fonction de méthode là-dessus n'est pas pertinent.
+
+04:08.000 --> 04:11.000
+Alors oui, je pense que vous avez raison sur ce point.
+
+04:11.000 --> 04:13.000
+Nous avons donc nos thèmes ici, ce qui est génial.
+
+04:13.000 --> 04:17.000
+Maintenant, tout va bien, mais je pense que vous savez tous où je veux en venir.
+
+04:17.000 --> 04:22.000
+Si nous allons de l'avant et testons cela dès maintenant dans notre application.
+
+04:22.000 --> 04:24.000
+D'accord, nous sommes toujours opérationnels.
+
+04:24.000 --> 04:25.000
+Rien ne se passe.
+
+04:25.000 --> 04:29.000
+Et la raison en est que nous avons besoin de pouvoir observer la chose.
+
+04:29.000 --> 04:34.000
+C’est donc là que notre fonction de thème utilisée va entrer en jeu ici.
+
+04:34.000 --> 04:38.000
+Alors aimez ceci, puis utilisez un thème comme celui-là.
+
+04:38.000 --> 04:44.000
+Et je pense frais, voilà, maintenant ça marche.
+
+04:44.000 --> 04:47.000
+D'accord, alors voici la question, n'est-ce pas ?
+
+04:47.000 --> 04:52.000
+Nous voulons maintenant utiliser la clé magique view-use.
+
+04:52.000 --> 04:55.000
+Nous regardons donc les clés magiques.
+
+04:56.000 --> 04:58.000
+Et encore une fois, ce truc, je l'adore.
+
+04:58.000 --> 05:01.000
+Comme le fait que vous, ça donne juste l'impression de regarder ça.
+
+05:01.000 --> 05:05.000
+Si vous poussez, et que cela tourne, c'est comme si vous visualisiez,
+
+05:05.000 --> 05:08.000
+et puis tu changes, tu sais, je ne sais pas.
+
+05:08.000 --> 05:09.000
+Super démo.
+
+05:09.000 --> 05:10.000
+Où j'ai trouvé ça.
+
+05:10.000 --> 05:13.000
+Et donc le fait que vous puissiez simplement le nommer par espace de noms, c'est génial.
+
+05:13.000 --> 05:17.000
+Okay, donc sachant que c'est comme ça qu'il est possible de l'utiliser,
+
+05:17.000 --> 05:19.000
+voyons.
+
+05:19.000 --> 05:21.000
+Je ne veux pas faire ça.
+
+05:22.000 --> 05:25.000
+Vous pouvez les exporter de cette façon, ou nous pouvons simplement le faire.
+
+05:25.000 --> 05:28.000
+Voyons voir, et ensuite nous pourrons également faire des combinaisons ici, n'est-ce pas ?
+
+05:28.000 --> 05:30.000
+Donc ça, nous pouvons simplement les additionner ensemble.
+
+05:30.000 --> 05:33.000
+On dirait que c'est aussi une autre alternative,
+
+05:33.000 --> 05:34.000
+pour aimer, utilisez des traits de soulignement.
+
+05:34.000 --> 05:37.000
+Donc je vais faire quelque chose comme des changements de contrôle,
+
+05:37.000 --> 05:40.000
+et puis comme un nombre, pour représenter comme le nombre,
+
+05:40.000 --> 05:42.000
+pour correspondre aux thèmes.
+
+05:42.000 --> 05:44.000
+Donc dans mon esprit, quand je regarde ça,
+
+05:44.000 --> 05:47.000
+alors laissez-moi continuer et je vois le graphique.
+
+05:47.000 --> 05:49.000
+Je devrais juste prendre ça ici pour l'instant.
+
+05:51.000 --> 05:55.000
+Je me dis, ok, alors oui, ceci, ceci, ceci,
+
+05:55.000 --> 05:57.000
+composable se charge de changer le thème,
+
+05:57.000 --> 05:59.000
+mais je vais maintenant avoir ce composable différent,
+
+05:59.000 --> 06:01.000
+parce que maintenant je fais de la réactivité avec des raccourcis clavier.
+
+06:01.000 --> 06:05.000
+Donc pour moi, je vais en faire un appelé utiliser des raccourcis clavier.
+
+06:05.000 --> 06:10.000
+Et puis à l'intérieur d'ici, nous allons essentiellement faire,
+
+06:10.000 --> 06:12.000
+voyons, comment voulons-nous faire cela ?
+
+06:12.000 --> 06:14.000
+Nous devons l'instancier car, en fin de compte,
+
+06:14.000 --> 06:16.000
+ce que nous devons faire, c'est être capable de l'écouter.
+
+06:16.000 --> 06:19.000
+Et donc j'ai lu ceci, la documentation à ce sujet,
+
+06:19.000 --> 06:22.000
+et donc il y a en fait ce truc qui s'appelle à chaque fois,
+
+06:22.000 --> 06:24.000
+ce qui est une très grande fonction utilitaire.
+
+06:24.000 --> 06:27.000
+Chaque fois que cette chose arrive, on insiste sur ce sujet,
+
+06:27.000 --> 06:30.000
+puis effectuez une fonction de rappel pour effectuer la tâche définie.
+
+06:30.000 --> 06:34.000
+C’est donc là que la composition commence à entrer en jeu, n’est-ce pas ?
+
+06:34.000 --> 06:38.000
+Donc dans mon esprit, donc exporter la fonction, utiliser le raccourci clavier,
+
+06:38.000 --> 06:41.000
+voyons voir, je dirai les touches de thème chaudes, c'est comme ça que je vais l'appeler.
+
+06:41.000 --> 06:45.000
+Parce que c'est précisément ce que font ces touches de raccourci.
+
+06:45.000 --> 06:50.000
+Et donc je vais dire que les contre-clés sont égales à l'utilisation de clés magiques.
+
+06:50.000 --> 06:54.000
+Et puis juste pour rendre les choses un peu plus faciles,
+
+06:54.000 --> 06:57.000
+alors nous dirons en gros à chaque fois que les touches pointent
+
+06:57.000 --> 07:03.000
+et la taille du contrôle change de un, alors nous obtenons une fonction.
+
+07:03.000 --> 07:05.000
+Et pour que nous voulions que cette fonction soit exécutée,
+
+07:05.000 --> 07:07.000
+eh bien, je veux que ça change de thème.
+
+07:07.000 --> 07:12.000
+Je vais donc importer mes thèmes, voyons, un thème défini
+
+07:12.000 --> 07:14.000
+de mon composable.
+
+07:14.000 --> 07:17.000
+Mais je dois aussi pouvoir référencer les thèmes eux-mêmes.
+
+07:17.000 --> 07:23.000
+Donc de cette façon, je devrais pouvoir faire quelque chose comme ça.
+
+07:23.000 --> 07:28.000
+Oh, j'en ai besoin à tout moment aussi.
+
+07:28.000 --> 07:30.000
+D'accord?
+
+07:30.000 --> 07:32.000
+Et donc, en ce qui concerne l'endroit où je veux écouter ça,
+
+07:32.000 --> 07:34.000
+si vous mettez ceci sur la page des paramètres,
+
+07:34.000 --> 07:35.000
+cela signifie que nous seuls y travaillerons.
+
+07:35.000 --> 07:38.000
+Mon premier réflexe est donc d’aller sur la page app.view.
+
+07:39.000 --> 07:45.000
+Et à l'intérieur, c'est ici que je dirais que l'importation utilise des touches de thème chaudes.
+
+07:45.000 --> 07:50.000
+Et puis ici, utilisons des touches de thème chaudes comme ça.
+
+07:50.000 --> 07:56.000
+D'accord, alors laissez-moi en faire quelques-unes très rapidement.
+
+07:56.000 --> 07:59.000
+Voyons si cela fonctionne.
+
+07:59.000 --> 08:01.000
+On pourrait évidemment le mettre en boucle, mais pour l'instant,
+
+08:01.000 --> 08:03.000
+par souci de simplicité.
+
+08:03.000 --> 08:06.000
+D'accord.
+
+08:06.000 --> 08:08.000
+Bon, on va à la maison.
+
+08:08.000 --> 08:11.000
+Et puis contrôlez les changements 1, 2, 3.
+
+08:11.000 --> 08:13.000
+Oh, voilà.
+
+08:13.000 --> 08:15.000
+Et ça bouge.
+
+08:15.000 --> 08:17.000
+Je l'ai fait dans ma démo pour une raison quelconque,
+
+08:17.000 --> 08:19.000
+cela ne respecte pas le deuxième thème.
+
+08:19.000 --> 08:22.000
+Je ne sais pas pourquoi pour être honnête avec toi.
+
+08:22.000 --> 08:25.000
+J'atteins 2 et ça ne fait rien.
+
+08:25.000 --> 08:27.000
+Mais ça me donne les autres.
+
+08:27.000 --> 08:30.000
+C'est donc quelque chose que je dirai pour bugger une autre fois.
+
+08:30.000 --> 08:35.000
+Mais c’est, je suppose, une version d’un thème brûlant.
+
+08:36.000 --> 08:39.000
+Comment cela pourrait être mis en œuvre.
+
+08:39.000 --> 08:42.000
+Et donc, la façon dont je pensais à ça,
+
+08:42.000 --> 08:44.000
+et c'est là que la composition entre en jeu.
+
+08:44.000 --> 08:48.000
+Parce que ce que nous avons fait en prenant ce thème d'utilisation ici,
+
+08:48.000 --> 08:51.000
+qui se trouve définitivement sur la page des paramètres ici.
+
+08:51.000 --> 08:54.000
+Et c'est lui qui fait toute la surveillance à ce niveau.
+
+08:54.000 --> 08:59.000
+Mais ensuite, utiliser les touches de raccourci n'a qu'à se soucier de définir le thème
+
+08:59.000 --> 09:02.000
+parce qu'on sait qu'il est lavé ailleurs.
+
+09:02.000 --> 09:05.000
+Et puis c'est, je suppose,
+
+09:05.000 --> 09:08.000
+ce que nous pouvons voir, il est mis à jour de manière réactive en conséquence.
+
+09:08.000 --> 09:12.000
+Alors c'est tout, je pense que ça résout le problème des multi-observateurs.
+
+09:12.000 --> 09:14.000
+que tu rencontrais, n'est-ce pas ?
+
+09:14.000 --> 09:17.000
+Alors oui.
+
+09:17.000 --> 09:23.000
+Comment cela se compare-t-il à certaines des choses que vous avez tous essayées ?
+
+09:23.000 --> 09:24.000
+C'est ce que j'ai fait.
+
+09:24.000 --> 09:26.000
+Scycler qui vient de parcourir les index du...
+
+09:26.000 --> 09:27.000
+Oh, sympa.
+
+09:27.000 --> 09:29.000
+Et puis juste comme...
+
+09:29.000 --> 09:30.000
+C'est vrai, et puis revenons à zéro.
+
+09:30.000 --> 09:31.000
+Bon.
+
+09:31.000 --> 09:33.200
+Ouais, définitivement plus élégant que ça, bien sûr.
+
+09:33.200 --> 09:35.700
+Ouais.
+
+09:35.700 --> 09:42.900
+Et donc ce genre de trucs amusants, je veux ceux-là sur des choses comme l'utilisation de la vue, n'est-ce pas ?
+
+09:42.900 --> 09:47.000
+Parce que quelque chose comme les raccourcis clavier est en fait traditionnellement une chose délicate à mettre en œuvre,
+
+09:47.000 --> 09:48.800
+c'est vrai, si vous comptez le faire à partir de zéro.
+
+09:48.800 --> 09:52.600
+Et je pense que, de plus en plus, nous nous intéressons aux logiciels en nous intéressant à l'accessibilité du clavier, etc.
+
+09:52.600 --> 09:57.600
+Pouvoir aimer les utilisateurs, personnaliser leurs raccourcis clavier et faire toutes sortes de combinaisons sympas de ce qu'ils veulent,
+
+09:57.600 --> 09:59.400
+afin qu'ils puissent exécuter la commande de leur choix.
+
+09:59.400 --> 10:04.400
+Je pense que cela ouvre la porte à toutes sortes de personnalisations.
+
+10:04.400 --> 10:10.600
+Donc personnellement, c’est l’une des raisons pour lesquelles ils fournissent l’un de mes utilitaires préférés.
+
+10:10.600 --> 10:15.600
+Parce qu’il devient alors si simple de permettre aux utilisateurs de déterminer ce qu’ils souhaitent ajouter.
+
+10:15.600 --> 10:18.600
+Et puis tout d’un coup, boum, vous avez une personnalisation dans cette catégorie.
+
+10:18.600 --> 10:20.600
+Et donc je ne saurais trop insister sur ce point.
+
+10:20.600 --> 10:22.600
+Ce n'est qu'une façon de procéder.
+
+10:22.600 --> 10:26.600
+Nous avons déjà entendu parler, vous savez, de faire davantage de manière cyclique en passant par des thèmes.
+
+10:26.600 --> 10:28.600
+Encore une fois, c'est très codé en dur.
+
+10:28.600 --> 10:31.600
+Mais oui, ce n’est qu’une des préoccupations.
+
+10:31.600 --> 10:35.600
+Je veux dire, certaines personnes, vous pourriez même théoriquement toutes le faire dans le cadre du thème d'utilisation.
+
+10:35.600 --> 10:36.600
+Cela ne dépend que de vous.
+
+10:36.600 --> 10:40.600
+Et c’est pour cela que la programmation n’est pas de l’art en ce sens.
+
+10:40.600 --> 10:46.600
+Lorsque nous décidons quels outils nous voulons utiliser, comment nous voulons concevoir les choses et ce qui nous semble le plus logique.
+
+10:46.600 --> 10:50.600
+Pour terminer sur les choses que je pense que vous devriez également considérer,
+
+10:50.600 --> 10:56.600
+chaque fois que vous en avez l'occasion pour vos applications.
+
+10:56.600 --> 11:00.600
+Donc, plus tôt, vous avez mentionné l'utilisation d'un lecteur multimédia.
+
+11:00.600 --> 11:05.600
+Donc pour ceux qui sont là, est-ce que ça utilise des contrôles, non ?
+
+11:05.600 --> 11:06.600
+Ouais.
+
+11:06.600 --> 11:11.600
+Donc même si vous deviez créer comme un lecteur vidéo, vous devez, vous savez,
+
+11:11.600 --> 11:13.600
+si vous l'avez déjà fait autrefois, vous savez, c'est incroyablement douloureux.
+
+11:13.600 --> 11:15.600
+Habituellement, il y avait comme une bibliothèque dédiée qui faisait tout pour vous.
+
+11:15.600 --> 11:17.600
+Cette chose peut le détruire.
+
+11:17.600 --> 11:19.600
+Je pense que je ne veux pas que le son apparaisse.
+
+11:19.600 --> 11:24.600
+Nous pouvons voir qu'il a toutes ces propriétés réactives comme le temps réglé,
+
+11:24.600 --> 11:31.600
+durée, attend, cherche, cale, comme juste, en fait, il vous indique même combien est mis en mémoire tampon.
+
+11:31.600 --> 11:37.600
+C'est juste que le niveau de réflexion qui a été porté sur ce genre de choses est fou, honnêtement.
+
+11:37.600 --> 11:42.600
+Je félicite simplement l’équipe qui a déployé des efforts pour y parvenir.
+
+11:42.600 --> 11:47.600
+L'ensemble des morceaux, ce qui a conduit à faire les sous-titres.
+
+11:47.600 --> 11:48.600
+Ouais.
+
+11:48.600 --> 11:52.600
+Nous utilisons des sous-titres codés pour les vidéos, également très utiles pour l'accessibilité.
+
+11:52.600 --> 11:55.600
+Ouais. C'est donc amusant.
+
+11:55.600 --> 11:59.600
+Encore une fois, donc si jamais vous faites comme ça, I Chopper est juste amusant.
+
+11:59.600 --> 12:03.600
+Si jamais vous voulez juste aimer, choisissez les couleurs, puis le presse-papiers.
+
+12:03.600 --> 12:07.600
+Encore une fois, si jamais vous avez besoin d'accéder pour utiliser uniquement l'historique du presse-papiers, utilisez simplement le presse-papiers.
+
+12:07.600 --> 12:10.600
+Et puis c'est, c'est là. Je veux dire, c'est aussi simple que ça.
+
+12:11.600 --> 12:16.600
+Et puis, celui dont je pense que la plupart d’entre nous ont fondamentalement besoin est d’utiliser un refistory.
+
+12:16.600 --> 12:19.600
+Ils ont également un historique d'utilisation anti-rebond dans les cas de trop.
+
+12:19.600 --> 12:25.600
+Et en gros, vous permettant ensuite, vous savez, de regarder ce qui arrive au,
+
+12:25.600 --> 12:30.600
+au décompte, puis au suivi, à un historique de base.
+
+12:30.600 --> 12:34.600
+Parce qu'annuler et refaire est la chose que si vous utilisez ceci ou si vous devenez de plus en plus habitué à pouvoir le faire.
+
+12:34.600 --> 12:38.600
+Vous savez, comme nous le voyons avec les e-mails et des trucs comme, oh, vous savez, voulez-vous annuler ce que vous venez d'envoyer ?
+
+12:38.600 --> 12:46.600
+Donc ce genre d'aide peut être d'une grande aide pour ceux d'entre nous qui se demandent, oh, en fait, comment pouvons-nous annuler cela ?
+

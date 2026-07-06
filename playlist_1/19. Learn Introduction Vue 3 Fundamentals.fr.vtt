@@ -1,0 +1,764 @@
+WEBVTT
+
+00:00.000 --> 00:01.600
+Donc je veux d'abord donner une chance aux gens
+
+00:01.600 --> 00:03.840
+pour pratiquer l'approche des accessoires, puis
+
+00:03.840 --> 00:05.920
+Je vais réinitialiser le contexte en termes d'introduction
+
+00:05.920 --> 00:07.920
+dans la prochaine technique que je pense
+
+00:07.920 --> 00:10.680
+est vraiment important lorsqu'il s'agit du modèle du Web
+
+00:10.680 --> 00:12.240
+développement et notre façon de voir les choses.
+
+00:15.760 --> 00:18.320
+Nous avons reçu une excellente question ici dans le chat.
+
+00:18.320 --> 00:21.400
+Et donc c'est à propos de l'idée du moment où
+
+00:21.400 --> 00:23.440
+dans de nombreuses applications du monde réel, très souvent
+
+00:23.440 --> 00:26.240
+vous obtenez de grands ensembles de données de votre API.
+
+00:26.240 --> 00:29.600
+Et donc dans le cas de la question, il s’agit des détails de l’utilisateur.
+
+00:29.600 --> 00:32.320
+Et donc si vous créez un composant comme une carte utilisateur,
+
+00:32.320 --> 00:33.440
+comment pourriez-vous aborder cela ?
+
+00:33.440 --> 00:35.880
+Encore une fois, juste pour ne pas que je parle,
+
+00:35.880 --> 00:38.000
+échafaudons au moins un peu ça,
+
+00:38.000 --> 00:40.080
+juste pour que nous ayons quelque chose de visuel.
+
+00:44.400 --> 00:47.160
+Allons à la cour de récréation.
+
+00:47.160 --> 00:51.320
+Et puis nous irons dans notre application.
+
+00:51.320 --> 00:54.040
+OK, c'est parti.
+
+00:54.040 --> 00:55.240
+Et donc ce que je vais faire ici, je suis
+
+00:55.280 --> 00:59.640
+je vais créer un fichier appelé usercard.dashView.
+
+00:59.640 --> 01:03.720
+Et puis laissez-moi faire ça très rapidement pour installer l'échafaudage.
+
+01:03.720 --> 01:06.080
+Restons simples.
+
+01:06.080 --> 01:07.240
+Utilisateur.
+
+01:07.240 --> 01:10.000
+Très bien, nous avons donc un composant de carte utilisateur.
+
+01:10.000 --> 01:13.840
+Et puis je vais expliquer quelle est la question ici.
+
+01:13.840 --> 01:22.480
+Carte utilisateur de composants.usercard.view, carte utilisateur, OK.
+
+01:22.480 --> 01:27.480
+Et puis ici, nous avons une carte d'utilisateur comme celle-là.
+
+01:30.400 --> 01:32.080
+Alors laisse-moi courir.
+
+01:32.080 --> 01:33.640
+Attends, ce n'est pas une bonne chose de diriger Devin.
+
+01:40.720 --> 01:44.640
+Très bien, cool.
+
+01:44.640 --> 01:46.680
+C'est trop petit, donc nous allons le déplacer, le déplacer,
+
+01:46.680 --> 01:48.560
+cogne ça, ferme ça.
+
+01:48.560 --> 01:51.320
+OK, donc la question ici est autour
+
+01:51.320 --> 01:56.480
+ce concept de ce qui se passe lorsque vous obtenez un objet de données volumineux.
+
+01:56.480 --> 01:59.120
+Alors à l'intérieur d'ici, par exemple, allons simplement
+
+01:59.120 --> 02:01.160
+définissons-le ici très rapidement, est-ce que nous allons
+
+02:01.160 --> 02:03.760
+disons que nous avons un objet de données utilisateur que nous finissons par récupérer
+
+02:03.760 --> 02:09.640
+de l'API qui a quelque chose comme un nom, puis préféré
+
+02:09.640 --> 02:17.800
+cadre, vue, par exemple, plat préféré, sushi,
+
+02:17.800 --> 02:19.000
+et puis gardons-le.
+
+02:19.000 --> 02:21.200
+OK, disons que c'est comme ce niveau d'objet,
+
+02:21.200 --> 02:23.320
+ou en fait, allons-y et qu'est-ce qu'il y a encore une chose ?
+
+02:23.320 --> 02:25.360
+Disons simplement, je ne sais pas, vos numéros préférés.
+
+02:25.360 --> 02:28.400
+Cela peut être un tableau, et cela peut être comme huit, quoi, 10.
+
+02:28.400 --> 02:29.960
+Ce ne sont pas vraiment mes numéros préférés,
+
+02:29.960 --> 02:33.160
+mais pour le plaisir de l'exercice, OK.
+
+02:33.160 --> 02:34.560
+Nous avons cette chose complexe.
+
+02:34.560 --> 02:38.160
+La question ici est donc de savoir si la carte utilisateur, par exemple,
+
+02:38.160 --> 02:39.760
+disons sur la carte utilisateur, nous avons seulement
+
+02:39.760 --> 02:40.960
+je veux afficher quelques choses.
+
+02:40.960 --> 02:43.640
+Nous voulons afficher le nom.
+
+02:43.640 --> 02:48.640
+Nous voulons afficher le, qu'avons-nous d'autre ?
+
+02:48.640 --> 02:50.320
+Nous avons un nom.
+
+02:50.320 --> 02:51.360
+Et disons simplement votre plat préféré.
+
+02:51.360 --> 02:54.920
+Disons simplement deux choses.
+
+02:54.920 --> 02:56.920
+Et donc si nous actualisons cela, ils sont très bons.
+
+02:56.920 --> 03:00.080
+OK, la question ici concerne l'architecture des données,
+
+03:00.080 --> 03:02.760
+et comment pouvons-nous réellement gérer cela ?
+
+03:02.760 --> 03:04.680
+Parce qu'il y a une façon de faire ça, n'est-ce pas ?
+
+03:04.680 --> 03:06.160
+Parlons de la première approche.
+
+03:06.160 --> 03:08.200
+Probablement l'approche la plus simple
+
+03:08.200 --> 03:11.280
+c'est juste pour dire que, hé, à l'intérieur de ce composant,
+
+03:11.280 --> 03:14.920
+Je vais prendre cet accessoire appelé utilisateur,
+
+03:14.920 --> 03:17.120
+et ça va être un type d'objet,
+
+03:17.120 --> 03:20.200
+et je vais en avoir besoin.
+
+03:21.200 --> 03:26.040
+Et puis c'est ici que je dirai user.name
+
+03:26.040 --> 03:31.600
+et user.favoritefood, car cela correspond à ces données
+
+03:31.600 --> 03:33.840
+que nous allons aller de l'avant et passer ici directement,
+
+03:33.840 --> 03:38.320
+l'utilisateur est égal aux données utilisateur.
+
+03:38.320 --> 03:41.320
+Donc si nous regardons à quoi cela ressemble ici,
+
+03:41.320 --> 03:43.880
+oups, je n'ai pas sauvegardé ?
+
+03:43.880 --> 03:44.800
+Et voilà.
+
+03:44.800 --> 03:48.200
+Vous voyez la corbeille utilisateur apparaître et les sushis apparaissent.
+
+03:48.200 --> 03:49.600
+OK, donc ça marche.
+
+03:49.640 --> 03:51.680
+Mais la question ici est, comme vous le remarquerez,
+
+03:51.680 --> 03:55.920
+est que nous avons transmis plus de données que ce dont nous avons réellement besoin.
+
+03:55.920 --> 03:58.040
+Et donc je pense que la question est du genre :
+
+03:58.040 --> 03:59.880
+quelle est la bonne façon ?
+
+03:59.880 --> 04:01.880
+Et comme beaucoup de choses en programmation,
+
+04:01.880 --> 04:04.640
+il n’y a pas de bonne voie unique.
+
+04:04.640 --> 04:06.680
+Bien souvent, cela finit par se résumer à quand
+
+04:06.680 --> 04:08.720
+ce qui compte pour gérer ce genre de choses, c'est la complexité
+
+04:08.720 --> 04:10.240
+autour de la maintenance du composant.
+
+04:10.240 --> 04:13.400
+C'est ce que je dirais en gros.
+
+04:13.400 --> 04:14.800
+Il y a certainement parfois des soucis
+
+04:14.800 --> 04:17.480
+que, oh, les données que tu transmets sont si massives
+
+04:17.480 --> 04:20.200
+que cela n'a pas de sens de passer à ce seul composant.
+
+04:20.200 --> 04:21.800
+Mais alors je dirais à ce stade,
+
+04:21.800 --> 04:24.600
+le goulot d'étranglement n'est pas l'architecture des composants,
+
+04:24.600 --> 04:26.960
+mais peut-être comment les données sont récupérées et analysées
+
+04:26.960 --> 04:29.000
+au niveau supérieur.
+
+04:29.000 --> 04:30.600
+C'est pourquoi je pense à des trucs comme GraphQL
+
+04:30.600 --> 04:33.160
+est devenu très populaire, car si les serveurs sont juste
+
+04:33.160 --> 04:35.160
+renvoyant des blobs géants de données, c'est
+
+04:35.160 --> 04:36.640
+cher pour l'utilisateur.
+
+04:36.640 --> 04:38.960
+Il n'y a pas beaucoup de choses intelligentes
+
+04:38.960 --> 04:40.760
+tu peux faire autant que tu veux, si tu es juste
+
+04:40.760 --> 04:42.480
+obtenir plus de données que nécessaire de votre serveur,
+
+04:42.480 --> 04:44.240
+c'est un problème qui doit être résolu de ce côté-là
+
+04:44.240 --> 04:46.240
+et pas forcément à ce niveau.
+
+04:46.280 --> 04:48.800
+Et donc dans ce cas, cependant,
+
+04:48.800 --> 04:50.320
+disons que c'était beaucoup plus gros.
+
+04:50.320 --> 04:52.040
+Disons simplement que c'était beaucoup plus gros, non ?
+
+04:52.040 --> 04:53.840
+Et vous dites, je ne veux vraiment pas laisser passer ça.
+
+04:53.840 --> 04:56.160
+Honnêtement, il n'y a rien de mal à dire, eh bien,
+
+04:56.160 --> 04:57.280
+que nous aurons un nom.
+
+04:57.280 --> 04:58.520
+Ce sera de la ficelle.
+
+04:58.520 --> 05:04.680
+Et cette fois, nous dirons simplement que c'est un défaut de John Doe.
+
+05:04.680 --> 05:09.120
+Et puis nous aurons également un accessoire alimentaire qui est une chaîne de type.
+
+05:09.120 --> 05:12.760
+Et nous utiliserons par défaut les cheeseburgers, n'est-ce pas ?
+
+05:12.760 --> 05:14.760
+Et donc c'est cool maintenant avec la valeur par défaut,
+
+05:14.760 --> 05:17.160
+parce que c'est, je pense, la première fois que je fais une démonstration,
+
+05:17.160 --> 05:21.800
+c'est que si dans le cas nous n'incluons rien sur l'application
+
+05:21.800 --> 05:26.120
+Côté, tu verras, qu'est-ce que j'ai cassé ?
+
+05:26.120 --> 05:28.360
+Vous avez utilisé un utilisateur ici ?
+
+05:28.360 --> 05:29.000
+Oh, je l'ai fait.
+
+05:29.000 --> 05:30.200
+Vous avez tout à fait raison.
+
+05:30.200 --> 05:32.440
+Une bonne prise n'est plus un objet.
+
+05:32.440 --> 05:34.800
+Ce ne sont que des propriétés individuelles.
+
+05:34.800 --> 05:36.560
+Voilà.
+
+05:36.560 --> 05:38.360
+Plat préféré de l'utilisateur.
+
+05:38.360 --> 05:39.760
+Oui, ce n'est que de la nourriture.
+
+05:39.760 --> 05:42.480
+OK, vous pouvez voir que nous avons du John Doe et des cheeseburgers.
+
+05:42.480 --> 05:44.160
+Et puis en conséquence, qu'est-ce que vous obtenez
+
+05:44.600 --> 05:47.720
+c'est maintenant, OK, disons simplement que le plat préféré de Ben est le cheeseburger.
+
+05:47.720 --> 05:50.480
+Eh bien, dans ce cas, userdata.name
+
+05:50.480 --> 05:52.200
+peut être la seule chose que nous réussissons.
+
+05:52.200 --> 05:56.040
+Et vous remarquerez que Ben est un bon accessoire par défaut
+
+05:56.040 --> 05:57.720
+reste cheeseburger.
+
+05:57.720 --> 06:00.280
+Et puis ici, vous pouvez aussi dire, vous savez quoi ?
+
+06:00.280 --> 06:10.600
+Puis aussi pour la nourriture préférée, alors soyez userdata.favoritefood.
+
+06:10.600 --> 06:12.480
+Et puis ça marche toujours.
+
+06:12.480 --> 06:13.920
+Et encore une fois, c'est une de ces choses
+
+06:13.920 --> 06:16.680
+Je pense qu'avec l'expérience, tu finiras par comprendre comme tel,
+
+06:16.680 --> 06:18.000
+quand est-ce qu'il y a trop d'accessoires ?
+
+06:18.000 --> 06:20.520
+Parce que je dirai que c’est en fait un problème légitime.
+
+06:20.520 --> 06:24.160
+Si vous arrivez au point où vous décomposez votre objet
+
+06:24.160 --> 06:26.480
+et tu as environ 10 lignes d'accessoires,
+
+06:26.480 --> 06:27.760
+personne ne voudra lire ça.
+
+06:27.760 --> 06:29.160
+Personne ne veut s’occuper de ça.
+
+06:29.160 --> 06:31.680
+Mais encore une fois, ressentez-le avec votre équipe.
+
+06:31.680 --> 06:33.640
+Déterminez quelle est votre limite ?
+
+06:33.640 --> 06:36.440
+Pour moi, une fois que je commence à dépasser trois à cinq accessoires,
+
+06:36.440 --> 06:38.720
+Je commence à me demander si je pourrais peut-être manipuler les données simplement
+
+06:38.720 --> 06:41.080
+passé comme un objet concis qui peut alors
+
+06:41.080 --> 06:43.040
+être étalé à l'intérieur du composant.
+
+06:43.040 --> 06:44.280
+Mais encore une fois, c'est une de ces choses
+
+06:44.280 --> 06:47.040
+où vous aurez un style quant à la façon dont vous abordez cela.
+
+06:47.040 --> 06:47.540
+Ouais.
+
+06:47.540 --> 06:50.160
+Mais c'est là que vous pourriez utiliser une propriété calculée
+
+06:50.160 --> 06:52.720
+passer pour un accessoire ?
+
+06:52.720 --> 06:53.280
+Je l'aime.
+
+06:53.280 --> 06:54.240
+D'ACCORD.
+
+06:54.240 --> 06:56.520
+La question ici est donc qu'avec ce même concept,
+
+06:56.520 --> 06:58.360
+à droite, pourrions-nous alors utiliser une propriété calculée
+
+06:58.360 --> 07:00.280
+le transmettre à la place ?
+
+07:00.280 --> 07:01.640
+Et je pense que c'est un excellent exemple.
+
+07:01.640 --> 07:04.560
+Alors encore une fois, prenons cet exemple.
+
+07:04.560 --> 07:08.760
+Si nous voulons dire seulement transmettre la nourriture et le nom,
+
+07:08.760 --> 07:12.520
+nous pourrions dire, appeler cela des données utilisateur raffinées.
+
+07:12.520 --> 07:14.600
+Et ces données utilisateur raffinées peuvent simplement
+
+07:14.600 --> 07:21.640
+be like renvoie un objet où nous faisons, qu'est-ce que c'est, nom,
+
+07:21.640 --> 07:27.360
+et puis juste this.userdata.name, et puis la nourriture.
+
+07:27.360 --> 07:31.040
+Ceci.userdata.favori.
+
+07:31.040 --> 07:32.480
+Nourriture.
+
+07:32.480 --> 07:34.360
+Et de cette façon, vous pouvez réellement manipuler les données
+
+07:34.360 --> 07:35.840
+un peu quand même.
+
+07:35.840 --> 07:39.640
+Et puis nous pourrons revenir à cet utilisateur
+
+07:39.640 --> 07:41.720
+maintenant, qui peut simplement être adopté.
+
+07:41.720 --> 07:44.360
+Et cela transmettra des données utilisateur raffinées.
+
+07:44.360 --> 07:49.800
+Cela signifie donc que nous allons mettre à jour ceci maintenant pour qu'il s'agisse d'un objet de type utilisateur.
+
+07:49.800 --> 07:52.320
+requis vrai.
+
+07:52.320 --> 07:55.600
+Et cette fois, nous pouvons alors dire user.name.
+
+07:55.600 --> 07:58.280
+En fait, j'aurais pu faire ça comme ça.
+
+07:58.280 --> 08:01.080
+Et voilà.
+
+08:01.080 --> 08:02.760
+Qu'est-ce que j'ai cassé ?
+
+08:02.800 --> 08:10.000
+Impossible de lire les propriétés définies, nom, calculées, retour, nom.
+
+08:10.000 --> 08:10.560
+Oh d'accord.
+
+08:10.560 --> 08:11.000
+Cela a fonctionné.
+
+08:11.000 --> 08:12.200
+Je n'ai tout simplement pas enregistré app.vue.
+
+08:12.200 --> 08:13.760
+D'ACCORD.
+
+08:13.760 --> 08:14.760
+Alors voilà.
+
+08:14.760 --> 08:17.800
+C'est un exemple de transmission des données dont vous avez besoin
+
+08:17.800 --> 08:20.000
+dans votre composant afin qu'il n'ait pas à gérer le
+
+08:20.000 --> 08:24.160
+nœud de toutes les autres propriétés des données.
+
+08:24.160 --> 08:27.880
+Et donc encore une fois, ce sera une partie stylistique dans la mesure où
+
+08:27.880 --> 08:31.120
+ressentir ce qui a le plus de sens, c'est que
+
+08:31.120 --> 08:32.440
+niveau de complexité même nécessaire ?
+
+08:32.440 --> 08:34.840
+Parce que s'il ne s'agit que d'une ou deux propriétés supplémentaires, je dirais
+
+08:34.840 --> 08:37.920
+la plupart du temps, cela ne vaut pas la peine de créer un système entièrement
+
+08:37.920 --> 08:40.720
+propriété séparée juste pour affiner un peu les données.
+
+08:40.720 --> 08:43.920
+Certes, si vous avez une carte massive qui contient une tonne de
+
+08:43.920 --> 08:46.800
+des trucs dedans, alors c'est le point où encore une fois, que ce soit
+
+08:46.800 --> 08:49.640
+en utilisant des choses comme des fonctions sans serveur, par exemple celles
+
+08:49.640 --> 08:51.680
+sont d'excellents moyens de manipuler les données afin que lorsqu'elles arrivent
+
+08:51.680 --> 08:53.920
+en arrière du back-end, il est plus petit dans la mesure où vous
+
+08:53.920 --> 08:54.440
+vouloir.
+
+08:54.440 --> 08:56.800
+C'est également une approche à cet égard.
+
+08:56.800 --> 09:01.560
+Parce que par exemple ici, une des API auxquelles nous devons jouer
+
+09:01.600 --> 09:03.960
+avec plus tard dans l'atelier, c'est si vous jetez un oeil à
+
+09:03.960 --> 09:07.080
+quelque chose comme ça, c'est en fait un excellent exemple de
+
+09:07.080 --> 09:12.040
+copier-coller vraiment compliqué.
+
+09:12.040 --> 09:15.800
+C’est tout pour le Pokémon Idem.
+
+09:15.800 --> 09:17.680
+Et il y a beaucoup de choses ici que tu
+
+09:17.680 --> 09:18.800
+je n'en ai probablement pas besoin.
+
+09:18.800 --> 09:20.720
+Vous avez probablement besoin d'une image.
+
+09:20.720 --> 09:23.120
+Vous avez peut-être besoin de son numéro, et vous
+
+09:23.120 --> 09:23.960
+peut-être besoin de rendre.
+
+09:23.960 --> 09:26.800
+Mais ceci est un exemple d'un grand nombre de données brutes que vous n'avez pas
+
+09:26.800 --> 09:27.960
+nécessairement besoin.
+
+09:27.960 --> 09:30.000
+Et donc encore une fois, il existe différentes approches pour gérer
+
+09:30.440 --> 09:32.720
+ceci, mais j'espère que cela répond à cette question.
+
+09:32.720 --> 09:35.920
+Merci donc d'avoir posé cette question.
+
+09:35.920 --> 09:37.600
+Cool.
+
+09:37.600 --> 09:38.280
+D'accord.
+
+09:38.280 --> 09:38.840
+Oui?
+
+09:38.840 --> 09:42.240
+C'est quand vous transmettez des propriétés, est-ce en quelque sorte en passant par un
+
+09:42.240 --> 09:46.320
+référence, ou transmet-il une copie de l'objet ?
+
+09:46.320 --> 09:49.360
+Tout simplement parce que nous parlons de performances et de mémoire.
+
+09:49.360 --> 09:50.080
+D'ACCORD.
+
+09:50.080 --> 09:53.720
+Donc la question ici est que lorsque vous passez dans ce monde raffiné
+
+09:53.720 --> 09:57.360
+données utilisateur, transmet-il une copie de celles-ci ou transmet-il un
+
+09:57.360 --> 09:59.240
+référence à ces données ?
+
+09:59.280 --> 10:01.240
+Et la réponse est que ça passe un
+
+10:01.240 --> 10:02.800
+référence à ces données.
+
+10:02.800 --> 10:05.240
+Et donc, quand il s’agit d’accessoires, cela nous amène en fait
+
+10:05.240 --> 10:07.280
+le concept d'accessoires mutants.
+
+10:07.280 --> 10:09.800
+D'une manière générale, ce n'est pas une bonne pratique.
+
+10:09.800 --> 10:13.400
+Donc ce que tu ne veux pas faire, c'est venir ici et dire ensuite :
+
+10:13.400 --> 10:16.320
+oh oui, je veux, je vais créer une méthode qui ressemble à
+
+10:16.320 --> 10:20.120
+changez de nom, et ce sera comme ceci.user.name est égal à
+
+10:20.120 --> 10:20.800
+comme Charlie.
+
+10:20.800 --> 10:22.600
+Genre, tu ne veux pas faire ça.
+
+10:22.600 --> 10:24.240
+Mais tu pourrais.
+
+10:24.240 --> 10:26.120
+Mais tu pourrais.
+
+10:26.160 --> 10:29.040
+Mais comme vous pouvez le constater, une mutation inattendue de
+
+10:29.040 --> 10:30.480
+l'accessoire utilisateur vous crie dessus.
+
+10:30.480 --> 10:33.440
+Parce qu'encore une fois, quand tu commences à embrouiller la chaîne
+
+10:33.440 --> 10:36.080
+de commandement en ce qui concerne la façon dont les données circulent, cela commence à devenir
+
+10:36.080 --> 10:40.040
+vraiment difficile de comprendre ce qui se passe maintenant.
+
+10:40.040 --> 10:42.840
+Encore une fois, cela nous amène à la question que nous nous posions plus tôt
+
+10:42.840 --> 10:45.400
+concernant, eh bien, si c'est le cas, êtes-vous en train de dire que
+
+10:45.400 --> 10:48.520
+mon composant enfant ne peut pas modifier les données qui se produisent ?
+
+10:48.520 --> 10:50.240
+Non, ce n'est pas du tout le cas.
+
+10:50.240 --> 10:53.400
+Mais avant de passer à ce sujet, quelqu'un a-t-il une idée
+
+10:53.400 --> 10:55.400
+d'autres questions sur l'exercice avec lequel ils ont travaillé
+
+10:55.400 --> 10:57.000
+en termes d'accessoires, ce genre de choses ?
+
+10:59.440 --> 11:03.000
+Si les données changent en dehors du composant depuis leur transmission
+
+11:03.000 --> 11:06.320
+par référence, va-t-il alors restituer le composant ?
+
+11:06.320 --> 11:09.560
+Ouais, il saura essentiellement quelles parties du DOM mettre à jour
+
+11:09.560 --> 11:12.960
+et toutes les dépendances.
+
+11:12.960 --> 11:16.880
+C'est donc l'un des avantages, c'est que pratiquement tous les
+
+11:16.880 --> 11:18.640
+réactivité, la vue suit et s'occupe.
+

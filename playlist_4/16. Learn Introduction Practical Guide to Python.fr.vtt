@@ -1,0 +1,209 @@
+WEBVTT
+
+00:00.000 --> 00:07.360
+Ensuite, nous avons des dictionnaires. Ce sont les dictionnaires qui sont un type de données qui
+
+00:07.360 --> 00:15.240
+nous permettent de stocker des paires clé et valeur. Les dictionnaires eux-mêmes sont modifiables, mais
+
+00:15.240 --> 00:24.040
+tout comme les ensembles de clés de dictionnaire ne peuvent être qu'immuables. Pourquoi? Parce que le dictionnaire
+
+00:24.040 --> 00:30.320
+la clé doit être hachable. Les dictionnaires permettent une recherche rapide des éléments et des
+
+00:30.320 --> 00:35.920
+tests d'adhésion. Vous pouvez rapidement dire, étant donné une clé, cette clé est-elle dans mon dictionnaire ou
+
+00:35.920 --> 00:41.120
+non. Et c'est parce que le hachage de la clé est comparé au hachage de la clé.
+
+00:41.120 --> 00:45.000
+clés dans le dictionnaire. Vous n'avez pas besoin de parcourir chaque élément de ce document
+
+00:45.000 --> 00:49.000
+dictionnaire et dis, es-tu l'objet ? Etes-vous l'article ? Êtes-vous l'objet que je suis
+
+00:49.000 --> 00:56.600
+tu cherches ? Puis-je avoir une liste comme dictionnaire dans une clé ? Je suis désolé, une liste
+
+00:56.600 --> 01:00.880
+comme clé dans le dictionnaire. Si je posais cette question correctement, j'obtiendrais un
+
+01:00.880 --> 01:06.600
+meilleure réponse. Non, n'est-ce pas ? Une liste est donc modifiable. Les clés du dictionnaire ne peuvent être
+
+01:06.600 --> 01:12.800
+immuable. Nous ne pouvons pas avoir de types de données mutables comme clés de dictionnaire. Pouvons-nous avoir un
+
+01:12.800 --> 01:22.360
+tuple comme clé de dictionnaire ? Oui, les tuples sont immuables. Nous pouvons donc les utiliser comme
+
+01:22.360 --> 01:28.840
+une clé de dictionnaire. J'ai une clé de dictionnaire ici pour vous, mais passons en revue
+
+01:28.840 --> 01:41.120
+quelques exemples de ce à quoi ressemblent les dictionnaires et Python. Donc si les ensembles avaient des boucles
+
+01:41.120 --> 01:48.400
+accolades, les dictionnaires ont des accolades et des deux-points. Et ce côlon est la façon dont vous
+
+01:48.400 --> 01:56.960
+faire la différence entre la clé et la valeur. Si je voulais créer un vide
+
+01:56.960 --> 02:02.520
+dictionnaire, comment faire ? Nous l'avons déjà vu.
+
+02:02.520 --> 02:12.320
+Juste deux accolades. Si je voulais créer des dictionnaires contenant des éléments, je
+
+02:12.320 --> 02:24.120
+il faudrait maintenant définir des clés et des valeurs. Et séparez-les par des virgules. Donc la clé
+
+02:24.120 --> 02:27.960
+se trouve du côté gauche du côlon. La valeur se trouve à droite de
+
+02:27.960 --> 02:33.440
+les deux points séparés par des virgules. Et cela m'a maintenant donné un dictionnaire avec deux
+
+02:33.440 --> 02:42.720
+paires de valeurs clés. Je peux continuer et attribuer ceci à une variable, puis vérifier
+
+02:42.720 --> 02:52.600
+c'est du genre. Et cela me montrera que c'est un dictionnaire. Maintenant, les clés du dictionnaire
+
+02:52.640 --> 03:00.360
+doit être immuable. Les valeurs du dictionnaire n'ont pas la même restriction. Alors tu peux
+
+03:00.360 --> 03:18.880
+disons que mes nombres sont un dictionnaire et disons que la clé est une et que la valeur est cette liste.
+
+03:18.880 --> 03:24.320
+C'est tout à fait bien. Parce que lorsque je veux récupérer cet élément de mon dictionnaire, je vais
+
+03:24.320 --> 03:37.340
+faites-le par sa clé. Maintenant, les dictionnaires comme les ensembles n'ont pas d'ordre dans mon
+
+03:37.340 --> 03:45.480
+pont. Il n'y a pas de zéro avec l'élément ou le premier élément. Si j'essaie d'accéder au zéro avec l'élément,
+
+03:45.480 --> 03:53.480
+Je vais recevoir une erreur disant que j'attends une clé et que cette clé n'existe pas. Alors pour
+
+03:53.480 --> 03:58.800
+accéder aux éléments d'un dictionnaire, vous utilisez la notation entre crochets, mais au lieu de fournir
+
+03:58.800 --> 04:07.880
+un index, comme vous le feriez avec une liste ou un tuple, vous fournissez à la place une clé. Et maintenant c'est
+
+04:07.880 --> 04:17.080
+je vais obtenir la valeur de mon dictionnaire qui a la clé de un. Si j'essaie d'obtenir un
+
+04:17.080 --> 04:24.880
+valeur qui n'existe pas, encore une fois, j'obtiens une erreur clé. Si je voulais obtenir quelque chose de
+
+04:24.880 --> 04:33.760
+mon dictionnaire et ne pas gérer une exception que je dois ensuite intercepter, je peux utiliser le
+
+04:33.760 --> 04:43.760
+clé pour obtenir l'article. Obtenez la méthode. Et cela ne générera pas d’erreur si cette clé n’existe pas.
+
+04:43.760 --> 04:52.320
+La méthode get possède un deuxième argument facultatif qui est une valeur par défaut. Donc je peux dire si ceci
+
+04:52.320 --> 05:02.720
+la clé n'existe pas, renvoyez plutôt cette valeur par défaut. Si je passe ici une clé qui existe,
+
+05:02.720 --> 05:14.400
+que vais-je voir ? Vais-je voir par défaut ? Non, je vais récupérer le numéro deux de mon
+
+05:14.400 --> 05:22.120
+deck parce que cette clé existe. La valeur par défaut n’est donc pas pertinente. Pour ajouter et supprimer des éléments
+
+05:22.120 --> 05:29.400
+à partir des dictionnaires, vous pouvez utiliser la même notation que celle que nous avons utilisée pour mettre à jour les éléments des listes.
+
+05:29.400 --> 05:36.480
+Mais au lieu de passer dans une position, vous allez passer dans une clé. Donc si je voulais mettre à jour
+
+05:36.480 --> 05:48.000
+le dictionnaire à la clé deux, je pourrais utiliser cette notation. Et maintenant, ma dictée est très idiote
+
+05:48.000 --> 05:55.400
+longue ficelle dedans. Je pourrais utiliser la même notation pour ajouter des éléments au dictionnaire qui
+
+05:55.400 --> 06:08.480
+Je n'existe pas déjà. Et maintenant, j'ai une nouvelle clé là-dedans. Tout comme avec les décors, vous pourriez
+
+06:08.480 --> 06:13.880
+update, vous pouvez appeler dot update sur un dictionnaire et passer dans un autre dictionnaire et cela
+
+06:13.880 --> 06:19.080
+combinera les deux dictionnaires ensemble. Donc, quel que soit le dictionnaire que vous appelez point
+
+06:19.080 --> 06:26.920
+update on sera celui qui sera modifié. Vous pouvez avoir des dictionnaires assez complexes.
+
+06:26.920 --> 06:42.520
+N'oubliez pas qu'un dictionnaire peut avoir une liste comme valeur. Disons que cette clé en est une et la valeur
+
+06:42.520 --> 06:55.880
+est une liste. Si j'appelle mes noms et que je transmets cette clé, je vais récupérer une liste.
+
+06:55.880 --> 07:02.920
+Je peux appeler dot append sur une liste, ce qui signifie que je peux simplement enchaîner ces actions.
+
+07:02.920 --> 07:12.960
+Donc, si je sais que cela renvoie une liste, je peux appeler dot append dessus et l'ajouter à ceci
+
+07:12.960 --> 07:26.600
+liste comme je le ferais normalement. Maintenant, si je regarde mon dictionnaire, oups, et que je l'épelle correctement,
+
+07:26.600 --> 07:33.680
+nous verrons que j'ai annexé une liste à ma liste. Les dictionnaires peuvent donc devenir très complexes.
+
+07:33.680 --> 07:44.120
+Les valeurs qu'ils contiennent peuvent être des objets. Alors quand tu les regardes, tu devras peut-être t'effondrer
+
+07:44.120 --> 07:50.320
+quel type est lequel dans la valeur et faites attention aux accolades, aux parenthèses et aux crochets
+
+07:50.320 --> 08:03.720
+pour déterminer de quel type il s'agit. Si vous souhaitez travailler avec les valeurs d'un dictionnaire, il y a
+
+08:03.720 --> 08:11.960
+sont trois méthodes que vous devez connaître. L’une est les touches à points qui vous permettront d’obtenir toutes les clés.
+
+08:11.960 --> 08:18.640
+L’une est les valeurs de points qui vous obtiendront toutes les valeurs. Mais le plus important que tu sois
+
+08:18.640 --> 08:29.720
+je vais utiliser le plus souvent mydict.items. Et cela va renvoyer toutes les paires clé et valeur.
+
+08:29.720 --> 08:34.800
+Lorsque vous essayez de parcourir un dictionnaire, vous pouvez vous attendre à ce que ce qui est réellement
+
+08:34.800 --> 08:41.120
+les éléments renvoyés seront les paires clé-valeur. Mais malheureusement, ce n’est pas exact.
+
+08:41.120 --> 08:48.120
+Lorsque vous parcourez un dictionnaire, ce qui est réellement renvoyé, ce sont uniquement les clés. Alors quelque chose
+
+08:48.120 --> 08:52.560
+être conscient de. Si vous souhaitez parcourir un dictionnaire, que nous examinerons plus tard, vous
+
+08:52.560 --> 09:01.520
+vous voulez vous assurer que vous appelez des éléments point dessus pour obtenir à la fois les paires clé et valeur.
+
+09:01.520 --> 09:07.520
+Donc juste un petit mot sur la mutabilité, les types simples en chaîne décimale flottante, booléen,
+
+09:07.520 --> 09:17.600
+tuple, ce sont des listes immuables, les ensembles, les dictionnaires sont mutables. Alors si tu ne t'en souviens pas,
+
+09:17.600 --> 09:23.240
+jetez un œil à l’aide-mémoire sur la mutabilité. Pour le moment, nous allons sauter
+
+09:23.240 --> 09:27.400
+la pratique pour ce chapitre et parcourez-la avec le chapitre suivant.
+

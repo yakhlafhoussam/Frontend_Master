@@ -1,0 +1,38 @@
+WEBVTT
+
+00:00.000 --> 00:04.800
+En codant avec moi dans cet atelier Python intermédiaire, vous allez apprendre à utiliser
+
+00:04.800 --> 00:09.680
+programmation orientée objet pour organiser votre code. Vous allez apprendre à diagnostiquer
+
+00:09.680 --> 00:14.880
+problèmes dans vos programmes Python en comprenant les exceptions et même en écrivant les vôtres.
+
+00:15.760 --> 00:20.160
+Nous allons travailler avec de nouvelles fonctionnalités de Python 3 qui rendent Python plus facile que jamais,
+
+00:20.160 --> 00:25.360
+comme les cordes F. Vous allez en apprendre un peu plus sur les générateurs, une fonctionnalité Python qui
+
+00:25.360 --> 00:30.400
+vous permet de parcourir de grands ensembles de données de manière efficace en termes de mémoire. Tu vas aussi apprendre
+
+00:30.400 --> 00:36.000
+sur la compréhension de listes, la compréhension de dictionnaires et d'autres méthodes avancées de boucle Python.
+
+00:36.720 --> 00:43.440
+Enfin, pour le dernier exercice, vous allez apprendre à utiliser une API interactive et à créer un
+
+00:43.440 --> 00:50.000
+application Web utilisant efficacement le framework Web Flask pour créer un site vraiment cool qui permet
+
+00:50.000 --> 00:57.120
+Nous filtrons les référentiels GitHub pour une langue particulière en fonction de leur nombre d'étoiles. Jetant un coup d'oeil à
+
+00:57.120 --> 01:05.680
+ce dernier exercice, c'est parti. Nous pouvons filtrer par langues, soumettre et notre petite application Web démarre
+
+01:05.680 --> 01:09.040
+pour accéder à l'API de recherche GitHub et revenir avec des résultats.
+

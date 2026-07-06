@@ -1,0 +1,635 @@
+WEBVTT
+
+00:00.000 --> 00:03.000
+Maintenant que nous avons fait cela, nous avons le premier composant.
+
+00:06.840 --> 00:09.920
+Allons-y et laissez-vous tous jouer avec la création
+
+00:09.920 --> 00:12.520
+vos propres composants depuis votre application.
+
+00:12.520 --> 00:16.080
+L’exercice ici consiste donc essentiellement à entrer dans votre
+
+00:16.080 --> 00:19.320
+application de forum, donc que ce soit le bureau, la communauté ou
+
+00:19.320 --> 00:24.520
+peu importe, puis regardez votre fichier index.html et c'est parti, OK,
+
+00:24.520 --> 00:25.920
+Je veux créer quelques composants à partir de cela.
+
+00:25.920 --> 00:27.120
+Comment vais-je le faire ?
+
+00:27.120 --> 00:30.600
+Et pour donner également une préface, vous rencontrerez un
+
+00:30.600 --> 00:32.760
+limitation assez rapidement en ce qui concerne les choses que vous voudrez
+
+00:32.760 --> 00:33.560
+à voir avec ça.
+
+00:33.560 --> 00:35.480
+Mais je veux juste vous entraîner à créer des
+
+00:35.480 --> 00:38.400
+.view fichiers, et sachez simplement que ce sera fonctionnellement
+
+00:38.400 --> 00:40.600
+brisé jusqu'à ce que nous nous remettions ensemble.
+
+00:40.600 --> 00:42.040
+Mais je veux juste vous mettre tous dans le
+
+00:42.040 --> 00:43.360
+l'habitude de pratiquer cela.
+
+00:43.360 --> 00:44.240
+Est-ce que ça sonne bien ?
+
+00:44.240 --> 00:46.720
+Donc, en gros, vous essayez de définir la portée, comme apporter des trucs
+
+00:46.720 --> 00:49.440
+ensemble, et voir comment cela se passe.
+
+00:52.320 --> 00:54.840
+OK, bon retour à tous.
+
+00:54.880 --> 00:58.080
+J'espère donc que vous avez tous eu du plaisir à créer des composants.
+
+00:58.080 --> 01:01.680
+Mais je me promenais et je vérifiais comment
+
+01:01.680 --> 01:02.760
+les gens faisaient.
+
+01:02.760 --> 01:05.040
+Vous avez probablement rencontré un problème, car vous
+
+01:05.040 --> 01:07.920
+commencé à migrer des éléments, car une grande partie de votre code est
+
+01:07.920 --> 01:09.600
+dépendants les uns des autres.
+
+01:09.600 --> 01:11.040
+Et donc vous avez peut-être remarqué que lorsque vous avez commencé à déménager
+
+01:11.040 --> 01:13.240
+des trucs comme ça, attends, où est ce truc que tu
+
+01:13.240 --> 01:17.040
+référence et avaient du mal à se parler.
+
+01:17.040 --> 01:19.640
+Alors allons-y et montrons ce que je veux dire par là.
+
+01:19.640 --> 01:26.360
+Alors laissez-moi commencer par ouvrir mon app.view pour mon avatar
+
+01:26.360 --> 01:28.400
+le maître de l'air.
+
+01:28.400 --> 01:32.000
+Et comme nous pouvons le voir ici, nous avons quelques sections ici
+
+01:32.000 --> 01:33.840
+cela pourrait vraiment avoir du sens.
+
+01:33.840 --> 01:34.880
+Nous voyons un tas de h2.
+
+01:34.880 --> 01:36.560
+Ils pourraient avoir un sens en tant que composants, pour être totalement
+
+01:36.560 --> 01:39.320
+honnête, dans la mesure où ce sont les personnages.
+
+01:39.320 --> 01:40.760
+C'est la liste des personnages.
+
+01:40.760 --> 01:43.480
+Et donc essayons quelque chose d'aussi simple que cela.
+
+01:43.480 --> 01:46.000
+Allons-y et commençons par l'intérieur de nos composants.
+
+01:46.000 --> 01:50.800
+Créons une liste de caractères.view.
+
+01:50.800 --> 01:53.080
+OK, et je vais en parler.
+
+01:53.080 --> 01:55.960
+Et puis nous avons notre bloc de script que nous allons avoir.
+
+01:55.960 --> 01:59.520
+Et nous allons avoir notre bloc modèle.
+
+01:59.520 --> 02:01.120
+Cette fois, je vais le retourner un peu.
+
+02:01.120 --> 02:03.920
+Et nous allons commencer par importer tout le HTML.
+
+02:03.920 --> 02:08.160
+Donc, le h2 jusqu'à présent est entièrement lié au
+
+02:08.160 --> 02:10.160
+personnages.
+
+02:10.160 --> 02:12.600
+Donc si vous sauvegardez ça, beaucoup de choses vont manquer,
+
+02:12.600 --> 02:14.800
+mais c'est tout à fait bien.
+
+02:14.800 --> 02:17.000
+Et gardons simplement un espace réservé pour la liste des personnages.
+
+02:19.960 --> 02:23.120
+Et puis ici, c'est là que ça devient un peu
+
+02:23.120 --> 02:24.280
+délicat maintenant.
+
+02:24.280 --> 02:25.080
+OK, qu'est-ce qu'on veut faire ?
+
+02:25.080 --> 02:27.920
+Eh bien, nous savons que cette liste de personnages ici est pertinente.
+
+02:27.920 --> 02:30.320
+Commençons donc par exporter un objet par défaut, car cela
+
+02:30.320 --> 02:32.920
+est l'objet qui définit notre application.
+
+02:32.920 --> 02:34.560
+La liste des personnages est donc ici.
+
+02:34.560 --> 02:36.280
+Super.
+
+02:36.280 --> 02:37.120
+Faisons ça.
+
+02:37.120 --> 02:40.520
+J'ai donc besoin de ma propriété de données.
+
+02:40.520 --> 02:41.920
+Et puis je peux mettre ma liste de personnages ici.
+
+02:41.920 --> 02:43.080
+Génial.
+
+02:43.080 --> 02:46.880
+Et puis voyons.
+
+02:46.880 --> 02:47.480
+Qu'avons-nous d'autre ?
+
+02:47.480 --> 02:48.320
+Eh bien, nous l'avons.
+
+02:48.320 --> 02:49.720
+Oui, la longueur.
+
+02:49.720 --> 02:51.840
+Cela a l'air plutôt bien.
+
+02:51.840 --> 02:53.400
+En fait, ça a l'air plutôt bien.
+
+02:53.400 --> 02:54.440
+Oh, en fait ici.
+
+02:54.440 --> 02:55.920
+Nous avons un personnage préféré.
+
+02:55.920 --> 02:56.840
+D'ACCORD.
+
+02:56.840 --> 02:57.360
+Comment fait-on cela ?
+
+02:57.360 --> 02:57.680
+Voyons.
+
+02:57.680 --> 02:59.120
+Allons ici.
+
+02:59.120 --> 03:02.000
+Oui, nous avons ici une méthode pour le personnage préféré.
+
+03:02.000 --> 03:04.120
+Donc je vais juste copier tout le bloc en sachant que je
+
+03:04.120 --> 03:08.120
+supprimerait le nouveau caractère ajouté.
+
+03:08.120 --> 03:10.240
+Et c'est probablement ce que vous avez commencé à faire.
+
+03:10.240 --> 03:11.160
+Et puis tu te dis, oh, oui.
+
+03:11.160 --> 03:15.240
+Il y a aussi la this.favoriteList.
+
+03:15.240 --> 03:17.040
+Et puis nous nous disons : OK, ajoutons cela ici.
+
+03:17.040 --> 03:17.680
+Liste des favoris.
+
+03:17.680 --> 03:19.160
+Et puis on économise.
+
+03:19.160 --> 03:21.120
+Et puis vous pensez, OK, super.
+
+03:21.120 --> 03:28.320
+Je vais importer la liste de caractères depuis composants.characterList.view.
+
+03:28.320 --> 03:29.280
+D'ACCORD.
+
+03:29.280 --> 03:30.840
+C'est ça.
+
+03:30.840 --> 03:33.400
+Et puis tu te dis, je vais enregistrer mon composant
+
+03:33.400 --> 03:35.280
+à la liste des caractères.
+
+03:35.280 --> 03:37.840
+Comme ça.
+
+03:37.880 --> 03:41.720
+Et puis, oups, il faut le renommer correctement.
+
+03:41.720 --> 03:43.360
+Et puis tu es probablement arrivé et tu t'es dit, OK,
+
+03:43.360 --> 03:45.440
+Je vais essayer d'appeler mon composant liste de personnages
+
+03:45.440 --> 03:46.160
+à l'intérieur d'ici.
+
+03:50.240 --> 03:54.000
+Maintenant, si nous regardons ce qui se passe ici,
+
+03:54.000 --> 03:56.120
+laissez-moi continuer et fermer ceci.
+
+03:56.120 --> 03:58.920
+Et puis nous allons aller de l'avant et sortir de là,
+
+03:58.920 --> 04:05.440
+allez sur notre forum atla, lancez ce développeur, super.
+
+04:05.440 --> 04:08.120
+Vous allez probablement vous rendre compte très prochainement
+
+04:08.120 --> 04:09.280
+que rien ne fonctionne.
+
+04:11.960 --> 04:14.960
+Quelqu'un a-t-il une idée de la raison pour laquelle rien ne fonctionne ?
+
+04:14.960 --> 04:18.560
+Parce que votre application parent s'appuie sur la liste des personnages
+
+04:18.560 --> 04:21.440
+pour les statistiques de Bender.
+
+04:21.440 --> 04:22.280
+D'ACCORD.
+
+04:22.280 --> 04:26.960
+Comme nous pouvons le voir ici, nous
+
+04:26.960 --> 04:30.120
+s'appuient sur l'intérieur de app.view.
+
+04:30.120 --> 04:33.320
+Désolé, j'ai techniquement déplacé ceci à ce stade.
+
+04:33.360 --> 04:35.720
+Nous essayons en fait de référencer cette liste de caractères
+
+04:35.720 --> 04:39.600
+propriété, mais vous remarquerez qu'elle a disparu.
+
+04:39.600 --> 04:41.520
+Et c'est ce que je mentionnais plus tôt.
+
+04:41.520 --> 04:43.720
+Lorsque vous avez des composants, les données
+
+04:43.720 --> 04:46.520
+sont limités au composant.
+
+04:46.520 --> 04:48.240
+Cela ne s'étend pas à l'ensemble de l'application.
+
+04:48.240 --> 04:50.280
+En d'autres termes, tout ce composant CharacterList,
+
+04:50.280 --> 04:53.520
+que j'ai fait par impulsion, en fait,
+
+04:53.520 --> 04:55.960
+si l'on pense à Dataflow, ce n'est pas la bonne voie.
+
+04:55.960 --> 04:59.520
+Parce que la liste de caractères est en fait essentiellement en haut.
+
+04:59.520 --> 05:02.760
+C'est la chose qui sert à tout le reste.
+
+05:02.760 --> 05:06.480
+Alors repensons cela encore une fois.
+
+05:06.480 --> 05:08.520
+Parce que ce que nous voulons vraiment, c'est la capacité
+
+05:08.520 --> 05:11.480
+pour que l'application soit intégrée aux composants d'un enfant.
+
+05:11.480 --> 05:14.720
+Le flux de données unidirectionnel est un sujet très important de nos jours.
+
+05:14.720 --> 05:16.440
+Parce que cela aide essentiellement à garantir
+
+05:16.440 --> 05:17.800
+que les choses sont plus faciles à suivre.
+
+05:17.800 --> 05:19.500
+Je sais que c'était l'un des premiers retours de flamme
+
+05:19.500 --> 05:21.440
+en ce qui concerne la liaison bidirectionnelle, est-ce
+
+05:21.440 --> 05:24.280
+que les gens ne savaient pas dans quelle direction les données circulaient.
+
+05:24.280 --> 05:25.920
+Mais cela ne crée pas de liaison de données bidirectionnelle
+
+05:25.920 --> 05:28.280
+comme un mal en soi.
+
+05:28.280 --> 05:30.480
+Nous pouvons voir que lorsque c'est fait de manière encapsulée,
+
+05:30.480 --> 05:31.840
+c'est facile à comprendre.
+
+05:31.840 --> 05:32.560
+C'est génial.
+
+05:32.600 --> 05:34.760
+Mais lorsqu'il s'agit de longs flux de données,
+
+05:34.760 --> 05:37.600
+nous avons constaté en tant qu'industrie que le flux de données unidirectionnel,
+
+05:37.600 --> 05:40.680
+essentiellement de haut en bas, il s'agit de garder cela cohérent,
+
+05:40.680 --> 05:43.080
+pour la plupart, a été très utile pour créer des choses
+
+05:43.080 --> 05:48.240
+maintenable et plus facile à travailler.
+
+05:48.240 --> 05:48.920
+D'ACCORD.
+
+05:48.920 --> 05:52.000
+Donc en fait, ce que j'ai fait ici comme exercice
+
+05:52.000 --> 05:54.440
+est un exercice futile.
+
+05:54.440 --> 05:56.560
+Je vais donc continuer et effacer ces changements.
+
+05:56.560 --> 05:57.800
+Et nous allons aller de l'avant et prendre
+
+05:57.800 --> 06:00.240
+un aperçu de la façon dont nous devrions penser au personnage
+
+06:00.240 --> 06:02.440
+comme composer notre application.
+
+06:02.440 --> 06:06.640
+Je peux donc continuer et supprimer ceci.
+
+06:06.640 --> 06:11.200
+Et puis nous pouvons actualiser l'application maintenant.
+
+06:11.200 --> 06:12.520
+OK, tout devrait fonctionner.
+
+06:12.520 --> 06:15.440
+Oh, je pense que j'ai tout fait planter.
+
+06:15.440 --> 06:16.760
+OK, actualisez.
+
+06:16.760 --> 06:18.480
+OK, tout va bien.
+
+06:18.480 --> 06:19.840
+D'ACCORD.
+
+06:19.840 --> 06:21.800
+Alors, la façon de penser aux composants
+
+06:21.800 --> 06:23.440
+est vraiment l'arborescence des composants.
+
+06:23.440 --> 06:25.840
+Encore une fois, votre app.view est tout en haut.
+
+06:25.840 --> 06:28.000
+Tout le reste découle de là.
+
+06:28.000 --> 06:29.800
+Alors choisissons quelque chose de plus petit à refactoriser
+
+06:29.800 --> 06:31.840
+pour en quelque sorte vous montrer ce que je veux dire.
+
+06:31.840 --> 06:33.800
+La chose la plus simple ici, on dirait,
+
+06:33.800 --> 06:36.480
+est en fait probablement le module de statistiques
+
+06:36.480 --> 06:37.960
+que nous venions de construire.
+
+06:37.960 --> 06:41.160
+Parce qu'en réalité, il a la seule propriété calculée ici.
+
+06:41.160 --> 06:43.200
+Et puis après, c'est essentiellement tout.
+
+06:43.200 --> 06:44.920
+Il n'y a pas vraiment d'autres dépendances.
+
+06:44.920 --> 06:47.080
+C'est donc un joli petit encapsulé
+
+06:47.080 --> 06:48.640
+sur lequel nous pouvons pratiquer.
+
+06:48.640 --> 06:53.080
+Alors ici, je vais lui dire supplierstatistics.view.
+
+06:53.080 --> 06:54.760
+Et cette fois, je vais le faire exploser sur le côté
+
+06:54.760 --> 06:57.240
+puisque nous ne nous inquiétons pas de son apparence pour le moment.
+
+06:57.240 --> 06:58.720
+Et donc ce que nous voulons aller de l'avant et faire
+
+06:58.720 --> 07:00.320
+c'est d'aller de l'avant et de voir à quoi cela ressemble.
+
+07:00.320 --> 07:03.960
+Alors d’abord, je vais récupérer le modèle.
+
+07:03.960 --> 07:05.160
+Et voilà.
+
+07:05.160 --> 07:06.680
+Et le modèle est ce petit bloc.
+
+07:06.680 --> 07:08.880
+Ce sont juste ces statistiques H2.
+
+07:08.880 --> 07:10.720
+Et aussi, nous allons parcourir et trouver
+
+07:10.720 --> 07:13.160
+ces statistiques du fournisseur.
+
+07:13.160 --> 07:17.400
+Alors maintenant, nous avons besoin de cette propriété de données, le script.
+
+07:17.400 --> 07:19.520
+Et la propriété data que nous recherchons ici
+
+07:19.520 --> 07:21.800
+sont les statistiques du fournisseur ici.
+
+07:21.800 --> 07:24.000
+Et il semble que ce soit la seule propriété calculée
+
+07:24.000 --> 07:24.840
+dans toute cette application.
+
+07:24.840 --> 07:27.920
+Nous pouvons donc simplement tout supprimer.
+
+07:27.920 --> 07:29.680
+Et nous pouvons exporter notre objet par défaut
+
+07:29.680 --> 07:34.040
+et collez notre propriété calculée, ce qui est génial.
+
+07:34.040 --> 07:36.200
+Maintenant, ça va mieux.
+
+07:36.200 --> 07:39.920
+Cependant, comme vous l'avez mentionné précédemment, nous avons toujours un blocage
+
+07:39.920 --> 07:42.800
+en ce sens que si nous allons de l'avant et ouvrons cela à l'intérieur du VIT, n'est-ce pas
+
+07:42.800 --> 07:47.720
+maintenant, donc si je sauvegarde, vous remarquerez celui-là, c'est bien.
+
+07:47.720 --> 07:49.680
+Les statistiques du fournisseur ne s'affichent pas.
+
+07:49.680 --> 07:50.600
+Aucune erreur.
+
+07:50.600 --> 07:52.760
+Et c'est normal parce que, eh bien, nous ne sommes pas
+
+07:52.760 --> 07:53.880
+appeler n'importe quoi.
+
+07:53.880 --> 07:59.600
+Mais lorsque nous importons les statistiques des fournisseurs,
+
+07:59.600 --> 08:02.120
+et donc c'était une saisie semi-automatique, au fait, pas de magie là-dedans,
+
+08:02.120 --> 08:03.720
+c'est juste en train de le lire.
+
+08:03.720 --> 08:04.400
+Et voilà.
+
+08:04.400 --> 08:05.720
+Nous pouvons l'enregistrer.
+
+08:05.720 --> 08:09.120
+Donc composants, fournisseur, statistiques.
+
+08:09.120 --> 08:12.080
+Et puis nous pouvons essayer de l'appeler en le rendant ici.
+
+08:15.040 --> 08:16.520
+OK, boum.
+
+08:16.520 --> 08:17.320
+Grosse erreur.
+
+08:17.320 --> 08:18.120
+Pourquoi?
+
+08:18.120 --> 08:21.080
+Parce que si nous regardons à l'intérieur des quatre chacun,
+
+08:21.080 --> 08:22.280
+qu'est-ce qu'il cherche ?
+
+08:22.280 --> 08:23.760
+C'est à la recherche de personnes sans caractère.
+
+08:23.760 --> 08:25.080
+Cela n'existe pas.
+
+08:25.080 --> 08:28.240
+Alors maintenant, nous avons prouvé dans les deux sens que les données ne fonctionnent pas comme par magie
+
+08:28.240 --> 08:29.160
+être délimité.
+
+08:29.200 --> 08:31.840
+Et encore une fois, c'est une bonne chose parce que tu veux des choses
+
+08:31.840 --> 08:35.520
+être intrinsèquement adapté au contexte dans lequel ils se trouvent.
+

@@ -1,0 +1,209 @@
+WEBVTT
+
+00:00.000 --> 00:05.000
+Vous remarquerez donc qu’à l’intérieur du projet, nous avons essentiellement deux types de données différents.
+
+00:05.000 --> 00:07.000
+Nous avons le restaurant, nous avons des plats.
+
+00:07.000 --> 00:11.000
+Et donc, tout comme la carte du restaurant où nous avons ajouté des types d'accessoires au plat,
+
+00:11.000 --> 00:13.000
+nous avons besoin que vous fassiez de même pour le plat.
+
+00:13.000 --> 00:18.000
+Et donc à l'intérieur de la fiche de plat, allez-y et poussez ce que nous venons d'apprendre aussi loin que possible.
+
+00:18.000 --> 00:21.000
+convertir un composant en script de type,
+
+00:21.000 --> 00:27.000
+puis importer la méthode de définition des composants et définir simplement les types avec pour le plat.
+
+00:31.000 --> 00:35.000
+En travaillant sur cela, j'étais curieux de savoir dans quelle mesure ce que nous venions de voir et de mettre en œuvre
+
+00:35.000 --> 00:39.000
+sera similaire lors de l'utilisation de l'API de composition.
+
+00:39.000 --> 00:43.000
+Une grande partie des choses que nous faisons dès le départ consistent essentiellement à prendre en compte l'API des options.
+
+00:43.000 --> 00:46.000
+parce que nous proposons de nombreuses conventions avec cela.
+
+00:46.000 --> 00:49.000
+Parce que pour ceux d'entre vous qui utilisent beaucoup ce mot-clé,
+
+00:49.000 --> 00:53.000
+et c'est, comme vous le savez, en JavaScript, un concept diabolique.
+
+00:53.000 --> 00:55.000
+Donc, le script de type devient super super perdu.
+
+00:55.000 --> 00:58.000
+Et nous faisons de notre mieux pour contourner cela pour vous faciliter la vie.
+
+00:58.000 --> 01:00.000
+Mais lorsqu'il s'agit d'API de composition,
+
+01:00.000 --> 01:04.000
+J'espère que les gens auront l'impression qu'il s'agit d'une intégration plus native avec,
+
+01:04.000 --> 01:06.000
+en ce qui concerne l'utilisation de la vue avec un script de type.
+
+01:06.000 --> 01:09.000
+Maintenant, je vois Gullina ou je m'excuse en prononçant mal cela,
+
+01:09.000 --> 01:12.000
+mais je vois qu'apparemment ce n'est pas aussi facile de s'y attendre.
+
+01:12.000 --> 01:15.000
+J’aimerais donc avoir de vos nouvelles le moment venu et pendant que nous traversons cela.
+
+01:15.000 --> 01:19.000
+Mais en attendant, je pense qu'il faut aller de l'avant et trouver la solution pour l'exercice.
+
+01:19.000 --> 01:23.000
+OK, donc pour ceux qui sont ici dans la carte des plats,
+
+01:23.000 --> 01:26.000
+j'espère que vous n'avez pas trouvé cet exercice trop difficile.
+
+01:26.000 --> 01:30.000
+Mais sur le fond, nous répétons vraiment ce que nous faisions auparavant dans la carte du restaurant.
+
+01:30.000 --> 01:33.000
+Donc la première chose est que nous voulons utiliser un script de type,
+
+01:33.000 --> 01:35.000
+nous allons donc faire l'attribut langue.
+
+01:35.000 --> 01:38.000
+Et en fait, il y a eu une excellente question plus tôt pour ceux qui pourraient être plus proches de voir
+
+01:38.000 --> 01:41.000
+est que cet attribut de langage n'est pas quelque chose de spécifique au script.
+
+01:41.000 --> 01:47.000
+Fondamentalement, view essaie d'utiliser un attribut natif dans son composant,
+
+01:47.000 --> 01:49.000
+composant de fichier unique, autant que possible.
+
+01:49.000 --> 01:52.000
+Ainsi, l’attribut langue peut également être utilisé sur le style, par exemple.
+
+01:52.000 --> 01:55.000
+Il est couramment utilisé comme pré-processeurs, comme Laying Sass, par exemple.
+
+01:55.000 --> 01:58.000
+Au-dessus de ceux qui utilisent le carlin, il se peut que le carlin ponde.
+
+01:58.000 --> 02:02.000
+Et nous verrons qu'en réalité, les attributs à l'intérieur de ces blocs de composants de fichier unique
+
+02:02.000 --> 02:04.000
+peut être fondamentalement tout ce que vous voulez.
+
+02:04.000 --> 02:08.000
+Les gens ont donc fait des choses assez intéressantes pour créer des attributs personnalisés.
+
+02:08.000 --> 02:11.000
+et nous en utiliserons un plus tard dans le cours pour vous le montrer.
+
+02:11.000 --> 02:17.000
+D'accord, la prochaine chose que nous devons faire est d'importer le composant find depuis la vue.
+
+02:17.000 --> 02:23.000
+parce que nous devons dire au script de type, hé, nous utilisons ce truc de wrapper de composant API d'options.
+
+02:23.000 --> 02:25.000
+Alors s'il vous plaît, c'est ça.
+
+02:25.000 --> 02:30.000
+Et donc, si vous ne l'avez pas survolé, vous verrez qu'il se passe beaucoup de choses ici.
+
+02:30.000 --> 02:34.000
+Et donc, et c'est parce qu'une fois de plus, nous essayons d'aider les scripts à naviguer
+
+02:34.000 --> 02:37.000
+tous les garde-corps que nous mettons en place avec les options API.
+
+02:37.000 --> 02:41.000
+Une fois que nous avons cela, nous voulons nous assurer que nous avons le type pour le plat.
+
+02:41.000 --> 02:44.000
+Je vais donc me contenter d'aller sur la page des plats.
+
+02:44.000 --> 02:47.000
+Et nous allons récupérer le plat d'ici.
+
+02:47.000 --> 02:50.000
+Et comme nous pouvons le voir ici, je pense en fait que je l'ai mémorisé.
+
+02:50.000 --> 02:55.000
+Nous avons donc un type de plat et qui a une idée de chaîne qui a un nom de chaîne
+
+02:55.000 --> 02:58.000
+et il a également un statut avec une chaîne.
+
+02:58.000 --> 02:59.000
+Et c'est tout ce que c'est.
+
+02:59.000 --> 03:03.000
+Et donc, pour appliquer cela maintenant à notre objet, c'est ici que nous allons nous entraîner.
+
+03:03.000 --> 03:06.000
+notre casting de type et nous allons vouloir le type d'accessoire.
+
+03:06.000 --> 03:09.000
+Et donc ce que nous devons faire, c'est importer cela depuis la vue.
+
+03:09.000 --> 03:15.000
+Maintenant, quelque chose qui mérite d'être noté, c'est que vous auriez pu l'être,
+
+03:15.000 --> 03:17.000
+vous auriez peut-être été obligé de le faire comme ça à l'origine.
+
+03:18.000 --> 03:21.000
+Et cela semble donc normal car c'est ainsi que nous importons généralement des éléments dans JavaScript.
+
+03:21.000 --> 03:25.000
+Mais vous remarquerez cependant qu'il nous crie dessus parce qu'il dit que ce n'est pas exactement
+
+03:25.000 --> 03:27.000
+une valeur JavaScript traditionnelle.
+
+03:27.000 --> 03:29.000
+C'est en fait un type.
+
+03:29.000 --> 03:33.000
+Donc, en conséquence, cela devrait vous crier, mais en gros, nous,
+
+03:33.000 --> 03:36.000
+chaque fois que vous voyez le type d'importation, c'est parce que nous essayons de le dire comme le compilateur
+
+03:36.000 --> 03:38.000
+c'est comme, hé, cette chose que tu peux fondamentalement ignorer.
+
+03:38.000 --> 03:41.000
+Vous n'avez pas besoin de le compiler.
+
+03:41.000 --> 03:44.000
+D'accord, maintenant que nous avons le type d'accessoire, nous allons utiliser un plus grand que moins qu'un simple
+
+03:45.000 --> 03:46.000
+puis transmettez-le.
+
+03:46.000 --> 03:47.000
+Et puis nous inspectons maintenant.
+
+03:47.000 --> 03:51.000
+Nous pouvons voir que notre plat est un plat de type accessoire.
+
+03:51.000 --> 03:53.000
+Et c'est tout ce qu'il y a à faire.
+

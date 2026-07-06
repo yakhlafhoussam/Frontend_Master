@@ -1,0 +1,184 @@
+WEBVTT
+
+00:00.000 --> 00:08.400
+So, Boolean logic and Python, you might have heard this expression truthiness.
+
+00:08.400 --> 00:14.560
+Truthiness is figuring out what expressions evaluate to true or false in Python,
+
+00:14.560 --> 00:17.920
+and that's going to help us control the flow of our program.
+
+00:20.880 --> 00:24.720
+Now, I have a little handy cheat sheet for you here at the top.
+
+00:25.440 --> 00:29.920
+With integers, truthiness works a little bit differently than you might expect.
+
+00:31.520 --> 00:38.480
+The truthiness of integers 0 is false, all other numbers that have a value are true,
+
+00:38.480 --> 00:40.720
+including negative numbers.
+
+00:42.720 --> 00:47.200
+For container types, like the list, the tuple, the set, the dictionary,
+
+00:47.920 --> 00:54.640
+empty containers evaluate to false containers with items in them evaluate to true.
+
+00:55.520 --> 00:59.680
+Now, the none or null type is always false.
+
+01:01.520 --> 01:08.480
+There are also keyword arguments of true with a capital T and false with a capital F.
+
+01:10.560 --> 01:16.960
+Now, sometimes truthiness is pretty obvious.
+
+01:17.680 --> 01:19.680
+Is this true or false?
+
+01:21.920 --> 01:22.960
+It's true, right?
+
+01:24.320 --> 01:26.880
+I tried it the reverse way, that's false.
+
+01:29.280 --> 01:38.000
+You can always figure out what truthiness your expression will have by calling Boo on it,
+
+01:38.800 --> 01:45.280
+and Boo maps to the constructor for the built-in true or false.
+
+01:46.080 --> 01:52.080
+So, I can call Boo with one, which is true, Boo with zero, which is false.
+
+01:52.480 --> 01:56.320
+But I can also pass in some complex expressions here,
+
+01:57.040 --> 02:00.880
+and it will let me know what the truthiness value of them is.
+
+02:03.600 --> 02:09.600
+So, calling Boo on an empty list, false, putting some items into it is true.
+
+02:09.760 --> 02:16.880
+Boo of none type is always false.
+
+02:20.000 --> 02:26.880
+You can compare different items in Python with less than greater than less than or equals.
+
+02:27.760 --> 02:32.160
+But there's also the double equals and the not equals.
+
+02:35.280 --> 02:38.160
+So, double equals is quality.
+
+02:39.920 --> 02:41.840
+And this is not equals.
+
+02:46.640 --> 02:51.760
+Equality for different container types is a little bit interesting.
+
+02:54.240 --> 02:59.520
+So, equality for lists will check for the items in the list.
+
+03:00.160 --> 03:02.160
+So, let's say I have list one.
+
+03:02.960 --> 03:12.720
+And list two, if I call list one equals list two, I'm checking for equality of the
+
+03:12.720 --> 03:19.120
+contents, and I'm not asking is this the same exact list.
+
+03:20.720 --> 03:27.520
+If you do want to check for, hey, are these lists pointing at the same variable?
+
+03:28.480 --> 03:34.960
+That is with, you're going to use a different keyword called is the checks for identity.
+
+03:42.320 --> 03:45.440
+Basically, asking to these points the same place in memory.
+
+03:52.640 --> 03:55.360
+They don't, they're stored at different variables.
+
+03:56.000 --> 04:03.520
+So, this is a little bit of a more advanced topic, but the reason that I'm introducing it
+
+04:06.160 --> 04:15.920
+is because we have a lot of keywords in Python that we've seen, like true and false and none.
+
+04:16.640 --> 04:26.000
+In order to check for equality with these keywords, we want to use the is keyword for to check for
+
+04:26.000 --> 04:31.760
+identity, do these things point to the same place in memory and not with equality.
+
+04:32.640 --> 04:38.400
+This is especially handy with none because
+
+04:39.200 --> 04:44.000
+a empty list can evaluate to false.
+
+04:45.280 --> 04:53.680
+So, if we want to differentiate between none and an empty list, we need to use the is keyword.
+
+04:55.120 --> 05:02.240
+And we can say is x none. Oops. Sorry, x is none, and that is true.
+
+05:02.880 --> 05:12.880
+If I ask, empty list is none, that is false. So, if you need to differentiate between the
+
+05:12.880 --> 05:20.160
+truthiness of a none value or something that has a false truthiness, like an empty list or zero,
+
+05:20.160 --> 05:22.160
+you're going to need to use that is keyword.
+
+05:22.400 --> 05:38.400
+And same for true and false. So, don't do a equals true. If you want to know explicitly,
+
+05:38.400 --> 05:48.720
+you can say a is true. Oops. I would need to define that and that will say true.
+
+05:49.680 --> 05:53.040
+So, the difference between equality and identity.
+
+05:54.880 --> 06:01.040
+There's also the and or and not statements in Python.
+
+06:02.160 --> 06:10.240
+One of the great things about Python is that these statements are just English keywords.
+
+06:13.840 --> 06:18.480
+And it kind of spells out like you would type a sentence for those of you who might come from Java,
+
+06:19.360 --> 06:27.920
+or another language like you don't have to do this stuff like it's super hard to remember when
+
+06:27.920 --> 06:34.000
+you're a beginner. So, I think having these keywords definitely helps out with learning Python.
+
+06:35.600 --> 06:44.080
+And let's say a equals true and b equals true. And means are both of these values true.
+
+06:44.960 --> 06:46.800
+Only return true when they're both true.
+
+06:50.240 --> 06:58.160
+If one of the values is false, that will return false. Or means is are any of these values true.
+
+06:58.160 --> 07:06.720
+So, true or false will return true and true will return true, but false or false, this false.
+
+07:07.040 --> 07:17.520
+Not just negates what you already have. So, if a is true, then not a is false.
+
+07:22.240 --> 07:30.080
+And you can also use these things in combination and make sure that you maintain the order that you want with parentheses.
+
+07:30.720 --> 07:37.200
+So, I can say, you know, true and true or false. And that will return true.

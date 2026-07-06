@@ -1,0 +1,197 @@
+WEBVTT
+
+00:00.000 --> 00:06.280
+So, now that we've got those beginner types down, the integers, the strings, the lists,
+
+00:06.280 --> 00:09.960
+we're going to talk about some of the more advanced data types in Python, and those
+
+00:09.960 --> 00:14.280
+are sets, tuples, and dictionaries.
+
+00:14.280 --> 00:19.120
+These container types let us organize other types of objects into data structures and
+
+00:19.120 --> 00:21.280
+take actions on them.
+
+00:21.280 --> 00:24.000
+Some of these are mutable, some of them are not.
+
+00:24.000 --> 00:32.000
+They have different ways of accessing the values inside, just like I had a cheat sheet
+
+00:32.000 --> 00:34.880
+for lists on the course website.
+
+00:34.880 --> 00:39.520
+I also have a cheat sheet for sets, tuples, and dictionaries.
+
+00:39.520 --> 00:44.640
+So after this chapter, if you feel like you're still not sure what the differences are,
+
+00:44.640 --> 00:49.800
+had it access values in them, what methods you can call if they're mutable or not.
+
+00:49.800 --> 00:54.880
+Just go back to the cheat sheet, it will be your handy guide and spur animal.
+
+00:54.880 --> 00:58.760
+Tuples are the first data type that we're going to talk about.
+
+00:58.760 --> 01:05.200
+They're lightweight collections that are used to keep track of related but different items.
+
+01:05.200 --> 01:10.040
+There's no rule or syntax error that says they have to be used this way.
+
+01:10.040 --> 01:16.800
+lists are generally used to have contained similar types of items in them.
+
+01:16.800 --> 01:20.800
+But again, that's just a guideline, and you can use them however you want.
+
+01:20.800 --> 01:25.680
+The difference with tuples and lists is that tuples are immutable.
+
+01:25.680 --> 01:29.320
+Once a tuple is created, you cannot change the items in it.
+
+01:29.320 --> 01:32.080
+You cannot append, you cannot pop.
+
+01:32.080 --> 01:37.400
+You cannot do an assignment at an index, like you could with a list.
+
+01:37.400 --> 01:46.760
+But tuples are sorted, so they have an order to them, and how they do it.
+
+01:46.760 --> 01:55.040
+They're stored, so you can access these 0th item in a tuple and the first and so on and so forth.
+
+01:55.040 --> 02:01.800
+There are occasions where you expect an immutable type, so you don't want to pass a list into a function
+
+02:01.800 --> 02:05.920
+because it might get changed by something later down the line.
+
+02:05.920 --> 02:16.720
+And so tuple is a great way of ensuring that the data structure that you are passing around won't change.
+
+02:16.720 --> 02:24.960
+One of the good uses for tuple is storing information in a row in a spreadsheet.
+
+02:24.960 --> 02:34.400
+So a spreadsheet might have different values in different columns, and the tuple can be used to represent that.
+
+02:34.400 --> 02:42.640
+Now, I'm not going to go too deep into tuples, but there are some important things that I want to show you.
+
+02:42.640 --> 02:49.280
+And again, I really recommend that you type along with me in the rubble because that's how you're going to get the muscle memory
+
+02:49.280 --> 02:54.480
+to really differentiate between these different kinds of data types.
+
+02:54.480 --> 03:01.760
+So a tuple, like a list, was defined with square brackets.
+
+03:01.760 --> 03:06.720
+Tuple is defined with parentheses.
+
+03:06.720 --> 03:21.040
+So if we assign this to a variable and we take a look at the type, we'll see that it's a tuple.
+
+03:21.040 --> 03:25.280
+But there's kind of a gacha here.
+
+03:25.280 --> 03:34.880
+What if I say that my tuple only has one item in it?
+
+03:34.880 --> 03:41.840
+Can anyone on zoom tell me what the type is of my tuple, my tuple?
+
+03:41.840 --> 03:43.520
+String, I believe.
+
+03:43.520 --> 03:45.440
+It's a string.
+
+03:45.440 --> 03:55.520
+And that's because remember when we did our math operations, and we defined the order that we would like things to be executed with parentheses.
+
+03:55.520 --> 04:00.480
+Python doesn't really know how to differentiate that syntax from the tuples and texts.
+
+04:00.560 --> 04:05.120
+So tuple isn't just the parentheses.
+
+04:05.120 --> 04:08.720
+Tuple is actually the parentheses and a comma.
+
+04:08.720 --> 04:13.360
+This is a very, very important differentiation.
+
+04:13.360 --> 04:16.480
+This one has bitten me lots and lots of times.
+
+04:16.480 --> 04:23.360
+If you want to define a tuple with one item in it, you need to make sure that you include a trailing comma.
+
+04:23.360 --> 04:26.080
+So that will look like this.
+
+04:26.080 --> 04:34.640
+Now, if I say that my tuple is equal to this, and I ask for the type of my tuple, it is now a tuple.
+
+04:34.640 --> 04:40.320
+So make sure that you have that trailing comma in there.
+
+04:40.320 --> 04:52.640
+Now, when you're creating a tuple, you can just use these parentheses and then, let's say we have a student and we're going to have a name.
+
+04:52.880 --> 05:00.720
+And we're going to have a age and subject, maybe, and like a GPA.
+
+05:03.440 --> 05:08.160
+Now, we can get the item that is at the 0th index.
+
+05:09.920 --> 05:12.800
+Remember, tuples are mutable, and we cannot change it.
+
+05:14.560 --> 05:21.520
+One of the useful features of tuples that you might see and lists in Python is called tuple unpacking.
+
+05:21.600 --> 05:25.600
+So you can get multiple items out of a tuple at once.
+
+05:27.600 --> 05:33.360
+And we can do that with when we declare our variables, we separate them with commas.
+
+05:39.600 --> 05:45.920
+And then assign those to the value of the tuple, and now I have all of these pulled out.
+
+05:46.880 --> 06:03.520
+Note that when you do this, the number of arguments on the left hand side need to match the number of arguments in the tuple, or you're going to get this value error too many values to unpack, you will see this error a lot.
+
+06:03.520 --> 06:14.240
+So remember it, that means that the items number of items on the left hand side of the expression don't match the number of items in the right hand side.
+
+06:14.480 --> 06:23.440
+If there's something that you don't care about, you can use a shortcut called underscore, and that means like, I need, I know I need to match the number of items.
+
+06:23.440 --> 06:29.200
+I don't care about saving this one in a variable, toss that one away. So that's also syntax that you might see.
+
+06:30.320 --> 06:32.640
+Does that syntax work with arrays or only tuples?
+
+06:33.360 --> 06:34.640
+It works with lists as well.
+
+06:36.320 --> 06:40.480
+But generally, you'll mostly see this syntax used with tuples.
+
+06:40.480 --> 06:51.200
+Because remember that lists are mutable, so as lists change, you don't have that guarantee that the number of items on the left hand side are going to match the expression on the right hand side.
+

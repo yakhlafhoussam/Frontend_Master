@@ -1,0 +1,224 @@
+WEBVTT
+
+00:00.000 --> 00:05.000
+It would be great if the web was all plain text, but it's not.
+
+00:05.000 --> 00:22.000
+So Flask provides something called templating, which allows us to quickly and easily access variables without having to use JavaScript or anything fancy.
+
+00:22.000 --> 00:32.000
+In order to use a template, in which ever folder your hello.py is, we're going to open the terminal.
+
+00:32.000 --> 00:36.000
+We can kill our server for now, just so we know we're on the right path.
+
+00:36.000 --> 00:42.000
+We're going to make a new directory and we're going to call it templates.
+
+00:43.000 --> 00:50.000
+And then we're going to touch a file here index.html.
+
+00:50.000 --> 00:57.000
+And that touch command won't work for Windows.
+
+00:57.000 --> 01:00.000
+So let me quickly.
+
+01:00.000 --> 01:09.000
+Yeah, I believe it's FC and then a forward slash.
+
+01:09.000 --> 01:13.000
+So for Windows, it's not a forward slash.
+
+01:13.000 --> 01:19.000
+It's a bracket templates index.html.
+
+01:23.000 --> 01:28.000
+To get our simple template to work, we have to do a few things.
+
+01:28.000 --> 01:41.000
+The first is, we need to import render template from Flask.
+
+01:41.000 --> 01:50.000
+And render template takes the name of the template that we want to use.
+
+01:50.000 --> 01:55.000
+So here instead of returning hello world, we're going to return render template.
+
+01:55.000 --> 01:58.000
+We're going to pass in the name of our template.
+
+01:58.000 --> 02:01.000
+We don't have to put in the templates directory.
+
+02:01.000 --> 02:15.000
+Now let's open our index.html file and put this is a template and save that.
+
+02:15.000 --> 02:22.000
+After you've done creating the files, remember to run your Flask server again.
+
+02:22.000 --> 02:26.000
+And now if I click on this link, there we go.
+
+02:26.000 --> 02:28.000
+Got this is a template.
+
+02:28.000 --> 02:31.000
+Is everyone seeing the same thing?
+
+02:31.000 --> 02:34.000
+Flask supports a templating language called jinger.
+
+02:34.000 --> 02:40.000
+That allows you to populate your HTML files with data from your Flask app at render time.
+
+02:40.000 --> 02:49.000
+I'm not going to go into the specifics of jinger, but I will show you.
+
+02:49.000 --> 02:57.000
+A simple example.
+
+02:57.000 --> 03:02.000
+So let's just make a, let's put some HTML tags in our template.
+
+03:02.000 --> 03:10.000
+And make the title of our page B hello from Flask.
+
+03:10.000 --> 03:14.000
+We can delete our, this is a template.
+
+03:14.000 --> 03:22.000
+So in order for our template to have variables, we need to explicitly pass them in.
+
+03:22.000 --> 03:28.000
+The way that we would do that is via this render template.
+
+03:28.000 --> 03:31.000
+So the first argument is the name of the template.
+
+03:31.000 --> 03:35.000
+And then any other arguments after that get passed into the template.
+
+03:35.000 --> 03:42.000
+So I can say the name is nina and then pass it in here in the call to render template.
+
+03:43.000 --> 03:49.000
+Going back to our template file, we now have access to this variable.
+
+03:49.000 --> 03:53.000
+And so this jinger templating language looks like this.
+
+03:53.000 --> 03:57.000
+The arguments are within a curly brace percent sign.
+
+03:57.000 --> 04:03.000
+So if you use templating for other languages like JavaScript, this shouldn't look too far fetched.
+
+04:03.000 --> 04:07.000
+And so I can put simple expressions in here.
+
+04:07.000 --> 04:10.000
+If you want to know more about jinger, I would check out the documentation.
+
+04:10.000 --> 04:14.000
+But I can say if name.
+
+04:14.000 --> 04:17.000
+And with jinger, jinger is just like each channel.
+
+04:17.000 --> 04:23.000
+So we need to have opening tags and closing tags to signify a block of code.
+
+04:23.000 --> 04:33.000
+So to close an if statement in jinger, you would just say end of.
+
+04:33.000 --> 04:38.000
+Now we can put some conditional code between these two tags.
+
+04:38.000 --> 04:43.000
+I can say hello in h1.
+
+04:43.000 --> 04:49.000
+And then to access the value of a variable, you just use two sets of curly braces.
+
+04:49.000 --> 04:52.000
+And this will print out the value of name.
+
+04:52.000 --> 04:54.000
+Let's reload our web page.
+
+04:54.000 --> 04:57.000
+And we'll see the information from our new template.
+
+04:57.000 --> 05:00.000
+Does everyone see that?
+
+05:00.000 --> 05:03.000
+Great.
+
+05:04.000 --> 05:08.000
+So just a little bit more about flask, like I mentioned, flask.
+
+05:08.000 --> 05:14.000
+Any of these other web frameworks, they're really easy to add to.
+
+05:14.000 --> 05:19.000
+So if your app is ready for the big time and you want to add.
+
+05:19.000 --> 05:24.000
+Database that flask is a useful mechanism for accessing database objects.
+
+05:24.000 --> 05:30.000
+It makes it really easy to use databases and store your data for a dynamic web app.
+
+05:30.000 --> 05:34.000
+You can find a lot more information about that in the flask documentation.
+
+05:34.000 --> 05:39.000
+But unless you want to be here until midnight, it's a topic for another day.
+
+05:39.000 --> 05:42.000
+In terms of deploying your web app, there are.
+
+05:42.000 --> 05:48.000
+There are a lot of different options from beginner to advanced.
+
+05:48.000 --> 05:51.000
+To deploy to our real web server.
+
+05:51.000 --> 05:55.000
+I think Haroku is the best bet for beginners.
+
+05:55.000 --> 05:56.000
+It's pretty easy.
+
+05:56.000 --> 05:58.000
+It's a lot of stuff by stuff instructions.
+
+05:58.000 --> 06:01.000
+And then as your app grows, you can graduate from there.
+
+06:01.000 --> 06:07.000
+The flask documentation lists other deployment options.
+
+06:07.000 --> 06:11.000
+And know that we're covering just the basics of flask today.
+
+06:11.000 --> 06:13.000
+But to deep dive and learn more.
+
+06:13.000 --> 06:18.000
+The flask mega tutorial is a great resource to check out after this class.
+
+06:18.000 --> 06:23.000
+And say huge tutorial that covers everything from databases to.
+
+06:23.000 --> 06:27.000
+Oh off to time zones.
+
+06:27.000 --> 06:29.000
+Probably take you a few days to complete.
+
+06:29.000 --> 06:33.000
+And you'll feel pretty comfortable with flask after that.
+

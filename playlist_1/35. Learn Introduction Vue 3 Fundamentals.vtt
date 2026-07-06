@@ -1,0 +1,383 @@
+WEBVTT
+
+00:00.000 --> 00:04.280
+So what I'd like you to do is to actually give this a shot,
+
+00:04.280 --> 00:08.320
+practice around using the idea of a composable in your directory.
+
+00:08.320 --> 00:11.000
+So basically, I kind of wanted to outline it a bit.
+
+00:11.000 --> 00:13.760
+You'll create a Composables folder inside of your source directory.
+
+00:13.760 --> 00:14.860
+Look inside of your app,
+
+00:14.860 --> 00:18.540
+see what opportunities there might be to share some state or functionality.
+
+00:18.540 --> 00:20.440
+Or if you don't have it obviously,
+
+00:20.440 --> 00:23.380
+like I did earlier, just go and do so to practice it,
+
+00:23.380 --> 00:25.160
+practice sharing those things.
+
+00:25.160 --> 00:28.720
+So here, I said create a file called useState or useFunction.
+
+00:28.720 --> 00:30.360
+Basically, I know in my case,
+
+00:30.360 --> 00:33.280
+I call it countStore which is a lead-in for something else in the future.
+
+00:33.280 --> 00:34.640
+But generally speaking,
+
+00:34.640 --> 00:36.240
+when you're naming your Composables,
+
+00:36.240 --> 00:37.880
+you do prefix it with that use.
+
+00:37.880 --> 00:41.400
+So in that case, I should have probably named it like useCountStore for example.
+
+00:41.400 --> 00:44.920
+Then otherwise, just try stuff out.
+
+00:46.800 --> 00:50.760
+All right. So how that feel with the Composables?
+
+00:50.760 --> 00:55.200
+Is that a bit weird to do?
+
+00:55.200 --> 00:56.720
+I see a lot of people still typing,
+
+00:56.720 --> 00:58.600
+so probably so tinkering away.
+
+00:58.600 --> 01:00.080
+People in the chat,
+
+01:00.080 --> 01:03.880
+if you had any issues with those Composables, please let me know.
+
+01:03.880 --> 01:06.760
+So I'm just going ahead and walk through a simple example for
+
+01:06.760 --> 01:08.280
+the solution and talk through
+
+01:08.280 --> 01:10.840
+some theoretical things while we're at it.
+
+01:10.840 --> 01:14.640
+So let's go ahead and switch over to sayLoveView.
+
+01:14.640 --> 01:18.820
+So if we look at sayLoveView, what do we have?
+
+01:18.820 --> 01:20.880
+Well, we have a couple things going on.
+
+01:20.880 --> 01:22.080
+We have a user card here,
+
+01:22.080 --> 01:23.480
+that's fine, user page.
+
+01:23.480 --> 01:26.800
+Okay. We have some async stuff happening.
+
+01:26.800 --> 01:28.560
+All right. Well, this is in the script setup.
+
+01:28.560 --> 01:30.520
+So this actually might be a good one.
+
+01:30.520 --> 01:33.640
+So let's say for instance then,
+
+01:33.640 --> 01:37.400
+that we want the ability to display the users in more than one place.
+
+01:37.400 --> 01:39.040
+Because the user page is a great place to list it,
+
+01:39.040 --> 01:40.360
+but on the other hand,
+
+01:40.360 --> 01:42.960
+there might be reasons to actually display it on like the homepage for instance.
+
+01:42.960 --> 01:46.440
+So let's just abstract that away into a Composable.
+
+01:46.440 --> 01:51.240
+So I'm going to go ahead and create a new folder here for Composables.
+
+01:51.240 --> 01:54.480
+Then I'm going to create one and following the syntax now,
+
+01:54.480 --> 01:57.920
+I'm going to call it useUserStore.js.
+
+01:57.920 --> 02:00.560
+All we're going to do here is we're going to do
+
+02:00.560 --> 02:05.440
+an import reactive from view.
+
+02:05.440 --> 02:13.120
+Then we're going to export a const called userList.
+
+02:13.120 --> 02:14.920
+Although actually, you know what I'm going to do?
+
+02:14.920 --> 02:16.560
+I'm actually going to do,
+
+02:16.560 --> 02:19.920
+because we're actually just exporting the single array,
+
+02:19.920 --> 02:22.520
+I prefer usually to use ref when it's not an object.
+
+02:22.520 --> 02:25.160
+So reactive is usually when I think of like a more complex object,
+
+02:25.160 --> 02:27.400
+that's personally kind of where I lean towards.
+
+02:27.400 --> 02:29.840
+So userList is a ref of an array.
+
+02:29.840 --> 02:31.320
+That's all this is.
+
+02:31.320 --> 02:33.200
+So now that we have this here,
+
+02:33.200 --> 02:37.000
+we can go inside of user page and we can change this up basically to say,
+
+02:37.000 --> 02:43.220
+okay, so I'm going to import from what?
+
+02:43.220 --> 02:45.800
+We're going to go up one level,
+
+02:45.800 --> 02:49.440
+go to Composables, go to useUserStore,
+
+02:49.440 --> 02:53.200
+and then what we're looking for inside of here is the userList,
+
+02:53.200 --> 02:54.960
+which is autocompleted right there.
+
+02:54.960 --> 02:58.000
+So now we can technically delete this,
+
+02:58.000 --> 03:01.480
+and then this means we can delete the reactive up here,
+
+03:01.480 --> 03:03.880
+and then wherever userList is being called,
+
+03:03.880 --> 03:05.280
+we will remove the state,
+
+03:05.280 --> 03:07.360
+and then because we're in script setup,
+
+03:07.360 --> 03:08.760
+remember that it's a ref,
+
+03:08.760 --> 03:10.840
+so we need to unpack it with dot value.
+
+03:10.840 --> 03:13.040
+Again, it's nice because the tooling has updated now,
+
+03:13.040 --> 03:16.480
+so that it'll actually tell you that it's expected the dot value.
+
+03:16.480 --> 03:18.520
+There was a time where the tooling hadn't caught up,
+
+03:18.520 --> 03:21.880
+and so it was really easy to miss that on your own if you weren't paying attention.
+
+03:21.880 --> 03:24.560
+So there we go, userList is now available.
+
+03:24.560 --> 03:27.560
+We can save and everything should still look good.
+
+03:27.560 --> 03:28.680
+Yeah, it looks good to me.
+
+03:28.680 --> 03:29.880
+If we go to Home now,
+
+03:29.880 --> 03:32.560
+let's actually show that we can do something similar.
+
+03:32.560 --> 03:36.400
+So we'll go now over to the Home page.
+
+03:36.400 --> 03:41.400
+So Home page, and I'll just use the script setup again up here,
+
+03:41.400 --> 03:46.280
+and let me just actually copy that snippet over from up here.
+
+03:46.360 --> 03:50.360
+So import, there we go, userList from that.
+
+03:50.360 --> 03:52.200
+Import userList right here,
+
+03:52.200 --> 03:54.280
+and again, once we've imported it,
+
+03:54.280 --> 03:58.760
+the mental model shift that you have to think about here is that it is already available.
+
+03:58.760 --> 04:03.960
+So we can go ahead and just do an LI in this case,
+
+04:03.960 --> 04:11.360
+and then v4 userInUserList and then user.name.
+
+04:11.360 --> 04:12.680
+I think that should work.
+
+04:12.680 --> 04:16.120
+There we go. It's looking good.
+
+04:16.120 --> 04:20.800
+Then to show you why this is incredibly powerful is that maybe in this specific context,
+
+04:20.800 --> 04:23.640
+this is where I want to actually only show the first five.
+
+04:23.640 --> 04:26.240
+So I don't need this to pollute the entire file.
+
+04:26.240 --> 04:32.760
+What I can do is I can just import the computer property from view,
+
+04:32.760 --> 04:42.960
+and just say const short userList is a computer property that
+
+04:43.000 --> 04:48.640
+returns userList.value,
+
+04:48.640 --> 04:56.520
+what was it, splice05, I think.
+
+04:56.520 --> 04:58.080
+I think that returns it. Great.
+
+04:58.080 --> 05:01.200
+Then we can do short userList here.
+
+05:01.200 --> 05:03.120
+You'll notice, there we go.
+
+05:03.120 --> 05:06.520
+Now we have this global piece of data that is shared in two files,
+
+05:06.520 --> 05:09.840
+but we also have some very specific context on how we might want to manipulate
+
+05:09.840 --> 05:11.840
+that data for that one component.
+
+05:11.840 --> 05:13.640
+That in it of itself is, I think,
+
+05:13.640 --> 05:17.600
+the power of the idea of the composition API in that you can really start to
+
+05:17.600 --> 05:20.320
+compose things the way that makes sense to you.
+
+05:20.320 --> 05:21.920
+So the other thing about View3,
+
+05:21.920 --> 05:23.000
+which you're not going to cover at all,
+
+05:23.000 --> 05:25.760
+but I did want to make a mention to it because those coming from View2 or
+
+05:25.760 --> 05:28.000
+those looking at View3 docs might notice that
+
+05:28.000 --> 05:32.360
+Mixins are a thing that also were particularly popular during the View2 days,
+
+05:32.360 --> 05:34.120
+and Mixins what they basically allow you to do,
+
+05:34.120 --> 05:38.280
+it was a way for you to share functionality and state using the options API.
+
+05:38.280 --> 05:40.360
+Nowadays, I would say the fact that you have these
+
+05:40.360 --> 05:44.280
+composables and reusable pieces of state and function that's easily
+
+05:44.280 --> 05:46.680
+injectable in a very concise way,
+
+05:46.680 --> 05:51.240
+these are basically superior to Mixins in every way, shape, and form.
+
+05:51.240 --> 05:55.440
+It's really actually hard to argue for using Mixins over the composables.
+
+05:55.440 --> 05:58.440
+So it is valuable to spend the time to get familiar with it,
+
+05:58.440 --> 06:02.240
+try it out, and start figuring out where it lands in your comfort zone.
+
+06:02.240 --> 06:03.600
+But as you can see here,
+
+06:03.600 --> 06:06.280
+there's something really nice about being able to say,
+
+06:06.280 --> 06:10.760
+oh, okay, yeah, I'm getting what the user list from where this use user store,
+
+06:10.760 --> 06:12.560
+and then you just know where everything is,
+
+06:12.560 --> 06:13.680
+everything's named correctly,
+
+06:13.680 --> 06:15.920
+or if you need to update it because there's some name clashes,
+
+06:15.920 --> 06:18.360
+everything is very declarative and explicit.
+
+06:18.360 --> 06:23.600
+So yeah, so these are composables in a nutshell,
+
+06:23.600 --> 06:29.040
+and that puts a wrap on the composition API section of all the things we're talking about.
+

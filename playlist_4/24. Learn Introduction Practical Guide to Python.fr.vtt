@@ -1,0 +1,389 @@
+WEBVTT
+
+00:00.000 --> 00:05.480
+Nous allons aborder quelques techniques de bouclage avancées que vous pourriez voir comme une liste
+
+00:05.480 --> 00:11.200
+compréhensions, comment convertir entre différents types et Python et comment travailler
+
+00:11.200 --> 00:14.480
+avec des fichiers.
+
+00:14.480 --> 00:22.480
+Les compréhensions de listes sont donc l'une des fonctionnalités les plus uniques de Python et il y en a tellement
+
+00:22.480 --> 00:28.080
+populaire que d'autres langues ont également commencé à implémenter des compréhensions de listes comme
+
+00:28.080 --> 00:29.080
+eh bien.
+
+00:29.080 --> 00:35.440
+Les compréhensions de listes vous permettent de prendre ce qui serait normalement une grande quantité de code qui est
+
+00:35.440 --> 00:39.920
+en fait assez courant lorsque vous programmez, qui passe par une liste de
+
+00:39.920 --> 00:51.160
+éléments, avoir une liste de résultats, puis les ajouter à vos résultats au fur et à mesure que vous parcourez une liste.
+
+00:51.160 --> 00:57.000
+Disons que nous voulions prendre une liste de noms et renvoyer une liste de longueurs
+
+00:57.000 --> 01:00.080
+de ces noms.
+
+01:00.080 --> 01:04.400
+Et voyons à quoi cela ressemblerait dans un repel Python.
+
+01:04.400 --> 01:10.280
+Faisons cela dans un nouveau fichier.
+
+01:10.280 --> 01:18.040
+Et je vais enregistrer cela en tant que compréhensions de liste ou interface utilisateur d'arrêt de composition de liste.
+
+01:18.040 --> 01:26.360
+Je vais continuer et quitter mon repel, puis exécuter ce fichier dans le terminal.
+
+01:26.360 --> 01:36.320
+J'ai donc ici une liste, 4, 3, 4, 5 qui concerne les longueurs de chacune de ces chaînes
+
+01:36.320 --> 01:37.840
+dans la liste.
+
+01:37.840 --> 01:43.480
+Une compréhension de liste va nous permettre de faire la même chose sur une seule ligne assez simplement
+
+01:43.480 --> 01:44.880
+et facilement.
+
+01:44.880 --> 01:52.480
+Je vais donc ici imprimer avant suivi de ma liste.
+
+01:52.480 --> 01:56.880
+Et puis je vais rédiger ma liste de compréhension.
+
+01:56.880 --> 02:05.680
+Donc, pour la compréhension de liste, je trouve qu'il est plus facile d'écrire en quelque sorte dans l'ordre inverse.
+
+02:05.680 --> 02:12.040
+Je vais donc commencer par les crochets car je sais que je veux une compréhension de liste
+
+02:12.040 --> 02:15.040
+et les crochets sont la syntaxe de la liste.
+
+02:15.040 --> 02:18.800
+Et puis je vais taper ce sur quoi je suis en boucle.
+
+02:18.800 --> 02:24.080
+Je vais donc taper 4 noms dans les noms.
+
+02:24.080 --> 02:32.000
+Une fois cela fait, je vais déplacer mon curseur complètement vers la gauche, juste après le
+
+02:32.000 --> 02:35.120
+crochet ouvrant.
+
+02:35.120 --> 02:42.400
+C'est ici que je tape le résultat que je souhaite en parcourant cet ensemble.
+
+02:42.400 --> 02:45.160
+Désolé, je boucle sur ces valeurs.
+
+02:45.160 --> 02:49.640
+Dans ce cas, je veux la longueur des noms.
+
+02:49.640 --> 02:51.360
+Et c'est une compréhension de liste.
+
+02:51.360 --> 02:53.600
+Cela remplace tout cela.
+
+02:53.600 --> 03:05.320
+Et maintenant, je peux imprimer après, exécuter ceci et obtenir la même chose.
+
+03:05.320 --> 03:17.320
+Je peux donc également l'attribuer à une variable et obtenir le même résultat.
+
+03:17.320 --> 03:22.640
+Je pense que c'est assez clair, lisible et compréhensible.
+
+03:22.640 --> 03:28.280
+C’est l’une des choses sur lesquelles les nouveaux venus en Python ont tendance à trébucher un peu.
+
+03:28.280 --> 03:34.360
+Et la meilleure façon de surmonter cet obstacle est de s’entraîner autant que possible.
+
+03:34.360 --> 03:41.120
+Donc, en tapant ces exercices et en intégrant cette mémoire musculaire, je trouve cette astuce d'écriture
+
+03:41.120 --> 03:47.200
+ma compréhension de liste à l'envers m'aide vraiment à me souvenir, d'accord, j'ai besoin des crochets
+
+03:47.200 --> 03:48.200
+parce que c'est une liste.
+
+03:48.200 --> 03:51.120
+Je dois comprendre sur quoi je tourne en boucle.
+
+03:51.120 --> 03:56.360
+Et puis je dois comprendre ce que je veux extraire.
+
+03:56.360 --> 04:00.760
+Dans ce cas, c'est la longueur des noms.
+
+04:00.800 --> 04:08.520
+Nous pouvons également avoir des instructions conditionnelles dans ces compréhensions de listes.
+
+04:08.520 --> 04:13.800
+Si nous voulons ajouter une condition, nous déplaçons notre curseur complètement vers la droite.
+
+04:13.800 --> 04:15.720
+Et c'est là que va notre condition.
+
+04:15.720 --> 04:18.360
+La condition est facultative.
+
+04:18.360 --> 04:26.560
+Et ici, vous pouvez taper if et une expression qui est évaluée à vrai ou faux.
+
+04:26.560 --> 04:33.120
+Lorsque l'expression est vraie, cette valeur sur le côté gauche se retrouvera dans la compréhension de la liste.
+
+04:33.120 --> 04:36.480
+Si cette expression est fausse, ce ne sera pas le cas.
+
+04:36.480 --> 04:47.160
+Donc, si je veux uniquement obtenir, disons, les noms comportant un nombre pair de caractères,
+
+04:47.160 --> 04:55.000
+Je peux dire, supprimer ceci et dire que ce que je veux en réalité, c'est le nom lui-même.
+
+04:55.000 --> 05:02.000
+Et puis avoir une condition qui dit, si la longueur du nom, modulaire par rapport aux moyens,
+
+05:02.000 --> 05:08.800
+est-ce que la longueur du nom est même égale à zéro, alors mettez-le dans ma liste.
+
+05:08.800 --> 05:17.320
+Alors maintenant, lorsque je lancerai ceci, je ne verrai que les noms comportant un nombre pair de caractères.
+
+05:17.320 --> 05:24.960
+Si je retourne cette condition et dis "pas égal" et que j'exécute ceci, alors j'obtiendrai l'autre
+
+05:24.960 --> 05:31.200
+deux noms, celui qui avait un nombre impair de caractères.
+
+05:31.200 --> 05:35.920
+Il existe des moyens de passer d'un type à l'autre en Python.
+
+05:35.920 --> 05:37.520
+L'un est divisé.
+
+05:37.520 --> 05:45.920
+Donc, si vous avez une chaîne séparée par des virgules et que vous souhaitez extraire ces valeurs,
+
+05:45.920 --> 05:47.920
+vous pouvez utiliser split.
+
+05:47.920 --> 05:50.480
+Revenons donc à la représailles.
+
+05:50.480 --> 06:02.240
+Si j'ai une chaîne de nom qui ressemble à ceci, vous pourriez voir quelque chose comme ceci
+
+06:02.240 --> 06:05.760
+dans un fichier CSV si jamais vous travaillez avec ceux-ci.
+
+06:05.760 --> 06:13.720
+Si vous souhaitez obtenir une liste de noms à partir de cette chaîne, vous pouvez appeler la méthode dot split
+
+06:13.720 --> 06:22.200
+dessus et transmettez le jeton sur lequel vous souhaitez diviser.
+
+06:22.200 --> 06:28.160
+Si vous avez des espaces entre ces noms, vous devrez alors transmettre un jeton qui
+
+06:28.160 --> 06:30.960
+est également une virgule dans un espace.
+
+06:30.960 --> 06:38.680
+C'est donc un moyen très rapide et simple de passer d'une chaîne à une liste.
+
+06:38.680 --> 06:44.360
+Si vous souhaitez ensuite enregistrer ces valeurs dans un fichier CSV.
+
+06:44.360 --> 06:53.600
+Donc, dans ce cas, je n'ai pas modifié ma chaîne de nom, rappelez-vous que les chaînes sont immuables.
+
+06:53.600 --> 07:02.320
+Alors disons que j'appelle cela une liste de noms et que j'ai dit que les chaînes de noms sont divisées en virgules.
+
+07:02.320 --> 07:04.120
+Maintenant, j'ai une liste.
+
+07:04.200 --> 07:13.480
+Si je voulais remettre cela dans une chaîne, je peux appeler la méthode dot join sur une chaîne.
+
+07:13.480 --> 07:16.880
+Dans ce cas, ça va avoir l'air un peu génial.
+
+07:16.880 --> 07:22.000
+Je vais utiliser l'espace, puis un tiret et un espace.
+
+07:22.000 --> 07:28.360
+Et je vais dire dot join avec ma liste de noms.
+
+07:28.360 --> 07:35.960
+Et cela va renvoyer une chaîne qui a ce millimètre.
+
+07:35.960 --> 07:42.680
+Vous pouvez également utiliser cette jointure de chaîne avec une compréhension de liste.
+
+07:42.680 --> 07:59.280
+Disons que je voulais multiplier chaque nombre d'une liste par deux.
+
+07:59.280 --> 08:07.680
+Je pourrais utiliser une compréhension de liste pour cela et dire quatre noms dans mes noms et déplacer mon curseur
+
+08:07.680 --> 08:14.080
+jusqu'au côté gauche et dites nombre fois deux.
+
+08:14.080 --> 08:17.680
+Cela va être une compréhension de liste.
+
+08:17.680 --> 08:31.000
+Je peux appeler cela une jointure avec cette compréhension de liste désolée qui n'a pas de droit d'auteur.
+
+08:31.040 --> 08:36.040
+Je peux appeler cette jointure avec cette compréhension de liste ici.
+
+08:36.040 --> 08:39.800
+Et cela accomplira la même chose.
+
+08:39.800 --> 08:40.800
+Oups, désolé.
+
+08:40.800 --> 08:46.280
+Je dois convertir ceci en chaîne.
+
+08:46.280 --> 08:48.280
+Là.
+
+08:48.280 --> 08:54.440
+Donc, passer d’un type à Python est vraiment très simple.
+
+08:54.440 --> 09:00.600
+Et si l'un d'entre vous a relevé des défis de codage comme l'avènement du calendrier de code,
+
+09:00.640 --> 09:06.240
+vous constaterez que beaucoup de programmeurs qui font cela se tourneront vers Python car le déplacement
+
+09:06.240 --> 09:09.960
+entre les types est si simple et direct.
+
+09:09.960 --> 09:15.160
+Et ce n'est pas nécessairement le cas dans d'autres langages de programmation.
+
+09:15.160 --> 09:22.360
+Il existe d’autres types de compréhension, comme la compréhension des ensembles de compréhension de dictionnaire.
+
+09:22.360 --> 09:26.240
+Je ne vais pas en parler pendant ce cours.
+
+09:26.320 --> 09:31.920
+Il y a un chapitre disponible sur le site Web du cours que vous pouvez lire par vous-même et il y a
+
+09:31.920 --> 09:35.400
+pratique disponible également.
+
+09:35.400 --> 09:41.520
+Ce dont je veux parler, ce sont les générateurs.
+
+09:41.520 --> 09:48.120
+Les expressions génératrices sont, eh bien, nous avons déjà vu certaines de ces expressions génératrices.
+
+09:48.120 --> 09:53.640
+Comme lorsque nous avons essayé d'appeler une zone, nous n'avons pas simplement obtenu une liste complète de tous les numéros.
+
+09:53.680 --> 09:55.160
+cette plage générée.
+
+09:55.160 --> 09:58.920
+Au lieu de cela, nous avons récupéré un type de fonction différent.
+
+09:58.920 --> 10:02.440
+Un générateur est donc un concept plus avancé.
+
+10:02.440 --> 10:08.040
+C'est comme un objet sur lequel vous pouvez parcourir comme une liste.
+
+10:08.040 --> 10:15.800
+Mais contrairement à une liste, un générateur sait uniquement où il se trouve actuellement et comment obtenir la valeur suivante.
+
+10:15.800 --> 10:21.000
+Et il le fait à la demande sans générer cette liste de valeurs d’un seul coup.
+
+10:21.000 --> 10:25.560
+Ainsi, la compréhension d'un générateur ressemble beaucoup à une compréhension de liste,
+
+10:25.560 --> 10:30.760
+sauf qu'il utilise une seule paire de parenthèses au lieu de crochets.
+
+10:30.760 --> 10:43.400
+Voici donc une liste de compréhension où nous générons des carrés pour chaque nombre,
+
+10:43.400 --> 10:47.320
+moins de 10, si ce nombre est pair.
+
+10:47.400 --> 10:57.800
+Je pourrais changer cela en une compréhension de générateur en changeant ces crochets en parenthèses.
+
+10:57.800 --> 11:04.680
+Si je vérifie le type de compréhension de ma liste, désolé, je vais appeler cela ma compréhension du générateur.
+
+11:04.680 --> 11:10.040
+Si je vérifie le type de compréhension de mon générateur, nous verrons que c'est un générateur.
+
+11:10.040 --> 11:14.520
+Et si j'essaie de le regarder, ça va revenir avec ça.
+
+11:15.480 --> 11:19.320
+Si je voulais voir ce qu'il y avait dans ce générateur, je pourrais appeler une liste dessus.
+
+11:20.520 --> 11:26.600
+Mais en général, lorsque vous utilisez un générateur, vous n'avez pas besoin d'avoir tous ces chiffres ou
+
+11:26.600 --> 11:31.800
+valeurs ou autre et mémoire en même temps. Au lieu de cela, vous souhaiterez probablement les parcourir en boucle et faire
+
+11:31.800 --> 11:40.840
+quelque chose avec eux. Je peux donc parcourir chaque élément de la compréhension de ce générateur et l'imprimer.
+
+11:41.720 --> 11:47.080
+Et je peux le faire comme je le ferais avec une liste, cette syntaxe est transparente.
+
+11:50.840 --> 11:56.760
+Le problème avec les générateurs, cependant, c'est qu'une fois que vous utilisez un générateur, encore une fois, il n'a plus aucun effet.
+
+11:56.760 --> 12:03.480
+état, il n’est pas stocké en mémoire. Ainsi, une fois que vous avez parcouru tous ces éléments, le générateur est épuisé.
+
+12:04.600 --> 12:08.840
+Il ne sait pas comment revenir à l’état dans lequel il se trouvait auparavant.
+
+12:09.480 --> 12:15.800
+Donc, si j'essaie de refaire une boucle, je ne récupérerai rien.
+
+12:16.840 --> 12:23.640
+J'ai épuisé mon générateur et si je veux l'utiliser à nouveau, je dois le recréer et repartir de zéro.
+
+12:25.800 --> 12:33.640
+Ainsi, à mesure que Python a migré vers Python 3, beaucoup plus de ces structures internes ont été déplacées.
+
+12:33.640 --> 12:39.720
+pour être des générateurs ou des générateurs comme. Et même s'il s'agit d'un concept plus avancé,
+
+12:39.720 --> 12:45.800
+il est vraiment important de le savoir en raison des optimisations qui ont eu lieu au fil des ans.
+

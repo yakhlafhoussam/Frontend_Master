@@ -1,0 +1,269 @@
+WEBVTT
+
+00:00.000 --> 00:03.640
+Bienvenue à tous dans l'introduction complète de Vue 3.
+
+00:03.640 --> 00:06.680
+Je m'appelle Ben Hong et je suis ravi de passer les prochains jours avec vous.
+
+00:06.680 --> 00:09.760
+pendant que nous passons en revue les principes fondamentaux de la vue et que nous vous préparons tous
+
+00:09.760 --> 00:12.480
+afin que vous vous sentiez en confiance pour essayer View pour votre prochain projet.
+
+00:14.880 --> 00:16.840
+Très bien, en ce qui concerne un petit mot de bienvenue,
+
+00:16.840 --> 00:20.400
+Un petit fait amusant que j'aime habituellement utiliser est que je suis un grand fan des manèges des parcs d'attractions.
+
+00:20.400 --> 00:24.480
+Voici donc celui d'Orlando Universal Studios.
+
+00:24.480 --> 00:28.280
+Et donc ce que je veux vraiment dire, c'est que si jamais tu vas à Disneyland,
+
+00:28.280 --> 00:30.880
+jetez un œil au, car c'est le classique de Jurassic Park.
+
+00:30.880 --> 00:34.040
+Ils ont refait celui de Disneyland pour qu'il soit sur le thème de Jurassic World.
+
+00:34.040 --> 00:37.160
+Et donc ils ont créé beaucoup d’effets 3D vraiment sympas et d’autres trucs.
+
+00:37.160 --> 00:38.600
+Je le recommande vivement.
+
+00:38.600 --> 00:44.680
+Si vous avez du mal à me retrouver à l'arrière, là je lève les bras là-haut.
+
+00:44.680 --> 00:47.680
+Mais ceci mis à part, parlons un peu de moi.
+
+00:47.680 --> 00:51.400
+Je suis ingénieur senior en expérience de développement chez Netlify,
+
+00:51.400 --> 00:57.240
+un membre de l'équipe principale de Vue.js, un ambassadeur Nux, un maître instructeur Vue,
+
+00:57.280 --> 01:01.440
+et je suis un développeur Google expert des technologies web ainsi que de la plateforme MAT.
+
+01:01.440 --> 01:04.680
+Très bien, donc si vous vous demandez à qui s'adresse cet atelier,
+
+01:04.680 --> 01:06.960
+cet atelier, car il s'agit d'une introduction complète à Vue,
+
+01:06.960 --> 01:09.840
+couvre les personnes cherchant à démarrer avec leur premier framework JavaScript
+
+01:09.840 --> 01:13.000
+essentiellement pour créer des interfaces utilisateur Web.
+
+01:13.000 --> 01:16.800
+Jusqu'aux personnes qui cherchent à en savoir plus sur ce qui rend Vue spécial
+
+01:16.800 --> 01:20.680
+et acquérir réellement les compétences nécessaires pour que s'ils souhaitent essayer d'utiliser Vue sur leur prochain projet,
+
+01:20.680 --> 01:23.440
+ils sont certainement plus que bienvenus.
+
+01:23.440 --> 01:24.960
+Et bien sûr, tout le monde entre les deux.
+
+01:25.000 --> 01:28.320
+Disons donc que nous avons ici une large gamme d’expériences différentes.
+
+01:28.320 --> 01:30.760
+Et donc oui, j'espère couvrir tout cela dans cet atelier d'aujourd'hui.
+
+01:33.880 --> 01:36.800
+Très bien, donc quelques choses à savoir sur cet atelier.
+
+01:36.800 --> 01:40.680
+Certaines choses que vous voudrez probablement savoir si vous regardez ceci et dans la mesure où,
+
+01:40.680 --> 01:44.840
+nous appellerons cela des prérequis, c'est-à-dire que si vous avez une certaine familiarité avec HTML,
+
+01:44.840 --> 01:45.960
+CSS et JavaScript.
+
+01:45.960 --> 01:49.520
+En d’autres termes, vous n’avez pas besoin d’être un expert dans aucun de ces domaines.
+
+01:49.520 --> 01:52.960
+Je l'ai conçu de telle sorte que tant que vous avez les bases pour chacun d'entre eux,
+
+01:53.240 --> 01:55.520
+vous serez prêt à partir.
+
+01:55.520 --> 01:57.640
+La connaissance de l'éditeur de code est également très utile,
+
+01:57.640 --> 01:59.560
+car nous ferons beaucoup de codage dans cet atelier.
+
+01:59.560 --> 02:02.200
+Parce qu'après tout, même s'il y a beaucoup de choses théoriques à aborder,
+
+02:02.200 --> 02:05.320
+Je veux que vous ayez une expérience pratique de travail avec Vue pour voir ce que vous ressentez
+
+02:05.320 --> 02:07.040
+lorsque vous le prenez pour un test.
+
+02:07.040 --> 02:09.080
+L'éditeur de code que j'utiliserai est VS Code.
+
+02:09.080 --> 02:14.880
+Et je recommande celui-là car les extensions que nous utiliserons sont également dans VS Code par défaut.
+
+02:14.880 --> 02:16.680
+Et donc si vous ne pouvez pas suivre cela, ce serait génial.
+
+02:16.680 --> 02:21.960
+Mais sinon, ne vous inquiétez pas si vous souhaitez utiliser l’éditeur de code de votre choix.
+
+02:21.960 --> 02:23.720
+Nous ferons également un peu avec le terminal,
+
+02:23.720 --> 02:26.640
+car comme la plupart d'entre vous le savent, lorsqu'il s'agit de frameworks,
+
+02:26.640 --> 02:28.480
+les outils de construction sont une chose assez importante.
+
+02:28.480 --> 02:31.600
+Donc, comme vous êtes familier avec certaines commandes de base,
+
+02:31.600 --> 02:32.920
+cela sera également utile.
+
+02:32.920 --> 02:34.840
+De plus, nous utiliserons également des outils de développement de navigateur.
+
+02:34.840 --> 02:36.560
+J'utiliserai donc Chrome dans ce cas.
+
+02:36.560 --> 02:39.640
+Mais qu'il s'agisse de Firefox ou de votre navigateur préféré,
+
+02:39.640 --> 02:44.080
+en gros, nous serons à l'intérieur pour inspecter les choses et voir comment tout fonctionne.
+
+02:44.080 --> 02:47.480
+Et enfin, une connaissance de base de Git et MPM serait également un plus.
+
+02:47.480 --> 02:51.640
+parce que toutes les ressources vont être essentiellement encapsulées dans le dépôt dont je dispose.
+
+02:51.680 --> 02:53.880
+Et puis nous installerons les dépendances avec MPM.
+
+02:53.880 --> 02:56.440
+Donc, tant que vous avez eu une certaine exposition à cela,
+
+02:56.440 --> 02:57.800
+vous devriez être prêt à participer à cet atelier.
+
+03:00.560 --> 03:03.040
+Très bien, et donc la ressource promise,
+
+03:03.040 --> 03:06.720
+tout va vivre dans ce dépôt, qui est github.com,
+
+03:06.720 --> 03:10.680
+coupez Ben Code Zen, puis coupez l'intro complète de View 3 Workshop.
+
+03:10.680 --> 03:14.160
+Donc, si vous allez simplement dans Ben Code Zen et Repos, vous devriez le voir tout en haut.
+
+03:15.600 --> 03:17.200
+Et si ça a l'air un peu stérile là-dedans, ne vous inquiétez pas,
+
+03:17.200 --> 03:20.040
+nous allons le remplir au fur et à mesure de l'atelier.
+
+03:20.040 --> 03:23.720
+Très bien, en ce qui concerne ce que vous pouvez attendre de l'atelier,
+
+03:23.720 --> 03:28.080
+Je suis un grand fan du format d'atelier consistant à apprendre, questionner et appliquer.
+
+03:28.080 --> 03:31.760
+Donc, fondamentalement, nous allons passer par le processus consistant à commencer par l'étape d'apprentissage,
+
+03:31.760 --> 03:33.280
+c'est à chaque fois que nous avons un nouveau concept,
+
+03:33.280 --> 03:35.280
+nous allons passer en revue des explications et des exemples,
+
+03:35.280 --> 03:38.280
+afin que vous puissiez commencer à être exposé à ce qui se passe.
+
+03:38.280 --> 03:40.320
+Ensuite, il y aura toujours des occasions de poser des questions.
+
+03:40.320 --> 03:43.640
+Donc, si vous avez des éclaircissements, et si, c'est le moment idéal pour intervenir
+
+03:43.640 --> 03:45.880
+pour commencer à interagir avec le matériel.
+
+03:45.880 --> 03:49.760
+Et enfin, l'étape la plus importante à mes yeux est sans doute d'aller de l'avant et
+
+03:49.760 --> 03:51.000
+appliquer ce que nous venons d'apprendre.
+
+03:51.000 --> 03:54.160
+Il y aura donc de nombreuses occasions de faire des exercices.
+
+03:54.160 --> 03:57.840
+Et surtout, je vous encourage à jouer et à expérimenter.
+
+03:57.840 --> 04:01.080
+Je vais vous fournir quelques conseils concernant certaines choses que vous pouvez faire avec l'exercice.
+
+04:01.080 --> 04:03.720
+Mais plus vous vous y lancez et jouez avec,
+
+04:03.720 --> 04:07.320
+plus vous serez malade au moment de l'apprendre.
+
+04:07.320 --> 04:10.320
+Et enfin, même si nous parlons ici de View,
+
+04:10.320 --> 04:12.600
+une chose importante à retenir est que tout le code est compromis.
+
+04:12.600 --> 04:15.880
+Nous avons donc entendu plus tôt des personnes venant de différents cadres.
+
+04:15.880 --> 04:19.120
+Différents cadres ont fait des choix et des compromis différents tout au long du processus.
+
+04:19.120 --> 04:21.160
+leurs auteurs ont en quelque sorte créé ces choses.
+
+04:21.160 --> 04:25.040
+Alors sachez que quelle que soit mon opinion, je vous encourage à poser des questions et
+
+04:25.040 --> 04:28.840
+ou en désaccord avec cela, car après tout, votre opinion et votre expérience comptent.
+
+04:28.840 --> 04:29.480
+En fin de journée,
+
+04:29.480 --> 04:31.520
+le plus important est que vous choisissiez ce qui vous convient le mieux
+
+04:31.520 --> 04:33.560
+vous et votre équipe afin de servir vos clients.
+

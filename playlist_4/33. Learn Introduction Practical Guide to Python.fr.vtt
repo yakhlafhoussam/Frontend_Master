@@ -1,0 +1,89 @@
+WEBVTT
+
+00:00.000 --> 00:13.000
+Maintenant que vous avez cette compréhension fondamentale du fonctionnement de Python, nous allons apprendre à structurer notre code en modules et à travailler avec différentes bibliothèques. Nous avons parlé un peu de la méthode principale au début du cours.
+
+00:13.000 --> 00:25.000
+Une fois que vous avez commencé à écrire vos programmes Python plus complets, si vous n'utilisez pas de bibliothèque qui exécute votre code pour vous, vous souhaitez disposer d'une méthode principale.
+
+00:25.000 --> 00:33.000
+Et le but de cette méthode principale est qu’elle ne s’exécutera que lorsque votre code sera exécuté en tant que programme autonome.
+
+00:33.000 --> 00:44.000
+Et en raison du fonctionnement du système d'importation de Python, si quelqu'un d'autre importe votre code Python, il est exécuté lors de l'importation.
+
+00:44.000 --> 00:50.000
+Supposons que nous ayons un fichier Python comme celui-ci appelé namelib.
+
+00:50.000 --> 00:54.000
+Allez-y et copiez ceci.
+
+00:54.000 --> 01:04.000
+Et créons un nouveau fichier et enregistrons-le sous le trait de soulignement principal lib.py.
+
+01:05.000 --> 01:14.000
+Si nous exécutons ce code, il ressemble exactement à ce à quoi nous nous attendions, la longueur d'une version majuscule est plus méchante.
+
+01:14.000 --> 01:28.000
+Mais nous voulons écrire du code réutilisable, car nous avons eu beaucoup de mal à écrire cette bibliothèque très, très utile qui contient des méthodes, comme obtenir le nom d'une longueur et la majuscule de ce nom.
+
+01:28.000 --> 01:33.000
+Alors, comment pouvons-nous permettre à d’autres programmeurs d’utiliser cela ?
+
+01:33.000 --> 01:39.000
+Disons que quelqu'un d'autre a écrit un programme appelé autre programme.
+
+01:39.000 --> 01:51.000
+Et copions ceci et enregistrons-le sous un autre program.py.
+
+01:51.000 --> 01:58.000
+Nous allons importer car désolé, nous appelons ici cette bibliothèque principale.
+
+01:58.000 --> 02:04.000
+Alors permettez-moi simplement de mettre à jour cet exemple.
+
+02:04.000 --> 02:10.000
+Si quelqu'un souhaite ouvrir une pull request, c'est le moment de briller.
+
+02:10.000 --> 02:15.000
+Alors allons-y et exécutons ceci.
+
+02:15.000 --> 02:23.000
+Nous verrons, je n'ai Nina nulle part ici, mais ceci imprime la version majuscule c'est Nina.
+
+02:23.000 --> 02:28.000
+Que se passe-t-il?
+
+02:28.000 --> 02:36.000
+J'essaie d'utiliser ces méthodes à partir de ce module principal de la bibliothèque.
+
+02:36.000 --> 02:46.000
+Ce qui se passe, c'est que lorsqu'il est importé, tout le code ici est exécuté, y compris ce truc ici.
+
+02:46.000 --> 02:50.000
+Et c’était juste des choses dont j’avais besoin pour moi.
+
+02:50.000 --> 02:55.000
+Si quelqu'un utilise ce module comme bibliothèque, il ne s'en soucie probablement pas.
+
+02:55.000 --> 03:04.000
+C'est pourquoi vous souhaitez envelopper ce code dans une méthode principale.
+
+03:04.000 --> 03:25.000
+Donc, pour ce faire, vous demandez si la valeur de dundername, qui est l'une de ces méthodes magiques, variables magiques, est égale au soulignement de la chaîne de soulignement, puis exécutez ce code.
+
+03:25.000 --> 03:33.000
+Maintenant, si j'exécute la bibliothèque principale, je vois que la longueur est pour et la version majuscule est Nina.
+
+03:33.000 --> 03:40.000
+Si je retourne à mon autre programme et que je le relance, il n'imprimera plus rien sur Nina.
+
+03:40.000 --> 03:47.000
+C'est parce que lorsque j'exécute ceci à partir de la ligne de commande, j'accède à ce code dans la méthode principale.
+
+03:47.000 --> 03:55.000
+Mais lorsque j'importe ce programme dans un autre fichier, le code de la méthode principale n'est pas exécuté.
+
+03:55.000 --> 04:00.000
+C'est donc une distinction importante qui vous aidera à écrire du code réutilisable.
+

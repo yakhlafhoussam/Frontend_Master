@@ -1,0 +1,134 @@
+WEBVTT
+
+00:00.000 --> 00:02.160
+Have any of you here heard of shallow ref?
+
+00:02.160 --> 00:06.480
+In case you haven't, shallow ref sounds actually a bit like what you think,
+
+00:06.480 --> 00:12.720
+which is that take this, uh, we're gonna take this, that's where I,
+
+00:12.720 --> 00:15.680
+back in database JSON. Okay.
+
+00:15.680 --> 00:19.840
+Imagine for a moment here, and let's go to Mar sandbox here,
+
+00:19.840 --> 00:29.040
+that we had, uh, my data, and it was a ref that was this giant object, right?
+
+00:29.920 --> 00:32.960
+This is a lot of data, and the thing is that when you make it a ref,
+
+00:32.960 --> 00:36.560
+it actually basically watches everything at a deep level.
+
+00:36.560 --> 00:40.800
+So it signs reactivity pretty, basically watches everything at a deep level,
+
+00:40.800 --> 00:44.240
+which, um, at first glance, you're probably like, oh, that sounds good.
+
+00:44.240 --> 00:47.840
+That's what I want. And so for, I don't know, most people,
+
+00:47.840 --> 00:49.760
+one of those performance, like, for this,
+
+00:49.760 --> 00:53.920
+actually, this is even not even really that big, so it probably would have matter.
+
+00:53.920 --> 00:56.800
+But you can imagine if you're dialing stuff from your database,
+
+00:56.800 --> 00:59.920
+you're doing some sort of tests. You can be tens of thousands of records.
+
+00:59.920 --> 01:02.720
+And the thing is is you don't always need deep reactivity.
+
+01:02.720 --> 01:06.400
+Sometimes you just need to know whether the object, like, the, the giant object has changed.
+
+01:06.400 --> 01:09.040
+Instead of the words, hence why it's called that.
+
+01:09.040 --> 01:13.120
+So shallow ref is a helper method, just like ref, uh, from view.
+
+01:13.120 --> 01:16.400
+And the difference being that when you're dealing with large sets of data,
+
+01:16.400 --> 01:19.760
+or more importantly, you're not gonna be manipulating, like, deep reactivity.
+
+01:19.760 --> 01:23.840
+And so this particularly comes into play with tests that I've seen most commonly.
+
+01:23.920 --> 01:28.000
+The actually recommend just default to shallow ref, because then it's just basically view is
+
+01:28.000 --> 01:30.480
+only looking at the top. They're not worried about the rest of it.
+
+01:31.840 --> 01:34.640
+And so again, this is more of a technique for in the event.
+
+01:34.640 --> 01:37.760
+You think that performance might be an issue, or you know, for a fact that you don't need
+
+01:37.760 --> 01:42.160
+deep reactivity. There are some who would even venture to go as far to say that shallow
+
+01:42.160 --> 01:46.480
+ref should be your default. Some would claim that. I don't think it needs to be that extreme.
+
+01:46.480 --> 01:49.840
+I would say I have seen most unit tests, or, like,
+
+01:49.840 --> 01:53.920
+intent as they do tend to be shallow ref, because it's usually just like render this object
+
+01:53.920 --> 01:57.360
+and skip to the next thing, or if there's one piece, it really needs to be reactive.
+
+01:57.360 --> 02:01.680
+They'll make that piece reactive. Uh, so I have seen people, people try to optimize performance
+
+02:01.680 --> 02:05.120
+in that regard, but just know that this exists for you in the event that you've ever
+
+02:05.120 --> 02:09.920
+like, um, ref definitely seems like overkill for this thing. Well, we got to cover shallow ref.
+
+02:10.640 --> 02:14.000
+So we were gonna formally give this a name. We talked about this earlier, and I mentioned that
+
+02:14.000 --> 02:18.800
+we had basically touched on this. And so it's this reminder. So I guess how many people have
+
+02:18.880 --> 02:23.840
+further worked termed singleton. Okay? Great. Yeah. Because here's the thing. It's not a
+
+02:23.840 --> 02:28.560
+view thing. It's a JavaScript thing. It's programming thing. Uh, and so, you know, for those who
+
+02:28.560 --> 02:33.200
+are maybe haven't heard of it or knew to it before, essentially, it's as the things that it's a
+
+02:33.200 --> 02:38.640
+single instance that is then shared with a bunch of things. And so this is why we saw earlier
+
+02:38.640 --> 02:44.320
+in our code when we were using things like use week. This is an example of a singleton right here
+
+02:44.400 --> 02:50.160
+because this constant is then basically cached. And then whenever it's brought into another
+
+02:50.160 --> 02:55.520
+component, that same instance of weeks is then being referenced. And that's the reason why we get
+
+02:55.520 --> 02:58.720
+that shared state.
+

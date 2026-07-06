@@ -1,0 +1,272 @@
+WEBVTT
+
+00:00.000 --> 00:01.840
+So now that we've talked about all this,
+
+00:01.840 --> 00:03.680
+let's take a look at the code that we've been building.
+
+00:03.680 --> 00:06.080
+So if you go ahead and look at our types right now,
+
+00:08.000 --> 00:11.880
+you might notice that both the dish and the restaurant type
+
+00:11.880 --> 00:14.400
+share this property called status.
+
+00:14.400 --> 00:17.160
+And more importantly, status is just a string.
+
+00:17.160 --> 00:19.520
+When a lot of us know that when it comes to letting users
+
+00:19.520 --> 00:21.880
+choose something, it's best to have some sort of options
+
+00:21.880 --> 00:23.720
+that they consistently use.
+
+00:23.720 --> 00:25.320
+And so if we go ahead and take a look back
+
+00:25.320 --> 00:28.040
+at our restaurant's page and take a look at it.
+
+00:28.040 --> 00:29.720
+So we can see here that, okay, status is,
+
+00:29.720 --> 00:31.600
+we have want to try and recommend it.
+
+00:31.600 --> 00:33.280
+Do not recommend, okay.
+
+00:33.280 --> 00:35.920
+And then dishes page, similarly, there's want to try,
+
+00:35.920 --> 00:37.800
+recommend it, do not recommend.
+
+00:37.800 --> 00:40.720
+Okay, so now this is where we're seeing a use case
+
+00:40.720 --> 00:42.560
+for having shared types and more importantly,
+
+00:42.560 --> 00:45.240
+we want something that's a little bit more specific
+
+00:45.240 --> 00:47.920
+than just generic string type that we have.
+
+00:47.920 --> 00:51.280
+So we're gonna learn now is learn how to define those things.
+
+00:51.280 --> 00:54.120
+So the way we're gonna do this is I'm just gonna call it
+
+00:54.120 --> 00:55.640
+a type of status.
+
+00:55.640 --> 00:57.160
+Let's just gonna call it.
+
+00:57.160 --> 00:59.640
+And what we're gonna learn about here is the union operator
+
+00:59.640 --> 01:02.160
+which basically allows you to define specific values
+
+01:02.160 --> 01:04.520
+for the type rather than just a generic,
+
+01:04.520 --> 01:06.480
+like data primitive or whatever.
+
+01:06.480 --> 01:09.720
+So in this case, we had, I think it was want to try.
+
+01:09.720 --> 01:12.840
+I think it was recommend and then I think it was
+
+01:12.840 --> 01:14.720
+do not recommend.
+
+01:14.720 --> 01:16.060
+Okay.
+
+01:16.060 --> 01:18.680
+And so then what we can do here is rather than just
+
+01:18.680 --> 01:21.160
+putting the generic string, we can actually say,
+
+01:21.160 --> 01:23.040
+oh, this is gonna be a type status.
+
+01:24.120 --> 01:26.040
+And what that allows you to do now is that when you hover
+
+01:26.040 --> 01:27.760
+over this, you can see that it actually tells you
+
+01:27.760 --> 01:29.800
+the exact ones that it allows.
+
+01:31.080 --> 01:33.440
+Now if we go back over now to our page,
+
+01:33.440 --> 01:35.640
+you'll notice something kind of funny.
+
+01:35.640 --> 01:37.680
+Status is yelling at us.
+
+01:37.680 --> 01:39.920
+And the reason for this is because it's saying,
+
+01:39.920 --> 01:43.320
+hey, I don't recognize this value.
+
+01:43.320 --> 01:44.800
+In other words, when it says something's overloaded,
+
+01:44.800 --> 01:46.480
+usually doesn't recognize the value.
+
+01:46.480 --> 01:48.240
+And it's saying, what is recommended?
+
+01:48.240 --> 01:50.240
+And so I'm like, well, I thought I'd define it
+
+01:50.240 --> 01:53.640
+as recommended, but let's go ahead and check the logbook.
+
+01:53.640 --> 01:56.280
+Nope, we didn't, we called it recommend.
+
+01:56.280 --> 01:59.120
+And so it's little things like this that can make a huge
+
+01:59.120 --> 02:00.960
+difference for helping to start putting really
+
+02:00.960 --> 02:03.560
+some shape to your application when it comes to like, okay,
+
+02:03.560 --> 02:05.880
+this is the information architecture we're looking for.
+
+02:05.880 --> 02:08.280
+These are the options we want to limit people to.
+
+02:08.280 --> 02:10.480
+And so in this case, I think recommended is better
+
+02:10.480 --> 02:12.480
+than recommend, because that was a type one my end.
+
+02:12.480 --> 02:15.040
+And so now if I save it, you'll see that that just
+
+02:15.040 --> 02:17.600
+automatically transposes over and same deal.
+
+02:17.600 --> 02:20.600
+Now on the Dishes page, if I go ahead and I'm like, oh,
+
+02:20.600 --> 02:24.480
+I think Dishes should also get like a delicious status.
+
+02:24.480 --> 02:28.200
+You know, like that's fine that I did that,
+
+02:28.200 --> 02:29.520
+but then at ways I get maybe it's not,
+
+02:29.520 --> 02:31.240
+because it's not actually matching, right?
+
+02:31.240 --> 02:32.960
+We want them to, like at this point,
+
+02:32.960 --> 02:35.080
+we want them to share just a little bit easier.
+
+02:35.080 --> 02:39.720
+So this is, and so you see something that's simple
+
+02:39.720 --> 02:41.480
+is just creating that custom type.
+
+02:41.480 --> 02:42.680
+And then dropping it between the two,
+
+02:42.680 --> 02:45.080
+we see already, there's a ton of benefit.
+
+02:45.080 --> 02:47.160
+Especially when these types are reused multiple times
+
+02:47.160 --> 02:49.200
+throughout your codebase, now you're getting those alerts
+
+02:49.200 --> 02:51.880
+that like, hey, this property you're adding
+
+02:51.880 --> 02:54.440
+doesn't exist or has the wrong types now,
+
+02:54.440 --> 02:56.920
+and we can get even more specific.
+
+02:56.920 --> 03:00.840
+Okay, so we've now created our own custom type.
+
+03:00.840 --> 03:04.240
+And so I want you all to practice creating your own custom type.
+
+03:04.240 --> 03:08.480
+And what we're gonna be doing is I want you to create a diet.
+
+03:08.480 --> 03:09.800
+So actually, I forgot.
+
+03:09.800 --> 03:12.680
+I have this constant file here to give some guidance,
+
+03:12.680 --> 03:14.160
+as far as what this might be.
+
+03:14.160 --> 03:16.880
+So basically, you know, when it comes to eating food,
+
+03:16.880 --> 03:18.360
+dietary restrictions are a thing.
+
+03:18.360 --> 03:20.320
+So I just created four options to keep it simple.
+
+03:20.320 --> 03:23.200
+There's vegetarian, pescatarian, keto, and then there's blank.
+
+03:23.200 --> 03:24.520
+Cause some of them just, you know,
+
+03:24.520 --> 03:26.800
+if it's like everything, then it doesn't matter.
+
+03:26.800 --> 03:29.760
+And so I'd like you to create your own custom type.
+
+03:29.760 --> 03:31.360
+Don't worry about referring to the constants,
+
+03:31.360 --> 03:33.400
+let's just reference the values,
+
+03:33.400 --> 03:35.360
+because we'll be taking care of that in the next one.
+

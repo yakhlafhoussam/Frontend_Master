@@ -1,0 +1,386 @@
+WEBVTT
+
+00:00.000 --> 00:07.000
+Ce que j'aimerais que vous fassiez, c'est que je vais continuer et valider ce code, puis vous vous entraînerez à créer une distorsion.
+
+00:07.000 --> 00:10.000
+Et donc maintenant, nous allons migrer cela et voir jusqu'où vous pouvez aller.
+
+00:10.000 --> 00:12.000
+Et puis je vous reverrai tous de l'autre côté.
+
+00:17.000 --> 00:22.000
+Je sais pour moi, une fois que j'ai commencé à utiliser Piny, comme si j'étais tellement heureux de ne plus avoir à écrire de mutations,
+
+00:22.000 --> 00:27.000
+et faites juste ce que je veux que vous fassiez, merci et suivez-le pour moi, comme toute cette bonté.
+
+00:28.000 --> 00:32.000
+D'accord, alors laissez-moi aller de l'avant et m'assurer de pousser la dernière branche d'exercices 10.
+
+00:32.000 --> 00:35.000
+Je pense que certaines personnes n'auraient peut-être pas pu participer. Je n'y suis pas parvenu.
+
+00:35.000 --> 00:41.000
+Donc, ce que j'ai fait, je suppose, dans le but de tenir des registres, c'est que si vous consultez la branche des 10 exercices,
+
+00:41.000 --> 00:46.000
+vous remarquerez que la page du restaurant a été correctement refactorisée pour utiliser l'ensemble du magasin.
+
+00:46.000 --> 00:51.000
+Donc, en gros, quelques points à souligner, c'est que le nombre de restaurants que j'ai restaurés,
+
+00:51.000 --> 00:56.000
+parce que dans ce cas, nous faisons la liste des restaurants filtrée, et je ne l'ai pas encore exactement déplacée vers le magasin.
+
+00:56.000 --> 01:00.000
+Il s'agit donc d'un type de nombre de restaurants différent du nombre de restaurants du magasin,
+
+01:00.000 --> 01:05.000
+c'est comme s'ils l'appelaient la copie maîtresse de tous les magasins à perpétuité.
+
+01:05.000 --> 01:12.000
+D'accord, donc avec ça, votre travail consistait à refactoriser la page des plats.
+
+01:12.000 --> 01:17.000
+Alors allons-y et faisons-le. Donc créer un nouveau magasin était la distorsion,
+
+01:17.000 --> 01:21.000
+puis nous importerons le magasin défini.
+
+01:21.000 --> 01:26.000
+Et puis une fois qu'on fait ça, on peut exporter un contre appelé use distor,
+
+01:26.000 --> 01:29.000
+puis définir le magasin, et comment va s'appeler l'idée ?
+
+01:29.000 --> 01:31.000
+Nous allons l'appeler distorsion.
+
+01:31.000 --> 01:34.000
+Et puis nous le passerons en objet pour l'état.
+
+01:34.000 --> 01:38.000
+Nous savons donc que l’État aura besoin d’une certaine forme.
+
+01:38.000 --> 01:40.000
+Alors allons-y et définissons cela maintenant.
+
+01:40.000 --> 01:42.000
+Nous appellerons donc cela la forme de l'état.
+
+01:42.000 --> 01:46.000
+Et donc pour ceux qui se demandent comment nommer, c’est une chose difficile, n’est-ce pas ?
+
+01:46.000 --> 01:48.000
+On en parle beaucoup en programmation,
+
+01:48.000 --> 01:52.000
+mais la seule chose que j'aime dans le fait de garder certains de mes états comme types,
+
+01:52.000 --> 01:54.000
+notamment en ligne dans mes composants ou fichiers,
+
+01:54.000 --> 01:57.000
+c'est que je n'ai pas à m'inquiéter d'un conflit avec autre chose.
+
+01:57.000 --> 02:00.000
+Parce que la forme de l’État va évidemment signifier beaucoup de choses différentes.
+
+02:00.000 --> 02:03.000
+à travers différents composants, mais pour ce magasin particulier,
+
+02:03.000 --> 02:05.000
+La forme de l'état est juste pour ce magasin.
+
+02:05.000 --> 02:08.000
+Donc, vous n'avez pas à vous inquiéter, je vais l'appeler un état éloigné comme un magasin.
+
+02:08.000 --> 02:11.000
+Cela n'est pertinent que lorsque vous le partagez sur plusieurs fichiers,
+
+02:11.000 --> 02:16.000
+mais n'ayez pas peur d'insérer vos types directement dans le fichier pour indiquer qu'il fonctionne.
+
+02:16.000 --> 02:20.000
+Je suis un grand fan de ce que j'appelle la refactorisation basée sur les données,
+
+02:20.000 --> 02:23.000
+où vous montrez en fait que vous avez répété le code entre les morceaux.
+
+02:23.000 --> 02:25.000
+Ensuite, c'est à ce moment-là que vous prenez le temps de le modulariser,
+
+02:25.000 --> 02:27.000
+commencez à extraire le refactoring.
+
+02:27.000 --> 02:31.000
+Cela dit, nous savons pertinemment que nous aurons une liste similaire,
+
+02:31.000 --> 02:34.000
+et nous aurons un plat qui sera dans une course.
+
+02:34.000 --> 02:36.000
+C'est donc essentiellement tout ce que nous devons savoir.
+
+02:36.000 --> 02:41.000
+Voilà donc ma liste, et ensuite je peux récupérer tout ça ici.
+
+02:41.000 --> 02:45.000
+Pump-up-up-up-up.
+
+02:45.000 --> 02:48.000
+Oh mon Dieu, le défilement ne se déroule pas comme je le voulais.
+
+02:48.000 --> 02:50.000
+Très bien, je le fais manuellement.
+
+02:50.000 --> 02:53.000
+Super coupe.
+
+02:53.000 --> 02:56.000
+Alors nous pouvons maintenant définir cela ici.
+
+02:56.000 --> 02:58.000
+Super, ça a l'air bien.
+
+02:58.000 --> 03:01.000
+Filtrez ensuite la liste ou une liste de plats.
+
+03:01.000 --> 03:04.000
+Comme on dit, liste de plats équivaut à utilisation, magasin de vaisselle.
+
+03:04.000 --> 03:06.000
+Comme ça.
+
+03:06.000 --> 03:10.000
+Même si j'ai réalisé que le magasin de vaisselle devrait d'abord être un magasin de vaisselle,
+
+03:10.000 --> 03:11.000
+et nous l'utiliserons.
+
+03:11.000 --> 03:13.000
+Et puis nous dirons Dish Store.list.
+
+03:13.000 --> 03:16.000
+Juste pour aider les choses à nettoyer un peu.
+
+03:16.000 --> 03:17.000
+Et voilà.
+
+03:17.000 --> 03:19.000
+Liste de plats.filtre.
+
+03:19.000 --> 03:22.000
+N'existe pas sur la propriété réf plat.
+
+03:22.000 --> 03:24.000
+Oh, il y a une référence en double.
+
+03:24.000 --> 03:25.000
+C'est pourquoi.
+
+03:25.000 --> 03:26.000
+Plat plat plat plat.
+
+03:26.000 --> 03:28.000
+Et puis la liste des plats.
+
+03:28.000 --> 03:30.000
+C'est très bien.
+
+03:30.000 --> 03:35.000
+La seule chose qui est plutôt intéressante, c'est qu'il dit que
+
+03:35.000 --> 03:38.000
+le plat ne correspond pas au plat.
+
+03:39.000 --> 03:41.000
+C'est une surcharge intéressante.
+
+03:41.000 --> 03:42.000
+D'accord.
+
+03:42.000 --> 03:44.000
+Pourquoi est-ce qu'il me crie dessus ?
+
+03:44.000 --> 03:46.000
+Oh, eh bien, c'est logique.
+
+03:46.000 --> 03:48.000
+Je n’ai jamais réellement défini la forme de l’État.
+
+03:48.000 --> 03:49.000
+Je l'ai défini ici.
+
+03:49.000 --> 03:50.000
+Je ne l'ai pas utilisé.
+
+03:50.000 --> 03:53.000
+Alors maintenant que je l'ai enregistré, cette erreur disparaît.
+
+03:53.000 --> 03:57.000
+Encore une fois, ce qui est bien, c'est que lorsque vous saupoudrez du TypeScript,
+
+03:57.000 --> 04:00.000
+cela vous montre les erreurs qui ont du sens au fur et à mesure, n'est-ce pas ?
+
+04:00.000 --> 04:03.000
+Et comme nous pouvons le voir ici, ce n’est pas trop intrusif.
+
+04:03.000 --> 04:05.000
+Et c’est globalement tout au long de cette recherche.
+
+04:05.000 --> 04:07.000
+Vous l'avez vu plusieurs fois.
+
+04:07.000 --> 04:10.000
+Attrapez-moi dans une erreur où j'aurais pu passer à autre chose et me dire simplement,
+
+04:10.000 --> 04:11.000
+hé, quelque chose ne va pas ici.
+
+04:11.000 --> 04:13.000
+Vous pourriez avoir moins quelque chose de différent.
+
+04:13.000 --> 04:16.000
+Et cela est vraiment précieux pour nous en tant que développeurs.
+
+04:16.000 --> 04:18.000
+Alors continuons.
+
+04:18.000 --> 04:19.000
+Nombre de plats.
+
+04:19.000 --> 04:22.000
+Nous allons garder cela pareil car comme je l'ai mentionné plus tôt,
+
+04:22.000 --> 04:24.000
+cela dépend en fait d'un texte de filtre.
+
+04:24.000 --> 04:25.000
+Cela se produit.
+
+04:25.000 --> 04:26.000
+Et donc nous allons laisser cela tranquille.
+
+04:26.000 --> 04:27.000
+Nous n'allons pas nous inquiéter de cela.
+
+04:27.000 --> 04:30.000
+Mais tout ça, ce sont des actions que nous pouvons prendre.
+
+04:30.000 --> 04:34.000
+Alors disons, oui, je peux prendre ça.
+
+04:34.000 --> 04:38.000
+Ces actions vont donc être définies ici.
+
+04:38.000 --> 04:40.000
+Des actions, boum.
+
+04:40.000 --> 04:42.000
+Et puis nous prendrons cela.
+
+04:42.000 --> 04:45.000
+Et là encore, les actions devraient être comme des fonctions normales,
+
+04:45.000 --> 04:50.000
+pas de fonctions d'erreur car nous allons devoir accéder à l'ensemble du magasin.
+
+04:50.000 --> 04:59.000
+Et puis à partir de là, nous pouvons essentiellement dire state.this.list.plush la charge utile.
+
+04:59.000 --> 05:01.000
+Cette.peluche.
+
+05:01.000 --> 05:02.000
+C'est bien.
+
+05:02.000 --> 05:03.000
+Ce n'est pas nécessaire pour le moment.
+
+05:03.000 --> 05:09.000
+Nous pouvons alors dire que this.list est égal à this.list.filter.
+
+05:09.000 --> 05:11.000
+Cela filtre tout.
+
+05:11.000 --> 05:13.000
+Cela ira de l'avant et filtrera tout.
+
+05:13.000 --> 05:16.000
+Alors maintenant, quand nous arrivons à refactoriser cela,
+
+05:16.000 --> 05:18.000
+nous avons toujours besoin de cette fonctionnalité hautement formée.
+
+05:18.000 --> 05:23.000
+C'est donc pour cette raison que nous allons continuer et simplement créer ce magasin.
+
+05:23.000 --> 05:25.000
+Nous allons supprimer la charge utile.
+
+05:25.000 --> 05:29.000
+Cependant, pour supprimer un plat, une des choses que nous ne faisons pas,
+
+05:29.000 --> 05:31.000
+c'est fondamentalement identique.
+
+05:31.000 --> 05:34.000
+Donc vraiment, nous n’avons même pas besoin de créer une fonction ici.
+
+05:34.000 --> 05:38.000
+Nous pourrons le faire à l'intérieur de l'endroit où existe le plat de suppression.
+
+05:38.000 --> 05:42.000
+Nous l'appellerons simplement Dishstore.lead-dish.
+
+05:42.000 --> 05:46.000
+Et une des choses que j'aime vraiment dans ce genre de déclaration de magasin modulaire,
+
+05:46.000 --> 05:49.000
+parce que certaines personnes diront, eh bien, je veux le déstructurer.
+
+05:49.000 --> 05:50.000
+Et je veux le rendre plus tondeuse.
+
+05:50.000 --> 05:54.000
+Mais le fait que vous sachiez immédiatement en ligne le 31,
+
+05:54.000 --> 05:57.000
+cela vient d'un magasin mondial, c'est incroyablement précieux.
+
+05:57.000 --> 06:00.000
+Je pense que pour le débogage, surtout comme nous le savons, à mesure que les bases de code deviennent plus complexes,
+
+06:00.000 --> 06:03.000
+la probabilité de conflits de noms et ce genre de choses se produisent.
+
+06:03.000 --> 06:06.000
+Donc pour moi, en étant juste un peu plus déclaratif,
+
+06:06.000 --> 06:07.000
+mais sachant instantanément ce que c'est,
+
+06:07.000 --> 06:10.000
+la compréhension est énorme en matière de maintenabilité du code.
+
+06:10.000 --> 06:13.000
+Donc personnellement, je suis un grand fan de ça.
+
+06:13.000 --> 06:15.000
+Ok, c'est ça, c'est ça.
+
+06:15.000 --> 06:18.000
+Je pense que c'est ça.
+
+06:18.000 --> 06:20.000
+Alors maintenant, nous avons tout ici, sans vaisselle.
+
+06:20.000 --> 06:21.000
+Ouais, juste stocker.
+
+06:21.000 --> 06:22.000
+C'est génial.
+

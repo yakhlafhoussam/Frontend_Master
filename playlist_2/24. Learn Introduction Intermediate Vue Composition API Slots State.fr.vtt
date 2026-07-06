@@ -1,0 +1,137 @@
+WEBVTT
+
+00:00.000 --> 00:07.520
+Les abonnés à la boutique seront-ils restitués si vous composez le pire de l'autre ?
+
+00:10.520 --> 00:15.420
+Ouais, je pense que c'était un miracle. Ils l'ont demandé, alors la plupart d'entre eux pendant la
+
+00:15.760 --> 00:18.920
+Ouais, d'accord, alors je vais répondre à ça parce que je pense que c'est une question intéressante
+
+00:18.920 --> 00:20.920
+C'est lui-même et puis s'ils précisent le contraire
+
+00:21.720 --> 00:29.120
+C'est donc une chose que je pense que View fait vraiment bien en raison de la façon dont le système de réactivité est écrit avec des proxys.
+
+00:30.120 --> 00:31.120
+vue
+
+00:31.120 --> 00:39.200
+j'aime très rarement, donc j'aime être honnête. Je connais beaucoup de réactifs avec ça, c'est comme si vous aviez un état dérivé de cet autre état
+
+00:39.200 --> 00:45.760
+Et parce que cet état est mis à jour, cela déclenche le nouveau rendu sur cet autre état et c'est donc comme réformer une chose avec laquelle ils doivent fréquemment faire face.
+
+00:45.920 --> 00:50.520
+Mais mettez-moi et les gens pour ceux d'entre nous qui utilisent une vue qui est en fait très
+
+00:51.360 --> 00:54.360
+Je ne vois pas, je ne sais pas tout. C'est un problème juste parce que encore une fois
+
+00:54.880 --> 00:59.600
+Parce que View comprend que oui, vous composez votre source ensemble
+
+01:00.000 --> 01:02.280
+On leur répond qu'ils dépendent les uns des autres
+
+01:02.400 --> 01:10.480
+Mais si ce n'est pas un contexte où le rendu est nécessaire, cela ne devrait pas fonctionner à moins que vous ne déclenchiez une mise à jour qui monte de cette façon, intentionnellement.
+
+01:10.680 --> 01:14.080
+En réalité, vous appelez simplement une valeur pour être là et en dériver une autre.
+
+01:15.360 --> 01:18.080
+Et donc ils sont généralement très doués pour
+
+01:18.720 --> 01:21.480
+Et c'est donc l'une des choses dont si vous n'avez pas entendu parler de View Vapor
+
+01:22.040 --> 01:24.040
+C'est une grande chose qui arrive
+
+01:26.040 --> 01:28.040
+aimer
+
+01:29.120 --> 01:38.520
+Fondamentalement, c'est le cas, nous allons pouvoir restituer votre projet sans le dôme virtuel et les améliorations de performances à ce sujet sont censées être assez prometteuses en termes de référence.
+
+01:39.160 --> 01:41.160
+Et donc
+
+01:41.160 --> 01:44.840
+Parce que l'idée est que vous êtes censé être capable de différencier quand un
+
+01:45.080 --> 01:49.080
+La valeur va en fait toucher un modèle comme l'arbre contre nous, une valeur qui est
+
+01:49.480 --> 01:55.400
+Vous savez, dans une sorte d'arbre de dépendances et donc je sais qu'Evan et l'équipe ont fait beaucoup de
+
+01:55.760 --> 02:00.400
+un travail granulaire pour trouver des moyens de vraiment s'assurer que vous ne soyez pas aléatoire
+
+02:01.600 --> 02:03.120
+déclencher chaque rendu et ce genre de chose
+
+02:03.480 --> 02:07.320
+Donc encore une fois, si vous êtes tous pour ceux-là, si vous voulez l'être, vous savez très bien
+
+02:07.800 --> 02:14.000
+Face à l'avant et restez à jour avec les plus paresseux, suivez définitivement View Vapor pour savoir ce que tout le monde fait. C'est plutôt cool
+
+02:15.000 --> 02:17.000
+Est-ce que c'est ce que
+
+02:17.240 --> 02:20.120
+Sur le fémur, ils demandaient, c'est exactement ce qu'ils demandaient
+
+02:20.840 --> 02:23.480
+Ils ont dit qu'ils étaient souvent confrontés à cela en réaction
+
+02:25.400 --> 02:27.400
+Ouais, c'est
+
+02:28.040 --> 02:30.040
+C'est dommage
+
+02:31.480 --> 02:39.480
+Oui, l'une des choses que nous voyons beaucoup de frameworks faire ces jours-ci, c'est honnêtement que si vous avez regardé les solides angulaires, vous avez l'impression que cela ressemble à une grande partie des solides modernes.
+
+02:39.480 --> 02:43.480
+Les cadres tentent de converger en termes d'idées et semblent être d'accord.
+
+02:44.360 --> 02:46.600
+En termes de principes de réactivité comme je pense
+
+02:47.160 --> 02:51.560
+Je veux dire, sautez-les davantage avec ça aussi, donc de la vue solide angulaire, les choses tombent ici aussi
+
+02:51.560 --> 02:53.240
+Je pense que tous les quatre sont à bord avec des signaux
+
+02:53.240 --> 03:00.680
+Il s'agit donc essentiellement d'une approche de réactivité convenue, puis il y a ce sentiment général que, comme le calcul
+
+03:00.680 --> 03:08.400
+Ce qui est une partie dérivée de l'état qui a intégré la mémorisation puis les optimisations est un élément clé car en tant que développeurs
+
+03:08.400 --> 03:12.800
+C'est ce que nous faisons la moitié du temps lorsque nous disposons d'une seule source de vérité. Nous dérivons des trucs. Nous dérivons des trucs. Nous dérivons des trucs
+
+03:13.120 --> 03:22.400
+Nous ne voulons pas vraiment avoir à nous occuper de la mémorisation et de la mise en cache qui en découlent, car nous avons d'autres choses à nous soucier et donc je pense que si vous regardez les propositions de ce genre
+
+03:22.640 --> 03:24.640
+Web ou TC, ils ont neuf ans et tout
+
+03:24.640 --> 03:30.000
+Il existe une proposition de signaux natifs, mais dans les cadres individuels, comme je pense qu'Angular l'appelle actuellement signaux de lien
+
+03:30.000 --> 03:35.760
+Je pense que Solid l'a fait aussi, mais ils sont tout ce que c'est, c'est vraiment cool de voir beaucoup de ces frameworks commencer à se centraliser
+
+03:36.480 --> 03:41.440
+Et nous sommes en quelque sorte d'accord sur les meilleures pratiques pour le Web, donc c'est super excitant.
+

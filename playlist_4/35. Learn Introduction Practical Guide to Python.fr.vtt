@@ -1,0 +1,137 @@
+WEBVTT
+
+00:00.000 --> 00:06.000
+Lorsque vous travaillez avec des bibliothèques et Python, vous utiliserez le mot-clé import.
+
+00:06.000 --> 00:09.000
+Voyons donc à quoi cela ressemble.
+
+00:16.000 --> 00:22.000
+Vous pouvez importer des packages qui se trouvent dans la bibliothèque standard sans rien faire de spécial.
+
+00:22.000 --> 00:27.000
+Ainsi, par exemple, random fait partie de la bibliothèque standard.
+
+00:27.000 --> 00:34.000
+Et ce module aléatoire, si je voulais voir ce qu'il contenait, je pourrais appeler Duronit.
+
+00:34.000 --> 00:38.000
+Existe-t-il ici une méthode appelée rant ints ?
+
+00:38.000 --> 00:42.000
+Si je voulais savoir ce que ça fait, je pourrais transmettre cela en aide.
+
+00:42.000 --> 00:47.000
+Renvoie donc un entier aléatoire compris entre A et B, incluant les deux points finaux.
+
+00:47.000 --> 00:53.000
+Je peux donc appeler un point aléatoire entre 0 et 100.
+
+00:53.000 --> 01:00.000
+Et cela me donnera un nombre aléatoire à chaque fois que je l'exécuterai.
+
+01:00.000 --> 01:08.000
+Vous pouvez également spécifier cela au lieu d’importer tout ce qui se trouve dans ce module aléatoire.
+
+01:08.000 --> 01:18.000
+Vous pouvez indiquer à partir de l'importation aléatoire du module, puis le nom spécifique de la fonction que vous souhaitez utiliser.
+
+01:18.000 --> 01:24.000
+Et puis je peux appeler une diatribe de cette façon sans aucune qualification supplémentaire.
+
+01:24.000 --> 01:28.000
+Vous vous familiariserez davantage avec ce concept à mesure que vous avancerez dans votre parcours Python.
+
+01:28.000 --> 01:39.000
+Mais sachez que si vous comptez utiliser une grande partie ou la totalité des définitions d'un module, importez ce module de niveau supérieur.
+
+01:39.000 --> 01:46.000
+Si vous souhaitez simplement utiliser une seule chose, respectez la meilleure pratique consistant à importer uniquement ce dont vous avez besoin.
+
+01:47.000 --> 01:52.000
+Vous pouvez également installer des bibliothèques avec PIP.
+
+01:52.000 --> 01:55.000
+Et généralement, vous souhaitez exécuter PIP de cette façon.
+
+01:55.000 --> 02:06.000
+Python-mPIP, rappelez-vous que l'indicateur tiret m signifie exécuter l'argument suivant en tant que programme autonome.
+
+02:06.000 --> 02:15.000
+Et cela garantit que nous utilisons toujours la version de PIP associée à la version de Python dans notre environnement virtuel.
+
+02:15.000 --> 02:21.000
+Car malheureusement, vous pouvez également vous retrouver avec plusieurs versions de PIP installées.
+
+02:21.000 --> 02:24.000
+Parfois, vous pouvez avoir un PIP 3 pour Python 3.
+
+02:24.000 --> 02:29.000
+C’est donc le moyen garanti d’installer le bon package.
+
+02:29.000 --> 02:34.000
+Allez-y et effectuez une demande d'installation Python dash m PIP dans votre environnement virtuel.
+
+02:34.000 --> 02:42.000
+Et nous allons utiliser cette bibliothèque externe dans la dernière pratique de ce chapitre.
+
+02:43.000 --> 02:54.000
+Assurez-vous que vous êtes dans votre terminal et que votre environnement virtuel est activé et effectuez les requêtes d'installation Python dash m PIP et vous devriez voir une installation ici.
+
+02:54.000 --> 02:56.000
+Je l'ai déjà installé.
+
+02:56.000 --> 03:02.000
+Il est donc dit que l'exigence est déjà satisfaite.
+
+03:02.000 --> 03:06.000
+Maintenant, un peu plus sur les modules et les importations.
+
+03:06.000 --> 03:09.000
+Python a la philosophie de ces batteries incluses.
+
+03:09.000 --> 03:16.000
+Il existe une bibliothèque standard riche et polyvalente disponible sans avoir à télécharger des packages séparés.
+
+03:16.000 --> 03:20.000
+Il y a beaucoup de choses utiles ici, comme travailler avec JSON.
+
+03:20.000 --> 03:25.000
+Nous avons vu plus tôt travailler avec les heures et les dates.
+
+03:25.000 --> 03:33.000
+Si vous souhaitez créer vos propres modules, créez simplement un nouveau dossier et placez-y votre code.
+
+03:33.000 --> 03:42.000
+Et de cette façon, vous pouvez importer tout ce qui se trouve dans ce module, comme ceci.
+
+03:42.000 --> 03:57.000
+Dans les anciennes versions de Python, il fallait avoir un dunder vide dans le fichier it.py dans les dossiers pour que Python les reconnaisse comme modules dans Python 3, ce qui n'est plus le cas.
+
+03:57.000 --> 04:02.000
+Et lorsque vous aurez le temps, vous pourrez passer par ici et consulter les meilleures pratiques.
+
+04:03.000 --> 04:10.000
+Nous n'allons pas parler de tests pour le moment, mais j'aborderai les tests lorsque nous parlerons de Django.
+
+04:10.000 --> 04:13.000
+Sachez que vous devriez les écrire.
+
+04:13.000 --> 04:17.000
+Ils constituent la pierre angulaire des programmes Python solides.
+
+04:17.000 --> 04:22.000
+Et la bibliothèque de tests unitaires est intégrée à Python.
+
+04:22.000 --> 04:28.000
+Il vous suffit d’importer des tests unitaires et vous disposez alors de nombreuses fonctionnalités disponibles.
+
+04:28.000 --> 04:38.000
+Sur le site Web du cours, vous verrez également qu'il existe un aide-mémoire pour toutes les assertions de cas de test que vous pourriez utiliser couramment.
+
+04:38.000 --> 04:45.000
+Lorsque vous testez unitairement votre code comme un certain égal, un certain non égal, un certain vrai, un certain faux.
+
+04:45.000 --> 04:49.000
+Vous utiliserez une combinaison de ceux-ci et de vos tests unitaires.
+

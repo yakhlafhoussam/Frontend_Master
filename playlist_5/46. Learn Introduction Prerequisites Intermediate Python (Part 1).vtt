@@ -1,0 +1,169 @@
+WEBVTT
+
+00:00.000 --> 00:11.400
+Just a reminder, this is what our final exercise looks like, we can select different languages
+
+00:11.400 --> 00:19.760
+here and then go and hit the GitHub search API and display the results.
+
+00:19.760 --> 00:25.800
+Pretty straightforward, flask app, there's no, we're not using a database here, we're
+
+00:25.800 --> 00:33.120
+not really maintaining any state, we're just checking what the user checked and unchecked
+
+00:33.120 --> 00:34.840
+the feature request.
+
+00:34.840 --> 00:38.040
+Pretty easy peasy.
+
+00:38.040 --> 00:43.560
+Now let's go through how to implement this.
+
+00:43.560 --> 00:55.080
+I'm going to exit out of the development server that I was using and I'm going to run
+
+00:55.080 --> 01:01.720
+a command to call tree that's going to list the directory structure for this chapter.
+
+01:01.720 --> 01:12.160
+If you're on Mac OS, just know that this utility doesn't come with Mac, you have to install
+
+01:12.160 --> 01:13.160
+it.
+
+01:13.160 --> 01:20.280
+So at the root, we have API.py, I have exceptions.py, where I put my custom exception.
+
+01:20.280 --> 01:31.400
+I have models.py, where I put the model that stores my GitHub repository.
+
+01:31.400 --> 01:38.960
+Then I have a static folder with a faevacon from my website, CSS styles that I've provided
+
+01:38.960 --> 01:40.960
+for you.
+
+01:40.960 --> 01:49.080
+Please don't get the pitchforks out if my CSS isn't good, I'm one of those full stack developers.
+
+01:49.080 --> 01:50.840
+But then we have a few templates.
+
+01:50.840 --> 01:57.640
+We have a template for an error page and a template for our index page, as well as some tests
+
+01:57.640 --> 02:03.000
+that we can run.
+
+02:03.000 --> 02:13.600
+Let's go through and look at these files.
+
+02:13.640 --> 02:20.400
+Our exception.py file is pretty straightforward.
+
+02:20.400 --> 02:27.040
+I have a class here and like you saw before it, inherits from exception.
+
+02:27.040 --> 02:30.080
+In the constructor, I'm taking a status code.
+
+02:30.080 --> 02:34.520
+If the status code was for a three, it's going to say rate limit reached.
+
+02:34.520 --> 02:40.040
+If the status code was any other type of error status code, it's going to print that out.
+
+02:40.040 --> 02:51.680
+Then I pass this new modified message that I created to a super dot in it.
+
+02:51.680 --> 02:57.200
+Looking at the model's file, we live coded this earlier.
+
+02:57.200 --> 03:03.760
+This class, the GitHub repo class, is used to represent a single GitHub repository.
+
+03:03.760 --> 03:10.680
+In my constructor, I take the name, the language, the number of stars.
+
+03:10.680 --> 03:18.160
+I also return a handy string representation and a wrapper.
+
+03:18.160 --> 03:22.000
+Now looking at API.py.
+
+03:22.000 --> 03:29.280
+This is where I put my create query and my repos with most stars methods.
+
+03:29.280 --> 03:38.880
+Remember that we were methods that look almost exactly like this in the intro to Python final exercise.
+
+03:38.880 --> 03:48.640
+Going through these for creating a query, I take a list of languages and the minimum amount of stars.
+
+03:48.640 --> 03:57.680
+In yesterday's code, we were looping over each query adding it on to the string,
+
+03:57.680 --> 04:04.560
+using concatenate, using the string join is much more efficient.
+
+04:04.560 --> 04:12.040
+Concatenate is a string concatenation is a pretty inefficient operation and using string join as much faster.
+
+04:12.040 --> 04:20.800
+Now we can make that same query using an F string for language, going through each language and languages,
+
+04:20.880 --> 04:34.320
+stripping out any trailing or leading white space, and then creating our new query with just one concatenation and concatenating the minimum number of stars that we'd like to see.
+
+04:34.320 --> 04:43.320
+Now in the re-boes with most stars method, we get our query by using that query method.
+
+04:43.320 --> 04:50.760
+We have the same parameters, I've printed them out here, but you don't need to do that in your code.
+
+04:51.000 --> 05:06.320
+I get the response by using the request library to get the resource at this GitHub API search URL, passing in the parameters I set up.
+
+05:06.320 --> 05:17.760
+Now if the status code was not 200, that means if anything went wrong, I'm just going to raise instance of my GitHub API exception,
+
+05:17.760 --> 05:22.080
+passing in the response.status code.
+
+05:22.080 --> 05:36.480
+Next, I get the JSON from the response, I get the items at the items key, and I'm just going to use a list comprehension to return an instance of my GitHub repo.
+
+05:36.480 --> 05:48.800
+A list of instances of my GitHub repo class, passing in the name, the language, and the Stargazers count, and using a list comprehension to do that for each item in items.
+
+05:48.800 --> 05:58.880
+Notice there is no main method here, we're not running our code in the same file, instead we're going to be using this as a library from our Flask app.
+
+05:58.880 --> 06:06.400
+We're scrolling to the top, notice that we imported requests so that we can use it as an available library.
+
+06:06.400 --> 06:17.800
+We're also importing a few things from our own custom classes, so our GitHub API exception and our GitHub repo model.
+
+06:17.960 --> 06:21.240
+Those are all the building blocks.
+
+06:21.240 --> 06:28.240
+Now open app.py, and see how it all gets put together.
+
+06:28.240 --> 06:41.200
+For you Windows folks, I'm going to, I'm going to put in additional instructions here to see who have them in one place with the final exercise.
+
+06:41.200 --> 06:52.640
+But we have a few imports here as well, we're importing a few things from Flask where importing the Flask class, we're importing render template.
+
+06:52.640 --> 07:02.960
+And we're also importing something called request, which gives us information about the request that we are currently processing.
+
+07:02.960 --> 07:18.520
+For my API, I'm also importing this repo with most stars, method, and I'm importing my GitHub API exception, so that I can catch it, do something with it.
+
+07:18.520 --> 07:32.920
+I'm creating a new app, a new Flask app here by passing in a Dundername, and then a making a list of available languages that I want my users of my web application to be able to choose from.

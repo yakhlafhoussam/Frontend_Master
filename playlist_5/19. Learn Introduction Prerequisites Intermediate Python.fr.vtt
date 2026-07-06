@@ -1,0 +1,95 @@
+WEBVTT
+
+00:00.000 --> 00:14.200
+Si je voulais suivre le nombre de roues de ma voiture, et si vous travaillez dans un fichier alors
+
+00:14.200 --> 00:26.800
+que vous pouvez suivre avec moi, laissez-moi vous montrer ce que j'ai tapé dans le Ripple.
+
+00:26.800 --> 00:32.600
+Dans les voitures, c'est le nom de mon fichier P-Wi sans l'extension P-Wi, juste pour que vous l'ayez
+
+00:32.600 --> 00:35.600
+là.
+
+00:35.600 --> 00:56.760
+Si je veux pouvoir accéder à ces variables de classe dans mes méthodes, je peux fournir quelque chose
+
+00:57.760 --> 01:02.760
+appelé une méthode de classe.
+
+01:02.760 --> 01:08.760
+Ceux-ci sont définis avec un décorateur comme celui-ci.
+
+01:08.760 --> 01:10.760
+Je ne vais pas entrer dans trop de détails.
+
+01:10.760 --> 01:14.760
+Je veux juste vous montrer parce que vous pourriez voir cela dans un autre code.
+
+01:14.760 --> 01:25.760
+Le problème avec la méthode de classe, une méthode de classe ne se prend pas en compte.
+
+01:26.760 --> 01:32.760
+Au lieu de cela, il faut un argument différent appelé CLS, ou peu importe
+
+01:32.760 --> 01:36.760
+vous l'appelez, mais c'est la convention.
+
+01:36.760 --> 01:48.760
+Vous pouvez désormais accéder à ces variables de classe.
+
+01:48.760 --> 01:54.760
+Oups, je souhaite renvoyer la variable nombre de roues.
+
+01:54.760 --> 02:01.760
+Il suffit de le sauvegarder et de le recharger.
+
+02:01.760 --> 02:12.760
+On peut dire que ma Subaru est une voiture, une voiture, Subaru.
+
+02:12.760 --> 02:17.760
+C'est mon exemple.
+
+02:18.760 --> 02:24.760
+Je n'ai pas pu accéder au nom uniquement à partir du type.
+
+02:24.760 --> 02:37.760
+Mais maintenant, parce que j'en ai fait une méthode de classe, je peux dire cars.car et appeler get number of wheel.
+
+02:37.760 --> 02:40.760
+Notez qu'il s'agit du type, pas de l'instance.
+
+02:40.760 --> 02:44.760
+C'est la différence entre une méthode de classe et une méthode d'instance.
+
+02:44.760 --> 02:49.760
+Comme vous débutez, vous utiliserez probablement toutes les méthodes d'instance, les méthodes de classe,
+
+02:49.760 --> 02:52.760
+ou généralement pour des cas particuliers.
+
+02:52.760 --> 03:04.760
+Vous pouvez également appeler ces méthodes de classe sur une instance car l'instance connaît la classe,
+
+03:04.760 --> 03:08.760
+mais pas l'inverse.
+
+03:08.760 --> 03:15.760
+Je ne peux donc toujours pas appeler .start.
+
+03:15.760 --> 03:17.760
+Ceci attend une instance.
+
+03:17.760 --> 03:20.760
+Je n'en ai pas et je vais recevoir une erreur.
+
+03:20.760 --> 03:28.760
+C'est un début, il manque un argument de position requis pour soi.
+
+03:28.760 --> 03:35.760
+Maintenant, vous savez en quelque sorte ce que signifient certaines de ces erreurs, d'où le soi apparaît,
+
+03:35.760 --> 03:39.760
+étant lié sous le capot par Python.
+

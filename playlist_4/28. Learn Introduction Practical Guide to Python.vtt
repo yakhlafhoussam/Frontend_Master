@@ -1,0 +1,71 @@
+WEBVTT
+
+00:00.000 --> 00:05.000
+Now we talked about some practical applications of Python as well.
+
+00:05.000 --> 00:08.000
+We talked about list comprehension.
+
+00:08.000 --> 00:13.000
+Let's say that we wanted to create a list of only odd numbers between zero
+
+00:13.000 --> 00:16.000
+and 100 using a list comprehension.
+
+00:16.000 --> 00:25.000
+We can do that by using range to get the numbers from zero to 99 in this case
+
+00:26.000 --> 00:30.000
+and add them to our list comprehension.
+
+00:30.000 --> 00:35.000
+Only if that number that is generated is divisible by two.
+
+00:35.000 --> 00:42.000
+You can also use a set comprehension or a dictionary comprehension.
+
+00:42.000 --> 00:45.000
+Those are outside of the scope of the course,
+
+00:45.000 --> 00:49.000
+but they are included on the course website for you to look at.
+
+00:49.000 --> 00:54.000
+Slicing is another important concept in Python.
+
+00:55.000 --> 01:00.000
+Let's say I had a list that looked like this with individual characters in it.
+
+01:00.000 --> 01:02.000
+I can take a look at the length.
+
+01:02.000 --> 01:05.000
+I could also ask for slices of my list.
+
+01:05.000 --> 01:15.000
+So for example, the slice from four to six.
+
+01:15.000 --> 01:19.000
+If I wanted to exclude that value,
+
+01:19.000 --> 01:22.000
+I would get the same results because by default,
+
+01:22.000 --> 01:26.000
+if you don't provide the value, it goes all the way to the end.
+
+01:26.000 --> 01:30.000
+If you don't provide a start value, it goes all the way to the beginning.
+
+01:30.000 --> 01:36.000
+Passing in no arguments at all is a quick shortcut to get a copy of a list in Python.
+
+01:36.000 --> 01:44.000
+You can also use the zip function to take two lists and combine them together.
+
+01:44.000 --> 01:50.000
+This is especially useful when you are converting between types.
+
+01:50.000 --> 01:57.000
+So I recommend that you go through the converting between types exercise on your own when you have time.
+

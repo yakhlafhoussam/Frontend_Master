@@ -1,0 +1,470 @@
+WEBVTT
+
+00:00.000 --> 00:03.440
+Nous allons donc nous pencher un peu sur le routage.
+
+00:03.440 --> 00:05.760
+Qui ici a une sorte de routage basé sur des fichiers, d'accord ?
+
+00:05.760 --> 00:08.080
+Il semble donc que certaines personnes ici le savent, ce qui est une bonne chose.
+
+00:08.080 --> 00:10.640
+Et donc cette technique, je pense, commence à intéresser la communauté
+
+00:10.640 --> 00:14.720
+par une tempête parce que comme nous le verrons, ça aide, je veux dire,
+
+00:14.720 --> 00:17.360
+Je pense que beaucoup de travail sur le cadre de développement
+
+00:17.360 --> 00:20.640
+consiste à rendre notre expérience de développeur la meilleure possible.
+
+00:20.640 --> 00:23.040
+Et simplifier le passe-partout que nous devons faire.
+
+00:23.040 --> 00:26.320
+Alors pour ceux qui ne le savent pas, jetons un oeil
+
+00:26.320 --> 00:28.640
+par quoi nous devons commencer.
+
+00:28.640 --> 00:32.640
+Donc pour ceux-là, vous devriez déjà être familier avec View Router.
+
+00:32.640 --> 00:34.640
+Et le fait qu'avec View Router,
+
+00:34.640 --> 00:38.560
+nous avons généralement toutes nos pages dans le dossier d'affichage.
+
+00:38.560 --> 00:42.640
+Et puis nous configurons tout à l'intérieur de notre routeur,
+
+00:42.640 --> 00:45.600
+à l'intérieur d'ici, à l'intérieur d'une chose appelée routes.
+
+00:45.600 --> 00:49.920
+Et nous définissons tous ces chemins, et nous définissons les composants qui y mènent.
+
+00:49.920 --> 00:54.160
+Et c'est une quantité de travail décente.
+
+00:54.160 --> 00:58.240
+Le routage basé sur les fichiers est intéressant car ce qu'il dit est :
+
+00:58.320 --> 01:01.200
+très bien, nous, c'est un truc standard, non ?
+
+01:01.200 --> 01:04.240
+Lorsque l'utilisateur visite un site, nous savons, vous savez,
+
+01:04.240 --> 01:06.480
+quand ils sont sur un site Web qu'ils sont,
+
+01:06.480 --> 01:08.400
+c'est en fait très petit à faire ici.
+
+01:08.400 --> 01:11.520
+Lorsqu'ils seront sur un site Web, ils aimeront :
+
+01:11.520 --> 01:14.000
+vous savez, disons slash ardomain.com,
+
+01:14.000 --> 01:18.080
+et puis il s'agit généralement d'une sorte de produit similaire,
+
+01:18.080 --> 01:22.400
+puis l'identifiant, et peut-être les détails du produit,
+
+01:22.400 --> 01:23.760
+quelque chose comme ça.
+
+01:23.760 --> 01:27.280
+Et si vous regardez ça, cela semble vraiment, vraiment similaire
+
+01:27.280 --> 01:30.080
+au fonctionnement des fichiers et des répertoires.
+
+01:30.080 --> 01:32.480
+Et donc un modèle est apparu, nous y sommes essentiellement comme,
+
+01:32.480 --> 01:34.480
+si c'est ce que nous voulons de toute façon,
+
+01:34.480 --> 01:37.920
+pourquoi s'embêter, au moins hors de la boîte,
+
+01:37.920 --> 01:41.520
+quoi, dans la plupart des cas, pourquoi nous embêtons-nous avec toute cette configuration,
+
+01:41.520 --> 01:44.080
+quand pouvons-nous simplement le faire via un routage basé sur des fichiers ?
+
+01:44.080 --> 01:47.280
+Et donc la façon dont cela va fonctionner est que j'ai installé.
+
+01:47.280 --> 01:49.440
+Je me suis donc déjà occupé d'une partie de la configuration.
+
+01:49.440 --> 01:52.240
+Et une partie de la raison pour laquelle j'ai fait cela est parce que je pense que la configuration
+
+01:52.240 --> 01:54.880
+ce n’est pas quelque chose sur lequel je veux insister.
+
+01:54.880 --> 01:56.480
+Et donc de quoi nous allons parler ici,
+
+01:56.480 --> 01:59.680
+je vais donc en parler pour que les gens le sachent.
+
+01:59.680 --> 02:02.800
+Débranchez le routeur de vue.
+
+02:02.800 --> 02:09.200
+En ce qui concerne, vous savez, toute la technologie de nouvelle génération,
+
+02:09.200 --> 02:12.800
+c'est comme l'avenir du routage serré.
+
+02:12.800 --> 02:15.280
+Et donc ici vous pouvez voir comment mettre en place votre propre projet.
+
+02:15.280 --> 02:17.600
+Mais j'ai essentiellement fait la plupart de cela pour vous.
+
+02:17.600 --> 02:19.840
+Et donc ce que nous allons faire ici, c'est que je veux vous montrer,
+
+02:19.840 --> 02:22.080
+Je vais progressivement commencer à en migrer une partie,
+
+02:22.080 --> 02:24.320
+et ensuite vous pourrez tous acquérir une petite expérience pratique,
+
+02:24.320 --> 02:26.080
+aussi, pour voir à quoi ça ressemble.
+
+02:26.080 --> 02:30.800
+Alors tout d’abord, voyons voir, je pense que tout devrait être prêt.
+
+02:30.800 --> 02:32.560
+Permettez-moi de vérifier très rapidement.
+
+02:32.560 --> 02:36.400
+Il y a la vue routeur, excellente, et puis, d'accord.
+
+02:37.440 --> 02:42.560
+Donc, la façon dont cela fonctionne, je suppose, je suppose que cela ne peut pas supposer
+
+02:42.560 --> 02:44.240
+l'expérience de tout le monde était le Web ici.
+
+02:44.240 --> 02:48.400
+Mais lorsque vous visitez un site Web comme domain.com comme celui-ci, juste ici.
+
+02:49.600 --> 02:55.200
+Pour ceux d'entre nous qui reviennent de l'époque de FTV et qui comprennent comment tout cela fonctionne,
+
+02:55.280 --> 02:58.320
+ce que vous ne savez pas, c'est que ce que vous frappez réellement est index.html.
+
+02:58.960 --> 03:03.600
+De la même manière, si nous allons au produit slash domain.com,
+
+03:04.320 --> 03:06.720
+c'est vrai, et puis vous avez un tas de produits qui sont sur la page,
+
+03:06.720 --> 03:10.080
+vous frappez vraiment products.index.ml.
+
+03:10.800 --> 03:14.000
+La raison pour laquelle ce contexte est utile est que vous aurez besoin de le savoir.
+
+03:14.000 --> 03:17.200
+lorsque vous effectuez le routage basé sur des fichiers, parce que vous allez essentiellement appeler ces fichiers,
+
+03:17.200 --> 03:18.880
+index.view, et ainsi de suite.
+
+03:19.440 --> 03:23.040
+Donc ce que nous faisons ici, c'est que nous allons créer ici un dossier appelé pages,
+
+03:23.120 --> 03:28.400
+plutôt que des vues. Et donc pour montrer que cela fonctionne, je vais commencer par déplacer la page d'accueil
+
+03:28.400 --> 03:33.520
+à l'intérieur d'ici. Et donc cela va se diviser en trucs parce que cela n’existe plus.
+
+03:33.520 --> 03:39.680
+Je vais donc supprimer cet itinéraire. Et puis ce que nous devons faire, c'est à l'intérieur de ça,
+
+03:40.560 --> 03:47.280
+J'ai besoin d'importer des itinéraires dans cette chose appelée gérer les mises à jour à chaud. Alors je vais vous expliquer une seconde
+
+03:47.280 --> 03:51.120
+à partir de la vue des routes automatiques avec barre oblique du routeur. C'est donc comme un paquet à l'intérieur.
+
+03:51.200 --> 03:53.680
+Nous avons maintenant une collision de noms ici. Nous allons donc utiliser notre petit
+
+03:54.560 --> 03:59.040
+renommer ici. Je vais donc appeler cela des routes automatiques. C'est ce qui se passe. Ils sont automatiques
+
+03:59.040 --> 04:06.240
+généré. Et puis nous allons faire ici, c'est que les itinéraires, nous allons les fusionner. Nous sommes
+
+04:06.240 --> 04:10.800
+je vais dire d'abord, allez-y et faites tous vos itinéraires ou en fait, nous allons faire des itinéraires automatiques. Tout d'abord,
+
+04:11.760 --> 04:15.840
+nous allons ensuite fusionner cela avec les itinéraires que nous avons écrits manuellement ici. C'est donc
+
+04:15.840 --> 04:20.400
+ce qui se passe là-bas. Ceux-ci sont donc répartis sur le même objet. Et puis c'est juste un
+
+04:20.400 --> 04:26.960
+chose de configuration. Mais en gros, cela nous permettra de recharger à chaud des modules.
+
+04:26.960 --> 04:34.320
+Pour que le routeur génère réellement la bonne chose. Alors, est-ce que ce sont des mises à jour chaudes ? Mise à jour à chaud. Voilà.
+
+04:34.320 --> 04:39.360
+D'accord, parfait. Maintenant, si cela fonctionne comme prévu,
+
+04:40.000 --> 04:49.680
+ouais, rechargé. Localisez l'hôte. 5173. D'accord, magnifique. C'est cassé. C'est bien. Ce que nous avons fait
+
+04:50.080 --> 04:56.800
+c'est que nous avons dit, hé, nos pages sont en route. Si vous remarquez que cela s'appelle page d'accueil, pas index. Mais si nous partons
+
+04:56.800 --> 05:04.640
+sur une page d'accueil comme celle-ci, maintenant nous tous sur tout apparaît. Alors juste une démo, je vais changer
+
+05:04.640 --> 05:10.480
+cela revient maintenant à index.view. Vous pouvez voir que cela va générer. Et puis, si nous ne pouvons plus accéder à la page d'accueil
+
+05:10.480 --> 05:17.920
+être trouvé, si nous allons maintenant sur la page d'accueil, voilà. C'est maintenant la page d'accueil. Et ce qui est cool c'est que tu ne l'as pas fait
+
+05:17.920 --> 05:24.240
+voyez-le ici, mais ce fichier ici est en fait généré pour vous tout ce temps. Comme toi
+
+05:24.240 --> 05:28.640
+pour être clair, ne modifiez pas ce fichier. Gros avertissement. Mais je pourrais le dire à notre routeur et vous voyez plus grand que ça.
+
+05:29.440 --> 05:34.240
+Mais vous pouvez voir ici, cela génère en fait des itinéraires typés de sorte que lorsque vous assimilez réellement
+
+05:34.240 --> 05:38.160
+ceux-ci, vous ne faites pas réellement certains enregistrements, la saisie semi-automatique. Ne me demandez pas d'expliquer comment le
+
+05:38.160 --> 05:42.480
+l'itinéraire tapé fonctionne. Sachez simplement qu'il est censé être tapé en toute sécurité. Terminons avantageusement avec ça.
+
+05:43.360 --> 05:49.280
+Et alors je vais continuer et en faire un de plus, par exemple. Nous avons donc mentionné comme
+
+05:49.280 --> 05:55.280
+une page de détails fiscaux, n'est-ce pas ? Donc une page de détail des taxes, c'est ce qui est drôle avec la page de détails des taxes,
+
+05:55.280 --> 06:01.360
+c'est que j'aime vraiment, sans regarder l'itinéraire, c'est difficile de savoir quoi exactement
+
+06:01.360 --> 06:04.960
+tu avais l'intention de faire ça. Et donc je dois en quelque sorte revenir ici. Je veux dire, regarde ça,
+
+06:04.960 --> 06:11.520
+par exemple, la page de détails de la tâche se trouve sous la barre oblique de la tâche, puis un paramètre dynamique ID. Alors que
+
+06:11.520 --> 06:18.000
+faible, voyons voir, la page de détail faible, la page de détail faible est en fait sous un ID planaire et faible.
+
+06:19.040 --> 06:22.720
+Et donc c'est en fait une sorte de sous-produit intéressant, le routage basé sur les fichiers.
+
+06:22.720 --> 06:26.640
+c'est que votre routeur, celui de votre entreprise, devient en fait assez déclaratif et vous comprenez où
+
+06:26.640 --> 06:30.240
+ils sont censés être et ce qu'ils ont l'intention de faire. Et donc la façon dont cela fonctionne,
+
+06:30.240 --> 06:34.240
+donc je vais faire la première tâche. Alors je vais y aller et voyons, je vais bouger
+
+06:34.240 --> 06:39.600
+pour déplacer la page des tâches. Oh attends, ce n'est pas le bon. Page de tâches ici. Oui, bougez.
+
+06:40.400 --> 06:46.880
+Et puis la page des tâches a disparu. Ensuite, je vais faire la page de détail de la tâche ici.
+
+06:47.760 --> 06:53.360
+Cela va disparaître maintenant. Et puis pour finaliser cela, nous allons continuer et nous allons
+
+06:53.360 --> 06:58.400
+créer un dossier de tâches car c'est l'itinéraire que nous souhaitions. Et puis nous déposerons la page de détails dans
+
+06:59.360 --> 07:04.720
+là. Et puis la convention que nous recherchons ici pour vous dire tout ce qui est le crochet
+
+07:04.720 --> 07:09.920
+à l'intérieur du nom de votre fichier, le fait est qu'il s'agit d'un paramètre dynamique. Et donc si tu
+
+07:09.920 --> 07:14.800
+au fait, j'ai fait quelque chose comme ça, donc à ce moment-là, la tâche serait statique,
+
+07:14.800 --> 07:20.080
+comme le tableau de bord de la tâche, et tout ce qui est ajouté est essentiellement le paramètre.
+
+07:21.840 --> 07:26.640
+Alors voilà. Et puis la page des tâches, je vais juste la mettre ici comme index, oups.
+
+07:26.960 --> 07:37.680
+Pas la vue X, d'accord. Et puis je pense, euh, point, point, point, point, point, point, point.
+
+07:39.760 --> 07:53.120
+D'accord, super. Ne dites pas, d'accord, voyons. De nouveaux itinéraires, les planificateurs corrigent. Non, c'est bien.
+
+07:54.080 --> 08:01.840
+Euh, planificateur. Attendez, planificateur. Ouais, j'ai mis ça à jour d'une manière ou d'une autre. Oh, ouais, c'est bizarre. D'accord. Donc ça devrait être ça.
+
+08:03.280 --> 08:11.600
+Ça a l'air bien. Je pense, d'accord, pourquoi est-ce malheureux ? Oh, les itinéraires, c'est oui. D'accord.
+
+08:12.880 --> 08:14.400
+Ouais, ouais, ouais, ouais, te voilà.
+
+08:14.400 --> 08:21.840
+Oui, bien, planifiez notre page.
+
+08:21.840 --> 08:27.120
+Vue sur Panerplage.
+
+08:27.120 --> 08:31.920
+Oh, non, cela a mis à jour le chemin de mon répertoire.
+
+08:31.920 --> 08:34.400
+Il devrait y avoir des vues.
+
+08:34.400 --> 08:35.400
+Vues vues.
+
+08:35.400 --> 08:36.400
+Aucune tâche.
+
+08:36.400 --> 08:37.760
+Oh, les tâches aussi.
+
+08:37.760 --> 08:39.760
+Juste des vues.
+
+08:39.760 --> 08:42.360
+Oh, tu as raison.
+
+08:42.360 --> 08:43.360
+Merci.
+
+08:44.320 --> 08:45.320
+Hé, belle.
+
+08:45.320 --> 08:49.800
+OK, alors maintenant vous pouvez voir si nous passons aux tâches.
+
+08:49.800 --> 08:51.400
+Whoa, qu'est-ce qui s'est passé ?
+
+08:51.400 --> 08:52.120
+Oh, je sais ce qui vient de se passer.
+
+08:55.000 --> 08:58.880
+Nous allons à la page d'index des tâches.
+
+08:58.880 --> 09:01.360
+Je crois que les importations et le gâchis.
+
+09:01.360 --> 09:02.320
+Oh non, ils sont bons.
+
+09:02.320 --> 09:04.360
+Votre filtre de liste de tâches.
+
+09:04.360 --> 09:09.200
+Oui, cela ressemble à la liste des tâches qui filtre les tâches.
+
+09:09.200 --> 09:11.000
+Oh, ouais, ouais, ouais, j'ai fait cette expérience.
+
+09:11.000 --> 09:15.480
+Et puis je ne l'ai jamais réparé.
+
+09:15.480 --> 09:18.840
+Stockez cette liste de tâches.
+
+09:18.840 --> 09:21.240
+Ce n’est pas une tâche, voilà.
+
+09:21.240 --> 09:24.200
+OK, rafraîchissez-vous, aha, c'est parti.
+
+09:24.200 --> 09:26.040
+OK, et ensuite vous pourrez voir ici.
+
+09:26.040 --> 09:27.880
+Boum, la première tâche est l'identification.
+
+09:27.880 --> 09:31.000
+Est-ce que tout fonctionne ?
+
+09:31.000 --> 09:33.240
+Et ce qui est génial maintenant, c'est que, alors que par le passé,
+
+09:33.240 --> 09:34.920
+je me souviens que je me disais, oh, je dois créer une page sandbox
+
+09:34.920 --> 09:36.440
+et je dois configurer un tas de choses.
+
+09:36.440 --> 09:37.560
+Maintenant, ça peut être, je ne sais pas.
+
+09:37.560 --> 09:40.840
+Quelqu'un m'a donné un nom de page.
+
+09:41.800 --> 09:44.440
+Très bien, le bac à sable, mais en avons-nous déjà un ?
+
+09:44.440 --> 09:45.200
+Je pense que nous en avons un.
+
+09:45.200 --> 09:46.640
+J'appelle Playground.
+
+09:46.640 --> 09:49.920
+Aire de jeuxW.
+
+09:49.920 --> 09:52.440
+Ouais.
+
+09:52.440 --> 09:53.040
+Aire de jeux.
+
+09:58.360 --> 09:59.400
+Aire de jeux.
+
+09:59.400 --> 10:01.000
+Fait.
+
+10:01.000 --> 10:02.480
+Tout ce passe-partout a disparu.
+
+10:02.480 --> 10:04.440
+Je n'ai plus à m'en occuper.
+
+10:04.440 --> 10:05.800
+Je l'aime.
+
+10:05.800 --> 10:07.760
+Ce sont les choses qui m’ont rendu heureux.
+

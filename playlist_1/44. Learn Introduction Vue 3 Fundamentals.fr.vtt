@@ -1,0 +1,533 @@
+WEBVTT
+
+00:00.000 --> 00:03.500
+Que se passe-t-il lorsque vous souhaitez examiner une valeur dynamique ?
+
+00:03.500 --> 00:06.780
+En d’autres termes, lorsque vous ne pouvez pas prédire l’itinéraire que vous suivrez.
+
+00:06.780 --> 00:09.860
+Prenons par exemple, lorsque nous entrons dans le Pokédex,
+
+00:09.860 --> 00:12.540
+et Pokédex a différents Pokémon,
+
+00:12.540 --> 00:14.900
+c'est ainsi que fonctionne le Pokédex.
+
+00:14.900 --> 00:17.580
+Et si nous voulions réellement restituer les différents Pokémon,
+
+00:17.580 --> 00:20.220
+mais nous voulions faire des choses en fonction du paramètre dans l'URL ?
+
+00:20.220 --> 00:22.260
+Un exemple de ceci pourrait donc être :
+
+00:22.260 --> 00:26.700
+si nous regardons la page Pokédex et que vous dites,
+
+00:26.700 --> 00:29.620
+ok, en théorie, ce que j'aimerais pouvoir faire, c'est aussi
+
+00:29.620 --> 00:32.980
+allez sur une page qui va aimer,
+
+00:32.980 --> 00:36.200
+allez au slash Pokédex slash one,
+
+00:36.200 --> 00:37.780
+et cela devrait appeler le premier Pokémon.
+
+00:37.780 --> 00:40.940
+En d’autres termes, cette partie est dynamique car ce que nous ne voulons pas faire, c’est définir
+
+00:40.940 --> 00:43.500
+une vue par points, une vue à deux points, etc.
+
+00:43.500 --> 00:45.780
+Alors, comment cela pourrait-il réellement fonctionner ?
+
+00:45.780 --> 00:47.540
+Eh bien, quand il s'agit de ça,
+
+00:47.540 --> 00:51.780
+ce que nous examinons en fait concerne l'idée d'identifiants de paramètres dynamiques.
+
+00:51.780 --> 00:56.420
+Donc la façon dont ça fonctionne, c'est que nous allons à l'intérieur de notre routeur,
+
+00:56.420 --> 00:58.820
+à l'intérieur du terrain de jeu.
+
+00:58.900 --> 01:02.940
+Ce que nous avons ici, c'est que nous avons un chemin ici,
+
+01:02.940 --> 01:08.020
+c'est une barre oblique du Pokédex avec l'identifiant du côlon,
+
+01:08.020 --> 01:10.860
+et c'est ce qui lui dit que ça va être dynamique.
+
+01:10.860 --> 01:13.340
+À partir de là, nous pouvons alors dire :
+
+01:13.340 --> 01:15.920
+créons une page Pokémon car cela récupérerait
+
+01:15.920 --> 01:18.220
+un Pokémon spécifique dans ce cas particulier.
+
+01:18.220 --> 01:21.980
+Laissez-moi FSC ceci et disons simplement Pokémon.
+
+01:21.980 --> 01:25.220
+Pour l'instant, nous dirons simplement le numéro 100 pour montrer que c'est
+
+01:25.220 --> 01:27.460
+faux en ce qui concerne l'URL.
+
+01:27.460 --> 01:30.060
+Ensuite, nous ferons juste le composant et cette fois nous allons juste
+
+01:30.060 --> 01:36.220
+importez le chemin dans les vues slash de la page Pokemon. Sauvegarder.
+
+01:36.220 --> 01:38.980
+Alors pour prouver que ça marche,
+
+01:38.980 --> 01:43.100
+on va y aller et sur la page Pokédex juste ici,
+
+01:43.100 --> 01:46.700
+nous aurons un lien de routeur qui va en slash
+
+01:46.700 --> 01:48.620
+Pokédex et cette fois on fera du slash 20,
+
+01:48.620 --> 01:49.900
+juste pour montrer quelque chose de différent.
+
+01:49.900 --> 01:52.380
+Allez au Pokémon numéro 20.
+
+01:52.380 --> 01:55.080
+On voit ça ici, et si on clique dessus,
+
+01:55.080 --> 01:58.920
+vous verrez que cela nous amène correctement à la page.
+
+01:58.920 --> 02:00.280
+Mais ce dont nous avons besoin, c'est de pouvoir
+
+02:00.280 --> 02:01.880
+extraire les données dynamiques.
+
+02:01.880 --> 02:04.320
+Droite? Comment ça marche ?
+
+02:04.320 --> 02:07.720
+Eh bien, quand vous le faisiez dans View2,
+
+02:07.720 --> 02:09.680
+comme vous le feriez dans l'API Options et vous pourriez toujours
+
+02:09.680 --> 02:11.960
+pourrais-tu faire cette route point point
+
+02:11.960 --> 02:14.680
+params c'est généralement ce que vous recherchez.
+
+02:14.680 --> 02:16.500
+Mais dans un effort pour que vous vous entraîniez tous avec
+
+02:16.500 --> 02:17.600
+API de composition et voir quoi
+
+02:17.600 --> 02:19.800
+une forme alternative pourrait ressembler à,
+
+02:19.800 --> 02:21.840
+que pourriez-vous chercher ?
+
+02:21.840 --> 02:23.360
+Probablement une méthode d'assistance, non ?
+
+02:23.360 --> 02:28.040
+Nous avons donc quelque chose appelé useRoute car il vient de ViewRouter.
+
+02:28.040 --> 02:31.720
+Ensuite, nous pouvons dire que constRoute est égal à useRoute.
+
+02:31.720 --> 02:33.040
+Alors avant de faire quoi que ce soit,
+
+02:33.040 --> 02:35.800
+Enregistrons cela très rapidement et montrons ce que nous obtenons.
+
+02:35.800 --> 02:38.080
+Oh, c'est la page Pokédex, je dois y retourner.
+
+02:38.080 --> 02:39.480
+Donc sur la page Pokédex,
+
+02:39.480 --> 02:42.360
+vous verrez maintenant que nous étendons cela à la cible,
+
+02:42.360 --> 02:43.880
+il y a plein de trucs en fait,
+
+02:43.880 --> 02:45.880
+paramètres, nom, méta,
+
+02:45.880 --> 02:47.920
+et puis si vous le décomposez pour interroger des trucs,
+
+02:47.920 --> 02:48.960
+il y a toute une tonne de choses
+
+02:48.960 --> 02:50.400
+là-dessous que vous pouvez déballer.
+
+02:50.400 --> 02:53.560
+Mais ce qui nous intéressera, ce seront les paramètres.
+
+02:53.560 --> 02:56.000
+Alors laissez-moi aller de l'avant et déplacer cette useRoute parce que
+
+02:56.000 --> 02:58.360
+là où nous en avons besoin, ce n'est pas la page Pokédex,
+
+02:58.360 --> 03:00.800
+nous en avons besoin sur la page Pokémon.
+
+03:00.800 --> 03:02.880
+Laissez-moi plutôt déposer ça ici.
+
+03:02.880 --> 03:05.440
+Alors maintenant, allons-y et passons à Pokémon 20,
+
+03:05.440 --> 03:08.080
+et maintenant nous remarquerons que nous actualisons.
+
+03:08.080 --> 03:12.160
+Et voilà. Notre itinéraire est rendu,
+
+03:12.160 --> 03:13.760
+et nous regardons nos paramètres,
+
+03:13.760 --> 03:17.520
+vous verrez que nous avons ici une pièce d'identité de 20.
+
+03:17.520 --> 03:19.120
+D'où vient cette pièce d'identité ?
+
+03:19.120 --> 03:24.240
+Cet identifiant vient de ce que nous avons nommé ici même sur notre chemin.
+
+03:24.240 --> 03:26.320
+C'est là que c'est réellement défini.
+
+03:26.320 --> 03:28.640
+Alors qu'est-ce qu'on obtient si on veut,
+
+03:28.640 --> 03:32.080
+nous disons route.params.id,
+
+03:32.080 --> 03:34.680
+et nous faisons cela et actualisons la page,
+
+03:34.680 --> 03:37.160
+tu verras, c'est 20.
+
+03:37.160 --> 03:38.440
+C'est tout ce qu'il faut.
+
+03:38.440 --> 03:42.360
+Alors maintenant, votre imagination peut partir d'ici,
+
+03:42.360 --> 03:43.920
+vous allez sur l'API Pokémon,
+
+03:43.920 --> 03:45.160
+et puis quand vous chargez la page,
+
+03:45.160 --> 03:46.960
+vous pouvez aller chercher le bon Pokémon,
+
+03:47.160 --> 03:49.240
+obtenir ses attributs, le rendre à la page,
+
+03:49.240 --> 03:51.560
+mais par souci de concision,
+
+03:51.560 --> 03:54.080
+nous allons juste aller de l'avant et montrer cela ici,
+
+03:54.080 --> 03:56.920
+juste comme ça, route.params.id,
+
+03:56.920 --> 03:59.840
+et puis juste comme ça,
+
+03:59.840 --> 04:02.720
+vous disposez désormais d'une page dynamique pouvant prendre n'importe quel argument,
+
+04:02.720 --> 04:04.320
+et puis comme bon vous semble,
+
+04:04.320 --> 04:07.120
+vous pouvez configurer par programme des conditions supplémentaires,
+
+04:07.120 --> 04:10.920
+sinon, ne pas rendre les bonnes choses à vos utilisateurs.
+
+04:10.920 --> 04:14.280
+Qu'en est-il des paramètres des routes parentes ?
+
+04:14.280 --> 04:16.640
+D'accord, la question ici concerne les paramètres des routes parentes.
+
+04:16.640 --> 04:19.720
+Donc ce que tu dis c'est que si c'est comme avec,
+
+04:19.720 --> 04:21.480
+donc en gros, esquissons cela très rapidement,
+
+04:21.480 --> 04:22.680
+est-ce que tu dis quelque chose comme,
+
+04:22.680 --> 04:26.320
+si Pokedex avait alors une pièce d'identité pour le Pokémon,
+
+04:26.320 --> 04:29.200
+il y avait comme une chose supplémentaire pour le même élément.
+
+04:29.200 --> 04:30.680
+Alors vous pourriez être sur une page d'élément,
+
+04:30.680 --> 04:32.720
+et vous souhaitez consulter vos paramètres d'identification.
+
+04:32.720 --> 04:33.560
+Potentiellement.
+
+04:33.560 --> 04:37.760
+Ouais, donc je crois qu'au moment où tu fais l'itinéraire, en gros,
+
+04:38.760 --> 04:39.840
+en gros, tu devrais tout avoir
+
+04:39.840 --> 04:41.720
+cela fait partie de cet itinéraire.
+
+04:41.720 --> 04:44.600
+Et donc cela dépasse le cadre
+
+04:44.600 --> 04:46.440
+comme le routeur d'examen des fondamentaux,
+
+04:46.440 --> 04:48.040
+mais il y a même des choses comme des vues imbriquées
+
+04:48.040 --> 04:49.640
+et toutes ces choses avec lesquelles nous pouvons jouer.
+
+04:49.640 --> 04:51.080
+Vous devriez donc pouvoir obtenir le parent
+
+04:51.080 --> 04:52.880
+de ce chemin sans aucun problème.
+
+04:52.880 --> 04:55.400
+Et c'est pourquoi ce serait une bonne pratique, par exemple,
+
+04:55.400 --> 04:59.200
+pas dans votre router.js pour dire,
+
+04:59.200 --> 05:03.960
+pour définir une autre route qui utilise le même paramètre comme name.
+
+05:03.960 --> 05:05.800
+Comme si tu ne voulais pas être comme ID ID.
+
+05:05.800 --> 05:07.600
+Parce que je pense que ce serait probablement le cas,
+
+05:07.600 --> 05:09.880
+Je suis presque certain que cela briserait le routeur de vue,
+
+05:09.880 --> 05:11.080
+parce que ce serait confus.
+
+05:11.080 --> 05:12.040
+Et donc dans ce cas particulier,
+
+05:12.040 --> 05:14.240
+c'est là qu'il est important d'être précis
+
+05:14.240 --> 05:15.840
+à propos du nom de ce paramètre,
+
+05:15.840 --> 05:18.160
+et puis la route doit contenir tous ces paramètres
+
+05:18.160 --> 05:20.860
+correctement ajouté à cet objet.
+
+05:22.760 --> 05:26.960
+Vous avez donc parlé d'itinéraires imbriqués. Pourriez-vous avoir une région similaire ?
+
+05:26.960 --> 05:28.280
+c'est ce que tu disais ?
+
+05:28.280 --> 05:29.120
+Ouais.
+
+05:29.120 --> 05:31.800
+ID de région avec barre oblique de région, un nom de région.
+
+05:31.800 --> 05:32.640
+Ouais.
+
+05:32.640 --> 05:35.360
+En dessous se trouve le pokedex de cette région
+
+05:35.360 --> 05:37.720
+puis avoir une page Pokémon pokée.
+
+05:37.720 --> 05:38.560
+Ouais.
+
+05:38.560 --> 05:39.720
+Le paramètre ID à ce sujet.
+
+05:39.720 --> 05:40.560
+Nous pouvons.
+
+05:40.560 --> 05:42.280
+Et donc ça ne fait pas partie de cet exercice,
+
+05:42.280 --> 05:43.400
+mais puisque c'est une question,
+
+05:43.400 --> 05:45.240
+Je veux montrer cela pour les imbriqués.
+
+05:45.240 --> 05:47.040
+Si nous regardons la documentation ici,
+
+05:47.040 --> 05:48.840
+et nous regardons les itinéraires imbriqués,
+
+05:49.880 --> 05:51.960
+le problème avec les itinéraires imbriqués, c'est qu'il est facile d'y penser
+
+05:51.960 --> 05:53.000
+comme ce que nous venons de faire,
+
+05:53.000 --> 05:55.280
+parce que vous voyez ici un profil d'utilisateur Johnny, n'est-ce pas ?
+
+05:55.280 --> 05:58.400
+Vous vous dites, n'avons-nous pas simplement fait ce Pokémon slash pokedex ?
+
+05:58.400 --> 06:01.220
+C'est différent car une vue imbriquée signifie
+
+06:01.220 --> 06:03.920
+que vous avez une vue de routeur à l'intérieur d'une vue de routeur,
+
+06:03.920 --> 06:06.040
+ce qui signifie que le reste de la page reste le même
+
+06:06.040 --> 06:08.920
+et juste cette section de la page change
+
+06:08.920 --> 06:10.640
+en fonction de l'URL.
+
+06:10.640 --> 06:12.800
+Donc, comme vous pouvez le voir ici à l'intérieur de cet exemple,
+
+06:12.800 --> 06:14.080
+laisse-moi le faire exploser beaucoup,
+
+06:14.080 --> 06:15.280
+c'est la page utilisateur ici,
+
+06:15.280 --> 06:17.520
+qui est le shell, qui est l'utilisateur slash,
+
+06:18.600 --> 06:21.600
+amène actuellement l'enfant Johnny, n'est-ce pas ?
+
+06:21.600 --> 06:23.240
+Ce serait donc l'utilisateur Johnny.
+
+06:23.240 --> 06:27.320
+Mais la vue imbriquée ici concerne le profil et les publications.
+
+06:27.320 --> 06:29.480
+Et donc on peut presque y penser comme des onglets
+
+06:29.480 --> 06:31.360
+où vous ne voulez pas que la page entière soit restituée
+
+06:31.360 --> 06:33.660
+si vous cliquez sur poster pour Johnny.
+
+06:33.660 --> 06:34.720
+Vous voulez que tout le reste reste pareil,
+
+06:34.720 --> 06:37.000
+vous voulez juste changer l'onglet qui se trouve à l'intérieur.
+
+06:37.000 --> 06:39.620
+Et donc les vues imbriquées sont essentiellement ce concept
+
+06:39.620 --> 06:42.200
+que sans avoir à restituer la page entière,
+
+06:42.200 --> 06:43.840
+vous pouvez simplement en restituer une partie
+
+06:43.840 --> 06:46.080
+et ayez cette mise à jour basée sur l'URL.
+
+06:46.080 --> 06:48.360
+Et pour que cela puisse aussi être très performant
+
+06:48.360 --> 06:49.600
+quand il s'agit de faire des choses pour votre application.
+
+06:49.600 --> 06:53.280
+Donc je sais que c'est drôle que les vues imbriquées aient connu une résurgence
+
+06:53.280 --> 06:54.440
+dernièrement dans la discussion,
+
+06:54.440 --> 06:56.280
+mais cela est envisagé depuis un certain temps.
+
+06:56.280 --> 06:57.880
+Mais je veux que vous en soyez tous conscients,
+
+06:57.880 --> 06:59.240
+pour que si jamais tu découvres que tu es comme,
+
+06:59.240 --> 07:01.040
+oh, tout le reste doit changer,
+
+07:01.040 --> 07:02.640
+ou désolé, tout doit rester pareil,
+
+07:02.640 --> 07:04.720
+à l'exception de cette partie lorsque l'URL change,
+
+07:04.720 --> 07:07.580
+les vues imbriquées sont des itinéraires imbriqués, vérifiez ceci,
+
+07:07.580 --> 07:09.080
+cela résoudra vos problèmes.
+

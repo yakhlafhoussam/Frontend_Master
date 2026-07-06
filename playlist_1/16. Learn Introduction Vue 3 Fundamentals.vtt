@@ -1,0 +1,683 @@
+WEBVTT
+
+00:00.000 --> 00:01.920
+We've been talking about single file components,
+
+00:01.920 --> 00:04.320
+and it's really time for us to really start diving into it.
+
+00:04.320 --> 00:07.040
+Because what we've really done is basically
+
+00:07.040 --> 00:11.120
+moved our entire app from index.xml into app.view.
+
+00:11.120 --> 00:14.880
+But this code is there's a lot going on here, right?
+
+00:14.880 --> 00:16.640
+Especially because there's a lot of logic.
+
+00:16.640 --> 00:19.600
+And more importantly, things could be scoped kind of differently.
+
+00:19.600 --> 00:23.120
+So it's time to really dive into component-driven development
+
+00:23.120 --> 00:24.960
+at this point.
+
+00:24.960 --> 00:26.400
+OK, so for what I'm going to do here,
+
+00:26.400 --> 00:30.120
+I'm going to delete all the boilerplate inside of our code base
+
+00:30.120 --> 00:33.760
+here so that we're not dealing with any boilerplate.
+
+00:33.760 --> 00:35.840
+And so let me go ahead and refactor that real quick.
+
+00:39.920 --> 00:43.240
+Factor delete boilerplate components.
+
+00:43.240 --> 00:46.240
+OK.
+
+00:46.240 --> 00:48.760
+So now let's talk about how we actually
+
+00:48.760 --> 00:51.000
+create components in view.
+
+00:51.000 --> 00:52.480
+As we mentioned, single file components
+
+00:52.480 --> 00:53.840
+are basically the way to go.
+
+00:53.840 --> 00:56.760
+So let's start with something like the,
+
+00:56.760 --> 00:58.120
+let's start with something simple.
+
+00:58.120 --> 01:00.280
+Actually, I'm in the wrong directory for this.
+
+01:00.280 --> 01:01.520
+Let's go back to the playground.
+
+01:01.520 --> 01:03.960
+Because that's the, we'll use the exercise for that.
+
+01:06.920 --> 01:09.160
+OK.
+
+01:09.160 --> 01:13.800
+Inside of my playground, let's take a look at this one.
+
+01:13.800 --> 01:15.840
+So now that we're actually in the build tool, though,
+
+01:15.840 --> 01:17.840
+I need to actually make sure I run the right one.
+
+01:17.840 --> 01:21.480
+So I'll go back to my playground app and run dev.
+
+01:21.480 --> 01:23.200
+And so now that we're running it, there we go.
+
+01:23.200 --> 01:24.600
+We see that it automatically refreshed
+
+01:24.600 --> 01:25.600
+without me doing anything.
+
+01:25.600 --> 01:26.120
+So it's great.
+
+01:26.120 --> 01:27.200
+We have the update.
+
+01:27.200 --> 01:28.560
+All right.
+
+01:28.560 --> 01:31.560
+So let's take a look at what's going on inside of our app here.
+
+01:31.560 --> 01:32.160
+There is a lot.
+
+01:32.160 --> 01:33.640
+We played around with different concepts.
+
+01:33.640 --> 01:35.040
+We talked about lists of numbers.
+
+01:35.040 --> 01:36.800
+We talked about this increment thing.
+
+01:36.800 --> 01:38.680
+So basically, let's start with the simplest thing, which
+
+01:38.680 --> 01:41.240
+is that we have a counter component.
+
+01:41.240 --> 01:43.280
+That's like the easiest thing that we could split off
+
+01:43.280 --> 01:44.840
+from this at this point.
+
+01:44.840 --> 01:46.920
+And so what we can do then is we can say, OK,
+
+01:46.920 --> 01:48.520
+let's go into the components folder.
+
+01:48.520 --> 01:52.920
+And let's create a new one called counter.view.
+
+01:53.720 --> 01:55.320
+So I'm going to go ahead and full screen this
+
+01:55.320 --> 01:57.160
+so that it's easier to see, since we don't actually
+
+01:57.160 --> 01:59.960
+need to see the live updates right now.
+
+01:59.960 --> 02:01.920
+When you're creating a new component, basically we
+
+02:01.920 --> 02:03.880
+have our basic building blocks.
+
+02:03.880 --> 02:05.680
+We have our script block.
+
+02:05.680 --> 02:07.160
+And we have our template block.
+
+02:07.160 --> 02:08.760
+We don't have any custom styling right now,
+
+02:08.760 --> 02:10.320
+so I'm not going to add anything.
+
+02:10.320 --> 02:12.680
+And so let's start moving some stuff over.
+
+02:12.680 --> 02:14.560
+So what I would do is I would actually
+
+02:14.560 --> 02:17.240
+start by saying, OK, so inside of my script block,
+
+02:17.240 --> 02:19.200
+I will export a default object, because this
+
+02:19.200 --> 02:20.680
+is what I'm configuring.
+
+02:20.680 --> 02:23.160
+And so inside of my data, what do we
+
+02:23.160 --> 02:24.960
+have that we want to migrate over?
+
+02:24.960 --> 02:27.600
+Well, we care about the count, so that looks good.
+
+02:27.600 --> 02:30.680
+The counter title, yeah, that sounds good too.
+
+02:30.680 --> 02:32.840
+And we care about the increment amount.
+
+02:32.840 --> 02:34.440
+This is good.
+
+02:34.440 --> 02:37.400
+And then that's list of numbers not relevant.
+
+02:37.400 --> 02:38.280
+OK.
+
+02:38.280 --> 02:40.960
+Oh, OK, we have some computer properties
+
+02:40.960 --> 02:44.480
+that's relevant for display title and optimized increment
+
+02:44.480 --> 02:45.520
+amount.
+
+02:45.520 --> 02:47.840
+So actually, none of this is related to anything else,
+
+02:47.840 --> 02:50.400
+right, because we have the count, which is here.
+
+02:50.440 --> 02:53.520
+We have the display title, which is here.
+
+02:53.520 --> 02:55.480
+And the increment amount is here,
+
+02:55.480 --> 02:57.320
+meaning we can take this whole block, actually,
+
+02:57.320 --> 02:59.520
+and just cut that from the app.view.
+
+02:59.520 --> 03:01.600
+And then we can put it here.
+
+03:01.600 --> 03:04.120
+And then finally, we have this increment count method
+
+03:04.120 --> 03:05.080
+that we're using.
+
+03:05.080 --> 03:06.760
+And we're actually not even using the watch,
+
+03:06.760 --> 03:08.680
+so we can actually delete this.
+
+03:08.680 --> 03:11.520
+And we can cut the methods entire block over.
+
+03:14.920 --> 03:18.400
+And then what you'll see that we end up having here
+
+03:18.400 --> 03:20.920
+is that we have all of our logic now
+
+03:20.920 --> 03:22.480
+scoped to the counter, right?
+
+03:22.480 --> 03:24.640
+Nothing that's irrelevant to it is kept to it.
+
+03:24.640 --> 03:25.640
+And this is great, right?
+
+03:25.640 --> 03:27.560
+And to be clear, this is not a view thing.
+
+03:27.560 --> 03:30.520
+React, Angular, we've all been basically thinking this way
+
+03:30.520 --> 03:33.640
+as far as keeping our concerns scoped to the same file,
+
+03:33.640 --> 03:35.280
+so it's easier for people to understand.
+
+03:35.280 --> 03:37.160
+You don't have to jump files as much.
+
+03:37.160 --> 03:38.400
+Now, of course, we've got to make sure
+
+03:38.400 --> 03:40.440
+we move all the stuff that's related, though,
+
+03:40.440 --> 03:42.680
+to the counter app when it comes to 6.0.
+
+03:42.680 --> 03:45.000
+So we have that here, here, here, here.
+
+03:45.000 --> 03:46.880
+I think I mostly organize it together,
+
+03:46.880 --> 03:49.400
+so there's not too much mystery there.
+
+03:49.400 --> 03:52.160
+And so I can cut all that and just drop it over here
+
+03:52.160 --> 03:53.040
+inside of the template.
+
+03:57.000 --> 03:59.600
+And so what you get here now is we have our scoped, JavaScript,
+
+03:59.600 --> 04:00.800
+and HTML.
+
+04:00.800 --> 04:02.360
+And so now it's a time where we actually
+
+04:02.360 --> 04:05.520
+kind of want to see what's going on inside of the app.
+
+04:05.520 --> 04:06.960
+And so if you take a look, you'll
+
+04:06.960 --> 04:08.640
+notice our counter app is gone.
+
+04:08.640 --> 04:10.400
+And that's to be expected, because we've already
+
+04:10.400 --> 04:11.560
+moved everything.
+
+04:11.560 --> 04:14.080
+But what we haven't done is we haven't actually
+
+04:14.080 --> 04:15.480
+called our component.
+
+04:15.480 --> 04:16.640
+So how does that actually work?
+
+04:16.640 --> 04:19.680
+Well, just like standard JavaScript, what we want to do
+
+04:19.680 --> 04:21.640
+is we want to basically import our component.
+
+04:21.640 --> 04:23.600
+So we want to import our counter component.
+
+04:23.600 --> 04:25.160
+Where are we importing it from?
+
+04:25.160 --> 04:26.760
+Well, we're going to move up a directory,
+
+04:26.760 --> 04:28.560
+because right now we're in app.view.
+
+04:28.560 --> 04:30.280
+We're going to move, oh, wait.
+
+04:30.280 --> 04:32.360
+Counter is in the wrong one right now.
+
+04:32.360 --> 04:34.200
+It needs to move down here.
+
+04:34.200 --> 04:36.440
+OK, so we have our app.view.
+
+04:36.440 --> 04:38.480
+And we're going to import counter.
+
+04:38.480 --> 04:40.800
+And so this is following the file path directory, where
+
+04:40.800 --> 04:43.840
+we have the root directory, which is this flat one right here.
+
+04:43.840 --> 04:47.640
+We're going to go up into components.
+
+04:47.640 --> 04:50.920
+And then we're going to import counter.view.
+
+04:50.920 --> 04:52.960
+So we're going to do.
+
+04:52.960 --> 04:54.960
+You'll notice that our extensions are yelling at us,
+
+04:54.960 --> 04:56.960
+because why is saying, hey, you imported something,
+
+04:56.960 --> 04:58.120
+you never, ever used it.
+
+04:58.120 --> 05:00.840
+And so the way we actually register a component inside
+
+05:00.840 --> 05:03.320
+of ViewsOption API is, well, there
+
+05:03.320 --> 05:06.280
+is an aptly called components option where we can basically
+
+05:06.280 --> 05:10.840
+register our counter, just like that.
+
+05:10.840 --> 05:18.000
+And then your methods is inside of your computed encounter.
+
+05:18.000 --> 05:19.720
+Computed.
+
+05:19.720 --> 05:22.000
+Oh, yeah, you're totally right.
+
+05:22.000 --> 05:23.440
+So the observation was pointed out here
+
+05:23.440 --> 05:25.480
+that my methods, when I copy and pasted,
+
+05:25.480 --> 05:27.680
+was copy pasted at the wrong point.
+
+05:27.680 --> 05:29.120
+So we should actually move this out.
+
+05:29.120 --> 05:29.560
+There you go.
+
+05:29.560 --> 05:33.080
+Now that looks much better.
+
+05:33.080 --> 05:35.800
+Oh, yeah, that's another thing we'll talk about in a second.
+
+05:35.800 --> 05:36.600
+OK, there we go.
+
+05:36.600 --> 05:37.440
+We have counter.
+
+05:37.440 --> 05:38.600
+This is good.
+
+05:38.600 --> 05:40.240
+And then now we need to actually use it.
+
+05:40.240 --> 05:40.760
+How do you use it?
+
+05:40.760 --> 05:42.400
+Well, it's a custom component.
+
+05:42.400 --> 05:46.400
+So whatever we named it, basically, we'll do the trick.
+
+05:46.400 --> 05:46.800
+Let's go.
+
+05:46.800 --> 05:47.400
+There we go.
+
+05:47.400 --> 05:49.000
+There's our counter component.
+
+05:49.000 --> 05:50.360
+A couple of things that might be new,
+
+05:50.360 --> 05:52.400
+if you haven't really worked with components before,
+
+05:52.400 --> 05:54.680
+is that this is what's called a self-closing tag.
+
+05:54.680 --> 05:57.720
+So this is the equivalent of doing this.
+
+05:57.720 --> 06:00.040
+It shows it's a little bit more succinct, because rather
+
+06:00.040 --> 06:02.640
+than duplicating it over, it's fairly common
+
+06:02.640 --> 06:04.840
+to just self-inclose like this.
+
+06:04.840 --> 06:07.320
+In addition, something else that View tries to get you to do,
+
+06:07.320 --> 06:09.600
+though, before we talk more about this,
+
+06:09.600 --> 06:11.560
+is you'll notice that earlier I had this error, which is
+
+06:11.560 --> 06:13.800
+from ESLint, in that we really try to recommend
+
+06:13.800 --> 06:16.480
+that you use multi-word component names.
+
+06:16.480 --> 06:18.280
+And the reason for that is because you never
+
+06:18.280 --> 06:20.720
+know when the HTML spec is going to add something.
+
+06:20.720 --> 06:23.000
+And they basically have, you know,
+
+06:23.000 --> 06:25.520
+they get first dibs when it comes to one-word components.
+
+06:25.520 --> 06:28.760
+So rather than basically run the risk of conflicting that,
+
+06:28.760 --> 06:30.440
+what I might do instead is I might go,
+
+06:30.440 --> 06:32.680
+I might call this like base counter.
+
+06:32.680 --> 06:37.560
+This is like the counter to rule all components.
+
+06:37.560 --> 06:39.200
+And so you'll notice here, though, that Volar,
+
+06:39.200 --> 06:42.080
+hey, it says, I noticed you're refactoring some stuff.
+
+06:42.080 --> 06:43.760
+And then you say, oh, what did you notice?
+
+06:43.760 --> 06:46.320
+And it says, look, I noticed that inside of here,
+
+06:46.320 --> 06:48.920
+you actually, like, it'll actually track the file path
+
+06:48.920 --> 06:51.160
+of the things that it's related to, which is pretty cool.
+
+06:51.160 --> 06:52.360
+So I can go ahead and apply that.
+
+06:52.360 --> 06:54.440
+And now you'll see that inside of app.view,
+
+06:54.440 --> 06:56.080
+it's gone ahead and actually renamed it correctly
+
+06:56.080 --> 06:58.240
+inside of my imports, which is a nice optimization
+
+06:58.240 --> 06:59.400
+that it does for us.
+
+06:59.400 --> 07:01.000
+But once again, I really would like
+
+07:01.000 --> 07:03.960
+to avoid the single-word naming.
+
+07:03.960 --> 07:06.040
+So I'm just going to do that like that.
+
+07:06.080 --> 07:09.240
+And then you'll see everything still works as expected.
+
+07:09.240 --> 07:12.160
+But another thing that View does for you
+
+07:12.160 --> 07:14.560
+in terms of extending upon HTML standards
+
+07:14.560 --> 07:17.400
+is you might not like the Pascal case, which
+
+07:17.400 --> 07:20.000
+is where you have the multi-word capitalized.
+
+07:20.000 --> 07:23.760
+You might say, I would rather just do the standard kebab
+
+07:23.760 --> 07:25.360
+case for HTML.
+
+07:25.360 --> 07:27.640
+And believe it or not, that actually just works.
+
+07:27.640 --> 07:29.920
+View will out of the box basically
+
+07:29.920 --> 07:31.840
+allow you to convert between two cases
+
+07:31.840 --> 07:36.280
+because it knows how to track the differences.
+
+07:36.280 --> 07:39.560
+And so to say which one is better
+
+07:39.560 --> 07:42.320
+depends a lot on the team that you're working with.
+
+07:42.320 --> 07:44.960
+I would say in terms of pros and cons,
+
+07:44.960 --> 07:47.440
+one of the nice things about the Pascal case
+
+07:47.440 --> 07:49.560
+is that it becomes very evident that this is something very
+
+07:49.560 --> 07:54.240
+specific to the app, that this is something custom.
+
+07:54.240 --> 07:56.800
+Granted, if you're using a multi-word component,
+
+07:56.800 --> 07:59.480
+that also does the job as well.
+
+07:59.480 --> 08:01.920
+So this is kind of what you're used to in that regard.
+
+08:01.920 --> 08:02.520
+You have a question?
+
+08:02.520 --> 08:06.560
+With the inverse of that work, can you name the file kebab case?
+
+08:06.560 --> 08:07.480
+I should be able to.
+
+08:07.480 --> 08:09.120
+Let's give that a shot.
+
+08:09.120 --> 08:11.720
+Oh, so the question was, can we name the file kebab case?
+
+08:15.360 --> 08:16.240
+Like that.
+
+08:16.240 --> 08:18.000
+And then, what did it change?
+
+08:18.000 --> 08:18.680
+Well, here we go.
+
+08:18.680 --> 08:21.960
+And notice that we have applied that, so we can apply that.
+
+08:21.960 --> 08:24.160
+And then inside of here, we're good.
+
+08:24.160 --> 08:28.040
+Inside of here, we can't do anything about it
+
+08:28.040 --> 08:31.280
+because this is like an import.
+
+08:31.280 --> 08:33.880
+And then I think that actually still works.
+
+08:33.880 --> 08:35.360
+Yep, that still works.
+
+08:35.360 --> 08:38.320
+The main thing about that is be consistent.
+
+08:38.320 --> 08:39.760
+That's the only thing I ask.
+
+08:39.760 --> 08:43.080
+Doesn't matter which one you choose, just be consistent.
+

@@ -1,0 +1,164 @@
+WEBVTT
+
+00:00.000 --> 00:04.000
+Pour parler d'objets, parlons de classes.
+
+00:13.000 --> 00:27.000
+Ainsi, tout en Python est une instance, toutes les variables avec lesquelles nous avons travaillé sont des instances d'une classe.
+
+00:27.000 --> 00:38.000
+Donc, pour les entiers, vous savez, pour en créer un nouveau, je pourrais simplement transmettre un nombre au constructeur into.
+
+00:38.000 --> 00:43.000
+Et si je vérifie le type de ça, nous verrons que c'est une classe int.
+
+00:44.000 --> 00:50.000
+Quelque chose que nous n'avons pas fait, c'est vérifier le type d'int lui-même.
+
+00:51.000 --> 00:54.000
+Donc un peu différent. La classe est un type.
+
+00:55.000 --> 01:03.000
+Classes contre instances que ce paradigme de programmation OP a structuré autour d'elles.
+
+01:03.000 --> 01:06.000
+Vous pouvez considérer une classe comme un type de quelque chose.
+
+01:06.000 --> 01:14.000
+Ici, le type est un int ou vous pouvez penser, vous savez, à une instance spécifique de quelque chose comme une voiture.
+
+01:14.000 --> 01:20.000
+Ou je suis désolé, vous pouvez penser à une classe ou une catégorie spécifique de quelque chose comme une voiture.
+
+01:20.000 --> 01:27.000
+Et puis l’instance est une instance spécifique de quelque chose.
+
+01:27.000 --> 01:32.000
+Donc, ici, vous savez, int est le type.
+
+01:32.000 --> 01:37.000
+C'est une classe alors que l'int de cinq, c'est maintenant une instance.
+
+01:37.000 --> 01:39.000
+C'est le V numéro cinq.
+
+01:39.000 --> 01:49.000
+Donc, si ma classe était une voiture, vous pourriez penser qu'il s'agit d'un exemple spécifique comme ma Subaru.
+
+01:49.000 --> 01:54.000
+Droite? Un cours est un peu comme un modèle ou une recette.
+
+01:54.000 --> 02:03.000
+Et puis vous pouvez l'utiliser pour créer de nouvelles instances actives contenant des valeurs spécifiques.
+
+02:03.000 --> 02:14.000
+Lorsque vous modifiez une variable de classe, cela ne change que ce qui est renvoyé par cette variable pour tout.
+
+02:14.000 --> 02:27.000
+Mais si vous changez la valeur de quelque chose dans une instance, vous ne changez pas le type, vous ne changez pas la recette ou vous ne changez que l'instance particulière que vous avez.
+
+02:27.000 --> 02:31.000
+Donc, je vais y revenir plus tard.
+
+02:31.000 --> 02:39.000
+C'est un peu déroutant, mais ceux d'entre vous qui utilisent Python depuis un certain temps, vous avez peut-être vu ce mot-clé self,
+
+02:39.000 --> 02:43.000
+Poivré tout au long du code. Alors parlons un peu de ce que cela fait.
+
+02:43.000 --> 02:51.000
+Si j'essaie simplement de mettre du code dans un nouveau fichier, pas de coloration syntaxique, je dois donc le sauvegarder.
+
+02:51.000 --> 03:00.000
+Je vais le sauvegarder sous le nom cars.py.
+
+03:00.000 --> 03:17.000
+D'accord, donc ma voiture de classe, j'ai une méthode de classe ici, les torts sont égaux à vrai, et la méthode de démarrage ici, prend un nom, ou elle prend le soi.
+
+03:17.000 --> 03:24.000
+Et je voulais aussi donner un nom à ma voiture.
+
+03:24.000 --> 03:29.000
+Cette fois, je veux vous montrer que self est associé à l'instance.
+
+03:29.000 --> 03:40.000
+Si je voulais enregistrer le nom que je transmets dans cette méthode, je le ferais en disant self.name égal nom.
+
+03:40.000 --> 03:55.000
+Et maintenant, je peux dire si la voiture d'impression autonome est démarrée, et je vais mettre mon F ici cette fois et le nom de la voiture.
+
+03:55.000 --> 04:07.000
+Parce que le nom est transmis ici, nous savons que nous l'aurons, mais si nous voulions y accéder dans une méthode,
+
+04:07.000 --> 04:14.000
+cela ne prend pas nécessairement cela comme paramètre, nous pouvons utiliser self.name.
+
+04:14.000 --> 04:18.000
+Cela donnera accès à d’autres méthodes.
+
+04:18.000 --> 04:24.000
+Et puis je peux dire le contraire, imprimez la chaîne F, mettez le F là-dedans maintenant.
+
+04:24.000 --> 04:32.000
+Self.name, la voiture est en panne. Oh non.
+
+04:32.000 --> 04:41.000
+Nous parlerons des importations un peu plus tard. Je devrai peut-être redémarrer mon repel afin de récupérer ce nouveau fichier.
+
+04:41.000 --> 04:48.000
+Maintenant, il devrait être possible de importer des voitures à partir de voitures.
+
+04:48.000 --> 04:58.000
+Et si vous placez tous le fichier de cette voiture dans votre répertoire de niveau supérieur, vous devriez également pouvoir le faire.
+
+04:58.000 --> 05:03.000
+D'accord. Maintenant, je peux dire, vous savez, je peux vérifier le type de voiture.
+
+05:03.000 --> 05:11.000
+C'est un type de classe. Je peux regarder la voiture et voir les courses, la valeur des courses, car c'est une variable de classe.
+
+05:11.000 --> 05:17.000
+Mais si j'essaie de vérifier car.name, il n'y a pas de nom d'attribut, c'est un attribut d'instance.
+
+05:17.000 --> 05:23.000
+Je vais donc créer une nouvelle instance et dire que ma Subaru est une nouvelle voiture.
+
+05:24.000 --> 05:31.000
+Le type de ma Subaru.
+
+05:31.000 --> 05:38.000
+C'est une instance de la classe cars.car.
+
+05:38.000 --> 05:44.000
+Maintenant, je peux dire que ma Subaru roule et passe dans la chaîne Subaru.
+
+05:44.000 --> 05:46.000
+Que se passe-t-il?
+
+05:46.000 --> 05:49.000
+L'objet entier n'est pas appelable.
+
+05:50.000 --> 05:57.000
+Oh, merci beaucoup. Un tel pet cérébral total.
+
+05:57.000 --> 06:02.000
+D'accord. Ma Subaru démarre par points Subaru.
+
+06:02.000 --> 06:03.000
+Et voilà.
+
+06:03.000 --> 06:04.000
+Ta-da.
+
+06:04.000 --> 06:08.000
+Ma voiture Subaru est donc démarrée.
+
+06:08.000 --> 06:15.000
+Je sais que lorsque j'ai essayé de vérifier le type, donc car.name, j'ai eu une erreur.
+
+06:16.000 --> 06:20.000
+Et si je demande mon nom de point Subaru, qu'obtiendrai-je ?
+
+06:20.000 --> 06:27.000
+La Subaru, non ? Cette variable est donc associée à l'instance, pas au type de classe.
+

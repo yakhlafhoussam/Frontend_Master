@@ -1,0 +1,137 @@
+WEBVTT
+
+00:00.000 --> 00:07.520
+Will subscribers to the store be re-rendered if you compose the worst the other?
+
+00:10.520 --> 00:15.420
+Yeah, I'm thinking it was a miracle. They asked it so most of them during the
+
+00:15.760 --> 00:18.920
+Yeah, okay, so I'll answer that because I think that's an interesting question
+
+00:18.920 --> 00:20.920
+It itself and then if they clarify otherwise
+
+00:21.720 --> 00:29.120
+So this is one thing I do think view does really well because of the way the reactivity see reactivity system is written with proxies
+
+00:30.120 --> 00:31.120
+view
+
+00:31.120 --> 00:39.200
+very rarely like so like to be honest. I know like reactives with this a lot which is like you have some state derived from this other state
+
+00:39.200 --> 00:45.760
+And because this state updates it triggers the re-render on this other state and so it's like reforming thing that they frequently have to deal with
+
+00:45.920 --> 00:50.520
+But put me on and people for those of us that use view that's actually very
+
+00:51.360 --> 00:54.360
+I don't see I don't know everything. It's an issue just because again
+
+00:54.880 --> 00:59.600
+Because view understands that like yes, you're composing your source together
+
+01:00.000 --> 01:02.280
+They're responded they're dependent on each other
+
+01:02.400 --> 01:10.480
+But if it's not an a context where rendering is necessary it shouldn't like unless you're triggering an update that goes up that way like intentionally
+
+01:10.680 --> 01:14.080
+You're really just calling a value to be there to derive another value
+
+01:15.360 --> 01:18.080
+And so they're usually very good about
+
+01:18.720 --> 01:21.480
+And so that's one of the things that if you haven't heard about view vapor
+
+01:22.040 --> 01:24.040
+This is a big thing that's coming
+
+01:26.040 --> 01:28.040
+to like
+
+01:29.120 --> 01:38.520
+Basically they are we're gonna be able to render your project without the virtual dome and the performance boosts on this are supposed to be quite promising benchmark wise
+
+01:39.160 --> 01:41.160
+And so
+
+01:41.160 --> 01:44.840
+Because the whole idea is that you're supposed to be able to differentiate when a
+
+01:45.080 --> 01:49.080
+Value actually is gonna touch a template like the tree versus us a value that's
+
+01:49.480 --> 01:55.400
+You know in some sort of dependency tree and so the I know Evan and the team have done a lot of
+
+01:55.760 --> 02:00.400
+granular work to figure out ways to really make sure that you don't get random
+
+02:01.600 --> 02:03.120
+triggering every rendering and that kind of thing
+
+02:03.480 --> 02:07.320
+So again if there's if you're all are for those if you want to be you know very
+
+02:07.800 --> 02:14.000
+Forward facing and keep up to date with the lazy greatest definitely follow view vapor to find out what everyone's doing. It's pretty cool
+
+02:15.000 --> 02:17.000
+Is that what the
+
+02:17.240 --> 02:20.120
+On the femur was asking about that's exactly what they were asking
+
+02:20.840 --> 02:23.480
+They said they face this a lot in react
+
+02:25.400 --> 02:27.400
+Yeah, it's
+
+02:28.040 --> 02:30.040
+It's unfortunate
+
+02:31.480 --> 02:39.480
+Yeah, one of the things that we see a lot of frameworks doing these days is honestly if you've looked at angular solids felt like it does seem like a lot of the modern
+
+02:39.480 --> 02:43.480
+Framework's are trying to converge in terms of the ideas and they seem to agree
+
+02:44.360 --> 02:46.600
+In terms of reactivity principles like I think
+
+02:47.160 --> 02:51.560
+I mean angular jump them more with this too, so of angular solid view things fells on here too
+
+02:51.560 --> 02:53.240
+I think all four are on board with signals
+
+02:53.240 --> 03:00.680
+So that's basically an agreed reactivity approach and then there is there is this general sense that like computed
+
+03:00.680 --> 03:08.400
+Which is a derived part of state that has built in memoization and then optimizations in it is a key part because as developers
+
+03:08.400 --> 03:12.800
+That's what we're doing half the time we have single source of truth. We derive stuff. We derive stuff. We derive stuff
+
+03:13.120 --> 03:22.400
+We don't really want to have to deal with the memoization and the caching that deals in that like we have other things to worry about and so I think if you're looking at the proposals on the like
+
+03:22.640 --> 03:24.640
+Web or TC they're nine and stuff
+
+03:24.640 --> 03:30.000
+There's a native signals proposal, but then within the individual frameworks like I think angular right now is calling it link signals
+
+03:30.000 --> 03:35.760
+I think solid did too, but they're all it's it's really cool to see a lot of these frameworks starting to centralize
+
+03:36.480 --> 03:41.440
+And kind of agree on what what what is the best practice for the web, so that is super exciting
+

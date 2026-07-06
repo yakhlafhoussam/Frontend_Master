@@ -1,0 +1,164 @@
+WEBVTT
+
+00:00.000 --> 00:11.280
+In this exercise on unit tests, we're going to use the built-in Python unit test library
+
+00:11.280 --> 00:18.040
+to write test classes and test cases and run our unit tests and make sure that they pass.
+
+00:18.040 --> 00:24.640
+So by now you're an expert in Python unit testing, right?
+
+00:24.640 --> 00:26.400
+We wrote our first unit test.
+
+00:26.400 --> 00:33.640
+We used this exercise to use the unit test library in the standard, in the Python standard
+
+00:33.640 --> 00:34.640
+library.
+
+00:34.640 --> 00:39.840
+We didn't have to install anything extra, use any other frameworks.
+
+00:39.840 --> 00:43.080
+It's all available to us right here.
+
+00:43.080 --> 00:53.440
+So let's go to VS Code, I'm going to make a new file, and I'm going to call it divisible.py.
+
+00:53.440 --> 00:58.840
+And I'm going to define a new function here, and I'm going to call it divisible.py.
+
+00:58.840 --> 01:05.840
+And checking a number, the number that I want to check, and then the divisor.
+
+01:05.840 --> 01:19.440
+And I'm going to return, if check number, modulo the divisor is equal to 0.
+
+01:19.440 --> 01:26.160
+So if the number that I'm checking is e, and I'm doing a modulo 2, it will be equal
+
+01:26.160 --> 01:31.200
+to 0, because 8 is an even number.
+
+01:31.200 --> 01:33.440
+Let's make another new file.
+
+01:33.440 --> 01:45.440
+This time I'm going to say that as test divisible.py.
+
+01:45.440 --> 01:56.560
+And this is where we'll write our unit tests.
+
+01:56.560 --> 01:59.760
+So we want to import unit test.
+
+01:59.760 --> 02:05.240
+We also want to import the code that we're going to test in a new file.
+
+02:05.240 --> 02:12.640
+So I'm going to import, I'm going to say from divisible.
+
+02:12.640 --> 02:14.640
+This is the name of our file.
+
+02:14.640 --> 02:19.640
+I'm going to import the divisible by method.
+
+02:19.640 --> 02:26.640
+I'm going to write a new class, and I'm going to call it divisible test case.
+
+02:26.640 --> 02:30.640
+What does it need to inherit from in order to be a valid test case?
+
+02:30.640 --> 02:32.640
+Unit test, test case.
+
+02:32.640 --> 02:33.640
+That's right.
+
+02:33.640 --> 02:36.640
+Unit test.test case.
+
+02:36.640 --> 02:41.640
+Now I can go ahead and start writing some tests in here.
+
+02:42.640 --> 02:47.640
+Remember the test has to start with test underscore or it's not going to be run.
+
+02:47.640 --> 02:51.640
+So I'm going to say test divisible by.
+
+02:51.640 --> 02:54.640
+I'm going to pass in itself.
+
+02:54.640 --> 03:06.640
+I'm going to use the assert true assertion that if I call divisible by with the arguments of 10 and 2, it should be true.
+
+03:06.640 --> 03:27.640
+And if I let's say I want to test that assert true that divisible by for 10 and 3 is also true.
+
+03:27.640 --> 03:36.640
+And I'm going to put in a if the name is equal to done domain.
+
+03:36.640 --> 03:38.640
+Just run this unit test.
+
+03:38.640 --> 03:43.640
+Call the main method on the unit test.
+
+03:43.640 --> 03:47.640
+Module here and it knows how to do the rest.
+
+03:47.640 --> 03:51.640
+So me is the command palette, run the Python file in my terminal.
+
+03:51.640 --> 03:53.640
+And I got an error here.
+
+03:53.640 --> 03:55.640
+This assertion error, false is not true.
+
+03:55.640 --> 04:03.640
+So this is a good opportunity for me to take a look and say, is it my code that's not correct or is it my test that's not correct.
+
+04:03.640 --> 04:05.640
+I got a failure.
+
+04:05.640 --> 04:10.640
+Well, it's actually my test that's not correct, right, 10 is not divisible by 3.
+
+04:10.640 --> 04:16.640
+So I'm going to change this to false and run the Python file in the ripple again.
+
+04:16.640 --> 04:26.640
+Now I should see that one test ran and one test ran and it ran successfully.
+
+04:26.640 --> 04:38.640
+I can also run this with the dash reflag or if you pass in two dashes that would be the dash verbose flag.
+
+04:38.640 --> 04:44.640
+And that will tell me exactly which test ran and which test case.
+
+04:44.640 --> 04:51.640
+The nice thing here is I can have multiple test cases, multiple tests.
+
+04:51.640 --> 04:55.640
+And I don't have to do anything special besides for this.
+
+04:55.640 --> 05:09.640
+If I didn't have this check for main method here, remember that I could run Python dash, I'm unit test and pass in the name of the module.
+
+05:09.640 --> 05:13.640
+So there's no dot pui here. Oops, I'm sorry.
+
+05:13.640 --> 05:19.640
+Divisable.
+
+05:19.640 --> 05:27.640
+There's no dot pui here where passing in the name of the module, which in this case is the name of the file, ran our test successfully.
+
+05:27.640 --> 05:30.640
+Awesome.
+

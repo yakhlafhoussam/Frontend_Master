@@ -1,0 +1,170 @@
+WEBVTT
+
+00:00.000 --> 00:11.400
+Juste un rappel, voici à quoi ressemble notre exercice final, nous pouvons sélectionner différentes langues
+
+00:11.400 --> 00:19.760
+ici et puis allez, appuyez sur l'API de recherche GitHub et affichez les résultats.
+
+00:19.760 --> 00:25.800
+Assez simple, flask app, il n'y a pas, nous n'utilisons pas de base de données ici, nous sommes
+
+00:25.800 --> 00:33.120
+nous ne maintenons pas vraiment d'état, nous vérifions simplement ce que l'utilisateur a coché et décoché
+
+00:33.120 --> 00:34.840
+la demande de fonctionnalité.
+
+00:34.840 --> 00:38.040
+Assez simple.
+
+00:38.040 --> 00:43.560
+Voyons maintenant comment mettre en œuvre cela.
+
+00:43.560 --> 00:55.080
+Je vais quitter le serveur de développement que j'utilisais et je vais exécuter
+
+00:55.080 --> 01:01.720
+une commande pour appeler l'arborescence qui va lister la structure des répertoires de ce chapitre.
+
+01:01.720 --> 01:12.160
+Si vous êtes sous Mac OS, sachez simplement que cet utilitaire n'est pas fourni avec Mac, vous devez l'installer
+
+01:12.160 --> 01:13.160
+ça.
+
+01:13.160 --> 01:20.280
+Donc à la racine, nous avons API.py, j'ai exceptions.py, où je mets mon exception personnalisée.
+
+01:20.280 --> 01:31.400
+J'ai models.py, où je mets le modèle qui stocke mon référentiel GitHub.
+
+01:31.400 --> 01:38.960
+Ensuite, j'ai un dossier statique avec un faevacon de mon site Web, les styles CSS que j'ai fournis
+
+01:38.960 --> 01:40.960
+pour toi.
+
+01:40.960 --> 01:49.080
+S'il vous plaît, ne sortez pas les fourches si mon CSS n'est pas bon, je fais partie de ces développeurs full stack.
+
+01:49.080 --> 01:50.840
+Mais nous avons ensuite quelques modèles.
+
+01:50.840 --> 01:57.640
+Nous avons un modèle pour une page d'erreur et un modèle pour notre page d'index, ainsi que quelques tests
+
+01:57.640 --> 02:03.000
+que nous pouvons courir.
+
+02:03.000 --> 02:13.600
+Passons en revue et regardons ces fichiers.
+
+02:13.640 --> 02:20.400
+Notre fichier exception.py est assez simple.
+
+02:20.400 --> 02:27.040
+J'ai une classe ici et, comme vous l'avez vu auparavant, elle hérite de l'exception.
+
+02:27.040 --> 02:30.080
+Dans le constructeur, je prends un code d'état.
+
+02:30.080 --> 02:34.520
+Si le code d'état correspond à trois, cela indiquera que la limite de débit a été atteinte.
+
+02:34.520 --> 02:40.040
+Si le code d'état était un autre type de code d'état d'erreur, il l'imprimera.
+
+02:40.040 --> 02:51.680
+Ensuite, je transmets ce nouveau message modifié que j'ai créé à un super point.
+
+02:51.680 --> 02:57.200
+En regardant le fichier du modèle, nous l'avons codé en direct plus tôt.
+
+02:57.200 --> 03:03.760
+Cette classe, la classe de dépôt GitHub, est utilisée pour représenter un seul référentiel GitHub.
+
+03:03.760 --> 03:10.680
+Dans mon constructeur, je prends le nom, la langue, le nombre d'étoiles.
+
+03:10.680 --> 03:18.160
+Je renvoie également une représentation sous forme de chaîne pratique et un wrapper.
+
+03:18.160 --> 03:22.000
+Je regarde maintenant API.py.
+
+03:22.000 --> 03:29.280
+C'est ici que je mets ma requête de création et mes dépôts avec la plupart des méthodes stars.
+
+03:29.280 --> 03:38.880
+N'oubliez pas que nous étions des méthodes qui ressemblaient presque exactement à ceci dans l'exercice final d'introduction à Python.
+
+03:38.880 --> 03:48.640
+En les parcourant pour créer une requête, je prends une liste de langues et le nombre minimum d'étoiles.
+
+03:48.640 --> 03:57.680
+Dans le code d'hier, nous parcourions chaque requête en l'ajoutant à la chaîne,
+
+03:57.680 --> 04:04.560
+en utilisant la concaténation, l'utilisation de la jointure de chaîne est beaucoup plus efficace.
+
+04:04.560 --> 04:12.040
+La concaténation est une concaténation de chaînes qui est une opération assez inefficace et l'utilisation de la jointure de chaînes est beaucoup plus rapide.
+
+04:12.040 --> 04:20.800
+Nous pouvons maintenant effectuer la même requête en utilisant une chaîne F pour la langue, en parcourant chaque langue et chaque langue,
+
+04:20.880 --> 04:34.320
+en supprimant tout espace blanc de fin ou de début, puis en créant notre nouvelle requête avec une seule concaténation et en concaténant le nombre minimum d'étoiles que nous aimerions voir.
+
+04:34.320 --> 04:43.320
+Maintenant, dans la méthode re-boes avec la plupart des étoiles, nous obtenons notre requête en utilisant cette méthode de requête.
+
+04:43.320 --> 04:50.760
+Nous avons les mêmes paramètres, je les ai imprimés ici, mais vous n'avez pas besoin de le faire dans votre code.
+
+04:51.000 --> 05:06.320
+J'obtiens la réponse en utilisant la bibliothèque de requêtes pour obtenir la ressource sur cette URL de recherche de l'API GitHub, en transmettant les paramètres que j'ai définis.
+
+05:06.320 --> 05:17.760
+Maintenant, si le code d'état n'était pas 200, cela signifie que si quelque chose ne va pas, je vais simplement déclencher une instance de mon exception API GitHub,
+
+05:17.760 --> 05:22.080
+en passant le code réponse.status.
+
+05:22.080 --> 05:36.480
+Ensuite, j'obtiens le JSON de la réponse, j'obtiens les éléments sur la clé des éléments et je vais simplement utiliser une compréhension de liste pour renvoyer une instance de mon dépôt GitHub.
+
+05:36.480 --> 05:48.800
+Une liste d'instances de ma classe de dépôt GitHub, en transmettant le nom, la langue et le nombre de Stargazers, et en utilisant une compréhension de liste pour le faire pour chaque élément des éléments.
+
+05:48.800 --> 05:58.880
+Notez qu'il n'y a pas de méthode principale ici, nous n'exécutons pas notre code dans le même fichier, nous allons plutôt l'utiliser comme bibliothèque de notre application Flask.
+
+05:58.880 --> 06:06.400
+Nous faisons défiler vers le haut, notons que nous avons importé des requêtes afin de pouvoir l'utiliser comme bibliothèque disponible.
+
+06:06.400 --> 06:17.800
+Nous importons également quelques éléments de nos propres classes personnalisées, donc notre exception API GitHub et notre modèle de dépôt GitHub.
+
+06:17.960 --> 06:21.240
+Ce sont tous les éléments de base.
+
+06:21.240 --> 06:28.240
+Maintenant, ouvrez app.py et voyez comment tout cela est mis en place.
+
+06:28.240 --> 06:41.200
+Pour vous, les utilisateurs de Windows, je vais, je vais mettre des instructions supplémentaires ici pour voir qui les a au même endroit avec l'exercice final.
+
+06:41.200 --> 06:52.640
+Mais nous avons également quelques importations ici, nous importons quelques éléments de Flask où, en important la classe Flask, nous importons un modèle de rendu.
+
+06:52.640 --> 07:02.960
+Et nous importons également quelque chose appelé request, qui nous donne des informations sur la demande que nous traitons actuellement.
+
+07:02.960 --> 07:18.520
+Pour mon API, j'importe également ce dépôt avec la plupart des étoiles, la méthode, et j'importe mon exception API GitHub, afin de pouvoir l'attraper et en faire quelque chose.
+
+07:18.520 --> 07:32.920
+Je crée une nouvelle application, une nouvelle application Flask ici en passant un Dundername, puis en dressant une liste des langues disponibles parmi lesquelles je souhaite que les utilisateurs de mon application Web puissent choisir.
+

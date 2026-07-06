@@ -1,0 +1,86 @@
+WEBVTT
+
+00:00.000 --> 00:07.000
+J'espère que c'était essentiellement comme quelques doublures et que vous aurez peut-être réalisé que vous aviez d'autres travaux à faire, mais nous allons en faire une démonstration ensemble maintenant.
+
+00:07.000 --> 00:16.000
+Donc, pour récapituler ce que je vous ai demandé de faire, c'est de prendre cette valeur ici dans la liste des régimes et de la mettre à notre disposition en tant que type.
+
+00:16.000 --> 00:21.000
+Je vais donc juste copier et coller cela juste pour me rendre la vie un peu plus facile, mais c'est le cas s'ils tapent régime égal.
+
+00:21.000 --> 00:26.000
+Et puis nous devons utiliser cet opérateur de canalisation comme un peu comme on l'appelle un opérateur syndical.
+
+00:26.000 --> 00:33.000
+Donc, même si je sais qu'en JavaScript, nous y pensons généralement comme ou c'est un peu comme ça que je dis cela.
+
+00:33.000 --> 00:39.000
+C'est en quelque sorte un ou dans cette situation, mais lorsque vous utilisez cet opérateur avec un objet, je vais vous dire tout de suite que cela ne fonctionne pas de cette façon.
+
+00:39.000 --> 00:45.000
+Je ne vais donc pas expliquer pourquoi il existe de nombreux types de ressources pour vous permettre d'entrer dans le vif du sujet,
+
+00:45.000 --> 00:51.000
+mais pour l'instant, si vous y pensez comme un ou pour les cordes de base et ce genre de choses, je pense que c'est la façon la plus simple d'y penser.
+
+00:52.000 --> 01:03.000
+Alors d'accord, nous avons donc le régime ici et je vous demande d'augmenter les deux choses, n'est-ce pas ? Donc, si vous entrez dans le régime alimentaire ici et que vous ajoutez cela ici et que nous mettons le régime alimentaire, c'est assez simple.
+
+01:03.000 --> 01:09.000
+Mais le fait est que si vous revenez à l’un de vos autres fichiers, c’est très très fou.
+
+01:09.000 --> 01:15.000
+Et c’est parce que nous n’avons pas de régime pour aucun de ces éléments.
+
+01:15.000 --> 01:26.000
+Et donc voici le truc, l'une de ces choses que vous pourriez faire est que nous pourrions seulement y aller manuellement, ajouter un régime et dire d'accord, forçons comme un attribut de régime et tout, mais ce n'est pas toujours la chose la plus pratique à faire.
+
+01:26.000 --> 01:33.000
+Et ce que vous voulez faire parfois avec vos types, c'est bien, peut-être qu'ils n'ont pas cette propriété, peut-être que c'est une propriété facultative, comment ferions-nous cela ?
+
+01:33.000 --> 01:39.000
+Eh bien, une des choses auxquelles vous pourriez penser avec nos nouveaux opérateurs syndiqués est, eh bien, nous pouvons simplement dire que c'est comme, oh, cela pourrait être indéfini.
+
+01:39.000 --> 01:43.000
+Et c'est une façon de l'empêcher de faire cela et ensuite nous disons que cela fait vraiment quelque chose.
+
+01:43.000 --> 01:51.000
+Pas particulièrement, mais c'est ce que font généralement les gens s'ils le souhaitent, car certains types de personnes vous crient parfois dessus pour une valeur, n'est-ce pas ?
+
+01:51.000 --> 01:56.000
+Et donc parfois, vous verrez des gens essayer de définir des choses avec l'opérateur syndical pour des raisons indéfinies.
+
+01:56.000 --> 02:06.000
+Mais la façon la plus simple de procéder est que si vous ne l'avez pas encore vu, c'est le point d'interrogation, cela essaie d'être introduit davantage dans la syntaxe JavaScript, comme si cette chose existe ?
+
+02:06.000 --> 02:09.000
+Donc, dans le domaine des scripts de test, cela dit essentiellement de rendre cette chose facultative.
+
+02:09.000 --> 02:15.000
+Il n'a pas besoin d'apparaître et plus important encore, il s'en occupe comme si vous n'avez pas de régime et qu'il n'est pas défini, il ne va pas vous crier dessus.
+
+02:15.000 --> 02:18.000
+Donc, cela fait en quelque sorte deux choses à la fois.
+
+02:18.000 --> 02:22.000
+Donc, une fois que vous avez ajouté cela, notre page de restaurant est désormais beaucoup plus heureuse.
+
+02:22.000 --> 02:25.000
+Et si on va sur notre page juste, tout à fait bien, c'est bien.
+
+02:25.000 --> 02:31.000
+Mais si nous décidions, d'accord, cette fois, celui-ci a un régime et je vais l'appeler paléo, n'est-ce pas ?
+
+02:31.000 --> 02:35.000
+Eh bien, cette fois, ce sera comme si, au fait, le paléo n'existe pas sur cette chose.
+
+02:35.000 --> 02:40.000
+Mais vous remarquez aussi, rappelez-vous cette chose facultative, c'est juste que je vais juste approuver, la preuve est dans le pudding.
+
+02:40.000 --> 02:47.000
+Vous verrez qu'il est écrit régime ou indéfini. Donc, ce point d’interrogation reconstitue automatiquement tout cela pour vous automatiquement.
+
+02:47.000 --> 02:53.000
+Alors oui, si vous n'êtes pas sûr d'obtenir une valeur, assurez-vous d'utiliser cet opérateur facultatif.
+

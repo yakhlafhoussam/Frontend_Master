@@ -1,0 +1,479 @@
+WEBVTT
+
+00:00.000 --> 00:05.000
+But by all means, if you want to just use the reactive, that's totally up to you as well.
+
+00:05.000 --> 00:11.000
+Okay, so now that we have that, we have this other issue, right, filter text doesn't exist.
+
+00:11.000 --> 00:16.000
+Well, that makes sense because we need to eliminate the this and just add.value, that works.
+
+00:16.000 --> 00:20.000
+And once again, delete that.value, there we go.
+
+00:20.000 --> 00:25.000
+So now our filter restaurant list computer property does work as expected.
+
+00:25.000 --> 00:30.000
+And you can see here that it actually tells you that hey, this is actually a type of computed ref.
+
+00:30.000 --> 00:35.000
+And so this is what's really nice about getting into composition API when you're working with TypeScript.
+
+00:35.000 --> 00:39.000
+It's because you start to get a lot more specific as far as how things are being used.
+
+00:39.000 --> 00:43.000
+Whereas in options API, it does depend on where you put it in the code and then you kind of have to like,
+
+00:43.000 --> 00:47.000
+jigger it a little bit to work the way that you want to with options.
+
+00:47.000 --> 00:52.000
+This feels a little bit more like natural TypeScript because, again, it's just a computer helper method.
+
+00:52.000 --> 00:55.000
+And then you're defining a callback function inside of here.
+
+00:55.000 --> 01:00.000
+And then you're basically defining the return here, which is the list of restaurants.
+
+01:00.000 --> 01:02.000
+And then basically you're good to go.
+
+01:02.000 --> 01:09.000
+All right, finally here, we now have the, for number of restaurants, we have a dependency on the computed property.
+
+01:09.000 --> 01:12.000
+Now remember what I said, refs require you to unpack it.
+
+01:12.000 --> 01:16.000
+So when we look at filtered restaurant list, it is a computed ref.
+
+01:16.000 --> 01:19.000
+In other words, we actually do need to unpack this as well.
+
+01:19.000 --> 01:22.000
+This is where dot value also needs to come into play.
+
+01:22.000 --> 01:25.000
+And that's a little gacha that some people don't realize when they're learning about ref and reactive.
+
+01:25.000 --> 01:29.000
+Is that because computed is using refs, it also needs to be unpacked.
+
+01:29.000 --> 01:31.000
+So then it's saying it's not being used.
+
+01:31.000 --> 01:33.000
+So let's go ahead and add that real quick.
+
+01:33.000 --> 01:36.000
+So let's see, filter a restaurant list.
+
+01:36.000 --> 01:38.000
+And then wait, that I missed type it.
+
+01:38.000 --> 01:40.000
+I think I did.
+
+01:40.000 --> 01:41.000
+There you go.
+
+01:41.000 --> 01:44.000
+And then we have the number of restaurants.
+
+01:44.000 --> 01:46.000
+Okay.
+
+01:46.000 --> 01:47.000
+Great.
+
+01:48.000 --> 01:50.000
+All right, that means computed has been successfully migrated.
+
+01:50.000 --> 01:54.000
+Now we're going to go ahead and finish this up, or actually with two more steps.
+
+01:54.000 --> 01:56.000
+Let's go ahead and move our methods in.
+
+01:56.000 --> 01:59.000
+So methods, right, they got this special name when it came to options API,
+
+01:59.000 --> 02:01.000
+but really all they are in JavaScript are functions.
+
+02:01.000 --> 02:02.000
+That's, that's really all they are.
+
+02:02.000 --> 02:08.000
+So we, I'm just going to grab all three here and use some multi cursor editing to save us a little bit of time.
+
+02:08.000 --> 02:12.000
+And so here, let me just delete that, delete that.
+
+02:12.000 --> 02:13.000
+Okay.
+
+02:13.000 --> 02:15.000
+So here, one, two, three.
+
+02:15.000 --> 02:19.000
+So we have a const of these three functions.
+
+02:19.000 --> 02:21.000
+We will declare it like this.
+
+02:21.000 --> 02:23.000
+And then we'll make it an arrow function.
+
+02:23.000 --> 02:27.000
+And then already, basically, these are the functions that we're going to be calling.
+
+02:27.000 --> 02:29.000
+Although this got deleted somehow.
+
+02:29.000 --> 02:31.000
+And then let's go ahead and fix all this up.
+
+02:31.000 --> 02:36.000
+So there we can delete restaurant list.valu, switch that.
+
+02:36.000 --> 02:38.000
+Hyde form is going to refer to this.
+
+02:38.000 --> 02:39.000
+Hyde form.
+
+02:39.000 --> 02:40.000
+So there's no point for this.
+
+02:40.000 --> 02:42.000
+And then once again, we can grab that.
+
+02:42.000 --> 02:45.000
+Switch it out to dot value.
+
+02:45.000 --> 02:48.000
+This also dot value.
+
+02:48.000 --> 02:50.000
+Great.
+
+02:50.000 --> 02:53.000
+And so you see here actually, this is, again, where types you can be super helpful,
+
+02:53.000 --> 02:56.000
+is that without the dot value, if you forget to unpack it,
+
+02:56.000 --> 03:00.000
+you can see already that it says that I don't know what I'm unpacking here.
+
+03:00.000 --> 03:02.000
+Like there's, there's an any here for some reason.
+
+03:02.000 --> 03:05.000
+And so that yelling at me reminds me, I need the value.
+
+03:05.000 --> 03:06.000
+Great.
+
+03:06.000 --> 03:09.000
+And then once again, show new form is just a rough.
+
+03:09.000 --> 03:10.000
+So there we go.
+
+03:10.000 --> 03:12.000
+And then we need to expose all this stuff.
+
+03:12.000 --> 03:15.000
+So delete restaurant.
+
+03:15.000 --> 03:19.000
+Hyde form.
+
+03:19.000 --> 03:23.000
+And then the last one was ad restaurant.
+
+03:23.000 --> 03:25.000
+OK.
+
+03:25.000 --> 03:28.000
+Finally, one last bit, as we migrate this over,
+
+03:28.000 --> 03:31.000
+is that we need the ability to call the mounted life cycle hook.
+
+03:31.000 --> 03:33.000
+Because we're, again, I want to show that transition over.
+
+03:33.000 --> 03:37.000
+So one of the things we've done as a convention inside a view is that we've
+
+03:37.000 --> 03:38.000
+provided you helper methods, right?
+
+03:38.000 --> 03:40.000
+That's what we've been doing this whole time.
+
+03:40.000 --> 03:42.000
+Refts computed all that stuff.
+
+03:42.000 --> 03:46.000
+So we have this thing called on basically life cycle hooks.
+
+03:46.000 --> 03:51.000
+So on mounted, which is a life cycle hook that we can import, as you can see here,
+
+03:51.000 --> 03:53.000
+is being imported directly from view.
+
+03:53.000 --> 03:56.000
+This is what actually allows us to then call those life cycle hooks.
+
+03:56.000 --> 04:00.000
+So on mounted here, and then we basically pass in the callback function that
+
+04:00.000 --> 04:03.000
+we'll run on that specific one.
+
+04:03.000 --> 04:05.000
+What are we going to do?
+
+04:05.000 --> 04:06.000
+OK.
+
+04:06.000 --> 04:10.000
+So this is where some people get tripped up, because this is where we now sort of enter the land
+
+04:10.000 --> 04:12.000
+of composables.
+
+04:12.000 --> 04:19.000
+If you haven't heard that term before, basically, it's a unique term to any sort of composition
+
+04:19.000 --> 04:20.000
+API module.
+
+04:20.000 --> 04:25.000
+So any time someone uses a function that creates like a router, any sort of function
+
+04:25.000 --> 04:28.000
+that uses composition API, they're currently being termed as composables.
+
+04:28.000 --> 04:33.000
+Because they're external modules that use composition API.
+
+04:33.000 --> 04:34.000
+I don't know.
+
+04:34.000 --> 04:36.000
+I have mixed feelings on the name, but it seems to be sticking.
+
+04:36.000 --> 04:38.000
+So that's what it is.
+
+04:38.000 --> 04:42.000
+And so for in this particular case, you'll notice that on mounted what we're doing here
+
+04:42.000 --> 04:44.000
+is we're checking for the route.
+
+04:44.000 --> 04:47.000
+And if the route has a query parameter of new, we're actually showing the new form
+
+04:47.000 --> 04:48.000
+basically.
+
+04:48.000 --> 04:51.000
+So it's like a hack over a rather doing direct routing.
+
+04:51.000 --> 04:53.000
+And so how do we actually get this?
+
+04:53.000 --> 04:54.000
+Right?
+
+04:54.000 --> 04:55.000
+Because now there's no more global properties.
+
+04:55.000 --> 04:58.000
+This is one of the things I think that scares people a little bit when moving from
+
+04:58.000 --> 05:02.000
+options API to composite API is that there's a lot of guardrails that options
+
+05:02.000 --> 05:06.000
+this gives you automatically, especially when it comes to globally inherited stuff.
+
+05:06.000 --> 05:09.000
+And so the way this works actually is that especially with view through going forward
+
+05:09.000 --> 05:12.000
+with all the libraries being typed correctly and we want to be composition
+
+05:12.000 --> 05:17.000
+API friendly in addition to being options API friendly is that we have this prefix
+
+05:17.000 --> 05:23.000
+and composable that's being used a lot inadvertently called use.
+
+05:23.000 --> 05:27.000
+So what we can do is since we want to grab something from the route, we want to
+
+05:27.000 --> 05:28.000
+grab something from view router.
+
+05:28.000 --> 05:35.000
+So by scroll up here, I can import something called use route from view router.
+
+05:35.000 --> 05:40.000
+And so if you think you have like where how would I know to use like use route,
+
+05:40.000 --> 05:44.000
+we try to actually follow conventions of what you would expect from the global API.
+
+05:44.000 --> 05:47.000
+So sometimes you might want router things so that will be used router, right?
+
+05:47.000 --> 05:49.000
+If you're using this dot dollar sign router.
+
+05:49.000 --> 05:53.000
+So use route here is what's going to basically allow you to get all the things that you
+
+05:53.000 --> 05:56.000
+would normally get from this dot dollar sign dot route.
+
+05:56.000 --> 06:01.000
+So if I do use route like this, this will actually then grab the route for me.
+
+06:01.000 --> 06:04.000
+And then I can swap this out now with just route.
+
+06:04.000 --> 06:07.000
+And then I can swap this out with dot value.
+
+06:07.000 --> 06:15.000
+And that is everything when it comes to migrating to the composition API.
+
+06:15.000 --> 06:19.000
+And so as we can see now, we can actually delete this part here.
+
+06:20.000 --> 06:26.000
+And so we have this nice isolated module of JavaScript that's leveraging type script.
+
+06:26.000 --> 06:30.000
+And then it's done in a way that can be freely organized.
+
+06:30.000 --> 06:33.000
+And this is what composition API really does offer in comparison to options API.
+
+06:33.000 --> 06:36.000
+Is that now when we're looking at this code, we can go, all right,
+
+06:36.000 --> 06:38.000
+so this is managing restaurants, right?
+
+06:38.000 --> 06:41.000
+So in the past, right, this is essentially the method section.
+
+06:41.000 --> 06:45.000
+This was the lifecycle section.
+
+06:45.000 --> 06:49.000
+And then we had computed here.
+
+06:49.000 --> 06:52.000
+And then we had all our data here.
+
+06:52.000 --> 06:58.000
+But because we're in free form composition API then, we can actually start thinking like,
+
+06:58.000 --> 06:59.000
+you know what?
+
+06:59.000 --> 07:02.000
+Actually, I think it makes more sense to group all like the restaurant stuff together.
+
+07:02.000 --> 07:06.000
+So I'm going to take the restaurant here, group that with this.
+
+07:06.000 --> 07:09.000
+Because I think this makes more sense that we established a reference.
+
+07:09.000 --> 07:14.000
+I'm going to call this restaurant module where we had the list of data.
+
+07:14.000 --> 07:21.000
+We filter that data and then we can even manage that data, so I can do like that.
+
+07:21.000 --> 07:24.000
+And then number of restaurants actually is relevant, so we'll keep it there.
+
+07:24.000 --> 07:26.000
+But then we have all this form stuff, right?
+
+07:26.000 --> 07:33.000
+And so this stuff, we can really just say, this is the new form module.
+
+07:33.000 --> 07:36.000
+And then we can just say, well, for now, the lifecycle hook is related to this.
+
+07:36.000 --> 07:38.000
+If not doing anything else, different with it.
+
+07:38.000 --> 07:43.000
+So we'll grab that and then we'll grab this two stuff to here.
+
+07:43.000 --> 07:54.000
+And now we have, now we have stuff organized by feature rather than by their concerns or like how they're functioning.
+
+07:54.000 --> 07:57.000
+Is there a better best practice?
+
+07:57.000 --> 07:59.000
+No, it is entirely up to your team.
+
+07:59.000 --> 08:03.000
+However, as you might have noticed though, because we're in vanilla JavaScript land,
+
+08:03.000 --> 08:06.000
+this does open us up to then creating the composable.
+
+08:06.000 --> 08:11.000
+In other words, we could export these chunks of code into individual JavaScript or TypeScript files
+
+08:11.000 --> 08:13.000
+and then share them amongst components.
+
+08:13.000 --> 08:17.000
+And that's where it starts to get really powerful with composition API is that reusability piece.
+
+08:17.000 --> 08:21.000
+Because with options API, you were limited to using essentially mix-ins,
+
+08:21.000 --> 08:27.000
+which was prone to errors as far as like naming things and then you had to worry about things overriding a certain way.
+
+08:27.000 --> 08:31.000
+But because everything here in composition API is very declarative,
+
+08:31.000 --> 08:35.000
+you know exactly when you're importing something from a specific file, what it's being named,
+
+08:35.000 --> 08:38.000
+or you can rename it if it has a conflict with that specific file.
+
+08:38.000 --> 08:42.000
+And you don't have to deal with all the assumptions that the options API can often provide for you.
+
+08:42.000 --> 08:47.000
+Which, again, can be helpful in certain context, but in the context of reusability of code,
+
+08:47.000 --> 08:51.000
+the mix-ins definitely became a footprint for a lot of people that we learned.
+

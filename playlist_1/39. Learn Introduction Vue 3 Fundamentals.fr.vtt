@@ -1,0 +1,239 @@
+WEBVTT
+
+00:00.000 --> 00:06.420
+Votre défi pour cette section est de jeter un œil à SailorView.
+
+00:06.420 --> 00:10.000
+J'ai intentionnellement laissé une grande partie du style très générique.
+
+00:10.000 --> 00:12.000
+En fait, il y a beaucoup de dédoublements.
+
+00:12.000 --> 00:16.240
+Vous pouvez essayer de voir si vous pouvez le refactoriser d'une manière qui vous semble plus logique.
+
+00:16.240 --> 00:18.480
+Peut-être que vous voulez le faire dans un fichier global,
+
+00:18.480 --> 00:21.320
+qui sait et ensuite vous pourrez en jouer un avec V-Bind.
+
+00:23.320 --> 00:26.760
+Espérons que les gens aient eu la chance de jouer avec certains styles.
+
+00:26.760 --> 00:30.800
+Comme je l'ai dit, honnêtement, CSS possède ses propres compétences.
+
+00:30.800 --> 00:33.720
+Il y a beaucoup d'excellents ateliers ici sur Front-of-Master,
+
+00:33.720 --> 00:36.760
+alors assurez-vous de les consulter si vous souhaitez en savoir plus sur l'architecture CSS.
+
+00:36.760 --> 00:42.480
+Mais j'espère que cela vous a été utile pour apprendre quelles techniques sont à votre disposition.
+
+00:42.480 --> 00:44.680
+hors de la porte lorsqu'il s'agit d'utiliser View,
+
+00:44.680 --> 00:48.240
+afin que vous puissiez l'utiliser pour augmenter les meilleures pratiques avec CSS.
+
+00:48.240 --> 00:51.200
+Parce que pour être très clair, encore une fois, en tant que personne qui aime CSS,
+
+00:51.200 --> 00:54.000
+Je ne vous conseille pas de contourner la Cascade.
+
+00:54.000 --> 00:55.760
+La Cascade est extrêmement puissante.
+
+00:55.880 --> 00:58.760
+Mais comme pour beaucoup de choses, il faut savoir quand l’utiliser dans les bons scénarios.
+
+00:58.760 --> 01:00.800
+Et parfois, lorsqu'il s'agit de certains composants,
+
+01:00.800 --> 01:03.440
+il est logique de simplement garder la portée pour ignorer la Cascade.
+
+01:03.440 --> 01:05.920
+Et sachez donc que View vous offre ces options.
+
+01:05.920 --> 01:08.800
+Et aussi, comme nous l'avons vu avec le V-Bind également,
+
+01:08.800 --> 01:13.960
+lorsqu'il s'agit de personnalisation et de pouvoir connecter facilement votre JavaScript à votre CSS,
+
+01:13.960 --> 01:18.240
+comme View essaie de faire de son mieux pour rendre cela aussi simple que possible pour vous
+
+01:18.240 --> 01:21.680
+lorsqu'il s'agit d'utiliser des optimisations basées sur le compilateur.
+
+01:22.680 --> 01:24.440
+Alors je vais aller de l'avant et, encore une fois,
+
+01:24.440 --> 01:26.520
+Faisons une démonstration de cela dans Say Love View
+
+01:26.520 --> 01:29.560
+afin que vous puissiez l'avoir comme branche de solution.
+
+01:29.560 --> 01:32.360
+Et puis nous partirons de là.
+
+01:32.360 --> 01:38.000
+Alors allumez, CD Say Love View.
+
+01:38.000 --> 01:39.680
+Super.
+
+01:39.680 --> 01:40.560
+Parfait.
+
+01:40.560 --> 01:43.040
+D'accord.
+
+01:43.040 --> 01:47.800
+Alors tout d'abord, quand je pense à Say Love View, comme nous pouvons le voir ici,
+
+01:47.800 --> 01:50.080
+la carte d'utilisateur est en fait quelque chose qui me touche
+
+01:50.080 --> 01:54.560
+comme quelque chose que nous n'allons honnêtement pas partager ces styles pour le moment.
+
+01:54.560 --> 01:58.360
+Et donc, quand je regarde ça, honnêtement, je pense que c'est probablement un bon cas.
+
+01:58.360 --> 02:03.920
+pour que le wrapper ou ces styles particuliers soient simplement limités à ce composant particulier.
+
+02:03.920 --> 02:07.840
+Nous pouvons donc aller de l'avant et l'étendre comme ceci.
+
+02:07.840 --> 02:10.520
+Et puis, cependant, si vous y réfléchissez et que vous vous dites,
+
+02:10.520 --> 02:13.320
+eh bien, il existe beaucoup d'autres cartes.
+
+02:13.320 --> 02:16.120
+Et si je veux être vraiment précis sur cette carte ?
+
+02:16.120 --> 02:19.320
+Alors vous savez quoi, après réflexion, faisons-en simplement un module CSS.
+
+02:19.320 --> 02:22.360
+Puisque, encore une fois, les styles ici sont assez inoffensifs,
+
+02:22.360 --> 02:24.240
+pas beaucoup de réutilisation pour le moment.
+
+02:24.240 --> 02:26.160
+Nous pouvons donc simplement faire du style.
+
+02:26.160 --> 02:28.880
+Et puis, parce que c'est le sprint, c'est là que, malheureusement,
+
+02:28.880 --> 02:32.840
+la syntaxe du style est un peu plus moche en comparaison.
+
+02:32.840 --> 02:36.560
+Nous pouvons voir maintenant que cela fonctionne toujours parce que nous regardons ici.
+
+02:36.560 --> 02:41.640
+Nous pouvons voir que notre carte utilisateur est effectivement affichée comme prévu.
+
+02:41.640 --> 02:45.080
+OK, qu'en est-il des autres opportunités de refactorisation de style ?
+
+02:45.080 --> 02:48.520
+Eh bien, si nous jetons un œil à la page d'accueil, nous avons un tas de choses ici
+
+02:48.520 --> 02:51.040
+c'est en fait assez générique.
+
+02:51.040 --> 02:53.720
+Nous avons des éléments dans la page de connexion qui sont en cours de refonte.
+
+02:53.720 --> 02:58.200
+Donc, ce que nous pourrions faire, en réalité, c'est simplement supprimer ces éléments sur la page de connexion.
+
+02:58.200 --> 03:02.040
+Et puis si nous rafraîchissons et jetons un œil, accueil, connexion, tout semble toujours bien.
+
+03:02.040 --> 03:05.720
+Ce refactor était donc assez simple.
+
+03:05.720 --> 03:08.760
+Et enfin, trouvons une opportunité pour certains styles de portée.
+
+03:08.760 --> 03:11.440
+Eh bien, si nous regardons la page utilisateur, en fait, il semble que nous utilisions
+
+03:11.440 --> 03:13.120
+beaucoup de choses ici aussi.
+
+03:13.120 --> 03:17.120
+Alors allons-y et effaçons cela pour terminer le refactor.
+
+03:17.120 --> 03:20.240
+Et si nous jetons un œil à la page d’accueil, nous avons ce bouton vert ici.
+
+03:20.240 --> 03:22.600
+Alors ok, c'est bien.
+
+03:22.600 --> 03:26.200
+Dans ce cas, pour être honnête, je ne suis pas sûr de vouloir définir les styles à ce stade.
+
+03:26.200 --> 03:28.800
+parce que nous sommes à l'intérieur de la page d'accueil.
+
+03:28.800 --> 03:31.920
+Et nous savons que la page d'accueil est partagée sur plusieurs fichiers.
+
+03:31.920 --> 03:34.600
+Donc à ce stade, ce que je ferais probablement, c'est de dire, vous savez quoi ?
+
+03:34.600 --> 03:38.520
+Les styles de page d’accueil ne sont pas seulement partagés pour eux-mêmes.
+
+03:38.520 --> 03:40.360
+Il est partagé dans l’ensemble de l’application.
+
+03:40.360 --> 03:43.880
+Alors laissons ça à l'intérieur d'ici.
+
+03:43.920 --> 03:47.320
+Donc, au strict minimum, cela semble un peu plus approprié en termes de cascade.
+
+03:47.320 --> 03:50.000
+App.view contrôle que ces éléments sont partagés partout.
+
+03:50.000 --> 03:51.520
+Alors boum, c'est désormais partagé.
+
+03:51.520 --> 03:54.480
+Et il y a certainement des opportunités ici pour refactoriser des choses comme, par exemple,
+
+03:54.480 --> 03:56.120
+nous voyons la navigation ici.
+
+03:56.120 --> 04:01.040
+Vous pouvez donc imaginer qu'à mesure que cette application se développe, vous pouvez totalement voir une opportunité
+
+04:01.040 --> 04:05.120
+pour que nous puissions réellement refactoriser notre composant d'en-tête dans son propre fichier,
+
+04:05.120 --> 04:08.280
+ce qui pourrait alors être un bon cas d'utilisation pour la portée, par exemple.
+
+04:08.280 --> 04:10.320
+Quoi qu'il en soit, je veux juste vous parler d'une refactorisation de haut niveau,
+
+04:10.320 --> 04:11.480
+et c'est ainsi que je pourrais l'aborder.
+

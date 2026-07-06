@@ -1,0 +1,626 @@
+WEBVTT
+
+00:00.000 --> 00:02.280
+We've talked a lot about moving data, methods,
+
+00:02.280 --> 00:04.240
+computed, all of you've done that successfully.
+
+00:04.240 --> 00:06.000
+But the one thing I've intentioned left off
+
+00:06.000 --> 00:08.440
+because it's kind of different in the script setup
+
+00:08.440 --> 00:12.040
+is the idea of basically what are compiler macros.
+
+00:12.040 --> 00:13.560
+So what are compiler macros?
+
+00:13.560 --> 00:18.560
+Well, let's go ahead and open up the nav bar here.
+
+00:18.560 --> 00:21.800
+And so let me go ahead and now hide this.
+
+00:21.800 --> 00:24.080
+Yeah, perfect, okay.
+
+00:24.080 --> 00:27.360
+So let's go ahead and convert this over to TypeScript rule quick.
+
+00:27.360 --> 00:34.360
+So the script set up, laying TS, and then to do, save,
+
+00:34.360 --> 00:37.520
+that's gone, that's gone.
+
+00:37.520 --> 00:39.440
+Okay, we're going to comment out the props for a second,
+
+00:39.440 --> 00:40.960
+and then we're just going to quickly say,
+
+00:40.960 --> 00:48.760
+cons, nav list equals a ref and wrap it just like that.
+
+00:48.760 --> 00:50.960
+And so here's an example, right where we're progressively
+
+00:50.960 --> 00:54.120
+enhancing a, well, I have the wrong thing here.
+
+00:54.120 --> 00:55.760
+Here we go.
+
+00:55.840 --> 00:57.400
+We're progressively enhancing the component
+
+00:57.400 --> 00:59.320
+you can see here with TypeScript, but you'll notice, though,
+
+00:59.320 --> 01:01.280
+that, actually let me import ref real quick,
+
+01:01.280 --> 01:05.920
+so that y'all can not be distracted by the Reich's quickly.
+
+01:05.920 --> 01:07.960
+I'm actually, I'm not actually going out of my way
+
+01:07.960 --> 01:11.200
+to define a custom type for what is inside of this nav list.
+
+01:11.200 --> 01:12.760
+Because, first of all, at this moment,
+
+01:12.760 --> 01:15.120
+it's fairly straightforward, and if we look at the ref,
+
+01:15.120 --> 01:16.920
+it already knows it's a name and a path.
+
+01:16.920 --> 01:18.720
+Now granted, if over time you start building,
+
+01:18.720 --> 01:21.520
+like nav items, and you want it to follow a specific structure,
+
+01:21.520 --> 01:23.600
+there's only a rationale to do so.
+
+01:23.600 --> 01:26.880
+But this is where it's important to try to differentiate
+
+01:26.880 --> 01:28.240
+when something is valuable to you,
+
+01:28.240 --> 01:29.680
+and versus when something is just done
+
+01:29.680 --> 01:32.920
+for the sake of purity, for purity sake.
+
+01:32.920 --> 01:35.960
+Now, that said, we still haven't defined this props, though,
+
+01:35.960 --> 01:37.600
+and how do we do that?
+
+01:37.600 --> 01:39.600
+And so compiler macros, essentially,
+
+01:39.600 --> 01:41.800
+are a views way of providing you functionality
+
+01:41.800 --> 01:47.000
+that will not impact the bundle that's ultimately outputted.
+
+01:47.000 --> 01:50.000
+And so we have this, basically, a helper function
+
+01:50.000 --> 01:52.400
+called defined props.
+
+01:52.400 --> 01:53.960
+And this, again, once again, this function
+
+01:53.960 --> 01:56.440
+is a compiler macro that's specific to script setup.
+
+01:56.440 --> 01:59.080
+So you actually can't use this, or you shouldn't really
+
+01:59.080 --> 02:01.160
+be using it outside of setup.
+
+02:01.160 --> 02:04.240
+And so inside of this defined props, what we can do
+
+02:04.240 --> 02:06.280
+is similarly to how we normally define props,
+
+02:06.280 --> 02:09.280
+we can just say tagline, and then we can do things
+
+02:09.280 --> 02:13.120
+like type string and require true.
+
+02:13.120 --> 02:17.880
+So this is where defined props, this looks pretty familiar.
+
+02:17.880 --> 02:20.520
+So we take that concept now, and let's look at something
+
+02:20.520 --> 02:22.040
+a little bit more advanced.
+
+02:22.040 --> 02:26.480
+Let's go ahead and take a look at the restaurant card.
+
+02:26.480 --> 02:29.480
+Here is where we can actually start to, yeah,
+
+02:29.480 --> 02:30.920
+let's play with this one.
+
+02:30.920 --> 02:32.760
+OK.
+
+02:32.760 --> 02:34.560
+So on the restaurant card, you'll see here
+
+02:34.560 --> 02:36.640
+that we have a prop that's a complex type,
+
+02:36.640 --> 02:39.280
+it's an object that is supposed to be a restaurant.
+
+02:39.280 --> 02:42.760
+And it also has this emit thing, which we'll talk about in a second.
+
+02:42.760 --> 02:45.320
+And then, otherwise, we need to go ahead and move this over.
+
+02:45.320 --> 02:47.200
+So let's go and do that real quick.
+
+02:47.200 --> 02:49.400
+We'll have setup, we'll take care of that.
+
+02:49.400 --> 02:52.160
+Let's comment this block out first.
+
+02:52.160 --> 02:56.560
+And then once here, we have constatus color, equals computed,
+
+02:56.560 --> 03:01.080
+wrap that arrow function, that's it.
+
+03:01.080 --> 03:07.400
+And then here, we have our delete restaurant,
+
+03:07.400 --> 03:10.720
+and then that is a function.
+
+03:10.720 --> 03:12.680
+And then we will comment this out for a second
+
+03:12.680 --> 03:14.720
+because this won't work.
+
+03:14.720 --> 03:16.720
+OK.
+
+03:16.720 --> 03:17.720
+OK.
+
+03:17.720 --> 03:19.000
+So here we have everything.
+
+03:19.000 --> 03:21.880
+And so using what we just learned about compiler macros,
+
+03:21.880 --> 03:25.480
+we said that there was a defined props helper method.
+
+03:25.480 --> 03:26.560
+And so one of the things we could do
+
+03:26.560 --> 03:27.880
+is we could do the same thing as before.
+
+03:27.880 --> 03:30.600
+We could say restaurant, and it's a type,
+
+03:30.600 --> 03:35.320
+object, as prop, type, restaurant.
+
+03:35.320 --> 03:38.320
+And then we can say required true.
+
+03:38.320 --> 03:41.800
+This seems, this is familiar.
+
+03:41.800 --> 03:44.080
+But what if we wanted to do this a little bit more
+
+03:44.080 --> 03:45.520
+like natural type script?
+
+03:45.520 --> 03:47.400
+Well, one of the things we can do is we
+
+03:47.400 --> 03:51.760
+can actually provide the types to define props as a basically
+
+03:51.760 --> 03:53.080
+do type casting.
+
+03:53.080 --> 03:54.440
+So in other words, we could, for example,
+
+03:54.440 --> 03:57.720
+call it prop types, I'll just call it like that.
+
+03:57.720 --> 04:00.480
+And we say there is a thing called a restaurant
+
+04:00.480 --> 04:03.960
+that is of type restaurant, just like that.
+
+04:03.960 --> 04:05.880
+And so the way this will look inside of your props
+
+04:05.880 --> 04:08.520
+is rather than defining it inside of the parameters
+
+04:08.520 --> 04:10.840
+of the parentheses, we use the greater than less than
+
+04:10.840 --> 04:15.280
+simple brackets, and then you just pass in prop types.
+
+04:15.280 --> 04:17.960
+And then this provides you a little bit more
+
+04:17.960 --> 04:22.760
+of that organic type script feel.
+
+04:22.760 --> 04:25.360
+However, one of the things you might be thinking of
+
+04:25.360 --> 04:28.160
+is, well, OK, so for example, here we,
+
+04:28.160 --> 04:29.520
+this is pure type script world.
+
+04:29.520 --> 04:32.080
+So we can't just go like, oh, this is actually
+
+04:32.080 --> 04:38.160
+type restaurant, and we can't be required true default,
+
+04:38.160 --> 04:38.640
+whatever.
+
+04:38.640 --> 04:39.760
+This is not going to work.
+
+04:39.760 --> 04:43.680
+Because this is not an actual JavaScript object.
+
+04:43.680 --> 04:46.520
+So if you want to use something that's required,
+
+04:46.520 --> 04:48.960
+remember that inside of type script, as long as you define
+
+04:48.960 --> 04:51.960
+a property on an object, it's by default required.
+
+04:51.960 --> 04:53.240
+So that's already on.
+
+04:53.240 --> 04:55.520
+If you actually want it to be optional, then this is where
+
+04:55.520 --> 04:57.960
+you might put the question mark as part of it.
+
+04:57.960 --> 04:59.800
+I'll actually not go whoops, I forgot.
+
+04:59.800 --> 05:02.640
+Sorry, go back here.
+
+05:02.640 --> 05:04.440
+You would want to put it like this.
+
+05:04.440 --> 05:06.920
+And then you're saying that this prop is optional
+
+05:06.920 --> 05:10.280
+and not required on the component.
+
+05:10.280 --> 05:12.920
+The thing, though, is that something that we often do
+
+05:12.920 --> 05:16.720
+when it comes to props is we want a default value.
+
+05:16.720 --> 05:17.880
+And so this is something that's currently
+
+05:17.880 --> 05:19.880
+in an experimental phase, but I'll show you how
+
+05:19.880 --> 05:21.920
+I've seen some of it done before.
+
+05:21.920 --> 05:23.000
+So there's two ways to do this.
+
+05:23.000 --> 05:27.560
+One is that there is, I forgot which build this was,
+
+05:27.560 --> 05:32.120
+but at one point, there was a proposition to do it like this,
+
+05:32.120 --> 05:36.880
+where you had this use defaults or use with defaults helper.
+
+05:36.880 --> 05:39.400
+And then you would pass in another object that was like
+
+05:39.400 --> 05:43.200
+restaurant and then like default values.
+
+05:43.200 --> 05:46.120
+For me, this is kind of clunky, because you have this defined
+
+05:46.120 --> 05:47.920
+props, and you're wrapping it with use with default
+
+05:47.920 --> 05:50.480
+that you're passing in a second argument that happens
+
+05:50.480 --> 05:54.680
+to be it feels a little clunky.
+
+05:54.680 --> 05:58.240
+So the way that's currently being experimented with here
+
+05:58.240 --> 06:00.000
+in the docs, which I'll definitely link to,
+
+06:00.000 --> 06:02.160
+is let me blow it up a little bit,
+
+06:02.160 --> 06:04.240
+is it's basically reactive destructuring.
+
+06:04.240 --> 06:07.920
+So basically, you would actually define your props as normal.
+
+06:07.920 --> 06:10.520
+But then, as a result of using normal JavaScript,
+
+06:10.520 --> 06:12.680
+where you destruct the props that you would normally
+
+06:12.680 --> 06:16.560
+want to use, you just assigned the default values then,
+
+06:16.560 --> 06:20.560
+which is actually fairly one to one with actually
+
+06:20.560 --> 06:23.000
+what we come to expect with JavaScript, actually.
+
+06:23.000 --> 06:25.840
+And so granted, again, at least at the time of this recording,
+
+06:25.840 --> 06:28.560
+this is an experimental feature that needs opt-in inside
+
+06:28.560 --> 06:29.400
+of your build.
+
+06:29.400 --> 06:31.520
+But this is the direction, it looks like this
+
+06:31.520 --> 06:33.240
+is the direction that view three is heading,
+
+06:33.240 --> 06:35.320
+as far as using defined props so that you
+
+06:35.320 --> 06:36.920
+can provide default values.
+
+06:36.920 --> 06:39.560
+In the meantime, though, if you really want,
+
+06:39.560 --> 06:42.000
+basically, what I would recommend just
+
+06:42.000 --> 06:47.320
+to keep things simple, that I delete it, I did delete it.
+
+06:47.320 --> 06:52.320
+Is while the casting is nice, I honestly don't,
+
+06:52.320 --> 06:56.360
+I think for the most part, it's totally fine to just keep it
+
+06:56.360 --> 07:02.560
+as is to just say restaurant type, the object
+
+07:02.560 --> 07:07.200
+has prop, type, restaurant, and then just
+
+07:07.200 --> 07:10.960
+a find your default here as part of your definition.
+
+07:10.960 --> 07:13.080
+There's nothing wrong with this.
+
+07:13.080 --> 07:14.560
+Again, we'll find better ways to doing it.
+
+07:14.560 --> 07:16.280
+But for now, if you really do want to default,
+
+07:16.280 --> 07:18.040
+this is one way to do it.
+
+07:18.040 --> 07:19.960
+That said, there's nothing stopping you as well
+
+07:19.960 --> 07:22.360
+from assigning another reactive value that will then
+
+07:22.360 --> 07:24.680
+take the prop if it's empty set it.
+
+07:24.680 --> 07:25.560
+As we know, programming, there's
+
+07:25.560 --> 07:27.400
+a lot of different ways to do things.
+
+07:27.400 --> 07:29.520
+So don't feel tied in, but for now,
+
+07:29.520 --> 07:30.880
+we're going to assume there's no default.
+
+07:30.880 --> 07:33.600
+So it's totally fine, which just uses typecasting
+
+07:33.600 --> 07:35.680
+to do define props.
+
+07:35.680 --> 07:38.280
+OK, so I'm going to delete that, I can delete that.
+
+07:38.280 --> 07:41.440
+OK, now we've defined our props.
+
+07:41.440 --> 07:44.240
+And then actually, one sec, I need to actually import
+
+07:44.240 --> 07:46.920
+it, compute it, so this thing stops yelling at me.
+
+07:46.920 --> 07:51.320
+And then we have, OK, here's the next problem, though.
+
+07:51.320 --> 07:53.520
+You'll notice though that inside of Options API,
+
+07:53.520 --> 07:55.440
+we typically could refer to the props directly
+
+07:55.440 --> 07:56.840
+because it was on the disk object.
+
+07:56.840 --> 07:58.280
+It was automatically inherited.
+
+07:58.280 --> 08:00.360
+But that's no longer the case, because we have it
+
+08:00.360 --> 08:03.040
+where we have it inside of defined props.
+
+08:03.040 --> 08:04.280
+So how do we get access to it?
+
+08:04.280 --> 08:06.320
+Well, we create a variable that we want to reference.
+
+08:06.320 --> 08:08.920
+So typically, it's just consprops.
+
+08:08.920 --> 08:09.920
+That's simple.
+
+08:09.920 --> 08:15.160
+And then that way, the this becomes props.resherent.status.
+
+08:15.160 --> 08:17.800
+And so you'll see though, which is just interestingly enough,
+
+08:17.800 --> 08:20.520
+is that typefrib is yelling at us.
+
+08:20.520 --> 08:21.960
+It's saying that, hey, as a right now,
+
+08:21.960 --> 08:24.120
+based on how you define the props, it
+
+08:24.120 --> 08:25.560
+might actually be undefined.
+
+08:25.560 --> 08:28.240
+So I can actually run this block of code.
+
+08:28.240 --> 08:30.680
+And so this is where typeguards come into play.
+
+08:30.680 --> 08:34.800
+So if we want, we could say, if props.resherent exists,
+
+08:34.800 --> 08:38.120
+then run all this code, right?
+
+08:38.120 --> 08:40.480
+And then, as you can see here, with that typeguard,
+
+08:40.480 --> 08:42.880
+typefrib knows that it can assume that typefresh
+
+08:42.880 --> 08:45.040
+on what have it's all the properties that it needs,
+
+08:45.040 --> 08:46.480
+and then it can run through.
+
+08:46.480 --> 08:48.200
+And that's actually helpful because, as we know,
+
+08:48.200 --> 08:49.320
+when you build your codes and times,
+
+08:49.320 --> 08:52.040
+you we do miss these little edge cases and things do break,
+
+08:52.040 --> 08:54.600
+because we forgot that like, oh, yeah, in this particular data
+
+08:54.600 --> 08:56.600
+type, something like this needs to happen before something
+
+08:56.600 --> 09:00.040
+like this happens, typefrib does help you to kind of
+
+09:00.040 --> 09:01.640
+remind you of that.
+
+09:01.640 --> 09:04.160
+However, in our case, this is a required prop.
+
+09:04.160 --> 09:07.040
+So in that case, the typeguard is really not necessary.
+
+09:07.040 --> 09:08.840
+So this way, you can see it's not yelling at me,
+
+09:08.840 --> 09:12.400
+because I'm promising it that it will get the value that it wants.
+

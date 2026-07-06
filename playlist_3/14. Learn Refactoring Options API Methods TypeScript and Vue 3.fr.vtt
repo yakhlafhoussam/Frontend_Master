@@ -1,0 +1,386 @@
+WEBVTT
+
+00:00.000 --> 00:05.200
+C'est juste curieux de savoir si ce genre de processus dans un code de vue plus grande
+
+00:05.200 --> 00:08.280
+type de base de résultats dans le fichier de bande de type constantes,
+
+00:08.280 --> 00:11.400
+être en quelque sorte cannibalisé ou incorporé dans le fichier de types.
+
+00:11.400 --> 00:14.640
+Voyez-vous fréquemment des fichiers de constantes ?
+
+00:14.640 --> 00:16.080
+Alors oui.
+
+00:16.080 --> 00:17.760
+C'est donc une excellente question.
+
+00:17.760 --> 00:20.400
+Parce que jetons un coup d'œil à cela.
+
+00:20.400 --> 00:22.040
+Et ce segway est parfait, au lieu de la prochaine chose
+
+00:22.040 --> 00:23.360
+Je voulais en parler.
+
+00:23.360 --> 00:27.400
+Nous avons donc remarqué ici que nous avons nos types de constantes ici.
+
+00:27.400 --> 00:29.480
+Et nous avons aussi nos types ici.
+
+00:29.480 --> 00:31.560
+Et en tant que développeurs, nous avons été inondés
+
+00:31.560 --> 00:33.560
+avec la règle de ne pas se répéter, qui,
+
+00:33.560 --> 00:35.560
+pour moi, c'est souvent exagéré.
+
+00:35.560 --> 00:38.600
+Mais évidemment, nous pouvons voir ici qu'il y a une certaine duplication.
+
+00:38.600 --> 00:40.160
+Nous avons deux sources de vérité.
+
+00:40.160 --> 00:41.720
+C'est un peu un problème.
+
+00:41.720 --> 00:43.120
+Donc le problème avec les constantes étant
+
+00:43.120 --> 00:45.000
+cependant, englobé dans les types, c'est que les constantes
+
+00:45.000 --> 00:47.600
+sont toujours des valeurs de type JavaScript valides
+
+00:47.600 --> 00:49.400
+que vous pourrez attribuer plus tard.
+
+00:49.400 --> 00:51.320
+Par exemple, quelle est l'une des choses que nous sommes sur le point de faire
+
+00:51.320 --> 00:53.640
+c'est si nous jetons un oeil à notre candidature
+
+00:53.640 --> 00:55.800
+et si nous allons dans un nouveau restaurant, vous remarquerez
+
+00:55.800 --> 00:58.000
+en fait, nous ne communiquons pas le statut pour le moment.
+
+00:58.000 --> 01:00.560
+Les utilisateurs n'ont aucun moyen de choisir de quel statut il s'agit.
+
+01:00.560 --> 01:03.680
+Et donc quand vous faites cela, ce que nous ferons dans un instant,
+
+01:03.680 --> 01:06.360
+nous voudrons importer cette constante sous forme de tableau qui
+
+01:06.360 --> 01:08.800
+va parcourir puis afficher nos options.
+
+01:08.800 --> 01:12.440
+Mais rappelez-vous que la valeur ici n'est pas la même qu'un type,
+
+01:12.440 --> 01:15.160
+parce que ce type ne peut jamais être consommé
+
+01:15.160 --> 01:18.080
+d'une manière que le JavaScript traditionnel le ferait.
+
+01:18.080 --> 01:21.400
+Alors allons-y et voyons comment nous pourrions résoudre ce problème.
+
+01:21.400 --> 01:23.000
+Parce que c'est un problème courant.
+
+01:23.000 --> 01:25.640
+Alors laissez-moi commencer par montrer le problème
+
+01:25.640 --> 01:26.800
+et ensuite nous partirons d'ici.
+
+01:26.800 --> 01:27.880
+Alors ce que nous allons essayer de faire maintenant
+
+01:27.880 --> 01:30.480
+est à l'intérieur d'un restaurant, la nouvelle page du restaurant,
+
+01:30.480 --> 01:33.840
+nous allons aller de l'avant et éliminer cette partie.
+
+01:33.840 --> 01:37.040
+Je vais donc aller de l'avant et aller dans un nouveau restaurant.
+
+01:37.040 --> 01:39.080
+Et nous pouvons voir ici que cela n'a pas été déplacé
+
+01:39.080 --> 01:39.720
+le type voyage encore.
+
+01:39.720 --> 01:40.560
+Je vais donc continuer et faire cela.
+
+01:40.560 --> 01:45.000
+Disons configurer Lang TS.
+
+01:45.000 --> 01:47.560
+Et puis après ça, nous allons,
+
+01:47.560 --> 01:48.400
+oh, tu sais quoi ?
+
+01:48.400 --> 01:49.640
+Je ne vais pas le faire pour l'instant,
+
+01:49.640 --> 01:51.240
+parce que je veux prouver quelque chose très rapidement.
+
+01:51.240 --> 01:54.080
+OK, je vais juste le faire à Lang TS.
+
+01:54.080 --> 02:00.400
+Et puis j'importerai Define Component depuis la vue.
+
+02:00.400 --> 02:03.560
+Et donc en fait juste pour expliquer ce que je pense ici.
+
+02:03.560 --> 02:05.480
+La raison pour laquelle nous n'allons pas encore créer ce groupe
+
+02:05.480 --> 02:07.240
+c'est parce que je ne vous ai pas tous appris à définir
+
+02:07.240 --> 02:08.880
+et les mythes et les accessoires et ce genre de choses.
+
+02:08.880 --> 02:10.760
+Alors plutôt que de passer directement à cela,
+
+02:10.760 --> 02:12.480
+nous allons simplement utiliser quelque chose que nous connaissons,
+
+02:12.480 --> 02:14.760
+qui est le composant Définir.
+
+02:14.760 --> 02:15.880
+D'ACCORD.
+
+02:15.880 --> 02:21.920
+Alors ici, à l'intérieur, voyons, où est notre statut ?
+
+02:21.920 --> 02:23.360
+Ah, le statut est ici.
+
+02:23.360 --> 02:26.640
+Vous remarquerez qu'il recherche cette liste de statuts de restaurant.
+
+02:26.640 --> 02:28.360
+Cela n’existe pas actuellement.
+
+02:28.360 --> 02:31.080
+Et la raison en est que nous n’avons pas encore importé.
+
+02:31.080 --> 02:35.440
+Donc si j'importe la liste des statuts des restaurants à partir de mes constantes,
+
+02:35.440 --> 02:41.800
+Je peux en fait l'ingérer ici, dans mes données réactives.
+
+02:41.800 --> 02:46.040
+Et puis une fois que j'aurai fait ça, vous verrez que tout apparaît.
+
+02:46.040 --> 02:50.600
+Mais nous résolvons ici un petit problème.
+
+02:50.600 --> 02:53.000
+Et la raison en est que nous
+
+02:53.000 --> 02:56.880
+avoir cette duplication de données.
+
+02:56.880 --> 02:58.880
+Et donc la question est : existe-t-il un moyen pour TypeScript
+
+02:58.880 --> 03:02.360
+pour regarder une constante que nous définissons ici puis générons les types
+
+03:02.360 --> 03:04.480
+de là ?
+
+03:04.480 --> 03:09.440
+Et comment ça marche, honnêtement, je ne sais pas pourquoi ils l'ont conçu
+
+03:09.440 --> 03:10.360
+de cette façon.
+
+03:10.360 --> 03:11.560
+Mais ça va.
+
+03:11.560 --> 03:13.520
+Je vais vous montrer comment ça marche.
+
+03:13.520 --> 03:15.840
+Très bien, la première chose que tu feras quand tu voudras,
+
+03:15.840 --> 03:17.640
+parce que, OK, pensez-y de cette façon.
+
+03:17.640 --> 03:21.320
+Ce que tu veux, c'est que si nous devions faire ça nous-mêmes,
+
+03:21.320 --> 03:27.400
+c'est que nous voulons en quelque sorte parcourir la liste des restaurants,
+
+03:27.400 --> 03:34.040
+liste d'état, constante, puis unissez-les avec un opérateur union.
+
+03:34.040 --> 03:35.280
+Nous étions des agents programmatiques.
+
+03:35.280 --> 03:36.880
+Un peu ce à quoi nous pensons.
+
+03:36.880 --> 03:39.480
+Alors vous pensez peut-être, oh, il y a quatre boucles ou quelque chose comme ça.
+
+03:39.480 --> 03:40.720
+Pas tout à fait.
+
+03:40.720 --> 03:46.400
+La façon dont cela fonctionne est la suivante : allons-y et importons notre constante.
+
+03:46.400 --> 03:50.440
+Nous importerons donc un restaurant, disons,
+
+03:50.440 --> 03:53.280
+restaurant, ok, il n'aime pas les importations,
+
+03:53.280 --> 03:56.800
+donc je vais juste devoir le faire manuellement avec des constantes.
+
+03:56.800 --> 03:58.600
+D'ACCORD.
+
+03:58.600 --> 04:03.560
+Alors si je fais du restaurant, pourquoi ça ne me plaît pas ?
+
+04:03.560 --> 04:06.160
+Statut?
+
+04:06.160 --> 04:09.680
+Cela ne lui plaît pas.
+
+04:09.680 --> 04:11.880
+Type d'importation non résolu.
+
+04:14.480 --> 04:15.120
+Oh, oh, bien sûr.
+
+04:15.120 --> 04:16.200
+OK, ouais, c'est OK.
+
+04:16.200 --> 04:18.280
+Désolé, cette erreur est correcte.
+
+04:18.280 --> 04:19.480
+Cela ne fonctionnera pas, n'est-ce pas ?
+
+04:19.480 --> 04:20.600
+Parce que c'est une valeur JavaScript.
+
+04:20.600 --> 04:21.760
+Ce n'est pas un type, n'est-ce pas ?
+
+04:21.760 --> 04:24.120
+Nous avons un mot-clé pour cela pour une raison.
+
+04:24.120 --> 04:26.320
+Donc une chose que vous pouvez faire, ou ce que vous êtes censé faire,
+
+04:26.320 --> 04:31.040
+la convention la plus populaire est que vous soyez typé comme une constante.
+
+04:31.040 --> 04:32.720
+Et c'est mon reproche numéro un.
+
+04:32.720 --> 04:33.960
+Parce que c'est déjà une constante.
+
+04:33.960 --> 04:37.360
+Cela me fait bizarre que vous tapiez quelque chose comme constante.
+
+04:37.360 --> 04:38.640
+Mais vous remarquerez que ça fait quelque chose,
+
+04:38.640 --> 04:41.560
+à la liste des statuts des restaurants, c'est qu'il le fait
+
+04:41.560 --> 04:45.000
+disponible pour la saisie en tant que tuple en lecture seule.
+
+04:45.000 --> 04:46.880
+Et donc pour ceux qui ne connaissent pas ce terme de programmation,
+
+04:46.880 --> 04:51.520
+c'est essentiellement là que vous avez un tableau avec des valeurs fixes à certaines positions.
+
+04:51.520 --> 04:54.480
+Cependant, je ne dis pas que c'est un tuple, mais c'est juste un peu comme ça.
+
+04:54.480 --> 05:00.000
+Là où il est dit, ce sont des tableaux avec ces valeurs spécifiques à ces endroits spécifiques.
+
+05:00.000 --> 05:02.640
+Et puis, ne vous souciez pas de ça dans le texte.
+
+05:02.640 --> 05:05.320
+Je fais juste ça pour mémoire.
+
+05:05.320 --> 05:10.560
+Vous demandez le type de liste d'état du restaurant.
+
+05:10.560 --> 05:15.680
+Et puis, pas seulement ça, vous devez ensuite utiliser ce numéro entre crochets,
+
+05:15.680 --> 05:19.360
+parce que c'est techniquement un éventail de choses que vous lisez.
+
+05:19.360 --> 05:22.440
+Mais les tableaux sont accessibles via un numéro.
+
+05:22.440 --> 05:24.680
+Par exemple, ce nombre ici n’est pas arbitraire.
+
+05:24.680 --> 05:29.600
+C'est le type de valeur utilisé pour accéder aux valeurs à l'intérieur
+
+05:29.600 --> 05:31.600
+de cette chose en lecture seule.
+
+05:31.600 --> 05:36.680
+Mais une fois que vous aurez fait cela, vous remarquerez que l'état du type est en fait
+
+05:36.680 --> 05:39.360
+générer comme vous vous en doutez.
+
+05:39.360 --> 05:42.160
+Il a envie d'essayer ou, et alors maintenant, si nous venons ici et que nous disons,
+
+05:42.160 --> 05:46.080
+hé, nous voulons ajouter un délicieux like, et nous le sauvegardons.
+
+05:46.080 --> 05:47.080
+Cool.
+
+05:47.080 --> 05:48.080
+Le statut est automatiquement mis à jour.
+

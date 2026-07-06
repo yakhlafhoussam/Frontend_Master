@@ -1,0 +1,227 @@
+WEBVTT
+
+00:00.000 --> 00:04.000
+Donc, nous allons le faire maintenant, nous allons passer à des gestionnaires d'événements plus avancés.
+
+00:04.000 --> 00:09.000
+Prenons par exemple le nouveau restaurant.name que nous avons ici.
+
+00:09.000 --> 00:14.000
+Pour ceux qui ne le savent pas, le modèle V est une directive qui vous permet de mettre à jour automatiquement la valeur de l'entrée et de la suivre,
+
+00:14.000 --> 00:18.000
+tout en suivant simultanément l'événement d'entrée, puis en mettant à jour le champ défini.
+
+00:18.000 --> 00:22.000
+Donc, pour montrer cela en exécution ici, ce que nous allons faire réellement, je vais juste le mettre ici,
+
+00:22.000 --> 00:28.000
+restaurant ou est-ce un nouveau restaurant, un nouveau restaurant.name, un nouveau restaurant.name, d'accord ?
+
+00:28.000 --> 00:35.000
+Donc, ici, quand nous entrons dans un restaurant, nouveau, et que je tape, vous remarquerez que tout est mis à jour comme vous le souhaitez.
+
+00:35.000 --> 00:41.000
+Mais que se passerait-il si nous voulions uniquement mettre à jour, disons, lorsque quelqu'un appuie sur la barre d'espace ?
+
+00:41.000 --> 00:43.000
+Faisons juste quelque chose d'un peu différent.
+
+00:43.000 --> 00:47.000
+Eh bien, la façon dont nous procéderions réellement serait de détourner ce qui se passe.
+
+00:47.000 --> 00:51.000
+Ainsi, le modèle V ne fonctionne plus car il va capturer tout ce que nous tapons dessus.
+
+00:51.000 --> 00:54.000
+Donc, ce que nous allons faire maintenant, c'est diviser le modèle V en ses deux parties distinctes.
+
+00:54.000 --> 00:59.000
+Et c'est ce que tout le monde ne réalise pas, c'est que le modèle V n'est en réalité qu'un sucre syntaxique pour ce que je m'apprête à vous montrer.
+
+00:59.000 --> 01:07.000
+Donc, la première chose à faire est que vous liez essentiellement la valeur de l'élément à cette chose dynamique, new restaurant.name.
+
+01:07.000 --> 01:13.000
+Et puis ce qu'il fait normalement avec le modèle V, c'est qu'il crée également un événement d'entrée qui dira alors essentiellement :
+
+01:13.000 --> 01:17.000
+encore une fois, c'est un peu du pseudo-code, mais event.target.value.
+
+01:17.000 --> 01:20.000
+C'est comme à un niveau élevé ce que l'on fait essentiellement.
+
+01:20.000 --> 01:25.000
+Il s'agit de combiner tout cela en un seul morceau, ce qui vous rend la vie beaucoup plus facile car la plupart du temps, nous n'essayons pas de détourner l'objet.
+
+01:25.000 --> 01:30.000
+Mais disons que nous voulons détourner la chose et que nous voulons uniquement mettre à jour chaque fois que nous appuyons sur la barre d'espace.
+
+01:30.000 --> 01:38.000
+Je vais donc utiliser la fonction de nom de mise à jour que nous appellerons chaque fois que cela sera atteint.
+
+01:38.000 --> 01:47.000
+Donc, maintenant, si nous déclarons le nom de la mise à jour, c'est une fonction et pour montrer que cela fonctionne, nous allons simplement nous connecter bonjour.
+
+01:48.000 --> 01:56.000
+Très bien, donc ici, nous verrons que lorsque je continue et que je tape, vous voyez que bonjour est déclenché. Cela fonctionne comme prévu.
+
+01:56.000 --> 02:01.000
+Mais nous voulons faire quelque chose, nous voulons faire un peu plus que cela, nous voulons réellement inspecter ce qui se passe.
+
+02:01.000 --> 02:11.000
+Si c'est la première fois que vous travaillez avec des événements personnalisés, ce que vous devez savoir est que lorsque vous avez cet événement ici, l'objet événement est automatiquement transmis dans le cadre de son paramètre par défaut.
+
+02:11.000 --> 02:20.000
+Donc, ici, ce que nous pouvons faire, c'est que si je continue, je vais juste taper event, souvent appelé e, mais je vais taper event et déconnecter l'événement cette fois.
+
+02:20.000 --> 02:27.000
+Nous allons voir maintenant que lorsque nous passons à new et tapons, vous voyez que l'événement input est réellement appelé.
+
+02:27.000 --> 02:34.000
+Et c’est génial parce que cela signifie que nous pouvons maintenant faire quelque chose avec cette chose, n’est-ce pas ? Il a les données, il a ce qui ne l'est pas.
+
+02:34.000 --> 02:43.000
+Et d'accord, c'est plutôt bien, mais vous remarquerez qu'en fait, le navigateur nous donne déjà un indice, mais ce n'est pas n'importe quel événement, c'est un événement d'entrée.
+
+02:43.000 --> 02:57.000
+Et donc ce que nous pouvons faire correctement, c'est que pour le moment, si nous essayons de faire comme les données de points d'événements, cela ne nous dira pas vraiment quoi que ce soit, car voici le problème avec les événements, c'est que, au moins dans le primaire ou sous la forme dans laquelle ils se trouvent actuellement, il n'y a pas de saisie dessus, n'est-ce pas ? C'est n'importe lequel.
+
+02:57.000 --> 03:09.000
+Alors vous pourriez vous dire, d'accord, j'ai compris, j'ai compris, je vais appeler ça un événement, ouais, je suis intelligent, et ensuite vous allez réaliser, oh, c'est assez générique, c'est juste comme si c'était un événement qui se déroulait dans le bas.
+
+03:09.000 --> 03:16.000
+C'est ça, c'est essentiellement l'un des événements pour être tout à fait honnête, comme oui, vous décrivez que c'est un événement, mais librement, nous pourrions utiliser un peu plus d'aide.
+
+03:16.000 --> 03:20.000
+Et donc ce que nous savons, c'est qu'il s'agit d'un événement d'entrée.
+
+03:20.000 --> 03:33.000
+Et lorsque vous obtenez l'événement d'entrée, la magie opère maintenant parce que tout ce que vous pouvez faire, je veux dire, oui, toutes les propriétés qui accompagnent cet objet apparaissent maintenant soudainement dans votre saisie semi-automatique.
+
+03:33.000 --> 03:40.000
+Donc, en gros, nous pouvons nous dire, d'accord, enregistrons les données pour cela, par exemple, ou peut-être voyons, ont-ils du code, peut-être que le code serait mieux.
+
+03:40.000 --> 03:45.000
+Non, pas là-dessus, oh, c'est vrai, je sais, je sais pourquoi c'est ça, mais ça va.
+
+03:45.000 --> 03:53.000
+Alors ici, nous allons enregistrer les données, donc nous revenons ici maintenant, permettez-moi de préciser que la console est un espace SDF, d'accord, super.
+
+03:53.000 --> 04:06.000
+Alors maintenant, qu'est-ce que j'ai dit, j'ai dit, je voulais l'attribuer quand cela se produit, donc ce que nous pouvons faire, c'est dire, si les données, si les données du point d'événement sont égales au caractère espace, alors que faisons-nous ?
+
+04:06.000 --> 04:13.000
+Nous pouvons dire que le nom du nouveau restaurant est en fait un nom de point de valeur de point, vous voyez, cela vous comprendra.
+
+04:13.000 --> 04:18.000
+Euh, ce sera équivalent à la cible du point d'événement, et voilà.
+
+04:18.000 --> 04:31.000
+Encore une fois, les données elles-mêmes ne se complètent pas automatiquement pour une raison quelconque, vous pensez comme une cible de point d'événement, comme pourquoi, et je pense que fondamentalement, la raison pour laquelle nous ne pouvons pas compléter cela automatiquement, n'est-ce pas, vous ne voyez de valeur nulle part est parce que
+
+04:31.000 --> 04:35.000
+en fait, il ne sait pas quelle est la cible du point d'événement, pour une raison quelconque.
+
+04:35.000 --> 04:50.000
+Et donc ce que vous pouvez faire à la place, cependant, c'est que vous pouvez essentiellement dire que vous pouvez dire que c'est en fait en enveloppant votre, votre valeur entre parenthèses et en utilisant le transtypage qu'il s'agit d'un élément HTML.
+
+04:50.000 --> 04:56.000
+Donc, votre cible d'événement, vous savez, parce que encore une fois, c'est vous qui codez ça, vous vous dites, j'ai compris, ça ne va pas être échangé au hasard.
+
+04:56.000 --> 05:02.000
+Et à partir de là, c’est là que la propriété value n’apparaît pas.
+
+05:02.000 --> 05:11.000
+Alors maintenant, si nous sauvegardons ceci et échangeons-le d'ici là, j'attendrai, laissez-moi vider le premier espace de la console.
+
+05:11.000 --> 05:14.000
+Maintenant que je suis là, la valeur totale apparaît réellement.
+
+05:14.000 --> 05:20.000
+Voici donc le problème avec cette syntaxe, c'est qu'il faut un peu de temps pour s'y habituer, car ce n'est pas naturellement ainsi que nous l'écririons.
+
+05:20.000 --> 05:25.000
+Honnêtement, la plupart d'entre nous s'attendraient à ce que le point d'événement cible cette valeur.
+
+05:25.000 --> 05:31.000
+Et même si, techniquement, cela fonctionnera, voyons, comme prévu, permettez-moi de forcer cela très rapidement.
+
+05:31.000 --> 05:35.000
+D'accord, donc je vais laisser TypeScript me crier dessus pour l'instant, c'est bien.
+
+05:35.000 --> 05:38.000
+TypeScript criera, ouais.
+
+05:38.000 --> 05:40.000
+Donc, techniquement, cela fonctionne.
+
+05:40.000 --> 05:48.000
+Et c'est donc là que, honnêtement, je pense qu'une partie du problème survient parfois lorsque les gens commencent à opter pour TypeScript de tout cœur.
+
+05:48.000 --> 05:54.000
+C'est qu'ils se lancent dans cette chose étrange où ils se disent, attendez, ce que j'ai l'habitude de faire maintenant me semble vraiment gênant.
+
+05:54.000 --> 06:01.000
+Genre, qu'est-ce que je suis censé faire ? Par exemple, je suppose que je peux, si la valeur du point cible du point d'événement existe, alors enregistrez-la.
+
+06:01.000 --> 06:06.000
+Mais ensuite, c'est comme, d'accord, eh bien, cela dit toujours que la cible du point d'événement pourrait être nulle.
+
+06:06.000 --> 06:08.000
+Peut-être que je devrais m'en débarrasser.
+
+06:08.000 --> 06:11.000
+Mais ensuite, c'est comme si, oh, eh bien, la cible du point d'événement pourrait être n'importe laquelle.
+
+06:11.000 --> 06:15.000
+Donc vous voyez que, comme TypeScript se déroule en quelque sorte, je ne sais pas ce que c'est censé être.
+
+06:16.000 --> 06:30.000
+Et c'est pourquoi, généralement, vous le feriez simplement, oui, donc nous enveloppions simplement cela et ensuite disons comme élément d'entrée HTML, et maintenant c'est heureux.
+
+06:30.000 --> 06:35.000
+Et maintenant, nous pouvons prendre tout cela et le laisser tomber ici.
+
+06:35.000 --> 06:41.000
+Et maintenant que nous avons cela, nous pouvons continuer avec une nouvelle valeur de point de nom, c'est génial.
+
+06:41.000 --> 06:48.000
+Encore une fois, nous pouvons tester cela en allant, si nous n'atteignons pas du tout l'espace, et en disant simplement, par exemple, le site Web de Ben.
+
+06:48.000 --> 06:51.000
+Rien ne s'est produit car il n'a jamais été attribué.
+
+06:51.000 --> 06:54.000
+Je veux dire, supprimez-le maintenant ou allez l'effacer.
+
+06:54.000 --> 06:57.000
+Je fais l'espace Ben. Vous voyez que j'ai été affecté ici.
+
+06:57.000 --> 06:59.000
+Test.
+
+06:59.000 --> 07:00.000
+Recommander.
+
+07:00.000 --> 07:01.000
+Créer.
+
+07:01.000 --> 07:04.000
+Il est désormais attribué et créé correctement.
+
+07:04.000 --> 07:10.000
+Encore une fois, le détournement d'événements peut être un peu délicat, mais comme vous pouvez taper du type cast, si vous, encore une fois, si vous dites type,
+
+07:10.000 --> 07:15.000
+si on sait ce qui va se passer, c'est sympa car encore une fois, c'est facile d'oublier ce qu'on met.
+
+07:15.000 --> 07:20.000
+Donc, en fin de compte, c'est essentiellement un moyen pour vous de documenter quelles sont vos intentions et comment cela est censé fonctionner.
+
+07:20.000 --> 07:29.000
+Et puis les gens peuvent beaucoup plus facilement accéder au nom de cette mise à jour au cas où il y aurait un bug à l'avenir et dire, d'accord, c'est ce que je regarde en quelque sorte sans même regarder le modèle.
+
+07:29.000 --> 07:34.000
+Ils peuvent déjà faire beaucoup de travail à partir de cela.
+

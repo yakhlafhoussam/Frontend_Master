@@ -1,0 +1,596 @@
+WEBVTT
+
+00:00.000 --> 00:02.400
+So the section we're going to be kicking off right now
+
+00:02.400 --> 00:05.160
+is on watchers and computed properties.
+
+00:05.160 --> 00:07.400
+We've talked a lot about reactive data,
+
+00:07.400 --> 00:10.760
+and we saw that it's cool, that it tracks.
+
+00:10.760 --> 00:13.720
+But the next step to reactive data a lot of times
+
+00:13.720 --> 00:17.080
+comes to the point where it's a question of what happens
+
+00:17.080 --> 00:19.440
+when things depend on that data, right?
+
+00:19.440 --> 00:21.320
+So you want something to happen when
+
+00:21.320 --> 00:22.640
+the reactive data changes.
+
+00:22.640 --> 00:24.200
+This is actually fairly common.
+
+00:24.200 --> 00:26.800
+So granted, we're doing a lot of things automatically
+
+00:26.800 --> 00:27.600
+at this point, right?
+
+00:27.600 --> 00:29.800
+So for example, when the data updates view
+
+00:29.800 --> 00:31.600
+will automatically update the HTML.
+
+00:31.600 --> 00:34.520
+But what do we want to do more fine-grained things?
+
+00:34.520 --> 00:38.720
+So for example, we want to watch the count up here.
+
+00:38.720 --> 00:42.960
+And if it's even, we want to go ahead and then, say,
+
+00:42.960 --> 00:46.800
+update the title up here to something else, right?
+
+00:46.800 --> 00:49.960
+So you can imagine that if we had this to be counter title,
+
+00:49.960 --> 00:55.080
+for example, and counter title would just put it here.
+
+00:55.080 --> 00:59.200
+So counter title is going to be just a standard,
+
+00:59.200 --> 01:01.080
+for example.
+
+01:01.080 --> 01:01.960
+So you can see it in a fresh.
+
+01:01.960 --> 01:03.720
+Great, counter standard here.
+
+01:03.720 --> 01:05.200
+And we want to say we want to watch
+
+01:05.200 --> 01:09.040
+for if the count goes past 20, then we
+
+01:09.040 --> 01:12.120
+want to add, like, long to the text.
+
+01:12.120 --> 01:14.800
+And so your first instinct for those who come from a framework
+
+01:14.800 --> 01:17.360
+background is to think, well, we need to be able to watch
+
+01:17.360 --> 01:18.520
+the thing, right?
+
+01:18.520 --> 01:21.680
+And so to watch something in view is actually fairly simple.
+
+01:21.680 --> 01:25.080
+There actually is a watch option, as you would expect.
+
+01:25.080 --> 01:26.720
+So we have data, we have methods.
+
+01:26.720 --> 01:29.040
+Here's our opportunity to watch something.
+
+01:29.040 --> 01:30.160
+And when you want to watch something,
+
+01:30.160 --> 01:33.560
+you basically say, what is it exactly that we're watching?
+
+01:33.560 --> 01:36.760
+Well, in this case, we're watching the count.
+
+01:36.760 --> 01:39.240
+And so when you actually define the count, though,
+
+01:39.240 --> 01:41.080
+what you want to do is you want to say,
+
+01:41.080 --> 01:42.480
+you need the value that is basically
+
+01:42.480 --> 01:44.000
+going to return to you by default.
+
+01:44.000 --> 01:45.000
+Because otherwise, you don't have
+
+01:45.000 --> 01:48.200
+something to refer to inside of that value.
+
+01:48.200 --> 01:50.400
+Because it's going to basically say, what's your new value?
+
+01:50.400 --> 01:51.440
+What's your old value?
+
+01:51.440 --> 01:53.720
+And so by default, you get the new value as the first one.
+
+01:53.720 --> 01:56.400
+So let me actually just do new value like this.
+
+01:56.400 --> 02:00.080
+So you'll see now, here we have a simple watch function
+
+02:00.080 --> 02:01.400
+that's watching count.
+
+02:01.400 --> 02:05.680
+And then when it changes, we should automatically see it log.
+
+02:05.680 --> 02:12.360
+And so, ooh, do, do, do, do, watch count, did not refresh.
+
+02:12.360 --> 02:13.520
+Refreshing would be helpful.
+
+02:13.520 --> 02:13.960
+There we go.
+
+02:13.960 --> 02:14.560
+OK.
+
+02:14.560 --> 02:17.760
+So we can see here, 1826, we're getting some logs as well here
+
+02:17.760 --> 02:18.880
+from increment count.
+
+02:18.880 --> 02:21.640
+But we see that at least it's being triggered.
+
+02:21.640 --> 02:24.480
+So your next thing would be like, OK, well, logically speaking,
+
+02:24.480 --> 02:26.280
+what I would want to do then is I would say,
+
+02:26.320 --> 02:32.200
+well, if new value is greater than 20, then this dot counter
+
+02:32.200 --> 02:39.240
+title, ooh, counter title plus equals very long.
+
+02:39.240 --> 02:40.560
+OK.
+
+02:40.560 --> 02:43.400
+Now, refresh, one, two.
+
+02:43.400 --> 02:45.520
+You can see, boom, it's updated.
+
+02:45.520 --> 02:47.880
+And so from a mental model perspective, you're like, yeah,
+
+02:47.880 --> 02:48.600
+that makes sense.
+
+02:48.600 --> 02:49.680
+Cool.
+
+02:49.680 --> 02:52.560
+And so this is actually a common paradigm in a lot of frameworks
+
+02:52.560 --> 02:54.520
+when it comes to watching reactive dependencies.
+
+02:54.520 --> 02:56.160
+That's what it's called.
+
+02:56.160 --> 02:59.760
+But view has a better way for us to do this, especially when
+
+02:59.760 --> 03:02.040
+it comes to modifying existing data.
+
+03:02.040 --> 03:04.360
+Because if you think about what we're doing here, what we're
+
+03:04.360 --> 03:06.680
+doing is we're saying, based on a reactive data property,
+
+03:06.680 --> 03:08.960
+run a specific computation.
+
+03:08.960 --> 03:11.840
+And then, but if we think about that from a performance
+
+03:11.840 --> 03:13.680
+perspective, we really only wanted
+
+03:13.680 --> 03:16.760
+to do that when all the dependent, like the right
+
+03:16.760 --> 03:18.200
+dependencies are triggered.
+
+03:18.200 --> 03:20.600
+And so one of the problems that comes with doing something
+
+03:20.600 --> 03:24.520
+as explicitly watching values is sometimes, especially when
+
+03:24.560 --> 03:27.400
+apps get really large, the watch can end up
+
+03:27.400 --> 03:31.000
+getting triggered like a lot, like unnecessarily so.
+
+03:31.000 --> 03:33.120
+And so when you hear things about people accidentally
+
+03:33.120 --> 03:36.120
+triggering re-renders, that's what they're talking about.
+
+03:36.120 --> 03:38.280
+It's because at that point, you're manually
+
+03:38.280 --> 03:39.440
+watching the dependencies.
+
+03:39.440 --> 03:40.760
+And if you don't know what you're doing,
+
+03:40.760 --> 03:42.840
+or not caching it correctly, all of a sudden,
+
+03:42.840 --> 03:45.360
+you might be triggering re-rendering of thousands
+
+03:45.360 --> 03:47.720
+of nodes and whatnot.
+
+03:47.720 --> 03:50.120
+So view, in its view fashion, came up
+
+03:50.120 --> 03:53.240
+with an API that would help to abstract that away.
+
+03:53.240 --> 03:55.680
+And the way it does that is through the idea
+
+03:55.680 --> 03:57.880
+of computed properties.
+
+03:57.880 --> 03:59.520
+And so the way computed properties worked
+
+03:59.520 --> 04:03.280
+is basically another option on your app.
+
+04:03.280 --> 04:06.080
+So I'm going to add it below data because,
+
+04:06.080 --> 04:08.080
+and you'll see shortly why.
+
+04:08.080 --> 04:10.280
+So computed properties is think of it
+
+04:10.280 --> 04:12.760
+as basically performance optimized calculations
+
+04:12.760 --> 04:15.400
+on reactive data that you have.
+
+04:15.400 --> 04:19.320
+So in the instance of, for example, the counter title,
+
+04:19.320 --> 04:21.920
+rather than it be like, OK, well, I'm
+
+04:21.920 --> 04:23.640
+going to have a watch on this count.
+
+04:23.640 --> 04:25.800
+If it's 20, then add the thing.
+
+04:25.800 --> 04:30.280
+Instead, you could be, I'll say, display title, for example.
+
+04:30.280 --> 04:35.360
+And so this will be a function that view will basically,
+
+04:35.360 --> 04:37.240
+it will correctly decide when to run it.
+
+04:37.240 --> 04:38.640
+So we'll see shortly.
+
+04:38.640 --> 04:40.400
+And in this function, what are we going to do?
+
+04:40.400 --> 04:45.640
+We're going to say, if this dot count is greater than 20,
+
+04:45.640 --> 04:49.760
+return counter standard.
+
+04:49.760 --> 04:52.920
+Otherwise, return, oh wait, in this case,
+
+04:52.920 --> 04:55.440
+it was counter very long.
+
+04:55.440 --> 05:00.880
+Otherwise, return counter standard, just like that.
+
+05:00.880 --> 05:09.600
+And so we switch this over now to display title and refresh.
+
+05:09.600 --> 05:11.560
+You see nothing changes, and then it's swapped,
+
+05:11.560 --> 05:13.000
+and then it's good.
+
+05:13.000 --> 05:16.040
+And basically, even though you might think programmatically,
+
+05:16.040 --> 05:18.560
+this looks very similar to what we just did,
+
+05:18.560 --> 05:20.960
+this is extremely powerful, because what you've just done
+
+05:20.960 --> 05:24.160
+is now given view the job of figuring out
+
+05:24.160 --> 05:26.480
+when its dependencies have changed.
+
+05:26.480 --> 05:28.120
+And so to show you what I mean by that,
+
+05:28.120 --> 05:31.280
+we could even combine computed properties together.
+
+05:31.280 --> 05:32.880
+So for example, let's say that we actually
+
+05:32.880 --> 05:35.480
+wanted to impact the increment amount based
+
+05:35.480 --> 05:36.880
+on the length of the title.
+
+05:36.880 --> 05:38.040
+Let's just do that.
+
+05:38.040 --> 05:41.880
+So we could then say, let's say I call it
+
+05:41.880 --> 05:44.200
+optimize increment amount.
+
+05:44.200 --> 05:46.120
+And for whatever reason, we have some algorithm
+
+05:46.120 --> 05:48.520
+that's dependent on the counter title.
+
+05:48.520 --> 05:54.160
+What we could do is that we can return this dot display
+
+05:54.160 --> 05:59.280
+title dot length times, and then, let's say,
+
+05:59.280 --> 06:00.840
+this dot increment amount.
+
+06:03.440 --> 06:05.200
+So now we have two dependencies.
+
+06:05.200 --> 06:07.800
+We're depending on this display title here.
+
+06:07.800 --> 06:11.160
+We're dependent on increment amount here.
+
+06:11.160 --> 06:16.040
+But then once we update here to optimize increment amount,
+
+06:16.040 --> 06:20.040
+we can see now that things are starting to change actually
+
+06:20.040 --> 06:21.720
+pretty drastically.
+
+06:21.720 --> 06:24.360
+You're seeing that the, oh, actually, I've realized you're
+
+06:24.360 --> 06:26.080
+not actually seeing the optimize amount.
+
+06:26.080 --> 06:28.240
+So let's show that real quick.
+
+06:28.240 --> 06:29.480
+Where's my increment count?
+
+06:29.480 --> 06:30.760
+OK, here we go.
+
+06:30.760 --> 06:34.760
+Then we can say optimize increment amount.
+
+06:34.760 --> 06:37.760
+Very good.
+
+06:37.760 --> 06:39.760
+So you can see here it's 224 right here.
+
+06:39.760 --> 06:41.520
+And so it's changing because why?
+
+06:41.520 --> 06:43.880
+Because we've modified the title.
+
+06:43.880 --> 06:46.000
+If we modify this times 10, you'll
+
+06:46.000 --> 06:48.400
+see that now it's updating correctly by the increment
+
+06:48.400 --> 06:50.600
+amount, but the optimize amount is now
+
+06:50.600 --> 06:52.840
+dependent on two different things.
+
+06:52.840 --> 06:54.680
+And so what you get with computer properties
+
+06:54.680 --> 06:56.960
+is basically really efficient tool chaining
+
+06:56.960 --> 06:59.120
+on reactive dependencies.
+
+06:59.120 --> 07:01.560
+And this is a concept we're starting to see popularized.
+
+07:01.560 --> 07:04.240
+I think Svelte has something very similar as well now,
+
+07:04.240 --> 07:07.240
+in that if you think about an enterprise level app,
+
+07:07.240 --> 07:09.880
+there is going to be so much that's changing.
+
+07:09.880 --> 07:12.720
+And when you have manual definitions of what you're
+
+07:12.720 --> 07:15.480
+watching, oftentimes you'll find that it's actually fairly
+
+07:15.480 --> 07:18.280
+brittle because one small change will break
+
+07:18.280 --> 07:19.800
+that entire dependency chain.
+
+07:19.800 --> 07:21.840
+Whereas here, you can have your source of truth
+
+07:21.840 --> 07:24.040
+being this data store, and then you
+
+07:24.040 --> 07:27.360
+can have all your computations run off of that thing.
+
+07:27.360 --> 07:29.200
+And it knows when to trigger, it knows what to do,
+
+07:29.200 --> 07:31.400
+it knows how to cache it, so that in the HTML
+
+07:31.400 --> 07:33.080
+it doesn't randomly trigger.
+
+07:33.080 --> 07:36.920
+All that stuff that our goal is to build cool things
+
+07:36.920 --> 07:39.720
+and to abstract business logic, deliver value to customers.
+
+07:39.720 --> 07:41.920
+As much as it's fun to learn about performance optimizations,
+
+07:41.920 --> 07:44.520
+that's not something we want to be debugging constantly.
+
+07:44.520 --> 07:47.200
+And so computer properties are incredibly powerful for this.
+
+07:47.200 --> 07:51.680
+In fact, if I were to say my single most favorite feature
+
+07:51.680 --> 07:53.520
+of view, it's the computer property
+
+07:53.520 --> 07:56.000
+because it just takes away all the worry for me
+
+07:56.000 --> 07:58.640
+about what's happening, and it does so much work for me.
+
+07:58.640 --> 08:00.280
+Again, really easy.
+
+08:00.280 --> 08:02.400
+And it's particularly powerful if you
+
+08:02.400 --> 08:03.600
+do any data visualizations.
+
+08:03.600 --> 08:04.480
+You can imagine, right?
+
+08:04.480 --> 08:06.240
+You're doing all these SVG calculations
+
+08:06.240 --> 08:08.080
+based on a set group of data.
+
+08:08.080 --> 08:10.840
+You don't want to have to write the dependency chain that
+
+08:10.840 --> 08:12.720
+would update the SVG at this particular point,
+
+08:12.720 --> 08:15.280
+and then it swaps this way or how it animates.
+
+08:15.280 --> 08:18.280
+All that can be managed basically with computer properties.
+
+08:18.280 --> 08:20.360
+And so some of the most elegant stores I've seen
+
+08:20.360 --> 08:23.080
+have one source of truth inside of data,
+
+08:23.080 --> 08:25.000
+and then they compute everything else out.
+
+08:25.000 --> 08:27.880
+And it just works really, really well
+
+08:27.880 --> 08:30.080
+because view can optimize all those things.
+

@@ -1,0 +1,178 @@
+WEBVTT
+
+00:00.000 --> 00:05.720
+And I have a index method here.
+
+00:05.720 --> 00:11.720
+If you've noticed here at the top, my app.row takes a list of methods that it accepts.
+
+00:11.720 --> 00:20.840
+So if I try to call this route with a method that is not accepted, like put, my server is just going to throw an error.
+
+00:20.840 --> 00:28.400
+Now, if the requested method was get, meaning we haven't submitted anything yet, we're not hitting that submit button.
+
+00:28.480 --> 00:34.600
+I'm just going to set the selected languages to all of the available languages by default.
+
+00:34.600 --> 00:44.800
+If the method was post-instead, I'm going to use that request variable that I imported from Flask.
+
+00:44.800 --> 00:56.080
+That variable has a form, which is attached to the form that I've used to submit to this endpoint.
+
+00:56.160 --> 01:00.320
+And there's a helper method on this called get list.
+
+01:00.320 --> 01:08.640
+And this tells me which form I would like to look at.
+
+01:08.640 --> 01:17.680
+Now, I get my results from the repos with most stars method, just like I did in my introduction to Python final exercise.
+
+01:17.680 --> 01:25.840
+This time, instead of passing in all of the languages, I'm just going to pass in the ones that the user selected.
+
+01:25.840 --> 01:27.840
+Next, I'm going to render my template.
+
+01:27.840 --> 01:32.480
+So the first argument to render template is index.hgml.
+
+01:32.480 --> 01:35.520
+We'll take a look at that template in just a second.
+
+01:35.520 --> 01:46.320
+I'm also passing in which languages were selected, so that when the page reloads, the languages that we had checked off stay checked off.
+
+01:46.320 --> 01:55.760
+And I'm passing in that list of all of the available languages, so that the checkboxes know whether they're selected or not.
+
+01:56.000 --> 02:03.760
+And to display the check on or off, I'm lastly, I'm just passing in one additional variable to the template.
+
+02:03.760 --> 02:09.200
+And that's our list of results, which contain those instances of get her repo.
+
+02:10.880 --> 02:13.520
+There's one last thing that happens down here.
+
+02:15.120 --> 02:17.520
+I'm using another decorator.
+
+02:17.520 --> 02:20.800
+This one is called app.ir handler.
+
+02:21.360 --> 02:25.120
+And to this decorator, I can pass an exception type.
+
+02:26.640 --> 02:33.440
+And just provide a single method that will run if this class of exception occurs.
+
+02:35.360 --> 02:39.760
+And here, I'm going to render a different type of template, error.hgml.
+
+02:40.640 --> 02:44.560
+And the message is just going to be the string representation of the error.
+
+02:46.000 --> 02:48.160
+Let's take a look at what's in these templates.
+
+02:48.240 --> 02:57.760
+First, I'm going to open error.hgml from my final exercise files, and we'll see that I link to a
+
+02:57.760 --> 03:07.680
+style sheet. I have a div here, but really the most important bit is I'm just going to display the message
+
+03:07.760 --> 03:18.160
+that got passed in one second. Let me close some of these files.
+
+03:29.040 --> 03:35.920
+And I'm going to open my app.py. Oops, that's not what I wanted. Sorry, one second.
+
+03:36.000 --> 03:45.680
+App.py is right here. And I'm going to open my error.hml file.
+
+03:47.120 --> 03:52.960
+Okay, let me see if I can display these side by side with my current font size.
+
+03:57.120 --> 04:03.520
+Okay, so here I'm returning render template. I'm passing in the message, which is the
+
+04:04.480 --> 04:11.120
+exception that was thrown. And here in my template, I'm looking at that message, and with these curly
+
+04:11.120 --> 04:23.920
+braces printing it out. Okay, now I'm going to open index.hgml from the final exercise template
+
+04:23.920 --> 04:33.840
+directory. And we'll see I have a title here, but the the body is pretty strong. The body of
+
+04:33.840 --> 04:43.760
+this is pretty short, pretty easy to read. So here are the form action that I'm taking. I'm using
+
+04:43.760 --> 04:55.360
+this built in that's available in templates. And I'm asking for the index the URL for this index
+
+04:57.520 --> 05:03.440
+method that I've created right here. So I don't have to do any weird things with paths. And I'm
+
+05:03.440 --> 05:12.720
+specifying in my form that the method is post. Now you'll remember that here in my index method,
+
+05:14.480 --> 05:18.240
+I'm rendering a template and I'm passing in a few things to this template. The selected
+
+05:18.240 --> 05:25.840
+languages, the available languages, and the results. So I'm going to loop through each language in my
+
+05:25.840 --> 05:35.600
+available languages. And I'm going to do, I'm going to set the value to the language for that checkbox
+
+05:35.600 --> 05:41.600
+so that when I submit this form, I have that language available to me. And then I'm going to return
+
+05:41.600 --> 05:48.080
+checked. I'm going to insert here checked if the language is in the selected languages. Otherwise,
+
+05:48.080 --> 05:54.960
+the checkbox is going to be unchecked. And finally, I'm going to print out the label for the language.
+
+05:56.720 --> 06:05.760
+That generates this section right here. Lastly, I just have a submit button. Remember that for
+
+06:05.760 --> 06:12.400
+junta templates, I'm going to have to end this four statement, because just like each
+
+06:12.400 --> 06:19.440
+channel, there's that opening tag and a closing tag. Now I'm going to print out my popular
+
+06:19.440 --> 06:28.080
+get her proposed by stars. And all I'm doing here, again, I passed in results to my template.
+
+06:28.800 --> 06:33.760
+If there are no results, I don't want to bother rendering the table. It's going to look ugly.
+
+06:33.840 --> 06:38.800
+So instead, I'm just going to print out no results. Otherwise, I'm going to print out the
+
+06:38.800 --> 06:46.800
+table header. Now, I'm going to loop through every result in my results. And for table data,
+
+06:47.200 --> 06:56.320
+I'll pull the result name, result language, and results. num stars. And that's it. This is a
+
+06:56.400 --> 07:06.720
+60 line index.hml file. And that's all that we need to generate this functional website.
+
+07:09.760 --> 07:16.400
+This is the kind of project that you can easily do in an afternoon. One more thing I want to
+
+07:16.480 --> 07:26.880
+to show you, I wrote a few simple unit tests for my application. I also wrote a few unit tests
+
+07:26.880 --> 07:32.880
+for the simple application. Those tests are included in the repo. So if you'd like,
+
+07:32.880 --> 07:38.880
+take a look at those and run them, and let's make sure our app works.

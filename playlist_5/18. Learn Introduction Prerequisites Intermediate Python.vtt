@@ -1,0 +1,359 @@
+WEBVTT
+
+00:00.000 --> 00:08.000
+These classes, they take a, if we want to be able to instantiate them and pass in arguments
+
+00:08.000 --> 00:14.000
+to them, like we did within, we need to make a special type of method.
+
+00:14.000 --> 00:17.000
+That's called the initializer method.
+
+00:17.000 --> 00:22.000
+And it starts with these double underscores, or dunder in it.
+
+00:22.000 --> 00:27.000
+What do these double underscores tend to mean?
+
+00:27.000 --> 00:29.000
+Yeah, it's special.
+
+00:29.000 --> 00:32.000
+So you shouldn't be calling this initializer method directly.
+
+00:32.000 --> 00:35.000
+Kind of happens under the hood.
+
+00:44.000 --> 00:47.000
+I'm going to print out does wrong.
+
+00:47.000 --> 00:52.000
+And I'm going to access runs, like runs is a, is a class variable, right?
+
+00:53.000 --> 00:59.000
+So if I run this code, well, the syntax highlighter here is giving you a little bit of a hint,
+
+00:59.000 --> 01:02.000
+but I forgot something.
+
+01:02.000 --> 01:04.000
+Let's say I didn't have this at all.
+
+01:04.000 --> 01:13.000
+I'm just going to print out your car.
+
+01:13.000 --> 01:18.000
+Sometimes highlighters still giving us a hint there.
+
+01:18.000 --> 01:20.000
+Why is that?
+
+01:20.000 --> 01:23.000
+It's because I'm missing something.
+
+01:23.000 --> 01:25.000
+And so.
+
+01:25.000 --> 01:28.000
+Right.
+
+01:28.000 --> 01:35.000
+So self is a required argument to in it.
+
+01:35.000 --> 01:37.000
+It's kind of a hidden one.
+
+01:37.000 --> 01:40.000
+You don't have to explicitly pass it in.
+
+01:40.000 --> 01:46.000
+I'm going to import something so that I can pull in the newest version of my car classes,
+
+01:46.000 --> 01:47.000
+and modify it.
+
+01:47.000 --> 01:51.000
+So if you're following along with me in this by using a file,
+
+01:51.000 --> 01:53.000
+you'll have to do this as well.
+
+01:53.000 --> 02:02.000
+So you would have to import, import lib, and then say import lib dot reload,
+
+02:02.000 --> 02:05.000
+and the name of your package.
+
+02:05.000 --> 02:11.000
+In this case, it's cars.
+
+02:11.000 --> 02:14.000
+If I can just type today.
+
+02:15.000 --> 02:17.000
+Oh, the reload must be a module.
+
+02:17.000 --> 02:21.000
+Okay, so to do this kind of live reload in the Ripple,
+
+02:21.000 --> 02:24.000
+not something that we usually do.
+
+02:24.000 --> 02:28.000
+Usually we're either working just in the Ripple or just with files.
+
+02:28.000 --> 02:33.000
+I would need to import cars as a module.
+
+02:33.000 --> 02:43.000
+And then I can say import lib dot reload and give the package name of cars.
+
+02:43.000 --> 02:47.000
+And that'll just reload it for my session.
+
+02:47.000 --> 02:48.000
+Make sense?
+
+02:48.000 --> 02:53.000
+So now if I want to make a new car, I just have to say cars dot car.
+
+02:53.000 --> 02:57.000
+And to verify that the type of that is a class type.
+
+02:57.000 --> 02:58.000
+Okay.
+
+02:58.000 --> 03:12.000
+So if I try to make a new car now.
+
+03:12.000 --> 03:17.000
+I'm not going to be able to access any sort of instance variables on it.
+
+03:17.000 --> 03:22.000
+And we'll see here that the linter is giving me a hint on that.
+
+03:22.000 --> 03:33.000
+So in order to do that, I'm going to have to pass it in self.
+
+03:33.000 --> 03:36.000
+And let's change things around a little bit.
+
+03:36.000 --> 03:38.000
+I'm just going to close this.
+
+03:38.000 --> 03:43.000
+I don't want to specify a new name every time I start my car.
+
+03:43.000 --> 03:45.000
+It doesn't make sense, right?
+
+03:45.000 --> 03:50.000
+When I make my new car instance, I should be able to say what the type of it is,
+
+03:50.000 --> 03:53.000
+or I'm sorry, what the model of my car is once,
+
+03:53.000 --> 03:56.000
+not every time I start it to just know.
+
+03:56.000 --> 04:01.000
+So I'm going to move this name variable.
+
+04:01.000 --> 04:08.000
+I'm going to move that into the init.
+
+04:08.000 --> 04:12.000
+What do I need to do to save it to the instance?
+
+04:12.000 --> 04:16.000
+Self.name equals name.
+
+04:16.000 --> 04:17.000
+Okay.
+
+04:17.000 --> 04:20.000
+Now I can take a cell.
+
+04:20.000 --> 04:23.000
+Am I passing a name into the start method here?
+
+04:23.000 --> 04:24.000
+I'm not.
+
+04:24.000 --> 04:29.000
+I still have to pass it in self to signify that this is an instance method.
+
+04:29.000 --> 04:34.000
+Now I can still access self.name.
+
+04:34.000 --> 04:38.000
+But I don't have access to it in this particular method.
+
+04:38.000 --> 04:41.000
+And it's all via the magic of self.
+
+04:41.000 --> 04:44.000
+So let me reload this.
+
+04:44.000 --> 04:54.000
+And now I can say my Subaru equals cars.car.
+
+04:54.000 --> 04:59.000
+And I'm going to give it a name of Subaru.
+
+04:59.000 --> 05:01.000
+And cool, new car.
+
+05:01.000 --> 05:08.000
+Now I can say my Subaru dot runs starts.
+
+05:08.000 --> 05:11.000
+I don't know why I got runs into my head.
+
+05:11.000 --> 05:13.000
+My Subaru dot starts.
+
+05:13.000 --> 05:15.000
+Start.
+
+05:15.000 --> 05:16.000
+Thank you guys.
+
+05:16.000 --> 05:18.000
+My Subaru dot start.
+
+05:18.000 --> 05:22.000
+And start knows that the name of my car is Subaru.
+
+05:22.000 --> 05:26.000
+Why are that instance variable?
+
+05:26.000 --> 05:27.000
+Okay.
+
+05:27.000 --> 05:32.000
+It's kind of the basics of classes here.
+
+05:32.000 --> 05:35.000
+Self refers to an instance.
+
+05:35.000 --> 05:40.000
+So the method start?
+
+05:40.000 --> 05:41.000
+Yes.
+
+05:41.000 --> 05:46.000
+The way it reads self.name is when this program initializes.
+
+05:46.000 --> 05:49.000
+That's where self.name.
+
+05:49.000 --> 05:52.000
+I'm just wondering how it reads ten.
+
+05:52.000 --> 05:55.000
+So let's say I had a new car.
+
+05:55.000 --> 05:59.000
+My Mustang equals cars dot car.
+
+05:59.000 --> 06:04.000
+What do we know about positional arguments?
+
+06:04.000 --> 06:06.000
+They're required, right?
+
+06:06.000 --> 06:09.000
+And they have to be passed in an order.
+
+06:09.000 --> 06:12.000
+So now if I try to make a new car.
+
+06:12.000 --> 06:15.000
+And I don't pass in that name argument.
+
+06:15.000 --> 06:17.000
+What's going to happen?
+
+06:18.000 --> 06:19.000
+I'm going to get a type error.
+
+06:19.000 --> 06:28.000
+It's going to tell me that in it is missing one required positional argument of name.
+
+06:28.000 --> 06:34.000
+So I know that if I have an instance of a car because I'm asking for it.
+
+06:34.000 --> 06:36.000
+In the beginning constructor.
+
+06:36.000 --> 06:38.000
+And I'm setting self.name is name.
+
+06:38.000 --> 06:43.000
+I know that it's guaranteed to be there as a variable.
+
+06:43.000 --> 06:45.000
+To show you one more time.
+
+06:45.000 --> 06:49.000
+It looks like I didn't correctly reload my module.
+
+06:49.000 --> 06:54.000
+So let me show you if I make an init.
+
+06:54.000 --> 06:57.000
+And that does not take self.
+
+06:57.000 --> 07:02.000
+And let me correctly reload this time.
+
+07:02.000 --> 07:04.000
+If I say cars dot car.
+
+07:04.000 --> 07:06.000
+If I try to make a new instance now.
+
+07:06.000 --> 07:08.000
+I'm going to get a type error.
+
+07:08.000 --> 07:11.000
+It says init takes zero positional arguments.
+
+07:11.000 --> 07:13.000
+But one was given.
+
+07:14.000 --> 07:17.000
+What positional argument was given?
+
+07:17.000 --> 07:21.000
+We didn't pass any in.
+
+07:21.000 --> 07:22.000
+Self.
+
+07:22.000 --> 07:23.000
+Exactly right.
+
+07:23.000 --> 07:26.000
+That that binding happens under the hood.
+
+07:26.000 --> 07:27.000
+Right.
+
+07:27.000 --> 07:30.000
+So when you make a new instance of a class.
+
+07:30.000 --> 07:32.000
+Python will always pass in.
+
+07:32.000 --> 07:35.000
+Self has the first argument.
+
+07:35.000 --> 07:38.000
+Okay.
+
+07:38.000 --> 07:53.000
+And so let me make sure to pass a not name argument again.
+

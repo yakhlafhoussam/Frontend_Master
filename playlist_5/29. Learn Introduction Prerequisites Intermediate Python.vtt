@@ -1,0 +1,173 @@
+WEBVTT
+
+00:00.000 --> 00:07.000
+Exceptions are just regular classes that inherit from the exception class.
+
+00:07.000 --> 00:17.000
+And so I can ask, is subclass value error exception?
+
+00:17.000 --> 00:19.000
+That's true, right?
+
+00:19.000 --> 00:23.000
+And you can do this for all of the exceptions that we've been looking at.
+
+00:24.000 --> 00:31.000
+So in order to make our own custom exceptions, all we need to do is subclass from exception,
+
+00:31.000 --> 00:34.000
+just like all these other types of exceptions do.
+
+00:34.000 --> 00:40.000
+So I can say class my custom exception, subclass from exception.
+
+00:40.000 --> 00:44.000
+And then I can, it's not really matter.
+
+00:44.000 --> 00:48.000
+You can even have just past which means it's, you know,
+
+00:48.000 --> 00:52.000
+it's a valid statement in Python.
+
+00:52.000 --> 01:03.000
+So it means you can kind of have an empty class without any variables or an initializer or anything like that.
+
+01:03.000 --> 01:15.000
+Now I can raise this custom exception class by using the raised keyword.
+
+01:15.000 --> 01:18.000
+Sorry, no colon there.
+
+01:18.000 --> 01:20.000
+And now we get a trace back.
+
+01:20.000 --> 01:24.000
+Going back to my custom exception.
+
+01:24.000 --> 01:33.000
+This is a really useful way of signaling error conditions in your production Python code.
+
+01:33.000 --> 01:42.000
+It's good to have custom exception classes so that you can then handle them as specifically as you want in your error checking code.
+
+01:43.000 --> 01:46.000
+Does that make sense why?
+
+01:46.000 --> 01:48.000
+Okay.
+
+01:48.000 --> 01:53.000
+The nice thing about these custom exception classes is they don't have to get simple.
+
+01:53.000 --> 01:56.000
+We can get this fancy as we want here.
+
+01:56.000 --> 02:01.000
+So I'm going to make a new class the incorrect value error.
+
+02:01.000 --> 02:08.000
+It's going to subclass from exception.
+
+02:08.000 --> 02:11.000
+And I'm going to make a constructor here.
+
+02:11.000 --> 02:13.000
+I'm going to take self.
+
+02:13.000 --> 02:21.000
+And I'm also going to take value.
+
+02:21.000 --> 02:24.000
+Now I know that exceptions all have a message.
+
+02:24.000 --> 02:27.000
+I did that by looking at the documentation and you can't do.
+
+02:27.000 --> 02:29.000
+But you know, bear with me for now.
+
+02:29.000 --> 02:32.000
+I can say that for my error class.
+
+02:32.000 --> 02:36.000
+I want the message to be got a bad value.
+
+02:37.000 --> 02:43.000
+I'm going to actually print out what the value was.
+
+02:43.000 --> 02:51.000
+How do I call the exception class and pass in my new message?
+
+02:51.000 --> 02:52.000
+Super.
+
+02:52.000 --> 02:54.000
+It's super.
+
+02:54.000 --> 02:55.000
+Done.
+
+02:55.000 --> 02:56.000
+Yep.
+
+02:56.000 --> 03:02.000
+Then I pass in my new message.
+
+03:02.000 --> 03:07.000
+So now I can say my value equals, you know.
+
+03:07.000 --> 03:13.000
+And that if my value is greater than 998.
+
+03:13.000 --> 03:17.000
+Oops.
+
+03:17.000 --> 03:19.000
+I'm going to fix that underscore there.
+
+03:19.000 --> 03:30.000
+If my value is greater than 998, raise my incorrect value error and pass in my value.
+
+03:31.000 --> 03:33.000
+There we go.
+
+03:33.000 --> 03:34.000
+It's my error message, right?
+
+03:34.000 --> 03:37.000
+It looks like the other Python tracebacks.
+
+03:37.000 --> 03:41.000
+It gives us the type and then it gives us the message.
+
+03:41.000 --> 03:45.000
+So very useful, especially for logging.
+
+03:45.000 --> 03:50.000
+We can do that this because exception in general takes a message.
+
+03:50.000 --> 03:57.000
+So if I wanted to, and you know, don't do this.
+
+03:57.000 --> 04:01.000
+Not good practice just showing you.
+
+04:01.000 --> 04:09.000
+You generally don't want to raise exception because your custom error handling code, you know.
+
+04:09.000 --> 04:15.000
+Probably doesn't do a good job of figuring out why this exception was thrown.
+
+04:15.000 --> 04:20.000
+But you can pass in a message here and say whatever.
+
+04:20.000 --> 04:25.000
+Whatever a message I want.
+
+04:26.000 --> 04:29.000
+There we go.
+
+04:29.000 --> 04:37.000
+Let's write a custom exception for our GitHub API.
+

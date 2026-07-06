@@ -1,0 +1,263 @@
+WEBVTT
+
+00:00.000 --> 00:03.900
+Donc, je sais que nous avons traversé tout cela et certains d'entre vous pensent peut-être :
+
+00:03.900 --> 00:06.820
+eh bien, qui crée des applications Web de cette façon ?
+
+00:06.820 --> 00:10.920
+Parce qu'après tout, chaque texte moderne que vous verrez parle toujours de
+
+00:10.920 --> 00:12.780
+construire des outils et ce genre de choses.
+
+00:12.780 --> 00:16.820
+Pour être honnête, l’amélioration progressive est en grande partie une chose qui
+
+00:16.820 --> 00:19.340
+continue d’exister à ce jour même si on n’en parle pas beaucoup.
+
+00:19.340 --> 00:20.980
+Les écritures de lecture de code sont très sexy,
+
+00:20.980 --> 00:24.360
+mais la vérité est que lorsqu'il s'agit de systèmes d'entreprise,
+
+00:24.360 --> 00:29.300
+ce n'est tout simplement pas réaliste de tout arrêter comme nous en avons déjà parlé et d'écrire de nouvelles fonctionnalités.
+
+00:29.300 --> 00:31.580
+Mais en passant dans le CDN avec vue,
+
+00:31.580 --> 00:34.380
+en l'améliorant progressivement, tout fonctionne.
+
+00:34.380 --> 00:38.060
+Parce que nous n'allons pas en parler à ce stade car nous allons passer aux outils de construction.
+
+00:38.060 --> 00:39.900
+Mais beaucoup de ces choses que nous voyons ici,
+
+00:39.900 --> 00:42.580
+ils peuvent être simplement résumés dans des fichiers .js.
+
+00:42.580 --> 00:44.660
+Vous pouvez réellement modulariser votre code.
+
+00:44.660 --> 00:48.060
+En réalité, vous pouvez faire beaucoup de choses et créer une application assez robuste.
+
+00:48.060 --> 00:52.780
+Il n'est pas nécessaire que tous vivent à l'intérieur de cet objet unique que je vous ai tous montré.
+
+00:52.780 --> 00:54.900
+C'est juste une façon pour nous de garder tout cela comme modèle mental.
+
+00:54.900 --> 00:56.700
+Mais finalement, tu peux t'en sortir,
+
+00:56.700 --> 01:02.060
+importez .js ici, utilisez-le comme s'il pouvait encore très bien évoluer.
+
+01:02.060 --> 01:05.460
+Donc cette image ici, que j'adore, est comme le gâteau,
+
+01:05.460 --> 01:07.660
+qu'ensuite vous obtenez le glaçage, puis vous obtenez les bougies.
+
+01:07.660 --> 01:10.380
+Donc le mérite ici est un mot de Tiffany,
+
+01:10.380 --> 01:13.700
+ceci est notre article de blog sur ce qu'est l'amélioration progressive et pourquoi devriez-vous vous en soucier.
+
+01:13.700 --> 01:16.300
+C'est donc certainement quelque chose que je pense que les développeurs Web modernes doivent
+
+01:16.300 --> 01:22.060
+à considérer lorsqu'il s'agit des réalités de la mise à niveau de leur base de code.
+
+01:22.260 --> 01:26.740
+C'est donc un magazine d'articles fracassants rédigé par
+
+01:26.740 --> 01:29.460
+Sarah Drasner qui faisait partie de l'équipe View Core.
+
+01:29.460 --> 01:32.060
+C'est un excellent article car son titre est
+
+01:32.060 --> 01:35.100
+Remplacement de jQuery par View.js, aucune étape de construction n'est nécessaire.
+
+01:35.100 --> 01:37.780
+C'est également une manière très valable d'utiliser View.
+
+01:37.780 --> 01:40.380
+C'est comme si vous saviez qu'une seule page sur l'ensemble de votre application,
+
+01:40.380 --> 01:43.260
+parce que vous le générez de manière statique donc tout est côté serveur,
+
+01:43.260 --> 01:45.500
+mais un seul pourrait utiliser une certaine interactivité,
+
+01:45.500 --> 01:47.180
+je n'ai même plus besoin de jQuery.
+
+01:47.180 --> 01:50.380
+Vous pouvez littéralement simplement supprimer View car je pense que le site CDN est à peu près le même,
+
+01:50.380 --> 01:53.180
+si la vue n'est pas légèrement inférieure à ce stade,
+
+01:53.180 --> 01:55.220
+mais c'est en fait une option viable maintenant.
+
+01:55.220 --> 01:57.060
+Vous n'avez même pas besoin d'aborder View en tant que framework.
+
+01:57.060 --> 02:01.460
+Vous pouvez n’être que de petits éléments d’interactivité disséminés dans une application.
+
+02:01.700 --> 02:05.040
+Finalement, encore une fois, les gens ont toujours l'idée du genre :
+
+02:05.040 --> 02:06.940
+eh bien, qui a réellement fait cela de cette façon ?
+
+02:06.940 --> 02:09.060
+Eh bien, GitLab l'a fait de cette façon.
+
+02:09.060 --> 02:11.820
+GitLab était en fait une application Ruby on Rails.
+
+02:11.820 --> 02:14.100
+C'était super long. Donc si quelqu'un travaille avec Ruby on Rails,
+
+02:14.100 --> 02:15.620
+tu le sais surtout à l'époque,
+
+02:15.620 --> 02:21.580
+y intégrer des chaînes d'outils basées sur des nœuds était extrêmement pénible.
+
+02:21.580 --> 02:23.860
+Encore une fois, ils devaient également proposer des fonctionnalités.
+
+02:23.860 --> 02:25.140
+C'était avant qu'ils ne soient rendus publics.
+
+02:25.140 --> 02:27.860
+Ils avaient des clients dont ils avaient besoin pour répondre à leurs besoins.
+
+02:27.860 --> 02:29.820
+Donc ils ne pouvaient pas tout arrêter et partir,
+
+02:29.820 --> 02:31.660
+ouais, Rails est obsolète.
+
+02:31.660 --> 02:32.740
+Nous aimerions vraiment utiliser un framework,
+
+02:32.740 --> 02:33.700
+alors arrêtons de construire des trucs.
+
+02:33.700 --> 02:35.540
+Ils ne pouvaient pas faire ça. Alors qu’ont-ils fait ?
+
+02:35.540 --> 02:38.380
+J'essaie de me rappeler de quelle page il s'agissait.
+
+02:38.380 --> 02:40.580
+Je connaissais quelqu'un qui faisait partie de l'équipe qui avait fait ça.
+
+02:40.580 --> 02:42.420
+Disons simplement, par exemple,
+
+02:42.420 --> 02:45.020
+ils avaient la page de connexion et ils ont dit sur la page de connexion,
+
+02:45.060 --> 02:48.900
+ajoutons la vue en tant que CDN et ajoutons simplement de l'interactivité.
+
+02:48.900 --> 02:50.460
+Une fois qu'ils ont prouvé que cela fonctionnait bien,
+
+02:50.460 --> 02:51.740
+ils sont allés, d'accord, le suivant.
+
+02:51.740 --> 02:54.060
+Qu'est-ce que nous pouvons atteindre et qui a un impact assez faible ?
+
+02:54.060 --> 02:55.540
+en termes de performances, que pouvons-nous faire ?
+
+02:55.540 --> 02:57.660
+Je pense qu'ils en ont fait un autre.
+
+02:57.660 --> 02:58.820
+En gros, c'est ce qu'ils ont fait.
+
+02:58.820 --> 03:01.300
+Ils ont lentement ajouté de nouvelles fonctionnalités à la clientèle
+
+03:01.300 --> 03:03.860
+tout en migrant progressivement leur application vers view.
+
+03:03.860 --> 03:09.420
+Puis finalement, quand ils ont atteint le point de bascule,
+
+03:09.420 --> 03:12.700
+ils avaient tellement de code en vue qu'il était logique d'aimer,
+
+03:12.820 --> 03:15.100
+prenons quelques semaines pour refactoriser notre code
+
+03:15.100 --> 03:18.380
+pour réellement utiliser les outils de nœuds pour tout intégrer.
+
+03:18.380 --> 03:19.380
+C'est à ce moment-là qu'ils ont fait ça,
+
+03:19.380 --> 03:22.460
+mais ils ont prouvé leur cause plutôt que d'essayer de simplement dire le produit,
+
+03:22.460 --> 03:24.660
+hé, arrête. Nous avons cette merveilleuse idée que
+
+03:24.660 --> 03:28.180
+si quelqu'un a déjà effectué une refactorisation massive d'une application,
+
+03:28.180 --> 03:30.620
+souvent, cela ne se passe pas comme prévu.
+
+03:30.620 --> 03:32.060
+Puis les délais sont repoussés,
+
+03:32.060 --> 03:34.700
+mais ils ont été capables de le faire de manière réaliste.
+
+03:34.700 --> 03:37.260
+Et c’est ainsi que GitLab est désormais affiché.
+
+03:37.260 --> 03:40.140
+Et donc la raison pour laquelle je voulais mettre l'accent sur cette méthode est
+
+03:40.140 --> 03:42.460
+parce que c'est quelque chose qui, je pense, est souvent négligé
+
+03:42.460 --> 03:45.060
+lorsque les gens réfléchissent à recommander des solutions aux clients.
+
+03:45.060 --> 03:47.780
+Et c'est quelque chose que je veux que les gens sachent
+
+03:47.780 --> 03:49.100
+donc chaque fois que tu travailles pour quelqu'un
+
+03:49.100 --> 03:50.940
+ou vous pensez que cela pourrait être une bonne approche,
+
+03:50.940 --> 03:53.060
+vous savez maintenant que ceci est là pour vous.
+

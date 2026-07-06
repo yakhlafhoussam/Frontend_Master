@@ -1,0 +1,229 @@
+WEBVTT
+
+00:00.000 --> 00:05.280
+Les fonctions en Python sont définies avec ce mot-clé sourd que nous avons vu plus tôt.
+
+00:05.280 --> 00:10.800
+Il est suivi d'un nom de fonction, qui est en minuscule
+
+00:10.800 --> 00:15.360
+séparés par des traits de soulignement, puis par des parenthèses contenant zéro
+
+00:15.360 --> 00:18.800
+ou plusieurs arguments et deux points.
+
+00:19.760 --> 00:26.800
+Tout ce qui est en retrait après la fonction appartient à cette fonction.
+
+00:26.880 --> 00:31.280
+Au début du cours, si vous vous en souvenez, nous avons essayé de
+
+00:31.280 --> 00:36.720
+des futures accolades d'importation, et nous avons obtenu une erreur impossible qui ne se produira jamais.
+
+00:36.720 --> 00:38.480
+C'était un petit œuf de Pâques.
+
+00:38.480 --> 00:43.520
+D'autres langages de programmation comme JavaScript utilisent des accolades pour
+
+00:43.520 --> 00:46.880
+délimiter où se trouvent le début et la fin d’une fonction.
+
+00:47.760 --> 00:52.080
+Python ne l'a pas. Au lieu de cela, cela repose sur l’espace de poids.
+
+00:52.080 --> 00:55.920
+Et donc à mesure que nous commençons à parler de fonctions,
+
+00:55.920 --> 00:59.840
+cours, if déclarations, vous allez devoir être très attentif
+
+00:59.840 --> 01:03.360
+de la façon dont vous utilisez l'espace blanc, car si les choses ne sont pas
+
+01:03.360 --> 01:07.360
+indenté au bon niveau, vous obtiendrez des erreurs de syntaxe.
+
+01:10.160 --> 01:16.320
+Si nous essayons de créer des fonctions auxquelles manquent certains de ces composants essentiels,
+
+01:17.520 --> 01:25.040
+donc si j'essaie de créer une fonction qui n'a pas ces deux-points,
+
+01:25.040 --> 01:27.200
+Je vais obtenir une syntaxe invalide.
+
+01:28.320 --> 01:32.400
+Donc, la mort, le nom de la fonction, les parenthèses,
+
+01:32.400 --> 01:35.840
+deux points, et nous verrons que Ripple nous montre un indice utile.
+
+01:35.840 --> 01:39.680
+Une fois que nous aurons ce deux-points, il se transformera en point, point, point,
+
+01:39.680 --> 01:43.520
+invite à dire, hé, j'attends plus de commentaires ici.
+
+01:44.400 --> 01:47.040
+Dans le Ripple, vous pouvez simplement appuyer sur un onglet.
+
+01:47.120 --> 01:57.040
+Lorsque j'appuie à nouveau sur Entrée, le Ripple va dire : hé, j'attends toujours plus d'informations.
+
+01:57.040 --> 02:01.680
+Si vous avez fini de définir votre fonction à ce stade, vous pouvez simplement appuyer à nouveau sur Entrée
+
+02:01.680 --> 02:08.560
+pour revenir aux trois invites fléchées que nous avons vues plus tôt.
+
+02:08.560 --> 02:13.280
+Et ça veut dire que la fonction est maintenant définie, et ça veut dire que je peux l'appeler.
+
+02:13.680 --> 02:21.280
+Lorsque nous écrivons des fichiers Python, cette nouvelle ligne supplémentaire après la fonction,
+
+02:21.840 --> 02:28.160
+si vous ne l'avez pas, ce n'est pas une erreur de syntaxe, mais Pep 8 indique que vous devriez avoir une nouvelle ligne
+
+02:28.160 --> 02:31.600
+après les définitions de vos fonctions, juste pour des raisons de lisibilité.
+
+02:32.800 --> 02:40.720
+Vous pouvez enregistrer le résultat de l’appel d’une fonction dans une variable.
+
+02:40.800 --> 02:47.360
+Je devrais changer un peu ma fonction, donc je devrais changer ma fonction en fait
+
+02:47.360 --> 02:54.320
+renvoyer quelque chose, parce que si je vois ce qu'il y a dans la salutation en ce moment, ce sera en fait un
+
+02:54.320 --> 02:58.720
+valeur nulle. La fonction a seulement imprimé quelque chose, elle ne renvoie aucune valeur.
+
+02:58.880 --> 03:14.400
+Je peux donc redéfinir ma fonction et lui faire renvoyer une valeur au lieu de l'imprimer.
+
+03:16.080 --> 03:22.160
+Maintenant, lorsque j'appelle ma fonction, elle devrait renvoyer la chaîne haute, et je peux maintenant l'enregistrer dans une variable.
+
+03:22.240 --> 03:32.880
+Ainsi, les instructions return vous permettent de faire des choses dans la fonction, puis de renvoyer ces valeurs au
+
+03:32.880 --> 03:39.680
+couleur. Vous pouvez rendre ce que vous voulez. Si vous souhaitez renvoyer plusieurs valeurs,
+
+03:39.680 --> 03:49.280
+vous pouvez l'utiliser pour tirer. Maintenant, appelez des fonctions assez simples sans arguments.
+
+03:49.280 --> 03:52.960
+Comment commencer à créer des fonctions qui acceptent des arguments ?
+
+04:00.320 --> 04:05.120
+Nous définissons les arguments que nous voulons accepter en les séparant par des virgules,
+
+04:05.680 --> 04:10.000
+en séparant les noms que nous attendons d'eux par des virgules plus accentuées.
+
+04:10.240 --> 04:16.080
+Et puis nous pouvons les utiliser dans notre fonction.
+
+04:27.680 --> 04:34.320
+Si nous voulions stocker cette valeur, ce serait assez simple.
+
+04:34.800 --> 04:49.520
+Le résultat est maintenant un entier avec 30. Nous pouvons également avoir des arguments facultatifs et leur fournir une valeur par défaut.
+
+04:50.000 --> 05:12.080
+Vous ne voudriez donc pas écrire une fonction comme celle-ci en production. Vos collègues seraient en colère contre vous.
+
+05:12.080 --> 05:17.120
+C'est une fonction mystérieuse qui fait des choses bizarres. Mais juste à titre d'exemple,
+
+05:17.600 --> 05:24.880
+maintenant je peux toujours ajouter mes numéros. Disons 35. En fait, je vais en avoir neuf
+
+05:26.000 --> 05:34.400
+car il y a cette valeur par défaut dans z qui vaut un. Mais je peux aussi lui transmettre ma propre valeur.
+
+05:38.480 --> 05:44.720
+Ces arguments doivent être fournis car ils n'ont pas de valeurs par défaut, à condition que ces arguments soient facultatifs.
+
+05:45.280 --> 05:49.200
+Et ils doivent être dans cet ordre spécifique.
+
+05:49.200 --> 05:55.280
+Les arguments requis doivent d’abord être définis. Les arguments facultatifs doivent être définis en dernier.
+
+05:55.280 --> 05:58.560
+Si vous mélangez l’ordre de ces éléments, vous obtiendrez des erreurs.
+
+06:07.600 --> 06:12.720
+Et c'est une erreur très utile. C'est une erreur de syntaxe, pas un argument autre que celui par défaut,
+
+06:12.720 --> 06:24.880
+suit l'argument par défaut. Une autre chose à propos des fonctions est que nous les définissons ici
+
+06:24.880 --> 06:32.320
+exactement dans l'ordre des, tels qu'ils ont été définis dans la fonction. Si vous avez fourni des étiquettes pour ceux-ci,
+
+06:32.320 --> 06:37.520
+lorsque vous appelez la fonction, vous pouvez la transmettre, vous pouvez la transmettre dans l'ordre de votre choix.
+
+06:37.520 --> 06:48.560
+Donc, en regardant la fonction d'ajout de nombres ici, je pourrais appeler ajouter des nombres un, deux et trois.
+
+06:49.920 --> 07:02.240
+Ou je pourrais dire que y est égal à un, z est égal à deux et x est égal à trois. Et parce que j'ai aidé
+
+07:02.240 --> 07:08.320
+Python est sorti et lui a dit, hé, je ne les appelle pas dans l'ordre, mais je vous donne les étiquettes.
+
+07:08.320 --> 07:14.960
+Il est capable de comprendre quelle était votre intention. Est-ce que cela a du sens ?
+
+07:17.040 --> 07:28.160
+D'accord, cool. Maintenant, nous avons parlé des arguments par défaut. Nous avons parlé d'ordre.
+
+07:28.240 --> 07:38.560
+Euh, si nous essayons d'appeler une fonction sans tous ses arguments par défaut, nous obtiendrons
+
+07:39.200 --> 07:47.600
+une exception. Donc, pour ajouter des nombres, j'ai deux arguments qui doivent avoir les valeurs x et y.
+
+07:48.400 --> 07:54.080
+Si j'essaie d'appeler cette fonction avec une seule valeur, j'obtiendrai une erreur très utile.
+
+07:54.640 --> 08:00.640
+C'est une erreur de type. Il indique qu'il manque un argument de position requis pour ajouter des nombres de y.
+
+08:01.920 --> 08:08.000
+Droite ? Parce que j'ai passé une valeur pour ceci, mais pas pour cela. Et Python n'a pas de valeur par défaut
+
+08:08.000 --> 08:10.480
+valeur pour cela. Je ne sais pas quoi faire.
+
+08:15.280 --> 08:23.840
+Si vous avez des arguments qui ont des valeurs par défaut pour tout, vous ne pouvez alors en transmettre aucun.
+
+08:24.320 --> 08:33.040
+Ou certains d'entre eux. Ou tous. Vous pouvez mélanger et assortir. Nous avons donc vu que nous avions une méthode de création de requête.
+
+08:35.040 --> 08:42.240
+Et je peux dire que le langage est JavaScript par défaut. Et le nombre d'étoiles est
+
+08:44.000 --> 08:48.560
+10 par défaut. Et l'ordre de tri est décroissant par défaut.
+
+08:48.720 --> 09:02.400
+Et cela va juste renvoyer un epsilon. Cela veut dire que notre langue est la langue et
+
+09:03.200 --> 09:09.840
+les nombres d'étoiles sont les nombres d'étoiles et le tri est le tri.
+
+09:10.080 --> 09:21.600
+Maintenant, quand j'appelle ceci sans argument, j'obtiens JavaScript. Ou je peux simplement fournir la langue
+
+09:25.200 --> 09:35.680
+ou je peux simplement fournir le nombre d'étoiles ou n'importe quelle combinaison d'entre elles.
